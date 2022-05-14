@@ -34,6 +34,7 @@ public class SimpleCharacterMovement : MonoBehaviour, ICharacterMovement
     //run
     [Header("Run")]
     public float timeToRun;
+    public float timeToStopRun;
     public float runSpeedMultiplier;
     private Coroutine startRunningCoroutine;
     public ParticleSystem runParticles;
@@ -240,10 +241,13 @@ public class SimpleCharacterMovement : MonoBehaviour, ICharacterMovement
         if (new Vector2(xAxis, zAxis) == Vector2.zero)
         {
             walk = false;
-            run = false;
             if (startRunningCoroutine != null)
             {
                 StopCoroutine(startRunningCoroutine);
+            }
+            if (run)
+            {
+                StartCoroutine(StopRunningAfter(timeToStopRun));
             }
         }
         else if (!walk) //first walking frame
@@ -268,6 +272,12 @@ public class SimpleCharacterMovement : MonoBehaviour, ICharacterMovement
     {
         yield return new WaitForSeconds(time);
         StartRunning();
+    }
+
+    private IEnumerator StopRunningAfter(float time)
+    {
+        yield return new WaitForSeconds(time);
+        StopRunning();
     }
     #endregion
 
