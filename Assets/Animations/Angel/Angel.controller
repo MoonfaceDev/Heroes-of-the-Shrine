@@ -11,9 +11,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: jump
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: recoveringFromJump
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6948446021964966828}
   m_Solo: 0
@@ -150,9 +147,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: jump
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: recoveringFromJump
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6948446021964966828}
   m_Solo: 0
@@ -175,8 +169,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: recoveringFromJump
+  - m_ConditionMode: 2
+    m_ConditionEvent: jump
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -9020417965952502097}
@@ -374,9 +368,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: recoveringFromJump
-    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: jump
     m_EventTreshold: 0
@@ -457,9 +448,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: recoveringFromJump
-    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: jump
     m_EventTreshold: 0
@@ -587,9 +575,6 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: jump
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: recoveringFromJump
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6948446021964966828}
