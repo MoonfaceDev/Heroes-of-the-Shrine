@@ -154,6 +154,8 @@ public class SimpleCharacterMovement : MonoBehaviour, ICharacterMovement
     #region Knockback
     public void Knockback(float direction, float distance, float height)
     {
+        anticipatingJump = false;
+        recoveringFromJump = false;
         EndJump();
         float airTime = 2 * Mathf.Sqrt(2 * height / gravityAcceleration);
         movableObject.velocity.x = direction * distance / airTime;
@@ -293,12 +295,9 @@ public class SimpleCharacterMovement : MonoBehaviour, ICharacterMovement
         {
             return;
         }
-        jump = true;
-        grounded = false;
-        jumps++;
-        anticipatingJump = true;
         if (walk == false && grounded) //not moving and grounded
         {
+            anticipatingJump = true;
             StartCoroutine(AnticipateJump());
         }
         else //moving or mid-air
@@ -310,12 +309,15 @@ public class SimpleCharacterMovement : MonoBehaviour, ICharacterMovement
     IEnumerator AnticipateJump()
     {
         yield return new WaitForSeconds(jumpAnticipateTime);
+        anticipatingJump = false;
         StartJump();
     }
 
     void StartJump()
     {
-        anticipatingJump = false;
+        jump = true;
+        jumps++;
+        grounded = false;
         movableObject.velocity.y = jumpSpeed;
         movableObject.acceleration.y = -gravityAcceleration;
         runParticlesMain.gravityModifier = 1f;
@@ -330,6 +332,7 @@ public class SimpleCharacterMovement : MonoBehaviour, ICharacterMovement
         movableObject.position.y = 0;
         movableObject.velocity.y = 0;
         movableObject.acceleration.y = 0;
+        jump = false;
         if (walk) //moving
         {
             EndJump();
@@ -344,13 +347,12 @@ public class SimpleCharacterMovement : MonoBehaviour, ICharacterMovement
     IEnumerator RecoverFromJump()
     {
         yield return new WaitForSeconds(jumpRecoverTime);
+        recoveringFromJump = false;
         EndJump();
     }
 
     public void EndJump()
     {
-        recoveringFromJump = false;
-        jump = false;
         grounded = true;
         jumps = 0;
         runParticlesMain.gravityModifier = 0;
