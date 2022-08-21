@@ -37,7 +37,7 @@ public class MovableObject : MonoBehaviour
         UpdateSortingOrder();
     }
 
-    public void AvoidCollisions(Vector3 previousPosition, Vector3 previousVelocity)
+    private void AvoidCollisions(Vector3 previousPosition, Vector3 previousVelocity)
     {
         BarrierRectangle[] rectangles = FindObjectsOfType<BarrierRectangle>();
         foreach (BarrierRectangle rectangle in rectangles)
@@ -66,7 +66,7 @@ public class MovableObject : MonoBehaviour
         }
     }
 
-    public void UpdateSortingOrder()
+    private void UpdateSortingOrder()
     {
         figureObject.GetComponent<SpriteRenderer>().sortingOrder = -1 * (Mathf.RoundToInt(position.z * 100f) * 10);
     }
