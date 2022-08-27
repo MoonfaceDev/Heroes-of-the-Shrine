@@ -2,29 +2,38 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : CharacterBehaviour
 {
-    public SimpleCharacterMovement movement;
-    public Animator animator;
     public RuntimeAnimatorController[] controllers;
 
     [HideInInspector]
     public int activeSuitIndex = 0;
 
+    private WalkBehaviour walkBehaviour;
+    private JumpBehaviour jumpBehaviour;
+    private SlideBehaviour slideBehaviour;
+
+    private void Start()
+    {
+        walkBehaviour = GetComponent<WalkBehaviour>();
+        jumpBehaviour = GetComponent<JumpBehaviour>();
+        slideBehaviour = GetComponent<SlideBehaviour>();
+    }
+
     public void Update()
     {
         float horizontal = Direction(Input.GetAxisRaw("Horizontal"));
         float vertical = Direction(Input.GetAxisRaw("Vertical"));
-        movement.Walk(horizontal, vertical);
+        walkBehaviour.Walk(horizontal, vertical);
         //jumping
-        if (Input.GetButtonDown("Jump")) //pressed jump
+        if (jumpBehaviour && Input.GetButtonDown("Jump")) //pressed jump
         {
-            movement.Jump();
+            jumpBehaviour.Jump();
         }
         //sliding
-        if (Input.GetButtonDown("Slide")) //pressed slide
+        if (slideBehaviour && Input.GetButtonDown("Slide")) //pressed slide
         {
-            movement.Slide();
+            slideBehaviour.Slide();
         }
         //change suits
         if (Input.GetKeyDown(KeyCode.Alpha7))
