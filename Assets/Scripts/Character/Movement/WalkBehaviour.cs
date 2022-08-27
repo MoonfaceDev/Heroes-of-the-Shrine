@@ -11,8 +11,8 @@ public class WalkBehaviour : CharacterBehaviour
     public delegate void OnStop();
 
     [HideInInspector] public float speed;
-    public OnStart onStart;
-    public OnStop onStop;
+    public event OnStart onStart;
+    public event OnStop onStop;
     public bool walk
     {
         get { return _walk; }
@@ -22,11 +22,11 @@ public class WalkBehaviour : CharacterBehaviour
             animator.SetBool("walk", _walk);
             if (value)
             {
-                onStart();
+                onStart?.Invoke();
             }
             else
             {
-                onStop();
+                onStop?.Invoke();
             }
         }
     }
@@ -37,8 +37,9 @@ public class WalkBehaviour : CharacterBehaviour
     private StunBehaviour stunBehaviour;
     private bool _walk; //walking or running
 
-    private void Start()
+    public override void Awake()
     {
+        base.Awake();
         jumpBehaviour = GetComponent<JumpBehaviour>();
         slideBehaviour = GetComponent<SlideBehaviour>();
         knockbackBehaviour = GetComponent<KnockbackBehaviour>();

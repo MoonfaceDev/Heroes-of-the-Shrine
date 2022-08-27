@@ -23,7 +23,7 @@ public class Character : MonoBehaviour
         }
     }
 
-    void Start()
+    public void Awake()
     {
         movableObject = GetComponent<MovableObject>();
         eventManager = FindObjectOfType<EventManager>();

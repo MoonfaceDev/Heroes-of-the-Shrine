@@ -7,8 +7,8 @@ public class StunBehaviour : CharacterBehaviour
     public delegate void OnStart();
     public delegate void OnStop();
 
-    public OnStart onStart;
-    public OnStop onStop;
+    public event OnStart onStart;
+    public event OnStop onStop;
     public bool stun
     {
         get
@@ -21,11 +21,11 @@ public class StunBehaviour : CharacterBehaviour
             animator.SetBool("stun", _stun);
             if (value)
             {
-                onStart();
+                onStart?.Invoke();
             }
             else
             {
-                onStop();
+                onStop?.Invoke();
             }
         }
     }

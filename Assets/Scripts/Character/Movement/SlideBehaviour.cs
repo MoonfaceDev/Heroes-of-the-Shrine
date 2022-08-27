@@ -8,8 +8,8 @@ public class SlideBehaviour : CharacterBehaviour
     public delegate void OnStart();
     public delegate void OnStop();
 
-    public OnStart onStart;
-    public OnStop onStop;
+    public event OnStart onStart;
+    public event OnStop onStop;
     public bool slide
     {
         get { return _slide; }
@@ -18,11 +18,11 @@ public class SlideBehaviour : CharacterBehaviour
             animator.SetBool("slide", _slide);
             if (value)
             {
-                onStart();
+                onStart?.Invoke();
             }
             else
             {
-                onStop();
+                onStop?.Invoke();
             }
         }
     }
@@ -32,8 +32,9 @@ public class SlideBehaviour : CharacterBehaviour
     private KnockbackBehaviour knockbackBehaviour;
     private StunBehaviour stunBehaviour;
 
-    private void Start()
+    public override void Awake()
     {
+        base.Awake();
         walkBehaviour = GetComponent<WalkBehaviour>();
         knockbackBehaviour = GetComponent<KnockbackBehaviour>();
         stunBehaviour = GetComponent<StunBehaviour>();

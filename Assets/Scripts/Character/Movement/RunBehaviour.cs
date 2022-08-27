@@ -7,12 +7,13 @@ public class RunBehaviour : CharacterBehaviour
     public float timeToRun;
     public float timeToStopRun;
     public float runSpeedMultiplier;
+    public ParticleSystem runParticles;
 
     public delegate void OnStart();
     public delegate void OnStop();
 
-    public OnStart onStart;
-    public OnStop onStop;
+    public event OnStart onStart;
+    public event OnStop onStop;
 
     public bool run
     {
@@ -20,13 +21,14 @@ public class RunBehaviour : CharacterBehaviour
         set
         {
             _run = value;
-            animator.SetBool("run", _run); if (value)
+            animator.SetBool("run", _run);
+            if (value)
             {
-                onStart();
+                onStart?.Invoke();
             }
             else
             {
-                onStop();
+                onStop?.Invoke();
             }
         }
     }
@@ -34,12 +36,12 @@ public class RunBehaviour : CharacterBehaviour
     private WalkBehaviour walkBehaviour;
     private JumpBehaviour jumpBehaviour;
     private Coroutine startRunningCoroutine;
-    private ParticleSystem runParticles;
     private ParticleSystem.MainModule runParticlesMain;
     private bool _run;
 
-    private void Start()
+    public override void Awake()
     {
+        base.Awake();
         walkBehaviour = GetComponent<WalkBehaviour>();
         jumpBehaviour = GetComponent<JumpBehaviour>();
         runParticlesMain = runParticles.main;

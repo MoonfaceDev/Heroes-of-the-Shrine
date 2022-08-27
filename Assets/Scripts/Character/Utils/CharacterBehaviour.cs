@@ -39,7 +39,7 @@ public class CharacterBehaviour: MonoBehaviour
 
     private Character character;
 
-    private void Start()
+    public virtual void Awake()
     {
         character = GetComponent<Character>();
     }

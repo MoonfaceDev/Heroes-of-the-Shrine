@@ -18,8 +18,9 @@ public class HittableBehaviour : CharacterBehaviour
     private KnockbackBehaviour knockbackBehaviour;
     private StunBehaviour stunBehaviour;
 
-    private void Start()
+    public override void Awake()
     {
+        base.Awake();
         healthSystem = GetComponent<HealthSystem>();
         knockbackBehaviour = GetComponent<KnockbackBehaviour>();
         stunBehaviour = GetComponent<StunBehaviour>();

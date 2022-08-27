@@ -12,9 +12,9 @@ public class KnockbackBehaviour : CharacterBehaviour
     public delegate void OnStop();
     public delegate void OnRecover();
 
-    public OnStart onStart;
-    public OnStop onStop;
-    public OnRecover onRecover;
+    public event OnStart onStart;
+    public event OnStop onStop;
+    public event OnRecover onRecover;
     public bool recoveringFromKnockback
     {
         get { return _recoveringFromKnockback; }
@@ -23,7 +23,7 @@ public class KnockbackBehaviour : CharacterBehaviour
             animator.SetBool("recoveringFromKnockback", _recoveringFromKnockback);
             if (!value)
             {
-                onRecover();
+                onRecover?.Invoke();
             }
         }
     }
@@ -35,7 +35,7 @@ public class KnockbackBehaviour : CharacterBehaviour
             animator.SetBool("knockback", _knockback);
             if (!value)
             {
-                onStop();
+                onStop?.Invoke();
             }
         }
     }
@@ -46,8 +46,9 @@ public class KnockbackBehaviour : CharacterBehaviour
     private JumpBehaviour jumpBehaviour;
     private StunBehaviour stunBehaviour;
 
-    private void Start()
+    public override void Awake()
     {
+        base.Awake();
         walkBehaviour = GetComponent<WalkBehaviour>();
         jumpBehaviour = GetComponent<JumpBehaviour>();
         stunBehaviour = GetComponent<StunBehaviour>();
@@ -67,7 +68,7 @@ public class KnockbackBehaviour : CharacterBehaviour
         {
             return;
         }
-        onStart(power, angleDegrees);
+        onStart?.Invoke(power, angleDegrees);
         if (walkBehaviour)
         {
             walkBehaviour.walk = false;

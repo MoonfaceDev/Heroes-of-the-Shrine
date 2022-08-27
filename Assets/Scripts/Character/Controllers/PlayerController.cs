@@ -11,8 +11,9 @@ public class PlayerController : CharacterBehaviour
     private JumpBehaviour jumpBehaviour;
     private SlideBehaviour slideBehaviour;
 
-    private void Start()
+    public override void Awake()
     {
+        base.Awake();
         walkBehaviour = GetComponent<WalkBehaviour>();
         jumpBehaviour = GetComponent<JumpBehaviour>();
         slideBehaviour = GetComponent<SlideBehaviour>();

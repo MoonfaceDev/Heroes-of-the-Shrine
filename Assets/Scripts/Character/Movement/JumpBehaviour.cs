@@ -13,10 +13,10 @@ public class JumpBehaviour : CharacterBehaviour
     public delegate void OnLand();
     public delegate void OnRecover();
 
-    public OnAnticipate onAnticipate;
-    public OnJump onJump;
-    public OnLand onLand;
-    public OnRecover onRecover;
+    public event OnAnticipate onAnticipate;
+    public event OnJump onJump;
+    public event OnLand onLand;
+    public event OnRecover onRecover;
     public bool jump
     {
         get { return _jump; }
@@ -25,11 +25,11 @@ public class JumpBehaviour : CharacterBehaviour
             animator.SetBool("jump", _jump);
             if (value)
             {
-                onJump();
+                onJump?.Invoke();
             }
             else
             {
-                onLand();
+                onLand?.Invoke();
             }
         }
     }
@@ -41,7 +41,7 @@ public class JumpBehaviour : CharacterBehaviour
             animator.SetBool("recoveringFromJump", _recoveringFromJump);
             if (!value)
             {
-                onRecover();
+                onRecover?.Invoke();
             }
         }
     }
@@ -53,7 +53,7 @@ public class JumpBehaviour : CharacterBehaviour
             animator.SetBool("anticipatingJump", _anticipatingJump);
             if (value)
             {
-                onAnticipate();
+                onAnticipate?.Invoke();
             }
         }
     }
@@ -67,8 +67,9 @@ public class JumpBehaviour : CharacterBehaviour
     private KnockbackBehaviour knockbackBehaviour;
     private StunBehaviour stunBehaviour;
 
-    private void Start()
+    public override void Awake()
     {
+        base.Awake();
         walkBehaviour = GetComponent<WalkBehaviour>();
         slideBehaviour = GetComponent<SlideBehaviour>();
         knockbackBehaviour = GetComponent<KnockbackBehaviour>();
