@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1099648}
   - component: {fileID: 1099650}
-  - component: {fileID: 1099649}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -156,20 +155,6 @@ Transform:
   m_Father: {fileID: 871744032}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1099649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1099647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4deafd5b62807574da9835b75b8a0254, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movableObject: {fileID: 0}
-  shadowScale: {x: 1.5, y: 0, z: 1}
 --- !u!212 &1099650
 SpriteRenderer:
   m_ObjectHideFlags: 0
