@@ -24,7 +24,10 @@ public class PlayerController : CharacterBehaviour
     {
         float horizontal = Direction(Input.GetAxisRaw("Horizontal"));
         float vertical = Direction(Input.GetAxisRaw("Vertical"));
-        walkBehaviour.Walk(horizontal, vertical);
+        if (walkBehaviour)
+        {
+            walkBehaviour.Walk(horizontal, vertical);
+        }
         //jumping
         if (jumpBehaviour && Input.GetButtonDown("Jump")) //pressed jump
         {
