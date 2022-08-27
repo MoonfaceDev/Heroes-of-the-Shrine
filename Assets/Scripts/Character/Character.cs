@@ -5,8 +5,11 @@ public class Character : MonoBehaviour
 {
     public Animator animator;
 
+    [HideInInspector] public EventManager eventManager;
+    [HideInInspector] public MovableObject movableObject;
     // look direction
-    public int lookDirection = 1;
+    [HideInInspector] public int lookDirection = 1;
+
     public int LookDirection
     {
         get
@@ -19,9 +22,6 @@ public class Character : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 90 * lookDirection - 90, 0);
         }
     }
-
-    private EventManager eventManager;
-    private MovableObject movableObject;
 
     void Start()
     {
