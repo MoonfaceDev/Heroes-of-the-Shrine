@@ -1,13 +1,14 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class KnockbackBehaviour : CharacterBehaviour
 {
-    public float knockbackRecoverTime;
-    public float secondBounceHeight;
+    public static float SECOND_BOUNCE_POWER_MULTIPLIER = 0.2f;
 
-    public delegate void OnStart();
+    public bool resistant;
+    public float knockbackRecoverTime;
+
+    public delegate void OnStart(float power, float angleDegrees);
     public delegate void OnStop();
     public delegate void OnRecover();
 
@@ -32,11 +33,7 @@ public class KnockbackBehaviour : CharacterBehaviour
         set { 
             _knockback = value;
             animator.SetBool("knockback", _knockback);
-            if (value)
-            {
-                onStart();
-            }
-            else
+            if (!value)
             {
                 onStop();
             }
@@ -47,15 +44,30 @@ public class KnockbackBehaviour : CharacterBehaviour
     private bool _recoveringFromKnockback;
     private WalkBehaviour walkBehaviour;
     private JumpBehaviour jumpBehaviour;
+    private StunBehaviour stunBehaviour;
 
     private void Start()
     {
         walkBehaviour = GetComponent<WalkBehaviour>();
         jumpBehaviour = GetComponent<JumpBehaviour>();
+        stunBehaviour = GetComponent<StunBehaviour>();
     }
 
-    public void Knockback(float direction, float distance, float height)
+    public bool CanReceive()
     {
+        return !knockback
+            && !recoveringFromKnockback
+            && !resistant
+            && !(stunBehaviour && stunBehaviour.stun);
+    }
+
+    public void Knockback(float power, float angleDegrees)
+    {
+        if (!CanReceive())
+        {
+            return;
+        }
+        onStart(power, angleDegrees);
         if (walkBehaviour)
         {
             walkBehaviour.walk = false;
@@ -66,17 +78,16 @@ public class KnockbackBehaviour : CharacterBehaviour
             jumpBehaviour.recoveringFromJump = false;
             jumpBehaviour.EndJump();
         }
-        float airTime = 2 * Mathf.Sqrt(2 * height / gravityAcceleration);
-        movableObject.velocity.x = direction * distance / airTime;
-        movableObject.velocity.y = Mathf.Sqrt(2 * gravityAcceleration * height);
+        movableObject.velocity.x = Mathf.Cos(Mathf.Deg2Rad * angleDegrees) * power;
+        movableObject.velocity.y = Mathf.Sin(Mathf.Deg2Rad * angleDegrees) * power;
         movableObject.acceleration.y = -gravityAcceleration;
         knockback = true;
         eventManager.Callback(
             () => movableObject.velocity.y < 0 && movableObject.position.y <= 0,
             () =>
             {
-                movableObject.velocity.y = Mathf.Sqrt(2 * gravityAcceleration * height);
-                movableObject.acceleration.y = -gravityAcceleration;
+                movableObject.velocity.x *= SECOND_BOUNCE_POWER_MULTIPLIER;
+                movableObject.velocity.y *= -SECOND_BOUNCE_POWER_MULTIPLIER;
                 movableObject.position.y = 0;
                 eventManager.Callback(
                     () => movableObject.velocity.y < 0 && movableObject.position.y <= 0,
