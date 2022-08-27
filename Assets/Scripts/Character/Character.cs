@@ -1,13 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(MovableObject))]
 public class Character : MonoBehaviour
 {
     public Animator animator;
-    public EventManager eventManager;
-    public MovableObject movableObject;
 
     // look direction
     public int lookDirection = 1;
@@ -22,6 +18,18 @@ public class Character : MonoBehaviour
             lookDirection = value;
             transform.rotation = Quaternion.Euler(0, 90 * lookDirection - 90, 0);
         }
+    }
+
+    private EventManager eventManager;
+    private MovableObject movableObject;
+
+    void Start()
+    {
+        movableObject = GetComponent<MovableObject>();
+        eventManager = FindObjectOfType<EventManager>();
+        //Update look direction
+        LookDirectionEvent lookDirectionEvent = new(this);
+        eventManager.AttachEvent(lookDirectionEvent);
     }
 
     class LookDirectionEvent : IEventListener
@@ -51,13 +59,5 @@ public class Character : MonoBehaviour
         {
             return Mathf.Abs(character.movableObject.velocity.x) > Mathf.Epsilon;
         }
-    }
-
-    void Start()
-    {
-        movableObject = GetComponent<MovableObject>();
-        //Update look direction
-        LookDirectionEvent lookDirectionEvent = new(this);
-        eventManager.AttachEvent(lookDirectionEvent);
     }
 }

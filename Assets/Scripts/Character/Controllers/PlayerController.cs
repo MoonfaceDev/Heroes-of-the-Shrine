@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : CharacterBehaviour
 {
-    public RuntimeAnimatorController[] controllers;
+    public RuntimeAnimatorController[] animatorControllers;
 
     [HideInInspector]
     public int activeSuitIndex = 0;
@@ -42,7 +40,7 @@ public class PlayerController : CharacterBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha7))
         {
             activeSuitIndex = 1 - activeSuitIndex;
-            animator.runtimeAnimatorController = controllers[activeSuitIndex];
+            animator.runtimeAnimatorController = animatorControllers[activeSuitIndex];
         }
     }
 
