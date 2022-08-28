@@ -12,18 +12,10 @@ public class SlideBehaviour : CharacterBehaviour
     public event OnStop onStop;
     public bool slide
     {
-        get { return _slide; }
-        set { 
+        get => _slide;
+        private set { 
             _slide = value;
             animator.SetBool("slide", _slide);
-            if (value)
-            {
-                onStart?.Invoke();
-            }
-            else
-            {
-                onStop?.Invoke();
-            }
         }
     }
 
@@ -45,7 +37,7 @@ public class SlideBehaviour : CharacterBehaviour
         return movableObject.velocity.x != 0 
             && movableObject.position.y == 0
             && !slide
-            && !(knockbackBehaviour && (knockbackBehaviour.knockback || knockbackBehaviour.recoveringFromKnockback))
+            && !(knockbackBehaviour && (knockbackBehaviour.knockback || knockbackBehaviour.recovering))
             && !(stunBehaviour && stunBehaviour.stun);
     }
 
@@ -57,24 +49,26 @@ public class SlideBehaviour : CharacterBehaviour
         }
         if (walkBehaviour)
         {
-            walkBehaviour.walk = false;
+            walkBehaviour.Stop();
         }
+        slide = true;
+        onStart?.Invoke();
         float slideDirection = lookDirection;
-        movableObject.velocity.x = slideDirection * slideSpeedMultiplier * movableObject.velocity.x;
+        movableObject.velocity.x = slideDirection * slideSpeedMultiplier * Mathf.Abs(movableObject.velocity.x);
         movableObject.acceleration.x = -slideDirection * slideStopAcceleration;
         movableObject.velocity.z = 0;
-        slide = true;
         eventManager.Callback(
             () => Mathf.Sign(movableObject.velocity.x) == Mathf.Sign(movableObject.acceleration.x),
-            EndSlide
+            Stop
         );
     }
 
-    public void EndSlide()
+    public void Stop()
     {
         slide = false;
         lookDirection = -Mathf.RoundToInt(Mathf.Sign(movableObject.velocity.x));
         movableObject.velocity.x = 0;
         movableObject.acceleration.x = 0;
+        onStop?.Invoke();
     }
 }

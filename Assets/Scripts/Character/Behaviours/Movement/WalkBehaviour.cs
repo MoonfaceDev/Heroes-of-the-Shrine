@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(MovableObject))]
@@ -15,19 +13,11 @@ public class WalkBehaviour : CharacterBehaviour
     public event OnStop onStop;
     public bool walk
     {
-        get { return _walk; }
-        set
+        get => _walk;
+        private set
         {
             _walk = value;
             animator.SetBool("walk", _walk);
-            if (value)
-            {
-                onStart?.Invoke();
-            }
-            else
-            {
-                onStop?.Invoke();
-            }
         }
     }
 
@@ -50,9 +40,9 @@ public class WalkBehaviour : CharacterBehaviour
     public bool CanWalk()
     {
         return
-            !(jumpBehaviour && (jumpBehaviour.anticipatingJump || jumpBehaviour.recoveringFromJump))
+            !(jumpBehaviour && (jumpBehaviour.anticipating || jumpBehaviour.recovering))
             && !(slideBehaviour && slideBehaviour.slide)
-            && !(knockbackBehaviour && (knockbackBehaviour.knockback || knockbackBehaviour.recoveringFromKnockback))
+            && !(knockbackBehaviour && (knockbackBehaviour.knockback || knockbackBehaviour.recovering))
             && !(stunBehaviour && stunBehaviour.stun);
     }
 
@@ -65,14 +55,21 @@ public class WalkBehaviour : CharacterBehaviour
         // run callbacks
         if (new Vector2(xAxis, zAxis) == Vector2.zero)
         {
-            walk = false;
+            Stop();
         }
         else if (!walk) //first walking frame
         {
             walk = true;
+            onStart?.Invoke();
         }
         // move speed
         movableObject.velocity.x = xAxis * speed;
         movableObject.velocity.z = zAxis * speed;
+    }
+
+    public void Stop()
+    {
+        walk = false;
+        onStop?.Invoke();
     }
 }

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,10 +20,16 @@ public class EventManager : MonoBehaviour
         eventListeners.Remove(@event);
     }
 
-    public void Callback(CallbackCondition condition, CallbackAction action)
+    public CallbackEvent Callback(CallbackCondition condition, CallbackAction action)
     {
         CallbackEvent callbackEvent = new(this, condition, action);
         AttachEvent(callbackEvent);
+        return callbackEvent;
+    }
+
+    public void CancelCallback(CallbackEvent callbackEvent)
+    {
+        DetachEvent(callbackEvent);
     }
 
     // Update is called once per frame

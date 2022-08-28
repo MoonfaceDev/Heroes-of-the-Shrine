@@ -17,25 +17,17 @@ public class RunBehaviour : CharacterBehaviour
 
     public bool run
     {
-        get { return _run; }
-        set
+        get => _run;
+        private set
         {
             _run = value;
             animator.SetBool("run", _run);
-            if (value)
-            {
-                onStart?.Invoke();
-            }
-            else
-            {
-                onStop?.Invoke();
-            }
         }
     }
 
     private WalkBehaviour walkBehaviour;
     private JumpBehaviour jumpBehaviour;
-    private Coroutine startRunningCoroutine;
+    private Coroutine startCoroutine;
     private ParticleSystem.MainModule runParticlesMain;
     private bool _run;
 
@@ -48,18 +40,18 @@ public class RunBehaviour : CharacterBehaviour
 
         walkBehaviour.onStart += () =>
         {
-            startRunningCoroutine = StartCoroutine(StartRunningAfter(timeToRun));
-            eventManager.Callback(() => !walkBehaviour.walk, () => StopCoroutine(startRunningCoroutine));
+            startCoroutine = StartCoroutine(RunAfter(timeToRun));
+            eventManager.Callback(() => !walkBehaviour.walk, () => StopCoroutine(startCoroutine));
         };
         walkBehaviour.onStop += () =>
         {
-            if (startRunningCoroutine != null)
+            if (startCoroutine != null)
             {
-                StopCoroutine(startRunningCoroutine);
+                StopCoroutine(startCoroutine);
             }
             if (run)
             {
-                StartCoroutine(StopRunningAfter(timeToStopRun));
+                StartCoroutine(StopAfter(timeToStopRun));
             }
         };
         if (jumpBehaviour)
@@ -75,29 +67,31 @@ public class RunBehaviour : CharacterBehaviour
         }
     }
 
-    private IEnumerator StartRunningAfter(float time)
+    private IEnumerator RunAfter(float time)
     {
         yield return new WaitForSeconds(time);
-        StartRunning();
+        Run();
     }
 
-    private IEnumerator StopRunningAfter(float time)
+    private IEnumerator StopAfter(float time)
     {
         yield return new WaitForSeconds(time);
-        StopRunning();
+        Stop();
     }
 
-    public void StartRunning()
+    public void Run()
     {
         run = true;
         walkBehaviour.speed *= runSpeedMultiplier;
         runParticles.Play();
+        onStart?.Invoke();
     }
 
-    public void StopRunning()
+    public void Stop()
     {
         run = false;
         walkBehaviour.speed = walkBehaviour.defaultSpeed;
         runParticles.Stop();
+        onStop?.Invoke();
     }
 }

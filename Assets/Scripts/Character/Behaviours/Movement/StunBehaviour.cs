@@ -11,22 +11,11 @@ public class StunBehaviour : CharacterBehaviour
     public event OnStop onStop;
     public bool stun
     {
-        get
-        {
-            return _stun;
-        }
-        set
+        get => _stun;
+        private set
         {
             _stun = value;
             animator.SetBool("stun", _stun);
-            if (value)
-            {
-                onStart?.Invoke();
-            }
-            else
-            {
-                onStop?.Invoke();
-            }
         }
     }
     
@@ -44,27 +33,27 @@ public class StunBehaviour : CharacterBehaviour
     {
         if (walkBehaviour)
         {
-            walkBehaviour.walk = false;
+            walkBehaviour.Stop();
         }
         if (jumpBehaviour)
         {
-            jumpBehaviour.anticipatingJump = false;
-            jumpBehaviour.recoveringFromJump = false;
-            jumpBehaviour.EndJump();
+            jumpBehaviour.Stop(waitForLand: false);
         }
         stun = true;
+        onStart?.Invoke();
         movableObject.velocity = new Vector3(0, 0, 0);
-        StartCoroutine(RemoveStunAfter(time));
+        StartCoroutine(StopAfter(time));
     }
 
-    public void RemoveStun()
+    public void Stop()
     {
         stun = false;
+        onStop?.Invoke();
     }
 
-    private IEnumerator RemoveStunAfter(float time)
+    private IEnumerator StopAfter(float time)
     {
         yield return new WaitForSeconds(time);
-        RemoveStun();
+        Stop();
     }
 }
