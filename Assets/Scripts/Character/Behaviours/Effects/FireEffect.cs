@@ -1,3 +1,6 @@
+using System.Collections;
+using UnityEngine;
+
 public class FireEffect : CharacterBehaviour
 {
     public bool fire
@@ -17,16 +20,35 @@ public class FireEffect : CharacterBehaviour
     public event OnCancel onCancel;
 
     private bool _fire;
+    private Coroutine damageCoroutine;
+    private HittableBehaviour hittableBehaviour;
 
-    public void Apply()
+    public override void Awake()
+    {
+        base.Awake();
+        hittableBehaviour = GetComponent<HittableBehaviour>();
+    }
+
+    public void Apply(float hitInterval, float damagePerHit)
     {
         fire = true;
         onApply?.Invoke();
+        damageCoroutine = StartCoroutine(DoDamage(hitInterval, damagePerHit));
     }
 
     public void Cancel()
     {
         fire = false;
         onCancel?.Invoke();
+        StopCoroutine(damageCoroutine);
+    }
+
+    private IEnumerator DoDamage(float hitInterval, float damagePerHit)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(hitInterval);
+            hittableBehaviour.Hit(damagePerHit);
+        }
     }
 }
