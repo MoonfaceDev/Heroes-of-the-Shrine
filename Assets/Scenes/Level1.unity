@@ -366,7 +366,6 @@ MonoBehaviour:
   jumpAnticipateTime: 0.1
   jumpRecoverTime: 0.1
   maxJumps: 1
-  jumps: 0
 --- !u!114 &871744034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,7 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e321a7af8378f45b972ec08f7089e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSpeed: 20
+  defaultSpeed: 6
   speed: 0
 --- !u!114 &871744036
 MonoBehaviour:
@@ -482,8 +481,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6ec1730c7ed3d49a2b8d7891202c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slideSpeedMultiplier: 2
-  slideStopAcceleration: 10
+  slideSpeedMultiplier: 3
+  slideStopAcceleration: 30
 --- !u!114 &871744042
 MonoBehaviour:
   m_ObjectHideFlags: 0
