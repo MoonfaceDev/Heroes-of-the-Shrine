@@ -11,13 +11,13 @@ public class WalkBehaviour : CharacterBehaviour
     [HideInInspector] public float speed;
     public event OnStart onStart;
     public event OnStop onStop;
-    public bool walk
+    public bool active
     {
-        get => _walk;
+        get => _active;
         private set
         {
-            _walk = value;
-            animator.SetBool("walk", _walk);
+            _active = value;
+            animator.SetBool("walk", _active);
         }
     }
 
@@ -25,7 +25,8 @@ public class WalkBehaviour : CharacterBehaviour
     private SlideBehaviour slideBehaviour;
     private KnockbackBehaviour knockbackBehaviour;
     private StunBehaviour stunBehaviour;
-    private bool _walk; //walking or running
+    private AttackManager attackManager;
+    private bool _active; //walking or running
 
     public override void Awake()
     {
@@ -34,6 +35,7 @@ public class WalkBehaviour : CharacterBehaviour
         slideBehaviour = GetComponent<SlideBehaviour>();
         knockbackBehaviour = GetComponent<KnockbackBehaviour>();
         stunBehaviour = GetComponent<StunBehaviour>();
+        attackManager = GetComponent<AttackManager>();
         speed = defaultSpeed;
     }
 
@@ -41,9 +43,10 @@ public class WalkBehaviour : CharacterBehaviour
     {
         return
             !(jumpBehaviour && (jumpBehaviour.anticipating || jumpBehaviour.recovering))
-            && !(slideBehaviour && slideBehaviour.slide)
-            && !(knockbackBehaviour && (knockbackBehaviour.knockback || knockbackBehaviour.recovering))
-            && !(stunBehaviour && stunBehaviour.stun);
+            && !(slideBehaviour && slideBehaviour.active)
+            && !(knockbackBehaviour && (knockbackBehaviour.active || knockbackBehaviour.recovering))
+            && !(stunBehaviour && stunBehaviour.active)
+            && !(attackManager && attackManager.attacking);
     }
 
     public void Walk(float xAxis, float zAxis)
@@ -57,9 +60,9 @@ public class WalkBehaviour : CharacterBehaviour
         {
             Stop();
         }
-        else if (!walk) //first walking frame
+        else if (!active) //first walking frame
         {
-            walk = true;
+            active = true;
             onStart?.Invoke();
         }
         // move speed
@@ -69,7 +72,7 @@ public class WalkBehaviour : CharacterBehaviour
 
     public void Stop()
     {
-        walk = false;
+        active = false;
         onStop?.Invoke();
     }
 }

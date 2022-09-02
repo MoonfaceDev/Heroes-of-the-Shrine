@@ -10,6 +10,9 @@ public class Character : MonoBehaviour
     // look direction
     [HideInInspector] public int lookDirection = 1;
 
+    private KnockbackBehaviour knockbackBehaviour;
+    private EventListener lookDirectionEvent;
+
     public int LookDirection
     {
         get
@@ -28,36 +31,26 @@ public class Character : MonoBehaviour
         movableObject = GetComponent<MovableObject>();
         eventManager = FindObjectOfType<EventManager>();
         //Update look direction
-        LookDirectionEvent lookDirectionEvent = new(this);
-        eventManager.AttachEvent(lookDirectionEvent);
+        knockbackBehaviour = GetComponent<KnockbackBehaviour>();
+        lookDirectionEvent = eventManager.Attach(
+            () => Mathf.Abs(movableObject.velocity.x) > Mathf.Epsilon,
+            () =>
+            {
+                if (knockbackBehaviour && knockbackBehaviour.active)
+                {
+                    LookDirection = -Mathf.RoundToInt(Mathf.Sign(movableObject.velocity.x));
+                }
+                else
+                {
+                    LookDirection = Mathf.RoundToInt(Mathf.Sign(movableObject.velocity.x));
+                }
+            },
+            single: false
+        );
     }
 
-    class LookDirectionEvent : IEventListener
+    public void OnDestroy()
     {
-        private readonly Character character;
-        private KnockbackBehaviour knockbackBehaviour;
-
-        public LookDirectionEvent(Character character)
-        {
-            this.character = character;
-            knockbackBehaviour = character.GetComponent<KnockbackBehaviour>();
-        }
-
-        public void Callback()
-        {
-            if (knockbackBehaviour && knockbackBehaviour.knockback)
-            {
-                character.LookDirection = -Mathf.RoundToInt(Mathf.Sign(character.movableObject.velocity.x));
-            }
-            else
-            {
-                character.LookDirection = Mathf.RoundToInt(Mathf.Sign(character.movableObject.velocity.x));
-            }
-        }
-
-        public bool Validate()
-        {
-            return Mathf.Abs(character.movableObject.velocity.x) > Mathf.Epsilon;
-        }
+        eventManager.Detach(lookDirectionEvent);
     }
 }

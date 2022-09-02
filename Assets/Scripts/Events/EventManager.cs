@@ -1,47 +1,54 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public delegate bool EventCondition();
+public delegate void EventAction();
+
+public class EventListener
+{
+    public readonly EventCondition Validate;
+    public readonly EventAction Action;
+    public readonly bool single;
+
+    public EventListener(EventCondition eventCondition, EventAction eventAction, bool single)
+    {
+        Validate = eventCondition;
+        Action = eventAction;
+        this.single = single;
+    }
+}
+
 public class EventManager : MonoBehaviour
 {
 
-    private readonly HashSet<IEventListener> eventListeners = new();
+    private readonly HashSet<EventListener> eventListeners = new();
 
-    public void AttachEvent(IEventListener @event)
+    public EventListener Attach(EventCondition condition, EventAction action, bool single = true)
     {
-        if (eventListeners.Contains(@event))
-        {
-            Debug.LogError("Event is already attached");
-        }
-        eventListeners.Add(@event);
+        EventListener eventListener = new(condition, action, single);
+        eventListeners.Add(eventListener);
+        return eventListener;
     }
 
-    public void DetachEvent(IEventListener @event)
+    public void Detach(EventListener callbackEvent)
     {
-        eventListeners.Remove(@event);
-    }
-
-    public CallbackEvent Callback(CallbackCondition condition, CallbackAction action)
-    {
-        CallbackEvent callbackEvent = new(this, condition, action);
-        AttachEvent(callbackEvent);
-        return callbackEvent;
-    }
-
-    public void CancelCallback(CallbackEvent callbackEvent)
-    {
-        DetachEvent(callbackEvent);
+        eventListeners.Remove(callbackEvent);
     }
 
     // Update is called once per frame
     void Update()
     {
-        IEventListener[] lockedEventListeners = new IEventListener[eventListeners.Count];
+        EventListener[] lockedEventListeners = new EventListener[eventListeners.Count];
         eventListeners.CopyTo(lockedEventListeners);
-        foreach (IEventListener eventListener in lockedEventListeners)
+        foreach (EventListener eventListener in lockedEventListeners)
         {
             if (eventListener.Validate())
             {
-                eventListener.Callback();
+                if (eventListener.single)
+                {
+                    Detach(eventListener);
+                }
+                eventListener.Action();
             }
         }
     }

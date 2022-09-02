@@ -21,12 +21,12 @@ public class JumpBehaviour : CharacterBehaviour
     public event OnLand onLand;
     public event OnRecover onRecover;
     public event OnStop onStop;
-    public bool jump
+    public bool active
     {
-        get => _jump;
+        get => _active;
         private set { 
-            _jump = value;
-            animator.SetBool("jump", _jump);
+            _active = value;
+            animator.SetBool("jump", _active);
         }
     }
     public bool recovering
@@ -55,17 +55,18 @@ public class JumpBehaviour : CharacterBehaviour
         }
     }
 
-    private bool _jump;
+    private bool _active;
     private bool _recovering;
     private bool _anticipating;
     private int _jumps;
     private Coroutine anticipateCoroutine;
-    private CallbackEvent jumpCallback;
+    private EventListener jumpEvent;
     private Coroutine recoverCoroutine;
     private WalkBehaviour walkBehaviour;
     private SlideBehaviour slideBehaviour;
     private KnockbackBehaviour knockbackBehaviour;
     private StunBehaviour stunBehaviour;
+    private AttackManager attackManager;
 
     public override void Awake()
     {
@@ -74,6 +75,7 @@ public class JumpBehaviour : CharacterBehaviour
         slideBehaviour = GetComponent<SlideBehaviour>();
         knockbackBehaviour = GetComponent<KnockbackBehaviour>();
         stunBehaviour = GetComponent<StunBehaviour>();
+        attackManager = GetComponent<AttackManager>();
     }
 
     public bool CanJump()
@@ -81,9 +83,10 @@ public class JumpBehaviour : CharacterBehaviour
         return !anticipating
             && !recovering 
             && jumps < maxJumps
-            && !(slideBehaviour && slideBehaviour.slide)
-            && !(knockbackBehaviour && (knockbackBehaviour.knockback || knockbackBehaviour.recovering))
-            && !(stunBehaviour && stunBehaviour.stun);
+            && !(slideBehaviour && slideBehaviour.active)
+            && !(knockbackBehaviour && (knockbackBehaviour.active || knockbackBehaviour.recovering))
+            && !(stunBehaviour && stunBehaviour.active)
+            && !(attackManager && attackManager.attacking);
     }
 
     public void Jump()
@@ -92,7 +95,7 @@ public class JumpBehaviour : CharacterBehaviour
         {
             return;
         }
-        if (walkBehaviour && walkBehaviour.walk == false && movableObject.position.y == 0) //not moving and grounded
+        if (walkBehaviour && walkBehaviour.active == false && movableObject.position.y == 0) //not moving and grounded
         {
             anticipating = true;
             onAnticipate?.Invoke();
@@ -113,13 +116,13 @@ public class JumpBehaviour : CharacterBehaviour
 
     private void StartJump()
     {
-        jump = true;
+        active = true;
         jumps++;
         onJump?.Invoke();
         onJumpsChanged?.Invoke(jumps);
         movableObject.velocity.y = jumpSpeed;
         movableObject.acceleration.y = -gravityAcceleration;
-        jumpCallback = eventManager.Callback(
+        jumpEvent = eventManager.Attach(
             () => movableObject.velocity.y < 0 && movableObject.position.y <= 0,
             Land
         );
@@ -127,7 +130,7 @@ public class JumpBehaviour : CharacterBehaviour
 
     private void Land()
     {
-        jump = false;
+        active = false;
         recovering = true;
         jumps = 0;
         onLand?.Invoke();
@@ -137,7 +140,7 @@ public class JumpBehaviour : CharacterBehaviour
         movableObject.velocity.y = 0;
         movableObject.acceleration.y = 0;
 
-        if (walkBehaviour && !walkBehaviour.walk) //not moving
+        if (walkBehaviour && !walkBehaviour.active) //not moving
         {
             recoverCoroutine = StartCoroutine(RecoverAfterTime());
         }
@@ -166,13 +169,13 @@ public class JumpBehaviour : CharacterBehaviour
             StopCoroutine(anticipateCoroutine);
             anticipating = false;
         }
-        if (jump)
+        if (active)
         {
             movableObject.velocity.y = 0;
             if (!waitForLand)
             {
-                eventManager.CancelCallback(jumpCallback);
-                jump = false;
+                eventManager.Detach(jumpEvent);
+                active = false;
                 jumps = 0;
                 onJumpsChanged?.Invoke(jumps);
             }

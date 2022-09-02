@@ -26,13 +26,13 @@ public class KnockbackBehaviour : CharacterBehaviour
             animator.SetBool("recoveringFromKnockback", _recovering);
         }
     }
-    public bool knockback
+    public bool active
     {
-        get => _knockback;
+        get => _active;
         private set
         {
-            _knockback = value;
-            animator.SetBool("knockback", _knockback);
+            _active = value;
+            animator.SetBool("knockback", _active);
         }
     }
     public int bounce
@@ -45,10 +45,10 @@ public class KnockbackBehaviour : CharacterBehaviour
         }
     }
 
-    private bool _knockback;
+    private bool _active;
     private bool _recovering;
     private int _bounce;
-    private CallbackEvent bounceCallback;
+    private EventListener bounceEvent;
     private Coroutine recoverCoroutine;
     private WalkBehaviour walkBehaviour;
     private JumpBehaviour jumpBehaviour;
@@ -64,10 +64,10 @@ public class KnockbackBehaviour : CharacterBehaviour
 
     public bool CanReceive()
     {
-        return !knockback
+        return !active
             && !recovering
             && !resistant
-            && !(stunBehaviour && stunBehaviour.stun);
+            && !(stunBehaviour && stunBehaviour.active);
     }
 
     public void Knockback(float power, float angleDegrees)
@@ -87,13 +87,13 @@ public class KnockbackBehaviour : CharacterBehaviour
             jumpBehaviour.Stop(waitForLand: false);
         }
 
-        knockback = true;
+        active = true;
         onStart?.Invoke();
         bounce = 1;
         SetMovement(power, angleDegrees);
         onBounce?.Invoke(bounce, power, angleDegrees);
 
-        bounceCallback = eventManager.Callback(
+        bounceEvent = eventManager.Attach(
             () => movableObject.velocity.y < 0 && movableObject.position.y <= 0,
             () =>
             { 
@@ -103,11 +103,11 @@ public class KnockbackBehaviour : CharacterBehaviour
                 SetMovement(power, angleDegrees);
                 onBounce?.Invoke(bounce, power, angleDegrees);
 
-                bounceCallback = eventManager.Callback(
+                bounceEvent = eventManager.Attach(
                     () => movableObject.velocity.y < 0 && movableObject.position.y <= 0,
                     () =>
                     {
-                        knockback = false;
+                        active = false;
                         bounce = 0;
                         recovering = true;
                         movableObject.acceleration.y = 0;
@@ -144,10 +144,10 @@ public class KnockbackBehaviour : CharacterBehaviour
 
     public void Stop()
     {
-        if (knockback)
+        if (active)
         {
-            eventManager.CancelCallback(bounceCallback);
-            knockback = false;
+            eventManager.Detach(bounceEvent);
+            active = false;
             bounce = 0;
             movableObject.acceleration.y = 0;
             movableObject.velocity.y = 0;

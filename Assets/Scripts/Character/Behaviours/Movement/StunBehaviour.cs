@@ -9,17 +9,17 @@ public class StunBehaviour : CharacterBehaviour
 
     public event OnStart onStart;
     public event OnStop onStop;
-    public bool stun
+    public bool active
     {
-        get => _stun;
+        get => _active;
         private set
         {
-            _stun = value;
-            animator.SetBool("stun", _stun);
+            _active = value;
+            animator.SetBool("stun", _active);
         }
     }
     
-    private bool _stun;
+    private bool _active;
     private WalkBehaviour walkBehaviour;
     private JumpBehaviour jumpBehaviour;
 
@@ -39,7 +39,7 @@ public class StunBehaviour : CharacterBehaviour
         {
             jumpBehaviour.Stop(waitForLand: false);
         }
-        stun = true;
+        active = true;
         onStart?.Invoke();
         movableObject.velocity = new Vector3(0, 0, 0);
         StartCoroutine(StopAfter(time));
@@ -47,7 +47,7 @@ public class StunBehaviour : CharacterBehaviour
 
     public void Stop()
     {
-        stun = false;
+        active = false;
         onStop?.Invoke();
     }
 

@@ -10,19 +10,21 @@ public class SlideBehaviour : CharacterBehaviour
 
     public event OnStart onStart;
     public event OnStop onStop;
-    public bool slide
+    public bool active
     {
-        get => _slide;
+        get => _active;
         private set { 
-            _slide = value;
-            animator.SetBool("slide", _slide);
+            _active = value;
+            animator.SetBool("slide", _active);
         }
     }
 
-    private bool _slide;
+    private bool _active;
     private WalkBehaviour walkBehaviour;
     private KnockbackBehaviour knockbackBehaviour;
     private StunBehaviour stunBehaviour;
+    private AttackManager attackManager;
+    private EventListener stopEvent;
 
     public override void Awake()
     {
@@ -30,15 +32,17 @@ public class SlideBehaviour : CharacterBehaviour
         walkBehaviour = GetComponent<WalkBehaviour>();
         knockbackBehaviour = GetComponent<KnockbackBehaviour>();
         stunBehaviour = GetComponent<StunBehaviour>();
+        attackManager = GetComponent<AttackManager>();
     }
 
     public bool CanSlide()
     {
         return movableObject.velocity.x != 0 
             && movableObject.position.y == 0
-            && !slide
-            && !(knockbackBehaviour && (knockbackBehaviour.knockback || knockbackBehaviour.recovering))
-            && !(stunBehaviour && stunBehaviour.stun);
+            && !active
+            && !(knockbackBehaviour && (knockbackBehaviour.active || knockbackBehaviour.recovering))
+            && !(stunBehaviour && stunBehaviour.active)
+            && !(attackManager && attackManager.attacking);
     }
 
     public void Slide()
@@ -51,24 +55,30 @@ public class SlideBehaviour : CharacterBehaviour
         {
             walkBehaviour.Stop();
         }
-        slide = true;
+        active = true;
         onStart?.Invoke();
         float slideDirection = lookDirection;
         movableObject.velocity.x = slideDirection * slideSpeedMultiplier * Mathf.Abs(movableObject.velocity.x);
         movableObject.acceleration.x = -slideDirection * slideStopAcceleration;
         movableObject.velocity.z = 0;
-        eventManager.Callback(
+        stopEvent = eventManager.Attach(
             () => Mathf.Sign(movableObject.velocity.x) == Mathf.Sign(movableObject.acceleration.x),
-            Stop
+            LeaveSlide
         );
     }
 
-    public void Stop()
+    private void LeaveSlide()
     {
-        slide = false;
+        active = false;
         lookDirection = -Mathf.RoundToInt(Mathf.Sign(movableObject.velocity.x));
         movableObject.velocity.x = 0;
         movableObject.acceleration.x = 0;
         onStop?.Invoke();
+    }
+
+    public void Stop()
+    {
+        eventManager.Detach(stopEvent);
+        LeaveSlide();
     }
 }
