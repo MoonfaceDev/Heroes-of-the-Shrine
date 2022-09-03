@@ -29,11 +29,11 @@ public class CharacterBehaviour: MonoBehaviour
     {
         get
         {
-            return character.LookDirection;
+            return character.lookDirection;
         }
         set
         {
-            character.LookDirection = value;
+            character.lookDirection = value;
         }
     }
 

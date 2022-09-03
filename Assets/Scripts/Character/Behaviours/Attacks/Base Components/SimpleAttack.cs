@@ -44,7 +44,7 @@ public class SimpleAttack : BaseAttack
         switch (hitType)
         {
             case HitType.Knockback:
-                hittableBehaviour.Knockback(damage, knockbackPower, knockbackDirection);
+                hittableBehaviour.Knockback(damage, knockbackPower, KnockbackBehaviour.GetRelativeDirection(knockbackDirection, lookDirection));
                 break;
             case HitType.Stun:
                 hittableBehaviour.Stun(damage, stunTime);

@@ -68,6 +68,11 @@ public class WalkBehaviour : CharacterBehaviour
         // move speed
         movableObject.velocity.x = xAxis * speed;
         movableObject.velocity.z = zAxis * speed;
+        // look direction
+        if (xAxis != 0)
+        {
+            lookDirection = Mathf.RoundToInt(xAxis);
+        }
     }
 
     public void Stop()

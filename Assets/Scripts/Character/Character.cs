@@ -8,21 +8,20 @@ public class Character : MonoBehaviour
     [HideInInspector] public EventManager eventManager;
     [HideInInspector] public MovableObject movableObject;
     // look direction
-    [HideInInspector] public int lookDirection = 1;
 
-    private KnockbackBehaviour knockbackBehaviour;
     private EventListener lookDirectionEvent;
+    private int _lookDirection = 1;
 
-    public int LookDirection
+    public int lookDirection
     {
         get
         {
-            return lookDirection;
+            return _lookDirection;
         }
         set
         {
-            lookDirection = value;
-            transform.rotation = Quaternion.Euler(0, 90 * lookDirection - 90, 0);
+            _lookDirection = value;
+            transform.rotation = Quaternion.Euler(0, 90 * _lookDirection - 90, 0);
         }
     }
 
@@ -30,23 +29,6 @@ public class Character : MonoBehaviour
     {
         movableObject = GetComponent<MovableObject>();
         eventManager = FindObjectOfType<EventManager>();
-        //Update look direction
-        knockbackBehaviour = GetComponent<KnockbackBehaviour>();
-        lookDirectionEvent = eventManager.Attach(
-            () => Mathf.Abs(movableObject.velocity.x) > Mathf.Epsilon,
-            () =>
-            {
-                if (knockbackBehaviour && knockbackBehaviour.active)
-                {
-                    LookDirection = -Mathf.RoundToInt(Mathf.Sign(movableObject.velocity.x));
-                }
-                else
-                {
-                    LookDirection = Mathf.RoundToInt(Mathf.Sign(movableObject.velocity.x));
-                }
-            },
-            single: false
-        );
     }
 
     public void OnDestroy()

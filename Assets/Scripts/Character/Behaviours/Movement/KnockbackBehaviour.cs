@@ -127,7 +127,15 @@ public class KnockbackBehaviour : CharacterBehaviour
     }
 
     private void SetMovement(float power, float angleDegrees)
-    { 
+    {
+        if ((angleDegrees > 0 && angleDegrees < 90) || (angleDegrees > 270 && angleDegrees < 360))
+        {
+            lookDirection = -1;
+        }
+        if ((angleDegrees > 90 && angleDegrees < 270))
+        {
+            lookDirection = 1;
+        }
         movableObject.acceleration.y = -gravityAcceleration;
         movableObject.velocity.x = Mathf.Cos(Mathf.Deg2Rad * angleDegrees) * power;
         movableObject.velocity.y = Mathf.Sin(Mathf.Deg2Rad * angleDegrees) * power;
@@ -164,5 +172,14 @@ public class KnockbackBehaviour : CharacterBehaviour
             StopCoroutine(recoverCoroutine);
             Recover();
         }
+    }
+
+    public static float GetRelativeDirection(float knockbackDirection, int hitDirection)
+    {
+        if (hitDirection == 1)
+        {
+            return knockbackDirection;
+        }
+        return (180 - knockbackDirection) % 360;
     }
 }
