@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 871744047}
   - component: {fileID: 871744048}
   - component: {fileID: 871744049}
+  - component: {fileID: 871744050}
   m_Layer: 0
   m_Name: Angel
   m_TagString: Untagged
@@ -445,7 +446,6 @@ MonoBehaviour:
   animator: {fileID: 1482702260}
   eventManager: {fileID: 0}
   movableObject: {fileID: 0}
-  lookDirection: 1
 --- !u!114 &871744039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -645,6 +645,31 @@ MonoBehaviour:
   stunTime: 0
   hitbox: {fileID: 0}
   normalAttackName: normalAttack
+--- !u!114 &871744050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871744029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 120971cb774917b4593fc4bac3084f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackName: uppercut
+  instant: 0
+  interruptable: 0
+  anticipateDuration: 0
+  activeDuration: 0
+  recoveryDuration: 0
+  damage: 0
+  hitType: 0
+  knockbackPower: 0
+  knockbackDirection: 0
+  stunTime: 0
+  hitbox: {fileID: 0}
+  altNormalAttackName: altNormalAttack
 --- !u!1 &948508457
 GameObject:
   m_ObjectHideFlags: 0

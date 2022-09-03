@@ -24,6 +24,7 @@ public class PlayerController : CharacterBehaviour
         attacks.Add(GetComponent<RunKick>(), "Attack");
         attacks.Add(GetComponent<NormalAttack>(), "Attack");
         attacks.Add(GetComponent<AltNormalAttack>(), "Attack");
+        attacks.Add(GetComponent<Uppercut>(), "Attack");
     }
 
     public void Update()
