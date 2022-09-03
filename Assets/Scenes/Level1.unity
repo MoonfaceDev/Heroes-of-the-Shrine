@@ -585,17 +585,17 @@ MonoBehaviour:
   attackName: runKick
   instant: 0
   interruptable: 0
-  anticipateDuration: 0
+  anticipateDuration: 0.1
   activeDuration: 0
-  recoveryDuration: 0
-  damage: 0
+  recoveryDuration: 0.1
+  damage: 20
   hitType: 0
-  knockbackPower: 0
-  knockbackDirection: 0
+  knockbackPower: 20
+  knockbackDirection: 25
   stunTime: 0
   hitbox: {fileID: 948508458}
-  velocity: 0
-  acceleration: 0
+  velocity: 3
+  acceleration: 20
 --- !u!114 &871744048
 MonoBehaviour:
   m_ObjectHideFlags: 0
