@@ -75,6 +75,7 @@ public class SimpleAttackEditor : Editor
                 attack.stunTime = stunTime.floatValue;
             }
         }
+
         serializedObject.ApplyModifiedProperties();
     }
 
