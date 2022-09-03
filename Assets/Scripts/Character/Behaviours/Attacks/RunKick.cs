@@ -6,7 +6,8 @@ public class RunKick : SimpleAttack
     public Hitbox hitbox;
     public float velocity;
     public float acceleration;
-    public SingleHitDetector hitDetector;
+
+    private SingleHitDetector hitDetector;
 
     public override void Awake()
     {
@@ -36,6 +37,8 @@ public class RunKick : SimpleAttack
         eventManager.Attach(() => Mathf.Sign(movableObject.velocity.x) != direction, () => stopped = true);
         hitDetector.Start();
         yield return new WaitUntil(() => stopped);
+        movableObject.velocity.x = 0;
+        movableObject.acceleration.x = 0;
         hitDetector.Stop();
     }
 }

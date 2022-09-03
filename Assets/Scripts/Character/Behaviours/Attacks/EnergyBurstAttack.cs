@@ -6,7 +6,8 @@ public class EnergyBurstAttack : SimpleAttack
     public Hitbox hitbox;
     public float burstVelocity;
     public float burstAcceleration;
-    public SingleHitDetector hitDetector;
+
+    private SingleHitDetector hitDetector;
 
     public override void Awake()
     {
