@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StunBehaviour : CharacterBehaviour
@@ -9,17 +8,17 @@ public class StunBehaviour : CharacterBehaviour
 
     public event OnStart onStart;
     public event OnStop onStop;
-    public bool active
+    public bool stun
     {
-        get => _active;
+        get => _stun;
         private set
         {
-            _active = value;
-            animator.SetBool("stun", _active);
+            _stun = value;
+            animator.SetBool("stun", _stun);
         }
     }
     
-    private bool _active;
+    private bool _stun;
     private WalkBehaviour walkBehaviour;
     private JumpBehaviour jumpBehaviour;
 
@@ -39,7 +38,7 @@ public class StunBehaviour : CharacterBehaviour
         {
             jumpBehaviour.Stop(waitForLand: false);
         }
-        active = true;
+        stun = true;
         onStart?.Invoke();
         movableObject.velocity = new Vector3(0, 0, 0);
         StartCoroutine(StopAfter(time));
@@ -47,7 +46,7 @@ public class StunBehaviour : CharacterBehaviour
 
     public void Stop()
     {
-        active = false;
+        stun = false;
         onStop?.Invoke();
     }
 

@@ -15,13 +15,13 @@ public class RunBehaviour : CharacterBehaviour
     public event OnStart onStart;
     public event OnStop onStop;
 
-    public bool active
+    public bool run
     {
-        get => _active;
+        get => _run;
         private set
         {
-            _active = value;
-            animator.SetBool("run", _active);
+            _run = value;
+            animator.SetBool("run", _run);
         }
     }
 
@@ -29,7 +29,7 @@ public class RunBehaviour : CharacterBehaviour
     private JumpBehaviour jumpBehaviour;
     private Coroutine startCoroutine;
     private ParticleSystem.MainModule runParticlesMain;
-    private bool _active;
+    private bool _run;
 
     public override void Awake()
     {
@@ -48,7 +48,7 @@ public class RunBehaviour : CharacterBehaviour
             {
                 StopCoroutine(startCoroutine);
             }
-            if (active)
+            if (run)
             {
                 StartCoroutine(StopAfter(timeToStopRun));
             }
@@ -80,7 +80,7 @@ public class RunBehaviour : CharacterBehaviour
 
     public void Run()
     {
-        active = true;
+        run = true;
         walkBehaviour.speed *= runSpeedMultiplier;
         runParticles.Play();
         onStart?.Invoke();
@@ -88,7 +88,7 @@ public class RunBehaviour : CharacterBehaviour
 
     public void Stop()
     {
-        active = false;
+        run = false;
         walkBehaviour.speed = walkBehaviour.defaultSpeed;
         runParticles.Stop();
         onStop?.Invoke();

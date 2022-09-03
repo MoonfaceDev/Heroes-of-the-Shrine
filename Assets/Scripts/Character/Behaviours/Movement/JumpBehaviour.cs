@@ -45,6 +45,10 @@ public class JumpBehaviour : CharacterBehaviour
             animator.SetBool("anticipatingJump", _anticipating);
         }
     }
+    public bool jump
+    {
+        get => anticipating || active || recovering;
+    }
     public int jumps
     {
         get => _jumps;
@@ -83,9 +87,9 @@ public class JumpBehaviour : CharacterBehaviour
         return !anticipating
             && !recovering 
             && jumps < maxJumps
-            && !(slideBehaviour && slideBehaviour.active)
-            && !(knockbackBehaviour && (knockbackBehaviour.active || knockbackBehaviour.recovering))
-            && !(stunBehaviour && stunBehaviour.active)
+            && !(slideBehaviour && slideBehaviour.slide)
+            && !(knockbackBehaviour && knockbackBehaviour.knockback)
+            && !(stunBehaviour && stunBehaviour.stun)
             && !(attackManager && attackManager.attacking);
     }
 
@@ -95,7 +99,7 @@ public class JumpBehaviour : CharacterBehaviour
         {
             return;
         }
-        if (walkBehaviour && walkBehaviour.active == false && movableObject.position.y == 0) //not moving and grounded
+        if (walkBehaviour && walkBehaviour.walk == false && movableObject.position.y == 0) //not moving and grounded
         {
             anticipating = true;
             onAnticipate?.Invoke();
@@ -140,7 +144,7 @@ public class JumpBehaviour : CharacterBehaviour
         movableObject.velocity.y = 0;
         movableObject.acceleration.y = 0;
 
-        if (walkBehaviour && !walkBehaviour.active) //not moving
+        if (walkBehaviour && !walkBehaviour.walk) //not moving
         {
             recoverCoroutine = StartCoroutine(RecoverAfterTime());
         }

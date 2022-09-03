@@ -24,7 +24,7 @@ public class RunKick : SimpleAttack
     protected override bool CanAttack()
     {
         RunBehaviour runBehaviour = GetComponent<RunBehaviour>();
-        return base.CanAttack() && (runBehaviour && runBehaviour.active);
+        return base.CanAttack() && (runBehaviour && runBehaviour.run);
     }
 
     protected override IEnumerator ActiveCoroutine()

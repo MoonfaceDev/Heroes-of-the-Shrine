@@ -10,13 +10,22 @@ public class KnockbackBehaviour : CharacterBehaviour
 
     public delegate void OnStart();
     public delegate void OnBounce(int count, float power, float angleDegrees);
-    public delegate void OnStop();
+    public delegate void OnFinish();
     public delegate void OnRecover();
 
     public event OnStart onStart;
     public event OnBounce onBounce;
-    public event OnStop onStop;
+    public event OnFinish onFinish;
     public event OnRecover onRecover;
+    public bool active
+    {
+        get => _active;
+        private set
+        {
+            _active = value;
+            animator.SetBool("knockback", _active);
+        }
+    }
     public bool recovering
     {
         get => _recovering;
@@ -26,14 +35,9 @@ public class KnockbackBehaviour : CharacterBehaviour
             animator.SetBool("recoveringFromKnockback", _recovering);
         }
     }
-    public bool active
+    public bool knockback
     {
-        get => _active;
-        private set
-        {
-            _active = value;
-            animator.SetBool("knockback", _active);
-        }
+        get => active || recovering;
     }
     public int bounce
     {
@@ -67,7 +71,7 @@ public class KnockbackBehaviour : CharacterBehaviour
         return !active
             && !recovering
             && !resistant
-            && !(stunBehaviour && stunBehaviour.active);
+            && !(stunBehaviour && stunBehaviour.stun);
     }
 
     public void Knockback(float power, float angleDegrees)
@@ -114,7 +118,7 @@ public class KnockbackBehaviour : CharacterBehaviour
                         movableObject.velocity.y = 0;
                         movableObject.velocity.x = 0;
                         movableObject.position.y = 0;
-                        onStop?.Invoke();
+                        onFinish?.Invoke();
                         recoverCoroutine = StartCoroutine(RecoverAfterTime());
                     }
                 );
@@ -154,7 +158,7 @@ public class KnockbackBehaviour : CharacterBehaviour
             movableObject.velocity.x = 0;
             movableObject.position.y = 0;
         }
-        onStop?.Invoke();
+        onFinish?.Invoke();
         if (recovering)
         {
             StopCoroutine(recoverCoroutine);

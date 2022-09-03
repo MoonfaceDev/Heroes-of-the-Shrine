@@ -26,10 +26,10 @@ public class SimpleAttack : BaseAttack
         StunBehaviour stunBehaviour = GetComponent<StunBehaviour>();
         AttackManager attackManager = GetComponent<AttackManager>();
 
-        return !(jumpBehaviour && (jumpBehaviour.anticipating || jumpBehaviour.active || jumpBehaviour.recovering))
-            && !(slideBehaviour && slideBehaviour.active)
-            && !(knockbackBehaviour && (knockbackBehaviour.active || knockbackBehaviour.recovering))
-            && !(stunBehaviour && stunBehaviour.active)
+        return !(jumpBehaviour && jumpBehaviour.jump)
+            && !(slideBehaviour && slideBehaviour.slide)
+            && !(knockbackBehaviour && knockbackBehaviour.knockback)
+            && !(stunBehaviour && stunBehaviour.stun)
             && !(attackManager && attackManager.attacking && !(instant && !attackManager.IsUninterruptable()));
     }
 
