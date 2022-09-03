@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class AttackManager : CharacterBehaviour
 {
-    [HideInInspector] public List<string> attackHistory;
+    public float maxComboDelay;
+    [HideInInspector] public string lastAttack;
+    [HideInInspector] public float lastAttackTime;
 
     public override void Awake()
     {
@@ -11,20 +13,19 @@ public class AttackManager : CharacterBehaviour
         BaseAttack[] attackComponents = GetComponents<BaseAttack>();
         foreach (BaseAttack attack in attackComponents)
         {
-            attack.onStart += () =>
+            attack.onFinish += () =>
             {
-                attackHistory.Add(attack.attackName);
+                lastAttack = attack.attackName;
+                lastAttackTime = Time.time;
             };
         }
-    }
-
-    public string GetLastAttack()
-    {
-        if (attackHistory.Count == 0)
+        eventManager.Attach(() => true, () =>
         {
-            return null;
-        }
-        return attackHistory[^1];
+            if (lastAttack != null && Time.time - lastAttackTime > maxComboDelay)
+            {
+                lastAttack = null;
+            }
+        }, single: false);
     }
 
     public bool anticipating

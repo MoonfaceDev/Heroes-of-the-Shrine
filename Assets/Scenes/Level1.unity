@@ -327,8 +327,6 @@ GameObject:
   - component: {fileID: 871744042}
   - component: {fileID: 871744040}
   - component: {fileID: 871744044}
-  - component: {fileID: 871744046}
-  - component: {fileID: 871744047}
   m_Layer: 0
   m_Name: Angel
   m_TagString: Untagged
@@ -525,44 +523,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ba493242bffda44bd80bb0d4062f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &871744046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871744029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab68d069e0e79504ebe8ab7fd318ee7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackHistory: []
---- !u!114 &871744047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871744029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afab7b434bf82e940a658e3c4b4805cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackName: energyBurst
-  instant: 0
-  interruptable: 0
-  anticipateDuration: 0.5
-  recoveryDuration: 0.5
-  hitbox: {fileID: 1059066342}
-  damage: 10
-  hitType: 0
-  knockbackPower: 8
-  knockbackDirection: 45
-  stunTime: 0
-  burstVelocity: 5
-  burstAcceleration: 2
 --- !u!1 &1059066341
 GameObject:
   m_ObjectHideFlags: 0
