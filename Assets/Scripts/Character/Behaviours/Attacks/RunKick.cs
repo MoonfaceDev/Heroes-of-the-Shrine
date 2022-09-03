@@ -20,6 +20,11 @@ public class RunKick : SimpleAttack
                 HitCallable(hittableBehaviour);
             }
         });
+        onAnticipate += () =>
+        {
+            WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
+            walkBehaviour.Stop();
+        };
     }
 
     protected override bool CanAttack()

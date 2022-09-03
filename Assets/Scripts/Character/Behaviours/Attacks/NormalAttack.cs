@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class NormalAttack : SimpleAttack
 {
-    public float attackDuration;
     public Hitbox hitbox;
 
     private SingleHitDetector hitDetector;
@@ -19,13 +18,14 @@ public class NormalAttack : SimpleAttack
                 HitCallable(hittableBehaviour);
             }
         });
-    }
-
-    protected override IEnumerator ActiveCoroutine()
-    {
-        hitDetector.Start();
-        yield return new WaitForSeconds(attackDuration);
-        hitDetector.Stop();
+        onStart += () =>
+        {
+            hitDetector.Start();
+        };
+        onFinish += () =>
+        {
+            hitDetector.Stop();
+        };
     }
 
     protected override bool CanAttack()
