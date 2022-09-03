@@ -327,6 +327,8 @@ GameObject:
   - component: {fileID: 871744042}
   - component: {fileID: 871744040}
   - component: {fileID: 871744044}
+  - component: {fileID: 871744046}
+  - component: {fileID: 871744047}
   m_Layer: 0
   m_Name: Angel
   m_TagString: Untagged
@@ -348,6 +350,7 @@ Transform:
   m_Children:
   - {fileID: 1482702259}
   - {fileID: 1099648}
+  - {fileID: 1059066343}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -522,6 +525,91 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ba493242bffda44bd80bb0d4062f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &871744046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871744029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab68d069e0e79504ebe8ab7fd318ee7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackHistory: []
+--- !u!114 &871744047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871744029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afab7b434bf82e940a658e3c4b4805cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackName: energyBurst
+  instant: 0
+  interruptable: 0
+  anticipateDuration: 0.5
+  recoveryDuration: 0.5
+  hitbox: {fileID: 1059066342}
+  damage: 10
+  hitType: 0
+  knockbackPower: 8
+  knockbackDirection: 45
+  stunTime: 0
+  burstVelocity: 5
+  burstAcceleration: 2
+--- !u!1 &1059066341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1059066343}
+  - component: {fileID: 1059066342}
+  m_Layer: 0
+  m_Name: EnergyBurstHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1059066342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059066341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: 0.83, y: 0.15, z: 0}
+  size: {x: 1.47, y: 0.56, z: 0.39}
+  parentObject: {fileID: 871744039}
+--- !u!4 &1059066343
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059066341}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.83, y: 0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 871744032}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1482702257
 GameObject:
   m_ObjectHideFlags: 0

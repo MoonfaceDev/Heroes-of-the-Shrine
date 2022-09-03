@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(AttackManager))]
@@ -12,30 +13,39 @@ public abstract class BaseAttack : CharacterBehaviour
     public delegate void OnFinish();
     public delegate void OnRecover();
 
-    public abstract bool anticipating
+    public bool anticipating
     {
-        get;
-        protected set;
+        get => _anticipating;
+        private set
+        {
+            _anticipating = value;
+            animator.SetBool(attackName + "-anticipating", _anticipating);
+        }
     }
-    public abstract bool active
+    public bool active
     {
-        get;
-        protected set;
+        get => _active;
+        private set
+        {
+            _active = value;
+            animator.SetBool(attackName + "-active", _active);
+        }
     }
-    public abstract bool recovering
+    public bool recovering
     {
-        get;
-        protected set;
+        get => _recovering;
+        private set
+        {
+            _recovering = value;
+            animator.SetBool(attackName + "-recovering", _recovering);
+        }
     }
+
     public event OnAnticipate onAnticipate;
     public event OnStart onStart;
     public event OnFinish onFinish;
     public event OnRecover onRecover;
-    public abstract void Attack();
-    public abstract bool CanAttack();
-    public abstract bool ShouldTarget(HittableBehaviour hittableBehaviour);
-    public abstract void OnHit(HittableBehaviour hittableBehaviour);
-    
+
     protected void InvokeOnAnticipate()
     {
         onAnticipate?.Invoke();
@@ -54,5 +64,44 @@ public abstract class BaseAttack : CharacterBehaviour
     protected void InvokeOnRecover()
     {
         onRecover?.Invoke();
+    }
+
+    private bool _anticipating;
+    private bool _active;
+    private bool _recovering;
+
+    protected abstract IEnumerator AnticipateCoroutine();
+    protected abstract IEnumerator ActiveCoroutine();
+    protected abstract IEnumerator RecoveryCoroutine();
+
+    protected abstract bool CanAttack();
+    protected abstract void HitCallable(HittableBehaviour hittableBehaviour);
+
+    public void Attack()
+    {
+        if (CanAttack())
+        {
+            StartCoroutine(AttackFlow());
+        }
+    }
+
+    private IEnumerator AttackFlow()
+    {
+        anticipating = true;
+        InvokeOnAnticipate();
+        yield return StartCoroutine(AnticipateCoroutine());
+
+        anticipating = false;
+        active = true;
+        InvokeOnStart();
+        yield return StartCoroutine(ActiveCoroutine());
+
+        active = false;
+        recovering = true;
+        InvokeOnFinish();
+        yield return StartCoroutine(RecoveryCoroutine());
+
+        recovering = false;
+        InvokeOnRecover();
     }
 }

@@ -12,6 +12,7 @@ public class PeriodicAbsoluteHitDetector : IHitDetector
 
     public PeriodicAbsoluteHitDetector(EventManager eventManager, Hitbox hitbox, HitCallable hitCallable, float interval, bool startImmediately = true)
     {
+        this.eventManager = eventManager;
         this.hitbox = hitbox;
         this.hitCallable = hitCallable;
         this.interval = interval;
