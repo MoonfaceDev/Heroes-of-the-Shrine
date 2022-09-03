@@ -1,3 +1,4 @@
+using System;
 using System.Reflection;
 using UnityEditor;
 
@@ -81,7 +82,16 @@ public class SimpleAttackEditor : Editor
 
     private bool HasMethod(SimpleAttack attack, string name)
     {
-        MethodBase method = attack.GetType().GetMethod(name, BINDING_FLAGS);
-        return method != null;
+        Type type = attack.GetType();
+        while (type != typeof(SimpleAttack))
+        {
+            MethodBase method = type.GetMethod(name, BINDING_FLAGS);
+            if (method != null)
+            {
+                return true;
+            }
+            type = type.BaseType;
+        }
+        return false;
     }
 }

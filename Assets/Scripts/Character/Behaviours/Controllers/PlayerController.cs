@@ -22,6 +22,8 @@ public class PlayerController : CharacterBehaviour
         slideBehaviour = GetComponent<SlideBehaviour>();
         attacks = new();
         attacks.Add(GetComponent<RunKick>(), "Attack");
+        attacks.Add(GetComponent<NormalAttack>(), "Attack");
+        attacks.Add(GetComponent<AltNormalAttack>(), "Attack");
     }
 
     public void Update()
