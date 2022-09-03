@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerController : CharacterBehaviour
 {
@@ -10,6 +11,8 @@ public class PlayerController : CharacterBehaviour
     private WalkBehaviour walkBehaviour;
     private JumpBehaviour jumpBehaviour;
     private SlideBehaviour slideBehaviour;
+    private RunKick runKick;
+    private Dictionary<BaseAttack, string> attacks;
 
     public override void Awake()
     {
@@ -17,6 +20,8 @@ public class PlayerController : CharacterBehaviour
         walkBehaviour = GetComponent<WalkBehaviour>();
         jumpBehaviour = GetComponent<JumpBehaviour>();
         slideBehaviour = GetComponent<SlideBehaviour>();
+        attacks = new();
+        attacks.Add(GetComponent<RunKick>(), "Attack");
     }
 
     public void Update()
@@ -33,9 +38,18 @@ public class PlayerController : CharacterBehaviour
             jumpBehaviour.Jump();
         }
         //sliding
-        if (slideBehaviour && Input.GetButtonDown("Slide")) //pressed slide
+        if (slideBehaviour && Input.GetButtonDown("Escape")) //pressed slide
         {
             slideBehaviour.Slide();
+        }
+        //attacks
+        foreach (KeyValuePair<BaseAttack, string> attack in attacks)
+        {
+            if (attack.Key && Input.GetButtonDown(attack.Value))
+            {
+                attack.Key.Attack();
+                return;
+            }
         }
         //change suits
         if (Input.GetKeyDown(KeyCode.Alpha7))
