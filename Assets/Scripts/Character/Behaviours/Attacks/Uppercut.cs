@@ -5,6 +5,6 @@ public class Uppercut : NormalAttack
     protected override bool CanAttack()
     {
         AttackManager attackManager = GetComponent<AttackManager>();
-        return base.CanAttack() && !(attackManager.lastAttack == altNormalAttackName);
+        return base.CanAttack() && attackManager.lastAttack == altNormalAttackName;
     }
 }

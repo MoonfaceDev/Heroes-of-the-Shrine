@@ -11,7 +11,6 @@ public class PlayerController : CharacterBehaviour
     private WalkBehaviour walkBehaviour;
     private JumpBehaviour jumpBehaviour;
     private SlideBehaviour slideBehaviour;
-    private RunKick runKick;
     private Dictionary<BaseAttack, string> attacks;
 
     public override void Awake()
@@ -25,6 +24,7 @@ public class PlayerController : CharacterBehaviour
         attacks.Add(GetComponent<NormalAttack>(), "Attack");
         attacks.Add(GetComponent<AltNormalAttack>(), "Attack");
         attacks.Add(GetComponent<Uppercut>(), "Attack");
+        attacks.Add(GetComponent<SpinningSwordsAttack>(), "Defense");
     }
 
     public void Update()

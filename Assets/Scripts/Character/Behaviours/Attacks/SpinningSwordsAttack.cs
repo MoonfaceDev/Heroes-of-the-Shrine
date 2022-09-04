@@ -1,0 +1,62 @@
+using System.Collections;
+using UnityEngine;
+
+public class SpinningSwordsAttack : SimpleAttack
+{
+    public string altNormalAttackName;
+    public Hitbox hitbox1;
+    public Hitbox hitbox2;
+    public float hitbox1FinishTime;
+    public float hitbox2StartTime;
+
+    private SingleHitDetector hitDetector1;
+    private SingleHitDetector hitDetector2;
+
+    public override void Awake()
+    {
+        base.Awake();
+        hitDetector1 = CreateHitDetector(hitbox1);
+        hitDetector2 = CreateHitDetector(hitbox2);
+        onStart += () =>
+        {
+            hitDetector1.Start();
+            StartCoroutine(DisableHitDetector1());
+            StartCoroutine(EnableHitDetector2());
+        };
+        onFinish += () =>
+        {
+            hitDetector1.Stop();
+            hitDetector2.Stop();
+        };
+    }
+
+    private SingleHitDetector CreateHitDetector(Hitbox hitbox)
+    {
+        return new(eventManager, hitbox, (hit) =>
+        {
+            HittableBehaviour hittableBehaviour = hit.GetComponent<HittableBehaviour>();
+            if (hittableBehaviour)
+            {
+                HitCallable(hittableBehaviour);
+            }
+        });
+    }
+
+    private IEnumerator DisableHitDetector1()
+    {
+        yield return new WaitForSeconds(hitbox1FinishTime);
+        hitDetector1.Stop();
+    }
+
+    private IEnumerator EnableHitDetector2()
+    {
+        yield return new WaitForSeconds(hitbox2StartTime);
+        hitDetector2.Start();
+    }
+
+    protected override bool CanAttack()
+    {
+        AttackManager attackManager = GetComponent<AttackManager>();
+        return base.CanAttack() && attackManager.lastAttack == altNormalAttackName;
+    }
+}

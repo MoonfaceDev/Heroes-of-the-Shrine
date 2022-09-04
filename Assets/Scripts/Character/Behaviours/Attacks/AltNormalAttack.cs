@@ -5,6 +5,6 @@ public class AltNormalAttack : NormalAttack
     protected override bool CanAttack()
     {
         AttackManager attackManager = GetComponent<AttackManager>();
-        return base.CanAttack() && !(attackManager.lastAttack == normalAttackName);
+        return base.CanAttack() && attackManager.lastAttack == normalAttackName;
     }
 }
