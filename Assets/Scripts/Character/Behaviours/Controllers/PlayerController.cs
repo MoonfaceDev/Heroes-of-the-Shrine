@@ -26,6 +26,7 @@ public class PlayerController : CharacterBehaviour
         attacks.Add(GetComponent<Uppercut>(), "Attack");
         attacks.Add(GetComponent<SpinningSwordsAttack>(), "Defense");
         attacks.Add(GetComponent<SmashAttack>(), "Attack");
+        attacks.Add(GetComponent<StabAttack>(), "Defense");
     }
 
     public void Update()
