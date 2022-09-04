@@ -334,6 +334,7 @@ GameObject:
   - component: {fileID: 871744049}
   - component: {fileID: 871744050}
   - component: {fileID: 871744051}
+  - component: {fileID: 871744052}
   m_Layer: 0
   m_Name: Angel
   m_TagString: Untagged
@@ -699,6 +700,31 @@ MonoBehaviour:
   hitbox2: {fileID: 0}
   hitbox1FinishTime: 0
   hitbox2StartTime: 0
+--- !u!114 &871744052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871744029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d19372dd6d0ab24db38e954cf9e4d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackName: smashAttack
+  instant: 0
+  interruptable: 0
+  anticipateDuration: 0
+  activeDuration: 0
+  recoveryDuration: 0
+  damage: 0
+  hitType: 0
+  knockbackPower: 0
+  knockbackDirection: 0
+  stunTime: 0
+  hitbox: {fileID: 0}
+  spinningSwordsAttackName: spinningSwordAttack
 --- !u!1 &948508457
 GameObject:
   m_ObjectHideFlags: 0
