@@ -619,7 +619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab68d069e0e79504ebe8ab7fd318ee7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxComboDelay: 0.25
+  maxComboDelay: 0.3
   lastAttack: 
   lastAttackTime: 0
 --- !u!114 &871744047
@@ -636,7 +636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 0
-  previousAttackName: 
+  previousAttackName: 0
   anticipateDuration: 0.1
   activeDuration: 0
   recoveryDuration: 0
