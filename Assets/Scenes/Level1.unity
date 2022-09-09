@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1146b9a9a2b3d2439f3aea5ac670bdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToRun: 1.5
+  timeToRun: 0.5
   timeToStopRun: 0.25
   runSpeedMultiplier: 1.5
   runParticles: {fileID: 1996247493}
@@ -588,17 +588,17 @@ MonoBehaviour:
   attackName: runKick
   instant: 0
   interruptable: 0
-  anticipateDuration: 0.1
+  anticipateDuration: 0
   activeDuration: 0
-  recoveryDuration: 0.1
+  recoveryDuration: 0
   damage: 20
   hitType: 0
   knockbackPower: 20
   knockbackDirection: 25
   stunTime: 0
   hitbox: {fileID: 948508458}
-  velocity: 3
-  acceleration: 20
+  velocity: 13
+  acceleration: 16
 --- !u!114 &871744048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,15 +613,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackName: normalAttack
   instant: 0
-  interruptable: 0
-  anticipateDuration: 0
-  activeDuration: 0
-  recoveryDuration: 0
-  damage: 0
-  hitType: 0
+  interruptable: 1
+  anticipateDuration: 0.5
+  activeDuration: 1
+  recoveryDuration: 0.5
+  damage: 20
+  hitType: 1
   knockbackPower: 0
   knockbackDirection: 0
-  stunTime: 0
+  stunTime: 0.5
   hitbox: {fileID: 0}
 --- !u!114 &871744049
 MonoBehaviour:
@@ -637,17 +637,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackName: altNormalAttack
   instant: 0
-  interruptable: 0
-  anticipateDuration: 0
-  activeDuration: 0
-  recoveryDuration: 0
-  damage: 0
-  hitType: 0
+  interruptable: 1
+  anticipateDuration: 0.1
+  activeDuration: 1
+  recoveryDuration: 0.5
+  damage: 20
+  hitType: 1
   knockbackPower: 0
   knockbackDirection: 0
-  stunTime: 0
+  stunTime: 0.5
   hitbox: {fileID: 0}
-  normalAttackName: normalAttack
+  normalAttackName: AltnormalAttack
 --- !u!114 &871744050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -780,8 +780,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0.83, y: 0.15, z: 0}
-  size: {x: 1.47, y: 0.56, z: 0.39}
+  position: {x: -0.22, y: 0.15, z: 0}
+  size: {x: 1.5, y: 1.04, z: 0.5}
   parentObject: {fileID: 871744039}
 --- !u!4 &948508459
 Transform:
@@ -791,7 +791,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 948508457}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.83, y: 0.15, z: 0}
+  m_LocalPosition: {x: -0.22, y: 0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
