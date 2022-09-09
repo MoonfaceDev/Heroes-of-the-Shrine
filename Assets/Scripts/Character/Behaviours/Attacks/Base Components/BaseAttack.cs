@@ -11,6 +11,7 @@ public abstract class BaseAttack : CharacterBehaviour
 {
     public bool instant = false;
     public bool interruptable = false;
+    public bool finalAttack = true; // true if no combo can be played after it
 
     public delegate void OnAnticipate();
     public delegate void OnStart();

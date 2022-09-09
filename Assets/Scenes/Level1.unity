@@ -595,6 +595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 0
+  finalAttack: 1
   previousAttackName: 
   anticipateDuration: 0
   activeDuration: 0
@@ -636,7 +637,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 0
-  previousAttackName: 0
+  finalAttack: 1
+  previousAttackName: 
   anticipateDuration: 0.1
   activeDuration: 0
   recoveryDuration: 0
@@ -662,6 +664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
+  finalAttack: 1
   previousAttackName: 
   anticipateDuration: 0.05
   activeDuration: 0.15
@@ -686,6 +689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
+  finalAttack: 1
   previousAttackName: NormalAttack
   anticipateDuration: 0.05
   activeDuration: 0.15
@@ -710,6 +714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 0
+  finalAttack: 1
   previousAttackName: AltNormalAttack
   anticipateDuration: 0
   activeDuration: 0
@@ -734,6 +739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 0
+  finalAttack: 1
   previousAttackName: AltNormalAttack
   anticipateDuration: 0
   activeDuration: 0
@@ -761,6 +767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 0
+  finalAttack: 1
   previousAttackName: SpinningSwordsAttack
   anticipateDuration: 0
   activeDuration: 0
@@ -785,6 +792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 0
+  finalAttack: 1
   previousAttackName: NormalAttack
   anticipateDuration: 0
   activeDuration: 0

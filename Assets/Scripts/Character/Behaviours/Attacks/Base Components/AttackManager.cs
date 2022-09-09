@@ -14,8 +14,11 @@ public class AttackManager : CharacterBehaviour
         {
             attack.onFinish += () =>
             {
-                lastAttack = attack.attackName;
-                lastAttackTime = Time.time;
+                if (!attack.finalAttack)
+                {
+                    lastAttack = attack.attackName;
+                    lastAttackTime = Time.time;
+                }
             };
         }
         eventManager.Attach(() => true, () =>
