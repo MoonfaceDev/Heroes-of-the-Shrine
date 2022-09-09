@@ -110,7 +110,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 640
+        y: 960
         width: 640
         height: 320
       alignment: 7
@@ -131,7 +131,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 640
+        y: 960
         width: 640
         height: 320
       alignment: 7
@@ -152,7 +152,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1280
-        y: 640
+        y: 960
         width: 640
         height: 320
       alignment: 7
@@ -173,7 +173,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1920
-        y: 640
+        y: 960
         width: 640
         height: 320
       alignment: 7
@@ -194,7 +194,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 320
+        y: 640
         width: 640
         height: 320
       alignment: 7
@@ -215,7 +215,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 320
+        y: 640
         width: 640
         height: 320
       alignment: 7
@@ -236,7 +236,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1280
-        y: 320
+        y: 640
         width: 640
         height: 320
       alignment: 7
@@ -257,7 +257,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1920
-        y: 320
+        y: 640
         width: 640
         height: 320
       alignment: 7
@@ -278,7 +278,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 320
         width: 640
         height: 320
       alignment: 7
@@ -299,7 +299,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 0
+        y: 320
         width: 640
         height: 320
       alignment: 7
@@ -320,7 +320,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1280
-        y: 0
+        y: 320
         width: 640
         height: 320
       alignment: 7
@@ -341,7 +341,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1920
-        y: 0
+        y: 320
         width: 640
         height: 320
       alignment: 7
@@ -357,6 +357,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: AngelNormalAttack_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 640
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f55ae46cb97d88f4e85f10a686570b44
+      internalID: 582425606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngelNormalAttack_13
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 640
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93aaee4b02e6a2a4e95ba1bc6f0d6ed7
+      internalID: 189290597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -368,10 +410,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      AngelNormalAttack_12: 582425606
       AngelNormalAttack_5: -1256962003
       AngelNormalAttack_3: 272411608
       AngelNormalAttack_7: -444127308
       AngelNormalAttack_0: 92123581
+      AngelNormalAttack_13: 189290597
       AngelNormalAttack_1: -1177605458
       AngelNormalAttack_2: -1103536421
       AngelNormalAttack_6: 200658793
