@@ -544,9 +544,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afab7b434bf82e940a658e3c4b4805cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackName: energyBurst
   instant: 0
   interruptable: 0
+  previousAttackName: 
   anticipateDuration: 0
   activeDuration: 0
   recoveryDuration: 0
@@ -585,9 +585,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89faf720898d4f341980bbc5ad9c92c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackName: runKick
   instant: 0
   interruptable: 0
+  previousAttackName: 
   anticipateDuration: 0.1
   activeDuration: 0
   recoveryDuration: 0.1
@@ -611,9 +611,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15028a98acbfc2140a1a48233734334d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackName: normalAttack
   instant: 0
   interruptable: 0
+  previousAttackName: 
   anticipateDuration: 0
   activeDuration: 0
   recoveryDuration: 0
@@ -635,9 +635,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 456a183db1e8752488fe8e192957fb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackName: altNormalAttack
   instant: 0
   interruptable: 0
+  previousAttackName: NormalAttack
   anticipateDuration: 0
   activeDuration: 0
   recoveryDuration: 0
@@ -647,7 +647,6 @@ MonoBehaviour:
   knockbackDirection: 0
   stunTime: 0
   hitbox: {fileID: 0}
-  normalAttackName: normalAttack
 --- !u!114 &871744050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,9 +659,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120971cb774917b4593fc4bac3084f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackName: uppercut
   instant: 0
   interruptable: 0
+  previousAttackName: AltNormalAttack
   anticipateDuration: 0
   activeDuration: 0
   recoveryDuration: 0
@@ -672,7 +671,6 @@ MonoBehaviour:
   knockbackDirection: 0
   stunTime: 0
   hitbox: {fileID: 0}
-  altNormalAttackName: altNormalAttack
 --- !u!114 &871744051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,9 +683,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81118c65449267140834718ab26499e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackName: spinningSwordsAttack
   instant: 0
   interruptable: 0
+  previousAttackName: AltNormalAttack
   anticipateDuration: 0
   activeDuration: 0
   recoveryDuration: 0
@@ -696,7 +694,6 @@ MonoBehaviour:
   knockbackPower: 0
   knockbackDirection: 0
   stunTime: 0
-  altNormalAttackName: altNormalAttack
   hitbox1: {fileID: 0}
   hitbox2: {fileID: 0}
   hitbox1FinishTime: 0
@@ -713,9 +710,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d19372dd6d0ab24db38e954cf9e4d87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackName: smashAttack
   instant: 0
   interruptable: 0
+  previousAttackName: SpinningSwordsAttack
   anticipateDuration: 0
   activeDuration: 0
   recoveryDuration: 0
@@ -725,7 +722,6 @@ MonoBehaviour:
   knockbackDirection: 0
   stunTime: 0
   hitbox: {fileID: 0}
-  spinningSwordsAttackName: spinningSwordAttack
 --- !u!114 &871744053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,9 +734,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff8981c0a36794540a98151813755dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackName: stabAttack
   instant: 0
   interruptable: 0
+  previousAttackName: NormalAttack
   anticipateDuration: 0
   activeDuration: 0
   recoveryDuration: 0
@@ -750,7 +746,6 @@ MonoBehaviour:
   knockbackDirection: 0
   stunTime: 0
   hitbox: {fileID: 0}
-  normalAttackName: normalAttack
 --- !u!1 &948508457
 GameObject:
   m_ObjectHideFlags: 0
