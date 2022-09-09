@@ -75,11 +75,14 @@ public class WalkBehaviour : CharacterBehaviour
         }
     }
 
-    public void Stop()
+    public void Stop(bool freeze = false)
     {
         walk = false;
-        movableObject.velocity.x = 0;
-        movableObject.velocity.z = 0;
+        if (freeze)
+        {
+            movableObject.velocity.x = 0;
+            movableObject.velocity.z = 0;
+        }
         onStop?.Invoke();
     }
 }

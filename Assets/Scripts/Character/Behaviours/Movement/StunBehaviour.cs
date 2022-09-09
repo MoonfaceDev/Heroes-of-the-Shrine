@@ -32,7 +32,7 @@ public class StunBehaviour : CharacterBehaviour
     {
         if (walkBehaviour)
         {
-            walkBehaviour.Stop();
+            walkBehaviour.Stop(true);
         }
         if (jumpBehaviour)
         {

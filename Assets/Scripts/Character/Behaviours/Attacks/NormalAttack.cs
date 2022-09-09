@@ -18,7 +18,7 @@ public class NormalAttack : SimpleAttack
         onAnticipate += () =>
         {
             WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
-            walkBehaviour.Stop();
+            walkBehaviour.Stop(true);
         };
         onStart += () =>
         {

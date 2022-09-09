@@ -83,7 +83,7 @@ public class KnockbackBehaviour : CharacterBehaviour
 
         if (walkBehaviour)
         {
-            walkBehaviour.Stop();
+            walkBehaviour.Stop(true);
         }
 
         if (jumpBehaviour)
