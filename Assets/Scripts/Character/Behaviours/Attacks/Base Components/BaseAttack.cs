@@ -9,7 +9,6 @@ public class CannotAttackException : Exception
 [RequireComponent(typeof(AttackManager))]
 public abstract class BaseAttack : CharacterBehaviour
 {
-    public string attackName;
     public bool instant = false;
     public bool interruptable = false;
 
@@ -18,6 +17,10 @@ public abstract class BaseAttack : CharacterBehaviour
     public delegate void OnFinish();
     public delegate void OnRecover();
 
+    public string attackName
+    {
+        get => GetType().Name;
+    }
     public bool anticipating
     {
         get => _anticipating;

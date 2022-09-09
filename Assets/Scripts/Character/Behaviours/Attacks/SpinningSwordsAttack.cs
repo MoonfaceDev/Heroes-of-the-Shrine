@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class SpinningSwordsAttack : SimpleAttack
 {
-    public string altNormalAttackName;
     public Hitbox hitbox1;
     public Hitbox hitbox2;
     public float hitbox1FinishTime;
@@ -57,11 +56,5 @@ public class SpinningSwordsAttack : SimpleAttack
     {
         yield return new WaitForSeconds(hitbox2StartTime);
         hitDetector2.Start();
-    }
-
-    protected override bool CanAttack()
-    {
-        AttackManager attackManager = GetComponent<AttackManager>();
-        return base.CanAttack() && attackManager.lastAttack == altNormalAttackName;
     }
 }

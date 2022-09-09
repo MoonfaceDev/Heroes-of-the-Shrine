@@ -20,9 +20,9 @@ public class AttackManager : CharacterBehaviour
         }
         eventManager.Attach(() => true, () =>
         {
-            if (lastAttack != null && Time.time - lastAttackTime > maxComboDelay)
+            if (lastAttack != "" && Time.time - lastAttackTime > maxComboDelay)
             {
-                lastAttack = null;
+                lastAttack = "";
             }
         }, single: false);
     }
