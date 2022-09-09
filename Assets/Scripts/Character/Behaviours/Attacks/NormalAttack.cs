@@ -1,6 +1,3 @@
-using System.Collections;
-using UnityEngine;
-
 public class NormalAttack : SimpleAttack
 {
     public Hitbox hitbox;
@@ -18,6 +15,11 @@ public class NormalAttack : SimpleAttack
                 HitCallable(hittableBehaviour);
             }
         });
+        onAnticipate += () =>
+        {
+            WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
+            walkBehaviour.Stop();
+        };
         onStart += () =>
         {
             hitDetector.Start();
