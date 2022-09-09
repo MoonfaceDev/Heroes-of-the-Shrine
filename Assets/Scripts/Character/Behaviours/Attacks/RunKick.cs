@@ -38,6 +38,7 @@ public class RunKick : SimpleAttack
         bool stopped = false;
         float direction = Mathf.Sign(movableObject.velocity.x);
         movableObject.velocity.x = direction * velocity;
+        movableObject.velocity.z = 0;
         movableObject.acceleration.x = -direction * acceleration;
         eventManager.Attach(() => Mathf.Sign(movableObject.velocity.x) != direction, () => stopped = true);
         hitDetector.Start();
