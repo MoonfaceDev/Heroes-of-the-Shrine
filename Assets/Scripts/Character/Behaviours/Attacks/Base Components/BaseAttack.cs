@@ -1,5 +1,10 @@
+using System;
 using System.Collections;
 using UnityEngine;
+
+public class CannotAttackException : Exception
+{
+}
 
 [RequireComponent(typeof(AttackManager))]
 public abstract class BaseAttack : CharacterBehaviour
@@ -79,10 +84,11 @@ public abstract class BaseAttack : CharacterBehaviour
 
     public void Attack()
     {
-        if (CanAttack())
+        if (!CanAttack())
         {
-            StartCoroutine(AttackFlow());
+            throw new CannotAttackException();
         }
+        StartCoroutine(AttackFlow());
     }
 
     private IEnumerator AttackFlow()

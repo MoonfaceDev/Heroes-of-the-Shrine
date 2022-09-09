@@ -52,8 +52,12 @@ public class PlayerController : CharacterBehaviour
         {
             if (attack.Key && Input.GetButtonDown(attack.Value))
             {
-                attack.Key.Attack();
-                return;
+                try
+                {
+                    attack.Key.Attack();
+                    return;
+                }
+                catch (CannotAttackException) { }
             }
         }
         //change suits
