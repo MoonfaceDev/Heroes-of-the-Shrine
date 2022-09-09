@@ -30,7 +30,7 @@ public class SimpleAttack : BaseAttack
             && !(slideBehaviour && slideBehaviour.slide)
             && !(knockbackBehaviour && knockbackBehaviour.knockback)
             && !(stunBehaviour && stunBehaviour.stun)
-            && !(attackManager && attackManager.attacking && !(instant && !attackManager.IsUninterruptable()));
+            && !(attackManager && (attackManager.anticipating || attackManager.active) && !(instant && !attackManager.IsUninterruptable()));
     }
 
     protected virtual float CalculateDamage(HittableBehaviour hittableBehaviour)
