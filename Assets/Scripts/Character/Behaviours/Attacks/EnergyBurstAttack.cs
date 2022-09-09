@@ -20,6 +20,11 @@ public class EnergyBurstAttack : SimpleAttack
                 HitCallable(hittableBehaviour);
             }
         });
+        onAnticipate += () =>
+        {
+            WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
+            walkBehaviour.Stop();
+        };
     }
 
     protected override IEnumerator ActiveCoroutine()

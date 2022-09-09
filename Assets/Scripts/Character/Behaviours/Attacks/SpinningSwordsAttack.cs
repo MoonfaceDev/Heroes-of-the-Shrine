@@ -17,6 +17,11 @@ public class SpinningSwordsAttack : SimpleAttack
         base.Awake();
         hitDetector1 = CreateHitDetector(hitbox1);
         hitDetector2 = CreateHitDetector(hitbox2);
+        onAnticipate += () =>
+        {
+            WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
+            walkBehaviour.Stop();
+        };
         onStart += () =>
         {
             hitDetector1.Start();
