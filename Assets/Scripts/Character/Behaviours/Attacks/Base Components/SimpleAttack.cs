@@ -9,6 +9,7 @@ public enum HitType
 
 public class SimpleAttack : BaseAttack
 {
+    public string previousAttackName;
     public float anticipateDuration;
     public float activeDuration;
     public float recoveryDuration;
@@ -30,7 +31,14 @@ public class SimpleAttack : BaseAttack
             && !(slideBehaviour && slideBehaviour.slide)
             && !(knockbackBehaviour && knockbackBehaviour.knockback)
             && !(stunBehaviour && stunBehaviour.stun)
-            && !(attackManager && (attackManager.anticipating || attackManager.active) && !(instant && !attackManager.IsUninterruptable()));
+            && !(attackManager.anticipating || attackManager.active) && !(instant && !attackManager.IsUninterruptable())
+            && ComboCondition();
+    }
+
+    protected virtual bool ComboCondition()
+    {
+        AttackManager attackManager = GetComponent<AttackManager>();
+        return attackManager.lastAttack == previousAttackName;
     }
 
     protected virtual float CalculateDamage(HittableBehaviour hittableBehaviour)

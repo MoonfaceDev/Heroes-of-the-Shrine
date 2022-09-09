@@ -78,6 +78,8 @@ public class WalkBehaviour : CharacterBehaviour
     public void Stop()
     {
         walk = false;
+        movableObject.velocity.x = 0;
+        movableObject.velocity.z = 0;
         onStop?.Invoke();
     }
 }

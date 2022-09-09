@@ -5,6 +5,7 @@ using UnityEditor;
 [CustomEditor(typeof(SimpleAttack), true)]
 public class SimpleAttackEditor : Editor
 {
+    SerializedProperty previousAttackName;
     SerializedProperty anticipateDuration;
     SerializedProperty activeDuration;
     SerializedProperty recoveryDuration;
@@ -18,6 +19,7 @@ public class SimpleAttackEditor : Editor
 
     void OnEnable()
     {
+        previousAttackName = serializedObject.FindProperty("previousAttackName");
         anticipateDuration = serializedObject.FindProperty("anticipateDuration");
         activeDuration = serializedObject.FindProperty("activeDuration");
         recoveryDuration = serializedObject.FindProperty("recoveryDuration");
@@ -31,8 +33,14 @@ public class SimpleAttackEditor : Editor
     public override void OnInspectorGUI()
     {
         serializedObject.Update();
-        DrawPropertiesExcluding(serializedObject, "anticipateDuration", "activeDuration", "recoveryDuration", "damage", "hitType", "knockbackPower", "knockbackDirection", "stunTime");
+        DrawPropertiesExcluding(serializedObject, "previousAttackName", "anticipateDuration", "activeDuration", "recoveryDuration", "damage", "hitType", "knockbackPower", "knockbackDirection", "stunTime");
         SimpleAttack attack = (SimpleAttack)target;
+
+        if (!HasMethod(attack, "ComboCondition"))
+        {
+            EditorGUILayout.PropertyField(previousAttackName);
+            attack.previousAttackName = previousAttackName.stringValue;
+        }
 
         if (!HasMethod(attack, "AnticipateCoroutine"))
         {
