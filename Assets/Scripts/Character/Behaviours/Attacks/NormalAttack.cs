@@ -1,3 +1,5 @@
+using System;
+
 public class NormalAttack : SimpleAttack
 {
     public Hitbox hitbox;
@@ -25,6 +27,10 @@ public class NormalAttack : SimpleAttack
             hitDetector.Start();
         };
         onFinish += () =>
+        {
+            hitDetector.Stop();
+        };
+        onStop += () =>
         {
             hitDetector.Stop();
         };

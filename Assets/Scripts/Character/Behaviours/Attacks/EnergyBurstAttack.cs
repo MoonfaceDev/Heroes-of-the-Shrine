@@ -25,6 +25,10 @@ public class EnergyBurstAttack : SimpleAttack
             WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
             walkBehaviour.Stop(true);
         };
+        onStop += () =>
+        {
+            hitDetector.Stop();
+        };
     }
 
     protected override IEnumerator ActiveCoroutine()

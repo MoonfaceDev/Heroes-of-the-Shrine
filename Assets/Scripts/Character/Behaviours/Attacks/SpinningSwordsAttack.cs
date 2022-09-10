@@ -32,6 +32,11 @@ public class SpinningSwordsAttack : SimpleAttack
             hitDetector1.Stop();
             hitDetector2.Stop();
         };
+        onStop += () =>
+        {
+            hitDetector1.Stop();
+            hitDetector2.Stop();
+        };
     }
 
     private SingleHitDetector CreateHitDetector(Hitbox hitbox)

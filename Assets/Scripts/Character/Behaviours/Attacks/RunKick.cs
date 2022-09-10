@@ -25,6 +25,10 @@ public class RunKick : SimpleAttack
             WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
             walkBehaviour.Stop();
         };
+        onStop += () =>
+        {
+            hitDetector.Stop();
+        };
     }
 
     protected override bool CanAttack()
