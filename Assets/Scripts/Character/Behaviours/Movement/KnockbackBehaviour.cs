@@ -57,6 +57,7 @@ public class KnockbackBehaviour : CharacterBehaviour
     private WalkBehaviour walkBehaviour;
     private JumpBehaviour jumpBehaviour;
     private StunBehaviour stunBehaviour;
+    private AttackManager attackManager;
 
     public override void Awake()
     {
@@ -64,6 +65,7 @@ public class KnockbackBehaviour : CharacterBehaviour
         walkBehaviour = GetComponent<WalkBehaviour>();
         jumpBehaviour = GetComponent<JumpBehaviour>();
         stunBehaviour = GetComponent<StunBehaviour>();
+        attackManager = GetComponent<AttackManager>();
     }
 
     public bool CanReceive()
@@ -89,6 +91,11 @@ public class KnockbackBehaviour : CharacterBehaviour
         if (jumpBehaviour)
         {
             jumpBehaviour.Stop(waitForLand: false);
+        }
+
+        if (attackManager)
+        {
+            attackManager.Stop();
         }
 
         active = true;

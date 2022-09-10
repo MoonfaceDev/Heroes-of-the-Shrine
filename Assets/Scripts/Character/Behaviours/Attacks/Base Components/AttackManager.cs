@@ -69,7 +69,7 @@ public class AttackManager : CharacterBehaviour
         return AnyAttack((attack) => attack.active && !attack.interruptable);
     }
 
-    public void StopAttack()
+    public void Stop()
     {
         BaseAttack[] attackComponents = GetComponents<BaseAttack>();
         foreach (BaseAttack attack in attackComponents)
