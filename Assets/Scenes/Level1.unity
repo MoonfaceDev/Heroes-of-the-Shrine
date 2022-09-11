@@ -353,6 +353,53 @@ Transform:
   m_Father: {fileID: 871744032}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &693627087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 693627089}
+  - component: {fileID: 693627088}
+  m_Layer: 0
+  m_Name: UppercutHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &693627088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693627087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: -0.92, y: 0.18, z: 0}
+  size: {x: 2.65, y: 1.83, z: 0.5}
+  parentObject: {fileID: 871744039}
+--- !u!4 &693627089
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693627087}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.92, y: 0.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 871744032}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &871744029
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,6 +455,7 @@ Transform:
   - {fileID: 948508459}
   - {fileID: 657404070}
   - {fileID: 1804132859}
+  - {fileID: 693627089}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -664,7 +712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
-  finalAttack: 1
+  finalAttack: 0
   previousAttackName: 
   anticipateDuration: 0.05
   activeDuration: 0.15
@@ -689,7 +737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
-  finalAttack: 1
+  finalAttack: 0
   previousAttackName: NormalAttack
   anticipateDuration: 0.05
   activeDuration: 0.15
@@ -713,18 +761,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instant: 0
-  interruptable: 0
+  interruptable: 1
   finalAttack: 1
   previousAttackName: AltNormalAttack
-  anticipateDuration: 0
-  activeDuration: 0
-  recoveryDuration: 0
-  damage: 0
+  anticipateDuration: 0.05
+  activeDuration: 0.3
+  recoveryDuration: 0.3
+  damage: 30
   hitType: 0
-  knockbackPower: 0
-  knockbackDirection: 0
+  knockbackPower: 20
+  knockbackDirection: 75
   stunTime: 0
-  hitbox: {fileID: 0}
+  hitbox: {fileID: 693627088}
 --- !u!114 &871744051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -956,7 +1004,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 272411608, guid: 4a60083f8b557444089ece5f33752830, type: 3}
+  m_Sprite: {fileID: -1381433642, guid: 4a60083f8b557444089ece5f33752830, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
