@@ -21,11 +21,13 @@ public class StunBehaviour : CharacterBehaviour
     private bool _stun;
     private WalkBehaviour walkBehaviour;
     private JumpBehaviour jumpBehaviour;
+    private AttackManager attackManager;
 
     private void Start()
     {
         walkBehaviour = GetComponent<WalkBehaviour>();
         jumpBehaviour = GetComponent<JumpBehaviour>();
+        attackManager = GetComponent<AttackManager>();
     }
 
     public void Stun(float time)
@@ -37,6 +39,10 @@ public class StunBehaviour : CharacterBehaviour
         if (jumpBehaviour)
         {
             jumpBehaviour.Stop(waitForLand: false);
+        }
+        if (attackManager)
+        {
+            attackManager.Stop();
         }
         stun = true;
         onStart?.Invoke();

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class AttackManager : CharacterBehaviour
@@ -30,69 +31,53 @@ public class AttackManager : CharacterBehaviour
         }, single: false);
     }
 
-    public bool anticipating
-    {
-        get
-        {
-            BaseAttack[] attackComponents = GetComponents<BaseAttack>();
-            foreach (BaseAttack attack in attackComponents)
-            {
-                if (attack.anticipating)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-    }
-
-    public bool active
-    {
-        get
-        {
-            BaseAttack[] attackComponents = GetComponents<BaseAttack>();
-            foreach (BaseAttack attack in attackComponents)
-            {
-                if (attack.active)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-    }
-
-    public bool recovering
-    {
-        get
-        {
-            BaseAttack[] attackComponents = GetComponents<BaseAttack>();
-            foreach (BaseAttack attack in attackComponents)
-            {
-                if (attack.recovering)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-    }
-
-    public bool attacking
-    {
-        get => anticipating || active || recovering;
-    }
-
-    public bool IsUninterruptable()
+    private bool AnyAttack(Func<BaseAttack, bool> callback)
     {
         BaseAttack[] attackComponents = GetComponents<BaseAttack>();
         foreach (BaseAttack attack in attackComponents)
         {
-            if (attack.active && !attack.interruptable)
+            if (callback(attack))
             {
                 return true;
             }
         }
         return false;
+    }
+
+    public bool anticipating
+    {
+        get => AnyAttack((attack) => attack.anticipating);
+    }
+
+    public bool active
+    {
+        get => AnyAttack((attack) => attack.active);
+    }
+
+    public bool recovering
+    {
+        get => AnyAttack((attack) => attack.recovering);
+    }
+
+    public bool attacking
+    {
+        get => AnyAttack((attack) => attack.attacking);
+    }
+
+    public bool IsUninterruptable()
+    {
+        return AnyAttack((attack) => attack.active && !attack.interruptable);
+    }
+
+    public void Stop()
+    {
+        BaseAttack[] attackComponents = GetComponents<BaseAttack>();
+        foreach (BaseAttack attack in attackComponents)
+        {
+            if (attack.attacking)
+            {
+                attack.Stop();
+            }
+        }
     }
 }

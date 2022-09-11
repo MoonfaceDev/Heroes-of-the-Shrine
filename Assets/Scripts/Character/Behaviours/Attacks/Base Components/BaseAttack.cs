@@ -17,6 +17,7 @@ public abstract class BaseAttack : CharacterBehaviour
     public delegate void OnStart();
     public delegate void OnFinish();
     public delegate void OnRecover();
+    public delegate void OnStop(); // manual stop
 
     public string attackName
     {
@@ -49,11 +50,16 @@ public abstract class BaseAttack : CharacterBehaviour
             animator.SetBool(attackName + "-recovering", _recovering);
         }
     }
+    public bool attacking
+    {
+        get => anticipating || active || recovering;
+    }
 
     public event OnAnticipate onAnticipate;
     public event OnStart onStart;
     public event OnFinish onFinish;
     public event OnRecover onRecover;
+    public event OnStop onStop;
 
     protected void InvokeOnAnticipate()
     {
@@ -75,9 +81,16 @@ public abstract class BaseAttack : CharacterBehaviour
         onRecover?.Invoke();
     }
 
+    protected void InvokeOnStop()
+    {
+        onStop?.Invoke();
+    }
+
     private bool _anticipating;
     private bool _active;
     private bool _recovering;
+
+    private Coroutine attackFlowCoroutine;
 
     protected abstract IEnumerator AnticipateCoroutine();
     protected abstract IEnumerator ActiveCoroutine();
@@ -92,7 +105,16 @@ public abstract class BaseAttack : CharacterBehaviour
         {
             throw new CannotAttackException();
         }
-        StartCoroutine(AttackFlow());
+        attackFlowCoroutine = StartCoroutine(AttackFlow());
+    }
+
+    public void Stop()
+    {
+        InvokeOnStop();
+        anticipating = false;
+        active = false;
+        recovering = false;
+        StopCoroutine(attackFlowCoroutine);
     }
 
     private IEnumerator AttackFlow()
