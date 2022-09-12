@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(MovableObject))]
@@ -5,12 +6,9 @@ public class WalkBehaviour : CharacterBehaviour
 {
     public float defaultSpeed;
 
-    public delegate void OnStart();
-    public delegate void OnStop();
-
     [HideInInspector] public float speed;
-    public event OnStart onStart;
-    public event OnStop onStop;
+    public event Action onStart;
+    public event Action onStop;
     public bool walk
     {
         get => _walk;

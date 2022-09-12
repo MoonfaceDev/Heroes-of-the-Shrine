@@ -22,18 +22,10 @@ public class NormalAttack : SimpleAttack
             WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
             walkBehaviour.Stop(true);
         };
-        onStart += () =>
-        {
-            hitDetector.Start();
-        };
-        onFinish += () =>
-        {
-            hitDetector.Stop();
-        };
-        onStop += () =>
-        {
-            hitDetector.Stop();
-        };
+        onStart += () => hitDetector.Start();
+        void StopHitDetector() => hitDetector.Stop();
+        onFinish += StopHitDetector;
+        onStop += StopHitDetector;
     }
 
     protected override bool CanAttack()

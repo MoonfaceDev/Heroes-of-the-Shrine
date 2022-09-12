@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class SlideBehaviour : CharacterBehaviour
@@ -5,11 +6,8 @@ public class SlideBehaviour : CharacterBehaviour
     public float slideSpeedMultiplier;
     public float slideStopAcceleration;
 
-    public delegate void OnStart();
-    public delegate void OnFinish();
-
-    public event OnStart onStart;
-    public event OnFinish onFinish;
+    public event Action onStart;
+    public event Action onFinish;
     public bool slide
     {
         get => _slide;

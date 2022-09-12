@@ -1,4 +1,4 @@
-public class FlagEffectCondition : IEffectCondition
+public class FlagEffectCondition : BaseEffectCondition
 {
     public bool flag
     {
@@ -8,26 +8,24 @@ public class FlagEffectCondition : IEffectCondition
             _flag = value;
             if (_flag)
             {
-                onSet?.Invoke();
+                InvokeOnSet();
             }
         }
     }
 
-    public event IEffectCondition.OnSet onSet;
-
     private bool _flag;
 
-    public float GetProgress()
+    public override float GetProgress()
     {
         return flag ? 1 : 0;
     }
 
-    public bool IsSet()
+    public override bool IsSet()
     {
         return flag;
     }
 
-    public void Set()
+    public override void Set()
     {
         flag = true;
     }

@@ -1,16 +1,14 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate bool EventCondition();
-public delegate void EventAction();
-
 public class EventListener
 {
-    public readonly EventCondition Validate;
-    public readonly EventAction Action;
+    public readonly Func<bool> Validate;
+    public readonly Action Action;
     public readonly bool single;
 
-    public EventListener(EventCondition eventCondition, EventAction eventAction, bool single)
+    public EventListener(Func<bool> eventCondition, Action eventAction, bool single)
     {
         Validate = eventCondition;
         Action = eventAction;
@@ -23,7 +21,7 @@ public class EventManager : MonoBehaviour
 
     private readonly HashSet<EventListener> eventListeners = new();
 
-    public EventListener Attach(EventCondition condition, EventAction action, bool single = true)
+    public EventListener Attach(Func<bool> condition, Action action, bool single = true)
     {
         EventListener eventListener = new(condition, action, single);
         eventListeners.Add(eventListener);
@@ -33,6 +31,23 @@ public class EventManager : MonoBehaviour
     public void Detach(EventListener callbackEvent)
     {
         eventListeners.Remove(callbackEvent);
+    }
+
+    public EventListener StartTimeout(Action action, float timeout)
+    {
+        float startTime = Time.time;
+        return Attach(() => Time.time - startTime >= timeout, action);
+    }
+
+    public EventListener StartInterval(Action action, float interval)
+    {
+        float startTime = 0;
+        void StartOneInterval()
+        {
+            startTime = Time.time;
+        }
+        StartOneInterval();
+        return Attach(() => Time.time - startTime >= interval, action + StartOneInterval, false);
     }
 
     // Update is called once per frame

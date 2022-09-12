@@ -1,13 +1,11 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class StunBehaviour : CharacterBehaviour
 {
-    public delegate void OnStart();
-    public delegate void OnStop();
-
-    public event OnStart onStart;
-    public event OnStop onStop;
+    public event Action onStart;
+    public event Action onStop;
     public bool stun
     {
         get => _stun;

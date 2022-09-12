@@ -8,7 +8,7 @@ public class PeriodicAbsoluteHitDetector : IHitDetector
     private readonly HitCallable hitCallable;
     private readonly float interval;
     private readonly bool startImmediately;
-    private Coroutine detectPeriodicallyCoroutine;
+    private EventListener detectPeriodicallyEvent;
 
     public PeriodicAbsoluteHitDetector(EventManager eventManager, Hitbox hitbox, HitCallable hitCallable, float interval, bool startImmediately = true)
     {
@@ -21,7 +21,11 @@ public class PeriodicAbsoluteHitDetector : IHitDetector
 
     public void Start()
     {
-        detectPeriodicallyCoroutine = eventManager.StartCoroutine(DetectPeriodically());
+        if (startImmediately)
+        {
+            DetectHits();
+        }
+        detectPeriodicallyEvent = eventManager.StartInterval(DetectHits, interval);
     }
 
     private void DetectHits()
@@ -32,21 +36,8 @@ public class PeriodicAbsoluteHitDetector : IHitDetector
         }
     }
 
-    private IEnumerator DetectPeriodically()
-    {
-        if (startImmediately)
-        {
-            DetectHits();
-        }
-        while (true)
-        {
-            yield return new WaitForSeconds(interval);
-            DetectHits();
-        }
-    }
-
     public void Stop()
     {
-        eventManager.StopCoroutine(detectPeriodicallyCoroutine);
+        eventManager.Detach(detectPeriodicallyEvent);
     }
 }

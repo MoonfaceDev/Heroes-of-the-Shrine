@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -13,11 +14,8 @@ public class FireEffect : CharacterBehaviour
         }
     }
 
-    public delegate void OnApply();
-    public delegate void OnCancel();
-
-    public event OnApply onApply;
-    public event OnCancel onCancel;
+    public event Action onApply;
+    public event Action onCancel;
 
     private bool _fire;
     private Coroutine damageCoroutine;

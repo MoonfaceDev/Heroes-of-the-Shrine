@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -8,19 +9,15 @@ public class JumpBehaviour : CharacterBehaviour
     public float jumpRecoverTime;
     public int maxJumps;
 
-    public delegate void OnAnticipate();
-    public delegate void OnJump();
     public delegate void OnJumpsChanged(int jumps);
-    public delegate void OnLand();
-    public delegate void OnRecover();
-    public delegate void OnStop();
 
-    public event OnAnticipate onAnticipate;
-    public event OnJump onJump;
+    public event Action onAnticipate;
+    public event Action onJump;
     public event OnJumpsChanged onJumpsChanged;
-    public event OnLand onLand;
-    public event OnRecover onRecover;
-    public event OnStop onStop;
+    public event Action onLand;
+    public event Action onRecover;
+    public event Action onStop;
+
     public bool active
     {
         get => _active;

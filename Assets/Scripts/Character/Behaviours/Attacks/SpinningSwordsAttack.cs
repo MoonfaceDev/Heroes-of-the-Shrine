@@ -14,29 +14,31 @@ public class SpinningSwordsAttack : SimpleAttack
     public override void Awake()
     {
         base.Awake();
+
         hitDetector1 = CreateHitDetector(hitbox1);
         hitDetector2 = CreateHitDetector(hitbox2);
+
         onAnticipate += () =>
         {
             WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
             walkBehaviour.Stop(true);
         };
+
         onStart += () =>
         {
             hitDetector1.Start();
             StartCoroutine(DisableHitDetector1());
             StartCoroutine(EnableHitDetector2());
         };
-        onFinish += () =>
-        {
+
+        void StopDetectors() {
             hitDetector1.Stop();
             hitDetector2.Stop();
-        };
-        onStop += () =>
-        {
-            hitDetector1.Stop();
-            hitDetector2.Stop();
-        };
+        }
+
+        onFinish += StopDetectors;
+
+        onStop += StopDetectors;
     }
 
     private SingleHitDetector CreateHitDetector(Hitbox hitbox)

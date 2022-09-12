@@ -13,12 +13,6 @@ public abstract class BaseAttack : CharacterBehaviour
     public bool interruptable = false;
     public bool finalAttack = true; // true if no combo can be played after it
 
-    public delegate void OnAnticipate();
-    public delegate void OnStart();
-    public delegate void OnFinish();
-    public delegate void OnRecover();
-    public delegate void OnStop(); // manual stop
-
     public string attackName
     {
         get => GetType().Name;
@@ -55,11 +49,11 @@ public abstract class BaseAttack : CharacterBehaviour
         get => anticipating || active || recovering;
     }
 
-    public event OnAnticipate onAnticipate;
-    public event OnStart onStart;
-    public event OnFinish onFinish;
-    public event OnRecover onRecover;
-    public event OnStop onStop;
+    public event Action onAnticipate;
+    public event Action onStart;
+    public event Action onFinish;
+    public event Action onRecover;
+    public event Action onStop; // manual stop
 
     protected void InvokeOnAnticipate()
     {

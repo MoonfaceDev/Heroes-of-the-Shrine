@@ -1,41 +1,39 @@
 using System;
-using System.Threading.Tasks;
+using UnityEngine;
 
-public class TimerEffectCondition : IEffectCondition
+public class TimerEffectCondition : BaseEffectCondition
 {
-    public TimeSpan duration;
+    public float duration;
 
-    public event IEffectCondition.OnSet onSet;
-
-    private DateTime startTime;
+    private float startTime;
     private bool manuallySet;
 
-    public TimerEffectCondition(TimeSpan duration)
+    public TimerEffectCondition(EventManager eventManager, float duration)
     {
         this.duration = duration;
-        startTime = DateTime.Now;
-        Task.Delay(duration).ContinueWith(task =>
+        startTime = Time.time;
+        eventManager.StartTimeout(() =>
         {
             if (!manuallySet)
             {
-                onSet?.Invoke();
+                Set();
             }
-        });
+        }, duration);
     }
 
-    public float GetProgress()
+    public override float GetProgress()
     {
-        return manuallySet ? 1 : (float)((DateTime.Now - startTime) / duration);
+        return manuallySet ? 1 : (float)((Time.time - startTime) / duration);
     }
 
-    public bool IsSet()
+    public override bool IsSet()
     {
-        return manuallySet || DateTime.Now - startTime < duration;
+        return manuallySet || Time.time - startTime < duration;
     }
 
-    public void Set()
+    public override void Set()
     {
         manuallySet = true;
-        onSet?.Invoke();
+        InvokeOnSet();
     }
 }
