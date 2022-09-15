@@ -10,6 +10,7 @@ public enum HitType
 public class SimpleAttack : BaseAttack
 {
     public string previousAttackName;
+    public bool midair = false;
     public float anticipateDuration;
     public float activeDuration;
     public float recoveryDuration;
@@ -27,7 +28,7 @@ public class SimpleAttack : BaseAttack
         StunBehaviour stunBehaviour = GetComponent<StunBehaviour>();
         AttackManager attackManager = GetComponent<AttackManager>();
 
-        return !(jumpBehaviour && jumpBehaviour.jump)
+        return midair == !(jumpBehaviour && jumpBehaviour.jump)
             && !(slideBehaviour && slideBehaviour.slide)
             && !(knockbackBehaviour && knockbackBehaviour.knockback)
             && !(stunBehaviour && stunBehaviour.stun)
