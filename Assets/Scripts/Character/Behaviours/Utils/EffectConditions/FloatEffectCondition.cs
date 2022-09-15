@@ -1,4 +1,6 @@
-public class FloatEffectCondition : IEffectCondition
+using System;
+
+public class FloatEffectCondition : BaseEffectCondition
 {
     public float max
     {
@@ -13,12 +15,10 @@ public class FloatEffectCondition : IEffectCondition
             _value = value;
             if (_value >= max)
             {
-                onSet?.Invoke();
+                InvokeOnSet();
             }
         }
     }
-
-    public event IEffectCondition.OnSet onSet;
 
     private float _max;
     private float _value;
@@ -29,17 +29,17 @@ public class FloatEffectCondition : IEffectCondition
         value = 0;
     }
 
-    public float GetProgress()
+    public override float GetProgress()
     {
         return value / max;
     }
 
-    public bool IsSet()
+    public override bool IsSet()
     {
         return value >= max;
     }
 
-    public void Set()
+    public override void Set()
     {
         value = max;
     }

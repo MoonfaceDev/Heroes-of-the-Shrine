@@ -7,12 +7,13 @@ public class EnergyBurstAttack : SimpleAttack
     public float burstVelocity;
     public float burstAcceleration;
 
-    private SingleHitDetector hitDetector;
+    private bool isMoving = false;
 
     public override void Awake()
     {
         base.Awake();
-        hitDetector = new(eventManager, hitbox, (hit) =>
+
+        SingleHitDetector hitDetector = new(eventManager, hitbox, (hit) =>
         {
             HittableBehaviour hittableBehaviour = hit.GetComponent<HittableBehaviour>();
             if (hittableBehaviour)
@@ -20,27 +21,39 @@ public class EnergyBurstAttack : SimpleAttack
                 HitCallable(hittableBehaviour);
             }
         });
+
         onAnticipate += () =>
         {
             WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
-            walkBehaviour.Stop(true);
+            walkBehaviour.Stop();
         };
-        onStop += () =>
+
+        onStart += () =>
         {
-            hitDetector.Stop();
+            isMoving = true;
+            float direction = Mathf.Sign(movableObject.velocity.x);
+            movableObject.velocity.x = direction * burstVelocity;
+            movableObject.velocity.z = 0;
+            movableObject.acceleration.x = -direction * burstAcceleration;
+            eventManager.Attach(() => Mathf.Sign(movableObject.velocity.x) != direction, () => isMoving = false);
+            hitDetector.Start();
         };
+
+        void FinishAction()
+        {
+            movableObject.velocity.x = 0;
+            movableObject.acceleration.x = 0;
+            hitDetector.Stop();
+        }
+
+        onFinish += FinishAction;
+
+        onStop += FinishAction;
     }
 
     protected override IEnumerator ActiveCoroutine()
     {
-        bool stopped = false;
-        float direction = Mathf.Sign(movableObject.velocity.x);
-        movableObject.velocity.x = direction * burstVelocity;
-        movableObject.acceleration.x = -direction * burstAcceleration;
-        eventManager.Attach(() => Mathf.Sign(movableObject.velocity.x) != direction, () => stopped = true);
-        hitDetector.Start();
-        yield return new WaitUntil(() => stopped);
-        hitDetector.Stop();
+        yield return new WaitWhile(() => isMoving);
     }
 
     protected override float CalculateDamage(HittableBehaviour hittableBehaviour)

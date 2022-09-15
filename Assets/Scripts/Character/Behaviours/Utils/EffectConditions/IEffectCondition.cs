@@ -1,8 +1,17 @@
-public interface IEffectCondition
+using System;
+
+public abstract class BaseEffectCondition
 {
-    public delegate void OnSet();
-    public event OnSet onSet;
-    float GetProgress();
-    bool IsSet();
-    void Set();
+    public event Action onSet;
+
+    public abstract float GetProgress();
+
+    public abstract bool IsSet();
+    
+    public abstract void Set();
+
+    protected void InvokeOnSet()
+    {
+        onSet?.Invoke();
+    }
 }

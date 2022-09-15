@@ -7,12 +7,13 @@ public class RunKick : SimpleAttack
     public float velocity;
     public float acceleration;
 
-    private SingleHitDetector hitDetector;
+    private bool isMoving = false;
 
     public override void Awake()
     {
         base.Awake();
-        hitDetector = new(eventManager, hitbox, (hit) =>
+
+        SingleHitDetector hitDetector = new(eventManager, hitbox, (hit) =>
         {
             HittableBehaviour hittableBehaviour = hit.GetComponent<HittableBehaviour>();
             if (hittableBehaviour)
@@ -20,15 +21,34 @@ public class RunKick : SimpleAttack
                 HitCallable(hittableBehaviour);
             }
         });
+
         onAnticipate += () =>
         {
             WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
             walkBehaviour.Stop();
         };
-        onStop += () =>
+
+        onStart += () =>
         {
-            hitDetector.Stop();
+            isMoving = true;
+            float direction = Mathf.Sign(movableObject.velocity.x);
+            movableObject.velocity.x = direction * velocity;
+            movableObject.velocity.z = 0;
+            movableObject.acceleration.x = -direction * acceleration;
+            eventManager.Attach(() => Mathf.Sign(movableObject.velocity.x) != direction, () => isMoving = false);
+            hitDetector.Start();
         };
+
+        void FinishAction()
+        {
+            movableObject.velocity.x = 0;
+            movableObject.acceleration.x = 0;
+            hitDetector.Stop();
+        }
+
+        onFinish += FinishAction;
+
+        onStop += FinishAction;
     }
 
     protected override bool CanAttack()
@@ -39,16 +59,6 @@ public class RunKick : SimpleAttack
 
     protected override IEnumerator ActiveCoroutine()
     {
-        bool stopped = false;
-        float direction = Mathf.Sign(movableObject.velocity.x);
-        movableObject.velocity.x = direction * velocity;
-        movableObject.velocity.z = 0;
-        movableObject.acceleration.x = -direction * acceleration;
-        eventManager.Attach(() => Mathf.Sign(movableObject.velocity.x) != direction, () => stopped = true);
-        hitDetector.Start();
-        yield return new WaitUntil(() => stopped);
-        movableObject.velocity.x = 0;
-        movableObject.acceleration.x = 0;
-        hitDetector.Stop();
+        yield return new WaitWhile(() => isMoving);
     }
 }

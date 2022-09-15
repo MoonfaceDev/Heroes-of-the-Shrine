@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -8,15 +9,12 @@ public class KnockbackBehaviour : CharacterBehaviour
     public bool resistant;
     public float knockbackRecoverTime;
 
-    public delegate void OnStart();
     public delegate void OnBounce(int count, float power, float angleDegrees);
-    public delegate void OnFinish();
-    public delegate void OnRecover();
 
-    public event OnStart onStart;
+    public event Action onStart;
     public event OnBounce onBounce;
-    public event OnFinish onFinish;
-    public event OnRecover onRecover;
+    public event Action onFinish;
+    public event Action onRecover;
     public bool active
     {
         get => _active;
