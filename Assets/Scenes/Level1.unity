@@ -645,6 +645,7 @@ MonoBehaviour:
   interruptable: 0
   finalAttack: 1
   previousAttackName: 
+  midair: 0
   anticipateDuration: 0
   activeDuration: 0
   recoveryDuration: 0
@@ -687,6 +688,7 @@ MonoBehaviour:
   interruptable: 0
   finalAttack: 1
   previousAttackName: 
+  midair: 0
   anticipateDuration: 0.1
   activeDuration: 0
   recoveryDuration: 0
@@ -714,6 +716,7 @@ MonoBehaviour:
   interruptable: 1
   finalAttack: 0
   previousAttackName: 
+  midair: 0
   anticipateDuration: 0.05
   activeDuration: 0.15
   recoveryDuration: 0.3
@@ -739,6 +742,7 @@ MonoBehaviour:
   interruptable: 1
   finalAttack: 0
   previousAttackName: NormalAttack
+  midair: 0
   anticipateDuration: 0.05
   activeDuration: 0.15
   recoveryDuration: 0.3
@@ -764,6 +768,7 @@ MonoBehaviour:
   interruptable: 1
   finalAttack: 1
   previousAttackName: AltNormalAttack
+  midair: 0
   anticipateDuration: 0.05
   activeDuration: 0.3
   recoveryDuration: 0.3
@@ -786,9 +791,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instant: 0
-  interruptable: 0
+  interruptable: 1
   finalAttack: 1
   previousAttackName: AltNormalAttack
+  midair: 0
   anticipateDuration: 0
   activeDuration: 0
   recoveryDuration: 0
@@ -817,6 +823,7 @@ MonoBehaviour:
   interruptable: 0
   finalAttack: 1
   previousAttackName: SpinningSwordsAttack
+  midair: 0
   anticipateDuration: 0
   activeDuration: 0
   recoveryDuration: 0
@@ -842,6 +849,7 @@ MonoBehaviour:
   interruptable: 0
   finalAttack: 1
   previousAttackName: NormalAttack
+  midair: 0
   anticipateDuration: 0
   activeDuration: 0
   recoveryDuration: 0
@@ -1004,7 +1012,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1381433642, guid: 4a60083f8b557444089ece5f33752830, type: 3}
+  m_Sprite: {fileID: 2128891561, guid: b2feff58c89c6654e93606cfc976c347, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
