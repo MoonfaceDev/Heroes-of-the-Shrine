@@ -306,6 +306,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &521153111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 521153112}
+  - component: {fileID: 521153113}
+  m_Layer: 0
+  m_Name: SpiningSwordAttackHitbox (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &521153112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521153111}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.87, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 871744032}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &521153113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521153111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: -1.87, y: 0, z: 0}
+  size: {x: 3.9, y: 1.68, z: 0.5}
+  parentObject: {fileID: 871744039}
 --- !u!1 &657404068
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,6 +503,8 @@ Transform:
   - {fileID: 657404070}
   - {fileID: 1804132859}
   - {fileID: 693627089}
+  - {fileID: 521153112}
+  - {fileID: 1207580633}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -735,7 +784,7 @@ MonoBehaviour:
   hitType: 1
   knockbackPower: 0
   knockbackDirection: 0
-  stunTime: 0.2
+  stunTime: 0.3
   hitbox: {fileID: 657404069}
 --- !u!114 &871744049
 MonoBehaviour:
@@ -761,7 +810,7 @@ MonoBehaviour:
   hitType: 1
   knockbackPower: 0
   knockbackDirection: 0
-  stunTime: 0.2
+  stunTime: 0.3
   hitbox: {fileID: 1804132860}
 --- !u!114 &871744050
 MonoBehaviour:
@@ -806,18 +855,18 @@ MonoBehaviour:
   finalAttack: 1
   previousAttackName: AltNormalAttack
   midair: 0
-  anticipateDuration: 0
-  activeDuration: 0
-  recoveryDuration: 0
+  anticipateDuration: 0.2
+  activeDuration: 0.3
+  recoveryDuration: 0.3
   damage: 0
-  hitType: 0
+  hitType: 1
   knockbackPower: 0
   knockbackDirection: 0
-  stunTime: 0
-  hitbox1: {fileID: 0}
-  hitbox2: {fileID: 0}
-  hitbox1FinishTime: 0
-  hitbox2StartTime: 0
+  stunTime: 0.3
+  hitbox1: {fileID: 521153113}
+  hitbox2: {fileID: 1207580634}
+  hitbox1FinishTime: 0.35
+  hitbox2StartTime: 0.4
 --- !u!114 &871744052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -964,6 +1013,53 @@ Transform:
   m_Father: {fileID: 871744032}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1207580632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1207580633}
+  - component: {fileID: 1207580634}
+  m_Layer: 0
+  m_Name: SpiningSwordAttackHitbox (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1207580633
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207580632}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.18, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 871744032}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1207580634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207580632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: 0.18, y: 0, z: 0}
+  size: {x: 1.66, y: 1.56, z: 0.5}
+  parentObject: {fileID: 871744039}
 --- !u!1 &1482702257
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,7 +1119,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 2128891561, guid: b2feff58c89c6654e93606cfc976c347, type: 3}
+  m_Sprite: {fileID: 1222185465, guid: b2feff58c89c6654e93606cfc976c347, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
