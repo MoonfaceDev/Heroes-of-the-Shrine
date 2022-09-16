@@ -575,6 +575,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bed8f32acb6e664ab18e38ef59e7abf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attacks:
+  - attack: {fileID: 871744048}
+    button: 2
+  - attack: {fileID: 871744049}
+    button: 2
+  - attack: {fileID: 871744050}
+    button: 2
+  - attack: {fileID: 871744047}
+    button: 2
+  - attack: {fileID: 871744051}
+    button: 3
   animatorControllers: []
   activeSuitIndex: 0
 --- !u!114 &871744041
