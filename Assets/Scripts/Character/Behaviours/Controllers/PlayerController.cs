@@ -62,6 +62,7 @@ public class PlayerController : CharacterBehaviour
                 try
                 {
                     property.attack.Attack();
+                    Debug.Log("Started attack " + property.attack.attackName);
                     return;
                 }
                 catch (CannotAttackException) { }
