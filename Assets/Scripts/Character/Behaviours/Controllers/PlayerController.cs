@@ -1,8 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
+
+[Serializable]
+public class AttackProperty
+{
+    public BaseAttack attack;
+    public string button;
+}
 
 public class PlayerController : CharacterBehaviour
 {
+    public AttackProperty[] attacks;
     public RuntimeAnimatorController[] animatorControllers;
 
     [HideInInspector]
@@ -11,7 +19,6 @@ public class PlayerController : CharacterBehaviour
     private WalkBehaviour walkBehaviour;
     private JumpBehaviour jumpBehaviour;
     private SlideBehaviour slideBehaviour;
-    private Dictionary<BaseAttack, string> attacks;
 
     public override void Awake()
     {
@@ -19,14 +26,6 @@ public class PlayerController : CharacterBehaviour
         walkBehaviour = GetComponent<WalkBehaviour>();
         jumpBehaviour = GetComponent<JumpBehaviour>();
         slideBehaviour = GetComponent<SlideBehaviour>();
-        attacks = new();
-        attacks.Add(GetComponent<RunKick>(), "Attack");
-        attacks.Add(GetComponent<NormalAttack>(), "Attack");
-        attacks.Add(GetComponent<AltNormalAttack>(), "Attack");
-        attacks.Add(GetComponent<Uppercut>(), "Attack");
-        attacks.Add(GetComponent<SpinningSwordsAttack>(), "Defense");
-        attacks.Add(GetComponent<SmashAttack>(), "Attack");
-        attacks.Add(GetComponent<StabAttack>(), "Defense");
     }
 
     public void Update()
@@ -48,13 +47,13 @@ public class PlayerController : CharacterBehaviour
             slideBehaviour.Slide();
         }
         //attacks
-        foreach (KeyValuePair<BaseAttack, string> attack in attacks)
+        foreach (AttackProperty property in attacks)
         {
-            if (attack.Key && Input.GetButtonDown(attack.Value))
+            if (property.attack && Input.GetButtonDown(property.button))
             {
                 try
                 {
-                    attack.Key.Attack();
+                    property.attack.Attack();
                     return;
                 }
                 catch (CannotAttackException) { }
