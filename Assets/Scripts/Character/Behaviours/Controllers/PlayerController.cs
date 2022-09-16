@@ -1,11 +1,19 @@
 ﻿using System;
 using UnityEngine;
 
+public enum Button
+{
+    Jump,
+    Escape,
+    Attack,
+    Defense
+}
+
 [Serializable]
 public class AttackProperty
 {
     public BaseAttack attack;
-    public string button;
+    public Button button;
 }
 
 public class PlayerController : CharacterBehaviour
@@ -37,19 +45,19 @@ public class PlayerController : CharacterBehaviour
             walkBehaviour.Walk(horizontal, vertical);
         }
         //jumping
-        if (jumpBehaviour && Input.GetButtonDown("Jump")) //pressed jump
+        if (jumpBehaviour && Input.GetButtonDown(Button.Jump.ToString())) //pressed jump
         {
             jumpBehaviour.Jump();
         }
         //sliding
-        if (slideBehaviour && Input.GetButtonDown("Escape")) //pressed slide
+        if (slideBehaviour && Input.GetButtonDown(Button.Escape.ToString())) //pressed slide
         {
             slideBehaviour.Slide();
         }
         //attacks
         foreach (AttackProperty property in attacks)
         {
-            if (property.attack && Input.GetButtonDown(property.button))
+            if (property.attack && Input.GetButtonDown(property.button.ToString()))
             {
                 try
                 {
