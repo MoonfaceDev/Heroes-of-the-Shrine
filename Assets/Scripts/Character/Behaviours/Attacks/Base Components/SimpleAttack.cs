@@ -28,7 +28,7 @@ public class SimpleAttack : BaseAttack
         StunBehaviour stunBehaviour = GetComponent<StunBehaviour>();
         AttackManager attackManager = GetComponent<AttackManager>();
 
-        return midair == !(jumpBehaviour && jumpBehaviour.jump)
+        return midair == (jumpBehaviour && jumpBehaviour.jump)
             && !(slideBehaviour && slideBehaviour.slide)
             && !(knockbackBehaviour && knockbackBehaviour.knockback)
             && !(stunBehaviour && stunBehaviour.stun)
