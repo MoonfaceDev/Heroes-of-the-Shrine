@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum HitType
@@ -9,7 +10,7 @@ public enum HitType
 
 public class SimpleAttack : BaseAttack
 {
-    public string previousAttackName;
+    public List<string> previousAttacks;
     public bool midair = false;
     public float anticipateDuration;
     public float activeDuration;
@@ -20,7 +21,7 @@ public class SimpleAttack : BaseAttack
     public float knockbackDirection = 0;
     public float stunTime = 0;
 
-    protected override bool CanAttack()
+    public override bool CanAttack()
     {
         JumpBehaviour jumpBehaviour = GetComponent<JumpBehaviour>();
         SlideBehaviour slideBehaviour = GetComponent<SlideBehaviour>();
@@ -39,7 +40,7 @@ public class SimpleAttack : BaseAttack
     protected virtual bool ComboCondition()
     {
         AttackManager attackManager = GetComponent<AttackManager>();
-        return attackManager.lastAttack == previousAttackName;
+        return previousAttacks.Contains(attackManager.lastAttack) || previousAttacks.Contains("*");
     }
 
     protected virtual float CalculateDamage(HittableBehaviour hittableBehaviour)

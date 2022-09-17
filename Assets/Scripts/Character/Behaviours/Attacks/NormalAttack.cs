@@ -27,10 +27,4 @@ public class NormalAttack : SimpleAttack
         onFinish += StopHitDetector;
         onStop += StopHitDetector;
     }
-
-    protected override bool CanAttack()
-    {
-        RunBehaviour runBehaviour = GetComponent<RunBehaviour>();
-        return base.CanAttack() && !(runBehaviour && runBehaviour.run);
-    }
 }

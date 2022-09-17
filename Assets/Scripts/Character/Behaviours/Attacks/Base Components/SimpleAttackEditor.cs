@@ -1,11 +1,12 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using UnityEditor;
 
 [CustomEditor(typeof(SimpleAttack), true)]
 public class SimpleAttackEditor : Editor
 {
-    SerializedProperty previousAttackName;
+    SerializedProperty previousAttacks;
     SerializedProperty anticipateDuration;
     SerializedProperty activeDuration;
     SerializedProperty recoveryDuration;
@@ -19,7 +20,7 @@ public class SimpleAttackEditor : Editor
 
     void OnEnable()
     {
-        previousAttackName = serializedObject.FindProperty("previousAttackName");
+        previousAttacks = serializedObject.FindProperty("previousAttacks");
         anticipateDuration = serializedObject.FindProperty("anticipateDuration");
         activeDuration = serializedObject.FindProperty("activeDuration");
         recoveryDuration = serializedObject.FindProperty("recoveryDuration");
@@ -33,13 +34,18 @@ public class SimpleAttackEditor : Editor
     public override void OnInspectorGUI()
     {
         serializedObject.Update();
-        DrawPropertiesExcluding(serializedObject, "previousAttackName", "anticipateDuration", "activeDuration", "recoveryDuration", "damage", "hitType", "knockbackPower", "knockbackDirection", "stunTime");
+        DrawPropertiesExcluding(serializedObject, "previousAttacks", "anticipateDuration", "activeDuration", "recoveryDuration", "damage", "hitType", "knockbackPower", "knockbackDirection", "stunTime");
         SimpleAttack attack = (SimpleAttack)target;
 
         if (!HasMethod(attack, "ComboCondition"))
         {
-            EditorGUILayout.PropertyField(previousAttackName);
-            attack.previousAttackName = previousAttackName.stringValue;
+            EditorGUILayout.PropertyField(previousAttacks);
+            List<string> previousAttacksValue = new();
+            for (int i = 0; i < previousAttacks.arraySize; i++)
+            {
+                previousAttacksValue.Add(previousAttacks.GetArrayElementAtIndex(i).stringValue);
+            }
+            attack.previousAttacks = previousAttacksValue;
         }
 
         if (!HasMethod(attack, "AnticipateCoroutine"))

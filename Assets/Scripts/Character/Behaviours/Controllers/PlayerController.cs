@@ -14,6 +14,7 @@ public class AttackProperty
 {
     public BaseAttack attack;
     public Button button;
+    public float priority;
 }
 
 public class PlayerController : CharacterBehaviour
@@ -55,18 +56,22 @@ public class PlayerController : CharacterBehaviour
             slideBehaviour.Slide();
         }
         //attacks
+        AttackProperty selectedAttack = null;
         foreach (AttackProperty property in attacks)
         {
-            if (property.attack && Input.GetButtonDown(property.button.ToString()))
+            if (Input.GetButtonDown(property.button.ToString()) && property.attack.CanAttack())
             {
-                try
+                if (selectedAttack == null || (property.priority > selectedAttack.priority))
                 {
-                    property.attack.Attack();
-                    Debug.Log("Started attack " + property.attack.attackName);
-                    return;
+                    selectedAttack = property;
                 }
-                catch (CannotAttackException) { }
             }
+        }
+        if (selectedAttack != null)
+        {
+            selectedAttack.attack.Attack();
+            Debug.Log("Started attack " + selectedAttack.attack.attackName);
+            return;
         }
         //change suits
         if (Input.GetKeyDown(KeyCode.Alpha7))
