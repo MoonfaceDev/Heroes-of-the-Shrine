@@ -629,16 +629,22 @@ MonoBehaviour:
   attacks:
   - attack: {fileID: 871744048}
     button: 2
+    priority: -10
   - attack: {fileID: 871744049}
     button: 2
+    priority: 0
   - attack: {fileID: 871744050}
     button: 2
+    priority: 0
   - attack: {fileID: 871744047}
     button: 2
+    priority: 0
   - attack: {fileID: 871744051}
     button: 3
+    priority: 0
   - attack: {fileID: 871744053}
     button: 3
+    priority: 0
   animatorControllers: []
   activeSuitIndex: 0
 --- !u!114 &871744041
@@ -707,8 +713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 0
-  finalAttack: 1
-  previousAttackName: 
+  previousAttacks: []
   midair: 0
   anticipateDuration: 0
   activeDuration: 0
@@ -750,8 +755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 0
-  finalAttack: 1
-  previousAttackName: 
+  previousAttacks: []
   midair: 0
   anticipateDuration: 0.1
   activeDuration: 0
@@ -778,8 +782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
-  finalAttack: 0
-  previousAttackName: 
+  previousAttacks: []
   midair: 0
   anticipateDuration: 0.05
   activeDuration: 0.15
@@ -804,8 +807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
-  finalAttack: 0
-  previousAttackName: NormalAttack
+  previousAttacks: []
   midair: 0
   anticipateDuration: 0.05
   activeDuration: 0.15
@@ -830,8 +832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
-  finalAttack: 1
-  previousAttackName: AltNormalAttack
+  previousAttacks: []
   midair: 0
   anticipateDuration: 0.05
   activeDuration: 0.3
@@ -856,8 +857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
-  finalAttack: 1
-  previousAttackName: AltNormalAttack
+  previousAttacks: []
   midair: 0
   anticipateDuration: 0.2
   activeDuration: 0.4
@@ -885,8 +885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 0
-  finalAttack: 1
-  previousAttackName: SpinningSwordsAttack
+  previousAttacks: []
   midair: 0
   anticipateDuration: 0
   activeDuration: 0
@@ -911,8 +910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
-  finalAttack: 1
-  previousAttackName: NormalAttack
+  previousAttacks: []
   midair: 0
   anticipateDuration: 0.05
   activeDuration: 0.15
@@ -937,8 +935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 0
-  finalAttack: 1
-  previousAttackName: 
+  previousAttacks: []
   midair: 0
   anticipateDuration: 0
   activeDuration: 0
@@ -963,8 +960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 0
-  finalAttack: 1
-  previousAttackName: 
+  previousAttacks: []
   midair: 0
   anticipateDuration: 0
   activeDuration: 0
