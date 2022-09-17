@@ -40,7 +40,7 @@ public class SimpleAttack : BaseAttack
     protected virtual bool ComboCondition()
     {
         AttackManager attackManager = GetComponent<AttackManager>();
-        return previousAttacks.Contains(attackManager.lastAttack) || previousAttacks.Contains("*");
+        return previousAttacks.Count == 0 || previousAttacks.Contains(attackManager.lastAttack);
     }
 
     protected virtual float CalculateDamage(HittableBehaviour hittableBehaviour)
