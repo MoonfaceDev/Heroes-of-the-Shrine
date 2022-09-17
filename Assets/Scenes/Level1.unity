@@ -807,7 +807,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
-  previousAttacks: []
+  previousAttacks:
+  - NormalAttack
   midair: 0
   anticipateDuration: 0.05
   activeDuration: 0.15
@@ -832,7 +833,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
-  previousAttacks: []
+  previousAttacks:
+  - AltNormalAttack
   midair: 0
   anticipateDuration: 0.05
   activeDuration: 0.3
@@ -857,7 +859,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
-  previousAttacks: []
+  previousAttacks:
+  - AltNormalAttack
   midair: 0
   anticipateDuration: 0.2
   activeDuration: 0.4
@@ -910,11 +913,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
-  previousAttacks: []
+  previousAttacks:
+  - NormalAttack
   midair: 0
   anticipateDuration: 0.05
   activeDuration: 0.15
-  recoveryDuration: 0.3
+  recoveryDuration: 0
   damage: 35
   hitType: 1
   knockbackPower: 0
