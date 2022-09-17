@@ -51,7 +51,7 @@ public class RunKick : SimpleAttack
         onStop += FinishAction;
     }
 
-    protected override bool CanAttack()
+    public override bool CanAttack()
     {
         RunBehaviour runBehaviour = GetComponent<RunBehaviour>();
         return base.CanAttack() && (runBehaviour && runBehaviour.run);

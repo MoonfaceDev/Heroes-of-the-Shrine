@@ -11,7 +11,6 @@ public abstract class BaseAttack : CharacterBehaviour
 {
     public bool instant = false;
     public bool interruptable = false;
-    public bool finalAttack = true; // true if no combo can be played after it
 
     public string attackName
     {
@@ -90,7 +89,7 @@ public abstract class BaseAttack : CharacterBehaviour
     protected abstract IEnumerator ActiveCoroutine();
     protected abstract IEnumerator RecoveryCoroutine();
 
-    protected abstract bool CanAttack();
+    public abstract bool CanAttack();
     protected abstract void HitCallable(HittableBehaviour hittableBehaviour);
 
     public void Attack()
