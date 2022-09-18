@@ -14,7 +14,6 @@ public class AttackProperty
 {
     public BaseAttack attack;
     public Button button;
-    public float priority;
 }
 
 public class PlayerController : CharacterBehaviour
@@ -61,10 +60,7 @@ public class PlayerController : CharacterBehaviour
         {
             if (Input.GetButtonDown(property.button.ToString()) && property.attack.CanAttack())
             {
-                if (selectedAttack == null || (property.priority > selectedAttack.priority))
-                {
-                    selectedAttack = property;
-                }
+                selectedAttack = property;
             }
         }
         if (selectedAttack != null)
