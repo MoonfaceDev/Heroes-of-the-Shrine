@@ -37,6 +37,11 @@ public class SimpleAttack : BaseAttack
             && ComboCondition();
     }
 
+    public override bool CanWalk()
+    {
+        return true;
+    }
+
     protected virtual bool ComboCondition()
     {
         AttackManager attackManager = GetComponent<AttackManager>();
