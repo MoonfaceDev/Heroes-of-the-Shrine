@@ -39,6 +39,11 @@ public class SimpleAttack : BaseAttack
         }
     }
 
+    public override bool CanWalk()
+    {
+        return false;
+    }
+
     public override bool CanAttack()
     {
         JumpBehaviour jumpBehaviour = GetComponent<JumpBehaviour>();

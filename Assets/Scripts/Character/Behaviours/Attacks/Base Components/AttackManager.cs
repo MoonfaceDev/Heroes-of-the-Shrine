@@ -61,6 +61,11 @@ public class AttackManager : CharacterBehaviour
         get => AnyAttack((attack) => attack.attacking);
     }
 
+    public bool CanWalk()
+    {
+        return AnyAttack((attack) => attack.attacking && attack.CanWalk());
+    }
+
     public bool IsUninterruptable()
     {
         return AnyAttack((attack) => attack.active && !attack.interruptable);
