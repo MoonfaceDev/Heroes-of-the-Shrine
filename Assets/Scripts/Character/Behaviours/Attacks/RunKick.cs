@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(RunBehaviour))]
 public class RunKick : SimpleAttack
 {
     public Hitbox hitbox;

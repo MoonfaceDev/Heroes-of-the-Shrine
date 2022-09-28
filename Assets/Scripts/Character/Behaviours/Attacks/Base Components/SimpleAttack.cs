@@ -24,14 +24,6 @@ public class SimpleAttack : BaseAttack
     public override void Awake()
     {
         base.Awake();
-        onAnticipate += () =>
-        {
-            if (!CanWalk())
-            {
-                WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
-                walkBehaviour.Stop(true);
-            }
-        };
         onAnticipate += StopOtherAttacks;
     }
 
@@ -61,11 +53,6 @@ public class SimpleAttack : BaseAttack
             && !(stunBehaviour && stunBehaviour.stun)
             && !(attackManager.anticipating || attackManager.active) && !(instant && !attackManager.IsUninterruptable())
             && ComboCondition();
-    }
-
-    public override bool CanWalk()
-    {
-        return true;
     }
 
     protected virtual bool ComboCondition()

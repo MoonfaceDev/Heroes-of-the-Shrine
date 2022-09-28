@@ -90,7 +90,6 @@ public abstract class BaseAttack : CharacterBehaviour
     protected abstract IEnumerator RecoveryCoroutine();
 
     public abstract bool CanAttack();
-    public abstract bool CanWalk();
     protected abstract void HitCallable(HittableBehaviour hittableBehaviour);
 
     public void Attack()

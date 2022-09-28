@@ -15,6 +15,14 @@ public class NormalAttack : SimpleAttack
                 HitCallable(hittableBehaviour);
             }
         });
+        onAnticipate += () =>
+        {
+            WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
+            if (walkBehaviour)
+            {
+                walkBehaviour.Stop(true);
+            }
+        };
         onStart += () => hitDetector.Start();
         void StopHitDetector() => hitDetector.Stop();
         onFinish += StopHitDetector;

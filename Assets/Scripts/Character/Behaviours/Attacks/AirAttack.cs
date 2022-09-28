@@ -17,9 +17,4 @@ public class AirAttack : SimpleAttack {
         onFinish += StopHitDetector;
         onStop += StopHitDetector;
     }
-
-    public override bool CanWalk()
-    {
-        return true;
-    }
 }

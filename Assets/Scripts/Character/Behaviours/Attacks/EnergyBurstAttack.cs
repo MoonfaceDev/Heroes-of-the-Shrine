@@ -25,7 +25,10 @@ public class EnergyBurstAttack : SimpleAttack
         onAnticipate += () =>
         {
             WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
-            walkBehaviour.Stop();
+            if (walkBehaviour)
+            {
+                walkBehaviour.Stop();
+            }
         };
 
         onStart += () =>
