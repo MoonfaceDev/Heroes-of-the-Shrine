@@ -21,6 +21,32 @@ public class SimpleAttack : BaseAttack
     public float knockbackDirection = 0;
     public float stunTime = 0;
 
+    public override void Awake()
+    {
+        base.Awake();
+        onAnticipate += () =>
+        {
+            if (!CanWalk())
+            {
+                WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
+                walkBehaviour.Stop(true);
+            }
+        };
+        onAnticipate += StopOtherAttacks;
+    }
+
+    private void StopOtherAttacks()
+    {
+        BaseAttack[] attackComponents = GetComponents<BaseAttack>();
+        foreach (BaseAttack attack in attackComponents)
+        {
+            if (attack != this && attack.attacking)
+            {
+                attack.Stop();
+            }
+        }
+    }
+
     public override bool CanAttack()
     {
         JumpBehaviour jumpBehaviour = GetComponent<JumpBehaviour>();
