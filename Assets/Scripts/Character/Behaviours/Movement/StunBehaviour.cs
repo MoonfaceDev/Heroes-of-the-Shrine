@@ -19,12 +19,16 @@ public class StunBehaviour : CharacterBehaviour
     private bool _stun;
     private WalkBehaviour walkBehaviour;
     private JumpBehaviour jumpBehaviour;
+    private SlideBehaviour slideBehaviour;
+    private DodgeBehaviour dodgeBehaviour;
     private AttackManager attackManager;
 
     private void Start()
     {
         walkBehaviour = GetComponent<WalkBehaviour>();
         jumpBehaviour = GetComponent<JumpBehaviour>();
+        slideBehaviour = GetComponent<SlideBehaviour>();
+        dodgeBehaviour = GetComponent<DodgeBehaviour>();
         attackManager = GetComponent<AttackManager>();
     }
 
@@ -37,6 +41,15 @@ public class StunBehaviour : CharacterBehaviour
         if (jumpBehaviour)
         {
             jumpBehaviour.Stop(waitForLand: false);
+        }
+        if (slideBehaviour)
+        {
+            slideBehaviour.Stop();
+        }
+
+        if (dodgeBehaviour)
+        {
+            dodgeBehaviour.Stop();
         }
         if (attackManager)
         {

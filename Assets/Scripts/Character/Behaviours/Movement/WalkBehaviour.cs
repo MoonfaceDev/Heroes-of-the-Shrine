@@ -19,29 +19,26 @@ public class WalkBehaviour : CharacterBehaviour
         }
     }
 
-    private JumpBehaviour jumpBehaviour;
-    private SlideBehaviour slideBehaviour;
-    private KnockbackBehaviour knockbackBehaviour;
-    private StunBehaviour stunBehaviour;
-    private AttackManager attackManager;
     private bool _walk; //walking or running
 
     public override void Awake()
     {
         base.Awake();
-        jumpBehaviour = GetComponent<JumpBehaviour>();
-        slideBehaviour = GetComponent<SlideBehaviour>();
-        knockbackBehaviour = GetComponent<KnockbackBehaviour>();
-        stunBehaviour = GetComponent<StunBehaviour>();
-        attackManager = GetComponent<AttackManager>();
         speed = defaultSpeed;
     }
 
     public bool CanWalk()
     {
+        JumpBehaviour jumpBehaviour = GetComponent<JumpBehaviour>();
+        SlideBehaviour slideBehaviour = GetComponent<SlideBehaviour>();
+        DodgeBehaviour dodgeBehaviour = GetComponent<DodgeBehaviour>();
+        KnockbackBehaviour knockbackBehaviour = GetComponent<KnockbackBehaviour>();
+        StunBehaviour stunBehaviour = GetComponent<StunBehaviour>();
+        AttackManager attackManager = GetComponent<AttackManager>();
         return
             !(jumpBehaviour && (jumpBehaviour.anticipating || jumpBehaviour.recovering))
             && !(slideBehaviour && slideBehaviour.slide)
+            && !(dodgeBehaviour && dodgeBehaviour.dodge)
             && !(knockbackBehaviour && knockbackBehaviour.knockback)
             && !(stunBehaviour && stunBehaviour.stun)
             && !(attackManager && !attackManager.CanWalk());

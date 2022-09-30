@@ -48,12 +48,14 @@ public class SimpleAttack : BaseAttack
     {
         JumpBehaviour jumpBehaviour = GetComponent<JumpBehaviour>();
         SlideBehaviour slideBehaviour = GetComponent<SlideBehaviour>();
+        DodgeBehaviour dodgeBehaviour = GetComponent<DodgeBehaviour>();
         KnockbackBehaviour knockbackBehaviour = GetComponent<KnockbackBehaviour>();
         StunBehaviour stunBehaviour = GetComponent<StunBehaviour>();
         AttackManager attackManager = GetComponent<AttackManager>();
 
         return midair == (jumpBehaviour && jumpBehaviour.jump)
             && !(slideBehaviour && slideBehaviour.slide)
+            && !(dodgeBehaviour && dodgeBehaviour.dodge)
             && !(knockbackBehaviour && knockbackBehaviour.knockback)
             && !(stunBehaviour && stunBehaviour.stun)
             && !(attackManager.anticipating || attackManager.active) && !(instant && !attackManager.IsUninterruptable())

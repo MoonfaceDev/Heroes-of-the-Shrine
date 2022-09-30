@@ -27,6 +27,7 @@ public class PlayerController : CharacterBehaviour
     private WalkBehaviour walkBehaviour;
     private JumpBehaviour jumpBehaviour;
     private SlideBehaviour slideBehaviour;
+    private DodgeBehaviour dodgeBehaviour;
 
     public override void Awake()
     {
@@ -34,6 +35,7 @@ public class PlayerController : CharacterBehaviour
         walkBehaviour = GetComponent<WalkBehaviour>();
         jumpBehaviour = GetComponent<JumpBehaviour>();
         slideBehaviour = GetComponent<SlideBehaviour>();
+        dodgeBehaviour = GetComponent<DodgeBehaviour>();
     }
 
     public void Update()
@@ -53,6 +55,11 @@ public class PlayerController : CharacterBehaviour
         if (slideBehaviour && Input.GetButtonDown(Button.Escape.ToString())) //pressed slide
         {
             slideBehaviour.Slide();
+        }
+        //dodging
+        if (dodgeBehaviour && Input.GetButtonDown(Button.Escape.ToString())) //pressed dodge
+        {
+            dodgeBehaviour.Dodge();
         }
         //attacks
         AttackProperty selectedAttack = null;

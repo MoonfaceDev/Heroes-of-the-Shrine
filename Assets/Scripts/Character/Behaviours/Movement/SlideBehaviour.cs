@@ -19,25 +19,24 @@ public class SlideBehaviour : CharacterBehaviour
 
     private bool _slide;
     private WalkBehaviour walkBehaviour;
-    private KnockbackBehaviour knockbackBehaviour;
-    private StunBehaviour stunBehaviour;
-    private AttackManager attackManager;
     private EventListener stopEvent;
 
     public override void Awake()
     {
         base.Awake();
         walkBehaviour = GetComponent<WalkBehaviour>();
-        knockbackBehaviour = GetComponent<KnockbackBehaviour>();
-        stunBehaviour = GetComponent<StunBehaviour>();
-        attackManager = GetComponent<AttackManager>();
     }
 
     public bool CanSlide()
     {
-        return movableObject.velocity.x != 0 
+        DodgeBehaviour dodgeBehaviour = GetComponent<DodgeBehaviour>();
+        KnockbackBehaviour knockbackBehaviour = GetComponent<KnockbackBehaviour>();
+        StunBehaviour stunBehaviour = GetComponent<StunBehaviour>();
+        AttackManager attackManager = GetComponent<AttackManager>();
+        return movableObject.velocity.x != 0
             && movableObject.position.y == 0
             && !slide
+            && !(dodgeBehaviour && dodgeBehaviour.dodge)
             && !(knockbackBehaviour && knockbackBehaviour.knockback)
             && !(stunBehaviour && stunBehaviour.stun)
             && !(attackManager && attackManager.attacking);

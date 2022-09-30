@@ -64,27 +64,25 @@ public class JumpBehaviour : CharacterBehaviour
     private EventListener jumpEvent;
     private Coroutine recoverCoroutine;
     private WalkBehaviour walkBehaviour;
-    private SlideBehaviour slideBehaviour;
-    private KnockbackBehaviour knockbackBehaviour;
-    private StunBehaviour stunBehaviour;
-    private AttackManager attackManager;
 
     public override void Awake()
     {
         base.Awake();
         walkBehaviour = GetComponent<WalkBehaviour>();
-        slideBehaviour = GetComponent<SlideBehaviour>();
-        knockbackBehaviour = GetComponent<KnockbackBehaviour>();
-        stunBehaviour = GetComponent<StunBehaviour>();
-        attackManager = GetComponent<AttackManager>();
     }
 
     public bool CanJump()
     {
+        SlideBehaviour slideBehaviour = GetComponent<SlideBehaviour>();
+        DodgeBehaviour dodgeBehaviour = GetComponent<DodgeBehaviour>();
+        KnockbackBehaviour knockbackBehaviour = GetComponent<KnockbackBehaviour>();
+        StunBehaviour stunBehaviour = GetComponent<StunBehaviour>();
+        AttackManager attackManager = GetComponent<AttackManager>();
         return !anticipating
             && !recovering 
             && jumps < maxJumps
             && !(slideBehaviour && slideBehaviour.slide)
+            && !(dodgeBehaviour && dodgeBehaviour.dodge)
             && !(knockbackBehaviour && knockbackBehaviour.knockback)
             && !(stunBehaviour && stunBehaviour.stun)
             && !(attackManager && attackManager.attacking);

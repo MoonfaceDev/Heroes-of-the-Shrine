@@ -54,6 +54,8 @@ public class KnockbackBehaviour : CharacterBehaviour
     private Coroutine recoverCoroutine;
     private WalkBehaviour walkBehaviour;
     private JumpBehaviour jumpBehaviour;
+    private SlideBehaviour slideBehaviour;
+    private DodgeBehaviour dodgeBehaviour;
     private StunBehaviour stunBehaviour;
     private AttackManager attackManager;
 
@@ -62,6 +64,8 @@ public class KnockbackBehaviour : CharacterBehaviour
         base.Awake();
         walkBehaviour = GetComponent<WalkBehaviour>();
         jumpBehaviour = GetComponent<JumpBehaviour>();
+        slideBehaviour = GetComponent<SlideBehaviour>();
+        dodgeBehaviour = GetComponent<DodgeBehaviour>();
         stunBehaviour = GetComponent<StunBehaviour>();
         attackManager = GetComponent<AttackManager>();
     }
@@ -89,6 +93,16 @@ public class KnockbackBehaviour : CharacterBehaviour
         if (jumpBehaviour)
         {
             jumpBehaviour.Stop(waitForLand: false);
+        }
+
+        if (slideBehaviour)
+        {
+            slideBehaviour.Stop();
+        }
+
+        if (dodgeBehaviour)
+        {
+            dodgeBehaviour.Stop();
         }
 
         if (attackManager)
