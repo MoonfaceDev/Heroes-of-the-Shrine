@@ -658,7 +658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slideSpeedMultiplier: 3
-  slideStopAcceleration: 30
+  slideStopAcceleration: 45
 --- !u!114 &871744042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -897,6 +897,8 @@ MonoBehaviour:
   knockbackDirection: 0
   stunTime: 0
   hitbox: {fileID: 0}
+  velocity: 0
+  acceleration: 0
 --- !u!114 &871744053
 MonoBehaviour:
   m_ObjectHideFlags: 0
