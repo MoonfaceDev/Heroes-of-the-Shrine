@@ -44,7 +44,7 @@ public class WalkBehaviour : CharacterBehaviour
             && !(slideBehaviour && slideBehaviour.slide)
             && !(knockbackBehaviour && knockbackBehaviour.knockback)
             && !(stunBehaviour && stunBehaviour.stun)
-            && !(attackManager && attackManager.attacking);
+            && !(attackManager && !attackManager.CanWalk());
     }
 
     public void Walk(float xAxis, float zAxis)

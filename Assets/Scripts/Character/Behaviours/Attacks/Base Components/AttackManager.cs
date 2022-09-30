@@ -63,7 +63,7 @@ public class AttackManager : CharacterBehaviour
 
     public bool CanWalk()
     {
-        return AnyAttack((attack) => attack.attacking && attack.CanWalk());
+        return !AnyAttack((attack) => attack.attacking && !attack.CanWalk());
     }
 
     public bool IsUninterruptable()
