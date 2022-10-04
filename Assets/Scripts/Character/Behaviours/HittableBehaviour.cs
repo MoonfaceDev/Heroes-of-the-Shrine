@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(HealthSystem))]
@@ -5,6 +6,8 @@ public class HittableBehaviour : CharacterBehaviour
 {
     public static float STUN_FALL_POWER = 1;
     public static float STUN_FALL_ANGEL = 270; // degrees
+
+    public List<Hitbox> hitboxes;
 
     public delegate void OnHit(float damage);
     public delegate void OnKnockback(float damage, float power, float angleDegrees);

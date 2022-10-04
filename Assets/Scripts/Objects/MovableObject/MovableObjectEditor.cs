@@ -7,31 +7,30 @@ using UnityEngine;
 class MovableObjectEditor : Editor
 {
     SerializedProperty figureObject;
-    SerializedProperty startPosition;
+    SerializedProperty position;
 
     void OnEnable()
     {
         figureObject = serializedObject.FindProperty("figureObject");
-        startPosition = serializedObject.FindProperty("startPosition");
+        position = serializedObject.FindProperty("position");
     }
 
     public override void OnInspectorGUI()
     {
         serializedObject.Update();
         EditorGUILayout.PropertyField(figureObject);
-        EditorGUILayout.PropertyField(startPosition);
+        EditorGUILayout.PropertyField(position);
         MovableObject movableObject = (MovableObject)target;
         FieldInfo figureObjectField = target.GetType().GetField(figureObject.propertyPath);
         if (figureObjectField != null)
         {
             movableObject.figureObject = (GameObject)figureObjectField.GetValue(target);
         }
-        movableObject.startPosition = startPosition.vector3Value;
-        Console.WriteLine(movableObject.startPosition);
-        movableObject.transform.localPosition = MovableObject.GroundScreenCoordinates(movableObject.startPosition);
+        movableObject.position = position.vector3Value;
+        movableObject.transform.localPosition = MovableObject.GroundScreenCoordinates(movableObject.position);
         if (movableObject.figureObject != null)
         {
-            movableObject.figureObject.transform.localPosition = MovableObject.ScreenCoordinates(movableObject.startPosition.y * Vector3.up);
+            movableObject.figureObject.transform.localPosition = MovableObject.ScreenCoordinates(movableObject.position.y * Vector3.up);
         }
         serializedObject.ApplyModifiedProperties();
     }

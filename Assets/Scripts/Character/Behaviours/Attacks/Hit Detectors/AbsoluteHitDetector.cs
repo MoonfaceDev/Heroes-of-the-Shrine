@@ -1,22 +1,28 @@
-public class AbsoluteHitDetector : IHitDetector
+using System;
+
+public class AbsoluteHitDetector : BaseHitDetector
 {
     private readonly Hitbox hitbox;
-    private readonly HitCallable hitCallable;
+    private readonly Action<HittableBehaviour> hitCallable;
 
-    public AbsoluteHitDetector(Hitbox hitbox, HitCallable hitCallable)
+    public AbsoluteHitDetector(Hitbox hitbox, Action<HittableBehaviour> hitCallable)
     {
         this.hitbox = hitbox;
         this.hitCallable = hitCallable;
     }
 
-    public void Start()
+    public override void Start()
     {
-        foreach (Hitbox hit in hitbox.DetectHits())
+        HittableBehaviour[] hittables = UnityEngine.Object.FindObjectsOfType<HittableBehaviour>();
+        foreach (HittableBehaviour hittable in hittables)
         {
-            hitCallable(hit);
+            if (OverlapHittable(hittable, hitbox))
+            {
+                hitCallable(hittable);
+            }
         }
     }
 
-    public void Stop()
+    public override void Stop()
     {}
 }

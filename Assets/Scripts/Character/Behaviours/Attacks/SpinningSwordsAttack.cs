@@ -47,12 +47,11 @@ public class SpinningSwordsAttack : SimpleAttack
 
     private SingleHitDetector CreateOneHitDetector(Hitbox hitbox)
     {
-        return new(eventManager, hitbox, (hit) =>
+        return new(eventManager, hitbox, (hittable) =>
         {
-            HittableBehaviour hittableBehaviour = hit.parentObject.GetComponent<HittableBehaviour>();
-            if (hittableBehaviour && HittableTags.Contains(hittableBehaviour.tag))
+            if (HittableTags.Contains(hittable.tag))
             {
-                HitCallable(hittableBehaviour);
+                HitCallable(hittable);
             }
         });
     }

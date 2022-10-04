@@ -50,12 +50,11 @@ public class SimpleAttack : BaseAttack
 
     protected virtual void CreateHitDetector()
     {
-        SingleHitDetector hitDetector = new(eventManager, hitbox, (hit) =>
+        SingleHitDetector hitDetector = new(eventManager, hitbox, (hittable) =>
         {
-            HittableBehaviour hittableBehaviour = hit.parentObject.GetComponent<HittableBehaviour>();
-            if (hittableBehaviour && HittableTags.Contains(hittableBehaviour.tag))
+            if (HittableTags.Contains(hittable.tag))
             {
-                HitCallable(hittableBehaviour);
+                HitCallable(hittable);
             }
         });
         onStart += () => hitDetector.Start();

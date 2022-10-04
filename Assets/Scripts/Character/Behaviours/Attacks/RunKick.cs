@@ -12,9 +12,11 @@ public class RunKick : SimpleAttack
     public override void Awake()
     {
         base.Awake();
+        float direction = 0;
 
         onAnticipate += () =>
         {
+            direction = Mathf.Sign(movableObject.velocity.x);
             WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
             walkBehaviour.Stop();
         };
@@ -22,7 +24,6 @@ public class RunKick : SimpleAttack
         onStart += () =>
         {
             isMoving = true;
-            float direction = Mathf.Sign(movableObject.velocity.x);
             movableObject.velocity.x = direction * velocity;
             movableObject.velocity.z = 0;
             movableObject.acceleration.x = -direction * acceleration;

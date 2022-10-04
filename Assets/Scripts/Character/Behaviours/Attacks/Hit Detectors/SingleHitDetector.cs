@@ -1,14 +1,15 @@
+using System;
 using System.Collections.Generic;
 
-public class SingleHitDetector : IHitDetector
+public class SingleHitDetector : BaseHitDetector
 {
     private readonly EventManager eventManager;
     private readonly Hitbox hitbox;
-    private readonly HitCallable hitCallable;
-    private readonly HashSet<Hitbox> alreadyHit;
+    private readonly Action<HittableBehaviour> hitCallable;
+    private readonly HashSet<HittableBehaviour> alreadyHit;
     private EventListener eventListener;
 
-    public SingleHitDetector(EventManager eventManager, Hitbox hitbox, HitCallable hitCallable)
+    public SingleHitDetector(EventManager eventManager, Hitbox hitbox, Action<HittableBehaviour> hitCallable)
     {
         this.eventManager = eventManager;
         this.hitbox = hitbox;
@@ -16,18 +17,18 @@ public class SingleHitDetector : IHitDetector
         alreadyHit = new();
     }
 
-    public void Start()
+    public override void Start()
     {
         eventListener = eventManager.Attach(
             () => true,
             () =>
             {
-                foreach (Hitbox hit in hitbox.DetectHits())
+                HittableBehaviour[] hittables = UnityEngine.Object.FindObjectsOfType<HittableBehaviour>();
+                foreach (HittableBehaviour hittable in hittables)
                 {
-                    if (!alreadyHit.Contains(hit))
+                    if (!alreadyHit.Contains(hittable) && OverlapHittable(hittable, hitbox))
                     {
-                        alreadyHit.Add(hit);
-                        hitCallable(hit);
+                        hitCallable(hittable);
                     }
                 }
             },
@@ -35,7 +36,7 @@ public class SingleHitDetector : IHitDetector
         );
     }
 
-    public void Stop()
+    public override void Stop()
     {
         eventManager.Detach(eventListener);
     }

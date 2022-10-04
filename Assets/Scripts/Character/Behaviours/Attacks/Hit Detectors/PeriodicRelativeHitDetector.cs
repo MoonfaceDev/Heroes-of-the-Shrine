@@ -1,17 +1,18 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PeriodicRelativeHitDetector : IHitDetector
+public class PeriodicRelativeHitDetector : BaseHitDetector
 {
     private readonly EventManager eventManager;
     private readonly Hitbox hitbox;
-    private readonly HitCallable hitCallable;
+    private readonly Action<HittableBehaviour> hitCallable;
     private readonly float interval;
     private readonly bool startImmediately;
     private EventListener detectPeriodicallyEvent;
-    private readonly Dictionary<Hitbox, float> hitTimes;
+    private readonly Dictionary<HittableBehaviour, float> hitTimes;
 
-    public PeriodicRelativeHitDetector(EventManager eventManager, Hitbox hitbox, HitCallable hitCallable, float interval, bool startImmediately = true)
+    public PeriodicRelativeHitDetector(EventManager eventManager, Hitbox hitbox, Action<HittableBehaviour> hitCallable, float interval, bool startImmediately = true)
     {
         this.eventManager = eventManager;
         this.hitbox = hitbox;
@@ -21,7 +22,7 @@ public class PeriodicRelativeHitDetector : IHitDetector
         hitTimes = new();
     }
 
-    public void Start()
+    public override void Start()
     {
         detectPeriodicallyEvent = eventManager.Attach(() => true, () =>
         {
@@ -31,22 +32,26 @@ public class PeriodicRelativeHitDetector : IHitDetector
 
     private void DetectHits()
     {
-        foreach (Hitbox hit in hitbox.DetectHits())
+        HittableBehaviour[] hittables = UnityEngine.Object.FindObjectsOfType<HittableBehaviour>();
+        foreach (HittableBehaviour hittable in hittables)
         {
-            if (!hitTimes.ContainsKey(hit) && !startImmediately)
+            if (OverlapHittable(hittable, hitbox))
             {
-                hitTimes[hit] = Time.time;
-                continue;
-            }
-            if (!hitTimes.ContainsKey(hit) || Time.time - hitTimes[hit] >= interval)
-            {
-                hitTimes[hit] = Time.time;
-                hitCallable(hit);
+                if (!hitTimes.ContainsKey(hittable) && !startImmediately)
+                {
+                    hitTimes[hittable] = Time.time;
+                    continue;
+                }
+                if (!hitTimes.ContainsKey(hittable) || Time.time - hitTimes[hittable] >= interval)
+                {
+                    hitTimes[hittable] = Time.time;
+                    hitCallable(hittable);
+                }
             }
         }
     }
 
-    public void Stop()
+    public override void Stop()
     {
         eventManager.Detach(detectPeriodicallyEvent);
     }

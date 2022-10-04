@@ -6,9 +6,9 @@ public class MovableObject : MonoBehaviour
 
     public GameObject figureObject;
 
-    public Vector3 startPosition;
-    [HideInInspector]
     public Vector3 position;
+    [HideInInspector]
+    public Vector3 startPosition;
     [HideInInspector]
     public Vector3 velocity;
     [HideInInspector]
@@ -16,7 +16,7 @@ public class MovableObject : MonoBehaviour
 
     private void Start()
     {
-        position = startPosition;
+        startPosition = position;
         velocity = Vector3.zero;
         acceleration = Vector3.zero;
     }

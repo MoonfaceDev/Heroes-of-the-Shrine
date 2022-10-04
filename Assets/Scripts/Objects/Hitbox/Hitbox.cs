@@ -42,28 +42,13 @@ public class Hitbox : MonoBehaviour
             IsBetween(GetFar() + padding, GetNear() - padding, hitbox.GetFar() + padding, hitbox.GetNear() - padding);
     }
 
-    public HashSet<Hitbox> DetectHits()
-    {
-        Hitbox[] foundHitboxes = FindObjectsOfType<Hitbox>();
-        HashSet<Hitbox> overlappedHitboxes = new();
-        foreach (Hitbox foundHitbox in foundHitboxes)
-        {
-            if (this != foundHitbox && OverlapHitbox(foundHitbox, 0))
-            {
-                overlappedHitboxes.Add(foundHitbox);
-            }
-        }
-        return overlappedHitboxes;
-    }
-
     public Vector3 WorldPosition
     {
-        get
-        {
-            return parentObject.position + new Vector3(position.x * (1 - 2 * Mathf.Pow(parentObject.transform.rotation.y, 2)),
-                       position.y,
-                       position.z);
-        }
+        get => parentObject.position + new Vector3(
+            position.x * (1 - 2 * Mathf.Pow(parentObject.transform.rotation.y, 2)), 
+            position.y, 
+            position.z
+        );
     }
 
     public float GetLeft()
