@@ -10,7 +10,7 @@ public enum HitType
 
 public class SimpleAttack : BaseAttack
 {
-    public List<string> previousAttacks;
+    public List<BaseAttack> previousAttacks;
     public bool midair = false;
     public float anticipateDuration;
     public float activeDuration;

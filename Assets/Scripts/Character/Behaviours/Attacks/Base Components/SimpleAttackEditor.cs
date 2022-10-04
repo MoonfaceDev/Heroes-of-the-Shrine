@@ -40,10 +40,10 @@ public class SimpleAttackEditor : Editor
         if (!HasMethod(attack, "ComboCondition"))
         {
             EditorGUILayout.PropertyField(previousAttacks);
-            List<string> previousAttacksValue = new();
+            List<BaseAttack> previousAttacksValue = new();
             for (int i = 0; i < previousAttacks.arraySize; i++)
             {
-                previousAttacksValue.Add(previousAttacks.GetArrayElementAtIndex(i).stringValue);
+                previousAttacksValue.Add((BaseAttack) previousAttacks.GetArrayElementAtIndex(i).objectReferenceValue);
             }
             attack.previousAttacks = previousAttacksValue;
         }

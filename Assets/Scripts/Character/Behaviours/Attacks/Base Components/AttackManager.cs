@@ -4,7 +4,7 @@ using UnityEngine;
 public class AttackManager : CharacterBehaviour
 {
     public float maxComboDelay;
-    [HideInInspector] public string lastAttack;
+    [HideInInspector] public BaseAttack lastAttack;
     [HideInInspector] public float lastAttackTime;
 
     public override void Awake()
@@ -15,15 +15,15 @@ public class AttackManager : CharacterBehaviour
         {
             attack.onFinish += () =>
             {
-                lastAttack = attack.attackName;
+                lastAttack = attack;
                 lastAttackTime = Time.time;
             };
         }
         eventManager.Attach(() => true, () =>
         {
-            if (lastAttack != "" && Time.time - lastAttackTime > maxComboDelay)
+            if (lastAttack != null && Time.time - lastAttackTime > maxComboDelay)
             {
-                lastAttack = "";
+                lastAttack = null;
             }
         }, single: false);
     }
