@@ -32,8 +32,11 @@ public class MovableObject : MonoBehaviour
         AvoidCollisions(previousPosition);
         //update position in scene
         transform.position = GroundScreenCoordinates(position);
-        figureObject.transform.localPosition = ScreenCoordinates(position.y * Vector3.up);
-        UpdateSortingOrder();
+        if (figureObject)
+        {
+            figureObject.transform.localPosition = ScreenCoordinates(position.y * Vector3.up);
+            UpdateSortingOrder();
+        }
     }
 
     private void AvoidCollisions(Vector3 previousPosition)

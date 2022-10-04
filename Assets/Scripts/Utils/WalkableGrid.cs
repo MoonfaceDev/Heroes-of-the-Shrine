@@ -1,20 +1,22 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class WalkableGrid : MovableObject
+[RequireComponent(typeof(MovableObject))]
+public class WalkableGrid : MonoBehaviour
 {
 	public Vector3 gridWorldSize;
 	public float nodeRadius;
-	public Pathfind pathfindGizmos;
 	[HideInInspector]
 	public Node[,] grid;
 
+	private MovableObject movableObject;
 	float nodeDiameter;
 	[HideInInspector]
 	public int gridSizeX, gridSizeZ;
 
 	void Start()
 	{
+		movableObject = GetComponent<MovableObject>();
 		nodeDiameter = nodeRadius * 2;
 		gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
 		gridSizeZ = Mathf.RoundToInt(gridWorldSize.z / nodeDiameter);
@@ -26,10 +28,10 @@ public class WalkableGrid : MovableObject
 		grid = new Node[gridSizeX, gridSizeZ];
 		for (int x = 0; x < gridSizeX; x++)
 		{
-			for (int y = 0; y < gridSizeZ; y++)
+			for (int z = 0; z < gridSizeZ; z++)
 			{
-				Vector3 worldPoint = transform.position + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.up * (y * nodeDiameter + nodeRadius);
-				grid[x, y] = new Node(x, y, true, worldPoint);
+				Vector3 worldPoint = movableObject.position + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (z * nodeDiameter + nodeRadius);
+				grid[x, z] = new Node(x, z, true, worldPoint);
 			}
 		}
 		Hitbox[] hitboxes = FindObjectsOfType<Hitbox>();    
@@ -40,9 +42,9 @@ public class WalkableGrid : MovableObject
 			{
 				Vector2Int bottomLeftIndex = IndexFromWorldPoint(hitbox.position);
 				Vector2Int topRightIndex = IndexFromWorldPoint(hitbox.position + hitbox.size);
-				for (int x = bottomLeftIndex.x - 1; x <= topRightIndex.x + 1; x++)
+				for (int x = bottomLeftIndex.x; x <= topRightIndex.x; x++)
 				{
-					for (int y = bottomLeftIndex.y - 1; y <= topRightIndex.y + 1; y++)
+					for (int y = bottomLeftIndex.y; y <= topRightIndex.y; y++)
 					{
 						if (x >= 0 && x < gridSizeX && y >= 0 && y < gridSizeZ)
 						{
@@ -82,10 +84,10 @@ public class WalkableGrid : MovableObject
 
 	public Vector2Int IndexFromWorldPoint(Vector3 worldPosition)
 	{
-		float percentX = Mathf.Clamp01((worldPosition.x - transform.position.x) / gridWorldSize.x);
-		float percentZ = Mathf.Clamp01((worldPosition.z - transform.position.z) / gridWorldSize.z);
-		int x = Mathf.RoundToInt((gridSizeX - 1) * percentX);
-		int y = Mathf.RoundToInt((gridSizeZ - 1) * percentZ);
+		float percentX = (worldPosition.x - movableObject.position.x) / gridWorldSize.x;
+		float percentZ = (worldPosition.z - movableObject.position.z) / gridWorldSize.z;
+		int x = Mathf.RoundToInt(gridSizeX * percentX);
+		int y = Mathf.RoundToInt(gridSizeZ * percentZ);
 		return new Vector2Int(x, y);
 	}
 
@@ -165,7 +167,8 @@ public class WalkableGrid : MovableObject
 
 	void OnDrawGizmos()
 	{
-		Gizmos.DrawWireCube(ScreenCoordinates(position + gridWorldSize / 2), ScreenCoordinates(gridWorldSize));
+		MovableObject movableObject = GetComponent<MovableObject>();
+		Gizmos.DrawWireCube(MovableObject.GroundScreenCoordinates(movableObject.position + gridWorldSize / 2), MovableObject.GroundScreenCoordinates(gridWorldSize));
 
 
 		if (grid != null)
@@ -173,7 +176,7 @@ public class WalkableGrid : MovableObject
 			foreach (Node n in grid)
 			{
 				Gizmos.color = (n.walkable) ? Color.white : Color.red;
-				Gizmos.DrawCube(n.position, Vector3.one * (nodeDiameter * 0.75f));
+				Gizmos.DrawCube(MovableObject.GroundScreenCoordinates(n.position), MovableObject.GroundScreenCoordinates(Vector3.one * (nodeDiameter * 0.75f)));
 			}
 		}
 	}
