@@ -15,16 +15,25 @@ public class SimpleAttack : BaseAttack
     public float anticipateDuration;
     public float activeDuration;
     public float recoveryDuration;
+    public Hitbox hitbox;
+    public bool overrideDefaultHittableTags = false;
+    public List<string> hittableTags;
     public float damage;
     public HitType hitType = HitType.Knockback;
     public float knockbackPower = 0;
     public float knockbackDirection = 0;
     public float stunTime = 0;
 
+    protected virtual List<string> HittableTags
+    {
+        get => overrideDefaultHittableTags ? hittableTags : GetComponent<AttackManager>().hittableTags;
+    }
+
     public override void Awake()
     {
         base.Awake();
         onAnticipate += StopOtherAttacks;
+        CreateHitDetector();
     }
 
     private void StopOtherAttacks()
@@ -37,6 +46,22 @@ public class SimpleAttack : BaseAttack
                 attack.Stop();
             }
         }
+    }
+
+    protected virtual void CreateHitDetector()
+    {
+        SingleHitDetector hitDetector = new(eventManager, hitbox, (hit) =>
+        {
+            HittableBehaviour hittableBehaviour = hit.parentObject.GetComponent<HittableBehaviour>();
+            if (hittableBehaviour && HittableTags.Contains(hittableBehaviour.tag))
+            {
+                HitCallable(hittableBehaviour);
+            }
+        });
+        onStart += () => hitDetector.Start();
+        void StopHitDetector() => hitDetector.Stop();
+        onFinish += StopHitDetector;
+        onStop += StopHitDetector;
     }
 
     public override bool CanWalk()

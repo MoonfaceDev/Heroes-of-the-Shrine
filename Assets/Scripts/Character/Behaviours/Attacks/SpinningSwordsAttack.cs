@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SpinningSwordsAttack : SimpleAttack
@@ -15,15 +16,17 @@ public class SpinningSwordsAttack : SimpleAttack
     {
         base.Awake();
 
-        hitDetector1 = CreateHitDetector(hitbox1);
-        hitDetector2 = CreateHitDetector(hitbox2);
-
         onAnticipate += () =>
         {
             WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
             walkBehaviour.Stop(true);
         };
+    }
 
+    protected override void CreateHitDetector()
+    {
+        hitDetector1 = CreateOneHitDetector(hitbox1);
+        hitDetector2 = CreateOneHitDetector(hitbox2);
         onStart += () =>
         {
             hitDetector1.Start();
@@ -31,7 +34,8 @@ public class SpinningSwordsAttack : SimpleAttack
             StartCoroutine(EnableHitDetector2());
         };
 
-        void StopDetectors() {
+        void StopDetectors()
+        {
             hitDetector1.Stop();
             hitDetector2.Stop();
         }
@@ -41,12 +45,12 @@ public class SpinningSwordsAttack : SimpleAttack
         onStop += StopDetectors;
     }
 
-    private SingleHitDetector CreateHitDetector(Hitbox hitbox)
+    private SingleHitDetector CreateOneHitDetector(Hitbox hitbox)
     {
         return new(eventManager, hitbox, (hit) =>
         {
-            HittableBehaviour hittableBehaviour = hit.GetComponent<HittableBehaviour>();
-            if (hittableBehaviour)
+            HittableBehaviour hittableBehaviour = hit.parentObject.GetComponent<HittableBehaviour>();
+            if (hittableBehaviour && HittableTags.Contains(hittableBehaviour.tag))
             {
                 HitCallable(hittableBehaviour);
             }

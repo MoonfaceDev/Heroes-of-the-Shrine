@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class EnergyBurstAttack : SimpleAttack
 {
-    public Hitbox hitbox;
     public float burstVelocity;
     public float burstAcceleration;
 
@@ -12,15 +11,6 @@ public class EnergyBurstAttack : SimpleAttack
     public override void Awake()
     {
         base.Awake();
-
-        SingleHitDetector hitDetector = new(eventManager, hitbox, (hit) =>
-        {
-            HittableBehaviour hittableBehaviour = hit.GetComponent<HittableBehaviour>();
-            if (hittableBehaviour)
-            {
-                HitCallable(hittableBehaviour);
-            }
-        });
 
         onAnticipate += () =>
         {
@@ -39,14 +29,12 @@ public class EnergyBurstAttack : SimpleAttack
             movableObject.velocity.z = 0;
             movableObject.acceleration.x = -direction * burstAcceleration;
             eventManager.Attach(() => Mathf.Sign(movableObject.velocity.x) != direction, () => isMoving = false);
-            hitDetector.Start();
         };
 
         void FinishAction()
         {
             movableObject.velocity.x = 0;
             movableObject.acceleration.x = 0;
-            hitDetector.Stop();
         }
 
         onFinish += FinishAction;

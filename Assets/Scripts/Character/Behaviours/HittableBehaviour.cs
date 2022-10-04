@@ -10,9 +10,9 @@ public class HittableBehaviour : CharacterBehaviour
     public delegate void OnKnockback(float damage, float power, float angleDegrees);
     public delegate void OnStun(float damage, float time);
 
-    public OnHit onHit;
-    public OnKnockback onKnockback;
-    public OnStun onStun;
+    public event OnHit onHit;
+    public event OnKnockback onKnockback;
+    public event OnStun onStun;
 
     private HealthSystem healthSystem;
     private KnockbackBehaviour knockbackBehaviour;
@@ -29,13 +29,13 @@ public class HittableBehaviour : CharacterBehaviour
     public void Hit(float damage)
     {
         healthSystem.health -= damage;
-        onHit(damage);
+        onHit?.Invoke(damage);
     }
 
     public bool Knockback(float damage, float power, float angleDegrees)
     {
         Hit(damage);
-        onKnockback(damage, power, angleDegrees);
+        onKnockback?.Invoke(damage, power, angleDegrees);
         if (!knockbackBehaviour)
         {
             return false;
@@ -51,7 +51,7 @@ public class HittableBehaviour : CharacterBehaviour
             return Knockback(damage, STUN_FALL_POWER, STUN_FALL_ANGEL);
         }
         Hit(damage);
-        onStun(damage, time);
+        onStun?.Invoke(damage, time);
         if (!stunBehaviour)
         {
             return false;

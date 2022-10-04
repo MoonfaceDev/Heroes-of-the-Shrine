@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 
 public class SlashAttack : SimpleAttack {
-    public Hitbox hitbox;
     public float velocity;
     public float acceleration;
 
@@ -11,15 +10,6 @@ public class SlashAttack : SimpleAttack {
     public override void Awake()
     {
         base.Awake();
-
-        SingleHitDetector hitDetector = new(eventManager, hitbox, (hit) =>
-        {
-            HittableBehaviour hittableBehaviour = hit.GetComponent<HittableBehaviour>();
-            if (hittableBehaviour)
-            {
-                HitCallable(hittableBehaviour);
-            }
-        });
 
         onAnticipate += () =>
         {
@@ -35,14 +25,12 @@ public class SlashAttack : SimpleAttack {
             movableObject.velocity.z = 0;
             movableObject.acceleration.x = -direction * acceleration;
             eventManager.Attach(() => Mathf.Sign(movableObject.velocity.x) != direction, () => isMoving = false);
-            hitDetector.Start();
         };
 
         void FinishAction()
         {
             movableObject.velocity.x = 0;
             movableObject.acceleration.x = 0;
-            hitDetector.Stop();
         }
 
         onFinish += FinishAction;

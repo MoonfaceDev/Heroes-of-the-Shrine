@@ -1,9 +1,11 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AttackManager : CharacterBehaviour
 {
     public float maxComboDelay;
+    public List<string> hittableTags;
     [HideInInspector] public BaseAttack lastAttack;
     [HideInInspector] public float lastAttackTime;
 

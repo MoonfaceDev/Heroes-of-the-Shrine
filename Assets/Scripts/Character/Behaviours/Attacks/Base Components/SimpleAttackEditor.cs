@@ -10,6 +10,9 @@ public class SimpleAttackEditor : Editor
     SerializedProperty anticipateDuration;
     SerializedProperty activeDuration;
     SerializedProperty recoveryDuration;
+    SerializedProperty hitbox;
+    SerializedProperty overrideDefaultHittableTags;
+    SerializedProperty hittableTags;
     SerializedProperty damage;
     SerializedProperty hitTypeIndex;
     SerializedProperty knockbackPower;
@@ -24,6 +27,9 @@ public class SimpleAttackEditor : Editor
         anticipateDuration = serializedObject.FindProperty("anticipateDuration");
         activeDuration = serializedObject.FindProperty("activeDuration");
         recoveryDuration = serializedObject.FindProperty("recoveryDuration");
+        hitbox = serializedObject.FindProperty("hitbox");
+        overrideDefaultHittableTags = serializedObject.FindProperty("overrideDefaultHittableTags");
+        hittableTags = serializedObject.FindProperty("hittableTags");
         damage = serializedObject.FindProperty("damage");
         hitTypeIndex = serializedObject.FindProperty("hitType");
         knockbackPower = serializedObject.FindProperty("knockbackPower");
@@ -34,7 +40,7 @@ public class SimpleAttackEditor : Editor
     public override void OnInspectorGUI()
     {
         serializedObject.Update();
-        DrawPropertiesExcluding(serializedObject, "previousAttacks", "anticipateDuration", "activeDuration", "recoveryDuration", "damage", "hitType", "knockbackPower", "knockbackDirection", "stunTime");
+        DrawPropertiesExcluding(serializedObject, "previousAttacks", "anticipateDuration", "activeDuration", "recoveryDuration", "hitbox", "overrideDefaultHittableTags", "hittableTags", "damage", "hitType", "knockbackPower", "knockbackDirection", "stunTime");
         SimpleAttack attack = (SimpleAttack)target;
 
         if (!HasMethod(attack, "ComboCondition"))
@@ -64,6 +70,28 @@ public class SimpleAttackEditor : Editor
         {
             EditorGUILayout.PropertyField(recoveryDuration);
             attack.recoveryDuration = recoveryDuration.floatValue;
+        }
+
+        if (!HasMethod(attack, "CreateHitDetector"))
+        {
+            EditorGUILayout.PropertyField(hitbox);
+            attack.hitbox = (Hitbox) hitbox.objectReferenceValue;
+        }
+
+        if (!HasProperty(attack, "HittableTags"))
+        {
+            EditorGUILayout.PropertyField(overrideDefaultHittableTags);
+            attack.overrideDefaultHittableTags = overrideDefaultHittableTags.boolValue;
+            if (attack.overrideDefaultHittableTags)
+            {
+                EditorGUILayout.PropertyField(hittableTags);
+                List<string> hittableTagsValue = new();
+                for (int i = 0; i < hittableTags.arraySize; i++)
+                {
+                    hittableTagsValue.Add(hittableTags.GetArrayElementAtIndex(i).stringValue);
+                }
+                attack.hittableTags = hittableTagsValue;
+            }
         }
 
         if (!HasMethod(attack, "CalculateDamage"))
@@ -101,6 +129,21 @@ public class SimpleAttackEditor : Editor
         {
             MethodBase method = type.GetMethod(name, BINDING_FLAGS);
             if (method != null)
+            {
+                return true;
+            }
+            type = type.BaseType;
+        }
+        return false;
+    }
+
+    private bool HasProperty(SimpleAttack attack, string name)
+    {
+        Type type = attack.GetType();
+        while (type != typeof(SimpleAttack))
+        {
+            PropertyInfo property = type.GetProperty(name, BINDING_FLAGS);
+            if (property != null)
             {
                 return true;
             }
