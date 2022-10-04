@@ -501,6 +501,7 @@ Transform:
   m_Children:
   - {fileID: 1482702259}
   - {fileID: 1099648}
+  - {fileID: 950406679}
   - {fileID: 1059066343}
   - {fileID: 948508459}
   - {fileID: 657404070}
@@ -717,12 +718,14 @@ MonoBehaviour:
   anticipateDuration: 0
   activeDuration: 0
   recoveryDuration: 0
+  hitbox: {fileID: 1059066342}
+  overrideDefaultHittableTags: 0
+  hittableTags: []
   damage: 0
   hitType: 0
   knockbackPower: 0
   knockbackDirection: 0
   stunTime: 0
-  hitbox: {fileID: 1059066342}
   burstVelocity: 0
   burstAcceleration: 0
 --- !u!114 &871744046
@@ -738,6 +741,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxComboDelay: 0.3
+  hittableTags:
+  - Enemy
   lastAttack: {fileID: 0}
   lastAttackTime: 0
 --- !u!114 &871744047
@@ -759,12 +764,14 @@ MonoBehaviour:
   anticipateDuration: 0.1
   activeDuration: 0
   recoveryDuration: 0
+  hitbox: {fileID: 948508458}
+  overrideDefaultHittableTags: 0
+  hittableTags: []
   damage: 20
   hitType: 0
   knockbackPower: 20
   knockbackDirection: 25
   stunTime: 0
-  hitbox: {fileID: 948508458}
   velocity: 13
   acceleration: 16
 --- !u!114 &871744048
@@ -786,12 +793,14 @@ MonoBehaviour:
   anticipateDuration: 0.05
   activeDuration: 0.15
   recoveryDuration: 0.3
+  hitbox: {fileID: 657404069}
+  overrideDefaultHittableTags: 0
+  hittableTags: []
   damage: 20
   hitType: 1
   knockbackPower: 0
   knockbackDirection: 0
   stunTime: 0.3
-  hitbox: {fileID: 657404069}
 --- !u!114 &871744049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -812,12 +821,14 @@ MonoBehaviour:
   anticipateDuration: 0.05
   activeDuration: 0.15
   recoveryDuration: 0.3
+  hitbox: {fileID: 1804132860}
+  overrideDefaultHittableTags: 0
+  hittableTags: []
   damage: 20
   hitType: 1
   knockbackPower: 0
   knockbackDirection: 0
   stunTime: 0.3
-  hitbox: {fileID: 1804132860}
 --- !u!114 &871744050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -838,12 +849,14 @@ MonoBehaviour:
   anticipateDuration: 0.05
   activeDuration: 0.3
   recoveryDuration: 0.3
+  hitbox: {fileID: 693627088}
+  overrideDefaultHittableTags: 0
+  hittableTags: []
   damage: 30
   hitType: 0
   knockbackPower: 20
   knockbackDirection: 75
   stunTime: 0
-  hitbox: {fileID: 693627088}
 --- !u!114 &871744051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -864,6 +877,9 @@ MonoBehaviour:
   anticipateDuration: 0.2
   activeDuration: 0.4
   recoveryDuration: 0.3
+  hitbox: {fileID: 0}
+  overrideDefaultHittableTags: 0
+  hittableTags: []
   damage: 20
   hitType: 1
   knockbackPower: 0
@@ -892,12 +908,14 @@ MonoBehaviour:
   anticipateDuration: 0
   activeDuration: 0
   recoveryDuration: 0
+  hitbox: {fileID: 0}
+  overrideDefaultHittableTags: 0
+  hittableTags: []
   damage: 0
   hitType: 0
   knockbackPower: 0
   knockbackDirection: 0
   stunTime: 0
-  hitbox: {fileID: 0}
   velocity: 0
   acceleration: 0
 --- !u!114 &871744053
@@ -920,12 +938,14 @@ MonoBehaviour:
   anticipateDuration: 0.05
   activeDuration: 0.15
   recoveryDuration: 0
+  hitbox: {fileID: 657404069}
+  overrideDefaultHittableTags: 0
+  hittableTags: []
   damage: 35
   hitType: 1
   knockbackPower: 0
   knockbackDirection: 0
   stunTime: 0.3
-  hitbox: {fileID: 657404069}
 --- !u!114 &871744054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -946,12 +966,14 @@ MonoBehaviour:
   anticipateDuration: 0.05
   activeDuration: 0.15
   recoveryDuration: 0.3
+  hitbox: {fileID: 1804132860}
+  overrideDefaultHittableTags: 0
+  hittableTags: []
   damage: 20
   hitType: 0
   knockbackPower: 1
   knockbackDirection: 20
   stunTime: 0
-  hitbox: {fileID: 1804132860}
 --- !u!114 &871744055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -971,12 +993,14 @@ MonoBehaviour:
   anticipateDuration: 0.05
   activeDuration: 0.15
   recoveryDuration: 0.3
+  hitbox: {fileID: 657404069}
+  overrideDefaultHittableTags: 0
+  hittableTags: []
   damage: 20
   hitType: 0
   knockbackPower: 1
   knockbackDirection: 20
   stunTime: 0
-  hitbox: {fileID: 657404069}
 --- !u!114 &871744056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -997,12 +1021,14 @@ MonoBehaviour:
   anticipateDuration: 0
   activeDuration: 0
   recoveryDuration: 0
+  hitbox: {fileID: 0}
+  overrideDefaultHittableTags: 0
+  hittableTags: []
   damage: 0
   hitType: 0
   knockbackPower: 0
   knockbackDirection: 0
   stunTime: 0
-  hitbox: {fileID: 0}
 --- !u!1 &948508457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,6 +1076,53 @@ Transform:
   m_Father: {fileID: 871744032}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &950406678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 950406679}
+  - component: {fileID: 950406680}
+  m_Layer: 0
+  m_Name: AngelHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &950406679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950406678}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.66, y: -0.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 871744032}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &950406680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950406678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: -0.66, y: 0, z: -0.25}
+  size: {x: 1.2, y: 2, z: 0.5}
+  parentObject: {fileID: 871744039}
 --- !u!1 &1059066341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,7 +1276,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1120765225, guid: 0c2c7b844258b5548acc426a4721fc8c, type: 3}
+  m_Sprite: {fileID: -1738506296, guid: 9c3fa839077a4b441af60523acaec38f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
