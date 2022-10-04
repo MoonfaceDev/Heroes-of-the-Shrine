@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteInEditMode]
@@ -28,6 +27,13 @@ public class Hitbox : MonoBehaviour
             Gizmos.color = fillColor;
             Gizmos.DrawCube(new Vector3(rect.center.x, rect.center.y, 0.01f), new Vector3(rect.size.x, rect.size.y, 0.01f));
         }
+    }
+
+    public bool IsInside(Vector3 point)
+    {
+        return point.x >= GetLeft() && point.x <= GetRight()
+            && point.y >= GetBottom() && point.y <= GetTop()
+            && point.z >= GetFar() && point.z <= GetNear();
     }
 
     static bool IsBetween(float min1, float max1, float min2, float max2)

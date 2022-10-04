@@ -25,31 +25,30 @@ public class MovableObject : MonoBehaviour
     void Update()
     {
         Vector3 previousPosition = position;
-        Vector3 previousVelocity = velocity;
         //update position and velocity
         velocity += acceleration * Time.deltaTime;
         position += Time.deltaTime * velocity + 0.5f * Mathf.Pow(Time.deltaTime, 2) * acceleration;
         //handle collision with barriers
-        AvoidCollisions(previousPosition, previousVelocity);
+        AvoidCollisions(previousPosition);
         //update position in scene
         transform.position = GroundScreenCoordinates(position);
         figureObject.transform.localPosition = ScreenCoordinates(position.y * Vector3.up);
         UpdateSortingOrder();
     }
 
-    private void AvoidCollisions(Vector3 previousPosition, Vector3 previousVelocity)
+    private void AvoidCollisions(Vector3 previousPosition)
     {
-        BarrierRectangle[] rectangles = FindObjectsOfType<BarrierRectangle>();
-        foreach (BarrierRectangle rectangle in rectangles)
+        Hitbox[] hitboxes = FindObjectsOfType<Hitbox>();
+        foreach (Hitbox hitbox in hitboxes)
         {
-            if (rectangle.IsInside(position))
+            if (hitbox.CompareTag("Barrier") && hitbox.IsInside(position))
             {
-                if (!rectangle.IsInside(new Vector3(previousPosition.x, position.y, position.z)))
+                if (!hitbox.IsInside(new Vector3(previousPosition.x, position.y, position.z)))
                 {
                     position.x = previousPosition.x;
                     velocity.x = 0;
                 }
-                else if (!rectangle.IsInside(new Vector3(position.x, position.y, previousPosition.z)))
+                else if (!hitbox.IsInside(new Vector3(position.x, position.y, previousPosition.z)))
                 {
                     position.z = previousPosition.z;
                     velocity.z = 0;
