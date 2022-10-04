@@ -28,6 +28,7 @@ public class SingleHitDetector : BaseHitDetector
                 {
                     if (!alreadyHit.Contains(hittable) && OverlapHittable(hittable, hitbox))
                     {
+                        alreadyHit.Add(hittable);
                         hitCallable(hittable);
                     }
                 }
@@ -39,5 +40,6 @@ public class SingleHitDetector : BaseHitDetector
     public override void Stop()
     {
         eventManager.Detach(eventListener);
+        alreadyHit.Clear();
     }
 }

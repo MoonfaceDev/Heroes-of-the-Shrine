@@ -40,8 +40,8 @@ public class WalkableGrid : MonoBehaviour
 		{
 			if (hitbox.CompareTag("Barrier"))
 			{
-				Vector2Int bottomLeftIndex = IndexFromWorldPoint(hitbox.position);
-				Vector2Int topRightIndex = IndexFromWorldPoint(hitbox.position + hitbox.size);
+				Vector2Int bottomLeftIndex = IndexFromWorldPoint(hitbox.position) - new Vector2Int(1, 1);
+				Vector2Int topRightIndex = IndexFromWorldPoint(hitbox.position + hitbox.size) + new Vector2Int(1, 1);
 				for (int x = bottomLeftIndex.x; x <= topRightIndex.x; x++)
 				{
 					for (int y = bottomLeftIndex.y; y <= topRightIndex.y; y++)
@@ -64,7 +64,7 @@ public class WalkableGrid : MonoBehaviour
 
 	public Node ClosestWalkableNode(Vector3 worldPosition)
 	{
-		Queue<Node> frontier = new Queue<Node>();
+		Queue<Node> frontier = new();
 		Node current;
 		frontier.Enqueue(NodeFromWorldPoint(worldPosition));
 		while (frontier.Count > 0)
@@ -84,10 +84,10 @@ public class WalkableGrid : MonoBehaviour
 
 	public Vector2Int IndexFromWorldPoint(Vector3 worldPosition)
 	{
-		float percentX = (worldPosition.x - movableObject.position.x) / gridWorldSize.x;
-		float percentZ = (worldPosition.z - movableObject.position.z) / gridWorldSize.z;
-		int x = Mathf.RoundToInt(gridSizeX * percentX);
-		int y = Mathf.RoundToInt(gridSizeZ * percentZ);
+		float percentX = Mathf.Clamp01((worldPosition.x - movableObject.position.x) / gridWorldSize.x);
+		float percentZ = Mathf.Clamp01((worldPosition.z - movableObject.position.z) / gridWorldSize.z);
+		int x = Mathf.RoundToInt((gridSizeX-1) * percentX);
+		int y = Mathf.RoundToInt((gridSizeZ-1) * percentZ);
 		return new Vector2Int(x, y);
 	}
 

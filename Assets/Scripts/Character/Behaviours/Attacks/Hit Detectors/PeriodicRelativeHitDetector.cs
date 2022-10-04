@@ -54,5 +54,6 @@ public class PeriodicRelativeHitDetector : BaseHitDetector
     public override void Stop()
     {
         eventManager.Detach(detectPeriodicallyEvent);
+        hitTimes.Clear();
     }
 }

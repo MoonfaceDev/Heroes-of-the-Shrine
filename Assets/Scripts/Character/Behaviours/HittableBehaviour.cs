@@ -4,8 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(HealthSystem))]
 public class HittableBehaviour : CharacterBehaviour
 {
-    public static float STUN_FALL_POWER = 1;
-    public static float STUN_FALL_ANGEL = 270; // degrees
+    public static float STUN_LAUNCH_POWER = 1;
+    public static float STUN_LAUNCH_ANGEL = 90; // degrees
 
     public List<Hitbox> hitboxes;
 
@@ -51,7 +51,7 @@ public class HittableBehaviour : CharacterBehaviour
     {
         if (movableObject.position.y > 0)
         {
-            return Knockback(damage, STUN_FALL_POWER, STUN_FALL_ANGEL);
+            return Knockback(damage, STUN_LAUNCH_POWER, STUN_LAUNCH_ANGEL);
         }
         Hit(damage);
         onStun?.Invoke(damage, time);

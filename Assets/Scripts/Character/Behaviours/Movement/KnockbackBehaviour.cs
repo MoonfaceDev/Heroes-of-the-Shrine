@@ -72,10 +72,8 @@ public class KnockbackBehaviour : CharacterBehaviour
 
     public bool CanReceive()
     {
-        return !active
-            && !recovering
-            && !resistant
-            && !(stunBehaviour && stunBehaviour.stun);
+        return !recovering
+            && !resistant;
     }
 
     public void Knockback(float power, float angleDegrees)
@@ -105,10 +103,17 @@ public class KnockbackBehaviour : CharacterBehaviour
             dodgeBehaviour.Stop();
         }
 
+        if (stunBehaviour)
+        {
+            stunBehaviour.Stop();
+        }
+
         if (attackManager)
         {
             attackManager.Stop();
         }
+
+        Stop(false);
 
         active = true;
         onStart?.Invoke();
@@ -123,6 +128,7 @@ public class KnockbackBehaviour : CharacterBehaviour
                 bounce = 2;
                 power *= SECOND_BOUNCE_POWER_MULTIPLIER;
                 angleDegrees = 180 - Mathf.Abs(angleDegrees % 360 - 180);
+                movableObject.position.y = 0;
                 SetMovement(power, angleDegrees);
                 onBounce?.Invoke(bounce, power, angleDegrees);
 
@@ -158,7 +164,6 @@ public class KnockbackBehaviour : CharacterBehaviour
         movableObject.acceleration.y = -gravityAcceleration;
         movableObject.velocity.x = Mathf.Cos(Mathf.Deg2Rad * angleDegrees) * power;
         movableObject.velocity.y = Mathf.Sin(Mathf.Deg2Rad * angleDegrees) * power;
-        movableObject.position.y = 0;
     }
 
     private IEnumerator RecoverAfterTime()
@@ -173,7 +178,7 @@ public class KnockbackBehaviour : CharacterBehaviour
         onRecover?.Invoke();
     }
 
-    public void Stop()
+    public void Stop(bool land=true)
     {
         if (active)
         {
@@ -183,7 +188,10 @@ public class KnockbackBehaviour : CharacterBehaviour
             movableObject.acceleration.y = 0;
             movableObject.velocity.y = 0;
             movableObject.velocity.x = 0;
-            movableObject.position.y = 0;
+            if (land)
+            {
+                movableObject.position.y = 0;
+            }
         }
         onFinish?.Invoke();
         if (recovering)

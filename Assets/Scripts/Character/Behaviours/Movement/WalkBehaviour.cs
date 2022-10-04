@@ -66,7 +66,7 @@ public class WalkBehaviour : CharacterBehaviour
         // look direction
         if (xAxis != 0)
         {
-            lookDirection = Mathf.RoundToInt(xAxis);
+            lookDirection = Mathf.RoundToInt(Mathf.Sign(xAxis));
         }
     }
 

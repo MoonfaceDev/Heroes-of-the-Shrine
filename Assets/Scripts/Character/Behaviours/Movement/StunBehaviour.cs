@@ -21,6 +21,7 @@ public class StunBehaviour : CharacterBehaviour
     private JumpBehaviour jumpBehaviour;
     private SlideBehaviour slideBehaviour;
     private DodgeBehaviour dodgeBehaviour;
+    private KnockbackBehaviour knockbackBehaviour;
     private AttackManager attackManager;
 
     private void Start()
@@ -29,6 +30,7 @@ public class StunBehaviour : CharacterBehaviour
         jumpBehaviour = GetComponent<JumpBehaviour>();
         slideBehaviour = GetComponent<SlideBehaviour>();
         dodgeBehaviour = GetComponent<DodgeBehaviour>();
+        knockbackBehaviour = GetComponent<KnockbackBehaviour>();
         attackManager = GetComponent<AttackManager>();
     }
 
@@ -38,10 +40,12 @@ public class StunBehaviour : CharacterBehaviour
         {
             walkBehaviour.Stop(true);
         }
+
         if (jumpBehaviour)
         {
             jumpBehaviour.Stop(waitForLand: false);
         }
+
         if (slideBehaviour)
         {
             slideBehaviour.Stop();
@@ -51,10 +55,19 @@ public class StunBehaviour : CharacterBehaviour
         {
             dodgeBehaviour.Stop();
         }
+
+        if (knockbackBehaviour)
+        {
+            knockbackBehaviour.Stop();
+        }
+
         if (attackManager)
         {
             attackManager.Stop();
         }
+
+        Stop();
+
         stun = true;
         onStart?.Invoke();
         movableObject.velocity = new Vector3(0, 0, 0);
