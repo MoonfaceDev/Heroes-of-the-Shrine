@@ -1156,8 +1156,8 @@ MonoBehaviour:
   previousAttacks:
   - {fileID: 871744049}
   midair: 0
-  anticipateDuration: 0.2
-  activeDuration: 0.4
+  anticipateDuration: 0.15
+  activeDuration: 0.45
   recoveryDuration: 0.3
   hitbox: {fileID: 0}
   overrideDefaultHittableTags: 0
@@ -1169,8 +1169,8 @@ MonoBehaviour:
   stunTime: 0.3
   hitbox1: {fileID: 521153113}
   hitbox2: {fileID: 1207580634}
-  hitbox1FinishTime: 0.35
-  hitbox2StartTime: 0.4
+  hitbox1FinishTime: 0.15
+  hitbox2StartTime: 0.35
 --- !u!114 &871744052
 MonoBehaviour:
   m_ObjectHideFlags: 0
