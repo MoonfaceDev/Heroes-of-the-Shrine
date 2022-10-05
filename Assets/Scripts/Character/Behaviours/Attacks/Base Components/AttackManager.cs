@@ -21,6 +21,7 @@ public class AttackManager : CharacterBehaviour
                 lastAttackTime = Time.time;
             };
         }
+        
         eventManager.Attach(() => true, () =>
         {
             if (lastAttack != null && Time.time - lastAttackTime > maxComboDelay)

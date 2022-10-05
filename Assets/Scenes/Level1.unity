@@ -280,17 +280,24 @@ GameObject:
   - component: {fileID: 439857745}
   - component: {fileID: 439857744}
   - component: {fileID: 439857743}
+  - component: {fileID: 439857748}
   - component: {fileID: 439857742}
   - component: {fileID: 439857741}
   - component: {fileID: 439857746}
   - component: {fileID: 439857750}
   - component: {fileID: 439857747}
-  - component: {fileID: 439857748}
+  - component: {fileID: 439857761}
+  - component: {fileID: 439857760}
   - component: {fileID: 439857749}
   - component: {fileID: 439857751}
   - component: {fileID: 439857752}
   - component: {fileID: 439857753}
   - component: {fileID: 439857754}
+  - component: {fileID: 439857759}
+  - component: {fileID: 439857758}
+  - component: {fileID: 439857757}
+  - component: {fileID: 439857756}
+  - component: {fileID: 439857755}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Enemy
@@ -374,7 +381,7 @@ Transform:
   - {fileID: 120408390}
   - {fileID: 900157165}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &439857746
 MonoBehaviour:
@@ -496,6 +503,156 @@ MonoBehaviour:
   player: {fileID: 871744039}
   speedMultiplier: 1
   minDistance: 1.5
+--- !u!114 &439857755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439857740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 120971cb774917b4593fc4bac3084f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instant: 0
+  interruptable: 1
+  previousAttacks:
+  - {fileID: 439857756}
+  midair: 0
+  anticipateDuration: 0.25
+  activeDuration: 0.1
+  recoveryDuration: 0.3
+  hitbox: {fileID: 0}
+  overrideDefaultHittableTags: 0
+  hittableTags: []
+  damage: 0
+  hitType: 0
+  knockbackPower: 0
+  knockbackDirection: 0
+  stunTime: 0
+--- !u!114 &439857756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439857740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456a183db1e8752488fe8e192957fb8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instant: 0
+  interruptable: 1
+  previousAttacks:
+  - {fileID: 439857757}
+  midair: 0
+  anticipateDuration: 0.05
+  activeDuration: 0.15
+  recoveryDuration: 0.3
+  hitbox: {fileID: 0}
+  overrideDefaultHittableTags: 0
+  hittableTags: []
+  damage: 0
+  hitType: 0
+  knockbackPower: 0
+  knockbackDirection: 0
+  stunTime: 0
+--- !u!114 &439857757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439857740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15028a98acbfc2140a1a48233734334d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instant: 0
+  interruptable: 1
+  previousAttacks: []
+  midair: 0
+  anticipateDuration: 0.05
+  activeDuration: 0.15
+  recoveryDuration: 0.3
+  hitbox: {fileID: 0}
+  overrideDefaultHittableTags: 0
+  hittableTags: []
+  damage: 0
+  hitType: 0
+  knockbackPower: 0
+  knockbackDirection: 0
+  stunTime: 0
+--- !u!114 &439857758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439857740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab68d069e0e79504ebe8ab7fd318ee7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxComboDelay: 0.3
+  hittableTags:
+  - Player
+  lastAttack: {fileID: 0}
+  lastAttackTime: 0
+--- !u!114 &439857759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439857740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 265a0e90be4a65f46b69d2d062842d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 871744039}
+  followSpeedMultiplier: 1.5
+  attackDistance: 1.5
+  attacks:
+  - attack: {fileID: 439857757}
+    startTime: 0
+  - attack: {fileID: 439857756}
+    startTime: 0.5
+  - attack: {fileID: 439857755}
+    startTime: 1
+  overallAttackTime: 2
+  escapeAfterAttack: 0
+  escapeSpeedMultiplier: 0
+  escapeTime: 0
+--- !u!114 &439857760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439857740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b548215346a08f438c0748856529dd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &439857761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439857740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed9ec4fc5714304c83d532294f45bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &486141796
 GameObject:
   m_ObjectHideFlags: 0
@@ -2014,7 +2171,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1733124737
 GameObject:
@@ -2210,7 +2367,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1996247490
 GameObject:

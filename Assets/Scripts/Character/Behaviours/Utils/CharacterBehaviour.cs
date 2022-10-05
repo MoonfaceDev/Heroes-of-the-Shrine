@@ -15,7 +15,7 @@ public class CharacterBehaviour: MonoBehaviour
     {
         get
         {
-            return character.eventManager;
+            return FindObjectOfType<EventManager>();
         }
     }
     public MovableObject movableObject
