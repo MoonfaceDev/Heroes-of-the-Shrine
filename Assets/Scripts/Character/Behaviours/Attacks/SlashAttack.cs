@@ -11,16 +11,18 @@ public class SlashAttack : SimpleAttack {
     {
         base.Awake();
 
+        float direction = 0;
+
         onAnticipate += () =>
         {
             WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
             walkBehaviour.Stop();
+            direction = lookDirection;
         };
 
         onStart += () =>
         {
             isMoving = true;
-            float direction = Mathf.Sign(movableObject.velocity.x);
             movableObject.velocity.x = direction * velocity;
             movableObject.velocity.z = 0;
             movableObject.acceleration.x = -direction * acceleration;
@@ -36,12 +38,6 @@ public class SlashAttack : SimpleAttack {
         onFinish += FinishAction;
 
         onStop += FinishAction;
-    }
-
-    public override bool CanAttack()
-    {
-        RunBehaviour runBehaviour = GetComponent<RunBehaviour>();
-        return base.CanAttack() && (runBehaviour && runBehaviour.run);
     }
 
     protected override IEnumerator ActiveCoroutine()
