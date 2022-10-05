@@ -44,7 +44,7 @@ public class WalkBehaviour : CharacterBehaviour
             && !(attackManager && !attackManager.CanWalk());
     }
 
-    public void Walk(float xAxis, float zAxis)
+    public void Walk(float xAxis, float zAxis, bool fitLookDirection = true)
     {
         if (!CanWalk())
         {
@@ -64,7 +64,7 @@ public class WalkBehaviour : CharacterBehaviour
         movableObject.velocity.x = xAxis * speed;
         movableObject.velocity.z = zAxis * speed;
         // look direction
-        if (xAxis != 0)
+        if (xAxis != 0 & fitLookDirection)
         {
             lookDirection = Mathf.RoundToInt(Mathf.Sign(xAxis));
         }

@@ -100,6 +100,7 @@ public class SimpleAttack : BaseAttack
     protected override void HitCallable(HittableBehaviour hittableBehaviour)
     {
         float damage = CalculateDamage(hittableBehaviour);
+        print(hittableBehaviour.name + " hit by " + attackName);
         switch (hitType)
         {
             case HitType.Knockback:

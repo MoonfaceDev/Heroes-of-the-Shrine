@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class MovableObject : MonoBehaviour
 {
@@ -13,6 +14,15 @@ public class MovableObject : MonoBehaviour
     public Vector3 velocity;
     [HideInInspector]
     public Vector3 acceleration;
+
+    public event Action onStuck;
+
+    private WalkableGrid walkableGrid;
+
+    public void Awake()
+    {
+        walkableGrid = FindObjectOfType<WalkableGrid>();
+    }
 
     private void Start()
     {
@@ -29,7 +39,11 @@ public class MovableObject : MonoBehaviour
         velocity += acceleration * Time.deltaTime;
         position += Time.deltaTime * velocity + 0.5f * Mathf.Pow(Time.deltaTime, 2) * acceleration;
         //handle collision with barriers
-        AvoidCollisions(previousPosition);
+        bool isStuck = AvoidCollisions(previousPosition);
+        if (isStuck)
+        {
+            onStuck?.Invoke();
+        }
         //update position in scene
         transform.position = GroundScreenCoordinates(position);
         if (figureObject)
@@ -39,7 +53,7 @@ public class MovableObject : MonoBehaviour
         }
     }
 
-    private void AvoidCollisions(Vector3 previousPosition)
+    private bool AvoidCollisions(Vector3 previousPosition)
     {
         Hitbox[] hitboxes = FindObjectsOfType<Hitbox>();
         foreach (Hitbox hitbox in hitboxes)
@@ -63,9 +77,40 @@ public class MovableObject : MonoBehaviour
                     position.z = previousPosition.z;
                     velocity.z = 0;
                 }
-                return;
+                return true;
             }
         }
+
+        if (walkableGrid)
+        {
+            Vector3 gridPosition = walkableGrid.GetComponent<MovableObject>().position;
+            Vector3 gridSize = walkableGrid.gridWorldSize;
+            bool xOutside = position.x < gridPosition.x || position.x > gridPosition.x + gridSize.x;
+            bool zOutside = position.z < gridPosition.z || position.z > gridPosition.z + gridSize.z;
+            if (xOutside && zOutside)
+            {
+                position.x = previousPosition.x;
+                velocity.x = 0;
+                position.z = previousPosition.z;
+                velocity.z = 0;
+            }
+            else if (xOutside)
+            {
+                position.x = previousPosition.x;
+                velocity.x = 0;
+            }
+            else if (zOutside)
+            {
+                position.z = previousPosition.z;
+                velocity.z = 0;
+            }
+            if (xOutside || zOutside)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private void UpdateSortingOrder()
