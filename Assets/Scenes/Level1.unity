@@ -436,6 +436,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87fda33e10ea24448ba9fe6c8dfffc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &486141796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 486141797}
+  - component: {fileID: 486141798}
+  m_Layer: 0
+  m_Name: AirSpinAttackHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &486141797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486141796}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.49, y: -0.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 871744032}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &486141798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486141796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: -1.49, y: 0, z: -0.5}
+  size: {x: 3.03, y: 1.92, z: 1}
+  parentObject: {fileID: 871744039}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,6 +774,53 @@ Transform:
   m_Father: {fileID: 871744032}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &863606220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 863606222}
+  - component: {fileID: 863606221}
+  m_Layer: 0
+  m_Name: SlashAttackHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &863606221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863606220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: -1.5, y: 0.24, z: -0.5}
+  size: {x: 3.31, y: 1.14, z: 1}
+  parentObject: {fileID: 871744039}
+--- !u!4 &863606222
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863606220}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5, y: -0.16000001, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 871744032}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &871744029
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,6 +883,8 @@ Transform:
   - {fileID: 693627089}
   - {fileID: 521153112}
   - {fileID: 1207580633}
+  - {fileID: 486141797}
+  - {fileID: 863606222}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -923,10 +1019,14 @@ MonoBehaviour:
     button: 2
   - attack: {fileID: 871744051}
     button: 3
+  - attack: {fileID: 871744052}
+    button: 2
   - attack: {fileID: 871744055}
     button: 2
   - attack: {fileID: 871744054}
     button: 2
+  - attack: {fileID: 871744056}
+    button: 3
   animatorControllers: []
   activeSuitIndex: 0
 --- !u!114 &871744041
@@ -1184,22 +1284,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instant: 0
-  interruptable: 0
-  previousAttacks: []
+  interruptable: 1
+  previousAttacks:
+  - {fileID: 871744051}
   midair: 0
-  anticipateDuration: 0
+  anticipateDuration: 0.01
   activeDuration: 0
-  recoveryDuration: 0
-  hitbox: {fileID: 0}
+  recoveryDuration: 0.2
+  hitbox: {fileID: 863606221}
   overrideDefaultHittableTags: 0
   hittableTags: []
-  damage: 0
+  damage: 40
   hitType: 0
-  knockbackPower: 0
-  knockbackDirection: 0
+  knockbackPower: 60
+  knockbackDirection: 280
   stunTime: 0
-  velocity: 0
-  acceleration: 0
+  velocity: 25
+  acceleration: 250
 --- !u!114 &871744053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1218,8 +1319,8 @@ MonoBehaviour:
   - {fileID: 871744048}
   midair: 0
   anticipateDuration: 0.05
-  activeDuration: 0.15
-  recoveryDuration: 0
+  activeDuration: 0.1
+  recoveryDuration: 0.05
   hitbox: {fileID: 657404069}
   overrideDefaultHittableTags: 0
   hittableTags: []
@@ -1299,17 +1400,19 @@ MonoBehaviour:
   interruptable: 0
   previousAttacks:
   - {fileID: 0}
-  midair: 0
-  anticipateDuration: 0
-  activeDuration: 0
-  recoveryDuration: 0
-  hitbox: {fileID: 0}
+  - {fileID: 871744055}
+  - {fileID: 871744054}
+  midair: 1
+  anticipateDuration: 0.075
+  activeDuration: 0.225
+  recoveryDuration: 0.1
+  hitbox: {fileID: 486141798}
   overrideDefaultHittableTags: 0
   hittableTags: []
-  damage: 0
+  damage: 30
   hitType: 0
-  knockbackPower: 0
-  knockbackDirection: 0
+  knockbackPower: 6
+  knockbackDirection: 110
   stunTime: 0
 --- !u!1 &900157164
 GameObject:
@@ -1762,7 +1865,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1738506296, guid: 9c3fa839077a4b441af60523acaec38f, type: 3}
+  m_Sprite: {fileID: -864071356, guid: c5ff4b58e1a846b42a910b03ccb02b42, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
