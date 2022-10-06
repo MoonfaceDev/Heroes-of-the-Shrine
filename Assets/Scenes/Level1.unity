@@ -247,7 +247,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 120408389}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.75, y: -0.4000001, z: 0}
+  m_LocalPosition: {x: -0.6500001, y: -0.4000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -266,8 +266,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: -0.75, y: 0, z: -0.5}
-  size: {x: 1.33, y: 1.98, z: 1}
+  position: {x: -0.65, y: 0, z: -0.5}
+  size: {x: 1.3, y: 1.82, z: 1}
   parentObject: {fileID: 439857744}
 --- !u!1 &439857740
 GameObject:
@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 439857756}
   - component: {fileID: 439857755}
   m_Layer: 0
-  m_Name: Goblin
+  m_Name: Cave Goblin
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -520,9 +520,9 @@ MonoBehaviour:
   previousAttacks:
   - {fileID: 439857756}
   midair: 0
-  anticipateDuration: 0.25
-  activeDuration: 0.1
-  recoveryDuration: 0.3
+  anticipateDuration: 0.05
+  activeDuration: 0.15
+  recoveryDuration: 0.05
   hitbox: {fileID: 0}
   overrideDefaultHittableTags: 0
   hittableTags: []
@@ -548,9 +548,9 @@ MonoBehaviour:
   previousAttacks:
   - {fileID: 439857757}
   midair: 0
-  anticipateDuration: 0.05
+  anticipateDuration: 0.1
   activeDuration: 0.15
-  recoveryDuration: 0.3
+  recoveryDuration: 0.1
   hitbox: {fileID: 0}
   overrideDefaultHittableTags: 0
   hittableTags: []
@@ -575,9 +575,9 @@ MonoBehaviour:
   interruptable: 1
   previousAttacks: []
   midair: 0
-  anticipateDuration: 0.05
-  activeDuration: 0.15
-  recoveryDuration: 0.3
+  anticipateDuration: 0.1
+  activeDuration: 0.1
+  recoveryDuration: 0.05
   hitbox: {fileID: 0}
   overrideDefaultHittableTags: 0
   hittableTags: []
@@ -622,9 +622,9 @@ MonoBehaviour:
   - attack: {fileID: 439857757}
     startTime: 0
   - attack: {fileID: 439857756}
-    startTime: 0.5
+    startTime: 0.24
   - attack: {fileID: 439857755}
-    startTime: 1
+    startTime: 0.59
   overallAttackTime: 2
   escapeAfterAttack: 0
   escapeSpeedMultiplier: 0
@@ -678,7 +678,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 486141796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.49, y: -0.4, z: 0}
+  m_LocalPosition: {x: -1.49, y: -0.4000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1138,8 +1138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: -1.5, y: 0.24, z: -0.5}
-  size: {x: 3.31, y: 1.14, z: 1}
+  position: {x: -1.5, y: 0.25, z: -0.5}
+  size: {x: 3.35, y: 1.15, z: 1}
   parentObject: {fileID: 871744039}
 --- !u!4 &863606222
 Transform:
@@ -1149,7 +1149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863606220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4999998, y: -0.16000009, z: 0}
+  m_LocalPosition: {x: -1.4999998, y: -0.1500001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2164,7 +2164,7 @@ Animator:
   m_GameObject: {fileID: 1387175052}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0e3f11d7e9885644a84e8f3178d1dc3a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2384,7 +2384,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1738506296, guid: 9c3fa839077a4b441af60523acaec38f, type: 3}
+  m_Sprite: {fileID: -864071356, guid: c5ff4b58e1a846b42a910b03ccb02b42, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
