@@ -1056,6 +1056,7 @@ GameObject:
   - component: {fileID: 871744034}
   - component: {fileID: 871744033}
   - component: {fileID: 871744041}
+  - component: {fileID: 871744057}
   - component: {fileID: 871744042}
   - component: {fileID: 871744044}
   - component: {fileID: 871744046}
@@ -1631,6 +1632,21 @@ MonoBehaviour:
   knockbackPower: 6
   knockbackDirection: 110
   stunTime: 0
+--- !u!114 &871744057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871744029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4021a5b57a1ec1b4dacf3b967c9f3f9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dodgeDistance: 1
+  anticipateTime: 0.05
+  recoveryTime: 0.2
 --- !u!1 &900157164
 GameObject:
   m_ObjectHideFlags: 0
@@ -2082,7 +2098,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1566226331, guid: 6df1e32059eed554d97ac367058ae2c0, type: 3}
+  m_Sprite: {fileID: -1738506296, guid: 9c3fa839077a4b441af60523acaec38f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
