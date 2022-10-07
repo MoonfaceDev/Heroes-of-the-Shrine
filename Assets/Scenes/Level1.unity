@@ -380,6 +380,7 @@ Transform:
   - {fileID: 1387175055}
   - {fileID: 120408390}
   - {fileID: 900157165}
+  - {fileID: 596657973}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -578,14 +579,14 @@ MonoBehaviour:
   anticipateDuration: 0.1
   activeDuration: 0.1
   recoveryDuration: 0.05
-  hitbox: {fileID: 0}
+  hitbox: {fileID: 596657972}
   overrideDefaultHittableTags: 0
   hittableTags: []
-  damage: 0
+  damage: 15
   hitType: 0
-  knockbackPower: 0
-  knockbackDirection: 0
-  stunTime: 0
+  knockbackPower: 20
+  knockbackDirection: 90
+  stunTime: 0.3
 --- !u!114 &439857758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -864,6 +865,53 @@ Transform:
   - {fileID: 1389068501}
   m_Father: {fileID: 0}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &596657971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 596657973}
+  - component: {fileID: 596657972}
+  m_Layer: 0
+  m_Name: NormalAttackHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &596657972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596657971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: 0.31, y: 0.7, z: -0.5}
+  size: {x: 1.15, y: 0.4, z: 1}
+  parentObject: {fileID: 439857744}
+--- !u!4 &596657973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596657971}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.30999994, y: 0.29999995, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 439857745}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &631861817
 GameObject:
@@ -1192,7 +1240,7 @@ GameObject:
   - component: {fileID: 871744045}
   m_Layer: 0
   m_Name: Angel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1600,8 +1648,8 @@ MonoBehaviour:
   hittableTags: []
   damage: 20
   hitType: 0
-  knockbackPower: 5
-  knockbackDirection: 120
+  knockbackPower: 6
+  knockbackDirection: 95
   stunTime: 0.3
   hitbox1: {fileID: 521153113}
   hitbox2: {fileID: 1207580634}
@@ -1626,7 +1674,7 @@ MonoBehaviour:
   midair: 0
   anticipateDuration: 0.01
   activeDuration: 0
-  recoveryDuration: 0.2
+  recoveryDuration: 0.1
   hitbox: {fileID: 863606221}
   overrideDefaultHittableTags: 0
   hittableTags: []
@@ -2215,7 +2263,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1476566322, guid: c558e1a82a9402a479f9228bc5d85cce, type: 3}
+  m_Sprite: {fileID: 1091855218, guid: c558e1a82a9402a479f9228bc5d85cce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
