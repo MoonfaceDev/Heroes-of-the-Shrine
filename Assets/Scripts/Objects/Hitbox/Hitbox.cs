@@ -51,9 +51,9 @@ public class Hitbox : MonoBehaviour
             IsBetween(GetFar() + padding, GetNear() - padding, hitbox.GetFar() + padding, hitbox.GetNear() - padding);
     }
 
-    public List<Vector3> GetSegmentIntersections(Vector3 start, Vector3 end, float offset = 0)
+    public List<Vector2> GetSegmentIntersections(Vector2 start, Vector2 end, float offset = 0)
     {
-        return LineRectangleIntersections(ToPlane(start), ToPlane(end), ToPlane(position), ToPlane(size), offset).Select(point => ToSpace(point)).ToList();
+        return LineRectangleIntersections(start, end, ToPlane(position), ToPlane(size), offset);
     }
 
     public Vector3 WorldPosition

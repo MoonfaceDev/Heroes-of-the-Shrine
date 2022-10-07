@@ -52,12 +52,12 @@ public class MovableObject : MonoBehaviour
     public void UpdatePosition(Vector3 position)
     {
         Hitbox[] hitboxes = FindObjectsOfType<Hitbox>();
-        List<Vector3> intersections = new();
+        List<Vector2> intersections = new();
         foreach (Hitbox hitbox in hitboxes)
         {
             if (hitbox.CompareTag("Barrier"))
             {
-                List<Vector3> newIntersections = hitbox.GetSegmentIntersections(this.position, position);
+                List<Vector2> newIntersections = hitbox.GetSegmentIntersections(ToPlane(this.position), ToPlane(position));
                 intersections.AddRange(newIntersections);
             }
         }
@@ -66,20 +66,20 @@ public class MovableObject : MonoBehaviour
         {
             Vector3 gridPosition = walkableGrid.GetComponent<MovableObject>().position;
             Vector3 gridSize = walkableGrid.gridWorldSize;
-            intersections.AddRange(LineRectangleIntersections(ToPlane(this.position), ToPlane(position), ToPlane(gridPosition), ToPlane(gridSize)).Select(point => ToSpace(point)));
+            intersections.AddRange(LineRectangleIntersections(ToPlane(this.position), ToPlane(position), ToPlane(gridPosition), ToPlane(gridSize)));
         }
 
         if (intersections.Count > 0)
         {
-            Vector3 closest = intersections.Aggregate(position, (prev, next) =>
+            Vector2 closest = intersections.Aggregate(ToPlane(position), (prev, next) =>
             {
-                if (Vector3.Distance(this.position, next) < Vector3.Distance(this.position, prev))
+                if (Vector2.Distance(ToPlane(this.position), next) < Vector2.Distance(ToPlane(this.position), prev))
                 {
                     return next;
                 }
                 return prev;
             });
-            this.position = closest - 0.01f * (closest - this.position).normalized;
+            this.position = ToSpace(closest - 0.01f * (ToPlane(position) - closest).normalized) + position.y * Vector3.up;
             onStuck?.Invoke();
         } else
         {

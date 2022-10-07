@@ -56,8 +56,8 @@ public class MathUtils
 		return new Vector2(point.x, point.z);
     }
 
-	public static Vector3 ToSpace(Vector2 point)
+	public static Vector3 ToSpace(Vector2 point, float y = 0)
     {
-		return new Vector3(point.x, 0, point.y);
+		return new Vector3(point.x, y, point.y);
     }
 }
