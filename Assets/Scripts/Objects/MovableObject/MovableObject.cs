@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using static MathUtils;
 
 public class MovableObject : MonoBehaviour
 {
@@ -34,16 +37,9 @@ public class MovableObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 previousPosition = position;
         //update position and velocity
         velocity += acceleration * Time.deltaTime;
-        position += Time.deltaTime * velocity + 0.5f * Mathf.Pow(Time.deltaTime, 2) * acceleration;
-        //handle collision with barriers
-        bool isStuck = AvoidCollisions(previousPosition);
-        if (isStuck)
-        {
-            onStuck?.Invoke();
-        }
+        UpdatePosition(position + Time.deltaTime * velocity + 0.5f * Mathf.Pow(Time.deltaTime, 2) * acceleration);
         //update position in scene
         transform.position = GroundScreenCoordinates(position);
         if (figureObject)
@@ -53,31 +49,16 @@ public class MovableObject : MonoBehaviour
         }
     }
 
-    private bool AvoidCollisions(Vector3 previousPosition)
+    public void UpdatePosition(Vector3 position)
     {
         Hitbox[] hitboxes = FindObjectsOfType<Hitbox>();
+        List<Vector3> intersections = new();
         foreach (Hitbox hitbox in hitboxes)
         {
-            if (hitbox.CompareTag("Barrier") && hitbox.IsInside(position))
+            if (hitbox.CompareTag("Barrier"))
             {
-                if (!hitbox.IsInside(new Vector3(previousPosition.x, position.y, position.z)))
-                {
-                    position.x = previousPosition.x;
-                    velocity.x = 0;
-                }
-                else if (!hitbox.IsInside(new Vector3(position.x, position.y, previousPosition.z)))
-                {
-                    position.z = previousPosition.z;
-                    velocity.z = 0;
-                }
-                else
-                {
-                    position.x = previousPosition.x;
-                    velocity.x = 0;
-                    position.z = previousPosition.z;
-                    velocity.z = 0;
-                }
-                return true;
+                List<Vector3> newIntersections = hitbox.GetSegmentIntersections(this.position, position);
+                intersections.AddRange(newIntersections);
             }
         }
 
@@ -85,32 +66,25 @@ public class MovableObject : MonoBehaviour
         {
             Vector3 gridPosition = walkableGrid.GetComponent<MovableObject>().position;
             Vector3 gridSize = walkableGrid.gridWorldSize;
-            bool xOutside = position.x < gridPosition.x || position.x > gridPosition.x + gridSize.x;
-            bool zOutside = position.z < gridPosition.z || position.z > gridPosition.z + gridSize.z;
-            if (xOutside && zOutside)
-            {
-                position.x = previousPosition.x;
-                velocity.x = 0;
-                position.z = previousPosition.z;
-                velocity.z = 0;
-            }
-            else if (xOutside)
-            {
-                position.x = previousPosition.x;
-                velocity.x = 0;
-            }
-            else if (zOutside)
-            {
-                position.z = previousPosition.z;
-                velocity.z = 0;
-            }
-            if (xOutside || zOutside)
-            {
-                return true;
-            }
+            intersections.AddRange(LineRectangleIntersections(ToPlane(this.position), ToPlane(position), ToPlane(gridPosition), ToPlane(gridSize)).Select(point => ToSpace(point)));
         }
 
-        return false;
+        if (intersections.Count > 0)
+        {
+            Vector3 closest = intersections.Aggregate(position, (prev, next) =>
+            {
+                if (Vector3.Distance(this.position, next) < Vector3.Distance(this.position, prev))
+                {
+                    return next;
+                }
+                return prev;
+            });
+            this.position = closest - 0.01f * (closest - this.position).normalized;
+            onStuck?.Invoke();
+        } else
+        {
+            this.position = position;
+        }
     }
 
     private void UpdateSortingOrder()

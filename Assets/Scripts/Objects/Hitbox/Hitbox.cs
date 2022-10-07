@@ -1,4 +1,7 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using static MathUtils;
 
 [ExecuteInEditMode]
 public class Hitbox : MonoBehaviour
@@ -46,6 +49,11 @@ public class Hitbox : MonoBehaviour
         return IsBetween(GetLeft() + padding, GetRight() - padding, hitbox.GetLeft() + padding, hitbox.GetRight() - padding) &&
             IsBetween(GetBottom() + padding, GetTop() - padding, hitbox.GetBottom() + padding, hitbox.GetTop() - padding) &&
             IsBetween(GetFar() + padding, GetNear() - padding, hitbox.GetFar() + padding, hitbox.GetNear() - padding);
+    }
+
+    public List<Vector3> GetSegmentIntersections(Vector3 start, Vector3 end, float offset = 0)
+    {
+        return LineRectangleIntersections(ToPlane(start), ToPlane(end), ToPlane(position), ToPlane(size), offset).Select(point => ToSpace(point)).ToList();
     }
 
     public Vector3 WorldPosition

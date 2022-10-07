@@ -78,8 +78,10 @@ public class DodgeBehaviour : CharacterBehaviour
         onAnticipate?.Invoke();
         anticipateEvent = eventManager.StartTimeout(() =>
         {
-            movableObject.position.z += dodgeDirection * dodgeDistance;
+            anticipating = false;
+            movableObject.UpdatePosition(movableObject.position + dodgeDirection * dodgeDistance * Vector3.forward);
             onDodge?.Invoke();
+            recovering = true;
             recoverEvent = eventManager.StartTimeout(() =>
             {
                 recovering = false;
