@@ -37,7 +37,13 @@ public class AttackPattern : BasePattern
     {
         base.StartPattern();
         followBehaviour.Follow(player, followSpeedMultiplier, attackDistance);
-        followBehaviour.onStop += () => StartCoroutine(AttackCoroutine());
+        followBehaviour.onStop += OnFollowStop;
+    }
+
+    private void OnFollowStop()
+    {
+        followBehaviour.onStop -= OnFollowStop;
+        StartCoroutine(AttackCoroutine());
     }
 
     private IEnumerator AttackCoroutine()
