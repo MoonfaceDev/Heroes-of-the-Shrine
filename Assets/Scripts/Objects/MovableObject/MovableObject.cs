@@ -79,12 +79,35 @@ public class MovableObject : MonoBehaviour
                 }
                 return prev;
             });
-            this.position = ToSpace(closest - 0.01f * (ToPlane(position) - closest).normalized) + position.y * Vector3.up;
+            position = ToSpace(closest - 0.001f * (ToPlane(position) - closest).normalized) + position.y * Vector3.up;
             onStuck?.Invoke();
-        } else
+        }
+        if (IsValidPosition(position))
         {
             this.position = position;
         }
+    }
+
+    public bool IsValidPosition(Vector3 position)
+    {
+        Hitbox[] hitboxes = FindObjectsOfType<Hitbox>();
+        foreach (Hitbox hitbox in hitboxes)
+        {
+            if (hitbox.CompareTag("Barrier") && hitbox.IsInside(position))
+            {
+                return false;
+            }
+        }
+        if (walkableGrid)
+        {
+            Vector3 bottomLeft = walkableGrid.GetComponent<MovableObject>().position;
+            Vector3 topRight = bottomLeft + walkableGrid.gridWorldSize;
+            if (position.x < bottomLeft.x || position.x > topRight.x || position.z < bottomLeft.z || position.z > topRight.z)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     private void UpdateSortingOrder()
