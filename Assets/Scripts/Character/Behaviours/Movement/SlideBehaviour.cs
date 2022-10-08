@@ -67,7 +67,6 @@ public class SlideBehaviour : CharacterBehaviour
     private void LeaveSlide()
     {
         slide = false;
-        lookDirection = -Mathf.RoundToInt(Mathf.Sign(movableObject.velocity.x));
         movableObject.velocity.x = 0;
         movableObject.acceleration.x = 0;
         onFinish?.Invoke();
