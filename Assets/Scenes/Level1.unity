@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 1099650}
   - component: {fileID: 1099651}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -197,7 +197,7 @@ SpriteRenderer:
   m_SortingLayerID: -202314909
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: 5edb505fefdaded40aed019404309fec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b3e0aeed74b096147b9b4c419c5d4fb2, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
@@ -1903,7 +1903,7 @@ SpriteRenderer:
   m_SortingLayerID: -202314909
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: 5edb505fefdaded40aed019404309fec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b3e0aeed74b096147b9b4c419c5d4fb2, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
