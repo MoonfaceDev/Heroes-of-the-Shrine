@@ -1,29 +1,26 @@
 using UnityEngine;
 
-[RequireComponent(typeof(FollowBehaviour))]
 public class FollowPattern : BasePattern
 {
-    public MovableObject player;
+    public string targetTag;
     public float speedMultiplier;
-    public float minimumDistance;
 
-    private FollowBehaviour followBehaviour;
-
-    public override void Awake()
+    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        base.Awake();
-        followBehaviour = GetComponent<FollowBehaviour>();
+        base.OnStateEnter(animator, stateInfo, layerIndex);
+
+        MovableObject player = GameObject.FindGameObjectWithTag(targetTag).GetComponent<MovableObject>();
+        FollowBehaviour followBehaviour = animator.GetComponent<FollowBehaviour>();
+
+        followBehaviour.Follow(player, speedMultiplier);
     }
 
-    public override void StartPattern()
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        base.StartPattern();
-        followBehaviour.Follow(player, speedMultiplier, minimumDistance);
-    }
+        base.OnStateExit(animator, stateInfo, layerIndex);
 
-    public override void StopPattern()
-    {
-        base.StopPattern();
+        FollowBehaviour followBehaviour = animator.GetComponent<FollowBehaviour>();
+
         followBehaviour.Stop();
     }
 }

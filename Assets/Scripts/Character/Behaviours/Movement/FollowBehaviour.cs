@@ -29,7 +29,7 @@ public class FollowBehaviour : CharacterBehaviour
         walkBehaviour = GetComponent<WalkBehaviour>();
     }
 
-    public void Follow(MovableObject target, float speedMultiplier, float minimumDistance)
+    public void Follow(MovableObject target, float speedMultiplier)
     {
         active = true;
         onStart?.Invoke();
@@ -40,13 +40,6 @@ public class FollowBehaviour : CharacterBehaviour
             Vector3 direction = pathfind.Direction(movableObject.position, target.position);
             walkBehaviour.Walk(direction.x, direction.z);
         }, false);
-
-        eventManager.Attach(() =>
-        {
-            Vector3 distance = target.position - movableObject.position;
-            distance.y = 0;
-            return distance.magnitude < minimumDistance;
-        }, Stop);
     }
 
     public void Stop()

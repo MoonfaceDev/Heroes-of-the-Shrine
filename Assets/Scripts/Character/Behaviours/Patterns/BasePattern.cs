@@ -1,30 +1,37 @@
 using System;
+using UnityEngine;
 
-public abstract class BasePattern : CharacterBehaviour
+public abstract class BasePattern : StateMachineBehaviour
 {
-    public event Action onStart;
-    public event Action onStop;
-
-    public bool active
+    public EventManager eventManager
     {
-        get => _active;
-        private set
-        {
-            _active = value;
-        }
+        get => FindObjectOfType<EventManager>();
     }
 
-    private bool _active;
+    private float time;
 
-    public virtual void StartPattern()
+    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        active = true;
-        onStart?.Invoke();
+        base.OnStateEnter(animator, stateInfo, layerIndex);
+        Debug.Log(animator.name + " starting " + GetType().Name);
+        time = 0;
     }
 
-    public virtual void StopPattern()
+    public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        active = false;
-        onStop?.Invoke();
+        base.OnStateUpdate(animator, stateInfo, layerIndex);
+        time += Time.deltaTime;
+    }
+
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        base.OnStateExit(animator, stateInfo, layerIndex);
+        Debug.Log(animator.name + " exited " + GetType().Name + " after " + time + "s");
+        time = 0;
+    }
+
+    public void Exit(Animator animator)
+    {
+        animator.SetTrigger("exit");
     }
 }

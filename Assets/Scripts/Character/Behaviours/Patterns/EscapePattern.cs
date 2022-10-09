@@ -1,29 +1,33 @@
+using System;
 using UnityEngine;
 
-[RequireComponent(typeof(WalkBehaviour))]
 public class EscapePattern : BasePattern
 {
-    public MovableObject player;
+    public string targetTag;
     public float speedMultiplier;
-    public float minDistance;
 
-    private EscapeBehaviour escapeBehaviour;
+    private Action onStop;
 
-    public override void Awake()
+    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        base.Awake();
-        escapeBehaviour = GetComponent<EscapeBehaviour>();
+        base.OnStateEnter(animator, stateInfo, layerIndex);
+
+        EscapeBehaviour escapeBehaviour = animator.GetComponent<EscapeBehaviour>();
+        MovableObject player = GameObject.FindGameObjectWithTag(targetTag).GetComponent<MovableObject>();
+
+        escapeBehaviour.Escape(player, speedMultiplier);
+
+        onStop = () => Exit(animator);
+        escapeBehaviour.movableObject.onStuck += onStop;
     }
 
-    public override void StartPattern()
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        base.StartPattern();
-        escapeBehaviour.Escape(player, speedMultiplier, minDistance);
-    }
+        base.OnStateExit(animator, stateInfo, layerIndex);
 
-    public override void StopPattern()
-    {
-        base.StopPattern();
+        EscapeBehaviour escapeBehaviour = animator.GetComponent<EscapeBehaviour>();
+
+        escapeBehaviour.movableObject.onStuck -= onStop;
         escapeBehaviour.Stop();
     }
 }

@@ -1,53 +1,52 @@
+using System;
 using UnityEngine;
 
-[RequireComponent(typeof(WalkBehaviour))]
 public class ArcPattern : BasePattern
 {
-    public MovableObject player;
+    public string targetTag;
     public float speedMultiplier;
 
-    private WalkBehaviour walkBehaviour;
     private EventListener circleEvent;
+    private Action onStop;
 
-    public override void Awake()
+    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        base.Awake();
-        walkBehaviour = GetComponent<WalkBehaviour>();
-    }
+        base.OnStateEnter(animator, stateInfo, layerIndex);
 
-    public override void StartPattern()
-    {
-        base.StartPattern();
+        WalkBehaviour walkBehaviour = animator.GetComponent<WalkBehaviour>();
+        MovableObject player = GameObject.FindGameObjectWithTag(targetTag).GetComponent<MovableObject>();
 
         walkBehaviour.speed = walkBehaviour.defaultSpeed * speedMultiplier;
 
         Vector3 playerPosition = player.position;
-
-        Vector3 initialDistance = movableObject.position - playerPosition;
+        Vector3 initialDistance = walkBehaviour.movableObject.position - playerPosition;
         initialDistance.y = 0;
         float radius = initialDistance.magnitude;
-
-        float clockwise = Mathf.Sign(Random.Range(-1f ,1f));
+        float clockwise = Mathf.Sign(UnityEngine.Random.Range(-1f ,1f));
 
         circleEvent = eventManager.Attach(() => true, () => {
-            Vector3 distance = movableObject.position - playerPosition;
+            Vector3 distance = walkBehaviour.movableObject.position - playerPosition;
             distance.y = 0;
             distance *= radius / distance.magnitude;
-            movableObject.position = playerPosition + distance;
+            walkBehaviour.movableObject.position = playerPosition + distance;
             Vector3 direction = clockwise * Vector3.Cross(distance, Vector3.up).normalized;
             walkBehaviour.Walk(direction.x, direction.z, false);
-            if ((player.position - movableObject.position).x != 0) {
-                lookDirection = Mathf.RoundToInt(Mathf.Sign((player.position - movableObject.position).x));
+            if ((player.position - walkBehaviour.movableObject.position).x != 0) {
+                walkBehaviour.lookDirection = Mathf.RoundToInt(Mathf.Sign((player.position - walkBehaviour.movableObject.position).x));
             };
         }, false);
 
-        movableObject.onStuck += StopPattern;
+        onStop = () => Exit(animator);
+        walkBehaviour.movableObject.onStuck += onStop;
     }
 
-    public override void StopPattern()
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        base.StopPattern();
-        movableObject.onStuck -= StopPattern;
+        base.OnStateExit(animator, stateInfo, layerIndex);
+
+        WalkBehaviour walkBehaviour = animator.GetComponent<WalkBehaviour>();
+
+        walkBehaviour.movableObject.onStuck -= onStop;
         eventManager.Detach(circleEvent);
         walkBehaviour.Stop(true);
         walkBehaviour.speed = walkBehaviour.defaultSpeed;

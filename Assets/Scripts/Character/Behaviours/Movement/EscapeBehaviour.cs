@@ -26,7 +26,7 @@ public class EscapeBehaviour : CharacterBehaviour
         walkBehaviour = GetComponent<WalkBehaviour>();
     }
 
-    public void Escape(MovableObject target, float speedMultiplier, float minDistance)
+    public void Escape(MovableObject target, float speedMultiplier)
     {
         active = true;
         onStart?.Invoke();
@@ -41,13 +41,6 @@ public class EscapeBehaviour : CharacterBehaviour
             Vector3 direction = distance.normalized;
             walkBehaviour.Walk(direction.x, direction.z);
         }, false);
-
-        eventManager.Attach(() =>
-        {
-            Vector3 distance = target.position - movableObject.position;
-            distance.y = 0;
-            return distance.magnitude < minDistance;
-        }, Stop);
     }
 
     public void Stop()

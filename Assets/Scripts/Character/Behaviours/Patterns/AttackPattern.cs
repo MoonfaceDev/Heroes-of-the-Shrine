@@ -2,82 +2,59 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TypeReferences;
 
 [Serializable]
 public class AttackNode
 {
-    public BaseAttack attack;
+    [Inherits(typeof(BaseAttack))]
+    public TypeReference attackType;
     public float startTime;
 }
 
-[RequireComponent(typeof(FollowBehaviour))]
-[RequireComponent(typeof(EscapeBehaviour))]
 public class AttackPattern : BasePattern
 {
-    public MovableObject player;
-    public float followSpeedMultiplier;
-    public float attackDistance;
+    public string targetTag;
     public List<AttackNode> attacks;
     public float overallAttackTime;
-    public bool escapeAfterAttack;
-    public float escapeSpeedMultiplier;
-    public float escapeTime;
 
-    private FollowBehaviour followBehaviour;
-    private EscapeBehaviour escapeBehaviour;
+    private Coroutine attackCoroutine;
 
-    public override void Awake()
+    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        base.Awake();
-        followBehaviour = GetComponent<FollowBehaviour>();
-        escapeBehaviour = GetComponent<EscapeBehaviour>();
+        base.OnStateEnter(animator, stateInfo, layerIndex);
+
+        MovableObject player = GameObject.FindGameObjectWithTag(targetTag).GetComponent<MovableObject>();
+        attackCoroutine = eventManager.StartCoroutine(AttackCoroutine(animator, player));
     }
 
-    public override void StartPattern()
-    {
-        base.StartPattern();
-        followBehaviour.Follow(player, followSpeedMultiplier, attackDistance);
-        followBehaviour.onStop += OnFollowStop;
-    }
-
-    private void OnFollowStop()
-    {
-        followBehaviour.onStop -= OnFollowStop;
-        StartCoroutine(AttackCoroutine());
-    }
-
-    private IEnumerator AttackCoroutine()
+    private IEnumerator AttackCoroutine(Animator animator, MovableObject player)
     {
         float startTime = Time.time;
 
         foreach (AttackNode node in attacks)
         {
             yield return new WaitForSeconds(node.startTime - (Time.time - startTime));
+            BaseAttack attack = animator.GetComponent(node.attackType) as BaseAttack;
             try
             {
-                node.attack.Attack();
+                attack.Attack();
             }
             catch (CannotAttackException)
             {
-                Debug.LogError("[" + (Time.time - startTime) + "s] Cannot execute " + node.attack.attackName);
+                Debug.LogError("[" + (Time.time - startTime) + "s] Cannot execute " + attack.attackName);
             }
         }
 
         yield return new WaitForSeconds(overallAttackTime - (Time.time - startTime));
 
-        if (escapeAfterAttack)
-        {
-            escapeBehaviour.Escape(player, escapeSpeedMultiplier, 0);
-            yield return new WaitForSeconds(escapeTime);
-            escapeBehaviour.Stop();
-        }
-        StopPattern();
+        Exit(animator);
     }
 
-    public override void StopPattern()
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        base.StopPattern();
-        followBehaviour.Stop();
-        escapeBehaviour.Stop();
+        base.OnStateExit(animator, stateInfo, layerIndex);
+
+        eventManager.StopCoroutine(attackCoroutine);
     }
 }
