@@ -16,7 +16,6 @@ public class AttackPattern : BasePattern
 {
     public string targetTag;
     public List<AttackNode> attacks;
-    public float overallAttackTime;
 
     private Coroutine attackCoroutine;
 
@@ -45,10 +44,6 @@ public class AttackPattern : BasePattern
                 Debug.LogError("[" + (Time.time - startTime) + "s] Cannot execute " + attack.attackName);
             }
         }
-
-        yield return new WaitForSeconds(overallAttackTime - (Time.time - startTime));
-
-        Exit(animator);
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
