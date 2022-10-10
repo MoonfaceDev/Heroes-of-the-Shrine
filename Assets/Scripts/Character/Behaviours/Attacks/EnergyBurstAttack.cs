@@ -49,6 +49,6 @@ public class EnergyBurstAttack : SimpleAttack
 
     protected override float CalculateDamage(HittableBehaviour hittableBehaviour)
     {
-        return damage;
+        return base.CalculateDamage(hittableBehaviour);
     }
 }

@@ -94,7 +94,7 @@ public class SimpleAttack : BaseAttack
 
     protected virtual float CalculateDamage(HittableBehaviour hittableBehaviour)
     {
-        return damage;
+        return GetComponent<AttackManager>().TranspileDamage(this, hittableBehaviour, damage);
     }
 
     protected override void HitCallable(HittableBehaviour hittableBehaviour)

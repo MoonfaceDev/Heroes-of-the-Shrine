@@ -6,6 +6,7 @@ public class GoblinBrain : CharacterBehaviour
 {
     public string playerTag;
     public float rageHealthThreshold;
+    public float rageDamageBonus;
 
     private Animator stateMachine;
 
@@ -25,6 +26,11 @@ public class GoblinBrain : CharacterBehaviour
             stunBehaviour.onStart += () => stateMachine.SetBool("stun", true);
             stunBehaviour.onStop += () => stateMachine.SetBool("stun", false);
         }
+        AttackManager attackManager = GetComponent<AttackManager>();
+        if (attackManager)
+        {
+            attackManager.AttachDamageBonus((BaseAttack attack, HittableBehaviour hittable) => IsEnraged() ? rageDamageBonus : 0);
+        }
     }
 
     public void Update()
@@ -33,7 +39,7 @@ public class GoblinBrain : CharacterBehaviour
         if (healthSystem)
         {
             stateMachine.SetFloat("health", healthSystem.health);
-            if (healthSystem.health <= rageHealthThreshold) {
+            if (IsEnraged()) {
                 stateMachine.SetBool("rage", true);
             }
         }
@@ -42,5 +48,11 @@ public class GoblinBrain : CharacterBehaviour
         {
             stateMachine.SetFloat("playerDistance", Vector2.Distance(ToPlane(movableObject.position), ToPlane(player.position)));
         }
+    }
+
+    private bool IsEnraged()
+    {
+        HealthSystem healthSystem = GetComponent<HealthSystem>();
+        return healthSystem && healthSystem.health <= rageHealthThreshold;
     }
 }

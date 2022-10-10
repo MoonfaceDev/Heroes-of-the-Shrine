@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+public delegate float DamageBonus(BaseAttack attack, HittableBehaviour hittable);
+
 public class AttackManager : CharacterBehaviour
 {
     public float maxComboDelay;
@@ -9,9 +11,15 @@ public class AttackManager : CharacterBehaviour
     [HideInInspector] public BaseAttack lastAttack;
     [HideInInspector] public float lastAttackTime;
 
+    private List<DamageBonus> damageBonuses;
+    private List<DamageBonus> damageMultipliers;
+
     public override void Awake()
     {
         base.Awake();
+        damageBonuses = new();
+        damageMultipliers = new();
+
         BaseAttack[] attackComponents = GetComponents<BaseAttack>();
         foreach (BaseAttack attack in attackComponents)
         {
@@ -84,5 +92,38 @@ public class AttackManager : CharacterBehaviour
                 attack.Stop();
             }
         }
+    }
+
+    public float TranspileDamage(BaseAttack attack, HittableBehaviour hittable, float damage)
+    {
+        foreach (DamageBonus bonus in damageBonuses)
+        {
+            damage += bonus(attack, hittable);
+        }
+        foreach (DamageBonus bonus in damageMultipliers)
+        {
+            damage *= bonus(attack, hittable);
+        }
+        return damage;
+    }
+
+    public void AttachDamageBonus(DamageBonus bonus)
+    {
+        damageBonuses.Add(bonus);
+    }
+
+    public void DetachDamageBonus(DamageBonus bonus)
+    {
+        damageBonuses.Remove(bonus);
+    }
+
+    public void AttackDamageMultiplier(DamageBonus multiplier)
+    {
+        damageMultipliers.Add(multiplier);
+    }
+
+    public void DetachDamageMultiplier(DamageBonus multiplier)
+    {
+        damageMultipliers.Remove(multiplier);
     }
 }
