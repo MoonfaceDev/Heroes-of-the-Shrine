@@ -3,6 +3,12 @@ using UnityEngine;
 
 public abstract class BasePattern : StateMachineBehaviour
 {
+    public bool hasRandomExitTime = false;
+    public float minTime;
+    public float maxTime;
+
+    private float timeout;
+
     public EventManager eventManager
     {
         get => FindObjectOfType<EventManager>();
@@ -19,12 +25,20 @@ public abstract class BasePattern : StateMachineBehaviour
         Debug.Log(animator.name + " starting " + GetType().Name);
         onEnter?.Invoke();
         time = 0;
+        if (hasRandomExitTime)
+        {
+            timeout = UnityEngine.Random.Range(minTime, maxTime);
+        }
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateUpdate(animator, stateInfo, layerIndex);
         time += Time.deltaTime;
+        if (hasRandomExitTime && time > timeout)
+        {
+            animator.SetTrigger("timeout");
+        }
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -32,11 +46,5 @@ public abstract class BasePattern : StateMachineBehaviour
         base.OnStateExit(animator, stateInfo, layerIndex);
         Debug.Log(animator.name + " exited " + GetType().Name + " after " + time + "s");
         onExit?.Invoke();
-        time = 0;
-    }
-
-    public void Exit(Animator animator)
-    {
-        animator.SetTrigger("exit");
     }
 }

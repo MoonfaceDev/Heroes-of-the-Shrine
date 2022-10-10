@@ -14,26 +14,42 @@ public class GoblinBrain : CharacterBehaviour
     {
         base.Awake();
         stateMachine = GetComponent<Animator>();
+
         KnockbackBehaviour knockbackBehaviour = GetComponent<KnockbackBehaviour>();
         if (knockbackBehaviour)
         {
             knockbackBehaviour.onStart += () => stateMachine.SetBool("knockback", true);
             knockbackBehaviour.onRecover += () => stateMachine.SetBool("knockback", false);
         }
+
         StunBehaviour stunBehaviour = GetComponent<StunBehaviour>();
         if (stunBehaviour)
         {
             stunBehaviour.onStart += () => stateMachine.SetBool("stun", true);
             stunBehaviour.onStop += () => stateMachine.SetBool("stun", false);
         }
+
         AttackManager attackManager = GetComponent<AttackManager>();
         if (attackManager)
         {
             attackManager.AttackDamageMultiplier((BaseAttack attack, HittableBehaviour hittable) => IsEnraged() ? rageDamageMultiplier : 1);
         }
+
         foreach (BasePattern pattern in stateMachine.GetBehaviours<BasePattern>())
         {
             pattern.onEnter += () => stateMachine.SetFloat("aggression", Random.Range(0f, 1f));
+        }
+
+        MovableObject player = GameObject.FindGameObjectWithTag(playerTag).GetComponent<MovableObject>();
+        if (player)
+        {
+            KnockbackBehaviour playerKnockbackBehaviour = player.GetComponent<KnockbackBehaviour>();
+            playerKnockbackBehaviour.onFinish += () => stateMachine.SetBool("playerRecoveringFromKnockback", true);
+            playerKnockbackBehaviour.onRecover += () => stateMachine.SetBool("playerRecoveringFromKnockback", false);
+
+            StunBehaviour playerStunBehaviour = player.GetComponent<StunBehaviour>();
+            playerStunBehaviour.onStart += () => stateMachine.SetBool("playerStun", true);
+            playerStunBehaviour.onStop += () => stateMachine.SetBool("playerStun", false);
         }
     }
 

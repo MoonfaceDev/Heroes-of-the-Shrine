@@ -36,7 +36,7 @@ public class ArcPattern : BasePattern
             };
         }, false);
 
-        onStop = () => Exit(animator);
+        onStop = () => animator.SetTrigger("stuck");
         walkBehaviour.movableObject.onStuck += onStop;
     }
 
