@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class StunBehaviour : CharacterBehaviour
 {
+    public bool resistant;
+
     public event Action onStart;
     public event Action onStop;
     public bool stun
@@ -24,8 +26,9 @@ public class StunBehaviour : CharacterBehaviour
     private KnockbackBehaviour knockbackBehaviour;
     private AttackManager attackManager;
 
-    private void Start()
+    public override void Awake()
     {
+        base.Awake();
         walkBehaviour = GetComponent<WalkBehaviour>();
         jumpBehaviour = GetComponent<JumpBehaviour>();
         slideBehaviour = GetComponent<SlideBehaviour>();
@@ -34,8 +37,18 @@ public class StunBehaviour : CharacterBehaviour
         attackManager = GetComponent<AttackManager>();
     }
 
+    public bool CanReceive()
+    {
+        return !resistant;
+    }
+
     public void Stun(float time)
     {
+        if (!CanReceive())
+        {
+            return;
+        }
+
         if (walkBehaviour)
         {
             walkBehaviour.Stop(true);
