@@ -39,7 +39,8 @@ public class EscapeBehaviour : CharacterBehaviour
             Vector3 distance = movableObject.position - target.position;
             distance.y = 0;
             Vector3 direction = distance.normalized;
-            walkBehaviour.Walk(direction.x, direction.z);
+            walkBehaviour.Walk(direction.x, direction.z, fitLookDirection: false);
+            lookDirection = Mathf.RoundToInt(Mathf.Sign(direction.x));
         }, false);
     }
 
