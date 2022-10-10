@@ -8,12 +8,16 @@ public abstract class BasePattern : StateMachineBehaviour
         get => FindObjectOfType<EventManager>();
     }
 
+    public event Action onEnter;
+    public event Action onExit;
+
     private float time;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
         Debug.Log(animator.name + " starting " + GetType().Name);
+        onEnter?.Invoke();
         time = 0;
     }
 
@@ -27,6 +31,7 @@ public abstract class BasePattern : StateMachineBehaviour
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
         Debug.Log(animator.name + " exited " + GetType().Name + " after " + time + "s");
+        onExit?.Invoke();
         time = 0;
     }
 

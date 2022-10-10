@@ -6,7 +6,7 @@ public class GoblinBrain : CharacterBehaviour
 {
     public string playerTag;
     public float rageHealthThreshold;
-    public float rageDamageBonus;
+    public float rageDamageMultiplier = 1;
 
     private Animator stateMachine;
 
@@ -29,7 +29,11 @@ public class GoblinBrain : CharacterBehaviour
         AttackManager attackManager = GetComponent<AttackManager>();
         if (attackManager)
         {
-            attackManager.AttachDamageBonus((BaseAttack attack, HittableBehaviour hittable) => IsEnraged() ? rageDamageBonus : 0);
+            attackManager.AttackDamageMultiplier((BaseAttack attack, HittableBehaviour hittable) => IsEnraged() ? rageDamageMultiplier : 1);
+        }
+        foreach (BasePattern pattern in stateMachine.GetBehaviours<BasePattern>())
+        {
+            pattern.onEnter += () => stateMachine.SetFloat("aggression", Random.Range(0f, 1f));
         }
     }
 
