@@ -26,7 +26,7 @@ public class EscapeBehaviour : CharacterBehaviour
         walkBehaviour = GetComponent<WalkBehaviour>();
     }
 
-    public void Escape(MovableObject target, float speedMultiplier)
+    public void Escape(MovableObject target, float speedMultiplier, bool fitLookDirection = true)
     {
         active = true;
         onStart?.Invoke();
@@ -39,8 +39,8 @@ public class EscapeBehaviour : CharacterBehaviour
             Vector3 distance = movableObject.position - target.position;
             distance.y = 0;
             Vector3 direction = distance.normalized;
-            walkBehaviour.Walk(direction.x, direction.z, fitLookDirection: false);
-            lookDirection = Mathf.RoundToInt(Mathf.Sign(direction.x));
+            walkBehaviour.Walk(direction.x, direction.z, fitLookDirection);
+            lookDirection = -Mathf.RoundToInt(Mathf.Sign(direction.x));
         }, false);
     }
 
