@@ -24,6 +24,8 @@ public class AttackPattern : BasePattern
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
         MovableObject player = GameObject.FindGameObjectWithTag(targetTag).GetComponent<MovableObject>();
+        Character character = animator.GetComponent<Character>();
+        character.lookDirection = Mathf.RoundToInt(Mathf.Sign((player.position - character.movableObject.position).x));
         attackCoroutine = eventManager.StartCoroutine(AttackCoroutine(animator, player));
     }
 
