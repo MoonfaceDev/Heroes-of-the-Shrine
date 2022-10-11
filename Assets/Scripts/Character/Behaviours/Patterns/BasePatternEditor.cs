@@ -30,5 +30,7 @@ public class BasePatternEditor : Editor
             EditorGUILayout.PropertyField(maxTime);
             pattern.maxTime = maxTime.floatValue;
         }
+
+        serializedObject.ApplyModifiedProperties();
     }
 }
