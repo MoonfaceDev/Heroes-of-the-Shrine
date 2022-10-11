@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e321a7af8378f45b972ec08f7089e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSpeed: 1
+  defaultSpeed: 3
   speed: 0
 --- !u!114 &439857748
 MonoBehaviour:
@@ -434,6 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87fda33e10ea24448ba9fe6c8dfffc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resistant: 0
 --- !u!114 &439857755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1537,6 +1538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87fda33e10ea24448ba9fe6c8dfffc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resistant: 0
 --- !u!114 &871744044
 MonoBehaviour:
   m_ObjectHideFlags: 0
