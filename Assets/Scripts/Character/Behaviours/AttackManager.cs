@@ -117,7 +117,7 @@ public class AttackManager : CharacterBehaviour
         damageBonuses.Remove(bonus);
     }
 
-    public void AttachDamageMultiplier(DamageBonus multiplier)
+    public void AttackDamageMultiplier(DamageBonus multiplier)
     {
         damageMultipliers.Add(multiplier);
     }
