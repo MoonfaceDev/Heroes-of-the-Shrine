@@ -29,37 +29,52 @@ public class HittableBehaviour : CharacterBehaviour
         stunBehaviour = GetComponent<StunBehaviour>();
     }
 
+    public bool CanGetHit()
+    {
+        return !(knockbackBehaviour && knockbackBehaviour.recovering);
+    }
+
     public void Hit(float damage)
     {
+        if (!CanGetHit())
+        {
+            return;
+        }
         healthSystem.health -= damage;
         onHit?.Invoke(damage);
     }
 
-    public bool Knockback(float damage, float power, float angleDegrees)
+    public void Knockback(float damage, float power, float angleDegrees)
     {
+        if (!CanGetHit())
+        {
+            return;
+        }
         Hit(damage);
         onKnockback?.Invoke(damage, power, angleDegrees);
         if (!knockbackBehaviour)
         {
-            return false;
+            return;
         }
         knockbackBehaviour.Knockback(power, angleDegrees);
-        return true;
     }
 
-    public bool Stun(float damage, float time)
+    public void Stun(float damage, float time)
     {
+        if (!CanGetHit())
+        {
+            return;
+        }
         if (movableObject.position.y > 0)
         {
-            return Knockback(damage, STUN_LAUNCH_POWER, STUN_LAUNCH_ANGEL);
+            Knockback(damage, STUN_LAUNCH_POWER, STUN_LAUNCH_ANGEL);
         }
         Hit(damage);
         onStun?.Invoke(damage, time);
         if (!stunBehaviour)
         {
-            return false;
+            return;
         }
         stunBehaviour.Stun(time);
-        return true;
     }
 }
