@@ -32,7 +32,7 @@ public class GoblinBrain : CharacterBehaviour
         AttackManager attackManager = GetComponent<AttackManager>();
         if (attackManager)
         {
-            attackManager.AttackDamageMultiplier((BaseAttack attack, HittableBehaviour hittable) => IsEnraged() ? rageDamageMultiplier : 1);
+            attackManager.AttachDamageMultiplier((BaseAttack attack, HittableBehaviour hittable) => IsEnraged() ? rageDamageMultiplier : 1);
         }
 
         foreach (BasePattern pattern in stateMachine.GetBehaviours<BasePattern>())
