@@ -28,7 +28,9 @@ public class ArcPattern : BasePattern
             Vector3 distance = walkBehaviour.movableObject.position - playerPosition;
             distance.y = 0;
             distance *= radius / distance.magnitude;
-            walkBehaviour.movableObject.position = playerPosition + distance;
+            Vector3 newPosition = playerPosition + distance;
+            newPosition.y = walkBehaviour.movableObject.position.y;
+            walkBehaviour.movableObject.position = newPosition;
             Vector3 direction = clockwise * Vector3.Cross(distance, Vector3.up).normalized;
             walkBehaviour.Walk(direction.x, direction.z, false);
             if ((player.position - walkBehaviour.movableObject.position).x != 0) {
