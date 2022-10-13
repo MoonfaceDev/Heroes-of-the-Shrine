@@ -68,6 +68,7 @@ public class HittableBehaviour : CharacterBehaviour
         if (movableObject.position.y > 0)
         {
             Knockback(damage, STUN_LAUNCH_POWER, STUN_LAUNCH_ANGEL);
+            return;
         }
         Hit(damage);
         onStun?.Invoke(damage, time);
