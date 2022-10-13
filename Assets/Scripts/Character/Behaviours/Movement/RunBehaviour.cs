@@ -6,7 +6,6 @@ using UnityEngine;
 public class RunBehaviour : CharacterBehaviour
 {
     public float timeToRun;
-    public float timeToStopRun;
     public float runSpeedMultiplier;
     public ParticleSystem runParticles;
 
@@ -48,7 +47,7 @@ public class RunBehaviour : CharacterBehaviour
             }
             if (run)
             {
-                StartCoroutine(StopAfter(timeToStopRun));
+                Stop();
             }
         };
         if (jumpBehaviour)
@@ -68,12 +67,6 @@ public class RunBehaviour : CharacterBehaviour
     {
         yield return new WaitForSeconds(time);
         Run();
-    }
-
-    private IEnumerator StopAfter(float time)
-    {
-        yield return new WaitForSeconds(time);
-        Stop();
     }
 
     public void Run()
