@@ -5,28 +5,39 @@ using UnityEngine;
 
 public class MathUtils
 {
-	public static bool LineLineIntersection(out Vector2 intersection, Vector3 start1, Vector3 end1, Vector3 start2, Vector3 end2)
+	public static bool IsBetween(Vector2 start, Vector2 end, Vector2 point)
+    {
+		return Mathf.Sign(point.x - start.x) != Mathf.Sign(point.x - end.x) && Mathf.Sign(point.y - start.y) != Mathf.Sign(point.y - end.y);
+	}
+
+	public static bool LineLineIntersection(out Vector2 intersection, Vector2 start1, Vector2 end1, Vector2 start2, Vector2 end2)
 	{
-		Vector3 vec1 = end1 - start1;
-		Vector3 vec2 = end2 - start2;
-		Vector3 vec3 = start2 - start1;
-		Vector3 crossVec1and2 = Vector3.Cross(vec1, vec2);
-		Vector3 crossVec3and2 = Vector3.Cross(vec3, vec2);
+		float m1 = (end1.y - start1.y) / (end1.x - start1.x);
+		float m2 = (end2.y - start2.y) / (end2.x - start2.x);
+		float b1 = start1.y - m1 * start1.x;
+		float b2 = start2.y - m2 * start2.x;
 
-		float planarFactor = Vector3.Dot(vec3, crossVec1and2);
+		// y = m1 * x + b1
+		// y = m2 * x + b2
+		if (Mathf.Abs(m1 - m2) < Mathf.Epsilon) // parallel
+        {
+			if (Mathf.Abs(b1 - b2) < Mathf.Epsilon) // identical
+            {
+				intersection = start1;
+				return true;
+            }
+			else
+            {
+				intersection = Vector2.zero;
+				return false;
+			}
+        }
 
-		//is coplanar, and not parrallel
-		if (Mathf.Abs(planarFactor) < 0.0001f && crossVec1and2.sqrMagnitude > 0.0001f)
-		{
-			float s = Vector3.Dot(crossVec3and2, crossVec1and2) / crossVec1and2.sqrMagnitude;
-			intersection = start1 + (vec1 * s);
-			return true;
-		}
-		else
-		{
-			intersection = Vector3.zero;
-			return false;
-		}
+		float x = (b2 - b1) / (m1 - m2);
+		float y = m1 * x + b1;
+
+		intersection = new Vector2(x, y);
+		return IsBetween(start1, end1, intersection) && IsBetween(start2, end2, intersection);
 	}
 
 	public static List<Vector2> LineRectangleIntersections(Vector2 start, Vector2 end, Vector2 rectanglePosition, Vector2 rectangleSize, float offset = 0)
@@ -41,9 +52,7 @@ public class MathUtils
 		foreach (Tuple<Vector2, Vector2> line in lines)
 		{
 			bool hasIntersection = LineLineIntersection(out Vector2 intersection, start, end, line.Item1, line.Item2);
-			float sideLength = Vector2.Distance(line.Item1, line.Item2);
-			float segmentLength = Vector2.Distance(start, end);
-            if (hasIntersection && Vector2.Distance(line.Item1, intersection) < sideLength + offset && Vector2.Distance(line.Item2, intersection) < sideLength + offset && Vector2.Distance(start, intersection) < segmentLength + offset && Vector2.Distance(end, intersection) < segmentLength + offset)
+            if (hasIntersection)
 			{
 				intersections.Add(intersection);
 			}
