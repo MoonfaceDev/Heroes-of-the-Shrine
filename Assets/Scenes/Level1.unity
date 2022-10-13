@@ -1326,7 +1326,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToRun: 0.5
-  timeToStopRun: 0
   runSpeedMultiplier: 1.5
   runParticles: {fileID: 1996247493}
 --- !u!114 &871744035
@@ -1555,7 +1554,7 @@ MonoBehaviour:
   midair: 0
   anticipateDuration: 0.1
   activeDuration: 0
-  recoveryDuration: 0
+  recoveryDuration: 0.1
   hitbox: {fileID: 948508458}
   overrideDefaultHittableTags: 0
   hittableTags: []
@@ -1592,7 +1591,7 @@ MonoBehaviour:
   hitType: 1
   knockbackPower: 0
   knockbackDirection: 0
-  stunTime: 0.3
+  stunTime: 0.5
 --- !u!114 &871744049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1620,7 +1619,7 @@ MonoBehaviour:
   hitType: 1
   knockbackPower: 0
   knockbackDirection: 0
-  stunTime: 0.3
+  stunTime: 0.5
 --- !u!114 &871744050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1709,8 +1708,8 @@ MonoBehaviour:
   knockbackPower: 60
   knockbackDirection: 280
   stunTime: 0
-  velocity: 25
-  acceleration: 250
+  velocity: 50
+  acceleration: 500
 --- !u!114 &871744053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1738,7 +1737,7 @@ MonoBehaviour:
   hitType: 1
   knockbackPower: 0
   knockbackDirection: 0
-  stunTime: 0.3
+  stunTime: 0.5
 --- !u!114 &871744054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1756,17 +1755,17 @@ MonoBehaviour:
   previousAttacks:
   - {fileID: 871744055}
   midair: 1
-  anticipateDuration: 0.05
-  activeDuration: 0.15
+  anticipateDuration: 0.01
+  activeDuration: 0.14
   recoveryDuration: 0.3
   hitbox: {fileID: 1804132860}
   overrideDefaultHittableTags: 0
   hittableTags: []
   damage: 20
-  hitType: 0
+  hitType: 1
   knockbackPower: 1
   knockbackDirection: 20
-  stunTime: 0
+  stunTime: 0.5
 --- !u!114 &871744055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1783,8 +1782,8 @@ MonoBehaviour:
   interruptable: 0
   previousAttacks: []
   midair: 1
-  anticipateDuration: 0.05
-  activeDuration: 0.15
+  anticipateDuration: 0.1
+  activeDuration: 0.1
   recoveryDuration: 0.3
   hitbox: {fileID: 657404069}
   overrideDefaultHittableTags: 0
@@ -1793,7 +1792,7 @@ MonoBehaviour:
   hitType: 1
   knockbackPower: 1
   knockbackDirection: 20
-  stunTime: 0.3
+  stunTime: 0.5
 --- !u!114 &871744056
 MonoBehaviour:
   m_ObjectHideFlags: 0
