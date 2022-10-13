@@ -32,6 +32,11 @@ public class MovableObject : MonoBehaviour
         startPosition = position;
         velocity = Vector3.zero;
         acceleration = Vector3.zero;
+        onStuck += () =>
+        {
+            velocity = Vector3.zero + velocity.y * Vector3.up;
+            acceleration = Vector3.zero + acceleration.y * Vector3.up;
+        };
     }
 
     // Update is called once per frame
@@ -39,7 +44,9 @@ public class MovableObject : MonoBehaviour
     {
         //update position and velocity
         velocity += acceleration * Time.deltaTime;
-        UpdatePosition(position + Time.deltaTime * velocity + 0.5f * Mathf.Pow(Time.deltaTime, 2) * acceleration);
+        if (!CompareTag("Barrier")) {
+            UpdatePosition(position + Time.deltaTime * velocity + 0.5f * Mathf.Pow(Time.deltaTime, 2) * acceleration);
+        }
         //update position in scene
         transform.position = GroundScreenCoordinates(position);
         if (figureObject)
@@ -79,9 +86,17 @@ public class MovableObject : MonoBehaviour
                 }
                 return prev;
             });
-            position = ToSpace(closest - 0.001f * (ToPlane(position) - closest).normalized) + position.y * Vector3.up;
+            if (Vector2.Distance(ToPlane(position), closest) > 0.001f)
+            {
+                position = ToSpace(closest - 0.001f * (ToPlane(position) - closest).normalized) + position.y * Vector3.up;
+            }
+            else
+            {
+                position = this.position;
+            }
             onStuck?.Invoke();
         }
+        this.position.y = position.y;
         if (IsValidPosition(position))
         {
             this.position = position;
