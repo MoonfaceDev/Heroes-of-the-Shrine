@@ -294,9 +294,10 @@ GameObject:
   - component: {fileID: 439857755}
   - component: {fileID: 439857762}
   - component: {fileID: 439857763}
+  - component: {fileID: 439857764}
   m_Layer: 0
   m_Name: Cave Goblin
-  m_TagString: Enemy
+  m_TagString: Enemy.Goblin.Cave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -588,12 +589,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 439857740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dee681c79c0155346bc8110bd1bdb610, type: 3}
+  m_Script: {fileID: 11500000, guid: f845d9457f00da341ab2556b6b7cc9b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
   rageHealthThreshold: 5
   rageDamageMultiplier: 0
+--- !u!114 &439857764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439857740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 595f0ae187581934e9415feea720a763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &486141796
 GameObject:
   m_ObjectHideFlags: 0

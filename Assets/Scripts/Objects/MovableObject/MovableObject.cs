@@ -130,6 +130,18 @@ public class MovableObject : MonoBehaviour
         figureObject.GetComponent<SpriteRenderer>().sortingOrder = -1 * (Mathf.RoundToInt(position.z * 100f) * 10);
     }
 
+    public float Distance(Vector3 point)
+    {
+        return (position - point).magnitude;
+    }
+
+    public float GroundDistance(Vector3 point)
+    {
+        Vector3 distance = position - point;
+        distance.y = 0;
+        return distance.magnitude;
+    }
+
     public static Vector3 WorldCoordinates(Vector3 v)
     {
         return new Vector3(v.x, 0, v.y / zScale);

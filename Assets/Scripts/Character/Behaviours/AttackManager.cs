@@ -20,6 +20,17 @@ public class AttackManager : CharacterBehaviour
         damageBonuses = new();
         damageMultipliers = new();
 
+        eventManager.Attach(() => true, () =>
+        {
+            if (lastAttack != null && Time.time - lastAttackTime > maxComboDelay)
+            {
+                lastAttack = null;
+            }
+        }, single: false);
+    }
+
+    public void Start()
+    {
         BaseAttack[] attackComponents = GetComponents<BaseAttack>();
         foreach (BaseAttack attack in attackComponents)
         {
@@ -29,14 +40,6 @@ public class AttackManager : CharacterBehaviour
                 lastAttackTime = Time.time;
             };
         }
-        
-        eventManager.Attach(() => true, () =>
-        {
-            if (lastAttack != null && Time.time - lastAttackTime > maxComboDelay)
-            {
-                lastAttack = null;
-            }
-        }, single: false);
     }
 
     private bool AnyAttack(Func<BaseAttack, bool> callback)

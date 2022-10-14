@@ -48,11 +48,32 @@ public class SimpleAttack : BaseAttack
         }
     }
 
+    protected bool IsTagIncluded(string tag, string group)
+    {
+        if (tag == group)
+        {
+            return true;
+        }
+        return tag.StartsWith(group + ".");
+    }
+
+    protected bool IsHittableTag(string tag)
+    {
+        foreach (string hittableTag in HittableTags)
+        {
+            if (IsTagIncluded(tag, hittableTag))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     protected virtual void CreateHitDetector()
     {
         SingleHitDetector hitDetector = new(eventManager, hitbox, (hittable) =>
         {
-            if (HittableTags.Contains(hittable.tag))
+            if (IsHittableTag(hittable.tag))
             {
                 HitCallable(hittable);
             }
