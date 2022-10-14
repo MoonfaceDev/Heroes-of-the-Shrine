@@ -192,8 +192,8 @@ public class KnockbackBehaviour : CharacterBehaviour
             {
                 movableObject.position.y = 0;
             }
+            onFinish?.Invoke();
         }
-        onFinish?.Invoke();
         if (recovering)
         {
             StopCoroutine(recoverCoroutine);

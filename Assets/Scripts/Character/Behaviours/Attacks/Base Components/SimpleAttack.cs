@@ -79,9 +79,7 @@ public class SimpleAttack : BaseAttack
             }
         });
         onStart += () => hitDetector.Start();
-        void StopHitDetector() => hitDetector.Stop();
-        onFinish += StopHitDetector;
-        onStop += StopHitDetector;
+        onFinish += () => hitDetector.Stop();
     }
 
     public override bool CanWalk()

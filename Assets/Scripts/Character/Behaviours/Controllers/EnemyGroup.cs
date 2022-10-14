@@ -11,6 +11,35 @@ public class EnemyGroup : CharacterBehaviour
         stateMachine = GetComponent<Animator>();
     }
 
+    public void Start()
+    {
+        EnemyGroup[] enemies = FindObjectsOfType<EnemyGroup>();
+        int enemiesAttackingCount = 0;
+        foreach (EnemyGroup enemy in enemies)
+        {
+            if (enemy != this)
+            {
+                AttackManager enemyAttackManager = enemy.GetComponent<AttackManager>();
+                if (enemyAttackManager && enemyAttackManager.attacking)
+                {
+                    enemyAttackManager.onAnticipate += () =>
+                    {
+                        enemiesAttackingCount++;
+                        stateMachine.SetBool("enemiesAttacking", true);
+                    };
+                    enemyAttackManager.onStop += () =>
+                    {
+                        enemiesAttackingCount--;
+                        if (enemiesAttackingCount == 0)
+                        {
+                            stateMachine.SetBool("enemiesAttacking", false);
+                        }
+                    };
+                }
+            }
+        }
+    }
+
     void Update()
     {
         EnemyGroup[] enemies = FindObjectsOfType<EnemyGroup>();
@@ -46,22 +75,5 @@ public class EnemyGroup : CharacterBehaviour
             });
             stateMachine.SetBool("isClosestToPlayer", this == closestEnemy);
         }
-
-        // Are any enemies attacking
-        SetEnemiesAttacking(enemies);
-    }
-
-    private void SetEnemiesAttacking(EnemyGroup[] enemies)
-    {
-        foreach (EnemyGroup enemy in enemies)
-        {
-            AttackManager enemyAttackManager = enemy.GetComponent<AttackManager>();
-            if (enemyAttackManager && enemyAttackManager.attacking)
-            {
-                stateMachine.SetBool("enemiesAttacking", true);
-                return;
-            }
-        }
-        stateMachine.SetBool("enemiesAttacking", false);
     }
 }

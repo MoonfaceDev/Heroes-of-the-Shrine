@@ -11,6 +11,12 @@ public class AttackManager : CharacterBehaviour
     [HideInInspector] public BaseAttack lastAttack;
     [HideInInspector] public float lastAttackTime;
 
+    public event Action onAnticipate;
+    public event Action onStart;
+    public event Action onFinish;
+    public event Action onRecover;
+    public event Action onStop;
+
     private List<DamageBonus> damageBonuses;
     private List<DamageBonus> damageMultipliers;
 
@@ -34,6 +40,12 @@ public class AttackManager : CharacterBehaviour
         BaseAttack[] attackComponents = GetComponents<BaseAttack>();
         foreach (BaseAttack attack in attackComponents)
         {
+            attack.onAnticipate += () => onAnticipate?.Invoke();
+            attack.onStart += () => onStart?.Invoke();
+            attack.onFinish += () => onFinish?.Invoke();
+            attack.onRecover += () => onRecover?.Invoke();
+            attack.onStop += () => onStop?.Invoke();
+
             attack.onFinish += () =>
             {
                 lastAttack = attack;

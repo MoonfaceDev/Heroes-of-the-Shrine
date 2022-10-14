@@ -43,12 +43,18 @@ public class EnemyBrain : CharacterBehaviour
         if (player)
         {
             KnockbackBehaviour playerKnockbackBehaviour = player.GetComponent<KnockbackBehaviour>();
+            playerKnockbackBehaviour.onStart += () => stateMachine.SetBool("playerKnockback", true);
+            playerKnockbackBehaviour.onFinish += () => stateMachine.SetBool("playerKnockback", false);
             playerKnockbackBehaviour.onFinish += () => stateMachine.SetBool("playerRecoveringFromKnockback", true);
             playerKnockbackBehaviour.onRecover += () => stateMachine.SetBool("playerRecoveringFromKnockback", false);
 
             StunBehaviour playerStunBehaviour = player.GetComponent<StunBehaviour>();
             playerStunBehaviour.onStart += () => stateMachine.SetBool("playerStun", true);
             playerStunBehaviour.onStop += () => stateMachine.SetBool("playerStun", false);
+
+            AttackManager playerAttackManager = player.GetComponent<AttackManager>();
+            playerAttackManager.onAnticipate += () => stateMachine.SetBool("playerAttacking", true);
+            playerAttackManager.onStop += () => stateMachine.SetBool("playerAttacking", false);
         }
     }
 

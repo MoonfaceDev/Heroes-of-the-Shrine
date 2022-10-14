@@ -29,15 +29,11 @@ public class SlashAttack : SimpleAttack {
             eventManager.Attach(() => Mathf.Sign(movableObject.velocity.x) != direction, () => isMoving = false);
         };
 
-        void FinishAction()
+        onFinish += () => 
         {
             movableObject.velocity.x = 0;
             movableObject.acceleration.x = 0;
-        }
-
-        onFinish += FinishAction;
-
-        onStop += FinishAction;
+        };
     }
 
     protected override IEnumerator ActiveCoroutine()

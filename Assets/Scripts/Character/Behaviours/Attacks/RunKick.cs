@@ -30,15 +30,11 @@ public class RunKick : SimpleAttack
             eventManager.Attach(() => Mathf.Sign(movableObject.velocity.x) != direction, () => isMoving = false);
         };
 
-        void FinishAction()
+        onFinish += () => 
         {
             movableObject.velocity.x = 0;
             movableObject.acceleration.x = 0;
-        }
-
-        onFinish += FinishAction;
-
-        onStop += FinishAction;
+        };
     }
 
     public override bool CanAttack()

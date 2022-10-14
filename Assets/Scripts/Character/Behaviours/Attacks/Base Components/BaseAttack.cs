@@ -52,7 +52,7 @@ public abstract class BaseAttack : CharacterBehaviour
     public event Action onStart;
     public event Action onFinish;
     public event Action onRecover;
-    public event Action onStop; // manual stop
+    public event Action onStop; // attack stopped (manually / recovered)
 
     protected void InvokeOnAnticipate()
     {
@@ -104,11 +104,22 @@ public abstract class BaseAttack : CharacterBehaviour
 
     public void Stop()
     {
-        InvokeOnStop();
-        anticipating = false;
-        active = false;
-        recovering = false;
+        if (anticipating)
+        {
+            anticipating = false;
+        }
+        if (active)
+        {
+            active = false;
+            InvokeOnFinish();
+        }
+        if (recovering)
+        {
+            recovering = false;
+            InvokeOnRecover();
+        }
         StopCoroutine(attackFlowCoroutine);
+        InvokeOnStop();
     }
 
     private IEnumerator AttackFlow()
@@ -129,5 +140,6 @@ public abstract class BaseAttack : CharacterBehaviour
 
         recovering = false;
         InvokeOnRecover();
+        InvokeOnStop();
     }
 }

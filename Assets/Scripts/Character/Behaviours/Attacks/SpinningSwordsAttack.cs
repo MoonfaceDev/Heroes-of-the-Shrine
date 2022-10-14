@@ -34,22 +34,18 @@ public class SpinningSwordsAttack : SimpleAttack
             StartCoroutine(EnableHitDetector2());
         };
 
-        void StopDetectors()
+        onFinish += () => 
         {
             hitDetector1.Stop();
             hitDetector2.Stop();
-        }
-
-        onFinish += StopDetectors;
-
-        onStop += StopDetectors;
+        };
     }
 
     private SingleHitDetector CreateOneHitDetector(Hitbox hitbox)
     {
         return new(eventManager, hitbox, (hittable) =>
         {
-            if (HittableTags.Contains(hittable.tag))
+            if (IsHittableTag(hittable.tag))
             {
                 HitCallable(hittable);
             }
