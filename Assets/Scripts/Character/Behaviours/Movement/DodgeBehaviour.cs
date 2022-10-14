@@ -6,11 +6,14 @@ public class DodgeBehaviour : CharacterBehaviour
     public float dodgeDistance;
     public float anticipateTime;
     public float recoveryTime;
+    public float cooldown;
 
+    private float lastSlideFinishTime;
     public event Action onAnticipate;
     public event Action onDodge;
     public event Action onRecover;
     public event Action onStop;
+
     public bool recovering
     {
         get => _recovering;
@@ -44,6 +47,8 @@ public class DodgeBehaviour : CharacterBehaviour
     {
         base.Awake();
         walkBehaviour = GetComponent<WalkBehaviour>();
+        lastSlideFinishTime = Time.time - cooldown;
+        onStop += () => lastSlideFinishTime = Time.time;
     }
 
     public bool CanDodge()
@@ -55,6 +60,7 @@ public class DodgeBehaviour : CharacterBehaviour
         return movableObject.velocity.z != 0
             && movableObject.velocity.x == 0
             && movableObject.position.y == 0
+            && Time.time - lastSlideFinishTime > cooldown
             && !(slideBehaviour && slideBehaviour.slide)
             && !(knockbackBehaviour && knockbackBehaviour.knockback)
             && !(stunBehaviour && stunBehaviour.stun)
@@ -86,6 +92,7 @@ public class DodgeBehaviour : CharacterBehaviour
             {
                 recovering = false;
                 onRecover?.Invoke();
+                onStop?.Invoke();
             }, recoveryTime);
         }, anticipateTime);
     }
@@ -94,14 +101,15 @@ public class DodgeBehaviour : CharacterBehaviour
     {
         if (anticipating)
         {
-            anticipating = false;
             eventManager.Detach(anticipateEvent);
+            anticipating = false;
         }
-        onStop?.Invoke();
         if (recovering)
         {
-            recovering = false;
             eventManager.Detach(recoverEvent);
+            recovering = false;
+            onRecover?.Invoke();
         }
+        onStop?.Invoke();
     }
 }

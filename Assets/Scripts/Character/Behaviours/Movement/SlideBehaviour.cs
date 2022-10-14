@@ -5,6 +5,7 @@ public class SlideBehaviour : CharacterBehaviour
 {
     public float slideSpeedMultiplier;
     public float slideStopAcceleration;
+    public float cooldown;
 
     public event Action onStart;
     public event Action onFinish;
@@ -17,6 +18,7 @@ public class SlideBehaviour : CharacterBehaviour
         }
     }
 
+    private float lastSlideFinishTime;
     private bool _slide;
     private WalkBehaviour walkBehaviour;
     private EventListener stopEvent;
@@ -25,6 +27,8 @@ public class SlideBehaviour : CharacterBehaviour
     {
         base.Awake();
         walkBehaviour = GetComponent<WalkBehaviour>();
+        lastSlideFinishTime = Time.time - cooldown;
+        onFinish += () => lastSlideFinishTime = Time.time;
     }
 
     public bool CanSlide()
@@ -36,6 +40,7 @@ public class SlideBehaviour : CharacterBehaviour
         return movableObject.velocity.x != 0
             && movableObject.position.y == 0
             && !slide
+            && Time.time - lastSlideFinishTime > cooldown
             && !(dodgeBehaviour && dodgeBehaviour.dodge)
             && !(knockbackBehaviour && knockbackBehaviour.knockback)
             && !(stunBehaviour && stunBehaviour.stun)
