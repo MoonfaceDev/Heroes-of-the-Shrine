@@ -5,6 +5,7 @@ using UnityEngine;
 public class StunBehaviour : CharacterBehaviour
 {
     public bool resistant;
+    public int stunFrames;
 
     public event Action onStart;
     public event Action onStop;
@@ -17,8 +18,19 @@ public class StunBehaviour : CharacterBehaviour
             animator.SetBool("stun", _stun);
         }
     }
-    
+
+    public int stunFrame
+    {
+        get => _stunFrame;
+        private set
+        {
+            _stunFrame = value;
+            animator.SetInteger("stunFrame", _stunFrame);
+        }
+    }
+
     private bool _stun;
+    private int _stunFrame;
     private WalkBehaviour walkBehaviour;
     private JumpBehaviour jumpBehaviour;
     private SlideBehaviour slideBehaviour;
@@ -82,8 +94,9 @@ public class StunBehaviour : CharacterBehaviour
         Stop();
 
         stun = true;
+        stunFrame = (stunFrame + 1) % stunFrames;
         onStart?.Invoke();
-        movableObject.velocity = new Vector3(0, 0, 0);
+        movableObject.velocity = Vector3.zero;
         StartCoroutine(StopAfter(time));
     }
 
