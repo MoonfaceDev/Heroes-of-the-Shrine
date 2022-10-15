@@ -20,7 +20,7 @@ public class EnemyGroup : CharacterBehaviour
             if (enemy != this)
             {
                 AttackManager enemyAttackManager = enemy.GetComponent<AttackManager>();
-                if (enemyAttackManager && enemyAttackManager.attacking)
+                if (enemyAttackManager)
                 {
                     enemyAttackManager.onAnticipate += () =>
                     {

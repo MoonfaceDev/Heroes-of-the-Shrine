@@ -31,6 +31,7 @@ public class StunBehaviour : CharacterBehaviour
 
     private bool _stun;
     private int _stunFrame;
+    private Coroutine stopCoroutine;
     private WalkBehaviour walkBehaviour;
     private JumpBehaviour jumpBehaviour;
     private SlideBehaviour slideBehaviour;
@@ -97,13 +98,17 @@ public class StunBehaviour : CharacterBehaviour
         stunFrame = (stunFrame + 1) % stunFrames;
         onStart?.Invoke();
         movableObject.velocity = Vector3.zero;
-        StartCoroutine(StopAfter(time));
+        stopCoroutine = StartCoroutine(StopAfter(time));
     }
 
     public void Stop()
     {
         stun = false;
         onStop?.Invoke();
+        if (stopCoroutine != null)
+        {
+            StopCoroutine(stopCoroutine);
+        }
     }
 
     private IEnumerator StopAfter(float time)
