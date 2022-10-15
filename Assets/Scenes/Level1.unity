@@ -295,6 +295,8 @@ GameObject:
   - component: {fileID: 439857762}
   - component: {fileID: 439857763}
   - component: {fileID: 439857764}
+  - component: {fileID: 439857766}
+  - component: {fileID: 439857765}
   m_Layer: 0
   m_Name: Cave Goblin
   m_TagString: Enemy.Goblin.Cave
@@ -358,7 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figureObject: {fileID: 1387175052}
-  position: {x: 3.98, y: 0, z: -2.91}
+  position: {x: 1.84, y: 0, z: -2.91}
   startPosition: {x: 3.98, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -370,7 +372,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439857740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.98, y: -2.328, z: 0}
+  m_LocalPosition: {x: 1.84, y: -2.328, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -380,6 +382,8 @@ Transform:
   - {fileID: 596657973}
   - {fileID: 1293244187}
   - {fileID: 1126762353}
+  - {fileID: 1974185346}
+  - {fileID: 933698993}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -607,6 +611,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595f0ae187581934e9415feea720a763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &439857765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439857740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cfe8175de16ba346a6957969e6a94ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles: {fileID: 0}
+--- !u!114 &439857766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439857740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e86d033fb4f164abb77561de174642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instant: 0
+  interruptable: 1
+  previousAttacks: []
+  midair: 0
+  anticipateDuration: 0.15
+  activeDuration: 0.5
+  recoveryDuration: 0.15
+  hitbox: {fileID: 0}
+  overrideDefaultHittableTags: 0
+  hittableTags: []
+  damage: 5
+  hitType: 0
+  knockbackPower: 0
+  knockbackDirection: 0
+  stunTime: 0
+  electrifyDuration: 5
+  electrifySpeedMultiplier: 0.5
+  periodicHitbox: {fileID: 1974185347}
+  periodicHitInterval: 0.1
+  periodicHitCount: 4
+  periodicHitElectrifyRate: 0.2
+  periodicStunTime: 0.5
+  periodicDamage: 5
+  explosionHitbox: {fileID: 933698994}
+  epxlosionKnockbackPower: 10
+  explosionKnockbackDirection: 45
+  explosionDamage: 20
 --- !u!1 &486141796
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,7 +916,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 596657971}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.30999994, y: 0.29999995, z: 0}
+  m_LocalPosition: {x: 0.31000006, y: 0.29999995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1262,6 +1318,7 @@ GameObject:
   - component: {fileID: 871744041}
   - component: {fileID: 871744057}
   - component: {fileID: 871744042}
+  - component: {fileID: 871744058}
   - component: {fileID: 871744044}
   - component: {fileID: 871744046}
   - component: {fileID: 871744040}
@@ -1853,6 +1910,19 @@ MonoBehaviour:
   anticipateTime: 0.05
   recoveryTime: 0.2
   cooldown: 1
+--- !u!114 &871744058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871744029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cfe8175de16ba346a6957969e6a94ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles: {fileID: 0}
 --- !u!1 &900157164
 GameObject:
   m_ObjectHideFlags: 0
@@ -1952,6 +2022,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &933698992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 933698993}
+  - component: {fileID: 933698994}
+  m_Layer: 0
+  m_Name: ElectrifyExploationHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &933698993
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933698992}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.5000001, y: -0.29999995, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 439857745}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &933698994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933698992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: 1.5, y: 0.3, z: -0.75}
+  size: {x: 1.5, y: 1.5, z: 1.5}
+  parentObject: {fileID: 439857744}
 --- !u!1 &948508457
 GameObject:
   m_ObjectHideFlags: 0
@@ -2397,7 +2514,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -116351853, guid: c558e1a82a9402a479f9228bc5d85cce, type: 3}
+  m_Sprite: {fileID: 1868346238, guid: c558e1a82a9402a479f9228bc5d85cce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2769,6 +2886,53 @@ MonoBehaviour:
   position: {x: -1.98, y: 0.3, z: -0.5}
   size: {x: 3.74, y: 0.75, z: 1}
   parentObject: {fileID: 871744039}
+--- !u!1 &1974185345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1974185346}
+  - component: {fileID: 1974185347}
+  m_Layer: 0
+  m_Name: ElectrifyAttackHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1974185346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974185345}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.42999995, y: 0.03999996, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 439857745}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1974185347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974185345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: 0.43, y: 0.64, z: -0.75}
+  size: {x: 2.24, y: 0.71, z: 1.5}
+  parentObject: {fileID: 439857744}
 --- !u!1 &1996247490
 GameObject:
   m_ObjectHideFlags: 0
