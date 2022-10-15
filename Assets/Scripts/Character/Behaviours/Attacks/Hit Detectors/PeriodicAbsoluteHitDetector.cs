@@ -1,7 +1,10 @@
 using System;
+using UnityEngine;
 
 public class PeriodicAbsoluteHitDetector : BaseHitDetector
 {
+    public event Action onDetect;
+
     private readonly EventManager eventManager;
     private readonly Hitbox hitbox;
     private readonly Action<HittableBehaviour> hitCallable;
@@ -29,6 +32,7 @@ public class PeriodicAbsoluteHitDetector : BaseHitDetector
 
     private void DetectHits()
     {
+        onDetect?.Invoke();
         HittableBehaviour[] hittables = UnityEngine.Object.FindObjectsOfType<HittableBehaviour>();
         foreach (HittableBehaviour hittable in hittables)
         {
