@@ -52,7 +52,6 @@ public class MovableObject : MonoBehaviour
         if (figureObject)
         {
             figureObject.transform.localPosition = ScreenCoordinates(position.y * Vector3.up);
-            UpdateSortingOrder();
         }
     }
 
@@ -123,11 +122,6 @@ public class MovableObject : MonoBehaviour
             }
         }
         return true;
-    }
-
-    private void UpdateSortingOrder()
-    {
-        figureObject.GetComponent<SpriteRenderer>().sortingOrder = -1 * (Mathf.RoundToInt(position.z * 100f) * 10);
     }
 
     public float Distance(Vector3 point)
