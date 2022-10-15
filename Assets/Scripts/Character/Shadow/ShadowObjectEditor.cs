@@ -7,11 +7,15 @@ class ShadowObjectEditor : Editor
 {
     SerializedProperty shadowScale;
     SerializedProperty movableObject;
+    SerializedProperty knockbackBehaviour;
+    SerializedProperty recoveringFromKnockbackScale;
 
     void OnEnable()
     {
         shadowScale = serializedObject.FindProperty("shadowScale");
         movableObject = serializedObject.FindProperty("movableObject");
+        knockbackBehaviour = serializedObject.FindProperty("knockbackBehaviour");
+        recoveringFromKnockbackScale = serializedObject.FindProperty("recoveringFromKnockbackScale");
     }
 
     public override void OnInspectorGUI()
@@ -30,6 +34,13 @@ class ShadowObjectEditor : Editor
         {
             float scale = 2 / (1 + Mathf.Exp(0.2f * shadowObject.movableObject.startPosition.y));
             shadowObject.transform.localScale = MovableObject.GroundScreenCoordinates(Vector3.Scale(shadowObject.shadowScale, scale * Vector3.one));
+        }
+        EditorGUILayout.PropertyField(knockbackBehaviour);
+        shadowObject.knockbackBehaviour = (KnockbackBehaviour) knockbackBehaviour.objectReferenceValue;
+        if (shadowObject.knockbackBehaviour)
+        {
+            EditorGUILayout.PropertyField(recoveringFromKnockbackScale);
+            shadowObject.recoveringFromKnockbackScale = recoveringFromKnockbackScale.floatValue;
         }
         serializedObject.ApplyModifiedProperties();
     }
