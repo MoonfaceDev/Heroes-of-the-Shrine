@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ElectrifiedEffect : BaseEffect
 {
+    public ParticleSystem particles;
+
     private float startTime;
     private float currentDuration;
     private WalkBehaviour walkBehaviour;
@@ -38,11 +40,12 @@ public class ElectrifiedEffect : BaseEffect
         active = true;
         InvokeOnActivate();
 
-        speedModifier = new MultiplierModifier(speedReductionMultiplier);
         if (walkBehaviour)
         {
+            speedModifier = new MultiplierModifier(speedReductionMultiplier);
             walkBehaviour.speed.AddModifier(speedModifier);
         }
+        particles.Play();
 
         startTime = Time.time;
         currentDuration = duration;
@@ -57,6 +60,7 @@ public class ElectrifiedEffect : BaseEffect
         {
             walkBehaviour.speed.RemoveModifier(speedModifier);
         }
+        particles.Stop();
 
         currentDuration = 0;
         InvokeOnDeactivate();
