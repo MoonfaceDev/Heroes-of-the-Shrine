@@ -6,7 +6,7 @@ public class WalkBehaviour : CharacterBehaviour
 {
     public float defaultSpeed;
 
-    [HideInInspector] public float speed;
+    [HideInInspector] public ModifiableValue speed;
     public event Action onStart;
     public event Action onStop;
     public bool walk
@@ -24,7 +24,7 @@ public class WalkBehaviour : CharacterBehaviour
     public override void Awake()
     {
         base.Awake();
-        speed = defaultSpeed;
+        speed = new ModifiableValue(defaultSpeed);
     }
 
     public bool CanWalk()

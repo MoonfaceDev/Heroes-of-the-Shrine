@@ -20,6 +20,7 @@ public class FollowBehaviour : CharacterBehaviour
     private bool _active;
     private Pathfind pathfind;
     private WalkBehaviour walkBehaviour;
+    private IModifier speedModifier;
     private EventListener followEvent;
 
     public override void Awake()
@@ -34,7 +35,8 @@ public class FollowBehaviour : CharacterBehaviour
         active = true;
         onStart?.Invoke();
 
-        walkBehaviour.speed = walkBehaviour.defaultSpeed * speedMultiplier;
+        speedModifier = new MultiplierModifier(speedMultiplier);
+        walkBehaviour.speed.AddModifier(speedModifier);
 
         followEvent = eventManager.Attach(() => true, () => {
             Vector3 direction = pathfind.Direction(movableObject.position, target.position);
@@ -48,7 +50,7 @@ public class FollowBehaviour : CharacterBehaviour
         onStop?.Invoke();
 
         eventManager.Detach(followEvent);
-        walkBehaviour.speed = walkBehaviour.defaultSpeed;
+        walkBehaviour.speed.RemoveModifier(speedModifier);
         walkBehaviour.Stop(true);
     }
 }

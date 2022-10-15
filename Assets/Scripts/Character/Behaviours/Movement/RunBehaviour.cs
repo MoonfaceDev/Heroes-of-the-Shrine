@@ -26,7 +26,17 @@ public class RunBehaviour : CharacterBehaviour
     private JumpBehaviour jumpBehaviour;
     private Coroutine startCoroutine;
     private ParticleSystem.MainModule runParticlesMain;
+    private IModifier speedModifier;
     private bool _run;
+
+
+    public bool CanRun()
+    {
+        ElectrifiedEffect electrifiedEffect = GetComponent<ElectrifiedEffect>();
+        return
+            !(electrifiedEffect && electrifiedEffect.active);
+    }
+
 
     public override void Awake()
     {
@@ -37,7 +47,10 @@ public class RunBehaviour : CharacterBehaviour
 
         walkBehaviour.onStart += () =>
         {
-            startCoroutine = StartCoroutine(RunAfter(timeToRun));
+            if (CanRun())
+            {
+                startCoroutine = StartCoroutine(RunAfter(timeToRun));
+            }
         };
         walkBehaviour.onStop += () =>
         {
@@ -72,7 +85,8 @@ public class RunBehaviour : CharacterBehaviour
     public void Run()
     {
         run = true;
-        walkBehaviour.speed *= runSpeedMultiplier;
+        speedModifier = new MultiplierModifier(runSpeedMultiplier);
+        walkBehaviour.speed.AddModifier(speedModifier);
         runParticles.Play();
         onStart?.Invoke();
     }
@@ -80,7 +94,7 @@ public class RunBehaviour : CharacterBehaviour
     public void Stop()
     {
         run = false;
-        walkBehaviour.speed = walkBehaviour.defaultSpeed;
+        walkBehaviour.speed.RemoveModifier(speedModifier);
         runParticles.Stop();
         onStop?.Invoke();
     }

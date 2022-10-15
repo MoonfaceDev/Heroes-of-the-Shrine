@@ -57,6 +57,7 @@ public class DodgeBehaviour : CharacterBehaviour
         SlideBehaviour slideBehaviour = GetComponent<SlideBehaviour>();
         StunBehaviour stunBehaviour = GetComponent<StunBehaviour>();
         AttackManager attackManager = GetComponent<AttackManager>();
+        ElectrifiedEffect electrifiedEffect = GetComponent<ElectrifiedEffect>();
         return movableObject.velocity.z != 0
             && movableObject.velocity.x == 0
             && movableObject.position.y == 0
@@ -64,7 +65,8 @@ public class DodgeBehaviour : CharacterBehaviour
             && !(slideBehaviour && slideBehaviour.slide)
             && !(knockbackBehaviour && knockbackBehaviour.knockback)
             && !(stunBehaviour && stunBehaviour.stun)
-            && !(attackManager && attackManager.attacking);
+            && !(attackManager && attackManager.attacking)
+            && !(electrifiedEffect && electrifiedEffect.active);
     }
 
     public void Dodge()

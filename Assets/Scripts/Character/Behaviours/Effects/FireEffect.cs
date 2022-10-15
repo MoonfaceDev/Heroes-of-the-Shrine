@@ -1,52 +1,49 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
-public class FireEffect : CharacterBehaviour
+public class FireEffect : BaseEffect
 {
-    public bool fire
-    {
-        get => _fire;
-        private set
-        {
-            _fire = value;
-            animator.SetBool("fire", value);
-        }
-    }
-
-    public event Action onApply;
-    public event Action onCancel;
-
-    private bool _fire;
     private Coroutine damageCoroutine;
-    private HittableBehaviour hittableBehaviour;
+    private float startTime;
+    private float currentDuration;
 
-    public override void Awake()
+    public void Activate(float duration, float hitInterval, float damagePerHit)
     {
-        base.Awake();
-        hittableBehaviour = GetComponent<HittableBehaviour>();
-    }
-
-    public void Apply(float hitInterval, float damagePerHit)
-    {
-        fire = true;
-        onApply?.Invoke();
+        active = true;
+        InvokeOnActivate();
         damageCoroutine = StartCoroutine(DoDamage(hitInterval, damagePerHit));
+        startTime = Time.time;
+        currentDuration = duration;
+        eventManager.Attach(() => Time.time - startTime > duration, Deactivate);
     }
 
-    public void Cancel()
+    public override void Deactivate()
     {
-        fire = false;
-        onCancel?.Invoke();
+        active = false;
+        currentDuration = 0;
+        InvokeOnDeactivate();
         StopCoroutine(damageCoroutine);
+    }
+
+    public override float GetProgress()
+    {
+        return currentDuration != 0 ? (Time.time - startTime) / currentDuration : 0;
     }
 
     private IEnumerator DoDamage(float hitInterval, float damagePerHit)
     {
+        HittableBehaviour hittableBehaviour = GetComponent<HittableBehaviour>();
         while (true)
         {
             yield return new WaitForSeconds(hitInterval);
-            hittableBehaviour.Hit(damagePerHit);
+            try
+            {
+                hittableBehaviour.Hit(damagePerHit);
+            }
+            catch (CannotHitException)
+            {
+                print(hittableBehaviour.name + " could not be hit by fire effect");
+            }
         }
     }
 }

@@ -1,5 +1,10 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+
+public class CannotHitException : Exception
+{
+}
 
 [RequireComponent(typeof(HealthSystem))]
 public class HittableBehaviour : CharacterBehaviour
@@ -38,7 +43,7 @@ public class HittableBehaviour : CharacterBehaviour
     {
         if (!CanGetHit())
         {
-            return;
+            throw new CannotHitException();
         }
         healthSystem.health -= damage;
         onHit?.Invoke(damage);
@@ -48,7 +53,7 @@ public class HittableBehaviour : CharacterBehaviour
     {
         if (!CanGetHit())
         {
-            return;
+            throw new CannotHitException();
         }
         Hit(damage);
         onKnockback?.Invoke(damage, power, angleDegrees);
@@ -63,7 +68,7 @@ public class HittableBehaviour : CharacterBehaviour
     {
         if (!CanGetHit())
         {
-            return;
+            throw new CannotHitException();
         }
         if (movableObject.position.y > 0)
         {

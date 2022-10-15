@@ -78,6 +78,7 @@ public class JumpBehaviour : CharacterBehaviour
         KnockbackBehaviour knockbackBehaviour = GetComponent<KnockbackBehaviour>();
         StunBehaviour stunBehaviour = GetComponent<StunBehaviour>();
         AttackManager attackManager = GetComponent<AttackManager>();
+        ElectrifiedEffect electrifiedEffect = GetComponent<ElectrifiedEffect>();
         return !anticipating
             && !recovering 
             && jumps < maxJumps
@@ -85,7 +86,8 @@ public class JumpBehaviour : CharacterBehaviour
             && !(dodgeBehaviour && dodgeBehaviour.dodge)
             && !(knockbackBehaviour && knockbackBehaviour.knockback)
             && !(stunBehaviour && stunBehaviour.stun)
-            && !(attackManager && attackManager.attacking);
+            && !(attackManager && attackManager.attacking)
+            && !(electrifiedEffect && electrifiedEffect.active);
     }
 
     public void Jump()

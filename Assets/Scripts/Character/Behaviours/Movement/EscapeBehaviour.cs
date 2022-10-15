@@ -18,6 +18,7 @@ public class EscapeBehaviour : CharacterBehaviour
 
     private bool _active;
     private WalkBehaviour walkBehaviour;
+    private IModifier speedModifier;
     private EventListener escapeEvent;
 
     public override void Awake()
@@ -31,7 +32,8 @@ public class EscapeBehaviour : CharacterBehaviour
         active = true;
         onStart?.Invoke();
 
-        walkBehaviour.speed = walkBehaviour.defaultSpeed * speedMultiplier;
+        speedModifier = new MultiplierModifier(speedMultiplier);
+        walkBehaviour.speed.AddModifier(speedModifier);
 
         movableObject.onStuck += Stop;
 
@@ -52,6 +54,6 @@ public class EscapeBehaviour : CharacterBehaviour
         movableObject.onStuck -= Stop;
         eventManager.Detach(escapeEvent);
         walkBehaviour.Stop(true);
-        walkBehaviour.speed = walkBehaviour.defaultSpeed;
+        walkBehaviour.speed.RemoveModifier(speedModifier);
     }
 }

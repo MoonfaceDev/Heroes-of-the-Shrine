@@ -6,6 +6,7 @@ public class ArcPattern : BasePattern
     public string targetTag;
     public float speedMultiplier;
 
+    private IModifier speedModifier;
     private EventListener circleEvent;
     private Action onStop;
 
@@ -16,7 +17,8 @@ public class ArcPattern : BasePattern
         WalkBehaviour walkBehaviour = animator.GetComponent<WalkBehaviour>();
         MovableObject player = GameObject.FindGameObjectWithTag(targetTag).GetComponent<MovableObject>();
 
-        walkBehaviour.speed = walkBehaviour.defaultSpeed * speedMultiplier;
+        speedModifier = new MultiplierModifier(speedMultiplier);
+        walkBehaviour.speed.AddModifier(speedModifier);
 
         Vector3 playerPosition = player.position;
         Vector3 initialDistance = walkBehaviour.movableObject.position - playerPosition;
@@ -51,6 +53,6 @@ public class ArcPattern : BasePattern
         walkBehaviour.movableObject.onStuck -= onStop;
         eventManager.Detach(circleEvent);
         walkBehaviour.Stop(true);
-        walkBehaviour.speed = walkBehaviour.defaultSpeed;
+        walkBehaviour.speed.RemoveModifier(speedModifier);
     }
 }
