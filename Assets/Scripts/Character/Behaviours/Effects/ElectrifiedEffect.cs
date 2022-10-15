@@ -8,6 +8,7 @@ public class ElectrifiedEffect : BaseEffect
     private float currentDuration;
     private WalkBehaviour walkBehaviour;
     private IModifier speedModifier;
+    private EventListener stopEvent;
 
     public override void Awake()
     {
@@ -27,14 +28,14 @@ public class ElectrifiedEffect : BaseEffect
         {
             slideBehaviour.Stop();
         }
-        StunBehaviour stunBehaviour = GetComponent<StunBehaviour>();
-        if (stunBehaviour)
+        DodgeBehaviour dodgeBehaviour = GetComponent<DodgeBehaviour>();
+        if (dodgeBehaviour)
         {
-            stunBehaviour.Stop();
+            dodgeBehaviour.Stop();
         }
         if (active)
         {
-            Deactivate();
+            Stop();
         }
 
         active = true;
@@ -49,10 +50,10 @@ public class ElectrifiedEffect : BaseEffect
 
         startTime = Time.time;
         currentDuration = duration;
-        eventManager.Attach(() => Time.time - startTime > duration, Deactivate);
+        stopEvent = eventManager.Attach(() => Time.time - startTime > duration, Stop);
     }
 
-    public override void Deactivate()
+    public override void Stop()
     {
         active = false;
 
@@ -63,7 +64,8 @@ public class ElectrifiedEffect : BaseEffect
         particles.Stop(true, stopBehavior: ParticleSystemStopBehavior.StopEmittingAndClear);
 
         currentDuration = 0;
-        InvokeOnDeactivate();
+        eventManager.Detach(stopEvent);
+        InvokeOnStop();
     }
 
     public override float GetProgress()

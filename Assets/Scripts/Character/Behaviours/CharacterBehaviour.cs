@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Character))]
-public class CharacterBehaviour: MonoBehaviour
+public abstract class CharacterBehaviour: MonoBehaviour
 {
     public static float gravityAcceleration = 20;
     public Animator animator
@@ -43,4 +43,6 @@ public class CharacterBehaviour: MonoBehaviour
     {
         character = GetComponent<Character>();
     }
+
+    public abstract void Stop();
 }

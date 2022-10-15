@@ -30,6 +30,17 @@ public class FollowBehaviour : CharacterBehaviour
         walkBehaviour = GetComponent<WalkBehaviour>();
     }
 
+    public void Start()
+    {
+        walkBehaviour.onStop += () =>
+        {
+            if (active)
+            {
+                Stop();
+            }
+        };
+    }
+
     public void Follow(MovableObject target, float speedMultiplier)
     {
         active = true;
@@ -44,13 +55,15 @@ public class FollowBehaviour : CharacterBehaviour
         }, false);
     }
 
-    public void Stop()
+    public override void Stop()
     {
-        active = false;
-        onStop?.Invoke();
-
-        eventManager.Detach(followEvent);
-        walkBehaviour.speed.RemoveModifier(speedModifier);
-        walkBehaviour.Stop(true);
+        if (active)
+        {
+            onStop?.Invoke();
+            active = false;
+            eventManager.Detach(followEvent);
+            walkBehaviour.speed.RemoveModifier(speedModifier);
+            walkBehaviour.Stop(true);
+        }
     }
 }

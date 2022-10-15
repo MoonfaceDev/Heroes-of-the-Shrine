@@ -2,10 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CannotHitException : Exception
-{
-}
-
 [RequireComponent(typeof(HealthSystem))]
 public class HittableBehaviour : CharacterBehaviour
 {
@@ -39,48 +35,54 @@ public class HittableBehaviour : CharacterBehaviour
         return !(knockbackBehaviour && knockbackBehaviour.recovering);
     }
 
-    public void Hit(float damage)
+    public bool Hit(float damage)
     {
         if (!CanGetHit())
         {
-            throw new CannotHitException();
+            return false;
         }
         healthSystem.health -= damage;
         onHit?.Invoke(damage);
+        return true;
     }
 
-    public void Knockback(float damage, float power, float angleDegrees)
+    public bool Knockback(float damage, float power, float angleDegrees)
     {
         if (!CanGetHit())
         {
-            throw new CannotHitException();
+            return false;
         }
         Hit(damage);
         onKnockback?.Invoke(damage, power, angleDegrees);
-        if (!knockbackBehaviour)
+        if (knockbackBehaviour)
         {
-            return;
+            knockbackBehaviour.Knockback(power, angleDegrees);
         }
-        knockbackBehaviour.Knockback(power, angleDegrees);
+        return true;
     }
 
-    public void Stun(float damage, float time)
+    public bool Stun(float damage, float time)
     {
         if (!CanGetHit())
         {
-            throw new CannotHitException();
+            return false;
         }
         if (movableObject.position.y > 0)
         {
             Knockback(damage, STUN_LAUNCH_POWER, STUN_LAUNCH_ANGEL);
-            return;
+            return true;
         }
         Hit(damage);
         onStun?.Invoke(damage, time);
-        if (!stunBehaviour)
+        if (stunBehaviour)
         {
-            return;
+            stunBehaviour.Stun(time);
         }
-        stunBehaviour.Stun(time);
+        return true;
+    }
+
+    public override void Stop()
+    {
+        throw new NotImplementedException();
     }
 }

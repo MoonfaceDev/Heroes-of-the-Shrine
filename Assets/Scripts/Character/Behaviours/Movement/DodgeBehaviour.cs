@@ -53,14 +53,15 @@ public class DodgeBehaviour : CharacterBehaviour
 
     public bool CanDodge()
     {
-        KnockbackBehaviour knockbackBehaviour = GetComponent<KnockbackBehaviour>();
         SlideBehaviour slideBehaviour = GetComponent<SlideBehaviour>();
+        KnockbackBehaviour knockbackBehaviour = GetComponent<KnockbackBehaviour>();
         StunBehaviour stunBehaviour = GetComponent<StunBehaviour>();
         AttackManager attackManager = GetComponent<AttackManager>();
         ElectrifiedEffect electrifiedEffect = GetComponent<ElectrifiedEffect>();
         return movableObject.velocity.z != 0
             && movableObject.velocity.x == 0
             && movableObject.position.y == 0
+            && !dodge
             && Time.time - lastSlideFinishTime > cooldown
             && !(slideBehaviour && slideBehaviour.slide)
             && !(knockbackBehaviour && knockbackBehaviour.knockback)
@@ -99,8 +100,12 @@ public class DodgeBehaviour : CharacterBehaviour
         }, anticipateTime);
     }
 
-    public void Stop()
+    public override void Stop()
     {
+        if (dodge)
+        {
+            onStop?.Invoke();
+        }
         if (anticipating)
         {
             eventManager.Detach(anticipateEvent);
@@ -112,6 +117,5 @@ public class DodgeBehaviour : CharacterBehaviour
             recovering = false;
             onRecover?.Invoke();
         }
-        onStop?.Invoke();
     }
 }

@@ -102,8 +102,13 @@ public abstract class BaseAttack : CharacterBehaviour
         attackFlowCoroutine = StartCoroutine(AttackFlow());
     }
 
-    public void Stop()
+    public override void Stop()
     {
+        if (attacking)
+        {
+            InvokeOnStop();
+            StopCoroutine(attackFlowCoroutine);
+        }
         if (anticipating)
         {
             anticipating = false;
@@ -118,25 +123,23 @@ public abstract class BaseAttack : CharacterBehaviour
             recovering = false;
             InvokeOnRecover();
         }
-        StopCoroutine(attackFlowCoroutine);
-        InvokeOnStop();
     }
 
     private IEnumerator AttackFlow()
     {
         anticipating = true;
         InvokeOnAnticipate();
-        yield return StartCoroutine(AnticipateCoroutine());
+        yield return AnticipateCoroutine();
 
         anticipating = false;
         active = true;
         InvokeOnStart();
-        yield return StartCoroutine(ActiveCoroutine());
+        yield return ActiveCoroutine();
 
         active = false;
         recovering = true;
         InvokeOnFinish();
-        yield return StartCoroutine(RecoveryCoroutine());
+        yield return RecoveryCoroutine();
 
         recovering = false;
         InvokeOnRecover();

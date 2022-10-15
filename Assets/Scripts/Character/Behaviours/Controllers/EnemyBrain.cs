@@ -75,6 +75,11 @@ public class EnemyBrain : CharacterBehaviour
         }
     }
 
+    public override void Stop()
+    {
+        throw new System.NotImplementedException();
+    }
+
     private bool IsEnraged()
     {
         HealthSystem healthSystem = GetComponent<HealthSystem>();

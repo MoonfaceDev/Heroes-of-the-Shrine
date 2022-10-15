@@ -91,11 +91,14 @@ public class RunBehaviour : CharacterBehaviour
         onStart?.Invoke();
     }
 
-    public void Stop()
+    public override void Stop()
     {
-        run = false;
-        walkBehaviour.speed.RemoveModifier(speedModifier);
-        runParticles.Stop();
-        onStop?.Invoke();
+        if (run)
+        {
+            onStop?.Invoke();
+            run = false;
+            walkBehaviour.speed.RemoveModifier(speedModifier);
+            runParticles.Stop();
+        }
     }
 }

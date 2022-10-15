@@ -10,4 +10,9 @@ public class HealthSystem : CharacterBehaviour
         base.Awake();
         health = startHealth;
     }
+
+    public override void Stop()
+    {
+        throw new System.NotImplementedException();
+    }
 }

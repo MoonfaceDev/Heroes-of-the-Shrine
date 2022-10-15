@@ -163,8 +163,12 @@ public class JumpBehaviour : CharacterBehaviour
         onRecover?.Invoke();
     }
 
-    public void Stop(bool waitForLand = true)
+    public override void Stop()
     {
+        if (jump)
+        {
+            onStop?.Invoke();
+        }
         if (anticipating)
         {
             StopCoroutine(anticipateCoroutine);
@@ -173,15 +177,11 @@ public class JumpBehaviour : CharacterBehaviour
         if (active)
         {
             movableObject.velocity.y = 0;
-            if (!waitForLand)
-            {
-                eventManager.Detach(jumpEvent);
-                active = false;
-                jumps = 0;
-                onJumpsChanged?.Invoke(jumps);
-            }
+            eventManager.Detach(jumpEvent);
+            active = false;
+            jumps = 0;
+            onJumpsChanged?.Invoke(jumps);
         }
-        onStop?.Invoke();
         if (recovering)
         {
             StopCoroutine(recoverCoroutine);

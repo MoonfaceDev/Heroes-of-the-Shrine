@@ -9,6 +9,8 @@ public class SlideBehaviour : CharacterBehaviour
 
     public event Action onStart;
     public event Action onFinish;
+    public event Action onStop;
+
     public bool slide
     {
         get => _slide;
@@ -74,14 +76,19 @@ public class SlideBehaviour : CharacterBehaviour
     private void LeaveSlide()
     {
         slide = false;
+        onFinish?.Invoke();
+
         movableObject.velocity.x = 0;
         movableObject.acceleration.x = 0;
-        onFinish?.Invoke();
     }
 
-    public void Stop()
+    public override void Stop()
     {
-        eventManager.Detach(stopEvent);
-        LeaveSlide();
+        if (slide)
+        {
+            onStop?.Invoke();
+            eventManager.Detach(stopEvent);
+            LeaveSlide();
+        }
     }
 }

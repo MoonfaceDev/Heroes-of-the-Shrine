@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
-public class SlashAttack : SimpleAttack {
+public class SlashAttack : SimpleAttack 
+{
     public float velocity;
     public float acceleration;
 
@@ -15,9 +16,12 @@ public class SlashAttack : SimpleAttack {
 
         onAnticipate += () =>
         {
-            WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
-            walkBehaviour.Stop();
             direction = lookDirection;
+            WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
+            if (walkBehaviour)
+            {
+                walkBehaviour.Stop();
+            }
         };
 
         onStart += () =>

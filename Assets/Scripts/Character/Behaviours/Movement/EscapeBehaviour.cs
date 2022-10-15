@@ -27,6 +27,23 @@ public class EscapeBehaviour : CharacterBehaviour
         walkBehaviour = GetComponent<WalkBehaviour>();
     }
 
+    public void Start()
+    {
+        movableObject.onStuck += () => {
+            if (active)
+            {
+                Stop();
+            }
+        };
+        walkBehaviour.onStop += () =>
+        {
+            if (active)
+            {
+                Stop();
+            }
+        };
+    }
+
     public void Escape(MovableObject target, float speedMultiplier, bool fitLookDirection = true)
     {
         active = true;
@@ -34,8 +51,6 @@ public class EscapeBehaviour : CharacterBehaviour
 
         speedModifier = new MultiplierModifier(speedMultiplier);
         walkBehaviour.speed.AddModifier(speedModifier);
-
-        movableObject.onStuck += Stop;
 
         escapeEvent = eventManager.Attach(() => true, () => {
             Vector3 distance = movableObject.position - target.position;
@@ -46,14 +61,15 @@ public class EscapeBehaviour : CharacterBehaviour
         }, false);
     }
 
-    public void Stop()
+    public override void Stop()
     {
-        active = false;
-        onStop?.Invoke();
-
-        movableObject.onStuck -= Stop;
-        eventManager.Detach(escapeEvent);
-        walkBehaviour.Stop(true);
-        walkBehaviour.speed.RemoveModifier(speedModifier);
+        if (active)
+        {
+            onStop?.Invoke();
+            active = false;
+            eventManager.Detach(escapeEvent);
+            walkBehaviour.Stop(true);
+            walkBehaviour.speed.RemoveModifier(speedModifier);
+        }
     }
 }

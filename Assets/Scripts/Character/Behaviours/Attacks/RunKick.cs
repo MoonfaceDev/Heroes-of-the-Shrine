@@ -12,6 +12,7 @@ public class RunKick : SimpleAttack
     public override void Awake()
     {
         base.Awake();
+
         float direction = 0;
 
         onAnticipate += () =>

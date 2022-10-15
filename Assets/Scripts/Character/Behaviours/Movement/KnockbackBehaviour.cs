@@ -15,6 +15,8 @@ public class KnockbackBehaviour : CharacterBehaviour
     public event OnBounce onBounce;
     public event Action onFinish;
     public event Action onRecover;
+    public event Action onStop;
+
     public bool active
     {
         get => _active;
@@ -90,7 +92,7 @@ public class KnockbackBehaviour : CharacterBehaviour
 
         if (jumpBehaviour)
         {
-            jumpBehaviour.Stop(waitForLand: false);
+            jumpBehaviour.Stop();
         }
 
         if (slideBehaviour)
@@ -112,8 +114,6 @@ public class KnockbackBehaviour : CharacterBehaviour
         {
             attackManager.Stop();
         }
-
-        Stop(false);
 
         active = true;
         onStart?.Invoke();
@@ -178,8 +178,12 @@ public class KnockbackBehaviour : CharacterBehaviour
         onRecover?.Invoke();
     }
 
-    public void Stop(bool land=true)
+    public override void Stop()
     {
+        if (knockback)
+        {
+            onStop?.Invoke();
+        }
         if (active)
         {
             eventManager.Detach(bounceEvent);
@@ -188,10 +192,6 @@ public class KnockbackBehaviour : CharacterBehaviour
             movableObject.acceleration.y = 0;
             movableObject.velocity.y = 0;
             movableObject.velocity.x = 0;
-            if (land)
-            {
-                movableObject.position.y = 0;
-            }
             onFinish?.Invoke();
         }
         if (recovering)

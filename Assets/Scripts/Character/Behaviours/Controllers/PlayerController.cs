@@ -97,4 +97,8 @@ public class PlayerController : CharacterBehaviour
         return 0;
     }
 
+    public override void Stop()
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -12,8 +12,11 @@ public class EnergyBurstAttack : SimpleAttack
     {
         base.Awake();
 
+        float direction = 0;
+
         onAnticipate += () =>
         {
+            direction = lookDirection;
             WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
             if (walkBehaviour)
             {
@@ -24,7 +27,6 @@ public class EnergyBurstAttack : SimpleAttack
         onStart += () =>
         {
             isMoving = true;
-            float direction = Mathf.Sign(movableObject.velocity.x);
             movableObject.velocity.x = direction * burstVelocity;
             movableObject.velocity.z = 0;
             movableObject.acceleration.x = -direction * burstAcceleration;

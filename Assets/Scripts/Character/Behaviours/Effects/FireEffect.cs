@@ -6,6 +6,7 @@ public class FireEffect : BaseEffect
     private Coroutine damageCoroutine;
     private float startTime;
     private float currentDuration;
+    private EventListener stopEvent;
 
     public void Activate(float duration, float hitInterval, float damagePerHit)
     {
@@ -14,15 +15,16 @@ public class FireEffect : BaseEffect
         damageCoroutine = StartCoroutine(DoDamage(hitInterval, damagePerHit));
         startTime = Time.time;
         currentDuration = duration;
-        eventManager.Attach(() => Time.time - startTime > duration, Deactivate);
+        stopEvent = eventManager.Attach(() => Time.time - startTime > duration, Stop);
     }
 
-    public override void Deactivate()
+    public override void Stop()
     {
         active = false;
         currentDuration = 0;
-        InvokeOnDeactivate();
         StopCoroutine(damageCoroutine);
+        eventManager.Detach(stopEvent);
+        InvokeOnStop();
     }
 
     public override float GetProgress()
@@ -36,14 +38,7 @@ public class FireEffect : BaseEffect
         while (true)
         {
             yield return new WaitForSeconds(hitInterval);
-            try
-            {
-                hittableBehaviour.Hit(damagePerHit);
-            }
-            catch (CannotHitException)
-            {
-                print(hittableBehaviour.name + " could not be hit by fire effect");
-            }
+            hittableBehaviour.Hit(damagePerHit);
         }
     }
 }

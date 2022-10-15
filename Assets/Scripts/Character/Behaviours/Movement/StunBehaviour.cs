@@ -69,7 +69,7 @@ public class StunBehaviour : CharacterBehaviour
 
         if (jumpBehaviour)
         {
-            jumpBehaviour.Stop(waitForLand: false);
+            jumpBehaviour.Stop();
         }
 
         if (slideBehaviour)
@@ -101,19 +101,23 @@ public class StunBehaviour : CharacterBehaviour
         stopCoroutine = StartCoroutine(StopAfter(time));
     }
 
-    public void Stop()
-    {
-        stun = false;
-        onStop?.Invoke();
-        if (stopCoroutine != null)
-        {
-            StopCoroutine(stopCoroutine);
-        }
-    }
-
     private IEnumerator StopAfter(float time)
     {
         yield return new WaitForSeconds(time);
-        Stop();
+        onStop?.Invoke();
+        stun = false;
+    }
+
+    public override void Stop()
+    {
+        if (stun)
+        {
+            onStop?.Invoke();
+            stun = false;
+            if (stopCoroutine != null)
+            {
+                StopCoroutine(stopCoroutine);
+            }
+        }
     }
 }

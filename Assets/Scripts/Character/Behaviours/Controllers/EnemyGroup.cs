@@ -76,4 +76,9 @@ public class EnemyGroup : CharacterBehaviour
             stateMachine.SetBool("isClosestToPlayer", this == closestEnemy);
         }
     }
+
+    public override void Stop()
+    {
+        throw new System.NotImplementedException();
+    }
 }
