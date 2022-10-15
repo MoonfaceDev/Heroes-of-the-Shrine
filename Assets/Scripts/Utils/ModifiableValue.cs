@@ -54,13 +54,15 @@ public class ModifiableValue
         }
     }
 
-    private float _value;
-    private List<FlatModifier> flatModifiers;
-    private List<MultiplierModifier> multiplierModifiers;
+    private readonly float _value;
+    private readonly List<FlatModifier> flatModifiers;
+    private readonly List<MultiplierModifier> multiplierModifiers;
 
     public ModifiableValue(float value)
     {
         _value = value;
+        flatModifiers = new();
+        multiplierModifiers = new();
     }
 
     public static implicit operator ModifiableValue(float value)
@@ -70,7 +72,7 @@ public class ModifiableValue
 
     public static implicit operator float(ModifiableValue value)
     {
-        return value;
+        return value.value;
     }
 
     public void AddModifier(IModifier modifier)
