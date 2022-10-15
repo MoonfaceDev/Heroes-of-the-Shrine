@@ -332,7 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af61f8ebac7a76742baddc8a44dddfa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 10
+  startHealth: 100
   health: 0
 --- !u!114 &439857743
 MonoBehaviour:
@@ -599,8 +599,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
-  rageHealthThreshold: 5
-  rageDamageMultiplier: 0
+  rageHealthThreshold: 50
+  rageDamageMultiplier: 1.1
 --- !u!114 &439857764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -662,9 +662,9 @@ MonoBehaviour:
   periodicStunTime: 0.5
   periodicDamage: 5
   explosionHitbox: {fileID: 933698994}
-  epxlosionKnockbackPower: 10
-  explosionKnockbackDirection: 45
-  explosionDamage: 20
+  epxlosionKnockbackPower: 30
+  explosionKnockbackDirection: 30
+  explosionDamage: 15
 --- !u!1 &486141796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,8 +1239,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1038603239
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 77a6f3e409ad45a4382f51da7d382f94, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
