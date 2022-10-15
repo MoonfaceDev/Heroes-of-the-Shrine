@@ -60,7 +60,7 @@ public class ElectrifiedEffect : BaseEffect
         {
             walkBehaviour.speed.RemoveModifier(speedModifier);
         }
-        particles.Stop();
+        particles.Stop(true, stopBehavior: ParticleSystemStopBehavior.StopEmittingAndClear);
 
         currentDuration = 0;
         InvokeOnDeactivate();
