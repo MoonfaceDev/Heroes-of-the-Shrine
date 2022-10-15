@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpinningSwordsAttack : SimpleAttack
+public class SpinningSwordsAttack : NormalAttack
 {
     public Hitbox hitbox1;
     public Hitbox hitbox2;
@@ -12,32 +12,29 @@ public class SpinningSwordsAttack : SimpleAttack
     private SingleHitDetector hitDetector1;
     private SingleHitDetector hitDetector2;
 
-    public override void Awake()
-    {
-        base.Awake();
-
-        onAnticipate += () =>
-        {
-            WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
-            walkBehaviour.Stop(true);
-        };
-    }
-
     protected override void CreateHitDetector()
     {
         hitDetector1 = CreateOneHitDetector(hitbox1);
         hitDetector2 = CreateOneHitDetector(hitbox2);
+        Coroutine disableHitDetector1 = null;
+        Coroutine enableHitDetector2 = null;
         onStart += () =>
         {
             hitDetector1.Start();
-            StartCoroutine(DisableHitDetector1());
-            StartCoroutine(EnableHitDetector2());
+            disableHitDetector1 = StartCoroutine(DisableHitDetector1());
+            enableHitDetector2 = StartCoroutine(EnableHitDetector2());
         };
 
         onFinish += () => 
         {
             hitDetector1.Stop();
             hitDetector2.Stop();
+        };
+
+        onStop += () =>
+        {
+            StopCoroutine(disableHitDetector1);
+            StopCoroutine(enableHitDetector2);
         };
     }
 

@@ -29,6 +29,15 @@ public class RunBehaviour : CharacterBehaviour
     private IModifier speedModifier;
     private bool _run;
 
+
+    public bool CanRun()
+    {
+        ElectrifiedEffect electrifiedEffect = GetComponent<ElectrifiedEffect>();
+        return
+            !(electrifiedEffect && electrifiedEffect.active);
+    }
+
+
     public override void Awake()
     {
         base.Awake();
@@ -38,7 +47,10 @@ public class RunBehaviour : CharacterBehaviour
 
         walkBehaviour.onStart += () =>
         {
-            startCoroutine = StartCoroutine(RunAfter(timeToRun));
+            if (CanRun())
+            {
+                startCoroutine = StartCoroutine(RunAfter(timeToRun));
+            }
         };
         walkBehaviour.onStop += () =>
         {

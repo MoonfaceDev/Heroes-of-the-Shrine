@@ -15,6 +15,26 @@ public class ElectrifiedEffect : BaseEffect
 
     public void Activate(float duration, float speedReductionMultiplier)
     {
+        RunBehaviour runBehaviour = GetComponent<RunBehaviour>();
+        if (runBehaviour)
+        {
+            runBehaviour.Stop();
+        }
+        SlideBehaviour slideBehaviour = GetComponent<SlideBehaviour>();
+        if (slideBehaviour)
+        {
+            slideBehaviour.Stop();
+        }
+        StunBehaviour stunBehaviour = GetComponent<StunBehaviour>();
+        if (stunBehaviour)
+        {
+            stunBehaviour.Stop();
+        }
+        if (active)
+        {
+            Deactivate();
+        }
+
         active = true;
         InvokeOnActivate();
 

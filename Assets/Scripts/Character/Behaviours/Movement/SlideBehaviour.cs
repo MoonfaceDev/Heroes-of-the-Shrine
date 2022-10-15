@@ -37,6 +37,7 @@ public class SlideBehaviour : CharacterBehaviour
         KnockbackBehaviour knockbackBehaviour = GetComponent<KnockbackBehaviour>();
         StunBehaviour stunBehaviour = GetComponent<StunBehaviour>();
         AttackManager attackManager = GetComponent<AttackManager>();
+        ElectrifiedEffect electrifiedEffect = GetComponent<ElectrifiedEffect>();
         return movableObject.velocity.x != 0
             && movableObject.position.y == 0
             && !slide
@@ -44,7 +45,8 @@ public class SlideBehaviour : CharacterBehaviour
             && !(dodgeBehaviour && dodgeBehaviour.dodge)
             && !(knockbackBehaviour && knockbackBehaviour.knockback)
             && !(stunBehaviour && stunBehaviour.stun)
-            && !(attackManager && attackManager.attacking);
+            && !(attackManager && attackManager.attacking)
+            && !(electrifiedEffect && electrifiedEffect.active);
     }
 
     public void Slide()

@@ -120,15 +120,22 @@ public class SimpleAttack : BaseAttack
     {
         float damage = CalculateDamage(hittableBehaviour);
         print(hittableBehaviour.name + " hit by " + attackName);
-        switch (hitType)
+        try
         {
-            case HitType.Knockback:
-                int hitDirection = (int)Mathf.Sign(hittableBehaviour.movableObject.position.x - movableObject.position.x);
-                hittableBehaviour.Knockback(damage, knockbackPower, KnockbackBehaviour.GetRelativeDirection(knockbackDirection, hitDirection));
-                break;
-            case HitType.Stun:
-                hittableBehaviour.Stun(damage, stunTime);
-                break;
+            switch (hitType)
+            {
+                case HitType.Knockback:
+                    int hitDirection = (int)Mathf.Sign(hittableBehaviour.movableObject.position.x - movableObject.position.x);
+                    hittableBehaviour.Knockback(damage, knockbackPower, KnockbackBehaviour.GetRelativeDirection(knockbackDirection, hitDirection));
+                    break;
+                case HitType.Stun:
+                    hittableBehaviour.Stun(damage, stunTime);
+                    break;
+            }
+        }
+        catch (CannotHitException)
+        {
+            print(hittableBehaviour.name + " could not be hit by " + attackName);
         }
     }
 

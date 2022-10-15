@@ -36,7 +36,14 @@ public class FireEffect : BaseEffect
         while (true)
         {
             yield return new WaitForSeconds(hitInterval);
-            hittableBehaviour.Hit(damagePerHit);
+            try
+            {
+                hittableBehaviour.Hit(damagePerHit);
+            }
+            catch (CannotHitException)
+            {
+                print(hittableBehaviour.name + " could not be hit by fire effect");
+            }
         }
     }
 }
