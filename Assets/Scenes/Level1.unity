@@ -2003,6 +2003,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slideSpeedMultiplier: 3
   slideStopAcceleration: 40
+  cooldown: 2
 --- !u!114 &871744042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2391,6 +2392,7 @@ MonoBehaviour:
   dodgeDistance: 1
   anticipateTime: 0.05
   recoveryTime: 0.2
+  cooldown: 1
 --- !u!1 &900157164
 GameObject:
   m_ObjectHideFlags: 0
