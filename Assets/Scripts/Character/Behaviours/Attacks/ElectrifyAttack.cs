@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class ElectrifyAttack : NormalAttack
@@ -31,7 +30,10 @@ public class ElectrifyAttack : NormalAttack
                 HitCallable(hittable);
             }
         }, periodicHitInterval);
-        
+
+        float detectCount = 0;
+        periodicHitDetector.onDetect += () => detectCount++;
+
         explosionHitDetector = new(eventManager, explosionHitbox, (hittable) =>
         {
             if (IsHittableTag(hittable.tag))
@@ -45,7 +47,12 @@ public class ElectrifyAttack : NormalAttack
         onStart += () =>
         {
             periodicHitDetector.Start();
-            switchHitDetectors = StartCoroutine(SwitchHitDetectors());
+            eventManager.Attach(() => detectCount >= periodicHitCount, () =>
+            {
+                periodicHitDetector.Stop();
+                explosionHitDetector.Start();
+                detectCount = 0;
+            });
         };
 
         onFinish += () =>
@@ -68,7 +75,7 @@ public class ElectrifyAttack : NormalAttack
     protected override void HitCallable(HittableBehaviour hittableBehaviour)
     {
         float damage = CalculateDamage(hittableBehaviour);
-        print(hittableBehaviour.name + " hit by " + attackName);
+        print(hittableBehaviour.name + " hit by periodic " + attackName);
         hittableBehaviour.Stun(damage, stunTime);
         if (Random.Range(0f, 1f) < periodicHitElectrifyRate)
         {
@@ -91,7 +98,7 @@ public class ElectrifyAttack : NormalAttack
     protected void ExplosionHitCallable(HittableBehaviour hittableBehaviour)
     {
         float damage = CalculateExplosionDamage(hittableBehaviour);
-        print(hittableBehaviour.name + " hit by " + attackName);
+        print(hittableBehaviour.name + " hit by explosion " + attackName);
         int hitDirection = (int)Mathf.Sign(hittableBehaviour.movableObject.position.x - movableObject.position.x);
         hittableBehaviour.Knockback(damage, epxlosionKnockbackPower, KnockbackBehaviour.GetRelativeDirection(explosionKnockbackDirection, hitDirection));
         ElectrifiedEffect electrifiedEffect = hittableBehaviour.GetComponent<ElectrifiedEffect>();
@@ -103,12 +110,5 @@ public class ElectrifyAttack : NormalAttack
         {
             Debug.LogWarning(hittableBehaviour.name + " doesn't have an ElectrifiedEffect component");
         }
-    }
-
-    private IEnumerator SwitchHitDetectors()
-    {
-        yield return new WaitForSeconds(periodicHitInterval * (periodicHitCount + 1));
-        periodicHitDetector.Stop();
-        explosionHitDetector.Start();
     }
 }

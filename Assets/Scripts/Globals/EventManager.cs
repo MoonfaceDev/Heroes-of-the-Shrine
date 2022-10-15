@@ -47,7 +47,7 @@ public class EventManager : MonoBehaviour
             startTime = Time.time;
         }
         StartOneInterval();
-        return Attach(() => Time.time - startTime >= interval, action + StartOneInterval, false);
+        return Attach(() => Time.time - startTime >= interval, StartOneInterval + action, false);
     }
 
     // Update is called once per frame
