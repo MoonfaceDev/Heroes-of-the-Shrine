@@ -76,7 +76,7 @@ public class ElectrifyAttack : NormalAttack
     {
         float damage = CalculateDamage(hittableBehaviour);
         print(hittableBehaviour.name + " hit by periodic " + attackName);
-        hittableBehaviour.Stun(damage, stunTime);
+        hittableBehaviour.Stun(damage, periodicStunTime);
         if (Random.Range(0f, 1f) < periodicHitElectrifyRate)
         {
             ElectrifiedEffect electrifiedEffect = hittableBehaviour.GetComponent<ElectrifiedEffect>();
