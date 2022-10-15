@@ -13,7 +13,6 @@ public class ElectrifyAttack : NormalAttack
     public float periodicStunTime;
     public Hitbox periodicHitbox;
     [Header("Explosion")]
-    public float explosionHitboxStartTime;
     public Hitbox explosionHitbox;
 
     private PeriodicAbsoluteHitDetector periodicHitDetector;
