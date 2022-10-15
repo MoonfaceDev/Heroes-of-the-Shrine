@@ -7,11 +7,6 @@ public class ShadowObject : MonoBehaviour
     public KnockbackBehaviour knockbackBehaviour;
     public float recoveringFromKnockbackScale;
 
-    public void Awake()
-    {
-        knockbackBehaviour = movableObject.GetComponent<KnockbackBehaviour>();
-    }
-
     // Update is called once per frame
     void Update()
     {
