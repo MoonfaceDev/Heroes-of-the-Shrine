@@ -1972,8 +1972,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movableObject: {fileID: 439857744}
   shadowScale: {x: 1.5, y: 0, z: 1}
-  knockbackBehaviour: {fileID: 0}
-  recoveringFromKnockbackScale: 0
+  knockbackBehaviour: {fileID: 439857746}
+  recoveringFromKnockbackScale: 1.5
 --- !u!212 &900157167
 SpriteRenderer:
   m_ObjectHideFlags: 0
