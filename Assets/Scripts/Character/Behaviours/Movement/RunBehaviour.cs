@@ -44,7 +44,10 @@ public class RunBehaviour : CharacterBehaviour
         walkBehaviour = GetComponent<WalkBehaviour>();
         jumpBehaviour = GetComponent<JumpBehaviour>();
         runParticlesMain = runParticles.main;
+    }
 
+    public void Start()
+    {
         walkBehaviour.onStart += () =>
         {
             if (CanRun())

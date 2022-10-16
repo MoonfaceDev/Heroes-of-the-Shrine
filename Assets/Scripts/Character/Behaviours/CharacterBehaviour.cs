@@ -15,7 +15,7 @@ public abstract class CharacterBehaviour: MonoBehaviour
     {
         get
         {
-            return FindObjectOfType<EventManager>();
+            return character.eventManager;
         }
     }
     public MovableObject movableObject

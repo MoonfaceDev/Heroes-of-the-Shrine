@@ -25,10 +25,6 @@ public class MovableObject : MonoBehaviour
     public void Awake()
     {
         walkableGrid = FindObjectOfType<WalkableGrid>();
-    }
-
-    private void Start()
-    {
         startPosition = position;
         velocity = Vector3.zero;
         acceleration = Vector3.zero;

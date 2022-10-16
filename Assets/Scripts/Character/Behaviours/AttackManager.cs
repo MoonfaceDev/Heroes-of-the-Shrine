@@ -25,7 +25,10 @@ public class AttackManager : CharacterBehaviour
         base.Awake();
         damageBonuses = new();
         damageMultipliers = new();
+    }
 
+    public void Start()
+    {
         eventManager.Attach(() => true, () =>
         {
             if (lastAttack != null && Time.time - lastAttackTime > maxComboDelay)
@@ -33,10 +36,7 @@ public class AttackManager : CharacterBehaviour
                 lastAttack = null;
             }
         }, single: false);
-    }
 
-    public void Start()
-    {
         BaseAttack[] attackComponents = GetComponents<BaseAttack>();
         foreach (BaseAttack attack in attackComponents)
         {
