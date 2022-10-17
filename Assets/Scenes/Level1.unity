@@ -555,9 +555,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  figureObject: {fileID: 1387175054}
+  figureObject: {fileID: 1387175052}
   position: {x: 1.84, y: 0, z: -2.91}
-  startPosition: {x: 0, y: 0, z: 0}
+  startPosition: {x: 3.98, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!4 &439857745
@@ -1373,7 +1373,7 @@ SpriteRenderer:
   m_SortingLayerID: -2050197935
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3865b5944373e5742959c33dc1b63c34, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 33ed2f00c72738e41ab00c093be2414a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8187,7 +8187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   figureObject: {fileID: 1583128358}
   position: {x: -0.35, y: 0, z: -4.58}
-  startPosition: {x: 0, y: 0, z: 0}
+  startPosition: {x: 3.98, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!4 &1315154343
