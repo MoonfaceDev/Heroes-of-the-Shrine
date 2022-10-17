@@ -222,8 +222,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movableObject: {fileID: 871744039}
   shadowScale: {x: 1.5, y: 0, z: 1}
-  knockbackBehaviour: {fileID: 871744042}
-  recoveringFromKnockbackScale: 1.5
+  figure: {fileID: 0}
+  animationDefinitions: []
 --- !u!1 &120408389
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +249,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 120408389}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6500001, y: -0.4000001, z: 0}
+  m_LocalPosition: {x: -0.65, y: -0.4000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af61f8ebac7a76742baddc8a44dddfa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 10000
+  startHealth: 100
   health: 0
 --- !u!114 &439857743
 MonoBehaviour:
@@ -2263,8 +2263,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movableObject: {fileID: 439857744}
   shadowScale: {x: 1.5, y: 0, z: 1}
-  knockbackBehaviour: {fileID: 439857746}
-  recoveringFromKnockbackScale: 1.5
+  figure: {fileID: 0}
+  animationDefinitions:
+  - animationStateName: RecoveringFromKnockback
+    shadowScale: 1.5
+  - animationStateName: Dead
+    shadowScale: 1.5
 --- !u!212 &900157167
 SpriteRenderer:
   m_ObjectHideFlags: 0
