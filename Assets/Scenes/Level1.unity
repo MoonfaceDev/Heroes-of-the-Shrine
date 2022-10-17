@@ -222,7 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movableObject: {fileID: 871744039}
   shadowScale: {x: 1.5, y: 0, z: 1}
-  figure: {fileID: 0}
+  figure: {fileID: 1482702260}
   animationDefinitions:
   - animationStateName: RecoveringFromKnockback
     shadowScale: 1.5
@@ -2267,11 +2267,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movableObject: {fileID: 439857744}
   shadowScale: {x: 1.5, y: 0, z: 1}
-  figure: {fileID: 0}
+  figure: {fileID: 1387175053}
   animationDefinitions:
   - animationStateName: RecoveringFromKnockback
     shadowScale: 1.5
-  - animationStateName: Dead
+  - animationStateName: Death
     shadowScale: 1.5
 --- !u!212 &900157167
 SpriteRenderer:
@@ -7754,7 +7754,7 @@ GameObject:
   - component: {fileID: 1482702258}
   - component: {fileID: 1482702260}
   m_Layer: 0
-  m_Name: Figure
+  m_Name: Angel Figure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
