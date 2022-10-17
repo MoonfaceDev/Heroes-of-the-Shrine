@@ -2,20 +2,17 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class KnockbackBehaviour : CharacterBehaviour
+public class KnockbackBehaviour : ForcedBehaviour
 {
     public static float SECOND_BOUNCE_POWER_MULTIPLIER = 0.2f;
 
-    public bool resistant;
     public float knockbackRecoverTime;
 
     public delegate void OnBounce(int count, float power, float angleDegrees);
 
-    public event Action onStart;
     public event OnBounce onBounce;
     public event Action onFinish;
     public event Action onRecover;
-    public event Action onStop;
 
     public bool active
     {
@@ -35,10 +32,6 @@ public class KnockbackBehaviour : CharacterBehaviour
             animator.SetBool("recoveringFromKnockback", _recovering);
         }
     }
-    public bool knockback
-    {
-        get => active || recovering;
-    }
     public int bounce
     {
         get => _bounce;
@@ -49,74 +42,25 @@ public class KnockbackBehaviour : CharacterBehaviour
         }
     }
 
+    public override bool Playing => active || recovering;
+
     private bool _active;
     private bool _recovering;
     private int _bounce;
     private EventListener bounceEvent;
     private Coroutine recoverCoroutine;
-    private WalkBehaviour walkBehaviour;
-    private JumpBehaviour jumpBehaviour;
-    private SlideBehaviour slideBehaviour;
-    private DodgeBehaviour dodgeBehaviour;
-    private StunBehaviour stunBehaviour;
-    private AttackManager attackManager;
 
-    public override void Awake()
+    public void Play(float power, float angleDegrees)
     {
-        base.Awake();
-        walkBehaviour = GetComponent<WalkBehaviour>();
-        jumpBehaviour = GetComponent<JumpBehaviour>();
-        slideBehaviour = GetComponent<SlideBehaviour>();
-        dodgeBehaviour = GetComponent<DodgeBehaviour>();
-        stunBehaviour = GetComponent<StunBehaviour>();
-        attackManager = GetComponent<AttackManager>();
-    }
-
-    public bool CanReceive()
-    {
-        return !recovering
-            && !resistant;
-    }
-
-    public void Knockback(float power, float angleDegrees)
-    {
-        if (!CanReceive())
+        if (!CanPlay())
         {
             return;
         }
 
-        if (walkBehaviour)
-        {
-            walkBehaviour.Stop(true);
-        }
-
-        if (jumpBehaviour)
-        {
-            jumpBehaviour.Stop();
-        }
-
-        if (slideBehaviour)
-        {
-            slideBehaviour.Stop();
-        }
-
-        if (dodgeBehaviour)
-        {
-            dodgeBehaviour.Stop();
-        }
-
-        if (stunBehaviour)
-        {
-            stunBehaviour.Stop();
-        }
-
-        if (attackManager)
-        {
-            attackManager.Stop();
-        }
+        StopBehaviours(typeof(BaseMovementBehaviour), typeof(AttackManager));
 
         active = true;
-        onStart?.Invoke();
+        InvokeOnPlay();
         bounce = 1;
         SetMovement(power, angleDegrees);
         onBounce?.Invoke(bounce, power, angleDegrees);
@@ -157,7 +101,7 @@ public class KnockbackBehaviour : CharacterBehaviour
         {
             lookDirection = -1;
         }
-        if ((angleDegrees > 90 && angleDegrees < 270))
+        if (angleDegrees > 90 && angleDegrees < 270)
         {
             lookDirection = 1;
         }
@@ -176,13 +120,14 @@ public class KnockbackBehaviour : CharacterBehaviour
     {
         recovering = false;
         onRecover?.Invoke();
+        InvokeOnStop();
     }
 
     public override void Stop()
     {
-        if (knockback)
+        if (Playing)
         {
-            onStop?.Invoke();
+            InvokeOnStop();
         }
         if (active)
         {

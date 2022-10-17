@@ -12,7 +12,7 @@ public class FollowPattern : BasePattern
         MovableObject player = GameObject.FindGameObjectWithTag(targetTag).GetComponent<MovableObject>();
         FollowBehaviour followBehaviour = animator.GetComponent<FollowBehaviour>();
 
-        followBehaviour.Follow(player, speedMultiplier);
+        followBehaviour.Play(player, speedMultiplier);
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

@@ -1,14 +1,11 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(MovableObject))]
-public class WalkBehaviour : CharacterBehaviour
+public class WalkBehaviour : BaseMovementBehaviour
 {
     public float defaultSpeed;
 
     [HideInInspector] public ModifiableValue speed;
-    public event Action onStart;
-    public event Action onStop;
     public bool walk
     {
         get => _walk;
@@ -19,6 +16,8 @@ public class WalkBehaviour : CharacterBehaviour
         }
     }
 
+    public override bool Playing => walk;
+
     private bool _walk; //walking or running
 
     public override void Awake()
@@ -27,38 +26,22 @@ public class WalkBehaviour : CharacterBehaviour
         speed = new ModifiableValue(defaultSpeed);
     }
 
-    public bool CanWalk()
+    public void Play(float xAxis, float zAxis, bool fitLookDirection = true)
     {
-        JumpBehaviour jumpBehaviour = GetComponent<JumpBehaviour>();
-        SlideBehaviour slideBehaviour = GetComponent<SlideBehaviour>();
-        DodgeBehaviour dodgeBehaviour = GetComponent<DodgeBehaviour>();
-        KnockbackBehaviour knockbackBehaviour = GetComponent<KnockbackBehaviour>();
-        StunBehaviour stunBehaviour = GetComponent<StunBehaviour>();
-        AttackManager attackManager = GetComponent<AttackManager>();
-        return
-            !(jumpBehaviour && (jumpBehaviour.anticipating || jumpBehaviour.recovering))
-            && !(slideBehaviour && slideBehaviour.slide)
-            && !(dodgeBehaviour && dodgeBehaviour.dodge)
-            && !(knockbackBehaviour && knockbackBehaviour.knockback)
-            && !(stunBehaviour && stunBehaviour.stun)
-            && !(attackManager && !attackManager.CanWalk());
-    }
-
-    public void Walk(float xAxis, float zAxis, bool fitLookDirection = true)
-    {
-        if (!CanWalk())
+        if (!CanPlay())
         {
             return;
         }
         // run callbacks
         if (new Vector2(xAxis, zAxis) == Vector2.zero)
         {
-            Stop();
+            InvokeOnStop();
+            walk = false;
         }
         else if (!walk) //first walking frame
         {
             walk = true;
-            onStart?.Invoke();
+            InvokeOnPlay();
         }
         // move speed
         movableObject.velocity.x = xAxis * speed;
@@ -70,22 +53,12 @@ public class WalkBehaviour : CharacterBehaviour
         }
     }
 
-    public void Stop(bool freeze = false)
+    public override void Stop()
     {
         if (walk)
         {
-            onStop?.Invoke();
+            InvokeOnStop();
             walk = false;
-            if (freeze)
-            {
-                movableObject.velocity.x = 0;
-                movableObject.velocity.z = 0;
-            }
         }
-    }
-
-    public override void Stop()
-    {
-        Stop(false);
     }
 }

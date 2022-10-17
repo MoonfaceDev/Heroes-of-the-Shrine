@@ -34,7 +34,7 @@ public class ArcPattern : BasePattern
             newPosition.y = walkBehaviour.movableObject.position.y;
             walkBehaviour.movableObject.position = newPosition;
             Vector3 direction = clockwise * Vector3.Cross(distance, Vector3.up).normalized;
-            walkBehaviour.Walk(direction.x, direction.z, false);
+            walkBehaviour.Play(direction.x, direction.z, false);
             if ((player.position - walkBehaviour.movableObject.position).x != 0) {
                 walkBehaviour.lookDirection = Mathf.RoundToInt(Mathf.Sign((player.position - walkBehaviour.movableObject.position).x));
             };
@@ -52,7 +52,8 @@ public class ArcPattern : BasePattern
 
         walkBehaviour.movableObject.onStuck -= onStop;
         eventManager.Detach(circleEvent);
-        walkBehaviour.Stop(true);
         walkBehaviour.speed.RemoveModifier(speedModifier);
+        walkBehaviour.Stop();
+        walkBehaviour.movableObject.velocity = Vector3.zero;
     }
 }

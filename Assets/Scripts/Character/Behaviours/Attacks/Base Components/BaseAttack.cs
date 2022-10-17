@@ -7,7 +7,7 @@ public class CannotAttackException : Exception
 }
 
 [RequireComponent(typeof(AttackManager))]
-public abstract class BaseAttack : CharacterBehaviour
+public abstract class BaseAttack : PlayableBehaviour
 {
     public bool instant = false;
     public bool interruptable = false;
@@ -16,6 +16,7 @@ public abstract class BaseAttack : CharacterBehaviour
     {
         get => GetType().Name;
     }
+
     public bool anticipating
     {
         get => _anticipating;
@@ -25,6 +26,7 @@ public abstract class BaseAttack : CharacterBehaviour
             animator.SetBool(attackName + "-anticipating", _anticipating);
         }
     }
+
     public bool active
     {
         get => _active;
@@ -34,6 +36,7 @@ public abstract class BaseAttack : CharacterBehaviour
             animator.SetBool(attackName + "-active", _active);
         }
     }
+
     public bool recovering
     {
         get => _recovering;
@@ -43,21 +46,12 @@ public abstract class BaseAttack : CharacterBehaviour
             animator.SetBool(attackName + "-recovering", _recovering);
         }
     }
-    public bool attacking
-    {
-        get => anticipating || active || recovering;
-    }
 
-    public event Action onAnticipate;
+    public override bool Playing => anticipating || active || recovering;
+
     public event Action onStart;
     public event Action onFinish;
     public event Action onRecover;
-    public event Action onStop; // attack stopped (manually / recovered)
-
-    protected void InvokeOnAnticipate()
-    {
-        onAnticipate?.Invoke();
-    }
 
     protected void InvokeOnStart()
     {
@@ -74,11 +68,6 @@ public abstract class BaseAttack : CharacterBehaviour
         onRecover?.Invoke();
     }
 
-    protected void InvokeOnStop()
-    {
-        onStop?.Invoke();
-    }
-
     private bool _anticipating;
     private bool _active;
     private bool _recovering;
@@ -89,13 +78,15 @@ public abstract class BaseAttack : CharacterBehaviour
     protected abstract IEnumerator ActiveCoroutine();
     protected abstract IEnumerator RecoveryCoroutine();
 
-    public abstract bool CanWalk();
-    public abstract bool CanAttack();
+    public override bool CanPlay()
+    {
+        return base.CanPlay() && AllStopped(typeof(KnockbackBehaviour), typeof(StunBehaviour));
+    }
     protected abstract void HitCallable(HittableBehaviour hittableBehaviour);
 
-    public void Attack()
+    public void Play()
     {
-        if (!CanAttack())
+        if (!CanPlay())
         {
             throw new CannotAttackException();
         }
@@ -104,7 +95,7 @@ public abstract class BaseAttack : CharacterBehaviour
 
     public override void Stop()
     {
-        if (attacking)
+        if (Playing)
         {
             InvokeOnStop();
             StopCoroutine(attackFlowCoroutine);
@@ -128,7 +119,7 @@ public abstract class BaseAttack : CharacterBehaviour
     private IEnumerator AttackFlow()
     {
         anticipating = true;
-        InvokeOnAnticipate();
+        InvokeOnPlay();
         yield return AnticipateCoroutine();
 
         anticipating = false;

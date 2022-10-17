@@ -12,17 +12,10 @@ public class SlashAttack : SimpleAttack
     {
         base.Awake();
 
-        float direction = 0;
+        PreventWalking(false);
 
-        onAnticipate += () =>
-        {
-            direction = lookDirection;
-            WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
-            if (walkBehaviour)
-            {
-                walkBehaviour.Stop();
-            }
-        };
+        float direction = 0;
+        onPlay += () => direction = lookDirection;
 
         onStart += () =>
         {

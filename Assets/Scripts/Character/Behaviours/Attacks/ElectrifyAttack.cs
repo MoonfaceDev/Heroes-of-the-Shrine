@@ -82,11 +82,7 @@ public class ElectrifyAttack : NormalAttack
             ElectrifiedEffect electrifiedEffect = hittableBehaviour.GetComponent<ElectrifiedEffect>();
             if (electrifiedEffect)
             {
-                electrifiedEffect.Activate(electrifyDuration, electrifySpeedMultiplier);
-            }
-            else
-            {
-                Debug.LogWarning(hittableBehaviour.name + " doesn't have an ElectrifiedEffect component");
+                electrifiedEffect.Play(electrifyDuration, electrifySpeedMultiplier);
             }
         }
     }
@@ -104,11 +100,7 @@ public class ElectrifyAttack : NormalAttack
         ElectrifiedEffect electrifiedEffect = hittableBehaviour.GetComponent<ElectrifiedEffect>();
         if (electrifiedEffect)
         {
-            electrifiedEffect.Activate(electrifyDuration, electrifySpeedMultiplier);
-        }
-        else
-        {
-            Debug.LogWarning(hittableBehaviour.name + " doesn't have an ElectrifiedEffect component");
+            electrifiedEffect.Play(electrifyDuration, electrifySpeedMultiplier);
         }
     }
 }

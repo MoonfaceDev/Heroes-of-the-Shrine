@@ -22,7 +22,7 @@ public class EnemyGroup : CharacterBehaviour
                 AttackManager enemyAttackManager = enemy.GetComponent<AttackManager>();
                 if (enemyAttackManager)
                 {
-                    enemyAttackManager.onAnticipate += () =>
+                    enemyAttackManager.onPlay += () =>
                     {
                         enemiesAttackingCount++;
                         stateMachine.SetBool("enemiesAttacking", true);
@@ -75,10 +75,5 @@ public class EnemyGroup : CharacterBehaviour
             });
             stateMachine.SetBool("isClosestToPlayer", this == closestEnemy);
         }
-    }
-
-    public override void Stop()
-    {
-        throw new System.NotImplementedException();
     }
 }

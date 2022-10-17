@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class ElectrifiedEffect : BaseEffect
@@ -10,42 +11,27 @@ public class ElectrifiedEffect : BaseEffect
     private IModifier speedModifier;
     private EventListener stopEvent;
 
+    private static readonly Type[] DISABLED_BEHAVIOURS = { typeof(RunBehaviour), typeof(SlideBehaviour), typeof(DodgeBehaviour), typeof(JumpBehaviour) };
+
     public override void Awake()
     {
         base.Awake();
         walkBehaviour = GetComponent<WalkBehaviour>();
     }
 
-    public void Activate(float duration, float speedReductionMultiplier)
+    public void Play(float duration, float speedReductionMultiplier)
     {
-        RunBehaviour runBehaviour = GetComponent<RunBehaviour>();
-        if (runBehaviour)
-        {
-            runBehaviour.Stop();
-        }
-        SlideBehaviour slideBehaviour = GetComponent<SlideBehaviour>();
-        if (slideBehaviour)
-        {
-            slideBehaviour.Stop();
-        }
-        DodgeBehaviour dodgeBehaviour = GetComponent<DodgeBehaviour>();
-        if (dodgeBehaviour)
-        {
-            dodgeBehaviour.Stop();
-        }
-        if (active)
-        {
-            Stop();
-        }
+        StopBehaviours(typeof(RunBehaviour), typeof(SlideBehaviour), typeof(DodgeBehaviour), typeof(ElectrifiedEffect));
 
         active = true;
-        InvokeOnActivate();
+        InvokeOnPlay();
 
         if (walkBehaviour)
         {
             speedModifier = new MultiplierModifier(speedReductionMultiplier);
             walkBehaviour.speed.AddModifier(speedModifier);
         }
+        DisableBehaviours(DISABLED_BEHAVIOURS);
         particles.Play();
 
         startTime = Time.time;
@@ -55,17 +41,21 @@ public class ElectrifiedEffect : BaseEffect
 
     public override void Stop()
     {
-        active = false;
-
-        if (walkBehaviour)
+        if (active)
         {
-            walkBehaviour.speed.RemoveModifier(speedModifier);
-        }
-        particles.Stop(true, stopBehavior: ParticleSystemStopBehavior.StopEmittingAndClear);
+            InvokeOnStop();
+            active = false;
 
-        currentDuration = 0;
-        eventManager.Detach(stopEvent);
-        InvokeOnStop();
+            if (walkBehaviour)
+            {
+                walkBehaviour.speed.RemoveModifier(speedModifier);
+            }
+            EnableBehaviours(DISABLED_BEHAVIOURS);
+            particles.Stop(true, stopBehavior: ParticleSystemStopBehavior.StopEmittingAndClear);
+
+            currentDuration = 0;
+            eventManager.Detach(stopEvent);
+        }
     }
 
     public override float GetProgress()

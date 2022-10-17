@@ -1,6 +1,4 @@
-using System;
-
-public abstract class BaseEffect : CharacterBehaviour
+public abstract class BaseEffect : PlayableBehaviour
 {
     public bool active
     {
@@ -12,20 +10,9 @@ public abstract class BaseEffect : CharacterBehaviour
         }
     }
 
-    public event Action onActivate;
-    public event Action onStop;
+    public override bool Playing => active;
 
     private bool _active;
 
     public abstract float GetProgress();
-
-    protected void InvokeOnActivate()
-    {
-        onActivate?.Invoke();
-    }
-
-    protected void InvokeOnStop()
-    {
-        onStop?.Invoke();
-    }
 }

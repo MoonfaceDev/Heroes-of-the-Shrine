@@ -13,14 +13,10 @@ public class RunKick : SimpleAttack
     {
         base.Awake();
 
-        float direction = 0;
+        PreventWalking(false);
 
-        onAnticipate += () =>
-        {
-            direction = Mathf.Sign(movableObject.velocity.x);
-            WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
-            walkBehaviour.Stop();
-        };
+        float direction = 0;
+        onPlay += () => direction = lookDirection;
 
         onStart += () =>
         {
@@ -38,10 +34,9 @@ public class RunKick : SimpleAttack
         };
     }
 
-    public override bool CanAttack()
+    public override bool CanPlay()
     {
-        RunBehaviour runBehaviour = GetComponent<RunBehaviour>();
-        return base.CanAttack() && (runBehaviour && runBehaviour.run);
+        return base.CanPlay() && IsPlaying(typeof(RunBehaviour));
     }
 
     protected override IEnumerator ActiveCoroutine()

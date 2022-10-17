@@ -56,7 +56,7 @@ public class HittableBehaviour : CharacterBehaviour
         onKnockback?.Invoke(damage, power, angleDegrees);
         if (knockbackBehaviour)
         {
-            knockbackBehaviour.Knockback(power, angleDegrees);
+            knockbackBehaviour.Play(power, angleDegrees);
         }
         return true;
     }
@@ -76,13 +76,8 @@ public class HittableBehaviour : CharacterBehaviour
         onStun?.Invoke(damage, time);
         if (stunBehaviour)
         {
-            stunBehaviour.Stun(time);
+            stunBehaviour.Play(time);
         }
         return true;
-    }
-
-    public override void Stop()
-    {
-        throw new NotImplementedException();
     }
 }

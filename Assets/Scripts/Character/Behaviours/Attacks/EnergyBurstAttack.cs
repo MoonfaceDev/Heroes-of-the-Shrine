@@ -12,17 +12,10 @@ public class EnergyBurstAttack : SimpleAttack
     {
         base.Awake();
 
-        float direction = 0;
+        PreventWalking(false);
 
-        onAnticipate += () =>
-        {
-            direction = lookDirection;
-            WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
-            if (walkBehaviour)
-            {
-                walkBehaviour.Stop();
-            }
-        };
+        float direction = 0;
+        onPlay += () => direction = lookDirection;
 
         onStart += () =>
         {
@@ -43,10 +36,5 @@ public class EnergyBurstAttack : SimpleAttack
     protected override IEnumerator ActiveCoroutine()
     {
         yield return new WaitWhile(() => isMoving);
-    }
-
-    protected override float CalculateDamage(HittableBehaviour hittableBehaviour)
-    {
-        return base.CalculateDamage(hittableBehaviour);
     }
 }

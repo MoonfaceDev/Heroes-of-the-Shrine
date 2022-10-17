@@ -4,18 +4,16 @@ using UnityEngine;
 
 public delegate float DamageBonus(BaseAttack attack, HittableBehaviour hittable);
 
-public class AttackManager : CharacterBehaviour
+public class AttackManager : PlayableBehaviour
 {
     public float maxComboDelay;
     public List<string> hittableTags;
     [HideInInspector] public BaseAttack lastAttack;
     [HideInInspector] public float lastAttackTime;
 
-    public event Action onAnticipate;
     public event Action onStart;
     public event Action onFinish;
     public event Action onRecover;
-    public event Action onStop;
 
     private List<DamageBonus> damageBonuses;
     private List<DamageBonus> damageMultipliers;
@@ -40,11 +38,11 @@ public class AttackManager : CharacterBehaviour
         BaseAttack[] attackComponents = GetComponents<BaseAttack>();
         foreach (BaseAttack attack in attackComponents)
         {
-            attack.onAnticipate += () => onAnticipate?.Invoke();
+            attack.onPlay += () => InvokeOnPlay();
             attack.onStart += () => onStart?.Invoke();
             attack.onFinish += () => onFinish?.Invoke();
             attack.onRecover += () => onRecover?.Invoke();
-            attack.onStop += () => onStop?.Invoke();
+            attack.onStop += () => InvokeOnStop();
 
             attack.onFinish += () =>
             {
@@ -67,30 +65,13 @@ public class AttackManager : CharacterBehaviour
         return false;
     }
 
-    public bool anticipating
-    {
-        get => AnyAttack((attack) => attack.anticipating);
-    }
+    public bool anticipating => AnyAttack((attack) => attack.anticipating);
 
-    public bool active
-    {
-        get => AnyAttack((attack) => attack.active);
-    }
+    public bool active => AnyAttack((attack) => attack.active);
 
-    public bool recovering
-    {
-        get => AnyAttack((attack) => attack.recovering);
-    }
+    public bool recovering => AnyAttack((attack) => attack.recovering);
 
-    public bool attacking
-    {
-        get => AnyAttack((attack) => attack.attacking);
-    }
-
-    public bool CanWalk()
-    {
-        return !AnyAttack((attack) => attack.attacking && !attack.CanWalk());
-    }
+    public override bool Playing => AnyAttack((attack) => attack.Playing);
 
     public bool IsUninterruptable()
     {

@@ -3,14 +3,11 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(WalkBehaviour))]
-public class RunBehaviour : CharacterBehaviour
+public class RunBehaviour : BaseMovementBehaviour
 {
     public float timeToRun;
     public float runSpeedMultiplier;
     public ParticleSystem runParticles;
-
-    public event Action onStart;
-    public event Action onStop;
 
     public bool run
     {
@@ -22,20 +19,14 @@ public class RunBehaviour : CharacterBehaviour
         }
     }
 
+    public override bool Playing => run;
+
     private WalkBehaviour walkBehaviour;
     private JumpBehaviour jumpBehaviour;
     private Coroutine startCoroutine;
     private ParticleSystem.MainModule runParticlesMain;
     private IModifier speedModifier;
     private bool _run;
-
-
-    public bool CanRun()
-    {
-        ElectrifiedEffect electrifiedEffect = GetComponent<ElectrifiedEffect>();
-        return
-            !(electrifiedEffect && electrifiedEffect.active);
-    }
 
 
     public override void Awake()
@@ -48,23 +39,16 @@ public class RunBehaviour : CharacterBehaviour
 
     public void Start()
     {
-        walkBehaviour.onStart += () =>
+        walkBehaviour.onPlay += () =>
         {
-            if (CanRun())
+            if (CanPlay())
             {
                 startCoroutine = StartCoroutine(RunAfter(timeToRun));
             }
         };
         walkBehaviour.onStop += () =>
         {
-            if (startCoroutine != null)
-            {
-                StopCoroutine(startCoroutine);
-            }
-            if (run)
-            {
-                Stop();
-            }
+            Stop();
         };
         if (jumpBehaviour)
         {
@@ -82,26 +66,34 @@ public class RunBehaviour : CharacterBehaviour
     private IEnumerator RunAfter(float time)
     {
         yield return new WaitForSeconds(time);
-        Run();
+        Play();
     }
 
-    public void Run()
+    public void Play()
     {
+        if (!CanPlay())
+        {
+            return;
+        }
         run = true;
         speedModifier = new MultiplierModifier(runSpeedMultiplier);
         walkBehaviour.speed.AddModifier(speedModifier);
         runParticles.Play();
-        onStart?.Invoke();
+        InvokeOnPlay();
     }
 
     public override void Stop()
     {
         if (run)
         {
-            onStop?.Invoke();
+            InvokeOnStop();
             run = false;
             walkBehaviour.speed.RemoveModifier(speedModifier);
             runParticles.Stop();
+        }
+        if (startCoroutine != null)
+        {
+            StopCoroutine(startCoroutine);
         }
     }
 }

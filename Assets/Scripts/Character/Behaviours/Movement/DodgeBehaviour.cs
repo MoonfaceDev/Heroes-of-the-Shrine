@@ -1,18 +1,14 @@
 using System;
 using UnityEngine;
 
-public class DodgeBehaviour : CharacterBehaviour
+public class DodgeBehaviour : SoloMovementBehaviour
 {
     public float dodgeDistance;
     public float anticipateTime;
     public float recoveryTime;
-    public float cooldown;
 
-    private float lastSlideFinishTime;
-    public event Action onAnticipate;
     public event Action onDodge;
     public event Action onRecover;
-    public event Action onStop;
 
     public bool recovering
     {
@@ -32,79 +28,48 @@ public class DodgeBehaviour : CharacterBehaviour
             animator.SetBool("anticipatingDodge", _anticipating);
         }
     }
-    public bool dodge
-    {
-        get => anticipating || recovering;
-    }
+
+    public override bool Playing => anticipating || recovering;
 
     private bool _anticipating;
     private bool _recovering;
-    private WalkBehaviour walkBehaviour;
     private EventListener anticipateEvent;
     private EventListener recoverEvent;
 
-    public override void Awake()
+    public override bool CanPlay()
     {
-        base.Awake();
-        walkBehaviour = GetComponent<WalkBehaviour>();
-        lastSlideFinishTime = Time.time - cooldown;
-        onStop += () => lastSlideFinishTime = Time.time;
+        return base.CanPlay() && movableObject.velocity.z != 0 && movableObject.velocity.x == 0;
     }
 
-    public bool CanDodge()
+    public void Play()
     {
-        SlideBehaviour slideBehaviour = GetComponent<SlideBehaviour>();
-        KnockbackBehaviour knockbackBehaviour = GetComponent<KnockbackBehaviour>();
-        StunBehaviour stunBehaviour = GetComponent<StunBehaviour>();
-        AttackManager attackManager = GetComponent<AttackManager>();
-        ElectrifiedEffect electrifiedEffect = GetComponent<ElectrifiedEffect>();
-        return movableObject.velocity.z != 0
-            && movableObject.velocity.x == 0
-            && movableObject.position.y == 0
-            && !dodge
-            && Time.time - lastSlideFinishTime > cooldown
-            && !(slideBehaviour && slideBehaviour.slide)
-            && !(knockbackBehaviour && knockbackBehaviour.knockback)
-            && !(stunBehaviour && stunBehaviour.stun)
-            && !(attackManager && attackManager.attacking)
-            && !(electrifiedEffect && electrifiedEffect.active);
-    }
-
-    public void Dodge()
-    {
-        if (!CanDodge())
+        if (!CanPlay())
         {
             return;
         }
-        if (walkBehaviour)
-        {
-            walkBehaviour.Stop();
-        }
+        DisableBehaviours(typeof(WalkBehaviour));
+        StopBehaviours(typeof(WalkBehaviour));
         anticipating = true;
+        InvokeOnPlay();
         float dodgeDirection = Mathf.Sign(movableObject.velocity.z);
         movableObject.acceleration = Vector3.zero;
         movableObject.velocity = Vector3.zero;
-        onAnticipate?.Invoke();
         anticipateEvent = eventManager.StartTimeout(() =>
         {
             anticipating = false;
             movableObject.UpdatePosition(movableObject.position + dodgeDirection * dodgeDistance * Vector3.forward);
             onDodge?.Invoke();
             recovering = true;
-            recoverEvent = eventManager.StartTimeout(() =>
-            {
-                recovering = false;
-                onRecover?.Invoke();
-                onStop?.Invoke();
-            }, recoveryTime);
+            recoverEvent = eventManager.StartTimeout(Stop, recoveryTime);
         }, anticipateTime);
     }
 
     public override void Stop()
     {
-        if (dodge)
+        if (Playing)
         {
-            onStop?.Invoke();
+            InvokeOnStop();
+            EnableBehaviours(typeof(WalkBehaviour));
         }
         if (anticipating)
         {

@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class JumpBehaviour : CharacterBehaviour
+public class JumpBehaviour : SoloMovementBehaviour
 {
     public float jumpSpeed;
     public float jumpAnticipateTime;
@@ -11,12 +11,10 @@ public class JumpBehaviour : CharacterBehaviour
 
     public delegate void OnJumpsChanged(int jumps);
 
-    public event Action onAnticipate;
     public event Action onJump;
     public event OnJumpsChanged onJumpsChanged;
     public event Action onLand;
     public event Action onRecover;
-    public event Action onStop;
 
     public bool active
     {
@@ -42,10 +40,6 @@ public class JumpBehaviour : CharacterBehaviour
             animator.SetBool("anticipatingJump", _anticipating);
         }
     }
-    public bool jump
-    {
-        get => anticipating || active || recovering;
-    }
     public int jumps
     {
         get => _jumps;
@@ -55,6 +49,8 @@ public class JumpBehaviour : CharacterBehaviour
             animator.SetInteger("jumps", _jumps);
         }
     }
+
+    public override bool Playing => anticipating || active || recovering;
 
     private bool _active;
     private bool _recovering;
@@ -71,35 +67,20 @@ public class JumpBehaviour : CharacterBehaviour
         walkBehaviour = GetComponent<WalkBehaviour>();
     }
 
-    public bool CanJump()
+    public override bool CanPlay()
     {
-        SlideBehaviour slideBehaviour = GetComponent<SlideBehaviour>();
-        DodgeBehaviour dodgeBehaviour = GetComponent<DodgeBehaviour>();
-        KnockbackBehaviour knockbackBehaviour = GetComponent<KnockbackBehaviour>();
-        StunBehaviour stunBehaviour = GetComponent<StunBehaviour>();
-        AttackManager attackManager = GetComponent<AttackManager>();
-        ElectrifiedEffect electrifiedEffect = GetComponent<ElectrifiedEffect>();
-        return !anticipating
-            && !recovering 
-            && jumps < maxJumps
-            && !(slideBehaviour && slideBehaviour.slide)
-            && !(dodgeBehaviour && dodgeBehaviour.dodge)
-            && !(knockbackBehaviour && knockbackBehaviour.knockback)
-            && !(stunBehaviour && stunBehaviour.stun)
-            && !(attackManager && attackManager.attacking)
-            && !(electrifiedEffect && electrifiedEffect.active);
+        return base.CanPlay() || (active && jumps < maxJumps);
     }
 
-    public void Jump()
+    public void Play()
     {
-        if (!CanJump())
+        if (!CanPlay())
         {
             return;
         }
-        if (walkBehaviour && walkBehaviour.walk == false && movableObject.position.y == 0) //not moving and grounded
+        InvokeOnPlay();
+        if (!IsPlaying(typeof(WalkBehaviour)) && movableObject.position.y == 0) //not moving and grounded
         {
-            anticipating = true;
-            onAnticipate?.Invoke();
             anticipateCoroutine = StartCoroutine(Anticipate());
         }
         else //moving or mid-air
@@ -110,7 +91,10 @@ public class JumpBehaviour : CharacterBehaviour
 
     private IEnumerator Anticipate()
     {
+        anticipating = true;
+        walkBehaviour.Enabled = false;
         yield return new WaitForSeconds(jumpAnticipateTime);
+        walkBehaviour.Enabled = true;
         anticipating = false;
         StartJump();
     }
@@ -132,7 +116,6 @@ public class JumpBehaviour : CharacterBehaviour
     private void Land()
     {
         active = false;
-        recovering = true;
         jumps = 0;
         onLand?.Invoke();
         onJumpsChanged?.Invoke(jumps);
@@ -147,31 +130,30 @@ public class JumpBehaviour : CharacterBehaviour
         }
         else
         {
-            Recover();
+            InvokeOnStop();
         }
     }
 
     private IEnumerator RecoverAfterTime()
     {
+        recovering = true;
+        walkBehaviour.Enabled = false;
         yield return new WaitForSeconds(jumpRecoverTime);
-        Recover();
-    }
-
-    private void Recover()
-    {
+        walkBehaviour.Enabled = true;
         recovering = false;
         onRecover?.Invoke();
     }
 
     public override void Stop()
     {
-        if (jump)
+        if (Playing)
         {
-            onStop?.Invoke();
+            InvokeOnStop();
         }
         if (anticipating)
         {
             StopCoroutine(anticipateCoroutine);
+            walkBehaviour.Enabled = true;
             anticipating = false;
         }
         if (active)
@@ -185,7 +167,9 @@ public class JumpBehaviour : CharacterBehaviour
         if (recovering)
         {
             StopCoroutine(recoverCoroutine);
-            Recover();
+            walkBehaviour.Enabled = true;
+            recovering = false;
+            onRecover?.Invoke();
         }
     }
 }

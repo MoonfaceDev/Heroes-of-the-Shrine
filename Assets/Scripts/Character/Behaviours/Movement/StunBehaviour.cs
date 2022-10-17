@@ -2,13 +2,10 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class StunBehaviour : CharacterBehaviour
+public class StunBehaviour : ForcedBehaviour
 {
-    public bool resistant;
     public int stunFrames;
 
-    public event Action onStart;
-    public event Action onStop;
     public bool stun
     {
         get => _stun;
@@ -29,74 +26,25 @@ public class StunBehaviour : CharacterBehaviour
         }
     }
 
+    public override bool Playing => stun;
+
     private bool _stun;
     private int _stunFrame;
     private Coroutine stopCoroutine;
-    private WalkBehaviour walkBehaviour;
-    private JumpBehaviour jumpBehaviour;
-    private SlideBehaviour slideBehaviour;
-    private DodgeBehaviour dodgeBehaviour;
-    private KnockbackBehaviour knockbackBehaviour;
-    private AttackManager attackManager;
 
-    public override void Awake()
+    public void Play(float time)
     {
-        base.Awake();
-        walkBehaviour = GetComponent<WalkBehaviour>();
-        jumpBehaviour = GetComponent<JumpBehaviour>();
-        slideBehaviour = GetComponent<SlideBehaviour>();
-        dodgeBehaviour = GetComponent<DodgeBehaviour>();
-        knockbackBehaviour = GetComponent<KnockbackBehaviour>();
-        attackManager = GetComponent<AttackManager>();
-    }
-
-    public bool CanReceive()
-    {
-        return !resistant;
-    }
-
-    public void Stun(float time)
-    {
-        if (!CanReceive())
+        if (!CanPlay())
         {
             return;
         }
 
-        if (walkBehaviour)
-        {
-            walkBehaviour.Stop(true);
-        }
-
-        if (jumpBehaviour)
-        {
-            jumpBehaviour.Stop();
-        }
-
-        if (slideBehaviour)
-        {
-            slideBehaviour.Stop();
-        }
-
-        if (dodgeBehaviour)
-        {
-            dodgeBehaviour.Stop();
-        }
-
-        if (knockbackBehaviour)
-        {
-            knockbackBehaviour.Stop();
-        }
-
-        if (attackManager)
-        {
-            attackManager.Stop();
-        }
-
-        Stop();
+        StopBehaviours(typeof(BaseMovementBehaviour), typeof(ForcedBehaviour), typeof(AttackManager));
+        movableObject.velocity = Vector3.zero;
 
         stun = true;
         stunFrame = (stunFrame + 1) % stunFrames;
-        onStart?.Invoke();
+        InvokeOnPlay();
         movableObject.velocity = Vector3.zero;
         stopCoroutine = StartCoroutine(StopAfter(time));
     }
@@ -104,15 +52,15 @@ public class StunBehaviour : CharacterBehaviour
     private IEnumerator StopAfter(float time)
     {
         yield return new WaitForSeconds(time);
-        onStop?.Invoke();
         stun = false;
+        InvokeOnStop();
     }
 
     public override void Stop()
     {
         if (stun)
         {
-            onStop?.Invoke();
+            InvokeOnStop();
             stun = false;
             if (stopCoroutine != null)
             {

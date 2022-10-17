@@ -1,13 +1,9 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Pathfind))]
 [RequireComponent(typeof(WalkBehaviour))]
-public class FollowBehaviour : CharacterBehaviour
+public class FollowBehaviour : SoloMovementBehaviour
 {
-    public event Action onStart;
-    public event Action onStop;
-
     public bool active
     {
         get => _active;
@@ -16,6 +12,8 @@ public class FollowBehaviour : CharacterBehaviour
             _active = value;
         }
     }
+
+    public override bool Playing => active;
 
     private bool _active;
     private Pathfind pathfind;
@@ -32,26 +30,24 @@ public class FollowBehaviour : CharacterBehaviour
 
     public void Start()
     {
-        walkBehaviour.onStop += () =>
-        {
-            if (active)
-            {
-                Stop();
-            }
-        };
+        walkBehaviour.onStop += Stop;
     }
 
-    public void Follow(MovableObject target, float speedMultiplier)
+    public void Play(MovableObject target, float speedMultiplier)
     {
+        if (!CanPlay())
+        {
+            return;
+        }
         active = true;
-        onStart?.Invoke();
+        InvokeOnPlay();
 
         speedModifier = new MultiplierModifier(speedMultiplier);
         walkBehaviour.speed.AddModifier(speedModifier);
 
         followEvent = eventManager.Attach(() => true, () => {
             Vector3 direction = pathfind.Direction(movableObject.position, target.position);
-            walkBehaviour.Walk(direction.x, direction.z);
+            walkBehaviour.Play(direction.x, direction.z);
         }, false);
     }
 
@@ -59,11 +55,12 @@ public class FollowBehaviour : CharacterBehaviour
     {
         if (active)
         {
-            onStop?.Invoke();
+            InvokeOnStop();
             active = false;
             eventManager.Detach(followEvent);
             walkBehaviour.speed.RemoveModifier(speedModifier);
-            walkBehaviour.Stop(true);
+            StopBehaviours(typeof(WalkBehaviour));
+            movableObject.velocity = Vector3.zero;
         }
     }
 }

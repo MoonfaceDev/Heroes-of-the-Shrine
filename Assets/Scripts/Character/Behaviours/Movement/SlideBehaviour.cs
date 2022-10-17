@@ -1,15 +1,9 @@
-using System;
 using UnityEngine;
 
-public class SlideBehaviour : CharacterBehaviour
+public class SlideBehaviour : SoloMovementBehaviour
 {
     public float slideSpeedMultiplier;
     public float slideStopAcceleration;
-    public float cooldown;
-
-    public event Action onStart;
-    public event Action onFinish;
-    public event Action onStop;
 
     public bool slide
     {
@@ -20,75 +14,46 @@ public class SlideBehaviour : CharacterBehaviour
         }
     }
 
-    private float lastSlideFinishTime;
+    public override bool Playing => slide;
+
     private bool _slide;
-    private WalkBehaviour walkBehaviour;
     private EventListener stopEvent;
 
-    public override void Awake()
+    public override bool CanPlay()
     {
-        base.Awake();
-        walkBehaviour = GetComponent<WalkBehaviour>();
-        lastSlideFinishTime = Time.time - cooldown;
-        onFinish += () => lastSlideFinishTime = Time.time;
+        return base.CanPlay() && movableObject.velocity.x != 0;
     }
 
-    public bool CanSlide()
+    public void Play()
     {
-        DodgeBehaviour dodgeBehaviour = GetComponent<DodgeBehaviour>();
-        KnockbackBehaviour knockbackBehaviour = GetComponent<KnockbackBehaviour>();
-        StunBehaviour stunBehaviour = GetComponent<StunBehaviour>();
-        AttackManager attackManager = GetComponent<AttackManager>();
-        ElectrifiedEffect electrifiedEffect = GetComponent<ElectrifiedEffect>();
-        return movableObject.velocity.x != 0
-            && movableObject.position.y == 0
-            && !slide
-            && Time.time - lastSlideFinishTime > cooldown
-            && !(dodgeBehaviour && dodgeBehaviour.dodge)
-            && !(knockbackBehaviour && knockbackBehaviour.knockback)
-            && !(stunBehaviour && stunBehaviour.stun)
-            && !(attackManager && attackManager.attacking)
-            && !(electrifiedEffect && electrifiedEffect.active);
-    }
-
-    public void Slide()
-    {
-        if (!CanSlide())
+        if (!CanPlay())
         {
             return;
         }
-        if (walkBehaviour)
-        {
-            walkBehaviour.Stop();
-        }
+        DisableBehaviours(typeof(WalkBehaviour));
+        StopBehaviours(typeof(WalkBehaviour));
         slide = true;
-        onStart?.Invoke();
+        InvokeOnPlay();
         float slideDirection = lookDirection;
         movableObject.velocity.x = slideDirection * slideSpeedMultiplier * Mathf.Abs(movableObject.velocity.x);
         movableObject.acceleration.x = -slideDirection * slideStopAcceleration;
         movableObject.velocity.z = 0;
         stopEvent = eventManager.Attach(
             () => Mathf.Sign(movableObject.velocity.x) == Mathf.Sign(movableObject.acceleration.x),
-            LeaveSlide
+            Stop
         );
-    }
-
-    private void LeaveSlide()
-    {
-        slide = false;
-        onFinish?.Invoke();
-
-        movableObject.velocity.x = 0;
-        movableObject.acceleration.x = 0;
     }
 
     public override void Stop()
     {
         if (slide)
         {
-            onStop?.Invoke();
+            InvokeOnStop();
             eventManager.Detach(stopEvent);
-            LeaveSlide();
+            slide = false;
+            movableObject.velocity.x = 0;
+            movableObject.acceleration.x = 0;
+            EnableBehaviours(typeof(WalkBehaviour));
         }
     }
 }

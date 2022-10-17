@@ -15,7 +15,7 @@ public class EscapePattern : BasePattern
         EscapeBehaviour escapeBehaviour = animator.GetComponent<EscapeBehaviour>();
         MovableObject player = GameObject.FindGameObjectWithTag(targetTag).GetComponent<MovableObject>();
 
-        escapeBehaviour.Escape(player, speedMultiplier);
+        escapeBehaviour.Play(player, speedMultiplier);
 
         onStop = () => animator.SetTrigger("stuck");
         escapeBehaviour.movableObject.onStuck += onStop;

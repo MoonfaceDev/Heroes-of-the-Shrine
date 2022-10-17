@@ -32,8 +32,22 @@ public class SimpleAttack : BaseAttack
     public override void Awake()
     {
         base.Awake();
-        onAnticipate += StopOtherAttacks;
+        onPlay += StopOtherAttacks;
         CreateHitDetector();
+    }
+
+    protected void PreventWalking(bool freeze)
+    {
+        onPlay += () =>
+        {
+            DisableBehaviours(typeof(WalkBehaviour));
+            StopBehaviours(typeof(WalkBehaviour));
+            if (freeze)
+            {
+                movableObject.velocity = Vector3.zero;
+            }
+        };
+        onStop += () => EnableBehaviours(typeof(WalkBehaviour));
     }
 
     private void StopOtherAttacks()
@@ -82,26 +96,14 @@ public class SimpleAttack : BaseAttack
         onFinish += () => hitDetector.Stop();
     }
 
-    public override bool CanWalk()
+    public override bool CanPlay()
     {
-        return false;
-    }
-
-    public override bool CanAttack()
-    {
-        JumpBehaviour jumpBehaviour = GetComponent<JumpBehaviour>();
-        SlideBehaviour slideBehaviour = GetComponent<SlideBehaviour>();
-        DodgeBehaviour dodgeBehaviour = GetComponent<DodgeBehaviour>();
-        KnockbackBehaviour knockbackBehaviour = GetComponent<KnockbackBehaviour>();
-        StunBehaviour stunBehaviour = GetComponent<StunBehaviour>();
         AttackManager attackManager = GetComponent<AttackManager>();
 
-        return midair == (jumpBehaviour && jumpBehaviour.jump)
-            && !(slideBehaviour && slideBehaviour.slide)
-            && !(dodgeBehaviour && dodgeBehaviour.dodge)
-            && !(knockbackBehaviour && knockbackBehaviour.knockback)
-            && !(stunBehaviour && stunBehaviour.stun)
-            && !(attackManager.anticipating || attackManager.active) && !(instant && !attackManager.IsUninterruptable())
+        return base.CanPlay() 
+            && midair == IsPlaying(typeof(JumpBehaviour))
+            && AllStopped(typeof(SlideBehaviour), typeof(DodgeBehaviour))
+            && !((attackManager.anticipating || attackManager.active) && !(instant && !attackManager.IsUninterruptable()))
             && ComboCondition();
     }
 

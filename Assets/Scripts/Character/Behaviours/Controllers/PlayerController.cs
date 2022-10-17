@@ -44,35 +44,35 @@ public class PlayerController : CharacterBehaviour
         float vertical = Direction(Input.GetAxisRaw("Vertical"));
         if (walkBehaviour)
         {
-            walkBehaviour.Walk(horizontal, vertical);
+            walkBehaviour.Play(horizontal, vertical);
         }
         //jumping
         if (jumpBehaviour && Input.GetButtonDown(Button.Jump.ToString())) //pressed jump
         {
-            jumpBehaviour.Jump();
+            jumpBehaviour.Play();
         }
         //sliding
         if (slideBehaviour && Input.GetButtonDown(Button.Escape.ToString())) //pressed slide
         {
-            slideBehaviour.Slide();
+            slideBehaviour.Play();
         }
         //dodging
         if (dodgeBehaviour && Input.GetButtonDown(Button.Escape.ToString())) //pressed dodge
         {
-            dodgeBehaviour.Dodge();
+            dodgeBehaviour.Play();
         }
         //attacks
         AttackProperty selectedAttack = null;
         foreach (AttackProperty property in attacks)
         {
-            if (Input.GetButtonDown(property.button.ToString()) && property.attack.CanAttack())
+            if (Input.GetButtonDown(property.button.ToString()) && property.attack.CanPlay())
             {
                 selectedAttack = property;
             }
         }
         if (selectedAttack != null)
         {
-            selectedAttack.attack.Attack();
+            selectedAttack.attack.Play();
             Debug.Log("Started attack " + selectedAttack.attack.attackName);
             return;
         }
@@ -95,10 +95,5 @@ public class PlayerController : CharacterBehaviour
             return -1;
         }
         return 0;
-    }
-
-    public override void Stop()
-    {
-        throw new NotImplementedException();
     }
 }

@@ -39,7 +39,7 @@ public class AttackPattern : BasePattern
             BaseAttack attack = animator.GetComponent(node.attackType) as BaseAttack;
             try
             {
-                attack.Attack();
+                attack.Play();
             }
             catch (CannotAttackException)
             {
