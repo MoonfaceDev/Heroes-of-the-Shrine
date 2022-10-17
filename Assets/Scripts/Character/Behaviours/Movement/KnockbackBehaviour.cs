@@ -67,7 +67,7 @@ public class KnockbackBehaviour : ForcedBehaviour
 
         bounceEvent = EventManager.Attach(
             () => MovableObject.velocity.y < 0 && MovableObject.position.y <= 0,
-            (Action)(() =>
+            () =>
             {
                 Bounce = 2;
                 power *= SECOND_BOUNCE_POWER_MULTIPLIER;
@@ -91,7 +91,7 @@ public class KnockbackBehaviour : ForcedBehaviour
                         recoverCoroutine = StartCoroutine(RecoverAfterTime());
                     }
                 );
-            })
+            }
         );
     }
 
