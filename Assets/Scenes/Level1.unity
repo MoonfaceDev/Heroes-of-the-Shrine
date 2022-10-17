@@ -517,6 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b548215346a08f438c0748856529dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 0
 --- !u!114 &122932401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,6 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed9ec4fc5714304c83d532294f45bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 0
 --- !u!114 &122932402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,6 +543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e321a7af8378f45b972ec08f7089e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 0
   defaultSpeed: 3
 --- !u!114 &122932403
 MonoBehaviour:
@@ -554,7 +557,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87fda33e10ea24448ba9fe6c8dfffc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resistant: 0
   stunFrames: 2
 --- !u!114 &122932404
 MonoBehaviour:
@@ -568,7 +570,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82852d2e650fc4048ac887d4fc8710e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resistant: 0
   knockbackRecoverTime: 1
 --- !u!114 &122932405
 MonoBehaviour:
@@ -584,6 +585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitboxes:
   - {fileID: 816205893}
+  deathAnimationDuration: 0
 --- !u!114 &122932406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -798,6 +800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitboxes:
   - {fileID: 120408391}
+  deathAnimationDuration: 0
 --- !u!114 &439857742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -879,7 +882,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82852d2e650fc4048ac887d4fc8710e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resistant: 0
   knockbackRecoverTime: 1
 --- !u!114 &439857747
 MonoBehaviour:
@@ -893,6 +895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e321a7af8378f45b972ec08f7089e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 0
   defaultSpeed: 3
 --- !u!114 &439857748
 MonoBehaviour:
@@ -918,7 +921,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87fda33e10ea24448ba9fe6c8dfffc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resistant: 0
   stunFrames: 2
 --- !u!114 &439857755
 MonoBehaviour:
@@ -1032,6 +1034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b548215346a08f438c0748856529dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 0
 --- !u!114 &439857761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1044,6 +1047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed9ec4fc5714304c83d532294f45bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 0
 --- !u!95 &439857762
 Animator:
   serializedVersion: 4
@@ -2109,6 +2113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7da27b710763c4593ecc0f625595d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 0
   jumpSpeed: 10
   jumpAnticipateTime: 0.1
   jumpRecoverTime: 0.1
@@ -2125,6 +2130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1146b9a9a2b3d2439f3aea5ac670bdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 0
   timeToRun: 0.5
   runSpeedMultiplier: 1.5
   runParticles: {fileID: 1996247493}
@@ -2140,6 +2146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e321a7af8378f45b972ec08f7089e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 0
   defaultSpeed: 6
 --- !u!114 &871744036
 MonoBehaviour:
@@ -2155,6 +2162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitboxes:
   - {fileID: 950406680}
+  deathAnimationDuration: 0
 --- !u!114 &871744037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2248,9 +2256,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6ec1730c7ed3d49a2b8d7891202c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 2
   slideSpeedMultiplier: 3
   slideStopAcceleration: 40
-  cooldown: 2
 --- !u!114 &871744042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2263,7 +2271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82852d2e650fc4048ac887d4fc8710e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resistant: 0
   knockbackRecoverTime: 1
 --- !u!114 &871744043
 MonoBehaviour:
@@ -2277,7 +2284,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87fda33e10ea24448ba9fe6c8dfffc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resistant: 0
   stunFrames: 2
 --- !u!114 &871744044
 MonoBehaviour:
@@ -2636,10 +2642,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4021a5b57a1ec1b4dacf3b967c9f3f9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 1
   dodgeDistance: 1
   anticipateTime: 0.05
   recoveryTime: 0.3
-  cooldown: 1
 --- !u!114 &871744058
 MonoBehaviour:
   m_ObjectHideFlags: 0
