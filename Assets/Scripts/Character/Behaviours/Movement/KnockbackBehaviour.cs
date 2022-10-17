@@ -57,7 +57,7 @@ public class KnockbackBehaviour : ForcedBehaviour
             return;
         }
 
-        StopBehaviours(typeof(BaseMovementBehaviour), typeof(AttackManager));
+        StopBehaviours(typeof(BaseMovementBehaviour), typeof(AttackManager), typeof(StunBehaviour));
 
         Active = true;
         InvokeOnPlay();

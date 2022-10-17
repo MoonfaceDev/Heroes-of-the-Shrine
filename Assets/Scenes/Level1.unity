@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af61f8ebac7a76742baddc8a44dddfa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 100
+  startHealth: 10000
   health: 0
 --- !u!114 &439857743
 MonoBehaviour:
@@ -2069,8 +2069,8 @@ MonoBehaviour:
   hittableTags: []
   damage: 40
   hitType: 0
-  knockbackPower: 60
-  knockbackDirection: 280
+  knockbackPower: 8
+  knockbackDirection: 40
   stunTime: 0
   velocity: 50
   acceleration: 500

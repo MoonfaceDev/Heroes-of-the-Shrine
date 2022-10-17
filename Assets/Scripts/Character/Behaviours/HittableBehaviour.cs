@@ -41,7 +41,7 @@ public class HittableBehaviour : CharacterBehaviour
 
     public void Kill()
     {
-        Type[] behavioursToStop = { typeof(BaseMovementBehaviour), typeof(BaseAttack), typeof(StunBehaviour) };
+        Type[] behavioursToStop = { typeof(BaseMovementBehaviour), typeof(AttackManager), typeof(StunBehaviour) };
         DisableBehaviours(behavioursToStop);
         StopBehaviours(behavioursToStop);
         OnDie?.Invoke();
