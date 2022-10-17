@@ -71,7 +71,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -120,14 +120,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b400c03c72c846409fd882eee199000
-      internalID: -415191002
+      spriteID: 38d31ee5dbc809445b7322f992e0a1e7
+      internalID: 790405778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
       name: AngelDodge_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 320
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf964add69da19b408073c29b02c00b7
+      internalID: 554369761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngelDodge_2
       rect:
         serializedVersion: 2
         x: 0
@@ -141,8 +162,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7864f80e73d2d9d4d92aeba8eaf304a0
-      internalID: -1241732029
+      spriteID: 670b775597d17974f8c96c8e548aa667
+      internalID: -2132243327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngelDodge_3
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 320
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f5a18b2163606d44a5f89fa8ab21687
+      internalID: -205845405
       vertices: []
       indices: 
       edges: []
@@ -158,8 +200,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AngelDodge_1: -1241732029
-      AngelDodge_0: -415191002
+      AngelDodge_1: 554369761
+      AngelDodge_3: -205845405
+      AngelDodge_0: 790405778
+      AngelDodge_2: -2132243327
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
