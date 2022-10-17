@@ -555,9 +555,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  figureObject: {fileID: 1387175052}
+  figureObject: {fileID: 1387175054}
   position: {x: 1.84, y: 0, z: -2.91}
-  startPosition: {x: 3.98, y: 0, z: 0}
+  startPosition: {x: 0, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!4 &439857745
@@ -7766,7 +7766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figureObject: {fileID: 1268183752}
-  position: {x: 0, y: 0, z: 0}
+  position: {x: 0, y: 0, z: -0.01}
   startPosition: {x: 0, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
