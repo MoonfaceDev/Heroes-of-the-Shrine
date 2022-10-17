@@ -41,13 +41,16 @@ public class HittableBehaviour : CharacterBehaviour
 
     public void Kill()
     {
-        DisableBehaviours(typeof(PlayableBehaviour));
-        StopBehaviours(typeof(PlayableBehaviour));
-        MovableObject.acceleration = Vector3.zero;
-        MovableObject.velocity = Vector3.zero;
-        Animator.SetBool("dead", true);
+        Type[] behavioursToStop = { typeof(BaseMovementBehaviour), typeof(BaseAttack), typeof(StunBehaviour) };
+        DisableBehaviours(behavioursToStop);
+        StopBehaviours(behavioursToStop);
         OnDie?.Invoke();
-        EventManager.StartTimeout(() => Destroy(gameObject), deathAnimationDuration);
+        EventManager.Attach(() => !IsPlaying(typeof(KnockbackBehaviour)), () =>
+        {
+            DisableBehaviours(typeof(KnockbackBehaviour));
+            Animator.SetBool("dead", true);
+            EventManager.StartTimeout(() => Destroy(gameObject), deathAnimationDuration);
+        });
     }
 
     public bool Hit(float damage)
