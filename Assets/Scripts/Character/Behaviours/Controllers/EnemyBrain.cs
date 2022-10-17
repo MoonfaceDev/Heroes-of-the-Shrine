@@ -36,7 +36,7 @@ public class EnemyBrain : CharacterBehaviour
 
         foreach (BasePattern pattern in stateMachine.GetBehaviours<BasePattern>())
         {
-            pattern.onEnter += () => stateMachine.SetFloat("aggression", Random.Range(0f, 1f));
+            pattern.OnEnter += () => stateMachine.SetFloat("aggression", Random.Range(0f, 1f));
         }
 
         MovableObject player = GameObject.FindGameObjectWithTag(playerTag).GetComponent<MovableObject>();

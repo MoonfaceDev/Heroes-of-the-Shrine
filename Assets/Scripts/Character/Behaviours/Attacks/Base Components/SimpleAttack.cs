@@ -33,6 +33,10 @@ public class SimpleAttack : BaseAttack
     {
         base.Awake();
         OnPlay += StopOtherAttacks;
+    }
+
+    public void Start()
+    {
         CreateHitDetector();
     }
 

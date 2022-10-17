@@ -26,7 +26,7 @@ public class ArcPattern : BasePattern
         float radius = initialDistance.magnitude;
         float clockwise = Mathf.Sign(UnityEngine.Random.Range(-1f ,1f));
 
-        circleEvent = eventManager.Attach(() => true, () => {
+        circleEvent = EventManager.Attach(() => true, () => {
             Vector3 distance = walkBehaviour.MovableObject.position - playerPosition;
             distance.y = 0;
             distance *= radius / distance.magnitude;
@@ -51,7 +51,7 @@ public class ArcPattern : BasePattern
         WalkBehaviour walkBehaviour = animator.GetComponent<WalkBehaviour>();
 
         walkBehaviour.MovableObject.onStuck -= onStop;
-        eventManager.Detach(circleEvent);
+        EventManager.Detach(circleEvent);
         walkBehaviour.speed.RemoveModifier(speedModifier);
         walkBehaviour.Stop();
         walkBehaviour.MovableObject.velocity = Vector3.zero;

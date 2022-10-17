@@ -32,7 +32,7 @@ public class ElectrifyAttack : NormalAttack
         }, periodicHitInterval);
 
         float detectCount = 0;
-        periodicHitDetector.onDetect += () => detectCount++;
+        periodicHitDetector.OnDetect += () => detectCount++;
 
         explosionHitDetector = new(EventManager, explosionHitbox, (hittable) =>
         {

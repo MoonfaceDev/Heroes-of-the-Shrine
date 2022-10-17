@@ -9,13 +9,13 @@ public abstract class BasePattern : StateMachineBehaviour
 
     private float timeout;
 
-    public EventManager eventManager
+    public EventManager EventManager
     {
         get => FindObjectOfType<EventManager>();
     }
 
-    public event Action onEnter;
-    public event Action onExit;
+    public event Action OnEnter;
+    public event Action OnExit;
 
     private float time;
 
@@ -23,7 +23,7 @@ public abstract class BasePattern : StateMachineBehaviour
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
         Debug.Log(animator.name + " starting " + GetType().Name);
-        onEnter?.Invoke();
+        OnEnter?.Invoke();
         time = 0;
         if (hasRandomExitTime)
         {
@@ -45,6 +45,6 @@ public abstract class BasePattern : StateMachineBehaviour
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
         Debug.Log(animator.name + " exited " + GetType().Name + " after " + time + "s");
-        onExit?.Invoke();
+        OnExit?.Invoke();
     }
 }
