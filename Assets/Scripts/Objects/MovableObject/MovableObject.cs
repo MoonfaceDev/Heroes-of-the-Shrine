@@ -41,7 +41,10 @@ public class MovableObject : MonoBehaviour
         //update position and velocity
         velocity += acceleration * Time.deltaTime;
         if (!CompareTag("Barrier")) {
-            UpdatePosition(position + Time.deltaTime * velocity + 0.5f * Mathf.Pow(Time.deltaTime, 2) * acceleration);
+            Vector3 wantedPosition = position + Time.deltaTime * velocity + 0.5f * Mathf.Pow(Time.deltaTime, 2) * acceleration;
+            UpdatePosition(position + Vector3.right * (wantedPosition.x - position.x));
+            UpdatePosition(position + Vector3.up * (wantedPosition.y - position.y));
+            UpdatePosition(position + Vector3.forward * (wantedPosition.z - position.z));
         }
         //update position in scene
         transform.position = GroundScreenCoordinates(position);

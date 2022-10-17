@@ -5,42 +5,52 @@ using UnityEngine;
 
 public class MathUtils
 {
+	struct LineParams
+    {
+        public readonly float a;
+        public readonly float b;
+        public readonly float c;
+
+		public LineParams(float a, float b, float c)
+        {
+			this.a = a;
+			this.b = b;
+			this.c = c;
+        }
+    }
+
 	public static bool IsBetween(Vector2 start, Vector2 end, Vector2 point)
     {
-		return Mathf.Sign(point.x - start.x) != Mathf.Sign(point.x - end.x) && Mathf.Sign(point.y - start.y) != Mathf.Sign(point.y - end.y);
+		return Mathf.Abs(Vector2.Distance(start, point) + Vector2.Distance(end, point) - Vector2.Distance(start, end)) < 0.001f;
 	}
+
+	private static LineParams GetLineParams(Vector2 start, Vector2 end)
+    {
+		float a = start.y - end.y;
+		float b = end.x - start.x;
+		float c = start.x * end.y - end.x * start.y;
+		return new(a, b ,-c);
+    }
 
 	public static bool LineLineIntersection(out Vector2 intersection, Vector2 start1, Vector2 end1, Vector2 start2, Vector2 end2)
 	{
-		float m1 = (end1.y - start1.y) / (end1.x - start1.x);
-		float m2 = (end2.y - start2.y) / (end2.x - start2.x);
-		float b1 = start1.y - m1 * start1.x;
-		float b2 = start2.y - m2 * start2.x;
+		LineParams l1 = GetLineParams(start1, end1);
+		LineParams l2 = GetLineParams(start2, end2);
+		float d = l1.a * l2.b - l1.b * l2.a;
+		float dx = l1.c * l2.b - l1.b * l2.c;
+		float dy = l1.a * l2.c - l1.c * l2.a;
 
-		// y = m1 * x + b1
-		// y = m2 * x + b2
-		if (Mathf.Abs(m1 - m2) < Mathf.Epsilon) // parallel
+		if (d == 0)
         {
-			if (Mathf.Abs(b1 - b2) < Mathf.Epsilon) // identical
-            {
-				intersection = start1;
-				return true;
-            }
-			else
-            {
-				intersection = Vector2.zero;
-				return false;
-			}
+			intersection = Vector2.zero;
+			return false;
         }
 
-		float x = (b2 - b1) / (m1 - m2);
-		float y = m1 * x + b1;
-
-		intersection = new Vector2(x, y);
+		intersection = new Vector2(dx / d, dy / d);
 		return IsBetween(start1, end1, intersection) && IsBetween(start2, end2, intersection);
 	}
 
-	public static List<Vector2> LineRectangleIntersections(Vector2 start, Vector2 end, Vector2 rectanglePosition, Vector2 rectangleSize, float offset = 0)
+    public static List<Vector2> LineRectangleIntersections(Vector2 start, Vector2 end, Vector2 rectanglePosition, Vector2 rectangleSize)
     {
 		List<Vector2> intersections = new();
 		Tuple<Vector2, Vector2>[] lines = new Tuple<Vector2, Vector2>[] { 
