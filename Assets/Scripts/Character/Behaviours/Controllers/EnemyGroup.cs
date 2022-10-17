@@ -35,13 +35,14 @@ public class EnemyGroup : CharacterBehaviour
         }
 
         // Closest to the player
-        MovableObject player = GameObject.FindGameObjectWithTag("Player").GetComponent<MovableObject>();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player)
         {
+            MovableObject playerMovableObject = player.GetComponent<MovableObject>();
             EnemyGroup closestEnemy = enemies.Aggregate(enemies[0], (prev, next) =>
             {
-                float nextDistance = player.GroundDistance(next.GetComponent<MovableObject>().position);
-                float prevDistance = player.GroundDistance(prev.GetComponent<MovableObject>().position);
+                float nextDistance = playerMovableObject.GroundDistance(next.GetComponent<MovableObject>().position);
+                float prevDistance = playerMovableObject.GroundDistance(prev.GetComponent<MovableObject>().position);
                 return nextDistance < prevDistance ? next : prev;
             });
             stateMachine.SetBool("isClosestToPlayer", this == closestEnemy);
