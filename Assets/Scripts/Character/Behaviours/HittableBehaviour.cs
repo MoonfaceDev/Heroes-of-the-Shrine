@@ -49,7 +49,7 @@ public class HittableBehaviour : CharacterBehaviour
         {
             DisableBehaviours(typeof(KnockbackBehaviour));
             Animator.SetBool("dead", true);
-            EventManager.StartTimeout(() => Destroy(gameObject), deathAnimationDuration);
+            Destroy(gameObject, deathAnimationDuration);
         });
     }
 
