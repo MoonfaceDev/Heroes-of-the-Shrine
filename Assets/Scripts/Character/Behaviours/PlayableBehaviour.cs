@@ -27,26 +27,4 @@ public abstract class PlayableBehaviour : CharacterBehaviour
     {
         OnStop?.Invoke();
     }
-
-    protected void StopBehaviours(params Type[] behaviours)
-    {
-        foreach (Type type in behaviours)
-        {
-            foreach (PlayableBehaviour behaviour in GetComponents(type))
-            {
-                behaviour.Stop();
-            }
-        }
-    }
-
-    protected bool IsPlaying(Type type)
-    {
-        PlayableBehaviour behaviour = GetComponent(type) as PlayableBehaviour;
-        return behaviour && behaviour.Playing;
-    }
-
-    protected bool AllStopped(params Type[] types)
-    {
-        return types.Select(type => GetComponents(type)).All(behaviours => behaviours.All(behaviour => !(behaviour as PlayableBehaviour).Playing));
-    }
 }

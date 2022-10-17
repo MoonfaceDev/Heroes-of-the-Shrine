@@ -39,6 +39,24 @@ public class EventManager : MonoBehaviour
         return Attach(() => Time.time - startTime >= timeout, action);
     }
 
+    public delegate void StopInterval();
+
+    public EventListener StartInterval(Action<StopInterval> action, float interval)
+    {
+        float startTime = 0;
+        void StartOneInterval()
+        {
+            startTime = Time.time;
+        }
+        StartOneInterval();
+        EventListener eventListener = null;
+        eventListener = Attach(() => Time.time - startTime >= interval, () => { 
+            StartOneInterval();
+            action(() => Detach(eventListener));
+            }, false);
+        return eventListener;
+    }
+
     public EventListener StartInterval(Action action, float interval)
     {
         float startTime = 0;

@@ -11,35 +11,6 @@ public class EnemyGroup : CharacterBehaviour
         stateMachine = GetComponent<Animator>();
     }
 
-    public void Start()
-    {
-        EnemyGroup[] enemies = FindObjectsOfType<EnemyGroup>();
-        int enemiesAttackingCount = 0;
-        foreach (EnemyGroup enemy in enemies)
-        {
-            if (enemy != this)
-            {
-                AttackManager enemyAttackManager = enemy.GetComponent<AttackManager>();
-                if (enemyAttackManager)
-                {
-                    enemyAttackManager.OnPlay += () =>
-                    {
-                        enemiesAttackingCount++;
-                        stateMachine.SetBool("enemiesAttacking", true);
-                    };
-                    enemyAttackManager.OnStop += () =>
-                    {
-                        enemiesAttackingCount--;
-                        if (enemiesAttackingCount == 0)
-                        {
-                            stateMachine.SetBool("enemiesAttacking", false);
-                        }
-                    };
-                }
-            }
-        }
-    }
-
     void Update()
     {
         EnemyGroup[] enemies = FindObjectsOfType<EnemyGroup>();
@@ -75,5 +46,13 @@ public class EnemyGroup : CharacterBehaviour
             });
             stateMachine.SetBool("isClosestToPlayer", this == closestEnemy);
         }
+
+        // Enemies attacking
+        bool enemiesAttacking = enemies.Any((enemy) =>
+        {
+            AttackManager enemyAttackManager = enemy.GetComponent<AttackManager>();
+            return enemyAttackManager.Playing;
+        });
+        stateMachine.SetBool("enemiesAttacking", enemiesAttacking);
     }
 }

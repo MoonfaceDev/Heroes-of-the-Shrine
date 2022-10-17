@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,10 +13,13 @@ public class HittableBehaviour : CharacterBehaviour
     public static float STUN_LAUNCH_ANGEL = 90; // degrees
 
     public List<Hitbox> hitboxes;
+    [Header("Death")]
+    public float deathAnimationDuration;
 
     public event OnHit OnHit;
     public event OnKnockback OnKnockback;
     public event OnStun OnStun;
+    public event Action OnDie;
 
     private HealthSystem healthSystem;
     private KnockbackBehaviour knockbackBehaviour;
@@ -34,6 +38,18 @@ public class HittableBehaviour : CharacterBehaviour
         return !(knockbackBehaviour && knockbackBehaviour.Recovering);
     }
 
+
+    public void Kill()
+    {
+        DisableBehaviours(typeof(PlayableBehaviour));
+        StopBehaviours(typeof(PlayableBehaviour));
+        MovableObject.acceleration = Vector3.zero;
+        MovableObject.velocity = Vector3.zero;
+        Animator.SetBool("dead", true);
+        OnDie?.Invoke();
+        EventManager.StartTimeout(() => Destroy(gameObject), deathAnimationDuration);
+    }
+
     public bool Hit(float damage)
     {
         if (!CanGetHit())
@@ -42,6 +58,10 @@ public class HittableBehaviour : CharacterBehaviour
         }
         healthSystem.health -= damage;
         OnHit?.Invoke(damage);
+        if (healthSystem.health <= 0)
+        {
+            Kill();
+        }
         return true;
     }
 

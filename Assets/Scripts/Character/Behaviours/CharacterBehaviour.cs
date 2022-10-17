@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Character))]
@@ -60,5 +61,27 @@ public abstract class CharacterBehaviour : MonoBehaviour
     protected void DisableBehaviours(params Type[] behaviours)
     {
         SetBehavioursEnabled(false, behaviours);
+    }
+
+    protected void StopBehaviours(params Type[] behaviours)
+    {
+        foreach (Type type in behaviours)
+        {
+            foreach (PlayableBehaviour behaviour in GetComponents(type))
+            {
+                behaviour.Stop();
+            }
+        }
+    }
+
+    protected bool IsPlaying(Type type)
+    {
+        PlayableBehaviour behaviour = GetComponent(type) as PlayableBehaviour;
+        return behaviour && behaviour.Playing;
+    }
+
+    protected bool AllStopped(params Type[] types)
+    {
+        return types.Select(type => GetComponents(type)).All(behaviours => behaviours.All(behaviour => !(behaviour as PlayableBehaviour).Playing));
     }
 }
