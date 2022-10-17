@@ -24,7 +24,7 @@ class MovableObjectEditor : Editor
         FieldInfo figureObjectField = target.GetType().GetField(figureObject.propertyPath);
         if (figureObjectField != null)
         {
-            movableObject.figureObject = (GameObject)figureObjectField.GetValue(target);
+            movableObject.figureObject = (Renderer)figureObjectField.GetValue(target);
         }
         movableObject.position = position.vector3Value;
         movableObject.transform.localPosition = MovableObject.GroundScreenCoordinates(movableObject.position);

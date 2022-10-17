@@ -555,9 +555,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  figureObject: {fileID: 1387175052}
+  figureObject: {fileID: 1387175054}
   position: {x: 1.84, y: 0, z: -2.91}
-  startPosition: {x: 3.98, y: 0, z: 0}
+  startPosition: {x: 0, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!4 &439857745
@@ -1964,7 +1964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  figureObject: {fileID: 1482702257}
+  figureObject: {fileID: 1482702258}
   position: {x: -3.74, y: 0, z: -2.89}
   startPosition: {x: 0, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
@@ -2948,6 +2948,7 @@ GameObject:
   - component: {fileID: 1268183753}
   - component: {fileID: 1268183751}
   - component: {fileID: 1268183752}
+  - component: {fileID: 1268183754}
   m_Layer: 0
   m_Name: Electrified Particles
   m_TagString: Untagged
@@ -7752,6 +7753,23 @@ Transform:
   m_Father: {fileID: 1482702259}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1268183754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268183750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  figureObject: {fileID: 1268183752}
+  position: {x: 0, y: 0, z: 0}
+  startPosition: {x: 0, y: 0, z: 0}
+  velocity: {x: 0, y: 0, z: 0}
+  acceleration: {x: 0, y: 0, z: 0}
 --- !u!1 &1293244185
 GameObject:
   m_ObjectHideFlags: 0
@@ -8167,9 +8185,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  figureObject: {fileID: 1583128356}
+  figureObject: {fileID: 1583128358}
   position: {x: -0.35, y: 0, z: -4.58}
-  startPosition: {x: 3.98, y: 0, z: 0}
+  startPosition: {x: 0, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!4 &1315154343

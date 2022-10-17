@@ -25,7 +25,7 @@ public class EscapeBehaviour : SoloMovementBehaviour
 
     public void Start()
     {
-        MovableObject.onStuck += Stop;
+        MovableObject.OnStuck += Stop;
         walkBehaviour.OnStop += Stop;
     }
 

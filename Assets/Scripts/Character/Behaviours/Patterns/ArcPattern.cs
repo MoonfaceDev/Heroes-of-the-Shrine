@@ -46,7 +46,7 @@ public class ArcPattern : BasePattern
         }, false);
 
         onStop = () => animator.SetTrigger("stuck");
-        walkBehaviour.MovableObject.onStuck += onStop;
+        walkBehaviour.MovableObject.OnStuck += onStop;
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -55,7 +55,7 @@ public class ArcPattern : BasePattern
 
         WalkBehaviour walkBehaviour = animator.GetComponent<WalkBehaviour>();
 
-        walkBehaviour.MovableObject.onStuck -= onStop;
+        walkBehaviour.MovableObject.OnStuck -= onStop;
         EventManager.Detach(circleEvent);
         walkBehaviour.speed.RemoveModifier(speedModifier);
         if (walkBehaviour.Playing)
