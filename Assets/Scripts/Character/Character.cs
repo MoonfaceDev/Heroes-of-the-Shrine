@@ -9,10 +9,10 @@ public class Character : MonoBehaviour
     [HideInInspector] public MovableObject movableObject;
     // look direction
 
-    private EventListener lookDirectionEvent;
+    private readonly EventListener lookDirectionEvent;
     private int _lookDirection = 1;
 
-    public int lookDirection
+    public int LookDirection
     {
         get
         {

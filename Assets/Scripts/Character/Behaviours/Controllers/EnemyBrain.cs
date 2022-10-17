@@ -17,15 +17,15 @@ public class EnemyBrain : CharacterBehaviour
         KnockbackBehaviour knockbackBehaviour = GetComponent<KnockbackBehaviour>();
         if (knockbackBehaviour)
         {
-            knockbackBehaviour.onPlay += () => stateMachine.SetBool("knockback", true);
-            knockbackBehaviour.onStop += () => stateMachine.SetBool("knockback", false);
+            knockbackBehaviour.OnPlay += () => stateMachine.SetBool("knockback", true);
+            knockbackBehaviour.OnStop += () => stateMachine.SetBool("knockback", false);
         }
 
         StunBehaviour stunBehaviour = GetComponent<StunBehaviour>();
         if (stunBehaviour)
         {
-            stunBehaviour.onPlay += () => stateMachine.SetBool("stun", true);
-            stunBehaviour.onStop += () => stateMachine.SetBool("stun", false);
+            stunBehaviour.OnPlay += () => stateMachine.SetBool("stun", true);
+            stunBehaviour.OnStop += () => stateMachine.SetBool("stun", false);
         }
 
         AttackManager attackManager = GetComponent<AttackManager>();
@@ -43,18 +43,18 @@ public class EnemyBrain : CharacterBehaviour
         if (player)
         {
             KnockbackBehaviour playerKnockbackBehaviour = player.GetComponent<KnockbackBehaviour>();
-            playerKnockbackBehaviour.onPlay += () => stateMachine.SetBool("playerKnockback", true);
-            playerKnockbackBehaviour.onFinish += () => stateMachine.SetBool("playerKnockback", false);
-            playerKnockbackBehaviour.onFinish += () => stateMachine.SetBool("playerRecoveringFromKnockback", true);
-            playerKnockbackBehaviour.onRecover += () => stateMachine.SetBool("playerRecoveringFromKnockback", false);
+            playerKnockbackBehaviour.OnPlay += () => stateMachine.SetBool("playerKnockback", true);
+            playerKnockbackBehaviour.OnFinish += () => stateMachine.SetBool("playerKnockback", false);
+            playerKnockbackBehaviour.OnFinish += () => stateMachine.SetBool("playerRecoveringFromKnockback", true);
+            playerKnockbackBehaviour.OnRecover += () => stateMachine.SetBool("playerRecoveringFromKnockback", false);
 
             StunBehaviour playerStunBehaviour = player.GetComponent<StunBehaviour>();
-            playerStunBehaviour.onPlay += () => stateMachine.SetBool("playerStun", true);
-            playerStunBehaviour.onStop += () => stateMachine.SetBool("playerStun", false);
+            playerStunBehaviour.OnPlay += () => stateMachine.SetBool("playerStun", true);
+            playerStunBehaviour.OnStop += () => stateMachine.SetBool("playerStun", false);
 
             AttackManager playerAttackManager = player.GetComponent<AttackManager>();
-            playerAttackManager.onPlay += () => stateMachine.SetBool("playerAttacking", true);
-            playerAttackManager.onStop += () => stateMachine.SetBool("playerAttacking", false);
+            playerAttackManager.OnPlay += () => stateMachine.SetBool("playerAttacking", true);
+            playerAttackManager.OnStop += () => stateMachine.SetBool("playerAttacking", false);
         }
     }
 
@@ -71,7 +71,7 @@ public class EnemyBrain : CharacterBehaviour
         MovableObject player = GameObject.FindGameObjectWithTag(playerTag).GetComponent<MovableObject>();
         if (player)
         {
-            stateMachine.SetFloat("playerDistance", Vector2.Distance(ToPlane(movableObject.position), ToPlane(player.position)));
+            stateMachine.SetFloat("playerDistance", Vector2.Distance(ToPlane(MovableObject.position), ToPlane(player.position)));
         }
     }
 

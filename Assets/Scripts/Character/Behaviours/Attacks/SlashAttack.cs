@@ -15,21 +15,21 @@ public class SlashAttack : SimpleAttack
         PreventWalking(false);
 
         float direction = 0;
-        onPlay += () => direction = lookDirection;
+        OnPlay += () => direction = LookDirection;
 
-        onStart += () =>
+        OnStart += () =>
         {
             isMoving = true;
-            movableObject.velocity.x = direction * velocity;
-            movableObject.velocity.z = 0;
-            movableObject.acceleration.x = -direction * acceleration;
-            eventManager.Attach(() => Mathf.Sign(movableObject.velocity.x) != direction, () => isMoving = false);
+            MovableObject.velocity.x = direction * velocity;
+            MovableObject.velocity.z = 0;
+            MovableObject.acceleration.x = -direction * acceleration;
+            EventManager.Attach(() => Mathf.Sign(MovableObject.velocity.x) != direction, () => isMoving = false);
         };
 
-        onFinish += () => 
+        OnFinish += () => 
         {
-            movableObject.velocity.x = 0;
-            movableObject.acceleration.x = 0;
+            MovableObject.velocity.x = 0;
+            MovableObject.acceleration.x = 0;
         };
     }
 

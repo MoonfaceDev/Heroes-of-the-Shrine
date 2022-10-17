@@ -73,14 +73,14 @@ public class PlayerController : CharacterBehaviour
         if (selectedAttack != null)
         {
             selectedAttack.attack.Play();
-            Debug.Log("Started attack " + selectedAttack.attack.attackName);
+            Debug.Log("Started attack " + selectedAttack.attack.AttackName);
             return;
         }
         //change suits
         if (Input.GetKeyDown(KeyCode.Alpha7))
         {
             activeSuitIndex = 1 - activeSuitIndex;
-            animator.runtimeAnimatorController = animatorControllers[activeSuitIndex];
+            Animator.runtimeAnimatorController = animatorControllers[activeSuitIndex];
         }
     }
 

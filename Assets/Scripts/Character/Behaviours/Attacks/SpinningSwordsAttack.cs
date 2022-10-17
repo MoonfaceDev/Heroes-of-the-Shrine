@@ -17,20 +17,20 @@ public class SpinningSwordsAttack : NormalAttack
         hitDetector2 = CreateOneHitDetector(hitbox2);
         Coroutine disableHitDetector1 = null;
         Coroutine enableHitDetector2 = null;
-        onStart += () =>
+        OnStart += () =>
         {
             hitDetector1.Start();
             disableHitDetector1 = StartCoroutine(DisableHitDetector1());
             enableHitDetector2 = StartCoroutine(EnableHitDetector2());
         };
 
-        onFinish += () => 
+        OnFinish += () => 
         {
             hitDetector1.Stop();
             hitDetector2.Stop();
         };
 
-        onStop += () =>
+        OnStop += () =>
         {
             StopCoroutine(disableHitDetector1);
             StopCoroutine(enableHitDetector2);
@@ -39,7 +39,7 @@ public class SpinningSwordsAttack : NormalAttack
 
     private SingleHitDetector CreateOneHitDetector(Hitbox hitbox)
     {
-        return new(eventManager, hitbox, (hittable) =>
+        return new(EventManager, hitbox, (hittable) =>
         {
             if (IsHittableTag(hittable.tag))
             {

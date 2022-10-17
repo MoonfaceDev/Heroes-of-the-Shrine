@@ -32,22 +32,22 @@ public class SimpleAttack : BaseAttack
     public override void Awake()
     {
         base.Awake();
-        onPlay += StopOtherAttacks;
+        OnPlay += StopOtherAttacks;
         CreateHitDetector();
     }
 
     protected void PreventWalking(bool freeze)
     {
-        onPlay += () =>
+        OnPlay += () =>
         {
             DisableBehaviours(typeof(WalkBehaviour));
             StopBehaviours(typeof(WalkBehaviour));
             if (freeze)
             {
-                movableObject.velocity = Vector3.zero;
+                MovableObject.velocity = Vector3.zero;
             }
         };
-        onStop += () => EnableBehaviours(typeof(WalkBehaviour));
+        OnStop += () => EnableBehaviours(typeof(WalkBehaviour));
     }
 
     private void StopOtherAttacks()
@@ -85,15 +85,15 @@ public class SimpleAttack : BaseAttack
 
     protected virtual void CreateHitDetector()
     {
-        SingleHitDetector hitDetector = new(eventManager, hitbox, (hittable) =>
+        SingleHitDetector hitDetector = new(EventManager, hitbox, (hittable) =>
         {
             if (IsHittableTag(hittable.tag))
             {
                 HitCallable(hittable);
             }
         });
-        onStart += () => hitDetector.Start();
-        onFinish += () => hitDetector.Stop();
+        OnStart += () => hitDetector.Start();
+        OnFinish += () => hitDetector.Stop();
     }
 
     public override bool CanPlay()
@@ -103,7 +103,7 @@ public class SimpleAttack : BaseAttack
         return base.CanPlay() 
             && midair == IsPlaying(typeof(JumpBehaviour))
             && AllStopped(typeof(SlideBehaviour), typeof(DodgeBehaviour))
-            && !((attackManager.anticipating || attackManager.active) && !(instant && !attackManager.IsUninterruptable()))
+            && !((attackManager.Anticipating || attackManager.Active) && !(instant && !attackManager.IsUninterruptable()))
             && ComboCondition();
     }
 
@@ -121,11 +121,11 @@ public class SimpleAttack : BaseAttack
     protected override void HitCallable(HittableBehaviour hittableBehaviour)
     {
         float damage = CalculateDamage(hittableBehaviour);
-        print(hittableBehaviour.name + " hit by " + attackName);
+        print(hittableBehaviour.name + " hit by " + AttackName);
         switch (hitType)
         {
             case HitType.Knockback:
-                int hitDirection = (int)Mathf.Sign(hittableBehaviour.movableObject.position.x - movableObject.position.x);
+                int hitDirection = (int)Mathf.Sign(hittableBehaviour.MovableObject.position.x - MovableObject.position.x);
                 hittableBehaviour.Knockback(damage, knockbackPower, KnockbackBehaviour.GetRelativeDirection(knockbackDirection, hitDirection));
                 break;
             case HitType.Stun:

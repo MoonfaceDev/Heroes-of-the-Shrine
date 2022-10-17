@@ -23,7 +23,7 @@ public class ElectrifiedEffect : BaseEffect
     {
         StopBehaviours(typeof(RunBehaviour), typeof(SlideBehaviour), typeof(DodgeBehaviour), typeof(ElectrifiedEffect));
 
-        active = true;
+        Active = true;
         InvokeOnPlay();
 
         if (walkBehaviour)
@@ -36,15 +36,15 @@ public class ElectrifiedEffect : BaseEffect
 
         startTime = Time.time;
         currentDuration = duration;
-        stopEvent = eventManager.Attach(() => Time.time - startTime > duration, Stop);
+        stopEvent = EventManager.Attach(() => Time.time - startTime > duration, Stop);
     }
 
     public override void Stop()
     {
-        if (active)
+        if (Active)
         {
             InvokeOnStop();
-            active = false;
+            Active = false;
 
             if (walkBehaviour)
             {
@@ -54,7 +54,7 @@ public class ElectrifiedEffect : BaseEffect
             particles.Stop(true, stopBehavior: ParticleSystemStopBehavior.StopEmittingAndClear);
 
             currentDuration = 0;
-            eventManager.Detach(stopEvent);
+            EventManager.Detach(stopEvent);
         }
     }
 

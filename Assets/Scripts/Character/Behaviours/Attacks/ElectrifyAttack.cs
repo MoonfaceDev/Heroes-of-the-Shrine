@@ -23,7 +23,7 @@ public class ElectrifyAttack : NormalAttack
 
     protected override void CreateHitDetector()
     {
-        periodicHitDetector = new(eventManager, periodicHitbox, (hittable) =>
+        periodicHitDetector = new(EventManager, periodicHitbox, (hittable) =>
         {
             if (IsHittableTag(hittable.tag))
             {
@@ -34,7 +34,7 @@ public class ElectrifyAttack : NormalAttack
         float detectCount = 0;
         periodicHitDetector.onDetect += () => detectCount++;
 
-        explosionHitDetector = new(eventManager, explosionHitbox, (hittable) =>
+        explosionHitDetector = new(EventManager, explosionHitbox, (hittable) =>
         {
             if (IsHittableTag(hittable.tag))
             {
@@ -44,10 +44,10 @@ public class ElectrifyAttack : NormalAttack
 
         EventListener switchDetectorsEvent = null;
 
-        onStart += () =>
+        OnStart += () =>
         {
             periodicHitDetector.Start();
-            switchDetectorsEvent = eventManager.Attach(() => detectCount >= periodicHitCount, () =>
+            switchDetectorsEvent = EventManager.Attach(() => detectCount >= periodicHitCount, () =>
             {
                 periodicHitDetector.Stop();
                 explosionHitDetector.Start();
@@ -55,15 +55,15 @@ public class ElectrifyAttack : NormalAttack
             });
         };
 
-        onFinish += () =>
+        OnFinish += () =>
         {
             periodicHitDetector.Stop();
             explosionHitDetector.Stop();
         };
 
-        onStop += () =>
+        OnStop += () =>
         {
-            eventManager.Detach(switchDetectorsEvent);
+            EventManager.Detach(switchDetectorsEvent);
         };
     }
 
@@ -75,7 +75,7 @@ public class ElectrifyAttack : NormalAttack
     protected override void HitCallable(HittableBehaviour hittableBehaviour)
     {
         float damage = CalculateDamage(hittableBehaviour);
-        print(hittableBehaviour.name + " hit by periodic " + attackName);
+        print(hittableBehaviour.name + " hit by periodic " + AttackName);
         hittableBehaviour.Stun(damage, periodicStunTime);
         if (Random.Range(0f, 1f) < periodicHitElectrifyRate)
         {
@@ -94,8 +94,8 @@ public class ElectrifyAttack : NormalAttack
     protected void ExplosionHitCallable(HittableBehaviour hittableBehaviour)
     {
         float damage = CalculateExplosionDamage(hittableBehaviour);
-        print(hittableBehaviour.name + " hit by explosion " + attackName);
-        int hitDirection = (int)Mathf.Sign(hittableBehaviour.movableObject.position.x - movableObject.position.x);
+        print(hittableBehaviour.name + " hit by explosion " + AttackName);
+        int hitDirection = (int)Mathf.Sign(hittableBehaviour.MovableObject.position.x - MovableObject.position.x);
         hittableBehaviour.Knockback(damage, epxlosionKnockbackPower, KnockbackBehaviour.GetRelativeDirection(explosionKnockbackDirection, hitDirection));
         ElectrifiedEffect electrifiedEffect = hittableBehaviour.GetComponent<ElectrifiedEffect>();
         if (electrifiedEffect)

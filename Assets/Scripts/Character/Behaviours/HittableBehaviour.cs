@@ -1,6 +1,9 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
+
+public delegate void OnHit(float damage);
+public delegate void OnKnockback(float damage, float power, float angleDegrees);
+public delegate void OnStun(float damage, float time);
 
 [RequireComponent(typeof(HealthSystem))]
 public class HittableBehaviour : CharacterBehaviour
@@ -10,13 +13,9 @@ public class HittableBehaviour : CharacterBehaviour
 
     public List<Hitbox> hitboxes;
 
-    public delegate void OnHit(float damage);
-    public delegate void OnKnockback(float damage, float power, float angleDegrees);
-    public delegate void OnStun(float damage, float time);
-
-    public event OnHit onHit;
-    public event OnKnockback onKnockback;
-    public event OnStun onStun;
+    public event OnHit OnHit;
+    public event OnKnockback OnKnockback;
+    public event OnStun OnStun;
 
     private HealthSystem healthSystem;
     private KnockbackBehaviour knockbackBehaviour;
@@ -32,7 +31,7 @@ public class HittableBehaviour : CharacterBehaviour
 
     public bool CanGetHit()
     {
-        return !(knockbackBehaviour && knockbackBehaviour.recovering);
+        return !(knockbackBehaviour && knockbackBehaviour.Recovering);
     }
 
     public bool Hit(float damage)
@@ -42,7 +41,7 @@ public class HittableBehaviour : CharacterBehaviour
             return false;
         }
         healthSystem.health -= damage;
-        onHit?.Invoke(damage);
+        OnHit?.Invoke(damage);
         return true;
     }
 
@@ -53,7 +52,7 @@ public class HittableBehaviour : CharacterBehaviour
             return false;
         }
         Hit(damage);
-        onKnockback?.Invoke(damage, power, angleDegrees);
+        OnKnockback?.Invoke(damage, power, angleDegrees);
         if (knockbackBehaviour)
         {
             knockbackBehaviour.Play(power, angleDegrees);
@@ -67,13 +66,13 @@ public class HittableBehaviour : CharacterBehaviour
         {
             return false;
         }
-        if (movableObject.position.y > 0)
+        if (MovableObject.position.y > 0)
         {
             Knockback(damage, STUN_LAUNCH_POWER, STUN_LAUNCH_ANGEL);
             return true;
         }
         Hit(damage);
-        onStun?.Invoke(damage, time);
+        OnStun?.Invoke(damage, time);
         if (stunBehaviour)
         {
             stunBehaviour.Play(time);

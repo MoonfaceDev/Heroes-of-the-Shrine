@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -6,30 +5,30 @@ public class StunBehaviour : ForcedBehaviour
 {
     public int stunFrames;
 
-    public bool stun
+    public bool Stun
     {
-        get => _stun;
+        get => stun;
         private set
         {
-            _stun = value;
-            animator.SetBool("stun", _stun);
+            stun = value;
+            Animator.SetBool("stun", stun);
         }
     }
 
-    public int stunFrame
+    public int StunFrame
     {
-        get => _stunFrame;
+        get => stunFrame;
         private set
         {
-            _stunFrame = value;
-            animator.SetInteger("stunFrame", _stunFrame);
+            stunFrame = value;
+            Animator.SetInteger("stunFrame", stunFrame);
         }
     }
 
-    public override bool Playing => stun;
+    public override bool Playing => Stun;
 
-    private bool _stun;
-    private int _stunFrame;
+    private bool stun;
+    private int stunFrame;
     private Coroutine stopCoroutine;
 
     public void Play(float time)
@@ -40,28 +39,28 @@ public class StunBehaviour : ForcedBehaviour
         }
 
         StopBehaviours(typeof(BaseMovementBehaviour), typeof(ForcedBehaviour), typeof(AttackManager));
-        movableObject.velocity = Vector3.zero;
+        MovableObject.velocity = Vector3.zero;
 
-        stun = true;
-        stunFrame = (stunFrame + 1) % stunFrames;
+        Stun = true;
+        StunFrame = (StunFrame + 1) % stunFrames;
         InvokeOnPlay();
-        movableObject.velocity = Vector3.zero;
+        MovableObject.velocity = Vector3.zero;
         stopCoroutine = StartCoroutine(StopAfter(time));
     }
 
     private IEnumerator StopAfter(float time)
     {
         yield return new WaitForSeconds(time);
-        stun = false;
+        Stun = false;
         InvokeOnStop();
     }
 
     public override void Stop()
     {
-        if (stun)
+        if (Stun)
         {
             InvokeOnStop();
-            stun = false;
+            Stun = false;
             if (stopCoroutine != null)
             {
                 StopCoroutine(stopCoroutine);

@@ -3,8 +3,8 @@ using System.Linq;
 
 public abstract class PlayableBehaviour : CharacterBehaviour
 {
-    public event Action onPlay;
-    public event Action onStop;
+    public event Action OnPlay;
+    public event Action OnStop;
 
     public abstract bool Playing
     {
@@ -20,12 +20,12 @@ public abstract class PlayableBehaviour : CharacterBehaviour
 
     protected void InvokeOnPlay()
     {
-        onPlay?.Invoke();
+        OnPlay?.Invoke();
     }
 
     protected void InvokeOnStop()
     {
-        onStop?.Invoke();
+        OnStop?.Invoke();
     }
 
     protected void StopBehaviours(params Type[] behaviours)

@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+public delegate void OnJumpsChanged(int jumps);
+
 public class JumpBehaviour : SoloMovementBehaviour
 {
     public float jumpSpeed;
@@ -9,53 +11,52 @@ public class JumpBehaviour : SoloMovementBehaviour
     public float jumpRecoverTime;
     public int maxJumps;
 
-    public delegate void OnJumpsChanged(int jumps);
+    public event Action OnJump;
+    public event OnJumpsChanged OnJumpsChanged;
+    public event Action OnLand;
+    public event Action OnRecover;
 
-    public event Action onJump;
-    public event OnJumpsChanged onJumpsChanged;
-    public event Action onLand;
-    public event Action onRecover;
-
-    public bool active
+    public bool Anticipating
     {
-        get => _active;
-        private set { 
-            _active = value;
-            animator.SetBool("jump", _active);
-        }
-    }
-    public bool recovering
-    {
-        get => _recovering;
-        private set { 
-            _recovering = value;
-            animator.SetBool("recoveringFromJump", _recovering);
-        }
-    }
-    public bool anticipating
-    {
-        get => _anticipating;
-        private set { 
-            _anticipating = value;
-            animator.SetBool("anticipatingJump", _anticipating);
-        }
-    }
-    public int jumps
-    {
-        get => _jumps;
+        get => anticipating;
         private set
         {
-            _jumps = value;
-            animator.SetInteger("jumps", _jumps);
+            anticipating = value;
+            Animator.SetBool("anticipatingJump", anticipating);
+        }
+    }
+    public bool Active
+    {
+        get => active;
+        private set { 
+            active = value;
+            Animator.SetBool("jump", active);
+        }
+    }
+    public bool Recovering
+    {
+        get => recovering;
+        private set { 
+            recovering = value;
+            Animator.SetBool("recoveringFromJump", recovering);
+        }
+    }
+    public int Jumps
+    {
+        get => jumps;
+        private set
+        {
+            jumps = value;
+            Animator.SetInteger("jumps", jumps);
         }
     }
 
-    public override bool Playing => anticipating || active || recovering;
+    public override bool Playing => Anticipating || Active || Recovering;
 
-    private bool _active;
-    private bool _recovering;
-    private bool _anticipating;
-    private int _jumps;
+    private bool active;
+    private bool recovering;
+    private bool anticipating;
+    private int jumps;
     private Coroutine anticipateCoroutine;
     private EventListener jumpEvent;
     private Coroutine recoverCoroutine;
@@ -69,7 +70,7 @@ public class JumpBehaviour : SoloMovementBehaviour
 
     public override bool CanPlay()
     {
-        return base.CanPlay() || (active && jumps < maxJumps);
+        return base.CanPlay() || (Active && Jumps < maxJumps);
     }
 
     public void Play()
@@ -79,7 +80,7 @@ public class JumpBehaviour : SoloMovementBehaviour
             return;
         }
         InvokeOnPlay();
-        if (!IsPlaying(typeof(WalkBehaviour)) && movableObject.position.y == 0) //not moving and grounded
+        if (!IsPlaying(typeof(WalkBehaviour)) && MovableObject.position.y == 0) //not moving and grounded
         {
             anticipateCoroutine = StartCoroutine(Anticipate());
         }
@@ -91,40 +92,40 @@ public class JumpBehaviour : SoloMovementBehaviour
 
     private IEnumerator Anticipate()
     {
-        anticipating = true;
+        Anticipating = true;
         walkBehaviour.Enabled = false;
         yield return new WaitForSeconds(jumpAnticipateTime);
         walkBehaviour.Enabled = true;
-        anticipating = false;
+        Anticipating = false;
         StartJump();
     }
 
     private void StartJump()
     {
-        active = true;
-        jumps++;
-        onJump?.Invoke();
-        onJumpsChanged?.Invoke(jumps);
-        movableObject.velocity.y = jumpSpeed;
-        movableObject.acceleration.y = -gravityAcceleration;
-        jumpEvent = eventManager.Attach(
-            () => movableObject.velocity.y < 0 && movableObject.position.y <= 0,
+        Active = true;
+        Jumps++;
+        OnJump?.Invoke();
+        OnJumpsChanged?.Invoke(Jumps);
+        MovableObject.velocity.y = jumpSpeed;
+        MovableObject.acceleration.y = -gravityAcceleration;
+        jumpEvent = EventManager.Attach(
+            () => MovableObject.velocity.y < 0 && MovableObject.position.y <= 0,
             Land
         );
     }
 
     private void Land()
     {
-        active = false;
-        jumps = 0;
-        onLand?.Invoke();
-        onJumpsChanged?.Invoke(jumps);
+        Active = false;
+        Jumps = 0;
+        OnLand?.Invoke();
+        OnJumpsChanged?.Invoke(Jumps);
 
-        movableObject.position.y = 0;
-        movableObject.velocity.y = 0;
-        movableObject.acceleration.y = 0;
+        MovableObject.position.y = 0;
+        MovableObject.velocity.y = 0;
+        MovableObject.acceleration.y = 0;
 
-        if (walkBehaviour && !walkBehaviour.walk) //not moving
+        if (walkBehaviour && !walkBehaviour.Walk) //not moving
         {
             recoverCoroutine = StartCoroutine(RecoverAfterTime());
         }
@@ -136,12 +137,12 @@ public class JumpBehaviour : SoloMovementBehaviour
 
     private IEnumerator RecoverAfterTime()
     {
-        recovering = true;
+        Recovering = true;
         walkBehaviour.Enabled = false;
         yield return new WaitForSeconds(jumpRecoverTime);
         walkBehaviour.Enabled = true;
-        recovering = false;
-        onRecover?.Invoke();
+        Recovering = false;
+        OnRecover?.Invoke();
     }
 
     public override void Stop()
@@ -150,26 +151,26 @@ public class JumpBehaviour : SoloMovementBehaviour
         {
             InvokeOnStop();
         }
-        if (anticipating)
+        if (Anticipating)
         {
             StopCoroutine(anticipateCoroutine);
             walkBehaviour.Enabled = true;
-            anticipating = false;
+            Anticipating = false;
         }
-        if (active)
+        if (Active)
         {
-            movableObject.velocity.y = 0;
-            eventManager.Detach(jumpEvent);
-            active = false;
-            jumps = 0;
-            onJumpsChanged?.Invoke(jumps);
+            MovableObject.velocity.y = 0;
+            EventManager.Detach(jumpEvent);
+            Active = false;
+            Jumps = 0;
+            OnJumpsChanged?.Invoke(Jumps);
         }
-        if (recovering)
+        if (Recovering)
         {
             StopCoroutine(recoverCoroutine);
             walkBehaviour.Enabled = true;
-            recovering = false;
-            onRecover?.Invoke();
+            Recovering = false;
+            OnRecover?.Invoke();
         }
     }
 }

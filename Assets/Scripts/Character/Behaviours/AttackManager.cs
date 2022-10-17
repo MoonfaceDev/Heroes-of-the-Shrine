@@ -11,9 +11,9 @@ public class AttackManager : PlayableBehaviour
     [HideInInspector] public BaseAttack lastAttack;
     [HideInInspector] public float lastAttackTime;
 
-    public event Action onStart;
-    public event Action onFinish;
-    public event Action onRecover;
+    public event Action OnStart;
+    public event Action OnFinish;
+    public event Action OnRecover;
 
     private List<DamageBonus> damageBonuses;
     private List<DamageBonus> damageMultipliers;
@@ -27,7 +27,7 @@ public class AttackManager : PlayableBehaviour
 
     public void Start()
     {
-        eventManager.Attach(() => true, () =>
+        EventManager.Attach(() => true, () =>
         {
             if (lastAttack != null && Time.time - lastAttackTime > maxComboDelay)
             {
@@ -38,13 +38,13 @@ public class AttackManager : PlayableBehaviour
         BaseAttack[] attackComponents = GetComponents<BaseAttack>();
         foreach (BaseAttack attack in attackComponents)
         {
-            attack.onPlay += () => InvokeOnPlay();
-            attack.onStart += () => onStart?.Invoke();
-            attack.onFinish += () => onFinish?.Invoke();
-            attack.onRecover += () => onRecover?.Invoke();
-            attack.onStop += () => InvokeOnStop();
+            attack.OnPlay += () => InvokeOnPlay();
+            attack.OnStart += () => OnStart?.Invoke();
+            attack.OnFinish += () => OnFinish?.Invoke();
+            attack.OnRecover += () => OnRecover?.Invoke();
+            attack.OnStop += () => InvokeOnStop();
 
-            attack.onFinish += () =>
+            attack.OnFinish += () =>
             {
                 lastAttack = attack;
                 lastAttackTime = Time.time;
@@ -65,17 +65,17 @@ public class AttackManager : PlayableBehaviour
         return false;
     }
 
-    public bool anticipating => AnyAttack((attack) => attack.anticipating);
+    public bool Anticipating => AnyAttack((attack) => attack.Anticipating);
 
-    public bool active => AnyAttack((attack) => attack.active);
+    public bool Active => AnyAttack((attack) => attack.Active);
 
-    public bool recovering => AnyAttack((attack) => attack.recovering);
+    public bool Recovering => AnyAttack((attack) => attack.Recovering);
 
     public override bool Playing => AnyAttack((attack) => attack.Playing);
 
     public bool IsUninterruptable()
     {
-        return AnyAttack((attack) => attack.active && !attack.interruptable);
+        return AnyAttack((attack) => attack.Active && !attack.interruptable);
     }
 
     public override void Stop()

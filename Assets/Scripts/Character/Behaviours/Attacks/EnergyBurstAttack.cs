@@ -15,21 +15,21 @@ public class EnergyBurstAttack : SimpleAttack
         PreventWalking(false);
 
         float direction = 0;
-        onPlay += () => direction = lookDirection;
+        OnPlay += () => direction = LookDirection;
 
-        onStart += () =>
+        OnStart += () =>
         {
             isMoving = true;
-            movableObject.velocity.x = direction * burstVelocity;
-            movableObject.velocity.z = 0;
-            movableObject.acceleration.x = -direction * burstAcceleration;
-            eventManager.Attach(() => Mathf.Sign(movableObject.velocity.x) != direction, () => isMoving = false);
+            MovableObject.velocity.x = direction * burstVelocity;
+            MovableObject.velocity.z = 0;
+            MovableObject.acceleration.x = -direction * burstAcceleration;
+            EventManager.Attach(() => Mathf.Sign(MovableObject.velocity.x) != direction, () => isMoving = false);
         };
 
-        onFinish += () => 
+        OnFinish += () => 
         {
-            movableObject.velocity.x = 0;
-            movableObject.acceleration.x = 0;
+            MovableObject.velocity.x = 0;
+            MovableObject.acceleration.x = 0;
         };
     }
 

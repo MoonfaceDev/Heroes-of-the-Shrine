@@ -1,18 +1,18 @@
 public abstract class BaseEffect : PlayableBehaviour
 {
-    public bool active
+    public bool Active
     {
-        get => _active;
+        get => active;
         protected set
         {
-            _active = value;
-            animator.SetBool(GetType().Name, _active);
+            active = value;
+            Animator.SetBool(GetType().Name, active);
         }
     }
 
-    public override bool Playing => active;
+    public override bool Playing => Active;
 
-    private bool _active;
+    private bool active;
 
     public abstract float GetProgress();
 }

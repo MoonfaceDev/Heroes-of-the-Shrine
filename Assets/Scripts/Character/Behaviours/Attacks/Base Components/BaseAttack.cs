@@ -12,65 +12,65 @@ public abstract class BaseAttack : PlayableBehaviour
     public bool instant = false;
     public bool interruptable = false;
 
-    public string attackName
+    public string AttackName
     {
         get => GetType().Name;
     }
 
-    public bool anticipating
+    public bool Anticipating
     {
-        get => _anticipating;
+        get => anticipating;
         private set
         {
-            _anticipating = value;
-            animator.SetBool(attackName + "-anticipating", _anticipating);
+            anticipating = value;
+            Animator.SetBool(AttackName + "-anticipating", anticipating);
         }
     }
 
-    public bool active
+    public bool Active
     {
-        get => _active;
+        get => active;
         private set
         {
-            _active = value;
-            animator.SetBool(attackName + "-active", _active);
+            active = value;
+            Animator.SetBool(AttackName + "-active", active);
         }
     }
 
-    public bool recovering
+    public bool Recovering
     {
-        get => _recovering;
+        get => recovering;
         private set
         {
-            _recovering = value;
-            animator.SetBool(attackName + "-recovering", _recovering);
+            recovering = value;
+            Animator.SetBool(AttackName + "-recovering", recovering);
         }
     }
 
-    public override bool Playing => anticipating || active || recovering;
+    public override bool Playing => Anticipating || Active || Recovering;
 
-    public event Action onStart;
-    public event Action onFinish;
-    public event Action onRecover;
+    public event Action OnStart;
+    public event Action OnFinish;
+    public event Action OnRecover;
 
     protected void InvokeOnStart()
     {
-        onStart?.Invoke();
+        OnStart?.Invoke();
     }
 
     protected void InvokeOnFinish()
     {
-        onFinish?.Invoke();
+        OnFinish?.Invoke();
     }
 
     protected void InvokeOnRecover()
     {
-        onRecover?.Invoke();
+        OnRecover?.Invoke();
     }
 
-    private bool _anticipating;
-    private bool _active;
-    private bool _recovering;
+    private bool anticipating;
+    private bool active;
+    private bool recovering;
 
     private Coroutine attackFlowCoroutine;
 
@@ -100,39 +100,39 @@ public abstract class BaseAttack : PlayableBehaviour
             InvokeOnStop();
             StopCoroutine(attackFlowCoroutine);
         }
-        if (anticipating)
+        if (Anticipating)
         {
-            anticipating = false;
+            Anticipating = false;
         }
-        if (active)
+        if (Active)
         {
-            active = false;
+            Active = false;
             InvokeOnFinish();
         }
-        if (recovering)
+        if (Recovering)
         {
-            recovering = false;
+            Recovering = false;
             InvokeOnRecover();
         }
     }
 
     private IEnumerator AttackFlow()
     {
-        anticipating = true;
+        Anticipating = true;
         InvokeOnPlay();
         yield return AnticipateCoroutine();
 
-        anticipating = false;
-        active = true;
+        Anticipating = false;
+        Active = true;
         InvokeOnStart();
         yield return ActiveCoroutine();
 
-        active = false;
-        recovering = true;
+        Active = false;
+        Recovering = true;
         InvokeOnFinish();
         yield return RecoveryCoroutine();
 
-        recovering = false;
+        Recovering = false;
         InvokeOnRecover();
         InvokeOnStop();
     }

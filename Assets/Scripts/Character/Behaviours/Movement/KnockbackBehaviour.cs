@@ -2,51 +2,51 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+public delegate void OnBounce(int count, float power, float angleDegrees);
+
 public class KnockbackBehaviour : ForcedBehaviour
 {
     public static float SECOND_BOUNCE_POWER_MULTIPLIER = 0.2f;
 
     public float knockbackRecoverTime;
 
-    public delegate void OnBounce(int count, float power, float angleDegrees);
+    public event OnBounce OnBounce;
+    public event Action OnFinish;
+    public event Action OnRecover;
 
-    public event OnBounce onBounce;
-    public event Action onFinish;
-    public event Action onRecover;
-
-    public bool active
+    public bool Active
     {
-        get => _active;
+        get => active;
         private set
         {
-            _active = value;
-            animator.SetBool("knockback", _active);
+            active = value;
+            Animator.SetBool("knockback", active);
         }
     }
-    public bool recovering
+    public bool Recovering
     {
-        get => _recovering;
+        get => recovering;
         private set
         {
-            _recovering = value;
-            animator.SetBool("recoveringFromKnockback", _recovering);
+            recovering = value;
+            Animator.SetBool("recoveringFromKnockback", recovering);
         }
     }
-    public int bounce
+    public int Bounce
     {
-        get => _bounce;
+        get => bounce;
         private set
         {
-            _bounce = value;
-            animator.SetInteger("bounce", _bounce);
+            bounce = value;
+            Animator.SetInteger("bounce", bounce);
         }
     }
 
-    public override bool Playing => active || recovering;
+    public override bool Playing => Active || Recovering;
 
-    private bool _active;
-    private bool _recovering;
-    private int _bounce;
+    private bool active;
+    private bool recovering;
+    private int bounce;
     private EventListener bounceEvent;
     private Coroutine recoverCoroutine;
 
@@ -59,39 +59,39 @@ public class KnockbackBehaviour : ForcedBehaviour
 
         StopBehaviours(typeof(BaseMovementBehaviour), typeof(AttackManager));
 
-        active = true;
+        Active = true;
         InvokeOnPlay();
-        bounce = 1;
+        Bounce = 1;
         SetMovement(power, angleDegrees);
-        onBounce?.Invoke(bounce, power, angleDegrees);
+        OnBounce?.Invoke(Bounce, power, angleDegrees);
 
-        bounceEvent = eventManager.Attach(
-            () => movableObject.velocity.y < 0 && movableObject.position.y <= 0,
-            () =>
-            { 
-                bounce = 2;
+        bounceEvent = EventManager.Attach(
+            () => MovableObject.velocity.y < 0 && MovableObject.position.y <= 0,
+            (Action)(() =>
+            {
+                Bounce = 2;
                 power *= SECOND_BOUNCE_POWER_MULTIPLIER;
                 angleDegrees = 180 - Mathf.Abs(angleDegrees % 360 - 180);
-                movableObject.position.y = 0;
+                MovableObject.position.y = 0;
                 SetMovement(power, angleDegrees);
-                onBounce?.Invoke(bounce, power, angleDegrees);
+                OnBounce?.Invoke(Bounce, power, angleDegrees);
 
-                bounceEvent = eventManager.Attach(
-                    () => movableObject.velocity.y < 0 && movableObject.position.y <= 0,
+                bounceEvent = EventManager.Attach(
+                    () => MovableObject.velocity.y < 0 && MovableObject.position.y <= 0,
                     () =>
                     {
-                        active = false;
-                        bounce = 0;
-                        recovering = true;
-                        movableObject.acceleration.y = 0;
-                        movableObject.velocity.y = 0;
-                        movableObject.velocity.x = 0;
-                        movableObject.position.y = 0;
-                        onFinish?.Invoke();
+                        Active = false;
+                        Bounce = 0;
+                        Recovering = true;
+                        MovableObject.acceleration.y = 0;
+                        MovableObject.velocity.y = 0;
+                        MovableObject.velocity.x = 0;
+                        MovableObject.position.y = 0;
+                        OnFinish?.Invoke();
                         recoverCoroutine = StartCoroutine(RecoverAfterTime());
                     }
                 );
-            }
+            })
         );
     }
 
@@ -99,15 +99,15 @@ public class KnockbackBehaviour : ForcedBehaviour
     {
         if ((angleDegrees > 0 && angleDegrees < 90) || (angleDegrees > 270 && angleDegrees < 360))
         {
-            lookDirection = -1;
+            LookDirection = -1;
         }
         if (angleDegrees > 90 && angleDegrees < 270)
         {
-            lookDirection = 1;
+            LookDirection = 1;
         }
-        movableObject.acceleration.y = -gravityAcceleration;
-        movableObject.velocity.x = Mathf.Cos(Mathf.Deg2Rad * angleDegrees) * power;
-        movableObject.velocity.y = Mathf.Sin(Mathf.Deg2Rad * angleDegrees) * power;
+        MovableObject.acceleration.y = -gravityAcceleration;
+        MovableObject.velocity.x = Mathf.Cos(Mathf.Deg2Rad * angleDegrees) * power;
+        MovableObject.velocity.y = Mathf.Sin(Mathf.Deg2Rad * angleDegrees) * power;
     }
 
     private IEnumerator RecoverAfterTime()
@@ -118,8 +118,8 @@ public class KnockbackBehaviour : ForcedBehaviour
 
     private void Recover()
     {
-        recovering = false;
-        onRecover?.Invoke();
+        Recovering = false;
+        OnRecover?.Invoke();
         InvokeOnStop();
     }
 
@@ -129,17 +129,17 @@ public class KnockbackBehaviour : ForcedBehaviour
         {
             InvokeOnStop();
         }
-        if (active)
+        if (Active)
         {
-            eventManager.Detach(bounceEvent);
-            active = false;
-            bounce = 0;
-            movableObject.acceleration.y = 0;
-            movableObject.velocity.y = 0;
-            movableObject.velocity.x = 0;
-            onFinish?.Invoke();
+            EventManager.Detach(bounceEvent);
+            Active = false;
+            Bounce = 0;
+            MovableObject.acceleration.y = 0;
+            MovableObject.velocity.y = 0;
+            MovableObject.velocity.x = 0;
+            OnFinish?.Invoke();
         }
-        if (recovering)
+        if (Recovering)
         {
             StopCoroutine(recoverCoroutine);
             Recover();

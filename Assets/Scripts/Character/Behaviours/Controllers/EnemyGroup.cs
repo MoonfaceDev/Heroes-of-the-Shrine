@@ -22,12 +22,12 @@ public class EnemyGroup : CharacterBehaviour
                 AttackManager enemyAttackManager = enemy.GetComponent<AttackManager>();
                 if (enemyAttackManager)
                 {
-                    enemyAttackManager.onPlay += () =>
+                    enemyAttackManager.OnPlay += () =>
                     {
                         enemiesAttackingCount++;
                         stateMachine.SetBool("enemiesAttacking", true);
                     };
-                    enemyAttackManager.onStop += () =>
+                    enemyAttackManager.OnStop += () =>
                     {
                         enemiesAttackingCount--;
                         if (enemiesAttackingCount == 0)
@@ -56,11 +56,11 @@ public class EnemyGroup : CharacterBehaviour
                 {
                     return prev;
                 }
-                float nextDistance = movableObject.GroundDistance(next.GetComponent<MovableObject>().position);
-                float prevDistance = movableObject.GroundDistance(prev.GetComponent<MovableObject>().position);
+                float nextDistance = MovableObject.GroundDistance(next.GetComponent<MovableObject>().position);
+                float prevDistance = MovableObject.GroundDistance(prev.GetComponent<MovableObject>().position);
                 return nextDistance < prevDistance ? next : prev;
             }).GetComponent<MovableObject>();
-            stateMachine.SetFloat("closestEnemyDistance", movableObject.GroundDistance(closestEnemy.position));
+            stateMachine.SetFloat("closestEnemyDistance", MovableObject.GroundDistance(closestEnemy.position));
         }
 
         // Closest to the player

@@ -7,38 +7,38 @@ public class DodgeBehaviour : SoloMovementBehaviour
     public float anticipateTime;
     public float recoveryTime;
 
-    public event Action onDodge;
-    public event Action onRecover;
+    public event Action OnDodge;
+    public event Action OnRecover;
 
-    public bool recovering
+    public bool Recovering
     {
-        get => _recovering;
+        get => recovering;
         private set
         {
-            _recovering = value;
-            animator.SetBool("recoveringFromDodge", _recovering);
+            recovering = value;
+            Animator.SetBool("recoveringFromDodge", recovering);
         }
     }
-    public bool anticipating
+    public bool Anticipating
     {
-        get => _anticipating;
+        get => anticipating;
         private set
         {
-            _anticipating = value;
-            animator.SetBool("anticipatingDodge", _anticipating);
+            anticipating = value;
+            Animator.SetBool("anticipatingDodge", anticipating);
         }
     }
 
-    public override bool Playing => anticipating || recovering;
+    public override bool Playing => Anticipating || Recovering;
 
-    private bool _anticipating;
-    private bool _recovering;
+    private bool anticipating;
+    private bool recovering;
     private EventListener anticipateEvent;
     private EventListener recoverEvent;
 
     public override bool CanPlay()
     {
-        return base.CanPlay() && movableObject.velocity.z != 0 && movableObject.velocity.x == 0;
+        return base.CanPlay() && MovableObject.velocity.z != 0 && MovableObject.velocity.x == 0;
     }
 
     public void Play()
@@ -49,18 +49,18 @@ public class DodgeBehaviour : SoloMovementBehaviour
         }
         DisableBehaviours(typeof(WalkBehaviour));
         StopBehaviours(typeof(WalkBehaviour));
-        anticipating = true;
+        Anticipating = true;
         InvokeOnPlay();
-        float dodgeDirection = Mathf.Sign(movableObject.velocity.z);
-        movableObject.acceleration = Vector3.zero;
-        movableObject.velocity = Vector3.zero;
-        anticipateEvent = eventManager.StartTimeout(() =>
+        float dodgeDirection = Mathf.Sign(MovableObject.velocity.z);
+        MovableObject.acceleration = Vector3.zero;
+        MovableObject.velocity = Vector3.zero;
+        anticipateEvent = EventManager.StartTimeout(() =>
         {
-            anticipating = false;
-            movableObject.UpdatePosition(movableObject.position + dodgeDirection * dodgeDistance * Vector3.forward);
-            onDodge?.Invoke();
-            recovering = true;
-            recoverEvent = eventManager.StartTimeout(Stop, recoveryTime);
+            Anticipating = false;
+            MovableObject.UpdatePosition(MovableObject.position + dodgeDirection * dodgeDistance * Vector3.forward);
+            OnDodge?.Invoke();
+            Recovering = true;
+            recoverEvent = EventManager.StartTimeout(Stop, recoveryTime);
         }, anticipateTime);
     }
 
@@ -71,16 +71,16 @@ public class DodgeBehaviour : SoloMovementBehaviour
             InvokeOnStop();
             EnableBehaviours(typeof(WalkBehaviour));
         }
-        if (anticipating)
+        if (Anticipating)
         {
-            eventManager.Detach(anticipateEvent);
-            anticipating = false;
+            EventManager.Detach(anticipateEvent);
+            Anticipating = false;
         }
-        if (recovering)
+        if (Recovering)
         {
-            eventManager.Detach(recoverEvent);
-            recovering = false;
-            onRecover?.Invoke();
+            EventManager.Detach(recoverEvent);
+            Recovering = false;
+            OnRecover?.Invoke();
         }
     }
 }

@@ -6,15 +6,15 @@ public abstract class CharacterBehaviour : MonoBehaviour
 {
     public static float gravityAcceleration = 20;
 
-    public Animator animator => character.animator;
-    public EventManager eventManager => character.eventManager;
-    public MovableObject movableObject => character.movableObject;
-    public int lookDirection
+    public Animator Animator => character.animator;
+    public EventManager EventManager => character.eventManager;
+    public MovableObject MovableObject => character.movableObject;
+    public int LookDirection
     {
-        get => character.lookDirection;
+        get => character.LookDirection;
         set
         {
-            character.lookDirection = value;
+            character.LookDirection = value;
         }
     }
 

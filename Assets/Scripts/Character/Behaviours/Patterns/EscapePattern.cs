@@ -18,7 +18,7 @@ public class EscapePattern : BasePattern
         escapeBehaviour.Play(player, speedMultiplier);
 
         onStop = () => animator.SetTrigger("stuck");
-        escapeBehaviour.movableObject.onStuck += onStop;
+        escapeBehaviour.MovableObject.onStuck += onStop;
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -27,7 +27,7 @@ public class EscapePattern : BasePattern
 
         EscapeBehaviour escapeBehaviour = animator.GetComponent<EscapeBehaviour>();
 
-        escapeBehaviour.movableObject.onStuck -= onStop;
+        escapeBehaviour.MovableObject.onStuck -= onStop;
         escapeBehaviour.Stop();
     }
 }

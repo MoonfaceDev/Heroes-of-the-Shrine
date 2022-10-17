@@ -6,19 +6,19 @@ public class WalkBehaviour : BaseMovementBehaviour
     public float defaultSpeed;
 
     [HideInInspector] public ModifiableValue speed;
-    public bool walk
+    public bool Walk
     {
-        get => _walk;
+        get => walk;
         private set
         {
-            _walk = value;
-            animator.SetBool("walk", _walk);
+            walk = value;
+            Animator.SetBool("walk", walk);
         }
     }
 
-    public override bool Playing => walk;
+    public override bool Playing => Walk;
 
-    private bool _walk; //walking or running
+    private bool walk; //walking or running
 
     public override void Awake()
     {
@@ -36,29 +36,29 @@ public class WalkBehaviour : BaseMovementBehaviour
         if (new Vector2(xAxis, zAxis) == Vector2.zero)
         {
             InvokeOnStop();
-            walk = false;
+            Walk = false;
         }
-        else if (!walk) //first walking frame
+        else if (!Walk) //first walking frame
         {
-            walk = true;
+            Walk = true;
             InvokeOnPlay();
         }
         // move speed
-        movableObject.velocity.x = xAxis * speed;
-        movableObject.velocity.z = zAxis * speed;
+        MovableObject.velocity.x = xAxis * speed;
+        MovableObject.velocity.z = zAxis * speed;
         // look direction
         if (xAxis != 0 & fitLookDirection)
         {
-            lookDirection = Mathf.RoundToInt(Mathf.Sign(xAxis));
+            LookDirection = Mathf.RoundToInt(Mathf.Sign(xAxis));
         }
     }
 
     public override void Stop()
     {
-        if (walk)
+        if (Walk)
         {
             InvokeOnStop();
-            walk = false;
+            Walk = false;
         }
     }
 }

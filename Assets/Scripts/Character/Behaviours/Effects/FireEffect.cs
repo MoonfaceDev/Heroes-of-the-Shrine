@@ -10,25 +10,25 @@ public class FireEffect : BaseEffect
 
     public void Play(float duration, float hitInterval, float damagePerHit)
     {
-        active = true;
+        Active = true;
         InvokeOnPlay();
         damageCoroutine = StartCoroutine(DoDamage(hitInterval, damagePerHit));
         startTime = Time.time;
         currentDuration = duration;
-        stopEvent = eventManager.Attach(() => Time.time - startTime > duration, Stop);
+        stopEvent = EventManager.Attach(() => Time.time - startTime > duration, Stop);
     }
 
     public override void Stop()
     {
-        if (active)
+        if (Active)
         {
-            active = false;
+            Active = false;
             InvokeOnStop();
 
             StopCoroutine(damageCoroutine);
 
             currentDuration = 0;
-            eventManager.Detach(stopEvent);
+            EventManager.Detach(stopEvent);
         }
     }
 

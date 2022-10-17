@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class EventListener
 {
-    public readonly Func<bool> Validate;
+    public readonly Func<bool> Condition;
     public readonly Action Action;
     public readonly bool single;
 
     public EventListener(Func<bool> eventCondition, Action eventAction, bool single)
     {
-        Validate = eventCondition;
+        Condition = eventCondition;
         Action = eventAction;
         this.single = single;
     }
@@ -57,7 +57,7 @@ public class EventManager : MonoBehaviour
         eventListeners.CopyTo(lockedEventListeners);
         foreach (EventListener eventListener in lockedEventListeners)
         {
-            if (eventListener.Validate())
+            if (eventListener.Condition())
             {
                 if (eventListener.single)
                 {

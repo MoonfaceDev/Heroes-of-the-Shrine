@@ -4,18 +4,15 @@ using UnityEngine;
 [RequireComponent(typeof(WalkBehaviour))]
 public class EscapeBehaviour : SoloMovementBehaviour
 {
-    public bool active
+    public bool Active
     {
-        get => _active;
-        private set
-        {
-            _active = value;
-        }
+        get => active;
+        private set => active = value;
     }
 
-    public override bool Playing => active;
+    public override bool Playing => Active;
 
-    private bool _active;
+    private bool active;
     private WalkBehaviour walkBehaviour;
     private IModifier speedModifier;
     private EventListener escapeEvent;
@@ -28,8 +25,8 @@ public class EscapeBehaviour : SoloMovementBehaviour
 
     public void Start()
     {
-        movableObject.onStuck += Stop;
-        walkBehaviour.onStop += Stop;
+        MovableObject.onStuck += Stop;
+        walkBehaviour.OnStop += Stop;
     }
 
     public void Play(MovableObject target, float speedMultiplier, bool fitLookDirection = true)
@@ -38,31 +35,31 @@ public class EscapeBehaviour : SoloMovementBehaviour
         {
             return;
         }
-        active = true;
+        Active = true;
         InvokeOnPlay();
 
         speedModifier = new MultiplierModifier(speedMultiplier);
         walkBehaviour.speed.AddModifier(speedModifier);
 
-        escapeEvent = eventManager.Attach(() => true, () => {
-            Vector3 distance = movableObject.position - target.position;
+        escapeEvent = EventManager.Attach(() => true, () => {
+            Vector3 distance = MovableObject.position - target.position;
             distance.y = 0;
             Vector3 direction = distance.normalized;
             walkBehaviour.Play(direction.x, direction.z, fitLookDirection);
-            lookDirection = -Mathf.RoundToInt(Mathf.Sign(direction.x));
+            LookDirection = -Mathf.RoundToInt(Mathf.Sign(direction.x));
         }, false);
     }
 
     public override void Stop()
     {
-        if (active)
+        if (Active)
         {
             InvokeOnStop();
-            active = false;
-            eventManager.Detach(escapeEvent);
+            Active = false;
+            EventManager.Detach(escapeEvent);
             walkBehaviour.speed.RemoveModifier(speedModifier);
             StopBehaviours(typeof(WalkBehaviour));
-            movableObject.velocity = Vector3.zero;
+            MovableObject.velocity = Vector3.zero;
         }
     }
 }

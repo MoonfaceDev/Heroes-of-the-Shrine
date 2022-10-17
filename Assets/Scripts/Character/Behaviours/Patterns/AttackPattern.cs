@@ -25,7 +25,7 @@ public class AttackPattern : BasePattern
 
         MovableObject player = GameObject.FindGameObjectWithTag(targetTag).GetComponent<MovableObject>();
         Character character = animator.GetComponent<Character>();
-        character.lookDirection = Mathf.RoundToInt(Mathf.Sign((player.position - character.movableObject.position).x));
+        character.LookDirection = Mathf.RoundToInt(Mathf.Sign((player.position - character.movableObject.position).x));
         attackCoroutine = eventManager.StartCoroutine(AttackCoroutine(animator, player));
     }
 
@@ -43,7 +43,7 @@ public class AttackPattern : BasePattern
             }
             catch (CannotAttackException)
             {
-                Debug.LogError("[" + (Time.time - startTime) + "s] Cannot execute " + attack.attackName);
+                Debug.LogError("[" + (Time.time - startTime) + "s] Cannot execute " + attack.AttackName);
             }
         }
     }

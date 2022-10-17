@@ -21,27 +21,27 @@ public class ArcPattern : BasePattern
         walkBehaviour.speed.AddModifier(speedModifier);
 
         Vector3 playerPosition = player.position;
-        Vector3 initialDistance = walkBehaviour.movableObject.position - playerPosition;
+        Vector3 initialDistance = walkBehaviour.MovableObject.position - playerPosition;
         initialDistance.y = 0;
         float radius = initialDistance.magnitude;
         float clockwise = Mathf.Sign(UnityEngine.Random.Range(-1f ,1f));
 
         circleEvent = eventManager.Attach(() => true, () => {
-            Vector3 distance = walkBehaviour.movableObject.position - playerPosition;
+            Vector3 distance = walkBehaviour.MovableObject.position - playerPosition;
             distance.y = 0;
             distance *= radius / distance.magnitude;
             Vector3 newPosition = playerPosition + distance;
-            newPosition.y = walkBehaviour.movableObject.position.y;
-            walkBehaviour.movableObject.position = newPosition;
+            newPosition.y = walkBehaviour.MovableObject.position.y;
+            walkBehaviour.MovableObject.position = newPosition;
             Vector3 direction = clockwise * Vector3.Cross(distance, Vector3.up).normalized;
             walkBehaviour.Play(direction.x, direction.z, false);
-            if ((player.position - walkBehaviour.movableObject.position).x != 0) {
-                walkBehaviour.lookDirection = Mathf.RoundToInt(Mathf.Sign((player.position - walkBehaviour.movableObject.position).x));
+            if ((player.position - walkBehaviour.MovableObject.position).x != 0) {
+                walkBehaviour.LookDirection = Mathf.RoundToInt(Mathf.Sign((player.position - walkBehaviour.MovableObject.position).x));
             };
         }, false);
 
         onStop = () => animator.SetTrigger("stuck");
-        walkBehaviour.movableObject.onStuck += onStop;
+        walkBehaviour.MovableObject.onStuck += onStop;
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -50,10 +50,10 @@ public class ArcPattern : BasePattern
 
         WalkBehaviour walkBehaviour = animator.GetComponent<WalkBehaviour>();
 
-        walkBehaviour.movableObject.onStuck -= onStop;
+        walkBehaviour.MovableObject.onStuck -= onStop;
         eventManager.Detach(circleEvent);
         walkBehaviour.speed.RemoveModifier(speedModifier);
         walkBehaviour.Stop();
-        walkBehaviour.movableObject.velocity = Vector3.zero;
+        walkBehaviour.MovableObject.velocity = Vector3.zero;
     }
 }

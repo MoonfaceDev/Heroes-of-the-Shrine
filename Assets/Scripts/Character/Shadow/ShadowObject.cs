@@ -11,7 +11,7 @@ public class ShadowObject : MonoBehaviour
     void Update()
     {
         float scale = 2 / (1 + Mathf.Exp(0.2f * movableObject.position.y));
-        if (knockbackBehaviour && knockbackBehaviour.recovering)
+        if (knockbackBehaviour && knockbackBehaviour.Recovering)
         {
             scale *= recoveringFromKnockbackScale;
         }

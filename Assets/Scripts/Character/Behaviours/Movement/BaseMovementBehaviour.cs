@@ -12,7 +12,7 @@ public abstract class BaseMovementBehaviour : PlayableBehaviour
         if (cooldown > 0)
         {
             cooldownStartTime = Time.time - cooldown;
-            onStop += () => cooldownStartTime = Time.time;
+            OnStop += () => cooldownStartTime = Time.time;
         }
     }
 

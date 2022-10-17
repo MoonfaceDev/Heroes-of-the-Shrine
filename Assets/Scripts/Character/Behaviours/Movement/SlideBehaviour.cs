@@ -5,23 +5,23 @@ public class SlideBehaviour : SoloMovementBehaviour
     public float slideSpeedMultiplier;
     public float slideStopAcceleration;
 
-    public bool slide
+    public bool Slide
     {
-        get => _slide;
+        get => slide;
         private set { 
-            _slide = value;
-            animator.SetBool("slide", _slide);
+            slide = value;
+            Animator.SetBool("slide", slide);
         }
     }
 
-    public override bool Playing => slide;
+    public override bool Playing => Slide;
 
-    private bool _slide;
+    private bool slide;
     private EventListener stopEvent;
 
     public override bool CanPlay()
     {
-        return base.CanPlay() && movableObject.velocity.x != 0;
+        return base.CanPlay() && MovableObject.velocity.x != 0;
     }
 
     public void Play()
@@ -32,27 +32,27 @@ public class SlideBehaviour : SoloMovementBehaviour
         }
         DisableBehaviours(typeof(WalkBehaviour));
         StopBehaviours(typeof(WalkBehaviour));
-        slide = true;
+        Slide = true;
         InvokeOnPlay();
-        float slideDirection = lookDirection;
-        movableObject.velocity.x = slideDirection * slideSpeedMultiplier * Mathf.Abs(movableObject.velocity.x);
-        movableObject.acceleration.x = -slideDirection * slideStopAcceleration;
-        movableObject.velocity.z = 0;
-        stopEvent = eventManager.Attach(
-            () => Mathf.Sign(movableObject.velocity.x) == Mathf.Sign(movableObject.acceleration.x),
+        float slideDirection = LookDirection;
+        MovableObject.velocity.x = slideDirection * slideSpeedMultiplier * Mathf.Abs(MovableObject.velocity.x);
+        MovableObject.acceleration.x = -slideDirection * slideStopAcceleration;
+        MovableObject.velocity.z = 0;
+        stopEvent = EventManager.Attach(
+            () => Mathf.Sign(MovableObject.velocity.x) == Mathf.Sign(MovableObject.acceleration.x),
             Stop
         );
     }
 
     public override void Stop()
     {
-        if (slide)
+        if (Slide)
         {
             InvokeOnStop();
-            eventManager.Detach(stopEvent);
-            slide = false;
-            movableObject.velocity.x = 0;
-            movableObject.acceleration.x = 0;
+            EventManager.Detach(stopEvent);
+            Slide = false;
+            MovableObject.velocity.x = 0;
+            MovableObject.acceleration.x = 0;
             EnableBehaviours(typeof(WalkBehaviour));
         }
     }

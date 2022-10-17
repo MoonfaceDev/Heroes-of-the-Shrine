@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -9,24 +8,24 @@ public class RunBehaviour : BaseMovementBehaviour
     public float runSpeedMultiplier;
     public ParticleSystem runParticles;
 
-    public bool run
+    public bool Run
     {
-        get => _run;
+        get => run;
         private set
         {
-            _run = value;
-            animator.SetBool("run", _run);
+            run = value;
+            Animator.SetBool("run", run);
         }
     }
 
-    public override bool Playing => run;
+    public override bool Playing => Run;
 
     private WalkBehaviour walkBehaviour;
     private JumpBehaviour jumpBehaviour;
     private Coroutine startCoroutine;
     private ParticleSystem.MainModule runParticlesMain;
     private IModifier speedModifier;
-    private bool _run;
+    private bool run;
 
 
     public override void Awake()
@@ -39,24 +38,24 @@ public class RunBehaviour : BaseMovementBehaviour
 
     public void Start()
     {
-        walkBehaviour.onPlay += () =>
+        walkBehaviour.OnPlay += () =>
         {
             if (CanPlay())
             {
                 startCoroutine = StartCoroutine(RunAfter(timeToRun));
             }
         };
-        walkBehaviour.onStop += () =>
+        walkBehaviour.OnStop += () =>
         {
             Stop();
         };
         if (jumpBehaviour)
         {
-            jumpBehaviour.onJump += () =>
+            jumpBehaviour.OnJump += () =>
             {
                 runParticlesMain.gravityModifier = 1f;
             };
-            jumpBehaviour.onLand += () =>
+            jumpBehaviour.OnLand += () =>
             {
                 runParticlesMain.gravityModifier = 0;
             };
@@ -75,7 +74,7 @@ public class RunBehaviour : BaseMovementBehaviour
         {
             return;
         }
-        run = true;
+        Run = true;
         speedModifier = new MultiplierModifier(runSpeedMultiplier);
         walkBehaviour.speed.AddModifier(speedModifier);
         runParticles.Play();
@@ -84,10 +83,10 @@ public class RunBehaviour : BaseMovementBehaviour
 
     public override void Stop()
     {
-        if (run)
+        if (Run)
         {
             InvokeOnStop();
-            run = false;
+            Run = false;
             walkBehaviour.speed.RemoveModifier(speedModifier);
             runParticles.Stop();
         }
