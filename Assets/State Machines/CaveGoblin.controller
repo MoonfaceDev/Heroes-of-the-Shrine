@@ -1219,6 +1219,7 @@ AnimatorState:
   - {fileID: -8228626861490890774}
   - {fileID: 6281697147748422498}
   - {fileID: -6730620246059499540}
+  - {fileID: 5158359366145404885}
   m_StateMachineBehaviours:
   - {fileID: -2426202616630841474}
   m_Position: {x: 50, y: 50, z: 0}
@@ -1850,12 +1851,6 @@ AnimatorController:
   m_Name: CaveGoblin
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: health
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
   - m_Name: rage
     m_Type: 4
     m_DefaultFloat: 0
@@ -1906,6 +1901,12 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: playerStun
     m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: health
+    m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -2364,6 +2365,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: aggression
     m_EventTreshold: 0.65
+  - m_ConditionMode: 1
+    m_ConditionEvent: isClosestToPlayer
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4977212966894462098}
   m_Solo: 0
@@ -2947,6 +2951,37 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &5158359366145404885
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: timeout
+    m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: aggression
+    m_EventTreshold: 0.3
+  - m_ConditionMode: 2
+    m_ConditionEvent: isClosestToPlayer
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 8006234566160452762}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &5537393029095654551
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -2964,6 +2999,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: enemyCount
     m_EventTreshold: 2
+  - m_ConditionMode: 3
+    m_ConditionEvent: health
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8006234566160452762}
   m_Solo: 0
@@ -3269,6 +3307,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 3
     m_ConditionEvent: aggression
     m_EventTreshold: 0.65
+  - m_ConditionMode: 2
+    m_ConditionEvent: isClosestToPlayer
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -9069317597996007808}
   m_Solo: 0
