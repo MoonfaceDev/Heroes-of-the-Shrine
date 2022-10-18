@@ -41,15 +41,15 @@ public class HittableBehaviour : CharacterBehaviour
 
     public void Kill()
     {
+        DisableBehaviours(typeof(KnockbackBehaviour), typeof(BaseEffect));
         Type[] behavioursToStop = { typeof(BaseMovementBehaviour), typeof(AttackManager), typeof(StunBehaviour) };
         DisableBehaviours(behavioursToStop);
         StopBehaviours(behavioursToStop);
-        OnDie?.Invoke();
 
         void KillAfterKnockback()
         {
+            OnDie?.Invoke();
             Animator.SetBool("dead", true);
-            DisableBehaviours(typeof(KnockbackBehaviour), typeof(BaseEffect));
             StopBehaviours(typeof(BaseEffect));
             Destroy(gameObject, deathAnimationDuration);
         }

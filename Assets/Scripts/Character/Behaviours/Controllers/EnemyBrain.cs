@@ -121,6 +121,11 @@ public class EnemyBrain : CharacterBehaviour
 
     public void Update()
     {
+        if (!player)
+        {
+            StopBehaviours(typeof(PlayableBehaviour));
+            Destroy(gameObject);
+        }
         HealthSystem healthSystem = GetComponent<HealthSystem>();
         if (healthSystem)
         {
