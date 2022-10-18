@@ -53,7 +53,10 @@ public class ArcPattern : BasePattern
         walkBehaviour.MovableObject.onStuck -= onStop;
         EventManager.Detach(circleEvent);
         walkBehaviour.speed.RemoveModifier(speedModifier);
-        walkBehaviour.Stop();
-        walkBehaviour.MovableObject.velocity = Vector3.zero;
+        if (walkBehaviour.Playing)
+        {
+            walkBehaviour.Stop();
+            walkBehaviour.MovableObject.velocity = Vector3.zero;
+        }
     }
 }
