@@ -23,13 +23,19 @@ public class AttackPattern : BasePattern
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
-        MovableObject player = GameObject.FindGameObjectWithTag(targetTag).GetComponent<MovableObject>();
+        GameObject player = GameObject.FindGameObjectWithTag(targetTag);
+
+        if (!player)
+        {
+            return;
+        }
+
         Character character = animator.GetComponent<Character>();
-        character.LookDirection = Mathf.RoundToInt(Mathf.Sign((player.position - character.movableObject.position).x));
-        attackCoroutine = EventManager.StartCoroutine(AttackCoroutine(animator, player));
+        character.LookDirection = Mathf.RoundToInt(Mathf.Sign((player.GetComponent<MovableObject>().position - character.movableObject.position).x));
+        attackCoroutine = EventManager.StartCoroutine(AttackCoroutine(animator));
     }
 
-    private IEnumerator AttackCoroutine(Animator animator, MovableObject player)
+    private IEnumerator AttackCoroutine(Animator animator)
     {
         float startTime = Time.time;
 
@@ -52,6 +58,9 @@ public class AttackPattern : BasePattern
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
 
-        EventManager.StopCoroutine(attackCoroutine);
+        if (attackCoroutine != null)
+        {
+            EventManager.StopCoroutine(attackCoroutine);
+        }
     }
 }

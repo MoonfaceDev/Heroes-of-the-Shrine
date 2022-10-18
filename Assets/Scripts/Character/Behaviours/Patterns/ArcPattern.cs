@@ -15,12 +15,17 @@ public class ArcPattern : BasePattern
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
         WalkBehaviour walkBehaviour = animator.GetComponent<WalkBehaviour>();
-        MovableObject player = GameObject.FindGameObjectWithTag(targetTag).GetComponent<MovableObject>();
+        GameObject player = GameObject.FindGameObjectWithTag(targetTag);
+        if (!player)
+        {
+            return;
+        }
+        MovableObject playerMovableObject = player.GetComponent<MovableObject>();
 
         speedModifier = new MultiplierModifier(speedMultiplier);
         walkBehaviour.speed.AddModifier(speedModifier);
 
-        Vector3 playerPosition = player.position;
+        Vector3 playerPosition = playerMovableObject.position;
         Vector3 initialDistance = walkBehaviour.MovableObject.position - playerPosition;
         initialDistance.y = 0;
         float radius = initialDistance.magnitude;
@@ -35,13 +40,13 @@ public class ArcPattern : BasePattern
             walkBehaviour.MovableObject.position = newPosition;
             Vector3 direction = clockwise * Vector3.Cross(distance, Vector3.up).normalized;
             walkBehaviour.Play(direction.x, direction.z, false);
-            if ((player.position - walkBehaviour.MovableObject.position).x != 0) {
-                walkBehaviour.LookDirection = Mathf.RoundToInt(Mathf.Sign((player.position - walkBehaviour.MovableObject.position).x));
+            if ((playerMovableObject.position - walkBehaviour.MovableObject.position).x != 0) {
+                walkBehaviour.LookDirection = Mathf.RoundToInt(Mathf.Sign((playerMovableObject.position - walkBehaviour.MovableObject.position).x));
             };
         }, false);
 
         onStop = () => animator.SetTrigger("stuck");
-        walkBehaviour.MovableObject.onStuck += onStop;
+        walkBehaviour.MovableObject.OnStuck += onStop;
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -50,7 +55,7 @@ public class ArcPattern : BasePattern
 
         WalkBehaviour walkBehaviour = animator.GetComponent<WalkBehaviour>();
 
-        walkBehaviour.MovableObject.onStuck -= onStop;
+        walkBehaviour.MovableObject.OnStuck -= onStop;
         EventManager.Detach(circleEvent);
         walkBehaviour.speed.RemoveModifier(speedModifier);
         if (walkBehaviour.Playing)

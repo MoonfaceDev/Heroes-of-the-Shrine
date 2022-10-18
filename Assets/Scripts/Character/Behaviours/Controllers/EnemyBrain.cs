@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using static MathUtils;
 
@@ -10,13 +8,18 @@ public class EnemyBrain : CharacterBehaviour
     public float rageHealthThreshold;
     public float rageDamageMultiplier = 1;
 
-    private MovableObject player;
+    private GameObject player;
+    private MovableObject playerMovableObject;
     private Animator stateMachine;
 
     public void Start()
     {
         stateMachine = GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag(playerTag).GetComponent<MovableObject>();
+        player = GameObject.FindGameObjectWithTag(playerTag);
+        if (player)
+        {
+            playerMovableObject = player.GetComponent<MovableObject>();
+        }
 
         KnockbackBehaviour knockbackBehaviour = GetComponent<KnockbackBehaviour>();
         if (knockbackBehaviour)
@@ -52,18 +55,27 @@ public class EnemyBrain : CharacterBehaviour
         if (player)
         {
             KnockbackBehaviour playerKnockbackBehaviour = player.GetComponent<KnockbackBehaviour>();
-            playerKnockbackBehaviour.OnPlay += OnPlayerKnockbackPlay;
-            playerKnockbackBehaviour.OnFinish += OnPlayerKnockbackStop;
-            playerKnockbackBehaviour.OnFinish += OnPlayerRecoveringFromKnockbackPlay;
-            playerKnockbackBehaviour.OnRecover += OnPlayerRecoveringFromKnockbackStop;
+            if (knockbackBehaviour)
+            {
+                playerKnockbackBehaviour.OnPlay += OnPlayerKnockbackPlay;
+                playerKnockbackBehaviour.OnFinish += OnPlayerKnockbackStop;
+                playerKnockbackBehaviour.OnFinish += OnPlayerRecoveringFromKnockbackPlay;
+                playerKnockbackBehaviour.OnRecover += OnPlayerRecoveringFromKnockbackStop;
+            }
 
             StunBehaviour playerStunBehaviour = player.GetComponent<StunBehaviour>();
-            playerStunBehaviour.OnPlay += OnPlayerStunPlay;
-            playerStunBehaviour.OnStop += OnPlayerStunStop;
+            if (playerStunBehaviour)
+            {
+                playerStunBehaviour.OnPlay += OnPlayerStunPlay;
+                playerStunBehaviour.OnStop += OnPlayerStunStop;
+            }
 
             AttackManager playerAttackManager = player.GetComponent<AttackManager>();
-            playerAttackManager.OnPlay += OnPlayerAttackPlay;
-            playerAttackManager.OnStop += OnPlayerAttackStop;
+            if (playerAttackManager)
+            {
+                playerAttackManager.OnPlay += OnPlayerAttackPlay;
+                playerAttackManager.OnStop += OnPlayerAttackStop;
+            }
         }
     }
 
@@ -117,9 +129,9 @@ public class EnemyBrain : CharacterBehaviour
                 stateMachine.SetBool("rage", true);
             }
         }
-        if (player)
+        if (playerMovableObject)
         {
-            stateMachine.SetFloat("playerDistance", Vector2.Distance(ToPlane(MovableObject.position), ToPlane(player.position)));
+            stateMachine.SetFloat("playerDistance", Vector2.Distance(ToPlane(MovableObject.position), ToPlane(playerMovableObject.position)));
         }
     }
 
@@ -134,18 +146,27 @@ public class EnemyBrain : CharacterBehaviour
         if (player)
         {
             KnockbackBehaviour playerKnockbackBehaviour = player.GetComponent<KnockbackBehaviour>();
-            playerKnockbackBehaviour.OnPlay -= OnPlayerKnockbackPlay;
-            playerKnockbackBehaviour.OnFinish -= OnPlayerKnockbackStop;
-            playerKnockbackBehaviour.OnFinish -= OnPlayerRecoveringFromKnockbackPlay;
-            playerKnockbackBehaviour.OnRecover -= OnPlayerRecoveringFromKnockbackStop;
+            if (playerKnockbackBehaviour)
+            {
+                playerKnockbackBehaviour.OnPlay -= OnPlayerKnockbackPlay;
+                playerKnockbackBehaviour.OnFinish -= OnPlayerKnockbackStop;
+                playerKnockbackBehaviour.OnFinish -= OnPlayerRecoveringFromKnockbackPlay;
+                playerKnockbackBehaviour.OnRecover -= OnPlayerRecoveringFromKnockbackStop;
+            }
 
             StunBehaviour playerStunBehaviour = player.GetComponent<StunBehaviour>();
-            playerStunBehaviour.OnPlay -= OnPlayerStunPlay;
-            playerStunBehaviour.OnStop -= OnPlayerStunStop;
+            if (playerStunBehaviour)
+            {
+                playerStunBehaviour.OnPlay -= OnPlayerStunPlay;
+                playerStunBehaviour.OnStop -= OnPlayerStunStop;
+            }
 
             AttackManager playerAttackManager = player.GetComponent<AttackManager>();
-            playerAttackManager.OnPlay -= OnPlayerAttackPlay;
-            playerAttackManager.OnStop -= OnPlayerAttackStop;
+            if (playerAttackManager)
+            {
+                playerAttackManager.OnPlay -= OnPlayerAttackPlay;
+                playerAttackManager.OnStop -= OnPlayerAttackStop;
+            }
         }
     }
 }

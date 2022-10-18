@@ -8,7 +8,7 @@ public class MovableObject : MonoBehaviour
 {
     public static float zScale = 0.8f;
 
-    public GameObject figureObject;
+    public Renderer figureObject;
 
     public Vector3 position;
     [HideInInspector]
@@ -18,7 +18,19 @@ public class MovableObject : MonoBehaviour
     [HideInInspector]
     public Vector3 acceleration;
 
-    public event Action onStuck;
+    public Vector3 WorldPosition
+    {
+        get
+        {
+            MovableObject[] movableObjects = GetComponentsInParent<MovableObject>();
+            return movableObjects.Aggregate(Vector3.zero, (total, next) =>
+            {
+                return total + next.position;
+            });
+        }
+    }
+
+    public event Action OnStuck;
 
     private WalkableGrid walkableGrid;
 
@@ -28,7 +40,7 @@ public class MovableObject : MonoBehaviour
         startPosition = position;
         velocity = Vector3.zero;
         acceleration = Vector3.zero;
-        onStuck += () =>
+        OnStuck += () =>
         {
             velocity = Vector3.zero + velocity.y * Vector3.up;
             acceleration = Vector3.zero + acceleration.y * Vector3.up;
@@ -41,7 +53,10 @@ public class MovableObject : MonoBehaviour
         //update position and velocity
         velocity += acceleration * Time.deltaTime;
         if (!CompareTag("Barrier")) {
-            UpdatePosition(position + Time.deltaTime * velocity + 0.5f * Mathf.Pow(Time.deltaTime, 2) * acceleration);
+            Vector3 wantedPosition = position + Time.deltaTime * velocity + 0.5f * Mathf.Pow(Time.deltaTime, 2) * acceleration;
+            UpdatePosition(position + Vector3.right * (wantedPosition.x - position.x));
+            UpdatePosition(position + Vector3.up * (wantedPosition.y - position.y));
+            UpdatePosition(position + Vector3.forward * (wantedPosition.z - position.z));
         }
         //update position in scene
         transform.position = GroundScreenCoordinates(position);
@@ -90,7 +105,7 @@ public class MovableObject : MonoBehaviour
             {
                 position = this.position;
             }
-            onStuck?.Invoke();
+            OnStuck?.Invoke();
         }
         this.position.y = position.y;
         if (IsValidPosition(position))
@@ -123,7 +138,7 @@ public class MovableObject : MonoBehaviour
 
     private void UpdateSortingOrder()
     {
-        figureObject.GetComponent<SpriteRenderer>().sortingOrder = -1 * (Mathf.RoundToInt(position.z * 100f) * 10);
+        figureObject.sortingOrder = -1 * Mathf.RoundToInt(WorldPosition.z * 100f) * 10;
     }
 
     public float Distance(Vector3 point)
