@@ -73,9 +73,9 @@ public class AttackManager : PlayableBehaviour
 
     public override bool Playing => AnyAttack((attack) => attack.Playing);
 
-    public bool IsUninterruptable()
+    public bool IsInterruptable()
     {
-        return AnyAttack((attack) => attack.Active && !attack.interruptable);
+        return !AnyAttack((attack) => attack.Playing && !attack.interruptable);
     }
 
     public override void Stop()

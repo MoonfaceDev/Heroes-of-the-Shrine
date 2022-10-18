@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class DodgeBehaviour : SoloMovementBehaviour
+public class DodgeBehaviour : BaseMovementBehaviour
 {
     public float dodgeDistance;
     public float anticipateTime;
@@ -38,7 +38,11 @@ public class DodgeBehaviour : SoloMovementBehaviour
 
     public override bool CanPlay()
     {
-        return base.CanPlay() && MovableObject.velocity.z != 0 && MovableObject.velocity.x == 0;
+        AttackManager attackManager = GetComponent<AttackManager>();
+        return base.CanPlay()
+            && AllStopped(typeof(JumpBehaviour), typeof(SlideBehaviour)) 
+            && !(attackManager && !attackManager.IsInterruptable())
+            && MovableObject.velocity.z != 0 && MovableObject.velocity.x == 0;
     }
 
     public void Play()

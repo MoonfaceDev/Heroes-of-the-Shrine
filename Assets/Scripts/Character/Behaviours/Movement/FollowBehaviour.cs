@@ -2,7 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Pathfind))]
 [RequireComponent(typeof(WalkBehaviour))]
-public class FollowBehaviour : SoloMovementBehaviour
+public class FollowBehaviour : BaseMovementBehaviour
 {
     public bool Active
     {

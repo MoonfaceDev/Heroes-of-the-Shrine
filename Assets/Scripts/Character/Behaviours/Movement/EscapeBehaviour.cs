@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [RequireComponent(typeof(WalkBehaviour))]
-public class EscapeBehaviour : SoloMovementBehaviour
+public class EscapeBehaviour : BaseMovementBehaviour
 {
     public bool Active
     {

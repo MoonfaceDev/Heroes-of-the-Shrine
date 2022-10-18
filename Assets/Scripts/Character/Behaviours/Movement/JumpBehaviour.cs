@@ -4,7 +4,7 @@ using UnityEngine;
 
 public delegate void OnJumpsChanged(int jumps);
 
-public class JumpBehaviour : SoloMovementBehaviour
+public class JumpBehaviour : BaseMovementBehaviour
 {
     public float jumpSpeed;
     public float jumpAnticipateTime;
@@ -70,7 +70,9 @@ public class JumpBehaviour : SoloMovementBehaviour
 
     public override bool CanPlay()
     {
-        return base.CanPlay() || (Active && Jumps < maxJumps);
+        return base.CanPlay() 
+            && AllStopped(typeof(AttackManager), typeof(SlideBehaviour), typeof(DodgeBehaviour))
+            && (!Active || jumps < maxJumps);
     }
 
     public void Play()

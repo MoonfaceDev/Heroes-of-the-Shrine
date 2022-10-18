@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SlideBehaviour : SoloMovementBehaviour
+public class SlideBehaviour : BaseMovementBehaviour
 {
     public float slideSpeedMultiplier;
     public float slideStopAcceleration;
@@ -21,7 +21,9 @@ public class SlideBehaviour : SoloMovementBehaviour
 
     public override bool CanPlay()
     {
-        return base.CanPlay() && MovableObject.velocity.x != 0;
+        return base.CanPlay()
+            && AllStopped(typeof(AttackManager), typeof(JumpBehaviour), typeof(DodgeBehaviour))
+            && MovableObject.velocity.x != 0;
     }
 
     public void Play()
