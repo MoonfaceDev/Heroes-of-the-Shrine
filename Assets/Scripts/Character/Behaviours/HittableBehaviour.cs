@@ -47,9 +47,9 @@ public class HittableBehaviour : CharacterBehaviour
         OnDie?.Invoke();
         EventManager.Attach(() => !IsPlaying(typeof(KnockbackBehaviour)), () =>
         {
+            Animator.SetBool("dead", true);
             DisableBehaviours(typeof(KnockbackBehaviour), typeof(BaseEffect));
             StopBehaviours(typeof(BaseEffect));
-            Animator.SetBool("dead", true);
             Destroy(gameObject, deathAnimationDuration);
         });
     }
