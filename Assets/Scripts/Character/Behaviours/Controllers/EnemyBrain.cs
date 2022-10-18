@@ -49,7 +49,7 @@ public class EnemyBrain : CharacterBehaviour
 
         foreach (BasePattern pattern in stateMachine.GetBehaviours<BasePattern>())
         {
-            pattern.OnEnter += () => stateMachine.SetFloat("aggression", UnityEngine.Random.Range(0f, 1f));
+            pattern.OnEnter += () => stateMachine.SetFloat("aggression", Random.Range(0f, 1f));
         }
 
         if (player)
@@ -132,6 +132,9 @@ public class EnemyBrain : CharacterBehaviour
         if (playerMovableObject)
         {
             stateMachine.SetFloat("playerDistance", Vector2.Distance(ToPlane(MovableObject.position), ToPlane(playerMovableObject.position)));
+            stateMachine.SetFloat("playerDistanceX", Mathf.Abs((MovableObject.position - playerMovableObject.position).x));
+            stateMachine.SetFloat("playerDistanceY", Mathf.Abs((MovableObject.position - playerMovableObject.position).y));
+            stateMachine.SetFloat("playerDistanceZ", Mathf.Abs((MovableObject.position - playerMovableObject.position).z));
         }
     }
 
