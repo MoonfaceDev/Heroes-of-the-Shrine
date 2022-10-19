@@ -42,26 +42,25 @@ public class DodgeBehaviour : BaseMovementBehaviour
         return base.CanPlay()
             && AllStopped(typeof(JumpBehaviour), typeof(SlideBehaviour)) 
             && !(attackManager && !attackManager.IsInterruptable())
-            && MovableObject.velocity.z != 0 && MovableObject.velocity.x == 0;
+            && MovableObject.velocity.x == 0;
     }
 
-    public void Play()
+    public void Play(int direction)
     {
-        if (!CanPlay())
+        if (!(CanPlay() && direction != 0))
         {
             return;
         }
         DisableBehaviours(typeof(WalkBehaviour));
-        StopBehaviours(typeof(WalkBehaviour));
+        StopBehaviours(typeof(WalkBehaviour), typeof(AttackManager));
         Anticipating = true;
         InvokeOnPlay();
-        float dodgeDirection = Mathf.Sign(MovableObject.velocity.z);
         MovableObject.acceleration = Vector3.zero;
         MovableObject.velocity = Vector3.zero;
         anticipateEvent = EventManager.StartTimeout(() =>
         {
             Anticipating = false;
-            MovableObject.UpdatePosition(MovableObject.position + dodgeDirection * dodgeDistance * Vector3.forward);
+            MovableObject.UpdatePosition(MovableObject.position + direction * dodgeDistance * Vector3.forward);
             OnDodge?.Invoke();
             Recovering = true;
             recoverEvent = EventManager.StartTimeout(Stop, recoveryTime);

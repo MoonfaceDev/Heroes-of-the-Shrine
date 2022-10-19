@@ -40,8 +40,8 @@ public class PlayerController : CharacterBehaviour
 
     public void Update()
     {
-        float horizontal = Direction(Input.GetAxisRaw("Horizontal"));
-        float vertical = Direction(Input.GetAxisRaw("Vertical"));
+        int horizontal = Direction(Input.GetAxisRaw("Horizontal"));
+        int vertical = Direction(Input.GetAxisRaw("Vertical"));
         if (walkBehaviour)
         {
             walkBehaviour.Play(horizontal, vertical);
@@ -59,7 +59,10 @@ public class PlayerController : CharacterBehaviour
         //dodging
         if (dodgeBehaviour && Input.GetButtonDown(Button.Escape.ToString())) //pressed dodge
         {
-            dodgeBehaviour.Play();
+            if (vertical != 0)
+            {
+                dodgeBehaviour.Play(vertical);
+            }
         }
         //attacks
         AttackProperty selectedAttack = null;
