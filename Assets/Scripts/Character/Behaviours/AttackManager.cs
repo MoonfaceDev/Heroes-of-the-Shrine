@@ -29,7 +29,7 @@ public class AttackManager : PlayableBehaviour
     {
         EventManager.Attach(() => true, () =>
         {
-            if (lastAttack != null && Time.time - lastAttackTime > maxComboDelay)
+            if (lastAttack != null && !Recovering && Time.time - lastAttackTime > maxComboDelay)
             {
                 lastAttack = null;
             }
@@ -46,6 +46,13 @@ public class AttackManager : PlayableBehaviour
 
             attack.OnFinish += () =>
             {
+                print("Last set to " + attack.AttackName);
+                lastAttack = attack;
+            };
+
+            attack.OnStop += () =>
+            {
+                print("(2nd) Last set to " + attack.AttackName);
                 lastAttack = attack;
                 lastAttackTime = Time.time;
             };
