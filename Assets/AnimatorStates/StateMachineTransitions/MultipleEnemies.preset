@@ -18,15 +18,15 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_Conditions.Array.data[0].m_ConditionMode
-    value: 1
+    value: 3
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_Conditions.Array.data[0].m_ConditionEvent
-    value: rage
+    value: enemyCount
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_Conditions.Array.data[0].m_EventTreshold
-    value: 0
+    value: 1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_DstStateMachine
@@ -80,4 +80,15 @@ Preset:
     propertyPath: m_CanTransitionToSelf
     value: 0
     objectReference: {fileID: 0}
-  m_ExcludedProperties: []
+  m_ExcludedProperties:
+  - m_DstStateMachine
+  - m_DstState
+  - m_Solo
+  - m_Mute
+  - m_IsExit
+  - m_TransitionOffset
+  - m_ExitTime
+  - m_HasFixedDuration
+  - m_InterruptionSource
+  - m_OrderedInterruption
+  - m_CanTransitionToSelf

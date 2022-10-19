@@ -14,7 +14,7 @@ Preset:
   m_Properties:
   - target: {fileID: 0}
     propertyPath: m_Conditions.Array.size
-    value: 4
+    value: 5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_Conditions.Array.data[0].m_ConditionMode
@@ -54,14 +54,26 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_Conditions.Array.data[3].m_ConditionMode
-    value: 1
+    value: 4
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_Conditions.Array.data[3].m_ConditionEvent
-    value: rage
+    value: playerDistanceZ
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_Conditions.Array.data[3].m_EventTreshold
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_Conditions.Array.data[4].m_ConditionMode
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_Conditions.Array.data[4].m_ConditionEvent
+    value: rage
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_Conditions.Array.data[4].m_EventTreshold
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -116,4 +128,15 @@ Preset:
     propertyPath: m_CanTransitionToSelf
     value: 0
     objectReference: {fileID: 0}
-  m_ExcludedProperties: []
+  m_ExcludedProperties:
+  - m_DstStateMachine
+  - m_DstState
+  - m_Solo
+  - m_Mute
+  - m_IsExit
+  - m_TransitionOffset
+  - m_ExitTime
+  - m_HasFixedDuration
+  - m_InterruptionSource
+  - m_OrderedInterruption
+  - m_CanTransitionToSelf

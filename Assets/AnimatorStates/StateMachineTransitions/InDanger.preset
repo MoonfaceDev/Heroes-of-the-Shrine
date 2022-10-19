@@ -104,4 +104,14 @@ Preset:
     propertyPath: m_CanTransitionToSelf
     value: 0
     objectReference: {fileID: 0}
-  m_ExcludedProperties: []
+  m_ExcludedProperties:
+  - m_DstStateMachine
+  - m_DstState
+  - m_Solo
+  - m_Mute
+  - m_IsExit
+  - m_TransitionOffset
+  - m_ExitTime
+  - m_InterruptionSource
+  - m_OrderedInterruption
+  - m_CanTransitionToSelf

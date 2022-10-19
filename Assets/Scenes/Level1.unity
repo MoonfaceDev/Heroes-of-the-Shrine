@@ -1819,7 +1819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0.31, y: 0.7, z: -0.5}
+  position: {x: 0.3, y: 0.7, z: -0.5}
   size: {x: 1.15, y: 0.4, z: 1}
   parentObject: {fileID: 439857744}
 --- !u!4 &596657973
@@ -1830,7 +1830,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 596657971}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.31000006, y: 0.29999995, z: 0}
+  m_LocalPosition: {x: 0.30000007, y: 0.29999995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3164,7 +3164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab68d069e0e79504ebe8ab7fd318ee7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxComboDelay: 0.3
+  maxComboDelay: 0.5
   hittableTags:
   - Enemy
   lastAttack: {fileID: 0}
@@ -3341,8 +3341,8 @@ MonoBehaviour:
   knockbackPower: 10
   knockbackDirection: 65
   stunTime: 0
-  velocity: 50
-  acceleration: 500
+  velocity: 100
+  acceleration: 1000
 --- !u!114 &871744053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3986,7 +3986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0, z: -0.5}
-  size: {x: 1.89, y: 1.8, z: 1}
+  size: {x: 1.9, y: 1.8, z: 1}
   parentObject: {fileID: 439857744}
 --- !u!4 &1126762353
 Transform:
@@ -9074,7 +9074,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293244185}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.099999905, y: 0.29999995, z: 0}
+  m_LocalPosition: {x: -0.100000024, y: 0.29999995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
