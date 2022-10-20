@@ -46,13 +46,11 @@ public class AttackManager : PlayableBehaviour
 
             attack.OnFinish += () =>
             {
-                print("Last set to " + attack.AttackName);
                 lastAttack = attack;
             };
 
             attack.OnStop += () =>
             {
-                print("(2nd) Last set to " + attack.AttackName);
                 lastAttack = attack;
                 lastAttackTime = Time.time;
             };
