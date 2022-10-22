@@ -18,6 +18,17 @@ public class EventListener
 
 public class EventManager : MonoBehaviour
 {
+    public static EventManager Instance { get; private set; }
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+        Instance = this;
+    }
 
     private readonly HashSet<EventListener> eventListeners = new();
 

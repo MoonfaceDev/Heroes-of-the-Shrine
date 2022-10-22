@@ -131,11 +131,6 @@ public class EnemyBrain : CharacterBehaviour
 
     public void Update()
     {
-        if (!player)
-        {
-            StopBehaviours(typeof(PlayableBehaviour));
-            Destroy(gameObject);
-        }
         HealthSystem healthSystem = GetComponent<HealthSystem>();
         if (healthSystem)
         {
@@ -157,6 +152,11 @@ public class EnemyBrain : CharacterBehaviour
     {
         HealthSystem healthSystem = GetComponent<HealthSystem>();
         return healthSystem && healthSystem.health <= rageHealthThreshold;
+    }
+
+    public void StopBehaviours()
+    {
+        StopBehaviours(typeof(PlayableBehaviour));
     }
 
     private void OnDestroy()

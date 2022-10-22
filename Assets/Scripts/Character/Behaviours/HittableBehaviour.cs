@@ -14,6 +14,7 @@ public class HittableBehaviour : CharacterBehaviour
 
     public List<Hitbox> hitboxes;
     [Header("Death")]
+    public bool destoryOnDeath = true;
     public float deathAnimationDuration;
 
     public event OnHit OnHit;
@@ -35,7 +36,7 @@ public class HittableBehaviour : CharacterBehaviour
 
     public bool CanGetHit()
     {
-        return !(knockbackBehaviour && knockbackBehaviour.Recovering);
+        return healthSystem.health > 0 && !(knockbackBehaviour && knockbackBehaviour.Recovering);
     }
 
 
@@ -51,7 +52,10 @@ public class HittableBehaviour : CharacterBehaviour
             OnDie?.Invoke();
             Animator.SetBool("dead", true);
             StopBehaviours(typeof(BaseEffect));
-            Destroy(gameObject, deathAnimationDuration);
+            if (destoryOnDeath)
+            {
+                Destroy(gameObject, deathAnimationDuration);
+            }
         }
 
         if (IsPlaying(typeof(KnockbackBehaviour)))

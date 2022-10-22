@@ -1,36 +1,26 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+[Serializable]
+public class Transition
+{
+    public MaskableGraphic graphic;
+    public float transitionSpeed;
+    public Color finalColor;
+}
+
 [RequireComponent(typeof(Image))]
 public class DeathPanel : MonoBehaviour
 {
-    public float transitionSpeed;
-
-    private Image image;
-    private TextMeshProUGUI text;
-    private bool showPanel;
-
-    void Start()
-    {
-        image = GetComponent<Image>();
-        text = transform.Find("Text").GetComponent<TextMeshProUGUI>();
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player)
-        {
-            player.GetComponent<HittableBehaviour>().OnDie += () =>
-            {
-                showPanel = true;
-            };
-        }
-    }
+    public Transition[] transitions;
 
     void Update()
     {
-        if (showPanel)
+        foreach (Transition transition in transitions)
         {
-            image.color = Color.Lerp(image.color, Color.black, transitionSpeed * Time.deltaTime);
-            text.color = Color.Lerp(text.color, Color.white, transitionSpeed * Time.deltaTime);
+            transition.graphic.color = Color.Lerp(transition.graphic.color, transition.finalColor, transition.transitionSpeed * Time.deltaTime);
         }
     }
 }

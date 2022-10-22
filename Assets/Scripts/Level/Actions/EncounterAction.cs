@@ -29,8 +29,9 @@ public class EncounterAction : BaseAction
     public GameObject[] firstWavePreSpawnedEnemies;
     public float timeToAlarm;
     public Rect cameraBorder;
-
     public float spawnSourceDistance = 1;
+
+    private bool stopped;
 
     public override void Invoke()
     {
@@ -70,13 +71,16 @@ public class EncounterAction : BaseAction
         {
             foreach (GameObject enemy in waveEnemies)
             {
-                enemy.GetComponent<EnemyBrain>().Alarm();
+                if (enemy)
+                {
+                    enemy.GetComponent<EnemyBrain>().Alarm();
+                }
             }
         }, timeToAlarm);
 
         eventManager.Attach(() => waveEnemies.TrueForAll(enemy => !enemy), () =>
         {
-            if (index + 1 < waveDefinitions.Length)
+            if (!stopped && index + 1 < waveDefinitions.Length)
             {
                 StartWave(index + 1);
             }
@@ -86,6 +90,11 @@ public class EncounterAction : BaseAction
                 cameraFollow.Unlock();
             }
         });
+    }
+
+    public void Stop()
+    {
+        stopped = true;
     }
 
     private void OnDrawGizmosSelected()

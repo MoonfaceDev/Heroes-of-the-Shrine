@@ -10,7 +10,6 @@ public class CameraFollow : MonoBehaviour
     private new Camera camera;
     private MovableObject target;
     private Vector3 offset;
-    private Vector3 targetPosition;
 
     public float CameraHeight => 2f * camera.orthographicSize;
 
@@ -59,7 +58,7 @@ public class CameraFollow : MonoBehaviour
     private void LateUpdate()
     {
         if (target == null) return;
-        targetPosition = MovableObject.GroundScreenCoordinates(target.position) + offset;
+        Vector3 targetPosition = MovableObject.GroundScreenCoordinates(target.position) + offset;
         if ((transform.position.x - CameraWidth / 2 > border.xMin && transform.position.x + CameraWidth / 2 < border.xMax) || (transform.position.x < targetPosition.x && transform.position.x - CameraWidth / 2 < border.xMin) || (transform.position.x > targetPosition.x && transform.position.x + CameraWidth / 2 > border.xMax))
         {
             MoveCamera(transform.position + (targetPosition.x - transform.position.x) * Vector3.right);
