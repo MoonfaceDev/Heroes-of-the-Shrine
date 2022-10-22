@@ -19,7 +19,12 @@ public class WalkableGrid : MonoBehaviour
 		movableObject = GetComponent<MovableObject>();
 	}
 
-	public void CreateGrid()
+    private void Start()
+    {
+		CreateGrid();
+    }
+
+    public void CreateGrid()
 	{
 		grid = new Node[GridSizeX, GridSizeZ];
 		for (int x = 0; x < GridSizeX; x++)

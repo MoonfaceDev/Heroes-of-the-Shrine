@@ -4,16 +4,13 @@ public class CameraFollow : MonoBehaviour
 {
     public string targetTag;
     public Rect worldBorder;
+    [HideInInspector] public Rect border;
     public float lerpSpeed = 3.0f;
 
     private new Camera camera;
-    private WalkableGrid walkableGrid;
     private MovableObject target;
     private Vector3 offset;
     private Vector3 targetPosition;
-    private Rect border;
-
-    private static Vector2 epsilon = Vector2.one * 0.01f;
 
     public float CameraHeight => 2f * camera.orthographicSize;
 
@@ -24,7 +21,6 @@ public class CameraFollow : MonoBehaviour
     private void Awake()
     {
         camera = GetComponent<Camera>();
-        walkableGrid = FindObjectOfType<WalkableGrid>();
         target = GameObject.FindGameObjectWithTag(targetTag).GetComponent<MovableObject>();
     }
 
@@ -40,9 +36,6 @@ public class CameraFollow : MonoBehaviour
     public void Lock(Rect newBorder)
     {
         border = newBorder;
-        walkableGrid.GetComponent<MovableObject>().position.x = newBorder.xMin;
-        walkableGrid.gridWorldSize.x = newBorder.width;
-        walkableGrid.CreateGrid();
     }
 
     public void Lock(float leftBorder, float rightBorder)

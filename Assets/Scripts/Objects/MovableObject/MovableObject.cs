@@ -33,10 +33,12 @@ public class MovableObject : MonoBehaviour
     public event Action OnStuck;
 
     private WalkableGrid walkableGrid;
+    private CameraFollow cameraFollow;
 
     public void Awake()
     {
         walkableGrid = FindObjectOfType<WalkableGrid>();
+        cameraFollow = Camera.main.GetComponent<CameraFollow>();
         startPosition = position;
         velocity = Vector3.zero;
         acceleration = Vector3.zero;
@@ -81,9 +83,25 @@ public class MovableObject : MonoBehaviour
 
         if (walkableGrid)
         {
-            Vector3 gridPosition = walkableGrid.GetComponent<MovableObject>().position;
-            Vector3 gridSize = walkableGrid.gridWorldSize;
-            intersections.AddRange(LineRectangleIntersections(previousGroundPosition, groundPosition, ToPlane(gridPosition), ToPlane(gridSize)));
+            Vector2 gridPosition = ToPlane(walkableGrid.GetComponent<MovableObject>().position);
+            Vector2 gridSize = ToPlane(walkableGrid.gridWorldSize);
+            intersections.AddRange(LineRectangleIntersections(previousGroundPosition, groundPosition, gridPosition, gridSize));
+            if (cameraFollow && CompareTag("Player"))
+            {
+                Rect border = cameraFollow.border;
+                Tuple<Vector2, Vector2>[] lines = new Tuple<Vector2, Vector2>[] {
+                    new (new (border.xMin, gridPosition.y), new (border.xMin, (gridPosition + gridSize).y)),
+                    new (new (border.xMax, gridPosition.y), new (border.xMax, (gridPosition + gridSize).y)),
+                };
+                foreach (Tuple<Vector2, Vector2> line in lines)
+                {
+                    bool hasIntersection = LineLineIntersection(out Vector2 intersection, previousGroundPosition, groundPosition, line.Item1, line.Item2);
+                    if (hasIntersection)
+                    {
+                        intersections.Add(intersection);
+                    }
+                }
+            }
         }
 
         if (intersections.Count > 0)
@@ -120,6 +138,10 @@ public class MovableObject : MonoBehaviour
             return false;
         }
         if (walkableGrid && !walkableGrid.IsInside(position))
+        {
+            return false;
+        }
+        if (walkableGrid && cameraFollow && CompareTag("Player") && (position.x < cameraFollow.border.xMin || position.x > cameraFollow.border.xMax))
         {
             return false;
         }

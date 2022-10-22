@@ -31,8 +31,6 @@ public class EncounterAction : BaseAction
     public Rect cameraBorder;
 
     public float spawnSourceDistance = 1;
-    public float spawnDestinationDistance = 1;
-    public float entranceVelocity = 3;
 
     public override void Invoke()
     {
@@ -55,22 +53,7 @@ public class EncounterAction : BaseAction
             GameObject enemy = Instantiate(definition.prefab);
             MovableObject movableObject = enemy.GetComponent<MovableObject>();
 
-            UncontrolledBehaviour uncontrolledBehaviour = enemy.GetComponent<UncontrolledBehaviour>();
-            uncontrolledBehaviour.Play();
-
             movableObject.position.x = borderEdge + direction * spawnSourceDistance;
-            uncontrolledBehaviour.LookDirection = -direction;
-
-            EventListener entranceEvent = eventManager.Attach(() => true, () => {
-                movableObject.position.x -= direction * entranceVelocity * Time.deltaTime;
-            }, false);
-
-            eventManager.Attach(() => Mathf.Sign(movableObject.position.x - (borderEdge - direction * spawnDestinationDistance)) == -direction, () =>
-            {
-                eventManager.Detach(entranceEvent);
-                uncontrolledBehaviour.Stop();
-            });
-
             movableObject.position.z = definition.z;
 
             if (definition.partOfWave)
