@@ -2683,8 +2683,9 @@ GameObject:
   m_Component:
   - component: {fileID: 959778240}
   - component: {fileID: 959778239}
+  - component: {fileID: 959778241}
   m_Layer: 0
-  m_Name: End Level
+  m_Name: Transition To Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2702,7 +2703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34cb8794370533848906e5ad79679eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  action: {fileID: 0}
+  action: {fileID: 959778241}
   position: {x: 75.5, y: 0, z: -4}
   size: {x: 1, y: 0, z: 2}
 --- !u!4 &959778240
@@ -2720,6 +2721,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &959778241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959778238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d68f97e133cec340aa2f3de17baed22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Level1Boss
 --- !u!1 &1059066341
 GameObject:
   m_ObjectHideFlags: 0

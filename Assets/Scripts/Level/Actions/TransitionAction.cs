@@ -1,18 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class TransitionAction : MonoBehaviour
+public class TransitionAction : BaseAction
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string sceneName;
 
-    // Update is called once per frame
-    void Update()
+    public override void Invoke()
     {
-        
+        SceneManager.LoadScene(sceneName);
     }
 }

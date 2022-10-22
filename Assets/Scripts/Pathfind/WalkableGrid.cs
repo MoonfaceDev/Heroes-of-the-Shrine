@@ -14,10 +14,9 @@ public class WalkableGrid : MonoBehaviour
 	private int GridSizeX => Mathf.RoundToInt(gridWorldSize.x / NodeDiameter);
 	private int GridSizeZ => Mathf.RoundToInt(gridWorldSize.z / NodeDiameter);
 
-	void Start()
+	void Awake()
 	{
 		movableObject = GetComponent<MovableObject>();
-		CreateGrid();
 	}
 
 	public void CreateGrid()

@@ -26,11 +26,11 @@ public class CameraFollow : MonoBehaviour
         camera = GetComponent<Camera>();
         walkableGrid = FindObjectOfType<WalkableGrid>();
         target = GameObject.FindGameObjectWithTag(targetTag).GetComponent<MovableObject>();
-        border = worldBorder;
     }
 
     private void Start()
     {
+        Lock(worldBorder);
         if (target)
         {
             offset = transform.position - MovableObject.GroundScreenCoordinates(target.position);
