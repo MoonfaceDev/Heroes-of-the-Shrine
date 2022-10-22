@@ -71,15 +71,12 @@ public class MovableObject : MonoBehaviour
     {
         Vector2 previousGroundPosition = ToPlane(position);
         Vector2 groundPosition = ToPlane(position);
-        Hitbox[] hitboxes = FindObjectsOfType<Hitbox>();
+        Hitbox[] barriers = HitboxManager.Instance.Barriers;
         List<Vector2> intersections = new();
-        foreach (Hitbox hitbox in hitboxes)
+        foreach (Hitbox barrier in barriers)
         {
-            if (hitbox.CompareTag("Barrier"))
-            {
-                List<Vector2> newIntersections = hitbox.GetSegmentIntersections(previousGroundPosition, groundPosition);
-                intersections.AddRange(newIntersections);
-            }
+            List<Vector2> newIntersections = barrier.GetSegmentIntersections(previousGroundPosition, groundPosition);
+            intersections.AddRange(newIntersections);
         }
 
         if (walkableGrid)
@@ -118,22 +115,13 @@ public class MovableObject : MonoBehaviour
 
     public bool IsValidPosition(Vector3 position)
     {
-        Hitbox[] hitboxes = FindObjectsOfType<Hitbox>();
-        foreach (Hitbox hitbox in hitboxes)
+        if (HitboxManager.Instance.GetOverlappingBarriers(position).Length > 0)
         {
-            if (hitbox.CompareTag("Barrier") && hitbox.IsInside(position))
-            {
-                return false;
-            }
+            return false;
         }
-        if (walkableGrid)
+        if (walkableGrid && !walkableGrid.IsInside(position))
         {
-            Vector3 bottomLeft = walkableGrid.GetComponent<MovableObject>().position;
-            Vector3 topRight = bottomLeft + walkableGrid.gridWorldSize;
-            if (position.x < bottomLeft.x || position.x > topRight.x || position.z < bottomLeft.z || position.z > topRight.z)
-            {
-                return false;
-            }
+            return false;
         }
         return true;
     }

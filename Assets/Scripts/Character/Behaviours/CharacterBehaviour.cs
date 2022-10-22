@@ -25,12 +25,16 @@ public abstract class CharacterBehaviour : MonoBehaviour
         set {
             if (value)
             {
-                disableCount--;
+                if (disableCount > 0)
+                {
+                    disableCount--;
+                }
             }
             else
             {
                 disableCount++;
             }
+            enabled = disableCount == 0;
         }
     }
 

@@ -9,26 +9,46 @@ public class Hitbox : MonoBehaviour
     public Vector3 size;
     public MovableObject parentObject;
 
-    void OnDrawGizmosSelected()
+    void OnDrawGizmos()
     {
-        if (parentObject != null)
+        if (parentObject != null && CompareTag("Barrier"))
         {
             Color lineColor = new(1.0f, 0.5f, 0.0f);
             Color fillColor = new(1.0f, 0.5f, 0.0f, 0.3f);
-            DrawRect(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), GetBottom(), GetFar())), MovableObject.ScreenCoordinates(new(size.x, size.y, 0))), false, lineColor, Color.white);
-            DrawRect(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), GetTop(), GetFar())), MovableObject.ScreenCoordinates(new(size.x, 0, size.z))), true, lineColor, fillColor);
+            DrawOutline(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), GetBottom(), GetFar())), MovableObject.ScreenCoordinates(new(size.x, size.y, 0))), lineColor);
+            DrawBoth(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), GetTop(), GetFar())), MovableObject.ScreenCoordinates(new(size.x, 0, size.z))), lineColor, fillColor);
+            DrawFill(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), 0, GetFar())), MovableObject.ScreenCoordinates(new(size.x, 0, size.z))), new Color(0, 0, 0, 0.5f));
         }
     }
 
-    void DrawRect(Rect rect, bool filled, Color lineColor, Color fillColor)
+    void OnDrawGizmosSelected()
+    {
+        if (parentObject != null && !CompareTag("Barrier"))
+        {
+            Color lineColor = new(1.0f, 0.5f, 0.0f);
+            Color fillColor = new(1.0f, 0.5f, 0.0f, 0.3f);
+            DrawOutline(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), GetBottom(), GetFar())), MovableObject.ScreenCoordinates(new(size.x, size.y, 0))), lineColor);
+            DrawBoth(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), GetTop(), GetFar())), MovableObject.ScreenCoordinates(new(size.x, 0, size.z))), lineColor, fillColor);
+            DrawFill(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), 0, GetFar())), MovableObject.ScreenCoordinates(new(size.x, 0, size.z))), new Color(0,0,0,0.5f));
+        }
+    }
+
+    void DrawBoth(Rect rect, Color lineColor, Color fillColor)
+    {
+        DrawOutline(rect, lineColor);
+        DrawFill(rect, fillColor);
+    }
+
+    void DrawOutline(Rect rect, Color lineColor)
     {
         Gizmos.color = lineColor;
         Gizmos.DrawWireCube(new Vector3(rect.center.x, rect.center.y, 0.01f), new Vector3(rect.size.x, rect.size.y, 0.01f));
-        if (filled)
-        {
-            Gizmos.color = fillColor;
-            Gizmos.DrawCube(new Vector3(rect.center.x, rect.center.y, 0.01f), new Vector3(rect.size.x, rect.size.y, 0.01f));
-        }
+    }
+
+    void DrawFill(Rect rect, Color fillColor)
+    {
+        Gizmos.color = fillColor;
+        Gizmos.DrawCube(new Vector3(rect.center.x, rect.center.y, 0.01f), new Vector3(rect.size.x, rect.size.y, 0.01f));
     }
 
     public bool IsInside(Vector3 point)

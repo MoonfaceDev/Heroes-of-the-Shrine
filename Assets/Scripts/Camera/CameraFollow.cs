@@ -7,6 +7,7 @@ public class CameraFollow : MonoBehaviour
     public float lerpSpeed = 3.0f;
 
     private new Camera camera;
+    private WalkableGrid walkableGrid;
     private MovableObject target;
     private Vector3 offset;
     private Vector3 targetPosition;
@@ -23,6 +24,7 @@ public class CameraFollow : MonoBehaviour
     private void Awake()
     {
         camera = GetComponent<Camera>();
+        walkableGrid = FindObjectOfType<WalkableGrid>();
         target = GameObject.FindGameObjectWithTag(targetTag).GetComponent<MovableObject>();
         border = worldBorder;
     }
@@ -38,6 +40,9 @@ public class CameraFollow : MonoBehaviour
     public void Lock(Rect newBorder)
     {
         border = newBorder;
+        walkableGrid.GetComponent<MovableObject>().position.x = newBorder.xMin;
+        walkableGrid.gridWorldSize.x = newBorder.width;
+        walkableGrid.CreateGrid();
     }
 
     public void Lock(float leftBorder, float rightBorder)
@@ -56,7 +61,7 @@ public class CameraFollow : MonoBehaviour
     private void MoveCamera(Vector3 targetPos)
     {
         Vector3 nextPosition = Vector3.Lerp(transform.position, targetPos, lerpSpeed * Time.deltaTime);
-        if (worldBorder.Contains((Vector2)nextPosition - CameraSize / 2 + epsilon) && worldBorder.Contains((Vector2)nextPosition + CameraSize / 2 - epsilon))
+        if (border.Contains((Vector2)nextPosition - CameraSize / 2 + epsilon) && border.Contains((Vector2)nextPosition + CameraSize / 2 - epsilon))
         {
             transform.position = nextPosition;
         }
@@ -70,13 +75,13 @@ public class CameraFollow : MonoBehaviour
         MoveCamera(transform.position + (targetPosition.y - transform.position.y) * Vector3.up);
     }
 
-    void OnDrawGizmosSelected()
+    void OnDrawGizmos()
     {
         Rect rect = border;
 #if UNITY_EDITOR
         rect = worldBorder;
 #endif
-        Gizmos.color = new(1, 0, 0);
+        Gizmos.color = Color.red;
         Gizmos.DrawWireCube(new Vector3(rect.center.x, rect.center.y, 0.01f), new Vector3(rect.size.x, rect.size.y, 0.01f));
     }
 }

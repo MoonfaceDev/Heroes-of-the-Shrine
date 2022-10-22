@@ -12,9 +12,19 @@ public class EnemyBrain : CharacterBehaviour
     private MovableObject playerMovableObject;
     private Animator stateMachine;
 
+    public void Alarm()
+    {
+        stateMachine.SetTrigger("Alarm");
+    }
+
+    public override void Awake()
+    {
+        base.Awake();
+        stateMachine = GetComponent<Animator>();
+    }
+
     public void Start()
     {
-        stateMachine = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag(playerTag);
         if (player)
         {
