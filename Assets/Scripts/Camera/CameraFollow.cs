@@ -60,19 +60,21 @@ public class CameraFollow : MonoBehaviour
 
     private void MoveCamera(Vector3 targetPos)
     {
-        Vector3 nextPosition = Vector3.Lerp(transform.position, targetPos, lerpSpeed * Time.deltaTime);
-        if (border.Contains((Vector2)nextPosition - CameraSize / 2 + epsilon) && border.Contains((Vector2)nextPosition + CameraSize / 2 - epsilon))
-        {
-            transform.position = nextPosition;
-        }
+        transform.position = Vector3.Lerp(transform.position, targetPos, lerpSpeed * Time.deltaTime);
     }
 
     private void LateUpdate()
     {
         if (target == null) return;
         targetPosition = MovableObject.GroundScreenCoordinates(target.position) + offset;
-        MoveCamera(transform.position + (targetPosition.x - transform.position.x) * Vector3.right);
-        MoveCamera(transform.position + (targetPosition.y - transform.position.y) * Vector3.up);
+        if ((transform.position.x - CameraWidth / 2 > border.xMin && transform.position.x + CameraWidth / 2 < border.xMax) || (transform.position.x < targetPosition.x && transform.position.x - CameraWidth / 2 < border.xMin) || (transform.position.x > targetPosition.x && transform.position.x + CameraWidth / 2 > border.xMax))
+        {
+            MoveCamera(transform.position + (targetPosition.x - transform.position.x) * Vector3.right);
+        }
+        if ((transform.position.y - CameraHeight / 2 > border.yMin && transform.position.y + CameraHeight / 2 < border.yMax) || (transform.position.y < targetPosition.y && transform.position.y - CameraHeight / 2 < border.yMin) || (transform.position.y > targetPosition.y && transform.position.y + CameraHeight / 2 > border.yMax))
+        {
+            MoveCamera(transform.position + (targetPosition.y - transform.position.y) * Vector3.up);
+        }
     }
 
     void OnDrawGizmos()

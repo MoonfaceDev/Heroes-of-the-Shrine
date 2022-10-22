@@ -17,10 +17,16 @@ public class EnemySpawnDefinition
     public bool partOfWave = true;
 }
 
-public class EncounterAction : BaseAction
+[Serializable]
+public class WaveDefinition
 {
     public EnemySpawnDefinition[] spawnDefinitions;
-    public GameObject[] preSpawnedEnemies;
+}
+
+public class EncounterAction : BaseAction
+{
+    public WaveDefinition[] waveDefinitions;
+    public GameObject[] firstWavePreSpawnedEnemies;
     public float timeToAlarm;
     public Rect cameraBorder;
 
@@ -30,45 +36,39 @@ public class EncounterAction : BaseAction
 
     public override void Invoke()
     {
-        EventManager eventManager = FindObjectOfType<EventManager>();
-
         CameraFollow cameraFollow = Camera.main.GetComponent<CameraFollow>();
         cameraFollow.Lock(cameraBorder);
 
-        List<GameObject> waveEnemies = new(preSpawnedEnemies);
+        StartWave(0);
+    }
 
-        foreach (EnemySpawnDefinition definition in spawnDefinitions)
+    private void StartWave(int index)
+    {
+        EventManager eventManager = FindObjectOfType<EventManager>();
+
+        List<GameObject> waveEnemies = index == 0 ? new(firstWavePreSpawnedEnemies) : new();
+
+        foreach (EnemySpawnDefinition definition in waveDefinitions[index].spawnDefinitions)
         {
+            int direction = GetDirection(definition.direction);
+            float borderEdge = direction == -1 ? cameraBorder.xMin : cameraBorder.xMax;
             GameObject enemy = Instantiate(definition.prefab);
             MovableObject movableObject = enemy.GetComponent<MovableObject>();
 
             UncontrolledBehaviour uncontrolledBehaviour = enemy.GetComponent<UncontrolledBehaviour>();
             uncontrolledBehaviour.Play();
 
-            if (definition.direction == Direction.Left)
+            movableObject.position.x = borderEdge + direction * spawnSourceDistance;
+
+            EventListener entranceEvent = eventManager.Attach(() => true, () => {
+                movableObject.position.x -= direction * entranceVelocity * Time.deltaTime;
+            }, false);
+
+            eventManager.Attach(() => Mathf.Sign(movableObject.position.x - (borderEdge - direction * spawnDestinationDistance)) == -direction, () =>
             {
-                movableObject.position.x = cameraBorder.xMin - spawnSourceDistance;
-                EventListener entranceEvent = eventManager.Attach(() => true, () => {
-                    movableObject.position.x += Time.deltaTime * entranceVelocity;
-                }, false);
-                eventManager.Attach(() => movableObject.position.x > cameraBorder.xMin + spawnDestinationDistance, () =>
-                {
-                    eventManager.Detach(entranceEvent);
-                    uncontrolledBehaviour.Stop();
-                });
-            }
-            else if (definition.direction == Direction.Right)
-            {
-                movableObject.position.x = cameraBorder.xMax + spawnSourceDistance;
-                EventListener entranceEvent = eventManager.Attach(() => true, () => {
-                    movableObject.position.x -= Time.deltaTime * entranceVelocity;
-                }, false);
-                eventManager.Attach(() => movableObject.position.x < cameraBorder.xMax - spawnDestinationDistance, () =>
-                {
-                    eventManager.Detach(entranceEvent);
-                    uncontrolledBehaviour.Stop();
-                });
-            }
+                eventManager.Detach(entranceEvent);
+                uncontrolledBehaviour.Stop();
+            });
 
             movableObject.position.z = definition.z;
 
@@ -78,17 +78,30 @@ public class EncounterAction : BaseAction
             }
             else
             {
-                enemy.GetComponent<EnemyBrain>().Alarm();
+                eventManager.StartTimeout(() => enemy.GetComponent<EnemyBrain>().Alarm(), timeToAlarm);
             }
         }
 
         eventManager.StartTimeout(() =>
         {
-            foreach(GameObject enemy in waveEnemies)
+            foreach (GameObject enemy in waveEnemies)
             {
                 enemy.GetComponent<EnemyBrain>().Alarm();
             }
         }, timeToAlarm);
+
+        eventManager.Attach(() => waveEnemies.TrueForAll(enemy => !enemy), () =>
+        {
+            if (index + 1 < waveDefinitions.Length)
+            {
+                StartWave(index + 1);
+            }
+            else
+            {
+                CameraFollow cameraFollow = Camera.main.GetComponent<CameraFollow>();
+                cameraFollow.Unlock();
+            }
+        });
     }
 
     private void OnDrawGizmosSelected()
@@ -97,16 +110,32 @@ public class EncounterAction : BaseAction
         Gizmos.DrawWireCube(new Vector3(cameraBorder.center.x, cameraBorder.center.y, 0.01f), new Vector3(cameraBorder.size.x, cameraBorder.size.y, 0.01f));
 
         Gizmos.color = Color.green;
-        foreach (EnemySpawnDefinition definition in spawnDefinitions)
+        for (int wave = 0; wave < waveDefinitions.Length; wave++)
         {
-            if (definition.direction == Direction.Left)
+            foreach (EnemySpawnDefinition definition in waveDefinitions[wave].spawnDefinitions)
             {
-                Gizmos.DrawSphere(MovableObject.ScreenCoordinates(new(cameraBorder.xMin, 0, definition.z)), 0.1f);
-            }
-            else if (definition.direction == Direction.Right)
-            {
-                Gizmos.DrawSphere(MovableObject.ScreenCoordinates(new(cameraBorder.xMax, 0, definition.z)), 0.1f);
+                if (definition.direction == Direction.Left)
+                {
+                    Gizmos.DrawWireSphere(MovableObject.ScreenCoordinates(new(cameraBorder.xMin, 0, definition.z)), 0.1f * (wave + 1));
+                }
+                else if (definition.direction == Direction.Right)
+                {
+                    Gizmos.DrawWireSphere(MovableObject.ScreenCoordinates(new(cameraBorder.xMax, 0, definition.z)), 0.1f * (wave + 1));
+                }
             }
         }
+    }
+
+    private static int GetDirection(Direction direction)
+    {
+        if (direction == Direction.Left)
+        {
+            return -1;
+        }
+        if (direction == Direction.Right)
+        {
+            return 1;
+        }
+        return 0;
     }
 }

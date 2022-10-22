@@ -49,7 +49,7 @@ public class AttackPattern : BasePattern
             }
             catch (CannotAttackException)
             {
-                Debug.LogError("[" + (Time.time - startTime) + "s] Cannot execute " + attack.AttackName);
+                Debug.LogWarning("[" + (Time.time - startTime) + "s] Cannot execute " + attack.AttackName);
             }
         }
     }

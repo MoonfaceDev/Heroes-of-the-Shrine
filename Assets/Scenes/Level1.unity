@@ -1619,24 +1619,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17a0bf4445f96143a36e22b59bc6b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDefinitions:
-  - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
-    direction: 0
-    z: -4
-    partOfWave: 1
-  - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
-    direction: 0
-    z: -2
-    partOfWave: 1
-  - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
-    direction: 1
-    z: -2
-    partOfWave: 1
-  - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
-    direction: 1
-    z: -4
-    partOfWave: 1
-  preSpawnedEnemies: []
+  waveDefinitions:
+  - spawnDefinitions:
+    - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
+      direction: 0
+      z: -3
+      partOfWave: 1
+    - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
+      direction: 1
+      z: -3
+      partOfWave: 1
+  - spawnDefinitions:
+    - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
+      direction: 0
+      z: -4
+      partOfWave: 1
+    - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
+      direction: 1
+      z: -2
+      partOfWave: 1
+    - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
+      direction: 1
+      z: -4
+      partOfWave: 1
+  firstWavePreSpawnedEnemies: []
   timeToAlarm: 1
   cameraBorder:
     serializedVersion: 2
@@ -7932,7 +7938,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -11.199951, y: 30}
+  m_AnchoredPosition: {x: -11.199951, y: 30.000015}
   m_SizeDelta: {x: 270, y: 270}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1411157424
