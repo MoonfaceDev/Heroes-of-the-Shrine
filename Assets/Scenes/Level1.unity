@@ -226,6 +226,124 @@ MonoBehaviour:
   animationDefinitions:
   - animationStateName: RecoveringFromKnockback
     shadowScale: 1.5
+--- !u!1 &101979069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 101979072}
+  - component: {fileID: 101979071}
+  - component: {fileID: 101979070}
+  m_Layer: 0
+  m_Name: Encounter 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &101979070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101979069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17a0bf4445f96143a36e22b59bc6b3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveDefinitions:
+  - spawnDefinitions:
+    - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
+      direction: 1
+      z: -4.5
+      partOfWave: 1
+    - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
+      direction: 1
+      z: -1.5
+      partOfWave: 1
+    - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
+      direction: 0
+      z: -3
+      partOfWave: 1
+  - spawnDefinitions:
+    - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
+      direction: 1
+      z: -4.5
+      partOfWave: 1
+    - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
+      direction: 1
+      z: -1.5
+      partOfWave: 1
+    - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
+      direction: 1
+      z: -3
+      partOfWave: 1
+  - spawnDefinitions:
+    - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
+      direction: 1
+      z: -4.5
+      partOfWave: 1
+    - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
+      direction: 1
+      z: -1.5
+      partOfWave: 1
+    - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
+      direction: 1
+      z: -3
+      partOfWave: 1
+    - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
+      direction: 0
+      z: -2
+      partOfWave: 1
+    - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
+      direction: 0
+      z: -4
+      partOfWave: 1
+  firstWavePreSpawnedEnemies: []
+  timeToAlarm: 1
+  cameraBorder:
+    serializedVersion: 2
+    x: 43
+    y: -4
+    width: 20
+    height: 8
+  spawnSourceDistance: 0.5
+  spawnDestinationDistance: 0.5
+  entranceVelocity: 5
+--- !u!114 &101979071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101979069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcbe33cf8e2c8f94bb342187d1f9c4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: 101979070}
+  minimumX: 53
+--- !u!4 &101979072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101979069}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &299247557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1591,7 +1709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   action: {fileID: 807749453}
-  minimumX: 27
+  minimumX: 17
 --- !u!4 &807749452
 Transform:
   m_ObjectHideFlags: 0
@@ -1621,17 +1739,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveDefinitions:
   - spawnDefinitions:
-    - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
-      direction: 0
-      z: -3
+    - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
+      direction: 1
+      z: -2
       partOfWave: 1
     - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
       direction: 1
       z: -3
       partOfWave: 1
+    - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
+      direction: 1
+      z: -4
+      partOfWave: 1
   - spawnDefinitions:
-    - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
-      direction: 0
+    - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
+      direction: 1
       z: -4
       partOfWave: 1
     - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
@@ -1639,20 +1761,28 @@ MonoBehaviour:
       z: -2
       partOfWave: 1
     - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
-      direction: 1
+      direction: 0
       z: -4
+      partOfWave: 1
+    - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
+      direction: 0
+      z: -3
+      partOfWave: 1
+    - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
+      direction: 0
+      z: -2
       partOfWave: 1
   firstWavePreSpawnedEnemies: []
   timeToAlarm: 1
   cameraBorder:
     serializedVersion: 2
-    x: 14.8
+    x: 6
     y: -4
-    width: 23.14
+    width: 25
     height: 8
-  spawnSourceDistance: 1
-  spawnDestinationDistance: 1
-  entranceVelocity: 3
+  spawnSourceDistance: 0.5
+  spawnDestinationDistance: 0.5
+  entranceVelocity: 5
 --- !u!1 &819813264
 GameObject:
   m_ObjectHideFlags: 0
@@ -2174,7 +2304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab68d069e0e79504ebe8ab7fd318ee7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxComboDelay: 0.5
+  maxComboDelay: 0.2
   hittableTags:
   - Enemy
   lastAttack: {fileID: 0}
