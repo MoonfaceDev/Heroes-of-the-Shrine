@@ -59,6 +59,7 @@ public class EncounterAction : BaseAction
             uncontrolledBehaviour.Play();
 
             movableObject.position.x = borderEdge + direction * spawnSourceDistance;
+            uncontrolledBehaviour.LookDirection = -direction;
 
             EventListener entranceEvent = eventManager.Attach(() => true, () => {
                 movableObject.position.x -= direction * entranceVelocity * Time.deltaTime;
