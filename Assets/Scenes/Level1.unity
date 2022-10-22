@@ -313,8 +313,6 @@ MonoBehaviour:
     width: 20
     height: 8
   spawnSourceDistance: 0.5
-  spawnDestinationDistance: 0.5
-  entranceVelocity: 5
 --- !u!114 &101979071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1158,6 +1156,12 @@ MonoBehaviour:
     y: -4
     width: 96
     height: 8
+  border:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
   lerpSpeed: 3
 --- !u!1 &521153111
 GameObject:
@@ -1383,7 +1387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figureObject: {fileID: 0}
-  position: {x: -8.56, y: 0, z: -5.06}
+  position: {x: -18, y: 0, z: -5}
   startPosition: {x: 0, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -1399,7 +1403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da38a530950dda94f945ad171fc0fd37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridWorldSize: {x: 82, y: 0, z: 3.6}
+  gridWorldSize: {x: 96, y: 0, z: 3.6}
   nodeRadius: 0.25
 --- !u!4 &631861820
 Transform:
@@ -1409,7 +1413,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631861817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.56, y: -4.048, z: 0}
+  m_LocalPosition: {x: -18, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1781,8 +1785,6 @@ MonoBehaviour:
     width: 25
     height: 8
   spawnSourceDistance: 0.5
-  spawnDestinationDistance: 0.5
-  entranceVelocity: 5
 --- !u!1 &819813264
 GameObject:
   m_ObjectHideFlags: 0
