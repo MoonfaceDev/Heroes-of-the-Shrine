@@ -839,11 +839,11 @@ MonoBehaviour:
   periodicHitCount: 4
   periodicHitElectrifyRate: 0.2
   periodicStunTime: 0.5
-  periodicDamage: 5
+  periodicDamage: 2.5
   explosionHitbox: {fileID: 5884619158396451716}
   epxlosionKnockbackPower: 10
   explosionKnockbackDirection: 30
-  explosionDamage: 20
+  explosionDamage: 10
 --- !u!114 &5884619158741390419
 MonoBehaviour:
   m_ObjectHideFlags: 0
