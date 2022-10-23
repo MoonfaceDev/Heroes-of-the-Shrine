@@ -30,9 +30,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: timeout
-    m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: playerDistance
+    m_EventTreshold: 6
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3451182139077028073}
   m_Solo: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13e758744219be54c9c5441d9ab98563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasRandomExitTime: 1
+  hasRandomExitTime: 0
   minTime: 1
   maxTime: 3
   targetTag: Player
@@ -648,7 +648,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: playerDistance
-    m_EventTreshold: 8
+    m_EventTreshold: 6
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3451182139077028073}
   m_Solo: 0
@@ -1037,9 +1037,9 @@ AnimatorStateTransition:
     m_ConditionEvent: playerDistance
     m_EventTreshold: 1.3
   - m_ConditionMode: 4
-    m_ConditionEvent: playerDistance
-    m_EventTreshold: 2
-  - m_ConditionMode: 3
+    m_ConditionEvent: playerDistanceX
+    m_EventTreshold: 3
+  - m_ConditionMode: 4
     m_ConditionEvent: playerDistanceZ
     m_EventTreshold: 0.75
   - m_ConditionMode: 1
@@ -1446,6 +1446,9 @@ AnimatorStateTransition:
     m_EventTreshold: 3
   - m_ConditionMode: 1
     m_ConditionEvent: playerAttacking
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: rage
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3156400213124108885}
@@ -2695,9 +2698,6 @@ AnimatorStateTransition:
     m_ConditionEvent: playerDistance
     m_EventTreshold: 10
   - m_ConditionMode: 2
-    m_ConditionEvent: playerAttacking
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
     m_ConditionEvent: enemiesAttacking
     m_EventTreshold: 0
   - m_ConditionMode: 2
@@ -2796,6 +2796,9 @@ AnimatorStateTransition:
     m_EventTreshold: 3
   - m_ConditionMode: 1
     m_ConditionEvent: playerAttacking
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: rage
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3156400213124108885}
@@ -3497,6 +3500,9 @@ AnimatorStateTransition:
     m_EventTreshold: 3
   - m_ConditionMode: 1
     m_ConditionEvent: playerAttacking
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: rage
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3156400213124108885}
