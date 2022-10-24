@@ -1,4 +1,5 @@
 using UnityEditor;
+using UnityEngine;
 
 [CustomEditor(typeof(BasePattern), true)]
 public class BasePatternEditor : Editor
@@ -12,6 +13,7 @@ public class BasePatternEditor : Editor
         hasRandomExitTime = serializedObject.FindProperty("hasRandomExitTime");
         minTime = serializedObject.FindProperty("minTime");
         maxTime = serializedObject.FindProperty("maxTime");
+        Debug.Log(minTime);
     }
 
     public override void OnInspectorGUI()

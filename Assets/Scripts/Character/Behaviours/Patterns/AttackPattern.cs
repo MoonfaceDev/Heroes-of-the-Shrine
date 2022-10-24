@@ -63,4 +63,12 @@ public class AttackPattern : BasePattern
             EventManager.StopCoroutine(attackCoroutine);
         }
     }
+
+    private void OnDestroy()
+    {
+        if (attackCoroutine != null)
+        {
+            EventManager.StopCoroutine(attackCoroutine);
+        }
+    }
 }

@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class Transition
 {
     public MaskableGraphic graphic;
-    public float transitionSpeed;
+    public float transitionDuration;
+    public Color startColor;
     public Color finalColor;
 }
 
@@ -16,11 +17,15 @@ public class DeathPanel : MonoBehaviour
 {
     public Transition[] transitions;
 
-    void Update()
+    private void Start()
     {
-        foreach (Transition transition in transitions)
+        float startTime = Time.time;
+        EventManager.Instance.Attach(() => true, () =>
         {
-            transition.graphic.color = Color.Lerp(transition.graphic.color, transition.finalColor, transition.transitionSpeed * Time.deltaTime);
-        }
+            foreach (Transition transition in transitions)
+            {
+                transition.graphic.color = Color.Lerp(transition.startColor, transition.finalColor, (Time.time - startTime) / transition.transitionDuration);
+            }
+        }, false);
     }
 }

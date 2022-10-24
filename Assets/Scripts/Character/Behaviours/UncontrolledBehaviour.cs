@@ -2,19 +2,9 @@ using UnityEngine;
 
 public class UncontrolledBehaviour : PlayableBehaviour
 {
-    public bool Active
-    {
-        get => active;
-        private set
-        {
-            active = value;
-            Animator.SetBool("uncontrolled", active);
-        }
-    }
-
     private bool active;
 
-    public override bool Playing => Active;
+    public override bool Playing => active;
 
     public void Play()
     {
@@ -27,16 +17,16 @@ public class UncontrolledBehaviour : PlayableBehaviour
         Enabled = true;
         StopBehaviours(typeof(PlayableBehaviour));
 
-        Active = true;
+        active = true;
         InvokeOnPlay();
     }
 
     public override void Stop()
     {
-        if (Active)
+        if (active)
         {
             InvokeOnStop();
-            Active = false;
+            active = false;
             EnableBehaviours(typeof(CharacterBehaviour));
         }
     }

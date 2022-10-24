@@ -20,15 +20,16 @@ public class CameraFollow : MonoBehaviour
     private void Awake()
     {
         camera = GetComponent<Camera>();
-        target = GameObject.FindGameObjectWithTag(targetTag).GetComponent<MovableObject>();
     }
 
     private void Start()
     {
         Lock(worldBorder);
+        target = GameObject.FindGameObjectWithTag(targetTag).GetComponent<MovableObject>();
         if (target)
         {
             offset = transform.position - MovableObject.GroundScreenCoordinates(target.position);
+            offset.x = 0;
         }
     }
 
@@ -52,21 +53,22 @@ public class CameraFollow : MonoBehaviour
 
     private void MoveCamera(Vector3 targetPos)
     {
-        transform.position = Vector3.Lerp(transform.position, targetPos, lerpSpeed * Time.deltaTime);
+        Vector3 next = Vector3.Lerp(transform.position, targetPos, lerpSpeed * Time.deltaTime);
+        if ((next.x - CameraWidth / 2 > border.xMin && next.x + CameraWidth / 2 < border.xMax) || (transform.position.x < next.x && transform.position.x - CameraWidth / 2 < border.xMin) || (transform.position.x > next.x && transform.position.x + CameraWidth / 2 > border.xMax))
+        {
+            transform.position = transform.position + (next.x - transform.position.x) * Vector3.right;
+        }
+        if ((next.y - CameraHeight / 2 > border.yMin && next.y + CameraHeight / 2 < border.yMax) || (transform.position.y < next.y && transform.position.y - CameraHeight / 2 < border.yMin) || (transform.position.y > next.y && transform.position.y + CameraHeight / 2 > border.yMax))
+        {
+            transform.position = transform.position + (next.y - transform.position.y) * Vector3.up;
+        }
     }
 
     private void LateUpdate()
     {
         if (target == null) return;
         Vector3 targetPosition = MovableObject.GroundScreenCoordinates(target.position) + offset;
-        if ((transform.position.x - CameraWidth / 2 > border.xMin && transform.position.x + CameraWidth / 2 < border.xMax) || (transform.position.x < targetPosition.x && transform.position.x - CameraWidth / 2 < border.xMin) || (transform.position.x > targetPosition.x && transform.position.x + CameraWidth / 2 > border.xMax))
-        {
-            MoveCamera(transform.position + (targetPosition.x - transform.position.x) * Vector3.right);
-        }
-        if ((transform.position.y - CameraHeight / 2 > border.yMin && transform.position.y + CameraHeight / 2 < border.yMax) || (transform.position.y < targetPosition.y && transform.position.y - CameraHeight / 2 < border.yMin) || (transform.position.y > targetPosition.y && transform.position.y + CameraHeight / 2 > border.yMax))
-        {
-            MoveCamera(transform.position + (targetPosition.y - transform.position.y) * Vector3.up);
-        }
+        MoveCamera(targetPosition);
     }
 
     void OnDrawGizmos()
