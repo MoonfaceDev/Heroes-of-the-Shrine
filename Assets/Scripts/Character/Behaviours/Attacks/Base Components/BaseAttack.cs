@@ -10,7 +10,8 @@ public class CannotAttackException : Exception
 public abstract class BaseAttack : PlayableBehaviour
 {
     public bool instant = false;
-    public bool interruptable = false;
+    public bool interruptable = true;
+    public bool hardRecovery = false;
 
     public string AttackName
     {

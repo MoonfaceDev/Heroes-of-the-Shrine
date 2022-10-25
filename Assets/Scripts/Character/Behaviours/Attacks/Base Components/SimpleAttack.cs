@@ -107,7 +107,7 @@ public class SimpleAttack : BaseAttack
         return base.CanPlay() 
             && midair == IsPlaying(typeof(JumpBehaviour))
             && AllStopped(typeof(SlideBehaviour), typeof(DodgeBehaviour))
-            && !((attackManager.Anticipating || attackManager.Active) && !(instant && attackManager.IsInterruptable()))
+            && !((attackManager.Anticipating || attackManager.Active || (hardRecovery && attackManager.Recovering)) && !(instant && attackManager.IsInterruptable()))
             && ComboCondition();
     }
 
