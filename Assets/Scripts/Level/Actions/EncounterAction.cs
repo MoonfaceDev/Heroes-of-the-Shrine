@@ -35,8 +35,8 @@ public class EncounterAction : BaseAction
 
     public override void Invoke()
     {
-        CameraFollow cameraFollow = Camera.main.GetComponent<CameraFollow>();
-        cameraFollow.Lock(cameraBorder);
+        CameraMovement cameraMovement = Camera.main.GetComponent<CameraMovement>();
+        cameraMovement.Lock(cameraBorder);
 
         StartWave(0);
     }
@@ -86,8 +86,8 @@ public class EncounterAction : BaseAction
             }
             else
             {
-                CameraFollow cameraFollow = Camera.main.GetComponent<CameraFollow>();
-                cameraFollow.Unlock();
+                CameraMovement cameraMovement = Camera.main.GetComponent<CameraMovement>();
+                cameraMovement.Unlock();
             }
         });
     }

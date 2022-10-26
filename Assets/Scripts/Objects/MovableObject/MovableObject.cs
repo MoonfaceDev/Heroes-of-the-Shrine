@@ -33,12 +33,12 @@ public class MovableObject : MonoBehaviour
     public event Action OnStuck;
 
     private WalkableGrid walkableGrid;
-    private CameraFollow cameraFollow;
+    private CameraMovement cameraMovement;
 
     public void Awake()
     {
         walkableGrid = FindObjectOfType<WalkableGrid>();
-        cameraFollow = Camera.main.GetComponent<CameraFollow>();
+        cameraMovement = Camera.main.GetComponent<CameraMovement>();
         startPosition = position;
         velocity = Vector3.zero;
         acceleration = Vector3.zero;
@@ -86,9 +86,9 @@ public class MovableObject : MonoBehaviour
             Vector2 gridPosition = ToPlane(walkableGrid.GetComponent<MovableObject>().position);
             Vector2 gridSize = ToPlane(walkableGrid.gridWorldSize);
             intersections.AddRange(LineRectangleIntersections(previousGroundPosition, groundPosition, gridPosition, gridSize));
-            if (cameraFollow && CompareTag("Player"))
+            if (cameraMovement && CompareTag("Player"))
             {
-                Rect border = cameraFollow.border;
+                Rect border = cameraMovement.border;
                 Tuple<Vector2, Vector2>[] lines = new Tuple<Vector2, Vector2>[] {
                     new (new (border.xMin, gridPosition.y), new (border.xMin, (gridPosition + gridSize).y)),
                     new (new (border.xMax, gridPosition.y), new (border.xMax, (gridPosition + gridSize).y)),
@@ -141,7 +141,7 @@ public class MovableObject : MonoBehaviour
         {
             return false;
         }
-        if (walkableGrid && cameraFollow && CompareTag("Player") && (position.x < cameraFollow.border.xMin || position.x > cameraFollow.border.xMax))
+        if (walkableGrid && cameraMovement && CompareTag("Player") && (position.x < cameraMovement.border.xMin || position.x > cameraMovement.border.xMax))
         {
             return false;
         }

@@ -17,7 +17,7 @@ public class CameraFocus : MonoBehaviour
     public void Zoom(Vector2 position, float factor)
     {
         this.position = position;
-        this.targetSize = camera.orthographicSize / factor;
+        targetSize = camera.orthographicSize / factor;
         active = true;
     }
 

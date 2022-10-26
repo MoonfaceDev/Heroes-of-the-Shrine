@@ -12,8 +12,8 @@ public class PlayerSpawning : MonoBehaviour
         gameManager.FadeIn();
 
         Camera camera = SetupCamera();
-        CameraFollow cameraFollow = camera.GetComponent<CameraFollow>();
-        SpawnPlayer(cameraFollow.worldBorder.xMin + 0.5f);
+        CameraMovement cameraMovement = camera.GetComponent<CameraMovement>();
+        SpawnPlayer(cameraMovement.worldBorder.xMin + 0.5f);
     }
 
     private void Start()
@@ -32,8 +32,8 @@ public class PlayerSpawning : MonoBehaviour
     private Camera SetupCamera()
     {
         Camera camera = Camera.main;
-        CameraFollow cameraFollow = camera.GetComponent<CameraFollow>();
-        camera.transform.position += (cameraFollow.worldBorder.xMin + cameraFollow.CameraWidth / 2 - camera.transform.position.x) * Vector3.right;
+        CameraMovement cameraMovement = Camera.main.GetComponent<CameraMovement>();
+        camera.transform.position += (cameraMovement.worldBorder.xMin + cameraMovement.CameraWidth / 2 - camera.transform.position.x) * Vector3.right;
         return camera;
     }
 
