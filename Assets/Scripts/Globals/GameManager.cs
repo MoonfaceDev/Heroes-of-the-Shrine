@@ -1,34 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public Image fadePanel;
+    public FadePanel fadePanel;
     public float fadeDelay;
     public float fadeDuration;
 
-    public void FadeIn()
+    private void Start()
     {
-        fadePanel.gameObject.SetActive(true);
-
-        float startTime = Time.time;
-        EventManager.Instance.Attach(() => true, () =>
-        {
-            fadePanel.color = Color.Lerp(Color.black, new Color(0, 0, 0, 0), (Time.time - startTime) / fadeDuration);
-        }, false);
-
-        EventManager.Instance.StartTimeout(() => fadePanel.gameObject.SetActive(false), fadeDuration);
-    }
-
-    public void FadeOut()
-    {
-        fadePanel.gameObject.SetActive(true);
-        float startTime = Time.time;
-        EventManager.Instance.Attach(() => true, () =>
-        {
-            fadePanel.color = Color.Lerp(new Color(0, 0, 0, 0), Color.black, (Time.time - startTime) / fadeDuration);
-        }, false);
+        fadePanel.FadeIn(fadeDuration);
     }
 
     public void Quit()
@@ -49,7 +30,7 @@ public class GameManager : MonoBehaviour
 
         EventManager.Instance.StartTimeout(() =>
         {
-            FadeOut();
+            fadePanel.FadeOut(fadeDuration);
             EventManager.Instance.StartTimeout(Restart, fadeDuration);
         }, fadeDelay);
     }

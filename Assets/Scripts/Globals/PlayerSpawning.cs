@@ -8,9 +8,6 @@ public class PlayerSpawning : MonoBehaviour
 
     void Awake()
     {
-        GameManager gameManager = FindObjectOfType<GameManager>();
-        gameManager.FadeIn();
-
         Camera camera = SetupCamera();
         CameraMovement cameraMovement = camera.GetComponent<CameraMovement>();
         SpawnPlayer(cameraMovement.worldBorder.xMin + 0.5f);
