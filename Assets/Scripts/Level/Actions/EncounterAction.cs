@@ -25,6 +25,7 @@ public class WaveDefinition
 
 public class EncounterAction : BaseAction
 {
+    public WaveAnnouncer waveAnnouncerPrefab;
     public WaveDefinition[] waveDefinitions;
     public GameObject[] firstWavePreSpawnedEnemies;
     public float timeToAlarm;
@@ -44,10 +45,17 @@ public class EncounterAction : BaseAction
     private void StartWave(int index)
     {
         EventManager eventManager = FindObjectOfType<EventManager>();
+        WaveDefinition wave = waveDefinitions[index];
+
+        if (waveAnnouncerPrefab)
+        {
+            WaveAnnouncer waveAnnouncer = Instantiate(waveAnnouncerPrefab);
+            waveAnnouncer.Activate(index);
+        }
 
         List<GameObject> waveEnemies = index == 0 ? new(firstWavePreSpawnedEnemies) : new();
 
-        foreach (EnemySpawnDefinition definition in waveDefinitions[index].spawnDefinitions)
+        foreach (EnemySpawnDefinition definition in wave.spawnDefinitions)
         {
             int direction = GetDirection(definition.direction);
             float borderEdge = direction == -1 ? cameraBorder.xMin : cameraBorder.xMax;
