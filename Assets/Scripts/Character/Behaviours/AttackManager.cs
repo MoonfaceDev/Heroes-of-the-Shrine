@@ -76,6 +76,8 @@ public class AttackManager : PlayableBehaviour
 
     public bool Recovering => AnyAttack((attack) => attack.Recovering);
 
+    public bool HardRecovrting => AnyAttack((attack) => attack.hardRecovery && attack.Recovering);
+
     public override bool Playing => AnyAttack((attack) => attack.Playing);
 
     public bool IsInterruptable()
