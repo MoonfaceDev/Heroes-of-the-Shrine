@@ -36,5 +36,9 @@ class HitboxEditor : Editor
             hitbox.transform.position = MovableObject.ScreenCoordinates(worldPosition);
         }
         serializedObject.ApplyModifiedProperties();
+        if (GUI.changed)
+        {
+            EditorUtility.SetDirty(hitbox);
+        }
     }
 }

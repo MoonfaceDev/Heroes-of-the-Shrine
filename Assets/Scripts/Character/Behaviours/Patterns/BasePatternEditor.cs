@@ -34,5 +34,9 @@ public class BasePatternEditor : Editor
         }
 
         serializedObject.ApplyModifiedProperties();
+        if (GUI.changed)
+        {
+            EditorUtility.SetDirty(pattern);
+        }
     }
 }

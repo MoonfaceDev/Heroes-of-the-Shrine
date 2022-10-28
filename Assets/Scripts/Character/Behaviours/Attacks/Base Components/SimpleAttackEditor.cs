@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEditor;
+using UnityEngine;
 
 [CustomEditor(typeof(SimpleAttack), true)]
 public class SimpleAttackEditor : Editor
@@ -120,6 +121,9 @@ public class SimpleAttackEditor : Editor
         }
 
         serializedObject.ApplyModifiedProperties();
+        if (GUI.changed) { 
+            EditorUtility.SetDirty(attack);
+        }
     }
 
     private bool HasMethod(SimpleAttack attack, string name)
