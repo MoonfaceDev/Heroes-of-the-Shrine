@@ -503,7 +503,7 @@ Transform:
   - {fileID: 5884619157288324020}
   - {fileID: 5884619158396451719}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5884619158741390438
 MonoBehaviour:
@@ -618,7 +618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 0
-  defaultSpeed: 3
+  defaultSpeed: 2
 --- !u!114 &5884619158741390423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,6 +689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
+  hardRecovery: 0
   previousAttacks: []
   midair: 0
   anticipateDuration: 0.1
@@ -716,6 +717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
+  hardRecovery: 0
   previousAttacks:
   - {fileID: 5884619158741390443}
   midair: 0
@@ -744,6 +746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
+  hardRecovery: 0
   previousAttacks:
   - {fileID: 5884619158741390442}
   midair: 0
@@ -819,9 +822,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
+  hardRecovery: 0
   previousAttacks: []
   midair: 0
-  anticipateDuration: 0.15
+  anticipateDuration: 0.45
   activeDuration: 0.5
   recoveryDuration: 0.15
   hitbox: {fileID: 0}
