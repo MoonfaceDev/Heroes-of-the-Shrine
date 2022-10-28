@@ -33,5 +33,9 @@ class MovableObjectEditor : Editor
             movableObject.figureObject.transform.localPosition = MovableObject.ScreenCoordinates(movableObject.position.y * Vector3.up);
         }
         serializedObject.ApplyModifiedProperties();
+        if (GUI.changed)
+        {
+            EditorUtility.SetDirty(movableObject);
+        }
     }
 }

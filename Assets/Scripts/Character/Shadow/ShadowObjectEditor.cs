@@ -33,5 +33,9 @@ class ShadowObjectEditor : Editor
             shadowObject.transform.localScale = MovableObject.GroundScreenCoordinates(Vector3.Scale(shadowObject.shadowScale, scale * Vector3.one));
         }
         serializedObject.ApplyModifiedProperties();
+        if (GUI.changed)
+        {
+            EditorUtility.SetDirty(shadowObject);
+        }
     }
 }
