@@ -1,5 +1,8 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+
+public delegate bool IsExcluded(Node node);
 
 public class Pathfind : MonoBehaviour
 {
@@ -11,11 +14,15 @@ public class Pathfind : MonoBehaviour
         grid = FindObjectOfType<WalkableGrid>();
     }
 
-    public Vector3 Direction(Vector3 start, Vector3 end)
+    public Vector3 Direction(Vector3 start, Vector3 end, IsExcluded isExcluded = null)
     {
         Node startNode = grid.NodeFromWorldPoint(start);
         Node endNode = grid.ClosestWalkableNode(end);
-        List<Node> path = ThetaStar(startNode, endNode);
+        if (isExcluded(startNode) || isExcluded(endNode))
+        {
+            return Vector3.zero;
+        }
+        List<Node> path = ThetaStar(startNode, endNode, isExcluded);
         if (path == null)
         {
             path = new List<Node>{ startNode, endNode };
@@ -61,7 +68,7 @@ public class Pathfind : MonoBehaviour
         return path;
     }
 
-    private List<Node> ThetaStar(Node start, Node end)
+    private List<Node> ThetaStar(Node start, Node end, IsExcluded isExcluded = null)
     {
         PriorityQueue<Node> frontier = new();
         frontier.Enqueue(start, 0);
@@ -72,6 +79,10 @@ public class Pathfind : MonoBehaviour
             Node current = frontier.Dequeue();
             foreach (Node node in grid.Neighbors(current))
             {
+                if (isExcluded != null && isExcluded(node))
+                {
+                    continue;
+                }
                 float newCost;
                 if (Mathf.Abs(node.x - current.x) == 1 || Mathf.Abs(node.y - current.y) == 1)
                 {

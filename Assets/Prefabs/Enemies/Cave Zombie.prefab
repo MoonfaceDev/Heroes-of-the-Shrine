@@ -162,6 +162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3354150098320785789}
   - component: {fileID: 3354150098320785788}
+  - component: {fileID: 6093531673381940708}
   - component: {fileID: 3354150098320785787}
   - component: {fileID: 3354150098320785786}
   - component: {fileID: 3354150098320785785}
@@ -223,6 +224,20 @@ MonoBehaviour:
   startPosition: {x: 0, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
+--- !u!114 &6093531673381940708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354150098320785675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679915e21248d4340a3599b8048c2ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cacheTag: Enemy
+  object: {fileID: 3354150098320785787}
 --- !u!114 &3354150098320785787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,6 +405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
+  hardRecovery: 0
   previousAttacks: []
   midair: 0
   anticipateDuration: 0.2
@@ -417,6 +433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
+  hardRecovery: 0
   previousAttacks:
   - {fileID: 3354150098320785777}
   midair: 0

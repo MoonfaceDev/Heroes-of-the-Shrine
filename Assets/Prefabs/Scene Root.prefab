@@ -88,7 +88,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e11117f84eb0a34fa8b9422658e3d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitboxes: []
+  cacheTags:
+  - Barrier
+  - Player
+  - Enemy
 --- !u!114 &5826350639003675520
 MonoBehaviour:
   m_ObjectHideFlags: 0

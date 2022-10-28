@@ -455,6 +455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5884619158741390439}
   - component: {fileID: 5884619158741390438}
+  - component: {fileID: 6526483692788110630}
   - component: {fileID: 5884619158741390457}
   - component: {fileID: 5884619158741390434}
   - component: {fileID: 5884619158741390456}
@@ -503,7 +504,7 @@ Transform:
   - {fileID: 5884619157288324020}
   - {fileID: 5884619158396451719}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5884619158741390438
 MonoBehaviour:
@@ -522,6 +523,20 @@ MonoBehaviour:
   startPosition: {x: 0, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
+--- !u!114 &6526483692788110630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5884619158741390458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679915e21248d4340a3599b8048c2ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cacheTag: Enemy
+  object: {fileID: 5884619158741390457}
 --- !u!114 &5884619158741390457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,6 +704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
+  hardRecovery: 0
   previousAttacks: []
   midair: 0
   anticipateDuration: 0.1
@@ -716,6 +732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
+  hardRecovery: 0
   previousAttacks:
   - {fileID: 5884619158741390443}
   midair: 0
@@ -744,6 +761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
+  hardRecovery: 0
   previousAttacks:
   - {fileID: 5884619158741390442}
   midair: 0
@@ -819,6 +837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
+  hardRecovery: 0
   previousAttacks: []
   midair: 0
   anticipateDuration: 0.15

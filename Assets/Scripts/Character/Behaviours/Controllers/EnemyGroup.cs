@@ -13,7 +13,7 @@ public class EnemyGroup : CharacterBehaviour
 
     void Update()
     {
-        EnemyGroup[] enemies = FindObjectsOfType<EnemyGroup>();
+        EnemyGroup[] enemies = CachedObjectsManager.Instance.GetObjects<Character>("Enemy").Select(enemy => enemy.GetComponent<EnemyGroup>()).ToArray();
 
         // Enemy count
         stateMachine.SetInteger("enemyCount", enemies.Length);
@@ -35,7 +35,7 @@ public class EnemyGroup : CharacterBehaviour
         }
 
         // Closest to the player
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Character player = CachedObjectsManager.Instance.GetObject<Character>("Player");
         if (player)
         {
             MovableObject playerMovableObject = player.GetComponent<MovableObject>();

@@ -73,7 +73,7 @@ public class MovableObject : MonoBehaviour
     {
         Vector2 previousGroundPosition = ToPlane(position);
         Vector2 groundPosition = ToPlane(position);
-        Hitbox[] barriers = HitboxManager.Instance.Barriers;
+        Hitbox[] barriers = CachedObjectsManager.Instance.GetObjects<Hitbox>("Barrier").ToArray();
         List<Vector2> intersections = new();
         foreach (Hitbox barrier in barriers)
         {
@@ -133,7 +133,7 @@ public class MovableObject : MonoBehaviour
 
     public bool IsValidPosition(Vector3 position)
     {
-        if (HitboxManager.Instance.GetOverlappingBarriers(position).Length > 0)
+        if (CachedObjectsManager.Instance.GetObjects<Hitbox>("Barrier").Any(hitbox => hitbox.IsInside(position)))
         {
             return false;
         }

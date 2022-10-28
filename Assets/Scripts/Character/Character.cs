@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(CachedObject))]
 [RequireComponent(typeof(MovableObject))]
 public class Character : MonoBehaviour
 {

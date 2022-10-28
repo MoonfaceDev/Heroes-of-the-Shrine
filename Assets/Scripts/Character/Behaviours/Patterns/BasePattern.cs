@@ -22,7 +22,7 @@ public abstract class BasePattern : StateMachineBehaviour
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
-        Debug.Log(animator.name + " starting " + GetType().Name);
+        // Debug.Log(animator.name + " starting " + GetType().Name);
         OnEnter?.Invoke();
         time = 0;
         if (hasRandomExitTime)
@@ -44,7 +44,7 @@ public abstract class BasePattern : StateMachineBehaviour
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
-        Debug.Log(animator.name + " exited " + GetType().Name + " after " + time + "s");
+        // Debug.Log(animator.name + " exited " + GetType().Name + " after " + time + "s");
         OnExit?.Invoke();
     }
 }

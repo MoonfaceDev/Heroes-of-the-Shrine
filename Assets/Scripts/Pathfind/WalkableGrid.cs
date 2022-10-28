@@ -57,6 +57,15 @@ public class WalkableGrid : MonoBehaviour
 		}
 	}
 
+	private Vector2Int IndexFromWorldPoint(Vector3 worldPosition)
+	{
+		float percentX = Mathf.Clamp01((worldPosition.x - movableObject.position.x) / gridWorldSize.x);
+		float percentZ = Mathf.Clamp01((worldPosition.z - movableObject.position.z) / gridWorldSize.z);
+		int x = Mathf.RoundToInt((GridSizeX - 1) * percentX);
+		int y = Mathf.RoundToInt((GridSizeZ - 1) * percentZ);
+		return new Vector2Int(x, y);
+	}
+
 	public Node NodeFromWorldPoint(Vector3 worldPosition)
 	{
 		Vector2Int index = IndexFromWorldPoint(worldPosition);
@@ -88,15 +97,6 @@ public class WalkableGrid : MonoBehaviour
 		Vector3 bottomLeft = movableObject.position;
 		Vector3 topRight = bottomLeft + gridWorldSize;
 		return !(point.x < bottomLeft.x || point.x > topRight.x || point.z < bottomLeft.z || point.z > topRight.z);
-	}
-
-	public Vector2Int IndexFromWorldPoint(Vector3 worldPosition)
-	{
-		float percentX = Mathf.Clamp01((worldPosition.x - movableObject.position.x) / gridWorldSize.x);
-		float percentZ = Mathf.Clamp01((worldPosition.z - movableObject.position.z) / gridWorldSize.z);
-		int x = Mathf.RoundToInt((GridSizeX-1) * percentX);
-		int y = Mathf.RoundToInt((GridSizeZ-1) * percentZ);
-		return new Vector2Int(x, y);
 	}
 
 	public List<Node> Neighbors(Node node)

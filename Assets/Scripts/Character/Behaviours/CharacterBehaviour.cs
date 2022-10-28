@@ -7,6 +7,7 @@ public abstract class CharacterBehaviour : MonoBehaviour
 {
     public static float gravityAcceleration = 20;
 
+    public Character Character => character;
     public Animator Animator => character.animator;
     public EventManager EventManager => character.eventManager;
     public MovableObject MovableObject => character.movableObject;

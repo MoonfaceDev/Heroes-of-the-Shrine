@@ -1,5 +1,7 @@
 using UnityEngine;
 
+public delegate bool GetOverrideDirection(out Vector3 direction);
+
 [RequireComponent(typeof(Pathfind))]
 [RequireComponent(typeof(WalkBehaviour))]
 public class FollowBehaviour : BaseMovementBehaviour
@@ -30,7 +32,7 @@ public class FollowBehaviour : BaseMovementBehaviour
         walkBehaviour.OnStop += Stop;
     }
 
-    public void Play(MovableObject target, float speedMultiplier)
+    public void Play(MovableObject target, float speedMultiplier, IsExcluded isExcluded = null, GetOverrideDirection getOverrideDirection = null)
     {
         if (!CanPlay())
         {
@@ -43,9 +45,23 @@ public class FollowBehaviour : BaseMovementBehaviour
         walkBehaviour.speed.AddModifier(speedModifier);
 
         followEvent = EventManager.Attach(() => true, () => {
-            Vector3 direction = pathfind.Direction(MovableObject.position, target.position);
-            walkBehaviour.Play(direction.x, direction.z);
+            Vector3 direction = GetDirection(target, isExcluded, getOverrideDirection);
+            walkBehaviour.Play(direction.x, direction.z, false);
+            LookDirection = Mathf.RoundToInt(Mathf.Sign(target.position.x - MovableObject.position.x));
         }, false);
+    }
+
+    private Vector3 GetDirection(MovableObject target, IsExcluded isExcluded, GetOverrideDirection getOverrideDirection)
+    {
+        if (getOverrideDirection != null)
+        {
+            bool shouldOverride = getOverrideDirection(out Vector3 direction);
+            if (shouldOverride)
+            {
+                return direction;
+            }
+        }
+        return pathfind.Direction(MovableObject.position, target.position, isExcluded);
     }
 
     public override void Stop()
