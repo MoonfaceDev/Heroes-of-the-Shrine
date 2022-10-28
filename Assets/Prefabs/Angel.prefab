@@ -712,17 +712,17 @@ MonoBehaviour:
   hardRecovery: 0
   previousAttacks: []
   midair: 0
-  anticipateDuration: 0.1
-  activeDuration: 0.1
+  anticipateDuration: 0.2
+  activeDuration: 0.05
   recoveryDuration: 0.3
   hitbox: {fileID: 5102893360536826755}
   overrideDefaultHittableTags: 0
   hittableTags: []
-  damage: 5
+  damage: 7
   hitType: 1
   knockbackPower: 0
   knockbackDirection: 0
-  stunTime: 0.5
+  stunTime: 1
 --- !u!114 &5102893360874897683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,7 +801,7 @@ MonoBehaviour:
   midair: 0
   anticipateDuration: 0.05
   activeDuration: 0.15
-  recoveryDuration: 0.4
+  recoveryDuration: 0.2
   hitbox: {fileID: 5102893360763890678}
   overrideDefaultHittableTags: 0
   hittableTags: []
