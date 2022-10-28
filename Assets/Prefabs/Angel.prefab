@@ -541,7 +541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 0
   jumpSpeed: 10
-  jumpAnticipateTime: 0.1
+  jumpAnticipateTime: 0
   jumpRecoverTime: 0.1
   maxJumps: 1
 --- !u!114 &5102893360874897679
@@ -556,9 +556,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6ec1730c7ed3d49a2b8d7891202c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 2
+  cooldown: 1
   slideSpeedMultiplier: 3
-  slideStopAcceleration: 40
+  slideStopAcceleration: 50
 --- !u!114 &5102893360874897695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,7 +572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 1
-  dodgeDistance: 1
+  dodgeDistance: 1.5
   anticipateTime: 0.05
   recoveryTime: 0.3
 --- !u!114 &5102893360874897676
@@ -679,22 +679,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 0
-  hardRecovery: 0
+  hardRecovery: 1
   previousAttacks: []
   midair: 0
   anticipateDuration: 0.1
   activeDuration: 0
-  recoveryDuration: 0.1
+  recoveryDuration: 0.15
   hitbox: {fileID: 5102893361029256204}
   overrideDefaultHittableTags: 0
   hittableTags: []
   damage: 10
   hitType: 0
-  knockbackPower: 20
+  knockbackPower: 10
   knockbackDirection: 10
   stunTime: 0
-  velocity: 15
-  acceleration: 20
+  velocity: 10
+  acceleration: 10
 --- !u!114 &5102893360874897686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -795,13 +795,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
-  hardRecovery: 0
+  hardRecovery: 1
   previousAttacks:
   - {fileID: 5102893360874897687}
   midair: 0
   anticipateDuration: 0.05
   activeDuration: 0.15
-  recoveryDuration: 0.5
+  recoveryDuration: 0.4
   hitbox: {fileID: 5102893360763890678}
   overrideDefaultHittableTags: 0
   hittableTags: []
@@ -857,7 +857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptable: 1
-  hardRecovery: 0
+  hardRecovery: 1
   previousAttacks:
   - {fileID: 5102893360874897685}
   midair: 0
@@ -870,7 +870,7 @@ MonoBehaviour:
   damage: 15
   hitType: 0
   knockbackPower: 10
-  knockbackDirection: 65
+  knockbackDirection: 60
   stunTime: 0
   velocity: 100
   acceleration: 1000
@@ -898,9 +898,9 @@ MonoBehaviour:
   overrideDefaultHittableTags: 0
   hittableTags: []
   damage: 5
-  hitType: 1
-  knockbackPower: 1
-  knockbackDirection: 20
+  hitType: 0
+  knockbackPower: 3
+  knockbackDirection: 30
   stunTime: 0.5
 --- !u!114 &5102893360874897680
 MonoBehaviour:
@@ -927,9 +927,9 @@ MonoBehaviour:
   overrideDefaultHittableTags: 0
   hittableTags: []
   damage: 5
-  hitType: 1
-  knockbackPower: 1
-  knockbackDirection: 20
+  hitType: 0
+  knockbackPower: 3
+  knockbackDirection: 30
   stunTime: 0.5
 --- !u!114 &5102893360874897694
 MonoBehaviour:

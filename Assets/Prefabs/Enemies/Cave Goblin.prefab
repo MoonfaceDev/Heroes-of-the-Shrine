@@ -633,7 +633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 0
-  defaultSpeed: 3
+  defaultSpeed: 2
 --- !u!114 &5884619158741390423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -840,7 +840,7 @@ MonoBehaviour:
   hardRecovery: 0
   previousAttacks: []
   midair: 0
-  anticipateDuration: 0.15
+  anticipateDuration: 0.45
   activeDuration: 0.5
   recoveryDuration: 0.15
   hitbox: {fileID: 0}
