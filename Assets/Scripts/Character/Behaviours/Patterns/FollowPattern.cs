@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -6,7 +5,7 @@ public class FollowPattern : BasePattern
 {
     public string targetTag;
     public float speedMultiplier;
-    public float distanceFromOtherEnemies = 1.5f;
+    private static float distanceFromOtherEnemies = 1f;
 
     private EventListener otherEnemiesEvent;
 
@@ -32,7 +31,7 @@ public class FollowPattern : BasePattern
         {
             otherEnemies = CachedObjectsManager.Instance.GetObjects<Character>("Enemy").Where(enemy => enemy != followBehaviour.Character).ToArray();
             closeEnemyPositions = otherEnemies
-            .Where(enemy => enemy.movableObject.GroundDistance(followBehaviour.MovableObject.position) < (distanceFromOtherEnemies + nodeRadius) * 1.5f)
+            .Where(enemy => enemy.movableObject.GroundDistance(followBehaviour.MovableObject.position) < (distanceFromOtherEnemies + nodeRadius) * 1.25f)
             .Select(enemy => enemy.movableObject.position - Vector3.up * enemy.movableObject.position.y).ToArray();
         }, false);
 
