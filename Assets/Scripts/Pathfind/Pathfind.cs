@@ -2,8 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public delegate bool IsExcluded(Node node);
-
 public class Pathfind : MonoBehaviour
 {
     private WalkableGrid grid;
@@ -17,11 +15,11 @@ public class Pathfind : MonoBehaviour
     public Vector3 Direction(Vector3 start, Vector3 end, IsExcluded isExcluded = null)
     {
         Node startNode = grid.NodeFromWorldPoint(start);
-        Node endNode = grid.ClosestWalkableNode(end);
-        if (isExcluded(startNode) || isExcluded(endNode))
+        if (!WalkableGrid.IsWalkable(startNode, isExcluded))
         {
             return Vector3.zero;
         }
+        Node endNode = grid.ClosestWalkableNode(end, isExcluded);
         List<Node> path = ThetaStar(startNode, endNode, isExcluded);
         if (path == null)
         {
@@ -74,15 +72,15 @@ public class Pathfind : MonoBehaviour
         frontier.Enqueue(start, 0);
         Dictionary<Node, Node> cameFrom = new(){[start] = null};
         Dictionary<Node, float> costSoFar = new(){[start] = 0};
+        foreach (Node node in grid.grid)
+        {
+            node.color = isExcluded != null && isExcluded(node);
+        }
         while (frontier.Count > 0)
         {
             Node current = frontier.Dequeue();
-            foreach (Node node in grid.Neighbors(current))
+            foreach (Node node in grid.WalkableNeighbors(current, isExcluded))
             {
-                if (isExcluded != null && isExcluded(node))
-                {
-                    continue;
-                }
                 float newCost;
                 if (Mathf.Abs(node.x - current.x) == 1 || Mathf.Abs(node.y - current.y) == 1)
                 {

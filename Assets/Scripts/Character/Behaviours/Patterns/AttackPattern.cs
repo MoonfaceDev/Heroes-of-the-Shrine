@@ -66,7 +66,7 @@ public class AttackPattern : BasePattern
 
     private void OnDestroy()
     {
-        if (attackCoroutine != null)
+        if (EventManager != null && attackCoroutine != null)
         {
             EventManager.StopCoroutine(attackCoroutine);
         }

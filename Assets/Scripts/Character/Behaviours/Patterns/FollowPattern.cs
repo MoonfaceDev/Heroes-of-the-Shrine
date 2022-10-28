@@ -1,11 +1,14 @@
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 public class FollowPattern : BasePattern
 {
     public string targetTag;
     public float speedMultiplier;
-    private static float distanceFromOtherEnemies = 1f;
+
+    private static float distanceFromOtherEnemies = 0.5f;
+    private static float moveAwayDuration = 0.5f;
 
     private EventListener otherEnemiesEvent;
 
@@ -22,41 +25,36 @@ public class FollowPattern : BasePattern
         }
 
         MovableObject target = player.GetComponent<MovableObject>();
-        float nodeRadius = FindObjectOfType<WalkableGrid>().nodeRadius;
+
+        WalkableGrid grid = FindObjectOfType<WalkableGrid>();
+        float nodeRadius = grid.nodeRadius;
 
         Character[] otherEnemies = new Character[0];
-        Vector3[] closeEnemyPositions = new Vector3[0];
 
         otherEnemiesEvent = EventManager.Instance.Attach(() => true, () =>
         {
             otherEnemies = CachedObjectsManager.Instance.GetObjects<Character>("Enemy").Where(enemy => enemy != followBehaviour.Character).ToArray();
-            closeEnemyPositions = otherEnemies
-            .Where(enemy => enemy.movableObject.GroundDistance(followBehaviour.MovableObject.position) < (distanceFromOtherEnemies + nodeRadius) * 1.25f)
-            .Select(enemy => enemy.movableObject.position - Vector3.up * enemy.movableObject.position.y).ToArray();
         }, false);
 
-        followBehaviour.Play(target, speedMultiplier, (Node node) =>
-        {
-            foreach (Character enemy in otherEnemies)
+        followBehaviour.Play(
+            target,
+            speedMultiplier,
+            (node) => otherEnemies.Any(enemy => enemy.movableObject.GroundDistance(node.position) < distanceFromOtherEnemies + nodeRadius),
+            (out Vector3 direction) =>
             {
-                if (enemy.movableObject.GroundDistance(node.position) < distanceFromOtherEnemies + nodeRadius)
+                Vector3[] closeEnemyPositions = otherEnemies
+                .Where(enemy => enemy.movableObject.GroundDistance(grid.NodeFromWorldPoint(followBehaviour.MovableObject.position).position) < distanceFromOtherEnemies + nodeRadius)
+                .Select(enemy => enemy.movableObject.position - Vector3.up * enemy.movableObject.position.y).ToArray();
+                if (closeEnemyPositions.Length == 0)
                 {
-                    return true;
+                    direction = Vector3.zero;
+                    return false;
                 }
+                Vector3 center = closeEnemyPositions.Aggregate(Vector3.zero, (acc, next) => acc + next) / closeEnemyPositions.Length;
+                direction = (followBehaviour.MovableObject.position - center).normalized;
+                return true;
             }
-            return false;
-        }, 
-        (out Vector3 direction) =>
-        {
-            if (closeEnemyPositions.Length == 0)
-            {
-                direction = Vector3.zero;
-                return false;
-            }
-            Vector3 center = closeEnemyPositions.Aggregate(Vector3.zero, (acc, next) => acc + next) / closeEnemyPositions.Length;
-            direction = (followBehaviour.MovableObject.position - center).normalized;
-            return true;
-        });
+        );
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

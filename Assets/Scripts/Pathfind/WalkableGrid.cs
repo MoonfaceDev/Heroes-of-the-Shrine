@@ -1,5 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
+
+public delegate bool IsExcluded(Node node);
 
 [RequireComponent(typeof(MovableObject))]
 public class WalkableGrid : MonoBehaviour
@@ -72,7 +75,12 @@ public class WalkableGrid : MonoBehaviour
 		return grid[index.x, index.y];
 	}
 
-	public Node ClosestWalkableNode(Vector3 worldPosition)
+	public static bool IsWalkable(Node node, IsExcluded isExcluded = null)
+	{
+		return node.walkable && !(isExcluded != null && isExcluded(node));
+	}
+
+	public Node ClosestWalkableNode(Vector3 worldPosition, IsExcluded isExcluded = null)
 	{
 		Queue<Node> frontier = new();
 		Node current;
@@ -80,11 +88,11 @@ public class WalkableGrid : MonoBehaviour
 		while (frontier.Count > 0)
 		{
 			current = frontier.Dequeue();
-			if (current.walkable)
+			if (IsWalkable(current, isExcluded))
 			{
 				return current;
 			}
-			foreach (Node node in RawNeighbors(current))
+			foreach (Node node in Neighbors(current))
 			{
 				frontier.Enqueue(node);
 			}
@@ -111,35 +119,18 @@ public class WalkableGrid : MonoBehaviour
 		{
 			if (index.x >= 0 && index.x < sizeX && index.y >= 0 && index.y < sizeY)
 			{
-				Node neighbor = grid[index.x, index.y];
-				if (neighbor.walkable)
-				{
-					neighbors.Add(neighbor);
-				}
-			}
-		}
-		return neighbors;
-	}
-
-	public List<Node> RawNeighbors(Node node)
-	{
-		int x = node.x;
-		int y = node.y;
-		Vector2Int[] possibleIndices = new Vector2Int[] { new Vector2Int(x - 1, y - 1), new Vector2Int(x, y - 1), new Vector2Int(x + 1, y - 1), new Vector2Int(x - 1, y), new Vector2Int(x + 1, y), new Vector2Int(x - 1, y + 1), new Vector2Int(x, y + 1), new Vector2Int(x + 1, y + 1) };
-		List<Node> neighbors = new();
-		int sizeX = grid.GetLength(0);
-		int sizeY = grid.GetLength(1);
-		foreach (Vector2Int index in possibleIndices)
-		{
-			if (index.x >= 0 && index.x < sizeX && index.y >= 0 && index.y < sizeY)
-			{
 				neighbors.Add(grid[index.x, index.y]);
 			}
 		}
 		return neighbors;
 	}
 
-	public bool LineOfSight(Node a, Node b)
+	public List<Node> WalkableNeighbors(Node node, IsExcluded isExcluded = null)
+	{
+		return Neighbors(node).Where(currentNode => IsWalkable(currentNode, isExcluded)).ToList();
+	}
+
+	public bool LineOfSight(Node a, Node b, IsExcluded isExcluded = null)
 	{
 		int x0 = a.x;
 		int y0 = a.y;
@@ -154,7 +145,7 @@ public class WalkableGrid : MonoBehaviour
 
 		while (true)
 		{
-			if (!grid[x0, y0].walkable)
+			if (!IsWalkable(grid[x0, y0], isExcluded))
 			{
 				return false;
 			}
@@ -184,7 +175,7 @@ public class WalkableGrid : MonoBehaviour
 		{
 			foreach (Node n in grid)
 			{
-				Gizmos.color = (n.walkable) ? Color.white : Color.red;
+				Gizmos.color = (n.walkable && !n.color) ? Color.white : Color.red;
 				Gizmos.DrawCube(MovableObject.GroundScreenCoordinates(n.position), MovableObject.GroundScreenCoordinates(Vector3.one * (NodeDiameter * 0.75f)));
 			}
 		}
@@ -197,6 +188,8 @@ public class Node
 	public int y;
 	public bool walkable;
 	public Vector3 position;
+
+	public bool color;
 
 	public Node(int x, int y, bool walkable, Vector3 position)
 	{
