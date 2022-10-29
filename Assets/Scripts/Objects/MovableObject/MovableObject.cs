@@ -30,6 +30,8 @@ public class MovableObject : MonoBehaviour
         }
     }
 
+    public Vector3 GroundPosition => position - position.y * Vector3.up;
+
     public event Action OnStuck;
 
     private WalkableGrid walkableGrid;

@@ -39,7 +39,10 @@ public class FollowPattern : BasePattern
         followBehaviour.Play(
             target,
             speedMultiplier,
-            (node) => otherEnemies.Any(enemy => enemy.movableObject.GroundDistance(node.position) < distanceFromOtherEnemies + nodeRadius),
+            () =>
+            {
+                return otherEnemies.SelectMany(enemy => grid.GetCircle(enemy.movableObject.GroundPosition, distanceFromOtherEnemies + nodeRadius)).ToArray();
+            },
             (out Vector3 direction) =>
             {
                 Vector3[] closeEnemyPositions = otherEnemies

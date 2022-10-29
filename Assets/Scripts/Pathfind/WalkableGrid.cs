@@ -2,8 +2,6 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 
-public delegate bool IsExcluded(Node node);
-
 [RequireComponent(typeof(MovableObject))]
 public class WalkableGrid : MonoBehaviour
 {
@@ -75,12 +73,12 @@ public class WalkableGrid : MonoBehaviour
 		return grid[index.x, index.y];
 	}
 
-	public static bool IsWalkable(Node node, IsExcluded isExcluded = null)
+	public static bool IsWalkable(Node node, Node[] excluded = null)
 	{
-		return node.walkable && !(isExcluded != null && isExcluded(node));
+		return node.walkable && !(excluded != null && excluded.Contains(node));
 	}
 
-	public Node ClosestWalkableNode(Vector3 worldPosition, IsExcluded isExcluded = null)
+	public Node ClosestWalkableNode(Vector3 worldPosition, Node[] excluded = null)
 	{
 		Queue<Node> frontier = new();
 		Node current;
@@ -88,7 +86,7 @@ public class WalkableGrid : MonoBehaviour
 		while (frontier.Count > 0)
 		{
 			current = frontier.Dequeue();
-			if (IsWalkable(current, isExcluded))
+			if (IsWalkable(current, excluded))
 			{
 				return current;
 			}
@@ -125,12 +123,30 @@ public class WalkableGrid : MonoBehaviour
 		return neighbors;
 	}
 
-	public List<Node> WalkableNeighbors(Node node, IsExcluded isExcluded = null)
+	public List<Node> WalkableNeighbors(Node node, Node[] excluded = null)
 	{
-		return Neighbors(node).Where(currentNode => IsWalkable(currentNode, isExcluded)).ToList();
+		return Neighbors(node).Where(currentNode => IsWalkable(currentNode, excluded)).ToList();
 	}
 
-	public bool LineOfSight(Node a, Node b, IsExcluded isExcluded = null)
+	public Node[] GetCircle(Vector3 center, float radius)
+    {
+		List<Node> nodes = new();
+		Vector2Int backLeft = IndexFromWorldPoint(center + radius * Vector3.left + radius * Vector3.back);
+		Vector2Int rightForward = IndexFromWorldPoint(center + radius * Vector3.right + radius * Vector3.forward);
+		for (int x = backLeft.x; x < rightForward.x; x++)
+        {
+			for (int y = backLeft.y; y < rightForward.y; y++)
+            {
+				if (Vector3.Distance(center, grid[x, y].position) < radius)
+                {
+					nodes.Add(grid[x, y]);
+                }
+            }
+		}
+		return nodes.ToArray();
+	}
+
+	public bool LineOfSight(Node a, Node b, Node[] excluded = null)
 	{
 		int x0 = a.x;
 		int y0 = a.y;
@@ -145,7 +161,7 @@ public class WalkableGrid : MonoBehaviour
 
 		while (true)
 		{
-			if (!IsWalkable(grid[x0, y0], isExcluded))
+			if (!IsWalkable(grid[x0, y0], excluded))
 			{
 				return false;
 			}
@@ -175,7 +191,7 @@ public class WalkableGrid : MonoBehaviour
 		{
 			foreach (Node n in grid)
 			{
-				Gizmos.color = (n.walkable && !n.color) ? Color.white : Color.red;
+				Gizmos.color = n.walkable ? Color.white : Color.red;
 				Gizmos.DrawCube(MovableObject.GroundScreenCoordinates(n.position), MovableObject.GroundScreenCoordinates(Vector3.one * (NodeDiameter * 0.75f)));
 			}
 		}
@@ -188,8 +204,6 @@ public class Node
 	public int y;
 	public bool walkable;
 	public Vector3 position;
-
-	public bool color;
 
 	public Node(int x, int y, bool walkable, Vector3 position)
 	{

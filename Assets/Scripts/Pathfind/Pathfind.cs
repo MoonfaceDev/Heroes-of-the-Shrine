@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class Pathfind : MonoBehaviour
@@ -12,15 +11,15 @@ public class Pathfind : MonoBehaviour
         grid = FindObjectOfType<WalkableGrid>();
     }
 
-    public Vector3 Direction(Vector3 start, Vector3 end, IsExcluded isExcluded = null)
+    public Vector3 Direction(Vector3 start, Vector3 end, Node[] excluded = null)
     {
         Node startNode = grid.NodeFromWorldPoint(start);
-        if (!WalkableGrid.IsWalkable(startNode, isExcluded))
+        if (!WalkableGrid.IsWalkable(startNode, excluded))
         {
             return Vector3.zero;
         }
-        Node endNode = grid.ClosestWalkableNode(end, isExcluded);
-        List<Node> path = ThetaStar(startNode, endNode, isExcluded);
+        Node endNode = grid.ClosestWalkableNode(end, excluded);
+        List<Node> path = ThetaStar(startNode, endNode, excluded);
         if (path == null)
         {
             path = new List<Node>{ startNode, endNode };
@@ -66,20 +65,16 @@ public class Pathfind : MonoBehaviour
         return path;
     }
 
-    private List<Node> ThetaStar(Node start, Node end, IsExcluded isExcluded = null)
+    private List<Node> ThetaStar(Node start, Node end, Node[] excluded = null)
     {
         PriorityQueue<Node> frontier = new();
         frontier.Enqueue(start, 0);
         Dictionary<Node, Node> cameFrom = new(){[start] = null};
         Dictionary<Node, float> costSoFar = new(){[start] = 0};
-        foreach (Node node in grid.grid)
-        {
-            node.color = isExcluded != null && isExcluded(node);
-        }
         while (frontier.Count > 0)
         {
             Node current = frontier.Dequeue();
-            foreach (Node node in grid.WalkableNeighbors(current, isExcluded))
+            foreach (Node node in grid.WalkableNeighbors(current, excluded))
             {
                 float newCost;
                 if (Mathf.Abs(node.x - current.x) == 1 || Mathf.Abs(node.y - current.y) == 1)
@@ -95,7 +90,7 @@ public class Pathfind : MonoBehaviour
                     costSoFar[node] = newCost;
                     float priority = newCost + Heuristic(end, node);
                     frontier.Enqueue(node, priority);
-                    if (current != start && grid.LineOfSight(cameFrom[current], node))
+                    if (current != start && grid.LineOfSight(cameFrom[current], node, excluded))
                     {
                         cameFrom[node] = cameFrom[current];
                     }
