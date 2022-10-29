@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class CameraFocus : MonoBehaviour
 {
@@ -19,24 +20,21 @@ public class CameraFocus : MonoBehaviour
         this.position = position;
         targetSize = camera.orthographicSize / factor;
         active = true;
+        GetComponent<PixelPerfectCamera>().enabled = false;
     }
 
     public void Stop()
     {
         active = false;
-    }
-
-    private void ZoomCamera()
-    {
-        transform.position = Vector3.Lerp(transform.position, new Vector3(position.x, position.y, transform.position.z), lerpSpeed * Time.deltaTime);
-        camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, targetSize, lerpSpeed * Time.deltaTime);
+        GetComponent<PixelPerfectCamera>().enabled = true;
     }
 
     private void LateUpdate()
     {
         if (active)
         {
-            ZoomCamera();
+            transform.position = Vector3.Lerp(transform.position, new Vector3(position.x, position.y, transform.position.z), lerpSpeed * Time.deltaTime);
+            camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, targetSize, lerpSpeed * Time.deltaTime);
         }
     }
 }
