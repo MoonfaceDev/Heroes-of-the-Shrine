@@ -8,7 +8,6 @@ public class FollowPattern : BasePattern
     public float speedMultiplier;
 
     private static float distanceFromOtherEnemies = 0.5f;
-    private static float moveAwayDuration = 0.5f;
 
     private EventListener otherEnemiesEvent;
 
