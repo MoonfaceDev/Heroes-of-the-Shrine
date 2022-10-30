@@ -32,17 +32,6 @@ public class WalkBehaviour : BaseMovementBehaviour
         {
             return;
         }
-        // run callbacks
-        if (new Vector2(xAxis, zAxis) == Vector2.zero)
-        {
-            InvokeOnStop();
-            Walk = false;
-        }
-        else if (!Walk) //first walking frame
-        {
-            Walk = true;
-            InvokeOnPlay();
-        }
         // move speed
         MovableObject.velocity.x = xAxis * speed;
         MovableObject.velocity.z = zAxis * speed;
@@ -51,14 +40,24 @@ public class WalkBehaviour : BaseMovementBehaviour
         {
             LookDirection = Mathf.RoundToInt(Mathf.Sign(xAxis));
         }
+        // run callbacks
+        if (new Vector2(xAxis, zAxis) == Vector2.zero)
+        {
+            Stop();
+        }
+        else if (!Walk) //first walking frame
+        {
+            Walk = true;
+            InvokeOnPlay();
+        }
     }
 
     public override void Stop()
     {
         if (Walk)
         {
-            InvokeOnStop();
             Walk = false;
+            InvokeOnStop();
         }
     }
 }

@@ -19,7 +19,7 @@ public abstract class BaseMovementBehaviour : PlayableBehaviour
     public override bool CanPlay()
     {
         return base.CanPlay()
-            && AllStopped(typeof(KnockbackBehaviour), typeof(StunBehaviour)) 
+            && AllStopped(typeof(ForcedBehaviour))
             && (cooldown <= 0 || Time.time - cooldownStartTime > cooldown);
     }
 }

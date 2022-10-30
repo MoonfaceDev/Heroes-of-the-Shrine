@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class DeathAction : BaseAction
+public class DeathAction : MonoBehaviour
 {
     public float cameraZoomFactor;
     public GameObject[] objctsToDestory;
     public GameObject deathPanel;
     public float deathPanelTransitionDelay;
 
-    public override void Invoke()
+    public void Invoke()
     {
         foreach (EnemyBrain enemyBrain in FindObjectsOfType<EnemyBrain>())
         {

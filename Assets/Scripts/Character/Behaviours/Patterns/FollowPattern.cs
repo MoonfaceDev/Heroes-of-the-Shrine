@@ -7,23 +7,27 @@ public class FollowPattern : BasePattern
     public string targetTag;
     public float speedMultiplier;
 
-    private static float distanceFromOtherEnemies = 0.5f;
+    private static readonly float distanceFromOtherEnemies = 0.5f;
 
+    private IModifier speedModifier;
     private EventListener otherEnemiesEvent;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
-        FollowBehaviour followBehaviour = animator.GetComponent<FollowBehaviour>();
         GameObject player = GameObject.FindGameObjectWithTag(targetTag);
-
         if (!player)
         {
             return;
         }
-
         MovableObject target = player.GetComponent<MovableObject>();
+
+        FollowBehaviour followBehaviour = animator.GetComponent<FollowBehaviour>();
+
+        WalkBehaviour walkBehaviour = animator.GetComponent<WalkBehaviour>();
+        speedModifier = new MultiplierModifier(speedMultiplier);
+        walkBehaviour.speed.AddModifier(speedModifier);
 
         WalkableGrid grid = FindObjectOfType<WalkableGrid>();
         float nodeRadius = grid.nodeRadius;
@@ -37,7 +41,6 @@ public class FollowPattern : BasePattern
 
         followBehaviour.Play(
             target,
-            speedMultiplier,
             () =>
             {
                 return otherEnemies.SelectMany(enemy => grid.GetCircle(enemy.movableObject.GroundPosition, distanceFromOtherEnemies + nodeRadius)).ToArray();
@@ -67,5 +70,8 @@ public class FollowPattern : BasePattern
 
         FollowBehaviour followBehaviour = animator.GetComponent<FollowBehaviour>();
         followBehaviour.Stop();
+
+        WalkBehaviour walkBehaviour = animator.GetComponent<WalkBehaviour>();
+        walkBehaviour.speed.RemoveModifier(speedModifier);
     }
 }
