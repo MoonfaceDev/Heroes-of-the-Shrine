@@ -246,14 +246,14 @@ MonoBehaviour:
       z: -4
       partOfWave: 1
   firstWavePreSpawnedEnemies: []
-  timeToAlarm: 1
+  timeToAlarm: 0.5
   cameraBorder:
     serializedVersion: 2
     x: 43
     y: -4
     width: 20
     height: 8
-  spawnSourceDistance: 0.5
+  spawnSourceDistance: 1
 --- !u!114 &101979071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,14 +498,14 @@ MonoBehaviour:
       z: -2
       partOfWave: 1
   firstWavePreSpawnedEnemies: []
-  timeToAlarm: 1
+  timeToAlarm: 0.5
   cameraBorder:
     serializedVersion: 2
     x: 6
     y: -4
     width: 25
     height: 8
-  spawnSourceDistance: 0.5
+  spawnSourceDistance: 1
 --- !u!1 &855906827
 GameObject:
   m_ObjectHideFlags: 0
