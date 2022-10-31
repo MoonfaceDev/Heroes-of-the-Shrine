@@ -8,6 +8,7 @@ public class AnimationDefinition
     public float shadowScale;
 }
 
+[ExecuteInEditMode]
 public class ShadowObject : MonoBehaviour
 {
     public MovableObject movableObject;

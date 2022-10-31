@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class BaseTrigger : MonoBehaviour
 {
-    public BaseAction action;
+    public UnityEvent action;
 }

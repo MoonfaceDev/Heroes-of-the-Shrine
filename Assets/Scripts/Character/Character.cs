@@ -11,18 +11,18 @@ public class Character : MonoBehaviour
     // look direction
 
     private readonly EventListener lookDirectionEvent;
-    private int _lookDirection = 1;
+    private int lookDirection = 1;
 
     public int LookDirection
     {
         get
         {
-            return _lookDirection;
+            return lookDirection;
         }
         set
         {
-            _lookDirection = value;
-            transform.rotation = Quaternion.Euler(0, 90 * _lookDirection - 90, 0);
+            lookDirection = value;
+            transform.rotation = Quaternion.Euler(0, 90 * lookDirection - 90, 0);
         }
     }
 

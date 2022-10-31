@@ -44,7 +44,6 @@ public class StunBehaviour : ForcedBehaviour
         Stun = true;
         StunFrame = (StunFrame + 1) % stunFrames;
         InvokeOnPlay();
-        MovableObject.velocity = Vector3.zero;
         stopCoroutine = StartCoroutine(StopAfter(time));
     }
 

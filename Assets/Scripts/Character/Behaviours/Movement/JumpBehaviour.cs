@@ -111,7 +111,7 @@ public class JumpBehaviour : BaseMovementBehaviour
         MovableObject.velocity.y = jumpSpeed;
         MovableObject.acceleration.y = -gravityAcceleration;
         jumpEvent = EventManager.Attach(
-            () => MovableObject.velocity.y < 0 && MovableObject.position.y <= 0,
+            () => MovableObject.velocity.y <= 0 && MovableObject.position.y <= 0,
             Land
         );
     }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerSpawning : MonoBehaviour
 {
-    public GameObject playerPrefab;
+    public GameObject player;
     public float entranceDuration;
     public float entranceSpeedMultiplier = 1;
 
@@ -10,20 +10,13 @@ public class PlayerSpawning : MonoBehaviour
     {
         Camera camera = SetupCamera();
         CameraMovement cameraMovement = camera.GetComponent<CameraMovement>();
-        SpawnPlayer(cameraMovement.worldBorder.xMin + 0.5f);
+        MovableObject movableObject = player.GetComponent<MovableObject>();
+        movableObject.position.x = cameraMovement.worldBorder.xMin + 0.5f;
     }
 
     private void Start()
     {
         PlayEntrance();
-    }
-
-    private GameObject SpawnPlayer(float x)
-    {
-        GameObject player = Instantiate(playerPrefab);
-        MovableObject movableObject = player.GetComponent<MovableObject>();
-        movableObject.position.x = x;
-        return player;
     }
 
     private Camera SetupCamera()
@@ -36,7 +29,6 @@ public class PlayerSpawning : MonoBehaviour
 
     private void PlayEntrance()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
         CameraFollow cameraFollow = Camera.main.GetComponent<CameraFollow>();
         PlayerController controller = player.GetComponent<PlayerController>();
         WalkBehaviour walkBehaviour = player.GetComponent<WalkBehaviour>();

@@ -23,7 +23,7 @@ public class WaveDefinition
     public EnemySpawnDefinition[] spawnDefinitions;
 }
 
-public class EncounterAction : BaseAction
+public class EncounterAction : MonoBehaviour
 {
     public WaveAnnouncer waveAnnouncerPrefab;
     public WaveDefinition[] waveDefinitions;
@@ -34,7 +34,7 @@ public class EncounterAction : BaseAction
 
     private bool stopped;
 
-    public override void Invoke()
+    public void Invoke()
     {
         CameraMovement cameraMovement = Camera.main.GetComponent<CameraMovement>();
         cameraMovement.Lock(cameraBorder);

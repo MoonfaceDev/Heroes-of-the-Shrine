@@ -7,18 +7,11 @@ public delegate bool GetOverrideDirection(out Vector3 direction);
 [RequireComponent(typeof(WalkBehaviour))]
 public class FollowBehaviour : BaseMovementBehaviour
 {
-    public bool Active
-    {
-        get => active;
-        private set => active = value;
-    }
-
-    public override bool Playing => Active;
+    public override bool Playing => active;
 
     private bool active;
     private Pathfind pathfind;
     private WalkBehaviour walkBehaviour;
-    private IModifier speedModifier;
     private EventListener followEvent;
 
     public override void Awake()
@@ -33,20 +26,32 @@ public class FollowBehaviour : BaseMovementBehaviour
         walkBehaviour.OnStop += Stop;
     }
 
-    public void Play(MovableObject target, float speedMultiplier, Func<Node[]> GetExcluded, GetOverrideDirection getOverrideDirection = null)
+    public void Play(Vector3 destination, Func<Node[]> GetExcluded = null)
     {
         if (!CanPlay())
         {
             return;
         }
-        Active = true;
+        active = true;
+        InvokeOnPlay();
+        followEvent = EventManager.Attach(() => true, () => {
+            Vector3 direction = pathfind.Direction(MovableObject.position, destination, GetExcluded != null ? GetExcluded() : null);
+            walkBehaviour.Play(direction.x, direction.z, false);
+            LookDirection = Mathf.RoundToInt(Mathf.Sign(destination.x - MovableObject.position.x));
+        }, false);
+    }
+
+    public void Play(MovableObject target, Func<Node[]> GetExcluded = null, GetOverrideDirection getOverrideDirection = null)
+    {
+        if (!CanPlay())
+        {
+            return;
+        }
+        active = true;
         InvokeOnPlay();
 
-        speedModifier = new MultiplierModifier(speedMultiplier);
-        walkBehaviour.speed.AddModifier(speedModifier);
-
         followEvent = EventManager.Attach(() => true, () => {
-            Vector3 direction = GetDirection(target, GetExcluded(), getOverrideDirection);
+            Vector3 direction = GetDirection(target, GetExcluded != null ? GetExcluded() : null, getOverrideDirection);
             walkBehaviour.Play(direction.x, direction.z, false);
             LookDirection = Mathf.RoundToInt(Mathf.Sign(target.position.x - MovableObject.position.x));
         }, false);
@@ -67,12 +72,11 @@ public class FollowBehaviour : BaseMovementBehaviour
 
     public override void Stop()
     {
-        if (Active)
+        if (active)
         {
             InvokeOnStop();
-            Active = false;
+            active = false;
             EventManager.Detach(followEvent);
-            walkBehaviour.speed.RemoveModifier(speedModifier);
             StopBehaviours(typeof(WalkBehaviour));
             MovableObject.velocity = Vector3.zero;
         }

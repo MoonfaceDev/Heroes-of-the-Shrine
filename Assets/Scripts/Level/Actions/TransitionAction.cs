@@ -1,10 +1,11 @@
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TransitionAction : BaseAction
+public class TransitionAction : MonoBehaviour
 {
     public string sceneName;
 
-    public override void Invoke()
+    public void Invoke()
     {
         SceneManager.LoadScene(sceneName);
     }
