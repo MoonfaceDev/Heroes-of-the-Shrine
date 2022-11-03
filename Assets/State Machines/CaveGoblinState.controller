@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasRandomExitTime: 1
-  minTime: 0.5
+  minTime: 2
   maxTime: 3
   targetTag: Player
   speedMultiplier: 1.5
@@ -2341,7 +2341,7 @@ AnimatorStateTransition:
     m_EventTreshold: 0.5
   - m_ConditionMode: 4
     m_ConditionEvent: playerDistance
-    m_EventTreshold: 1.3
+    m_EventTreshold: 1.5
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3798933222075844845}
   m_Solo: 0
@@ -2578,7 +2578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasRandomExitTime: 1
-  minTime: 2
+  minTime: 3
   maxTime: 4
   targetTag: Player
   speedMultiplier: 1
@@ -2844,7 +2844,7 @@ MonoBehaviour:
   minTime: 0
   maxTime: 3
   targetTag: Player
-  speedMultiplier: 1
+  speedMultiplier: 1.5
 --- !u!1102 &4921882366354855378
 AnimatorState:
   serializedVersion: 6
@@ -3538,7 +3538,7 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 4
     m_ConditionEvent: playerDistance
-    m_EventTreshold: 1.3
+    m_EventTreshold: 1.5
   - m_ConditionMode: 4
     m_ConditionEvent: playerDistanceZ
     m_EventTreshold: 0.5
@@ -3767,7 +3767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasRandomExitTime: 1
   minTime: 0
-  maxTime: 3
+  maxTime: 2
 --- !u!1102 &8144624813517784096
 AnimatorState:
   serializedVersion: 6
