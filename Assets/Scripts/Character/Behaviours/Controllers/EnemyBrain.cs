@@ -2,7 +2,7 @@ using UnityEngine;
 using static MathUtils;
 
 [RequireComponent(typeof(Animator))]
-public class EnemyBrain : CharacterBehaviour
+public class EnemyBrain : CharacterController
 {
     public string playerTag;
     public float rageHealthThreshold;
@@ -146,6 +146,16 @@ public class EnemyBrain : CharacterBehaviour
             stateMachine.SetFloat("playerDistanceY", Mathf.Abs((MovableObject.position - playerMovableObject.position).y));
             stateMachine.SetFloat("playerDistanceZ", Mathf.Abs((MovableObject.position - playerMovableObject.position).z));
         }
+    }
+
+    private void OnEnable()
+    {
+        stateMachine.enabled = true;
+    }
+
+    private void OnDisable()
+    {
+        stateMachine.enabled = false;
     }
 
     private bool IsEnraged()
