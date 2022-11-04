@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(MovableObject))]
 public class Character : MonoBehaviour
 {
-    public float gravityAcceleration = 20;
+    public PhysicalAttributes physicalAttributes;
     public Animator animator;
 
     [HideInInspector] public EventManager eventManager;
