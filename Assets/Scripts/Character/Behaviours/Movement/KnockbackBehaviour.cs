@@ -105,7 +105,7 @@ public class KnockbackBehaviour : ForcedBehaviour
         {
             LookDirection = 1;
         }
-        MovableObject.acceleration.y = -gravityAcceleration;
+        MovableObject.acceleration.y = -Character.physicalAttributes.gravityAcceleration;
         MovableObject.velocity.x = Mathf.Cos(Mathf.Deg2Rad * angleDegrees) * power;
         MovableObject.velocity.y = Mathf.Sin(Mathf.Deg2Rad * angleDegrees) * power;
     }

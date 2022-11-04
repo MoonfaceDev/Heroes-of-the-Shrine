@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(MovableObject))]
 public class Character : MonoBehaviour
 {
+    public PhysicalAttributes physicalAttributes;
     public Animator animator;
 
     [HideInInspector] public EventManager eventManager;
