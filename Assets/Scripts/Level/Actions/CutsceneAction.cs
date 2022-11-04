@@ -42,6 +42,7 @@ public class CutsceneAction : MonoBehaviour
         {
             moveDefinitions.ForEach(subject => {
                 subject.target.Stop();
+                subject.target.DisableBehaviours(typeof(CharacterController));
                 subject.target.LookDirection = (int)subject.lookDirection;
             });
             director.Play();
@@ -51,8 +52,11 @@ public class CutsceneAction : MonoBehaviour
 
     private void OnStop(PlayableDirector director)
     {
-        postCutsceneEvent.Invoke();
+        moveDefinitions.ForEach(subject => {
+            subject.target.EnableBehaviours(typeof(CharacterController));
+        });
         director.stopped -= OnStop;
+        postCutsceneEvent.Invoke();
     }
 
     private void OnDrawGizmosSelected()

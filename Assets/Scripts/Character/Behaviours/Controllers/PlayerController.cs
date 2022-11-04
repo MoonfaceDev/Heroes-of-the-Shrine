@@ -16,7 +16,7 @@ public class AttackProperty
     public Button button;
 }
 
-public class PlayerController : CharacterBehaviour
+public class PlayerController : CharacterController
 {
     public AttackProperty[] attacks;
     public RuntimeAnimatorController[] animatorControllers;

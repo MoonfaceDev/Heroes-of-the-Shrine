@@ -58,17 +58,17 @@ public abstract class CharacterBehaviour : MonoBehaviour
         }
     }
 
-    protected void EnableBehaviours(params Type[] behaviours)
+    public void EnableBehaviours(params Type[] behaviours)
     {
         SetBehavioursEnabled(true, behaviours);
     }
 
-    protected void DisableBehaviours(params Type[] behaviours)
+    public void DisableBehaviours(params Type[] behaviours)
     {
         SetBehavioursEnabled(false, behaviours);
     }
 
-    protected void StopBehaviours(params Type[] behaviours)
+    public void StopBehaviours(params Type[] behaviours)
     {
         foreach (Type type in behaviours)
         {
@@ -79,13 +79,13 @@ public abstract class CharacterBehaviour : MonoBehaviour
         }
     }
 
-    protected bool IsPlaying(Type type)
+    public bool IsPlaying(Type type)
     {
         PlayableBehaviour behaviour = GetComponent(type) as PlayableBehaviour;
         return behaviour && behaviour.Playing;
     }
 
-    protected bool AllStopped(params Type[] types)
+    public bool AllStopped(params Type[] types)
     {
         return types.Select(type => GetComponents(type)).All(behaviours => behaviours.All(behaviour => !(behaviour as PlayableBehaviour).Playing));
     }

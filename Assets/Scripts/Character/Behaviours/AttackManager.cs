@@ -15,6 +15,7 @@ public class AttackManager : PlayableBehaviour
     public event Action OnFinish;
     public event Action OnRecover;
 
+    private EventListener forgetComboEvent;
     private List<DamageBonus> damageBonuses;
     private List<DamageBonus> damageMultipliers;
 
@@ -27,14 +28,6 @@ public class AttackManager : PlayableBehaviour
 
     public void Start()
     {
-        EventManager.Attach(() => true, () =>
-        {
-            if (lastAttack != null && !Recovering && Time.time - lastAttackTime > maxComboDelay)
-            {
-                lastAttack = null;
-            }
-        }, single: false);
-
         BaseAttack[] attackComponents = GetComponents<BaseAttack>();
         foreach (BaseAttack attack in attackComponents)
         {
@@ -44,15 +37,19 @@ public class AttackManager : PlayableBehaviour
             attack.OnRecover += () => OnRecover?.Invoke();
             attack.OnStop += () => InvokeOnStop();
 
-            attack.OnFinish += () =>
+            attack.OnPlay += () =>
             {
+                EventManager.Detach(forgetComboEvent);
                 lastAttack = attack;
             };
 
             attack.OnStop += () =>
             {
-                lastAttack = attack;
-                lastAttackTime = Time.time;
+                EventManager.Detach(forgetComboEvent);
+                forgetComboEvent = EventManager.StartTimeout(() =>
+                {
+                    lastAttack = null;
+                }, maxComboDelay);
             };
         }
     }
