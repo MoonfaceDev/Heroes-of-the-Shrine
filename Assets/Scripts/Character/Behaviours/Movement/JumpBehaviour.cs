@@ -109,7 +109,7 @@ public class JumpBehaviour : BaseMovementBehaviour
         OnJump?.Invoke();
         OnJumpsChanged?.Invoke(Jumps);
         MovableObject.velocity.y = jumpSpeed;
-        MovableObject.acceleration.y = -gravityAcceleration;
+        MovableObject.acceleration.y = -Character.gravityAcceleration;
         jumpEvent = EventManager.Attach(
             () => MovableObject.velocity.y <= 0 && MovableObject.position.y <= 0,
             Land
