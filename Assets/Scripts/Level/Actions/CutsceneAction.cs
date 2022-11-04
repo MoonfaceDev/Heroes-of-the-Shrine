@@ -42,9 +42,12 @@ public class CutsceneAction : MonoBehaviour
         {
             moveDefinitions.ForEach(subject => {
                 subject.target.Stop();
-                subject.target.DisableBehaviours(typeof(CharacterController));
                 subject.target.LookDirection = (int)subject.lookDirection;
             });
+            foreach(CharacterController controller in FindObjectsOfType<CharacterController>())
+            {
+                controller.Enabled = false;
+            } 
             director.Play();
             director.stopped += OnStop;
         });
@@ -52,9 +55,10 @@ public class CutsceneAction : MonoBehaviour
 
     private void OnStop(PlayableDirector director)
     {
-        moveDefinitions.ForEach(subject => {
-            subject.target.EnableBehaviours(typeof(CharacterController));
-        });
+        foreach (CharacterController controller in FindObjectsOfType<CharacterController>())
+        {
+            controller.Enabled = true;
+        }
         director.stopped -= OnStop;
         postCutsceneEvent.Invoke();
     }
