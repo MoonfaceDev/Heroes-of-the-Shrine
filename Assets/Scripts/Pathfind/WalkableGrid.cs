@@ -9,8 +9,9 @@ public class WalkableGrid : MonoBehaviour
 	public float nodeRadius;
 	[HideInInspector]
 	public Node[,] grid;
+    [HideInInspector]
+	public MovableObject movableObject;
 
-	private MovableObject movableObject;
 	private float NodeDiameter => nodeRadius * 2;
 	private int GridSizeX => Mathf.RoundToInt(gridWorldSize.x / NodeDiameter);
 	private int GridSizeZ => Mathf.RoundToInt(gridWorldSize.z / NodeDiameter);

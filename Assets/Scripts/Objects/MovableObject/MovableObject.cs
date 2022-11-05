@@ -75,6 +75,41 @@ public class MovableObject : MonoBehaviour
     {
         Vector2 previousGroundPosition = ToPlane(this.position);
         Vector2 groundPosition = ToPlane(position);
+        List<Vector2> intersections = GetIntersections(previousGroundPosition, groundPosition);
+
+        if (intersections.Count > 0)
+        {
+            Vector2 closest = intersections.Aggregate(groundPosition, (prev, next) =>
+            {
+                return Vector2.Distance(previousGroundPosition, next) < Vector2.Distance(previousGroundPosition, prev) ? next : prev;
+            });
+            position = ToSpace(closest - 0.001f * (groundPosition - previousGroundPosition).normalized, position.y);
+            OnStuck?.Invoke();
+        }
+
+        this.position.y = position.y;
+        if (IsValidPosition(position))
+        {
+            this.position = position;
+        }
+    }
+
+    private List<Vector2> GetIntersections(Vector2 previousGroundPosition, Vector2 groundPosition)
+    {
+        List<Vector2> intersections = GetBarrierIntersections(previousGroundPosition, groundPosition);
+        if (walkableGrid)
+        {
+            intersections.AddRange(GetWalkableGridIntersections(previousGroundPosition, groundPosition));
+            if (cameraMovement && CompareTag("Player"))
+            {
+                intersections.AddRange(GetCameraBorderIntersections(previousGroundPosition, groundPosition));
+            }
+        }
+        return intersections;
+    }
+
+    private List<Vector2> GetBarrierIntersections(Vector2 previousGroundPosition, Vector2 groundPosition)
+    {
         Hitbox[] barriers = CachedObjectsManager.Instance.GetObjects<Hitbox>("Barrier").ToArray();
         List<Vector2> intersections = new();
         foreach (Hitbox barrier in barriers)
@@ -82,55 +117,22 @@ public class MovableObject : MonoBehaviour
             List<Vector2> newIntersections = barrier.GetSegmentIntersections(previousGroundPosition, groundPosition);
             intersections.AddRange(newIntersections);
         }
+        return intersections;
+    }
 
-        if (walkableGrid)
-        {
-            Vector2 gridPosition = ToPlane(walkableGrid.GetComponent<MovableObject>().position);
-            Vector2 gridSize = ToPlane(walkableGrid.gridWorldSize);
-            intersections.AddRange(LineRectangleIntersections(previousGroundPosition, groundPosition, gridPosition, gridSize));
-            if (cameraMovement && CompareTag("Player"))
-            {
-                Rect border = cameraMovement.border;
-                Tuple<Vector2, Vector2>[] lines = new Tuple<Vector2, Vector2>[] {
-                    new (new (border.xMin, gridPosition.y), new (border.xMin, (gridPosition + gridSize).y)),
-                    new (new (border.xMax, gridPosition.y), new (border.xMax, (gridPosition + gridSize).y)),
-                };
-                foreach (Tuple<Vector2, Vector2> line in lines)
-                {
-                    bool hasIntersection = LineLineIntersection(out Vector2 intersection, previousGroundPosition, groundPosition, line.Item1, line.Item2);
-                    if (hasIntersection)
-                    {
-                        intersections.Add(intersection);
-                    }
-                }
-            }
-        }
+    private List<Vector2> GetWalkableGridIntersections(Vector2 previousGroundPosition, Vector2 groundPosition)
+    {
+        Vector2 gridPosition = ToPlane(walkableGrid.movableObject.position);
+        Vector2 gridSize = ToPlane(walkableGrid.gridWorldSize);
+        return LineRectangleIntersections(previousGroundPosition, groundPosition, gridPosition, gridSize);
+    }
 
-        if (intersections.Count > 0)
-        {
-            Vector2 closest = intersections.Aggregate(groundPosition, (prev, next) =>
-            {
-                if (Vector2.Distance(previousGroundPosition, next) < Vector2.Distance(previousGroundPosition, prev))
-                {
-                    return next;
-                }
-                return prev;
-            });
-            if (Vector2.Distance(previousGroundPosition, closest) > 0.001f)
-            {
-                position = ToSpace(closest - 0.001f * (groundPosition - previousGroundPosition).normalized) + position.y * Vector3.up;
-            }
-            else
-            {
-                position = this.position;
-            }
-            OnStuck?.Invoke();
-        }
-        this.position.y = position.y;
-        if (IsValidPosition(position))
-        {
-            this.position = position;
-        }
+    private List<Vector2> GetCameraBorderIntersections(Vector2 previousGroundPosition, Vector2 groundPosition)
+    {
+        Rect border = cameraMovement.border;
+        Vector2 gridPosition = ToPlane(walkableGrid.movableObject.position);
+        Vector2 gridSize = ToPlane(walkableGrid.gridWorldSize);
+        return LineRectangleIntersections(previousGroundPosition, groundPosition, new(border.xMin, gridPosition.y), new(border.width, gridSize.y));
     }
 
     public bool IsValidPosition(Vector3 position)
