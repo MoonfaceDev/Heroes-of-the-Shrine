@@ -18,7 +18,7 @@ public class RunKick : SimpleAttack
         float direction = 0;
         OnPlay += () => direction = LookDirection;
 
-        OnStart += () =>
+        OnStartActive += () =>
         {
             isMoving = true;
             MovableObject.velocity.x = direction * velocity;
@@ -27,7 +27,7 @@ public class RunKick : SimpleAttack
             EventManager.Attach(() => MovableObject.velocity.x == 0 || Mathf.Sign(MovableObject.velocity.x) != direction, () => isMoving = false);
         };
 
-        OnFinish += () => 
+        OnFinishActive += () => 
         {
             MovableObject.velocity.x = 0;
             MovableObject.acceleration.x = 0;

@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class CannotAttackException : Exception
 {
@@ -14,10 +13,7 @@ public abstract class BaseAttack : PlayableBehaviour
     public bool interruptable = true;
     public bool hardRecovery = false;
 
-    public string AttackName
-    {
-        get => GetType().Name;
-    }
+    public string AttackName => GetType().Name;
 
     public bool Anticipating
     {
@@ -26,6 +22,7 @@ public abstract class BaseAttack : PlayableBehaviour
         {
             anticipating = value;
             Animator.SetBool(AttackName + "-anticipating", anticipating);
+            (value ? OnStartAnticipating : OnFinishAnticipating)?.Invoke();
         }
     }
 
@@ -36,6 +33,7 @@ public abstract class BaseAttack : PlayableBehaviour
         {
             active = value;
             Animator.SetBool(AttackName + "-active", active);
+            (value ? OnStartActive : OnFinishActive)?.Invoke();
         }
     }
 
@@ -46,29 +44,18 @@ public abstract class BaseAttack : PlayableBehaviour
         {
             recovering = value;
             Animator.SetBool(AttackName + "-recovering", recovering);
+            (value ? OnStartRecovery : OnFinishRecovery)?.Invoke();
         }
     }
 
     public override bool Playing => Anticipating || Active || Recovering;
 
-    public event Action OnStart;
-    public event Action OnFinish;
-    public event Action OnRecover;
-
-    protected void InvokeOnStart()
-    {
-        OnStart?.Invoke();
-    }
-
-    protected void InvokeOnFinish()
-    {
-        OnFinish?.Invoke();
-    }
-
-    protected void InvokeOnRecover()
-    {
-        OnRecover?.Invoke();
-    }
+    public event Action OnStartAnticipating;
+    public event Action OnFinishAnticipating;
+    public event Action OnStartActive;
+    public event Action OnFinishActive;
+    public event Action OnStartRecovery;
+    public event Action OnFinishRecovery;
 
     private bool anticipating;
     private bool active;
@@ -92,6 +79,7 @@ public abstract class BaseAttack : PlayableBehaviour
         {
             throw new CannotAttackException();
         }
+        InvokeOnPlay();
         attackFlowCoroutine = StartCoroutine(AttackFlow());
     }
 
@@ -99,43 +87,36 @@ public abstract class BaseAttack : PlayableBehaviour
     {
         if (Playing)
         {
-            InvokeOnStop();
             StopCoroutine(attackFlowCoroutine);
+            InvokeOnStop();
         }
         if (Anticipating)
         {
             Anticipating = false;
+            OnFinishAnticipating?.Invoke();
         }
         if (Active)
         {
             Active = false;
-            InvokeOnFinish();
+            OnFinishActive?.Invoke();
         }
         if (Recovering)
         {
             Recovering = false;
-            InvokeOnRecover();
+            OnFinishRecovery?.Invoke();
         }
     }
 
     private IEnumerator AttackFlow()
     {
         Anticipating = true;
-        InvokeOnPlay();
         yield return AnticipateCoroutine();
-
         Anticipating = false;
         Active = true;
-        InvokeOnStart();
         yield return ActiveCoroutine();
-
         Active = false;
         Recovering = true;
-        InvokeOnFinish();
         yield return RecoveryCoroutine();
-
         Recovering = false;
-        InvokeOnRecover();
-        InvokeOnStop();
     }
 }

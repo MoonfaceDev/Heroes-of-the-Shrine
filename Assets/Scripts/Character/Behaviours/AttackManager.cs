@@ -11,9 +11,12 @@ public class AttackManager : PlayableBehaviour
     [HideInInspector] public BaseAttack lastAttack;
     [HideInInspector] public float lastAttackTime;
 
-    public event Action OnStart;
-    public event Action OnFinish;
-    public event Action OnRecover;
+    public event Action OnStartAnticipating;
+    public event Action OnFinishAnticipating;
+    public event Action OnStartActive;
+    public event Action OnFinishActive;
+    public event Action OnStartRecovery;
+    public event Action OnFinishRecovery;
 
     private EventListener forgetComboEvent;
     private List<DamageBonus> damageBonuses;
@@ -31,11 +34,17 @@ public class AttackManager : PlayableBehaviour
         BaseAttack[] attackComponents = GetComponents<BaseAttack>();
         foreach (BaseAttack attack in attackComponents)
         {
+            // Forward events
             attack.OnPlay += () => InvokeOnPlay();
-            attack.OnStart += () => OnStart?.Invoke();
-            attack.OnFinish += () => OnFinish?.Invoke();
-            attack.OnRecover += () => OnRecover?.Invoke();
+            attack.OnStartAnticipating += () => OnStartAnticipating?.Invoke();
+            attack.OnFinishAnticipating += () => OnFinishAnticipating?.Invoke();
+            attack.OnStartActive+= () => OnStartActive?.Invoke();
+            attack.OnFinishActive += () => OnFinishActive?.Invoke();
+            attack.OnStartRecovery += () => OnStartRecovery?.Invoke();
+            attack.OnFinishRecovery += () => OnFinishRecovery?.Invoke();
             attack.OnStop += () => InvokeOnStop();
+
+            // Combo handling
 
             attack.OnPlay += () =>
             {
@@ -43,14 +52,17 @@ public class AttackManager : PlayableBehaviour
                 lastAttack = attack;
             };
 
-            attack.OnStop += () =>
+            void ForgetComboAction()
             {
                 EventManager.Detach(forgetComboEvent);
                 forgetComboEvent = EventManager.StartTimeout(() =>
                 {
                     lastAttack = null;
                 }, maxComboDelay);
-            };
+            }
+
+            attack.OnFinishRecovery += ForgetComboAction;
+            attack.OnStop += ForgetComboAction;
         }
     }
 

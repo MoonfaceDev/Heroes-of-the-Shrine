@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum Direction
 {
@@ -31,6 +32,7 @@ public class EncounterAction : MonoBehaviour
     public float timeToAlarm;
     public Rect cameraBorder;
     public float spawnSourceDistance = 1;
+    public UnityEvent postEncounterEvent;
 
     private bool stopped;
 
@@ -96,6 +98,7 @@ public class EncounterAction : MonoBehaviour
             {
                 CameraMovement cameraMovement = Camera.main.GetComponent<CameraMovement>();
                 cameraMovement.Unlock();
+                postEncounterEvent.Invoke();
             }
         });
     }

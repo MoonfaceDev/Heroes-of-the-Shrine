@@ -44,7 +44,7 @@ public class ElectrifyAttack : NormalAttack
 
         EventListener switchDetectorsEvent = null;
 
-        OnStart += () =>
+        OnStartActive += () =>
         {
             periodicHitDetector.Start();
             switchDetectorsEvent = EventManager.Attach(() => detectCount >= periodicHitCount, () =>
@@ -55,14 +55,10 @@ public class ElectrifyAttack : NormalAttack
             });
         };
 
-        OnFinish += () =>
+        OnFinishActive += () =>
         {
             periodicHitDetector.Stop();
             explosionHitDetector.Stop();
-        };
-
-        OnStop += () =>
-        {
             EventManager.Detach(switchDetectorsEvent);
         };
     }

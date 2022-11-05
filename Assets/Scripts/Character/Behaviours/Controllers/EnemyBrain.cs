@@ -84,50 +84,31 @@ public class EnemyBrain : CharacterController
             if (playerAttackManager)
             {
                 playerAttackManager.OnPlay += OnPlayerAttackPlay;
+                playerAttackManager.OnStartAnticipating += OnPlayerAttackStartAnticipating;
+                playerAttackManager.OnFinishAnticipating += OnPlayerAttackFinishAnticipating;
+                playerAttackManager.OnStartActive += OnPlayerAttackStartActive;
+                playerAttackManager.OnFinishActive += OnPlayerAttackFinishActive;
+                playerAttackManager.OnStartRecovery += OnPlayerAttackStartRecovery;
+                playerAttackManager.OnFinishRecovery += OnPlayerAttackFinishRecovery;
                 playerAttackManager.OnStop += OnPlayerAttackStop;
             }
         }
     }
 
-    private void OnPlayerKnockbackPlay()
-    {
-        stateMachine.SetBool("playerKnockback", true);
-    }
-
-    private void OnPlayerKnockbackStop()
-    {
-        stateMachine.SetBool("playerKnockback", false);
-    }
-
-    private void OnPlayerRecoveringFromKnockbackPlay()
-    {
-        stateMachine.SetBool("playerRecoveringFromKnockback", true);
-    }
-
-    private void OnPlayerRecoveringFromKnockbackStop()
-    {
-        stateMachine.SetBool("playerRecoveringFromKnockback", false);
-    }
-
-    private void OnPlayerStunPlay()
-    {
-        stateMachine.SetBool("playerStun", true);
-    }
-
-    private void OnPlayerStunStop()
-    {
-        stateMachine.SetBool("playerStun", false);
-    }
-
-    private void OnPlayerAttackPlay()
-    {
-        stateMachine.SetBool("playerAttacking", true);
-    }
-
-    private void OnPlayerAttackStop()
-    {
-        stateMachine.SetBool("playerAttacking", false);
-    }
+    private void OnPlayerKnockbackPlay() => stateMachine.SetBool("playerKnockback", true);
+    private void OnPlayerKnockbackStop() => stateMachine.SetBool("playerKnockback", false);
+    private void OnPlayerRecoveringFromKnockbackPlay() => stateMachine.SetBool("playerRecoveringFromKnockback", true);
+    private void OnPlayerRecoveringFromKnockbackStop() => stateMachine.SetBool("playerRecoveringFromKnockback", false);
+    private void OnPlayerStunPlay() => stateMachine.SetBool("playerStun", true);
+    private void OnPlayerStunStop() => stateMachine.SetBool("playerStun", false);
+    private void OnPlayerAttackPlay() => stateMachine.SetBool("playerAttacking", true);
+    private void OnPlayerAttackStartAnticipating() => stateMachine.SetBool("playerAttacking-anticipating", true);
+    private void OnPlayerAttackFinishAnticipating() => stateMachine.SetBool("playerAttacking-anticipating", false);
+    private void OnPlayerAttackStartActive() => stateMachine.SetBool("playerAttacking-active", true);
+    private void OnPlayerAttackFinishActive() => stateMachine.SetBool("playerAttacking-active", false);
+    private void OnPlayerAttackStartRecovery() => stateMachine.SetBool("playerAttacking-recovering", true);
+    private void OnPlayerAttackFinishRecovery() => stateMachine.SetBool("playerAttacking-recovering", false);
+    private void OnPlayerAttackStop() => stateMachine.SetBool("playerAttacking", false);
 
     public void Update()
     {
@@ -193,6 +174,12 @@ public class EnemyBrain : CharacterController
             if (playerAttackManager)
             {
                 playerAttackManager.OnPlay -= OnPlayerAttackPlay;
+                playerAttackManager.OnStartAnticipating -= OnPlayerAttackStartAnticipating;
+                playerAttackManager.OnFinishAnticipating -= OnPlayerAttackFinishAnticipating;
+                playerAttackManager.OnStartActive -= OnPlayerAttackStartActive;
+                playerAttackManager.OnFinishActive -= OnPlayerAttackFinishActive;
+                playerAttackManager.OnStartRecovery -= OnPlayerAttackStartRecovery;
+                playerAttackManager.OnFinishRecovery -= OnPlayerAttackFinishRecovery;
                 playerAttackManager.OnStop -= OnPlayerAttackStop;
             }
         }

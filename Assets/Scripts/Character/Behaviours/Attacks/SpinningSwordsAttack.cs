@@ -17,21 +17,17 @@ public class SpinningSwordsAttack : NormalAttack
         hitDetector2 = CreateOneHitDetector(hitbox2);
         Coroutine disableHitDetector1 = null;
         Coroutine enableHitDetector2 = null;
-        OnStart += () =>
+        OnStartActive += () =>
         {
             hitDetector1.Start();
             disableHitDetector1 = StartCoroutine(DisableHitDetector1());
             enableHitDetector2 = StartCoroutine(EnableHitDetector2());
         };
 
-        OnFinish += () => 
+        OnFinishActive += () => 
         {
             hitDetector1.Stop();
             hitDetector2.Stop();
-        };
-
-        OnStop += () =>
-        {
             StopCoroutine(disableHitDetector1);
             StopCoroutine(enableHitDetector2);
         };

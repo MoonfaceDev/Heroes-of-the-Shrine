@@ -51,6 +51,7 @@ public class SimpleAttack : BaseAttack
                 MovableObject.velocity = Vector3.zero;
             }
         };
+        OnFinishRecovery += () => EnableBehaviours(typeof(WalkBehaviour));
         OnStop += () => EnableBehaviours(typeof(WalkBehaviour));
     }
 
@@ -96,8 +97,8 @@ public class SimpleAttack : BaseAttack
                 HitCallable(hittable);
             }
         });
-        OnStart += () => hitDetector.Start();
-        OnFinish += () => hitDetector.Stop();
+        OnStartActive += () => hitDetector.Start();
+        OnFinishActive += () => hitDetector.Stop();
     }
 
     public override bool CanPlay()
