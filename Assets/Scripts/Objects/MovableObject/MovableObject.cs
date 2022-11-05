@@ -73,7 +73,7 @@ public class MovableObject : MonoBehaviour
 
     public void UpdatePosition(Vector3 position)
     {
-        Vector2 previousGroundPosition = ToPlane(position);
+        Vector2 previousGroundPosition = ToPlane(this.position);
         Vector2 groundPosition = ToPlane(position);
         Hitbox[] barriers = CachedObjectsManager.Instance.GetObjects<Hitbox>("Barrier").ToArray();
         List<Vector2> intersections = new();
