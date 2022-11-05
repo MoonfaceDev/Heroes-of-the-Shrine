@@ -1,22 +1,21 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerSpawning : MonoBehaviour
 {
     public GameObject player;
-    public float entranceDuration;
-    public float entranceSpeedMultiplier = 1;
+    public Vector3 spawnPosition;
+    // public float entranceDuration;
+    // public float entranceSpeedMultiplier = 1;
+    public UnityEvent startEvent;
 
     void Awake()
     {
         Camera camera = SetupCamera();
-        CameraMovement cameraMovement = camera.GetComponent<CameraMovement>();
+        // CameraMovement cameraMovement = camera.GetComponent<CameraMovement>();
         MovableObject movableObject = player.GetComponent<MovableObject>();
-        movableObject.position.x = cameraMovement.worldBorder.xMin + 0.5f;
-    }
-
-    private void Start()
-    {
-        PlayEntrance();
+        // movableObject.position.x = cameraMovement.worldBorder.xMin + 0.5f;
+        movableObject.position = spawnPosition;
     }
 
     private Camera SetupCamera()
@@ -27,7 +26,13 @@ public class PlayerSpawning : MonoBehaviour
         return camera;
     }
 
-    private void PlayEntrance()
+    private void Start()
+    {
+        startEvent.Invoke();
+        // PlayEntrance();
+    }
+
+    /*private void PlayEntrance()
     {
         CameraFollow cameraFollow = Camera.main.GetComponent<CameraFollow>();
         PlayerController controller = player.GetComponent<PlayerController>();
@@ -47,5 +52,11 @@ public class PlayerSpawning : MonoBehaviour
             controller.Enabled = true;
             cameraFollow.enabled = true;
         }, entranceDuration);
+    }*/
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(MovableObject.ScreenCoordinates(spawnPosition), 0.5f);
     }
 }

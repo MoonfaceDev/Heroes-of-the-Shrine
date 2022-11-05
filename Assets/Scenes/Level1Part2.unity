@@ -727,6 +727,9 @@ MonoBehaviour:
     width: 24.44
     height: 8
   spawnSourceDistance: 1
+  postEncounterEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &966562213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -913,6 +916,34 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_PlayableAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: ebc4389c63968414d8841a503e57b7fe, type: 2}
+    - target: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_SceneBindings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_SceneBindings.Array.data[0].key
+      value: 
+      objectReference: {fileID: 8403503124373609895, guid: ebc4389c63968414d8841a503e57b7fe, type: 2}
+    - target: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_SceneBindings.Array.data[1].key
+      value: 
+      objectReference: {fileID: -7946910647684706536, guid: ebc4389c63968414d8841a503e57b7fe, type: 2}
+    - target: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_SceneBindings.Array.data[0].value
+      value: 
+      objectReference: {fileID: 1500296618}
+    - target: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_SceneBindings.Array.data[1].value
+      value: 
+      objectReference: {fileID: 1500296619}
+    - target: {fileID: 4205167683501668961, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: spawnPosition.x
+      value: -11.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5826350637341048340, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1021,6 +1052,14 @@ PrefabInstance:
       propertyPath: objctsToDestory.Array.data[0]
       value: 
       objectReference: {fileID: 2083560094}
+    - target: {fileID: 8011096904622113216, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138288699133641890, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: director
+      value: 
+      objectReference: {fileID: 1500296616}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
@@ -1035,6 +1074,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018754af8c72e684ba346cdfe11831b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!320 &1500296616 stripped
+PlayableDirector:
+  m_CorrespondingSourceObject: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+  m_PrefabInstance: {fileID: 1500296614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1500296617 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8011096904622113277, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+  m_PrefabInstance: {fileID: 1500296614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1500296618
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500296617}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &1500296619 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8011096905049079380, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+  m_PrefabInstance: {fileID: 1500296614}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1571971838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1505,6 +1579,9 @@ MonoBehaviour:
     width: 49.2
     height: 8
   spawnSourceDistance: 1
+  postEncounterEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1847954931
 MonoBehaviour:
   m_ObjectHideFlags: 0

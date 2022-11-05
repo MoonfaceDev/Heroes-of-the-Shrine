@@ -47,19 +47,29 @@ public class CutsceneAction : MonoBehaviour
             foreach(CharacterController controller in FindObjectsOfType<CharacterController>())
             {
                 controller.Enabled = false;
+            }
+            if (director)
+            {
+                director.Play();
+                director.stopped += OnStop;
             } 
-            director.Play();
-            director.stopped += OnStop;
+            else
+            {
+                OnStop(director);
+            }
         });
     }
 
     private void OnStop(PlayableDirector director)
     {
+        if (director)
+        {
+            director.stopped -= OnStop;
+        }
         foreach (CharacterController controller in FindObjectsOfType<CharacterController>())
         {
             controller.Enabled = true;
         }
-        director.stopped -= OnStop;
         postCutsceneEvent.Invoke();
     }
 
