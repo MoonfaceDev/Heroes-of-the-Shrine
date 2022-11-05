@@ -39,6 +39,10 @@ public class SpinningSwordsAttack : NormalAttack
         {
             if (IsHittableTag(hittable.tag))
             {
+                if (hittable.CanGetHit())
+                {
+                    hitbox.PlayParticles();
+                }
                 HitCallable(hittable);
             }
         });

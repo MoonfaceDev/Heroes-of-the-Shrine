@@ -94,6 +94,10 @@ public class SimpleAttack : BaseAttack
         {
             if (IsHittableTag(hittable.tag))
             {
+                if (hittable.CanGetHit())
+                {
+                    hitbox.PlayParticles();
+                }
                 HitCallable(hittable);
             }
         });
@@ -127,10 +131,6 @@ public class SimpleAttack : BaseAttack
     {
         float damage = CalculateDamage(hittableBehaviour);
         print(hittableBehaviour.name + " hit by " + AttackName);
-        if (hittableBehaviour.CanGetHit())
-        {
-            hitbox.PlayParticles();
-        }
         switch (hitType)
         {
             case HitType.Knockback:
