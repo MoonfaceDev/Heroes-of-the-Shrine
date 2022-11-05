@@ -666,7 +666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab68d069e0e79504ebe8ab7fd318ee7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxComboDelay: 0.2
+  maxComboDelay: 0.05
   hittableTags:
   - Enemy
   lastAttack: {fileID: 0}
@@ -760,8 +760,8 @@ MonoBehaviour:
   previousAttacks: []
   midair: 0
   anticipateDuration: 0.2
-  activeDuration: 0.05
-  recoveryDuration: 0.3
+  activeDuration: 0.15
+  recoveryDuration: 0.2
   hitbox: {fileID: 5102893360536826755}
   overrideDefaultHittableTags: 0
   hittableTags: []

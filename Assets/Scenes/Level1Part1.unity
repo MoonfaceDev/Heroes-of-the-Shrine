@@ -11187,6 +11187,10 @@ PrefabInstance:
       propertyPath: startPosition.z
       value: -3
       objectReference: {fileID: 0}
+    - target: {fileID: 8011096904622113230, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: maxComboDelay
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8011096904796056369, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5500002
