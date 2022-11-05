@@ -844,7 +844,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: playerDistance
-    m_EventTreshold: 1.5
+    m_EventTreshold: 2.5
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3451182139077028073}
   m_Solo: 0
@@ -1320,7 +1320,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: playerDistance
-    m_EventTreshold: 1.5
+    m_EventTreshold: 2.5
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3451182139077028073}
   m_Solo: 0
@@ -2340,8 +2340,8 @@ AnimatorStateTransition:
     m_ConditionEvent: playerDistanceZ
     m_EventTreshold: 0.5
   - m_ConditionMode: 4
-    m_ConditionEvent: playerDistance
-    m_EventTreshold: 1.5
+    m_ConditionEvent: playerDistanceX
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3798933222075844845}
   m_Solo: 0
@@ -3537,11 +3537,11 @@ AnimatorStateTransition:
     m_ConditionEvent: rage
     m_EventTreshold: 0
   - m_ConditionMode: 4
-    m_ConditionEvent: playerDistance
+    m_ConditionEvent: playerDistanceX
     m_EventTreshold: 1.5
   - m_ConditionMode: 4
     m_ConditionEvent: playerDistanceZ
-    m_EventTreshold: 0.5
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2283841270127899050}
   m_Solo: 0
