@@ -706,6 +706,12 @@ MonoBehaviour:
     button: 3
   animatorControllers: []
   activeSuitIndex: 0
+  bufferingTime: 0.2
+  nonBufferedAttacks:
+  - {fileID: 5102893360874897673}
+  jumpPriority: 0
+  slidePriority: 1
+  attackPriority: 2
 --- !u!114 &5102893360874897673
 MonoBehaviour:
   m_ObjectHideFlags: 0
