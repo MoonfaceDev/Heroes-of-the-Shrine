@@ -21,6 +21,15 @@ public class Hitbox : MonoBehaviour
         }
     }
 
+    public void PlayParticles()
+    {
+        ParticleSystem particleSystem = GetComponentInChildren<ParticleSystem>();
+        if (particleSystem)
+        {
+            particleSystem.Play();
+        }
+    }
+
     void OnDrawGizmosSelected()
     {
         if (parentObject != null && !CompareTag("Barrier"))

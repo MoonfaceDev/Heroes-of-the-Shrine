@@ -72,6 +72,10 @@ public class ElectrifyAttack : NormalAttack
     {
         float damage = CalculateDamage(hittableBehaviour);
         print(hittableBehaviour.name + " hit by periodic " + AttackName);
+        if (hittableBehaviour.CanGetHit())
+        {
+            periodicHitbox.PlayParticles();
+        }
         hittableBehaviour.Stun(damage, periodicStunTime);
         if (Random.Range(0f, 1f) < periodicHitElectrifyRate)
         {
@@ -91,6 +95,10 @@ public class ElectrifyAttack : NormalAttack
     {
         float damage = CalculateExplosionDamage(hittableBehaviour);
         print(hittableBehaviour.name + " hit by explosion " + AttackName);
+        if (hittableBehaviour.CanGetHit())
+        {
+            explosionHitbox.PlayParticles();
+        }
         int hitDirection = (int)Mathf.Sign(hittableBehaviour.MovableObject.position.x - MovableObject.position.x);
         hittableBehaviour.Knockback(damage, epxlosionKnockbackPower, KnockbackBehaviour.GetRelativeDirection(explosionKnockbackDirection, hitDirection));
         ElectrifiedEffect electrifiedEffect = hittableBehaviour.GetComponent<ElectrifiedEffect>();
