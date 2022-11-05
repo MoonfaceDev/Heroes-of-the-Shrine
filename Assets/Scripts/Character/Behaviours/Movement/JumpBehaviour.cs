@@ -58,7 +58,6 @@ public class JumpBehaviour : BaseMovementBehaviour
     private bool anticipating;
     private int jumps;
     private Coroutine anticipateCoroutine;
-    private EventListener jumpEvent;
     private Coroutine recoverCoroutine;
     private WalkBehaviour walkBehaviour;
 
@@ -110,22 +109,17 @@ public class JumpBehaviour : BaseMovementBehaviour
         OnJumpsChanged?.Invoke(Jumps);
         MovableObject.velocity.y = jumpSpeed;
         MovableObject.acceleration.y = -Character.physicalAttributes.gravityAcceleration;
-        jumpEvent = EventManager.Attach(
-            () => MovableObject.velocity.y <= 0 && MovableObject.position.y <= 0,
-            Land
-        );
+        MovableObject.OnLand += Land;
     }
 
     private void Land()
     {
+        MovableObject.OnLand -= Land;
+
         Active = false;
         Jumps = 0;
         OnLand?.Invoke();
         OnJumpsChanged?.Invoke(Jumps);
-
-        MovableObject.position.y = 0;
-        MovableObject.velocity.y = 0;
-        MovableObject.acceleration.y = 0;
 
         if (walkBehaviour && !walkBehaviour.Walk) //not moving
         {
@@ -162,7 +156,7 @@ public class JumpBehaviour : BaseMovementBehaviour
         if (Active)
         {
             MovableObject.velocity.y = 0;
-            EventManager.Detach(jumpEvent);
+            MovableObject.OnLand -= Land;
             Active = false;
             Jumps = 0;
             OnJumpsChanged?.Invoke(Jumps);

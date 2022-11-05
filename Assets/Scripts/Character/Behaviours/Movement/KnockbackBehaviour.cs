@@ -47,7 +47,7 @@ public class KnockbackBehaviour : ForcedBehaviour
     private bool active;
     private bool recovering;
     private int bounce;
-    private EventListener bounceEvent;
+    private Action currentLandEvent;
     private Coroutine recoverCoroutine;
 
     public void Play(float power, float angleDegrees)
@@ -63,36 +63,34 @@ public class KnockbackBehaviour : ForcedBehaviour
         InvokeOnPlay();
         Bounce = 1;
         SetMovement(power, angleDegrees);
+
+        void Land()
+        {
+            MovableObject.OnLand -= Land;
+            currentLandEvent = null;
+            Active = false;
+            Bounce = 0;
+            Recovering = true;
+            MovableObject.velocity.x = 0;
+            OnFinish?.Invoke();
+            recoverCoroutine = StartCoroutine(RecoverAfterTime());
+        }
+
+        void SecondBounce()
+        {
+            MovableObject.OnLand -= SecondBounce;
+            Bounce = 2;
+            power *= SECOND_BOUNCE_POWER_MULTIPLIER;
+            angleDegrees = 180 - Mathf.Abs(angleDegrees % 360 - 180);
+            SetMovement(power, angleDegrees);
+            MovableObject.OnLand += Land;
+            currentLandEvent = Land;
+            OnBounce?.Invoke(Bounce, power, angleDegrees);
+        }
+
+        MovableObject.OnLand += SecondBounce;
+        currentLandEvent = SecondBounce;
         OnBounce?.Invoke(Bounce, power, angleDegrees);
-
-        bounceEvent = EventManager.Attach(
-            () => MovableObject.velocity.y < 0 && MovableObject.position.y <= 0,
-            () =>
-            {
-                Bounce = 2;
-                power *= SECOND_BOUNCE_POWER_MULTIPLIER;
-                angleDegrees = 180 - Mathf.Abs(angleDegrees % 360 - 180);
-                MovableObject.position.y = 0;
-                SetMovement(power, angleDegrees);
-                OnBounce?.Invoke(Bounce, power, angleDegrees);
-
-                bounceEvent = EventManager.Attach(
-                    () => MovableObject.velocity.y < 0 && MovableObject.position.y <= 0,
-                    () =>
-                    {
-                        Active = false;
-                        Bounce = 0;
-                        Recovering = true;
-                        MovableObject.acceleration.y = 0;
-                        MovableObject.velocity.y = 0;
-                        MovableObject.velocity.x = 0;
-                        MovableObject.position.y = 0;
-                        OnFinish?.Invoke();
-                        recoverCoroutine = StartCoroutine(RecoverAfterTime());
-                    }
-                );
-            }
-        );
     }
 
     private void SetMovement(float power, float angleDegrees)
@@ -131,7 +129,7 @@ public class KnockbackBehaviour : ForcedBehaviour
         }
         if (Active)
         {
-            EventManager.Detach(bounceEvent);
+            MovableObject.OnLand -= currentLandEvent;
             Active = false;
             Bounce = 0;
             MovableObject.acceleration.y = 0;

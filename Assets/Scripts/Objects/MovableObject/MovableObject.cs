@@ -33,6 +33,7 @@ public class MovableObject : MonoBehaviour
     public Vector3 GroundPosition => position - position.y * Vector3.up;
 
     public event Action OnStuck;
+    public event Action OnLand;
 
     private WalkableGrid walkableGrid;
     private CameraMovement cameraMovement;
@@ -48,6 +49,11 @@ public class MovableObject : MonoBehaviour
         {
             velocity = Vector3.zero + velocity.y * Vector3.up;
             acceleration = Vector3.zero + acceleration.y * Vector3.up;
+        };
+        OnLand += () =>
+        {
+            velocity.y = 0;
+            acceleration.y = 0;
         };
     }
 
@@ -85,6 +91,11 @@ public class MovableObject : MonoBehaviour
             });
             position = ToSpace(closest - 0.001f * (groundPosition - previousGroundPosition).normalized, position.y);
             OnStuck?.Invoke();
+        }
+        if (position.y < 0)
+        {
+            position.y = 0;
+            OnLand?.Invoke();
         }
 
         this.position.y = position.y;
