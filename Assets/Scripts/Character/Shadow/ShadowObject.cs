@@ -19,7 +19,7 @@ public class ShadowObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float scale = 2 / (1 + Mathf.Exp(0.2f * movableObject.position.y));
+        float scale = 2 / (1 + Mathf.Exp(0.2f * movableObject.WorldPosition.y));
         foreach (AnimationDefinition definition in animationDefinitions)
         {
             if (figure.GetCurrentAnimatorStateInfo(0).IsName(definition.animationStateName))

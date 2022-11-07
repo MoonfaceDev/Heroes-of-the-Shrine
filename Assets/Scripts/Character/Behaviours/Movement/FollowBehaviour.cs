@@ -35,9 +35,9 @@ public class FollowBehaviour : BaseMovementBehaviour
         active = true;
         InvokeOnPlay();
         followEvent = EventManager.Attach(() => true, () => {
-            Vector3 direction = pathfind.Direction(MovableObject.position, destination, GetExcluded != null ? GetExcluded() : null);
+            Vector3 direction = pathfind.Direction(MovableObject.WorldPosition, destination, GetExcluded != null ? GetExcluded() : null);
             walkBehaviour.Play(direction.x, direction.z, false);
-            LookDirection = Mathf.RoundToInt(Mathf.Sign(destination.x - MovableObject.position.x));
+            LookDirection = Mathf.RoundToInt(Mathf.Sign(destination.x - MovableObject.WorldPosition.x));
         }, false);
     }
 
@@ -53,7 +53,7 @@ public class FollowBehaviour : BaseMovementBehaviour
         followEvent = EventManager.Attach(() => true, () => {
             Vector3 direction = GetDirection(target, GetExcluded != null ? GetExcluded() : null, getOverrideDirection);
             walkBehaviour.Play(direction.x, direction.z, false);
-            LookDirection = Mathf.RoundToInt(Mathf.Sign(target.position.x - MovableObject.position.x));
+            LookDirection = Mathf.RoundToInt(Mathf.Sign(target.WorldPosition.x - MovableObject.WorldPosition.x));
         }, false);
     }
 
@@ -67,7 +67,7 @@ public class FollowBehaviour : BaseMovementBehaviour
                 return direction;
             }
         }
-        return pathfind.Direction(MovableObject.position, target.position, excluded);
+        return pathfind.Direction(MovableObject.WorldPosition, target.WorldPosition, excluded);
     }
 
     public override void Stop()

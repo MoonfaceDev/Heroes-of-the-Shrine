@@ -8,29 +8,23 @@ public class MovableObject : MonoBehaviour
 {
     public static float zScale = 0.8f;
 
+    public MovableObject parent;
     public Renderer figureObject;
 
     public Vector3 position;
-    [HideInInspector]
-    public Vector3 startPosition;
-    [HideInInspector]
-    public Vector3 velocity;
-    [HideInInspector]
-    public Vector3 acceleration;
+    public Quaternion rotation;
+    public Vector3 scale = Vector3.one;
 
-    public Vector3 WorldPosition
-    {
-        get
-        {
-            MovableObject[] movableObjects = GetComponentsInParent<MovableObject>();
-            return movableObjects.Aggregate(Vector3.zero, (total, next) =>
-            {
-                return total + next.position;
-            });
-        }
+    [ShowDebug] public Vector3 velocity;
+    [ShowDebug] public Vector3 acceleration;
+    [ShowDebug] public Vector3 wawa;
+
+    public Vector3 WorldPosition {
+        get => TransformToWorld(position);
+        set => position = TransformToRelative(value);
     }
 
-    public Vector3 GroundPosition => position - position.y * Vector3.up;
+    public Vector3 GroundWorldPosition => WorldPosition - WorldPosition.y * Vector3.up;
 
     public event Action OnStuck;
     public event Action OnLand;
@@ -42,7 +36,6 @@ public class MovableObject : MonoBehaviour
     {
         walkableGrid = FindObjectOfType<WalkableGrid>();
         cameraMovement = Camera.main.GetComponent<CameraMovement>();
-        startPosition = position;
         velocity = Vector3.zero;
         acceleration = Vector3.zero;
         OnStuck += () =>
@@ -60,6 +53,7 @@ public class MovableObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        wawa = WorldPosition;
         //update position and velocity
         velocity += acceleration * Time.deltaTime;
         if (!CompareTag("Barrier")) {
@@ -69,18 +63,38 @@ public class MovableObject : MonoBehaviour
             UpdatePosition(position + Vector3.forward * (wantedPosition.z - position.z));
         }
         //update position in scene
-        transform.position = GroundScreenCoordinates(position);
+        transform.localPosition = GroundScreenCoordinates(position);
+        transform.localRotation = rotation;
+        transform.localScale = scale;
         if (figureObject)
         {
-            figureObject.transform.localPosition = ScreenCoordinates(position.y * Vector3.up);
+            figureObject.transform.localPosition = ScreenCoordinates(WorldPosition.y * Vector3.up);
             UpdateSortingOrder();
         }
     }
 
+    public Vector3 TransformToWorld(Vector3 relativePoint)
+    {
+        if (!parent)
+        {
+            return relativePoint;
+        }
+        return parent.WorldPosition + Vector3.Scale(parent.rotation * relativePoint, parent.scale);
+    }
+
+    public Vector3 TransformToRelative(Vector3 worldPoint)
+    {
+        if (!parent)
+        {
+            return worldPoint;
+        }
+        return Vector3.Scale(worldPoint - parent.WorldPosition, Quaternion.Inverse(parent.rotation) * new Vector3(1 / parent.scale.x, 1 / parent.scale.y, 1 / parent.scale.z));
+    }
+
     public void UpdatePosition(Vector3 position)
     {
-        Vector2 previousGroundPosition = ToPlane(this.position);
-        Vector2 groundPosition = ToPlane(position);
+        Vector2 previousGroundPosition = ToPlane(WorldPosition);
+        Vector2 groundPosition = ToPlane(TransformToWorld(position));
         List<Vector2> intersections = GetIntersections(previousGroundPosition, groundPosition);
 
         if (intersections.Count > 0)
@@ -89,7 +103,7 @@ public class MovableObject : MonoBehaviour
             {
                 return Vector2.Distance(previousGroundPosition, next) < Vector2.Distance(previousGroundPosition, prev) ? next : prev;
             });
-            position = ToSpace(closest - 0.001f * (groundPosition - previousGroundPosition).normalized, position.y);
+            position = ToSpace(TransformToRelative(closest - 0.001f * (groundPosition - previousGroundPosition).normalized), position.y);
             OnStuck?.Invoke();
         }
         if (position.y < 0)
@@ -133,7 +147,7 @@ public class MovableObject : MonoBehaviour
 
     private List<Vector2> GetWalkableGridIntersections(Vector2 previousGroundPosition, Vector2 groundPosition)
     {
-        Vector2 gridPosition = ToPlane(walkableGrid.movableObject.position);
+        Vector2 gridPosition = ToPlane(walkableGrid.movableObject.WorldPosition);
         Vector2 gridSize = ToPlane(walkableGrid.gridWorldSize);
         return LineRectangleIntersections(previousGroundPosition, groundPosition, gridPosition, gridSize);
     }
@@ -141,7 +155,7 @@ public class MovableObject : MonoBehaviour
     private List<Vector2> GetCameraBorderIntersections(Vector2 previousGroundPosition, Vector2 groundPosition)
     {
         Rect border = cameraMovement.border;
-        Vector2 gridPosition = ToPlane(walkableGrid.movableObject.position);
+        Vector2 gridPosition = ToPlane(walkableGrid.movableObject.WorldPosition);
         Vector2 gridSize = ToPlane(walkableGrid.gridWorldSize);
         return LineRectangleIntersections(previousGroundPosition, groundPosition, new(border.xMin, gridPosition.y), new(border.width, gridSize.y));
     }
@@ -168,14 +182,9 @@ public class MovableObject : MonoBehaviour
         figureObject.sortingOrder = -1 * Mathf.RoundToInt(WorldPosition.z * 100f) * 10;
     }
 
-    public float Distance(Vector3 point)
-    {
-        return (position - point).magnitude;
-    }
-
     public float GroundDistance(Vector3 point)
     {
-        Vector3 distance = position - point;
+        Vector3 distance = WorldPosition - point;
         distance.y = 0;
         return distance.magnitude;
     }

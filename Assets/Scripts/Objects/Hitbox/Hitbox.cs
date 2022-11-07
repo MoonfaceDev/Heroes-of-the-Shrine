@@ -3,23 +3,20 @@ using UnityEngine;
 using static MathUtils;
 
 [ExecuteInEditMode]
+[RequireComponent(typeof(MovableObject))]
 public class Hitbox : MonoBehaviour
 {
-    public Vector3 position;
     public Vector3 size;
-    public MovableObject parentObject;
 
-    void OnDrawGizmos()
+    private MovableObject movableObject;
+
+    private void Awake()
     {
-        if (parentObject != null && CompareTag("Barrier"))
-        {
-            Color lineColor = new(1.0f, 0.5f, 0.0f);
-            Color fillColor = new(1.0f, 0.5f, 0.0f, 0.3f);
-            DrawOutline(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), GetBottom(), GetFar())), MovableObject.ScreenCoordinates(new(size.x, size.y, 0))), lineColor);
-            DrawBoth(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), GetTop(), GetFar())), MovableObject.ScreenCoordinates(new(size.x, 0, size.z))), lineColor, fillColor);
-            DrawFill(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), 0, GetFar())), MovableObject.ScreenCoordinates(new(size.x, 0, size.z))), new Color(0, 0, 0, 0.5f));
-        }
+        movableObject = GetComponent<MovableObject>();
     }
+
+    public Vector3 WorldPosition => movableObject.WorldPosition;
+    public Vector3 WorldSize => Vector3.Scale(movableObject.parent.rotation * size, movableObject.parent.scale);
 
     public void PlayParticles()
     {
@@ -30,15 +27,27 @@ public class Hitbox : MonoBehaviour
         }
     }
 
-    void OnDrawGizmosSelected()
+    void OnDrawGizmos()
     {
-        if (parentObject != null && !CompareTag("Barrier"))
+        if (CompareTag("Barrier"))
         {
             Color lineColor = new(1.0f, 0.5f, 0.0f);
             Color fillColor = new(1.0f, 0.5f, 0.0f, 0.3f);
             DrawOutline(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), GetBottom(), GetFar())), MovableObject.ScreenCoordinates(new(size.x, size.y, 0))), lineColor);
             DrawBoth(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), GetTop(), GetFar())), MovableObject.ScreenCoordinates(new(size.x, 0, size.z))), lineColor, fillColor);
-            DrawFill(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), 0, GetFar())), MovableObject.ScreenCoordinates(new(size.x, 0, size.z))), new Color(0,0,0,0.5f));
+            DrawFill(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), 0, GetFar())), MovableObject.ScreenCoordinates(new(size.x, 0, size.z))), new Color(0, 0, 0, 0.5f));
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if (!CompareTag("Barrier"))
+        {
+            Color lineColor = new(1.0f, 0.5f, 0.0f);
+            Color fillColor = new(1.0f, 0.5f, 0.0f, 0.3f);
+            DrawOutline(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), GetBottom(), GetFar())), MovableObject.ScreenCoordinates(new(size.x, size.y, 0))), lineColor);
+            DrawBoth(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), GetTop(), GetFar())), MovableObject.ScreenCoordinates(new(size.x, 0, size.z))), lineColor, fillColor);
+            DrawFill(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), 0, GetFar())), MovableObject.ScreenCoordinates(new(size.x, 0, size.z))), new Color(0, 0, 0, 0.5f));
         }
     }
 
@@ -81,53 +90,36 @@ public class Hitbox : MonoBehaviour
 
     public List<Vector2> GetSegmentIntersections(Vector2 start, Vector2 end)
     {
-        return LineRectangleIntersections(start, end, ToPlane(position), ToPlane(size));
-    }
-
-    public Vector3 WorldPosition
-    {
-        get => parentObject.position + new Vector3(
-            position.x * (1 - 2 * Mathf.Pow(parentObject.transform.rotation.y, 2)), 
-            position.y, 
-            position.z
-        );
+        return LineRectangleIntersections(start, end, ToPlane(WorldPosition), ToPlane(size));
     }
 
     public float GetLeft()
     {
-        if (1 - 2 * Mathf.Pow(parentObject.transform.rotation.y, 2) > 0)
-        {
-            return WorldPosition.x;
-        }
-        return WorldPosition.x - size.x;
+        return Mathf.Min(WorldPosition.x, WorldPosition.x + WorldSize.x);
     }
 
     public float GetRight()
     {
-        if (1 - 2 * Mathf.Pow(parentObject.transform.rotation.y, 2) < 0)
-        {
-            return WorldPosition.x;
-        }
-        return WorldPosition.x + size.x;
-    }
-
-    public float GetTop()
-    {
-        return WorldPosition.y + size.y;
+        return Mathf.Max(WorldPosition.x, WorldPosition.x + WorldSize.x);
     }
 
     public float GetBottom()
     {
-        return WorldPosition.y;
+        return Mathf.Min(WorldPosition.y, WorldPosition.y + WorldSize.y);
+    }
+    public float GetTop()
+    {
+        return Mathf.Max(WorldPosition.y, WorldPosition.y + WorldSize.y);
+    }
+
+    public float GetFar()
+    {
+        return Mathf.Min(WorldPosition.z, WorldPosition.z + WorldSize.z);
     }
 
     public float GetNear()
     {
-        return WorldPosition.z + size.z;
-    }
-    public float GetFar()
-    {
-        return WorldPosition.z;
+        return Mathf.Max(WorldPosition.z, WorldPosition.z + WorldSize.z);
     }
 }
 

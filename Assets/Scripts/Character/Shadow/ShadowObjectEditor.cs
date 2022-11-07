@@ -29,7 +29,7 @@ class ShadowObjectEditor : Editor
         }
         if (shadowObject.movableObject != null)
         {
-            float scale = 2 / (1 + Mathf.Exp(0.2f * shadowObject.movableObject.startPosition.y));
+            float scale = 2 / (1 + Mathf.Exp(0.2f * shadowObject.movableObject.WorldPosition.y));
             shadowObject.transform.localScale = MovableObject.GroundScreenCoordinates(Vector3.Scale(shadowObject.shadowScale, scale * Vector3.one));
         }
         serializedObject.ApplyModifiedProperties();

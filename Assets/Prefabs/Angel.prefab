@@ -113,6 +113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5102893360398477694}
   - component: {fileID: 5102893360398477695}
+  - component: {fileID: 4204961340021553250}
   m_Layer: 0
   m_Name: SpiningSwordAttackHitbox (1)
   m_TagString: Untagged
@@ -128,7 +129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893360398477681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8700008, y: -0.5, z: 0}
+  m_LocalPosition: {x: -1.87, y: -0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -150,6 +151,25 @@ MonoBehaviour:
   position: {x: -1.87, y: 0.1, z: -0.75}
   size: {x: 3.85, y: 1, z: 1.5}
   parentObject: {fileID: 5102893360874897665}
+--- !u!114 &4204961340021553250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893360398477681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5102893360874897665}
+  figureObject: {fileID: 0}
+  position: {x: -1.87, y: 0.1, z: -0.75}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  scale: {x: 1, y: 1, z: 1}
+  velocity: {x: 0, y: 0, z: 0}
+  acceleration: {x: 0, y: 0, z: 0}
 --- !u!1 &5102893360422186050
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,6 +180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5102893360422186051}
   - component: {fileID: 5102893360422186048}
+  - component: {fileID: 2601094941652560139}
   m_Layer: 0
   m_Name: AirSpinAttackHitbox
   m_TagString: Untagged
@@ -175,7 +196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893360422186050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4899998, y: -0.39999986, z: 0}
+  m_LocalPosition: {x: -1.49, y: -0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -197,6 +218,25 @@ MonoBehaviour:
   position: {x: -1.49, y: 0, z: -0.5}
   size: {x: 3.03, y: 1.92, z: 1}
   parentObject: {fileID: 5102893360874897665}
+--- !u!114 &2601094941652560139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893360422186050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5102893360874897665}
+  figureObject: {fileID: 0}
+  position: {x: -1.49, y: 0, z: -0.5}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  scale: {x: 1, y: 1, z: 1}
+  velocity: {x: 0, y: 0, z: 0}
+  acceleration: {x: 0, y: 0, z: 0}
 --- !u!1 &5102893360536826754
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5102893360536826752}
   - component: {fileID: 5102893360536826755}
+  - component: {fileID: 6156904755942689786}
   - component: {fileID: 3581447371850593138}
   - component: {fileID: 4264865998920902590}
   m_Layer: 0
@@ -224,7 +265,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893360536826754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12000084, y: -0.01999998, z: 0}
+  m_LocalPosition: {x: 0, y: 0.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -246,6 +287,25 @@ MonoBehaviour:
   position: {x: -0.12, y: 0.38, z: -0.5}
   size: {x: 1.63, y: 0.61, z: 1}
   parentObject: {fileID: 5102893360874897665}
+--- !u!114 &6156904755942689786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893360536826754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5102893360874897665}
+  figureObject: {fileID: 4264865998920902590}
+  position: {x: -0.12, y: 0.38, z: -0.5}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  scale: {x: 1, y: 1, z: 1}
+  velocity: {x: 0, y: 0, z: 0}
+  acceleration: {x: 0, y: 0, z: 0}
 --- !u!198 &3581447371850593138
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5037,6 +5097,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5102893360763890679}
   - component: {fileID: 5102893360763890678}
+  - component: {fileID: 4490768084976023015}
   - component: {fileID: 408234941172631270}
   - component: {fileID: 3827456830970774092}
   m_Layer: 0
@@ -5054,7 +5115,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893360763890665}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.54999924, y: -0.23000002, z: 0}
+  m_LocalPosition: {x: 0, y: 0.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5076,6 +5137,25 @@ MonoBehaviour:
   position: {x: 0.55, y: 0.17, z: -0.5}
   size: {x: 1.13, y: 1.88, z: 1}
   parentObject: {fileID: 5102893360874897665}
+--- !u!114 &4490768084976023015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893360763890665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5102893360874897665}
+  figureObject: {fileID: 408234941172631270}
+  position: {x: 0.55, y: 0.17, z: -0.5}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  scale: {x: 1, y: 1, z: 1}
+  velocity: {x: 0, y: 0, z: 0}
+  acceleration: {x: 0, y: 0, z: 0}
 --- !u!199 &408234941172631270
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -9867,6 +9947,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5102893360866760424}
   - component: {fileID: 5102893360866760427}
+  - component: {fileID: 2748543002303246879}
   m_Layer: 0
   m_Name: SlashAttackHitbox
   m_TagString: Untagged
@@ -9882,7 +9963,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893360866760426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: -0.14999986, z: 0}
+  m_LocalPosition: {x: -1.5, y: -0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9904,6 +9985,25 @@ MonoBehaviour:
   position: {x: -1.5, y: 0.25, z: -0.5}
   size: {x: 3.35, y: 1.15, z: 1}
   parentObject: {fileID: 5102893360874897665}
+--- !u!114 &2748543002303246879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893360866760426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5102893360874897665}
+  figureObject: {fileID: 0}
+  position: {x: -1.5, y: 0.25, z: -0.5}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  scale: {x: 1, y: 1, z: 1}
+  velocity: {x: 0, y: 0, z: 0}
+  acceleration: {x: 0, y: 0, z: 0}
 --- !u!1 &5102893360874897723
 GameObject:
   m_ObjectHideFlags: 0
@@ -9989,9 +10089,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 0}
   figureObject: {fileID: 5102893361555062420}
   position: {x: -17.5, y: 0, z: -3}
-  startPosition: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &9052240310973488254
@@ -10615,6 +10717,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5102893360938488513}
   - component: {fileID: 5102893360938488512}
+  - component: {fileID: 8265206534415596788}
   m_Layer: 0
   m_Name: EnergyBurstHitbox
   m_TagString: Untagged
@@ -10630,7 +10733,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893360938488515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8299999, y: -0.64999986, z: 0}
+  m_LocalPosition: {x: 0.83, y: -0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10652,6 +10755,25 @@ MonoBehaviour:
   position: {x: 0.83, y: 0.15, z: -1}
   size: {x: 1.47, y: 0.56, z: 2}
   parentObject: {fileID: 5102893360874897665}
+--- !u!114 &8265206534415596788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893360938488515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5102893360874897665}
+  figureObject: {fileID: 0}
+  position: {x: 0.83, y: 0.15, z: -1}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  scale: {x: 1, y: 1, z: 1}
+  velocity: {x: 0, y: 0, z: 0}
+  acceleration: {x: 0, y: 0, z: 0}
 --- !u!1 &5102893361029256207
 GameObject:
   m_ObjectHideFlags: 0
@@ -10662,6 +10784,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5102893361029256205}
   - component: {fileID: 5102893361029256204}
+  - component: {fileID: 8408330998147681252}
   m_Layer: 0
   m_Name: RunKickHitbox
   m_TagString: Untagged
@@ -10677,7 +10800,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893361029256207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6499996, y: -0.14999986, z: 0}
+  m_LocalPosition: {x: 0.65, y: -0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10699,6 +10822,25 @@ MonoBehaviour:
   position: {x: 0.65, y: 0.25, z: -0.5}
   size: {x: 0.65, y: 0.5, z: 1}
   parentObject: {fileID: 5102893360874897665}
+--- !u!114 &8408330998147681252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893361029256207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5102893360874897665}
+  figureObject: {fileID: 0}
+  position: {x: 0.65, y: 0.25, z: -0.5}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  scale: {x: 1, y: 1, z: 1}
+  velocity: {x: 0, y: 0, z: 0}
+  acceleration: {x: 0, y: 0, z: 0}
 --- !u!1 &5102893361031154992
 GameObject:
   m_ObjectHideFlags: 0
@@ -10709,6 +10851,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5102893361031154993}
   - component: {fileID: 5102893361031155006}
+  - component: {fileID: 6085540348271789170}
   m_Layer: 0
   m_Name: AngelHitbox
   m_TagString: Untagged
@@ -10724,7 +10867,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893361031154992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.65999985, y: -0.39999986, z: 0}
+  m_LocalPosition: {x: -0.66, y: -0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10746,6 +10889,25 @@ MonoBehaviour:
   position: {x: -0.66, y: 0, z: -0.5}
   size: {x: 1.2, y: 2, z: 1}
   parentObject: {fileID: 5102893360874897665}
+--- !u!114 &6085540348271789170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893361031154992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5102893360874897665}
+  figureObject: {fileID: 0}
+  position: {x: -0.66, y: 0, z: -0.5}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  scale: {x: 1, y: 1, z: 1}
+  velocity: {x: 0, y: 0, z: 0}
+  acceleration: {x: 0, y: 0, z: 0}
 --- !u!1 &5102893361076516094
 GameObject:
   m_ObjectHideFlags: 0
@@ -10756,6 +10918,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5102893361076516095}
   - component: {fileID: 5102893361076516092}
+  - component: {fileID: 1435858954811333285}
   m_Layer: 0
   m_Name: SpiningSwordAttackHitbox (2)
   m_TagString: Untagged
@@ -10771,7 +10934,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893361076516094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.13999987, y: -0.5999999, z: 0}
+  m_LocalPosition: {x: -0.14, y: -0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10793,6 +10956,25 @@ MonoBehaviour:
   position: {x: -0.14, y: 0, z: -0.75}
   size: {x: 1.9, y: 1.56, z: 1.5}
   parentObject: {fileID: 5102893360874897665}
+--- !u!114 &1435858954811333285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893361076516094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5102893360874897665}
+  figureObject: {fileID: 0}
+  position: {x: -0.14, y: 0, z: -0.75}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  scale: {x: 1, y: 1, z: 1}
+  velocity: {x: 0, y: 0, z: 0}
+  acceleration: {x: 0, y: 0, z: 0}
 --- !u!1 &5102893361279726048
 GameObject:
   m_ObjectHideFlags: 0
@@ -10819,9 +11001,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893361279726048}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.538462, y: 1.538462, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5102893361555062421}
@@ -15621,9 +15803,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 0}
   figureObject: {fileID: 5102893361279726062}
   position: {x: 0, y: 0, z: -0.01}
-  startPosition: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!1 &5102893361555062423
@@ -15743,6 +15927,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5102893361817772765}
   - component: {fileID: 5102893361817772762}
+  - component: {fileID: 5622713660951101158}
   - component: {fileID: 5107263526857870990}
   - component: {fileID: 2003055564482278461}
   m_Layer: 0
@@ -15760,7 +15945,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893361817772764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: -0.099999905, z: 0}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15782,6 +15967,25 @@ MonoBehaviour:
   position: {x: -1, y: 0.3, z: -0.5}
   size: {x: 2.75, y: 0.75, z: 1}
   parentObject: {fileID: 5102893360874897665}
+--- !u!114 &5622713660951101158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893361817772764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5102893360874897665}
+  figureObject: {fileID: 5107263526857870990}
+  position: {x: -1, y: 0.3, z: -0.5}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  scale: {x: 1, y: 1, z: 1}
+  velocity: {x: 0, y: 0, z: 0}
+  acceleration: {x: 0, y: 0, z: 0}
 --- !u!199 &5107263526857870990
 ParticleSystemRenderer:
   serializedVersion: 6

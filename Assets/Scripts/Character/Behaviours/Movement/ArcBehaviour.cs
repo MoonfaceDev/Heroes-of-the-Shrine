@@ -40,24 +40,24 @@ public class ArcBehaviour : BaseMovementBehaviour
         speedModifier = new MultiplierModifier(speedMultiplier);
         walkBehaviour.speed.AddModifier(speedModifier);
 
-        Vector3 playerPosition = target.position;
-        Vector3 initialDistance = walkBehaviour.MovableObject.position - playerPosition;
+        Vector3 playerPosition = target.WorldPosition;
+        Vector3 initialDistance = walkBehaviour.MovableObject.WorldPosition - playerPosition;
         initialDistance.y = 0;
         float radius = initialDistance.magnitude;
         float clockwise = Mathf.Sign(Random.Range(-1f, 1f));
 
         circleEvent = EventManager.Attach(() => true, () => {
-            Vector3 distance = walkBehaviour.MovableObject.position - playerPosition;
+            Vector3 distance = walkBehaviour.MovableObject.WorldPosition - playerPosition;
             distance.y = 0;
             distance *= radius / distance.magnitude;
             Vector3 newPosition = playerPosition + distance;
-            newPosition.y = walkBehaviour.MovableObject.position.y;
-            walkBehaviour.MovableObject.position = newPosition;
+            newPosition.y = walkBehaviour.MovableObject.WorldPosition.y;
+            walkBehaviour.MovableObject.WorldPosition = newPosition;
             Vector3 direction = clockwise * Vector3.Cross(distance, Vector3.up).normalized;
             walkBehaviour.Play(direction.x, direction.z, false);
-            if ((target.position - walkBehaviour.MovableObject.position).x != 0)
+            if ((target.WorldPosition - walkBehaviour.MovableObject.WorldPosition).x != 0)
             {
-                walkBehaviour.LookDirection = Mathf.RoundToInt(Mathf.Sign((target.position - walkBehaviour.MovableObject.position).x));
+                walkBehaviour.LookDirection = Mathf.RoundToInt(Mathf.Sign((target.WorldPosition - walkBehaviour.MovableObject.WorldPosition).x));
             };
         }, false);
     }

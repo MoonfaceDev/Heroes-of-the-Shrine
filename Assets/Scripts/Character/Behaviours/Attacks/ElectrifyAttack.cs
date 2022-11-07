@@ -99,7 +99,7 @@ public class ElectrifyAttack : NormalAttack
     {
         float damage = CalculateExplosionDamage(hittableBehaviour);
         print(hittableBehaviour.name + " hit by explosion " + AttackName);
-        int hitDirection = (int)Mathf.Sign(hittableBehaviour.MovableObject.position.x - MovableObject.position.x);
+        int hitDirection = (int)Mathf.Sign(hittableBehaviour.MovableObject.WorldPosition.x - MovableObject.WorldPosition.x);
         hittableBehaviour.Knockback(damage, epxlosionKnockbackPower, KnockbackBehaviour.GetRelativeDirection(explosionKnockbackDirection, hitDirection));
         ElectrifiedEffect electrifiedEffect = hittableBehaviour.GetComponent<ElectrifiedEffect>();
         if (electrifiedEffect)

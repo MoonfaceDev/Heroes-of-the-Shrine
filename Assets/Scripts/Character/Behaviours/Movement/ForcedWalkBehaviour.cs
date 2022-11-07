@@ -26,7 +26,7 @@ public class ForcedWalkBehaviour : PlayableBehaviour
         startWalking = () =>
         {
             walkBehaviour.OnStop -= startWalking;
-            Vector3 direction = (point - walkBehaviour.MovableObject.position).normalized;
+            Vector3 direction = (point - walkBehaviour.MovableObject.WorldPosition).normalized;
             walkBehaviour.Play(direction.x, direction.z, true);
         };
         walkBehaviour.OnStop += startWalking;

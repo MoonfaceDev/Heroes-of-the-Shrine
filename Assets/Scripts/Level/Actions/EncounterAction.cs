@@ -64,8 +64,7 @@ public class EncounterAction : MonoBehaviour
             GameObject enemy = Instantiate(definition.prefab);
             MovableObject movableObject = enemy.GetComponent<MovableObject>();
 
-            movableObject.position.x = borderEdge + direction * spawnSourceDistance;
-            movableObject.position.z = definition.z;
+            movableObject.WorldPosition = new(borderEdge + direction * spawnSourceDistance, 0, definition.z);
 
             if (definition.partOfWave)
             {

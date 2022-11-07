@@ -43,20 +43,20 @@ public class FollowPattern : BasePattern
             target,
             () =>
             {
-                return otherEnemies.SelectMany(enemy => grid.GetCircle(enemy.movableObject.GroundPosition, distanceFromOtherEnemies + nodeRadius)).ToArray();
+                return otherEnemies.SelectMany(enemy => grid.GetCircle(enemy.movableObject.GroundWorldPosition, distanceFromOtherEnemies + nodeRadius)).ToArray();
             },
             (out Vector3 direction) =>
             {
                 Vector3[] closeEnemyPositions = otherEnemies
-                .Where(enemy => enemy.movableObject.GroundDistance(grid.NodeFromWorldPoint(followBehaviour.MovableObject.position).position) < distanceFromOtherEnemies + nodeRadius)
-                .Select(enemy => enemy.movableObject.position - Vector3.up * enemy.movableObject.position.y).ToArray();
+                .Where(enemy => enemy.movableObject.GroundDistance(grid.NodeFromWorldPoint(followBehaviour.MovableObject.WorldPosition).position) < distanceFromOtherEnemies + nodeRadius)
+                .Select(enemy => enemy.movableObject.WorldPosition - Vector3.up * enemy.movableObject.WorldPosition.y).ToArray();
                 if (closeEnemyPositions.Length == 0)
                 {
                     direction = Vector3.zero;
                     return false;
                 }
                 Vector3 center = closeEnemyPositions.Aggregate(Vector3.zero, (acc, next) => acc + next) / closeEnemyPositions.Length;
-                direction = (followBehaviour.MovableObject.position - center).normalized;
+                direction = (followBehaviour.MovableObject.WorldPosition - center).normalized;
                 return true;
             }
         );

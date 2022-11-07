@@ -15,7 +15,7 @@ public class PlayerSpawning : MonoBehaviour
         // CameraMovement cameraMovement = camera.GetComponent<CameraMovement>();
         MovableObject movableObject = player.GetComponent<MovableObject>();
         // movableObject.position.x = cameraMovement.worldBorder.xMin + 0.5f;
-        movableObject.position = spawnPosition;
+        movableObject.WorldPosition = spawnPosition;
     }
 
     private Camera SetupCamera()

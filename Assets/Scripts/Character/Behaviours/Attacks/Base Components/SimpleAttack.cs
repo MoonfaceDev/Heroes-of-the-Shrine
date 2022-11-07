@@ -134,7 +134,7 @@ public class SimpleAttack : BaseAttack
         switch (hitType)
         {
             case HitType.Knockback:
-                int hitDirection = (int)Mathf.Sign(hittableBehaviour.MovableObject.position.x - MovableObject.position.x);
+                int hitDirection = (int)Mathf.Sign(hittableBehaviour.MovableObject.WorldPosition.x - MovableObject.WorldPosition.x);
                 hittableBehaviour.Knockback(damage, knockbackPower, KnockbackBehaviour.GetRelativeDirection(knockbackDirection, hitDirection));
                 break;
             case HitType.Stun:

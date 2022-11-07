@@ -27,11 +27,11 @@ public class EnemyGroup : CharacterBehaviour
                 {
                     return prev;
                 }
-                float nextDistance = MovableObject.GroundDistance(next.GetComponent<MovableObject>().position);
-                float prevDistance = MovableObject.GroundDistance(prev.GetComponent<MovableObject>().position);
+                float nextDistance = MovableObject.GroundDistance(next.GetComponent<MovableObject>().WorldPosition);
+                float prevDistance = MovableObject.GroundDistance(prev.GetComponent<MovableObject>().WorldPosition);
                 return nextDistance < prevDistance ? next : prev;
             }).GetComponent<MovableObject>();
-            stateMachine.SetFloat("closestEnemyDistance", MovableObject.GroundDistance(closestEnemy.position));
+            stateMachine.SetFloat("closestEnemyDistance", MovableObject.GroundDistance(closestEnemy.WorldPosition));
         }
 
         // Closest to the player
@@ -41,8 +41,8 @@ public class EnemyGroup : CharacterBehaviour
             MovableObject playerMovableObject = player.GetComponent<MovableObject>();
             EnemyGroup closestEnemy = enemies.Aggregate(enemies[0], (prev, next) =>
             {
-                float nextDistance = playerMovableObject.GroundDistance(next.GetComponent<MovableObject>().position);
-                float prevDistance = playerMovableObject.GroundDistance(prev.GetComponent<MovableObject>().position);
+                float nextDistance = playerMovableObject.GroundDistance(next.GetComponent<MovableObject>().WorldPosition);
+                float prevDistance = playerMovableObject.GroundDistance(prev.GetComponent<MovableObject>().WorldPosition);
                 return nextDistance < prevDistance ? next : prev;
             });
             stateMachine.SetBool("isClosestToPlayer", this == closestEnemy);

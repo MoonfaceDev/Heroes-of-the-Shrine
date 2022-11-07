@@ -18,7 +18,7 @@ public class LineTrigger : BaseTrigger
 
     private void Update()
     {
-        if (playerMovableObject && playerMovableObject.position.x >= minimumX && !fired)
+        if (playerMovableObject && playerMovableObject.WorldPosition.x >= minimumX && !fired)
         {
             fired = true;
             action.Invoke();

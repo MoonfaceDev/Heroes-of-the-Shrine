@@ -31,7 +31,7 @@ public class AttackPattern : BasePattern
         }
 
         Character character = animator.GetComponent<Character>();
-        character.LookDirection = Mathf.RoundToInt(Mathf.Sign((player.GetComponent<MovableObject>().position - character.movableObject.position).x));
+        character.LookDirection = Mathf.RoundToInt(Mathf.Sign((player.GetComponent<MovableObject>().WorldPosition - character.movableObject.WorldPosition).x));
         attackCoroutine = EventManager.StartCoroutine(AttackCoroutine(animator));
     }
 

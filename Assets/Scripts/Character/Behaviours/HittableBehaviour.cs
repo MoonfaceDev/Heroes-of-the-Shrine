@@ -104,7 +104,8 @@ public class HittableBehaviour : CharacterBehaviour
         {
             return false;
         }
-        if (MovableObject.position.y > 0)
+        print(MovableObject.WorldPosition);
+        if (MovableObject.WorldPosition.y > 0)
         {
             Knockback(damage, STUN_LAUNCH_POWER, STUN_LAUNCH_ANGEL);
             return true;

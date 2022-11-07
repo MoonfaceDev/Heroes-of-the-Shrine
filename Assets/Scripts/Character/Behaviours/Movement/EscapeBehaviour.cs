@@ -42,7 +42,7 @@ public class EscapeBehaviour : BaseMovementBehaviour
         walkBehaviour.speed.AddModifier(speedModifier);
 
         escapeEvent = EventManager.Attach(() => true, () => {
-            Vector3 distance = MovableObject.position - target.position;
+            Vector3 distance = MovableObject.WorldPosition - target.WorldPosition;
             distance.y = 0;
             Vector3 direction = distance.normalized;
             walkBehaviour.Play(direction.x, direction.z, fitLookDirection);

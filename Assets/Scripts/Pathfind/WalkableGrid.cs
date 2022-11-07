@@ -9,7 +9,6 @@ public class WalkableGrid : MonoBehaviour
 	public float nodeRadius;
 	[HideInInspector]
 	public Node[,] grid;
-    [HideInInspector]
 	public MovableObject movableObject;
 
 	private float NodeDiameter => nodeRadius * 2;
@@ -33,7 +32,7 @@ public class WalkableGrid : MonoBehaviour
 		{
 			for (int z = 0; z < GridSizeZ; z++)
 			{
-				Vector3 worldPoint = movableObject.position + Vector3.right * (x * NodeDiameter + nodeRadius) + Vector3.forward * (z * NodeDiameter + nodeRadius);
+				Vector3 worldPoint = movableObject.WorldPosition + Vector3.right * (x * NodeDiameter + nodeRadius) + Vector3.forward * (z * NodeDiameter + nodeRadius);
 				grid[x, z] = new Node(x, z, true, worldPoint);
 			}
 		}
@@ -41,10 +40,10 @@ public class WalkableGrid : MonoBehaviour
 
 		foreach (Hitbox hitbox in hitboxes)
 		{
-			if (hitbox.CompareTag("Barrier") && (IsInside(hitbox.position) || IsInside(hitbox.position + hitbox.size)))
+			if (hitbox.CompareTag("Barrier") && (IsInside(hitbox.WorldPosition) || IsInside(hitbox.WorldPosition + hitbox.size)))
 			{
-				Vector2Int bottomLeftIndex = IndexFromWorldPoint(hitbox.position) - new Vector2Int(1, 1);
-				Vector2Int topRightIndex = IndexFromWorldPoint(hitbox.position + hitbox.size) + new Vector2Int(1, 1);
+				Vector2Int bottomLeftIndex = IndexFromWorldPoint(hitbox.WorldPosition) - new Vector2Int(1, 1);
+				Vector2Int topRightIndex = IndexFromWorldPoint(hitbox.WorldPosition + hitbox.size) + new Vector2Int(1, 1);
 				for (int x = bottomLeftIndex.x; x <= topRightIndex.x; x++)
 				{
 					for (int y = bottomLeftIndex.y; y <= topRightIndex.y; y++)
@@ -61,8 +60,8 @@ public class WalkableGrid : MonoBehaviour
 
 	private Vector2Int IndexFromWorldPoint(Vector3 worldPosition)
 	{
-		float percentX = Mathf.Clamp01((worldPosition.x - movableObject.position.x) / gridWorldSize.x);
-		float percentZ = Mathf.Clamp01((worldPosition.z - movableObject.position.z) / gridWorldSize.z);
+		float percentX = Mathf.Clamp01((worldPosition.x - movableObject.WorldPosition.x) / gridWorldSize.x);
+		float percentZ = Mathf.Clamp01((worldPosition.z - movableObject.WorldPosition.z) / gridWorldSize.z);
 		int x = Mathf.RoundToInt((GridSizeX - 1) * percentX);
 		int y = Mathf.RoundToInt((GridSizeZ - 1) * percentZ);
 		return new Vector2Int(x, y);
@@ -101,7 +100,7 @@ public class WalkableGrid : MonoBehaviour
 
 	public bool IsInside(Vector3 point)
     {
-		Vector3 bottomLeft = movableObject.position;
+		Vector3 bottomLeft = movableObject.WorldPosition;
 		Vector3 topRight = bottomLeft + gridWorldSize;
 		return !(point.x < bottomLeft.x || point.x > topRight.x || point.z < bottomLeft.z || point.z > topRight.z);
 	}
@@ -185,7 +184,7 @@ public class WalkableGrid : MonoBehaviour
 	{
 		MovableObject movableObject = GetComponent<MovableObject>();
 		Gizmos.color = Color.yellow;
-		Gizmos.DrawWireCube(MovableObject.GroundScreenCoordinates(movableObject.position + gridWorldSize / 2), MovableObject.GroundScreenCoordinates(gridWorldSize));
+		Gizmos.DrawWireCube(MovableObject.GroundScreenCoordinates(movableObject.WorldPosition + gridWorldSize / 2), MovableObject.GroundScreenCoordinates(gridWorldSize));
 
 
 		if (grid != null)

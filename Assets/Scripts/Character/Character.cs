@@ -23,7 +23,7 @@ public class Character : MonoBehaviour
         set
         {
             lookDirection = value;
-            transform.rotation = Quaternion.Euler(0, 90 * lookDirection - 90, 0);
+            movableObject.rotation = Quaternion.Euler(0, 90 * lookDirection - 90, 0);
         }
     }
 

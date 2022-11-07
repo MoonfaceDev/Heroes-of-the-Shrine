@@ -18,7 +18,7 @@ public class CameraFollow : MonoBehaviour
         target = GameObject.FindGameObjectWithTag(targetTag).GetComponent<MovableObject>();
         if (target)
         {
-            offset = transform.position - MovableObject.GroundScreenCoordinates(target.position);
+            offset = transform.position - MovableObject.GroundScreenCoordinates(target.WorldPosition);
             offset.x = 0;
         }
     }
@@ -26,7 +26,7 @@ public class CameraFollow : MonoBehaviour
     private void LateUpdate()
     {
         if (target == null) return;
-        Vector3 targetPosition = MovableObject.GroundScreenCoordinates(target.position) + offset;
+        Vector3 targetPosition = MovableObject.GroundScreenCoordinates(target.WorldPosition) + offset;
         cameraMovement.Move(targetPosition);
     }
 }

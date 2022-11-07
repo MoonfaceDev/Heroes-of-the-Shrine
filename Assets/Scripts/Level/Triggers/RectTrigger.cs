@@ -19,7 +19,7 @@ public class RectTrigger : BaseTrigger
 
     private void Update()
     {
-        if (playerMovableObject && IsInside(playerMovableObject.position) && !fired)
+        if (playerMovableObject && IsInside(playerMovableObject.WorldPosition) && !fired)
         {
             fired = true;
             action.Invoke();

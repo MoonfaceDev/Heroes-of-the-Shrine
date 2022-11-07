@@ -122,10 +122,10 @@ public class EnemyBrain : CharacterController
         }
         if (playerMovableObject)
         {
-            stateMachine.SetFloat("playerDistance", Vector2.Distance(ToPlane(MovableObject.position), ToPlane(playerMovableObject.position)));
-            stateMachine.SetFloat("playerDistanceX", Mathf.Abs((MovableObject.position - playerMovableObject.position).x));
-            stateMachine.SetFloat("playerDistanceY", Mathf.Abs((MovableObject.position - playerMovableObject.position).y));
-            stateMachine.SetFloat("playerDistanceZ", Mathf.Abs((MovableObject.position - playerMovableObject.position).z));
+            stateMachine.SetFloat("playerDistance", Vector2.Distance(ToPlane(MovableObject.WorldPosition), ToPlane(playerMovableObject.WorldPosition)));
+            stateMachine.SetFloat("playerDistanceX", Mathf.Abs((MovableObject.WorldPosition - playerMovableObject.WorldPosition).x));
+            stateMachine.SetFloat("playerDistanceY", Mathf.Abs((MovableObject.WorldPosition - playerMovableObject.WorldPosition).y));
+            stateMachine.SetFloat("playerDistanceZ", Mathf.Abs((MovableObject.WorldPosition - playerMovableObject.WorldPosition).z));
         }
     }
 
