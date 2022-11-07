@@ -7,8 +7,8 @@ public class DeathTrigger : BaseTrigger
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player)
         {
-            HittableBehaviour hittableBehaviour = player.GetComponent<HittableBehaviour>();
-            hittableBehaviour.OnDie += action.Invoke;
+            DieBehaviour dieBehaviour = player.GetComponent<DieBehaviour>();
+            dieBehaviour.OnDie += action.Invoke;
         }
     }
 }

@@ -45,10 +45,10 @@ public class EnemyBrain : CharacterController
             stunBehaviour.OnStop += () => stateMachine.SetBool("stun", false);
         }
 
-        HittableBehaviour hittableBehaviour = GetComponent<HittableBehaviour>();
-        if (hittableBehaviour)
+        DieBehaviour dieBehaviour = GetComponent<DieBehaviour>();
+        if (dieBehaviour)
         {
-            hittableBehaviour.OnDie += () => stateMachine.SetBool("dead", true);
+            dieBehaviour.OnDie += () => stateMachine.SetBool("dead", true);
         }
 
         AttackManager attackManager = GetComponent<AttackManager>();

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,14 +12,10 @@ public class HittableBehaviour : CharacterBehaviour
     public static float STUN_LAUNCH_ANGEL = 90; // degrees
 
     public List<Hitbox> hitboxes;
-    [Header("Death")]
-    public bool destoryOnDeath = true;
-    public float deathAnimationDuration;
 
     public event OnHit OnHit;
     public event OnKnockback OnKnockback;
     public event OnStun OnStun;
-    public event Action OnDie;
 
     private HealthSystem healthSystem;
     private KnockbackBehaviour knockbackBehaviour;
@@ -39,83 +34,65 @@ public class HittableBehaviour : CharacterBehaviour
         return healthSystem.health > 0 && !(knockbackBehaviour && knockbackBehaviour.Recovering);
     }
 
-
-    public void Kill()
+    public virtual float ProcessDamage(float damage)
     {
-        DisableBehaviours(typeof(KnockbackBehaviour), typeof(BaseEffect));
-        Type[] behavioursToStop = { typeof(BaseMovementBehaviour), typeof(AttackManager), typeof(StunBehaviour) };
-        DisableBehaviours(behavioursToStop);
-        StopBehaviours(behavioursToStop);
-
-        void KillAfterKnockback()
-        {
-            OnDie?.Invoke();
-            Animator.SetBool("dead", true);
-            StopBehaviours(typeof(BaseEffect));
-            if (destoryOnDeath)
-            {
-                Destroy(gameObject, deathAnimationDuration);
-            }
-        }
-
-        if (IsPlaying(typeof(KnockbackBehaviour)))
-        {
-            knockbackBehaviour.OnStop += KillAfterKnockback;
-        }
-        else
-        {
-            KillAfterKnockback();
-        }
+        return damage;
     }
 
-    public bool Hit(float damage)
+    public virtual bool Hit(float damage)
     {
         if (!CanGetHit())
         {
             return false;
         }
-        healthSystem.health -= damage;
-        OnHit?.Invoke(damage);
-        if (healthSystem.health <= 0)
-        {
-            Kill();
-        }
+        float processedDamage = ProcessDamage(damage);
+        healthSystem.health -= processedDamage;
+        OnHit?.Invoke(processedDamage);
         return true;
     }
 
-    public bool Knockback(float damage, float power, float angleDegrees)
+    protected virtual void DoKnockback(float damage, float power, float angleDegrees)
+    {
+        OnKnockback?.Invoke(damage, power, angleDegrees);
+        if (knockbackBehaviour)
+        {
+            knockbackBehaviour.Play(power, angleDegrees);
+        }
+    }
+
+    public virtual bool Knockback(float damage, float power, float angleDegrees)
     {
         if (!CanGetHit())
         {
             return false;
         }
         Hit(damage);
-        OnKnockback?.Invoke(damage, power, angleDegrees);
-        if (knockbackBehaviour)
-        {
-            knockbackBehaviour.Play(power, angleDegrees);
-        }
+        DoKnockback(damage, power, angleDegrees);
         return true;
     }
 
-    public bool Stun(float damage, float time)
+    protected virtual void DoStun(float damage, float time)
+    {
+        OnStun?.Invoke(damage, time);
+        if (stunBehaviour)
+        {
+            stunBehaviour.Play(time);
+        }
+    }
+
+    public virtual bool Stun(float damage, float time)
     {
         if (!CanGetHit())
         {
             return false;
         }
-        print(MovableObject.WorldPosition);
         if (MovableObject.WorldPosition.y > 0)
         {
             Knockback(damage, STUN_LAUNCH_POWER, STUN_LAUNCH_ANGEL);
             return true;
         }
         Hit(damage);
-        OnStun?.Invoke(damage, time);
-        if (stunBehaviour)
-        {
-            stunBehaviour.Play(time);
-        }
+        DoStun(damage, time);
         return true;
     }
 }

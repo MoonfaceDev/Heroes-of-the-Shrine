@@ -45,9 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0.43, y: 0.64, z: -0.75}
   size: {x: 2.24, y: 0.71, z: 1.5}
-  parentObject: {fileID: 5884619158741390438}
 --- !u!114 &5533764411884718115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,6 +65,7 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
+  wawa: {x: 0, y: 0, z: 0}
 --- !u!1 &5884619157808626362
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,9 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: -0.1, y: 0.7, z: -0.5}
   size: {x: 1.55, y: 0.4, z: 1}
-  parentObject: {fileID: 5884619158741390438}
 --- !u!114 &3452115348150720552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +236,7 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
+  wawa: {x: 0, y: 0, z: 0}
 --- !u!1 &5884619158051856729
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,9 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0, y: 0, z: -0.5}
   size: {x: 1.9, y: 1.8, z: 1}
-  parentObject: {fileID: 5884619158741390438}
 --- !u!114 &6946030317013343167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,6 +302,7 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
+  wawa: {x: 0, y: 0, z: 0}
 --- !u!1 &5884619158362908890
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,9 +453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 1.5, y: 0.3, z: -0.75}
   size: {x: 1.5, y: 1.5, z: 1.5}
-  parentObject: {fileID: 5884619158741390438}
 --- !u!114 &6665416565453018402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,6 +473,7 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
+  wawa: {x: 0, y: 0, z: 0}
 --- !u!1 &5884619158596542725
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,9 +519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0.3, y: 0.7, z: -0.5}
   size: {x: 1.15, y: 0.4, z: 1}
-  parentObject: {fileID: 5884619158741390438}
 --- !u!114 &5199938739203020887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,6 +539,7 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
+  wawa: {x: 0, y: 0, z: 0}
 --- !u!1 &5884619158741390458
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,6 +554,7 @@ GameObject:
   - component: {fileID: 5884619158741390457}
   - component: {fileID: 5884619158741390434}
   - component: {fileID: 5884619158741390456}
+  - component: {fileID: 6231911944032600069}
   - component: {fileID: 5884619158741390459}
   - component: {fileID: 5884619158741390436}
   - component: {fileID: 5884619158741390432}
@@ -624,6 +620,7 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
+  wawa: {x: 0, y: 0, z: 0}
 --- !u!114 &6526483692788110630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -680,6 +677,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHealth: 100
   health: 0
+--- !u!114 &6231911944032600069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5884619158741390458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f271e06fd2ef53a4c87299bd48bc9f07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destoryOnDeath: 1
+  deathAnimationDuration: 3
 --- !u!114 &5884619158741390459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -694,8 +705,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitboxes:
   - {fileID: 5884619159192989553}
-  destoryOnDeath: 1
-  deathAnimationDuration: 3
 --- !u!114 &5884619158741390436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,9 +1032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: -0.65, y: 0, z: -0.5}
   size: {x: 1.3, y: 1.82, z: 1}
-  parentObject: {fileID: 5884619158741390438}
 --- !u!114 &9044924591447564905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1045,3 +1052,4 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
+  wawa: {x: 0, y: 0, z: 0}
