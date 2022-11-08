@@ -17,7 +17,6 @@ public class MovableObject : MonoBehaviour
 
     [ShowDebug] public Vector3 velocity;
     [ShowDebug] public Vector3 acceleration;
-    [ShowDebug] public Vector3 wawa;
 
     public Vector3 WorldPosition {
         get => TransformToWorld(position);
@@ -53,7 +52,6 @@ public class MovableObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        wawa = WorldPosition;
         //update position and velocity
         velocity += acceleration * Time.deltaTime;
         if (!CompareTag("Barrier")) {
