@@ -41,16 +41,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        # with:
-        #   submodules: true
+        with:
+          submodules: true
+          fetch-depth: 0
+          lfs: true
 
       # Download the generated documentation
       - name: Download site artifact
         uses: actions/download-artifact@v1
         with:
-          submodules: true
-          fetch-depth: 0
-          lfs: true
+          name: _site
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
