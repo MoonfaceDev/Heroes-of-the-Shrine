@@ -1,0 +1,80 @@
+{
+    "metadata": [
+        {
+            "src": [
+                {
+                    "src": "..",
+                    "files": [
+                        "Assets/**/*.cs"
+                    ],
+                    "exclude": [
+                        "Assets/Plugins/**"
+                    ]
+                }
+            ],
+            "globalNamespaceId": "Global",
+            "dest": "api"
+        }
+    ],
+    "build": {
+        "globalMetadata": {
+            "_appTitle": "Heroes of the Shrine",
+            "_appFooter": "Heroes of the Shrine - Manual",
+            "_enableSearch": true
+        },
+        "content": [
+            {
+                "files": [
+                    "toc.yml",
+                    "index.md"
+                ]
+            },
+            {
+                "src": "api",
+                "files": [
+                    "*.yml"
+                ],
+                "dest": "api"
+            },
+            {
+                "src": "manual",
+                "files": [
+                    "toc.yml",
+                    "*.md"
+                ],
+                "dest": "manual"
+            }
+        ],
+        "overwrite": [
+            {
+                "src": "..",
+                "files": [
+                    "Assets/Scripts/**/*.md"
+                ]
+            }
+        ],
+        "resource": [
+            {
+                "files": [
+                    "resources/**/*"
+                ]
+            }
+        ],
+        "sitemap": {
+            "baseUrl": "https://moonface.github.io/HeroesOfTheShrine",
+            "changefreq": "weekly",
+            "fileOptions": {
+                "api/*": {
+                    "changefreq": "daily"
+                }
+            }
+        },
+        "xref": [
+            "https://normanderwan.github.io/UnityXrefMaps/xrefmap.yml"
+        ],
+        "xrefService": [
+            "https://xref.docs.microsoft.com/query?uid={uid}"
+        ],
+        "dest": "../_site"
+    }
+}
