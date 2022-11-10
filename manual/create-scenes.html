@@ -85,22 +85,22 @@
 </blockquote>
 <p>Each level can rely on multiple scenes, each representing a different part in the level. Scene transitions are costy in terms of client resources, thus they shouldn&#39;t occur very often.</p>
 <h2 id="scene-structure">Scene Structure</h2>
-<p>In our game, each scenes should have a <em>Scene Root</em> game object. <em>Scene Root</em> is a prefab, located in <code>Assets/Prefabs</code>, and it contains essential global objects and scripts (and even the player itself).</p>
+<p>In our game, each scenes should have a <code>Scene Root</code> game object. <code>Scene Root</code> is a prefab, located in <em>Assets/Prefabs</em>, and it contains essential global objects and scripts (and even the player itself).</p>
 <p><img src="../resources/SceneRootHierarchy.png" alt="Scene root hierarchy"></p>
 <p>Scenes will also contain enemies, UI, and level definitions (encounters, transitions, cutscenes, etc.)</p>
-<div class="NOTE"><h5>Note</h5><p>All UI elements must live under the <em>Canvas</em> object in the <em>Scene Root</em></p>
+<div class="NOTE"><h5>Note</h5><p>All UI elements must live under the <code>Canvas</code> object in the <code>Scene Root</code></p>
 </div>
 <h2 id="create-a-scene">Create a Scene</h2>
 <p>To add a new scene follow these steps:</p>
 <ol>
-<li>Create a scene assets in <code>Assets/Scenes</code>. Give it an indicative name, such as <em>Level3Forest</em>.</li>
+<li>Create a scene assets in <em>Assets/Scenes</em>. Give it an indicative name, such as <em>Level3Forest</em>.</li>
 <li>Get inside your new scene, by double clicking the asset.</li>
-<li>Add <em>Scene Root</em> to the scene, by dragging it from <code>Assets/Prefabs/Scene Root</code>.</li>
+<li>Add <code>Scene Root</code> to the scene, by dragging it from <em>Assets/Prefabs/Scene Root</em>.</li>
 <li>Add scene background using normal 2D sprites.</li>
 <li>Add the enemies, encounters, hazards and cutscenes - everything that makes this scene unique.</li>
 <li>Save your changes!</li>
 </ol>
-<div class="WARNING"><h5>Warning</h5><p><code>Ctrl+S</code> is usually sufficient for saving, but sometimes it might skip some parts. In order to make sure you saved everything, right click the scene object in the hierarchy, and click &quot;Save Scene&quot;
+<div class="WARNING"><h5>Warning</h5><p><em>Ctrl+S</em> is usually sufficient for saving, but sometimes it might skip some parts. In order to make sure you saved everything, right click the scene object in the hierarchy, and click <em>Save Scene</em>
 <img src="../resources/SaveScene.png" alt="Scene root hierarchy"></p>
 </div>
 </article>
