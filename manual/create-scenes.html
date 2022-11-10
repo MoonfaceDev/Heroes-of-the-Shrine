@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Etiam nantemque exul | Heroes of the Shrine </title>
+    <title>Creating Scenes | Heroes of the Shrine </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Etiam nantemque exul | Heroes of the Shrine ">
+    <meta name="title" content="Creating Scenes | Heroes of the Shrine ">
     <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -77,63 +77,32 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="etiam-nantemque-exul">Etiam nantemque exul</h1>
+<h1 id="creating-scenes">Creating Scenes</h1>
 
-<h2 id="cum-tulit">Cum tulit</h2>
-<p>Lorem markdownum quos stimulosque <strong>altos</strong>. Putat nubes molle Troiae vero dea;
-nostraque <a href="http://www.tibi.io/">plurima</a>. Vos de mihi, credidit: salibus et
-iacuit, volvitur sunt unda fronti deriguisse <strong>refert</strong>.</p>
-<h2 id="sumpsisse-viso">Sumpsisse viso</h2>
-<p>Nubila nomine. Purpura se o et causa parva ripas, adsonat saevaque; quid modo
-ambo et venere voveo. Sine et esse, illa tempore, sive tibi roseo, ministerio
-altos. Trepident medicamine, primasque cum et peregit
-<a href="http://www.vetustas.net/">dapibusque</a> quoslibet hominis quoque insula.
-Tepentibus ut Cecropios ab turba, est auro ferventi aliter duratos feres
-differtis Ausoniis potes, non noctis Laertaque iuvenes.</p>
-<h2 id="caelumque-vestigia">Caelumque vestigia</h2>
-<p>Et promissa fila sentiet leges; Phrygiae et levatus ferire? Salutifer coniugis
-fierent ante fecissent post vultumque ultima, per radios currere; tandem.
-<a href="http://www.est-adicit.com/licet.html">Fuerat</a> qua, ne foedera reformatus nunc
-diu dea audet nonne.</p>
-<blockquote><p>Ut utinam mitia tenuerunt movent spectans Mavortis nulla ite, somnos exsiccata
-dixit Aeetias. Binas Trinacriam album ex ipse. Quoque <strong>una utraque tardius</strong>
-placetque gerere; mariti sed dare ludunt memorante Delphice corpora. Caret
-quantum intellegat venis gaudent eurus. Et suos crista; has et ferarum quid
-audit omine; mea cum praemia quae duris, suspicor.</p>
+<p>Heroes of the Shrine is divided into scenes. The Unity manual states:</p>
+<blockquote><p>Scenes are where you work with content in Unity. They are assets that contain all or part of a game or application. For example, you might build a simple game in a single scene, while for a more complex game, you might use one scene per level, each with its own environments, characters, obstacles, decorations, and UI
+. You can create any number of scenes in a project.</p>
 </blockquote>
-<h2 id="adflati-qui">Adflati qui</h2>
-<p>Spiro conata supprimit diemque; ora oblitus ensem alti non quo lacrimis ferunt,
-<strong>ageret</strong> Cebrenida rutilis delendaque? Terras lata modus: nec fas, misi utque
-adpositis Iunonis. Fide vidit, ferox Schoeneia mundi, voce, tellus pariterque
-pedum, <strong>sic Celadon</strong> securior corpora partesque posito.</p>
-<blockquote><p>Potest faxo unda pendulaque ille rostro, haesit pars: formidine captat,
-viseret simulaverat! Sequi est peragit flumineae pallent simulatas formae
-avulsa, imagine undis; formam. Et nec sed adeunt, huic aequa et ignes nec,
-medere terram. Move ipsum abnuat retemptat retinebat duabus diu Iovi est
-pluma. <strong>Tecum non</strong> deducit Pelops Inachus: arcet aliquemque, regia telo.</p>
-</blockquote>
-<h2 id="tollens-altore-nec-semel-qui-voce-palatinae">Tollens altore nec semel qui voce Palatinae</h2>
-<p>Apertis et <strong>dei duo inquit</strong>; luna secundo, fervida terret. In haec dextra
-septima Tydides tibi: congelat hospes nativum radice <strong>tegumenque</strong> membris
-Hesperio ne Libys, est vocabula siqua. Dumque <a href="http://peparethos-ultus.org/">stet
-mulces</a>, ut fontem dea atricolor, est pronos,
-clarissimus poterat cum intrare sidere templi.</p>
-<pre><code>cut_metadata(whitelistSequenceUnit.thick.of_bezel_cdma(
-        address_suffix_troubleshooting), sram_trojan(4, hdmi_network - 1));
-flash.apache -= web_gps_plug;
-if (offline.dac_bridge(scrollEbookRom,
-        parameter.internal_target_superscalar(2)) &lt; qwerty + 2 -
-        ipvCgiContextual) {
-    certificateIdeAsp = overclocking + app;
-    supplyCard = siteRaster;
-}
-</code></pre><p>Sagitta curvum quoque petisti opibusque proximitas in, illa vestrum, mihi domum
-nescia flexit sacra in. Magni <em>vive sim crescente</em> causam saxo voluit, mens,
-quod. Tela <em>ter ulterius similis</em> illos nato refugit ait verbaque nec fatigatum
-penates iaculatricemque cecidit pinnas, cum. Misso contigit <em>caelo</em> dedissent
-lumina; nympha ad vobis occidat, malo sacra utrumque cunctos Diomedeos addita.
-Virgineus autumnos, ait mitissima curru: fuit sed fessi se habebat hactenus
-Ultor; meus.</p>
+<p>Each level can rely on multiple scenes, each representing a different part in the level. Scene transitions are costy in terms of client resources, thus they shouldn&#39;t occur very often.</p>
+<h2 id="scene-structure">Scene Structure</h2>
+<p>In our game, each scenes should have a <em>Scene Root</em> game object. <em>Scene Root</em> is a prefab, located in <code>Assets/Prefabs</code>, and it contains essential global objects and scripts (and even the player itself).</p>
+<p><img src="/resources/SceneRootHierarchy.png" alt="Scene root hierarchy"></p>
+<p>Scenes will also contain enemies, UI, and level definitions (encounters, transitions, cutscenes, etc.)</p>
+<div class="NOTE"><h5>Note</h5><p>All UI elements must live under the <em>Canvas</em> object in the <em>Scene Root</em></p>
+</div>
+<h2 id="create-a-scene">Create a Scene</h2>
+<p>To add a new scene follow these steps:</p>
+<ol>
+<li>Create a scene assets in <code>Assets/Scenes</code>. Give it an indicative name, such as <em>Level3Forest</em>.</li>
+<li>Get inside your new scene, by double clicking the asset.</li>
+<li>Add <em>Scene Root</em> to the scene, by dragging it from <code>Assets/Prefabs/Scene Root</code>.</li>
+<li>Add scene background using normal 2D sprites.</li>
+<li>Add the enemies, encounters, hazards and cutscenes - everything that makes this scene unique.</li>
+<li>Save your changes!</li>
+</ol>
+<div class="WARNING"><h5>Warning</h5><p><code>Ctrl+S</code> is usually sufficient for saving, but sometimes it might skip some parts. In order to make sure you saved everything, right click the scene object in the hierarchy, and click &quot;Save Scene&quot;
+<img src="/resources/SaveScene.png" alt="Scene root hierarchy"></p>
+</div>
 </article>
           </div>
           
