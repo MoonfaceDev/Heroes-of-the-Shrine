@@ -13,8 +13,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        # with:
-        #   submodules: true
+        with:
+          submodules: true
+          fetch-depth: 0
+          lfs: true
 
       - name: Install DocFX
         run: choco install -y docfx
@@ -46,7 +48,9 @@ jobs:
       - name: Download site artifact
         uses: actions/download-artifact@v1
         with:
-          name: _site
+          submodules: true
+          fetch-depth: 0
+          lfs: true
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
