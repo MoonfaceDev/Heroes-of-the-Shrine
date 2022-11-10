@@ -1,4 +1,20 @@
-- name: Coniunctis nec qui
-  href: coniunctis.md
-- name: Etiam nantemque exul
-  href: etiam.md
+- name: Level
+  items:
+  - name: Creating Scenes
+    href: create-scenes.md
+  - name: Adding Encounters
+    href: add-encounters.md
+  - name: Create Cutscenes
+    href: create-cutscenes.md
+- name: Player
+  items:
+  - name: Using Attacks
+    href: using-attacks.md
+- name: Enemy
+  items:
+  - name: Adding Enemies
+    href: add-enemies.md
+  - name: Using Attacks
+    href: using-attacks.md
+  - name: Using Patterns
+    href: using-patterns.md
