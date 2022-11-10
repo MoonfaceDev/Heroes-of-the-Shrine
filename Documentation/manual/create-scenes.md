@@ -11,7 +11,7 @@ Each level can rely on multiple scenes, each representing a different part in th
 
 In our game, each scenes should have a `Scene Root` game object. `Scene Root` is a prefab, located in *Assets/Prefabs*, and it contains essential global objects and scripts (and even the player itself).
 
-![Scene root hierarchy](../resources/SceneRootHierarchy.png)
+![Scene root hierarchy](resources/SceneRootHierarchy.png)
 
 Scenes will also contain enemies, UI, and level definitions (encounters, transitions, cutscenes, etc.)
 
@@ -31,4 +31,4 @@ To add a new scene follow these steps:
 
 > [!WARNING]
 > *Ctrl+S* is usually sufficient for saving, but sometimes it might skip some parts. In order to make sure you saved everything, right click the scene object in the hierarchy, and click *Save Scene*
-> ![Scene root hierarchy](../resources/SaveScene.png)
+> ![Scene root hierarchy](resources/SaveScene.png)
