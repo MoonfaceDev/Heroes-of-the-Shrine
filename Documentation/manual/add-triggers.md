@@ -10,8 +10,8 @@
 4. Attach an *action* by clicking '+'. First, select the game object on which the action occurs. Using the dropdown in the right, select the function that will be invoked by the trigger, in one of the components.
 ![Trigger action](../resources/TriggerAction.png)
 
-> [!NOTE]
-> The action can even be a function on the same object. For example, you can create an object with a *line trigger* that invokes an *encounter action*, both on the same game object.
+    > [!NOTE]
+    > The action can even be a function on the same object. For example, you can create an object with a *line trigger* that invokes an *encounter action*, both on the same game object.
 
 ## Available Triggers
 
