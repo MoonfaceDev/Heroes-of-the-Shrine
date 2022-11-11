@@ -1492,7 +1492,19 @@
       "output": {
         ".html": {
           "relative_path": "manual/add-encounters.html",
-          "hash": "B4SfXT3CSjCUVEA8U8yH2fODp96k8QmjvxD3x99Tk90="
+          "hash": "TtgYi2AX+zQ4rbfWVV8qLK74blhXjbqyBvZlA1Q2KCc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/add-triggers.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/add-triggers.html",
+          "hash": "+kyEzGi5vn7VZZl5pzfvIzX/rdHD1shLc7ePeekZ6oo="
         }
       },
       "is_incremental": false,
@@ -1531,7 +1543,18 @@
       "output": {
         ".html": {
           "relative_path": "manual/toc.html",
-          "hash": "0Y3CNTioMvUjO/waC7bw1P8iYfgKGIMkjfCTejTiwA0="
+          "hash": "JneXDEw0GD3uK3H+p7zWBL1yZkW4MhaSRNPh/5WWSq4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/EncounterEnemy.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/EncounterEnemy.png"
         }
       },
       "is_incremental": false,
@@ -1586,7 +1609,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 4,
+          "total_file_count": 5,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
