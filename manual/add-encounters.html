@@ -90,9 +90,9 @@
 <li>From the trigger, attach the method <code>Invoke</code> of the new <code>Encounter Action</code>.</li>
 </ol>
 <h2 id="customization">Customization</h2>
-<h3 id="wave-announcer">Wave announcer</h3>
+<h4 id="wave-announcer">Wave announcer</h4>
 <p>Wave announcer is a prefab of a UI object that will be activated once a wave starts. The prefab must have the component <code>Wave Announcer</code>. The component accepts a property <code>text</code>, which is a reference to a TextMeshPro component. It&#39;s used to display the announcement: <em>&quot;Wave X begins!&quot;</em>.</p>
-<h3 id="wave-definitions">Wave definitions</h3>
+<h4 id="wave-definitions">Wave definitions</h4>
 <p><code>Wave definitions</code> is a list where each element defines a wave in the encounter, and each wave is a list of enemy definitions. Each instance of an enemy has to be defined separately. The defined enemies are spawned when the wave starts, and the player has to eliminate them to finish the wave. Each enemy definiton has the following properties:
 <img src="../resources/EncounterEnemy.png" alt="Encounter enemy"></p>
 <ul>
@@ -101,17 +101,15 @@
 <li><code>Z</code> - Z coordinate from in which the enemy spawns.</li>
 <li><code>Part of wave</code> - If true, the enemy has to be eliminated in order to finish the wave.</li>
 </ul>
-<h3 id="first-wave-pre-spawned-enemies">First wave pre spawned enemies</h3>
+<h4 id="first-wave-pre-spawned-enemies">First wave pre spawned enemies</h4>
 <p>List of enemy objects from the scene (not prefabs). The player has to eliminate them to finish the first wave, in addition to the enemies spawned in that wave (if any).</p>
-<div class="NOTE"><h5>Note</h5><p>To add a delay before pre spawned enemies start attacking the player, refer to <code>Time to alarm</code>.</p>
-</div>
-<h3 id="time-to-alarm">Time to alarm</h3>
+<h4 id="time-to-alarm">Time to alarm</h4>
 <p>Delay (in seconds) before enemies start attacking the player. This property affects all the enemies defined in <code>Wave definitions</code> (regardless of whether they are <code>Part of wave</code>), and also enemies defined in <code>First wave pre spawned enemies</code>. When the delay finishes, it will activate a trigger animator parameter called <code>Alarm</code>.</p>
-<h3 id="camera-border">Camera border</h3>
+<h4 id="camera-border">Camera border</h4>
 <p>Border of the camera during the encounter. More info in <a href="#camera-behaviour">Camera Behaviour</a>.</p>
-<h3 id="spawn-source-distance">Spawn source distance</h3>
+<h4 id="spawn-source-distance">Spawn source distance</h4>
 <p>Specifies the distance outside the camera border where enemies are spawned. Enemies should enter the camera border by themselves.</p>
-<h3 id="post-encounter-event">Post encounter event</h3>
+<h4 id="post-encounter-event">Post encounter event</h4>
 <p>Use the event to invoke an action after when the encounter is over. Pick an object or drag one in, and select any of its methods to invoke.</p>
 </article>
           </div>
