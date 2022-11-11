@@ -1492,19 +1492,22 @@
       "output": {
         ".html": {
           "relative_path": "manual/add-encounters.html",
-          "hash": "V/5bdyj6dEA2M6atgj5RnQ0+VkjxWy/af+XQLZMpiFo="
+          "hash": "6l4q8Z8NfqJxyg/vANNU5r0AjpEbRy9MzUUPx0FrXkw="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Conceptual",
       "source_relative_path": "manual/add-triggers.md",
       "output": {
         ".html": {
           "relative_path": "manual/add-triggers.html",
-          "hash": "+kyEzGi5vn7VZZl5pzfvIzX/rdHD1shLc7ePeekZ6oo="
+          "hash": "Ss3wFUiuQcXJxNhoY7Cx9pY1RRGmIn1nC+F8RZvQWPA="
         }
       },
       "is_incremental": false,
@@ -1577,6 +1580,17 @@
       "output": {
         "resource": {
           "relative_path": "resources/SceneRootHierarchy.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/TriggerAction.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/TriggerAction.png"
         }
       },
       "is_incremental": false,
