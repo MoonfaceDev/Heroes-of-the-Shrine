@@ -85,11 +85,12 @@
 <li>Create an empty game object, and give it an indicative name.</li>
 <li>Attach the trigger component that you want, located in <em>Scripts/Level/Triggers</em>.</li>
 <li>Define the properties required by the trigger you have chosen.</li>
-<li>Attach an <em>action</em> by clicking &#39;+&#39;. First, select the game object on which the action occurs. Using the dropdown in the right, select the function that will be invoked by the trigger, in one of the components.
-<img src="../resources/TriggerAction.png" alt="Trigger action"></li>
-</ol>
+<li><p>Attach an <em>action</em> by clicking &#39;+&#39;. First, select the game object on which the action occurs. Using the dropdown in the right, select the function that will be invoked by the trigger, in one of the components.
+<img src="../resources/TriggerAction.png" alt="Trigger action"></p>
 <div class="NOTE"><h5>Note</h5><p>The action can even be a function on the same object. For example, you can create an object with a <em>line trigger</em> that invokes an <em>encounter action</em>, both on the same game object.</p>
 </div>
+</li>
+</ol>
 <h2 id="available-triggers">Available Triggers</h2>
 <p><strong>Line Trigger</strong>: fires when the player position in the X axis, is greater than the specified <em>Minimum X</em>. When editing, a purple line Gizmo is drawn, representing <em>Minimum X</em>.</p>
 <p><strong>Rect Trigger</strong>: fires when the player enters a rectangle on the ground. When editing, a purple rectangle Gizmo is drawn, representing the rectangle&#39;s <em>position</em> and <em>size</em>. Even though <em>position</em> and <em>size</em> are <code>Vector3</code>, the <em>Y</em> value is ignored.</p>
