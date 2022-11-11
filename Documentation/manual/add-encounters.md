@@ -47,4 +47,4 @@ Specifies the distance outside the camera border where enemies are spawned. Enem
 
 #### Post encounter event
 
-Use the event to invoke an action after when the encounter is over. Pick an object or drag one in, and select any of its methods to invoke.
+`UnityEvent` to invoke when the encounter is over. Pick an object or drag one in, and select any of its methods to invoke.
