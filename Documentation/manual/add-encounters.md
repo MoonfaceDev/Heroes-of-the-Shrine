@@ -15,11 +15,11 @@ While in encounter, the camera border is restricted between two X coordinated. T
 
 ## Customization
 
-### Wave announcer
+#### Wave announcer
 
 Wave announcer is a prefab of a UI object that will be activated once a wave starts. The prefab must have the component `Wave Announcer`. The component accepts a property `text`, which is a reference to a TextMeshPro component. It's used to display the announcement: *"Wave X begins!"*.
 
-### Wave definitions
+#### Wave definitions
 
 `Wave definitions` is a list where each element defines a wave in the encounter, and each wave is a list of enemy definitions. Each instance of an enemy has to be defined separately. The defined enemies are spawned when the wave starts, and the player has to eliminate them to finish the wave. Each enemy definiton has the following properties:
 ![Encounter enemy](../resources/EncounterEnemy.png)
@@ -29,25 +29,22 @@ Wave announcer is a prefab of a UI object that will be activated once a wave sta
 * `Z` - Z coordinate from in which the enemy spawns.
 * `Part of wave` - If true, the enemy has to be eliminated in order to finish the wave.
 
-### First wave pre spawned enemies
+#### First wave pre spawned enemies
 
 List of enemy objects from the scene (not prefabs). The player has to eliminate them to finish the first wave, in addition to the enemies spawned in that wave (if any).
 
-> [!NOTE]
-> To add a delay before pre spawned enemies start attacking the player, refer to `Time to alarm`.
-
-### Time to alarm
+#### Time to alarm
 
 Delay (in seconds) before enemies start attacking the player. This property affects all the enemies defined in `Wave definitions` (regardless of whether they are `Part of wave`), and also enemies defined in `First wave pre spawned enemies`. When the delay finishes, it will activate a trigger animator parameter called `Alarm`.
 
-### Camera border
+#### Camera border
 
 Border of the camera during the encounter. More info in [Camera Behaviour](#camera-behaviour).
 
-### Spawn source distance
+#### Spawn source distance
 
 Specifies the distance outside the camera border where enemies are spawned. Enemies should enter the camera border by themselves.
 
-### Post encounter event
+#### Post encounter event
 
 Use the event to invoke an action after when the encounter is over. Pick an object or drag one in, and select any of its methods to invoke.
