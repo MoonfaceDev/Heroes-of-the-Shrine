@@ -9,6 +9,7 @@
 3. Define the properties required by the trigger you have chosen.
 4. Attach an *action* by clicking '+'. First, select the game object on which the action occurs. Using the dropdown in the right, select the function that will be invoked by the trigger, in one of the components.
 ![Trigger action](../resources/TriggerAction.png)
+
 > [!NOTE]
 > The action can even be a function on the same object. For example, you can create an object with a *line trigger* that invokes an *encounter action*, both on the same game object.
 
@@ -16,9 +17,7 @@
 
 **Line Trigger**: fires when the player position in the X axis, is greater than the specified *Minimum X*. When editing, a purple line Gizmo is drawn, representing *Minimum X*.
 
-**Rect Trigger**: fires when the player enters a rectangle on the ground. When editing, a purple rectangle Gizmo is drawn, representing the rectangle's *position* and *size*.
-> [!NOTE]
-> Even though *position* and *size* are `Vector3`, the *Y* value is ignored.
+**Rect Trigger**: fires when the player enters a rectangle on the ground. When editing, a purple rectangle Gizmo is drawn, representing the rectangle's *position* and *size*. Even though *position* and *size* are `Vector3`, the *Y* value is ignored.
 
 **Death Trigger**: fires when the player dies. If the player dies while being in knockback, it will fire once they land.
 > [!WARNING]
