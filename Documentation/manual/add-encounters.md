@@ -1,68 +1,53 @@
-# Etiam nantemque exul
+# Add Encounters
 
-## Cum tulit
+Enemies in the game are often spawned in a form of an *Encounter*. The encounter is divided to waves, and when one wave finishes, the next will invoke.
 
-Lorem markdownum quos stimulosque **altos**. Putat nubes molle Troiae vero dea;
-nostraque [plurima](http://www.tibi.io/). Vos de mihi, credidit: salibus et
-iacuit, volvitur sunt unda fronti deriguisse **refert**.
+## Camera Behaviour
 
-## Sumpsisse viso
+While in encounter, the camera border is restricted between two X coordinated. The camera will follow the player between these positions, but it will not exceed. When the encounter is over, the camera border will return back to normal. If an encounter starts and the camera is not yet inside the restricted border, it will follow the player into the border. While the encounter is active, the player cannot exceed the camera border. However, enemies can exceed the border, to prevent them from being trapped between the player and border.
 
-Nubila nomine. Purpura se o et causa parva ripas, adsonat saevaque; quid modo
-ambo et venere voveo. Sine et esse, illa tempore, sive tibi roseo, ministerio
-altos. Trepident medicamine, primasque cum et peregit
-[dapibusque](http://www.vetustas.net/) quoslibet hominis quoque insula.
-Tepentibus ut Cecropios ab turba, est auro ferventi aliter duratos feres
-differtis Ausoniis potes, non noctis Laertaque iuvenes.
+## Add an Encounter
 
-## Caelumque vestigia
+1. Create an empty game object, and give it an indicative name.
+2. Add a trigger for the encounter. More info in [Adding Triggrs](../manual/add-triggers.md).
+3. Add the `Encounter Action` component, located in *Assets/Scripts/Level/Actions*.
+4. From the trigger, attach the method `Invoke` of the new `Encounter Action`.
 
-Et promissa fila sentiet leges; Phrygiae et levatus ferire? Salutifer coniugis
-fierent ante fecissent post vultumque ultima, per radios currere; tandem.
-[Fuerat](http://www.est-adicit.com/licet.html) qua, ne foedera reformatus nunc
-diu dea audet nonne.
+## Customization
 
-> Ut utinam mitia tenuerunt movent spectans Mavortis nulla ite, somnos exsiccata
-> dixit Aeetias. Binas Trinacriam album ex ipse. Quoque **una utraque tardius**
-> placetque gerere; mariti sed dare ludunt memorante Delphice corpora. Caret
-> quantum intellegat venis gaudent eurus. Et suos crista; has et ferarum quid
-> audit omine; mea cum praemia quae duris, suspicor.
+### Wave announcer
 
-## Adflati qui
+Wave announcer is a prefab of a UI object that will be activated once a wave starts. The prefab must have the component `Wave Announcer`. The component accepts a property `text`, which is a reference to a TextMeshPro component. It's used to display the announcement: *"Wave X begins!"*.
 
-Spiro conata supprimit diemque; ora oblitus ensem alti non quo lacrimis ferunt,
-**ageret** Cebrenida rutilis delendaque? Terras lata modus: nec fas, misi utque
-adpositis Iunonis. Fide vidit, ferox Schoeneia mundi, voce, tellus pariterque
-pedum, **sic Celadon** securior corpora partesque posito.
+### Wave definitions
 
-> Potest faxo unda pendulaque ille rostro, haesit pars: formidine captat,
-> viseret simulaverat! Sequi est peragit flumineae pallent simulatas formae
-> avulsa, imagine undis; formam. Et nec sed adeunt, huic aequa et ignes nec,
-> medere terram. Move ipsum abnuat retemptat retinebat duabus diu Iovi est
-> pluma. **Tecum non** deducit Pelops Inachus: arcet aliquemque, regia telo.
+`Wave definitions` is a list where each element defines a wave in the encounter, and each wave is a list of enemy definitions. Each instance of an enemy has to be defined separately. The defined enemies are spawned when the wave starts, and the player has to eliminate them to finish the wave. Each enemy definiton has the following properties:
+![Encounter enemy](../resources/EncounterEnemy.png)
 
-## Tollens altore nec semel qui voce Palatinae
+* `Prefab` - Enemy to spawn.
+* `Direction` - Side of the camera border from which the enemy walks into the encounter (*Left* / *Right*).
+* `Z` - Z coordinate from in which the enemy spawns.
+* `Part of wave` - If true, the enemy has to be eliminated in order to finish the wave.
 
-Apertis et **dei duo inquit**; luna secundo, fervida terret. In haec dextra
-septima Tydides tibi: congelat hospes nativum radice **tegumenque** membris
-Hesperio ne Libys, est vocabula siqua. Dumque [stet
-mulces](http://peparethos-ultus.org/), ut fontem dea atricolor, est pronos,
-clarissimus poterat cum intrare sidere templi.
+### First wave pre spawned enemies
 
-    cut_metadata(whitelistSequenceUnit.thick.of_bezel_cdma(
-            address_suffix_troubleshooting), sram_trojan(4, hdmi_network - 1));
-    flash.apache -= web_gps_plug;
-    if (offline.dac_bridge(scrollEbookRom,
-            parameter.internal_target_superscalar(2)) < qwerty + 2 -
-            ipvCgiContextual) {
-        certificateIdeAsp = overclocking + app;
-        supplyCard = siteRaster;
-    }
+List of enemy objects from the scene (not prefabs). The player has to eliminate them to finish the first wave, in addition to the enemies spawned in that wave (if any).
 
-Sagitta curvum quoque petisti opibusque proximitas in, illa vestrum, mihi domum
-nescia flexit sacra in. Magni *vive sim crescente* causam saxo voluit, mens,
-quod. Tela *ter ulterius similis* illos nato refugit ait verbaque nec fatigatum
-penates iaculatricemque cecidit pinnas, cum. Misso contigit *caelo* dedissent
-lumina; nympha ad vobis occidat, malo sacra utrumque cunctos Diomedeos addita.
-Virgineus autumnos, ait mitissima curru: fuit sed fessi se habebat hactenus
-Ultor; meus.
+> [!NOTE]
+> To add a delay before pre spawned enemies start attacking the player, refer to `Time to alarm`.
+
+### Time to alarm
+
+Delay (in seconds) before enemies start attacking the player. This property affects all the enemies defined in `Wave definitions` (regardless of whether they are `Part of wave`), and also enemies defined in `First wave pre spawned enemies`. When the delay finishes, it will activate a trigger animator parameter called `Alarm`.
+
+### Camera border
+
+Border of the camera during the encounter. More info in [Camera Behaviour](#camera-behaviour).
+
+### Spawn source distance
+
+Specifies the distance outside the camera border where enemies are spawned. Enemies should enter the camera border by themselves.
+
+### Post encounter event
+
+Use the event to invoke an action after when the encounter is over. Pick an object or drag one in, and select any of its methods to invoke.
