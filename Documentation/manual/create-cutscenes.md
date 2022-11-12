@@ -56,7 +56,7 @@ Define where characters from the scene should move before the encounter starts.
 
 *Animation Track* is used to animate objects, as well as change their properties over time (e.g. move them around). Each animation track is related to a single object in the scene. To animate an object in the timeline, it must have an *Animator* component, even if it doesn't have an animator controller (animations state machine). Each track can modify multiple properties, but it is recommended to split an animation to multiple tracks where it fits.
 
-To create a new *Animation Track*, follow these steps:
+To create a new *Animation Track*, follow these steps (if the track is based on an existing clip, skip step 1):
 
 1. Go to your timeline folder in *Assets/Timelines*. Create a new animation clip and give it an indicative name.
 
@@ -64,7 +64,7 @@ To create a new *Animation Track*, follow these steps:
 
 3. Drag the object you want to animate from the scene. If the object doesn't already have an *Animator*, make one and then drag it to the track.
 
-4. Right click the new track, and select "Add From Animation Clip". There, select the clip you created in step 1.
+4. Right click the new track, and select "Add From Animation Clip". There, select the clip you created in step 1 (or a clip you already have).
 
 5. Double click in the track area to open the animation clip.
 
