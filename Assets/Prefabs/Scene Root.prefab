@@ -46,8 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab4a99eff4ae7143a64b443f33cfb4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 8011096904622113277}
-  spawnPosition: {x: -17.5, y: 0, z: -3}
   startEvent:
     m_PersistentCalls:
       m_Calls:
@@ -464,7 +462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridWorldSize: {x: 30, y: 0, z: 3.6}
   nodeRadius: 0.25
-  movableObject: {fileID: 0}
+  movableObject: {fileID: 5826350637441399168}
 --- !u!1 &5826350637460925669
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,7 +788,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3309,10 +3307,5 @@ PrefabInstance:
 --- !u!4 &8011096904622113216 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5102893360874897670, guid: e6b59c7f93ad90f41b501eaabf2e3e0a, type: 3}
-  m_PrefabInstance: {fileID: 3025359334329434310}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8011096904622113277 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5102893360874897723, guid: e6b59c7f93ad90f41b501eaabf2e3e0a, type: 3}
   m_PrefabInstance: {fileID: 3025359334329434310}
   m_PrefabAsset: {fileID: 0}
