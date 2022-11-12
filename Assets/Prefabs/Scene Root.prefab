@@ -90,7 +90,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 0}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -423,7 +423,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5826350637441399182}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -18, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -443,9 +443,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 0}
   figureObject: {fileID: 0}
   position: {x: -18, y: 0, z: -5}
-  startPosition: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &5826350637441399169
@@ -996,7 +998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08aa043e8b7ac40408e5e42a696db487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EffectBarPrefab: {fileID: 5701558148130113370, guid: 0c7bebf87b510ce43beeec18f07719be, type: 3}
+  effectBarPrefab: {fileID: 5701558148130113370, guid: 0c7bebf87b510ce43beeec18f07719be, type: 3}
   effects:
   - effectType:
       GuidAssignmentFailed: 0
@@ -1797,8 +1799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraZoomFactor: 3
-  objctsToDestory:
-  - {fileID: 0}
+  objectsToDestroy:
   - {fileID: 5826350637849315246}
   deathPanel: {fileID: 5826350638911486880}
   deathPanelTransitionDelay: 2

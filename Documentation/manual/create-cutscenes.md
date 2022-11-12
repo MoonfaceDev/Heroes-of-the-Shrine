@@ -17,11 +17,17 @@ Cutscenes should be constant, meaning object positions will never be relative to
 ## Create a Cutscene
 
 1. Create an empty game object, and give it an indicative name.
+
 2. Add a trigger for the cutscene. More info in [Adding Triggrs](../manual/add-triggers.md). Instead, you can also attach the cutscene to an existing `UnityEvent`, such as [Post Encounter Event](../manual/add-encounters.md#post-encounter-event).
+
 3. Add the **Cutscene Action** component, located in *Assets/Scripts/Level/Actions*.
+
 4. From the trigger, attach the method `Invoke` of the new Cutscene Action.
+
 5. Create a new timeline asset in *Assets/Timelines*.
+
 6. In the same object, attach a *Playable Director* component. Change the *Playable* to the timeline you have created, and make sure that *Play On Awake* is unchecked.
+
 7. In the hierarchy, select the cutscene object you added. Open the *Timeline* window where you can edit tracks, and start adding tracks (by clicking '+') to build the cutscene!
 
 ## Customization
@@ -51,10 +57,15 @@ Define where characters from the scene should move before the encounter starts.
 To create a new *Animation Track*, follow these steps:
 
 1. Select the game object that contains the timeline, click the '+' icon in the timeline window, and select "Animation Track".
+
 2. Drag the object you want to animate from the scene. If the object doesn't already have an *Animator*, make one and then drag it to the track.
-3. Click the record button (red circle), to start recording the animation
+
+3. Click the record button (red circle), to start recording the animation.
+
 4. Select the animated object in the hierarchy, and set the initial *position* of the [Movable Object](../api/Global.MovableObject.html) in the animation. Click the record button again to stop recording.
+
 5. Double click in the track area to open the new animation clip.
+
 6. Start adding keyframe that change properties over time.
 
     > [!WARNING]
@@ -82,6 +93,7 @@ To create a new *Animation Track*, follow these steps:
 To create a new *Activation Track*, follow these steps:
 
 1. Select the game object that contains the timeline, click the '+' icon in the timeline window, and select "Activation Track".
+
 2. Drag the object you want to modify from the scene. The rectangle in the timeline specifies when the object is active inside the cutscene.
 
 #### Signal Track
@@ -91,11 +103,19 @@ To create a new *Activation Track*, follow these steps:
 To create a new *Signal Track*, follow these steps:
 
 1. Select the game object that contains the timeline, and add the component **Signal Receiver**, if it wasn't already attached.
+
 2. Click the "Add Reaction" icon inside the component to add a new signal reaction.
+
 3. Inside the dropdown, select an existing *Signal* or create a new one. Store them inside *Assets/Timelines/Signals*, and give the signal an indicative name.
+
 4. Click the '+' icon inside the reaction.
+
 5. Attach a `UnityEvent` that will be invoked when the selected signal is emitted. First, select the game object that has the function. Using the dropdown in the right, select the function that will be invoked by the trigger, in one of the components.
+
 6. Select the game object that contains the timeline, click the '+' icon in the timeline window, and select "Signal Track".
+
 7. Drag the game object that contains the timeline to the empty field.
+
 8. Right click inside the track area, and select "Add Signal Emitter".
+
 9. From the inspector, change the *Emit Signal* to the signal you used in the *Signal Receiver* component.

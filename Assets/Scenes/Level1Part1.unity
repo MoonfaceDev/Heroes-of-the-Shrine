@@ -806,6 +806,11 @@ Transform:
   m_Father: {fileID: 531007163}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1096272827 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5826350637849315246, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+  m_PrefabInstance: {fileID: 5826350637269321193}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1285269678 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8011096904622113277, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
@@ -1211,7 +1216,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!4 &2542200778651597022
 Transform:
   m_ObjectHideFlags: 0
@@ -6202,7 +6206,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!199 &2542200780129880118
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -11191,7 +11194,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!1 &2626226325161371265
 GameObject:
   m_ObjectHideFlags: 0
@@ -11411,7 +11413,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!4 &2626226325319188579
 Transform:
   m_ObjectHideFlags: 0
@@ -11556,7 +11557,6 @@ MonoBehaviour:
   hittableTags:
   - Player
   lastAttack: {fileID: 0}
-  lastAttackTime: 0
 --- !u!114 &2626226325319188589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11583,7 +11583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instant: 0
-  interruptable: 1
+  interruptible: 1
   hardRecovery: 0
   previousAttacks:
   - {fileID: 2626226325319188591}
@@ -11612,7 +11612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instant: 0
-  interruptable: 1
+  interruptible: 1
   hardRecovery: 0
   previousAttacks: []
   midair: 0
@@ -11692,7 +11692,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!4 &2626226326310494992
 Transform:
   m_ObjectHideFlags: 0
@@ -11971,7 +11970,19 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5826350638490993486, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: objectsToDestroy.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826350638490993486, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: objctsToDestory.Array.data[0]
+      value: 
+      objectReference: {fileID: 684266075}
+    - target: {fileID: 5826350638490993486, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: objectsToDestroy.Array.data[0]
+      value: 
+      objectReference: {fileID: 1096272827}
+    - target: {fileID: 5826350638490993486, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: objectsToDestroy.Array.data[1]
       value: 
       objectReference: {fileID: 684266075}
     - target: {fileID: 8011096903894591928, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
