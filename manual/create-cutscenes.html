@@ -98,7 +98,9 @@ Wikipedia defines cutscenes as such:</p>
 </li>
 <li><p>From the trigger, attach the method <code>Invoke</code> of the new Cutscene Action.</p>
 </li>
-<li><p>Create a new timeline asset in <em>Assets/Timelines</em>.</p>
+<li><p>Create a new folder in <em>Assets/Timelines</em>. Give it an indicative name that describes the cutscene.</p>
+</li>
+<li><p>Inside the folder, create a timeline asset, and give it the same name as the folder.</p>
 </li>
 <li><p>In the same object, attach a <strong>Playable Director</strong> component. Change the <em>Playable</em> to the timeline you have created, and make sure that <em>Play On Awake</em> is unchecked. Drag the <em>Playable Director</em> to the <em>director</em> property of the <em>Cutscene Action</em>.</p>
 </li>
@@ -120,17 +122,17 @@ Wikipedia defines cutscenes as such:</p>
 <p><em>Animation Track</em> is used to animate objects, as well as change their properties over time (e.g. move them around). Each animation track is related to a single object in the scene. To animate an object in the timeline, it must have an <em>Animator</em> component, even if it doesn&#39;t have an animator controller (animations state machine). Each track can modify multiple properties, but it is recommended to split an animation to multiple tracks where it fits.</p>
 <p>To create a new <em>Animation Track</em>, follow these steps:</p>
 <ol>
+<li><p>Go to your timeline folder in <em>Assets/Timelines</em>. Create a new animation clip and give it an indicative name.</p>
+</li>
 <li><p>Select the game object that contains the timeline, click the &#39;+&#39; icon in the timeline window, and select &quot;Animation Track&quot;.</p>
 </li>
 <li><p>Drag the object you want to animate from the scene. If the object doesn&#39;t already have an <em>Animator</em>, make one and then drag it to the track.</p>
 </li>
-<li><p>Click the record button (red circle), to start recording the animation.</p>
+<li><p>Right click the new track, and select &quot;Add From Animation Clip&quot;. There, select the clip you created in step 1.</p>
 </li>
-<li><p>Select the animated object in the hierarchy, and set the initial <em>position</em> of the <a href="../api/Global.MovableObject.html">Movable Object</a> in the animation. Click the record button again to stop recording.</p>
+<li><p>Double click in the track area to open the animation clip.</p>
 </li>
-<li><p>Double click in the track area to open the new animation clip.</p>
-</li>
-<li><p>Start adding keyframe that change properties over time.</p>
+<li><p>Start adding keyframes that change properties over time.</p>
 <div class="WARNING"><h5>Warning</h5><p>Unfortunately, editing properties of a movable object does not reflect in the scene while editing them.</p>
 </div>
 <div class="NOTE"><h5>Note</h5><p>By default, the interpolation of a float value between two keyframes, is not linear and has a certain smooth curve:</p>
