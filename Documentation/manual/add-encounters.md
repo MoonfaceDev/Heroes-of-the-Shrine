@@ -9,7 +9,7 @@ While in encounter, the camera border is restricted between two X coordinated. T
 ## Add an Encounter
 
 1. Create an empty game object, and give it an indicative name.
-2. Add a trigger for the encounter. More info in [Adding Triggrs](../manual/add-triggers.md).
+2. Add a trigger for the encounter. More info in [Adding Triggrs](../manual/add-triggers.md). Instead, you can also attach the encounter to an existing `UnityEvent`, such as [Post Encounter Event](../manual/create-cutscenes.md#post-cutscene-event).
 3. Add the **Encounter Action** component, located in *Assets/Scripts/Level/Actions*.
 4. From the trigger, attach the method `Invoke` of the new Encounter Action.
 
