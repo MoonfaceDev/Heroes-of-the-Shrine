@@ -1492,7 +1492,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/add-encounters.html",
-          "hash": "6l4q8Z8NfqJxyg/vANNU5r0AjpEbRy9MzUUPx0FrXkw="
+          "hash": "hrwkdgyp9AriH8dSN6i6DZFqlx95CT90MbmL3tqWPYM="
         }
       },
       "is_incremental": false,
@@ -1514,12 +1514,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Conceptual",
       "source_relative_path": "manual/create-cutscenes.md",
       "output": {
         ".html": {
           "relative_path": "manual/create-cutscenes.html",
-          "hash": "pyoLiHbzzm8pEbEQK1deOkXQCaFEzV7gtiUk57CwDyU="
+          "hash": "KhlImJSEPQdslDYwg5CWMGkY1m0g+ygY/CCJ0oqqvEo="
         }
       },
       "is_incremental": false,
@@ -1554,6 +1557,39 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "resources/AnimationCurve.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/AnimationCurve.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/ClipInspector.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/ClipInspector.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/CutsceneMoveDefinition.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/CutsceneMoveDefinition.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "resources/EncounterEnemy.png",
       "output": {
         "resource": {
@@ -1580,6 +1616,17 @@
       "output": {
         "resource": {
           "relative_path": "resources/SceneRootHierarchy.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/TimelineExample.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/TimelineExample.png"
         }
       },
       "is_incremental": false,
