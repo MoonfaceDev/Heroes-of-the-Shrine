@@ -172,7 +172,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p>If true, The attack cannot be interrupted while <code>Recovering</code> is true.</p>
+        <td><p>If <code>true</code>, The attack cannot be interrupted while <span class="xref">BaseAttack.Recovering</span> is true.</p>
 </td>
       </tr>
     </tbody>
@@ -332,7 +332,7 @@ Used in combo system, and in animator parameters.</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><p>Attack is playing.
-True if attack is either anticipating, active or recovering.</p>
+True if attack is either <span class="xref">BaseAttack.Anticipating</span>, <span class="xref">BaseAttack.Active</span> or <span class="xref">BaseAttack.Recovering</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -372,7 +372,7 @@ It also sets the animator parameter: <code>{attackName}-recovering</code>.</p>
   
   <a id="Global_BaseAttack_ActiveCoroutine_" data-uid="Global.BaseAttack.ActiveCoroutine*"></a>
   <h4 id="Global_BaseAttack_ActiveCoroutine" data-uid="Global.BaseAttack.ActiveCoroutine">ActiveCoroutine()</h4>
-  <div class="markdown level1 summary"><p>Coroutine played while attack is active.
+  <div class="markdown level1 summary"><p>Coroutine played while attack is <span class="xref">BaseAttack.Active</span>.
 When the coroutine finishes, the active phase finishes.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -400,7 +400,7 @@ When the coroutine finishes, the active phase finishes.</p>
   
   <a id="Global_BaseAttack_AnticipateCoroutine_" data-uid="Global.BaseAttack.AnticipateCoroutine*"></a>
   <h4 id="Global_BaseAttack_AnticipateCoroutine" data-uid="Global.BaseAttack.AnticipateCoroutine">AnticipateCoroutine()</h4>
-  <div class="markdown level1 summary"><p>Coroutine played while attack is anticipating.
+  <div class="markdown level1 summary"><p>Coroutine played while attack is <span class="xref">BaseAttack.Anticipating</span>.
 When the coroutine finishes, the anticipation finishes.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -429,7 +429,7 @@ When the coroutine finishes, the anticipation finishes.</p>
   <a id="Global_BaseAttack_CanPlay_" data-uid="Global.BaseAttack.CanPlay*"></a>
   <h4 id="Global_BaseAttack_CanPlay" data-uid="Global.BaseAttack.CanPlay">CanPlay()</h4>
   <div class="markdown level1 summary"><p>Tells if the attack can be played.
-By default, any attack can be played if it is enabled, and the character is not under knockback or stunned.
+By default, any attack can be played if it is <span class="xref">CharacterBehaviour.Enabled</span>, and the character is not under knockback or stunned.
 Override to add more conditions that attack requires.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -486,7 +486,7 @@ Override to add more conditions that attack requires.</p>
   
   <a id="Global_BaseAttack_RecoveryCoroutine_" data-uid="Global.BaseAttack.RecoveryCoroutine*"></a>
   <h4 id="Global_BaseAttack_RecoveryCoroutine" data-uid="Global.BaseAttack.RecoveryCoroutine">RecoveryCoroutine()</h4>
-  <div class="markdown level1 summary"><p>Coroutine played while attack is recovering.
+  <div class="markdown level1 summary"><p>Coroutine played while attack is <span class="xref">BaseAttack.Recovering</span>.
 When the coroutine finishes, the recovery finishes.</p>
 </div>
   <div class="markdown level1 conceptual"></div>

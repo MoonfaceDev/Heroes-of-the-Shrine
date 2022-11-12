@@ -222,7 +222,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td></td>
+        <td><p>Duration of the active phase, in seconds.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -246,14 +247,16 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td></td>
+        <td><p>Duration of the anticipation phase, in seconds.</p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
   <h4 id="Global_SimpleAttack_damage" data-uid="Global.SimpleAttack.damage">damage</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Health reduced to hit characters.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -294,14 +297,16 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Global.Hitbox.html">Hitbox</a></td>
-        <td></td>
+        <td><p>Hitbox where the attack can hit.</p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
   <h4 id="Global_SimpleAttack_hittableTags" data-uid="Global.SimpleAttack.hittableTags">hittableTags</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Tags of objects this attack can hit.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -325,7 +330,8 @@
   
   
   <h4 id="Global_SimpleAttack_hitType" data-uid="Global.SimpleAttack.hitType">hitType</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Side effect of the hit, either knockback or stun.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -349,7 +355,8 @@
   
   
   <h4 id="Global_SimpleAttack_knockbackDirection" data-uid="Global.SimpleAttack.knockbackDirection">knockbackDirection</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Direction of the knockback in degrees, relative to X axis, in the direction of the hit. </p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -373,7 +380,8 @@
   
   
   <h4 id="Global_SimpleAttack_knockbackPower" data-uid="Global.SimpleAttack.knockbackPower">knockbackPower</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Power of the knockback, affects its initial speed.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -414,7 +422,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p>If true, this attack can only play when <span class="xref">JumpBehaviour</span> is playing.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -438,7 +447,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p>If <code>true</code>, overrides the default list of hittable tags in <span class="xref">AttackManager</span>, specifically for this attack.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -462,7 +472,10 @@
     <tbody>
       <tr>
         <td><span class="xref">List</span>&lt;<a class="xref" href="Global.BaseAttack.html">BaseAttack</a>&gt;</td>
-        <td></td>
+        <td><p>This attack can be played only if the previous attack is one of the <code>previousAttacks</code>.
+If the attack can also be played without a previous attack, add <code>null</code> to the list.
+If the list is left empty, the attack can be played after any attack (including <code>null</code>).</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -486,14 +499,16 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td></td>
+        <td><p>Duration of the recovery phase, in seconds.</p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
   <h4 id="Global_SimpleAttack_stunTime" data-uid="Global.SimpleAttack.stunTime">stunTime</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Duration of stun effect caused by hit.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -537,7 +552,8 @@
     <tbody>
       <tr>
         <td><span class="xref">IEnumerator</span></td>
-        <td></td>
+        <td><p>Coroutine that waits for <span class="xref">SimpleAttack.activeDuration</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -564,7 +580,8 @@
     <tbody>
       <tr>
         <td><span class="xref">IEnumerator</span></td>
-        <td></td>
+        <td><p>Coroutine that waits for <span class="xref">SimpleAttack.anticipateDuration</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -586,7 +603,8 @@
   
   <a id="Global_SimpleAttack_CalculateDamage_" data-uid="Global.SimpleAttack.CalculateDamage*"></a>
   <h4 id="Global_SimpleAttack_CalculateDamage_HittableBehaviour_" data-uid="Global.SimpleAttack.CalculateDamage(HittableBehaviour)">CalculateDamage(HittableBehaviour)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Calculates the attack damage on a specific hittable.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -605,7 +623,8 @@
       <tr>
         <td><a class="xref" href="Global.HittableBehaviour.html">HittableBehaviour</a></td>
         <td><span class="parametername">hittableBehaviour</span></td>
-        <td></td>
+        <td><p>Hittable to calculate the damage for.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -620,7 +639,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td></td>
+        <td><p>Damage result.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -628,7 +648,9 @@
   
   <a id="Global_SimpleAttack_CanPlay_" data-uid="Global.SimpleAttack.CanPlay*"></a>
   <h4 id="Global_SimpleAttack_CanPlay" data-uid="Global.SimpleAttack.CanPlay">CanPlay()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Tells if the attack can be played.
+Override to add more conditions that attack requires.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -645,7 +667,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if the attack can be played.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -655,7 +678,9 @@
   
   <a id="Global_SimpleAttack_CreateHitDetector_" data-uid="Global.SimpleAttack.CreateHitDetector*"></a>
   <h4 id="Global_SimpleAttack_CreateHitDetector" data-uid="Global.SimpleAttack.CreateHitDetector">CreateHitDetector()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a <span class="xref">SingleHitDetector</span> that detects hits for <span class="xref">SimpleAttack.hitbox</span>.
+The hit detector will detect hits when attack is during active phase.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -665,7 +690,9 @@
   
   <a id="Global_SimpleAttack_HitCallable_" data-uid="Global.SimpleAttack.HitCallable*"></a>
   <h4 id="Global_SimpleAttack_HitCallable_HittableBehaviour_" data-uid="Global.SimpleAttack.HitCallable(HittableBehaviour)">HitCallable(HittableBehaviour)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Communicates with the hittable when hit by this attack.
+By default, Applies damage and performs knockback or stun.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -684,7 +711,8 @@
       <tr>
         <td><a class="xref" href="Global.HittableBehaviour.html">HittableBehaviour</a></td>
         <td><span class="parametername">hittableBehaviour</span></td>
-        <td></td>
+        <td><p>The hittable hit by the attack.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -692,7 +720,8 @@
   
   <a id="Global_SimpleAttack_IsHittableTag_" data-uid="Global.SimpleAttack.IsHittableTag*"></a>
   <h4 id="Global_SimpleAttack_IsHittableTag_System_String_" data-uid="Global.SimpleAttack.IsHittableTag(System.String)">IsHittableTag(String)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Checks if the tag is hittable by this attack.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -711,7 +740,8 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">testedTag</span></td>
-        <td></td>
+        <td><p>Tag to test.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -726,7 +756,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><code>true</code> if the tag is hittable.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -734,7 +765,8 @@
   
   <a id="Global_SimpleAttack_PreventWalking_" data-uid="Global.SimpleAttack.PreventWalking*"></a>
   <h4 id="Global_SimpleAttack_PreventWalking_System_Boolean_" data-uid="Global.SimpleAttack.PreventWalking(System.Boolean)">PreventWalking(Boolean)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Disables walking when attack is playing, and re-enables it when attack is finished. </p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -753,7 +785,8 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">freeze</span></td>
-        <td></td>
+        <td><p>If <code>true</code>, changes the velocity to <see cref="!:Vector3.zero"></see>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -778,7 +811,8 @@
     <tbody>
       <tr>
         <td><span class="xref">IEnumerator</span></td>
-        <td></td>
+        <td><p>Coroutine that waits for <span class="xref">SimpleAttack.recoveryDuration</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
