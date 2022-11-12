@@ -90,13 +90,20 @@ Wikipedia defines cutscenes as such:</p>
 <p><img src="../resources/TimelineExample.png" alt="Timeline example"></p>
 <h2 id="create-a-cutscene">Create a Cutscene</h2>
 <ol>
-<li>Create an empty game object, and give it an indicative name.</li>
-<li>Add a trigger for the cutscene. More info in <a href="add-triggers.html">Adding Triggrs</a>. Instead, you can also attach the cutscene to an existing <code>UnityEvent</code>, such as <a href="add-encounters.html#post-encounter-event">Post Encounter Event</a>.</li>
-<li>Add the <strong>Cutscene Action</strong> component, located in <em>Assets/Scripts/Level/Actions</em>.</li>
-<li>From the trigger, attach the method <code>Invoke</code> of the new Cutscene Action.</li>
-<li>Create a new timeline asset in <em>Assets/Timelines</em>.</li>
-<li>In the same object, attach a <em>Playable Director</em> component. Change the <em>Playable</em> to the timeline you have created, and make sure that <em>Play On Awake</em> is unchecked.</li>
-<li>In the hierarchy, select the cutscene object you added. Open the <em>Timeline</em> window where you can edit tracks, and start adding tracks (by clicking &#39;+&#39;) to build the cutscene!</li>
+<li><p>Create an empty game object, and give it an indicative name.</p>
+</li>
+<li><p>Add a trigger for the cutscene. More info in <a href="add-triggers.html">Adding Triggrs</a>. Instead, you can also attach the cutscene to an existing <code>UnityEvent</code>, such as <a href="add-encounters.html#post-encounter-event">Post Encounter Event</a>.</p>
+</li>
+<li><p>Add the <strong>Cutscene Action</strong> component, located in <em>Assets/Scripts/Level/Actions</em>.</p>
+</li>
+<li><p>From the trigger, attach the method <code>Invoke</code> of the new Cutscene Action.</p>
+</li>
+<li><p>Create a new timeline asset in <em>Assets/Timelines</em>.</p>
+</li>
+<li><p>In the same object, attach a <em>Playable Director</em> component. Change the <em>Playable</em> to the timeline you have created, and make sure that <em>Play On Awake</em> is unchecked.</p>
+</li>
+<li><p>In the hierarchy, select the cutscene object you added. Open the <em>Timeline</em> window where you can edit tracks, and start adding tracks (by clicking &#39;+&#39;) to build the cutscene!</p>
+</li>
 </ol>
 <h2 id="customization">Customization</h2>
 <h4 id="move-definitions">Move Definitions</h4>
@@ -113,11 +120,16 @@ Wikipedia defines cutscenes as such:</p>
 <p><em>Animation Track</em> is used to animate objects, as well as change their properties over time (e.g. move them around). Each animation track is related to a single object in the scene. To animate an object in the timeline, it must have an <em>Animator</em> component, even if it doesn&#39;t have an animator controller (animations state machine). Each track can modify multiple properties, but it is recommended to split an animation to multiple tracks where it fits.</p>
 <p>To create a new <em>Animation Track</em>, follow these steps:</p>
 <ol>
-<li>Select the game object that contains the timeline, click the &#39;+&#39; icon in the timeline window, and select &quot;Animation Track&quot;.</li>
-<li>Drag the object you want to animate from the scene. If the object doesn&#39;t already have an <em>Animator</em>, make one and then drag it to the track.</li>
-<li>Click the record button (red circle), to start recording the animation</li>
-<li>Select the animated object in the hierarchy, and set the initial <em>position</em> of the <a href="../api/Global.MovableObject.html">Movable Object</a> in the animation. Click the record button again to stop recording.</li>
-<li>Double click in the track area to open the new animation clip.</li>
+<li><p>Select the game object that contains the timeline, click the &#39;+&#39; icon in the timeline window, and select &quot;Animation Track&quot;.</p>
+</li>
+<li><p>Drag the object you want to animate from the scene. If the object doesn&#39;t already have an <em>Animator</em>, make one and then drag it to the track.</p>
+</li>
+<li><p>Click the record button (red circle), to start recording the animation.</p>
+</li>
+<li><p>Select the animated object in the hierarchy, and set the initial <em>position</em> of the <a href="../api/Global.MovableObject.html">Movable Object</a> in the animation. Click the record button again to stop recording.</p>
+</li>
+<li><p>Double click in the track area to open the new animation clip.</p>
+</li>
 <li><p>Start adding keyframe that change properties over time.</p>
 <div class="WARNING"><h5>Warning</h5><p>Unfortunately, editing properties of a movable object does not reflect in the scene while editing them.</p>
 </div>
@@ -137,22 +149,33 @@ Click the &quot;Dropsheet&quot; button in the bottom to see the normal animation
 <p><em>Activation Track</em> is used to change activate and deactivate objects. Deactivated objects do not appear in the game, and cannot affect the game in any way.</p>
 <p>To create a new <em>Activation Track</em>, follow these steps:</p>
 <ol>
-<li>Select the game object that contains the timeline, click the &#39;+&#39; icon in the timeline window, and select &quot;Activation Track&quot;.</li>
-<li>Drag the object you want to modify from the scene. The rectangle in the timeline specifies when the object is active inside the cutscene.</li>
+<li><p>Select the game object that contains the timeline, click the &#39;+&#39; icon in the timeline window, and select &quot;Activation Track&quot;.</p>
+</li>
+<li><p>Drag the object you want to modify from the scene. The rectangle in the timeline specifies when the object is active inside the cutscene.</p>
+</li>
 </ol>
 <h4 id="signal-track">Signal Track</h4>
 <p><em>Signal Track</em> is used to call a functions on a component of any object in the scene. They use the familiar <code>UnityEvent</code> API.</p>
 <p>To create a new <em>Signal Track</em>, follow these steps:</p>
 <ol>
-<li>Select the game object that contains the timeline, and add the component <strong>Signal Receiver</strong>, if it wasn&#39;t already attached.</li>
-<li>Click the &quot;Add Reaction&quot; icon inside the component to add a new signal reaction.</li>
-<li>Inside the dropdown, select an existing <em>Signal</em> or create a new one. Store them inside <em>Assets/Timelines/Signals</em>, and give the signal an indicative name.</li>
-<li>Click the &#39;+&#39; icon inside the reaction.</li>
-<li>Attach a <code>UnityEvent</code> that will be invoked when the selected signal is emitted. First, select the game object that has the function. Using the dropdown in the right, select the function that will be invoked by the trigger, in one of the components.</li>
-<li>Select the game object that contains the timeline, click the &#39;+&#39; icon in the timeline window, and select &quot;Signal Track&quot;.</li>
-<li>Drag the game object that contains the timeline to the empty field.</li>
-<li>Right click inside the track area, and select &quot;Add Signal Emitter&quot;.</li>
-<li>From the inspector, change the <em>Emit Signal</em> to the signal you used in the <em>Signal Receiver</em> component.</li>
+<li><p>Select the game object that contains the timeline, and add the component <strong>Signal Receiver</strong>, if it wasn&#39;t already attached.</p>
+</li>
+<li><p>Click the &quot;Add Reaction&quot; icon inside the component to add a new signal reaction.</p>
+</li>
+<li><p>Inside the dropdown, select an existing <em>Signal</em> or create a new one. Store them inside <em>Assets/Timelines/Signals</em>, and give the signal an indicative name.</p>
+</li>
+<li><p>Click the &#39;+&#39; icon inside the reaction.</p>
+</li>
+<li><p>Attach a <code>UnityEvent</code> that will be invoked when the selected signal is emitted. First, select the game object that has the function. Using the dropdown in the right, select the function that will be invoked by the trigger, in one of the components.</p>
+</li>
+<li><p>Select the game object that contains the timeline, click the &#39;+&#39; icon in the timeline window, and select &quot;Signal Track&quot;.</p>
+</li>
+<li><p>Drag the game object that contains the timeline to the empty field.</p>
+</li>
+<li><p>Right click inside the track area, and select &quot;Add Signal Emitter&quot;.</p>
+</li>
+<li><p>From the inspector, change the <em>Emit Signal</em> to the signal you used in the <em>Signal Receiver</em> component.</p>
+</li>
 </ol>
 </article>
           </div>
