@@ -82,7 +82,7 @@ To create a new *Animation Track*, follow these steps (if the track is based on 
     > Select all keyframes (Ctrl+A), right click on one of them and select "Both Tangents" -> "Linear". The curve should become linear.
     > Click the "Dropsheet" button in the bottom to see the normal animation window again.
 
-When inside the clip, you will see the following in the inspector:
+If you select the clip (grey rectangle in the track), you will see the following in the inspector:
 
 ![Clip Inspector](../resources/ClipInspector.png)
 
