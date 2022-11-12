@@ -83,7 +83,7 @@
 <blockquote><p>Scenes are where you work with content in Unity. They are assets that contain all or part of a game or application. For example, you might build a simple game in a single scene, while for a more complex game, you might use one scene per level, each with its own environments, characters, obstacles, decorations, and UI
 . You can create any number of scenes in a project.</p>
 </blockquote>
-<p>Each level can rely on multiple scenes, each representing a different part in the level. Scene transitions are costy in terms of client resources, thus they shouldn&#39;t occur very often.</p>
+<p>Each level can rely on multiple scenes, each representing a different part in the level. Scene transitions are costy in terms of client resources, thus they shouldn&#39;t occur very often. However, and even more important, is to use scenes where it fits.</p>
 <h2 id="scene-structure">Scene Structure</h2>
 <p>In our game, each scenes should have a <strong>Scene Root</strong> game object. <em>Scene Root</em> is a prefab, located in <em>Assets/Prefabs</em>, and it contains essential global objects and scripts (and even the player itself).</p>
 <p><img src="../resources/SceneRootHierarchy.png" alt="Scene root hierarchy"></p>
@@ -93,7 +93,7 @@
 <h2 id="create-a-scene">Create a Scene</h2>
 <p>To add a new scene follow these steps:</p>
 <ol>
-<li><p>Create a scene assets in <em>Assets/Scenes</em>. Give it an indicative name, such as <em>Level3Forest</em>.</p>
+<li><p>Create a scene asset in <em>Assets/Scenes</em>. Give it an indicative name, such as <em>Level3Forest</em>.</p>
 </li>
 <li><p>Get inside your new scene, by double clicking the asset.</p>
 </li>
@@ -105,7 +105,7 @@
 </li>
 <li><p>Set <strong>world border</strong> in the camera&#39;s <a href="../api/Global.CameraMovement.html">Camera Movement</a> component.</p>
 </li>
-<li><p>Add the entrance cutscene inside <strong>Player Entrance</strong> object. Refer to the <a href="create-cutscenes.html">cutscenes manual</a>, and skip steps 1-4 because they have already been done in <em>Scene Root</em>. Also, in step 6, the <em>Playable Director</em>. You only need to attach the timeline from step 5 to it.</p>
+<li><p>Add the entrance cutscene inside <strong>Player Entrance</strong> object. Refer to the <a href="create-cutscenes.html">cutscenes manual</a>, and skip steps 1-4 because they have already been done in <em>Scene Root</em>. Also, in step 6, the <em>Playable Director</em> already exists. You only need to attach the timeline from step 5 to it.</p>
 </li>
 <li><p>In <strong>Player Death</strong>, set the <em>Objects To Destroy</em>. The list should have the HUD, and the foreground sprite of the level.</p>
 </li>
