@@ -24,11 +24,13 @@ Cutscenes should be constant, meaning object positions will never be relative to
 
 4. From the trigger, attach the method `Invoke` of the new Cutscene Action.
 
-5. Create a new timeline asset in *Assets/Timelines*.
+5. Create a new folder in *Assets/Timelines*. Give it an indicative name that describes the cutscene.
 
-6. In the same object, attach a **Playable Director** component. Change the *Playable* to the timeline you have created, and make sure that *Play On Awake* is unchecked. Drag the *Playable Director* to the *director* property of the *Cutscene Action*.
+6. Inside the folder, create a timeline asset, and give it the same name as the folder.
 
-7. In the hierarchy, select the cutscene object you added. Open the *Timeline* window where you can edit tracks, and start adding tracks (by clicking '+') to build the cutscene!
+7. In the same object, attach a **Playable Director** component. Change the *Playable* to the timeline you have created, and make sure that *Play On Awake* is unchecked. Drag the *Playable Director* to the *director* property of the *Cutscene Action*.
+
+8. In the hierarchy, select the cutscene object you added. Open the *Timeline* window where you can edit tracks, and start adding tracks (by clicking '+') to build the cutscene!
 
 ## Customization
 
@@ -56,17 +58,17 @@ Define where characters from the scene should move before the encounter starts.
 
 To create a new *Animation Track*, follow these steps:
 
-1. Select the game object that contains the timeline, click the '+' icon in the timeline window, and select "Animation Track".
+1. Go to your timeline folder in *Assets/Timelines*. Create a new animation clip and give it an indicative name.
 
-2. Drag the object you want to animate from the scene. If the object doesn't already have an *Animator*, make one and then drag it to the track.
+2. Select the game object that contains the timeline, click the '+' icon in the timeline window, and select "Animation Track".
 
-3. Click the record button (red circle), to start recording the animation.
+3. Drag the object you want to animate from the scene. If the object doesn't already have an *Animator*, make one and then drag it to the track.
 
-4. Select the animated object in the hierarchy, and set the initial *position* of the [Movable Object](../api/Global.MovableObject.html) in the animation. Click the record button again to stop recording.
+4. Right click the new track, and select "Add From Animation Clip". There, select the clip you created in step 1.
 
-5. Double click in the track area to open the new animation clip.
+5. Double click in the track area to open the animation clip.
 
-6. Start adding keyframe that change properties over time.
+6. Start adding keyframes that change properties over time.
 
     > [!WARNING]
     > Unfortunately, editing properties of a movable object does not reflect in the scene while editing them.
