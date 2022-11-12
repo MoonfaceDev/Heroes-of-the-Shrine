@@ -82,11 +82,11 @@ To create a new *Animation Track*, follow these steps:
     > Select all keyframes (Ctrl+A), right click on one of them and select "Both Tangents" -> "Linear". The curve should become linear.
     > Click the "Dropsheet" button in the bottom to see the normal animation window again.
 
-7. When the animation clip is done, return to the timeline window, right click the animation track, and select "Convert To Clip Track". Click the clip to see the following in the inspector:
+When inside the clip, you will see the following in the inspector:
 
-    ![Clip Inspector](../resources/ClipInspector.png)
+![Clip Inspector](../resources/ClipInspector.png)
 
-    Using these properties, you can set a *Speed Multiplier* for the clip, and change the [extrpolation](https://docs.unity3d.com/Packages/com.unity.timeline@1.2/manual/clp_gap_extrap.html) between clips.
+Using these properties, you can set a *Speed Multiplier* for the clip, and change the [extrapolation](https://docs.unity3d.com/Packages/com.unity.timeline@1.2/manual/clp_gap_extrap.html) between clips.
 
 #### Activation Track
 
