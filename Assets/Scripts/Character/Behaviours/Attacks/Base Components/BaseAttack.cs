@@ -10,31 +10,31 @@ public class CannotAttackException : Exception
 [RequireComponent(typeof(AttackManager))]
 public abstract class BaseAttack : PlayableBehaviour
 {
-    /// <summary>
+    /// <value>
     /// If true, the attack can be played while another interruptible attack is playing.
-    /// </summary>
+    /// </value>
     public bool instant;
     
-    /// <summary>
+    /// <value>
     /// If true, an instant attack can replace it while this attack is playing.
-    /// </summary>
+    /// </value>
     [FormerlySerializedAs("interruptable")] public bool interruptible = true;
     
-    /// <summary>
+    /// <value>
     /// If true, The attack cannot be interrupted while <c>Recovering</c> is true.
-    /// </summary>
+    /// </value>
     public bool hardRecovery;
 
-    /// <summary>
+    /// <value>
     /// Name of the attack, in the format <c>CamelCase</c>.
     /// Used in combo system, and in animator parameters.
-    /// </summary>
+    /// </value>
     public string AttackName => GetType().Name;
 
-    /// <summary>
+    /// <value>
     /// Attack is anticipating.
     /// It also sets the animator parameter: <c>{attackName}-anticipating</c>.
-    /// </summary>
+    /// </value>
     public bool Anticipating
     {
         get => anticipating;
@@ -46,10 +46,10 @@ public abstract class BaseAttack : PlayableBehaviour
         }
     }
 
-    /// <summary>
+    /// <value>
     /// Attack is active.
     /// It also sets the animator parameter: <c>{attackName}-active</c>.
-    /// </summary>
+    /// </value>
     public bool Active
     {
         get => active;
@@ -61,10 +61,10 @@ public abstract class BaseAttack : PlayableBehaviour
         }
     }
 
-    /// <summary>
+    /// <value>
     /// Attack is recovering.
     /// It also sets the animator parameter: <c>{attackName}-recovering</c>.
-    /// </summary>
+    /// </value>
     public bool Recovering
     {
         get => recovering;
@@ -76,43 +76,43 @@ public abstract class BaseAttack : PlayableBehaviour
         }
     }
 
-    /// <summary>
+    /// <value>
     /// Attack is playing.
     /// True if attack is either anticipating, active or recovering.
-    /// </summary>
+    /// </value>
     public override bool Playing => Anticipating || Active || Recovering;
 
-    /// <summary>
+    /// <value>
     /// Attack anticipation has started.
-    /// </summary>
+    /// </value>
     public event Action OnStartAnticipating;
     
-    /// <summary>
+    /// <value>
     /// Attack anticipation has finished.
     /// Also fires if the attack was stopped while in anticipation.
-    /// </summary>
+    /// </value>
     public event Action OnFinishAnticipating;
     
-    /// <summary>
+    /// <value>
     /// Attack active phase has started.
-    /// </summary>
+    /// </value>
     public event Action OnStartActive;
     
-    /// <summary>
+    /// <value>
     /// Attack active phase has finished.
     /// Also fires if the attack was stopped while in active phase.
-    /// </summary>
+    /// </value>
     public event Action OnFinishActive;
     
-    /// <summary>
+    /// <value>
     /// Attack recovery has started.
-    /// </summary>
+    /// </value>
     public event Action OnStartRecovery;
     
-    /// <summary>
+    /// <value>
     /// Attack recovery has finished.
     /// Also fires if the attack was stopped while in recovery.
-    /// </summary>
+    /// </value>
     public event Action OnFinishRecovery;
 
     private bool anticipating;
@@ -125,25 +125,29 @@ public abstract class BaseAttack : PlayableBehaviour
     /// Coroutine played while attack is anticipating.
     /// When the coroutine finishes, the anticipation finishes.
     /// </summary>
+    /// <returns>Started coroutine.</returns>
     protected abstract IEnumerator AnticipateCoroutine();
     
     /// <summary>
     /// Coroutine played while attack is active.
     /// When the coroutine finishes, the active phase finishes.
     /// </summary>
+    /// <returns>Started coroutine.</returns>
     protected abstract IEnumerator ActiveCoroutine();
     
     /// <summary>
     /// Coroutine played while attack is recovering.
     /// When the coroutine finishes, the recovery finishes.
     /// </summary>
+    /// <returns>Started coroutine.</returns>
     protected abstract IEnumerator RecoveryCoroutine();
 
     /// <summary>
-    /// Tells if the attack can pe played.
+    /// Tells if the attack can be played.
     /// By default, any attack can be played if it is enabled, and the character is not under knockback or stunned.
     /// Override to add more conditions that attack requires.
     /// </summary>
+    /// <returns><c>true</c> if the attack can be played</returns>
     public override bool CanPlay()
     {
         return base.CanPlay() && AllStopped(typeof(KnockbackBehaviour), typeof(StunBehaviour));
