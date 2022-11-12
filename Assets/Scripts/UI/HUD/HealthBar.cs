@@ -4,17 +4,13 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Scrollbar))]
 public class HealthBar : MonoBehaviour
 {
+    public HealthSystem healthSystem;
+    
     private Scrollbar scrollbar;
-    private HealthSystem healthSystem;
 
     public void Awake()
     {
         scrollbar = GetComponent<Scrollbar>();
-        var player = GameObject.FindGameObjectWithTag("Player");
-        if (player)
-        {
-            healthSystem = player.GetComponent<HealthSystem>();
-        }
     }
 
     private void Update()

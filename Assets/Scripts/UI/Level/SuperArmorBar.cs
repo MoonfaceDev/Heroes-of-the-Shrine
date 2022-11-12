@@ -15,6 +15,13 @@ public class SuperArmorBar : MonoBehaviour
 
     private void Update()
     {
-        scrollbar.size = Mathf.Lerp(scrollbar.size, hittableBehaviour.Fraction, 3f * Time.deltaTime);
+        scrollbar.size = Mathf.Lerp(scrollbar.size, GetValue(), 3f * Time.deltaTime);
+    }
+
+    private float GetValue()
+    {
+        return hittableBehaviour.Fraction != 0
+            ? hittableBehaviour.Fraction
+            : (Time.time - hittableBehaviour.armorCooldownStart) / hittableBehaviour.armorCooldown;
     }
 }

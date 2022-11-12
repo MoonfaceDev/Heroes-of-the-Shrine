@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -46,7 +47,7 @@ public class HittableBehaviour : CharacterBehaviour
             return;
         }
         var processedDamage = ProcessDamage(damage);
-        healthSystem.health -= processedDamage;
+        healthSystem.health = Math.Max(healthSystem.health - processedDamage, 0);
         OnHit?.Invoke(processedDamage);
     }
 

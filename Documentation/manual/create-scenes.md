@@ -38,6 +38,9 @@ To add a new scene follow these steps:
 
 8. Set the camera's initial position using its *transform*.
 
+    > [!NOTE]
+    > The initial offset between camera position to the player position is kept through the scene.
+
 9. If you want to change the camera zoom, go to the component *Pixel Perfect Camera*. Click "Run In Edit Mode", and play with the value of *Assets Pixels Per Unit*.
 
 10. Add the entrance cutscene inside **Player Entrance** object. Refer to the [cutscenes manual](../manual/create-cutscenes.md), and skip steps 1-4 because they have already been done in *Scene Root*. Also, in step 7, the *Playable Director* already exists. You only need to attach the timeline from step 6 to it.
