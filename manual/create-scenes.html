@@ -107,7 +107,9 @@
 </li>
 <li><p>Set <strong>world border</strong> in the camera&#39;s <a href="../api/Global.CameraMovement.html">Camera Movement</a> component.</p>
 </li>
-<li><p>Add the entrance cutscene inside <strong>Player Entrance</strong> object. Refer to the <a href="create-cutscenes.html">cutscenes manual</a>, and skip steps 1-4 because they have already been done in <em>Scene Root</em>. Also, in step 6, the <em>Playable Director</em> already exists. You only need to attach the timeline from step 5 to it.</p>
+<li><p>Set the camera&#39;s initial position using its <em>transform</em>.</p>
+</li>
+<li><p>Add the entrance cutscene inside <strong>Player Entrance</strong> object. Refer to the <a href="create-cutscenes.html">cutscenes manual</a>, and skip steps 1-4 because they have already been done in <em>Scene Root</em>. Also, in step 7, the <em>Playable Director</em> already exists. You only need to attach the timeline from step 6 to it.</p>
 <div class="WARNING"><h5>Warning</h5><p>The player position should always stay inside the <em>walkable grid</em>. To achieve that, set the player&#39;s position (in <a href="../api/Global.MovableObject.html">Movable Object</a>) to be inside the <em>walkable grid</em>. Also, if you animate the position inside the timeline, make sure it is always inside the grid, even in the first frame.</p>
 </div>
 </li>
@@ -116,11 +118,11 @@
 <li><p>Add the enemies, encounters, hazards and cutscenes - everything that makes this scene unique.</p>
 </li>
 <li><p>Save your changes!</p>
-</li>
-</ol>
 <div class="WARNING"><h5>Warning</h5><p><em>Ctrl+S</em> is usually sufficient for saving, but sometimes it might skip some parts. In order to make sure you saved everything, right click the scene object in the hierarchy, and click &quot;Save Scene&quot;.
 <img src="../resources/SaveScene.png" alt="Scene root hierarchy"></p>
 </div>
+</li>
+</ol>
 </article>
           </div>
           
