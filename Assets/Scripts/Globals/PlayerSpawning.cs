@@ -3,15 +3,11 @@ using UnityEngine.Events;
 
 public class PlayerSpawning : MonoBehaviour
 {
-    public GameObject player;
-    public Vector3 spawnPosition;
     public UnityEvent startEvent;
 
     private void Awake()
     {
         SetupCamera();
-        var movableObject = player.GetComponent<MovableObject>();
-        movableObject.WorldPosition = spawnPosition;
     }
 
     private static void SetupCamera()
@@ -27,11 +23,5 @@ public class PlayerSpawning : MonoBehaviour
     private void Start()
     {
         startEvent.Invoke();
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(MovableObject.ScreenCoordinates(spawnPosition), 0.5f);
     }
 }

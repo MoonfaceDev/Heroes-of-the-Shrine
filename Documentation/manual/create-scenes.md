@@ -36,7 +36,7 @@ To add a new scene follow these steps:
 
 7. Add the entrance cutscene inside **Player Entrance** object. Refer to the [cutscenes manual](../manual/create-cutscenes.md), and skip steps 1-4 because they have already been done in *Scene Root*. Also, in step 6, the *Playable Director* already exists. You only need to attach the timeline from step 5 to it.
 
-8. In **Player Death**, set the *Objects To Destroy*. The list should have the HUD, and the foreground sprite of the level.
+8. In **Player Death**, set the *Objects To Destroy*. The list should have the HUD (by default), and the foreground sprite of the level (you have to select it manually).
 
 9. Add the enemies, encounters, hazards and cutscenes - everything that makes this scene unique.
 
