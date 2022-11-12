@@ -5,7 +5,7 @@ Heroes of the Shrine is divided into scenes. The Unity manual states:
 > Scenes are where you work with content in Unity. They are assets that contain all or part of a game or application. For example, you might build a simple game in a single scene, while for a more complex game, you might use one scene per level, each with its own environments, characters, obstacles, decorations, and UI
 . You can create any number of scenes in a project.
 
-Each level can rely on multiple scenes, each representing a different part in the level. Scene transitions are costy in terms of client resources, thus they shouldn't occur very often.
+Each level can rely on multiple scenes, each representing a different part in the level. Scene transitions are costy in terms of client resources, thus they shouldn't occur very often. However, and even more important, is to use scenes where it fits.
 
 ## Scene Structure
 
@@ -22,7 +22,7 @@ Scenes will also contain enemies, UI, and level definitions (encounters, transit
 
 To add a new scene follow these steps:
 
-1. Create a scene assets in *Assets/Scenes*. Give it an indicative name, such as *Level3Forest*.
+1. Create a scene asset in *Assets/Scenes*. Give it an indicative name, such as *Level3Forest*.
 
 2. Get inside your new scene, by double clicking the asset.
 
@@ -34,7 +34,7 @@ To add a new scene follow these steps:
 
 6. Set **world border** in the camera's [Camera Movement](../api/Global.CameraMovement.html) component.
 
-7. Add the entrance cutscene inside **Player Entrance** object. Refer to the [cutscenes manual](../manual/create-cutscenes.md), and skip steps 1-4 because they have already been done in *Scene Root*. Also, in step 6, the *Playable Director*. You only need to attach the timeline from step 5 to it.
+7. Add the entrance cutscene inside **Player Entrance** object. Refer to the [cutscenes manual](../manual/create-cutscenes.md), and skip steps 1-4 because they have already been done in *Scene Root*. Also, in step 6, the *Playable Director* already exists. You only need to attach the timeline from step 5 to it.
 
 8. In **Player Death**, set the *Objects To Destroy*. The list should have the HUD, and the foreground sprite of the level.
 
