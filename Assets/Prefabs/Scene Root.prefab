@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4801661329409996874}
-  - component: {fileID: 4205167683501668961}
-  - component: {fileID: 9138288699133641890}
   - component: {fileID: 2938681094569912794}
   m_Layer: 0
   m_Name: Player Entrance
@@ -34,50 +32,6 @@ Transform:
   m_Father: {fileID: 5826350637955933943}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4205167683501668961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3589934913040286563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cab4a99eff4ae7143a64b443f33cfb4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9138288699133641890}
-        m_TargetAssemblyTypeName: CutsceneAction, Assembly-CSharp
-        m_MethodName: Invoke
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &9138288699133641890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3589934913040286563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d46c6acf33fd0442aa56ceab5c40cc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveDefinitions: []
-  director: {fileID: 2938681094569912794}
-  postCutsceneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!320 &2938681094569912794
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -88,7 +42,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 0}
-  m_InitialState: 0
+  m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0

@@ -36,17 +36,19 @@ To add a new scene follow these steps:
 
 7. Set **world border** in the camera's [Camera Movement](../api/Global.CameraMovement.html) component.
 
-8. Add the entrance cutscene inside **Player Entrance** object. Refer to the [cutscenes manual](../manual/create-cutscenes.md), and skip steps 1-4 because they have already been done in *Scene Root*. Also, in step 6, the *Playable Director* already exists. You only need to attach the timeline from step 5 to it.
+8. Set the camera's initial position using its *transform*.
+
+9. Add the entrance cutscene inside **Player Entrance** object. Refer to the [cutscenes manual](../manual/create-cutscenes.md), and skip steps 1-4 because they have already been done in *Scene Root*. Also, in step 7, the *Playable Director* already exists. You only need to attach the timeline from step 6 to it.
 
     > [!WARNING]
     > The player position should always stay inside the *walkable grid*. To achieve that, set the player's position (in [Movable Object](../api/Global.MovableObject.html)) to be inside the *walkable grid*. Also, if you animate the position inside the timeline, make sure it is always inside the grid, even in the first frame.
 
-9. In **Player Death**, set the *Objects To Destroy*. The list should have the HUD (by default), and the foreground sprite of the level (you have to select it manually).
+10. In **Player Death**, set the *Objects To Destroy*. The list should have the HUD (by default), and the foreground sprite of the level (you have to select it manually).
 
-10. Add the enemies, encounters, hazards and cutscenes - everything that makes this scene unique.
+11. Add the enemies, encounters, hazards and cutscenes - everything that makes this scene unique.
 
-11. Save your changes!
+12. Save your changes!
 
-> [!WARNING]
-> *Ctrl+S* is usually sufficient for saving, but sometimes it might skip some parts. In order to make sure you saved everything, right click the scene object in the hierarchy, and click "Save Scene".
-> ![Scene root hierarchy](../resources/SaveScene.png)
+    > [!WARNING]
+    > *Ctrl+S* is usually sufficient for saving, but sometimes it might skip some parts. In order to make sure you saved everything, right click the scene object in the hierarchy, and click "Save Scene".
+    > ![Scene root hierarchy](../resources/SaveScene.png)
