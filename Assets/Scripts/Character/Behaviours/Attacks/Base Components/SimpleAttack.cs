@@ -19,7 +19,7 @@ public class SimpleAttack : BaseAttack
     public List<BaseAttack> previousAttacks;
 
     /// <value>
-    /// If true, this attack can only play when <see cref="JumpBehaviour"/> is playing.
+    /// If true, this attack can only play when <seealso cref="JumpBehaviour"/> is playing.
     /// </value>
     public bool midair;
 
@@ -44,38 +44,38 @@ public class SimpleAttack : BaseAttack
     public Hitbox hitbox;
 
     /// <value>
-    /// If <c>true</c>, overrides the default list of hittable tags in <see cref="AttackManager"/>, specifically for this attack.
+    /// If <c>true</c>, overrides the default list of hittable tags in <seealso cref="AttackManager"/>, specifically for this attack.
     /// </value>
     public bool overrideDefaultHittableTags;
 
-    /// <summary>
+    /// <value>
     /// Tags of objects this attack can hit.
-    /// </summary>
+    /// </value>
     public List<string> hittableTags;
 
-    /// <summary>
+    /// <value>
     /// Health reduced to hit characters.
-    /// </summary>
+    /// </value>
     public float damage;
 
-    /// <summary>
+    /// <value>
     /// Side effect of the hit, either knockback or stun.
-    /// </summary>
+    /// </value>
     public HitType hitType = HitType.Knockback;
 
-    /// <summary>
+    /// <value>
     /// Power of the knockback, affects its initial speed.
-    /// </summary>
+    /// </value>
     public float knockbackPower;
 
-    /// <summary>
+    /// <value>
     /// Direction of the knockback in degrees, relative to X axis, in the direction of the hit. 
-    /// </summary>
+    /// </value>
     public float knockbackDirection;
 
-    /// <summary>
+    /// <value>
     /// Duration of stun effect caused by hit.
-    /// </summary>
+    /// </value>
     public float stunTime;
 
     private IEnumerable<string> HittableTags =>
@@ -95,7 +95,7 @@ public class SimpleAttack : BaseAttack
     /// <summary>
     /// Disables walking when attack is playing, and re-enables it when attack is finished. 
     /// </summary>
-    /// <param name="freeze">If <c>true</c>, changes the velocity to <see cref="Vector3.zero"/>.</param>
+    /// <param name="freeze">If <c>true</c>, changes the velocity to <seealso cref="Vector3.zero"/>.</param>
     protected void PreventWalking(bool freeze)
     {
         OnPlay += () =>
@@ -139,7 +139,7 @@ public class SimpleAttack : BaseAttack
     }
 
     /// <summary>
-    /// Creates a <see cref="SingleHitDetector"/> that detects hits for <see cref="hitbox"/>.
+    /// Creates a <seealso cref="SingleHitDetector"/> that detects hits for <seealso cref="hitbox"/>.
     /// The hit detector will detect hits when attack is during active phase.
     /// </summary>
     protected virtual void CreateHitDetector()
@@ -214,19 +214,19 @@ public class SimpleAttack : BaseAttack
         }
     }
 
-    /// <returns>Coroutine that waits for <see cref="anticipateDuration"/>.</returns>
+    /// <returns>Coroutine that waits for <seealso cref="anticipateDuration"/>.</returns>
     protected override IEnumerator AnticipateCoroutine()
     {
         yield return new WaitForSeconds(anticipateDuration);
     }
 
-    /// <returns>Coroutine that waits for <see cref="activeDuration"/>.</returns>
+    /// <returns>Coroutine that waits for <seealso cref="activeDuration"/>.</returns>
     protected override IEnumerator ActiveCoroutine()
     {
         yield return new WaitForSeconds(activeDuration);
     }
 
-    /// <returns>Coroutine that waits for <see cref="recoveryDuration"/>.</returns>
+    /// <returns>Coroutine that waits for <seealso cref="recoveryDuration"/>.</returns>
     protected override IEnumerator RecoveryCoroutine()
     {
         yield return new WaitForSeconds(recoveryDuration);

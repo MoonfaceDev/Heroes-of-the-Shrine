@@ -25,7 +25,7 @@ public abstract class BaseAttack : PlayableBehaviour
     public bool interruptible = true;
 
     /// <value>
-    /// If <c>true</c>, The attack cannot be interrupted while <see cref="Recovering"/> is true.
+    /// If <c>true</c>, The attack cannot be interrupted while <seealso cref="Recovering"/> is true.
     /// </value>
     public bool hardRecovery;
 
@@ -82,7 +82,7 @@ public abstract class BaseAttack : PlayableBehaviour
 
     /// <value>
     /// Attack is playing.
-    /// True if attack is either <see cref="Anticipating"/>, <see cref="Active"/> or <see cref="Recovering"/>.
+    /// True if attack is either <seealso cref="Anticipating"/>, <seealso cref="Active"/> or <seealso cref="Recovering"/>.
     /// </value>
     public override bool Playing => Anticipating || Active || Recovering;
 
@@ -126,21 +126,21 @@ public abstract class BaseAttack : PlayableBehaviour
     private Coroutine attackFlowCoroutine;
 
     /// <summary>
-    /// Coroutine played while attack is <see cref="Anticipating"/>.
+    /// Coroutine played while attack is <seealso cref="Anticipating"/>.
     /// When the coroutine finishes, the anticipation finishes.
     /// </summary>
     /// <returns>Started coroutine.</returns>
     protected abstract IEnumerator AnticipateCoroutine();
 
     /// <summary>
-    /// Coroutine played while attack is <see cref="Active"/>.
+    /// Coroutine played while attack is <seealso cref="Active"/>.
     /// When the coroutine finishes, the active phase finishes.
     /// </summary>
     /// <returns>Started coroutine.</returns>
     protected abstract IEnumerator ActiveCoroutine();
 
     /// <summary>
-    /// Coroutine played while attack is <see cref="Recovering"/>.
+    /// Coroutine played while attack is <seealso cref="Recovering"/>.
     /// When the coroutine finishes, the recovery finishes.
     /// </summary>
     /// <returns>Started coroutine.</returns>
@@ -148,7 +148,7 @@ public abstract class BaseAttack : PlayableBehaviour
 
     /// <summary>
     /// Tells if the attack can be played.
-    /// By default, any attack can be played if it is <see cref="CharacterBehaviour.Enabled"/>, and the character is not under knockback or stunned.
+    /// By default, any attack can be played if it is <seealso cref="CharacterBehaviour.Enabled"/>, and the character is not under knockback or stunned.
     /// Override to add more conditions that attack requires.
     /// </summary>
     /// <returns><c>true</c> if the attack can be played</returns>
