@@ -13,43 +13,37 @@ public class Pathfind : MonoBehaviour
 
     public Vector3 Direction(Vector3 start, Vector3 end, Node[] excluded = null)
     {
-        Node startNode = grid.NodeFromWorldPoint(start);
+        var startNode = grid.NodeFromWorldPoint(start);
         if (!WalkableGrid.IsWalkable(startNode, excluded))
         {
             return Vector3.zero;
         }
-        Node endNode = grid.ClosestWalkableNode(end, excluded);
-        List<Node> path = ThetaStar(startNode, endNode, excluded);
-        if (path == null)
-        {
-            path = new List<Node>{ startNode, endNode };
-        }
+        var endNode = grid.ClosestWalkableNode(end, excluded);
+        var path = ThetaStar(startNode, endNode, excluded) ?? new List<Node>{ startNode, endNode };
         gizmosPath = path;
         return Vector3.Normalize(path[1].position - startNode.position);
     }
 
-    void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
-        if (grid != null && gizmosPath != null)
+        if (grid == null || gizmosPath == null) return;
+        var i = 0;
+        foreach (var n in gizmosPath)
         {
-            int i = 0;
-            foreach (Node n in gizmosPath)
-            {
-                Gizmos.color = i == 1 ? Color.green : Color.blue;
-                Gizmos.DrawCube(MovableObject.GroundScreenCoordinates(n.position) + 0.1f * Vector3.forward, MovableObject.GroundScreenCoordinates(Vector3.one * (grid.nodeRadius * 2f)));
-                i++;
-            }
+            Gizmos.color = i == 1 ? Color.green : Color.blue;
+            Gizmos.DrawCube(MovableObject.GroundScreenCoordinates(n.position) + 0.1f * Vector3.forward, MovableObject.GroundScreenCoordinates(Vector3.one * (grid.nodeRadius * 2f)));
+            i++;
         }
     }
 
-    private float Heuristic(Node a, Node b)
+    private static float Heuristic(Node a, Node b)
     {
         return Mathf.Sqrt(Mathf.Pow(a.x - b.x, 2) + Mathf.Pow(a.y - b.y, 2));
     }
 
-    private List<Node> BuildPath(Dictionary<Node, Node> cameFrom, Node start, Node end)
+    private static List<Node> BuildPath(IReadOnlyDictionary<Node, Node> cameFrom, Node start, Node end)
     {
-        Node current = end;
+        var current = end;
         List<Node> path = new();
         while (current != start)
         {
@@ -73,8 +67,8 @@ public class Pathfind : MonoBehaviour
         Dictionary<Node, float> costSoFar = new(){[start] = 0};
         while (frontier.Count > 0)
         {
-            Node current = frontier.Dequeue();
-            foreach (Node node in grid.WalkableNeighbors(current, excluded))
+            var current = frontier.Dequeue();
+            foreach (var node in grid.WalkableNeighbors(current, excluded))
             {
                 float newCost;
                 if (Mathf.Abs(node.x - current.x) == 1 || Mathf.Abs(node.y - current.y) == 1)
@@ -88,7 +82,7 @@ public class Pathfind : MonoBehaviour
                 if (!costSoFar.ContainsKey(node) || newCost < costSoFar[node])
                 {
                     costSoFar[node] = newCost;
-                    float priority = newCost + Heuristic(end, node);
+                    var priority = newCost + Heuristic(end, node);
                     frontier.Enqueue(node, priority);
                     if (current != start && grid.LineOfSight(cameFrom[current], node, excluded))
                     {

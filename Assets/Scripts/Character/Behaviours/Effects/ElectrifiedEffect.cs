@@ -11,7 +11,7 @@ public class ElectrifiedEffect : BaseEffect
     private IModifier speedModifier;
     private EventListener stopEvent;
 
-    private static readonly Type[] DISABLED_BEHAVIOURS = { typeof(RunBehaviour), typeof(SlideBehaviour), typeof(DodgeBehaviour), typeof(JumpBehaviour) };
+    private static readonly Type[] DisabledBehaviours = { typeof(RunBehaviour), typeof(SlideBehaviour), typeof(DodgeBehaviour), typeof(JumpBehaviour) };
 
     public override void Awake()
     {
@@ -31,7 +31,7 @@ public class ElectrifiedEffect : BaseEffect
             speedModifier = new MultiplierModifier(speedReductionMultiplier);
             walkBehaviour.speed.AddModifier(speedModifier);
         }
-        DisableBehaviours(DISABLED_BEHAVIOURS);
+        DisableBehaviours(DisabledBehaviours);
         particles.Play();
 
         startTime = Time.time;
@@ -50,7 +50,7 @@ public class ElectrifiedEffect : BaseEffect
             {
                 walkBehaviour.speed.RemoveModifier(speedModifier);
             }
-            EnableBehaviours(DISABLED_BEHAVIOURS);
+            EnableBehaviours(DisabledBehaviours);
             particles.Stop(true, stopBehavior: ParticleSystemStopBehavior.StopEmittingAndClear);
 
             currentDuration = 0;

@@ -23,26 +23,27 @@ public class AttackPattern : BasePattern
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
-        GameObject player = GameObject.FindGameObjectWithTag(targetTag);
+        var player = GameObject.FindGameObjectWithTag(targetTag);
 
         if (!player)
         {
             return;
         }
 
-        Character character = animator.GetComponent<Character>();
+        var character = animator.GetComponent<Character>();
         character.LookDirection = Mathf.RoundToInt(Mathf.Sign((player.GetComponent<MovableObject>().WorldPosition - character.movableObject.WorldPosition).x));
         attackCoroutine = EventManager.StartCoroutine(AttackCoroutine(animator));
     }
 
     private IEnumerator AttackCoroutine(Animator animator)
     {
-        float startTime = Time.time;
+        var startTime = Time.time;
 
-        foreach (AttackNode node in attacks)
+        foreach (var node in attacks)
         {
             yield return new WaitForSeconds(node.startTime - (Time.time - startTime));
-            BaseAttack attack = animator.GetComponent(node.attackType) as BaseAttack;
+            var attack = animator.GetComponent(node.attackType) as BaseAttack;
+            if (attack == null) continue;
             try
             {
                 attack.Play();

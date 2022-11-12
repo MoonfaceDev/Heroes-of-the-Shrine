@@ -7,8 +7,7 @@ public class WalkableGrid : MonoBehaviour
 {
 	public Vector3 gridWorldSize;
 	public float nodeRadius;
-	[HideInInspector]
-	public Node[,] grid;
+	private Node[,] grid;
 	public MovableObject movableObject;
 
 	private float NodeDiameter => nodeRadius * 2;
@@ -25,28 +24,28 @@ public class WalkableGrid : MonoBehaviour
 		CreateGrid();
     }
 
-    public void CreateGrid()
+    private void CreateGrid()
 	{
 		grid = new Node[GridSizeX, GridSizeZ];
-		for (int x = 0; x < GridSizeX; x++)
+		for (var x = 0; x < GridSizeX; x++)
 		{
-			for (int z = 0; z < GridSizeZ; z++)
+			for (var z = 0; z < GridSizeZ; z++)
 			{
-				Vector3 worldPoint = movableObject.WorldPosition + Vector3.right * (x * NodeDiameter + nodeRadius) + Vector3.forward * (z * NodeDiameter + nodeRadius);
+				var worldPoint = movableObject.WorldPosition + Vector3.right * (x * NodeDiameter + nodeRadius) + Vector3.forward * (z * NodeDiameter + nodeRadius);
 				grid[x, z] = new Node(x, z, true, worldPoint);
 			}
 		}
-		Hitbox[] hitboxes = FindObjectsOfType<Hitbox>();    
+		var hitboxes = FindObjectsOfType<Hitbox>();    
 
-		foreach (Hitbox hitbox in hitboxes)
+		foreach (var hitbox in hitboxes)
 		{
 			if (hitbox.CompareTag("Barrier") && (IsInside(hitbox.WorldPosition) || IsInside(hitbox.WorldPosition + hitbox.size)))
 			{
-				Vector2Int bottomLeftIndex = IndexFromWorldPoint(hitbox.WorldPosition) - new Vector2Int(1, 1);
-				Vector2Int topRightIndex = IndexFromWorldPoint(hitbox.WorldPosition + hitbox.size) + new Vector2Int(1, 1);
-				for (int x = bottomLeftIndex.x; x <= topRightIndex.x; x++)
+				var bottomLeftIndex = IndexFromWorldPoint(hitbox.WorldPosition) - new Vector2Int(1, 1);
+				var topRightIndex = IndexFromWorldPoint(hitbox.WorldPosition + hitbox.size) + new Vector2Int(1, 1);
+				for (var x = bottomLeftIndex.x; x <= topRightIndex.x; x++)
 				{
-					for (int y = bottomLeftIndex.y; y <= topRightIndex.y; y++)
+					for (var y = bottomLeftIndex.y; y <= topRightIndex.y; y++)
 					{
 						if (x >= 0 && x < GridSizeX && y >= 0 && y < GridSizeZ)
 						{
@@ -60,16 +59,16 @@ public class WalkableGrid : MonoBehaviour
 
 	private Vector2Int IndexFromWorldPoint(Vector3 worldPosition)
 	{
-		float percentX = Mathf.Clamp01((worldPosition.x - movableObject.WorldPosition.x) / gridWorldSize.x);
-		float percentZ = Mathf.Clamp01((worldPosition.z - movableObject.WorldPosition.z) / gridWorldSize.z);
-		int x = Mathf.RoundToInt((GridSizeX - 1) * percentX);
-		int y = Mathf.RoundToInt((GridSizeZ - 1) * percentZ);
+		var percentX = Mathf.Clamp01((worldPosition.x - movableObject.WorldPosition.x) / gridWorldSize.x);
+		var percentZ = Mathf.Clamp01((worldPosition.z - movableObject.WorldPosition.z) / gridWorldSize.z);
+		var x = Mathf.RoundToInt((GridSizeX - 1) * percentX);
+		var y = Mathf.RoundToInt((GridSizeZ - 1) * percentZ);
 		return new Vector2Int(x, y);
 	}
 
 	public Node NodeFromWorldPoint(Vector3 worldPosition)
 	{
-		Vector2Int index = IndexFromWorldPoint(worldPosition);
+		var index = IndexFromWorldPoint(worldPosition);
 		return grid[index.x, index.y];
 	}
 
@@ -81,16 +80,15 @@ public class WalkableGrid : MonoBehaviour
 	public Node ClosestWalkableNode(Vector3 worldPosition, Node[] excluded = null)
 	{
 		Queue<Node> frontier = new();
-		Node current;
 		frontier.Enqueue(NodeFromWorldPoint(worldPosition));
 		while (frontier.Count > 0)
 		{
-			current = frontier.Dequeue();
+			var current = frontier.Dequeue();
 			if (IsWalkable(current, excluded))
 			{
 				return current;
 			}
-			foreach (Node node in Neighbors(current))
+			foreach (var node in Neighbors(current))
 			{
 				frontier.Enqueue(node);
 			}
@@ -100,27 +98,19 @@ public class WalkableGrid : MonoBehaviour
 
 	public bool IsInside(Vector3 point)
     {
-		Vector3 bottomLeft = movableObject.WorldPosition;
-		Vector3 topRight = bottomLeft + gridWorldSize;
+		var bottomLeft = movableObject.WorldPosition;
+		var topRight = bottomLeft + gridWorldSize;
 		return !(point.x < bottomLeft.x || point.x > topRight.x || point.z < bottomLeft.z || point.z > topRight.z);
 	}
 
-	public List<Node> Neighbors(Node node)
+	private List<Node> Neighbors(Node node)
 	{
-		int x = node.x;
-		int y = node.y;
-		Vector2Int[] possibleIndices = new Vector2Int[] { new Vector2Int(x - 1, y - 1), new Vector2Int(x, y - 1), new Vector2Int(x + 1, y - 1), new Vector2Int(x - 1, y), new Vector2Int(x + 1, y), new Vector2Int(x - 1, y + 1), new Vector2Int(x, y + 1), new Vector2Int(x + 1, y + 1) };
-		List<Node> neighbors = new();
-		int sizeX = grid.GetLength(0);
-		int sizeY = grid.GetLength(1);
-		foreach (Vector2Int index in possibleIndices)
-		{
-			if (index.x >= 0 && index.x < sizeX && index.y >= 0 && index.y < sizeY)
-			{
-				neighbors.Add(grid[index.x, index.y]);
-			}
-		}
-		return neighbors;
+		var x = node.x;
+		var y = node.y;
+		Vector2Int[] possibleIndices = { new(x - 1, y - 1), new(x, y - 1), new(x + 1, y - 1), new(x - 1, y), new(x + 1, y), new(x - 1, y + 1), new(x, y + 1), new(x + 1, y + 1) };
+		var sizeX = grid.GetLength(0);
+		var sizeY = grid.GetLength(1);
+		return (from index in possibleIndices where index.x >= 0 && index.x < sizeX && index.y >= 0 && index.y < sizeY select grid[index.x, index.y]).ToList();
 	}
 
 	public List<Node> WalkableNeighbors(Node node, Node[] excluded = null)
@@ -128,14 +118,14 @@ public class WalkableGrid : MonoBehaviour
 		return Neighbors(node).Where(currentNode => IsWalkable(currentNode, excluded)).ToList();
 	}
 
-	public Node[] GetCircle(Vector3 center, float radius)
+	public IEnumerable<Node> GetCircle(Vector3 center, float radius)
     {
 		List<Node> nodes = new();
-		Vector2Int backLeft = IndexFromWorldPoint(center + radius * Vector3.left + radius * Vector3.back);
-		Vector2Int rightForward = IndexFromWorldPoint(center + radius * Vector3.right + radius * Vector3.forward);
-		for (int x = backLeft.x; x < rightForward.x; x++)
+		var backLeft = IndexFromWorldPoint(center + radius * Vector3.left + radius * Vector3.back);
+		var rightForward = IndexFromWorldPoint(center + radius * Vector3.right + radius * Vector3.forward);
+		for (var x = backLeft.x; x < rightForward.x; x++)
         {
-			for (int y = backLeft.y; y < rightForward.y; y++)
+			for (var y = backLeft.y; y < rightForward.y; y++)
             {
 				if (Vector3.Distance(center, grid[x, y].position) < radius)
                 {
@@ -148,16 +138,16 @@ public class WalkableGrid : MonoBehaviour
 
 	public bool LineOfSight(Node a, Node b, Node[] excluded = null)
 	{
-		int x0 = a.x;
-		int y0 = a.y;
-		int x1 = b.x;
-		int y1 = b.y;
+		var x0 = a.x;
+		var y0 = a.y;
+		var x1 = b.x;
+		var y1 = b.y;
 
-		int dx = Mathf.Abs(x1 - x0);
-		int sx = x0 < x1 ? 1 : -1;
-		int dy = -Mathf.Abs(y1 - y0);
-		int sy = y0 < y1 ? 1 : -1;
-		int err = dx + dy;
+		var dx = Mathf.Abs(x1 - x0);
+		var sx = x0 < x1 ? 1 : -1;
+		var dy = -Mathf.Abs(y1 - y0);
+		var sy = y0 < y1 ? 1 : -1;
+		var err = dx + dy;
 
 		while (true)
 		{
@@ -180,28 +170,25 @@ public class WalkableGrid : MonoBehaviour
 		}
 	}
 
-	void OnDrawGizmos()
+	private void OnDrawGizmos()
 	{
-		MovableObject movableObject = GetComponent<MovableObject>();
+		if (!movableObject) return;
 		Gizmos.color = Color.yellow;
 		Gizmos.DrawWireCube(MovableObject.GroundScreenCoordinates(movableObject.WorldPosition + gridWorldSize / 2), MovableObject.GroundScreenCoordinates(gridWorldSize));
 
-
-		if (grid != null)
+		if (grid == null) return;
+		foreach (var n in grid)
 		{
-			foreach (Node n in grid)
-			{
-				Gizmos.color = n.walkable ? Color.white : Color.red;
-				Gizmos.DrawCube(MovableObject.GroundScreenCoordinates(n.position), MovableObject.GroundScreenCoordinates(Vector3.one * (NodeDiameter * 0.75f)));
-			}
+			Gizmos.color = n.walkable ? Color.white : Color.red;
+			Gizmos.DrawCube(MovableObject.GroundScreenCoordinates(n.position), MovableObject.GroundScreenCoordinates(Vector3.one * (NodeDiameter * 0.75f)));
 		}
 	}
 }
 
 public class Node
 {
-	public int x;
-	public int y;
+	public readonly int x;
+	public readonly int y;
 	public bool walkable;
 	public Vector3 position;
 

@@ -1,20 +1,23 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(HittableBehaviour))]
 public class DieBehaviour : CharacterBehaviour
 {
-    public bool destoryOnDeath = true;
+    [FormerlySerializedAs("destoryOnDeath")] public bool destroyOnDeath = true;
     public float deathAnimationDuration;
+    
+    private static readonly int DeadParameter = Animator.StringToHash("dead");
 
     public event Action OnDie;
 
     private void Start()
     {
-        HittableBehaviour hittableBehaviour = GetComponent<HittableBehaviour>();
-        HealthSystem healthSystem = GetComponent<HealthSystem>();
+        var hittableBehaviour = GetComponent<HittableBehaviour>();
+        var healthSystem = GetComponent<HealthSystem>();
 
-        hittableBehaviour.OnHit += (float damage) =>
+        hittableBehaviour.OnHit += _ =>
         {
             if (healthSystem.health <= 0)
             {
@@ -33,9 +36,9 @@ public class DieBehaviour : CharacterBehaviour
         void KillAfterKnockback()
         {
             OnDie?.Invoke();
-            Animator.SetBool("dead", true);
+            Animator.SetBool(DeadParameter, true);
             StopBehaviours(typeof(BaseEffect));
-            if (destoryOnDeath)
+            if (destroyOnDeath)
             {
                 Destroy(gameObject, deathAnimationDuration);
             }

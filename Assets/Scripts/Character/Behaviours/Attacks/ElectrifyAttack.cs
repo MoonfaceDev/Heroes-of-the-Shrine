@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ElectrifyAttack : NormalAttack
 {
@@ -14,7 +15,7 @@ public class ElectrifyAttack : NormalAttack
     public float periodicDamage;
     [Header("Explosion")]
     public Hitbox explosionHitbox;
-    public float epxlosionKnockbackPower;
+    [FormerlySerializedAs("epxlosionKnockbackPower")] public float explosionKnockbackPower;
     public float explosionKnockbackDirection;
     public float explosionDamage;
 
@@ -23,31 +24,27 @@ public class ElectrifyAttack : NormalAttack
 
     protected override void CreateHitDetector()
     {
-        periodicHitDetector = new(EventManager, periodicHitbox, (hittable) =>
+        periodicHitDetector = new PeriodicAbsoluteHitDetector(EventManager, periodicHitbox, hittable =>
         {
-            if (IsHittableTag(hittable.tag))
+            if (!IsHittableTag(hittable.tag)) return;
+            if (hittable.CanGetHit())
             {
-                if (hittable.CanGetHit())
-                {
-                    periodicHitbox.PlayParticles();
-                }
-                HitCallable(hittable);
+                periodicHitbox.PlayParticles();
             }
+            HitCallable(hittable);
         }, periodicHitInterval);
 
         float detectCount = 0;
         periodicHitDetector.OnDetect += () => detectCount++;
 
-        explosionHitDetector = new(EventManager, explosionHitbox, (hittable) =>
+        explosionHitDetector = new SingleHitDetector(EventManager, explosionHitbox, hittable =>
         {
-            if (IsHittableTag(hittable.tag))
+            if (!IsHittableTag(hittable.tag)) return;
+            if (hittable.CanGetHit())
             {
-                if (hittable.CanGetHit())
-                {
-                    explosionHitbox.PlayParticles();
-                }
-                ExplosionHitCallable(hittable);
+                explosionHitbox.PlayParticles();
             }
+            ExplosionHitCallable(hittable);
         });
 
         EventListener switchDetectorsEvent = null;
@@ -78,30 +75,31 @@ public class ElectrifyAttack : NormalAttack
 
     protected override void HitCallable(HittableBehaviour hittableBehaviour)
     {
-        float damage = CalculateDamage(hittableBehaviour);
+        var processedDamage = CalculateDamage(hittableBehaviour);
         print(hittableBehaviour.name + " hit by periodic " + AttackName);
-        hittableBehaviour.Stun(damage, periodicStunTime);
+        hittableBehaviour.Stun(processedDamage, periodicStunTime);
         if (Random.Range(0f, 1f) < periodicHitElectrifyRate)
         {
-            ElectrifiedEffect electrifiedEffect = hittableBehaviour.GetComponent<ElectrifiedEffect>();
+            var electrifiedEffect = hittableBehaviour.GetComponent<ElectrifiedEffect>();
             if (electrifiedEffect)
             {
                 electrifiedEffect.Play(electrifyDuration, electrifySpeedMultiplier);
             }
         }
     }
-    protected float CalculateExplosionDamage(HittableBehaviour hittableBehaviour)
+
+    private float CalculateExplosionDamage(HittableBehaviour hittableBehaviour)
     {
         return GetComponent<AttackManager>().TranspileDamage(this, hittableBehaviour, explosionDamage);
     }
 
-    protected void ExplosionHitCallable(HittableBehaviour hittableBehaviour)
+    private void ExplosionHitCallable(HittableBehaviour hittableBehaviour)
     {
-        float damage = CalculateExplosionDamage(hittableBehaviour);
+        var processedDamage = CalculateExplosionDamage(hittableBehaviour);
         print(hittableBehaviour.name + " hit by explosion " + AttackName);
-        int hitDirection = (int)Mathf.Sign(hittableBehaviour.MovableObject.WorldPosition.x - MovableObject.WorldPosition.x);
-        hittableBehaviour.Knockback(damage, epxlosionKnockbackPower, KnockbackBehaviour.GetRelativeDirection(explosionKnockbackDirection, hitDirection));
-        ElectrifiedEffect electrifiedEffect = hittableBehaviour.GetComponent<ElectrifiedEffect>();
+        var hitDirection = (int)Mathf.Sign(hittableBehaviour.MovableObject.WorldPosition.x - MovableObject.WorldPosition.x);
+        hittableBehaviour.Knockback(processedDamage, explosionKnockbackPower, KnockbackBehaviour.GetRelativeDirection(explosionKnockbackDirection, hitDirection));
+        var electrifiedEffect = hittableBehaviour.GetComponent<ElectrifiedEffect>();
         if (electrifiedEffect)
         {
             electrifiedEffect.Play(electrifyDuration, electrifySpeedMultiplier);

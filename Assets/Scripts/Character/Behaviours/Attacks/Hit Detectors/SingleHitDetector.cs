@@ -14,7 +14,7 @@ public class SingleHitDetector : BaseHitDetector
         this.eventManager = eventManager;
         this.hitbox = hitbox;
         this.hitCallable = hitCallable;
-        alreadyHit = new();
+        alreadyHit = new HashSet<HittableBehaviour>();
     }
 
     public override void Start()
@@ -23,8 +23,8 @@ public class SingleHitDetector : BaseHitDetector
             () => true,
             () =>
             {
-                HittableBehaviour[] hittables = UnityEngine.Object.FindObjectsOfType<HittableBehaviour>();
-                foreach (HittableBehaviour hittable in hittables)
+                var hittables = UnityEngine.Object.FindObjectsOfType<HittableBehaviour>();
+                foreach (var hittable in hittables)
                 {
                     if (!alreadyHit.Contains(hittable) && OverlapHittable(hittable, hitbox))
                     {

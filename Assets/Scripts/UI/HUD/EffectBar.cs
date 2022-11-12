@@ -13,7 +13,7 @@ public class EffectBar : MonoBehaviour
         scrollbar = GetComponent<Scrollbar>();
     }
 
-    void Update()
+    private void Update()
     {
         scrollbar.size = 1 - effect.GetProgress();
     }

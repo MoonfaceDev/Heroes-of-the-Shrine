@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public delegate void OnJumpsChanged(int jumps);
+public delegate void JumpsChangedCallback(int jumps);
 
 public class JumpBehaviour : BaseMovementBehaviour
 {
@@ -12,7 +12,7 @@ public class JumpBehaviour : BaseMovementBehaviour
     public int maxJumps;
 
     public event Action OnJump;
-    public event OnJumpsChanged OnJumpsChanged;
+    public event JumpsChangedCallback OnJumpsChanged;
     public event Action OnLand;
     public event Action OnRecover;
 
@@ -22,7 +22,7 @@ public class JumpBehaviour : BaseMovementBehaviour
         private set
         {
             anticipating = value;
-            Animator.SetBool("anticipatingJump", anticipating);
+            Animator.SetBool(AnticipatingJumpParameter, anticipating);
         }
     }
     public bool Active
@@ -30,7 +30,7 @@ public class JumpBehaviour : BaseMovementBehaviour
         get => active;
         private set { 
             active = value;
-            Animator.SetBool("jump", active);
+            Animator.SetBool(JumpParameter, active);
         }
     }
     public bool Recovering
@@ -38,7 +38,7 @@ public class JumpBehaviour : BaseMovementBehaviour
         get => recovering;
         private set { 
             recovering = value;
-            Animator.SetBool("recoveringFromJump", recovering);
+            Animator.SetBool(RecoveringFromJumpParameter, recovering);
         }
     }
     public int Jumps
@@ -47,7 +47,7 @@ public class JumpBehaviour : BaseMovementBehaviour
         private set
         {
             jumps = value;
-            Animator.SetInteger("jumps", jumps);
+            Animator.SetInteger(JumpsParameter, jumps);
         }
     }
 
@@ -60,6 +60,11 @@ public class JumpBehaviour : BaseMovementBehaviour
     private Coroutine anticipateCoroutine;
     private Coroutine recoverCoroutine;
     private WalkBehaviour walkBehaviour;
+    
+    private static readonly int AnticipatingJumpParameter = Animator.StringToHash("anticipatingJump");
+    private static readonly int JumpParameter = Animator.StringToHash("jump");
+    private static readonly int RecoveringFromJumpParameter = Animator.StringToHash("recoveringFromJump");
+    private static readonly int JumpsParameter = Animator.StringToHash("jumps");
 
     public override void Awake()
     {

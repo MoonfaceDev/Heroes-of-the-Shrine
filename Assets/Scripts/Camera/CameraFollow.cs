@@ -16,17 +16,15 @@ public class CameraFollow : MonoBehaviour
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag(targetTag).GetComponent<MovableObject>();
-        if (target)
-        {
-            offset = transform.position - MovableObject.GroundScreenCoordinates(target.WorldPosition);
-            offset.x = 0;
-        }
+        if (!target) return;
+        offset = transform.position - MovableObject.GroundScreenCoordinates(target.WorldPosition);
+        offset.x = 0;
     }
 
     private void LateUpdate()
     {
-        if (target == null) return;
-        Vector3 targetPosition = MovableObject.GroundScreenCoordinates(target.WorldPosition) + offset;
+        if (!target) return;
+        var targetPosition = MovableObject.GroundScreenCoordinates(target.WorldPosition) + offset;
         cameraMovement.Move(targetPosition);
     }
 }

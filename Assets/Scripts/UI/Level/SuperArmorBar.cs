@@ -13,7 +13,7 @@ public class SuperArmorBar : MonoBehaviour
         scrollbar = GetComponent<Scrollbar>();
     }
 
-    void Update()
+    private void Update()
     {
         scrollbar.size = Mathf.Lerp(scrollbar.size, hittableBehaviour.Fraction, 3f * Time.deltaTime);
     }

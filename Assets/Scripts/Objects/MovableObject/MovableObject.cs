@@ -6,7 +6,7 @@ using static MathUtils;
 
 public class MovableObject : MonoBehaviour
 {
-    public static float zScale = 0.8f;
+    private const float ZScale = 0.8f;
 
     public MovableObject parent;
     public Renderer figureObject;
@@ -34,7 +34,7 @@ public class MovableObject : MonoBehaviour
     public void Awake()
     {
         walkableGrid = FindObjectOfType<WalkableGrid>();
-        cameraMovement = Camera.main.GetComponent<CameraMovement>();
+        if (Camera.main != null) cameraMovement = Camera.main.GetComponent<CameraMovement>();
         velocity = Vector3.zero;
         acceleration = Vector3.zero;
         OnStuck += () =>
@@ -50,12 +50,12 @@ public class MovableObject : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         //update position and velocity
         velocity += acceleration * Time.deltaTime;
         if (!CompareTag("Barrier")) {
-            Vector3 wantedPosition = position + Time.deltaTime * velocity + 0.5f * Mathf.Pow(Time.deltaTime, 2) * acceleration;
+            var wantedPosition = position + Time.deltaTime * velocity + 0.5f * Mathf.Pow(Time.deltaTime, 2) * acceleration;
             UpdatePosition(position + Vector3.right * (wantedPosition.x - position.x));
             UpdatePosition(position + Vector3.up * (wantedPosition.y - position.y));
             UpdatePosition(position + Vector3.forward * (wantedPosition.z - position.z));
@@ -71,7 +71,7 @@ public class MovableObject : MonoBehaviour
         }
     }
 
-    public Vector3 TransformToWorld(Vector3 relativePoint)
+    private Vector3 TransformToWorld(Vector3 relativePoint)
     {
         if (!parent)
         {
@@ -80,7 +80,7 @@ public class MovableObject : MonoBehaviour
         return parent.WorldPosition + Vector3.Scale(parent.rotation * relativePoint, parent.scale);
     }
 
-    public Vector3 TransformToRelative(Vector3 worldPoint)
+    private Vector3 TransformToRelative(Vector3 worldPoint)
     {
         if (!parent)
         {
@@ -89,86 +89,81 @@ public class MovableObject : MonoBehaviour
         return Vector3.Scale(worldPoint - parent.WorldPosition, Quaternion.Inverse(parent.rotation) * new Vector3(1 / parent.scale.x, 1 / parent.scale.y, 1 / parent.scale.z));
     }
 
-    public void UpdatePosition(Vector3 position)
+    public void UpdatePosition(Vector3 newPosition)
     {
-        Vector2 previousGroundPosition = ToPlane(WorldPosition);
-        Vector2 groundPosition = ToPlane(TransformToWorld(position));
-        List<Vector2> intersections = GetIntersections(previousGroundPosition, groundPosition);
+        var previousGroundPosition = ToPlane(WorldPosition);
+        var groundPosition = ToPlane(TransformToWorld(newPosition));
+        var intersections = GetIntersections(previousGroundPosition, groundPosition);
 
         if (intersections.Count > 0)
         {
-            Vector2 closest = intersections.Aggregate(groundPosition, (prev, next) =>
-            {
-                return Vector2.Distance(previousGroundPosition, next) < Vector2.Distance(previousGroundPosition, prev) ? next : prev;
-            });
-            position = ToSpace(TransformToRelative(closest - 0.001f * (groundPosition - previousGroundPosition).normalized), position.y);
+            var closest = intersections.Aggregate(groundPosition, (prev, next) => Vector2.Distance(previousGroundPosition, next) < Vector2.Distance(previousGroundPosition, prev) ? next : prev);
+            newPosition = ToSpace(TransformToRelative(closest - 0.001f * (groundPosition - previousGroundPosition).normalized), newPosition.y);
             OnStuck?.Invoke();
         }
-        if (position.y < 0)
+        if (newPosition.y < 0)
         {
-            position.y = 0;
+            newPosition.y = 0;
             OnLand?.Invoke();
         }
 
-        this.position.y = position.y;
-        if (IsValidPosition(position))
+        position.y = newPosition.y;
+        if (IsValidPosition(newPosition))
         {
-            this.position = position;
+            position = newPosition;
         }
     }
 
     private List<Vector2> GetIntersections(Vector2 previousGroundPosition, Vector2 groundPosition)
     {
-        List<Vector2> intersections = GetBarrierIntersections(previousGroundPosition, groundPosition);
-        if (walkableGrid)
+        var intersections = GetBarrierIntersections(previousGroundPosition, groundPosition);
+        if (!walkableGrid) return intersections;
+        intersections.AddRange(GetWalkableGridIntersections(previousGroundPosition, groundPosition));
+        if (cameraMovement && CompareTag("Player"))
         {
-            intersections.AddRange(GetWalkableGridIntersections(previousGroundPosition, groundPosition));
-            if (cameraMovement && CompareTag("Player"))
-            {
-                intersections.AddRange(GetCameraBorderIntersections(previousGroundPosition, groundPosition));
-            }
+            intersections.AddRange(GetCameraBorderIntersections(previousGroundPosition, groundPosition));
         }
         return intersections;
     }
 
-    private List<Vector2> GetBarrierIntersections(Vector2 previousGroundPosition, Vector2 groundPosition)
+    private static List<Vector2> GetBarrierIntersections(Vector2 previousGroundPosition, Vector2 groundPosition)
     {
-        Hitbox[] barriers = CachedObjectsManager.Instance.GetObjects<Hitbox>("Barrier").ToArray();
+        var barriers = CachedObjectsManager.Instance.GetObjects<Hitbox>("Barrier").ToArray();
         List<Vector2> intersections = new();
-        foreach (Hitbox barrier in barriers)
+        foreach (var barrier in barriers)
         {
-            List<Vector2> newIntersections = barrier.GetSegmentIntersections(previousGroundPosition, groundPosition);
+            var newIntersections = barrier.GetSegmentIntersections(previousGroundPosition, groundPosition);
             intersections.AddRange(newIntersections);
         }
         return intersections;
     }
 
-    private List<Vector2> GetWalkableGridIntersections(Vector2 previousGroundPosition, Vector2 groundPosition)
+    private IEnumerable<Vector2> GetWalkableGridIntersections(Vector2 previousGroundPosition, Vector2 groundPosition)
     {
-        Vector2 gridPosition = ToPlane(walkableGrid.movableObject.WorldPosition);
-        Vector2 gridSize = ToPlane(walkableGrid.gridWorldSize);
+        var gridPosition = ToPlane(walkableGrid.movableObject.WorldPosition);
+        var gridSize = ToPlane(walkableGrid.gridWorldSize);
         return LineRectangleIntersections(previousGroundPosition, groundPosition, gridPosition, gridSize);
     }
 
-    private List<Vector2> GetCameraBorderIntersections(Vector2 previousGroundPosition, Vector2 groundPosition)
+    private IEnumerable<Vector2> GetCameraBorderIntersections(Vector2 previousGroundPosition, Vector2 groundPosition)
     {
-        Rect border = cameraMovement.border;
-        Vector2 gridPosition = ToPlane(walkableGrid.movableObject.WorldPosition);
-        Vector2 gridSize = ToPlane(walkableGrid.gridWorldSize);
-        return LineRectangleIntersections(previousGroundPosition, groundPosition, new(border.xMin, gridPosition.y), new(border.width, gridSize.y));
+        var border = cameraMovement.border;
+        var gridPosition = ToPlane(walkableGrid.movableObject.WorldPosition);
+        var gridSize = ToPlane(walkableGrid.gridWorldSize);
+        return LineRectangleIntersections(previousGroundPosition, groundPosition, new Vector2(border.xMin, gridPosition.y), new Vector2(border.width, gridSize.y));
     }
 
-    public bool IsValidPosition(Vector3 position)
+    private bool IsValidPosition(Vector3 newPosition)
     {
-        if (CachedObjectsManager.Instance.GetObjects<Hitbox>("Barrier").Any(hitbox => hitbox.IsInside(position)))
+        if (CachedObjectsManager.Instance.GetObjects<Hitbox>("Barrier").Any(hitbox => hitbox.IsInside(newPosition)))
         {
             return false;
         }
-        if (walkableGrid && !walkableGrid.IsInside(position))
+        if (walkableGrid && !walkableGrid.IsInside(newPosition))
         {
             return false;
         }
-        if (walkableGrid && cameraMovement && CompareTag("Player") && (position.x < cameraMovement.border.xMin || position.x > cameraMovement.border.xMax))
+        if (walkableGrid && cameraMovement && CompareTag("Player") && (newPosition.x < cameraMovement.border.xMin || newPosition.x > cameraMovement.border.xMax))
         {
             return false;
         }
@@ -182,25 +177,25 @@ public class MovableObject : MonoBehaviour
 
     public float GroundDistance(Vector3 point)
     {
-        Vector3 distance = WorldPosition - point;
+        var distance = WorldPosition - point;
         distance.y = 0;
         return distance.magnitude;
     }
 
     public static Vector3 WorldCoordinates(Vector3 v)
     {
-        return new Vector3(v.x, 0, v.y / zScale);
+        return new Vector3(v.x, 0, v.y / ZScale);
     }
 
     // Without elevation
     public static Vector3 GroundScreenCoordinates(Vector3 v)
     {
-        return new Vector3(v.x, v.z * zScale, 0);
+        return new Vector3(v.x, v.z * ZScale, 0);
     }
     
     // With elevation
     public static Vector3 ScreenCoordinates(Vector3 v)
     {
-        return new Vector3(v.x, v.y + v.z * zScale, 0);
+        return new Vector3(v.x, v.y + v.z * ZScale, 0);
     }
 }

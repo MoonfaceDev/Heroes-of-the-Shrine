@@ -14,7 +14,7 @@ public class RunBehaviour : BaseMovementBehaviour
         private set
         {
             run = value;
-            Animator.SetBool("run", run);
+            Animator.SetBool(RunParameter, run);
         }
     }
 
@@ -26,6 +26,8 @@ public class RunBehaviour : BaseMovementBehaviour
     private ParticleSystem.MainModule runParticlesMain;
     private IModifier speedModifier;
     private bool run;
+    
+    private static readonly int RunParameter = Animator.StringToHash("run");
 
 
     public override void Awake()
@@ -45,10 +47,7 @@ public class RunBehaviour : BaseMovementBehaviour
                 startCoroutine = StartCoroutine(RunAfter(timeToRun));
             }
         };
-        walkBehaviour.OnStop += () =>
-        {
-            Stop();
-        };
+        walkBehaviour.OnStop += Stop;
         if (jumpBehaviour)
         {
             jumpBehaviour.OnJump += () =>

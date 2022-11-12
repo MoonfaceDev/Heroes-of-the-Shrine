@@ -2,15 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public class CachedObjectsManager : MonoBehaviour
 {
     public string[] cacheTags;
 
     public static CachedObjectsManager Instance { get; private set; }
-    private Dictionary<string, List<UnityEngine.Object>> objects;
+    private Dictionary<string, List<Object>> objects;
 
-    void Awake()
+    private void Awake()
     {
         if (Instance != null && Instance != this)
         {
@@ -18,14 +19,14 @@ public class CachedObjectsManager : MonoBehaviour
             return;
         }
         Instance = this;
-        objects = new();
-        foreach (string cacheTag in cacheTags)
+        objects = new Dictionary<string, List<Object>>();
+        foreach (var cacheTag in cacheTags)
         {
-            objects[cacheTag] = new();
+            objects[cacheTag] = new List<Object>();
         }
     }
 
-    private List<UnityEngine.Object> SafeGet(string cacheTag)
+    private List<Object> SafeGet(string cacheTag)
     {
         try
         {
@@ -37,22 +38,22 @@ public class CachedObjectsManager : MonoBehaviour
         }
     }
 
-    public void AddObject(string cacheTag, UnityEngine.Object @object)
+    public void AddObject(string cacheTag, Object @object)
     {
         SafeGet(cacheTag).Add(@object);
     }
 
-    public void RemoveObject(string cacheTag, UnityEngine.Object @object)
+    public void RemoveObject(string cacheTag, Object @object)
     {
         SafeGet(cacheTag).Remove(@object);
     }
 
-    public T[] GetObjects<T>(string cacheTag) where T : UnityEngine.Object
+    public T[] GetObjects<T>(string cacheTag) where T : Object
     {
         return SafeGet(cacheTag).Select(@object => (T) @object).ToArray();
     }
 
-    public T GetObject<T>(string cacheTag) where T : UnityEngine.Object
+    public T GetObject<T>(string cacheTag) where T : Object
     {
         try
         {

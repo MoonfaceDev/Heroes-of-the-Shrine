@@ -16,10 +16,7 @@ public class Character : MonoBehaviour
 
     public int LookDirection
     {
-        get
-        {
-            return lookDirection;
-        }
+        get => lookDirection;
         set
         {
             lookDirection = value;

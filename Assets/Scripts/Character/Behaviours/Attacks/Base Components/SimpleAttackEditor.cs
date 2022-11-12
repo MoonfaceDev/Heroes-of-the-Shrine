@@ -7,22 +7,22 @@ using UnityEngine;
 [CustomEditor(typeof(SimpleAttack), true)]
 public class SimpleAttackEditor : Editor
 {
-    SerializedProperty previousAttacks;
-    SerializedProperty anticipateDuration;
-    SerializedProperty activeDuration;
-    SerializedProperty recoveryDuration;
-    SerializedProperty hitbox;
-    SerializedProperty overrideDefaultHittableTags;
-    SerializedProperty hittableTags;
-    SerializedProperty damage;
-    SerializedProperty hitTypeIndex;
-    SerializedProperty knockbackPower;
-    SerializedProperty knockbackDirection;
-    SerializedProperty stunTime;
+    private SerializedProperty previousAttacks;
+    private SerializedProperty anticipateDuration;
+    private SerializedProperty activeDuration;
+    private SerializedProperty recoveryDuration;
+    private SerializedProperty hitbox;
+    private SerializedProperty overrideDefaultHittableTags;
+    private SerializedProperty hittableTags;
+    private SerializedProperty damage;
+    private SerializedProperty hitTypeIndex;
+    private SerializedProperty knockbackPower;
+    private SerializedProperty knockbackDirection;
+    private SerializedProperty stunTime;
 
-    private readonly BindingFlags BINDING_FLAGS = BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
+    private const BindingFlags OverridableFlags = BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
 
-    void OnEnable()
+    private void OnEnable()
     {
         previousAttacks = serializedObject.FindProperty("previousAttacks");
         anticipateDuration = serializedObject.FindProperty("anticipateDuration");
@@ -42,13 +42,13 @@ public class SimpleAttackEditor : Editor
     {
         serializedObject.Update();
         DrawPropertiesExcluding(serializedObject, "previousAttacks", "anticipateDuration", "activeDuration", "recoveryDuration", "hitbox", "overrideDefaultHittableTags", "hittableTags", "damage", "hitType", "knockbackPower", "knockbackDirection", "stunTime");
-        SimpleAttack attack = (SimpleAttack)target;
+        var attack = (SimpleAttack)target;
 
         if (!HasMethod(attack, "ComboCondition"))
         {
             EditorGUILayout.PropertyField(previousAttacks);
             List<BaseAttack> previousAttacksValue = new();
-            for (int i = 0; i < previousAttacks.arraySize; i++)
+            for (var i = 0; i < previousAttacks.arraySize; i++)
             {
                 previousAttacksValue.Add((BaseAttack) previousAttacks.GetArrayElementAtIndex(i).objectReferenceValue);
             }
@@ -87,7 +87,7 @@ public class SimpleAttackEditor : Editor
             {
                 EditorGUILayout.PropertyField(hittableTags);
                 List<string> hittableTagsValue = new();
-                for (int i = 0; i < hittableTags.arraySize; i++)
+                for (var i = 0; i < hittableTags.arraySize; i++)
                 {
                     hittableTagsValue.Add(hittableTags.GetArrayElementAtIndex(i).stringValue);
                 }
@@ -104,19 +104,22 @@ public class SimpleAttackEditor : Editor
         if (!HasMethod(attack, "HitCallable"))
         {
             EditorGUILayout.PropertyField(hitTypeIndex);
-            HitType hitTypeValue = (HitType)typeof(HitType).GetEnumValues().GetValue(hitTypeIndex.enumValueIndex);
+            var hitTypeValue = (HitType)typeof(HitType).GetEnumValues().GetValue(hitTypeIndex.enumValueIndex);
             attack.hitType = hitTypeValue;
-            if (hitTypeValue == HitType.Knockback)
+            switch (hitTypeValue)
             {
-                EditorGUILayout.PropertyField(knockbackPower);
-                EditorGUILayout.PropertyField(knockbackDirection);
-                attack.knockbackPower = knockbackPower.floatValue;
-                attack.knockbackDirection = knockbackDirection.floatValue;
-            }
-            else if (hitTypeValue == HitType.Stun)
-            {
-                EditorGUILayout.PropertyField(stunTime);
-                attack.stunTime = stunTime.floatValue;
+                case HitType.Knockback:
+                    EditorGUILayout.PropertyField(knockbackPower);
+                    EditorGUILayout.PropertyField(knockbackDirection);
+                    attack.knockbackPower = knockbackPower.floatValue;
+                    attack.knockbackDirection = knockbackDirection.floatValue;
+                    break;
+                case HitType.Stun:
+                    EditorGUILayout.PropertyField(stunTime);
+                    attack.stunTime = stunTime.floatValue;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
 
@@ -126,12 +129,12 @@ public class SimpleAttackEditor : Editor
         }
     }
 
-    private bool HasMethod(SimpleAttack attack, string name)
+    private static bool HasMethod(SimpleAttack attack, string name)
     {
-        Type type = attack.GetType();
-        while (type != typeof(SimpleAttack))
+        var type = attack.GetType();
+        while (type != typeof(SimpleAttack) && type != null)
         {
-            MethodBase method = type.GetMethod(name, BINDING_FLAGS);
+            var method = type.GetMethod(name, OverridableFlags);
             if (method != null)
             {
                 return true;
@@ -141,12 +144,12 @@ public class SimpleAttackEditor : Editor
         return false;
     }
 
-    private bool HasProperty(SimpleAttack attack, string name)
+    private static bool HasProperty(SimpleAttack attack, string name)
     {
-        Type type = attack.GetType();
-        while (type != typeof(SimpleAttack))
+        var type = attack.GetType();
+        while (type != typeof(SimpleAttack) && type != null)
         {
-            PropertyInfo property = type.GetProperty(name, BINDING_FLAGS);
+            var property = type.GetProperty(name, OverridableFlags);
             if (property != null)
             {
                 return true;

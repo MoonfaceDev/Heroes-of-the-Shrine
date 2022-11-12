@@ -4,15 +4,10 @@ using UnityEngine;
 [RequireComponent(typeof(WalkBehaviour))]
 public class EscapeBehaviour : BaseMovementBehaviour
 {
-    public bool Active
-    {
-        get => active;
-        private set => active = value;
-    }
+    public bool Active { get; private set; }
 
     public override bool Playing => Active;
 
-    private bool active;
     private WalkBehaviour walkBehaviour;
     private IModifier speedModifier;
     private EventListener escapeEvent;
@@ -42,9 +37,9 @@ public class EscapeBehaviour : BaseMovementBehaviour
         walkBehaviour.speed.AddModifier(speedModifier);
 
         escapeEvent = EventManager.Attach(() => true, () => {
-            Vector3 distance = MovableObject.WorldPosition - target.WorldPosition;
+            var distance = MovableObject.WorldPosition - target.WorldPosition;
             distance.y = 0;
-            Vector3 direction = distance.normalized;
+            var direction = distance.normalized;
             walkBehaviour.Play(direction.x, direction.z, fitLookDirection);
             LookDirection = -Mathf.RoundToInt(Mathf.Sign(direction.x));
         }, false);
@@ -52,14 +47,12 @@ public class EscapeBehaviour : BaseMovementBehaviour
 
     public override void Stop()
     {
-        if (Active)
-        {
-            InvokeOnStop();
-            Active = false;
-            EventManager.Detach(escapeEvent);
-            walkBehaviour.speed.RemoveModifier(speedModifier);
-            StopBehaviours(typeof(WalkBehaviour));
-            MovableObject.velocity = Vector3.zero;
-        }
+        if (!Active) return;
+        InvokeOnStop();
+        Active = false;
+        EventManager.Detach(escapeEvent);
+        walkBehaviour.speed.RemoveModifier(speedModifier);
+        StopBehaviours(typeof(WalkBehaviour));
+        MovableObject.velocity = Vector3.zero;
     }
 }

@@ -26,7 +26,7 @@ public class FollowBehaviour : BaseMovementBehaviour
         walkBehaviour.OnStop += Stop;
     }
 
-    public void Play(Vector3 destination, Func<Node[]> GetExcluded = null)
+    public void Play(Vector3 destination, Func<Node[]> getExcluded = null)
     {
         if (!CanPlay())
         {
@@ -34,14 +34,15 @@ public class FollowBehaviour : BaseMovementBehaviour
         }
         active = true;
         InvokeOnPlay();
+        
         followEvent = EventManager.Attach(() => true, () => {
-            Vector3 direction = pathfind.Direction(MovableObject.WorldPosition, destination, GetExcluded != null ? GetExcluded() : null);
+            var direction = pathfind.Direction(MovableObject.WorldPosition, destination, getExcluded?.Invoke());
             walkBehaviour.Play(direction.x, direction.z, false);
             LookDirection = Mathf.RoundToInt(Mathf.Sign(destination.x - MovableObject.WorldPosition.x));
         }, false);
     }
 
-    public void Play(MovableObject target, Func<Node[]> GetExcluded = null, GetOverrideDirection getOverrideDirection = null)
+    public void Play(MovableObject target, Func<Node[]> getExcluded = null, GetOverrideDirection getOverrideDirection = null)
     {
         if (!CanPlay())
         {
@@ -51,7 +52,7 @@ public class FollowBehaviour : BaseMovementBehaviour
         InvokeOnPlay();
 
         followEvent = EventManager.Attach(() => true, () => {
-            Vector3 direction = GetDirection(target, GetExcluded != null ? GetExcluded() : null, getOverrideDirection);
+            var direction = GetDirection(target, getExcluded?.Invoke(), getOverrideDirection);
             walkBehaviour.Play(direction.x, direction.z, false);
             LookDirection = Mathf.RoundToInt(Mathf.Sign(target.WorldPosition.x - MovableObject.WorldPosition.x));
         }, false);
@@ -61,7 +62,7 @@ public class FollowBehaviour : BaseMovementBehaviour
     {
         if (getOverrideDirection != null)
         {
-            bool shouldOverride = getOverrideDirection(out Vector3 direction);
+            var shouldOverride = getOverrideDirection(out Vector3 direction);
             if (shouldOverride)
             {
                 return direction;
@@ -72,13 +73,11 @@ public class FollowBehaviour : BaseMovementBehaviour
 
     public override void Stop()
     {
-        if (active)
-        {
-            InvokeOnStop();
-            active = false;
-            EventManager.Detach(followEvent);
-            StopBehaviours(typeof(WalkBehaviour));
-            MovableObject.velocity = Vector3.zero;
-        }
+        if (!active) return;
+        InvokeOnStop();
+        active = false;
+        EventManager.Detach(followEvent);
+        StopBehaviours(typeof(WalkBehaviour));
+        MovableObject.velocity = Vector3.zero;
     }
 }

@@ -19,30 +19,27 @@ public class PeriodicRelativeHitDetector : BaseHitDetector
         this.hitCallable = hitCallable;
         this.interval = interval;
         this.startImmediately = startImmediately;
-        hitTimes = new();
+        hitTimes = new Dictionary<HittableBehaviour, float>();
     }
 
     public override void Start()
     {
-        detectPeriodicallyEvent = eventManager.Attach(() => true, () =>
-        {
-            DetectHits();
-        });
+        detectPeriodicallyEvent = eventManager.Attach(() => true, DetectHits);
     }
 
     private void DetectHits()
     {
-        HittableBehaviour[] hittables = UnityEngine.Object.FindObjectsOfType<HittableBehaviour>();
-        foreach (HittableBehaviour hittable in hittables)
+        var hittables = UnityEngine.Object.FindObjectsOfType<HittableBehaviour>();
+        foreach (var hittable in hittables)
         {
-            if (OverlapHittable(hittable, hitbox))
+            if (OverlapHittable(hittable, hitbox) && !hitTimes.ContainsKey(hittable))
             {
-                if (!hitTimes.ContainsKey(hittable) && !startImmediately)
+                if (!startImmediately)
                 {
                     hitTimes[hittable] = Time.time;
                     continue;
                 }
-                if (!hitTimes.ContainsKey(hittable) || Time.time - hitTimes[hittable] >= interval)
+                if (Time.time - hitTimes[hittable] >= interval)
                 {
                     hitTimes[hittable] = Time.time;
                     hitCallable(hittable);

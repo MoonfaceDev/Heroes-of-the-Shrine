@@ -4,11 +4,11 @@ using UnityEngine;
 [CustomEditor(typeof(BasePattern), true)]
 public class BasePatternEditor : Editor
 {
-    SerializedProperty hasRandomExitTime;
-    SerializedProperty minTime;
-    SerializedProperty maxTime;
+    private SerializedProperty hasRandomExitTime;
+    private SerializedProperty minTime;
+    private SerializedProperty maxTime;
 
-    void OnEnable()
+    private void OnEnable()
     {
         hasRandomExitTime = serializedObject.FindProperty("hasRandomExitTime");
         minTime = serializedObject.FindProperty("minTime");
@@ -19,7 +19,7 @@ public class BasePatternEditor : Editor
     {
         serializedObject.Update();
         DrawPropertiesExcluding(serializedObject, "hasRandomExitTime", "minTime", "maxTime");
-        BasePattern pattern = (BasePattern)target;
+        var pattern = (BasePattern)target;
 
         EditorGUILayout.PropertyField(hasRandomExitTime);
         pattern.hasRandomExitTime = hasRandomExitTime.boolValue;

@@ -2,15 +2,15 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public delegate void OnBounce(int count, float power, float angleDegrees);
+public delegate void BounceCallback(int count, float power, float angleDegrees);
 
 public class KnockbackBehaviour : ForcedBehaviour
 {
-    public static float SECOND_BOUNCE_POWER_MULTIPLIER = 0.2f;
+    private const float SecondBouncePowerMultiplier = 0.2f;
 
     public float knockbackRecoverTime;
 
-    public event OnBounce OnBounce;
+    public event BounceCallback OnBounce;
     public event Action OnFinish;
     public event Action OnRecover;
 
@@ -20,7 +20,7 @@ public class KnockbackBehaviour : ForcedBehaviour
         private set
         {
             active = value;
-            Animator.SetBool("knockback", active);
+            Animator.SetBool(KnockbackParameter, active);
         }
     }
     public bool Recovering
@@ -29,7 +29,7 @@ public class KnockbackBehaviour : ForcedBehaviour
         private set
         {
             recovering = value;
-            Animator.SetBool("recoveringFromKnockback", recovering);
+            Animator.SetBool(RecoveringFromKnockbackParameter, recovering);
         }
     }
     public int Bounce
@@ -38,7 +38,7 @@ public class KnockbackBehaviour : ForcedBehaviour
         private set
         {
             bounce = value;
-            Animator.SetInteger("bounce", bounce);
+            Animator.SetInteger(BounceParameter, bounce);
         }
     }
 
@@ -49,6 +49,10 @@ public class KnockbackBehaviour : ForcedBehaviour
     private int bounce;
     private Action currentLandEvent;
     private Coroutine recoverCoroutine;
+    
+    private static readonly int KnockbackParameter = Animator.StringToHash("knockback");
+    private static readonly int RecoveringFromKnockbackParameter = Animator.StringToHash("recoveringFromKnockback");
+    private static readonly int BounceParameter = Animator.StringToHash("bounce");
 
     public void Play(float power, float angleDegrees)
     {
@@ -80,9 +84,7 @@ public class KnockbackBehaviour : ForcedBehaviour
         {
             MovableObject.OnLand -= SecondBounce;
             Bounce = 2;
-            power *= SECOND_BOUNCE_POWER_MULTIPLIER;
-            angleDegrees = 180 - Mathf.Abs(angleDegrees % 360 - 180);
-            SetMovement(power, angleDegrees);
+            SetMovement(power * SecondBouncePowerMultiplier, 180 - Mathf.Abs(angleDegrees % 360 - 180));
             MovableObject.OnLand += Land;
             currentLandEvent = Land;
             OnBounce?.Invoke(Bounce, power, angleDegrees);
@@ -95,14 +97,17 @@ public class KnockbackBehaviour : ForcedBehaviour
 
     private void SetMovement(float power, float angleDegrees)
     {
-        if ((angleDegrees > 0 && angleDegrees < 90) || (angleDegrees > 270 && angleDegrees < 360))
+        switch (angleDegrees)
         {
-            LookDirection = -1;
+            case > 0 and < 90:
+            case > 270 and < 360:
+                LookDirection = -1;
+                break;
+            case > 90 and < 270:
+                LookDirection = 1;
+                break;
         }
-        if (angleDegrees > 90 && angleDegrees < 270)
-        {
-            LookDirection = 1;
-        }
+
         MovableObject.acceleration.y = -Character.physicalAttributes.gravityAcceleration;
         MovableObject.velocity.x = Mathf.Cos(Mathf.Deg2Rad * angleDegrees) * power;
         MovableObject.velocity.y = Mathf.Sin(Mathf.Deg2Rad * angleDegrees) * power;

@@ -20,16 +20,14 @@ public class FireEffect : BaseEffect
 
     public override void Stop()
     {
-        if (Active)
-        {
-            Active = false;
-            InvokeOnStop();
+        if (!Active) return;
+        Active = false;
+        InvokeOnStop();
 
-            StopCoroutine(damageCoroutine);
+        StopCoroutine(damageCoroutine);
 
-            currentDuration = 0;
-            EventManager.Detach(stopEvent);
-        }
+        currentDuration = 0;
+        EventManager.Detach(stopEvent);
     }
 
     public override float GetProgress()
@@ -39,7 +37,7 @@ public class FireEffect : BaseEffect
 
     private IEnumerator DoDamage(float hitInterval, float damagePerHit)
     {
-        HittableBehaviour hittableBehaviour = GetComponent<HittableBehaviour>();
+        var hittableBehaviour = GetComponent<HittableBehaviour>();
         while (true)
         {
             yield return new WaitForSeconds(hitInterval);

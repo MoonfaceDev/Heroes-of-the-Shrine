@@ -13,8 +13,8 @@ public class AbsoluteHitDetector : BaseHitDetector
 
     public override void Start()
     {
-        HittableBehaviour[] hittables = UnityEngine.Object.FindObjectsOfType<HittableBehaviour>();
-        foreach (HittableBehaviour hittable in hittables)
+        var hittables = UnityEngine.Object.FindObjectsOfType<HittableBehaviour>();
+        foreach (var hittable in hittables)
         {
             if (OverlapHittable(hittable, hitbox))
             {

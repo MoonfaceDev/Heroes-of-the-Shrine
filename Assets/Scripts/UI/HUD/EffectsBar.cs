@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using TypeReferences;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 [Serializable]
@@ -15,7 +16,7 @@ public class EffectDefinition
 [RequireComponent(typeof(VerticalLayoutGroup))]
 public class EffectsBar : MonoBehaviour
 {
-    public GameObject EffectBarPrefab;
+    [FormerlySerializedAs("EffectBarPrefab")] public GameObject effectBarPrefab;
     public EffectDefinition[] effects;
 
     private VerticalLayoutGroup container;
@@ -26,17 +27,18 @@ public class EffectsBar : MonoBehaviour
     {
         container = GetComponent<VerticalLayoutGroup>();
         player = GameObject.FindGameObjectWithTag("Player");
-        bars = new();
+        bars = new Dictionary<Type, GameObject>();
     }
 
     public void Start()
     {
-        foreach (EffectDefinition definition in effects)
+        foreach (var definition in effects)
         {
-            BaseEffect effect = player.GetComponent(definition.effectType) as BaseEffect;
+            var effect = player.GetComponent(definition.effectType) as BaseEffect;
+            if (effect == null) continue;
             effect.OnPlay += () =>
             {
-                GameObject bar = Instantiate(EffectBarPrefab, container.transform);
+                var bar = Instantiate(effectBarPrefab, container.transform);
                 bar.GetComponent<EffectBar>().effect = effect;
                 bar.transform.Find("Effect Icon").GetComponent<Image>().sprite = definition.icon;
                 bar.GetComponent<Scrollbar>().handleRect.GetComponent<Image>().color = definition.color;

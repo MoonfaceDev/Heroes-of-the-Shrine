@@ -33,18 +33,16 @@ public class SpinningSwordsAttack : NormalAttack
         };
     }
 
-    private SingleHitDetector CreateOneHitDetector(Hitbox hitbox)
+    private SingleHitDetector CreateOneHitDetector(Hitbox attachedHitbox)
     {
-        return new(EventManager, hitbox, (hittable) =>
+        return new SingleHitDetector(EventManager, attachedHitbox, hittable =>
         {
-            if (IsHittableTag(hittable.tag))
+            if (!IsHittableTag(hittable.tag)) return;
+            if (hittable.CanGetHit())
             {
-                if (hittable.CanGetHit())
-                {
-                    hitbox.PlayParticles();
-                }
-                HitCallable(hittable);
+                attachedHitbox.PlayParticles();
             }
+            HitCallable(hittable);
         });
     }
 

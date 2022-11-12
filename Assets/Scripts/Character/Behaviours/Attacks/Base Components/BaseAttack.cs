@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CannotAttackException : Exception
 {
@@ -9,9 +10,9 @@ public class CannotAttackException : Exception
 [RequireComponent(typeof(AttackManager))]
 public abstract class BaseAttack : PlayableBehaviour
 {
-    public bool instant = false;
-    public bool interruptable = true;
-    public bool hardRecovery = false;
+    public bool instant;
+    [FormerlySerializedAs("interruptable")] public bool interruptible = true;
+    public bool hardRecovery;
 
     public string AttackName => GetType().Name;
 

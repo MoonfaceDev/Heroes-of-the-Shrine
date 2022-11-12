@@ -4,7 +4,7 @@ public class PauseManager : MonoBehaviour
 { 
     public GameObject pauseMenu;
 
-    [HideInInspector] public bool Paused
+    public bool Paused
     {
         set
         {
@@ -17,7 +17,7 @@ public class PauseManager : MonoBehaviour
 
     private bool paused;
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {

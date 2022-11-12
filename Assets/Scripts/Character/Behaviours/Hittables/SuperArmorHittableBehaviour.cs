@@ -15,7 +15,7 @@ public class SuperArmorHittableBehaviour : HittableBehaviour
         currentArmorHealth = armorHealth;
     }
 
-    public override float ProcessDamage(float damage)
+    protected override float ProcessDamage(float damage)
     {
         return (ArmorActive ? damageMultiplier : 1) * damage;
     }

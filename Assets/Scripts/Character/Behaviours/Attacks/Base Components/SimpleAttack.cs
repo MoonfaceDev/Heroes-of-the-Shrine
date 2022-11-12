@@ -1,33 +1,32 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public enum HitType
 {
     Knockback,
-    Stun,
+    Stun
 }
 
 public class SimpleAttack : BaseAttack
 {
     public List<BaseAttack> previousAttacks;
-    public bool midair = false;
+    public bool midair;
     public float anticipateDuration;
     public float activeDuration;
     public float recoveryDuration;
     public Hitbox hitbox;
-    public bool overrideDefaultHittableTags = false;
+    public bool overrideDefaultHittableTags;
     public List<string> hittableTags;
     public float damage;
     public HitType hitType = HitType.Knockback;
-    public float knockbackPower = 0;
-    public float knockbackDirection = 0;
-    public float stunTime = 0;
+    public float knockbackPower;
+    public float knockbackDirection;
+    public float stunTime;
 
-    protected virtual List<string> HittableTags
-    {
-        get => overrideDefaultHittableTags ? hittableTags : GetComponent<AttackManager>().hittableTags;
-    }
+    private IEnumerable<string> HittableTags => overrideDefaultHittableTags ? hittableTags : GetComponent<AttackManager>().hittableTags;
 
     public override void Awake()
     {
@@ -57,8 +56,8 @@ public class SimpleAttack : BaseAttack
 
     private void StopOtherAttacks()
     {
-        BaseAttack[] attackComponents = GetComponents<BaseAttack>();
-        foreach (BaseAttack attack in attackComponents)
+        var attackComponents = GetComponents<BaseAttack>();
+        foreach (var attack in attackComponents)
         {
             if (attack != this)
             {
@@ -67,39 +66,26 @@ public class SimpleAttack : BaseAttack
         }
     }
 
-    protected bool IsTagIncluded(string tag, string group)
+    private static bool IsTagIncluded(string testedTag, string group)
     {
-        if (tag == group)
-        {
-            return true;
-        }
-        return tag.StartsWith(group + ".");
+        return testedTag == group || testedTag.StartsWith(group + ".");
     }
 
-    protected bool IsHittableTag(string tag)
+    protected bool IsHittableTag(string testedTag)
     {
-        foreach (string hittableTag in HittableTags)
-        {
-            if (IsTagIncluded(tag, hittableTag))
-            {
-                return true;
-            }
-        }
-        return false;
+        return HittableTags.Any(hittableTag => IsTagIncluded(testedTag, hittableTag));
     }
 
     protected virtual void CreateHitDetector()
     {
-        SingleHitDetector hitDetector = new(EventManager, hitbox, (hittable) =>
+        SingleHitDetector hitDetector = new(EventManager, hitbox, hittable =>
         {
-            if (IsHittableTag(hittable.tag))
+            if (!IsHittableTag(hittable.tag)) return;
+            if (hittable.CanGetHit())
             {
-                if (hittable.CanGetHit())
-                {
-                    hitbox.PlayParticles();
-                }
-                HitCallable(hittable);
+                hitbox.PlayParticles();
             }
+            HitCallable(hittable);
         });
         OnStartActive += () => hitDetector.Start();
         OnFinishActive += () => hitDetector.Stop();
@@ -107,18 +93,18 @@ public class SimpleAttack : BaseAttack
 
     public override bool CanPlay()
     {
-        AttackManager attackManager = GetComponent<AttackManager>();
+        var attackManager = GetComponent<AttackManager>();
 
         return base.CanPlay() 
             && midair == IsPlaying(typeof(JumpBehaviour))
             && AllStopped(typeof(SlideBehaviour), typeof(DodgeBehaviour))
-            && !((attackManager.Anticipating || attackManager.Active || attackManager.HardRecovrting) && !(instant && attackManager.IsInterruptable()))
+            && !((attackManager.Anticipating || attackManager.Active || attackManager.HardRecovering) && !(instant && attackManager.IsInterruptible()))
             && ComboCondition();
     }
 
-    protected virtual bool ComboCondition()
+    private bool ComboCondition()
     {
-        AttackManager attackManager = GetComponent<AttackManager>();
+        var attackManager = GetComponent<AttackManager>();
         return previousAttacks.Count == 0 || previousAttacks.Contains(attackManager.lastAttack);
     }
 
@@ -129,17 +115,19 @@ public class SimpleAttack : BaseAttack
 
     protected override void HitCallable(HittableBehaviour hittableBehaviour)
     {
-        float damage = CalculateDamage(hittableBehaviour);
+        var processedDamage = CalculateDamage(hittableBehaviour);
         print(hittableBehaviour.name + " hit by " + AttackName);
         switch (hitType)
         {
             case HitType.Knockback:
                 int hitDirection = (int)Mathf.Sign(hittableBehaviour.MovableObject.WorldPosition.x - MovableObject.WorldPosition.x);
-                hittableBehaviour.Knockback(damage, knockbackPower, KnockbackBehaviour.GetRelativeDirection(knockbackDirection, hitDirection));
+                hittableBehaviour.Knockback(processedDamage, knockbackPower, KnockbackBehaviour.GetRelativeDirection(knockbackDirection, hitDirection));
                 break;
             case HitType.Stun:
-                hittableBehaviour.Stun(damage, stunTime);
+                hittableBehaviour.Stun(processedDamage, stunTime);
                 break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
     }
 

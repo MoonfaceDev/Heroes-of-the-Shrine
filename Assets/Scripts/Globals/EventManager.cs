@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class EventListener
 {
-    public readonly Func<bool> Condition;
-    public readonly Action Action;
+    public readonly Func<bool> condition;
+    public readonly Action action;
     public readonly bool single;
 
     public EventListener(Func<bool> eventCondition, Action eventAction, bool single)
     {
-        Condition = eventCondition;
-        Action = eventAction;
+        condition = eventCondition;
+        action = eventAction;
         this.single = single;
     }
 }
@@ -20,7 +20,7 @@ public class EventManager : MonoBehaviour
 {
     public static EventManager Instance { get; private set; }
 
-    void Awake()
+    private void Awake()
     {
         if (Instance != null && Instance != this)
         {
@@ -46,7 +46,7 @@ public class EventManager : MonoBehaviour
 
     public EventListener StartTimeout(Action action, float timeout)
     {
-        float startTime = Time.time;
+        var startTime = Time.time;
         return Attach(() => Time.time - startTime >= timeout, action);
     }
 
@@ -54,7 +54,7 @@ public class EventManager : MonoBehaviour
 
     public EventListener StartInterval(Action<StopInterval> action, float interval)
     {
-        float startTime = 0;
+        float startTime;
         void StartOneInterval()
         {
             startTime = Time.time;
@@ -70,7 +70,7 @@ public class EventManager : MonoBehaviour
 
     public EventListener StartInterval(Action action, float interval)
     {
-        float startTime = 0;
+        float startTime;
         void StartOneInterval()
         {
             startTime = Time.time;
@@ -82,18 +82,16 @@ public class EventManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        EventListener[] lockedEventListeners = new EventListener[eventListeners.Count];
+        var lockedEventListeners = new EventListener[eventListeners.Count];
         eventListeners.CopyTo(lockedEventListeners);
-        foreach (EventListener eventListener in lockedEventListeners)
+        foreach (var eventListener in lockedEventListeners)
         {
-            if (eventListener.Condition())
+            if (!eventListener.condition()) continue;
+            if (eventListener.single)
             {
-                if (eventListener.single)
-                {
-                    Detach(eventListener);
-                }
-                eventListener.Action();
+                Detach(eventListener);
             }
+            eventListener.action();
         }
     }
 }

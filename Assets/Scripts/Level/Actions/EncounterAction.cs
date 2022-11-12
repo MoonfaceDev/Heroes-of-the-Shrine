@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
 public enum Direction
 {
     Left,
-    Right,
+    Right
 }
 
 [Serializable]
@@ -38,33 +39,37 @@ public class EncounterAction : MonoBehaviour
 
     public void Invoke()
     {
-        CameraMovement cameraMovement = Camera.main.GetComponent<CameraMovement>();
-        cameraMovement.Lock(cameraBorder);
+        var camera = Camera.main;
+        if (camera != null)
+        {
+            var cameraMovement = camera.GetComponent<CameraMovement>();
+            cameraMovement.Lock(cameraBorder);
+        }
 
         StartWave(0);
     }
 
     private void StartWave(int index)
     {
-        EventManager eventManager = FindObjectOfType<EventManager>();
-        WaveDefinition wave = waveDefinitions[index];
+        var eventManager = FindObjectOfType<EventManager>();
+        var wave = waveDefinitions[index];
 
         if (waveAnnouncerPrefab)
         {
-            WaveAnnouncer waveAnnouncer = Instantiate(waveAnnouncerPrefab);
+            var waveAnnouncer = Instantiate(waveAnnouncerPrefab);
             waveAnnouncer.Activate(index);
         }
 
-        List<GameObject> waveEnemies = index == 0 ? new(firstWavePreSpawnedEnemies) : new();
+        var waveEnemies = index == 0 ? new List<GameObject>(firstWavePreSpawnedEnemies) : new List<GameObject>();
 
-        foreach (EnemySpawnDefinition definition in wave.spawnDefinitions)
+        foreach (var definition in wave.spawnDefinitions)
         {
-            int direction = GetDirection(definition.direction);
-            float borderEdge = direction == -1 ? cameraBorder.xMin : cameraBorder.xMax;
-            GameObject enemy = Instantiate(definition.prefab);
-            MovableObject movableObject = enemy.GetComponent<MovableObject>();
+            var direction = GetDirection(definition.direction);
+            var borderEdge = direction == -1 ? cameraBorder.xMin : cameraBorder.xMax;
+            var enemy = Instantiate(definition.prefab);
+            var movableObject = enemy.GetComponent<MovableObject>();
 
-            movableObject.WorldPosition = new(borderEdge + direction * spawnSourceDistance, 0, definition.z);
+            movableObject.WorldPosition = new Vector3(borderEdge + direction * spawnSourceDistance, 0, definition.z);
 
             if (definition.partOfWave)
             {
@@ -78,12 +83,9 @@ public class EncounterAction : MonoBehaviour
 
         eventManager.StartTimeout(() =>
         {
-            foreach (GameObject enemy in waveEnemies)
+            foreach (var enemy in waveEnemies.Where(enemy => enemy))
             {
-                if (enemy)
-                {
-                    enemy.GetComponent<EnemyBrain>().Alarm();
-                }
+                enemy.GetComponent<EnemyBrain>().Alarm();
             }
         }, timeToAlarm);
 
@@ -95,8 +97,13 @@ public class EncounterAction : MonoBehaviour
             }
             else
             {
-                CameraMovement cameraMovement = Camera.main.GetComponent<CameraMovement>();
-                cameraMovement.Unlock();
+                var camera = Camera.main;
+                if (camera != null)
+                {
+                    var cameraMovement = camera.GetComponent<CameraMovement>();
+                    cameraMovement.Unlock();
+                }
+                
                 postEncounterEvent.Invoke();
             }
         });
@@ -113,17 +120,20 @@ public class EncounterAction : MonoBehaviour
         Gizmos.DrawWireCube(new Vector3(cameraBorder.center.x, cameraBorder.center.y, 0.01f), new Vector3(cameraBorder.size.x, cameraBorder.size.y, 0.01f));
 
         Gizmos.color = Color.green;
-        for (int wave = 0; wave < waveDefinitions.Length; wave++)
+        for (var wave = 0; wave < waveDefinitions.Length; wave++)
         {
-            foreach (EnemySpawnDefinition definition in waveDefinitions[wave].spawnDefinitions)
+            foreach (var definition in waveDefinitions[wave].spawnDefinitions)
             {
-                if (definition.direction == Direction.Left)
+                switch (definition.direction)
                 {
-                    Gizmos.DrawWireSphere(MovableObject.ScreenCoordinates(new(cameraBorder.xMin, 0, definition.z)), 0.1f * (wave + 1));
-                }
-                else if (definition.direction == Direction.Right)
-                {
-                    Gizmos.DrawWireSphere(MovableObject.ScreenCoordinates(new(cameraBorder.xMax, 0, definition.z)), 0.1f * (wave + 1));
+                    case Direction.Left:
+                        Gizmos.DrawWireSphere(MovableObject.ScreenCoordinates(new Vector3(cameraBorder.xMin, 0, definition.z)), 0.1f * (wave + 1));
+                        break;
+                    case Direction.Right:
+                        Gizmos.DrawWireSphere(MovableObject.ScreenCoordinates(new Vector3(cameraBorder.xMax, 0, definition.z)), 0.1f * (wave + 1));
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
                 }
             }
         }
@@ -131,14 +141,11 @@ public class EncounterAction : MonoBehaviour
 
     private static int GetDirection(Direction direction)
     {
-        if (direction == Direction.Left)
+        return direction switch
         {
-            return -1;
-        }
-        if (direction == Direction.Right)
-        {
-            return 1;
-        }
-        return 0;
+            Direction.Left => -1,
+            Direction.Right => 1,
+            _ => 0
+        };
     }
 }

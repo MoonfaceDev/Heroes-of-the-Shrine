@@ -81,7 +81,7 @@ public class Hitbox : MonoBehaviour
         return max1 >= min2 && max2 >= min1;
     }
 
-    public bool OverlapHitbox(Hitbox hitbox, float padding)
+    public bool OverlapHitbox(Hitbox hitbox, float padding = 0)
     {
         return IsBetween(GetLeft() + padding, GetRight() - padding, hitbox.GetLeft() + padding, hitbox.GetRight() - padding) &&
             IsBetween(GetBottom() + padding, GetTop() - padding, hitbox.GetBottom() + padding, hitbox.GetTop() - padding) &&

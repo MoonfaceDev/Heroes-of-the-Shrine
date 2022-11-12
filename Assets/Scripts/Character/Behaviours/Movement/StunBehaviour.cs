@@ -11,7 +11,7 @@ public class StunBehaviour : ForcedBehaviour
         private set
         {
             stun = value;
-            Animator.SetBool("stun", stun);
+            Animator.SetBool(StunParameter, stun);
         }
     }
 
@@ -21,7 +21,7 @@ public class StunBehaviour : ForcedBehaviour
         private set
         {
             stunFrame = value;
-            Animator.SetInteger("stunFrame", stunFrame);
+            Animator.SetInteger(StunFrameParameter, stunFrame);
         }
     }
 
@@ -30,6 +30,8 @@ public class StunBehaviour : ForcedBehaviour
     private bool stun;
     private int stunFrame;
     private Coroutine stopCoroutine;
+    private static readonly int StunParameter = Animator.StringToHash("stun");
+    private static readonly int StunFrameParameter = Animator.StringToHash("stunFrame");
 
     public void Play(float time)
     {

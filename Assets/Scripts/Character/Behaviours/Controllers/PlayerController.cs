@@ -31,7 +31,7 @@ public class PlayerController : CharacterController
     public RuntimeAnimatorController[] animatorControllers;
 
     [HideInInspector]
-    public int activeSuitIndex = 0;
+    public int activeSuitIndex;
 
     public float bufferingTime;
     public BaseAttack[] nonBufferedAttacks;
@@ -56,7 +56,7 @@ public class PlayerController : CharacterController
         slideBehaviour = GetComponent<SlideBehaviour>();
         dodgeBehaviour = GetComponent<DodgeBehaviour>();
 
-        bufferedActions = new();
+        bufferedActions = new List<BufferedAction>();
     }
 
     private void Start()
@@ -72,19 +72,14 @@ public class PlayerController : CharacterController
         // play the buffered action with highest priority
         if (bufferedActions.Count > 0)
         {
-            foreach(BufferedAction bufferedAction in bufferedActions.OrderByDescending(action => action.priority))
+            if (bufferedActions.OrderByDescending(action => action.priority).Select(bufferedAction => bufferedAction.action()).Any(isSuccess => isSuccess))
             {
-                bool isSuccess = bufferedAction.action();
-                if (isSuccess)
-                {
-                    bufferedActions.Clear();
-                    break;
-                }
+                bufferedActions.Clear();
             }
         }
 
-        int horizontal = Direction(Input.GetAxisRaw("Horizontal"));
-        int vertical = Direction(Input.GetAxisRaw("Vertical"));
+        var horizontal = Direction(Input.GetAxisRaw("Horizontal"));
+        var vertical = Direction(Input.GetAxisRaw("Vertical"));
         if (walkBehaviour)
         {
             walkBehaviour.Play(horizontal, vertical);
@@ -98,11 +93,9 @@ public class PlayerController : CharacterController
         //attacks
         ExecuteAttack();
         //change suits
-        if (Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            activeSuitIndex = 1 - activeSuitIndex;
-            Animator.runtimeAnimatorController = animatorControllers[activeSuitIndex];
-        }
+        if (!Input.GetKeyDown(KeyCode.Alpha7)) return;
+        activeSuitIndex = 1 - activeSuitIndex;
+        Animator.runtimeAnimatorController = animatorControllers[activeSuitIndex];
     }
 
     private void ExecuteJump()
@@ -123,7 +116,7 @@ public class PlayerController : CharacterController
 
     private void ExecuteDodge()
     {
-        int vertical = Direction(Input.GetAxisRaw("Vertical"));
+        var vertical = Direction(Input.GetAxisRaw("Vertical"));
         if (dodgeBehaviour && Input.GetButtonDown(Button.Escape.ToString())) //pressed dodge
         {
             if (vertical != 0)
@@ -136,34 +129,36 @@ public class PlayerController : CharacterController
     private bool ExecuteAttack(bool isBuffered = false, Button[] bufferedButtons = null)
     {
         AttackProperty selectedAttack = null;
-        foreach (AttackProperty property in attacks)
+        
+        foreach (var property in attacks)
         {
-            if (property.attack.CanPlay())
+            if (!property.attack.CanPlay()) continue;
+            if (isBuffered && bufferedButtons != null && bufferedButtons.Contains(property.button))
             {
-                if (isBuffered && bufferedButtons != null && bufferedButtons.Contains(property.button))
-                {
-                    selectedAttack = property;
-                }
-                if (!isBuffered && Input.GetButtonDown(property.button.ToString()))
-                {
-                    selectedAttack = property;
-                }
+                selectedAttack = property;
+            }
+            if (!isBuffered && Input.GetButtonDown(property.button.ToString()))
+            {
+                selectedAttack = property;
             }
         }
+        
         if (selectedAttack != null && !(isBuffered && nonBufferedAttacks.Contains(selectedAttack.attack)))
         {
             selectedAttack.attack.Play();
             Debug.Log("Started attack " + selectedAttack.attack.AttackName);
             return true;
         }
-        else if (!isBuffered)
+
+        if (!isBuffered)
         {
-            Button[] downButtons = GetDownButtons();
+            var downButtons = GetDownButtons();
             if (downButtons.Length > 0)
             {
                 bufferedActions.Add(new BufferedAction { action = () => ExecuteAttack(true, downButtons), priority = attackPriority, insertionTime = Time.time });
             }
         }
+        
         return false;
     }
 
@@ -178,12 +173,9 @@ public class PlayerController : CharacterController
             bufferedActions.Add(new BufferedAction
             {
                 action = () => {
-                    if (canPlay())
-                    {
-                        play();
-                        return true;
-                    }
-                    return false;
+                    if (!canPlay()) return false;
+                    play();
+                    return true;
                 },
                 priority = bufferingPriority,
                 insertionTime = Time.time
@@ -191,12 +183,12 @@ public class PlayerController : CharacterController
         }
     }
 
-    private Button[] GetDownButtons()
+    private static Button[] GetDownButtons()
     {
         return Enum.GetValues(typeof(Button)).Cast<Button>().Where(button => Input.GetButtonDown(button.ToString())).ToArray();
     }
 
-    public int Direction(float number)
+    private static int Direction(float number)
     {
         if (number > Mathf.Epsilon)
         {

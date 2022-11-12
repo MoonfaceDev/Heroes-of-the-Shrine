@@ -3,14 +3,14 @@ using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(MovableObject))]
-class MovableObjectEditor : Editor
+internal class MovableObjectEditor : Editor
 {
-    SerializedProperty figureObject;
-    SerializedProperty position;
-    SerializedProperty rotation;
-    SerializedProperty scale;
+    private SerializedProperty figureObject;
+    private SerializedProperty position;
+    private SerializedProperty rotation;
+    private SerializedProperty scale;
 
-    void OnEnable()
+    private void OnEnable()
     {
         figureObject = serializedObject.FindProperty("figureObject");
         position = serializedObject.FindProperty("position");
@@ -26,8 +26,8 @@ class MovableObjectEditor : Editor
         EditorGUILayout.PropertyField(position);
         EditorGUILayout.PropertyField(rotation);
         EditorGUILayout.PropertyField(scale);
-        MovableObject movableObject = (MovableObject)target;
-        FieldInfo figureObjectField = target.GetType().GetField(figureObject.propertyPath);
+        var movableObject = (MovableObject)target;
+        var figureObjectField = target.GetType().GetField(figureObject.propertyPath);
         if (figureObjectField != null)
         {
             movableObject.figureObject = (Renderer)figureObjectField.GetValue(target);
@@ -38,7 +38,7 @@ class MovableObjectEditor : Editor
         movableObject.transform.localRotation = movableObject.rotation;
         movableObject.scale = scale.vector3Value;
         movableObject.transform.localScale = movableObject.scale;
-        if (movableObject.figureObject != null)
+        if (movableObject.figureObject)
         {
             movableObject.figureObject.transform.localPosition = MovableObject.ScreenCoordinates(movableObject.position.y * Vector3.up);
         }

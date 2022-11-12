@@ -5,20 +5,20 @@ public class CameraFocus : MonoBehaviour
 {
     public float lerpSpeed = 3.0f;
 
-    private new Camera camera;
+    private Camera mainCamera;
     private bool active;
-    private Vector2 position;
+    private Vector2 currentPosition;
     private float targetSize;
 
     private void Awake()
     {
-        camera = GetComponent<Camera>();
+        mainCamera = GetComponent<Camera>();
     }
 
     public void Zoom(Vector2 position, float factor)
     {
-        this.position = position;
-        targetSize = camera.orthographicSize / factor;
+        currentPosition = position;
+        targetSize = mainCamera.orthographicSize / factor;
         active = true;
         GetComponent<PixelPerfectCamera>().enabled = false;
     }
@@ -31,10 +31,10 @@ public class CameraFocus : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (active)
-        {
-            transform.position = Vector3.Lerp(transform.position, new Vector3(position.x, position.y, transform.position.z), lerpSpeed * Time.deltaTime);
-            camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, targetSize, lerpSpeed * Time.deltaTime);
-        }
+        if (!active) return;
+        var position = transform.position;
+        position = Vector3.Lerp(position, new Vector3(currentPosition.x, currentPosition.y, position.z), lerpSpeed * Time.deltaTime);
+        transform.position = position;
+        mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, targetSize, lerpSpeed * Time.deltaTime);
     }
 }

@@ -7,13 +7,14 @@ public class ArcPattern : BasePattern
     public float speedMultiplier;
 
     private Action onStop;
+    private static readonly int StuckParameter = Animator.StringToHash("stuck");
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
-        ArcBehaviour arcBehaviour = animator.GetComponent<ArcBehaviour>();
-        GameObject player = GameObject.FindGameObjectWithTag(targetTag);
+        var arcBehaviour = animator.GetComponent<ArcBehaviour>();
+        var player = GameObject.FindGameObjectWithTag(targetTag);
         if (!player)
         {
             return;
@@ -21,7 +22,7 @@ public class ArcPattern : BasePattern
 
         arcBehaviour.Play(player.GetComponent<MovableObject>(), speedMultiplier);
 
-        onStop = () => animator.SetTrigger("stuck");
+        onStop = () => animator.SetTrigger(StuckParameter);
         arcBehaviour.MovableObject.OnStuck += onStop;
     }
 
@@ -29,7 +30,7 @@ public class ArcPattern : BasePattern
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
 
-        ArcBehaviour arcBehaviour = animator.GetComponent<ArcBehaviour>();
+        var arcBehaviour = animator.GetComponent<ArcBehaviour>();
 
         arcBehaviour.MovableObject.OnStuck -= onStop;
         arcBehaviour.Stop();

@@ -1,36 +1,40 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class DeathAction : MonoBehaviour
 {
     public float cameraZoomFactor;
-    public GameObject[] objctsToDestory;
+    [FormerlySerializedAs("objctsToDestory")] public GameObject[] objectsToDestroy;
     public GameObject deathPanel;
     public float deathPanelTransitionDelay;
 
     public void Invoke()
     {
-        foreach (EnemyBrain enemyBrain in FindObjectsOfType<EnemyBrain>())
+        foreach (var enemyBrain in FindObjectsOfType<EnemyBrain>())
         {
             Destroy(enemyBrain.gameObject);
         }
 
-        foreach (EncounterAction encounter in FindObjectsOfType<EncounterAction>())
+        foreach (var encounter in FindObjectsOfType<EncounterAction>())
         {
             encounter.Stop();
         }
 
-        foreach (GameObject @object in objctsToDestory)
+        foreach (var @object in objectsToDestroy)
         {
             Destroy(@object);
         }
 
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        Camera camera = Camera.main;
+        var player = GameObject.FindGameObjectWithTag("Player");
+        var camera = Camera.main;
 
-        CameraFollow cameraFollow = camera.GetComponent<CameraFollow>();
-        cameraFollow.enabled = false;
-        CameraFocus cameraFocus = camera.GetComponent<CameraFocus>();
-        cameraFocus.Zoom((Vector2)player.transform.position + 1f * Vector2.up, cameraZoomFactor);
+        if (camera)
+        {
+            var cameraFollow = camera.GetComponent<CameraFollow>();
+            cameraFollow.enabled = false;
+            var cameraFocus = camera.GetComponent<CameraFocus>();
+            cameraFocus.Zoom((Vector2)player.transform.position + 1f * Vector2.up, cameraZoomFactor);
+        }
 
         EventManager.Instance.StartTimeout(() => deathPanel.SetActive(true), deathPanelTransitionDelay);
     }

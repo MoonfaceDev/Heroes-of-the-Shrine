@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class BaseMovementBehaviour : PlayableBehaviour
 {
-    public float cooldown = 0;
+    public float cooldown;
 
     private float cooldownStartTime;
 

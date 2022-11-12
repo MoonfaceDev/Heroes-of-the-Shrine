@@ -1,21 +1,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void OnHit(float damage);
-public delegate void OnKnockback(float damage, float power, float angleDegrees);
-public delegate void OnStun(float damage, float time);
+public delegate void HitCallback(float damage);
+public delegate void KnockbackCallback(float damage, float power, float angleDegrees);
+public delegate void StunCallback(float damage, float time);
 
 [RequireComponent(typeof(HealthSystem))]
 public class HittableBehaviour : CharacterBehaviour
 {
-    public static float STUN_LAUNCH_POWER = 1;
-    public static float STUN_LAUNCH_ANGEL = 90; // degrees
+    private const float StunLaunchPower = 1;
+    private const float StunLaunchAngel = 90; // degrees
 
     public List<Hitbox> hitboxes;
 
-    public event OnHit OnHit;
-    public event OnKnockback OnKnockback;
-    public event OnStun OnStun;
+    public event HitCallback OnHit;
+    public event KnockbackCallback OnKnockback;
+    public event StunCallback OnStun;
 
     private HealthSystem healthSystem;
     private KnockbackBehaviour knockbackBehaviour;
@@ -34,21 +34,20 @@ public class HittableBehaviour : CharacterBehaviour
         return healthSystem.health > 0 && !(knockbackBehaviour && knockbackBehaviour.Recovering);
     }
 
-    public virtual float ProcessDamage(float damage)
+    protected virtual float ProcessDamage(float damage)
     {
         return damage;
     }
 
-    public virtual bool Hit(float damage)
+    public void Hit(float damage)
     {
         if (!CanGetHit())
         {
-            return false;
+            return;
         }
-        float processedDamage = ProcessDamage(damage);
+        var processedDamage = ProcessDamage(damage);
         healthSystem.health -= processedDamage;
         OnHit?.Invoke(processedDamage);
-        return true;
     }
 
     protected virtual void DoKnockback(float damage, float power, float angleDegrees)
@@ -60,15 +59,14 @@ public class HittableBehaviour : CharacterBehaviour
         }
     }
 
-    public virtual bool Knockback(float damage, float power, float angleDegrees)
+    public void Knockback(float damage, float power, float angleDegrees)
     {
         if (!CanGetHit())
         {
-            return false;
+            return;
         }
         Hit(damage);
         DoKnockback(damage, power, angleDegrees);
-        return true;
     }
 
     protected virtual void DoStun(float damage, float time)
@@ -80,19 +78,18 @@ public class HittableBehaviour : CharacterBehaviour
         }
     }
 
-    public virtual bool Stun(float damage, float time)
+    public void Stun(float damage, float time)
     {
         if (!CanGetHit())
         {
-            return false;
+            return;
         }
         if (MovableObject.WorldPosition.y > 0)
         {
-            Knockback(damage, STUN_LAUNCH_POWER, STUN_LAUNCH_ANGEL);
-            return true;
+            Knockback(damage, StunLaunchPower, StunLaunchAngel);
+            return;
         }
         Hit(damage);
         DoStun(damage, time);
-        return true;
     }
 }

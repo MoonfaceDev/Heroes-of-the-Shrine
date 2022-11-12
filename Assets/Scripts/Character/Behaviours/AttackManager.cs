@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public delegate float DamageBonus(BaseAttack attack, HittableBehaviour hittable);
@@ -9,7 +10,6 @@ public class AttackManager : PlayableBehaviour
     public float maxComboDelay;
     public List<string> hittableTags;
     [HideInInspector] public BaseAttack lastAttack;
-    [HideInInspector] public float lastAttackTime;
 
     public event Action OnStartAnticipating;
     public event Action OnFinishAnticipating;
@@ -25,24 +25,24 @@ public class AttackManager : PlayableBehaviour
     public override void Awake()
     {
         base.Awake();
-        damageBonuses = new();
-        damageMultipliers = new();
+        damageBonuses = new List<DamageBonus>();
+        damageMultipliers = new List<DamageBonus>();
     }
 
     public void Start()
     {
-        BaseAttack[] attackComponents = GetComponents<BaseAttack>();
-        foreach (BaseAttack attack in attackComponents)
+        var attackComponents = GetComponents<BaseAttack>();
+        foreach (var attack in attackComponents)
         {
             // Forward events
-            attack.OnPlay += () => InvokeOnPlay();
+            attack.OnPlay += InvokeOnPlay;
             attack.OnStartAnticipating += () => OnStartAnticipating?.Invoke();
             attack.OnFinishAnticipating += () => OnFinishAnticipating?.Invoke();
             attack.OnStartActive+= () => OnStartActive?.Invoke();
             attack.OnFinishActive += () => OnFinishActive?.Invoke();
             attack.OnStartRecovery += () => OnStartRecovery?.Invoke();
             attack.OnFinishRecovery += () => OnFinishRecovery?.Invoke();
-            attack.OnStop += () => InvokeOnStop();
+            attack.OnStop += InvokeOnStop;
 
             // Combo handling
 
@@ -68,36 +68,29 @@ public class AttackManager : PlayableBehaviour
 
     private bool AnyAttack(Func<BaseAttack, bool> callback)
     {
-        BaseAttack[] attackComponents = GetComponents<BaseAttack>();
-        foreach (BaseAttack attack in attackComponents)
-        {
-            if (callback(attack))
-            {
-                return true;
-            }
-        }
-        return false;
+        var attackComponents = GetComponents<BaseAttack>();
+        return attackComponents.Any(callback);
     }
 
-    public bool Anticipating => AnyAttack((attack) => attack.Anticipating);
+    public bool Anticipating => AnyAttack(attack => attack.Anticipating);
 
-    public bool Active => AnyAttack((attack) => attack.Active);
+    public bool Active => AnyAttack(attack => attack.Active);
 
-    public bool Recovering => AnyAttack((attack) => attack.Recovering);
+    public bool Recovering => AnyAttack(attack => attack.Recovering);
 
-    public bool HardRecovrting => AnyAttack((attack) => attack.hardRecovery && attack.Recovering);
+    public bool HardRecovering => AnyAttack(attack => attack.hardRecovery && attack.Recovering);
 
     public override bool Playing => AnyAttack((attack) => attack.Playing);
 
-    public bool IsInterruptable()
+    public bool IsInterruptible()
     {
-        return !AnyAttack((attack) => attack.Playing && !attack.interruptable);
+        return !AnyAttack((attack) => attack.Playing && !attack.interruptible);
     }
 
     public override void Stop()
     {
-        BaseAttack[] attackComponents = GetComponents<BaseAttack>();
-        foreach (BaseAttack attack in attackComponents)
+        var attackComponents = GetComponents<BaseAttack>();
+        foreach (var attack in attackComponents)
         {
             attack.Stop();
         }
@@ -105,15 +98,8 @@ public class AttackManager : PlayableBehaviour
 
     public float TranspileDamage(BaseAttack attack, HittableBehaviour hittable, float damage)
     {
-        foreach (DamageBonus bonus in damageBonuses)
-        {
-            damage += bonus(attack, hittable);
-        }
-        foreach (DamageBonus bonus in damageMultipliers)
-        {
-            damage *= bonus(attack, hittable);
-        }
-        return damage;
+        damage += damageBonuses.Sum(bonus => bonus(attack, hittable));
+        return damageMultipliers.Aggregate(damage, (current, bonus) => current * bonus(attack, hittable));
     }
 
     public void AttachDamageBonus(DamageBonus bonus)

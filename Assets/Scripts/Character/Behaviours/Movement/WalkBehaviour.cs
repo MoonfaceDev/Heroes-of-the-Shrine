@@ -5,20 +5,23 @@ public class WalkBehaviour : BaseMovementBehaviour
 {
     public float defaultSpeed;
 
-    [HideInInspector] public ModifiableValue speed;
+    public ModifiableValue speed;
+    
     public bool Walk
     {
         get => walk;
         private set
         {
             walk = value;
-            Animator.SetBool("walk", walk);
+            Animator.SetBool(WalkParameter, walk);
         }
     }
 
     public override bool Playing => Walk;
 
     private bool walk; //walking or running
+    
+    private static readonly int WalkParameter = Animator.StringToHash("walk");
 
     public override void Awake()
     {
@@ -54,10 +57,8 @@ public class WalkBehaviour : BaseMovementBehaviour
 
     public override void Stop()
     {
-        if (Walk)
-        {
-            Walk = false;
-            InvokeOnStop();
-        }
+        if (!Walk) return;
+        Walk = false;
+        InvokeOnStop();
     }
 }

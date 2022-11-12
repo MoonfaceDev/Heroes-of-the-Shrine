@@ -32,8 +32,8 @@ public class PeriodicAbsoluteHitDetector : BaseHitDetector
     private void DetectHits()
     {
         OnDetect?.Invoke();
-        HittableBehaviour[] hittables = UnityEngine.Object.FindObjectsOfType<HittableBehaviour>();
-        foreach (HittableBehaviour hittable in hittables)
+        var hittables = UnityEngine.Object.FindObjectsOfType<HittableBehaviour>();
+        foreach (var hittable in hittables)
         {
             if (OverlapHittable(hittable, hitbox))
             {

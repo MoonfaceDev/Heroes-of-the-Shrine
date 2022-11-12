@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class ArcBehaviour : BaseMovementBehaviour
 {
-    public bool Active
-    {
-        get => active;
-        private set => active = value;
-    }
+    public bool Active { get; private set; }
 
     public override bool Playing => Active;
 
-    private bool active;
     private WalkBehaviour walkBehaviour;
     private IModifier speedModifier;
     private EventListener circleEvent;
@@ -28,7 +23,7 @@ public class ArcBehaviour : BaseMovementBehaviour
         walkBehaviour.OnStop += Stop;
     }
 
-    public void Play(MovableObject target, float speedMultiplier, bool fitLookDirection = true)
+    public void Play(MovableObject target, float speedMultiplier)
     {
         if (!CanPlay())
         {
@@ -40,20 +35,20 @@ public class ArcBehaviour : BaseMovementBehaviour
         speedModifier = new MultiplierModifier(speedMultiplier);
         walkBehaviour.speed.AddModifier(speedModifier);
 
-        Vector3 playerPosition = target.WorldPosition;
-        Vector3 initialDistance = walkBehaviour.MovableObject.WorldPosition - playerPosition;
+        var playerPosition = target.WorldPosition;
+        var initialDistance = walkBehaviour.MovableObject.WorldPosition - playerPosition;
         initialDistance.y = 0;
-        float radius = initialDistance.magnitude;
-        float clockwise = Mathf.Sign(Random.Range(-1f, 1f));
+        var radius = initialDistance.magnitude;
+        var clockwise = Mathf.Sign(Random.Range(-1f, 1f));
 
         circleEvent = EventManager.Attach(() => true, () => {
-            Vector3 distance = walkBehaviour.MovableObject.WorldPosition - playerPosition;
+            var distance = walkBehaviour.MovableObject.WorldPosition - playerPosition;
             distance.y = 0;
             distance *= radius / distance.magnitude;
-            Vector3 newPosition = playerPosition + distance;
+            var newPosition = playerPosition + distance;
             newPosition.y = walkBehaviour.MovableObject.WorldPosition.y;
             walkBehaviour.MovableObject.WorldPosition = newPosition;
-            Vector3 direction = clockwise * Vector3.Cross(distance, Vector3.up).normalized;
+            var direction = clockwise * Vector3.Cross(distance, Vector3.up).normalized;
             walkBehaviour.Play(direction.x, direction.z, false);
             if ((target.WorldPosition - walkBehaviour.MovableObject.WorldPosition).x != 0)
             {
@@ -64,15 +59,13 @@ public class ArcBehaviour : BaseMovementBehaviour
 
     public override void Stop()
     {
-        if (Active)
-        {
-            InvokeOnStop();
-            Active = false;
-            EventManager.Detach(circleEvent);
-            walkBehaviour.speed.RemoveModifier(speedModifier);
-            StopBehaviours(typeof(WalkBehaviour));
-            MovableObject.velocity = Vector3.zero;
-        }
+        if (!Active) return;
+        InvokeOnStop();
+        Active = false;
+        EventManager.Detach(circleEvent);
+        walkBehaviour.speed.RemoveModifier(speedModifier);
+        StopBehaviours(typeof(WalkBehaviour));
+        MovableObject.velocity = Vector3.zero;
     }
 
     private void OnDestroy()

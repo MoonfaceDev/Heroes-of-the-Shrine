@@ -5,54 +5,29 @@ public class PlayerSpawning : MonoBehaviour
 {
     public GameObject player;
     public Vector3 spawnPosition;
-    // public float entranceDuration;
-    // public float entranceSpeedMultiplier = 1;
     public UnityEvent startEvent;
 
-    void Awake()
+    private void Awake()
     {
-        Camera camera = SetupCamera();
-        // CameraMovement cameraMovement = camera.GetComponent<CameraMovement>();
-        MovableObject movableObject = player.GetComponent<MovableObject>();
-        // movableObject.position.x = cameraMovement.worldBorder.xMin + 0.5f;
+        SetupCamera();
+        var movableObject = player.GetComponent<MovableObject>();
         movableObject.WorldPosition = spawnPosition;
     }
 
-    private Camera SetupCamera()
+    private static void SetupCamera()
     {
-        Camera camera = Camera.main;
-        CameraMovement cameraMovement = Camera.main.GetComponent<CameraMovement>();
-        camera.transform.position += (cameraMovement.worldBorder.xMin + cameraMovement.CameraWidth / 2 - camera.transform.position.x) * Vector3.right;
-        return camera;
+        var camera = Camera.main;
+        if (camera == null) return;
+        var cameraMovement = camera.GetComponent<CameraMovement>();
+        var position = camera.transform.position;
+        position += (cameraMovement.worldBorder.xMin + cameraMovement.CameraWidth / 2 - position.x) * Vector3.right;
+        camera.transform.position = position;
     }
 
     private void Start()
     {
         startEvent.Invoke();
-        // PlayEntrance();
     }
-
-    /*private void PlayEntrance()
-    {
-        CameraFollow cameraFollow = Camera.main.GetComponent<CameraFollow>();
-        PlayerController controller = player.GetComponent<PlayerController>();
-        WalkBehaviour walkBehaviour = player.GetComponent<WalkBehaviour>();
-
-        controller.Enabled = false;
-        cameraFollow.enabled = false;
-
-        IModifier modifier = new MultiplierModifier(entranceSpeedMultiplier);
-        walkBehaviour.speed.AddModifier(modifier);
-        walkBehaviour.Play(1, 0);
-
-        EventManager.Instance.StartTimeout(() =>
-        {
-            walkBehaviour.Stop();
-            walkBehaviour.speed.RemoveModifier(modifier);
-            controller.Enabled = true;
-            cameraFollow.enabled = true;
-        }, entranceDuration);
-    }*/
 
     private void OnDrawGizmosSelected()
     {

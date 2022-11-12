@@ -1,5 +1,5 @@
+using System;
 using System.Linq;
-using UnityEditor;
 using UnityEngine;
 
 public class FollowPattern : BasePattern
@@ -7,7 +7,7 @@ public class FollowPattern : BasePattern
     public string targetTag;
     public float speedMultiplier;
 
-    private static readonly float distanceFromOtherEnemies = 0.5f;
+    private const float DistanceFromOtherEnemies = 0.5f;
 
     private IModifier speedModifier;
     private EventListener otherEnemiesEvent;
@@ -16,23 +16,23 @@ public class FollowPattern : BasePattern
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
-        GameObject player = GameObject.FindGameObjectWithTag(targetTag);
+        var player = GameObject.FindGameObjectWithTag(targetTag);
         if (!player)
         {
             return;
         }
-        MovableObject target = player.GetComponent<MovableObject>();
+        var target = player.GetComponent<MovableObject>();
 
-        FollowBehaviour followBehaviour = animator.GetComponent<FollowBehaviour>();
+        var followBehaviour = animator.GetComponent<FollowBehaviour>();
 
-        WalkBehaviour walkBehaviour = animator.GetComponent<WalkBehaviour>();
+        var walkBehaviour = animator.GetComponent<WalkBehaviour>();
         speedModifier = new MultiplierModifier(speedMultiplier);
         walkBehaviour.speed.AddModifier(speedModifier);
 
-        WalkableGrid grid = FindObjectOfType<WalkableGrid>();
-        float nodeRadius = grid.nodeRadius;
+        var grid = FindObjectOfType<WalkableGrid>();
+        var nodeRadius = grid.nodeRadius;
 
-        Character[] otherEnemies = new Character[0];
+        var otherEnemies = Array.Empty<Character>();
 
         otherEnemiesEvent = EventManager.Instance.Attach(() => true, () =>
         {
@@ -43,12 +43,12 @@ public class FollowPattern : BasePattern
             target,
             () =>
             {
-                return otherEnemies.SelectMany(enemy => grid.GetCircle(enemy.movableObject.GroundWorldPosition, distanceFromOtherEnemies + nodeRadius)).ToArray();
+                return otherEnemies.SelectMany(enemy => grid.GetCircle(enemy.movableObject.GroundWorldPosition, DistanceFromOtherEnemies + nodeRadius)).ToArray();
             },
             (out Vector3 direction) =>
             {
-                Vector3[] closeEnemyPositions = otherEnemies
-                .Where(enemy => enemy.movableObject.GroundDistance(grid.NodeFromWorldPoint(followBehaviour.MovableObject.WorldPosition).position) < distanceFromOtherEnemies + nodeRadius)
+                var closeEnemyPositions = otherEnemies
+                .Where(enemy => enemy.movableObject.GroundDistance(grid.NodeFromWorldPoint(followBehaviour.MovableObject.WorldPosition).position) < DistanceFromOtherEnemies + nodeRadius)
                 .Select(enemy => enemy.movableObject.WorldPosition - Vector3.up * enemy.movableObject.WorldPosition.y).ToArray();
                 if (closeEnemyPositions.Length == 0)
                 {
@@ -68,10 +68,10 @@ public class FollowPattern : BasePattern
 
         EventManager.Instance.Detach(otherEnemiesEvent);
 
-        FollowBehaviour followBehaviour = animator.GetComponent<FollowBehaviour>();
+        var followBehaviour = animator.GetComponent<FollowBehaviour>();
         followBehaviour.Stop();
 
-        WalkBehaviour walkBehaviour = animator.GetComponent<WalkBehaviour>();
+        var walkBehaviour = animator.GetComponent<WalkBehaviour>();
         walkBehaviour.speed.RemoveModifier(speedModifier);
     }
 }

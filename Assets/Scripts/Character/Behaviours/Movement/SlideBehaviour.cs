@@ -10,7 +10,7 @@ public class SlideBehaviour : BaseMovementBehaviour
         get => slide;
         private set { 
             slide = value;
-            Animator.SetBool("slide", slide);
+            Animator.SetBool(SlideParameter, slide);
         }
     }
 
@@ -18,6 +18,8 @@ public class SlideBehaviour : BaseMovementBehaviour
 
     private bool slide;
     private EventListener stopEvent;
+    
+    private static readonly int SlideParameter = Animator.StringToHash("slide");
 
     public override bool CanPlay()
     {
@@ -41,21 +43,19 @@ public class SlideBehaviour : BaseMovementBehaviour
         MovableObject.acceleration.x = -slideDirection * slideStopAcceleration;
         MovableObject.velocity.z = 0;
         stopEvent = EventManager.Attach(
-            () => Mathf.Sign(MovableObject.velocity.x) == Mathf.Sign(MovableObject.acceleration.x),
+            () => Mathf.Approximately(Mathf.Sign(MovableObject.velocity.x), Mathf.Sign(MovableObject.acceleration.x)),
             Stop
         );
     }
 
     public override void Stop()
     {
-        if (Slide)
-        {
-            InvokeOnStop();
-            EventManager.Detach(stopEvent);
-            Slide = false;
-            MovableObject.velocity.x = 0;
-            MovableObject.acceleration.x = 0;
-            EnableBehaviours(typeof(WalkBehaviour));
-        }
+        if (!Slide) return;
+        InvokeOnStop();
+        EventManager.Detach(stopEvent);
+        Slide = false;
+        MovableObject.velocity.x = 0;
+        MovableObject.acceleration.x = 0;
+        EnableBehaviours(typeof(WalkBehaviour));
     }
 }

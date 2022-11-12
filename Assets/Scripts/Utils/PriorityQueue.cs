@@ -6,10 +6,7 @@ public class PriorityQueue<T>
 
     private readonly List<Tuple<T, double>> elements = new();
 
-    public int Count
-    {
-        get { return elements.Count; }
-    }
+    public int Count => elements.Count;
 
     public void Enqueue(T item, double priority)
     {
@@ -18,9 +15,9 @@ public class PriorityQueue<T>
 
     public T Dequeue()
     {
-        int bestIndex = 0;
+        var bestIndex = 0;
 
-        for (int i = 0; i < elements.Count; i++)
+        for (var i = 0; i < elements.Count; i++)
         {
             if (elements[i].Item2 < elements[bestIndex].Item2)
             {
@@ -28,7 +25,7 @@ public class PriorityQueue<T>
             }
         }
 
-        T bestItem = elements[bestIndex].Item1;
+        var bestItem = elements[bestIndex].Item1;
         elements.RemoveAt(bestIndex);
         return bestItem;
     }

@@ -16,7 +16,7 @@ public class DodgeBehaviour : BaseMovementBehaviour
         private set
         {
             recovering = value;
-            Animator.SetBool("recoveringFromDodge", recovering);
+            Animator.SetBool(RecoveringFromDodgeParameter, recovering);
         }
     }
     public bool Anticipating
@@ -25,7 +25,7 @@ public class DodgeBehaviour : BaseMovementBehaviour
         private set
         {
             anticipating = value;
-            Animator.SetBool("anticipatingDodge", anticipating);
+            Animator.SetBool(AnticipatingDodgeParameter, anticipating);
         }
     }
 
@@ -35,13 +35,16 @@ public class DodgeBehaviour : BaseMovementBehaviour
     private bool recovering;
     private EventListener anticipateEvent;
     private EventListener recoverEvent;
+    
+    private static readonly int RecoveringFromDodgeParameter = Animator.StringToHash("recoveringFromDodge");
+    private static readonly int AnticipatingDodgeParameter = Animator.StringToHash("anticipatingDodge");
 
     public override bool CanPlay()
     {
-        AttackManager attackManager = GetComponent<AttackManager>();
+        var attackManager = GetComponent<AttackManager>();
         return base.CanPlay()
             && AllStopped(typeof(JumpBehaviour), typeof(SlideBehaviour)) 
-            && !(attackManager && !attackManager.IsInterruptable())
+            && !(attackManager && !attackManager.IsInterruptible())
             && MovableObject.velocity.x == 0;
     }
 

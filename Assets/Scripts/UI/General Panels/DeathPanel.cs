@@ -1,5 +1,4 @@
 using System;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,10 +18,10 @@ public class DeathPanel : MonoBehaviour
 
     private void Start()
     {
-        float startTime = Time.time;
+        var startTime = Time.time;
         EventManager.Instance.Attach(() => true, () =>
         {
-            foreach (Transition transition in transitions)
+            foreach (var transition in transitions)
             {
                 transition.graphic.color = Color.Lerp(transition.startColor, transition.finalColor, (Time.time - startTime) / transition.transitionDuration);
             }

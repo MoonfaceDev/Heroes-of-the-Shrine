@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public FadePanel fadePanel;
     public float fadeDelay;
     public float fadeDuration;
+    private static readonly int RespawnParameter = Animator.StringToHash("respawn");
 
     private void Start()
     {
@@ -24,9 +25,9 @@ public class GameManager : MonoBehaviour
 
     public void Respawn()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        Animator playerAnimator = player.GetComponent<MovableObject>().figureObject.GetComponent<Animator>();
-        playerAnimator.SetBool("respawn", true);
+        var player = GameObject.FindGameObjectWithTag("Player");
+        var playerAnimator = player.GetComponent<MovableObject>().figureObject.GetComponent<Animator>();
+        playerAnimator.SetBool(RespawnParameter, true);
 
         EventManager.Instance.StartTimeout(() =>
         {

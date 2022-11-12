@@ -20,28 +20,26 @@ public class ForcedWalkBehaviour : PlayableBehaviour
         active = true;
         InvokeOnPlay();
 
-        WalkBehaviour walkBehaviour = GetComponent<WalkBehaviour>();
-        FollowBehaviour followBehaviour = GetComponent<FollowBehaviour>();
+        var walkBehaviour = GetComponent<WalkBehaviour>();
+        var followBehaviour = GetComponent<FollowBehaviour>();
         followBehaviour.Play(point);
         startWalking = () =>
         {
             walkBehaviour.OnStop -= startWalking;
-            Vector3 direction = (point - walkBehaviour.MovableObject.WorldPosition).normalized;
-            walkBehaviour.Play(direction.x, direction.z, true);
+            var direction = (point - walkBehaviour.MovableObject.WorldPosition).normalized;
+            walkBehaviour.Play(direction.x, direction.z);
         };
         walkBehaviour.OnStop += startWalking;
     }
 
     public override void Stop()
     {
-        if (active)
-        {
-            InvokeOnStop();
-            active = false;
-            GetComponent<WalkBehaviour>().OnStop -= startWalking;
-            StopBehaviours(typeof(WalkBehaviour));
-            EnableBehaviours(typeof(PlayerController));
-            MovableObject.velocity = Vector3.zero;
-        }
+        if (!active) return;
+        InvokeOnStop();
+        active = false;
+        GetComponent<WalkBehaviour>().OnStop -= startWalking;
+        StopBehaviours(typeof(WalkBehaviour));
+        EnableBehaviours(typeof(PlayerController));
+        MovableObject.velocity = Vector3.zero;
     }
 }

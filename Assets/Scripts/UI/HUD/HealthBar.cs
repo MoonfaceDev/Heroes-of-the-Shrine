@@ -10,14 +10,14 @@ public class HealthBar : MonoBehaviour
     public void Awake()
     {
         scrollbar = GetComponent<Scrollbar>();
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        var player = GameObject.FindGameObjectWithTag("Player");
         if (player)
         {
             healthSystem = player.GetComponent<HealthSystem>();
         }
     }
 
-    void Update()
+    private void Update()
     {
         scrollbar.size = Mathf.Lerp(scrollbar.size, healthSystem.Fraction, 3f * Time.deltaTime);
     }

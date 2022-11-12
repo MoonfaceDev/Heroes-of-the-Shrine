@@ -7,7 +7,7 @@ public class RunKick : SimpleAttack
     public float velocity;
     public float acceleration;
 
-    private bool isMoving = false;
+    private bool isMoving;
 
     public override void Awake()
     {
@@ -15,7 +15,7 @@ public class RunKick : SimpleAttack
 
         PreventWalking(false);
 
-        float direction = 0;
+        var direction = 0;
         OnPlay += () => direction = LookDirection;
 
         OnStartActive += () =>
@@ -24,7 +24,7 @@ public class RunKick : SimpleAttack
             MovableObject.velocity.x = direction * velocity;
             MovableObject.velocity.z = 0;
             MovableObject.acceleration.x = -direction * acceleration;
-            EventManager.Attach(() => MovableObject.velocity.x == 0 || Mathf.Sign(MovableObject.velocity.x) != direction, () => isMoving = false);
+            EventManager.Attach(() => MovableObject.velocity.x == 0 || Mathf.RoundToInt(Mathf.Sign(MovableObject.velocity.x)) != direction, () => isMoving = false);
         };
 
         OnFinishActive += () => 

@@ -17,10 +17,10 @@ public class ShadowObject : MonoBehaviour
     public AnimationDefinition[] animationDefinitions;
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        float scale = 2 / (1 + Mathf.Exp(0.2f * movableObject.WorldPosition.y));
-        foreach (AnimationDefinition definition in animationDefinitions)
+        var scale = 2 / (1 + Mathf.Exp(0.2f * movableObject.WorldPosition.y));
+        foreach (var definition in animationDefinitions)
         {
             if (figure.GetCurrentAnimatorStateInfo(0).IsName(definition.animationStateName))
             {

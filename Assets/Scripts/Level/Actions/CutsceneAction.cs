@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Playables;
@@ -10,7 +11,7 @@ public class MoveDefinition
     public enum Direction
     {
         Left = -1,
-        Right = 1,
+        Right = 1
     }
 
     public ForcedWalkBehaviour target;
@@ -24,27 +25,22 @@ public class CutsceneAction : MonoBehaviour
     public PlayableDirector director;
     public UnityEvent postCutsceneEvent;
 
-    private static readonly float wantedDistance = 0.1f;
+    private const float WantedDistance = 0.1f;
 
     public void Invoke()
     {
-        foreach (MoveDefinition definition in moveDefinitions)
+        foreach (var definition in moveDefinitions.Where(definition => definition.target))
         {
-            if (!definition.target)
-            {
-                continue;
-            }
-            MovableObject movableObject = definition.target.MovableObject;
             definition.target.Play(definition.position);
         }
 
-        EventManager.Instance.Attach(() => moveDefinitions.TrueForAll(definition => definition.target.MovableObject.GroundDistance(definition.position) < wantedDistance), () =>
+        EventManager.Instance.Attach(() => moveDefinitions.TrueForAll(definition => definition.target.MovableObject.GroundDistance(definition.position) < WantedDistance), () =>
         {
             moveDefinitions.ForEach(subject => {
                 subject.target.Stop();
                 subject.target.LookDirection = (int)subject.lookDirection;
             });
-            foreach(CharacterController controller in FindObjectsOfType<CharacterController>())
+            foreach(var controller in FindObjectsOfType<CharacterController>())
             {
                 controller.Enabled = false;
             }
@@ -60,13 +56,13 @@ public class CutsceneAction : MonoBehaviour
         });
     }
 
-    private void OnStop(PlayableDirector director)
+    private void OnStop(PlayableDirector stoppedDirector)
     {
-        if (director)
+        if (stoppedDirector)
         {
-            director.stopped -= OnStop;
+            stoppedDirector.stopped -= OnStop;
         }
-        foreach (CharacterController controller in FindObjectsOfType<CharacterController>())
+        foreach (var controller in FindObjectsOfType<CharacterController>())
         {
             controller.Enabled = true;
         }

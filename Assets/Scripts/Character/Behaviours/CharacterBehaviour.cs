@@ -5,17 +5,15 @@ using UnityEngine;
 [RequireComponent(typeof(Character))]
 public abstract class CharacterBehaviour : MonoBehaviour
 {
-    public Character Character => character;
-    public Animator Animator => character.animator;
-    public EventManager EventManager => character.eventManager;
-    public MovableObject MovableObject => character.movableObject;
+    public Character Character { get; private set; }
+
+    protected Animator Animator => Character.animator;
+    protected EventManager EventManager => Character.eventManager;
+    public MovableObject MovableObject => Character.movableObject;
     public int LookDirection
     {
-        get => character.LookDirection;
-        set
-        {
-            character.LookDirection = value;
-        }
+        get => Character.LookDirection;
+        set => Character.LookDirection = value;
     }
 
     public bool Enabled
@@ -37,54 +35,55 @@ public abstract class CharacterBehaviour : MonoBehaviour
         }
     }
 
-    private Character character;
     private int disableCount;
 
     public virtual void Awake()
     {
-        character = GetComponent<Character>();
+        Character = GetComponent<Character>();
     }
 
-    private void SetBehavioursEnabled(bool enabled, Type[] behaviours)
+    private void SetBehavioursEnabled(bool enabledValue, Type[] behaviours)
     {
-        foreach (Type type in behaviours)
+        foreach (var type in behaviours)
         {
-            foreach (CharacterBehaviour behaviour in GetComponents(type))
+            foreach (var component in GetComponents(type))
             {
-                behaviour.Enabled = enabled;
+                var behaviour = (CharacterBehaviour)component;
+                behaviour.Enabled = enabledValue;
             }
         }
     }
 
-    public void EnableBehaviours(params Type[] behaviours)
+    protected void EnableBehaviours(params Type[] behaviours)
     {
         SetBehavioursEnabled(true, behaviours);
     }
 
-    public void DisableBehaviours(params Type[] behaviours)
+    protected void DisableBehaviours(params Type[] behaviours)
     {
         SetBehavioursEnabled(false, behaviours);
     }
 
-    public void StopBehaviours(params Type[] behaviours)
+    protected void StopBehaviours(params Type[] behaviours)
     {
-        foreach (Type type in behaviours)
+        foreach (var type in behaviours)
         {
-            foreach (PlayableBehaviour behaviour in GetComponents(type))
+            foreach (var component in GetComponents(type))
             {
+                var behaviour = (PlayableBehaviour)component;
                 behaviour.Stop();
             }
         }
     }
 
-    public bool IsPlaying(Type type)
+    protected bool IsPlaying(Type type)
     {
-        PlayableBehaviour behaviour = GetComponent(type) as PlayableBehaviour;
+        var behaviour = GetComponent(type) as PlayableBehaviour;
         return behaviour && behaviour.Playing;
     }
 
-    public bool AllStopped(params Type[] types)
+    protected bool AllStopped(params Type[] types)
     {
-        return types.Select(type => GetComponents(type)).All(behaviours => behaviours.All(behaviour => !(behaviour as PlayableBehaviour).Playing));
+        return types.Select(GetComponents).All(behaviours => behaviours.All(behaviour => !((PlayableBehaviour)behaviour).Playing));
     }
 }

@@ -4,6 +4,10 @@ using UnityEngine;
 public class EnemyGroup : CharacterBehaviour
 {
     private Animator stateMachine;
+    private static readonly int EnemyCountParameter = Animator.StringToHash("enemyCount");
+    private static readonly int ClosestEnemyDistanceParameter = Animator.StringToHash("closestEnemyDistance");
+    private static readonly int IsClosestToPlayerParameter = Animator.StringToHash("isClosestToPlayer");
+    private static readonly int EnemiesAttackingParameter = Animator.StringToHash("enemiesAttacking");
 
     public override void Awake()
     {
@@ -11,49 +15,49 @@ public class EnemyGroup : CharacterBehaviour
         stateMachine = GetComponent<Animator>();
     }
 
-    void Update()
+    private void Update()
     {
-        EnemyGroup[] enemies = CachedObjectsManager.Instance.GetObjects<Character>("Enemy").Select(enemy => enemy.GetComponent<EnemyGroup>()).ToArray();
+        var enemies = CachedObjectsManager.Instance.GetObjects<Character>("Enemy").Select(enemy => enemy.GetComponent<EnemyGroup>()).ToArray();
 
         // Enemy count
-        stateMachine.SetInteger("enemyCount", enemies.Length);
+        stateMachine.SetInteger(EnemyCountParameter, enemies.Length);
 
-        // Distance of the closest enemt
+        // Distance of the closest enemy
         if (enemies.Length > 1)
         {
-            MovableObject closestEnemy = enemies.Aggregate(enemies[0], (prev, next) =>
+            var closestEnemy = enemies.Aggregate(enemies[0], (prev, next) =>
             {
                 if (next == this)
                 {
                     return prev;
                 }
-                float nextDistance = MovableObject.GroundDistance(next.GetComponent<MovableObject>().WorldPosition);
-                float prevDistance = MovableObject.GroundDistance(prev.GetComponent<MovableObject>().WorldPosition);
+                var nextDistance = MovableObject.GroundDistance(next.GetComponent<MovableObject>().WorldPosition);
+                var prevDistance = MovableObject.GroundDistance(prev.GetComponent<MovableObject>().WorldPosition);
                 return nextDistance < prevDistance ? next : prev;
             }).GetComponent<MovableObject>();
-            stateMachine.SetFloat("closestEnemyDistance", MovableObject.GroundDistance(closestEnemy.WorldPosition));
+            stateMachine.SetFloat(ClosestEnemyDistanceParameter, MovableObject.GroundDistance(closestEnemy.WorldPosition));
         }
 
         // Closest to the player
-        Character player = CachedObjectsManager.Instance.GetObject<Character>("Player");
+        var player = CachedObjectsManager.Instance.GetObject<Character>("Player");
         if (player)
         {
-            MovableObject playerMovableObject = player.GetComponent<MovableObject>();
-            EnemyGroup closestEnemy = enemies.Aggregate(enemies[0], (prev, next) =>
+            var playerMovableObject = player.GetComponent<MovableObject>();
+            var closestEnemy = enemies.Aggregate(enemies[0], (prev, next) =>
             {
-                float nextDistance = playerMovableObject.GroundDistance(next.GetComponent<MovableObject>().WorldPosition);
-                float prevDistance = playerMovableObject.GroundDistance(prev.GetComponent<MovableObject>().WorldPosition);
+                var nextDistance = playerMovableObject.GroundDistance(next.GetComponent<MovableObject>().WorldPosition);
+                var prevDistance = playerMovableObject.GroundDistance(prev.GetComponent<MovableObject>().WorldPosition);
                 return nextDistance < prevDistance ? next : prev;
             });
-            stateMachine.SetBool("isClosestToPlayer", this == closestEnemy);
+            stateMachine.SetBool(IsClosestToPlayerParameter, this == closestEnemy);
         }
 
         // Enemies attacking
-        bool enemiesAttacking = enemies.Any((enemy) =>
+        var enemiesAttacking = enemies.Any((enemy) =>
         {
-            AttackManager enemyAttackManager = enemy.GetComponent<AttackManager>();
+            var enemyAttackManager = enemy.GetComponent<AttackManager>();
             return enemyAttackManager.Playing;
         });
-        stateMachine.SetBool("enemiesAttacking", enemiesAttacking);
+        stateMachine.SetBool(EnemiesAttackingParameter, enemiesAttacking);
     }
 }

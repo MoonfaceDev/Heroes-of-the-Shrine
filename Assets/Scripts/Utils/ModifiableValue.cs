@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 public interface IModifier
 {
@@ -7,7 +8,7 @@ public interface IModifier
 
 public class FlatModifier : IModifier
 {
-    public float increment;
+    private readonly float increment;
 
     public FlatModifier(float increment)
     {
@@ -22,7 +23,7 @@ public class FlatModifier : IModifier
 
 public class MultiplierModifier : IModifier
 {
-    public float factor;
+    private readonly float factor;
 
     public MultiplierModifier(float factor)
     {
@@ -37,32 +38,24 @@ public class MultiplierModifier : IModifier
 
 public class ModifiableValue
 {
-    public float value
+    private float Value
     {
         get
         {
-            float result = _value;
-            foreach (IModifier modifier in flatModifiers)
-            {
-                result = modifier.Modify(result);
-            }
-            foreach (IModifier modifier in multiplierModifiers)
-            {
-                result = modifier.Modify(result);
-            }
-            return result;
+            var result = flatModifiers.Aggregate(value, (current, modifier) => modifier.Modify(current));
+            return multiplierModifiers.Cast<IModifier>().Aggregate(result, (current, modifier) => modifier.Modify(current));
         }
     }
 
-    private readonly float _value;
+    private readonly float value;
     private readonly List<FlatModifier> flatModifiers;
     private readonly List<MultiplierModifier> multiplierModifiers;
 
     public ModifiableValue(float value)
     {
-        _value = value;
-        flatModifiers = new();
-        multiplierModifiers = new();
+        this.value = value;
+        flatModifiers = new List<FlatModifier>();
+        multiplierModifiers = new List<MultiplierModifier>();
     }
 
     public static implicit operator ModifiableValue(float value)
@@ -72,30 +65,32 @@ public class ModifiableValue
 
     public static implicit operator float(ModifiableValue value)
     {
-        return value.value;
+        return value.Value;
     }
 
     public void AddModifier(IModifier modifier)
     {
-        if (modifier is FlatModifier)
+        switch (modifier)
         {
-            flatModifiers.Add(modifier as FlatModifier);
-        }
-        if (modifier is MultiplierModifier)
-        {
-            multiplierModifiers.Add(modifier as MultiplierModifier);
+            case FlatModifier flatModifier:
+                flatModifiers.Add(flatModifier);
+                break;
+            case MultiplierModifier multiplierModifier:
+                multiplierModifiers.Add(multiplierModifier);
+                break;
         }
     }
 
     public void RemoveModifier(IModifier modifier)
     {
-        if (modifier is FlatModifier)
+        switch (modifier)
         {
-            flatModifiers.Remove(modifier as FlatModifier);
-        }
-        if (modifier is MultiplierModifier)
-        {
-            multiplierModifiers.Remove(modifier as MultiplierModifier);
+            case FlatModifier flatModifier:
+                flatModifiers.Remove(flatModifier);
+                break;
+            case MultiplierModifier multiplierModifier:
+                multiplierModifiers.Remove(multiplierModifier);
+                break;
         }
     }
 }

@@ -7,13 +7,15 @@ public class EscapePattern : BasePattern
     public float speedMultiplier;
 
     private Action onStop;
+    
+    private static readonly int StuckParameter = Animator.StringToHash("stuck");
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
-        EscapeBehaviour escapeBehaviour = animator.GetComponent<EscapeBehaviour>();
-        GameObject player = GameObject.FindGameObjectWithTag(targetTag);
+        var escapeBehaviour = animator.GetComponent<EscapeBehaviour>();
+        var player = GameObject.FindGameObjectWithTag(targetTag);
         if (!player)
         {
             return;
@@ -21,7 +23,7 @@ public class EscapePattern : BasePattern
 
         escapeBehaviour.Play(player.GetComponent<MovableObject>(), speedMultiplier);
 
-        onStop = () => animator.SetTrigger("stuck");
+        onStop = () => animator.SetTrigger(StuckParameter);
         escapeBehaviour.MovableObject.OnStuck += onStop;
     }
 
@@ -29,7 +31,7 @@ public class EscapePattern : BasePattern
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
 
-        EscapeBehaviour escapeBehaviour = animator.GetComponent<EscapeBehaviour>();
+        var escapeBehaviour = animator.GetComponent<EscapeBehaviour>();
 
         escapeBehaviour.MovableObject.OnStuck -= onStop;
         escapeBehaviour.Stop();
