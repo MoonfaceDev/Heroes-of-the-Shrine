@@ -299,6 +299,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4205167683501668961, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: spawnPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205167683501668961, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: spawnPosition.z
+      value: -9
+      objectReference: {fileID: 0}
     - target: {fileID: 5826350637341048340, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -418,6 +426,38 @@ PrefabInstance:
     - target: {fileID: 5826350637955933943, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826350638490993486, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: objectsToDestroy.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826350638490993486, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: objectsToDestroy.Array.data[1]
+      value: 
+      objectReference: {fileID: 1664371913}
+    - target: {fileID: 5826350638490993486, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: objectsToDestroy.Array.data[2]
+      value: 
+      objectReference: {fileID: 1664371913}
+    - target: {fileID: 8011096904622113216, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011096904622113216, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011096904622113216, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011096904622113216, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011096904622113223, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: position.x
+      value: -2.46
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
