@@ -131,12 +131,12 @@ references:
   isSpec: "True"
   fullName: ArcBehaviour.Awake
   nameWithType: ArcBehaviour.Awake
-- uid: Global.ArcBehaviour.Play(MovableObject,System.Single,System.Boolean)
-  name: Play(MovableObject, Single, Boolean)
-  href: api/Global.ArcBehaviour.html#Global_ArcBehaviour_Play_MovableObject_System_Single_System_Boolean_
-  commentId: M:Global.ArcBehaviour.Play(MovableObject,System.Single,System.Boolean)
-  fullName: ArcBehaviour.Play(MovableObject, System.Single, System.Boolean)
-  nameWithType: ArcBehaviour.Play(MovableObject, Single, Boolean)
+- uid: Global.ArcBehaviour.Play(MovableObject,System.Single)
+  name: Play(MovableObject, Single)
+  href: api/Global.ArcBehaviour.html#Global_ArcBehaviour_Play_MovableObject_System_Single_
+  commentId: M:Global.ArcBehaviour.Play(MovableObject,System.Single)
+  fullName: ArcBehaviour.Play(MovableObject, System.Single)
+  nameWithType: ArcBehaviour.Play(MovableObject, Single)
 - uid: Global.ArcBehaviour.Play*
   name: Play
   href: api/Global.ArcBehaviour.html#Global_ArcBehaviour_Play_
@@ -324,50 +324,44 @@ references:
   isSpec: "True"
   fullName: AttackManager.DetachDamageMultiplier
   nameWithType: AttackManager.DetachDamageMultiplier
-- uid: Global.AttackManager.HardRecovrting
-  name: HardRecovrting
-  href: api/Global.AttackManager.html#Global_AttackManager_HardRecovrting
-  commentId: P:Global.AttackManager.HardRecovrting
-  fullName: AttackManager.HardRecovrting
-  nameWithType: AttackManager.HardRecovrting
-- uid: Global.AttackManager.HardRecovrting*
-  name: HardRecovrting
-  href: api/Global.AttackManager.html#Global_AttackManager_HardRecovrting_
-  commentId: Overload:Global.AttackManager.HardRecovrting
+- uid: Global.AttackManager.HardRecovering
+  name: HardRecovering
+  href: api/Global.AttackManager.html#Global_AttackManager_HardRecovering
+  commentId: P:Global.AttackManager.HardRecovering
+  fullName: AttackManager.HardRecovering
+  nameWithType: AttackManager.HardRecovering
+- uid: Global.AttackManager.HardRecovering*
+  name: HardRecovering
+  href: api/Global.AttackManager.html#Global_AttackManager_HardRecovering_
+  commentId: Overload:Global.AttackManager.HardRecovering
   isSpec: "True"
-  fullName: AttackManager.HardRecovrting
-  nameWithType: AttackManager.HardRecovrting
+  fullName: AttackManager.HardRecovering
+  nameWithType: AttackManager.HardRecovering
 - uid: Global.AttackManager.hittableTags
   name: hittableTags
   href: api/Global.AttackManager.html#Global_AttackManager_hittableTags
   commentId: F:Global.AttackManager.hittableTags
   fullName: AttackManager.hittableTags
   nameWithType: AttackManager.hittableTags
-- uid: Global.AttackManager.IsInterruptable
-  name: IsInterruptable()
-  href: api/Global.AttackManager.html#Global_AttackManager_IsInterruptable
-  commentId: M:Global.AttackManager.IsInterruptable
-  fullName: AttackManager.IsInterruptable()
-  nameWithType: AttackManager.IsInterruptable()
-- uid: Global.AttackManager.IsInterruptable*
-  name: IsInterruptable
-  href: api/Global.AttackManager.html#Global_AttackManager_IsInterruptable_
-  commentId: Overload:Global.AttackManager.IsInterruptable
+- uid: Global.AttackManager.IsInterruptible
+  name: IsInterruptible()
+  href: api/Global.AttackManager.html#Global_AttackManager_IsInterruptible
+  commentId: M:Global.AttackManager.IsInterruptible
+  fullName: AttackManager.IsInterruptible()
+  nameWithType: AttackManager.IsInterruptible()
+- uid: Global.AttackManager.IsInterruptible*
+  name: IsInterruptible
+  href: api/Global.AttackManager.html#Global_AttackManager_IsInterruptible_
+  commentId: Overload:Global.AttackManager.IsInterruptible
   isSpec: "True"
-  fullName: AttackManager.IsInterruptable
-  nameWithType: AttackManager.IsInterruptable
+  fullName: AttackManager.IsInterruptible
+  nameWithType: AttackManager.IsInterruptible
 - uid: Global.AttackManager.lastAttack
   name: lastAttack
   href: api/Global.AttackManager.html#Global_AttackManager_lastAttack
   commentId: F:Global.AttackManager.lastAttack
   fullName: AttackManager.lastAttack
   nameWithType: AttackManager.lastAttack
-- uid: Global.AttackManager.lastAttackTime
-  name: lastAttackTime
-  href: api/Global.AttackManager.html#Global_AttackManager_lastAttackTime
-  commentId: F:Global.AttackManager.lastAttackTime
-  fullName: AttackManager.lastAttackTime
-  nameWithType: AttackManager.lastAttackTime
 - uid: Global.AttackManager.maxComboDelay
   name: maxComboDelay
   href: api/Global.AttackManager.html#Global_AttackManager_maxComboDelay
@@ -664,12 +658,12 @@ references:
   commentId: F:Global.BaseAttack.instant
   fullName: BaseAttack.instant
   nameWithType: BaseAttack.instant
-- uid: Global.BaseAttack.interruptable
-  name: interruptable
-  href: api/Global.BaseAttack.html#Global_BaseAttack_interruptable
-  commentId: F:Global.BaseAttack.interruptable
-  fullName: BaseAttack.interruptable
-  nameWithType: BaseAttack.interruptable
+- uid: Global.BaseAttack.interruptible
+  name: interruptible
+  href: api/Global.BaseAttack.html#Global_BaseAttack_interruptible
+  commentId: F:Global.BaseAttack.interruptible
+  fullName: BaseAttack.interruptible
+  nameWithType: BaseAttack.interruptible
 - uid: Global.BaseAttack.OnFinishActive
   name: OnFinishActive
   href: api/Global.BaseAttack.html#Global_BaseAttack_OnFinishActive
@@ -1018,6 +1012,12 @@ references:
   commentId: F:Global.BaseTrigger.action
   fullName: BaseTrigger.action
   nameWithType: BaseTrigger.action
+- uid: Global.BounceCallback
+  name: BounceCallback
+  href: api/Global.BounceCallback.html
+  commentId: T:Global.BounceCallback
+  fullName: BounceCallback
+  nameWithType: BounceCallback
 - uid: Global.BufferedAction
   name: BufferedAction
   href: api/Global.BufferedAction.html
@@ -1096,12 +1096,12 @@ references:
   commentId: T:Global.CachedObjectsManager
   fullName: CachedObjectsManager
   nameWithType: CachedObjectsManager
-- uid: Global.CachedObjectsManager.AddObject(System.String,UnityEngine.Object)
-  name: AddObject(String, UnityEngine.Object)
-  href: api/Global.CachedObjectsManager.html#Global_CachedObjectsManager_AddObject_System_String_UnityEngine_Object_
-  commentId: M:Global.CachedObjectsManager.AddObject(System.String,UnityEngine.Object)
-  fullName: CachedObjectsManager.AddObject(System.String, UnityEngine.Object)
-  nameWithType: CachedObjectsManager.AddObject(String, UnityEngine.Object)
+- uid: Global.CachedObjectsManager.AddObject(System.String,Object)
+  name: AddObject(String, Object)
+  href: api/Global.CachedObjectsManager.html#Global_CachedObjectsManager_AddObject_System_String_Object_
+  commentId: M:Global.CachedObjectsManager.AddObject(System.String,Object)
+  fullName: CachedObjectsManager.AddObject(System.String, Object)
+  nameWithType: CachedObjectsManager.AddObject(String, Object)
 - uid: Global.CachedObjectsManager.AddObject*
   name: AddObject
   href: api/Global.CachedObjectsManager.html#Global_CachedObjectsManager_AddObject_
@@ -1160,12 +1160,12 @@ references:
   isSpec: "True"
   fullName: CachedObjectsManager.Instance
   nameWithType: CachedObjectsManager.Instance
-- uid: Global.CachedObjectsManager.RemoveObject(System.String,UnityEngine.Object)
-  name: RemoveObject(String, UnityEngine.Object)
-  href: api/Global.CachedObjectsManager.html#Global_CachedObjectsManager_RemoveObject_System_String_UnityEngine_Object_
-  commentId: M:Global.CachedObjectsManager.RemoveObject(System.String,UnityEngine.Object)
-  fullName: CachedObjectsManager.RemoveObject(System.String, UnityEngine.Object)
-  nameWithType: CachedObjectsManager.RemoveObject(String, UnityEngine.Object)
+- uid: Global.CachedObjectsManager.RemoveObject(System.String,Object)
+  name: RemoveObject(String, Object)
+  href: api/Global.CachedObjectsManager.html#Global_CachedObjectsManager_RemoveObject_System_String_Object_
+  commentId: M:Global.CachedObjectsManager.RemoveObject(System.String,Object)
+  fullName: CachedObjectsManager.RemoveObject(System.String, Object)
+  nameWithType: CachedObjectsManager.RemoveObject(String, Object)
 - uid: Global.CachedObjectsManager.RemoveObject*
   name: RemoveObject
   href: api/Global.CachedObjectsManager.html#Global_CachedObjectsManager_RemoveObject_
@@ -1248,19 +1248,6 @@ references:
   isSpec: "True"
   fullName: CameraMovement.CameraHeight
   nameWithType: CameraMovement.CameraHeight
-- uid: Global.CameraMovement.CameraSize
-  name: CameraSize
-  href: api/Global.CameraMovement.html#Global_CameraMovement_CameraSize
-  commentId: P:Global.CameraMovement.CameraSize
-  fullName: CameraMovement.CameraSize
-  nameWithType: CameraMovement.CameraSize
-- uid: Global.CameraMovement.CameraSize*
-  name: CameraSize
-  href: api/Global.CameraMovement.html#Global_CameraMovement_CameraSize_
-  commentId: Overload:Global.CameraMovement.CameraSize
-  isSpec: "True"
-  fullName: CameraMovement.CameraSize
-  nameWithType: CameraMovement.CameraSize
 - uid: Global.CameraMovement.CameraWidth
   name: CameraWidth
   href: api/Global.CameraMovement.html#Global_CameraMovement_CameraWidth
@@ -1286,12 +1273,6 @@ references:
   commentId: M:Global.CameraMovement.Lock(Rect)
   fullName: CameraMovement.Lock(Rect)
   nameWithType: CameraMovement.Lock(Rect)
-- uid: Global.CameraMovement.Lock(System.Single,System.Single)
-  name: Lock(Single, Single)
-  href: api/Global.CameraMovement.html#Global_CameraMovement_Lock_System_Single_System_Single_
-  commentId: M:Global.CameraMovement.Lock(System.Single,System.Single)
-  fullName: CameraMovement.Lock(System.Single, System.Single)
-  nameWithType: CameraMovement.Lock(Single, Single)
 - uid: Global.CameraMovement.Lock*
   name: Lock
   href: api/Global.CameraMovement.html#Global_CameraMovement_Lock_
@@ -1666,12 +1647,12 @@ references:
   isSpec: "True"
   fullName: DeathAction.Invoke
   nameWithType: DeathAction.Invoke
-- uid: Global.DeathAction.objctsToDestory
-  name: objctsToDestory
-  href: api/Global.DeathAction.html#Global_DeathAction_objctsToDestory
-  commentId: F:Global.DeathAction.objctsToDestory
-  fullName: DeathAction.objctsToDestory
-  nameWithType: DeathAction.objctsToDestory
+- uid: Global.DeathAction.objectsToDestroy
+  name: objectsToDestroy
+  href: api/Global.DeathAction.html#Global_DeathAction_objectsToDestroy
+  commentId: F:Global.DeathAction.objectsToDestroy
+  fullName: DeathAction.objectsToDestroy
+  nameWithType: DeathAction.objectsToDestroy
 - uid: Global.DeathPanel
   name: DeathPanel
   href: api/Global.DeathPanel.html
@@ -1702,12 +1683,12 @@ references:
   commentId: F:Global.DieBehaviour.deathAnimationDuration
   fullName: DieBehaviour.deathAnimationDuration
   nameWithType: DieBehaviour.deathAnimationDuration
-- uid: Global.DieBehaviour.destoryOnDeath
-  name: destoryOnDeath
-  href: api/Global.DieBehaviour.html#Global_DieBehaviour_destoryOnDeath
-  commentId: F:Global.DieBehaviour.destoryOnDeath
-  fullName: DieBehaviour.destoryOnDeath
-  nameWithType: DieBehaviour.destoryOnDeath
+- uid: Global.DieBehaviour.destroyOnDeath
+  name: destroyOnDeath
+  href: api/Global.DieBehaviour.html#Global_DieBehaviour_destroyOnDeath
+  commentId: F:Global.DieBehaviour.destroyOnDeath
+  fullName: DieBehaviour.destroyOnDeath
+  nameWithType: DieBehaviour.destroyOnDeath
 - uid: Global.DieBehaviour.Kill
   name: Kill()
   href: api/Global.DieBehaviour.html#Global_DieBehaviour_Kill
@@ -1927,12 +1908,12 @@ references:
   isSpec: "True"
   fullName: EffectsBar.Awake
   nameWithType: EffectsBar.Awake
-- uid: Global.EffectsBar.EffectBarPrefab
-  name: EffectBarPrefab
-  href: api/Global.EffectsBar.html#Global_EffectsBar_EffectBarPrefab
-  commentId: F:Global.EffectsBar.EffectBarPrefab
-  fullName: EffectsBar.EffectBarPrefab
-  nameWithType: EffectsBar.EffectBarPrefab
+- uid: Global.EffectsBar.effectBarPrefab
+  name: effectBarPrefab
+  href: api/Global.EffectsBar.html#Global_EffectsBar_effectBarPrefab
+  commentId: F:Global.EffectsBar.effectBarPrefab
+  fullName: EffectsBar.effectBarPrefab
+  nameWithType: EffectsBar.effectBarPrefab
 - uid: Global.EffectsBar.effects
   name: effects
   href: api/Global.EffectsBar.html#Global_EffectsBar_effects
@@ -2035,19 +2016,6 @@ references:
   isSpec: "True"
   fullName: ElectrifyAttack.CalculateDamage
   nameWithType: ElectrifyAttack.CalculateDamage
-- uid: Global.ElectrifyAttack.CalculateExplosionDamage(HittableBehaviour)
-  name: CalculateExplosionDamage(HittableBehaviour)
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_CalculateExplosionDamage_HittableBehaviour_
-  commentId: M:Global.ElectrifyAttack.CalculateExplosionDamage(HittableBehaviour)
-  fullName: ElectrifyAttack.CalculateExplosionDamage(HittableBehaviour)
-  nameWithType: ElectrifyAttack.CalculateExplosionDamage(HittableBehaviour)
-- uid: Global.ElectrifyAttack.CalculateExplosionDamage*
-  name: CalculateExplosionDamage
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_CalculateExplosionDamage_
-  commentId: Overload:Global.ElectrifyAttack.CalculateExplosionDamage
-  isSpec: "True"
-  fullName: ElectrifyAttack.CalculateExplosionDamage
-  nameWithType: ElectrifyAttack.CalculateExplosionDamage
 - uid: Global.ElectrifyAttack.CreateHitDetector
   name: CreateHitDetector()
   href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_CreateHitDetector
@@ -2073,12 +2041,6 @@ references:
   commentId: F:Global.ElectrifyAttack.electrifySpeedMultiplier
   fullName: ElectrifyAttack.electrifySpeedMultiplier
   nameWithType: ElectrifyAttack.electrifySpeedMultiplier
-- uid: Global.ElectrifyAttack.epxlosionKnockbackPower
-  name: epxlosionKnockbackPower
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_epxlosionKnockbackPower
-  commentId: F:Global.ElectrifyAttack.epxlosionKnockbackPower
-  fullName: ElectrifyAttack.epxlosionKnockbackPower
-  nameWithType: ElectrifyAttack.epxlosionKnockbackPower
 - uid: Global.ElectrifyAttack.explosionDamage
   name: explosionDamage
   href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_explosionDamage
@@ -2091,25 +2053,18 @@ references:
   commentId: F:Global.ElectrifyAttack.explosionHitbox
   fullName: ElectrifyAttack.explosionHitbox
   nameWithType: ElectrifyAttack.explosionHitbox
-- uid: Global.ElectrifyAttack.ExplosionHitCallable(HittableBehaviour)
-  name: ExplosionHitCallable(HittableBehaviour)
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_ExplosionHitCallable_HittableBehaviour_
-  commentId: M:Global.ElectrifyAttack.ExplosionHitCallable(HittableBehaviour)
-  fullName: ElectrifyAttack.ExplosionHitCallable(HittableBehaviour)
-  nameWithType: ElectrifyAttack.ExplosionHitCallable(HittableBehaviour)
-- uid: Global.ElectrifyAttack.ExplosionHitCallable*
-  name: ExplosionHitCallable
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_ExplosionHitCallable_
-  commentId: Overload:Global.ElectrifyAttack.ExplosionHitCallable
-  isSpec: "True"
-  fullName: ElectrifyAttack.ExplosionHitCallable
-  nameWithType: ElectrifyAttack.ExplosionHitCallable
 - uid: Global.ElectrifyAttack.explosionKnockbackDirection
   name: explosionKnockbackDirection
   href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_explosionKnockbackDirection
   commentId: F:Global.ElectrifyAttack.explosionKnockbackDirection
   fullName: ElectrifyAttack.explosionKnockbackDirection
   nameWithType: ElectrifyAttack.explosionKnockbackDirection
+- uid: Global.ElectrifyAttack.explosionKnockbackPower
+  name: explosionKnockbackPower
+  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_explosionKnockbackPower
+  commentId: F:Global.ElectrifyAttack.explosionKnockbackPower
+  fullName: ElectrifyAttack.explosionKnockbackPower
+  nameWithType: ElectrifyAttack.explosionKnockbackPower
 - uid: Global.ElectrifyAttack.HitCallable(HittableBehaviour)
   name: HitCallable(HittableBehaviour)
   href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_HitCallable_HittableBehaviour_
@@ -2565,18 +2520,18 @@ references:
   isSpec: "True"
   fullName: EventListener.EventListener
   nameWithType: EventListener.EventListener
-- uid: Global.EventListener.Action
-  name: Action
-  href: api/Global.EventListener.html#Global_EventListener_Action
-  commentId: F:Global.EventListener.Action
-  fullName: EventListener.Action
-  nameWithType: EventListener.Action
-- uid: Global.EventListener.Condition
-  name: Condition
-  href: api/Global.EventListener.html#Global_EventListener_Condition
-  commentId: F:Global.EventListener.Condition
-  fullName: EventListener.Condition
-  nameWithType: EventListener.Condition
+- uid: Global.EventListener.action
+  name: action
+  href: api/Global.EventListener.html#Global_EventListener_action
+  commentId: F:Global.EventListener.action
+  fullName: EventListener.action
+  nameWithType: EventListener.action
+- uid: Global.EventListener.condition
+  name: condition
+  href: api/Global.EventListener.html#Global_EventListener_condition
+  commentId: F:Global.EventListener.condition
+  fullName: EventListener.condition
+  nameWithType: EventListener.condition
 - uid: Global.EventListener.single
   name: single
   href: api/Global.EventListener.html#Global_EventListener_single
@@ -2768,12 +2723,6 @@ references:
   isSpec: "True"
   fullName: FlatModifier.FlatModifier
   nameWithType: FlatModifier.FlatModifier
-- uid: Global.FlatModifier.increment
-  name: increment
-  href: api/Global.FlatModifier.html#Global_FlatModifier_increment
-  commentId: F:Global.FlatModifier.increment
-  fullName: FlatModifier.increment
-  nameWithType: FlatModifier.increment
 - uid: Global.FlatModifier.Modify(System.Single)
   name: Modify(Single)
   href: api/Global.FlatModifier.html#Global_FlatModifier_Modify_System_Single_
@@ -3271,6 +3220,12 @@ references:
   isSpec: "True"
   fullName: Hitbox.WorldSize
   nameWithType: Hitbox.WorldSize
+- uid: Global.HitCallback
+  name: HitCallback
+  href: api/Global.HitCallback.html
+  commentId: T:Global.HitCallback
+  fullName: HitCallback
+  nameWithType: HitCallback
 - uid: Global.HittableBehaviour
   name: HittableBehaviour
   href: api/Global.HittableBehaviour.html
@@ -3405,18 +3360,6 @@ references:
   isSpec: "True"
   fullName: HittableBehaviour.Stun
   nameWithType: HittableBehaviour.Stun
-- uid: Global.HittableBehaviour.STUN_LAUNCH_ANGEL
-  name: STUN_LAUNCH_ANGEL
-  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_STUN_LAUNCH_ANGEL
-  commentId: F:Global.HittableBehaviour.STUN_LAUNCH_ANGEL
-  fullName: HittableBehaviour.STUN_LAUNCH_ANGEL
-  nameWithType: HittableBehaviour.STUN_LAUNCH_ANGEL
-- uid: Global.HittableBehaviour.STUN_LAUNCH_POWER
-  name: STUN_LAUNCH_POWER
-  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_STUN_LAUNCH_POWER
-  commentId: F:Global.HittableBehaviour.STUN_LAUNCH_POWER
-  fullName: HittableBehaviour.STUN_LAUNCH_POWER
-  nameWithType: HittableBehaviour.STUN_LAUNCH_POWER
 - uid: Global.HitType
   name: HitType
   href: api/Global.HitType.html
@@ -3631,6 +3574,12 @@ references:
   isSpec: "True"
   fullName: JumpBehaviour.Stop
   nameWithType: JumpBehaviour.Stop
+- uid: Global.JumpsChangedCallback
+  name: JumpsChangedCallback
+  href: api/Global.JumpsChangedCallback.html
+  commentId: T:Global.JumpsChangedCallback
+  fullName: JumpsChangedCallback
+  nameWithType: JumpsChangedCallback
 - uid: Global.KnockbackBehaviour
   name: KnockbackBehaviour
   href: api/Global.KnockbackBehaviour.html
@@ -3739,12 +3688,6 @@ references:
   isSpec: "True"
   fullName: KnockbackBehaviour.Recovering
   nameWithType: KnockbackBehaviour.Recovering
-- uid: Global.KnockbackBehaviour.SECOND_BOUNCE_POWER_MULTIPLIER
-  name: SECOND_BOUNCE_POWER_MULTIPLIER
-  href: api/Global.KnockbackBehaviour.html#Global_KnockbackBehaviour_SECOND_BOUNCE_POWER_MULTIPLIER
-  commentId: F:Global.KnockbackBehaviour.SECOND_BOUNCE_POWER_MULTIPLIER
-  fullName: KnockbackBehaviour.SECOND_BOUNCE_POWER_MULTIPLIER
-  nameWithType: KnockbackBehaviour.SECOND_BOUNCE_POWER_MULTIPLIER
 - uid: Global.KnockbackBehaviour.Stop
   name: Stop()
   href: api/Global.KnockbackBehaviour.html#Global_KnockbackBehaviour_Stop
@@ -3758,6 +3701,12 @@ references:
   isSpec: "True"
   fullName: KnockbackBehaviour.Stop
   nameWithType: KnockbackBehaviour.Stop
+- uid: Global.KnockbackCallback
+  name: KnockbackCallback
+  href: api/Global.KnockbackCallback.html
+  commentId: T:Global.KnockbackCallback
+  fullName: KnockbackCallback
+  nameWithType: KnockbackCallback
 - uid: Global.LineTrigger
   name: LineTrigger
   href: api/Global.LineTrigger.html
@@ -3776,35 +3725,6 @@ references:
   commentId: T:Global.MathUtils
   fullName: MathUtils
   nameWithType: MathUtils
-- uid: Global.MathUtils.IsBetween(Vector2,Vector2,Vector2)
-  name: IsBetween(Vector2, Vector2, Vector2)
-  href: api/Global.MathUtils.html#Global_MathUtils_IsBetween_Vector2_Vector2_Vector2_
-  commentId: M:Global.MathUtils.IsBetween(Vector2,Vector2,Vector2)
-  fullName: MathUtils.IsBetween(Vector2, Vector2, Vector2)
-  nameWithType: MathUtils.IsBetween(Vector2, Vector2, Vector2)
-- uid: Global.MathUtils.IsBetween*
-  name: IsBetween
-  href: api/Global.MathUtils.html#Global_MathUtils_IsBetween_
-  commentId: Overload:Global.MathUtils.IsBetween
-  isSpec: "True"
-  fullName: MathUtils.IsBetween
-  nameWithType: MathUtils.IsBetween
-- uid: Global.MathUtils.LineLineIntersection(Vector2@,Vector2,Vector2,Vector2,Vector2)
-  name: LineLineIntersection(out Vector2, Vector2, Vector2, Vector2, Vector2)
-  href: api/Global.MathUtils.html#Global_MathUtils_LineLineIntersection_Vector2__Vector2_Vector2_Vector2_Vector2_
-  commentId: M:Global.MathUtils.LineLineIntersection(Vector2@,Vector2,Vector2,Vector2,Vector2)
-  name.vb: LineLineIntersection(ByRef Vector2, Vector2, Vector2, Vector2, Vector2)
-  fullName: MathUtils.LineLineIntersection(out Vector2, Vector2, Vector2, Vector2, Vector2)
-  fullName.vb: MathUtils.LineLineIntersection(ByRef Vector2, Vector2, Vector2, Vector2, Vector2)
-  nameWithType: MathUtils.LineLineIntersection(out Vector2, Vector2, Vector2, Vector2, Vector2)
-  nameWithType.vb: MathUtils.LineLineIntersection(ByRef Vector2, Vector2, Vector2, Vector2, Vector2)
-- uid: Global.MathUtils.LineLineIntersection*
-  name: LineLineIntersection
-  href: api/Global.MathUtils.html#Global_MathUtils_LineLineIntersection_
-  commentId: Overload:Global.MathUtils.LineLineIntersection
-  isSpec: "True"
-  fullName: MathUtils.LineLineIntersection
-  nameWithType: MathUtils.LineLineIntersection
 - uid: Global.MathUtils.LineRectangleIntersections(Vector2,Vector2,Vector2,Vector2)
   name: LineRectangleIntersections(Vector2, Vector2, Vector2, Vector2)
   href: api/Global.MathUtils.html#Global_MathUtils_LineRectangleIntersections_Vector2_Vector2_Vector2_Vector2_
@@ -3917,19 +3837,6 @@ references:
   isSpec: "True"
   fullName: ModifiableValue.RemoveModifier
   nameWithType: ModifiableValue.RemoveModifier
-- uid: Global.ModifiableValue.value
-  name: value
-  href: api/Global.ModifiableValue.html#Global_ModifiableValue_value
-  commentId: P:Global.ModifiableValue.value
-  fullName: ModifiableValue.value
-  nameWithType: ModifiableValue.value
-- uid: Global.ModifiableValue.value*
-  name: value
-  href: api/Global.ModifiableValue.html#Global_ModifiableValue_value_
-  commentId: Overload:Global.ModifiableValue.value
-  isSpec: "True"
-  fullName: ModifiableValue.value
-  nameWithType: ModifiableValue.value
 - uid: Global.MovableObject
   name: MovableObject
   href: api/Global.MovableObject.html
@@ -4000,19 +3907,6 @@ references:
   isSpec: "True"
   fullName: MovableObject.GroundWorldPosition
   nameWithType: MovableObject.GroundWorldPosition
-- uid: Global.MovableObject.IsValidPosition(Vector3)
-  name: IsValidPosition(Vector3)
-  href: api/Global.MovableObject.html#Global_MovableObject_IsValidPosition_Vector3_
-  commentId: M:Global.MovableObject.IsValidPosition(Vector3)
-  fullName: MovableObject.IsValidPosition(Vector3)
-  nameWithType: MovableObject.IsValidPosition(Vector3)
-- uid: Global.MovableObject.IsValidPosition*
-  name: IsValidPosition
-  href: api/Global.MovableObject.html#Global_MovableObject_IsValidPosition_
-  commentId: Overload:Global.MovableObject.IsValidPosition
-  isSpec: "True"
-  fullName: MovableObject.IsValidPosition
-  nameWithType: MovableObject.IsValidPosition
 - uid: Global.MovableObject.OnLand
   name: OnLand
   href: api/Global.MovableObject.html#Global_MovableObject_OnLand
@@ -4062,32 +3956,6 @@ references:
   isSpec: "True"
   fullName: MovableObject.ScreenCoordinates
   nameWithType: MovableObject.ScreenCoordinates
-- uid: Global.MovableObject.TransformToRelative(Vector3)
-  name: TransformToRelative(Vector3)
-  href: api/Global.MovableObject.html#Global_MovableObject_TransformToRelative_Vector3_
-  commentId: M:Global.MovableObject.TransformToRelative(Vector3)
-  fullName: MovableObject.TransformToRelative(Vector3)
-  nameWithType: MovableObject.TransformToRelative(Vector3)
-- uid: Global.MovableObject.TransformToRelative*
-  name: TransformToRelative
-  href: api/Global.MovableObject.html#Global_MovableObject_TransformToRelative_
-  commentId: Overload:Global.MovableObject.TransformToRelative
-  isSpec: "True"
-  fullName: MovableObject.TransformToRelative
-  nameWithType: MovableObject.TransformToRelative
-- uid: Global.MovableObject.TransformToWorld(Vector3)
-  name: TransformToWorld(Vector3)
-  href: api/Global.MovableObject.html#Global_MovableObject_TransformToWorld_Vector3_
-  commentId: M:Global.MovableObject.TransformToWorld(Vector3)
-  fullName: MovableObject.TransformToWorld(Vector3)
-  nameWithType: MovableObject.TransformToWorld(Vector3)
-- uid: Global.MovableObject.TransformToWorld*
-  name: TransformToWorld
-  href: api/Global.MovableObject.html#Global_MovableObject_TransformToWorld_
-  commentId: Overload:Global.MovableObject.TransformToWorld
-  isSpec: "True"
-  fullName: MovableObject.TransformToWorld
-  nameWithType: MovableObject.TransformToWorld
 - uid: Global.MovableObject.UpdatePosition(Vector3)
   name: UpdatePosition(Vector3)
   href: api/Global.MovableObject.html#Global_MovableObject_UpdatePosition_Vector3_
@@ -4133,12 +4001,6 @@ references:
   isSpec: "True"
   fullName: MovableObject.WorldPosition
   nameWithType: MovableObject.WorldPosition
-- uid: Global.MovableObject.zScale
-  name: zScale
-  href: api/Global.MovableObject.html#Global_MovableObject_zScale
-  commentId: F:Global.MovableObject.zScale
-  fullName: MovableObject.zScale
-  nameWithType: MovableObject.zScale
 - uid: Global.MoveDefinition
   name: MoveDefinition
   href: api/Global.MoveDefinition.html
@@ -4200,12 +4062,6 @@ references:
   isSpec: "True"
   fullName: MultiplierModifier.MultiplierModifier
   nameWithType: MultiplierModifier.MultiplierModifier
-- uid: Global.MultiplierModifier.factor
-  name: factor
-  href: api/Global.MultiplierModifier.html#Global_MultiplierModifier_factor
-  commentId: F:Global.MultiplierModifier.factor
-  fullName: MultiplierModifier.factor
-  nameWithType: MultiplierModifier.factor
 - uid: Global.MultiplierModifier.Modify(System.Single)
   name: Modify(Single)
   href: api/Global.MultiplierModifier.html#Global_MultiplierModifier_Modify_System_Single_
@@ -4281,36 +4137,6 @@ references:
   isSpec: "True"
   fullName: NormalAttack.Awake
   nameWithType: NormalAttack.Awake
-- uid: Global.OnBounce
-  name: OnBounce
-  href: api/Global.OnBounce.html
-  commentId: T:Global.OnBounce
-  fullName: OnBounce
-  nameWithType: OnBounce
-- uid: Global.OnHit
-  name: OnHit
-  href: api/Global.OnHit.html
-  commentId: T:Global.OnHit
-  fullName: OnHit
-  nameWithType: OnHit
-- uid: Global.OnJumpsChanged
-  name: OnJumpsChanged
-  href: api/Global.OnJumpsChanged.html
-  commentId: T:Global.OnJumpsChanged
-  fullName: OnJumpsChanged
-  nameWithType: OnJumpsChanged
-- uid: Global.OnKnockback
-  name: OnKnockback
-  href: api/Global.OnKnockback.html
-  commentId: T:Global.OnKnockback
-  fullName: OnKnockback
-  nameWithType: OnKnockback
-- uid: Global.OnStun
-  name: OnStun
-  href: api/Global.OnStun.html
-  commentId: T:Global.OnStun
-  fullName: OnStun
-  nameWithType: OnStun
 - uid: Global.Pathfind
   name: Pathfind
   href: api/Global.Pathfind.html
@@ -4604,19 +4430,6 @@ references:
   commentId: F:Global.PlayerController.bufferingTime
   fullName: PlayerController.bufferingTime
   nameWithType: PlayerController.bufferingTime
-- uid: Global.PlayerController.Direction(System.Single)
-  name: Direction(Single)
-  href: api/Global.PlayerController.html#Global_PlayerController_Direction_System_Single_
-  commentId: M:Global.PlayerController.Direction(System.Single)
-  fullName: PlayerController.Direction(System.Single)
-  nameWithType: PlayerController.Direction(Single)
-- uid: Global.PlayerController.Direction*
-  name: Direction
-  href: api/Global.PlayerController.html#Global_PlayerController_Direction_
-  commentId: Overload:Global.PlayerController.Direction
-  isSpec: "True"
-  fullName: PlayerController.Direction
-  nameWithType: PlayerController.Direction
 - uid: Global.PlayerController.jumpPriority
   name: jumpPriority
   href: api/Global.PlayerController.html#Global_PlayerController_jumpPriority
@@ -5098,19 +4911,6 @@ references:
   isSpec: "True"
   fullName: SimpleAttack.CanPlay
   nameWithType: SimpleAttack.CanPlay
-- uid: Global.SimpleAttack.ComboCondition
-  name: ComboCondition()
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_ComboCondition
-  commentId: M:Global.SimpleAttack.ComboCondition
-  fullName: SimpleAttack.ComboCondition()
-  nameWithType: SimpleAttack.ComboCondition()
-- uid: Global.SimpleAttack.ComboCondition*
-  name: ComboCondition
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_ComboCondition_
-  commentId: Overload:Global.SimpleAttack.ComboCondition
-  isSpec: "True"
-  fullName: SimpleAttack.ComboCondition
-  nameWithType: SimpleAttack.ComboCondition
 - uid: Global.SimpleAttack.CreateHitDetector
   name: CreateHitDetector()
   href: api/Global.SimpleAttack.html#Global_SimpleAttack_CreateHitDetector
@@ -5155,19 +4955,6 @@ references:
   commentId: F:Global.SimpleAttack.hittableTags
   fullName: SimpleAttack.hittableTags
   nameWithType: SimpleAttack.hittableTags
-- uid: Global.SimpleAttack.HittableTags
-  name: HittableTags
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_HittableTags
-  commentId: P:Global.SimpleAttack.HittableTags
-  fullName: SimpleAttack.HittableTags
-  nameWithType: SimpleAttack.HittableTags
-- uid: Global.SimpleAttack.HittableTags*
-  name: HittableTags
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_HittableTags_
-  commentId: Overload:Global.SimpleAttack.HittableTags
-  isSpec: "True"
-  fullName: SimpleAttack.HittableTags
-  nameWithType: SimpleAttack.HittableTags
 - uid: Global.SimpleAttack.hitType
   name: hitType
   href: api/Global.SimpleAttack.html#Global_SimpleAttack_hitType
@@ -5187,19 +4974,6 @@ references:
   isSpec: "True"
   fullName: SimpleAttack.IsHittableTag
   nameWithType: SimpleAttack.IsHittableTag
-- uid: Global.SimpleAttack.IsTagIncluded(System.String,System.String)
-  name: IsTagIncluded(String, String)
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_IsTagIncluded_System_String_System_String_
-  commentId: M:Global.SimpleAttack.IsTagIncluded(System.String,System.String)
-  fullName: SimpleAttack.IsTagIncluded(System.String, System.String)
-  nameWithType: SimpleAttack.IsTagIncluded(String, String)
-- uid: Global.SimpleAttack.IsTagIncluded*
-  name: IsTagIncluded
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_IsTagIncluded_
-  commentId: Overload:Global.SimpleAttack.IsTagIncluded
-  isSpec: "True"
-  fullName: SimpleAttack.IsTagIncluded
-  nameWithType: SimpleAttack.IsTagIncluded
 - uid: Global.SimpleAttack.knockbackDirection
   name: knockbackDirection
   href: api/Global.SimpleAttack.html#Global_SimpleAttack_knockbackDirection
@@ -5601,6 +5375,12 @@ references:
   commentId: F:Global.StunBehaviour.stunFrames
   fullName: StunBehaviour.stunFrames
   nameWithType: StunBehaviour.stunFrames
+- uid: Global.StunCallback
+  name: StunCallback
+  href: api/Global.StunCallback.html
+  commentId: T:Global.StunCallback
+  fullName: StunCallback
+  nameWithType: StunCallback
 - uid: Global.SuperArmorBar
   name: SuperArmorBar
   href: api/Global.SuperArmorBar.html
@@ -5798,19 +5578,6 @@ references:
   isSpec: "True"
   fullName: WalkableGrid.ClosestWalkableNode
   nameWithType: WalkableGrid.ClosestWalkableNode
-- uid: Global.WalkableGrid.CreateGrid
-  name: CreateGrid()
-  href: api/Global.WalkableGrid.html#Global_WalkableGrid_CreateGrid
-  commentId: M:Global.WalkableGrid.CreateGrid
-  fullName: WalkableGrid.CreateGrid()
-  nameWithType: WalkableGrid.CreateGrid()
-- uid: Global.WalkableGrid.CreateGrid*
-  name: CreateGrid
-  href: api/Global.WalkableGrid.html#Global_WalkableGrid_CreateGrid_
-  commentId: Overload:Global.WalkableGrid.CreateGrid
-  isSpec: "True"
-  fullName: WalkableGrid.CreateGrid
-  nameWithType: WalkableGrid.CreateGrid
 - uid: Global.WalkableGrid.GetCircle(Vector3,System.Single)
   name: GetCircle(Vector3, Single)
   href: api/Global.WalkableGrid.html#Global_WalkableGrid_GetCircle_Vector3_System_Single_
@@ -5824,12 +5591,6 @@ references:
   isSpec: "True"
   fullName: WalkableGrid.GetCircle
   nameWithType: WalkableGrid.GetCircle
-- uid: Global.WalkableGrid.grid
-  name: grid
-  href: api/Global.WalkableGrid.html#Global_WalkableGrid_grid
-  commentId: F:Global.WalkableGrid.grid
-  fullName: WalkableGrid.grid
-  nameWithType: WalkableGrid.grid
 - uid: Global.WalkableGrid.gridWorldSize
   name: gridWorldSize
   href: api/Global.WalkableGrid.html#Global_WalkableGrid_gridWorldSize
@@ -5887,19 +5648,6 @@ references:
   commentId: F:Global.WalkableGrid.movableObject
   fullName: WalkableGrid.movableObject
   nameWithType: WalkableGrid.movableObject
-- uid: Global.WalkableGrid.Neighbors(Node)
-  name: Neighbors(Node)
-  href: api/Global.WalkableGrid.html#Global_WalkableGrid_Neighbors_Node_
-  commentId: M:Global.WalkableGrid.Neighbors(Node)
-  fullName: WalkableGrid.Neighbors(Node)
-  nameWithType: WalkableGrid.Neighbors(Node)
-- uid: Global.WalkableGrid.Neighbors*
-  name: Neighbors
-  href: api/Global.WalkableGrid.html#Global_WalkableGrid_Neighbors_
-  commentId: Overload:Global.WalkableGrid.Neighbors
-  isSpec: "True"
-  fullName: WalkableGrid.Neighbors
-  nameWithType: WalkableGrid.Neighbors
 - uid: Global.WalkableGrid.NodeFromWorldPoint(Vector3)
   name: NodeFromWorldPoint(Vector3)
   href: api/Global.WalkableGrid.html#Global_WalkableGrid_NodeFromWorldPoint_Vector3_

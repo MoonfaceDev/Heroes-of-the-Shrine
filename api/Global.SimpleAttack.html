@@ -104,7 +104,7 @@
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_instant">BaseAttack.instant</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_interruptable">BaseAttack.interruptable</a>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_interruptible">BaseAttack.interruptible</a>
     </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_hardRecovery">BaseAttack.hardRecovery</a>
@@ -514,33 +514,6 @@
       </tr>
     </tbody>
   </table>
-  <h3 id="properties">Properties
-  </h3>
-  
-  
-  <a id="Global_SimpleAttack_HittableTags_" data-uid="Global.SimpleAttack.HittableTags*"></a>
-  <h4 id="Global_SimpleAttack_HittableTags" data-uid="Global.SimpleAttack.HittableTags">HittableTags</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual List&lt;string&gt; HittableTags { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="methods">Methods
   </h3>
   
@@ -680,31 +653,6 @@
   <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_CanPlay">BaseAttack.CanPlay()</a></div>
   
   
-  <a id="Global_SimpleAttack_ComboCondition_" data-uid="Global.SimpleAttack.ComboCondition*"></a>
-  <h4 id="Global_SimpleAttack_ComboCondition" data-uid="Global.SimpleAttack.ComboCondition">ComboCondition()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual bool ComboCondition()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
   <a id="Global_SimpleAttack_CreateHitDetector_" data-uid="Global.SimpleAttack.CreateHitDetector*"></a>
   <h4 id="Global_SimpleAttack_CreateHitDetector" data-uid="Global.SimpleAttack.CreateHitDetector">CreateHitDetector()</h4>
   <div class="markdown level1 summary"></div>
@@ -750,7 +698,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected bool IsHittableTag(string tag)</code></pre>
+    <pre><code class="lang-csharp hljs">protected bool IsHittableTag(string testedTag)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -764,54 +712,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">tag</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_SimpleAttack_IsTagIncluded_" data-uid="Global.SimpleAttack.IsTagIncluded*"></a>
-  <h4 id="Global_SimpleAttack_IsTagIncluded_System_String_System_String_" data-uid="Global.SimpleAttack.IsTagIncluded(System.String,System.String)">IsTagIncluded(String, String)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected bool IsTagIncluded(string tag, string group)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">tag</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">group</span></td>
+        <td><span class="parametername">testedTag</span></td>
         <td></td>
       </tr>
     </tbody>

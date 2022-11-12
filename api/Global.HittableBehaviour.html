@@ -160,54 +160,6 @@
       </tr>
     </tbody>
   </table>
-  
-  
-  <h4 id="Global_HittableBehaviour_STUN_LAUNCH_ANGEL" data-uid="Global.HittableBehaviour.STUN_LAUNCH_ANGEL">STUN_LAUNCH_ANGEL</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float STUN_LAUNCH_ANGEL</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_HittableBehaviour_STUN_LAUNCH_POWER" data-uid="Global.HittableBehaviour.STUN_LAUNCH_POWER">STUN_LAUNCH_POWER</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float STUN_LAUNCH_POWER</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="methods">Methods
   </h3>
   
@@ -324,7 +276,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual bool Hit(float damage)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Hit(float damage)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -343,21 +295,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   
   
   <a id="Global_HittableBehaviour_Knockback_" data-uid="Global.HittableBehaviour.Knockback*"></a>
@@ -366,7 +303,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual bool Knockback(float damage, float power, float angleDegrees)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Knockback(float damage, float power, float angleDegrees)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -395,21 +332,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   
   
   <a id="Global_HittableBehaviour_ProcessDamage_" data-uid="Global.HittableBehaviour.ProcessDamage*"></a>
@@ -418,7 +340,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual float ProcessDamage(float damage)</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual float ProcessDamage(float damage)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -460,7 +382,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual bool Stun(float damage, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Stun(float damage, float time)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -484,21 +406,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="events">Events
   </h3>
   
@@ -508,7 +415,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event OnHit OnHit</code></pre>
+    <pre><code class="lang-csharp hljs">public event HitCallback OnHit</code></pre>
   </div>
   <h5 class="eventType">Event Type</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -520,7 +427,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.OnHit.html">OnHit</a></td>
+        <td><a class="xref" href="Global.HitCallback.html">HitCallback</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -532,7 +439,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event OnKnockback OnKnockback</code></pre>
+    <pre><code class="lang-csharp hljs">public event KnockbackCallback OnKnockback</code></pre>
   </div>
   <h5 class="eventType">Event Type</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -544,7 +451,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.OnKnockback.html">OnKnockback</a></td>
+        <td><a class="xref" href="Global.KnockbackCallback.html">KnockbackCallback</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -556,7 +463,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event OnStun OnStun</code></pre>
+    <pre><code class="lang-csharp hljs">public event StunCallback OnStun</code></pre>
   </div>
   <h5 class="eventType">Event Type</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -568,7 +475,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.OnStun.html">OnStun</a></td>
+        <td><a class="xref" href="Global.StunCallback.html">StunCallback</a></td>
         <td></td>
       </tr>
     </tbody>

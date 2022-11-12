@@ -100,30 +100,6 @@
   </h3>
   
   
-  <h4 id="Global_WalkableGrid_grid" data-uid="Global.WalkableGrid.grid">grid</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Node[, ] grid</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.Node.html">Node</a>[,]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
   <h4 id="Global_WalkableGrid_gridWorldSize" data-uid="Global.WalkableGrid.gridWorldSize">gridWorldSize</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
@@ -245,23 +221,13 @@
   </table>
   
   
-  <a id="Global_WalkableGrid_CreateGrid_" data-uid="Global.WalkableGrid.CreateGrid*"></a>
-  <h4 id="Global_WalkableGrid_CreateGrid" data-uid="Global.WalkableGrid.CreateGrid">CreateGrid()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void CreateGrid()</code></pre>
-  </div>
-  
-  
   <a id="Global_WalkableGrid_GetCircle_" data-uid="Global.WalkableGrid.GetCircle*"></a>
   <h4 id="Global_WalkableGrid_GetCircle_Vector3_System_Single_" data-uid="Global.WalkableGrid.GetCircle(Vector3,System.Single)">GetCircle(Vector3, Single)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Node[] GetCircle(Vector3 center, float radius)</code></pre>
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Node&gt; GetCircle(Vector3 center, float radius)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -295,7 +261,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.Node.html">Node</a>[]</td>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="Global.Node.html">Node</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -437,48 +403,6 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_WalkableGrid_Neighbors_" data-uid="Global.WalkableGrid.Neighbors*"></a>
-  <h4 id="Global_WalkableGrid_Neighbors_Node_" data-uid="Global.WalkableGrid.Neighbors(Node)">Neighbors(Node)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;Node&gt; Neighbors(Node node)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.Node.html">Node</a></td>
-        <td><span class="parametername">node</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="Global.Node.html">Node</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
