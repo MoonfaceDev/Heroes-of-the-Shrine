@@ -120,7 +120,7 @@ Wikipedia defines cutscenes as such:</p>
 <h2 id="useful-tracks">Useful Tracks</h2>
 <h4 id="animation-track">Animation Track</h4>
 <p><em>Animation Track</em> is used to animate objects, as well as change their properties over time (e.g. move them around). Each animation track is related to a single object in the scene. To animate an object in the timeline, it must have an <em>Animator</em> component, even if it doesn&#39;t have an animator controller (animations state machine). Each track can modify multiple properties, but it is recommended to split an animation to multiple tracks where it fits.</p>
-<p>To create a new <em>Animation Track</em>, follow these steps:</p>
+<p>To create a new <em>Animation Track</em>, follow these steps (if the track is based on an existing clip, skip step 1):</p>
 <ol>
 <li><p>Go to your timeline folder in <em>Assets/Timelines</em>. Create a new animation clip and give it an indicative name.</p>
 </li>
@@ -128,7 +128,7 @@ Wikipedia defines cutscenes as such:</p>
 </li>
 <li><p>Drag the object you want to animate from the scene. If the object doesn&#39;t already have an <em>Animator</em>, make one and then drag it to the track.</p>
 </li>
-<li><p>Right click the new track, and select &quot;Add From Animation Clip&quot;. There, select the clip you created in step 1.</p>
+<li><p>Right click the new track, and select &quot;Add From Animation Clip&quot;. There, select the clip you created in step 1 (or a clip you already have).</p>
 </li>
 <li><p>Double click in the track area to open the animation clip.</p>
 </li>
