@@ -26,7 +26,7 @@ Cutscenes should be constant, meaning object positions will never be relative to
 
 5. Create a new timeline asset in *Assets/Timelines*.
 
-6. In the same object, attach a *Playable Director* component. Change the *Playable* to the timeline you have created, and make sure that *Play On Awake* is unchecked.
+6. In the same object, attach a **Playable Director** component. Change the *Playable* to the timeline you have created, and make sure that *Play On Awake* is unchecked. Drag the *Playable Director* to the *director* property of the *Cutscene Action*.
 
 7. In the hierarchy, select the cutscene object you added. Open the *Timeline* window where you can edit tracks, and start adding tracks (by clicking '+') to build the cutscene!
 
