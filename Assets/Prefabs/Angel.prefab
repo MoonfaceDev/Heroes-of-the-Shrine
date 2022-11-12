@@ -168,7 +168,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!1 &5102893360422186050
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,7 +233,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!1 &5102893360536826754
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +300,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!198 &3581447371850593138
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -320,7 +317,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -5151,7 +5148,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!199 &408234941172631270
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -5241,7 +5237,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -9998,7 +9994,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!1 &5102893360874897723
 GameObject:
   m_ObjectHideFlags: 0
@@ -10071,7 +10066,7 @@ Transform:
   - {fileID: 5102893360422186051}
   - {fileID: 5102893360866760424}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360874897665
 MonoBehaviour:
@@ -10092,7 +10087,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!114 &9052240310973488254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10149,7 +10143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f271e06fd2ef53a4c87299bd48bc9f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destoryOnDeath: 0
+  destroyOnDeath: 0
   deathAnimationDuration: 3
 --- !u!114 &5102893360874897666
 MonoBehaviour:
@@ -10347,7 +10341,6 @@ MonoBehaviour:
   hittableTags:
   - Enemy
   lastAttack: {fileID: 0}
-  lastAttackTime: 0
 --- !u!114 &5102893360874897678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10402,7 +10395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instant: 0
-  interruptable: 0
+  interruptible: 0
   hardRecovery: 1
   previousAttacks: []
   midair: 0
@@ -10432,7 +10425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instant: 0
-  interruptable: 1
+  interruptible: 1
   hardRecovery: 0
   previousAttacks: []
   midair: 0
@@ -10460,7 +10453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instant: 0
-  interruptable: 1
+  interruptible: 1
   hardRecovery: 0
   previousAttacks:
   - {fileID: 5102893360874897686}
@@ -10489,7 +10482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instant: 0
-  interruptable: 1
+  interruptible: 1
   hardRecovery: 0
   previousAttacks:
   - {fileID: 5102893360874897686}
@@ -10518,7 +10511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instant: 0
-  interruptable: 1
+  interruptible: 1
   hardRecovery: 1
   previousAttacks:
   - {fileID: 5102893360874897687}
@@ -10547,7 +10540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instant: 0
-  interruptable: 1
+  interruptible: 1
   hardRecovery: 0
   previousAttacks:
   - {fileID: 5102893360874897687}
@@ -10580,7 +10573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instant: 0
-  interruptable: 0
+  interruptible: 0
   hardRecovery: 1
   previousAttacks:
   - {fileID: 5102893360874897685}
@@ -10611,7 +10604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instant: 0
-  interruptable: 0
+  interruptible: 0
   hardRecovery: 0
   previousAttacks: []
   midair: 1
@@ -10639,7 +10632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instant: 0
-  interruptable: 0
+  interruptible: 0
   hardRecovery: 0
   previousAttacks:
   - {fileID: 5102893360874897681}
@@ -10668,7 +10661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instant: 0
-  interruptable: 0
+  interruptible: 0
   hardRecovery: 0
   previousAttacks:
   - {fileID: 0}
@@ -10699,7 +10692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instant: 0
-  interruptable: 0
+  interruptible: 0
   hardRecovery: 0
   previousAttacks: []
   midair: 0
@@ -10781,7 +10774,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!1 &5102893361029256207
 GameObject:
   m_ObjectHideFlags: 0
@@ -10847,7 +10839,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!1 &5102893361031154992
 GameObject:
   m_ObjectHideFlags: 0
@@ -10913,7 +10904,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!1 &5102893361076516094
 GameObject:
   m_ObjectHideFlags: 0
@@ -10979,7 +10969,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!1 &5102893361279726048
 GameObject:
   m_ObjectHideFlags: 0
@@ -15815,7 +15804,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!1 &5102893361555062423
 GameObject:
   m_ObjectHideFlags: 0
@@ -15990,7 +15978,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!199 &5107263526857870990
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -16080,7 +16067,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
