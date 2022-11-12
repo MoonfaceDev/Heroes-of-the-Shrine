@@ -3,6 +3,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+/// <summary>
+/// Attack could not be played
+/// </summary>
 public class CannotAttackException : Exception
 {
 }
@@ -14,14 +17,15 @@ public abstract class BaseAttack : PlayableBehaviour
     /// If true, the attack can be played while another interruptible attack is playing.
     /// </value>
     public bool instant;
-    
+
     /// <value>
     /// If true, an instant attack can replace it while this attack is playing.
     /// </value>
-    [FormerlySerializedAs("interruptable")] public bool interruptible = true;
-    
+    [FormerlySerializedAs("interruptable")]
+    public bool interruptible = true;
+
     /// <value>
-    /// If true, The attack cannot be interrupted while <c>Recovering</c> is true.
+    /// If <c>true</c>, The attack cannot be interrupted while <see cref="Recovering"/> is true.
     /// </value>
     public bool hardRecovery;
 
@@ -78,7 +82,7 @@ public abstract class BaseAttack : PlayableBehaviour
 
     /// <value>
     /// Attack is playing.
-    /// True if attack is either anticipating, active or recovering.
+    /// True if attack is either <see cref="Anticipating"/>, <see cref="Active"/> or <see cref="Recovering"/>.
     /// </value>
     public override bool Playing => Anticipating || Active || Recovering;
 
@@ -86,29 +90,29 @@ public abstract class BaseAttack : PlayableBehaviour
     /// Attack anticipation has started.
     /// </value>
     public event Action OnStartAnticipating;
-    
+
     /// <value>
     /// Attack anticipation has finished.
     /// Also fires if the attack was stopped while in anticipation.
     /// </value>
     public event Action OnFinishAnticipating;
-    
+
     /// <value>
     /// Attack active phase has started.
     /// </value>
     public event Action OnStartActive;
-    
+
     /// <value>
     /// Attack active phase has finished.
     /// Also fires if the attack was stopped while in active phase.
     /// </value>
     public event Action OnFinishActive;
-    
+
     /// <value>
     /// Attack recovery has started.
     /// </value>
     public event Action OnStartRecovery;
-    
+
     /// <value>
     /// Attack recovery has finished.
     /// Also fires if the attack was stopped while in recovery.
@@ -122,21 +126,21 @@ public abstract class BaseAttack : PlayableBehaviour
     private Coroutine attackFlowCoroutine;
 
     /// <summary>
-    /// Coroutine played while attack is anticipating.
+    /// Coroutine played while attack is <see cref="Anticipating"/>.
     /// When the coroutine finishes, the anticipation finishes.
     /// </summary>
     /// <returns>Started coroutine.</returns>
     protected abstract IEnumerator AnticipateCoroutine();
-    
+
     /// <summary>
-    /// Coroutine played while attack is active.
+    /// Coroutine played while attack is <see cref="Active"/>.
     /// When the coroutine finishes, the active phase finishes.
     /// </summary>
     /// <returns>Started coroutine.</returns>
     protected abstract IEnumerator ActiveCoroutine();
-    
+
     /// <summary>
-    /// Coroutine played while attack is recovering.
+    /// Coroutine played while attack is <see cref="Recovering"/>.
     /// When the coroutine finishes, the recovery finishes.
     /// </summary>
     /// <returns>Started coroutine.</returns>
@@ -144,7 +148,7 @@ public abstract class BaseAttack : PlayableBehaviour
 
     /// <summary>
     /// Tells if the attack can be played.
-    /// By default, any attack can be played if it is enabled, and the character is not under knockback or stunned.
+    /// By default, any attack can be played if it is <see cref="CharacterBehaviour.Enabled"/>, and the character is not under knockback or stunned.
     /// Override to add more conditions that attack requires.
     /// </summary>
     /// <returns><c>true</c> if the attack can be played</returns>
@@ -163,6 +167,7 @@ public abstract class BaseAttack : PlayableBehaviour
         {
             throw new CannotAttackException();
         }
+
         InvokeOnPlay();
         attackFlowCoroutine = StartCoroutine(AttackFlow());
     }
@@ -178,16 +183,19 @@ public abstract class BaseAttack : PlayableBehaviour
             StopCoroutine(attackFlowCoroutine);
             InvokeOnStop();
         }
+
         if (Anticipating)
         {
             Anticipating = false;
             OnFinishAnticipating?.Invoke();
         }
+
         if (Active)
         {
             Active = false;
             OnFinishActive?.Invoke();
         }
+
         if (Recovering)
         {
             Recovering = false;
