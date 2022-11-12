@@ -113,7 +113,7 @@ public class SimpleAttack : BaseAttack
         return GetComponent<AttackManager>().TranspileDamage(this, hittableBehaviour, damage);
     }
 
-    protected override void HitCallable(HittableBehaviour hittableBehaviour)
+    protected virtual void HitCallable(HittableBehaviour hittableBehaviour)
     {
         var processedDamage = CalculateDamage(hittableBehaviour);
         print(hittableBehaviour.name + " hit by " + AttackName);
