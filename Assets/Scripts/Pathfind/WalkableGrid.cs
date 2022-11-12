@@ -2,19 +2,21 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 
+[ExecuteInEditMode]
 [RequireComponent(typeof(MovableObject))]
 public class WalkableGrid : MonoBehaviour
 {
 	public Vector3 gridWorldSize;
 	public float nodeRadius;
+	
 	private Node[,] grid;
-	public MovableObject movableObject;
+	[HideInInspector] public MovableObject movableObject;
 
 	private float NodeDiameter => nodeRadius * 2;
 	private int GridSizeX => Mathf.RoundToInt(gridWorldSize.x / NodeDiameter);
 	private int GridSizeZ => Mathf.RoundToInt(gridWorldSize.z / NodeDiameter);
 
-	void Awake()
+	private void Awake()
 	{
 		movableObject = GetComponent<MovableObject>();
 	}
@@ -176,7 +178,7 @@ public class WalkableGrid : MonoBehaviour
 		Gizmos.color = Color.yellow;
 		Gizmos.DrawWireCube(MovableObject.GroundScreenCoordinates(movableObject.WorldPosition + gridWorldSize / 2), MovableObject.GroundScreenCoordinates(gridWorldSize));
 
-		if (grid == null) return;
+		if (grid == null || Application.isEditor) return;
 		foreach (var n in grid)
 		{
 			Gizmos.color = n.walkable ? Color.white : Color.red;
