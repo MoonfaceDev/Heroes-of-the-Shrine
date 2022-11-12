@@ -61,8 +61,6 @@ To create a new *Animation Track*, follow these steps:
     > Unfortunately, editing properties of a movable object does not reflect in the scene while editing them.
 
     > [!NOTE]
-    > <details>
-    > <summary>Change animation curve to linear</summary>
     > By default, the interpolation of a float value between two keyframes, is not linear and has a certain smooth curve:
     > 
     > ![Animation Curve](../resources/AnimationCurve.png)
@@ -70,7 +68,6 @@ To create a new *Animation Track*, follow these steps:
     > In order to change it to linear, from the animation window click the *"Curves"* button in the bottom.
     > Select all keyframes (Ctrl+A), right click on one of them and select "Both Tangents" -> "Linear". The curve should become linear.
     > Click the "Dropsheet" button in the bottom to see the normal animation window again.
-    </details>
 
 7. When the animation clip is done, return to the timeline window, right click the animation track, and select "Convert To Clip Track". Click the clip to see the following in the inspector:
 
