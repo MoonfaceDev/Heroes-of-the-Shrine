@@ -15,15 +15,15 @@ references:
   commentId: T:Global.AbsoluteHitDetector
   fullName: AbsoluteHitDetector
   nameWithType: AbsoluteHitDetector
-- uid: Global.AbsoluteHitDetector.#ctor(Hitbox,Action{HittableBehaviour})
-  name: AbsoluteHitDetector(Hitbox, Action<HittableBehaviour>)
-  href: api/Global.AbsoluteHitDetector.html#Global_AbsoluteHitDetector__ctor_Hitbox_Action_HittableBehaviour__
-  commentId: M:Global.AbsoluteHitDetector.#ctor(Hitbox,Action{HittableBehaviour})
-  name.vb: AbsoluteHitDetector(Hitbox, Action(Of HittableBehaviour))
-  fullName: AbsoluteHitDetector.AbsoluteHitDetector(Hitbox, Action<HittableBehaviour>)
-  fullName.vb: AbsoluteHitDetector.AbsoluteHitDetector(Hitbox, Action(Of HittableBehaviour))
-  nameWithType: AbsoluteHitDetector.AbsoluteHitDetector(Hitbox, Action<HittableBehaviour>)
-  nameWithType.vb: AbsoluteHitDetector.AbsoluteHitDetector(Hitbox, Action(Of HittableBehaviour))
+- uid: Global.AbsoluteHitDetector.#ctor(Hitbox,Action{IHittable})
+  name: AbsoluteHitDetector(Hitbox, Action<IHittable>)
+  href: api/Global.AbsoluteHitDetector.html#Global_AbsoluteHitDetector__ctor_Hitbox_Action_IHittable__
+  commentId: M:Global.AbsoluteHitDetector.#ctor(Hitbox,Action{IHittable})
+  name.vb: AbsoluteHitDetector(Hitbox, Action(Of IHittable))
+  fullName: AbsoluteHitDetector.AbsoluteHitDetector(Hitbox, Action<IHittable>)
+  fullName.vb: AbsoluteHitDetector.AbsoluteHitDetector(Hitbox, Action(Of IHittable))
+  nameWithType: AbsoluteHitDetector.AbsoluteHitDetector(Hitbox, Action<IHittable>)
+  nameWithType.vb: AbsoluteHitDetector.AbsoluteHitDetector(Hitbox, Action(Of IHittable))
 - uid: Global.AbsoluteHitDetector.#ctor*
   name: AbsoluteHitDetector
   href: api/Global.AbsoluteHitDetector.html#Global_AbsoluteHitDetector__ctor_
@@ -456,12 +456,12 @@ references:
   isSpec: "True"
   fullName: AttackManager.Stop
   nameWithType: AttackManager.Stop
-- uid: Global.AttackManager.TranspileDamage(BaseAttack,HittableBehaviour,System.Single)
-  name: TranspileDamage(BaseAttack, HittableBehaviour, Single)
-  href: api/Global.AttackManager.html#Global_AttackManager_TranspileDamage_BaseAttack_HittableBehaviour_System_Single_
-  commentId: M:Global.AttackManager.TranspileDamage(BaseAttack,HittableBehaviour,System.Single)
-  fullName: AttackManager.TranspileDamage(BaseAttack, HittableBehaviour, System.Single)
-  nameWithType: AttackManager.TranspileDamage(BaseAttack, HittableBehaviour, Single)
+- uid: Global.AttackManager.TranspileDamage(BaseAttack,Character,System.Single)
+  name: TranspileDamage(BaseAttack, Character, Single)
+  href: api/Global.AttackManager.html#Global_AttackManager_TranspileDamage_BaseAttack_Character_System_Single_
+  commentId: M:Global.AttackManager.TranspileDamage(BaseAttack,Character,System.Single)
+  fullName: AttackManager.TranspileDamage(BaseAttack, Character, System.Single)
+  nameWithType: AttackManager.TranspileDamage(BaseAttack, Character, Single)
 - uid: Global.AttackManager.TranspileDamage*
   name: TranspileDamage
   href: api/Global.AttackManager.html#Global_AttackManager_TranspileDamage_
@@ -803,12 +803,12 @@ references:
   commentId: T:Global.BaseHitDetector
   fullName: BaseHitDetector
   nameWithType: BaseHitDetector
-- uid: Global.BaseHitDetector.OverlapHittable(HittableBehaviour,Hitbox)
-  name: OverlapHittable(HittableBehaviour, Hitbox)
-  href: api/Global.BaseHitDetector.html#Global_BaseHitDetector_OverlapHittable_HittableBehaviour_Hitbox_
-  commentId: M:Global.BaseHitDetector.OverlapHittable(HittableBehaviour,Hitbox)
-  fullName: BaseHitDetector.OverlapHittable(HittableBehaviour, Hitbox)
-  nameWithType: BaseHitDetector.OverlapHittable(HittableBehaviour, Hitbox)
+- uid: Global.BaseHitDetector.OverlapHittable(HittableHitbox,Hitbox)
+  name: OverlapHittable(HittableHitbox, Hitbox)
+  href: api/Global.BaseHitDetector.html#Global_BaseHitDetector_OverlapHittable_HittableHitbox_Hitbox_
+  commentId: M:Global.BaseHitDetector.OverlapHittable(HittableHitbox,Hitbox)
+  fullName: BaseHitDetector.OverlapHittable(HittableHitbox, Hitbox)
+  nameWithType: BaseHitDetector.OverlapHittable(HittableHitbox, Hitbox)
 - uid: Global.BaseHitDetector.OverlapHittable*
   name: OverlapHittable
   href: api/Global.BaseHitDetector.html#Global_BaseHitDetector_OverlapHittable_
@@ -1990,12 +1990,12 @@ references:
   commentId: T:Global.ElectrifyAttack
   fullName: ElectrifyAttack
   nameWithType: ElectrifyAttack
-- uid: Global.ElectrifyAttack.CalculateDamage(HittableBehaviour)
-  name: CalculateDamage(HittableBehaviour)
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_CalculateDamage_HittableBehaviour_
-  commentId: M:Global.ElectrifyAttack.CalculateDamage(HittableBehaviour)
-  fullName: ElectrifyAttack.CalculateDamage(HittableBehaviour)
-  nameWithType: ElectrifyAttack.CalculateDamage(HittableBehaviour)
+- uid: Global.ElectrifyAttack.CalculateDamage(Character)
+  name: CalculateDamage(Character)
+  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_CalculateDamage_Character_
+  commentId: M:Global.ElectrifyAttack.CalculateDamage(Character)
+  fullName: ElectrifyAttack.CalculateDamage(Character)
+  nameWithType: ElectrifyAttack.CalculateDamage(Character)
 - uid: Global.ElectrifyAttack.CalculateDamage*
   name: CalculateDamage
   href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_CalculateDamage_
@@ -2052,12 +2052,12 @@ references:
   commentId: F:Global.ElectrifyAttack.explosionKnockbackPower
   fullName: ElectrifyAttack.explosionKnockbackPower
   nameWithType: ElectrifyAttack.explosionKnockbackPower
-- uid: Global.ElectrifyAttack.HitCallable(HittableBehaviour)
-  name: HitCallable(HittableBehaviour)
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_HitCallable_HittableBehaviour_
-  commentId: M:Global.ElectrifyAttack.HitCallable(HittableBehaviour)
-  fullName: ElectrifyAttack.HitCallable(HittableBehaviour)
-  nameWithType: ElectrifyAttack.HitCallable(HittableBehaviour)
+- uid: Global.ElectrifyAttack.HitCallable(IHittable)
+  name: HitCallable(IHittable)
+  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_HitCallable_IHittable_
+  commentId: M:Global.ElectrifyAttack.HitCallable(IHittable)
+  fullName: ElectrifyAttack.HitCallable(IHittable)
+  nameWithType: ElectrifyAttack.HitCallable(IHittable)
 - uid: Global.ElectrifyAttack.HitCallable*
   name: HitCallable
   href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_HitCallable_
@@ -3290,12 +3290,6 @@ references:
   isSpec: "True"
   fullName: HittableBehaviour.Hit
   nameWithType: HittableBehaviour.Hit
-- uid: Global.HittableBehaviour.hitboxes
-  name: hitboxes
-  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_hitboxes
-  commentId: F:Global.HittableBehaviour.hitboxes
-  fullName: HittableBehaviour.hitboxes
-  nameWithType: HittableBehaviour.hitboxes
 - uid: Global.HittableBehaviour.Knockback(System.Single,System.Single,System.Single)
   name: Knockback(Single, Single, Single)
   href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_Knockback_System_Single_System_Single_System_Single_
@@ -3353,6 +3347,83 @@ references:
   isSpec: "True"
   fullName: HittableBehaviour.Stun
   nameWithType: HittableBehaviour.Stun
+- uid: Global.HittableHitbox
+  name: HittableHitbox
+  href: api/Global.HittableHitbox.html
+  commentId: T:Global.HittableHitbox
+  fullName: HittableHitbox
+  nameWithType: HittableHitbox
+- uid: Global.HittableHitbox.Character
+  name: Character
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Character
+  commentId: P:Global.HittableHitbox.Character
+  fullName: HittableHitbox.Character
+  nameWithType: HittableHitbox.Character
+- uid: Global.HittableHitbox.Character*
+  name: Character
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Character_
+  commentId: Overload:Global.HittableHitbox.Character
+  isSpec: "True"
+  fullName: HittableHitbox.Character
+  nameWithType: HittableHitbox.Character
+- uid: Global.HittableHitbox.Hit(System.Single)
+  name: Hit(Single)
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Hit_System_Single_
+  commentId: M:Global.HittableHitbox.Hit(System.Single)
+  fullName: HittableHitbox.Hit(System.Single)
+  nameWithType: HittableHitbox.Hit(Single)
+- uid: Global.HittableHitbox.Hit*
+  name: Hit
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Hit_
+  commentId: Overload:Global.HittableHitbox.Hit
+  isSpec: "True"
+  fullName: HittableHitbox.Hit
+  nameWithType: HittableHitbox.Hit
+- uid: Global.HittableHitbox.Hitbox
+  name: Hitbox
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Hitbox
+  commentId: P:Global.HittableHitbox.Hitbox
+  fullName: HittableHitbox.Hitbox
+  nameWithType: HittableHitbox.Hitbox
+- uid: Global.HittableHitbox.Hitbox*
+  name: Hitbox
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Hitbox_
+  commentId: Overload:Global.HittableHitbox.Hitbox
+  isSpec: "True"
+  fullName: HittableHitbox.Hitbox
+  nameWithType: HittableHitbox.Hitbox
+- uid: Global.HittableHitbox.hittableBehaviour
+  name: hittableBehaviour
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_hittableBehaviour
+  commentId: F:Global.HittableHitbox.hittableBehaviour
+  fullName: HittableHitbox.hittableBehaviour
+  nameWithType: HittableHitbox.hittableBehaviour
+- uid: Global.HittableHitbox.Knockback(System.Single,System.Single,System.Single)
+  name: Knockback(Single, Single, Single)
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Knockback_System_Single_System_Single_System_Single_
+  commentId: M:Global.HittableHitbox.Knockback(System.Single,System.Single,System.Single)
+  fullName: HittableHitbox.Knockback(System.Single, System.Single, System.Single)
+  nameWithType: HittableHitbox.Knockback(Single, Single, Single)
+- uid: Global.HittableHitbox.Knockback*
+  name: Knockback
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Knockback_
+  commentId: Overload:Global.HittableHitbox.Knockback
+  isSpec: "True"
+  fullName: HittableHitbox.Knockback
+  nameWithType: HittableHitbox.Knockback
+- uid: Global.HittableHitbox.Stun(System.Single,System.Single)
+  name: Stun(Single, Single)
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Stun_System_Single_System_Single_
+  commentId: M:Global.HittableHitbox.Stun(System.Single,System.Single)
+  fullName: HittableHitbox.Stun(System.Single, System.Single)
+  nameWithType: HittableHitbox.Stun(Single, Single)
+- uid: Global.HittableHitbox.Stun*
+  name: Stun
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Stun_
+  commentId: Overload:Global.HittableHitbox.Stun
+  isSpec: "True"
+  fullName: HittableHitbox.Stun
+  nameWithType: HittableHitbox.Stun
 - uid: Global.HitType
   name: HitType
   href: api/Global.HitType.html
@@ -3377,6 +3448,64 @@ references:
   commentId: T:Global.IdlePattern
   fullName: IdlePattern
   nameWithType: IdlePattern
+- uid: Global.IHittable
+  name: IHittable
+  href: api/Global.IHittable.html
+  commentId: T:Global.IHittable
+  fullName: IHittable
+  nameWithType: IHittable
+- uid: Global.IHittable.Character
+  name: Character
+  href: api/Global.IHittable.html#Global_IHittable_Character
+  commentId: P:Global.IHittable.Character
+  fullName: IHittable.Character
+  nameWithType: IHittable.Character
+- uid: Global.IHittable.Character*
+  name: Character
+  href: api/Global.IHittable.html#Global_IHittable_Character_
+  commentId: Overload:Global.IHittable.Character
+  isSpec: "True"
+  fullName: IHittable.Character
+  nameWithType: IHittable.Character
+- uid: Global.IHittable.Hit(System.Single)
+  name: Hit(Single)
+  href: api/Global.IHittable.html#Global_IHittable_Hit_System_Single_
+  commentId: M:Global.IHittable.Hit(System.Single)
+  fullName: IHittable.Hit(System.Single)
+  nameWithType: IHittable.Hit(Single)
+- uid: Global.IHittable.Hit*
+  name: Hit
+  href: api/Global.IHittable.html#Global_IHittable_Hit_
+  commentId: Overload:Global.IHittable.Hit
+  isSpec: "True"
+  fullName: IHittable.Hit
+  nameWithType: IHittable.Hit
+- uid: Global.IHittable.Knockback(System.Single,System.Single,System.Single)
+  name: Knockback(Single, Single, Single)
+  href: api/Global.IHittable.html#Global_IHittable_Knockback_System_Single_System_Single_System_Single_
+  commentId: M:Global.IHittable.Knockback(System.Single,System.Single,System.Single)
+  fullName: IHittable.Knockback(System.Single, System.Single, System.Single)
+  nameWithType: IHittable.Knockback(Single, Single, Single)
+- uid: Global.IHittable.Knockback*
+  name: Knockback
+  href: api/Global.IHittable.html#Global_IHittable_Knockback_
+  commentId: Overload:Global.IHittable.Knockback
+  isSpec: "True"
+  fullName: IHittable.Knockback
+  nameWithType: IHittable.Knockback
+- uid: Global.IHittable.Stun(System.Single,System.Single)
+  name: Stun(Single, Single)
+  href: api/Global.IHittable.html#Global_IHittable_Stun_System_Single_System_Single_
+  commentId: M:Global.IHittable.Stun(System.Single,System.Single)
+  fullName: IHittable.Stun(System.Single, System.Single)
+  nameWithType: IHittable.Stun(Single, Single)
+- uid: Global.IHittable.Stun*
+  name: Stun
+  href: api/Global.IHittable.html#Global_IHittable_Stun_
+  commentId: Overload:Global.IHittable.Stun
+  isSpec: "True"
+  fullName: IHittable.Stun
+  nameWithType: IHittable.Stun
 - uid: Global.IModifier
   name: IModifier
   href: api/Global.IModifier.html
@@ -4183,15 +4312,15 @@ references:
   commentId: T:Global.PeriodicAbsoluteHitDetector
   fullName: PeriodicAbsoluteHitDetector
   nameWithType: PeriodicAbsoluteHitDetector
-- uid: Global.PeriodicAbsoluteHitDetector.#ctor(EventManager,Hitbox,Action{HittableBehaviour},System.Single,System.Boolean)
-  name: PeriodicAbsoluteHitDetector(EventManager, Hitbox, Action<HittableBehaviour>, Single, Boolean)
-  href: api/Global.PeriodicAbsoluteHitDetector.html#Global_PeriodicAbsoluteHitDetector__ctor_EventManager_Hitbox_Action_HittableBehaviour__System_Single_System_Boolean_
-  commentId: M:Global.PeriodicAbsoluteHitDetector.#ctor(EventManager,Hitbox,Action{HittableBehaviour},System.Single,System.Boolean)
-  name.vb: PeriodicAbsoluteHitDetector(EventManager, Hitbox, Action(Of HittableBehaviour), Single, Boolean)
-  fullName: PeriodicAbsoluteHitDetector.PeriodicAbsoluteHitDetector(EventManager, Hitbox, Action<HittableBehaviour>, System.Single, System.Boolean)
-  fullName.vb: PeriodicAbsoluteHitDetector.PeriodicAbsoluteHitDetector(EventManager, Hitbox, Action(Of HittableBehaviour), System.Single, System.Boolean)
-  nameWithType: PeriodicAbsoluteHitDetector.PeriodicAbsoluteHitDetector(EventManager, Hitbox, Action<HittableBehaviour>, Single, Boolean)
-  nameWithType.vb: PeriodicAbsoluteHitDetector.PeriodicAbsoluteHitDetector(EventManager, Hitbox, Action(Of HittableBehaviour), Single, Boolean)
+- uid: Global.PeriodicAbsoluteHitDetector.#ctor(EventManager,Hitbox,Action{IHittable},System.Single,System.Boolean)
+  name: PeriodicAbsoluteHitDetector(EventManager, Hitbox, Action<IHittable>, Single, Boolean)
+  href: api/Global.PeriodicAbsoluteHitDetector.html#Global_PeriodicAbsoluteHitDetector__ctor_EventManager_Hitbox_Action_IHittable__System_Single_System_Boolean_
+  commentId: M:Global.PeriodicAbsoluteHitDetector.#ctor(EventManager,Hitbox,Action{IHittable},System.Single,System.Boolean)
+  name.vb: PeriodicAbsoluteHitDetector(EventManager, Hitbox, Action(Of IHittable), Single, Boolean)
+  fullName: PeriodicAbsoluteHitDetector.PeriodicAbsoluteHitDetector(EventManager, Hitbox, Action<IHittable>, System.Single, System.Boolean)
+  fullName.vb: PeriodicAbsoluteHitDetector.PeriodicAbsoluteHitDetector(EventManager, Hitbox, Action(Of IHittable), System.Single, System.Boolean)
+  nameWithType: PeriodicAbsoluteHitDetector.PeriodicAbsoluteHitDetector(EventManager, Hitbox, Action<IHittable>, Single, Boolean)
+  nameWithType.vb: PeriodicAbsoluteHitDetector.PeriodicAbsoluteHitDetector(EventManager, Hitbox, Action(Of IHittable), Single, Boolean)
 - uid: Global.PeriodicAbsoluteHitDetector.#ctor*
   name: PeriodicAbsoluteHitDetector
   href: api/Global.PeriodicAbsoluteHitDetector.html#Global_PeriodicAbsoluteHitDetector__ctor_
@@ -4237,15 +4366,15 @@ references:
   commentId: T:Global.PeriodicRelativeHitDetector
   fullName: PeriodicRelativeHitDetector
   nameWithType: PeriodicRelativeHitDetector
-- uid: Global.PeriodicRelativeHitDetector.#ctor(EventManager,Hitbox,Action{HittableBehaviour},System.Single,System.Boolean)
-  name: PeriodicRelativeHitDetector(EventManager, Hitbox, Action<HittableBehaviour>, Single, Boolean)
-  href: api/Global.PeriodicRelativeHitDetector.html#Global_PeriodicRelativeHitDetector__ctor_EventManager_Hitbox_Action_HittableBehaviour__System_Single_System_Boolean_
-  commentId: M:Global.PeriodicRelativeHitDetector.#ctor(EventManager,Hitbox,Action{HittableBehaviour},System.Single,System.Boolean)
-  name.vb: PeriodicRelativeHitDetector(EventManager, Hitbox, Action(Of HittableBehaviour), Single, Boolean)
-  fullName: PeriodicRelativeHitDetector.PeriodicRelativeHitDetector(EventManager, Hitbox, Action<HittableBehaviour>, System.Single, System.Boolean)
-  fullName.vb: PeriodicRelativeHitDetector.PeriodicRelativeHitDetector(EventManager, Hitbox, Action(Of HittableBehaviour), System.Single, System.Boolean)
-  nameWithType: PeriodicRelativeHitDetector.PeriodicRelativeHitDetector(EventManager, Hitbox, Action<HittableBehaviour>, Single, Boolean)
-  nameWithType.vb: PeriodicRelativeHitDetector.PeriodicRelativeHitDetector(EventManager, Hitbox, Action(Of HittableBehaviour), Single, Boolean)
+- uid: Global.PeriodicRelativeHitDetector.#ctor(EventManager,Hitbox,Action{IHittable},System.Single,System.Boolean)
+  name: PeriodicRelativeHitDetector(EventManager, Hitbox, Action<IHittable>, Single, Boolean)
+  href: api/Global.PeriodicRelativeHitDetector.html#Global_PeriodicRelativeHitDetector__ctor_EventManager_Hitbox_Action_IHittable__System_Single_System_Boolean_
+  commentId: M:Global.PeriodicRelativeHitDetector.#ctor(EventManager,Hitbox,Action{IHittable},System.Single,System.Boolean)
+  name.vb: PeriodicRelativeHitDetector(EventManager, Hitbox, Action(Of IHittable), Single, Boolean)
+  fullName: PeriodicRelativeHitDetector.PeriodicRelativeHitDetector(EventManager, Hitbox, Action<IHittable>, System.Single, System.Boolean)
+  fullName.vb: PeriodicRelativeHitDetector.PeriodicRelativeHitDetector(EventManager, Hitbox, Action(Of IHittable), System.Single, System.Boolean)
+  nameWithType: PeriodicRelativeHitDetector.PeriodicRelativeHitDetector(EventManager, Hitbox, Action<IHittable>, Single, Boolean)
+  nameWithType.vb: PeriodicRelativeHitDetector.PeriodicRelativeHitDetector(EventManager, Hitbox, Action(Of IHittable), Single, Boolean)
 - uid: Global.PeriodicRelativeHitDetector.#ctor*
   name: PeriodicRelativeHitDetector
   href: api/Global.PeriodicRelativeHitDetector.html#Global_PeriodicRelativeHitDetector__ctor_
@@ -4854,12 +4983,12 @@ references:
   isSpec: "True"
   fullName: SimpleAttack.Awake
   nameWithType: SimpleAttack.Awake
-- uid: Global.SimpleAttack.CalculateDamage(HittableBehaviour)
-  name: CalculateDamage(HittableBehaviour)
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_CalculateDamage_HittableBehaviour_
-  commentId: M:Global.SimpleAttack.CalculateDamage(HittableBehaviour)
-  fullName: SimpleAttack.CalculateDamage(HittableBehaviour)
-  nameWithType: SimpleAttack.CalculateDamage(HittableBehaviour)
+- uid: Global.SimpleAttack.CalculateDamage(Character)
+  name: CalculateDamage(Character)
+  href: api/Global.SimpleAttack.html#Global_SimpleAttack_CalculateDamage_Character_
+  commentId: M:Global.SimpleAttack.CalculateDamage(Character)
+  fullName: SimpleAttack.CalculateDamage(Character)
+  nameWithType: SimpleAttack.CalculateDamage(Character)
 - uid: Global.SimpleAttack.CalculateDamage*
   name: CalculateDamage
   href: api/Global.SimpleAttack.html#Global_SimpleAttack_CalculateDamage_
@@ -4905,12 +5034,12 @@ references:
   commentId: F:Global.SimpleAttack.hitbox
   fullName: SimpleAttack.hitbox
   nameWithType: SimpleAttack.hitbox
-- uid: Global.SimpleAttack.HitCallable(HittableBehaviour)
-  name: HitCallable(HittableBehaviour)
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_HitCallable_HittableBehaviour_
-  commentId: M:Global.SimpleAttack.HitCallable(HittableBehaviour)
-  fullName: SimpleAttack.HitCallable(HittableBehaviour)
-  nameWithType: SimpleAttack.HitCallable(HittableBehaviour)
+- uid: Global.SimpleAttack.HitCallable(IHittable)
+  name: HitCallable(IHittable)
+  href: api/Global.SimpleAttack.html#Global_SimpleAttack_HitCallable_IHittable_
+  commentId: M:Global.SimpleAttack.HitCallable(IHittable)
+  fullName: SimpleAttack.HitCallable(IHittable)
+  nameWithType: SimpleAttack.HitCallable(IHittable)
 - uid: Global.SimpleAttack.HitCallable*
   name: HitCallable
   href: api/Global.SimpleAttack.html#Global_SimpleAttack_HitCallable_
@@ -5049,15 +5178,15 @@ references:
   commentId: T:Global.SingleHitDetector
   fullName: SingleHitDetector
   nameWithType: SingleHitDetector
-- uid: Global.SingleHitDetector.#ctor(EventManager,Hitbox,Action{HittableBehaviour})
-  name: SingleHitDetector(EventManager, Hitbox, Action<HittableBehaviour>)
-  href: api/Global.SingleHitDetector.html#Global_SingleHitDetector__ctor_EventManager_Hitbox_Action_HittableBehaviour__
-  commentId: M:Global.SingleHitDetector.#ctor(EventManager,Hitbox,Action{HittableBehaviour})
-  name.vb: SingleHitDetector(EventManager, Hitbox, Action(Of HittableBehaviour))
-  fullName: SingleHitDetector.SingleHitDetector(EventManager, Hitbox, Action<HittableBehaviour>)
-  fullName.vb: SingleHitDetector.SingleHitDetector(EventManager, Hitbox, Action(Of HittableBehaviour))
-  nameWithType: SingleHitDetector.SingleHitDetector(EventManager, Hitbox, Action<HittableBehaviour>)
-  nameWithType.vb: SingleHitDetector.SingleHitDetector(EventManager, Hitbox, Action(Of HittableBehaviour))
+- uid: Global.SingleHitDetector.#ctor(EventManager,Hitbox,Action{IHittable})
+  name: SingleHitDetector(EventManager, Hitbox, Action<IHittable>)
+  href: api/Global.SingleHitDetector.html#Global_SingleHitDetector__ctor_EventManager_Hitbox_Action_IHittable__
+  commentId: M:Global.SingleHitDetector.#ctor(EventManager,Hitbox,Action{IHittable})
+  name.vb: SingleHitDetector(EventManager, Hitbox, Action(Of IHittable))
+  fullName: SingleHitDetector.SingleHitDetector(EventManager, Hitbox, Action<IHittable>)
+  fullName.vb: SingleHitDetector.SingleHitDetector(EventManager, Hitbox, Action(Of IHittable))
+  nameWithType: SingleHitDetector.SingleHitDetector(EventManager, Hitbox, Action<IHittable>)
+  nameWithType.vb: SingleHitDetector.SingleHitDetector(EventManager, Hitbox, Action(Of IHittable))
 - uid: Global.SingleHitDetector.#ctor*
   name: SingleHitDetector
   href: api/Global.SingleHitDetector.html#Global_SingleHitDetector__ctor_

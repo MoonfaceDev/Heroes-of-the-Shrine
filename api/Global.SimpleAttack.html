@@ -602,13 +602,13 @@ If the list is left empty, the attack can be played after any attack (including 
   
   
   <a id="Global_SimpleAttack_CalculateDamage_" data-uid="Global.SimpleAttack.CalculateDamage*"></a>
-  <h4 id="Global_SimpleAttack_CalculateDamage_HittableBehaviour_" data-uid="Global.SimpleAttack.CalculateDamage(HittableBehaviour)">CalculateDamage(HittableBehaviour)</h4>
+  <h4 id="Global_SimpleAttack_CalculateDamage_Character_" data-uid="Global.SimpleAttack.CalculateDamage(Character)">CalculateDamage(Character)</h4>
   <div class="markdown level1 summary"><p>Calculates the attack damage on a specific hittable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual float CalculateDamage(HittableBehaviour hittableBehaviour)</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual float CalculateDamage(Character character)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -621,9 +621,9 @@ If the list is left empty, the attack can be played after any attack (including 
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.HittableBehaviour.html">HittableBehaviour</a></td>
-        <td><span class="parametername">hittableBehaviour</span></td>
-        <td><p>Hittable to calculate the damage for.</p>
+        <td><a class="xref" href="Global.Character.html">Character</a></td>
+        <td><span class="parametername">character</span></td>
+        <td><p>Character to calculate the damage for.</p>
 </td>
       </tr>
     </tbody>
@@ -689,14 +689,14 @@ The hit detector will detect hits when attack is during active phase.</p>
   
   
   <a id="Global_SimpleAttack_HitCallable_" data-uid="Global.SimpleAttack.HitCallable*"></a>
-  <h4 id="Global_SimpleAttack_HitCallable_HittableBehaviour_" data-uid="Global.SimpleAttack.HitCallable(HittableBehaviour)">HitCallable(HittableBehaviour)</h4>
+  <h4 id="Global_SimpleAttack_HitCallable_IHittable_" data-uid="Global.SimpleAttack.HitCallable(IHittable)">HitCallable(IHittable)</h4>
   <div class="markdown level1 summary"><p>Communicates with the hittable when hit by this attack.
 By default, Applies damage and performs knockback or stun.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void HitCallable(HittableBehaviour hittableBehaviour)</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual void HitCallable(IHittable hittable)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -709,8 +709,8 @@ By default, Applies damage and performs knockback or stun.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.HittableBehaviour.html">HittableBehaviour</a></td>
-        <td><span class="parametername">hittableBehaviour</span></td>
+        <td><a class="xref" href="Global.IHittable.html">IHittable</a></td>
+        <td><span class="parametername">hittable</span></td>
         <td><p>The hittable hit by the attack.</p>
 </td>
       </tr>
