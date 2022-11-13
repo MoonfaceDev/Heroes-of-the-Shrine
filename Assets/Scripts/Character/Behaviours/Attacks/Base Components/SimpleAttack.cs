@@ -146,12 +146,8 @@ public class SimpleAttack : BaseAttack
     {
         SingleHitDetector hitDetector = new(EventManager, hitbox, hittable =>
         {
-            if (!IsHittableTag(hittable.tag)) return;
-            if (hittable.CanGetHit())
-            {
-                hitbox.PlayParticles();
-            }
-
+            if (!IsHittableTag(hittable.Character.tag)) return;
+            hitbox.PlayParticles();
             HitCallable(hittable);
         });
         OnStartActive += () => hitDetector.Start();
@@ -184,32 +180,32 @@ public class SimpleAttack : BaseAttack
     /// <summary>
     /// Calculates the attack damage on a specific hittable.
     /// </summary>
-    /// <param name="hittableBehaviour">Hittable to calculate the damage for.</param>
+    /// <param name="character">Character to calculate the damage for.</param>
     /// <returns>Damage result.</returns>
-    protected virtual float CalculateDamage(HittableBehaviour hittableBehaviour)
+    protected virtual float CalculateDamage(Character character)
     {
-        return GetComponent<AttackManager>().TranspileDamage(this, hittableBehaviour, damage);
+        return GetComponent<AttackManager>().TranspileDamage(this, character, damage);
     }
 
     /// <summary>
     /// Communicates with the hittable when hit by this attack.
     /// By default, Applies damage and performs knockback or stun.
     /// </summary>
-    /// <param name="hittableBehaviour">The hittable hit by the attack.</param>
-    protected virtual void HitCallable(HittableBehaviour hittableBehaviour)
+    /// <param name="hittable">The hittable hit by the attack.</param>
+    protected virtual void HitCallable(IHittable hittable)
     {
-        var processedDamage = CalculateDamage(hittableBehaviour);
-        print(hittableBehaviour.name + " hit by " + AttackName);
+        var processedDamage = CalculateDamage(hittable.Character);
+        print(hittable.Character.name + " hit by " + AttackName);
         switch (hitType)
         {
             case HitType.Knockback:
                 var hitDirection =
-                    (int)Mathf.Sign(hittableBehaviour.MovableObject.WorldPosition.x - MovableObject.WorldPosition.x);
-                hittableBehaviour.Knockback(processedDamage, knockbackPower,
+                    (int)Mathf.Sign(hittable.Character.movableObject.WorldPosition.x - MovableObject.WorldPosition.x);
+                hittable.Knockback(processedDamage, knockbackPower,
                     KnockbackBehaviour.GetRelativeDirection(knockbackDirection, hitDirection));
                 break;
             case HitType.Stun:
-                hittableBehaviour.Stun(processedDamage, stunTime);
+                hittable.Stun(processedDamage, stunTime);
                 break;
         }
     }

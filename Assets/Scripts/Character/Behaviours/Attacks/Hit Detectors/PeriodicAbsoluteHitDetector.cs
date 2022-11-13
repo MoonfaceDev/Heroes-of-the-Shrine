@@ -6,12 +6,12 @@ public class PeriodicAbsoluteHitDetector : BaseHitDetector
 
     private readonly EventManager eventManager;
     private readonly Hitbox hitbox;
-    private readonly Action<HittableBehaviour> hitCallable;
+    private readonly Action<IHittable> hitCallable;
     private readonly float interval;
     private readonly bool startImmediately;
     private EventListener detectPeriodicallyEvent;
 
-    public PeriodicAbsoluteHitDetector(EventManager eventManager, Hitbox hitbox, Action<HittableBehaviour> hitCallable, float interval, bool startImmediately = true)
+    public PeriodicAbsoluteHitDetector(EventManager eventManager, Hitbox hitbox, Action<IHittable> hitCallable, float interval, bool startImmediately = true)
     {
         this.eventManager = eventManager;
         this.hitbox = hitbox;
@@ -32,7 +32,7 @@ public class PeriodicAbsoluteHitDetector : BaseHitDetector
     private void DetectHits()
     {
         OnDetect?.Invoke();
-        var hittables = UnityEngine.Object.FindObjectsOfType<HittableBehaviour>();
+        var hittables = UnityEngine.Object.FindObjectsOfType<HittableHitbox>();
         foreach (var hittable in hittables)
         {
             if (OverlapHittable(hittable, hitbox))

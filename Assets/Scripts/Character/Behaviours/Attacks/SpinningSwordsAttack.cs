@@ -37,11 +37,8 @@ public class SpinningSwordsAttack : NormalAttack
     {
         return new SingleHitDetector(EventManager, attachedHitbox, hittable =>
         {
-            if (!IsHittableTag(hittable.tag)) return;
-            if (hittable.CanGetHit())
-            {
-                attachedHitbox.PlayParticles();
-            }
+            if (!IsHittableTag(hittable.Character.tag)) return;
+            attachedHitbox.PlayParticles();
             HitCallable(hittable);
         });
     }

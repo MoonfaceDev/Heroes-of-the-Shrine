@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 public delegate void HitCallback(float damage);
@@ -7,13 +6,10 @@ public delegate void KnockbackCallback(float damage, float power, float angleDeg
 public delegate void StunCallback(float damage, float time);
 
 [RequireComponent(typeof(HealthSystem))]
-public class HittableBehaviour : CharacterBehaviour
+public class HittableBehaviour : CharacterBehaviour, IHittable
 {
     private const float StunLaunchPower = 1;
     private const float StunLaunchAngel = 90; // degrees
-
-    public List<Hitbox> hitboxes;
-
     public event HitCallback OnHit;
     public event KnockbackCallback OnKnockback;
     public event StunCallback OnStun;
@@ -39,7 +35,7 @@ public class HittableBehaviour : CharacterBehaviour
     {
         return damage;
     }
-
+    
     public void Hit(float damage)
     {
         if (!CanGetHit())

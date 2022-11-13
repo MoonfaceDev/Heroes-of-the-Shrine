@@ -3,19 +3,19 @@ using UnityEngine.Serialization;
 
 public class ElectrifyAttack : NormalAttack
 {
-    [Header("Electrify")]
-    public float electrifyDuration;
+    [Header("Electrify")] public float electrifyDuration;
     public float electrifySpeedMultiplier;
-    [Header("Periodic hits")]
-    public Hitbox periodicHitbox;
+    [Header("Periodic hits")] public Hitbox periodicHitbox;
     public float periodicHitInterval;
     public int periodicHitCount;
     public float periodicHitElectrifyRate;
     public float periodicStunTime;
     public float periodicDamage;
-    [Header("Explosion")]
-    public Hitbox explosionHitbox;
-    [FormerlySerializedAs("epxlosionKnockbackPower")] public float explosionKnockbackPower;
+    [Header("Explosion")] public Hitbox explosionHitbox;
+
+    [FormerlySerializedAs("epxlosionKnockbackPower")]
+    public float explosionKnockbackPower;
+
     public float explosionKnockbackDirection;
     public float explosionDamage;
 
@@ -26,11 +26,8 @@ public class ElectrifyAttack : NormalAttack
     {
         periodicHitDetector = new PeriodicAbsoluteHitDetector(EventManager, periodicHitbox, hittable =>
         {
-            if (!IsHittableTag(hittable.tag)) return;
-            if (hittable.CanGetHit())
-            {
-                periodicHitbox.PlayParticles();
-            }
+            if (!IsHittableTag(hittable.Character.tag)) return;
+            periodicHitbox.PlayParticles();
             HitCallable(hittable);
         }, periodicHitInterval);
 
@@ -39,11 +36,8 @@ public class ElectrifyAttack : NormalAttack
 
         explosionHitDetector = new SingleHitDetector(EventManager, explosionHitbox, hittable =>
         {
-            if (!IsHittableTag(hittable.tag)) return;
-            if (hittable.CanGetHit())
-            {
-                explosionHitbox.PlayParticles();
-            }
+            if (!IsHittableTag(hittable.Character.tag)) return;
+            explosionHitbox.PlayParticles();
             ExplosionHitCallable(hittable);
         });
 
@@ -68,19 +62,19 @@ public class ElectrifyAttack : NormalAttack
         };
     }
 
-    protected override float CalculateDamage(HittableBehaviour hittableBehaviour)
+    protected override float CalculateDamage(Character character)
     {
-        return GetComponent<AttackManager>().TranspileDamage(this, hittableBehaviour, periodicDamage);
+        return GetComponent<AttackManager>().TranspileDamage(this, character, periodicDamage);
     }
 
-    protected override void HitCallable(HittableBehaviour hittableBehaviour)
+    protected override void HitCallable(IHittable hittable)
     {
-        var processedDamage = CalculateDamage(hittableBehaviour);
-        print(hittableBehaviour.name + " hit by periodic " + AttackName);
-        hittableBehaviour.Stun(processedDamage, periodicStunTime);
+        var processedDamage = CalculateDamage(hittable.Character);
+        print(hittable.Character.name + " hit by periodic " + AttackName);
+        hittable.Stun(processedDamage, periodicStunTime);
         if (Random.Range(0f, 1f) < periodicHitElectrifyRate)
         {
-            var electrifiedEffect = hittableBehaviour.GetComponent<ElectrifiedEffect>();
+            var electrifiedEffect = hittable.Character.GetComponent<ElectrifiedEffect>();
             if (electrifiedEffect)
             {
                 electrifiedEffect.Play(electrifyDuration, electrifySpeedMultiplier);
@@ -88,18 +82,20 @@ public class ElectrifyAttack : NormalAttack
         }
     }
 
-    private float CalculateExplosionDamage(HittableBehaviour hittableBehaviour)
+    private float CalculateExplosionDamage(Character character)
     {
-        return GetComponent<AttackManager>().TranspileDamage(this, hittableBehaviour, explosionDamage);
+        return GetComponent<AttackManager>().TranspileDamage(this, character, explosionDamage);
     }
 
-    private void ExplosionHitCallable(HittableBehaviour hittableBehaviour)
+    private void ExplosionHitCallable(IHittable hittable)
     {
-        var processedDamage = CalculateExplosionDamage(hittableBehaviour);
-        print(hittableBehaviour.name + " hit by explosion " + AttackName);
-        var hitDirection = (int)Mathf.Sign(hittableBehaviour.MovableObject.WorldPosition.x - MovableObject.WorldPosition.x);
-        hittableBehaviour.Knockback(processedDamage, explosionKnockbackPower, KnockbackBehaviour.GetRelativeDirection(explosionKnockbackDirection, hitDirection));
-        var electrifiedEffect = hittableBehaviour.GetComponent<ElectrifiedEffect>();
+        var processedDamage = CalculateExplosionDamage(hittable.Character);
+        print(hittable.Character.name + " hit by explosion " + AttackName);
+        var hitDirection =
+            (int)Mathf.Sign(hittable.Character.movableObject.WorldPosition.x - MovableObject.WorldPosition.x);
+        hittable.Knockback(processedDamage, explosionKnockbackPower,
+            KnockbackBehaviour.GetRelativeDirection(explosionKnockbackDirection, hitDirection));
+        var electrifiedEffect = hittable.Character.GetComponent<ElectrifiedEffect>();
         if (electrifiedEffect)
         {
             electrifiedEffect.Play(electrifyDuration, electrifySpeedMultiplier);

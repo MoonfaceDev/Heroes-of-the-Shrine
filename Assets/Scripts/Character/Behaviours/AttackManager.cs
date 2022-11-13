@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public delegate float DamageBonus(BaseAttack attack, HittableBehaviour hittable);
+public delegate float DamageBonus(BaseAttack attack, Character character);
 
 public class AttackManager : PlayableBehaviour
 {
@@ -96,10 +96,10 @@ public class AttackManager : PlayableBehaviour
         }
     }
 
-    public float TranspileDamage(BaseAttack attack, HittableBehaviour hittable, float damage)
+    public float TranspileDamage(BaseAttack attack, Character character, float damage)
     {
-        damage += damageBonuses.Sum(bonus => bonus(attack, hittable));
-        return damageMultipliers.Aggregate(damage, (current, bonus) => current * bonus(attack, hittable));
+        damage += damageBonuses.Sum(bonus => bonus(attack, character));
+        return damageMultipliers.Aggregate(damage, (current, bonus) => current * bonus(attack, character));
     }
 
     public void AttachDamageBonus(DamageBonus bonus)

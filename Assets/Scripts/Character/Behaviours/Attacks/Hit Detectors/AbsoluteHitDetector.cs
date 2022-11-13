@@ -3,9 +3,9 @@ using System;
 public class AbsoluteHitDetector : BaseHitDetector
 {
     private readonly Hitbox hitbox;
-    private readonly Action<HittableBehaviour> hitCallable;
+    private readonly Action<IHittable> hitCallable;
 
-    public AbsoluteHitDetector(Hitbox hitbox, Action<HittableBehaviour> hitCallable)
+    public AbsoluteHitDetector(Hitbox hitbox, Action<IHittable> hitCallable)
     {
         this.hitbox = hitbox;
         this.hitCallable = hitCallable;
@@ -13,7 +13,7 @@ public class AbsoluteHitDetector : BaseHitDetector
 
     public override void Start()
     {
-        var hittables = UnityEngine.Object.FindObjectsOfType<HittableBehaviour>();
+        var hittables = UnityEngine.Object.FindObjectsOfType<HittableHitbox>();
         foreach (var hittable in hittables)
         {
             if (OverlapHittable(hittable, hitbox))

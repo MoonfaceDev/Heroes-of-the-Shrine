@@ -5,11 +5,11 @@ public class SingleHitDetector : BaseHitDetector
 {
     private readonly EventManager eventManager;
     private readonly Hitbox hitbox;
-    private readonly Action<HittableBehaviour> hitCallable;
+    private readonly Action<IHittable> hitCallable;
     private readonly HashSet<HittableBehaviour> alreadyHit;
     private EventListener eventListener;
 
-    public SingleHitDetector(EventManager eventManager, Hitbox hitbox, Action<HittableBehaviour> hitCallable)
+    public SingleHitDetector(EventManager eventManager, Hitbox hitbox, Action<IHittable> hitCallable)
     {
         this.eventManager = eventManager;
         this.hitbox = hitbox;
@@ -23,12 +23,12 @@ public class SingleHitDetector : BaseHitDetector
             () => true,
             () =>
             {
-                var hittables = UnityEngine.Object.FindObjectsOfType<HittableBehaviour>();
+                var hittables = UnityEngine.Object.FindObjectsOfType<HittableHitbox>();
                 foreach (var hittable in hittables)
                 {
-                    if (!alreadyHit.Contains(hittable) && OverlapHittable(hittable, hitbox))
+                    if (!alreadyHit.Contains(hittable.hittableBehaviour) && OverlapHittable(hittable, hitbox))
                     {
-                        alreadyHit.Add(hittable);
+                        alreadyHit.Add(hittable.hittableBehaviour);
                         hitCallable(hittable);
                     }
                 }

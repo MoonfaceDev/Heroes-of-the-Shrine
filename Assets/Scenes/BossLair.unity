@@ -147,11 +147,7 @@ GameObject:
   - component: {fileID: 63080241}
   - component: {fileID: 63080240}
   - component: {fileID: 63080239}
-  - component: {fileID: 63080238}
   - component: {fileID: 63080237}
-  - component: {fileID: 63080236}
-  - component: {fileID: 63080235}
-  - component: {fileID: 63080234}
   m_Layer: 0
   m_Name: CaveGoblinPossesed
   m_TagString: Enemy.Goblin.Cave
@@ -159,46 +155,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &63080234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63080233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cfe8175de16ba346a6957969e6a94ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particles: {fileID: 0}
---- !u!114 &63080235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63080233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 595f0ae187581934e9415feea720a763, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &63080236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63080233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f845d9457f00da341ab2556b6b7cc9b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTag: Player
-  rageHealthThreshold: 30
-  rageDamageMultiplier: 0.5
 --- !u!95 &63080237
 Animator:
   serializedVersion: 4
@@ -209,7 +165,7 @@ Animator:
   m_GameObject: {fileID: 63080233}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 89f5a48996a7c0a4fbcb346d7cc35246, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -219,35 +175,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &63080238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63080233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 456a183db1e8752488fe8e192957fb8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instant: 0
-  interruptible: 1
-  hardRecovery: 0
-  previousAttacks:
-  - {fileID: 63080239}
-  midair: 0
-  anticipateDuration: 0.2
-  activeDuration: 0.2
-  recoveryDuration: 0.1
-  hitbox: {fileID: 153687729}
-  overrideDefaultHittableTags: 0
-  hittableTags: []
-  damage: 10
-  hitType: 1
-  knockbackPower: 0
-  knockbackDirection: 0
-  stunTime: 0.5
 --- !u!114 &63080239
 MonoBehaviour:
   m_ObjectHideFlags: 0

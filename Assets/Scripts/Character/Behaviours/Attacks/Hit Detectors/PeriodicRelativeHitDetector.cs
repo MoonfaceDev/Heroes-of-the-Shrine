@@ -6,13 +6,13 @@ public class PeriodicRelativeHitDetector : BaseHitDetector
 {
     private readonly EventManager eventManager;
     private readonly Hitbox hitbox;
-    private readonly Action<HittableBehaviour> hitCallable;
+    private readonly Action<IHittable> hitCallable;
     private readonly float interval;
     private readonly bool startImmediately;
     private EventListener detectPeriodicallyEvent;
     private readonly Dictionary<HittableBehaviour, float> hitTimes;
 
-    public PeriodicRelativeHitDetector(EventManager eventManager, Hitbox hitbox, Action<HittableBehaviour> hitCallable, float interval, bool startImmediately = true)
+    public PeriodicRelativeHitDetector(EventManager eventManager, Hitbox hitbox, Action<IHittable> hitCallable, float interval, bool startImmediately = true)
     {
         this.eventManager = eventManager;
         this.hitbox = hitbox;
@@ -29,19 +29,19 @@ public class PeriodicRelativeHitDetector : BaseHitDetector
 
     private void DetectHits()
     {
-        var hittables = UnityEngine.Object.FindObjectsOfType<HittableBehaviour>();
+        var hittables = UnityEngine.Object.FindObjectsOfType<HittableHitbox>();
         foreach (var hittable in hittables)
         {
-            if (OverlapHittable(hittable, hitbox) && !hitTimes.ContainsKey(hittable))
+            if (OverlapHittable(hittable, hitbox) && !hitTimes.ContainsKey(hittable.hittableBehaviour))
             {
                 if (!startImmediately)
                 {
-                    hitTimes[hittable] = Time.time;
+                    hitTimes[hittable.hittableBehaviour] = Time.time;
                     continue;
                 }
-                if (Time.time - hitTimes[hittable] >= interval)
+                if (Time.time - hitTimes[hittable.hittableBehaviour] >= interval)
                 {
-                    hitTimes[hittable] = Time.time;
+                    hitTimes[hittable.hittableBehaviour] = Time.time;
                     hitCallable(hittable);
                 }
             }

@@ -65,7 +65,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!1 &5884619157808626362
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +235,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!1 &5884619158051856729
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +300,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!1 &5884619158362908890
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,7 +470,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!1 &5884619158596542725
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,7 +535,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!1 &5884619158741390458
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,7 +615,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
 --- !u!114 &6526483692788110630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,7 +683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f271e06fd2ef53a4c87299bd48bc9f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destoryOnDeath: 1
+  destroyOnDeath: 1
   deathAnimationDuration: 3
 --- !u!114 &5884619158741390459
 MonoBehaviour:
@@ -703,8 +697,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03767b56dc6ba3740842c0db368e9321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitboxes:
-  - {fileID: 5884619159192989553}
 --- !u!114 &5884619158741390436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -800,7 +792,6 @@ MonoBehaviour:
   hittableTags:
   - Player
   lastAttack: {fileID: 0}
-  lastAttackTime: 0
 --- !u!114 &5884619158741390443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -814,7 +805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instant: 0
-  interruptable: 1
+  interruptible: 1
   hardRecovery: 0
   previousAttacks: []
   midair: 0
@@ -842,7 +833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instant: 0
-  interruptable: 1
+  interruptible: 1
   hardRecovery: 0
   previousAttacks:
   - {fileID: 5884619158741390443}
@@ -871,7 +862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instant: 0
-  interruptable: 1
+  interruptible: 1
   hardRecovery: 0
   previousAttacks:
   - {fileID: 5884619158741390442}
@@ -947,7 +938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instant: 0
-  interruptable: 1
+  interruptible: 1
   hardRecovery: 0
   previousAttacks: []
   midair: 0
@@ -971,7 +962,7 @@ MonoBehaviour:
   periodicStunTime: 0.5
   periodicDamage: 2.5
   explosionHitbox: {fileID: 5884619158396451716}
-  epxlosionKnockbackPower: 10
+  explosionKnockbackPower: 10
   explosionKnockbackDirection: 30
   explosionDamage: 10
 --- !u!114 &5884619158741390419
@@ -996,8 +987,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5884619159192989552}
-  - component: {fileID: 5884619159192989553}
   - component: {fileID: 9044924591447564905}
+  - component: {fileID: 5884619159192989553}
+  - component: {fileID: 3425261661105341904}
   m_Layer: 0
   m_Name: Goblin Hitbox
   m_TagString: Untagged
@@ -1013,26 +1005,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5884619159192989555}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.65, y: -0.4, z: 0}
+  m_LocalPosition: {x: -0.65, y: -0.4000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5884619158741390439}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5884619159192989553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5884619159192989555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  size: {x: 1.3, y: 1.82, z: 1}
 --- !u!114 &9044924591447564905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1052,4 +1031,29 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
-  wawa: {x: 0, y: 0, z: 0}
+--- !u!114 &5884619159192989553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5884619159192989555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 1.3, y: 1.82, z: 1}
+--- !u!114 &3425261661105341904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5884619159192989555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f61bf6815ea54901837aaba13eb795b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hittableBehaviour: {fileID: 5884619158741390459}
