@@ -1,10 +1,11 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Scrollbar))]
 public class SuperArmorBar : MonoBehaviour
 {
-    public SuperArmorHittableBehaviour hittableBehaviour;
+    public SuperArmorEffect superArmorEffect;
 
     private Scrollbar scrollbar;
 
@@ -15,13 +16,17 @@ public class SuperArmorBar : MonoBehaviour
 
     private void Update()
     {
+        if (!superArmorEffect)
+        {
+            Destroy(gameObject);
+        }
         scrollbar.size = Mathf.Lerp(scrollbar.size, GetValue(), 3f * Time.deltaTime);
     }
 
     private float GetValue()
     {
-        return hittableBehaviour.Fraction != 0
-            ? hittableBehaviour.Fraction
-            : (Time.time - hittableBehaviour.armorCooldownStart) / hittableBehaviour.armorCooldown;
+        return superArmorEffect.GetProgress() != 0
+            ? superArmorEffect.GetProgress()
+            : (Time.time - superArmorEffect.armorCooldownStart) / superArmorEffect.armorCooldown;
     }
 }

@@ -15,6 +15,10 @@ public class HealthBar : MonoBehaviour
 
     private void Update()
     {
+        if (!healthSystem)
+        {
+            Destroy(gameObject);
+        }
         scrollbar.size = Mathf.Lerp(scrollbar.size, healthSystem.Fraction, 3f * Time.deltaTime);
     }
 }
