@@ -575,11 +575,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 316202118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 000ab94428d282341bdb08b7a791305d, type: 3}
+  m_Script: {fileID: 11500000, guid: f61bf6815ea54901837aaba13eb795b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hittableBehaviour: {fileID: 63080256}
-  damageMultiplier: 0.5
 --- !u!1 &350069657
 GameObject:
   m_ObjectHideFlags: 0
@@ -1590,10 +1589,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1725771218}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f61bf6815ea54901837aaba13eb795b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 000ab94428d282341bdb08b7a791305d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hittableBehaviour: {fileID: 63080256}
+  damageMultiplier: 0.5
 --- !u!1 &1824913454
 GameObject:
   m_ObjectHideFlags: 0
