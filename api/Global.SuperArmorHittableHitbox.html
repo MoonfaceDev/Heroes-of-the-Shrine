@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class HittableHitbox
+    <title>Class SuperArmorHittableHitbox
    | Heroes of the Shrine </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class HittableHitbox
+    <meta name="title" content="Class SuperArmorHittableHitbox
    | Heroes of the Shrine ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,39 +78,51 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Global.HittableHitbox">
+            <article class="content wrap" id="_content" data-uid="Global.SuperArmorHittableHitbox">
   
   
-  <h1 id="Global_HittableHitbox" data-uid="Global.HittableHitbox" class="text-break">Class HittableHitbox
+  <h1 id="Global_SuperArmorHittableHitbox" data-uid="Global.SuperArmorHittableHitbox" class="text-break">Class SuperArmorHittableHitbox
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">HittableHitbox</span></div>
-      <div class="level2"><a class="xref" href="Global.SuperArmorHittableHitbox.html">SuperArmorHittableHitbox</a></div>
+    <div class="level1"><a class="xref" href="Global.HittableHitbox.html">HittableHitbox</a></div>
+    <div class="level2"><span class="xref">SuperArmorHittableHitbox</span></div>
   </div>
   <div class="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="Global.IHittable.html">IHittable</a></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_hittableBehaviour">HittableHitbox.hittableBehaviour</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_Hitbox">HittableHitbox.Hitbox</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_Character">HittableHitbox.Character</a>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Global_HittableHitbox_syntax">Syntax</h5>
+  <h5 id="Global_SuperArmorHittableHitbox_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class HittableHitbox : MonoBehaviour, IHittable</code></pre>
+    <pre><code class="lang-csharp hljs">public class SuperArmorHittableHitbox : HittableHitbox, IHittable</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
   
   
-  <h4 id="Global_HittableHitbox_hittableBehaviour" data-uid="Global.HittableHitbox.hittableBehaviour">hittableBehaviour</h4>
+  <h4 id="Global_SuperArmorHittableHitbox_damageMultiplier" data-uid="Global.SuperArmorHittableHitbox.damageMultiplier">damageMultiplier</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public HittableBehaviour hittableBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public float damageMultiplier</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -122,59 +134,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.HittableBehaviour.html">HittableBehaviour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-  </h3>
-  
-  
-  <a id="Global_HittableHitbox_Character_" data-uid="Global.HittableHitbox.Character*"></a>
-  <h4 id="Global_HittableHitbox_Character" data-uid="Global.HittableHitbox.Character">Character</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Character Character { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.Character.html">Character</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_HittableHitbox_Hitbox_" data-uid="Global.HittableHitbox.Hitbox*"></a>
-  <h4 id="Global_HittableHitbox_Hitbox" data-uid="Global.HittableHitbox.Hitbox">Hitbox</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Hitbox Hitbox { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.Hitbox.html">Hitbox</a></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -183,23 +143,25 @@
   </h3>
   
   
-  <a id="Global_HittableHitbox_Awake_" data-uid="Global.HittableHitbox.Awake*"></a>
-  <h4 id="Global_HittableHitbox_Awake" data-uid="Global.HittableHitbox.Awake">Awake()</h4>
+  <a id="Global_SuperArmorHittableHitbox_Awake_" data-uid="Global.SuperArmorHittableHitbox.Awake*"></a>
+  <h4 id="Global_SuperArmorHittableHitbox_Awake" data-uid="Global.SuperArmorHittableHitbox.Awake">Awake()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void Awake()</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void Awake()</code></pre>
   </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_Awake">HittableHitbox.Awake()</a></div>
   
   
-  <a id="Global_HittableHitbox_Hit_" data-uid="Global.HittableHitbox.Hit*"></a>
-  <h4 id="Global_HittableHitbox_Hit_System_Single_" data-uid="Global.HittableHitbox.Hit(System.Single)">Hit(Single)</h4>
+  <a id="Global_SuperArmorHittableHitbox_Hit_" data-uid="Global.SuperArmorHittableHitbox.Hit*"></a>
+  <h4 id="Global_SuperArmorHittableHitbox_Hit_System_Single_" data-uid="Global.SuperArmorHittableHitbox.Hit(System.Single)">Hit(Single)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Hit(float damage)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Hit(float damage)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -218,15 +180,17 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_Hit_System_Single_">HittableHitbox.Hit(Single)</a></div>
   
   
-  <a id="Global_HittableHitbox_Knockback_" data-uid="Global.HittableHitbox.Knockback*"></a>
-  <h4 id="Global_HittableHitbox_Knockback_System_Single_System_Single_System_Single_" data-uid="Global.HittableHitbox.Knockback(System.Single,System.Single,System.Single)">Knockback(Single, Single, Single)</h4>
+  <a id="Global_SuperArmorHittableHitbox_Knockback_" data-uid="Global.SuperArmorHittableHitbox.Knockback*"></a>
+  <h4 id="Global_SuperArmorHittableHitbox_Knockback_System_Single_System_Single_System_Single_" data-uid="Global.SuperArmorHittableHitbox.Knockback(System.Single,System.Single,System.Single)">Knockback(Single, Single, Single)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Knockback(float damage, float power, float angleDegrees)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Knockback(float damage, float power, float angleDegrees)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -255,15 +219,17 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_Knockback_System_Single_System_Single_System_Single_">HittableHitbox.Knockback(Single, Single, Single)</a></div>
   
   
-  <a id="Global_HittableHitbox_Stun_" data-uid="Global.HittableHitbox.Stun*"></a>
-  <h4 id="Global_HittableHitbox_Stun_System_Single_System_Single_" data-uid="Global.HittableHitbox.Stun(System.Single,System.Single)">Stun(Single, Single)</h4>
+  <a id="Global_SuperArmorHittableHitbox_Stun_" data-uid="Global.SuperArmorHittableHitbox.Stun*"></a>
+  <h4 id="Global_SuperArmorHittableHitbox_Stun_System_Single_System_Single_" data-uid="Global.SuperArmorHittableHitbox.Stun(System.Single,System.Single)">Stun(Single, Single)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Stun(float damage, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Stun(float damage, float time)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -287,6 +253,8 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_Stun_System_Single_System_Single_">HittableHitbox.Stun(Single, Single)</a></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Global.IHittable.html">IHittable</a>

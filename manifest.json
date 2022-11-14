@@ -184,7 +184,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.BaseEffect.html",
-          "hash": "9Uquaqpao1IINj5Ty0BCOgzBugfB3x6B0YSFMgEai9w="
+          "hash": "9d3MtENNWyyCL9ph3zvrZ0NoCyyzmdv4tJdRlGLusQE="
         }
       },
       "is_incremental": false,
@@ -856,7 +856,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.HittableBehaviour.html",
-          "hash": "SDewjIakOfO5kYCB7/SelX3FrGSK/S5ZKAcIc6HFBFA="
+          "hash": "D3A1mcJ5Snrnw1hRulrFjmS++1ZKyqfDdH6D75Zb11I="
         }
       },
       "is_incremental": false,
@@ -868,7 +868,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.HittableHitbox.html",
-          "hash": "WHOPcZYZGAAnpjlbCvn1KgA1BkezjoyOiRLK9D9VPO4="
+          "hash": "51nXZeUu6FdR7F8M8+HbuXAY9cFo25u0+5OflXtyIiw="
         }
       },
       "is_incremental": false,
@@ -1360,7 +1360,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.SuperArmorBar.html",
-          "hash": "CjK+esV0iAW51dnc4V4T805aFiyq79fAZjDmsWh2SiU="
+          "hash": "86NFG+dTVauEKLMcwmPM/ms+VwxvefOCec7DqNEcR+Y="
         }
       },
       "is_incremental": false,
@@ -1368,11 +1368,23 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.SuperArmorHittableBehaviour.yml",
+      "source_relative_path": "api/Global.SuperArmorEffect.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Global.SuperArmorHittableBehaviour.html",
-          "hash": "WqugjAyrSjUEtupwilmmYYK2jBKzBJ8Uvn3tBF6AnUs="
+          "relative_path": "api/Global.SuperArmorEffect.html",
+          "hash": "Ru4KOkyy07Miu6PhRPjjYpOpKHxkFOKGsa4TvQBOOSc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.SuperArmorHittableHitbox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.SuperArmorHittableHitbox.html",
+          "hash": "P9lkxIIpgDSxP0RFanoTDMYagNIJINEjPFKNX9b9TqI="
         }
       },
       "is_incremental": false,
@@ -1468,7 +1480,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "pVQ9EJjOiIsMTOxwX/xXMDZ50EEO+C4ezRuu28mOjkM="
+          "hash": "qBj+UTEl3e0JHAteUR0ylFCkOi/KKrsd0WH0nQgB8AA="
         }
       },
       "is_incremental": false,
@@ -1480,7 +1492,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "tuM6BQYVbeAHjlZQ5ewvljEfXK21gfi/c26s/w177eo="
+          "hash": "m1A6qBipbkpJSB/4PJu5YCu8QncbLI2beUbEHmYwDfw="
         }
       },
       "is_incremental": false,
@@ -1691,7 +1703,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 121,
+          "total_file_count": 122,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

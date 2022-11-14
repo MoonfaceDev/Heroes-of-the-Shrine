@@ -3353,6 +3353,19 @@ references:
   commentId: T:Global.HittableHitbox
   fullName: HittableHitbox
   nameWithType: HittableHitbox
+- uid: Global.HittableHitbox.Awake
+  name: Awake()
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Awake
+  commentId: M:Global.HittableHitbox.Awake
+  fullName: HittableHitbox.Awake()
+  nameWithType: HittableHitbox.Awake()
+- uid: Global.HittableHitbox.Awake*
+  name: Awake
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Awake_
+  commentId: Overload:Global.HittableHitbox.Awake
+  isSpec: "True"
+  fullName: HittableHitbox.Awake
+  nameWithType: HittableHitbox.Awake
 - uid: Global.HittableHitbox.Character
   name: Character
   href: api/Global.HittableHitbox.html#Global_HittableHitbox_Character
@@ -5498,107 +5511,152 @@ references:
   isSpec: "True"
   fullName: SuperArmorBar.Awake
   nameWithType: SuperArmorBar.Awake
-- uid: Global.SuperArmorBar.hittableBehaviour
-  name: hittableBehaviour
-  href: api/Global.SuperArmorBar.html#Global_SuperArmorBar_hittableBehaviour
-  commentId: F:Global.SuperArmorBar.hittableBehaviour
-  fullName: SuperArmorBar.hittableBehaviour
-  nameWithType: SuperArmorBar.hittableBehaviour
-- uid: Global.SuperArmorHittableBehaviour
-  name: SuperArmorHittableBehaviour
-  href: api/Global.SuperArmorHittableBehaviour.html
-  commentId: T:Global.SuperArmorHittableBehaviour
-  fullName: SuperArmorHittableBehaviour
-  nameWithType: SuperArmorHittableBehaviour
-- uid: Global.SuperArmorHittableBehaviour.ArmorActive
-  name: ArmorActive
-  href: api/Global.SuperArmorHittableBehaviour.html#Global_SuperArmorHittableBehaviour_ArmorActive
-  commentId: P:Global.SuperArmorHittableBehaviour.ArmorActive
-  fullName: SuperArmorHittableBehaviour.ArmorActive
-  nameWithType: SuperArmorHittableBehaviour.ArmorActive
-- uid: Global.SuperArmorHittableBehaviour.ArmorActive*
-  name: ArmorActive
-  href: api/Global.SuperArmorHittableBehaviour.html#Global_SuperArmorHittableBehaviour_ArmorActive_
-  commentId: Overload:Global.SuperArmorHittableBehaviour.ArmorActive
-  isSpec: "True"
-  fullName: SuperArmorHittableBehaviour.ArmorActive
-  nameWithType: SuperArmorHittableBehaviour.ArmorActive
-- uid: Global.SuperArmorHittableBehaviour.armorCooldown
+- uid: Global.SuperArmorBar.superArmorEffect
+  name: superArmorEffect
+  href: api/Global.SuperArmorBar.html#Global_SuperArmorBar_superArmorEffect
+  commentId: F:Global.SuperArmorBar.superArmorEffect
+  fullName: SuperArmorBar.superArmorEffect
+  nameWithType: SuperArmorBar.superArmorEffect
+- uid: Global.SuperArmorEffect
+  name: SuperArmorEffect
+  href: api/Global.SuperArmorEffect.html
+  commentId: T:Global.SuperArmorEffect
+  fullName: SuperArmorEffect
+  nameWithType: SuperArmorEffect
+- uid: Global.SuperArmorEffect.armorCooldown
   name: armorCooldown
-  href: api/Global.SuperArmorHittableBehaviour.html#Global_SuperArmorHittableBehaviour_armorCooldown
-  commentId: F:Global.SuperArmorHittableBehaviour.armorCooldown
-  fullName: SuperArmorHittableBehaviour.armorCooldown
-  nameWithType: SuperArmorHittableBehaviour.armorCooldown
-- uid: Global.SuperArmorHittableBehaviour.armorCooldownStart
+  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_armorCooldown
+  commentId: F:Global.SuperArmorEffect.armorCooldown
+  fullName: SuperArmorEffect.armorCooldown
+  nameWithType: SuperArmorEffect.armorCooldown
+- uid: Global.SuperArmorEffect.armorCooldownStart
   name: armorCooldownStart
-  href: api/Global.SuperArmorHittableBehaviour.html#Global_SuperArmorHittableBehaviour_armorCooldownStart
-  commentId: F:Global.SuperArmorHittableBehaviour.armorCooldownStart
-  fullName: SuperArmorHittableBehaviour.armorCooldownStart
-  nameWithType: SuperArmorHittableBehaviour.armorCooldownStart
-- uid: Global.SuperArmorHittableBehaviour.armorHealth
+  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_armorCooldownStart
+  commentId: F:Global.SuperArmorEffect.armorCooldownStart
+  fullName: SuperArmorEffect.armorCooldownStart
+  nameWithType: SuperArmorEffect.armorCooldownStart
+- uid: Global.SuperArmorEffect.armorHealth
   name: armorHealth
-  href: api/Global.SuperArmorHittableBehaviour.html#Global_SuperArmorHittableBehaviour_armorHealth
-  commentId: F:Global.SuperArmorHittableBehaviour.armorHealth
-  fullName: SuperArmorHittableBehaviour.armorHealth
-  nameWithType: SuperArmorHittableBehaviour.armorHealth
-- uid: Global.SuperArmorHittableBehaviour.damageMultiplier
+  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_armorHealth
+  commentId: F:Global.SuperArmorEffect.armorHealth
+  fullName: SuperArmorEffect.armorHealth
+  nameWithType: SuperArmorEffect.armorHealth
+- uid: Global.SuperArmorEffect.Awake
+  name: Awake()
+  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_Awake
+  commentId: M:Global.SuperArmorEffect.Awake
+  fullName: SuperArmorEffect.Awake()
+  nameWithType: SuperArmorEffect.Awake()
+- uid: Global.SuperArmorEffect.Awake*
+  name: Awake
+  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_Awake_
+  commentId: Overload:Global.SuperArmorEffect.Awake
+  isSpec: "True"
+  fullName: SuperArmorEffect.Awake
+  nameWithType: SuperArmorEffect.Awake
+- uid: Global.SuperArmorEffect.GetProgress
+  name: GetProgress()
+  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_GetProgress
+  commentId: M:Global.SuperArmorEffect.GetProgress
+  fullName: SuperArmorEffect.GetProgress()
+  nameWithType: SuperArmorEffect.GetProgress()
+- uid: Global.SuperArmorEffect.GetProgress*
+  name: GetProgress
+  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_GetProgress_
+  commentId: Overload:Global.SuperArmorEffect.GetProgress
+  isSpec: "True"
+  fullName: SuperArmorEffect.GetProgress
+  nameWithType: SuperArmorEffect.GetProgress
+- uid: Global.SuperArmorEffect.HitArmor(System.Single)
+  name: HitArmor(Single)
+  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_HitArmor_System_Single_
+  commentId: M:Global.SuperArmorEffect.HitArmor(System.Single)
+  fullName: SuperArmorEffect.HitArmor(System.Single)
+  nameWithType: SuperArmorEffect.HitArmor(Single)
+- uid: Global.SuperArmorEffect.HitArmor*
+  name: HitArmor
+  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_HitArmor_
+  commentId: Overload:Global.SuperArmorEffect.HitArmor
+  isSpec: "True"
+  fullName: SuperArmorEffect.HitArmor
+  nameWithType: SuperArmorEffect.HitArmor
+- uid: Global.SuperArmorEffect.Stop
+  name: Stop()
+  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_Stop
+  commentId: M:Global.SuperArmorEffect.Stop
+  fullName: SuperArmorEffect.Stop()
+  nameWithType: SuperArmorEffect.Stop()
+- uid: Global.SuperArmorEffect.Stop*
+  name: Stop
+  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_Stop_
+  commentId: Overload:Global.SuperArmorEffect.Stop
+  isSpec: "True"
+  fullName: SuperArmorEffect.Stop
+  nameWithType: SuperArmorEffect.Stop
+- uid: Global.SuperArmorHittableHitbox
+  name: SuperArmorHittableHitbox
+  href: api/Global.SuperArmorHittableHitbox.html
+  commentId: T:Global.SuperArmorHittableHitbox
+  fullName: SuperArmorHittableHitbox
+  nameWithType: SuperArmorHittableHitbox
+- uid: Global.SuperArmorHittableHitbox.Awake
+  name: Awake()
+  href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_Awake
+  commentId: M:Global.SuperArmorHittableHitbox.Awake
+  fullName: SuperArmorHittableHitbox.Awake()
+  nameWithType: SuperArmorHittableHitbox.Awake()
+- uid: Global.SuperArmorHittableHitbox.Awake*
+  name: Awake
+  href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_Awake_
+  commentId: Overload:Global.SuperArmorHittableHitbox.Awake
+  isSpec: "True"
+  fullName: SuperArmorHittableHitbox.Awake
+  nameWithType: SuperArmorHittableHitbox.Awake
+- uid: Global.SuperArmorHittableHitbox.damageMultiplier
   name: damageMultiplier
-  href: api/Global.SuperArmorHittableBehaviour.html#Global_SuperArmorHittableBehaviour_damageMultiplier
-  commentId: F:Global.SuperArmorHittableBehaviour.damageMultiplier
-  fullName: SuperArmorHittableBehaviour.damageMultiplier
-  nameWithType: SuperArmorHittableBehaviour.damageMultiplier
-- uid: Global.SuperArmorHittableBehaviour.DoKnockback(System.Single,System.Single,System.Single)
-  name: DoKnockback(Single, Single, Single)
-  href: api/Global.SuperArmorHittableBehaviour.html#Global_SuperArmorHittableBehaviour_DoKnockback_System_Single_System_Single_System_Single_
-  commentId: M:Global.SuperArmorHittableBehaviour.DoKnockback(System.Single,System.Single,System.Single)
-  fullName: SuperArmorHittableBehaviour.DoKnockback(System.Single, System.Single, System.Single)
-  nameWithType: SuperArmorHittableBehaviour.DoKnockback(Single, Single, Single)
-- uid: Global.SuperArmorHittableBehaviour.DoKnockback*
-  name: DoKnockback
-  href: api/Global.SuperArmorHittableBehaviour.html#Global_SuperArmorHittableBehaviour_DoKnockback_
-  commentId: Overload:Global.SuperArmorHittableBehaviour.DoKnockback
+  href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_damageMultiplier
+  commentId: F:Global.SuperArmorHittableHitbox.damageMultiplier
+  fullName: SuperArmorHittableHitbox.damageMultiplier
+  nameWithType: SuperArmorHittableHitbox.damageMultiplier
+- uid: Global.SuperArmorHittableHitbox.Hit(System.Single)
+  name: Hit(Single)
+  href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_Hit_System_Single_
+  commentId: M:Global.SuperArmorHittableHitbox.Hit(System.Single)
+  fullName: SuperArmorHittableHitbox.Hit(System.Single)
+  nameWithType: SuperArmorHittableHitbox.Hit(Single)
+- uid: Global.SuperArmorHittableHitbox.Hit*
+  name: Hit
+  href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_Hit_
+  commentId: Overload:Global.SuperArmorHittableHitbox.Hit
   isSpec: "True"
-  fullName: SuperArmorHittableBehaviour.DoKnockback
-  nameWithType: SuperArmorHittableBehaviour.DoKnockback
-- uid: Global.SuperArmorHittableBehaviour.DoStun(System.Single,System.Single)
-  name: DoStun(Single, Single)
-  href: api/Global.SuperArmorHittableBehaviour.html#Global_SuperArmorHittableBehaviour_DoStun_System_Single_System_Single_
-  commentId: M:Global.SuperArmorHittableBehaviour.DoStun(System.Single,System.Single)
-  fullName: SuperArmorHittableBehaviour.DoStun(System.Single, System.Single)
-  nameWithType: SuperArmorHittableBehaviour.DoStun(Single, Single)
-- uid: Global.SuperArmorHittableBehaviour.DoStun*
-  name: DoStun
-  href: api/Global.SuperArmorHittableBehaviour.html#Global_SuperArmorHittableBehaviour_DoStun_
-  commentId: Overload:Global.SuperArmorHittableBehaviour.DoStun
+  fullName: SuperArmorHittableHitbox.Hit
+  nameWithType: SuperArmorHittableHitbox.Hit
+- uid: Global.SuperArmorHittableHitbox.Knockback(System.Single,System.Single,System.Single)
+  name: Knockback(Single, Single, Single)
+  href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_Knockback_System_Single_System_Single_System_Single_
+  commentId: M:Global.SuperArmorHittableHitbox.Knockback(System.Single,System.Single,System.Single)
+  fullName: SuperArmorHittableHitbox.Knockback(System.Single, System.Single, System.Single)
+  nameWithType: SuperArmorHittableHitbox.Knockback(Single, Single, Single)
+- uid: Global.SuperArmorHittableHitbox.Knockback*
+  name: Knockback
+  href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_Knockback_
+  commentId: Overload:Global.SuperArmorHittableHitbox.Knockback
   isSpec: "True"
-  fullName: SuperArmorHittableBehaviour.DoStun
-  nameWithType: SuperArmorHittableBehaviour.DoStun
-- uid: Global.SuperArmorHittableBehaviour.Fraction
-  name: Fraction
-  href: api/Global.SuperArmorHittableBehaviour.html#Global_SuperArmorHittableBehaviour_Fraction
-  commentId: P:Global.SuperArmorHittableBehaviour.Fraction
-  fullName: SuperArmorHittableBehaviour.Fraction
-  nameWithType: SuperArmorHittableBehaviour.Fraction
-- uid: Global.SuperArmorHittableBehaviour.Fraction*
-  name: Fraction
-  href: api/Global.SuperArmorHittableBehaviour.html#Global_SuperArmorHittableBehaviour_Fraction_
-  commentId: Overload:Global.SuperArmorHittableBehaviour.Fraction
+  fullName: SuperArmorHittableHitbox.Knockback
+  nameWithType: SuperArmorHittableHitbox.Knockback
+- uid: Global.SuperArmorHittableHitbox.Stun(System.Single,System.Single)
+  name: Stun(Single, Single)
+  href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_Stun_System_Single_System_Single_
+  commentId: M:Global.SuperArmorHittableHitbox.Stun(System.Single,System.Single)
+  fullName: SuperArmorHittableHitbox.Stun(System.Single, System.Single)
+  nameWithType: SuperArmorHittableHitbox.Stun(Single, Single)
+- uid: Global.SuperArmorHittableHitbox.Stun*
+  name: Stun
+  href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_Stun_
+  commentId: Overload:Global.SuperArmorHittableHitbox.Stun
   isSpec: "True"
-  fullName: SuperArmorHittableBehaviour.Fraction
-  nameWithType: SuperArmorHittableBehaviour.Fraction
-- uid: Global.SuperArmorHittableBehaviour.ProcessDamage(System.Single)
-  name: ProcessDamage(Single)
-  href: api/Global.SuperArmorHittableBehaviour.html#Global_SuperArmorHittableBehaviour_ProcessDamage_System_Single_
-  commentId: M:Global.SuperArmorHittableBehaviour.ProcessDamage(System.Single)
-  fullName: SuperArmorHittableBehaviour.ProcessDamage(System.Single)
-  nameWithType: SuperArmorHittableBehaviour.ProcessDamage(Single)
-- uid: Global.SuperArmorHittableBehaviour.ProcessDamage*
-  name: ProcessDamage
-  href: api/Global.SuperArmorHittableBehaviour.html#Global_SuperArmorHittableBehaviour_ProcessDamage_
-  commentId: Overload:Global.SuperArmorHittableBehaviour.ProcessDamage
-  isSpec: "True"
-  fullName: SuperArmorHittableBehaviour.ProcessDamage
-  nameWithType: SuperArmorHittableBehaviour.ProcessDamage
+  fullName: SuperArmorHittableHitbox.Stun
+  nameWithType: SuperArmorHittableHitbox.Stun
 - uid: Global.Transition
   name: Transition
   href: api/Global.Transition.html
