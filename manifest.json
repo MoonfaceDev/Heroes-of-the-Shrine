@@ -252,6 +252,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.BossHittableHitbox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.BossHittableHitbox.html",
+          "hash": "SdaYquy66UNikfHWFoHFFAoNu8pPoEeuE9QVokRH14M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.BounceCallback.yml",
       "output": {
         ".html": {
@@ -856,7 +868,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.HittableBehaviour.html",
-          "hash": "9lbdfyHjPLMMoCHIlFnfO8Armz2QzA+ccbi+l9mVHpQ="
+          "hash": "eyY/6tm6zmzC4ZPX6f6F6/EgguXEmM2WWN6OEWQhq+0="
         }
       },
       "is_incremental": false,
@@ -868,7 +880,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.HittableHitbox.html",
-          "hash": "a5BZirDdzUivKBSlhaoBBYV15yniaUGbl2ILw0QOFRM="
+          "hash": "BJR0YB73NqBI/R8XPNH4GxF0FIfn6IyyOGr+3d6ccHg="
         }
       },
       "is_incremental": false,
@@ -1372,7 +1384,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.SuperArmorEffect.html",
-          "hash": "Ru4KOkyy07Miu6PhRPjjYpOpKHxkFOKGsa4TvQBOOSc="
+          "hash": "g9Dw2e1sJ5uyCnguzMkIPEzZhLNrmndOpxIl1qRZSzo="
         }
       },
       "is_incremental": false,
@@ -1384,7 +1396,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.SuperArmorHittableHitbox.html",
-          "hash": "99JSvtWolJHtX5naYBVpwBnDGyGvO1fo20Of1bADhhg="
+          "hash": "U/4xMyNWS1JeHOG6mv3yKD7wetm6XulnG5BKTHtRrR0="
         }
       },
       "is_incremental": false,
@@ -1480,7 +1492,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "qBj+UTEl3e0JHAteUR0ylFCkOi/KKrsd0WH0nQgB8AA="
+          "hash": "2fAngNfRsB3ygJMTuE96FexULqMgbt5g7V8PrmXefm4="
         }
       },
       "is_incremental": false,
@@ -1492,7 +1504,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "m1A6qBipbkpJSB/4PJu5YCu8QncbLI2beUbEHmYwDfw="
+          "hash": "lzHMYtVKPSIbzJnNjEHbGS1xMDsKOz1vBGKwioS6JjA="
         }
       },
       "is_incremental": false,
@@ -1703,7 +1715,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 122,
+          "total_file_count": 123,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

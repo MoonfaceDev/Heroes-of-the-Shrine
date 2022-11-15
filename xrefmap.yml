@@ -999,6 +999,25 @@ references:
   commentId: F:Global.BaseTrigger.action
   fullName: BaseTrigger.action
   nameWithType: BaseTrigger.action
+- uid: Global.BossHittableHitbox
+  name: BossHittableHitbox
+  href: api/Global.BossHittableHitbox.html
+  commentId: T:Global.BossHittableHitbox
+  fullName: BossHittableHitbox
+  nameWithType: BossHittableHitbox
+- uid: Global.BossHittableHitbox.Knockback(System.Single,System.Single,System.Single,System.Single)
+  name: Knockback(Single, Single, Single, Single)
+  href: api/Global.BossHittableHitbox.html#Global_BossHittableHitbox_Knockback_System_Single_System_Single_System_Single_System_Single_
+  commentId: M:Global.BossHittableHitbox.Knockback(System.Single,System.Single,System.Single,System.Single)
+  fullName: BossHittableHitbox.Knockback(System.Single, System.Single, System.Single, System.Single)
+  nameWithType: BossHittableHitbox.Knockback(Single, Single, Single, Single)
+- uid: Global.BossHittableHitbox.Knockback*
+  name: Knockback
+  href: api/Global.BossHittableHitbox.html#Global_BossHittableHitbox_Knockback_
+  commentId: Overload:Global.BossHittableHitbox.Knockback
+  isSpec: "True"
+  fullName: BossHittableHitbox.Knockback
+  nameWithType: BossHittableHitbox.Knockback
 - uid: Global.BounceCallback
   name: BounceCallback
   href: api/Global.BounceCallback.html
@@ -3244,45 +3263,12 @@ references:
   isSpec: "True"
   fullName: HittableBehaviour.Awake
   nameWithType: HittableBehaviour.Awake
-- uid: Global.HittableBehaviour.CanGetHit
-  name: CanGetHit()
-  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_CanGetHit
-  commentId: M:Global.HittableBehaviour.CanGetHit
-  fullName: HittableBehaviour.CanGetHit()
-  nameWithType: HittableBehaviour.CanGetHit()
-- uid: Global.HittableBehaviour.CanGetHit*
-  name: CanGetHit
-  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_CanGetHit_
-  commentId: Overload:Global.HittableBehaviour.CanGetHit
-  isSpec: "True"
-  fullName: HittableBehaviour.CanGetHit
-  nameWithType: HittableBehaviour.CanGetHit
-- uid: Global.HittableBehaviour.DoKnockback(System.Single,System.Single,System.Single)
-  name: DoKnockback(Single, Single, Single)
-  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_DoKnockback_System_Single_System_Single_System_Single_
-  commentId: M:Global.HittableBehaviour.DoKnockback(System.Single,System.Single,System.Single)
-  fullName: HittableBehaviour.DoKnockback(System.Single, System.Single, System.Single)
-  nameWithType: HittableBehaviour.DoKnockback(Single, Single, Single)
-- uid: Global.HittableBehaviour.DoKnockback*
-  name: DoKnockback
-  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_DoKnockback_
-  commentId: Overload:Global.HittableBehaviour.DoKnockback
-  isSpec: "True"
-  fullName: HittableBehaviour.DoKnockback
-  nameWithType: HittableBehaviour.DoKnockback
-- uid: Global.HittableBehaviour.DoStun(System.Single,System.Single)
-  name: DoStun(Single, Single)
-  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_DoStun_System_Single_System_Single_
-  commentId: M:Global.HittableBehaviour.DoStun(System.Single,System.Single)
-  fullName: HittableBehaviour.DoStun(System.Single, System.Single)
-  nameWithType: HittableBehaviour.DoStun(Single, Single)
-- uid: Global.HittableBehaviour.DoStun*
-  name: DoStun
-  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_DoStun_
-  commentId: Overload:Global.HittableBehaviour.DoStun
-  isSpec: "True"
-  fullName: HittableBehaviour.DoStun
-  nameWithType: HittableBehaviour.DoStun
+- uid: Global.HittableBehaviour.damageMultiplier
+  name: damageMultiplier
+  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_damageMultiplier
+  commentId: F:Global.HittableBehaviour.damageMultiplier
+  fullName: HittableBehaviour.damageMultiplier
+  nameWithType: HittableBehaviour.damageMultiplier
 - uid: Global.HittableBehaviour.Hit(System.Single)
   name: Hit(Single)
   href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_Hit_System_Single_
@@ -3327,19 +3313,6 @@ references:
   commentId: E:Global.HittableBehaviour.OnStun
   fullName: HittableBehaviour.OnStun
   nameWithType: HittableBehaviour.OnStun
-- uid: Global.HittableBehaviour.ProcessDamage(System.Single)
-  name: ProcessDamage(Single)
-  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_ProcessDamage_System_Single_
-  commentId: M:Global.HittableBehaviour.ProcessDamage(System.Single)
-  fullName: HittableBehaviour.ProcessDamage(System.Single)
-  nameWithType: HittableBehaviour.ProcessDamage(Single)
-- uid: Global.HittableBehaviour.ProcessDamage*
-  name: ProcessDamage
-  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_ProcessDamage_
-  commentId: Overload:Global.HittableBehaviour.ProcessDamage
-  isSpec: "True"
-  fullName: HittableBehaviour.ProcessDamage
-  nameWithType: HittableBehaviour.ProcessDamage
 - uid: Global.HittableBehaviour.Stun(System.Single,System.Single)
   name: Stun(Single, Single)
   href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_Stun_System_Single_System_Single_
@@ -5560,6 +5533,12 @@ references:
   isSpec: "True"
   fullName: SuperArmorEffect.Awake
   nameWithType: SuperArmorEffect.Awake
+- uid: Global.SuperArmorEffect.damageMultiplier
+  name: damageMultiplier
+  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_damageMultiplier
+  commentId: F:Global.SuperArmorEffect.damageMultiplier
+  fullName: SuperArmorEffect.damageMultiplier
+  nameWithType: SuperArmorEffect.damageMultiplier
 - uid: Global.SuperArmorEffect.GetProgress
   name: GetProgress()
   href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_GetProgress
@@ -5618,12 +5597,6 @@ references:
   isSpec: "True"
   fullName: SuperArmorHittableHitbox.Awake
   nameWithType: SuperArmorHittableHitbox.Awake
-- uid: Global.SuperArmorHittableHitbox.damageMultiplier
-  name: damageMultiplier
-  href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_damageMultiplier
-  commentId: F:Global.SuperArmorHittableHitbox.damageMultiplier
-  fullName: SuperArmorHittableHitbox.damageMultiplier
-  nameWithType: SuperArmorHittableHitbox.damageMultiplier
 - uid: Global.SuperArmorHittableHitbox.Hit(System.Single)
   name: Hit(Single)
   href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_Hit_System_Single_
