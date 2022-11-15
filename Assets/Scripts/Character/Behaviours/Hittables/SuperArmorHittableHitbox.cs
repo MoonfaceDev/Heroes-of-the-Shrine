@@ -1,7 +1,5 @@
 public class SuperArmorHittableHitbox : HittableHitbox
 {
-    public float damageMultiplier = 1;
-
     private SuperArmorEffect superArmorEffect;
 
     protected override void Awake()
@@ -12,38 +10,16 @@ public class SuperArmorHittableHitbox : HittableHitbox
 
     public override void Hit(float damage)
     {
-        if (superArmorEffect.Active)
-        {
-            superArmorEffect.HitArmor(damage);
-            hittableBehaviour.Hit(damage * damageMultiplier);
-        }
-        else
-        {
-            hittableBehaviour.Hit(damage);
-        }
+        superArmorEffect.HitArmor(damage);
     }
 
     public override void Knockback(float damage, float power, float angleDegrees, float stunTime)
     {
-        if (superArmorEffect.Active)
-        {
-            Hit(damage);
-        }
-        else
-        {
-            hittableBehaviour.Knockback(damage, power, angleDegrees, stunTime);
-        }
+        Hit(damage);
     }
 
     public override void Stun(float damage, float time)
     {
-        if (superArmorEffect.Active)
-        {
-            Hit(damage);
-        }
-        else
-        {
-            hittableBehaviour.Stun(damage, time);
-        }
+        Hit(damage);
     }
 }

@@ -8,6 +8,8 @@ public delegate void StunCallback(float damage, float time);
 [RequireComponent(typeof(HealthSystem))]
 public class HittableBehaviour : CharacterBehaviour, IHittable
 {
+    [ShowDebug] public float damageMultiplier;
+    
     private const float StunLaunchPower = 1;
     private const float StunLaunchAngel = 90; // degrees
     public event HitCallback OnHit;
@@ -24,16 +26,17 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
         healthSystem = GetComponent<HealthSystem>();
         knockbackBehaviour = GetComponent<KnockbackBehaviour>();
         stunBehaviour = GetComponent<StunBehaviour>();
+        damageMultiplier = 1;
     }
 
-    public bool CanGetHit()
+    private bool CanGetHit()
     {
         return healthSystem.health > 0 && !(knockbackBehaviour && knockbackBehaviour.Recovering);
     }
 
-    protected virtual float ProcessDamage(float damage)
+    private float ProcessDamage(float damage)
     {
-        return damage;
+        return damage * damageMultiplier;
     }
     
     public void Hit(float damage)
@@ -47,7 +50,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
         OnHit?.Invoke(processedDamage);
     }
 
-    protected virtual void DoKnockback(float damage, float power, float angleDegrees)
+    private void DoKnockback(float damage, float power, float angleDegrees)
     {
         OnKnockback?.Invoke(damage, power, angleDegrees);
         if (knockbackBehaviour)
@@ -66,7 +69,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
         DoKnockback(damage, power, angleDegrees);
     }
 
-    protected virtual void DoStun(float damage, float time)
+    private void DoStun(float damage, float time)
     {
         OnStun?.Invoke(damage, time);
         if (stunBehaviour)

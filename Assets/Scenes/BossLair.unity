@@ -420,6 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03767b56dc6ba3740842c0db368e9321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 0
 --- !u!114 &63080257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,6 +435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armorHealth: 100
   armorCooldown: 5
+  damageMultiplier: 0.5
   armorCooldownStart: 0
 --- !u!1 &153687728
 GameObject:
@@ -575,7 +577,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 316202118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f61bf6815ea54901837aaba13eb795b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d39bd96fe75485598bdbd1b1a002d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hittableBehaviour: {fileID: 63080256}
@@ -1593,7 +1595,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hittableBehaviour: {fileID: 63080256}
-  damageMultiplier: 0.5
 --- !u!1 &1824913454
 GameObject:
   m_ObjectHideFlags: 0
