@@ -2052,6 +2052,12 @@ references:
   commentId: F:Global.ElectrifyAttack.explosionKnockbackPower
   fullName: ElectrifyAttack.explosionKnockbackPower
   nameWithType: ElectrifyAttack.explosionKnockbackPower
+- uid: Global.ElectrifyAttack.explosionStunTime
+  name: explosionStunTime
+  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_explosionStunTime
+  commentId: F:Global.ElectrifyAttack.explosionStunTime
+  fullName: ElectrifyAttack.explosionStunTime
+  nameWithType: ElectrifyAttack.explosionStunTime
 - uid: Global.ElectrifyAttack.HitCallable(IHittable)
   name: HitCallable(IHittable)
   href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_HitCallable_IHittable_
@@ -3290,12 +3296,12 @@ references:
   isSpec: "True"
   fullName: HittableBehaviour.Hit
   nameWithType: HittableBehaviour.Hit
-- uid: Global.HittableBehaviour.Knockback(System.Single,System.Single,System.Single)
-  name: Knockback(Single, Single, Single)
-  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_Knockback_System_Single_System_Single_System_Single_
-  commentId: M:Global.HittableBehaviour.Knockback(System.Single,System.Single,System.Single)
-  fullName: HittableBehaviour.Knockback(System.Single, System.Single, System.Single)
-  nameWithType: HittableBehaviour.Knockback(Single, Single, Single)
+- uid: Global.HittableBehaviour.Knockback(System.Single,System.Single,System.Single,System.Single)
+  name: Knockback(Single, Single, Single, Single)
+  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_Knockback_System_Single_System_Single_System_Single_System_Single_
+  commentId: M:Global.HittableBehaviour.Knockback(System.Single,System.Single,System.Single,System.Single)
+  fullName: HittableBehaviour.Knockback(System.Single, System.Single, System.Single, System.Single)
+  nameWithType: HittableBehaviour.Knockback(Single, Single, Single, Single)
 - uid: Global.HittableBehaviour.Knockback*
   name: Knockback
   href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_Knockback_
@@ -3411,12 +3417,12 @@ references:
   commentId: F:Global.HittableHitbox.hittableBehaviour
   fullName: HittableHitbox.hittableBehaviour
   nameWithType: HittableHitbox.hittableBehaviour
-- uid: Global.HittableHitbox.Knockback(System.Single,System.Single,System.Single)
-  name: Knockback(Single, Single, Single)
-  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Knockback_System_Single_System_Single_System_Single_
-  commentId: M:Global.HittableHitbox.Knockback(System.Single,System.Single,System.Single)
-  fullName: HittableHitbox.Knockback(System.Single, System.Single, System.Single)
-  nameWithType: HittableHitbox.Knockback(Single, Single, Single)
+- uid: Global.HittableHitbox.Knockback(System.Single,System.Single,System.Single,System.Single)
+  name: Knockback(Single, Single, Single, Single)
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Knockback_System_Single_System_Single_System_Single_System_Single_
+  commentId: M:Global.HittableHitbox.Knockback(System.Single,System.Single,System.Single,System.Single)
+  fullName: HittableHitbox.Knockback(System.Single, System.Single, System.Single, System.Single)
+  nameWithType: HittableHitbox.Knockback(Single, Single, Single, Single)
 - uid: Global.HittableHitbox.Knockback*
   name: Knockback
   href: api/Global.HittableHitbox.html#Global_HittableHitbox_Knockback_
@@ -3493,12 +3499,12 @@ references:
   isSpec: "True"
   fullName: IHittable.Hit
   nameWithType: IHittable.Hit
-- uid: Global.IHittable.Knockback(System.Single,System.Single,System.Single)
-  name: Knockback(Single, Single, Single)
-  href: api/Global.IHittable.html#Global_IHittable_Knockback_System_Single_System_Single_System_Single_
-  commentId: M:Global.IHittable.Knockback(System.Single,System.Single,System.Single)
-  fullName: IHittable.Knockback(System.Single, System.Single, System.Single)
-  nameWithType: IHittable.Knockback(Single, Single, Single)
+- uid: Global.IHittable.Knockback(System.Single,System.Single,System.Single,System.Single)
+  name: Knockback(Single, Single, Single, Single)
+  href: api/Global.IHittable.html#Global_IHittable_Knockback_System_Single_System_Single_System_Single_System_Single_
+  commentId: M:Global.IHittable.Knockback(System.Single,System.Single,System.Single,System.Single)
+  fullName: IHittable.Knockback(System.Single, System.Single, System.Single, System.Single)
+  nameWithType: IHittable.Knockback(Single, Single, Single, Single)
 - uid: Global.IHittable.Knockback*
   name: Knockback
   href: api/Global.IHittable.html#Global_IHittable_Knockback_
@@ -5631,12 +5637,12 @@ references:
   isSpec: "True"
   fullName: SuperArmorHittableHitbox.Hit
   nameWithType: SuperArmorHittableHitbox.Hit
-- uid: Global.SuperArmorHittableHitbox.Knockback(System.Single,System.Single,System.Single)
-  name: Knockback(Single, Single, Single)
-  href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_Knockback_System_Single_System_Single_System_Single_
-  commentId: M:Global.SuperArmorHittableHitbox.Knockback(System.Single,System.Single,System.Single)
-  fullName: SuperArmorHittableHitbox.Knockback(System.Single, System.Single, System.Single)
-  nameWithType: SuperArmorHittableHitbox.Knockback(Single, Single, Single)
+- uid: Global.SuperArmorHittableHitbox.Knockback(System.Single,System.Single,System.Single,System.Single)
+  name: Knockback(Single, Single, Single, Single)
+  href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_Knockback_System_Single_System_Single_System_Single_System_Single_
+  commentId: M:Global.SuperArmorHittableHitbox.Knockback(System.Single,System.Single,System.Single,System.Single)
+  fullName: SuperArmorHittableHitbox.Knockback(System.Single, System.Single, System.Single, System.Single)
+  nameWithType: SuperArmorHittableHitbox.Knockback(Single, Single, Single, Single)
 - uid: Global.SuperArmorHittableHitbox.Knockback*
   name: Knockback
   href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_Knockback_
