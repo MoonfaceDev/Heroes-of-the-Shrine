@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEditor;
@@ -20,7 +19,8 @@ public class SimpleAttackEditor : Editor
     private SerializedProperty knockbackDirection;
     private SerializedProperty stunTime;
 
-    private const BindingFlags OverridableFlags = BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
+    private const BindingFlags OverridableFlags =
+        BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
 
     private void OnEnable()
     {
@@ -41,7 +41,9 @@ public class SimpleAttackEditor : Editor
     public override void OnInspectorGUI()
     {
         serializedObject.Update();
-        DrawPropertiesExcluding(serializedObject, "previousAttacks", "anticipateDuration", "activeDuration", "recoveryDuration", "hitbox", "overrideDefaultHittableTags", "hittableTags", "damage", "hitType", "knockbackPower", "knockbackDirection", "stunTime");
+        DrawPropertiesExcluding(serializedObject, "previousAttacks", "anticipateDuration", "activeDuration",
+            "recoveryDuration", "hitbox", "overrideDefaultHittableTags", "hittableTags", "damage", "hitType",
+            "knockbackPower", "knockbackDirection", "stunTime");
         var attack = (SimpleAttack)target;
 
         if (!HasMethod(attack, "ComboCondition"))
@@ -50,8 +52,9 @@ public class SimpleAttackEditor : Editor
             List<BaseAttack> previousAttacksValue = new();
             for (var i = 0; i < previousAttacks.arraySize; i++)
             {
-                previousAttacksValue.Add((BaseAttack) previousAttacks.GetArrayElementAtIndex(i).objectReferenceValue);
+                previousAttacksValue.Add((BaseAttack)previousAttacks.GetArrayElementAtIndex(i).objectReferenceValue);
             }
+
             attack.previousAttacks = previousAttacksValue;
         }
 
@@ -76,7 +79,7 @@ public class SimpleAttackEditor : Editor
         if (!HasMethod(attack, "CreateHitDetector"))
         {
             EditorGUILayout.PropertyField(hitbox);
-            attack.hitbox = (Hitbox) hitbox.objectReferenceValue;
+            attack.hitbox = (Hitbox)hitbox.objectReferenceValue;
         }
 
         if (!HasProperty(attack, "HittableTags"))
@@ -91,6 +94,7 @@ public class SimpleAttackEditor : Editor
                 {
                     hittableTagsValue.Add(hittableTags.GetArrayElementAtIndex(i).stringValue);
                 }
+
                 attack.hittableTags = hittableTagsValue;
             }
         }
@@ -106,25 +110,21 @@ public class SimpleAttackEditor : Editor
             EditorGUILayout.PropertyField(hitTypeIndex);
             var hitTypeValue = (HitType)typeof(HitType).GetEnumValues().GetValue(hitTypeIndex.enumValueIndex);
             attack.hitType = hitTypeValue;
-            switch (hitTypeValue)
+            if (hitTypeValue == HitType.Knockback)
             {
-                case HitType.Knockback:
-                    EditorGUILayout.PropertyField(knockbackPower);
-                    EditorGUILayout.PropertyField(knockbackDirection);
-                    attack.knockbackPower = knockbackPower.floatValue;
-                    attack.knockbackDirection = knockbackDirection.floatValue;
-                    break;
-                case HitType.Stun:
-                    EditorGUILayout.PropertyField(stunTime);
-                    attack.stunTime = stunTime.floatValue;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
+                EditorGUILayout.PropertyField(knockbackPower);
+                EditorGUILayout.PropertyField(knockbackDirection);
+                attack.knockbackPower = knockbackPower.floatValue;
+                attack.knockbackDirection = knockbackDirection.floatValue;
             }
+
+            EditorGUILayout.PropertyField(stunTime);
+            attack.stunTime = stunTime.floatValue;
         }
 
         serializedObject.ApplyModifiedProperties();
-        if (GUI.changed) { 
+        if (GUI.changed)
+        {
             EditorUtility.SetDirty(attack);
         }
     }
@@ -139,8 +139,10 @@ public class SimpleAttackEditor : Editor
             {
                 return true;
             }
+
             type = type.BaseType;
         }
+
         return false;
     }
 
@@ -154,8 +156,10 @@ public class SimpleAttackEditor : Editor
             {
                 return true;
             }
+
             type = type.BaseType;
         }
+
         return false;
     }
 }

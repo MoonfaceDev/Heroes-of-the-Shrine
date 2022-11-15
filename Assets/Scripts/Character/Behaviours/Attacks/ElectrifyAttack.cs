@@ -18,6 +18,7 @@ public class ElectrifyAttack : NormalAttack
 
     public float explosionKnockbackDirection;
     public float explosionDamage;
+    public float explosionStunTime;
 
     private PeriodicAbsoluteHitDetector periodicHitDetector;
     private SingleHitDetector explosionHitDetector;
@@ -94,7 +95,7 @@ public class ElectrifyAttack : NormalAttack
         var hitDirection =
             (int)Mathf.Sign(hittable.Character.movableObject.WorldPosition.x - MovableObject.WorldPosition.x);
         hittable.Knockback(processedDamage, explosionKnockbackPower,
-            KnockbackBehaviour.GetRelativeDirection(explosionKnockbackDirection, hitDirection));
+            KnockbackBehaviour.GetRelativeDirection(explosionKnockbackDirection, hitDirection), explosionStunTime);
         var electrifiedEffect = hittable.Character.GetComponent<ElectrifiedEffect>();
         if (electrifiedEffect)
         {

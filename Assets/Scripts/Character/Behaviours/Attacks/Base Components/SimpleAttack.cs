@@ -74,9 +74,9 @@ public class SimpleAttack : BaseAttack
     public float knockbackDirection;
 
     /// <value>
-    /// Duration of stun effect caused by hit.
+    /// Duration of stun effect caused by hit. If enemy is resistant to knockback, this value will be used too. 
     /// </value>
-    public float stunTime;
+    public float stunTime = 0.5f;
 
     private IEnumerable<string> HittableTags =>
         overrideDefaultHittableTags ? hittableTags : GetComponent<AttackManager>().hittableTags;
@@ -202,7 +202,7 @@ public class SimpleAttack : BaseAttack
                 var hitDirection =
                     (int)Mathf.Sign(hittable.Character.movableObject.WorldPosition.x - MovableObject.WorldPosition.x);
                 hittable.Knockback(processedDamage, knockbackPower,
-                    KnockbackBehaviour.GetRelativeDirection(knockbackDirection, hitDirection));
+                    KnockbackBehaviour.GetRelativeDirection(knockbackDirection, hitDirection), stunTime);
                 break;
             case HitType.Stun:
                 hittable.Stun(processedDamage, stunTime);

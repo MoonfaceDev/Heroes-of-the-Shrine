@@ -19,9 +19,9 @@ public class HittableHitbox : MonoBehaviour, IHittable
         hittableBehaviour.Hit(damage);
     }
 
-    public virtual void Knockback(float damage, float power, float angleDegrees)
+    public virtual void Knockback(float damage, float power, float angleDegrees, float stunTime)
     {
-        hittableBehaviour.Knockback(damage, power, angleDegrees);
+        hittableBehaviour.Knockback(damage, power, angleDegrees, stunTime);
     }
 
     public virtual void Stun(float damage, float time)

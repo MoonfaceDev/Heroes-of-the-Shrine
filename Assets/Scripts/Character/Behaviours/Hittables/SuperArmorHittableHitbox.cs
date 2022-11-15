@@ -23,7 +23,7 @@ public class SuperArmorHittableHitbox : HittableHitbox
         }
     }
 
-    public override void Knockback(float damage, float power, float angleDegrees)
+    public override void Knockback(float damage, float power, float angleDegrees, float stunTime)
     {
         if (superArmorEffect.Active)
         {
@@ -31,7 +31,7 @@ public class SuperArmorHittableHitbox : HittableHitbox
         }
         else
         {
-            hittableBehaviour.Knockback(damage, power, angleDegrees);
+            hittableBehaviour.Knockback(damage, power, angleDegrees, stunTime);
         }
     }
 

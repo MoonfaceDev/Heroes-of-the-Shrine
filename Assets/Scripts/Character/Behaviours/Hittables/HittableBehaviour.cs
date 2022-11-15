@@ -56,7 +56,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
         }
     }
 
-    public void Knockback(float damage, float power, float angleDegrees)
+    public void Knockback(float damage, float power, float angleDegrees, float stunTime)
     {
         if (!CanGetHit())
         {
@@ -83,7 +83,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
         }
         if (MovableObject.WorldPosition.y > 0)
         {
-            Knockback(damage, StunLaunchPower, StunLaunchAngel);
+            Knockback(damage, StunLaunchPower, StunLaunchAngel, time);
             return;
         }
         Hit(damage);

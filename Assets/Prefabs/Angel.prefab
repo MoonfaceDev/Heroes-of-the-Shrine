@@ -10407,7 +10407,7 @@ MonoBehaviour:
   hitType: 0
   knockbackPower: 10
   knockbackDirection: 10
-  stunTime: 0
+  stunTime: 0.5
   velocity: 10
   acceleration: 10
 --- !u!114 &5102893360874897686
@@ -10524,7 +10524,7 @@ MonoBehaviour:
   hitType: 0
   knockbackPower: 10
   knockbackDirection: 85
-  stunTime: 0
+  stunTime: 0.5
 --- !u!114 &5102893360874897685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10553,7 +10553,7 @@ MonoBehaviour:
   hitType: 0
   knockbackPower: 6
   knockbackDirection: 95
-  stunTime: 0.3
+  stunTime: 0.5
   hitbox1: {fileID: 5102893360398477695}
   hitbox2: {fileID: 5102893361076516092}
   hitbox1FinishTime: 0.4
@@ -10586,7 +10586,7 @@ MonoBehaviour:
   hitType: 0
   knockbackPower: 10
   knockbackDirection: 60
-  stunTime: 0
+  stunTime: 0.5
   velocity: 100
   acceleration: 1000
 --- !u!114 &5102893360874897681
@@ -10676,7 +10676,7 @@ MonoBehaviour:
   hitType: 0
   knockbackPower: 6
   knockbackDirection: 110
-  stunTime: 0
+  stunTime: 0.5
 --- !u!114 &5102893360874897675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10704,7 +10704,7 @@ MonoBehaviour:
   hitType: 0
   knockbackPower: 0
   knockbackDirection: 0
-  stunTime: 0
+  stunTime: 0.5
   burstVelocity: 0
   burstAcceleration: 0
 --- !u!1 &5102893360938488515
