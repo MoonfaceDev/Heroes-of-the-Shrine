@@ -1164,6 +1164,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.PossesAttack.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.PossesAttack.html",
+          "hash": "qfXwKspmsG4rWJZXPBkiyHZLQAPyCRDx/tJk+HxC8dk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.PriorityQueue-1.yml",
       "output": {
         ".html": {
@@ -1264,7 +1276,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.SimpleAttack.html",
-          "hash": "Xglf+R8Z4znjucKRY7BKhIN2C/bsBVVBin4EPvbxuKs="
+          "hash": "A3w+RpjZEjrBCfxmuWyfutDcnqcLBo+zZ/A/4eG+X44="
         }
       },
       "is_incremental": false,
@@ -1492,7 +1504,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "2fAngNfRsB3ygJMTuE96FexULqMgbt5g7V8PrmXefm4="
+          "hash": "ZQpN6laupjVu4Au8YuccLOUSUPAdBoh1yETrDDlJqbs="
         }
       },
       "is_incremental": false,
@@ -1504,7 +1516,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "lzHMYtVKPSIbzJnNjEHbGS1xMDsKOz1vBGKwioS6JjA="
+          "hash": "BdAlf1hscDXh4azZ2Cqkui/5XJftOlpoyWl8kOy6+fw="
         }
       },
       "is_incremental": false,
@@ -1715,7 +1727,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 123,
+          "total_file_count": 124,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
