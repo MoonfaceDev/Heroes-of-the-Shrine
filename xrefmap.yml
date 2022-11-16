@@ -4581,6 +4581,80 @@ references:
   commentId: T:Global.PossesAttack
   fullName: PossesAttack
   nameWithType: PossesAttack
+- uid: Global.PossesAttack.Awake
+  name: Awake()
+  href: api/Global.PossesAttack.html#Global_PossesAttack_Awake
+  commentId: M:Global.PossesAttack.Awake
+  fullName: PossesAttack.Awake()
+  nameWithType: PossesAttack.Awake()
+- uid: Global.PossesAttack.Awake*
+  name: Awake
+  href: api/Global.PossesAttack.html#Global_PossesAttack_Awake_
+  commentId: Overload:Global.PossesAttack.Awake
+  isSpec: "True"
+  fullName: PossesAttack.Awake
+  nameWithType: PossesAttack.Awake
+- uid: Global.PossesAttack.possesSource
+  name: possesSource
+  href: api/Global.PossesAttack.html#Global_PossesAttack_possesSource
+  commentId: F:Global.PossesAttack.possesSource
+  fullName: PossesAttack.possesSource
+  nameWithType: PossesAttack.possesSource
+- uid: Global.PossesAttack.sourceActiveDuration
+  name: sourceActiveDuration
+  href: api/Global.PossesAttack.html#Global_PossesAttack_sourceActiveDuration
+  commentId: F:Global.PossesAttack.sourceActiveDuration
+  fullName: PossesAttack.sourceActiveDuration
+  nameWithType: PossesAttack.sourceActiveDuration
+- uid: Global.PossesAttack.sourcesCount
+  name: sourcesCount
+  href: api/Global.PossesAttack.html#Global_PossesAttack_sourcesCount
+  commentId: F:Global.PossesAttack.sourcesCount
+  fullName: PossesAttack.sourcesCount
+  nameWithType: PossesAttack.sourcesCount
+- uid: Global.PossesAttack.spawnRadius
+  name: spawnRadius
+  href: api/Global.PossesAttack.html#Global_PossesAttack_spawnRadius
+  commentId: F:Global.PossesAttack.spawnRadius
+  fullName: PossesAttack.spawnRadius
+  nameWithType: PossesAttack.spawnRadius
+- uid: Global.PossesAttack.warningDuration
+  name: warningDuration
+  href: api/Global.PossesAttack.html#Global_PossesAttack_warningDuration
+  commentId: F:Global.PossesAttack.warningDuration
+  fullName: PossesAttack.warningDuration
+  nameWithType: PossesAttack.warningDuration
+- uid: Global.PossesSource
+  name: PossesSource
+  href: api/Global.PossesSource.html
+  commentId: T:Global.PossesSource
+  fullName: PossesSource
+  nameWithType: PossesSource
+- uid: Global.PossesSource.Activate(System.Single,System.Single)
+  name: Activate(Single, Single)
+  href: api/Global.PossesSource.html#Global_PossesSource_Activate_System_Single_System_Single_
+  commentId: M:Global.PossesSource.Activate(System.Single,System.Single)
+  fullName: PossesSource.Activate(System.Single, System.Single)
+  nameWithType: PossesSource.Activate(Single, Single)
+- uid: Global.PossesSource.Activate*
+  name: Activate
+  href: api/Global.PossesSource.html#Global_PossesSource_Activate_
+  commentId: Overload:Global.PossesSource.Activate
+  isSpec: "True"
+  fullName: PossesSource.Activate
+  nameWithType: PossesSource.Activate
+- uid: Global.PossesSource.activeIndicator
+  name: activeIndicator
+  href: api/Global.PossesSource.html#Global_PossesSource_activeIndicator
+  commentId: F:Global.PossesSource.activeIndicator
+  fullName: PossesSource.activeIndicator
+  nameWithType: PossesSource.activeIndicator
+- uid: Global.PossesSource.warningIndicator
+  name: warningIndicator
+  href: api/Global.PossesSource.html#Global_PossesSource_warningIndicator
+  commentId: F:Global.PossesSource.warningIndicator
+  fullName: PossesSource.warningIndicator
+  nameWithType: PossesSource.warningIndicator
 - uid: Global.PriorityQueue`1
   name: PriorityQueue<T>
   href: api/Global.PriorityQueue-1.html

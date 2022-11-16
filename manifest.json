@@ -1168,7 +1168,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.PossesAttack.html",
-          "hash": "qfXwKspmsG4rWJZXPBkiyHZLQAPyCRDx/tJk+HxC8dk="
+          "hash": "g1HkdgaPszBQ5BNPttGen1R8Vd8/eo9VPzOvLifpwa4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.PossesSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.PossesSource.html",
+          "hash": "RUWC3EquNd4YFpHdmbai8FL29xVitZel9OulNZZ9nnQ="
         }
       },
       "is_incremental": false,
@@ -1504,7 +1516,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "ZQpN6laupjVu4Au8YuccLOUSUPAdBoh1yETrDDlJqbs="
+          "hash": "ytUAnlXaSyK3CPPudypQ8kvllEfG3kHBHdsvFOLnnHA="
         }
       },
       "is_incremental": false,
@@ -1516,7 +1528,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "BdAlf1hscDXh4azZ2Cqkui/5XJftOlpoyWl8kOy6+fw="
+          "hash": "dG8JZhbpSU7mt6jt26UXLGKHFiuyMMqvVepsur5G+Fg="
         }
       },
       "is_incremental": false,
@@ -1727,7 +1739,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 124,
+          "total_file_count": 125,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
