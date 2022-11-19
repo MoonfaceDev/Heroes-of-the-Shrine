@@ -3193,12 +3193,12 @@ references:
   isSpec: "True"
   fullName: Hitbox.OverlapHitbox
   nameWithType: Hitbox.OverlapHitbox
-- uid: Global.Hitbox.PlayParticles
-  name: PlayParticles()
-  href: api/Global.Hitbox.html#Global_Hitbox_PlayParticles
-  commentId: M:Global.Hitbox.PlayParticles
-  fullName: Hitbox.PlayParticles()
-  nameWithType: Hitbox.PlayParticles()
+- uid: Global.Hitbox.PlayParticles(System.Int32)
+  name: PlayParticles(Int32)
+  href: api/Global.Hitbox.html#Global_Hitbox_PlayParticles_System_Int32_
+  commentId: M:Global.Hitbox.PlayParticles(System.Int32)
+  fullName: Hitbox.PlayParticles(System.Int32)
+  nameWithType: Hitbox.PlayParticles(Int32)
 - uid: Global.Hitbox.PlayParticles*
   name: PlayParticles
   href: api/Global.Hitbox.html#Global_Hitbox_PlayParticles_
@@ -3225,19 +3225,6 @@ references:
   isSpec: "True"
   fullName: Hitbox.WorldPosition
   nameWithType: Hitbox.WorldPosition
-- uid: Global.Hitbox.WorldSize
-  name: WorldSize
-  href: api/Global.Hitbox.html#Global_Hitbox_WorldSize
-  commentId: P:Global.Hitbox.WorldSize
-  fullName: Hitbox.WorldSize
-  nameWithType: Hitbox.WorldSize
-- uid: Global.Hitbox.WorldSize*
-  name: WorldSize
-  href: api/Global.Hitbox.html#Global_Hitbox_WorldSize_
-  commentId: Overload:Global.Hitbox.WorldSize
-  isSpec: "True"
-  fullName: Hitbox.WorldSize
-  nameWithType: Hitbox.WorldSize
 - uid: Global.HitCallback
   name: HitCallback
   href: api/Global.HitCallback.html
@@ -4070,6 +4057,19 @@ references:
   isSpec: "True"
   fullName: MovableObject.ScreenCoordinates
   nameWithType: MovableObject.ScreenCoordinates
+- uid: Global.MovableObject.SortingOrder
+  name: SortingOrder
+  href: api/Global.MovableObject.html#Global_MovableObject_SortingOrder
+  commentId: P:Global.MovableObject.SortingOrder
+  fullName: MovableObject.SortingOrder
+  nameWithType: MovableObject.SortingOrder
+- uid: Global.MovableObject.SortingOrder*
+  name: SortingOrder
+  href: api/Global.MovableObject.html#Global_MovableObject_SortingOrder_
+  commentId: Overload:Global.MovableObject.SortingOrder
+  isSpec: "True"
+  fullName: MovableObject.SortingOrder
+  nameWithType: MovableObject.SortingOrder
 - uid: Global.MovableObject.UpdatePosition(Vector3)
   name: UpdatePosition(Vector3)
   href: api/Global.MovableObject.html#Global_MovableObject_UpdatePosition_Vector3_
