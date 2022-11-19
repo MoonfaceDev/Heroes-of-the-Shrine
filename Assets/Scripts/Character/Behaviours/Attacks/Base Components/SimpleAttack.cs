@@ -147,7 +147,7 @@ public class SimpleAttack : BaseAttack
         SingleHitDetector hitDetector = new(EventManager, hitbox, hittable =>
         {
             if (!IsHittableTag(hittable.Character.tag)) return;
-            hitbox.PlayParticles();
+            hitbox.PlayParticles(hittable.Character.movableObject.SortingOrder);
             HitCallable(hittable);
         });
         OnStartActive += () => hitDetector.Start();

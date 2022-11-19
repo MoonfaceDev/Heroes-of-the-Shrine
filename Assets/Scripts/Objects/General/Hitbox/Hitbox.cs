@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using static MathUtils;
@@ -16,15 +17,15 @@ public class Hitbox : MonoBehaviour
     }
 
     public Vector3 WorldPosition => movableObject.WorldPosition;
-    public Vector3 WorldSize => movableObject.parent ? Vector3.Scale(movableObject.parent.rotation * size, movableObject.parent.scale) : size;
 
-    public void PlayParticles()
+    public void PlayParticles(int minSortingOrder)
     {
-        ParticleSystem particleSystem = GetComponentInChildren<ParticleSystem>();
-        if (particleSystem)
-        {
-            particleSystem.Play();
-        }
+        print(minSortingOrder + ", " + movableObject.parent.SortingOrder);
+        var innerParticleSystem = GetComponentInChildren<ParticleSystem>();
+        if (!innerParticleSystem) return;
+        innerParticleSystem.GetComponent<Renderer>().sortingOrder =
+            Math.Max(minSortingOrder, movableObject.parent.SortingOrder) + 1;  
+        innerParticleSystem.Play();
     }
 
     void OnDrawGizmos()
@@ -33,9 +34,7 @@ public class Hitbox : MonoBehaviour
         {
             Color lineColor = new(1.0f, 0.5f, 0.0f);
             Color fillColor = new(1.0f, 0.5f, 0.0f, 0.3f);
-            DrawOutline(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), GetBottom(), GetFar())), MovableObject.ScreenCoordinates(new(size.x, size.y, 0))), lineColor);
-            DrawBoth(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), GetTop(), GetFar())), MovableObject.ScreenCoordinates(new(size.x, 0, size.z))), lineColor, fillColor);
-            DrawFill(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), 0, GetFar())), MovableObject.ScreenCoordinates(new(size.x, 0, size.z))), new Color(0, 0, 0, 0.5f));
+            DrawHitbox(lineColor, fillColor);
         }
     }
 
@@ -45,28 +44,33 @@ public class Hitbox : MonoBehaviour
         {
             Color lineColor = new(1.0f, 0.5f, 0.0f);
             Color fillColor = new(1.0f, 0.5f, 0.0f, 0.3f);
-            DrawOutline(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), GetBottom(), GetFar())), MovableObject.ScreenCoordinates(new(size.x, size.y, 0))), lineColor);
-            DrawBoth(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), GetTop(), GetFar())), MovableObject.ScreenCoordinates(new(size.x, 0, size.z))), lineColor, fillColor);
-            DrawFill(new Rect(MovableObject.ScreenCoordinates(new(GetLeft(), 0, GetFar())), MovableObject.ScreenCoordinates(new(size.x, 0, size.z))), new Color(0, 0, 0, 0.5f));
+            DrawHitbox(lineColor, fillColor);
         }
     }
 
-    void DrawBoth(Rect rect, Color lineColor, Color fillColor)
+    private void DrawHitbox(Color lineColor, Color fillColor)
     {
-        DrawOutline(rect, lineColor);
-        DrawFill(rect, fillColor);
+        DrawOutline(MovableObject.ScreenCoordinates(WorldPosition + size.z / 2 * Vector3.back), MovableObject.ScreenCoordinates(size + size.z * Vector3.back), lineColor);
+        DrawBoth(MovableObject.ScreenCoordinates(WorldPosition + size.y / 2 * Vector3.up), MovableObject.ScreenCoordinates(size + size.y * Vector3.down), lineColor, fillColor);
+        DrawFill(MovableObject.ScreenCoordinates(WorldPosition + WorldPosition.y * Vector3.down), MovableObject.ScreenCoordinates(size + size.y * Vector3.down), new Color(0, 0, 0, 0.5f));
     }
 
-    void DrawOutline(Rect rect, Color lineColor)
+    void DrawBoth(Vector2 screenCenter, Vector2 screenSize, Color lineColor, Color fillColor)
+    {
+        DrawOutline(screenCenter, screenSize, lineColor);
+        DrawFill(screenCenter, screenSize, fillColor);
+    }
+
+    void DrawOutline(Vector2 screenCenter, Vector2 screenSize, Color lineColor)
     {
         Gizmos.color = lineColor;
-        Gizmos.DrawWireCube(new Vector3(rect.center.x, rect.center.y, 0.01f), new Vector3(rect.size.x, rect.size.y, 0.01f));
+        Gizmos.DrawWireCube((Vector3)screenCenter + 0.01f * Vector3.forward, (Vector3)screenSize + 0.01f * Vector3.forward);
     }
 
-    void DrawFill(Rect rect, Color fillColor)
+    void DrawFill(Vector2 screenCenter, Vector2 screenSize, Color fillColor)
     {
         Gizmos.color = fillColor;
-        Gizmos.DrawCube(new Vector3(rect.center.x, rect.center.y, 0.01f), new Vector3(rect.size.x, rect.size.y, 0.01f));
+        Gizmos.DrawCube((Vector3)screenCenter + 0.01f * Vector3.forward, (Vector3)screenSize + 0.01f * Vector3.forward);
     }
 
     public bool IsInside(Vector3 point)
@@ -95,31 +99,31 @@ public class Hitbox : MonoBehaviour
 
     public float GetLeft()
     {
-        return Mathf.Min(WorldPosition.x, WorldPosition.x + WorldSize.x);
+        return WorldPosition.x - size.x / 2;
     }
 
     public float GetRight()
     {
-        return Mathf.Max(WorldPosition.x, WorldPosition.x + WorldSize.x);
+        return WorldPosition.x + size.x / 2;
     }
 
     public float GetBottom()
     {
-        return Mathf.Min(WorldPosition.y, WorldPosition.y + WorldSize.y);
+        return WorldPosition.y - size.y / 2;
     }
     public float GetTop()
     {
-        return Mathf.Max(WorldPosition.y, WorldPosition.y + WorldSize.y);
+        return WorldPosition.y + size.y / 2;
     }
 
     public float GetFar()
     {
-        return Mathf.Min(WorldPosition.z, WorldPosition.z + WorldSize.z);
+        return WorldPosition.z - size.z / 2;
     }
 
     public float GetNear()
     {
-        return Mathf.Max(WorldPosition.z, WorldPosition.z + WorldSize.z);
+        return WorldPosition.z + size.z / 2;
     }
 }
 

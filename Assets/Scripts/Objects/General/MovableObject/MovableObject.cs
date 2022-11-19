@@ -172,8 +172,10 @@ public class MovableObject : MonoBehaviour
 
     private void UpdateSortingOrder()
     {
-        figureObject.sortingOrder = -1 * Mathf.RoundToInt(WorldPosition.z * 100f) * 10;
+        figureObject.sortingOrder = SortingOrder;
     }
+    
+    public int SortingOrder => -1 * Mathf.RoundToInt(WorldPosition.z * 100f) * 10;
 
     public float GroundDistance(Vector3 point)
     {

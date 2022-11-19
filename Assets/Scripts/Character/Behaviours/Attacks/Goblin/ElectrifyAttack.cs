@@ -28,7 +28,7 @@ public class ElectrifyAttack : NormalAttack
         periodicHitDetector = new PeriodicAbsoluteHitDetector(EventManager, periodicHitbox, hittable =>
         {
             if (!IsHittableTag(hittable.Character.tag)) return;
-            periodicHitbox.PlayParticles();
+            periodicHitbox.PlayParticles(hittable.Character.movableObject.SortingOrder);
             HitCallable(hittable);
         }, periodicHitInterval);
 
@@ -38,7 +38,7 @@ public class ElectrifyAttack : NormalAttack
         explosionHitDetector = new SingleHitDetector(EventManager, explosionHitbox, hittable =>
         {
             if (!IsHittableTag(hittable.Character.tag)) return;
-            explosionHitbox.PlayParticles();
+            explosionHitbox.PlayParticles(hittable.Character.movableObject.SortingOrder);
             ExplosionHitCallable(hittable);
         });
 

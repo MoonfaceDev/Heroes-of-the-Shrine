@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -38,7 +39,7 @@ public class SpinningSwordsAttack : NormalAttack
         return new SingleHitDetector(EventManager, attachedHitbox, hittable =>
         {
             if (!IsHittableTag(hittable.Character.tag)) return;
-            attachedHitbox.PlayParticles();
+            attachedHitbox.PlayParticles(hittable.Character.movableObject.SortingOrder);
             HitCallable(hittable);
         });
     }
