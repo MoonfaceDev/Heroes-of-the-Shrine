@@ -927,7 +927,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: ebc4389c63968414d8841a503e57b7fe, type: 2}
     - target: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_SceneBindings.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_SceneBindings.Array.data[0].key
@@ -937,6 +937,10 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[1].key
       value: 
       objectReference: {fileID: -7946910647684706536, guid: ebc4389c63968414d8841a503e57b7fe, type: 2}
+    - target: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_SceneBindings.Array.data[2].key
+      value: 
+      objectReference: {fileID: -8399753187831221364, guid: ebc4389c63968414d8841a503e57b7fe, type: 2}
     - target: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_SceneBindings.Array.data[0].value
       value: 
@@ -1075,7 +1079,19 @@ PrefabInstance:
       objectReference: {fileID: 2083560094}
     - target: {fileID: 8011096904622113216, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.5
+      value: -11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011096904622113216, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011096904622113223, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: position.x
+      value: -11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011096904622113223, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: position.z
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 9138288699133641890, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: director
