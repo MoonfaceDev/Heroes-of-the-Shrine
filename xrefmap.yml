@@ -4581,6 +4581,38 @@ references:
   commentId: T:Global.PossesAttack
   fullName: PossesAttack
   nameWithType: PossesAttack
+- uid: Global.PossesAttack.ActiveCoroutine
+  name: ActiveCoroutine()
+  href: api/Global.PossesAttack.html#Global_PossesAttack_ActiveCoroutine
+  commentId: M:Global.PossesAttack.ActiveCoroutine
+  fullName: PossesAttack.ActiveCoroutine()
+  nameWithType: PossesAttack.ActiveCoroutine()
+- uid: Global.PossesAttack.ActiveCoroutine*
+  name: ActiveCoroutine
+  href: api/Global.PossesAttack.html#Global_PossesAttack_ActiveCoroutine_
+  commentId: Overload:Global.PossesAttack.ActiveCoroutine
+  isSpec: "True"
+  fullName: PossesAttack.ActiveCoroutine
+  nameWithType: PossesAttack.ActiveCoroutine
+- uid: Global.PossesAttack.AnticipateCoroutine
+  name: AnticipateCoroutine()
+  href: api/Global.PossesAttack.html#Global_PossesAttack_AnticipateCoroutine
+  commentId: M:Global.PossesAttack.AnticipateCoroutine
+  fullName: PossesAttack.AnticipateCoroutine()
+  nameWithType: PossesAttack.AnticipateCoroutine()
+- uid: Global.PossesAttack.AnticipateCoroutine*
+  name: AnticipateCoroutine
+  href: api/Global.PossesAttack.html#Global_PossesAttack_AnticipateCoroutine_
+  commentId: Overload:Global.PossesAttack.AnticipateCoroutine
+  isSpec: "True"
+  fullName: PossesAttack.AnticipateCoroutine
+  nameWithType: PossesAttack.AnticipateCoroutine
+- uid: Global.PossesAttack.anticipateDuration
+  name: anticipateDuration
+  href: api/Global.PossesAttack.html#Global_PossesAttack_anticipateDuration
+  commentId: F:Global.PossesAttack.anticipateDuration
+  fullName: PossesAttack.anticipateDuration
+  nameWithType: PossesAttack.anticipateDuration
 - uid: Global.PossesAttack.Awake
   name: Awake()
   href: api/Global.PossesAttack.html#Global_PossesAttack_Awake
@@ -4594,12 +4626,37 @@ references:
   isSpec: "True"
   fullName: PossesAttack.Awake
   nameWithType: PossesAttack.Awake
+- uid: Global.PossesAttack.minSourcesDistance
+  name: minSourcesDistance
+  href: api/Global.PossesAttack.html#Global_PossesAttack_minSourcesDistance
+  commentId: F:Global.PossesAttack.minSourcesDistance
+  fullName: PossesAttack.minSourcesDistance
+  nameWithType: PossesAttack.minSourcesDistance
 - uid: Global.PossesAttack.possesSource
   name: possesSource
   href: api/Global.PossesAttack.html#Global_PossesAttack_possesSource
   commentId: F:Global.PossesAttack.possesSource
   fullName: PossesAttack.possesSource
   nameWithType: PossesAttack.possesSource
+- uid: Global.PossesAttack.RecoveryCoroutine
+  name: RecoveryCoroutine()
+  href: api/Global.PossesAttack.html#Global_PossesAttack_RecoveryCoroutine
+  commentId: M:Global.PossesAttack.RecoveryCoroutine
+  fullName: PossesAttack.RecoveryCoroutine()
+  nameWithType: PossesAttack.RecoveryCoroutine()
+- uid: Global.PossesAttack.RecoveryCoroutine*
+  name: RecoveryCoroutine
+  href: api/Global.PossesAttack.html#Global_PossesAttack_RecoveryCoroutine_
+  commentId: Overload:Global.PossesAttack.RecoveryCoroutine
+  isSpec: "True"
+  fullName: PossesAttack.RecoveryCoroutine
+  nameWithType: PossesAttack.RecoveryCoroutine
+- uid: Global.PossesAttack.recoveryDuration
+  name: recoveryDuration
+  href: api/Global.PossesAttack.html#Global_PossesAttack_recoveryDuration
+  commentId: F:Global.PossesAttack.recoveryDuration
+  fullName: PossesAttack.recoveryDuration
+  nameWithType: PossesAttack.recoveryDuration
 - uid: Global.PossesAttack.sourceActiveDuration
   name: sourceActiveDuration
   href: api/Global.PossesAttack.html#Global_PossesAttack_sourceActiveDuration

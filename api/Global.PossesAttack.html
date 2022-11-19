@@ -91,80 +91,10 @@
     <div class="level1"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
     <div class="level2"><a class="xref" href="Global.PlayableBehaviour.html">PlayableBehaviour</a></div>
     <div class="level3"><a class="xref" href="Global.BaseAttack.html">BaseAttack</a></div>
-    <div class="level4"><a class="xref" href="Global.SimpleAttack.html">SimpleAttack</a></div>
-    <div class="level5"><span class="xref">PossesAttack</span></div>
+    <div class="level4"><span class="xref">PossesAttack</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_previousAttacks">SimpleAttack.previousAttacks</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_midair">SimpleAttack.midair</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_anticipateDuration">SimpleAttack.anticipateDuration</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_activeDuration">SimpleAttack.activeDuration</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_recoveryDuration">SimpleAttack.recoveryDuration</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_hitbox">SimpleAttack.hitbox</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_overrideDefaultHittableTags">SimpleAttack.overrideDefaultHittableTags</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_hittableTags">SimpleAttack.hittableTags</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_damage">SimpleAttack.damage</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_hitType">SimpleAttack.hitType</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_knockbackPower">SimpleAttack.knockbackPower</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_knockbackDirection">SimpleAttack.knockbackDirection</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_stunTime">SimpleAttack.stunTime</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_Start">SimpleAttack.Start()</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_PreventWalking_System_Boolean_">SimpleAttack.PreventWalking(Boolean)</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_IsHittableTag_System_String_">SimpleAttack.IsHittableTag(String)</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_CreateHitDetector">SimpleAttack.CreateHitDetector()</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_CanPlay">SimpleAttack.CanPlay()</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_CalculateDamage_Character_">SimpleAttack.CalculateDamage(Character)</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_HitCallable_IHittable_">SimpleAttack.HitCallable(IHittable)</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_AnticipateCoroutine">SimpleAttack.AnticipateCoroutine()</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_ActiveCoroutine">SimpleAttack.ActiveCoroutine()</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_RecoveryCoroutine">SimpleAttack.RecoveryCoroutine()</a>
-    </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_instant">BaseAttack.instant</a>
     </div>
@@ -206,6 +136,9 @@
     </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_OnFinishRecovery">BaseAttack.OnFinishRecovery</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_CanPlay">BaseAttack.CanPlay()</a>
     </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Play">BaseAttack.Play()</a>
@@ -263,10 +196,58 @@
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_PossesAttack_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class PossesAttack : SimpleAttack</code></pre>
+    <pre><code class="lang-csharp hljs">public class PossesAttack : BaseAttack</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
+  
+  
+  <h4 id="Global_PossesAttack_anticipateDuration" data-uid="Global.PossesAttack.anticipateDuration">anticipateDuration</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float anticipateDuration</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Global_PossesAttack_minSourcesDistance" data-uid="Global.PossesAttack.minSourcesDistance">minSourcesDistance</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float minSourcesDistance</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   
   
   <h4 id="Global_PossesAttack_possesSource" data-uid="Global.PossesAttack.possesSource">possesSource</h4>
@@ -287,6 +268,30 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Global.PossesSource.html">PossesSource</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Global_PossesAttack_recoveryDuration" data-uid="Global.PossesAttack.recoveryDuration">recoveryDuration</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float recoveryDuration</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -391,6 +396,60 @@
   </h3>
   
   
+  <a id="Global_PossesAttack_ActiveCoroutine_" data-uid="Global.PossesAttack.ActiveCoroutine*"></a>
+  <h4 id="Global_PossesAttack_ActiveCoroutine" data-uid="Global.PossesAttack.ActiveCoroutine">ActiveCoroutine()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerator ActiveCoroutine()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_ActiveCoroutine">BaseAttack.ActiveCoroutine()</a></div>
+  
+  
+  <a id="Global_PossesAttack_AnticipateCoroutine_" data-uid="Global.PossesAttack.AnticipateCoroutine*"></a>
+  <h4 id="Global_PossesAttack_AnticipateCoroutine" data-uid="Global.PossesAttack.AnticipateCoroutine">AnticipateCoroutine()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerator AnticipateCoroutine()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_AnticipateCoroutine">BaseAttack.AnticipateCoroutine()</a></div>
+  
+  
   <a id="Global_PossesAttack_Awake_" data-uid="Global.PossesAttack.Awake*"></a>
   <h4 id="Global_PossesAttack_Awake" data-uid="Global.PossesAttack.Awake">Awake()</h4>
   <div class="markdown level1 summary"></div>
@@ -400,7 +459,34 @@
     <pre><code class="lang-csharp hljs">public override void Awake()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_Awake">SimpleAttack.Awake()</a></div>
+  <div><a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Awake">CharacterBehaviour.Awake()</a></div>
+  
+  
+  <a id="Global_PossesAttack_RecoveryCoroutine_" data-uid="Global.PossesAttack.RecoveryCoroutine*"></a>
+  <h4 id="Global_PossesAttack_RecoveryCoroutine" data-uid="Global.PossesAttack.RecoveryCoroutine">RecoveryCoroutine()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerator RecoveryCoroutine()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_RecoveryCoroutine">BaseAttack.RecoveryCoroutine()</a></div>
 </article>
           </div>
           
