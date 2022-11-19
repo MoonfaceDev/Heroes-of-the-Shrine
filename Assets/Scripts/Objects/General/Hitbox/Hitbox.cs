@@ -16,7 +16,7 @@ public class Hitbox : MonoBehaviour
     }
 
     public Vector3 WorldPosition => movableObject.WorldPosition;
-    public Vector3 WorldSize => Vector3.Scale(movableObject.parent.rotation * size, movableObject.parent.scale);
+    public Vector3 WorldSize => movableObject.parent ? Vector3.Scale(movableObject.parent.rotation * size, movableObject.parent.scale) : size;
 
     public void PlayParticles()
     {
@@ -29,7 +29,7 @@ public class Hitbox : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        if (CompareTag("Barrier"))
+        if (movableObject && CompareTag("Barrier"))
         {
             Color lineColor = new(1.0f, 0.5f, 0.0f);
             Color fillColor = new(1.0f, 0.5f, 0.0f, 0.3f);
@@ -41,7 +41,7 @@ public class Hitbox : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
-        if (!CompareTag("Barrier"))
+        if (movableObject && !CompareTag("Barrier"))
         {
             Color lineColor = new(1.0f, 0.5f, 0.0f);
             Color fillColor = new(1.0f, 0.5f, 0.0f, 0.3f);

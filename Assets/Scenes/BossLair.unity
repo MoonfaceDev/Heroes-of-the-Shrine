@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 63080241}
   - component: {fileID: 63080240}
   - component: {fileID: 63080239}
+  - component: {fileID: 63080258}
   - component: {fileID: 63080257}
   - component: {fileID: 63080237}
   m_Layer: 0
@@ -437,6 +438,29 @@ MonoBehaviour:
   armorCooldown: 5
   damageMultiplier: 0.5
   armorCooldownStart: 0
+--- !u!114 &63080258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63080233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9569bccaf17bff14bb7809fd39e6391d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instant: 0
+  interruptible: 1
+  hardRecovery: 0
+  anticipateDuration: 1
+  recoveryDuration: 3
+  sourcesCount: 10
+  spawnRadius: 5
+  minSourcesDistance: 0.5
+  possesSource: {fileID: 6907962097126891099, guid: c619b10d9f747194c92416ed8fe7005a, type: 3}
+  warningDuration: 2
+  sourceActiveDuration: 1
 --- !u!1 &153687728
 GameObject:
   m_ObjectHideFlags: 0

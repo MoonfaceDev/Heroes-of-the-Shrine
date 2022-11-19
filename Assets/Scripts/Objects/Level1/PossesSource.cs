@@ -1,17 +1,10 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Hitbox))]
 public class PossesSource : MonoBehaviour
 {
     public GameObject warningIndicator;
     public GameObject activeIndicator;
-
-    private void Start()
-    {
-        warningIndicator.SetActive(false);
-        activeIndicator.SetActive(false);
-    }
 
     public void Activate(float warningDuration, float activeDuration)
     {
