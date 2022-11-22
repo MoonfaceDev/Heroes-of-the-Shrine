@@ -5,13 +5,12 @@ public class ElectrifyAttack : NormalAttack
 {
     [Header("Electrify")] public float electrifyDuration;
     public float electrifySpeedMultiplier;
-    [Header("Periodic hits")] public Hitbox periodicHitbox;
-    public float periodicHitInterval;
+    [Header("Periodic hits")] public PeriodicAbsoluteHitDetector periodicHitDetector;
     public int periodicHitCount;
     public float periodicHitElectrifyRate;
     public float periodicStunTime;
     public float periodicDamage;
-    [Header("Explosion")] public Hitbox explosionHitbox;
+    [Header("Explosion")] public BaseHitDetector explosionHitDetector;
 
     [FormerlySerializedAs("epxlosionKnockbackPower")]
     public float explosionKnockbackPower;
@@ -20,45 +19,28 @@ public class ElectrifyAttack : NormalAttack
     public float explosionDamage;
     public float explosionStunTime;
 
-    private PeriodicAbsoluteHitDetector periodicHitDetector;
-    private SingleHitDetector explosionHitDetector;
-
-    protected override void CreateHitDetector()
+    protected override void ConfigureHitDetector()
     {
-        periodicHitDetector = new PeriodicAbsoluteHitDetector(EventManager, periodicHitbox, hittable =>
-        {
-            if (!IsHittableTag(hittable.Character.tag)) return;
-            periodicHitbox.PlayParticles(hittable.Character.movableObject.SortingOrder);
-            HitCallable(hittable);
-        }, periodicHitInterval);
-
         float detectCount = 0;
         periodicHitDetector.OnDetect += () => detectCount++;
-
-        explosionHitDetector = new SingleHitDetector(EventManager, explosionHitbox, hittable =>
-        {
-            if (!IsHittableTag(hittable.Character.tag)) return;
-            explosionHitbox.PlayParticles(hittable.Character.movableObject.SortingOrder);
-            ExplosionHitCallable(hittable);
-        });
 
         EventListener switchDetectorsEvent = null;
 
         OnStartActive += () =>
         {
-            periodicHitDetector.Start();
+            periodicHitDetector.StartDetector(HitCallable, AttackManager.hittableTags);
             switchDetectorsEvent = EventManager.Attach(() => detectCount >= periodicHitCount, () =>
             {
-                periodicHitDetector.Stop();
-                explosionHitDetector.Start();
+                periodicHitDetector.StopDetector();
+                explosionHitDetector.StartDetector(ExplosionHitCallable, AttackManager.hittableTags);
                 detectCount = 0;
             });
         };
 
         OnFinishActive += () =>
         {
-            periodicHitDetector.Stop();
-            explosionHitDetector.Stop();
+            periodicHitDetector.StopDetector();
+            explosionHitDetector.StopDetector();
             EventManager.Detach(switchDetectorsEvent);
         };
     }
@@ -70,6 +52,7 @@ public class ElectrifyAttack : NormalAttack
 
     protected override void HitCallable(IHittable hittable)
     {
+        InvokeOnHit(hittable);
         var processedDamage = CalculateDamage(hittable.Character);
         print(hittable.Character.name + " hit by periodic " + AttackName);
         hittable.Stun(processedDamage, periodicStunTime);

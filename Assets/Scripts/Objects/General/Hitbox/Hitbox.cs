@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using static MathUtils;
@@ -17,16 +16,6 @@ public class Hitbox : MonoBehaviour
     }
 
     public Vector3 WorldPosition => movableObject.WorldPosition;
-
-    public void PlayParticles(int minSortingOrder)
-    {
-        print(minSortingOrder + ", " + movableObject.parent.SortingOrder);
-        var innerParticleSystem = GetComponentInChildren<ParticleSystem>();
-        if (!innerParticleSystem) return;
-        innerParticleSystem.GetComponent<Renderer>().sortingOrder =
-            Math.Max(minSortingOrder, movableObject.parent.SortingOrder) + 1;  
-        innerParticleSystem.Play();
-    }
 
     void OnDrawGizmos()
     {
@@ -50,9 +39,12 @@ public class Hitbox : MonoBehaviour
 
     private void DrawHitbox(Color lineColor, Color fillColor)
     {
-        DrawOutline(MovableObject.ScreenCoordinates(WorldPosition + size.z / 2 * Vector3.back), MovableObject.ScreenCoordinates(size + size.z * Vector3.back), lineColor);
-        DrawBoth(MovableObject.ScreenCoordinates(WorldPosition + size.y / 2 * Vector3.up), MovableObject.ScreenCoordinates(size + size.y * Vector3.down), lineColor, fillColor);
-        DrawFill(MovableObject.ScreenCoordinates(WorldPosition + WorldPosition.y * Vector3.down), MovableObject.ScreenCoordinates(size + size.y * Vector3.down), new Color(0, 0, 0, 0.5f));
+        DrawOutline(MovableObject.ScreenCoordinates(WorldPosition + size.z / 2 * Vector3.back),
+            MovableObject.ScreenCoordinates(size + size.z * Vector3.back), lineColor);
+        DrawBoth(MovableObject.ScreenCoordinates(WorldPosition + size.y / 2 * Vector3.up),
+            MovableObject.ScreenCoordinates(size + size.y * Vector3.down), lineColor, fillColor);
+        DrawFill(MovableObject.ScreenCoordinates(WorldPosition + WorldPosition.y * Vector3.down),
+            MovableObject.ScreenCoordinates(size + size.y * Vector3.down), new Color(0, 0, 0, 0.5f));
     }
 
     void DrawBoth(Vector2 screenCenter, Vector2 screenSize, Color lineColor, Color fillColor)
@@ -64,7 +56,8 @@ public class Hitbox : MonoBehaviour
     void DrawOutline(Vector2 screenCenter, Vector2 screenSize, Color lineColor)
     {
         Gizmos.color = lineColor;
-        Gizmos.DrawWireCube((Vector3)screenCenter + 0.01f * Vector3.forward, (Vector3)screenSize + 0.01f * Vector3.forward);
+        Gizmos.DrawWireCube((Vector3)screenCenter + 0.01f * Vector3.forward,
+            (Vector3)screenSize + 0.01f * Vector3.forward);
     }
 
     void DrawFill(Vector2 screenCenter, Vector2 screenSize, Color fillColor)
@@ -76,8 +69,8 @@ public class Hitbox : MonoBehaviour
     public bool IsInside(Vector3 point)
     {
         return point.x >= GetLeft() && point.x <= GetRight()
-            && point.y >= GetBottom() && point.y <= GetTop()
-            && point.z >= GetFar() && point.z <= GetNear();
+                                    && point.y >= GetBottom() && point.y <= GetTop()
+                                    && point.z >= GetFar() && point.z <= GetNear();
     }
 
     static bool IsBetween(float min1, float max1, float min2, float max2)
@@ -87,9 +80,12 @@ public class Hitbox : MonoBehaviour
 
     public bool OverlapHitbox(Hitbox hitbox, float padding = 0)
     {
-        return IsBetween(GetLeft() + padding, GetRight() - padding, hitbox.GetLeft() + padding, hitbox.GetRight() - padding) &&
-            IsBetween(GetBottom() + padding, GetTop() - padding, hitbox.GetBottom() + padding, hitbox.GetTop() - padding) &&
-            IsBetween(GetFar() + padding, GetNear() - padding, hitbox.GetFar() + padding, hitbox.GetNear() - padding);
+        return IsBetween(GetLeft() + padding, GetRight() - padding, hitbox.GetLeft() + padding,
+                   hitbox.GetRight() - padding) &&
+               IsBetween(GetBottom() + padding, GetTop() - padding, hitbox.GetBottom() + padding,
+                   hitbox.GetTop() - padding) &&
+               IsBetween(GetFar() + padding, GetNear() - padding, hitbox.GetFar() + padding,
+                   hitbox.GetNear() - padding);
     }
 
     public List<Vector2> GetSegmentIntersections(Vector2 start, Vector2 end)
@@ -111,6 +107,7 @@ public class Hitbox : MonoBehaviour
     {
         return WorldPosition.y - size.y / 2;
     }
+
     public float GetTop()
     {
         return WorldPosition.y + size.y / 2;
@@ -126,4 +123,3 @@ public class Hitbox : MonoBehaviour
         return WorldPosition.z + size.z / 2;
     }
 }
-

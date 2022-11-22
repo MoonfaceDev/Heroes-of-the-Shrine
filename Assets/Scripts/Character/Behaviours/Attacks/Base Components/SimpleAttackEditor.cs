@@ -10,9 +10,7 @@ public class SimpleAttackEditor : Editor
     private SerializedProperty anticipateDuration;
     private SerializedProperty activeDuration;
     private SerializedProperty recoveryDuration;
-    private SerializedProperty hitbox;
-    private SerializedProperty overrideDefaultHittableTags;
-    private SerializedProperty hittableTags;
+    private SerializedProperty hitDetector;
     private SerializedProperty damage;
     private SerializedProperty hitTypeIndex;
     private SerializedProperty knockbackPower;
@@ -28,9 +26,7 @@ public class SimpleAttackEditor : Editor
         anticipateDuration = serializedObject.FindProperty("anticipateDuration");
         activeDuration = serializedObject.FindProperty("activeDuration");
         recoveryDuration = serializedObject.FindProperty("recoveryDuration");
-        hitbox = serializedObject.FindProperty("hitbox");
-        overrideDefaultHittableTags = serializedObject.FindProperty("overrideDefaultHittableTags");
-        hittableTags = serializedObject.FindProperty("hittableTags");
+        hitDetector = serializedObject.FindProperty("hitDetector");
         damage = serializedObject.FindProperty("damage");
         hitTypeIndex = serializedObject.FindProperty("hitType");
         knockbackPower = serializedObject.FindProperty("knockbackPower");
@@ -42,8 +38,7 @@ public class SimpleAttackEditor : Editor
     {
         serializedObject.Update();
         DrawPropertiesExcluding(serializedObject, "previousAttacks", "anticipateDuration", "activeDuration",
-            "recoveryDuration", "hitbox", "overrideDefaultHittableTags", "hittableTags", "damage", "hitType",
-            "knockbackPower", "knockbackDirection", "stunTime");
+            "recoveryDuration", "hitDetector", "damage", "hitType", "knockbackPower", "knockbackDirection", "stunTime");
         var attack = (SimpleAttack)target;
 
         if (!HasMethod(attack, "ComboCondition"))
@@ -76,27 +71,10 @@ public class SimpleAttackEditor : Editor
             attack.recoveryDuration = recoveryDuration.floatValue;
         }
 
-        if (!HasMethod(attack, "CreateHitDetector"))
+        if (!HasMethod(attack, "ConfigureHitDetector"))
         {
-            EditorGUILayout.PropertyField(hitbox);
-            attack.hitbox = (Hitbox)hitbox.objectReferenceValue;
-        }
-
-        if (!HasProperty(attack, "HittableTags"))
-        {
-            EditorGUILayout.PropertyField(overrideDefaultHittableTags);
-            attack.overrideDefaultHittableTags = overrideDefaultHittableTags.boolValue;
-            if (attack.overrideDefaultHittableTags)
-            {
-                EditorGUILayout.PropertyField(hittableTags);
-                List<string> hittableTagsValue = new();
-                for (var i = 0; i < hittableTags.arraySize; i++)
-                {
-                    hittableTagsValue.Add(hittableTags.GetArrayElementAtIndex(i).stringValue);
-                }
-
-                attack.hittableTags = hittableTagsValue;
-            }
+            EditorGUILayout.PropertyField(hitDetector);
+            attack.hitDetector = (BaseHitDetector)hitDetector.objectReferenceValue;
         }
 
         if (!HasMethod(attack, "CalculateDamage"))

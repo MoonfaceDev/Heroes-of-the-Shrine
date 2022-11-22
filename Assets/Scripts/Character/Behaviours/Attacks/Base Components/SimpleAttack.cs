@@ -1,6 +1,6 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public enum HitType
@@ -39,19 +39,9 @@ public class SimpleAttack : BaseAttack
     public float recoveryDuration;
 
     /// <value>
-    /// Hitbox where the attack can hit.
+    /// Hit detector that detect hits.
     /// </value>
-    public Hitbox hitbox;
-
-    /// <value>
-    /// If <c>true</c>, overrides the default list of hittable tags in <see cref="AttackManager"/>, specifically for this attack.
-    /// </value>
-    public bool overrideDefaultHittableTags;
-
-    /// <value>
-    /// Tags of objects this attack can hit.
-    /// </value>
-    public List<string> hittableTags;
+    public BaseHitDetector hitDetector;
 
     /// <value>
     /// Health reduced to hit characters.
@@ -78,8 +68,10 @@ public class SimpleAttack : BaseAttack
     /// </value>
     public float stunTime = 0.5f;
 
-    private IEnumerable<string> HittableTags =>
-        overrideDefaultHittableTags ? hittableTags : GetComponent<AttackManager>().hittableTags;
+    /// <value>
+    /// An hittable was hit by this attack.
+    /// </value>
+    public event Action<IHittable> OnHit;
 
     public override void Awake()
     {
@@ -89,7 +81,7 @@ public class SimpleAttack : BaseAttack
 
     public void Start()
     {
-        CreateHitDetector();
+        ConfigureHitDetector();
     }
 
     /// <summary>
@@ -123,35 +115,14 @@ public class SimpleAttack : BaseAttack
         }
     }
 
-    private static bool IsTagIncluded(string testedTag, string group)
-    {
-        return testedTag == group || testedTag.StartsWith(group + ".");
-    }
-
     /// <summary>
-    /// Checks if the tag is hittable by this attack.
-    /// </summary>
-    /// <param name="testedTag">Tag to test.</param>
-    /// <returns><c>true</c> if the tag is hittable.</returns>
-    protected bool IsHittableTag(string testedTag)
-    {
-        return HittableTags.Any(hittableTag => IsTagIncluded(testedTag, hittableTag));
-    }
-
-    /// <summary>
-    /// Creates a <see cref="SingleHitDetector"/> that detects hits for <see cref="hitbox"/>.
+    /// Configures the <see cref="hitDetector"/>.
     /// The hit detector will detect hits when attack is during active phase.
     /// </summary>
-    protected virtual void CreateHitDetector()
+    protected virtual void ConfigureHitDetector()
     {
-        SingleHitDetector hitDetector = new(EventManager, hitbox, hittable =>
-        {
-            if (!IsHittableTag(hittable.Character.tag)) return;
-            hitbox.PlayParticles(hittable.Character.movableObject.SortingOrder);
-            HitCallable(hittable);
-        });
-        OnStartActive += () => hitDetector.Start();
-        OnFinishActive += () => hitDetector.Stop();
+        OnStartActive += () => hitDetector.StartDetector(HitCallable, AttackManager.hittableTags);
+        OnFinishActive += () => hitDetector.StopDetector();
     }
 
     /// <summary>
@@ -161,20 +132,17 @@ public class SimpleAttack : BaseAttack
     /// <returns><c>true</c> if the attack can be played.</returns>
     public override bool CanPlay()
     {
-        var attackManager = GetComponent<AttackManager>();
-
         return base.CanPlay()
                && midair == IsPlaying(typeof(JumpBehaviour))
                && AllStopped(typeof(SlideBehaviour), typeof(DodgeBehaviour))
-               && !((attackManager.Anticipating || attackManager.Active || attackManager.HardRecovering) &&
-                    !(instant && attackManager.IsInterruptible()))
+               && !((AttackManager.Anticipating || AttackManager.Active || AttackManager.HardRecovering) &&
+                    !(instant && AttackManager.IsInterruptible()))
                && ComboCondition();
     }
 
     private bool ComboCondition()
     {
-        var attackManager = GetComponent<AttackManager>();
-        return previousAttacks.Count == 0 || previousAttacks.Contains(attackManager.lastAttack);
+        return previousAttacks.Count == 0 || previousAttacks.Contains(AttackManager.lastAttack);
     }
 
     /// <summary>
@@ -184,7 +152,16 @@ public class SimpleAttack : BaseAttack
     /// <returns>Damage result.</returns>
     protected virtual float CalculateDamage(Character character)
     {
-        return GetComponent<AttackManager>().TranspileDamage(this, character, damage);
+        return AttackManager.TranspileDamage(this, character, damage);
+    }
+
+    /// <summary>
+    /// Invokes <see cref="OnHit"/> event
+    /// </summary>
+    /// <param name="hittable">Hittable hit by the attack</param>
+    protected void InvokeOnHit(IHittable hittable)
+    {
+        OnHit?.Invoke(hittable);
     }
 
     /// <summary>
@@ -194,6 +171,7 @@ public class SimpleAttack : BaseAttack
     /// <param name="hittable">The hittable hit by the attack.</param>
     protected virtual void HitCallable(IHittable hittable)
     {
+        InvokeOnHit(hittable);
         var processedDamage = CalculateDamage(hittable.Character);
         print(hittable.Character.name + " hit by " + AttackName);
         switch (hitType)

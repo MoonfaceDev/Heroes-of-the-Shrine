@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
 
@@ -34,8 +35,8 @@ internal class MovableObjectEditor : Editor
         }
         movableObject.position = position.vector3Value;
         movableObject.transform.localPosition = MovableObject.GroundScreenCoordinates(movableObject.position);
-        movableObject.rotation = rotation.quaternionValue;
-        movableObject.transform.localRotation = movableObject.rotation;
+        movableObject.rotation = rotation.vector3Value;
+        movableObject.transform.localRotation = quaternion.Euler(movableObject.rotation);
         movableObject.scale = scale.vector3Value;
         movableObject.transform.localScale = movableObject.scale;
         if (movableObject.figureObject)

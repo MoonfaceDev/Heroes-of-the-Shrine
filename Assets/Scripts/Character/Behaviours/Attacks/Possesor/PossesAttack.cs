@@ -46,7 +46,8 @@ public class PossesAttack : BaseAttack
                     alreadySpawned.Add(spawnPoint);
                     var newPossesSource = Instantiate(possesSource.gameObject);
                     newPossesSource.GetComponent<MovableObject>().WorldPosition = spawnPoint;
-                    newPossesSource.GetComponent<PossesSource>().Activate(warningDuration, sourceActiveDuration);
+                    newPossesSource.GetComponent<PossesSource>().Activate(warningDuration, sourceActiveDuration,
+                        AttackManager.hittableTags);
                 }
                 catch (NoSpawnPointException)
                 {

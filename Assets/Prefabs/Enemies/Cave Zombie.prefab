@@ -154,7 +154,7 @@ MonoBehaviour:
   parent: {fileID: 3354150098320785788}
   figureObject: {fileID: 0}
   position: {x: 0, y: 0.91, z: 0}
-  rotation: {x: 0, y: 0, z: 0, w: 0}
+  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -212,7 +212,6 @@ GameObject:
   - component: {fileID: 3354150098320785679}
   - component: {fileID: 3354150098320785678}
   - component: {fileID: 3354150098320785677}
-  - component: {fileID: 3354150098320785676}
   m_Layer: 0
   m_Name: Cave Zombie
   m_TagString: Enemy.Goblin.Cave
@@ -254,7 +253,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   figureObject: {fileID: 3354150098403288961}
   position: {x: 5.16, y: 0, z: -2.91}
-  rotation: {x: 0, y: 0, z: 0, w: 0}
+  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -456,9 +455,7 @@ MonoBehaviour:
   anticipateDuration: 0.2
   activeDuration: 0.2
   recoveryDuration: 0.1
-  hitbox: {fileID: 3354150098559167059}
-  overrideDefaultHittableTags: 0
-  hittableTags: []
+  hitDetector: {fileID: 3056088687185938479}
   damage: 10
   hitType: 1
   knockbackPower: 20
@@ -485,9 +482,7 @@ MonoBehaviour:
   anticipateDuration: 0.2
   activeDuration: 0.2
   recoveryDuration: 0.1
-  hitbox: {fileID: 3354150098559167059}
-  overrideDefaultHittableTags: 0
-  hittableTags: []
+  hitDetector: {fileID: 3056088687185938479}
   damage: 10
   hitType: 1
   knockbackPower: 0
@@ -540,19 +535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595f0ae187581934e9415feea720a763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3354150098320785676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3354150098320785675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cfe8175de16ba346a6957969e6a94ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particles: {fileID: 0}
 --- !u!1 &3354150098403288991
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,6 +651,7 @@ GameObject:
   - component: {fileID: 3354150098559167060}
   - component: {fileID: 3354150098559167059}
   - component: {fileID: 6878422677271055116}
+  - component: {fileID: 3056088687185938479}
   m_Layer: 0
   m_Name: NormalAttackHitbox
   m_TagString: Untagged
@@ -719,7 +702,22 @@ MonoBehaviour:
   parent: {fileID: 3354150098320785788}
   figureObject: {fileID: 0}
   position: {x: 0.875, y: 0.9, z: 0}
-  rotation: {x: 0, y: 0, z: 0, w: 0}
+  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
+--- !u!114 &3056088687185938479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354150098559167058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackManager: {fileID: 3354150098320785778}
+  overrideDefaultHittableTags: 0
+  hittableTags: []

@@ -123,6 +123,21 @@ public abstract class BaseAttack : PlayableBehaviour
     private bool active;
     private bool recovering;
 
+    protected AttackManager AttackManager
+    {
+        get
+        {
+            if (attackManager == null)
+            {
+                attackManager = GetComponent<AttackManager>();
+            }
+
+            return attackManager;
+        }
+    }
+
+    private AttackManager attackManager;
+
     private Coroutine attackFlowCoroutine;
 
     /// <summary>

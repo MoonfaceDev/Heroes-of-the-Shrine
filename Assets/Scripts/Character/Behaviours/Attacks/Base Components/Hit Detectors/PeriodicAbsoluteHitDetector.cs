@@ -2,48 +2,37 @@ using System;
 
 public class PeriodicAbsoluteHitDetector : BaseHitDetector
 {
+    public float interval;
+    public bool startImmediately = true;
+    
     public event Action OnDetect;
 
-    private readonly EventManager eventManager;
-    private readonly Hitbox hitbox;
-    private readonly Action<IHittable> hitCallable;
-    private readonly float interval;
-    private readonly bool startImmediately;
     private EventListener detectPeriodicallyEvent;
 
-    public PeriodicAbsoluteHitDetector(EventManager eventManager, Hitbox hitbox, Action<IHittable> hitCallable, float interval, bool startImmediately = true)
-    {
-        this.eventManager = eventManager;
-        this.hitbox = hitbox;
-        this.hitCallable = hitCallable;
-        this.interval = interval;
-        this.startImmediately = startImmediately;
-    }
-
-    public override void Start()
+    protected override void DoStartDetector(Action<IHittable> hitCallable)
     {
         if (startImmediately)
         {
-            DetectHits();
+            DetectHits(hitCallable);
         }
-        detectPeriodicallyEvent = eventManager.StartInterval(DetectHits, interval);
+        detectPeriodicallyEvent = EventManager.Instance.StartInterval(() => DetectHits(hitCallable), interval);
     }
 
-    private void DetectHits()
+    private void DetectHits(Action<IHittable> hitCallable)
     {
         OnDetect?.Invoke();
-        var hittables = UnityEngine.Object.FindObjectsOfType<HittableHitbox>();
+        var hittables = FindObjectsOfType<HittableHitbox>();
         foreach (var hittable in hittables)
         {
-            if (OverlapHittable(hittable, hitbox))
+            if (hittable.Hitbox.OverlapHitbox(hitbox))
             {
                 hitCallable(hittable);
             }
         }
     }
 
-    public override void Stop()
+    public override void StopDetector()
     {
-        eventManager.Detach(detectPeriodicallyEvent);
+        EventManager.Instance.Detach(detectPeriodicallyEvent);
     }
 }

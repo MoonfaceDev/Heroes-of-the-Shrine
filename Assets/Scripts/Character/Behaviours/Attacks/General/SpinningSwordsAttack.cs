@@ -1,58 +1,37 @@
-using System;
-using System.Collections;
-using UnityEngine;
+using UnityEngine.Serialization;
 
 public class SpinningSwordsAttack : NormalAttack
 {
-    public Hitbox hitbox1;
-    public Hitbox hitbox2;
-    public float hitbox1FinishTime;
-    public float hitbox2StartTime;
+    public BaseHitDetector hitDetector1;
+    public BaseHitDetector hitDetector2;
 
-    private SingleHitDetector hitDetector1;
-    private SingleHitDetector hitDetector2;
+    [FormerlySerializedAs("hitbox1FinishTime")]
+    public float detector1FinishTime;
 
-    protected override void CreateHitDetector()
+    [FormerlySerializedAs("hitbox2StartTime")]
+    public float detector2StartTime;
+
+    protected override void ConfigureHitDetector()
     {
-        hitDetector1 = CreateOneHitDetector(hitbox1);
-        hitDetector2 = CreateOneHitDetector(hitbox2);
-        Coroutine disableHitDetector1 = null;
-        Coroutine enableHitDetector2 = null;
+        EventListener disableHitDetector1 = null;
+        EventListener enableHitDetector2 = null;
+
         OnStartActive += () =>
         {
-            hitDetector1.Start();
-            disableHitDetector1 = StartCoroutine(DisableHitDetector1());
-            enableHitDetector2 = StartCoroutine(EnableHitDetector2());
+            hitDetector1.StartDetector(HitCallable, AttackManager.hittableTags);
+            disableHitDetector1 = EventManager.Instance.StartTimeout(hitDetector1.StopDetector, detector1FinishTime);
+            enableHitDetector2 = EventManager.Instance.StartTimeout(
+                () => hitDetector2.StartDetector(HitCallable, AttackManager.hittableTags),
+                detector2StartTime
+            );
         };
 
-        OnFinishActive += () => 
+        OnFinishActive += () =>
         {
-            hitDetector1.Stop();
-            hitDetector2.Stop();
-            StopCoroutine(disableHitDetector1);
-            StopCoroutine(enableHitDetector2);
+            hitDetector1.StopDetector();
+            hitDetector2.StopDetector();
+            EventManager.Instance.Detach(disableHitDetector1);
+            EventManager.Instance.Detach(enableHitDetector2);
         };
-    }
-
-    private SingleHitDetector CreateOneHitDetector(Hitbox attachedHitbox)
-    {
-        return new SingleHitDetector(EventManager, attachedHitbox, hittable =>
-        {
-            if (!IsHittableTag(hittable.Character.tag)) return;
-            attachedHitbox.PlayParticles(hittable.Character.movableObject.SortingOrder);
-            HitCallable(hittable);
-        });
-    }
-
-    private IEnumerator DisableHitDetector1()
-    {
-        yield return new WaitForSeconds(hitbox1FinishTime);
-        hitDetector1.Stop();
-    }
-
-    private IEnumerator EnableHitDetector2()
-    {
-        yield return new WaitForSeconds(hitbox2StartTime);
-        hitDetector2.Start();
     }
 }
