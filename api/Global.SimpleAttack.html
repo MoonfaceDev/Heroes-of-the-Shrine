@@ -143,6 +143,9 @@
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_OnFinishRecovery">BaseAttack.OnFinishRecovery</a>
     </div>
     <div>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_AttackManager">BaseAttack.AttackManager</a>
+    </div>
+    <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Play">BaseAttack.Play()</a>
     </div>
     <div>
@@ -279,12 +282,12 @@
   </table>
   
   
-  <h4 id="Global_SimpleAttack_hitbox" data-uid="Global.SimpleAttack.hitbox">hitbox</h4>
+  <h4 id="Global_SimpleAttack_hitDetector" data-uid="Global.SimpleAttack.hitDetector">hitDetector</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Hitbox hitbox</code></pre>
+    <pre><code class="lang-csharp hljs">public BaseHitDetector hitDetector</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -296,33 +299,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.Hitbox.html">Hitbox</a></td>
-        <td><p>Hitbox where the attack can hit.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_SimpleAttack_hittableTags" data-uid="Global.SimpleAttack.hittableTags">hittableTags</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;string&gt; hittableTags</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
-        <td><p>Tags of objects this attack can hit.</p>
+        <td><a class="xref" href="Global.BaseHitDetector.html">BaseHitDetector</a></td>
+        <td><p>Hit detector that detect hits.</p>
 </td>
       </tr>
     </tbody>
@@ -423,31 +401,6 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><p>If true, this attack can only play when <span class="xref">JumpBehaviour</span> is playing.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_SimpleAttack_overrideDefaultHittableTags" data-uid="Global.SimpleAttack.overrideDefaultHittableTags">overrideDefaultHittableTags</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool overrideDefaultHittableTags</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p>If <code>true</code>, overrides the default list of hittable tags in <span class="xref">AttackManager</span>, specifically for this attack.</p>
 </td>
       </tr>
     </tbody>
@@ -676,15 +629,15 @@ Override to add more conditions that attack requires.</p>
   <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_CanPlay">BaseAttack.CanPlay()</a></div>
   
   
-  <a id="Global_SimpleAttack_CreateHitDetector_" data-uid="Global.SimpleAttack.CreateHitDetector*"></a>
-  <h4 id="Global_SimpleAttack_CreateHitDetector" data-uid="Global.SimpleAttack.CreateHitDetector">CreateHitDetector()</h4>
-  <div class="markdown level1 summary"><p>Creates a <span class="xref">SingleHitDetector</span> that detects hits for <span class="xref">SimpleAttack.hitbox</span>.
+  <a id="Global_SimpleAttack_ConfigureHitDetector_" data-uid="Global.SimpleAttack.ConfigureHitDetector*"></a>
+  <h4 id="Global_SimpleAttack_ConfigureHitDetector" data-uid="Global.SimpleAttack.ConfigureHitDetector">ConfigureHitDetector()</h4>
+  <div class="markdown level1 summary"><p>Configures the <span class="xref">SimpleAttack.hitDetector</span>.
 The hit detector will detect hits when attack is during active phase.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void CreateHitDetector()</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual void ConfigureHitDetector()</code></pre>
   </div>
   
   
@@ -718,14 +671,14 @@ By default, Applies damage and performs knockback or stun.</p>
   </table>
   
   
-  <a id="Global_SimpleAttack_IsHittableTag_" data-uid="Global.SimpleAttack.IsHittableTag*"></a>
-  <h4 id="Global_SimpleAttack_IsHittableTag_System_String_" data-uid="Global.SimpleAttack.IsHittableTag(System.String)">IsHittableTag(String)</h4>
-  <div class="markdown level1 summary"><p>Checks if the tag is hittable by this attack.</p>
+  <a id="Global_SimpleAttack_InvokeOnHit_" data-uid="Global.SimpleAttack.InvokeOnHit*"></a>
+  <h4 id="Global_SimpleAttack_InvokeOnHit_IHittable_" data-uid="Global.SimpleAttack.InvokeOnHit(IHittable)">InvokeOnHit(IHittable)</h4>
+  <div class="markdown level1 summary"><p>Invokes <span class="xref">SimpleAttack.OnHit</span> event</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected bool IsHittableTag(string testedTag)</code></pre>
+    <pre><code class="lang-csharp hljs">protected void InvokeOnHit(IHittable hittable)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -738,25 +691,9 @@ By default, Applies damage and performs knockback or stun.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">testedTag</span></td>
-        <td><p>Tag to test.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><code>true</code> if the tag is hittable.</p>
+        <td><a class="xref" href="Global.IHittable.html">IHittable</a></td>
+        <td><span class="parametername">hittable</span></td>
+        <td><p>Hittable hit by the attack</p>
 </td>
       </tr>
     </tbody>
@@ -828,6 +765,33 @@ By default, Applies damage and performs knockback or stun.</p>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Start()</code></pre>
   </div>
+  <h3 id="events">Events
+  </h3>
+  
+  
+  <h4 id="Global_SimpleAttack_OnHit" data-uid="Global.SimpleAttack.OnHit">OnHit</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;IHittable&gt; OnHit</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Action</span>&lt;<a class="xref" href="Global.IHittable.html">IHittable</a>&gt;</td>
+        <td><p>An hittable was hit by this attack.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           

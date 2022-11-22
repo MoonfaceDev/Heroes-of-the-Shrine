@@ -116,13 +116,7 @@
       <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_recoveryDuration">SimpleAttack.recoveryDuration</a>
     </div>
     <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_hitbox">SimpleAttack.hitbox</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_overrideDefaultHittableTags">SimpleAttack.overrideDefaultHittableTags</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_hittableTags">SimpleAttack.hittableTags</a>
+      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_hitDetector">SimpleAttack.hitDetector</a>
     </div>
     <div>
       <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_damage">SimpleAttack.damage</a>
@@ -140,16 +134,19 @@
       <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_stunTime">SimpleAttack.stunTime</a>
     </div>
     <div>
+      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_OnHit">SimpleAttack.OnHit</a>
+    </div>
+    <div>
       <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_Start">SimpleAttack.Start()</a>
     </div>
     <div>
       <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_PreventWalking_System_Boolean_">SimpleAttack.PreventWalking(Boolean)</a>
     </div>
     <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_IsHittableTag_System_String_">SimpleAttack.IsHittableTag(String)</a>
+      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_CanPlay">SimpleAttack.CanPlay()</a>
     </div>
     <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_CanPlay">SimpleAttack.CanPlay()</a>
+      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_InvokeOnHit_IHittable_">SimpleAttack.InvokeOnHit(IHittable)</a>
     </div>
     <div>
       <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_AnticipateCoroutine">SimpleAttack.AnticipateCoroutine()</a>
@@ -201,6 +198,9 @@
     </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_OnFinishRecovery">BaseAttack.OnFinishRecovery</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_AttackManager">BaseAttack.AttackManager</a>
     </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Play">BaseAttack.Play()</a>
@@ -336,12 +336,12 @@
   </table>
   
   
-  <h4 id="Global_ElectrifyAttack_explosionHitbox" data-uid="Global.ElectrifyAttack.explosionHitbox">explosionHitbox</h4>
+  <h4 id="Global_ElectrifyAttack_explosionHitDetector" data-uid="Global.ElectrifyAttack.explosionHitDetector">explosionHitDetector</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Hitbox explosionHitbox</code></pre>
+    <pre><code class="lang-csharp hljs">public BaseHitDetector explosionHitDetector</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -353,7 +353,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.Hitbox.html">Hitbox</a></td>
+        <td><a class="xref" href="Global.BaseHitDetector.html">BaseHitDetector</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -456,30 +456,6 @@
   </table>
   
   
-  <h4 id="Global_ElectrifyAttack_periodicHitbox" data-uid="Global.ElectrifyAttack.periodicHitbox">periodicHitbox</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Hitbox periodicHitbox</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.Hitbox.html">Hitbox</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
   <h4 id="Global_ElectrifyAttack_periodicHitCount" data-uid="Global.ElectrifyAttack.periodicHitCount">periodicHitCount</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
@@ -504,12 +480,12 @@
   </table>
   
   
-  <h4 id="Global_ElectrifyAttack_periodicHitElectrifyRate" data-uid="Global.ElectrifyAttack.periodicHitElectrifyRate">periodicHitElectrifyRate</h4>
+  <h4 id="Global_ElectrifyAttack_periodicHitDetector" data-uid="Global.ElectrifyAttack.periodicHitDetector">periodicHitDetector</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float periodicHitElectrifyRate</code></pre>
+    <pre><code class="lang-csharp hljs">public PeriodicAbsoluteHitDetector periodicHitDetector</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -521,19 +497,19 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><a class="xref" href="Global.PeriodicAbsoluteHitDetector.html">PeriodicAbsoluteHitDetector</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <h4 id="Global_ElectrifyAttack_periodicHitInterval" data-uid="Global.ElectrifyAttack.periodicHitInterval">periodicHitInterval</h4>
+  <h4 id="Global_ElectrifyAttack_periodicHitElectrifyRate" data-uid="Global.ElectrifyAttack.periodicHitElectrifyRate">periodicHitElectrifyRate</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float periodicHitInterval</code></pre>
+    <pre><code class="lang-csharp hljs">public float periodicHitElectrifyRate</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -622,16 +598,16 @@
   <div><a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_CalculateDamage_Character_">SimpleAttack.CalculateDamage(Character)</a></div>
   
   
-  <a id="Global_ElectrifyAttack_CreateHitDetector_" data-uid="Global.ElectrifyAttack.CreateHitDetector*"></a>
-  <h4 id="Global_ElectrifyAttack_CreateHitDetector" data-uid="Global.ElectrifyAttack.CreateHitDetector">CreateHitDetector()</h4>
+  <a id="Global_ElectrifyAttack_ConfigureHitDetector_" data-uid="Global.ElectrifyAttack.ConfigureHitDetector*"></a>
+  <h4 id="Global_ElectrifyAttack_ConfigureHitDetector" data-uid="Global.ElectrifyAttack.ConfigureHitDetector">ConfigureHitDetector()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void CreateHitDetector()</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void ConfigureHitDetector()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_CreateHitDetector">SimpleAttack.CreateHitDetector()</a></div>
+  <div><a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_ConfigureHitDetector">SimpleAttack.ConfigureHitDetector()</a></div>
   
   
   <a id="Global_ElectrifyAttack_HitCallable_" data-uid="Global.ElectrifyAttack.HitCallable*"></a>

@@ -15,48 +15,35 @@ references:
   commentId: T:Global.AbsoluteHitDetector
   fullName: AbsoluteHitDetector
   nameWithType: AbsoluteHitDetector
-- uid: Global.AbsoluteHitDetector.#ctor(Hitbox,Action{IHittable})
-  name: AbsoluteHitDetector(Hitbox, Action<IHittable>)
-  href: api/Global.AbsoluteHitDetector.html#Global_AbsoluteHitDetector__ctor_Hitbox_Action_IHittable__
-  commentId: M:Global.AbsoluteHitDetector.#ctor(Hitbox,Action{IHittable})
-  name.vb: AbsoluteHitDetector(Hitbox, Action(Of IHittable))
-  fullName: AbsoluteHitDetector.AbsoluteHitDetector(Hitbox, Action<IHittable>)
-  fullName.vb: AbsoluteHitDetector.AbsoluteHitDetector(Hitbox, Action(Of IHittable))
-  nameWithType: AbsoluteHitDetector.AbsoluteHitDetector(Hitbox, Action<IHittable>)
-  nameWithType.vb: AbsoluteHitDetector.AbsoluteHitDetector(Hitbox, Action(Of IHittable))
-- uid: Global.AbsoluteHitDetector.#ctor*
-  name: AbsoluteHitDetector
-  href: api/Global.AbsoluteHitDetector.html#Global_AbsoluteHitDetector__ctor_
-  commentId: Overload:Global.AbsoluteHitDetector.#ctor
+- uid: Global.AbsoluteHitDetector.DoStartDetector(Action{IHittable})
+  name: DoStartDetector(Action<IHittable>)
+  href: api/Global.AbsoluteHitDetector.html#Global_AbsoluteHitDetector_DoStartDetector_Action_IHittable__
+  commentId: M:Global.AbsoluteHitDetector.DoStartDetector(Action{IHittable})
+  name.vb: DoStartDetector(Action(Of IHittable))
+  fullName: AbsoluteHitDetector.DoStartDetector(Action<IHittable>)
+  fullName.vb: AbsoluteHitDetector.DoStartDetector(Action(Of IHittable))
+  nameWithType: AbsoluteHitDetector.DoStartDetector(Action<IHittable>)
+  nameWithType.vb: AbsoluteHitDetector.DoStartDetector(Action(Of IHittable))
+- uid: Global.AbsoluteHitDetector.DoStartDetector*
+  name: DoStartDetector
+  href: api/Global.AbsoluteHitDetector.html#Global_AbsoluteHitDetector_DoStartDetector_
+  commentId: Overload:Global.AbsoluteHitDetector.DoStartDetector
   isSpec: "True"
-  fullName: AbsoluteHitDetector.AbsoluteHitDetector
-  nameWithType: AbsoluteHitDetector.AbsoluteHitDetector
-- uid: Global.AbsoluteHitDetector.Start
-  name: Start()
-  href: api/Global.AbsoluteHitDetector.html#Global_AbsoluteHitDetector_Start
-  commentId: M:Global.AbsoluteHitDetector.Start
-  fullName: AbsoluteHitDetector.Start()
-  nameWithType: AbsoluteHitDetector.Start()
-- uid: Global.AbsoluteHitDetector.Start*
-  name: Start
-  href: api/Global.AbsoluteHitDetector.html#Global_AbsoluteHitDetector_Start_
-  commentId: Overload:Global.AbsoluteHitDetector.Start
+  fullName: AbsoluteHitDetector.DoStartDetector
+  nameWithType: AbsoluteHitDetector.DoStartDetector
+- uid: Global.AbsoluteHitDetector.StopDetector
+  name: StopDetector()
+  href: api/Global.AbsoluteHitDetector.html#Global_AbsoluteHitDetector_StopDetector
+  commentId: M:Global.AbsoluteHitDetector.StopDetector
+  fullName: AbsoluteHitDetector.StopDetector()
+  nameWithType: AbsoluteHitDetector.StopDetector()
+- uid: Global.AbsoluteHitDetector.StopDetector*
+  name: StopDetector
+  href: api/Global.AbsoluteHitDetector.html#Global_AbsoluteHitDetector_StopDetector_
+  commentId: Overload:Global.AbsoluteHitDetector.StopDetector
   isSpec: "True"
-  fullName: AbsoluteHitDetector.Start
-  nameWithType: AbsoluteHitDetector.Start
-- uid: Global.AbsoluteHitDetector.Stop
-  name: Stop()
-  href: api/Global.AbsoluteHitDetector.html#Global_AbsoluteHitDetector_Stop
-  commentId: M:Global.AbsoluteHitDetector.Stop
-  fullName: AbsoluteHitDetector.Stop()
-  nameWithType: AbsoluteHitDetector.Stop()
-- uid: Global.AbsoluteHitDetector.Stop*
-  name: Stop
-  href: api/Global.AbsoluteHitDetector.html#Global_AbsoluteHitDetector_Stop_
-  commentId: Overload:Global.AbsoluteHitDetector.Stop
-  isSpec: "True"
-  fullName: AbsoluteHitDetector.Stop
-  nameWithType: AbsoluteHitDetector.Stop
+  fullName: AbsoluteHitDetector.StopDetector
+  nameWithType: AbsoluteHitDetector.StopDetector
 - uid: Global.AirAttack
   name: AirAttack
   href: api/Global.AirAttack.html
@@ -607,6 +594,19 @@ references:
   isSpec: "True"
   fullName: BaseAttack.Anticipating
   nameWithType: BaseAttack.Anticipating
+- uid: Global.BaseAttack.AttackManager
+  name: AttackManager
+  href: api/Global.BaseAttack.html#Global_BaseAttack_AttackManager
+  commentId: P:Global.BaseAttack.AttackManager
+  fullName: BaseAttack.AttackManager
+  nameWithType: BaseAttack.AttackManager
+- uid: Global.BaseAttack.AttackManager*
+  name: AttackManager
+  href: api/Global.BaseAttack.html#Global_BaseAttack_AttackManager_
+  commentId: Overload:Global.BaseAttack.AttackManager
+  isSpec: "True"
+  fullName: BaseAttack.AttackManager
+  nameWithType: BaseAttack.AttackManager
 - uid: Global.BaseAttack.AttackName
   name: AttackName
   href: api/Global.BaseAttack.html#Global_BaseAttack_AttackName
@@ -803,45 +803,82 @@ references:
   commentId: T:Global.BaseHitDetector
   fullName: BaseHitDetector
   nameWithType: BaseHitDetector
-- uid: Global.BaseHitDetector.OverlapHittable(HittableHitbox,Hitbox)
-  name: OverlapHittable(HittableHitbox, Hitbox)
-  href: api/Global.BaseHitDetector.html#Global_BaseHitDetector_OverlapHittable_HittableHitbox_Hitbox_
-  commentId: M:Global.BaseHitDetector.OverlapHittable(HittableHitbox,Hitbox)
-  fullName: BaseHitDetector.OverlapHittable(HittableHitbox, Hitbox)
-  nameWithType: BaseHitDetector.OverlapHittable(HittableHitbox, Hitbox)
-- uid: Global.BaseHitDetector.OverlapHittable*
-  name: OverlapHittable
-  href: api/Global.BaseHitDetector.html#Global_BaseHitDetector_OverlapHittable_
-  commentId: Overload:Global.BaseHitDetector.OverlapHittable
+- uid: Global.BaseHitDetector.Awake
+  name: Awake()
+  href: api/Global.BaseHitDetector.html#Global_BaseHitDetector_Awake
+  commentId: M:Global.BaseHitDetector.Awake
+  fullName: BaseHitDetector.Awake()
+  nameWithType: BaseHitDetector.Awake()
+- uid: Global.BaseHitDetector.Awake*
+  name: Awake
+  href: api/Global.BaseHitDetector.html#Global_BaseHitDetector_Awake_
+  commentId: Overload:Global.BaseHitDetector.Awake
   isSpec: "True"
-  fullName: BaseHitDetector.OverlapHittable
-  nameWithType: BaseHitDetector.OverlapHittable
-- uid: Global.BaseHitDetector.Start
-  name: Start()
-  href: api/Global.BaseHitDetector.html#Global_BaseHitDetector_Start
-  commentId: M:Global.BaseHitDetector.Start
-  fullName: BaseHitDetector.Start()
-  nameWithType: BaseHitDetector.Start()
-- uid: Global.BaseHitDetector.Start*
-  name: Start
-  href: api/Global.BaseHitDetector.html#Global_BaseHitDetector_Start_
-  commentId: Overload:Global.BaseHitDetector.Start
+  fullName: BaseHitDetector.Awake
+  nameWithType: BaseHitDetector.Awake
+- uid: Global.BaseHitDetector.DoStartDetector(Action{IHittable})
+  name: DoStartDetector(Action<IHittable>)
+  href: api/Global.BaseHitDetector.html#Global_BaseHitDetector_DoStartDetector_Action_IHittable__
+  commentId: M:Global.BaseHitDetector.DoStartDetector(Action{IHittable})
+  name.vb: DoStartDetector(Action(Of IHittable))
+  fullName: BaseHitDetector.DoStartDetector(Action<IHittable>)
+  fullName.vb: BaseHitDetector.DoStartDetector(Action(Of IHittable))
+  nameWithType: BaseHitDetector.DoStartDetector(Action<IHittable>)
+  nameWithType.vb: BaseHitDetector.DoStartDetector(Action(Of IHittable))
+- uid: Global.BaseHitDetector.DoStartDetector*
+  name: DoStartDetector
+  href: api/Global.BaseHitDetector.html#Global_BaseHitDetector_DoStartDetector_
+  commentId: Overload:Global.BaseHitDetector.DoStartDetector
   isSpec: "True"
-  fullName: BaseHitDetector.Start
-  nameWithType: BaseHitDetector.Start
-- uid: Global.BaseHitDetector.Stop
-  name: Stop()
-  href: api/Global.BaseHitDetector.html#Global_BaseHitDetector_Stop
-  commentId: M:Global.BaseHitDetector.Stop
-  fullName: BaseHitDetector.Stop()
-  nameWithType: BaseHitDetector.Stop()
-- uid: Global.BaseHitDetector.Stop*
-  name: Stop
-  href: api/Global.BaseHitDetector.html#Global_BaseHitDetector_Stop_
-  commentId: Overload:Global.BaseHitDetector.Stop
+  fullName: BaseHitDetector.DoStartDetector
+  nameWithType: BaseHitDetector.DoStartDetector
+- uid: Global.BaseHitDetector.excludedHittableTags
+  name: excludedHittableTags
+  href: api/Global.BaseHitDetector.html#Global_BaseHitDetector_excludedHittableTags
+  commentId: F:Global.BaseHitDetector.excludedHittableTags
+  fullName: BaseHitDetector.excludedHittableTags
+  nameWithType: BaseHitDetector.excludedHittableTags
+- uid: Global.BaseHitDetector.hitbox
+  name: hitbox
+  href: api/Global.BaseHitDetector.html#Global_BaseHitDetector_hitbox
+  commentId: F:Global.BaseHitDetector.hitbox
+  fullName: BaseHitDetector.hitbox
+  nameWithType: BaseHitDetector.hitbox
+- uid: Global.BaseHitDetector.includedHittableTags
+  name: includedHittableTags
+  href: api/Global.BaseHitDetector.html#Global_BaseHitDetector_includedHittableTags
+  commentId: F:Global.BaseHitDetector.includedHittableTags
+  fullName: BaseHitDetector.includedHittableTags
+  nameWithType: BaseHitDetector.includedHittableTags
+- uid: Global.BaseHitDetector.StartDetector(Action{IHittable},List{System.String})
+  name: StartDetector(Action<IHittable>, List<String>)
+  href: api/Global.BaseHitDetector.html#Global_BaseHitDetector_StartDetector_Action_IHittable__List_System_String__
+  commentId: M:Global.BaseHitDetector.StartDetector(Action{IHittable},List{System.String})
+  name.vb: StartDetector(Action(Of IHittable), List(Of String))
+  fullName: BaseHitDetector.StartDetector(Action<IHittable>, List<System.String>)
+  fullName.vb: BaseHitDetector.StartDetector(Action(Of IHittable), List(Of System.String))
+  nameWithType: BaseHitDetector.StartDetector(Action<IHittable>, List<String>)
+  nameWithType.vb: BaseHitDetector.StartDetector(Action(Of IHittable), List(Of String))
+- uid: Global.BaseHitDetector.StartDetector*
+  name: StartDetector
+  href: api/Global.BaseHitDetector.html#Global_BaseHitDetector_StartDetector_
+  commentId: Overload:Global.BaseHitDetector.StartDetector
   isSpec: "True"
-  fullName: BaseHitDetector.Stop
-  nameWithType: BaseHitDetector.Stop
+  fullName: BaseHitDetector.StartDetector
+  nameWithType: BaseHitDetector.StartDetector
+- uid: Global.BaseHitDetector.StopDetector
+  name: StopDetector()
+  href: api/Global.BaseHitDetector.html#Global_BaseHitDetector_StopDetector
+  commentId: M:Global.BaseHitDetector.StopDetector
+  fullName: BaseHitDetector.StopDetector()
+  nameWithType: BaseHitDetector.StopDetector()
+- uid: Global.BaseHitDetector.StopDetector*
+  name: StopDetector
+  href: api/Global.BaseHitDetector.html#Global_BaseHitDetector_StopDetector_
+  commentId: Overload:Global.BaseHitDetector.StopDetector
+  isSpec: "True"
+  fullName: BaseHitDetector.StopDetector
+  nameWithType: BaseHitDetector.StopDetector
 - uid: Global.BaseMovementBehaviour
   name: BaseMovementBehaviour
   href: api/Global.BaseMovementBehaviour.html
@@ -2022,19 +2059,19 @@ references:
   isSpec: "True"
   fullName: ElectrifyAttack.CalculateDamage
   nameWithType: ElectrifyAttack.CalculateDamage
-- uid: Global.ElectrifyAttack.CreateHitDetector
-  name: CreateHitDetector()
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_CreateHitDetector
-  commentId: M:Global.ElectrifyAttack.CreateHitDetector
-  fullName: ElectrifyAttack.CreateHitDetector()
-  nameWithType: ElectrifyAttack.CreateHitDetector()
-- uid: Global.ElectrifyAttack.CreateHitDetector*
-  name: CreateHitDetector
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_CreateHitDetector_
-  commentId: Overload:Global.ElectrifyAttack.CreateHitDetector
+- uid: Global.ElectrifyAttack.ConfigureHitDetector
+  name: ConfigureHitDetector()
+  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_ConfigureHitDetector
+  commentId: M:Global.ElectrifyAttack.ConfigureHitDetector
+  fullName: ElectrifyAttack.ConfigureHitDetector()
+  nameWithType: ElectrifyAttack.ConfigureHitDetector()
+- uid: Global.ElectrifyAttack.ConfigureHitDetector*
+  name: ConfigureHitDetector
+  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_ConfigureHitDetector_
+  commentId: Overload:Global.ElectrifyAttack.ConfigureHitDetector
   isSpec: "True"
-  fullName: ElectrifyAttack.CreateHitDetector
-  nameWithType: ElectrifyAttack.CreateHitDetector
+  fullName: ElectrifyAttack.ConfigureHitDetector
+  nameWithType: ElectrifyAttack.ConfigureHitDetector
 - uid: Global.ElectrifyAttack.electrifyDuration
   name: electrifyDuration
   href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_electrifyDuration
@@ -2053,12 +2090,12 @@ references:
   commentId: F:Global.ElectrifyAttack.explosionDamage
   fullName: ElectrifyAttack.explosionDamage
   nameWithType: ElectrifyAttack.explosionDamage
-- uid: Global.ElectrifyAttack.explosionHitbox
-  name: explosionHitbox
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_explosionHitbox
-  commentId: F:Global.ElectrifyAttack.explosionHitbox
-  fullName: ElectrifyAttack.explosionHitbox
-  nameWithType: ElectrifyAttack.explosionHitbox
+- uid: Global.ElectrifyAttack.explosionHitDetector
+  name: explosionHitDetector
+  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_explosionHitDetector
+  commentId: F:Global.ElectrifyAttack.explosionHitDetector
+  fullName: ElectrifyAttack.explosionHitDetector
+  nameWithType: ElectrifyAttack.explosionHitDetector
 - uid: Global.ElectrifyAttack.explosionKnockbackDirection
   name: explosionKnockbackDirection
   href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_explosionKnockbackDirection
@@ -2096,30 +2133,24 @@ references:
   commentId: F:Global.ElectrifyAttack.periodicDamage
   fullName: ElectrifyAttack.periodicDamage
   nameWithType: ElectrifyAttack.periodicDamage
-- uid: Global.ElectrifyAttack.periodicHitbox
-  name: periodicHitbox
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_periodicHitbox
-  commentId: F:Global.ElectrifyAttack.periodicHitbox
-  fullName: ElectrifyAttack.periodicHitbox
-  nameWithType: ElectrifyAttack.periodicHitbox
 - uid: Global.ElectrifyAttack.periodicHitCount
   name: periodicHitCount
   href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_periodicHitCount
   commentId: F:Global.ElectrifyAttack.periodicHitCount
   fullName: ElectrifyAttack.periodicHitCount
   nameWithType: ElectrifyAttack.periodicHitCount
+- uid: Global.ElectrifyAttack.periodicHitDetector
+  name: periodicHitDetector
+  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_periodicHitDetector
+  commentId: F:Global.ElectrifyAttack.periodicHitDetector
+  fullName: ElectrifyAttack.periodicHitDetector
+  nameWithType: ElectrifyAttack.periodicHitDetector
 - uid: Global.ElectrifyAttack.periodicHitElectrifyRate
   name: periodicHitElectrifyRate
   href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_periodicHitElectrifyRate
   commentId: F:Global.ElectrifyAttack.periodicHitElectrifyRate
   fullName: ElectrifyAttack.periodicHitElectrifyRate
   nameWithType: ElectrifyAttack.periodicHitElectrifyRate
-- uid: Global.ElectrifyAttack.periodicHitInterval
-  name: periodicHitInterval
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_periodicHitInterval
-  commentId: F:Global.ElectrifyAttack.periodicHitInterval
-  fullName: ElectrifyAttack.periodicHitInterval
-  nameWithType: ElectrifyAttack.periodicHitInterval
 - uid: Global.ElectrifyAttack.periodicStunTime
   name: periodicStunTime
   href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_periodicStunTime
@@ -3193,19 +3224,6 @@ references:
   isSpec: "True"
   fullName: Hitbox.OverlapHitbox
   nameWithType: Hitbox.OverlapHitbox
-- uid: Global.Hitbox.PlayParticles(System.Int32)
-  name: PlayParticles(Int32)
-  href: api/Global.Hitbox.html#Global_Hitbox_PlayParticles_System_Int32_
-  commentId: M:Global.Hitbox.PlayParticles(System.Int32)
-  fullName: Hitbox.PlayParticles(System.Int32)
-  nameWithType: Hitbox.PlayParticles(Int32)
-- uid: Global.Hitbox.PlayParticles*
-  name: PlayParticles
-  href: api/Global.Hitbox.html#Global_Hitbox_PlayParticles_
-  commentId: Overload:Global.Hitbox.PlayParticles
-  isSpec: "True"
-  fullName: Hitbox.PlayParticles
-  nameWithType: Hitbox.PlayParticles
 - uid: Global.Hitbox.size
   name: size
   href: api/Global.Hitbox.html#Global_Hitbox_size
@@ -3231,6 +3249,31 @@ references:
   commentId: T:Global.HitCallback
   fullName: HitCallback
   nameWithType: HitCallback
+- uid: Global.HitParticles
+  name: HitParticles
+  href: api/Global.HitParticles.html
+  commentId: T:Global.HitParticles
+  fullName: HitParticles
+  nameWithType: HitParticles
+- uid: Global.HitParticles.Play(IHittable)
+  name: Play(IHittable)
+  href: api/Global.HitParticles.html#Global_HitParticles_Play_IHittable_
+  commentId: M:Global.HitParticles.Play(IHittable)
+  fullName: HitParticles.Play(IHittable)
+  nameWithType: HitParticles.Play(IHittable)
+- uid: Global.HitParticles.Play*
+  name: Play
+  href: api/Global.HitParticles.html#Global_HitParticles_Play_
+  commentId: Overload:Global.HitParticles.Play
+  isSpec: "True"
+  fullName: HitParticles.Play
+  nameWithType: HitParticles.Play
+- uid: Global.HitParticles.prefab
+  name: prefab
+  href: api/Global.HitParticles.html#Global_HitParticles_prefab
+  commentId: F:Global.HitParticles.prefab
+  fullName: HitParticles.prefab
+  nameWithType: HitParticles.prefab
 - uid: Global.HittableBehaviour
   name: HittableBehaviour
   href: api/Global.HittableBehaviour.html
@@ -4070,6 +4113,19 @@ references:
   isSpec: "True"
   fullName: MovableObject.SortingOrder
   nameWithType: MovableObject.SortingOrder
+- uid: Global.MovableObject.TransformToWorld(Vector3)
+  name: TransformToWorld(Vector3)
+  href: api/Global.MovableObject.html#Global_MovableObject_TransformToWorld_Vector3_
+  commentId: M:Global.MovableObject.TransformToWorld(Vector3)
+  fullName: MovableObject.TransformToWorld(Vector3)
+  nameWithType: MovableObject.TransformToWorld(Vector3)
+- uid: Global.MovableObject.TransformToWorld*
+  name: TransformToWorld
+  href: api/Global.MovableObject.html#Global_MovableObject_TransformToWorld_
+  commentId: Overload:Global.MovableObject.TransformToWorld
+  isSpec: "True"
+  fullName: MovableObject.TransformToWorld
+  nameWithType: MovableObject.TransformToWorld
 - uid: Global.MovableObject.UpdatePosition(Vector3)
   name: UpdatePosition(Vector3)
   href: api/Global.MovableObject.html#Global_MovableObject_UpdatePosition_Vector3_
@@ -4089,19 +4145,6 @@ references:
   commentId: F:Global.MovableObject.velocity
   fullName: MovableObject.velocity
   nameWithType: MovableObject.velocity
-- uid: Global.MovableObject.WorldCoordinates(Vector3)
-  name: WorldCoordinates(Vector3)
-  href: api/Global.MovableObject.html#Global_MovableObject_WorldCoordinates_Vector3_
-  commentId: M:Global.MovableObject.WorldCoordinates(Vector3)
-  fullName: MovableObject.WorldCoordinates(Vector3)
-  nameWithType: MovableObject.WorldCoordinates(Vector3)
-- uid: Global.MovableObject.WorldCoordinates*
-  name: WorldCoordinates
-  href: api/Global.MovableObject.html#Global_MovableObject_WorldCoordinates_
-  commentId: Overload:Global.MovableObject.WorldCoordinates
-  isSpec: "True"
-  fullName: MovableObject.WorldCoordinates
-  nameWithType: MovableObject.WorldCoordinates
 - uid: Global.MovableObject.WorldPosition
   name: WorldPosition
   href: api/Global.MovableObject.html#Global_MovableObject_WorldPosition
@@ -4115,6 +4158,32 @@ references:
   isSpec: "True"
   fullName: MovableObject.WorldPosition
   nameWithType: MovableObject.WorldPosition
+- uid: Global.MovableObject.WorldRotation
+  name: WorldRotation
+  href: api/Global.MovableObject.html#Global_MovableObject_WorldRotation
+  commentId: P:Global.MovableObject.WorldRotation
+  fullName: MovableObject.WorldRotation
+  nameWithType: MovableObject.WorldRotation
+- uid: Global.MovableObject.WorldRotation*
+  name: WorldRotation
+  href: api/Global.MovableObject.html#Global_MovableObject_WorldRotation_
+  commentId: Overload:Global.MovableObject.WorldRotation
+  isSpec: "True"
+  fullName: MovableObject.WorldRotation
+  nameWithType: MovableObject.WorldRotation
+- uid: Global.MovableObject.WorldScale
+  name: WorldScale
+  href: api/Global.MovableObject.html#Global_MovableObject_WorldScale
+  commentId: P:Global.MovableObject.WorldScale
+  fullName: MovableObject.WorldScale
+  nameWithType: MovableObject.WorldScale
+- uid: Global.MovableObject.WorldScale*
+  name: WorldScale
+  href: api/Global.MovableObject.html#Global_MovableObject_WorldScale_
+  commentId: Overload:Global.MovableObject.WorldScale
+  isSpec: "True"
+  fullName: MovableObject.WorldScale
+  nameWithType: MovableObject.WorldScale
 - uid: Global.MoveDefinition
   name: MoveDefinition
   href: api/Global.MoveDefinition.html
@@ -4304,102 +4373,100 @@ references:
   commentId: T:Global.PeriodicAbsoluteHitDetector
   fullName: PeriodicAbsoluteHitDetector
   nameWithType: PeriodicAbsoluteHitDetector
-- uid: Global.PeriodicAbsoluteHitDetector.#ctor(EventManager,Hitbox,Action{IHittable},System.Single,System.Boolean)
-  name: PeriodicAbsoluteHitDetector(EventManager, Hitbox, Action<IHittable>, Single, Boolean)
-  href: api/Global.PeriodicAbsoluteHitDetector.html#Global_PeriodicAbsoluteHitDetector__ctor_EventManager_Hitbox_Action_IHittable__System_Single_System_Boolean_
-  commentId: M:Global.PeriodicAbsoluteHitDetector.#ctor(EventManager,Hitbox,Action{IHittable},System.Single,System.Boolean)
-  name.vb: PeriodicAbsoluteHitDetector(EventManager, Hitbox, Action(Of IHittable), Single, Boolean)
-  fullName: PeriodicAbsoluteHitDetector.PeriodicAbsoluteHitDetector(EventManager, Hitbox, Action<IHittable>, System.Single, System.Boolean)
-  fullName.vb: PeriodicAbsoluteHitDetector.PeriodicAbsoluteHitDetector(EventManager, Hitbox, Action(Of IHittable), System.Single, System.Boolean)
-  nameWithType: PeriodicAbsoluteHitDetector.PeriodicAbsoluteHitDetector(EventManager, Hitbox, Action<IHittable>, Single, Boolean)
-  nameWithType.vb: PeriodicAbsoluteHitDetector.PeriodicAbsoluteHitDetector(EventManager, Hitbox, Action(Of IHittable), Single, Boolean)
-- uid: Global.PeriodicAbsoluteHitDetector.#ctor*
-  name: PeriodicAbsoluteHitDetector
-  href: api/Global.PeriodicAbsoluteHitDetector.html#Global_PeriodicAbsoluteHitDetector__ctor_
-  commentId: Overload:Global.PeriodicAbsoluteHitDetector.#ctor
+- uid: Global.PeriodicAbsoluteHitDetector.DoStartDetector(Action{IHittable})
+  name: DoStartDetector(Action<IHittable>)
+  href: api/Global.PeriodicAbsoluteHitDetector.html#Global_PeriodicAbsoluteHitDetector_DoStartDetector_Action_IHittable__
+  commentId: M:Global.PeriodicAbsoluteHitDetector.DoStartDetector(Action{IHittable})
+  name.vb: DoStartDetector(Action(Of IHittable))
+  fullName: PeriodicAbsoluteHitDetector.DoStartDetector(Action<IHittable>)
+  fullName.vb: PeriodicAbsoluteHitDetector.DoStartDetector(Action(Of IHittable))
+  nameWithType: PeriodicAbsoluteHitDetector.DoStartDetector(Action<IHittable>)
+  nameWithType.vb: PeriodicAbsoluteHitDetector.DoStartDetector(Action(Of IHittable))
+- uid: Global.PeriodicAbsoluteHitDetector.DoStartDetector*
+  name: DoStartDetector
+  href: api/Global.PeriodicAbsoluteHitDetector.html#Global_PeriodicAbsoluteHitDetector_DoStartDetector_
+  commentId: Overload:Global.PeriodicAbsoluteHitDetector.DoStartDetector
   isSpec: "True"
-  fullName: PeriodicAbsoluteHitDetector.PeriodicAbsoluteHitDetector
-  nameWithType: PeriodicAbsoluteHitDetector.PeriodicAbsoluteHitDetector
+  fullName: PeriodicAbsoluteHitDetector.DoStartDetector
+  nameWithType: PeriodicAbsoluteHitDetector.DoStartDetector
+- uid: Global.PeriodicAbsoluteHitDetector.interval
+  name: interval
+  href: api/Global.PeriodicAbsoluteHitDetector.html#Global_PeriodicAbsoluteHitDetector_interval
+  commentId: F:Global.PeriodicAbsoluteHitDetector.interval
+  fullName: PeriodicAbsoluteHitDetector.interval
+  nameWithType: PeriodicAbsoluteHitDetector.interval
 - uid: Global.PeriodicAbsoluteHitDetector.OnDetect
   name: OnDetect
   href: api/Global.PeriodicAbsoluteHitDetector.html#Global_PeriodicAbsoluteHitDetector_OnDetect
   commentId: E:Global.PeriodicAbsoluteHitDetector.OnDetect
   fullName: PeriodicAbsoluteHitDetector.OnDetect
   nameWithType: PeriodicAbsoluteHitDetector.OnDetect
-- uid: Global.PeriodicAbsoluteHitDetector.Start
-  name: Start()
-  href: api/Global.PeriodicAbsoluteHitDetector.html#Global_PeriodicAbsoluteHitDetector_Start
-  commentId: M:Global.PeriodicAbsoluteHitDetector.Start
-  fullName: PeriodicAbsoluteHitDetector.Start()
-  nameWithType: PeriodicAbsoluteHitDetector.Start()
-- uid: Global.PeriodicAbsoluteHitDetector.Start*
-  name: Start
-  href: api/Global.PeriodicAbsoluteHitDetector.html#Global_PeriodicAbsoluteHitDetector_Start_
-  commentId: Overload:Global.PeriodicAbsoluteHitDetector.Start
+- uid: Global.PeriodicAbsoluteHitDetector.startImmediately
+  name: startImmediately
+  href: api/Global.PeriodicAbsoluteHitDetector.html#Global_PeriodicAbsoluteHitDetector_startImmediately
+  commentId: F:Global.PeriodicAbsoluteHitDetector.startImmediately
+  fullName: PeriodicAbsoluteHitDetector.startImmediately
+  nameWithType: PeriodicAbsoluteHitDetector.startImmediately
+- uid: Global.PeriodicAbsoluteHitDetector.StopDetector
+  name: StopDetector()
+  href: api/Global.PeriodicAbsoluteHitDetector.html#Global_PeriodicAbsoluteHitDetector_StopDetector
+  commentId: M:Global.PeriodicAbsoluteHitDetector.StopDetector
+  fullName: PeriodicAbsoluteHitDetector.StopDetector()
+  nameWithType: PeriodicAbsoluteHitDetector.StopDetector()
+- uid: Global.PeriodicAbsoluteHitDetector.StopDetector*
+  name: StopDetector
+  href: api/Global.PeriodicAbsoluteHitDetector.html#Global_PeriodicAbsoluteHitDetector_StopDetector_
+  commentId: Overload:Global.PeriodicAbsoluteHitDetector.StopDetector
   isSpec: "True"
-  fullName: PeriodicAbsoluteHitDetector.Start
-  nameWithType: PeriodicAbsoluteHitDetector.Start
-- uid: Global.PeriodicAbsoluteHitDetector.Stop
-  name: Stop()
-  href: api/Global.PeriodicAbsoluteHitDetector.html#Global_PeriodicAbsoluteHitDetector_Stop
-  commentId: M:Global.PeriodicAbsoluteHitDetector.Stop
-  fullName: PeriodicAbsoluteHitDetector.Stop()
-  nameWithType: PeriodicAbsoluteHitDetector.Stop()
-- uid: Global.PeriodicAbsoluteHitDetector.Stop*
-  name: Stop
-  href: api/Global.PeriodicAbsoluteHitDetector.html#Global_PeriodicAbsoluteHitDetector_Stop_
-  commentId: Overload:Global.PeriodicAbsoluteHitDetector.Stop
-  isSpec: "True"
-  fullName: PeriodicAbsoluteHitDetector.Stop
-  nameWithType: PeriodicAbsoluteHitDetector.Stop
+  fullName: PeriodicAbsoluteHitDetector.StopDetector
+  nameWithType: PeriodicAbsoluteHitDetector.StopDetector
 - uid: Global.PeriodicRelativeHitDetector
   name: PeriodicRelativeHitDetector
   href: api/Global.PeriodicRelativeHitDetector.html
   commentId: T:Global.PeriodicRelativeHitDetector
   fullName: PeriodicRelativeHitDetector
   nameWithType: PeriodicRelativeHitDetector
-- uid: Global.PeriodicRelativeHitDetector.#ctor(EventManager,Hitbox,Action{IHittable},System.Single,System.Boolean)
-  name: PeriodicRelativeHitDetector(EventManager, Hitbox, Action<IHittable>, Single, Boolean)
-  href: api/Global.PeriodicRelativeHitDetector.html#Global_PeriodicRelativeHitDetector__ctor_EventManager_Hitbox_Action_IHittable__System_Single_System_Boolean_
-  commentId: M:Global.PeriodicRelativeHitDetector.#ctor(EventManager,Hitbox,Action{IHittable},System.Single,System.Boolean)
-  name.vb: PeriodicRelativeHitDetector(EventManager, Hitbox, Action(Of IHittable), Single, Boolean)
-  fullName: PeriodicRelativeHitDetector.PeriodicRelativeHitDetector(EventManager, Hitbox, Action<IHittable>, System.Single, System.Boolean)
-  fullName.vb: PeriodicRelativeHitDetector.PeriodicRelativeHitDetector(EventManager, Hitbox, Action(Of IHittable), System.Single, System.Boolean)
-  nameWithType: PeriodicRelativeHitDetector.PeriodicRelativeHitDetector(EventManager, Hitbox, Action<IHittable>, Single, Boolean)
-  nameWithType.vb: PeriodicRelativeHitDetector.PeriodicRelativeHitDetector(EventManager, Hitbox, Action(Of IHittable), Single, Boolean)
-- uid: Global.PeriodicRelativeHitDetector.#ctor*
-  name: PeriodicRelativeHitDetector
-  href: api/Global.PeriodicRelativeHitDetector.html#Global_PeriodicRelativeHitDetector__ctor_
-  commentId: Overload:Global.PeriodicRelativeHitDetector.#ctor
+- uid: Global.PeriodicRelativeHitDetector.DoStartDetector(Action{IHittable})
+  name: DoStartDetector(Action<IHittable>)
+  href: api/Global.PeriodicRelativeHitDetector.html#Global_PeriodicRelativeHitDetector_DoStartDetector_Action_IHittable__
+  commentId: M:Global.PeriodicRelativeHitDetector.DoStartDetector(Action{IHittable})
+  name.vb: DoStartDetector(Action(Of IHittable))
+  fullName: PeriodicRelativeHitDetector.DoStartDetector(Action<IHittable>)
+  fullName.vb: PeriodicRelativeHitDetector.DoStartDetector(Action(Of IHittable))
+  nameWithType: PeriodicRelativeHitDetector.DoStartDetector(Action<IHittable>)
+  nameWithType.vb: PeriodicRelativeHitDetector.DoStartDetector(Action(Of IHittable))
+- uid: Global.PeriodicRelativeHitDetector.DoStartDetector*
+  name: DoStartDetector
+  href: api/Global.PeriodicRelativeHitDetector.html#Global_PeriodicRelativeHitDetector_DoStartDetector_
+  commentId: Overload:Global.PeriodicRelativeHitDetector.DoStartDetector
   isSpec: "True"
-  fullName: PeriodicRelativeHitDetector.PeriodicRelativeHitDetector
-  nameWithType: PeriodicRelativeHitDetector.PeriodicRelativeHitDetector
-- uid: Global.PeriodicRelativeHitDetector.Start
-  name: Start()
-  href: api/Global.PeriodicRelativeHitDetector.html#Global_PeriodicRelativeHitDetector_Start
-  commentId: M:Global.PeriodicRelativeHitDetector.Start
-  fullName: PeriodicRelativeHitDetector.Start()
-  nameWithType: PeriodicRelativeHitDetector.Start()
-- uid: Global.PeriodicRelativeHitDetector.Start*
-  name: Start
-  href: api/Global.PeriodicRelativeHitDetector.html#Global_PeriodicRelativeHitDetector_Start_
-  commentId: Overload:Global.PeriodicRelativeHitDetector.Start
+  fullName: PeriodicRelativeHitDetector.DoStartDetector
+  nameWithType: PeriodicRelativeHitDetector.DoStartDetector
+- uid: Global.PeriodicRelativeHitDetector.interval
+  name: interval
+  href: api/Global.PeriodicRelativeHitDetector.html#Global_PeriodicRelativeHitDetector_interval
+  commentId: F:Global.PeriodicRelativeHitDetector.interval
+  fullName: PeriodicRelativeHitDetector.interval
+  nameWithType: PeriodicRelativeHitDetector.interval
+- uid: Global.PeriodicRelativeHitDetector.startImmediately
+  name: startImmediately
+  href: api/Global.PeriodicRelativeHitDetector.html#Global_PeriodicRelativeHitDetector_startImmediately
+  commentId: F:Global.PeriodicRelativeHitDetector.startImmediately
+  fullName: PeriodicRelativeHitDetector.startImmediately
+  nameWithType: PeriodicRelativeHitDetector.startImmediately
+- uid: Global.PeriodicRelativeHitDetector.StopDetector
+  name: StopDetector()
+  href: api/Global.PeriodicRelativeHitDetector.html#Global_PeriodicRelativeHitDetector_StopDetector
+  commentId: M:Global.PeriodicRelativeHitDetector.StopDetector
+  fullName: PeriodicRelativeHitDetector.StopDetector()
+  nameWithType: PeriodicRelativeHitDetector.StopDetector()
+- uid: Global.PeriodicRelativeHitDetector.StopDetector*
+  name: StopDetector
+  href: api/Global.PeriodicRelativeHitDetector.html#Global_PeriodicRelativeHitDetector_StopDetector_
+  commentId: Overload:Global.PeriodicRelativeHitDetector.StopDetector
   isSpec: "True"
-  fullName: PeriodicRelativeHitDetector.Start
-  nameWithType: PeriodicRelativeHitDetector.Start
-- uid: Global.PeriodicRelativeHitDetector.Stop
-  name: Stop()
-  href: api/Global.PeriodicRelativeHitDetector.html#Global_PeriodicRelativeHitDetector_Stop
-  commentId: M:Global.PeriodicRelativeHitDetector.Stop
-  fullName: PeriodicRelativeHitDetector.Stop()
-  nameWithType: PeriodicRelativeHitDetector.Stop()
-- uid: Global.PeriodicRelativeHitDetector.Stop*
-  name: Stop
-  href: api/Global.PeriodicRelativeHitDetector.html#Global_PeriodicRelativeHitDetector_Stop_
-  commentId: Overload:Global.PeriodicRelativeHitDetector.Stop
-  isSpec: "True"
-  fullName: PeriodicRelativeHitDetector.Stop
-  nameWithType: PeriodicRelativeHitDetector.Stop
+  fullName: PeriodicRelativeHitDetector.StopDetector
+  nameWithType: PeriodicRelativeHitDetector.StopDetector
 - uid: Global.PhysicalAttributes
   name: PhysicalAttributes
   href: api/Global.PhysicalAttributes.html
@@ -4687,12 +4754,15 @@ references:
   commentId: T:Global.PossesSource
   fullName: PossesSource
   nameWithType: PossesSource
-- uid: Global.PossesSource.Activate(System.Single,System.Single)
-  name: Activate(Single, Single)
-  href: api/Global.PossesSource.html#Global_PossesSource_Activate_System_Single_System_Single_
-  commentId: M:Global.PossesSource.Activate(System.Single,System.Single)
-  fullName: PossesSource.Activate(System.Single, System.Single)
-  nameWithType: PossesSource.Activate(Single, Single)
+- uid: Global.PossesSource.Activate(System.Single,System.Single,List{System.String})
+  name: Activate(Single, Single, List<String>)
+  href: api/Global.PossesSource.html#Global_PossesSource_Activate_System_Single_System_Single_List_System_String__
+  commentId: M:Global.PossesSource.Activate(System.Single,System.Single,List{System.String})
+  name.vb: Activate(Single, Single, List(Of String))
+  fullName: PossesSource.Activate(System.Single, System.Single, List<System.String>)
+  fullName.vb: PossesSource.Activate(System.Single, System.Single, List(Of System.String))
+  nameWithType: PossesSource.Activate(Single, Single, List<String>)
+  nameWithType.vb: PossesSource.Activate(Single, Single, List(Of String))
 - uid: Global.PossesSource.Activate*
   name: Activate
   href: api/Global.PossesSource.html#Global_PossesSource_Activate_
@@ -5138,31 +5208,25 @@ references:
   isSpec: "True"
   fullName: SimpleAttack.CanPlay
   nameWithType: SimpleAttack.CanPlay
-- uid: Global.SimpleAttack.CreateHitDetector
-  name: CreateHitDetector()
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_CreateHitDetector
-  commentId: M:Global.SimpleAttack.CreateHitDetector
-  fullName: SimpleAttack.CreateHitDetector()
-  nameWithType: SimpleAttack.CreateHitDetector()
-- uid: Global.SimpleAttack.CreateHitDetector*
-  name: CreateHitDetector
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_CreateHitDetector_
-  commentId: Overload:Global.SimpleAttack.CreateHitDetector
+- uid: Global.SimpleAttack.ConfigureHitDetector
+  name: ConfigureHitDetector()
+  href: api/Global.SimpleAttack.html#Global_SimpleAttack_ConfigureHitDetector
+  commentId: M:Global.SimpleAttack.ConfigureHitDetector
+  fullName: SimpleAttack.ConfigureHitDetector()
+  nameWithType: SimpleAttack.ConfigureHitDetector()
+- uid: Global.SimpleAttack.ConfigureHitDetector*
+  name: ConfigureHitDetector
+  href: api/Global.SimpleAttack.html#Global_SimpleAttack_ConfigureHitDetector_
+  commentId: Overload:Global.SimpleAttack.ConfigureHitDetector
   isSpec: "True"
-  fullName: SimpleAttack.CreateHitDetector
-  nameWithType: SimpleAttack.CreateHitDetector
+  fullName: SimpleAttack.ConfigureHitDetector
+  nameWithType: SimpleAttack.ConfigureHitDetector
 - uid: Global.SimpleAttack.damage
   name: damage
   href: api/Global.SimpleAttack.html#Global_SimpleAttack_damage
   commentId: F:Global.SimpleAttack.damage
   fullName: SimpleAttack.damage
   nameWithType: SimpleAttack.damage
-- uid: Global.SimpleAttack.hitbox
-  name: hitbox
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_hitbox
-  commentId: F:Global.SimpleAttack.hitbox
-  fullName: SimpleAttack.hitbox
-  nameWithType: SimpleAttack.hitbox
 - uid: Global.SimpleAttack.HitCallable(IHittable)
   name: HitCallable(IHittable)
   href: api/Global.SimpleAttack.html#Global_SimpleAttack_HitCallable_IHittable_
@@ -5176,31 +5240,31 @@ references:
   isSpec: "True"
   fullName: SimpleAttack.HitCallable
   nameWithType: SimpleAttack.HitCallable
-- uid: Global.SimpleAttack.hittableTags
-  name: hittableTags
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_hittableTags
-  commentId: F:Global.SimpleAttack.hittableTags
-  fullName: SimpleAttack.hittableTags
-  nameWithType: SimpleAttack.hittableTags
+- uid: Global.SimpleAttack.hitDetector
+  name: hitDetector
+  href: api/Global.SimpleAttack.html#Global_SimpleAttack_hitDetector
+  commentId: F:Global.SimpleAttack.hitDetector
+  fullName: SimpleAttack.hitDetector
+  nameWithType: SimpleAttack.hitDetector
 - uid: Global.SimpleAttack.hitType
   name: hitType
   href: api/Global.SimpleAttack.html#Global_SimpleAttack_hitType
   commentId: F:Global.SimpleAttack.hitType
   fullName: SimpleAttack.hitType
   nameWithType: SimpleAttack.hitType
-- uid: Global.SimpleAttack.IsHittableTag(System.String)
-  name: IsHittableTag(String)
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_IsHittableTag_System_String_
-  commentId: M:Global.SimpleAttack.IsHittableTag(System.String)
-  fullName: SimpleAttack.IsHittableTag(System.String)
-  nameWithType: SimpleAttack.IsHittableTag(String)
-- uid: Global.SimpleAttack.IsHittableTag*
-  name: IsHittableTag
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_IsHittableTag_
-  commentId: Overload:Global.SimpleAttack.IsHittableTag
+- uid: Global.SimpleAttack.InvokeOnHit(IHittable)
+  name: InvokeOnHit(IHittable)
+  href: api/Global.SimpleAttack.html#Global_SimpleAttack_InvokeOnHit_IHittable_
+  commentId: M:Global.SimpleAttack.InvokeOnHit(IHittable)
+  fullName: SimpleAttack.InvokeOnHit(IHittable)
+  nameWithType: SimpleAttack.InvokeOnHit(IHittable)
+- uid: Global.SimpleAttack.InvokeOnHit*
+  name: InvokeOnHit
+  href: api/Global.SimpleAttack.html#Global_SimpleAttack_InvokeOnHit_
+  commentId: Overload:Global.SimpleAttack.InvokeOnHit
   isSpec: "True"
-  fullName: SimpleAttack.IsHittableTag
-  nameWithType: SimpleAttack.IsHittableTag
+  fullName: SimpleAttack.InvokeOnHit
+  nameWithType: SimpleAttack.InvokeOnHit
 - uid: Global.SimpleAttack.knockbackDirection
   name: knockbackDirection
   href: api/Global.SimpleAttack.html#Global_SimpleAttack_knockbackDirection
@@ -5219,12 +5283,12 @@ references:
   commentId: F:Global.SimpleAttack.midair
   fullName: SimpleAttack.midair
   nameWithType: SimpleAttack.midair
-- uid: Global.SimpleAttack.overrideDefaultHittableTags
-  name: overrideDefaultHittableTags
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_overrideDefaultHittableTags
-  commentId: F:Global.SimpleAttack.overrideDefaultHittableTags
-  fullName: SimpleAttack.overrideDefaultHittableTags
-  nameWithType: SimpleAttack.overrideDefaultHittableTags
+- uid: Global.SimpleAttack.OnHit
+  name: OnHit
+  href: api/Global.SimpleAttack.html#Global_SimpleAttack_OnHit
+  commentId: E:Global.SimpleAttack.OnHit
+  fullName: SimpleAttack.OnHit
+  nameWithType: SimpleAttack.OnHit
 - uid: Global.SimpleAttack.PreventWalking(System.Boolean)
   name: PreventWalking(Boolean)
   href: api/Global.SimpleAttack.html#Global_SimpleAttack_PreventWalking_System_Boolean_
@@ -5307,48 +5371,35 @@ references:
   commentId: T:Global.SingleHitDetector
   fullName: SingleHitDetector
   nameWithType: SingleHitDetector
-- uid: Global.SingleHitDetector.#ctor(EventManager,Hitbox,Action{IHittable})
-  name: SingleHitDetector(EventManager, Hitbox, Action<IHittable>)
-  href: api/Global.SingleHitDetector.html#Global_SingleHitDetector__ctor_EventManager_Hitbox_Action_IHittable__
-  commentId: M:Global.SingleHitDetector.#ctor(EventManager,Hitbox,Action{IHittable})
-  name.vb: SingleHitDetector(EventManager, Hitbox, Action(Of IHittable))
-  fullName: SingleHitDetector.SingleHitDetector(EventManager, Hitbox, Action<IHittable>)
-  fullName.vb: SingleHitDetector.SingleHitDetector(EventManager, Hitbox, Action(Of IHittable))
-  nameWithType: SingleHitDetector.SingleHitDetector(EventManager, Hitbox, Action<IHittable>)
-  nameWithType.vb: SingleHitDetector.SingleHitDetector(EventManager, Hitbox, Action(Of IHittable))
-- uid: Global.SingleHitDetector.#ctor*
-  name: SingleHitDetector
-  href: api/Global.SingleHitDetector.html#Global_SingleHitDetector__ctor_
-  commentId: Overload:Global.SingleHitDetector.#ctor
+- uid: Global.SingleHitDetector.DoStartDetector(Action{IHittable})
+  name: DoStartDetector(Action<IHittable>)
+  href: api/Global.SingleHitDetector.html#Global_SingleHitDetector_DoStartDetector_Action_IHittable__
+  commentId: M:Global.SingleHitDetector.DoStartDetector(Action{IHittable})
+  name.vb: DoStartDetector(Action(Of IHittable))
+  fullName: SingleHitDetector.DoStartDetector(Action<IHittable>)
+  fullName.vb: SingleHitDetector.DoStartDetector(Action(Of IHittable))
+  nameWithType: SingleHitDetector.DoStartDetector(Action<IHittable>)
+  nameWithType.vb: SingleHitDetector.DoStartDetector(Action(Of IHittable))
+- uid: Global.SingleHitDetector.DoStartDetector*
+  name: DoStartDetector
+  href: api/Global.SingleHitDetector.html#Global_SingleHitDetector_DoStartDetector_
+  commentId: Overload:Global.SingleHitDetector.DoStartDetector
   isSpec: "True"
-  fullName: SingleHitDetector.SingleHitDetector
-  nameWithType: SingleHitDetector.SingleHitDetector
-- uid: Global.SingleHitDetector.Start
-  name: Start()
-  href: api/Global.SingleHitDetector.html#Global_SingleHitDetector_Start
-  commentId: M:Global.SingleHitDetector.Start
-  fullName: SingleHitDetector.Start()
-  nameWithType: SingleHitDetector.Start()
-- uid: Global.SingleHitDetector.Start*
-  name: Start
-  href: api/Global.SingleHitDetector.html#Global_SingleHitDetector_Start_
-  commentId: Overload:Global.SingleHitDetector.Start
+  fullName: SingleHitDetector.DoStartDetector
+  nameWithType: SingleHitDetector.DoStartDetector
+- uid: Global.SingleHitDetector.StopDetector
+  name: StopDetector()
+  href: api/Global.SingleHitDetector.html#Global_SingleHitDetector_StopDetector
+  commentId: M:Global.SingleHitDetector.StopDetector
+  fullName: SingleHitDetector.StopDetector()
+  nameWithType: SingleHitDetector.StopDetector()
+- uid: Global.SingleHitDetector.StopDetector*
+  name: StopDetector
+  href: api/Global.SingleHitDetector.html#Global_SingleHitDetector_StopDetector_
+  commentId: Overload:Global.SingleHitDetector.StopDetector
   isSpec: "True"
-  fullName: SingleHitDetector.Start
-  nameWithType: SingleHitDetector.Start
-- uid: Global.SingleHitDetector.Stop
-  name: Stop()
-  href: api/Global.SingleHitDetector.html#Global_SingleHitDetector_Stop
-  commentId: M:Global.SingleHitDetector.Stop
-  fullName: SingleHitDetector.Stop()
-  nameWithType: SingleHitDetector.Stop()
-- uid: Global.SingleHitDetector.Stop*
-  name: Stop
-  href: api/Global.SingleHitDetector.html#Global_SingleHitDetector_Stop_
-  commentId: Overload:Global.SingleHitDetector.Stop
-  isSpec: "True"
-  fullName: SingleHitDetector.Stop
-  nameWithType: SingleHitDetector.Stop
+  fullName: SingleHitDetector.StopDetector
+  nameWithType: SingleHitDetector.StopDetector
 - uid: Global.SlashAttack
   name: SlashAttack
   href: api/Global.SlashAttack.html
@@ -5482,43 +5533,43 @@ references:
   commentId: T:Global.SpinningSwordsAttack
   fullName: SpinningSwordsAttack
   nameWithType: SpinningSwordsAttack
-- uid: Global.SpinningSwordsAttack.CreateHitDetector
-  name: CreateHitDetector()
-  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_CreateHitDetector
-  commentId: M:Global.SpinningSwordsAttack.CreateHitDetector
-  fullName: SpinningSwordsAttack.CreateHitDetector()
-  nameWithType: SpinningSwordsAttack.CreateHitDetector()
-- uid: Global.SpinningSwordsAttack.CreateHitDetector*
-  name: CreateHitDetector
-  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_CreateHitDetector_
-  commentId: Overload:Global.SpinningSwordsAttack.CreateHitDetector
+- uid: Global.SpinningSwordsAttack.ConfigureHitDetector
+  name: ConfigureHitDetector()
+  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_ConfigureHitDetector
+  commentId: M:Global.SpinningSwordsAttack.ConfigureHitDetector
+  fullName: SpinningSwordsAttack.ConfigureHitDetector()
+  nameWithType: SpinningSwordsAttack.ConfigureHitDetector()
+- uid: Global.SpinningSwordsAttack.ConfigureHitDetector*
+  name: ConfigureHitDetector
+  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_ConfigureHitDetector_
+  commentId: Overload:Global.SpinningSwordsAttack.ConfigureHitDetector
   isSpec: "True"
-  fullName: SpinningSwordsAttack.CreateHitDetector
-  nameWithType: SpinningSwordsAttack.CreateHitDetector
-- uid: Global.SpinningSwordsAttack.hitbox1
-  name: hitbox1
-  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_hitbox1
-  commentId: F:Global.SpinningSwordsAttack.hitbox1
-  fullName: SpinningSwordsAttack.hitbox1
-  nameWithType: SpinningSwordsAttack.hitbox1
-- uid: Global.SpinningSwordsAttack.hitbox1FinishTime
-  name: hitbox1FinishTime
-  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_hitbox1FinishTime
-  commentId: F:Global.SpinningSwordsAttack.hitbox1FinishTime
-  fullName: SpinningSwordsAttack.hitbox1FinishTime
-  nameWithType: SpinningSwordsAttack.hitbox1FinishTime
-- uid: Global.SpinningSwordsAttack.hitbox2
-  name: hitbox2
-  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_hitbox2
-  commentId: F:Global.SpinningSwordsAttack.hitbox2
-  fullName: SpinningSwordsAttack.hitbox2
-  nameWithType: SpinningSwordsAttack.hitbox2
-- uid: Global.SpinningSwordsAttack.hitbox2StartTime
-  name: hitbox2StartTime
-  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_hitbox2StartTime
-  commentId: F:Global.SpinningSwordsAttack.hitbox2StartTime
-  fullName: SpinningSwordsAttack.hitbox2StartTime
-  nameWithType: SpinningSwordsAttack.hitbox2StartTime
+  fullName: SpinningSwordsAttack.ConfigureHitDetector
+  nameWithType: SpinningSwordsAttack.ConfigureHitDetector
+- uid: Global.SpinningSwordsAttack.detector1FinishTime
+  name: detector1FinishTime
+  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_detector1FinishTime
+  commentId: F:Global.SpinningSwordsAttack.detector1FinishTime
+  fullName: SpinningSwordsAttack.detector1FinishTime
+  nameWithType: SpinningSwordsAttack.detector1FinishTime
+- uid: Global.SpinningSwordsAttack.detector2StartTime
+  name: detector2StartTime
+  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_detector2StartTime
+  commentId: F:Global.SpinningSwordsAttack.detector2StartTime
+  fullName: SpinningSwordsAttack.detector2StartTime
+  nameWithType: SpinningSwordsAttack.detector2StartTime
+- uid: Global.SpinningSwordsAttack.hitDetector1
+  name: hitDetector1
+  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_hitDetector1
+  commentId: F:Global.SpinningSwordsAttack.hitDetector1
+  fullName: SpinningSwordsAttack.hitDetector1
+  nameWithType: SpinningSwordsAttack.hitDetector1
+- uid: Global.SpinningSwordsAttack.hitDetector2
+  name: hitDetector2
+  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_hitDetector2
+  commentId: F:Global.SpinningSwordsAttack.hitDetector2
+  fullName: SpinningSwordsAttack.hitDetector2
+  nameWithType: SpinningSwordsAttack.hitDetector2
 - uid: Global.StabAttack
   name: StabAttack
   href: api/Global.StabAttack.html
