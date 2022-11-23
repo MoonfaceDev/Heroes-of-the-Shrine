@@ -417,7 +417,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 776863200}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2583027, y: 4.0310435, z: -0.18375917}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1197,8 +1197,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
   figureObject: {fileID: 2542200780353046348}
-  position: {x: 29.2, y: 0, z: -8}
-  rotation: {x: 0, y: 0, z: 0, w: 0}
+  position: {x: 29.2, y: 0, z: -3}
+  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -1210,7 +1210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2542200778651597027}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.2, y: -6.4, z: 0}
+  m_LocalPosition: {x: 29.2, y: -2.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6188,7 +6188,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   figureObject: {fileID: 2542200780129880118}
   position: {x: 0, y: 0, z: -0.01}
-  rotation: {x: 0, y: 0, z: 0, w: 0}
+  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
