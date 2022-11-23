@@ -7,7 +7,7 @@ public class PossesSource : MonoBehaviour
     public GameObject warningIndicator;
     public GameObject activeIndicator;
 
-    public void Activate(float warningDuration, float activeDuration, List<string> hittableTags)
+    public void Activate(float warningDuration, float activeDuration, List<string> hittableTags, float effectDuration)
     {
         warningIndicator.SetActive(true);
         EventManager.Instance.StartTimeout(() =>
@@ -17,8 +17,11 @@ public class PossesSource : MonoBehaviour
             var hitDetector = GetComponent<BaseHitDetector>();
             hitDetector.StartDetector(hittable =>
             {
-                // TODO: Apply the PossessedEffect
-                print(hittable);
+                var possessedEffect = hittable.Character.GetComponent<PossessedEffect>();
+                if (possessedEffect)
+                {
+                    possessedEffect.Play(effectDuration);
+                }
             }, hittableTags);
             EventManager.Instance.StartTimeout(() =>
             {

@@ -459,6 +459,8 @@ MonoBehaviour:
   possesSource: {fileID: 6907962097126891099, guid: c619b10d9f747194c92416ed8fe7005a, type: 3}
   warningDuration: 2
   sourceActiveDuration: 1
+  effectDuration: 5
+  waveCount: 1
 --- !u!1 &153687728
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,9 +539,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackManager: {fileID: 63080240}
-  overrideDefaultHittableTags: 0
-  hittableTags: []
+  includedHittableTags: []
+  excludedHittableTags: []
 --- !u!1 &316202118
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,6 +19,8 @@ public class PossesAttack : BaseAttack
     public PossesSource possesSource;
     public float warningDuration;
     public float sourceActiveDuration;
+    public float effectDuration;
+    public int waveCount = 1;
 
     private WalkableGrid walkableGrid;
 
@@ -35,27 +37,35 @@ public class PossesAttack : BaseAttack
         OnStop += () => EnableBehaviours(typeof(WalkBehaviour));
         walkableGrid = FindObjectOfType<WalkableGrid>();
 
-        OnStartActive += () =>
+        OnStartActive += () => StartWave(0);
+    }
+
+    private void StartWave(int waveIndex)
+    {
+        var alreadySpawned = new List<Vector3>();
+        
+        for (var i = 0; i < sourcesCount; i++)
         {
-            var alreadySpawned = new List<Vector3>();
-            for (var i = 0; i < sourcesCount; i++)
+            try
             {
-                try
-                {
-                    var spawnPoint = GetSpawnPoint(alreadySpawned);
-                    alreadySpawned.Add(spawnPoint);
-                    var newPossesSource = Instantiate(possesSource.gameObject);
-                    newPossesSource.GetComponent<MovableObject>().WorldPosition = spawnPoint;
-                    newPossesSource.GetComponent<PossesSource>().Activate(warningDuration, sourceActiveDuration,
-                        AttackManager.hittableTags);
-                }
-                catch (NoSpawnPointException)
-                {
-                    Debug.LogError("Spawn point not found after 10 tries");
-                    break;
-                }
+                var spawnPoint = GetSpawnPoint(alreadySpawned);
+                alreadySpawned.Add(spawnPoint);
+                var newPossesSource = Instantiate(possesSource.gameObject);
+                newPossesSource.GetComponent<MovableObject>().WorldPosition = spawnPoint;
+                newPossesSource.GetComponent<PossesSource>().Activate(warningDuration, sourceActiveDuration,
+                    AttackManager.hittableTags, effectDuration);
             }
-        };
+            catch (NoSpawnPointException)
+            {
+                Debug.LogError("Spawn point not found after 10 tries");
+                break;
+            }
+        }
+
+        if (waveIndex + 1 < waveCount)
+        {
+            EventManager.Instance.StartTimeout(() => StartWave(waveIndex + 1), warningDuration + sourceActiveDuration);
+        }
     }
 
     private void Start()
@@ -72,7 +82,7 @@ public class PossesAttack : BaseAttack
 
         var player = CachedObjectsManager.Instance.GetObject<Character>("Player");
         var groundPlayerPosition = player.movableObject.GroundWorldPosition;
-        var relativePoint = new Vector3(Random.value - 0.5f, 0, Random.value - 0.5f) * 2 * spawnRadius;
+        var relativePoint = 2 * spawnRadius * new Vector3(Random.value - 0.5f, 0, Random.value - 0.5f);
         var newPosition = groundPlayerPosition + relativePoint;
         if (!IsValidPosition(alreadySpawned, newPosition))
         {

@@ -398,7 +398,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   figureObject: {fileID: 0}
   position: {x: -18, y: 0, z: -5}
-  rotation: {x: 0, y: 0, z: 0, w: 0}
+  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -959,6 +959,13 @@ MonoBehaviour:
       _suppressLogs: 0
     icon: {fileID: 1286662905, guid: 025f3bba0b899a54ab2963a8dfa019d4, type: 3}
     color: {r: 0.19715197, g: 0.39614257, b: 0.735849, a: 1}
+  - effectType:
+      GuidAssignmentFailed: 0
+      GUID: 11f5303dff324830818deddd46b8e2ca
+      _typeNameAndAssembly: PossessedEffect, Assembly-CSharp
+      _suppressLogs: 0
+    icon: {fileID: 1286662905, guid: 025f3bba0b899a54ab2963a8dfa019d4, type: 3}
+    color: {r: 0.7264151, g: 0.24493913, b: 0.18894625, a: 1}
 --- !u!1 &5826350637666628246
 GameObject:
   m_ObjectHideFlags: 0

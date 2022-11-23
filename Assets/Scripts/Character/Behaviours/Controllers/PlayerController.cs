@@ -29,17 +29,19 @@ public class PlayerController : CharacterController
 {
     public AttackProperty[] attacks;
     public RuntimeAnimatorController[] animatorControllers;
+    [HideInInspector] public int activeSuitIndex;
 
-    [HideInInspector]
-    public int activeSuitIndex;
-
-    public float bufferingTime;
+    [Header("Action buffering")] public float bufferingTime;
     public BaseAttack[] nonBufferedAttacks;
 
     [Header("Buffered actions priorities")]
     public int jumpPriority;
+
     public int slidePriority;
     public int attackPriority;
+
+    [Header("Special inputs")] public List<Button> possessedEffectTimeReducing;
+    public float possessedEffectDurationReduction;
 
     private WalkBehaviour walkBehaviour;
     private JumpBehaviour jumpBehaviour;
@@ -62,17 +64,30 @@ public class PlayerController : CharacterController
     private void Start()
     {
         // clear expired buffered actions
-        EventManager.Attach(() => true, () => {
-            bufferedActions = bufferedActions.FindAll(action => Time.time < action.insertionTime + bufferingTime);
-        }, false);
+        EventManager.Attach(() => true,
+            () =>
+            {
+                bufferedActions = bufferedActions.FindAll(action => Time.time < action.insertionTime + bufferingTime);
+            }, false);
     }
 
     public void Update()
     {
+        // reduce duration of possessed effect
+        if (possessedEffectTimeReducing.Any(button => Input.GetButtonDown(button.ToString())))
+        {
+            var possessedEffect = GetComponent<PossessedEffect>();
+            if (possessedEffect)
+            {
+                possessedEffect.ReduceDuration(possessedEffectDurationReduction);
+            }
+        }
+
         // play the buffered action with highest priority
         if (bufferedActions.Count > 0)
         {
-            if (bufferedActions.OrderByDescending(action => action.priority).Select(bufferedAction => bufferedAction.action()).Any(isSuccess => isSuccess))
+            if (bufferedActions.OrderByDescending(action => action.priority)
+                .Select(bufferedAction => bufferedAction.action()).Any(isSuccess => isSuccess))
             {
                 bufferedActions.Clear();
             }
@@ -84,6 +99,7 @@ public class PlayerController : CharacterController
         {
             walkBehaviour.Play(horizontal, vertical);
         }
+
         //jumping
         ExecuteJump();
         //sliding
@@ -129,7 +145,7 @@ public class PlayerController : CharacterController
     private bool ExecuteAttack(bool isBuffered = false, Button[] bufferedButtons = null)
     {
         AttackProperty selectedAttack = null;
-        
+
         foreach (var property in attacks)
         {
             if (!property.attack.CanPlay()) continue;
@@ -137,12 +153,13 @@ public class PlayerController : CharacterController
             {
                 selectedAttack = property;
             }
+
             if (!isBuffered && Input.GetButtonDown(property.button.ToString()))
             {
                 selectedAttack = property;
             }
         }
-        
+
         if (selectedAttack != null && !(isBuffered && nonBufferedAttacks.Contains(selectedAttack.attack)))
         {
             selectedAttack.attack.Play();
@@ -155,10 +172,14 @@ public class PlayerController : CharacterController
             var downButtons = GetDownButtons();
             if (downButtons.Length > 0)
             {
-                bufferedActions.Add(new BufferedAction { action = () => ExecuteAttack(true, downButtons), priority = attackPriority, insertionTime = Time.time });
+                bufferedActions.Add(new BufferedAction
+                {
+                    action = () => ExecuteAttack(true, downButtons), priority = attackPriority,
+                    insertionTime = Time.time
+                });
             }
         }
-        
+
         return false;
     }
 
@@ -172,7 +193,8 @@ public class PlayerController : CharacterController
         {
             bufferedActions.Add(new BufferedAction
             {
-                action = () => {
+                action = () =>
+                {
                     if (!canPlay()) return false;
                     play();
                     return true;
@@ -185,7 +207,8 @@ public class PlayerController : CharacterController
 
     private static Button[] GetDownButtons()
     {
-        return Enum.GetValues(typeof(Button)).Cast<Button>().Where(button => Input.GetButtonDown(button.ToString())).ToArray();
+        return Enum.GetValues(typeof(Button)).Cast<Button>().Where(button => Input.GetButtonDown(button.ToString()))
+            .ToArray();
     }
 
     private static int Direction(float number)
@@ -194,10 +217,12 @@ public class PlayerController : CharacterController
         {
             return 1;
         }
+
         if (number < -Mathf.Epsilon)
         {
             return -1;
         }
+
         return 0;
     }
 }

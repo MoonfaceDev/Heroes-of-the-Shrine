@@ -79,7 +79,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
   prefab: {fileID: 6160012718991474138, guid: 4beee89b5f87b224189fe289925793fb, type: 3}
 --- !u!114 &210030094719651067
 MonoBehaviour:
@@ -93,9 +92,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackManager: {fileID: 5102893360874897672}
-  overrideDefaultHittableTags: 0
-  hittableTags: []
+  includedHittableTags: []
+  excludedHittableTags: []
 --- !u!1 &5102893360079750233
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +276,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
   prefab: {fileID: 1914151399083900665, guid: 97424818f1eb2994fa6429d2ec6974de, type: 3}
 --- !u!114 &3331154466096814319
 MonoBehaviour:
@@ -292,9 +289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackManager: {fileID: 5102893360874897672}
-  overrideDefaultHittableTags: 0
-  hittableTags: []
+  includedHittableTags: []
+  excludedHittableTags: []
 --- !u!1 &5102893360422186050
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +370,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
   prefab: {fileID: 2661468372341986182, guid: b27efde971e356747b9bdce37c18c7be, type: 3}
 --- !u!114 &9212607366117902189
 MonoBehaviour:
@@ -388,9 +383,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackManager: {fileID: 5102893360874897672}
-  overrideDefaultHittableTags: 0
-  hittableTags: []
+  includedHittableTags: []
+  excludedHittableTags: []
 --- !u!1 &5102893360536826754
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,7 +464,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
   prefab: {fileID: 7368109035975547894, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
 --- !u!114 &1378128598374464822
 MonoBehaviour:
@@ -484,9 +477,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackManager: {fileID: 5102893360874897672}
-  overrideDefaultHittableTags: 0
-  hittableTags: []
+  includedHittableTags: []
+  excludedHittableTags: []
 --- !u!1 &5102893360763890665
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,7 +558,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
   prefab: {fileID: 8245450162260640053, guid: e9a1faa674d113a428519eb042e2e097, type: 3}
 --- !u!114 &4499705321448943879
 MonoBehaviour:
@@ -580,9 +571,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackManager: {fileID: 5102893360874897672}
-  overrideDefaultHittableTags: 0
-  hittableTags: []
+  includedHittableTags: []
+  excludedHittableTags: []
 --- !u!1 &5102893360866760426
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,7 +652,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
   prefab: {fileID: 7161048684058357246, guid: f3fda9e187466314e97b96e464322573, type: 3}
 --- !u!114 &3262553446811620699
 MonoBehaviour:
@@ -676,9 +665,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackManager: {fileID: 5102893360874897672}
-  overrideDefaultHittableTags: 0
-  hittableTags: []
+  includedHittableTags: []
+  excludedHittableTags: []
 --- !u!1 &5102893360874897723
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,6 +694,7 @@ GameObject:
   - component: {fileID: 2899137309724130339}
   - component: {fileID: 5102893360874897692}
   - component: {fileID: 5102893360874897674}
+  - component: {fileID: 1638938386684518268}
   - component: {fileID: 5102893360874897672}
   - component: {fileID: 5102893360874897678}
   - component: {fileID: 5102893360874897673}
@@ -752,7 +741,7 @@ Transform:
   - {fileID: 5102893360866760424}
   - {fileID: 3850747449127629430}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360874897665
 MonoBehaviour:
@@ -1010,6 +999,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ba493242bffda44bd80bb0d4062f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1638938386684518268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893360874897723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11f5303dff324830818deddd46b8e2ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5102893360874897672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1067,6 +1068,8 @@ MonoBehaviour:
   jumpPriority: 0
   slidePriority: 1
   attackPriority: 2
+  possessedEffectTimeReducing: 00000000010000000200000003000000
+  possessedEffectDurationReduction: 0.05
 --- !u!114 &5102893360874897673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1450,9 +1453,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackManager: {fileID: 5102893360874897672}
-  overrideDefaultHittableTags: 0
-  hittableTags: []
+  includedHittableTags: []
+  excludedHittableTags: []
 --- !u!1 &5102893361029256207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,7 +1534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
   prefab: {fileID: 3843020969008119030, guid: baca1c3b16caaf246824b26b93c8130a, type: 3}
 --- !u!114 &6205691515461635864
 MonoBehaviour:
@@ -1546,9 +1547,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackManager: {fileID: 5102893360874897672}
-  overrideDefaultHittableTags: 0
-  hittableTags: []
+  includedHittableTags: []
+  excludedHittableTags: []
 --- !u!1 &5102893361031154992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1707,7 +1707,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
   prefab: {fileID: 6176859053047132887, guid: 4149b67738ee91743826106b7544e3e7, type: 3}
 --- !u!114 &1090857225183363841
 MonoBehaviour:
@@ -1721,9 +1720,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackManager: {fileID: 5102893360874897672}
-  overrideDefaultHittableTags: 0
-  hittableTags: []
+  includedHittableTags: []
+  excludedHittableTags: []
 --- !u!1 &5102893361279726048
 GameObject:
   m_ObjectHideFlags: 0
@@ -6745,7 +6743,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
   prefab: {fileID: 2493925537809947469, guid: 634f87744e474794792b9b794ec0dfed, type: 3}
 --- !u!114 &8845085713669517856
 MonoBehaviour:
@@ -6759,9 +6756,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackManager: {fileID: 5102893360874897672}
-  overrideDefaultHittableTags: 0
-  hittableTags: []
+  includedHittableTags: []
+  excludedHittableTags: []
 --- !u!1 &5102893361865183972
 GameObject:
   m_ObjectHideFlags: 0
