@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class BaseEffect
+    <title>Class PossessedEffect
    | Heroes of the Shrine </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class BaseEffect
+    <meta name="title" content="Class PossessedEffect
    | Heroes of the Shrine ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,10 +78,10 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Global.BaseEffect">
+            <article class="content wrap" id="_content" data-uid="Global.PossessedEffect">
   
   
-  <h1 id="Global_BaseEffect" data-uid="Global.BaseEffect" class="text-break">Class BaseEffect
+  <h1 id="Global_PossessedEffect" data-uid="Global.PossessedEffect" class="text-break">Class PossessedEffect
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
@@ -90,14 +90,17 @@
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
     <div class="level2"><a class="xref" href="Global.PlayableBehaviour.html">PlayableBehaviour</a></div>
-    <div class="level3"><span class="xref">BaseEffect</span></div>
-      <div class="level4"><a class="xref" href="Global.ElectrifiedEffect.html">ElectrifiedEffect</a></div>
-      <div class="level4"><a class="xref" href="Global.FireEffect.html">FireEffect</a></div>
-      <div class="level4"><a class="xref" href="Global.PossessedEffect.html">PossessedEffect</a></div>
-      <div class="level4"><a class="xref" href="Global.SuperArmorEffect.html">SuperArmorEffect</a></div>
+    <div class="level3"><a class="xref" href="Global.BaseEffect.html">BaseEffect</a></div>
+    <div class="level4"><span class="xref">PossessedEffect</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Global.BaseEffect.html#Global_BaseEffect_Active">BaseEffect.Active</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseEffect.html#Global_BaseEffect_Playing">BaseEffect.Playing</a>
+    </div>
     <div>
       <a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_OnPlay">PlayableBehaviour.OnPlay</a>
     </div>
@@ -106,9 +109,6 @@
     </div>
     <div>
       <a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_CanPlay">PlayableBehaviour.CanPlay()</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_Stop">PlayableBehaviour.Stop()</a>
     </div>
     <div>
       <a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_InvokeOnPlay">PlayableBehaviour.InvokeOnPlay()</a>
@@ -155,75 +155,21 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Global_BaseEffect_syntax">Syntax</h5>
+  <h5 id="Global_PossessedEffect_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class BaseEffect : PlayableBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class PossessedEffect : BaseEffect</code></pre>
   </div>
-  <h3 id="properties">Properties
-  </h3>
-  
-  
-  <a id="Global_BaseEffect_Active_" data-uid="Global.BaseEffect.Active*"></a>
-  <h4 id="Global_BaseEffect_Active" data-uid="Global.BaseEffect.Active">Active</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Active { get; protected set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_BaseEffect_Playing_" data-uid="Global.BaseEffect.Playing*"></a>
-  <h4 id="Global_BaseEffect_Playing" data-uid="Global.BaseEffect.Playing">Playing</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool Playing { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_Playing">PlayableBehaviour.Playing</a></div>
   <h3 id="methods">Methods
   </h3>
   
   
-  <a id="Global_BaseEffect_GetProgress_" data-uid="Global.BaseEffect.GetProgress*"></a>
-  <h4 id="Global_BaseEffect_GetProgress" data-uid="Global.BaseEffect.GetProgress">GetProgress()</h4>
+  <a id="Global_PossessedEffect_GetProgress_" data-uid="Global.PossessedEffect.GetProgress*"></a>
+  <h4 id="Global_PossessedEffect_GetProgress" data-uid="Global.PossessedEffect.GetProgress">GetProgress()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract float GetProgress()</code></pre>
+    <pre><code class="lang-csharp hljs">public override float GetProgress()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -240,6 +186,74 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.BaseEffect.html#Global_BaseEffect_GetProgress">BaseEffect.GetProgress()</a></div>
+  
+  
+  <a id="Global_PossessedEffect_Play_" data-uid="Global.PossessedEffect.Play*"></a>
+  <h4 id="Global_PossessedEffect_Play_System_Single_" data-uid="Global.PossessedEffect.Play(System.Single)">Play(Single)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Play(float maxDuration)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">maxDuration</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Global_PossessedEffect_ReduceDuration_" data-uid="Global.PossessedEffect.ReduceDuration*"></a>
+  <h4 id="Global_PossessedEffect_ReduceDuration_System_Single_" data-uid="Global.PossessedEffect.ReduceDuration(System.Single)">ReduceDuration(Single)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ReduceDuration(float durationPart)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">durationPart</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Global_PossessedEffect_Stop_" data-uid="Global.PossessedEffect.Stop*"></a>
+  <h4 id="Global_PossessedEffect_Stop" data-uid="Global.PossessedEffect.Stop">Stop()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Stop()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_Stop">PlayableBehaviour.Stop()</a></div>
 </article>
           </div>
           

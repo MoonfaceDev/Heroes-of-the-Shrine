@@ -4623,6 +4623,18 @@ references:
   commentId: F:Global.PlayerController.nonBufferedAttacks
   fullName: PlayerController.nonBufferedAttacks
   nameWithType: PlayerController.nonBufferedAttacks
+- uid: Global.PlayerController.possessedEffectDurationReduction
+  name: possessedEffectDurationReduction
+  href: api/Global.PlayerController.html#Global_PlayerController_possessedEffectDurationReduction
+  commentId: F:Global.PlayerController.possessedEffectDurationReduction
+  fullName: PlayerController.possessedEffectDurationReduction
+  nameWithType: PlayerController.possessedEffectDurationReduction
+- uid: Global.PlayerController.possessedEffectTimeReducing
+  name: possessedEffectTimeReducing
+  href: api/Global.PlayerController.html#Global_PlayerController_possessedEffectTimeReducing
+  commentId: F:Global.PlayerController.possessedEffectTimeReducing
+  fullName: PlayerController.possessedEffectTimeReducing
+  nameWithType: PlayerController.possessedEffectTimeReducing
 - uid: Global.PlayerController.slidePriority
   name: slidePriority
   href: api/Global.PlayerController.html#Global_PlayerController_slidePriority
@@ -4693,6 +4705,12 @@ references:
   isSpec: "True"
   fullName: PossesAttack.Awake
   nameWithType: PossesAttack.Awake
+- uid: Global.PossesAttack.effectDuration
+  name: effectDuration
+  href: api/Global.PossesAttack.html#Global_PossesAttack_effectDuration
+  commentId: F:Global.PossesAttack.effectDuration
+  fullName: PossesAttack.effectDuration
+  nameWithType: PossesAttack.effectDuration
 - uid: Global.PossesAttack.minSourcesDistance
   name: minSourcesDistance
   href: api/Global.PossesAttack.html#Global_PossesAttack_minSourcesDistance
@@ -4748,21 +4766,85 @@ references:
   commentId: F:Global.PossesAttack.warningDuration
   fullName: PossesAttack.warningDuration
   nameWithType: PossesAttack.warningDuration
+- uid: Global.PossesAttack.waveCount
+  name: waveCount
+  href: api/Global.PossesAttack.html#Global_PossesAttack_waveCount
+  commentId: F:Global.PossesAttack.waveCount
+  fullName: PossesAttack.waveCount
+  nameWithType: PossesAttack.waveCount
+- uid: Global.PossessedEffect
+  name: PossessedEffect
+  href: api/Global.PossessedEffect.html
+  commentId: T:Global.PossessedEffect
+  fullName: PossessedEffect
+  nameWithType: PossessedEffect
+- uid: Global.PossessedEffect.GetProgress
+  name: GetProgress()
+  href: api/Global.PossessedEffect.html#Global_PossessedEffect_GetProgress
+  commentId: M:Global.PossessedEffect.GetProgress
+  fullName: PossessedEffect.GetProgress()
+  nameWithType: PossessedEffect.GetProgress()
+- uid: Global.PossessedEffect.GetProgress*
+  name: GetProgress
+  href: api/Global.PossessedEffect.html#Global_PossessedEffect_GetProgress_
+  commentId: Overload:Global.PossessedEffect.GetProgress
+  isSpec: "True"
+  fullName: PossessedEffect.GetProgress
+  nameWithType: PossessedEffect.GetProgress
+- uid: Global.PossessedEffect.Play(System.Single)
+  name: Play(Single)
+  href: api/Global.PossessedEffect.html#Global_PossessedEffect_Play_System_Single_
+  commentId: M:Global.PossessedEffect.Play(System.Single)
+  fullName: PossessedEffect.Play(System.Single)
+  nameWithType: PossessedEffect.Play(Single)
+- uid: Global.PossessedEffect.Play*
+  name: Play
+  href: api/Global.PossessedEffect.html#Global_PossessedEffect_Play_
+  commentId: Overload:Global.PossessedEffect.Play
+  isSpec: "True"
+  fullName: PossessedEffect.Play
+  nameWithType: PossessedEffect.Play
+- uid: Global.PossessedEffect.ReduceDuration(System.Single)
+  name: ReduceDuration(Single)
+  href: api/Global.PossessedEffect.html#Global_PossessedEffect_ReduceDuration_System_Single_
+  commentId: M:Global.PossessedEffect.ReduceDuration(System.Single)
+  fullName: PossessedEffect.ReduceDuration(System.Single)
+  nameWithType: PossessedEffect.ReduceDuration(Single)
+- uid: Global.PossessedEffect.ReduceDuration*
+  name: ReduceDuration
+  href: api/Global.PossessedEffect.html#Global_PossessedEffect_ReduceDuration_
+  commentId: Overload:Global.PossessedEffect.ReduceDuration
+  isSpec: "True"
+  fullName: PossessedEffect.ReduceDuration
+  nameWithType: PossessedEffect.ReduceDuration
+- uid: Global.PossessedEffect.Stop
+  name: Stop()
+  href: api/Global.PossessedEffect.html#Global_PossessedEffect_Stop
+  commentId: M:Global.PossessedEffect.Stop
+  fullName: PossessedEffect.Stop()
+  nameWithType: PossessedEffect.Stop()
+- uid: Global.PossessedEffect.Stop*
+  name: Stop
+  href: api/Global.PossessedEffect.html#Global_PossessedEffect_Stop_
+  commentId: Overload:Global.PossessedEffect.Stop
+  isSpec: "True"
+  fullName: PossessedEffect.Stop
+  nameWithType: PossessedEffect.Stop
 - uid: Global.PossesSource
   name: PossesSource
   href: api/Global.PossesSource.html
   commentId: T:Global.PossesSource
   fullName: PossesSource
   nameWithType: PossesSource
-- uid: Global.PossesSource.Activate(System.Single,System.Single,List{System.String})
-  name: Activate(Single, Single, List<String>)
-  href: api/Global.PossesSource.html#Global_PossesSource_Activate_System_Single_System_Single_List_System_String__
-  commentId: M:Global.PossesSource.Activate(System.Single,System.Single,List{System.String})
-  name.vb: Activate(Single, Single, List(Of String))
-  fullName: PossesSource.Activate(System.Single, System.Single, List<System.String>)
-  fullName.vb: PossesSource.Activate(System.Single, System.Single, List(Of System.String))
-  nameWithType: PossesSource.Activate(Single, Single, List<String>)
-  nameWithType.vb: PossesSource.Activate(Single, Single, List(Of String))
+- uid: Global.PossesSource.Activate(System.Single,System.Single,List{System.String},System.Single)
+  name: Activate(Single, Single, List<String>, Single)
+  href: api/Global.PossesSource.html#Global_PossesSource_Activate_System_Single_System_Single_List_System_String__System_Single_
+  commentId: M:Global.PossesSource.Activate(System.Single,System.Single,List{System.String},System.Single)
+  name.vb: Activate(Single, Single, List(Of String), Single)
+  fullName: PossesSource.Activate(System.Single, System.Single, List<System.String>, System.Single)
+  fullName.vb: PossesSource.Activate(System.Single, System.Single, List(Of System.String), System.Single)
+  nameWithType: PossesSource.Activate(Single, Single, List<String>, Single)
+  nameWithType.vb: PossesSource.Activate(Single, Single, List(Of String), Single)
 - uid: Global.PossesSource.Activate*
   name: Activate
   href: api/Global.PossesSource.html#Global_PossesSource_Activate_
