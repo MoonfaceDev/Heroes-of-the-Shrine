@@ -146,7 +146,6 @@ GameObject:
   - component: {fileID: 63080242}
   - component: {fileID: 63080241}
   - component: {fileID: 63080240}
-  - component: {fileID: 63080239}
   - component: {fileID: 63080258}
   - component: {fileID: 63080259}
   - component: {fileID: 63080257}
@@ -178,32 +177,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &63080239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63080233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15028a98acbfc2140a1a48233734334d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instant: 0
-  interruptible: 1
-  hardRecovery: 0
-  previousAttacks: []
-  midair: 0
-  anticipateDuration: 0.2
-  activeDuration: 0.2
-  recoveryDuration: 0.1
-  hitDetector: {fileID: 153687732}
-  damage: 10
-  hitType: 1
-  knockbackPower: 20
-  knockbackDirection: 90
-  stunTime: 0.5
 --- !u!114 &63080240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,8 +431,8 @@ MonoBehaviour:
   spawnRadius: 5
   minSourcesDistance: 0.5
   possesSource: {fileID: 6907962097126891099, guid: c619b10d9f747194c92416ed8fe7005a, type: 3}
-  warningDuration: 2
-  sourceActiveDuration: 1
+  warningDuration: 1
+  sourceActiveDuration: 2
   effectDuration: 5
   waveCount: 1
 --- !u!114 &63080259
@@ -476,11 +449,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instant: 0
   interruptible: 1
-  hardRecovery: 0
+  hardRecovery: 1
   anticipateDuration: 1
   recoveryDuration: 1
   maxEnemyCount: 5
-  enemyPrefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
+  enemyPrefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
   spawnPoints:
   - {x: -15.5, y: 0, z: 1}
   - {x: 15.5, y: 0, z: 1}
@@ -593,7 +566,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316202118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.71, y: 0, z: 0}
+  m_LocalPosition: {x: -0.8, y: 0.080000006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -614,7 +587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 63080252}
   figureObject: {fileID: 0}
-  position: {x: -0.71, y: 1.275, z: 0}
+  position: {x: -0.8, y: 1.31, z: 0.1}
   rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
@@ -631,7 +604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 0.78, y: 1.15, z: 0.5}
+  size: {x: 0.9, y: 1.15, z: 0.75}
 --- !u!114 &316202123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1067,6 +1040,10 @@ PrefabInstance:
       propertyPath: position.z
       value: -6
       objectReference: {fileID: 0}
+    - target: {fileID: 8011096905049079378, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1738506296, guid: 9c3fa839077a4b441af60523acaec38f, type: 3}
     - target: {fileID: 9138288699133641890, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: director
       value: 
@@ -1620,7 +1597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 1.07, y: 1.82, z: 1}
+  size: {x: 1.2, y: 1.7, z: 1}
 --- !u!114 &1725771220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1635,7 +1612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 63080252}
   figureObject: {fileID: 0}
-  position: {x: 0.085, y: 0.91, z: 0.5}
+  position: {x: 0.1, y: 0.85, z: -0.1}
   rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
@@ -1648,7 +1625,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725771218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.085, y: 0.4, z: 0}
+  m_LocalPosition: {x: 0.1, y: -0.080000006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1680,7 +1657,7 @@ GameObject:
   - component: {fileID: 1824913457}
   - component: {fileID: 1824913456}
   m_Layer: 0
-  m_Name: GoblinCaveGoblinPossesed
+  m_Name: GoblinCaveGoblinPossesedSadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1695,7 +1672,7 @@ Transform:
   m_GameObject: {fileID: 1824913454}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.1, z: 0}
-  m_LocalScale: {x: 1.5, y: 0.8, z: 0}
+  m_LocalScale: {x: 2.25, y: 0.96000004, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 63080253}
@@ -1714,7 +1691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movableObject: {fileID: 63080252}
-  shadowScale: {x: 1.5, y: 0, z: 1}
+  shadowScale: {x: 2.25, y: 0, z: 1.2}
   figure: {fileID: 2074727358}
   animationDefinitions:
   - animationStateName: RecoveringFromKnockback

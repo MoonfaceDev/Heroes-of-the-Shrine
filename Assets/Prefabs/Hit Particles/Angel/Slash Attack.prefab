@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!199 &7779149446551483750
 ParticleSystemRenderer:
@@ -740,7 +740,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 0.62
     donutRadius: 0.2
-    m_Position: {x: 1.4125, y: 0.1675, z: 0}
+    m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 77.85, y: 0, z: 474.69}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
@@ -821,7 +821,7 @@ ParticleSystem:
     sphericalDirectionAmount: 1
     randomPositionAmount: 0
     radius:
-      value: 2.21
+      value: 2.22
       mode: 0
       spread: 0
       speed:
