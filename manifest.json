@@ -172,7 +172,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.BaseAttack.html",
-          "hash": "bNBxbfM85ueolVnuZGF3WTWiUT4KMiMAosCJs4jB8Yo="
+          "hash": "YszWIBmRVjGyZfdDi04s1gnrI0K+or8ypeR42MNnwkI="
         }
       },
       "is_incremental": false,
@@ -797,6 +797,18 @@
         ".html": {
           "relative_path": "api/Global.GoblinBrain.html",
           "hash": "taDp7iE6dxQLpJMFIUC4UiaFwBz9AoRm/BiGOBgyQvk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.GoblinSpawnAttack.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.GoblinSpawnAttack.html",
+          "hash": "Cqp7gqgbkbBxHJzDBy9/S40KgWxidezv03OrNTKslgo="
         }
       },
       "is_incremental": false,
@@ -1540,7 +1552,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "oHcpJ94i/maDZt6U1AYfUNFouSPN65YCxH3tMobVIRA="
+          "hash": "1sKIcJe060J1/RQdhXFVlLpNfdBMzR8fDFsPGay8VDQ="
         }
       },
       "is_incremental": false,
@@ -1552,7 +1564,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "nRa6sUYeth+aRjXeD/7w7h9jmvt/nDQG9OkrHayJkas="
+          "hash": "PYNZ0dolwwmjAsRD+3KBfosf9UgTw6CBNfdSYFGAfnQ="
         }
       },
       "is_incremental": false,
@@ -1763,7 +1775,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 127,
+          "total_file_count": 128,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
