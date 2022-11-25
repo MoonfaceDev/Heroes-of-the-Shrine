@@ -101,7 +101,7 @@ public class PossesAttack : BaseAttack
 
     protected override IEnumerator ActiveCoroutine()
     {
-        yield return new WaitForSeconds(0);
+        yield return new WaitForSeconds((warningDuration + sourceActiveDuration) * waveCount);
     }
 
     protected override IEnumerator RecoveryCoroutine()
