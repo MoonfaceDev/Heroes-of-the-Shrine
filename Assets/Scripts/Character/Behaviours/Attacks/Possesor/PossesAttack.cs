@@ -68,11 +68,6 @@ public class PossesAttack : BaseAttack
         }
     }
 
-    private void Start()
-    {
-        Play();
-    }
-
     private Vector3 GetSpawnPoint(List<Vector3> alreadySpawned, int maxDepth = 20)
     {
         if (maxDepth == 0)

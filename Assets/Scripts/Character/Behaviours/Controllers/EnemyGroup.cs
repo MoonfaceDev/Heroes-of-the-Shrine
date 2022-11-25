@@ -27,7 +27,8 @@ public class EnemyGroup : CharacterBehaviour
         {
             var closestEnemy = enemies.Aggregate(enemies[0], (prev, next) =>
             {
-                if (next == this)
+                if (!prev) return next;
+                if (!next || next == this)
                 {
                     return prev;
                 }
@@ -45,6 +46,8 @@ public class EnemyGroup : CharacterBehaviour
             var playerMovableObject = player.GetComponent<MovableObject>();
             var closestEnemy = enemies.Aggregate(enemies[0], (prev, next) =>
             {
+                if (!prev) return next;
+                if (!next) return prev;
                 var nextDistance = playerMovableObject.GroundDistance(next.GetComponent<MovableObject>().WorldPosition);
                 var prevDistance = playerMovableObject.GroundDistance(prev.GetComponent<MovableObject>().WorldPosition);
                 return nextDistance < prevDistance ? next : prev;
@@ -53,8 +56,9 @@ public class EnemyGroup : CharacterBehaviour
         }
 
         // Enemies attacking
-        var enemiesAttacking = enemies.Any((enemy) =>
+        var enemiesAttacking = enemies.Any(enemy =>
         {
+            if (!enemy) return false;
             var enemyAttackManager = enemy.GetComponent<AttackManager>();
             return enemyAttackManager.Playing;
         });
