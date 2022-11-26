@@ -53,11 +53,6 @@ public class GoblinSpawnAttack : BaseAttack
         return selectedPoints;
     }
 
-    private void Start()
-    {
-        Play();
-    }
-
     protected override IEnumerator AnticipateCoroutine()
     {
         yield return new WaitForSeconds(anticipateDuration);
