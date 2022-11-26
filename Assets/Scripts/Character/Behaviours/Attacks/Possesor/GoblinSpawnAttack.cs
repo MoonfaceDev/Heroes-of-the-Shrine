@@ -19,10 +19,10 @@ public class GoblinSpawnAttack : BaseAttack
             StopBehaviours(typeof(WalkBehaviour));
             MovableObject.velocity = Vector3.zero;
         };
-        OnFinishRecovery += () => EnableBehaviours(typeof(WalkBehaviour));
+        generalEvents.onFinishRecovery.AddListener(() => EnableBehaviours(typeof(WalkBehaviour)));
         OnStop += () => EnableBehaviours(typeof(WalkBehaviour));
 
-        OnStartActive += SpawnGoblins;
+        generalEvents.onStartActive.AddListener(SpawnGoblins);
     }
 
     private void SpawnGoblins()

@@ -16,7 +16,7 @@ public class SpinningSwordsAttack : NormalAttack
         EventListener disableHitDetector1 = null;
         EventListener enableHitDetector2 = null;
 
-        OnStartActive += () =>
+        generalEvents.onStartActive.AddListener(() =>
         {
             hitDetector1.StartDetector(HitCallable, AttackManager.hittableTags);
             disableHitDetector1 = EventManager.Instance.StartTimeout(hitDetector1.StopDetector, detector1FinishTime);
@@ -24,14 +24,14 @@ public class SpinningSwordsAttack : NormalAttack
                 () => hitDetector2.StartDetector(HitCallable, AttackManager.hittableTags),
                 detector2StartTime
             );
-        };
+        });
 
-        OnFinishActive += () =>
+        generalEvents.onFinishActive.AddListener(() =>
         {
             hitDetector1.StopDetector();
             hitDetector2.StopDetector();
             EventManager.Instance.Detach(disableHitDetector1);
             EventManager.Instance.Detach(enableHitDetector2);
-        };
+        });
     }
 }

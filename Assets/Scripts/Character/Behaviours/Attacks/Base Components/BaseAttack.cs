@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 /// <summary>
@@ -8,6 +9,43 @@ using UnityEngine.Serialization;
 /// </summary>
 public class CannotAttackException : Exception
 {
+}
+
+[Serializable]
+public class Events
+{
+    /// <value>
+    /// Attack anticipation has started.
+    /// </value>
+    public UnityEvent onStartAnticipating;
+
+    /// <value>
+    /// Attack anticipation has finished.
+    /// Also fires if the attack was stopped while in anticipation.
+    /// </value>
+    public UnityEvent onFinishAnticipating;
+
+    /// <value>
+    /// Attack active phase has started.
+    /// </value>
+    public UnityEvent onStartActive;
+
+    /// <value>
+    /// Attack active phase has finished.
+    /// Also fires if the attack was stopped while in active phase.
+    /// </value>
+    public UnityEvent onFinishActive;
+
+    /// <value>
+    /// Attack recovery has started.
+    /// </value>
+    public UnityEvent onStartRecovery;
+
+    /// <value>
+    /// Attack recovery has finished.
+    /// Also fires if the attack was stopped while in recovery.
+    /// </value>
+    public UnityEvent onFinishRecovery;
 }
 
 [RequireComponent(typeof(AttackManager))]
@@ -46,7 +84,7 @@ public abstract class BaseAttack : PlayableBehaviour
         {
             anticipating = value;
             Animator.SetBool(AttackName + "-anticipating", anticipating);
-            (value ? OnStartAnticipating : OnFinishAnticipating)?.Invoke();
+            (value ? generalEvents.onStartAnticipating : generalEvents.onFinishAnticipating)?.Invoke();
         }
     }
 
@@ -61,7 +99,7 @@ public abstract class BaseAttack : PlayableBehaviour
         {
             active = value;
             Animator.SetBool(AttackName + "-active", active);
-            (value ? OnStartActive : OnFinishActive)?.Invoke();
+            (value ? generalEvents.onStartActive : generalEvents.onFinishActive)?.Invoke();
         }
     }
 
@@ -76,7 +114,7 @@ public abstract class BaseAttack : PlayableBehaviour
         {
             recovering = value;
             Animator.SetBool(AttackName + "-recovering", recovering);
-            (value ? OnStartRecovery : OnFinishRecovery)?.Invoke();
+            (value ? generalEvents.onStartRecovery : generalEvents.onFinishRecovery)?.Invoke();
         }
     }
 
@@ -87,37 +125,9 @@ public abstract class BaseAttack : PlayableBehaviour
     public override bool Playing => Anticipating || Active || Recovering;
 
     /// <value>
-    /// Attack anticipation has started.
+    /// General attack events
     /// </value>
-    public event Action OnStartAnticipating;
-
-    /// <value>
-    /// Attack anticipation has finished.
-    /// Also fires if the attack was stopped while in anticipation.
-    /// </value>
-    public event Action OnFinishAnticipating;
-
-    /// <value>
-    /// Attack active phase has started.
-    /// </value>
-    public event Action OnStartActive;
-
-    /// <value>
-    /// Attack active phase has finished.
-    /// Also fires if the attack was stopped while in active phase.
-    /// </value>
-    public event Action OnFinishActive;
-
-    /// <value>
-    /// Attack recovery has started.
-    /// </value>
-    public event Action OnStartRecovery;
-
-    /// <value>
-    /// Attack recovery has finished.
-    /// Also fires if the attack was stopped while in recovery.
-    /// </value>
-    public event Action OnFinishRecovery;
+    public Events generalEvents;
 
     private bool anticipating;
     private bool active;
@@ -202,19 +212,19 @@ public abstract class BaseAttack : PlayableBehaviour
         if (Anticipating)
         {
             Anticipating = false;
-            OnFinishAnticipating?.Invoke();
+            generalEvents.onFinishAnticipating?.Invoke();
         }
 
         if (Active)
         {
             Active = false;
-            OnFinishActive?.Invoke();
+            generalEvents.onFinishActive?.Invoke();
         }
 
         if (Recovering)
         {
             Recovering = false;
-            OnFinishRecovery?.Invoke();
+            generalEvents.onFinishRecovery?.Invoke();
         }
     }
 

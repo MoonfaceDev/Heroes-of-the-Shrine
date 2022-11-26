@@ -36,12 +36,12 @@ public class AttackManager : PlayableBehaviour
         {
             // Forward events
             attack.OnPlay += InvokeOnPlay;
-            attack.OnStartAnticipating += () => OnStartAnticipating?.Invoke();
-            attack.OnFinishAnticipating += () => OnFinishAnticipating?.Invoke();
-            attack.OnStartActive+= () => OnStartActive?.Invoke();
-            attack.OnFinishActive += () => OnFinishActive?.Invoke();
-            attack.OnStartRecovery += () => OnStartRecovery?.Invoke();
-            attack.OnFinishRecovery += () => OnFinishRecovery?.Invoke();
+            attack.generalEvents.onStartAnticipating.AddListener(() => OnStartAnticipating?.Invoke());
+            attack.generalEvents.onFinishAnticipating.AddListener(() => OnFinishAnticipating?.Invoke());
+            attack.generalEvents.onStartActive.AddListener(() => OnStartActive?.Invoke());
+            attack.generalEvents.onFinishActive.AddListener(() => OnFinishActive?.Invoke());
+            attack.generalEvents.onStartRecovery.AddListener(() => OnStartRecovery?.Invoke());
+            attack.generalEvents.onFinishRecovery.AddListener(() => OnFinishRecovery?.Invoke());
             attack.OnStop += InvokeOnStop;
 
             // Combo handling
@@ -61,7 +61,7 @@ public class AttackManager : PlayableBehaviour
                 }, maxComboDelay);
             }
 
-            attack.OnFinishRecovery += ForgetComboAction;
+            attack.generalEvents.onFinishRecovery.AddListener(ForgetComboAction);
             attack.OnStop += ForgetComboAction;
         }
     }

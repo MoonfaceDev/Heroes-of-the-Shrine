@@ -26,7 +26,7 @@ public class ElectrifyAttack : NormalAttack
 
         EventListener switchDetectorsEvent = null;
 
-        OnStartActive += () =>
+        generalEvents.onStartActive.AddListener(() =>
         {
             periodicHitDetector.StartDetector(HitCallable, AttackManager.hittableTags);
             switchDetectorsEvent = EventManager.Attach(() => detectCount >= periodicHitCount, () =>
@@ -35,14 +35,14 @@ public class ElectrifyAttack : NormalAttack
                 explosionHitDetector.StartDetector(ExplosionHitCallable, AttackManager.hittableTags);
                 detectCount = 0;
             });
-        };
+        });
 
-        OnFinishActive += () =>
+        generalEvents.onFinishActive.AddListener(() =>
         {
             periodicHitDetector.StopDetector();
             explosionHitDetector.StopDetector();
             EventManager.Detach(switchDetectorsEvent);
-        };
+        });
     }
 
     protected override float CalculateDamage(Character character)

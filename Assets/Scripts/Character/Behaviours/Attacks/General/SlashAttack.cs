@@ -17,20 +17,20 @@ public class SlashAttack : SimpleAttack
         var direction = 0;
         OnPlay += () => direction = LookDirection;
 
-        OnStartActive += () =>
+        generalEvents.onStartActive.AddListener(() =>
         {
             isMoving = true;
             MovableObject.velocity.x = direction * velocity;
             MovableObject.velocity.z = 0;
             MovableObject.acceleration.x = -direction * acceleration;
             EventManager.Attach(() => MovableObject.velocity.x == 0 || Mathf.RoundToInt(Mathf.Sign(MovableObject.velocity.x)) != direction, () => isMoving = false);
-        };
+        });
 
-        OnFinishActive += () => 
+        generalEvents.onFinishActive.AddListener(() => 
         {
             MovableObject.velocity.x = 0;
             MovableObject.acceleration.x = 0;
-        };
+        });
     }
 
     protected override IEnumerator ActiveCoroutine()

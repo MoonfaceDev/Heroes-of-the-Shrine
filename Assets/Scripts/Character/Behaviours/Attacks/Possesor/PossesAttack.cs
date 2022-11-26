@@ -33,11 +33,11 @@ public class PossesAttack : BaseAttack
             StopBehaviours(typeof(WalkBehaviour));
             MovableObject.velocity = Vector3.zero;
         };
-        OnFinishRecovery += () => EnableBehaviours(typeof(WalkBehaviour));
+        generalEvents.onFinishRecovery.AddListener(() => EnableBehaviours(typeof(WalkBehaviour)));
         OnStop += () => EnableBehaviours(typeof(WalkBehaviour));
         walkableGrid = FindObjectOfType<WalkableGrid>();
 
-        OnStartActive += () => StartWave(0);
+        generalEvents.onStartActive.AddListener(() => StartWave(0));
     }
 
     private void StartWave(int waveIndex)

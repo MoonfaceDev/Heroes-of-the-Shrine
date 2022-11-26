@@ -99,7 +99,7 @@ public class SimpleAttack : BaseAttack
                 MovableObject.velocity = Vector3.zero;
             }
         };
-        OnFinishRecovery += () => EnableBehaviours(typeof(WalkBehaviour));
+        generalEvents.onFinishRecovery.AddListener(() => EnableBehaviours(typeof(WalkBehaviour)));
         OnStop += () => EnableBehaviours(typeof(WalkBehaviour));
     }
 
@@ -121,8 +121,8 @@ public class SimpleAttack : BaseAttack
     /// </summary>
     protected virtual void ConfigureHitDetector()
     {
-        OnStartActive += () => hitDetector.StartDetector(HitCallable, AttackManager.hittableTags);
-        OnFinishActive += () => hitDetector.StopDetector();
+        generalEvents.onStartActive.AddListener(() => hitDetector.StartDetector(HitCallable, AttackManager.hittableTags));
+        generalEvents.onFinishActive.AddListener(() => hitDetector.StopDetector());
     }
 
     /// <summary>
