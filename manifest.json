@@ -40,7 +40,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.AirAttack.html",
-          "hash": "SPV303TtpobB7tzfmdbxZwav6JZ821x/hXI4gWf6TcY="
+          "hash": "TWhZMCEFEr9bOMFAFBYevIDyHVOdLOpUaSyUi2bRDXs="
         }
       },
       "is_incremental": false,
@@ -52,7 +52,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.AirSpinAttack.html",
-          "hash": "oLHUODv8T6+yxWObxX6NPVEDa+u2LMYkos0OaeSxP+Q="
+          "hash": "RZJ04Bni3ywynMn0FlE3FFD91Lr1EcraDLZvDjpuW24="
         }
       },
       "is_incremental": false,
@@ -64,7 +64,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.AltAirAttack.html",
-          "hash": "EYqqQFfK4j8Q7Cq/2T4hqrmBU/FAVhkNuRLK56465rQ="
+          "hash": "rwd16/5giwkhqbQ7297M6wwiXZUyeH9u1hGV3yCN0v0="
         }
       },
       "is_incremental": false,
@@ -76,7 +76,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.AltNormalAttack.html",
-          "hash": "KHy/cdLK18rj8IGX4iTXrnkdtC65CfEUTZTlMPtUibo="
+          "hash": "00WgA/wMBZn6AZZA4vjFfwBLmUg83EZWmJdSqG4wmqM="
         }
       },
       "is_incremental": false,
@@ -144,6 +144,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.AttackParticles.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.AttackParticles.html",
+          "hash": "FWkEaQmpfASxCrpdHZfvs4oeitxOMaKzujqTyIelDEQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.AttackPattern.yml",
       "output": {
         ".html": {
@@ -172,7 +184,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.BaseAttack.html",
-          "hash": "YszWIBmRVjGyZfdDi04s1gnrI0K+or8ypeR42MNnwkI="
+          "hash": "dZnEzCKAj5Z7UhfXjKGJxzTqdfAVnJvFa+qpAc+QUng="
         }
       },
       "is_incremental": false,
@@ -556,7 +568,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.ElectrifyAttack.html",
-          "hash": "yrvCmT1oVdVp+02exPjZyiqjGF1u/+o+QRCIhnitMro="
+          "hash": "7hYXH/dLjPYr5r9wVb3MhQ6MmyQUetv8Gew5SlsTFGc="
         }
       },
       "is_incremental": false,
@@ -616,7 +628,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.EnergyBurstAttack.html",
-          "hash": "l+WVvoOS30SuNJ5XQ7TdoXJ90AyBpG8URorRnGNrV+E="
+          "hash": "xI66OMb6MZ473BqH490AirVbs6SN2I9Vjpt+suUvHSE="
         }
       },
       "is_incremental": false,
@@ -677,6 +689,18 @@
         ".html": {
           "relative_path": "api/Global.EventManager.html",
           "hash": "TnZcKzTM08UHdq90RdwgWBtDVy58jdvYr6T2czoKVx0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.Events.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.Events.html",
+          "hash": "32sPszcF93JumNWAfRINaSfwA+lgTxfFf8gy946L6ZU="
         }
       },
       "is_incremental": false,
@@ -808,7 +832,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.GoblinSpawnAttack.html",
-          "hash": "Cqp7gqgbkbBxHJzDBy9/S40KgWxidezv03OrNTKslgo="
+          "hash": "VsRtQDmTeD0iqxf6jM1/VnLXAgKsmEpEeAW/68djhAk="
         }
       },
       "is_incremental": false,
@@ -1096,7 +1120,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.NormalAttack.html",
-          "hash": "Qe5Q+fIuWwIphOsWDXMLJVUmNEAK3dJSx9mG8z18ps0="
+          "hash": "EKZgeLa94gnbWBZNpsa3Wb6gEkYSNKZoGf7jAxTHdRA="
         }
       },
       "is_incremental": false,
@@ -1192,7 +1216,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.PossesAttack.html",
-          "hash": "tzpeFxk7GRdiHflG0fF3ZpTMAVaADw572ls/GnnhHl4="
+          "hash": "CBCDrVfQabe71sWldM9EyK0ap5wwCDD7sP43Q8auouw="
         }
       },
       "is_incremental": false,
@@ -1288,7 +1312,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.RunKick.html",
-          "hash": "olv/NNqcYGKEDOUi4sa5BwU4BFSrXlWg2tbVmtbpmQE="
+          "hash": "U/y7aPQwLOu3NhprBoiQyi9LBDk664k3F26vRkGMPvA="
         }
       },
       "is_incremental": false,
@@ -1324,7 +1348,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.SimpleAttack.html",
-          "hash": "PUs4LIiUcVwDn8VIJOCUetTwNJCOu8qRT5VLN3/U/pM="
+          "hash": "qyujDEMrlYNOVMQ/3eO5Qc4yRKZfZO7TW5ZKzh5/R4w="
         }
       },
       "is_incremental": false,
@@ -1360,7 +1384,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.SlashAttack.html",
-          "hash": "VgiMPE2pz/7uJC06Q5oqCw5y23MFLEk2fmNnJJ/ish8="
+          "hash": "hTPKzj8pv1fWBInlPb527lin/FqWe/vxLDarAzDJY44="
         }
       },
       "is_incremental": false,
@@ -1384,7 +1408,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.SpinningSwordsAttack.html",
-          "hash": "WulRJjgQqBIdTRFDi+VLPExEv3UD3AGXqeh4cTM4Bz4="
+          "hash": "A37UdQy3g+ttBL45PWCLSPFMg73qW5S9KgE6FsXfD54="
         }
       },
       "is_incremental": false,
@@ -1396,7 +1420,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.StabAttack.html",
-          "hash": "vnWTWNwplh7icCVdMr+DoPZfWjyNy/AYgvUc15t3d0M="
+          "hash": "wz2Zckjv2v1su345wwHji2v7Gs1kaUkPGB8clFcyJ3o="
         }
       },
       "is_incremental": false,
@@ -1492,7 +1516,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.Uppercut.html",
-          "hash": "P+Sot5UQ3zIxxhGDXJurHajn/GMz/0/JgfGM7pLe77k="
+          "hash": "pwiDH0wg37TPpUfzbpvcuejblJJSF5GjFliIoyKBOdA="
         }
       },
       "is_incremental": false,
@@ -1552,7 +1576,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "1sKIcJe060J1/RQdhXFVlLpNfdBMzR8fDFsPGay8VDQ="
+          "hash": "S6pfYzVQH4ZlA3so3S9GJzMAAso9Q+JTmMUNaGKSQKo="
         }
       },
       "is_incremental": false,
@@ -1564,7 +1588,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "PYNZ0dolwwmjAsRD+3KBfosf9UgTw6CBNfdSYFGAfnQ="
+          "hash": "cSfy+Fx0g8mun2mIvj6cp1Z0dEqFPrPluioGTZQotfA="
         }
       },
       "is_incremental": false,
@@ -1775,7 +1799,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 128,
+          "total_file_count": 130,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

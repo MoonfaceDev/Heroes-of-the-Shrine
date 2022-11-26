@@ -474,6 +474,37 @@ references:
   commentId: F:Global.AttackNode.startTime
   fullName: AttackNode.startTime
   nameWithType: AttackNode.startTime
+- uid: Global.AttackParticles
+  name: AttackParticles
+  href: api/Global.AttackParticles.html
+  commentId: T:Global.AttackParticles
+  fullName: AttackParticles
+  nameWithType: AttackParticles
+- uid: Global.AttackParticles.particlePosition
+  name: particlePosition
+  href: api/Global.AttackParticles.html#Global_AttackParticles_particlePosition
+  commentId: F:Global.AttackParticles.particlePosition
+  fullName: AttackParticles.particlePosition
+  nameWithType: AttackParticles.particlePosition
+- uid: Global.AttackParticles.Play
+  name: Play()
+  href: api/Global.AttackParticles.html#Global_AttackParticles_Play
+  commentId: M:Global.AttackParticles.Play
+  fullName: AttackParticles.Play()
+  nameWithType: AttackParticles.Play()
+- uid: Global.AttackParticles.Play*
+  name: Play
+  href: api/Global.AttackParticles.html#Global_AttackParticles_Play_
+  commentId: Overload:Global.AttackParticles.Play
+  isSpec: "True"
+  fullName: AttackParticles.Play
+  nameWithType: AttackParticles.Play
+- uid: Global.AttackParticles.prefab
+  name: prefab
+  href: api/Global.AttackParticles.html#Global_AttackParticles_prefab
+  commentId: F:Global.AttackParticles.prefab
+  fullName: AttackParticles.prefab
+  nameWithType: AttackParticles.prefab
 - uid: Global.AttackPattern
   name: AttackPattern
   href: api/Global.AttackPattern.html
@@ -633,6 +664,12 @@ references:
   isSpec: "True"
   fullName: BaseAttack.CanPlay
   nameWithType: BaseAttack.CanPlay
+- uid: Global.BaseAttack.generalEvents
+  name: generalEvents
+  href: api/Global.BaseAttack.html#Global_BaseAttack_generalEvents
+  commentId: F:Global.BaseAttack.generalEvents
+  fullName: BaseAttack.generalEvents
+  nameWithType: BaseAttack.generalEvents
 - uid: Global.BaseAttack.hardRecovery
   name: hardRecovery
   href: api/Global.BaseAttack.html#Global_BaseAttack_hardRecovery
@@ -651,42 +688,6 @@ references:
   commentId: F:Global.BaseAttack.interruptible
   fullName: BaseAttack.interruptible
   nameWithType: BaseAttack.interruptible
-- uid: Global.BaseAttack.OnFinishActive
-  name: OnFinishActive
-  href: api/Global.BaseAttack.html#Global_BaseAttack_OnFinishActive
-  commentId: E:Global.BaseAttack.OnFinishActive
-  fullName: BaseAttack.OnFinishActive
-  nameWithType: BaseAttack.OnFinishActive
-- uid: Global.BaseAttack.OnFinishAnticipating
-  name: OnFinishAnticipating
-  href: api/Global.BaseAttack.html#Global_BaseAttack_OnFinishAnticipating
-  commentId: E:Global.BaseAttack.OnFinishAnticipating
-  fullName: BaseAttack.OnFinishAnticipating
-  nameWithType: BaseAttack.OnFinishAnticipating
-- uid: Global.BaseAttack.OnFinishRecovery
-  name: OnFinishRecovery
-  href: api/Global.BaseAttack.html#Global_BaseAttack_OnFinishRecovery
-  commentId: E:Global.BaseAttack.OnFinishRecovery
-  fullName: BaseAttack.OnFinishRecovery
-  nameWithType: BaseAttack.OnFinishRecovery
-- uid: Global.BaseAttack.OnStartActive
-  name: OnStartActive
-  href: api/Global.BaseAttack.html#Global_BaseAttack_OnStartActive
-  commentId: E:Global.BaseAttack.OnStartActive
-  fullName: BaseAttack.OnStartActive
-  nameWithType: BaseAttack.OnStartActive
-- uid: Global.BaseAttack.OnStartAnticipating
-  name: OnStartAnticipating
-  href: api/Global.BaseAttack.html#Global_BaseAttack_OnStartAnticipating
-  commentId: E:Global.BaseAttack.OnStartAnticipating
-  fullName: BaseAttack.OnStartAnticipating
-  nameWithType: BaseAttack.OnStartAnticipating
-- uid: Global.BaseAttack.OnStartRecovery
-  name: OnStartRecovery
-  href: api/Global.BaseAttack.html#Global_BaseAttack_OnStartRecovery
-  commentId: E:Global.BaseAttack.OnStartRecovery
-  fullName: BaseAttack.OnStartRecovery
-  nameWithType: BaseAttack.OnStartRecovery
 - uid: Global.BaseAttack.Play
   name: Play()
   href: api/Global.BaseAttack.html#Global_BaseAttack_Play
@@ -2670,6 +2671,48 @@ references:
   commentId: T:Global.EventManager.StopInterval
   fullName: EventManager.StopInterval
   nameWithType: EventManager.StopInterval
+- uid: Global.Events
+  name: Events
+  href: api/Global.Events.html
+  commentId: T:Global.Events
+  fullName: Events
+  nameWithType: Events
+- uid: Global.Events.onFinishActive
+  name: onFinishActive
+  href: api/Global.Events.html#Global_Events_onFinishActive
+  commentId: F:Global.Events.onFinishActive
+  fullName: Events.onFinishActive
+  nameWithType: Events.onFinishActive
+- uid: Global.Events.onFinishAnticipating
+  name: onFinishAnticipating
+  href: api/Global.Events.html#Global_Events_onFinishAnticipating
+  commentId: F:Global.Events.onFinishAnticipating
+  fullName: Events.onFinishAnticipating
+  nameWithType: Events.onFinishAnticipating
+- uid: Global.Events.onFinishRecovery
+  name: onFinishRecovery
+  href: api/Global.Events.html#Global_Events_onFinishRecovery
+  commentId: F:Global.Events.onFinishRecovery
+  fullName: Events.onFinishRecovery
+  nameWithType: Events.onFinishRecovery
+- uid: Global.Events.onStartActive
+  name: onStartActive
+  href: api/Global.Events.html#Global_Events_onStartActive
+  commentId: F:Global.Events.onStartActive
+  fullName: Events.onStartActive
+  nameWithType: Events.onStartActive
+- uid: Global.Events.onStartAnticipating
+  name: onStartAnticipating
+  href: api/Global.Events.html#Global_Events_onStartAnticipating
+  commentId: F:Global.Events.onStartAnticipating
+  fullName: Events.onStartAnticipating
+  nameWithType: Events.onStartAnticipating
+- uid: Global.Events.onStartRecovery
+  name: onStartRecovery
+  href: api/Global.Events.html#Global_Events_onStartRecovery
+  commentId: F:Global.Events.onStartRecovery
+  fullName: Events.onStartRecovery
+  nameWithType: Events.onStartRecovery
 - uid: Global.FadePanel
   name: FadePanel
   href: api/Global.FadePanel.html
