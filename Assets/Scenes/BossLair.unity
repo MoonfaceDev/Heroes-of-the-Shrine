@@ -454,8 +454,8 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 1
-  anticipateDuration: 0.25
-  recoveryDuration: 0.3
+  anticipateDuration: 0.5
+  recoveryDuration: 0.5
   maxEnemyCount: 5
   enemyPrefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
   spawnPoints:
