@@ -147,9 +147,11 @@ GameObject:
   - component: {fileID: 63080241}
   - component: {fileID: 63080240}
   - component: {fileID: 63080258}
+  - component: {fileID: 63080261}
   - component: {fileID: 63080259}
   - component: {fileID: 63080257}
   - component: {fileID: 63080237}
+  - component: {fileID: 63080260}
   m_Layer: 0
   m_Name: CaveGoblinPossesed
   m_TagString: Enemy.Goblin.Cave
@@ -450,8 +452,8 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 1
-  anticipateDuration: 1
-  recoveryDuration: 1
+  anticipateDuration: 0.25
+  recoveryDuration: 0.3
   maxEnemyCount: 5
   enemyPrefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
   spawnPoints:
@@ -459,6 +461,57 @@ MonoBehaviour:
   - {x: 15.5, y: 0, z: 1}
   - {x: 15.5, y: 0, z: -7}
   - {x: -15.5, y: 0, z: -7}
+--- !u!114 &63080260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63080233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cfe8175de16ba346a6957969e6a94ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles: {fileID: 0}
+--- !u!114 &63080261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63080233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e86d033fb4f164abb77561de174642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instant: 0
+  interruptible: 1
+  hardRecovery: 1
+  previousAttacks: []
+  midair: 0
+  anticipateDuration: 0.25
+  activeDuration: 35
+  recoveryDuration: 0.15
+  hitDetector: {fileID: 0}
+  damage: 0
+  hitType: 0
+  knockbackPower: 0
+  knockbackDirection: 0
+  stunTime: 0.5
+  electrifyDuration: 4
+  electrifySpeedMultiplier: 0.5
+  periodicHitDetector: {fileID: 0}
+  periodicHitCount: 2
+  periodicHitElectrifyRate: 0.05
+  periodicStunTime: 0.5
+  periodicDamage: 5
+  explosionHitDetector: {fileID: 0}
+  explosionKnockbackPower: 0
+  explosionKnockbackDirection: 0
+  explosionDamage: 0
+  explosionStunTime: 0
 --- !u!1 &153687728
 GameObject:
   m_ObjectHideFlags: 0

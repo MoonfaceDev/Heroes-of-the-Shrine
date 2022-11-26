@@ -78,9 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04d83c1371e2c6b4abf3f1635112fab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackManager: {fileID: 5884619158741390440}
-  overrideDefaultHittableTags: 0
-  hittableTags: []
+  includedHittableTags: []
+  excludedHittableTags: []
   interval: 0.1
   startImmediately: 1
 --- !u!1 &5884619157808626362
@@ -157,7 +156,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1476566322, guid: c558e1a82a9402a479f9228bc5d85cce, type: 3}
+  m_Sprite: {fileID: -116351853, guid: c558e1a82a9402a479f9228bc5d85cce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -200,6 +199,7 @@ GameObject:
   - component: {fileID: 5884619157950951724}
   - component: {fileID: 3452115348150720552}
   - component: {fileID: 7845899968168809158}
+  - component: {fileID: 194388456993999270}
   m_Layer: 0
   m_Name: AltNormalAttackHitbox
   m_TagString: Untagged
@@ -266,9 +266,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackManager: {fileID: 5884619158741390440}
-  overrideDefaultHittableTags: 0
-  hittableTags: []
+  includedHittableTags: []
+  excludedHittableTags: []
+--- !u!114 &194388456993999270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5884619157950951727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 9064382892142360621, guid: 4d8c5fbcca0950e4291a8586725017e8, type: 3}
+  particlePosition: {x: 0.4, y: -0.2, z: 0}
 --- !u!1 &5884619158051856729
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,9 +360,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackManager: {fileID: 5884619158741390440}
-  overrideDefaultHittableTags: 0
-  hittableTags: []
+  includedHittableTags: []
+  excludedHittableTags: []
 --- !u!1 &5884619158362908890
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,9 +545,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackManager: {fileID: 5884619158741390440}
-  overrideDefaultHittableTags: 0
-  hittableTags: []
+  includedHittableTags: []
+  excludedHittableTags: []
 --- !u!1 &5884619158596542725
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,6 +559,7 @@ GameObject:
   - component: {fileID: 5884619158596542722}
   - component: {fileID: 5199938739203020887}
   - component: {fileID: 384846321737885714}
+  - component: {fileID: 8315404211282100638}
   m_Layer: 0
   m_Name: NormalAttackHitbox
   m_TagString: Untagged
@@ -614,9 +626,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackManager: {fileID: 5884619158741390440}
-  overrideDefaultHittableTags: 0
-  hittableTags: []
+  includedHittableTags: []
+  excludedHittableTags: []
+--- !u!114 &8315404211282100638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5884619158596542725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 9064382892142360621, guid: 4d8c5fbcca0950e4291a8586725017e8, type: 3}
+  particlePosition: {x: 0.3, y: 0, z: 0}
 --- !u!1 &5884619158741390458
 GameObject:
   m_ObjectHideFlags: 0
