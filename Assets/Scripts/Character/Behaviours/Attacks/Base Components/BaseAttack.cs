@@ -84,7 +84,7 @@ public abstract class BaseAttack : PlayableBehaviour
         {
             anticipating = value;
             Animator.SetBool(AttackName + "-anticipating", anticipating);
-            (value ? generalEvents.onStartAnticipating : generalEvents.onFinishAnticipating)?.Invoke();
+            (value ? generalEvents.onStartAnticipating : generalEvents.onFinishAnticipating).Invoke();
         }
     }
 
@@ -99,7 +99,7 @@ public abstract class BaseAttack : PlayableBehaviour
         {
             active = value;
             Animator.SetBool(AttackName + "-active", active);
-            (value ? generalEvents.onStartActive : generalEvents.onFinishActive)?.Invoke();
+            (value ? generalEvents.onStartActive : generalEvents.onFinishActive).Invoke();
         }
     }
 
@@ -114,7 +114,7 @@ public abstract class BaseAttack : PlayableBehaviour
         {
             recovering = value;
             Animator.SetBool(AttackName + "-recovering", recovering);
-            (value ? generalEvents.onStartRecovery : generalEvents.onFinishRecovery)?.Invoke();
+            (value ? generalEvents.onStartRecovery : generalEvents.onFinishRecovery).Invoke();
         }
     }
 
@@ -212,19 +212,19 @@ public abstract class BaseAttack : PlayableBehaviour
         if (Anticipating)
         {
             Anticipating = false;
-            generalEvents.onFinishAnticipating?.Invoke();
+            generalEvents.onFinishAnticipating.Invoke();
         }
 
         if (Active)
         {
             Active = false;
-            generalEvents.onFinishActive?.Invoke();
+            generalEvents.onFinishActive.Invoke();
         }
 
         if (Recovering)
         {
             Recovering = false;
-            generalEvents.onFinishRecovery?.Invoke();
+            generalEvents.onFinishRecovery.Invoke();
         }
     }
 
