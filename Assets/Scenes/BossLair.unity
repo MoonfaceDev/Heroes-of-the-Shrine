@@ -429,6 +429,25 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
+  generalEvents:
+    onStartAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartRecovery:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishRecovery:
+      m_PersistentCalls:
+        m_Calls: []
   anticipateDuration: 1
   recoveryDuration: 3
   sourcesCount: 10
@@ -454,6 +473,25 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 1
+  generalEvents:
+    onStartAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartRecovery:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishRecovery:
+      m_PersistentCalls:
+        m_Calls: []
   anticipateDuration: 0.5
   recoveryDuration: 0.5
   maxEnemyCount: 5
@@ -491,6 +529,25 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 1
+  generalEvents:
+    onStartAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartRecovery:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishRecovery:
+      m_PersistentCalls:
+        m_Calls: []
   previousAttacks: []
   midair: 0
   anticipateDuration: 0.25
@@ -1058,6 +1115,18 @@ PrefabInstance:
       propertyPath: position.z
       value: -6
       objectReference: {fileID: 0}
+    - target: {fileID: 8011096904622113236, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: generalEvents.onStartActive.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011096904622113236, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: generalEvents.onStartActive.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011096904622113236, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: generalEvents.onStartActive.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8011096905049079378, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1426,7 +1495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 63080252}
   figureObject: {fileID: 0}
-  position: {x: 1.64, y: 0.7, z: 0}
+  position: {x: 1.5, y: 0.7, z: 0}
   rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
@@ -1452,7 +1521,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1340466845}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.64, y: 0, z: 0}
+  m_LocalPosition: {x: 1.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1578,7 +1647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 63080252}
   figureObject: {fileID: 0}
-  position: {x: 2, y: 0.75, z: 0}
+  position: {x: 1.85, y: 0.75, z: 0}
   rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
@@ -1604,7 +1673,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1468609904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalPosition: {x: 1.85, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1636,6 +1705,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1506894243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506894209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d961789b6aee674bb3eb9ce45793ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  particlePosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1522698583
 GameObject:
   m_ObjectHideFlags: 0

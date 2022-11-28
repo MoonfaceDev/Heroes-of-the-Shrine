@@ -714,6 +714,7 @@ GameObject:
   - component: {fileID: 5102893360874897680}
   - component: {fileID: 5102893360874897694}
   - component: {fileID: 5102893360874897675}
+  - component: {fileID: 4916786187361843125}
   m_Layer: 0
   m_Name: Angel
   m_TagString: Player
@@ -1091,6 +1092,25 @@ MonoBehaviour:
   instant: 0
   interruptible: 0
   hardRecovery: 1
+  generalEvents:
+    onStartAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartRecovery:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishRecovery:
+      m_PersistentCalls:
+        m_Calls: []
   previousAttacks: []
   midair: 0
   anticipateDuration: 0.1
@@ -1119,6 +1139,25 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
+  generalEvents:
+    onStartAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartRecovery:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishRecovery:
+      m_PersistentCalls:
+        m_Calls: []
   previousAttacks: []
   midair: 0
   anticipateDuration: 0.2
@@ -1145,6 +1184,25 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
+  generalEvents:
+    onStartAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartRecovery:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishRecovery:
+      m_PersistentCalls:
+        m_Calls: []
   previousAttacks:
   - {fileID: 5102893360874897686}
   midair: 0
@@ -1172,6 +1230,25 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
+  generalEvents:
+    onStartAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartRecovery:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishRecovery:
+      m_PersistentCalls:
+        m_Calls: []
   previousAttacks:
   - {fileID: 5102893360874897686}
   midair: 0
@@ -1199,6 +1276,25 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 1
+  generalEvents:
+    onStartAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartRecovery:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishRecovery:
+      m_PersistentCalls:
+        m_Calls: []
   previousAttacks:
   - {fileID: 5102893360874897687}
   midair: 0
@@ -1226,6 +1322,25 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
+  generalEvents:
+    onStartAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartRecovery:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishRecovery:
+      m_PersistentCalls:
+        m_Calls: []
   previousAttacks:
   - {fileID: 5102893360874897687}
   midair: 0
@@ -1257,6 +1372,37 @@ MonoBehaviour:
   instant: 0
   interruptible: 0
   hardRecovery: 1
+  generalEvents:
+    onStartAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7161048684058357246, guid: f3fda9e187466314e97b96e464322573, type: 3}
+          m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onFinishActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartRecovery:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishRecovery:
+      m_PersistentCalls:
+        m_Calls: []
   previousAttacks:
   - {fileID: 5102893360874897685}
   midair: 0
@@ -1286,6 +1432,25 @@ MonoBehaviour:
   instant: 0
   interruptible: 0
   hardRecovery: 0
+  generalEvents:
+    onStartAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartRecovery:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishRecovery:
+      m_PersistentCalls:
+        m_Calls: []
   previousAttacks: []
   midair: 1
   anticipateDuration: 0.1
@@ -1312,6 +1477,25 @@ MonoBehaviour:
   instant: 0
   interruptible: 0
   hardRecovery: 0
+  generalEvents:
+    onStartAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartRecovery:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishRecovery:
+      m_PersistentCalls:
+        m_Calls: []
   previousAttacks:
   - {fileID: 5102893360874897681}
   midair: 1
@@ -1339,6 +1523,25 @@ MonoBehaviour:
   instant: 0
   interruptible: 0
   hardRecovery: 0
+  generalEvents:
+    onStartAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartRecovery:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishRecovery:
+      m_PersistentCalls:
+        m_Calls: []
   previousAttacks:
   - {fileID: 0}
   - {fileID: 5102893360874897681}
@@ -1368,6 +1571,25 @@ MonoBehaviour:
   instant: 0
   interruptible: 0
   hardRecovery: 0
+  generalEvents:
+    onStartAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartRecovery:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishRecovery:
+      m_PersistentCalls:
+        m_Calls: []
   previousAttacks: []
   midair: 0
   anticipateDuration: 0
@@ -1381,6 +1603,20 @@ MonoBehaviour:
   stunTime: 0.5
   burstVelocity: 0
   burstAcceleration: 0
+--- !u!114 &4916786187361843125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893360874897723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d961789b6aee674bb3eb9ce45793ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  particlePosition: {x: 0, y: 0, z: 0}
 --- !u!1 &5102893360938488515
 GameObject:
   m_ObjectHideFlags: 0
