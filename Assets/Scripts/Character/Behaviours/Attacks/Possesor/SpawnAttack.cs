@@ -2,13 +2,20 @@
 using System.Linq;
 using UnityEngine;
 
-public class GoblinSpawnAttack : BaseAttack
+public class SpawnAttack : BaseAttack
 {
     public float anticipateDuration;
     public float recoveryDuration;
     public int maxEnemyCount;
     public GameObject enemyPrefab;
     public Vector3[] spawnPoints;
+
+    public override bool CanPlay()
+    {
+        return base.CanPlay() &&
+               !((AttackManager.Anticipating || AttackManager.Active || AttackManager.HardRecovering) &&
+                 !(instant && AttackManager.IsInterruptible()));
+    }
 
     public override void Awake()
     {
