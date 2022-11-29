@@ -5,14 +5,23 @@ public class AttackParticles : MonoBehaviour
 {
     public ParticleSystem prefab;
     public Vector3 particlePosition;
+    public bool attachToCharacter;
 
     public void Play()
     {
         var movableObject = GetComponent<MovableObject>();
-        var clone = Instantiate(prefab);
+        var clone = attachToCharacter ? Instantiate(prefab, movableObject.transform) : Instantiate(prefab);
         var shape = clone.GetComponent<ParticleSystem>().shape;
-        shape.position = MovableObject.ScreenCoordinates(movableObject.TransformToWorld(particlePosition));
-        shape.rotation += movableObject.WorldRotation; 
+        shape.position =
+            MovableObject.ScreenCoordinates(attachToCharacter
+                ? particlePosition
+                : movableObject.TransformToWorld(particlePosition));
+        
+        if (!attachToCharacter)
+        {
+            shape.rotation += movableObject.WorldRotation;
+        }
+        
         clone.GetComponent<Renderer>().sortingOrder = movableObject.SortingOrder + 1;
         clone.GetComponent<ParticleSystem>().Play();
     }

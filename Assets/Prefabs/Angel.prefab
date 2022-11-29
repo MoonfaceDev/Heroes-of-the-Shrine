@@ -589,7 +589,6 @@ GameObject:
   - component: {fileID: 5102893360866760424}
   - component: {fileID: 5102893360866760427}
   - component: {fileID: 2748543002303246879}
-  - component: {fileID: 3603115898868858838}
   - component: {fileID: 3262553446811620699}
   m_Layer: 0
   m_Name: SlashAttackHitbox
@@ -645,20 +644,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
---- !u!114 &3603115898868858838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360866760426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 7161048684058357246, guid: f3fda9e187466314e97b96e464322573, type: 3}
-  particlePosition: {x: 0, y: 0, z: 0}
 --- !u!114 &3262553446811620699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,7 +733,7 @@ Transform:
   - {fileID: 5102893360866760424}
   - {fileID: 3850747449127629430}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360874897665
 MonoBehaviour:
@@ -1382,8 +1367,8 @@ MonoBehaviour:
     onStartActive:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7161048684058357246, guid: f3fda9e187466314e97b96e464322573, type: 3}
-          m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        - m_Target: {fileID: 4916786187361843125}
+          m_TargetAssemblyTypeName: AttackParticles, Assembly-CSharp
           m_MethodName: Play
           m_Mode: 1
           m_Arguments:
@@ -1615,8 +1600,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d961789b6aee674bb3eb9ce45793ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 7161048684058357246, guid: f3fda9e187466314e97b96e464322573, type: 3}
   particlePosition: {x: 0, y: 0, z: 0}
+  attachToCharacter: 1
 --- !u!1 &5102893360938488515
 GameObject:
   m_ObjectHideFlags: 0
