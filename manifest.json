@@ -184,7 +184,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.BaseAttack.html",
-          "hash": "dZnEzCKAj5Z7UhfXjKGJxzTqdfAVnJvFa+qpAc+QUng="
+          "hash": "070Lur4aWm/g5RpJRWuxiQIajFexqc5jkWYZKaykckY="
         }
       },
       "is_incremental": false,
@@ -828,18 +828,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.GoblinSpawnAttack.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.GoblinSpawnAttack.html",
-          "hash": "VsRtQDmTeD0iqxf6jM1/VnLXAgKsmEpEeAW/68djhAk="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Global.HealthBar.yml",
       "output": {
         ".html": {
@@ -1404,6 +1392,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.SpawnAttack.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.SpawnAttack.html",
+          "hash": "mRi8Qrf5SHL8Qmve+pBYfs5CDPS6nd8MHzR5Kl9KJso="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.SpinningSwordsAttack.yml",
       "output": {
         ".html": {
@@ -1576,7 +1576,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "S6pfYzVQH4ZlA3so3S9GJzMAAso9Q+JTmMUNaGKSQKo="
+          "hash": "yjtzLK4l7h+xOK50t+agedlyAi5vnPy4jUtoOOTpOBY="
         }
       },
       "is_incremental": false,
@@ -1588,7 +1588,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "cSfy+Fx0g8mun2mIvj6cp1Z0dEqFPrPluioGTZQotfA="
+          "hash": "qW+mGV76bldP2VdSJd66N9ESA7ZtrBzZAYCrbUzIGuM="
         }
       },
       "is_incremental": false,
