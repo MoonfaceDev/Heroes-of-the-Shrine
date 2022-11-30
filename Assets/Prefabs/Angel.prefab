@@ -733,7 +733,7 @@ Transform:
   - {fileID: 5102893360866760424}
   - {fileID: 3850747449127629430}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360874897665
 MonoBehaviour:
@@ -1360,12 +1360,6 @@ MonoBehaviour:
   generalEvents:
     onStartAnticipating:
       m_PersistentCalls:
-        m_Calls: []
-    onFinishAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
-    onStartActive:
-      m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 4916786187361843125}
           m_TargetAssemblyTypeName: AttackParticles, Assembly-CSharp
@@ -1379,6 +1373,12 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls: []
     onFinishActive:
       m_PersistentCalls:
         m_Calls: []
@@ -1601,7 +1601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 7161048684058357246, guid: f3fda9e187466314e97b96e464322573, type: 3}
-  particlePosition: {x: 0, y: 0, z: 0}
+  particlePosition: {x: -0.48, y: 1.5, z: -1}
   attachToCharacter: 1
 --- !u!1 &5102893360938488515
 GameObject:
@@ -6863,7 +6863,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 392057230, guid: 0cb6cc035f8dc854baa89121323d03fb, type: 3}
+  m_Sprite: {fileID: -864071356, guid: c5ff4b58e1a846b42a910b03ccb02b42, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

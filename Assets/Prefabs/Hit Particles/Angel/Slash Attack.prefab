@@ -114,7 +114,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4191199336927616018}
   serializedVersion: 8
-  lengthInSec: 0.2
+  lengthInSec: 0.3
   simulationSpeed: 1
   stopAction: 2
   cullingMode: 0
@@ -189,7 +189,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.125
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -242,7 +242,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4
+      scalar: -5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -358,7 +358,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.05
+      scalar: 0.075
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -675,7 +675,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 1
-    maxNumParticles: 200
+    maxNumParticles: 100
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -735,14 +735,14 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 10
+    type: 12
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 0.62
+    radiusThickness: 0.48
     donutRadius: 0.2
-    m_Position: {x: 1, y: 0, z: 0}
-    m_Rotation: {x: 77.85, y: 0, z: 474.69}
+    m_Position: {x: 0, y: 0, z: 0}
+    m_Rotation: {x: 0, y: 0, z: 270}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -818,11 +818,11 @@ ParticleSystem:
     m_TextureColorAffectsParticles: 1
     m_TextureAlphaAffectsParticles: 1
     m_TextureBilinearFiltering: 0
-    randomDirectionAmount: 1
-    sphericalDirectionAmount: 1
+    randomDirectionAmount: 0
+    sphericalDirectionAmount: 0.05
     randomPositionAmount: 0
     radius:
-      value: 2.22
+      value: 0.7
       mode: 0
       spread: 0
       speed:
@@ -879,7 +879,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 129.82
+      value: 180
       mode: 0
       spread: 0
       speed:
@@ -941,7 +941,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 200
+      scalar: 80
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -994,7 +994,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4007,7 +4007,7 @@ ParticleSystem:
     lifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.4
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4057,11 +4057,11 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    minVertexDistance: 1
+    minVertexDistance: 0
     textureMode: 0
     textureScale: {x: 1, y: 1}
     ribbonCount: 1
-    shadowBias: 0
+    shadowBias: 3.51
     worldSpace: 0
     dieWithParticles: 1
     sizeAffectsWidth: 1

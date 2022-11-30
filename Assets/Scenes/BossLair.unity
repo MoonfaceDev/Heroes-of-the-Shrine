@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af61f8ebac7a76742baddc8a44dddfa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 100
+  startHealth: 150
   health: 0
 --- !u!114 &63080249
 MonoBehaviour:
@@ -410,8 +410,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 579c565da1e94b73a6686a85695e0bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armorHealth: 100
-  armorCooldown: 5
+  armorHealth: 50
+  armorCooldown: 10
   damageMultiplier: 0.5
   armorCooldownStart: 0
 --- !u!114 &63080258
@@ -493,7 +493,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   anticipateDuration: 0.5
-  recoveryDuration: 0.5
+  recoveryDuration: 1
   maxEnemyCount: 5
   enemyPrefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
   spawnPoints:
@@ -565,11 +565,11 @@ MonoBehaviour:
   periodicHitCount: 2
   periodicHitElectrifyRate: 0.05
   periodicStunTime: 0.5
-  periodicDamage: 10
+  periodicDamage: 2.5
   explosionHitDetector: {fileID: 1468609905}
   explosionKnockbackPower: 10
   explosionKnockbackDirection: 35
-  explosionDamage: 20
+  explosionDamage: 15
   explosionStunTime: 0.5
 --- !u!114 &63080262
 MonoBehaviour:
@@ -1719,6 +1719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   particlePosition: {x: 0, y: 0, z: 0}
+  attachToCharacter: 0
 --- !u!1 &1522698583
 GameObject:
   m_ObjectHideFlags: 0
