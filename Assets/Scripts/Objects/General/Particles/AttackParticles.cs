@@ -11,17 +11,13 @@ public class AttackParticles : MonoBehaviour
     {
         var movableObject = GetComponent<MovableObject>();
         var clone = attachToCharacter ? Instantiate(prefab, movableObject.transform) : Instantiate(prefab);
-        var shape = clone.GetComponent<ParticleSystem>().shape;
-        shape.position =
-            MovableObject.ScreenCoordinates(attachToCharacter
-                ? particlePosition
-                : movableObject.TransformToWorld(particlePosition));
-        
+        clone.transform.position = MovableObject.ScreenCoordinates(movableObject.TransformToWorld(particlePosition));
+
         if (!attachToCharacter)
         {
-            shape.rotation += movableObject.WorldRotation;
+            clone.transform.rotation = Quaternion.Euler(movableObject.WorldRotation);
         }
-        
+
         clone.GetComponent<Renderer>().sortingOrder = movableObject.SortingOrder + 1;
         clone.GetComponent<ParticleSystem>().Play();
     }

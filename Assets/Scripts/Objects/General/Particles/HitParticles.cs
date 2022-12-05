@@ -10,9 +10,8 @@ public class HitParticles : MonoBehaviour
     {
         var movableObject = GetComponent<MovableObject>();
         var clone = Instantiate(prefab);
-        var shape = clone.GetComponent<ParticleSystem>().shape;
-        shape.position = MovableObject.ScreenCoordinates(movableObject.TransformToWorld(particlePosition));
-        shape.rotation += movableObject.WorldRotation; 
+        clone.transform.position = MovableObject.ScreenCoordinates(movableObject.TransformToWorld(particlePosition));
+        clone.transform.rotation = Quaternion.Euler(movableObject.WorldRotation);
         clone.GetComponent<Renderer>().sortingOrder = Mathf.Max(
             movableObject.parent.SortingOrder,
             hittable.Character.movableObject.SortingOrder
