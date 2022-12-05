@@ -775,7 +775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af61f8ebac7a76742baddc8a44dddfa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 100
+  startHealth: 70
   health: 0
 --- !u!114 &6231911944032600069
 MonoBehaviour:
@@ -914,6 +914,25 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
+  generalEvents:
+    onStartAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartRecovery:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishRecovery:
+      m_PersistentCalls:
+        m_Calls: []
   previousAttacks: []
   midair: 0
   anticipateDuration: 0.1
@@ -940,6 +959,25 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
+  generalEvents:
+    onStartAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartRecovery:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishRecovery:
+      m_PersistentCalls:
+        m_Calls: []
   previousAttacks:
   - {fileID: 5884619158741390443}
   midair: 0
@@ -967,6 +1005,25 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
+  generalEvents:
+    onStartAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartRecovery:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishRecovery:
+      m_PersistentCalls:
+        m_Calls: []
   previousAttacks:
   - {fileID: 5884619158741390442}
   midair: 0
@@ -1012,7 +1069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
-  rageHealthThreshold: 50
+  rageHealthThreshold: 35
   rageDamageMultiplier: 1.1
 --- !u!114 &5884619158741390418
 MonoBehaviour:
@@ -1041,6 +1098,25 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
+  generalEvents:
+    onStartAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartRecovery:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishRecovery:
+      m_PersistentCalls:
+        m_Calls: []
   previousAttacks: []
   midair: 0
   anticipateDuration: 0.45
