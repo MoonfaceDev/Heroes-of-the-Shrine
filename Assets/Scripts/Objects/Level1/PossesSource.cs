@@ -4,19 +4,27 @@ using UnityEngine;
 [RequireComponent(typeof(BaseHitDetector))]
 public class PossesSource : MonoBehaviour
 {
-    public GameObject warningIndicator;
-    public GameObject activeIndicator;
+    public Animator animator;
+    public float hitAnimationDuration;
+    
+    private static readonly int Warning = Animator.StringToHash("Warning");
+    private static readonly int Active = Animator.StringToHash("Active");
+    private static readonly int Hit = Animator.StringToHash("Hit");
 
     public void Activate(float warningDuration, float activeDuration, List<string> hittableTags, float effectDuration)
     {
-        warningIndicator.SetActive(true);
+        animator.SetBool(Warning, true);
         EventManager.Instance.StartTimeout(() =>
         {
-            warningIndicator.SetActive(false);
-            activeIndicator.SetActive(true);
+            animator.SetBool(Warning, false);
+            animator.SetBool(Active, true);
             var hitDetector = GetComponent<BaseHitDetector>();
             hitDetector.StartDetector(hittable =>
             {
+                hitDetector.StopDetector();
+                animator.SetBool(Hit, true);
+                Destroy(gameObject, hitAnimationDuration);
+
                 var possessedEffect = hittable.Character.GetComponent<PossessedEffect>();
                 if (possessedEffect)
                 {
@@ -26,7 +34,7 @@ public class PossesSource : MonoBehaviour
             EventManager.Instance.StartTimeout(() =>
             {
                 hitDetector.StopDetector();
-                activeIndicator.SetActive(false);
+                animator.SetBool(Active, false);
                 Destroy(gameObject);
             }, activeDuration);
         }, warningDuration);
