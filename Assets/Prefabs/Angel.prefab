@@ -852,7 +852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 0
-  timeToRun: 0.5
+  timeToRun: 1
   runSpeedMultiplier: 1.5
   runParticles: {fileID: 5102893361865183971}
 --- !u!114 &5102893360874897671
@@ -1075,7 +1075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instant: 0
-  interruptible: 0
+  interruptible: 1
   hardRecovery: 1
   generalEvents:
     onStartAnticipating:
