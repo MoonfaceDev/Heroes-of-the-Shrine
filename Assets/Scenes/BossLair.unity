@@ -150,10 +150,10 @@ GameObject:
   - component: {fileID: 63080261}
   - component: {fileID: 63080259}
   - component: {fileID: 63080257}
-  - component: {fileID: 63080237}
   - component: {fileID: 63080260}
   - component: {fileID: 63080262}
   - component: {fileID: 63080263}
+  - component: {fileID: 63080237}
   m_Layer: 0
   m_Name: CaveGoblinPossesed
   m_TagString: Enemy.Goblin.Cave
@@ -451,7 +451,7 @@ MonoBehaviour:
     onFinishRecovery:
       m_PersistentCalls:
         m_Calls: []
-  anticipateDuration: 1
+  anticipateDuration: 1.65
   recoveryDuration: 3
   sourcesCount: 10
   spawnRadius: 5
@@ -629,7 +629,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316202118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.8, y: 0.080000006, z: 0}
+  m_LocalPosition: {x: -0.8, y: 0.008, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -650,7 +650,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 63080252}
   figureObject: {fileID: 0}
-  position: {x: -0.8, y: 1.3, z: 0.1}
+  position: {x: -0.8, y: 1.3, z: 0.01}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -2013,7 +2013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 63080252}
   figureObject: {fileID: 0}
-  position: {x: 0, y: 0.85, z: -0.1}
+  position: {x: 0, y: 0.85, z: -0.01}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -2025,7 +2025,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725771218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.080000006, z: 0}
+  m_LocalPosition: {x: 0, y: -0.008, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
