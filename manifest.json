@@ -232,7 +232,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.BasePattern.html",
-          "hash": "mNhEbr2/UwRQUv84822/5DZuiyrtAACowDXUwWJXchg="
+          "hash": "tg/f6NpAX0i0qnkQoes+NR2vb3bRUlycWm681RHmcLk="
         }
       },
       "is_incremental": false,
@@ -1272,6 +1272,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.RandomRayPattern.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.RandomRayPattern.html",
+          "hash": "pqEfNnqlhqtPV7ZvadOqLggsXlWLcgzmFr/Dpmsbf10="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.ReadonlyAttribute.yml",
       "output": {
         ".html": {
@@ -1612,7 +1624,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "klx9lb0iXhseF/gRQ1JicID5aNFz3HKIDAHKnY5X17A="
+          "hash": "cdKGoJqVM/DWbjMp5wB2VKhVOAwkDld1cN9UJ7jkl48="
         }
       },
       "is_incremental": false,
@@ -1624,7 +1636,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "9k+hEMXAIvpuWhDRNjcYqr6RHp+gPIZtjcchN08EbQw="
+          "hash": "KoKwESoYPfFPjik6N6uxJwbvjLXNbBw3Qx81OpaCG9s="
         }
       },
       "is_incremental": false,
@@ -1835,7 +1847,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 133,
+          "total_file_count": 134,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
