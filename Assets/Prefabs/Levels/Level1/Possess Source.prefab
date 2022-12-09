@@ -115,6 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 315375992637314452}
   - component: {fileID: 5916882827402875226}
+  - component: {fileID: 6844794933150260862}
   m_Layer: 0
   m_Name: Possess Source
   m_TagString: Untagged
@@ -157,6 +158,21 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
+--- !u!114 &6844794933150260862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4935747359819157664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df8dd7a80b64456a7d0d2915f617572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitDetector: {fileID: 7882393571395824768}
+  animator: {fileID: 8808664771124120978}
+  hitAnimationDuration: 1
 --- !u!1 &8436393641562852876
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +185,6 @@ GameObject:
   - component: {fileID: 6765827481344271966}
   - component: {fileID: 1815740459291873946}
   - component: {fileID: 7882393571395824768}
-  - component: {fileID: 251105427124514054}
   m_Layer: 0
   m_Name: Hitbox
   m_TagString: Untagged
@@ -237,17 +252,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   includedHittableTags: []
   excludedHittableTags: []
---- !u!114 &251105427124514054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8436393641562852876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1df8dd7a80b64456a7d0d2915f617572, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 8808664771124120978}
-  hitAnimationDuration: 1
