@@ -1068,6 +1068,9 @@ MonoBehaviour:
   playerTag: Player
   rageHealthThreshold: 35
   rageDamageMultiplier: 1.1
+  distanceAnimatorParameters:
+  - parameterName: distanceFromCenter
+    groundPoint: {x: 0, y: 0}
 --- !u!114 &5884619158741390418
 MonoBehaviour:
   m_ObjectHideFlags: 0

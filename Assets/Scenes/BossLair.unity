@@ -398,6 +398,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageMultiplier: 0
+  figure: {fileID: 0}
+  blinkColor: {r: 0, g: 0, b: 0, a: 0}
+  blinkTime: 0
 --- !u!114 &63080257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,6 +589,7 @@ MonoBehaviour:
   playerTag: Player
   rageHealthThreshold: 50
   rageDamageMultiplier: 1
+  distanceAnimatorParameters: []
 --- !u!114 &63080263
 MonoBehaviour:
   m_ObjectHideFlags: 0

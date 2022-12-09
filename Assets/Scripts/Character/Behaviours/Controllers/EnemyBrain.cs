@@ -1,5 +1,8 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using static MathUtils;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Animator))]
 public class EnemyBrain : CharacterController
@@ -7,6 +10,18 @@ public class EnemyBrain : CharacterController
     public string playerTag;
     public float rageHealthThreshold;
     public float rageDamageMultiplier = 1;
+
+    [Serializable]
+    public class DistanceParameterEntry
+    {
+        public string parameterName;
+        public Vector2 groundPoint;
+    }
+    
+    /// <value>
+    /// Mapping from animator parameter name, to the point (on the ground) from which distance is measured.
+    /// </value>
+    public List<DistanceParameterEntry> distanceAnimatorParameters;
 
     private GameObject player;
     private MovableObject playerMovableObject;
@@ -145,6 +160,11 @@ public class EnemyBrain : CharacterController
             stateMachine.SetFloat(PlayerDistanceXParameter, Mathf.Abs((MovableObject.WorldPosition - playerMovableObject.WorldPosition).x));
             stateMachine.SetFloat(PlayerDistanceYParameter, Mathf.Abs((MovableObject.WorldPosition - playerMovableObject.WorldPosition).y));
             stateMachine.SetFloat(PlayerDistanceZParameter, Mathf.Abs((MovableObject.WorldPosition - playerMovableObject.WorldPosition).z));
+        }
+
+        foreach (var entry in distanceAnimatorParameters)
+        {
+            stateMachine.SetFloat(entry.parameterName,  Vector2.Distance(ToPlane(MovableObject.WorldPosition), entry.groundPoint));
         }
     }
 
