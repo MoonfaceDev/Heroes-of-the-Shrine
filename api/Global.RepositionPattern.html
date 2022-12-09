@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class BasePattern
+    <title>Class RepositionPattern
    | Heroes of the Shrine </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class BasePattern
+    <meta name="title" content="Class RepositionPattern
    | Heroes of the Shrine ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,40 +78,59 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Global.BasePattern">
+            <article class="content wrap" id="_content" data-uid="Global.RepositionPattern">
   
   
-  <h1 id="Global_BasePattern" data-uid="Global.BasePattern" class="text-break">Class BasePattern
+  <h1 id="Global_RepositionPattern" data-uid="Global.RepositionPattern" class="text-break">Class RepositionPattern
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">BasePattern</span></div>
-      <div class="level2"><a class="xref" href="Global.ArcPattern.html">ArcPattern</a></div>
-      <div class="level2"><a class="xref" href="Global.AttackPattern.html">AttackPattern</a></div>
-      <div class="level2"><a class="xref" href="Global.EscapePattern.html">EscapePattern</a></div>
-      <div class="level2"><a class="xref" href="Global.FollowPattern.html">FollowPattern</a></div>
-      <div class="level2"><a class="xref" href="Global.IdlePattern.html">IdlePattern</a></div>
-      <div class="level2"><a class="xref" href="Global.RepositionPattern.html">RepositionPattern</a></div>
+    <div class="level1"><a class="xref" href="Global.BasePattern.html">BasePattern</a></div>
+    <div class="level2"><span class="xref">RepositionPattern</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Global.BasePattern.html#Global_BasePattern_hasRandomExitTime">BasePattern.hasRandomExitTime</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BasePattern.html#Global_BasePattern_minTime">BasePattern.minTime</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BasePattern.html#Global_BasePattern_maxTime">BasePattern.maxTime</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BasePattern.html#Global_BasePattern_EventManager">BasePattern.EventManager</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BasePattern.html#Global_BasePattern_OnEnter">BasePattern.OnEnter</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BasePattern.html#Global_BasePattern_OnExit">BasePattern.OnExit</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BasePattern.html#Global_BasePattern_OnStateUpdate_Animator_AnimatorStateInfo_System_Int32_">BasePattern.OnStateUpdate(Animator, AnimatorStateInfo, Int32)</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Global_BasePattern_syntax">Syntax</h5>
+  <h5 id="Global_RepositionPattern_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class BasePattern : StateMachineBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class RepositionPattern : BasePattern</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
   
   
-  <h4 id="Global_BasePattern_hasRandomExitTime" data-uid="Global.BasePattern.hasRandomExitTime">hasRandomExitTime</h4>
+  <h4 id="Global_RepositionPattern_destination" data-uid="Global.RepositionPattern.destination">destination</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool hasRandomExitTime</code></pre>
+    <pre><code class="lang-csharp hljs">public Vector3 destination</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -123,43 +142,19 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="xref">Vector3</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <h4 id="Global_BasePattern_maxTime" data-uid="Global.BasePattern.maxTime">maxTime</h4>
+  <h4 id="Global_RepositionPattern_speedMultiplier" data-uid="Global.RepositionPattern.speedMultiplier">speedMultiplier</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float maxTime</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_BasePattern_minTime" data-uid="Global.BasePattern.minTime">minTime</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float minTime</code></pre>
+    <pre><code class="lang-csharp hljs">public float speedMultiplier</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -172,33 +167,6 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-  </h3>
-  
-  
-  <a id="Global_BasePattern_EventManager_" data-uid="Global.BasePattern.EventManager*"></a>
-  <h4 id="Global_BasePattern_EventManager" data-uid="Global.BasePattern.EventManager">EventManager</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected static EventManager EventManager { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.EventManager.html">EventManager</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -207,8 +175,8 @@
   </h3>
   
   
-  <a id="Global_BasePattern_OnStateEnter_" data-uid="Global.BasePattern.OnStateEnter*"></a>
-  <h4 id="Global_BasePattern_OnStateEnter_Animator_AnimatorStateInfo_System_Int32_" data-uid="Global.BasePattern.OnStateEnter(Animator,AnimatorStateInfo,System.Int32)">OnStateEnter(Animator, AnimatorStateInfo, Int32)</h4>
+  <a id="Global_RepositionPattern_OnStateEnter_" data-uid="Global.RepositionPattern.OnStateEnter*"></a>
+  <h4 id="Global_RepositionPattern_OnStateEnter_Animator_AnimatorStateInfo_System_Int32_" data-uid="Global.RepositionPattern.OnStateEnter(Animator,AnimatorStateInfo,System.Int32)">OnStateEnter(Animator, AnimatorStateInfo, Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -242,10 +210,12 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.BasePattern.html#Global_BasePattern_OnStateEnter_Animator_AnimatorStateInfo_System_Int32_">BasePattern.OnStateEnter(Animator, AnimatorStateInfo, Int32)</a></div>
   
   
-  <a id="Global_BasePattern_OnStateExit_" data-uid="Global.BasePattern.OnStateExit*"></a>
-  <h4 id="Global_BasePattern_OnStateExit_Animator_AnimatorStateInfo_System_Int32_" data-uid="Global.BasePattern.OnStateExit(Animator,AnimatorStateInfo,System.Int32)">OnStateExit(Animator, AnimatorStateInfo, Int32)</h4>
+  <a id="Global_RepositionPattern_OnStateExit_" data-uid="Global.RepositionPattern.OnStateExit*"></a>
+  <h4 id="Global_RepositionPattern_OnStateExit_Animator_AnimatorStateInfo_System_Int32_" data-uid="Global.RepositionPattern.OnStateExit(Animator,AnimatorStateInfo,System.Int32)">OnStateExit(Animator, AnimatorStateInfo, Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -279,93 +249,8 @@
       </tr>
     </tbody>
   </table>
-  
-  
-  <a id="Global_BasePattern_OnStateUpdate_" data-uid="Global.BasePattern.OnStateUpdate*"></a>
-  <h4 id="Global_BasePattern_OnStateUpdate_Animator_AnimatorStateInfo_System_Int32_" data-uid="Global.BasePattern.OnStateUpdate(Animator,AnimatorStateInfo,System.Int32)">OnStateUpdate(Animator, AnimatorStateInfo, Int32)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Animator</span></td>
-        <td><span class="parametername">animator</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">AnimatorStateInfo</span></td>
-        <td><span class="parametername">stateInfo</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">layerIndex</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="events">Events
-  </h3>
-  
-  
-  <h4 id="Global_BasePattern_OnEnter" data-uid="Global.BasePattern.OnEnter">OnEnter</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event Action OnEnter</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Action</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_BasePattern_OnExit" data-uid="Global.BasePattern.OnExit">OnExit</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event Action OnExit</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Action</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.BasePattern.html#Global_BasePattern_OnStateExit_Animator_AnimatorStateInfo_System_Int32_">BasePattern.OnStateExit(Animator, AnimatorStateInfo, Int32)</a></div>
 </article>
           </div>
           

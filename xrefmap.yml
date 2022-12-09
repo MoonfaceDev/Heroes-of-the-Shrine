@@ -2231,6 +2231,30 @@ references:
   isSpec: "True"
   fullName: EnemyBrain.Awake
   nameWithType: EnemyBrain.Awake
+- uid: Global.EnemyBrain.distanceAnimatorParameters
+  name: distanceAnimatorParameters
+  href: api/Global.EnemyBrain.html#Global_EnemyBrain_distanceAnimatorParameters
+  commentId: F:Global.EnemyBrain.distanceAnimatorParameters
+  fullName: EnemyBrain.distanceAnimatorParameters
+  nameWithType: EnemyBrain.distanceAnimatorParameters
+- uid: Global.EnemyBrain.DistanceParameterEntry
+  name: EnemyBrain.DistanceParameterEntry
+  href: api/Global.EnemyBrain.DistanceParameterEntry.html
+  commentId: T:Global.EnemyBrain.DistanceParameterEntry
+  fullName: EnemyBrain.DistanceParameterEntry
+  nameWithType: EnemyBrain.DistanceParameterEntry
+- uid: Global.EnemyBrain.DistanceParameterEntry.groundPoint
+  name: groundPoint
+  href: api/Global.EnemyBrain.DistanceParameterEntry.html#Global_EnemyBrain_DistanceParameterEntry_groundPoint
+  commentId: F:Global.EnemyBrain.DistanceParameterEntry.groundPoint
+  fullName: EnemyBrain.DistanceParameterEntry.groundPoint
+  nameWithType: EnemyBrain.DistanceParameterEntry.groundPoint
+- uid: Global.EnemyBrain.DistanceParameterEntry.parameterName
+  name: parameterName
+  href: api/Global.EnemyBrain.DistanceParameterEntry.html#Global_EnemyBrain_DistanceParameterEntry_parameterName
+  commentId: F:Global.EnemyBrain.DistanceParameterEntry.parameterName
+  fullName: EnemyBrain.DistanceParameterEntry.parameterName
+  nameWithType: EnemyBrain.DistanceParameterEntry.parameterName
 - uid: Global.EnemyBrain.playerTag
   name: playerTag
   href: api/Global.EnemyBrain.html#Global_EnemyBrain_playerTag
@@ -5185,6 +5209,50 @@ references:
   commentId: F:Global.RectTrigger.size
   fullName: RectTrigger.size
   nameWithType: RectTrigger.size
+- uid: Global.RepositionPattern
+  name: RepositionPattern
+  href: api/Global.RepositionPattern.html
+  commentId: T:Global.RepositionPattern
+  fullName: RepositionPattern
+  nameWithType: RepositionPattern
+- uid: Global.RepositionPattern.destination
+  name: destination
+  href: api/Global.RepositionPattern.html#Global_RepositionPattern_destination
+  commentId: F:Global.RepositionPattern.destination
+  fullName: RepositionPattern.destination
+  nameWithType: RepositionPattern.destination
+- uid: Global.RepositionPattern.OnStateEnter(Animator,AnimatorStateInfo,System.Int32)
+  name: OnStateEnter(Animator, AnimatorStateInfo, Int32)
+  href: api/Global.RepositionPattern.html#Global_RepositionPattern_OnStateEnter_Animator_AnimatorStateInfo_System_Int32_
+  commentId: M:Global.RepositionPattern.OnStateEnter(Animator,AnimatorStateInfo,System.Int32)
+  fullName: RepositionPattern.OnStateEnter(Animator, AnimatorStateInfo, System.Int32)
+  nameWithType: RepositionPattern.OnStateEnter(Animator, AnimatorStateInfo, Int32)
+- uid: Global.RepositionPattern.OnStateEnter*
+  name: OnStateEnter
+  href: api/Global.RepositionPattern.html#Global_RepositionPattern_OnStateEnter_
+  commentId: Overload:Global.RepositionPattern.OnStateEnter
+  isSpec: "True"
+  fullName: RepositionPattern.OnStateEnter
+  nameWithType: RepositionPattern.OnStateEnter
+- uid: Global.RepositionPattern.OnStateExit(Animator,AnimatorStateInfo,System.Int32)
+  name: OnStateExit(Animator, AnimatorStateInfo, Int32)
+  href: api/Global.RepositionPattern.html#Global_RepositionPattern_OnStateExit_Animator_AnimatorStateInfo_System_Int32_
+  commentId: M:Global.RepositionPattern.OnStateExit(Animator,AnimatorStateInfo,System.Int32)
+  fullName: RepositionPattern.OnStateExit(Animator, AnimatorStateInfo, System.Int32)
+  nameWithType: RepositionPattern.OnStateExit(Animator, AnimatorStateInfo, Int32)
+- uid: Global.RepositionPattern.OnStateExit*
+  name: OnStateExit
+  href: api/Global.RepositionPattern.html#Global_RepositionPattern_OnStateExit_
+  commentId: Overload:Global.RepositionPattern.OnStateExit
+  isSpec: "True"
+  fullName: RepositionPattern.OnStateExit
+  nameWithType: RepositionPattern.OnStateExit
+- uid: Global.RepositionPattern.speedMultiplier
+  name: speedMultiplier
+  href: api/Global.RepositionPattern.html#Global_RepositionPattern_speedMultiplier
+  commentId: F:Global.RepositionPattern.speedMultiplier
+  fullName: RepositionPattern.speedMultiplier
+  nameWithType: RepositionPattern.speedMultiplier
 - uid: Global.RunBehaviour
   name: RunBehaviour
   href: api/Global.RunBehaviour.html
