@@ -1009,6 +1009,21 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-2190197694980205821
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44ff6a9d25cb9df47a04cf260f59998f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasRandomExitTime: 0
+  minTime: 0
+  maxTime: 0
 --- !u!1101 &-1916294770248756101
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1141,7 +1156,7 @@ AnimatorStateTransition:
   serializedVersion: 3
   m_TransitionDuration: 0
   m_TransitionOffset: 0
-  m_ExitTime: 3
+  m_ExitTime: 5
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -1734,7 +1749,7 @@ AnimatorStateTransition:
   serializedVersion: 3
   m_TransitionDuration: 0
   m_TransitionOffset: 0
-  m_ExitTime: 3
+  m_ExitTime: 4
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -1831,7 +1846,7 @@ AnimatorState:
   m_Transitions:
   - {fileID: 2546907599953372252}
   m_StateMachineBehaviours:
-  - {fileID: 4656129956740041147}
+  - {fileID: -2190197694980205821}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -2200,29 +2215,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!114 &4656129956740041147
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 265a0e90be4a65f46b69d2d062842d50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasRandomExitTime: 0
-  minTime: 0
-  maxTime: 0
-  targetTag: Player
-  attacks:
-  - attackType:
-      GuidAssignmentFailed: 0
-      GUID: 9569bccaf17bff14bb7809fd39e6391d
-      _typeNameAndAssembly: PossesAttack, Assembly-CSharp
-      _suppressLogs: 0
-    startTime: 0
 --- !u!1102 &4921882366354855378
 AnimatorState:
   serializedVersion: 6
@@ -2702,9 +2694,9 @@ MonoBehaviour:
   - attackType:
       GuidAssignmentFailed: 0
       GUID: 9569bccaf17bff14bb7809fd39e6391d
-      _typeNameAndAssembly: PossesAttack, Assembly-CSharp
+      _typeNameAndAssembly: PossessAttack, Assembly-CSharp
       _suppressLogs: 0
-    startTime: 0
+    startTime: 2
 --- !u!1101 &7276443777483075547
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
