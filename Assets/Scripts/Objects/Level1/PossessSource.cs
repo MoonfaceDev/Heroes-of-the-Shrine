@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class PossesSource : MonoBehaviour
+public class PossessSource : MonoBehaviour
 {
     public BaseHitDetector hitDetector;
     public Animator animator;
