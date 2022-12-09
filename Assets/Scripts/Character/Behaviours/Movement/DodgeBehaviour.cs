@@ -44,8 +44,7 @@ public class DodgeBehaviour : BaseMovementBehaviour
         var attackManager = GetComponent<AttackManager>();
         return base.CanPlay()
             && AllStopped(typeof(JumpBehaviour), typeof(SlideBehaviour)) 
-            && !(attackManager && !attackManager.IsInterruptible())
-            && MovableObject.velocity.x == 0;
+            && !(attackManager && !attackManager.IsInterruptible());
     }
 
     public void Play(int direction)
