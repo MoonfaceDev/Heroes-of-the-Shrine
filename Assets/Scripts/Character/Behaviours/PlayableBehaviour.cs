@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 
 public abstract class PlayableBehaviour : CharacterBehaviour
 {
@@ -26,5 +25,10 @@ public abstract class PlayableBehaviour : CharacterBehaviour
     protected void InvokeOnStop()
     {
         OnStop?.Invoke();
+    }
+
+    private void OnDestroy()
+    {
+        Stop();
     }
 }

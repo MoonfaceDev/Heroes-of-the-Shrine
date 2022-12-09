@@ -74,4 +74,9 @@ public class FollowPattern : BasePattern
         var walkBehaviour = animator.GetComponent<WalkBehaviour>();
         walkBehaviour.speed.RemoveModifier(speedModifier);
     }
+
+    private void OnDestroy()
+    {
+        EventManager.Instance.Detach(otherEnemiesEvent);
+    }
 }

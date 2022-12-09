@@ -67,12 +67,4 @@ public class ArcBehaviour : BaseMovementBehaviour
         StopBehaviours(typeof(WalkBehaviour));
         MovableObject.velocity = Vector3.zero;
     }
-
-    private void OnDestroy()
-    {
-        if (EventManager != null && circleEvent != null)
-        {
-            EventManager.Detach(circleEvent);
-        }
-    }
 }
