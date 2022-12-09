@@ -7,6 +7,8 @@ public class PossessedEffect : BaseEffect
 
     public void Play(float maxDuration)
     {
+        StopBehaviours(typeof(PossessedEffect));
+        
         Active = true;
         InvokeOnPlay();
 

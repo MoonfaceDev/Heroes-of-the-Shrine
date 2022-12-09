@@ -20,6 +20,7 @@ public class PossessAttack : BaseAttack
     public float warningDuration;
     public float sourceActiveDuration;
     public float effectDuration;
+    public int sourceDamage;
     public int waveCount = 1;
 
     private WalkableGrid walkableGrid;
@@ -53,11 +54,11 @@ public class PossessAttack : BaseAttack
                 var newPossessSource = Instantiate(possessSource.gameObject, MovableObject.ScreenCoordinates(spawnPoint), Quaternion.identity);
                 newPossessSource.GetComponent<MovableObject>().WorldPosition = spawnPoint;
                 newPossessSource.GetComponent<PossessSource>().Activate(warningDuration, sourceActiveDuration,
-                    AttackManager.hittableTags, effectDuration);
+                    AttackManager.hittableTags, effectDuration, sourceDamage);
             }
             catch (NoSpawnPointException)
             {
-                Debug.LogError("Spawn point not found after 10 tries");
+                Debug.LogError("Spawn point not found after 20 tries");
                 break;
             }
         }

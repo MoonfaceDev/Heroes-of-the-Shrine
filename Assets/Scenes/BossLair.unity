@@ -453,13 +453,14 @@ MonoBehaviour:
         m_Calls: []
   anticipateDuration: 1.65
   recoveryDuration: 3
-  sourcesCount: 10
-  spawnRadius: 12
-  minSourcesDistance: 1.5
+  sourcesCount: 5
+  spawnRadius: 8
+  minSourcesDistance: 1
   possessSource: {fileID: 6844794933150260862, guid: c619b10d9f747194c92416ed8fe7005a, type: 3}
-  warningDuration: 1
+  warningDuration: 2
   sourceActiveDuration: 3
   effectDuration: 5
+  sourceDamage: 5
   waveCount: 2
 --- !u!114 &63080259
 MonoBehaviour:
