@@ -517,7 +517,7 @@
   "api/Global.PossesSource.html": {
     "href": "api/Global.PossesSource.html",
     "title": "Class PossesSource | Heroes of the Shrine",
-    "keywords": "Class PossesSource Inheritance Object PossesSource Namespace : Global Assembly : cs.temp.dll.dll Syntax public class PossesSource : MonoBehaviour Fields animator Declaration public Animator animator Field Value Type Description Animator hitAnimationDuration Declaration public float hitAnimationDuration Field Value Type Description Single Methods Activate(Single, Single, List<String>, Single) Declaration public void Activate(float warningDuration, float activeDuration, List<string> hittableTags, float effectDuration) Parameters Type Name Description Single warningDuration Single activeDuration List < String > hittableTags Single effectDuration"
+    "keywords": "Class PossesSource Inheritance Object PossesSource Namespace : Global Assembly : cs.temp.dll.dll Syntax public class PossesSource : MonoBehaviour Fields animator Declaration public Animator animator Field Value Type Description Animator hitAnimationDuration Declaration public float hitAnimationDuration Field Value Type Description Single hitDetector Declaration public BaseHitDetector hitDetector Field Value Type Description BaseHitDetector Methods Activate(Single, Single, List<String>, Single) Declaration public void Activate(float warningDuration, float activeDuration, List<string> hittableTags, float effectDuration) Parameters Type Name Description Single warningDuration Single activeDuration List < String > hittableTags Single effectDuration"
   },
   "api/Global.PriorityQueue-1.html": {
     "href": "api/Global.PriorityQueue-1.html",
