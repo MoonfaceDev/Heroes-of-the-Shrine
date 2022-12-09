@@ -43,7 +43,7 @@ public class PossesAttack : BaseAttack
     private void StartWave(int waveIndex)
     {
         var alreadySpawned = new List<Vector3>();
-        
+
         for (var i = 0; i < sourcesCount; i++)
         {
             try
@@ -90,6 +90,8 @@ public class PossesAttack : BaseAttack
     private bool IsValidPosition(List<Vector3> alreadySpawned, Vector3 newPosition)
     {
         return walkableGrid.IsInside(newPosition)
+               && CachedObjectsManager.Instance.GetObjects<Hitbox>("Barrier").ToArray()
+                   .All(barrier => !barrier.IsInside(newPosition))
                && alreadySpawned.All(existingPosition =>
                    Vector3.Distance(newPosition, existingPosition) > 2 * minSourcesDistance);
     }
