@@ -29,7 +29,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
         damageMultiplier = 1;
     }
 
-    private bool CanGetHit()
+    public bool CanGetHit()
     {
         return healthSystem.health > 0 && !(knockbackBehaviour && knockbackBehaviour.Recovering);
     }

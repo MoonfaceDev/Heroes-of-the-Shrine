@@ -44,13 +44,18 @@ public abstract class BaseHitDetector : MonoBehaviour
             if (!IsHittable(hittable, hittableTags)) return;
             
             var hitParticles = GetComponent<HitParticles>();
-            if (hitParticles)
+            if (hitParticles && ShouldPlayHitParticles(hittable))
             {
                 hitParticles.Play(hittable);
             }
 
             hitCallable(hittable);
         });
+    }
+
+    private bool ShouldPlayHitParticles(IHittable hittable)
+    {
+        return hittable.Character.GetComponent<HittableBehaviour>().CanGetHit();
     }
 
     public abstract void StopDetector();
