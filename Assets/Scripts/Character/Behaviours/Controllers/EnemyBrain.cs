@@ -184,11 +184,6 @@ public class EnemyBrain : CharacterController
         return healthSystem && healthSystem.health <= rageHealthThreshold;
     }
 
-    public void StopBehaviours()
-    {
-        StopBehaviours(typeof(PlayableBehaviour));
-    }
-
     private void OnDestroy()
     {
         if (player)

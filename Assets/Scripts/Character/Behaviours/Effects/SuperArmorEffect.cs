@@ -19,8 +19,9 @@ public class SuperArmorEffect : BaseEffect
     {
         currentArmorHealth = armorHealth;
         Active = true;
-        DisableBehaviours(typeof(KnockbackBehaviour), typeof(StunBehaviour));
         GetComponent<HittableBehaviour>().damageMultiplier *= damageMultiplier;
+        DisableBehaviours(typeof(KnockbackBehaviour), typeof(StunBehaviour));
+        EnableBehaviours(typeof(EnemyBrain));
     }
 
     private void CancelArmor()
@@ -29,6 +30,10 @@ public class SuperArmorEffect : BaseEffect
         Active = false;
         EnableBehaviours(typeof(KnockbackBehaviour), typeof(StunBehaviour));
         GetComponent<HittableBehaviour>().damageMultiplier /= damageMultiplier;
+        StopBehaviours(typeof(BaseMovementBehaviour), typeof(ForcedBehaviour), typeof(AttackManager));
+        DisableBehaviours(typeof(EnemyBrain));
+        MovableObject.velocity = Vector3.zero;
+        InvokeOnPlay();
     }
 
     public void HitArmor(float damage)
