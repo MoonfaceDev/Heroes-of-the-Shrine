@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BaseHitDetector))]
 public class PossesSource : MonoBehaviour
 {
     public BaseHitDetector hitDetector;
