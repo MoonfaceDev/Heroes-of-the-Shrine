@@ -9,14 +9,14 @@ internal class NoSpawnPointException : Exception
 {
 }
 
-public class PossesAttack : BaseAttack
+public class PossessAttack : BaseAttack
 {
     public float anticipateDuration;
     public float recoveryDuration;
     public int sourcesCount;
     public float spawnRadius;
     public float minSourcesDistance;
-    public PossesSource possesSource;
+    public PossessSource possessSource;
     public float warningDuration;
     public float sourceActiveDuration;
     public float effectDuration;
@@ -50,9 +50,9 @@ public class PossesAttack : BaseAttack
             {
                 var spawnPoint = GetSpawnPoint(alreadySpawned);
                 alreadySpawned.Add(spawnPoint);
-                var newPossesSource = Instantiate(possesSource.gameObject, MovableObject.ScreenCoordinates(spawnPoint), Quaternion.identity);
-                newPossesSource.GetComponent<MovableObject>().WorldPosition = spawnPoint;
-                newPossesSource.GetComponent<PossesSource>().Activate(warningDuration, sourceActiveDuration,
+                var newPossessSource = Instantiate(possessSource.gameObject, MovableObject.ScreenCoordinates(spawnPoint), Quaternion.identity);
+                newPossessSource.GetComponent<MovableObject>().WorldPosition = spawnPoint;
+                newPossessSource.GetComponent<PossessSource>().Activate(warningDuration, sourceActiveDuration,
                     AttackManager.hittableTags, effectDuration);
             }
             catch (NoSpawnPointException)
