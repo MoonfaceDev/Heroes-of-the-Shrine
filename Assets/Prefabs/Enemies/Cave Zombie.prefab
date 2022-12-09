@@ -154,7 +154,6 @@ MonoBehaviour:
   parent: {fileID: 3354150098320785788}
   figureObject: {fileID: 0}
   position: {x: 0, y: 0.91, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -253,7 +252,6 @@ MonoBehaviour:
   parent: {fileID: 0}
   figureObject: {fileID: 3354150098403288961}
   position: {x: 5.16, y: 0, z: -2.91}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -340,6 +338,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageMultiplier: 0
+  figure: {fileID: 3354150098403288961}
+  blinkColor: {r: 1, g: 0.20350403, b: 0.20350403, a: 1}
+  blinkTime: 0.1
 --- !u!114 &3354150098320785783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -741,7 +742,6 @@ MonoBehaviour:
   parent: {fileID: 3354150098320785788}
   figureObject: {fileID: 0}
   position: {x: 0.8, y: 0.9, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}

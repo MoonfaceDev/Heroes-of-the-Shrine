@@ -62,7 +62,6 @@ MonoBehaviour:
   parent: {fileID: 5884619158741390438}
   figureObject: {fileID: 0}
   position: {x: 1.55, y: 0.995, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -250,7 +249,6 @@ MonoBehaviour:
   parent: {fileID: 5884619158741390438}
   figureObject: {fileID: 0}
   position: {x: 0.675, y: 0.9, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -344,7 +342,6 @@ MonoBehaviour:
   parent: {fileID: 5884619158741390438}
   figureObject: {fileID: 0}
   position: {x: 0.95, y: 0.9, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -529,7 +526,6 @@ MonoBehaviour:
   parent: {fileID: 5884619158741390438}
   figureObject: {fileID: 0}
   position: {x: 2.25, y: 1.05, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -610,7 +606,6 @@ MonoBehaviour:
   parent: {fileID: 5884619158741390438}
   figureObject: {fileID: 0}
   position: {x: 0.875, y: 0.9, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -717,7 +712,6 @@ MonoBehaviour:
   parent: {fileID: 0}
   figureObject: {fileID: 5884619157808626360}
   position: {x: 1.84, y: 0, z: -2.91}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -804,6 +798,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageMultiplier: 0
+  figure: {fileID: 5884619157808626360}
+  blinkColor: {r: 0.8018868, g: 0.24640186, b: 0.24640186, a: 1}
+  blinkTime: 0.1
 --- !u!114 &5884619158741390436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1189,7 +1186,6 @@ MonoBehaviour:
   parent: {fileID: 5884619158741390438}
   figureObject: {fileID: 0}
   position: {x: 0, y: 0.91, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
