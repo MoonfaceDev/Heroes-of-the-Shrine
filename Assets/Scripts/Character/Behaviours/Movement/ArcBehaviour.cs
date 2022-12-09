@@ -52,8 +52,8 @@ public class ArcBehaviour : BaseMovementBehaviour
             walkBehaviour.Play(direction.x, direction.z, false);
             if ((target.WorldPosition - walkBehaviour.MovableObject.WorldPosition).x != 0)
             {
-                walkBehaviour.LookDirection = Mathf.RoundToInt(Mathf.Sign((target.WorldPosition - walkBehaviour.MovableObject.WorldPosition).x));
-            };
+                walkBehaviour.MovableObject.rotation = Mathf.RoundToInt(Mathf.Sign((target.WorldPosition - walkBehaviour.MovableObject.WorldPosition).x));
+            }
         }, false);
     }
 

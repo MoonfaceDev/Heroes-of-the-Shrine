@@ -30,8 +30,8 @@ public class AttackPattern : BasePattern
             return;
         }
 
-        var character = animator.GetComponent<Character>();
-        character.LookDirection = Mathf.RoundToInt(Mathf.Sign((player.GetComponent<MovableObject>().WorldPosition - character.movableObject.WorldPosition).x));
+        var movableObject = animator.GetComponent<MovableObject>();
+        movableObject.rotation = Mathf.RoundToInt(Mathf.Sign((player.GetComponent<MovableObject>().WorldPosition - movableObject.WorldPosition).x));
         attackCoroutine = EventManager.StartCoroutine(AttackCoroutine(animator));
     }
 

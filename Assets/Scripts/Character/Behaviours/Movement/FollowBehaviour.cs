@@ -38,7 +38,7 @@ public class FollowBehaviour : BaseMovementBehaviour
         followEvent = EventManager.Attach(() => true, () => {
             var direction = pathfind.Direction(MovableObject.WorldPosition, destination, getExcluded?.Invoke());
             walkBehaviour.Play(direction.x, direction.z, false);
-            LookDirection = Mathf.RoundToInt(Mathf.Sign(destination.x - MovableObject.WorldPosition.x));
+            MovableObject.rotation = Mathf.RoundToInt(Mathf.Sign(destination.x - MovableObject.WorldPosition.x));
         }, false);
     }
 
@@ -54,7 +54,7 @@ public class FollowBehaviour : BaseMovementBehaviour
         followEvent = EventManager.Attach(() => true, () => {
             var direction = GetDirection(target, getExcluded?.Invoke(), getOverrideDirection);
             walkBehaviour.Play(direction.x, direction.z, false);
-            LookDirection = Mathf.RoundToInt(Mathf.Sign(target.WorldPosition.x - MovableObject.WorldPosition.x));
+            MovableObject.rotation = Mathf.RoundToInt(Mathf.Sign(target.WorldPosition.x - MovableObject.WorldPosition.x));
         }, false);
     }
 

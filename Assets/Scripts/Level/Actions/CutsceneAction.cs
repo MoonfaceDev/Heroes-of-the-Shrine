@@ -34,26 +34,30 @@ public class CutsceneAction : MonoBehaviour
             definition.target.Play(definition.position);
         }
 
-        EventManager.Instance.Attach(() => moveDefinitions.TrueForAll(definition => definition.target.MovableObject.GroundDistance(definition.position) < WantedDistance), () =>
-        {
-            moveDefinitions.ForEach(subject => {
-                subject.target.Stop();
-                subject.target.LookDirection = (int)subject.lookDirection;
+        EventManager.Instance.Attach(
+            () => moveDefinitions.TrueForAll(definition =>
+                definition.target.MovableObject.GroundDistance(definition.position) < WantedDistance), () =>
+            {
+                moveDefinitions.ForEach(subject =>
+                {
+                    subject.target.Stop();
+                    subject.target.MovableObject.rotation = (int)subject.lookDirection;
+                });
+                foreach (var controller in FindObjectsOfType<CharacterController>())
+                {
+                    controller.Enabled = false;
+                }
+
+                if (director)
+                {
+                    director.Play();
+                    director.stopped += OnStop;
+                }
+                else
+                {
+                    OnStop(director);
+                }
             });
-            foreach(var controller in FindObjectsOfType<CharacterController>())
-            {
-                controller.Enabled = false;
-            }
-            if (director)
-            {
-                director.Play();
-                director.stopped += OnStop;
-            } 
-            else
-            {
-                OnStop(director);
-            }
-        });
     }
 
     private void OnStop(PlayableDirector stoppedDirector)
@@ -62,10 +66,12 @@ public class CutsceneAction : MonoBehaviour
         {
             stoppedDirector.stopped -= OnStop;
         }
+
         foreach (var controller in FindObjectsOfType<CharacterController>())
         {
             controller.Enabled = true;
         }
+
         postCutsceneEvent.Invoke();
     }
 
@@ -75,8 +81,10 @@ public class CutsceneAction : MonoBehaviour
         {
             return;
         }
+
         Gizmos.color = Color.white;
-        foreach (var definition in moveDefinitions) {
+        foreach (var definition in moveDefinitions)
+        {
             Gizmos.DrawWireSphere(MovableObject.ScreenCoordinates(definition.position), 0.2f);
         }
     }

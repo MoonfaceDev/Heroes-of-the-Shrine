@@ -15,7 +15,7 @@ public class AttackParticles : MonoBehaviour
 
         if (!attachToCharacter)
         {
-            clone.transform.rotation = Quaternion.Euler(movableObject.WorldRotation);
+            clone.transform.rotation = movableObject.WorldRotation;
         }
 
         clone.GetComponent<Renderer>().sortingOrder = movableObject.SortingOrder + 1;

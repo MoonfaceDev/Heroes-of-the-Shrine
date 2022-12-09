@@ -41,7 +41,7 @@ public class WalkBehaviour : BaseMovementBehaviour
         // look direction
         if (xAxis != 0 & fitLookDirection)
         {
-            LookDirection = Mathf.RoundToInt(Mathf.Sign(xAxis));
+            MovableObject.rotation = Mathf.RoundToInt(Mathf.Sign(xAxis));
         }
         // run callbacks
         if (new Vector2(xAxis, zAxis) == Vector2.zero)

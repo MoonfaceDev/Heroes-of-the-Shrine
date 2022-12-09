@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-using Unity.Mathematics;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(MovableObject))]
@@ -19,13 +17,18 @@ internal class MovableObjectEditor : Editor
         scale = serializedObject.FindProperty("scale");
     }
 
+    private enum RotationType
+    {
+        Left,
+        Right
+    }
+
     public override void OnInspectorGUI()
     {
         serializedObject.Update();
         DrawPropertiesExcluding(serializedObject, "figureObject", "position", "rotation", "scale");
         EditorGUILayout.PropertyField(figureObject);
         EditorGUILayout.PropertyField(position);
-        EditorGUILayout.PropertyField(rotation);
         EditorGUILayout.PropertyField(scale);
         var movableObject = (MovableObject)target;
         var figureObjectField = target.GetType().GetField(figureObject.propertyPath);
@@ -33,16 +36,26 @@ internal class MovableObjectEditor : Editor
         {
             movableObject.figureObject = (Renderer)figureObjectField.GetValue(target);
         }
+
         movableObject.position = position.vector3Value;
         movableObject.transform.localPosition = MovableObject.GroundScreenCoordinates(movableObject.position);
-        movableObject.rotation = rotation.vector3Value;
-        movableObject.transform.localRotation = quaternion.Euler(movableObject.rotation);
+
+        var selectedRotation = (RotationType)EditorGUILayout.EnumPopup(
+            movableObject.rotation == MovableObject.Rotation.Left ? RotationType.Left : RotationType.Right
+        );
+        movableObject.rotation = selectedRotation == RotationType.Left
+            ? MovableObject.Rotation.Left
+            : MovableObject.Rotation.Right;
+        movableObject.transform.localRotation = movableObject.rotation;
+
         movableObject.scale = scale.vector3Value;
         movableObject.transform.localScale = movableObject.scale;
         if (movableObject.figureObject)
         {
-            movableObject.figureObject.transform.localPosition = MovableObject.ScreenCoordinates(movableObject.position.y * Vector3.up);
+            movableObject.figureObject.transform.localPosition =
+                MovableObject.ScreenCoordinates(movableObject.position.y * Vector3.up);
         }
+
         serializedObject.ApplyModifiedProperties();
         if (GUI.changed)
         {

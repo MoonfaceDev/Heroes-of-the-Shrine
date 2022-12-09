@@ -15,7 +15,7 @@ public class SlashAttack : SimpleAttack
         PreventWalking(false);
 
         var direction = 0;
-        OnPlay += () => direction = LookDirection;
+        OnPlay += () => direction = MovableObject.rotation;
 
         generalEvents.onStartActive.AddListener(() =>
         {

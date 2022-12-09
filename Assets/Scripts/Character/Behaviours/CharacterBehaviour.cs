@@ -10,11 +10,6 @@ public abstract class CharacterBehaviour : MonoBehaviour
     protected Animator Animator => Character.animator;
     protected EventManager EventManager => Character.eventManager;
     public MovableObject MovableObject => Character.movableObject;
-    public int LookDirection
-    {
-        get => Character.LookDirection;
-        set => Character.LookDirection = value;
-    }
 
     public bool Enabled
     {

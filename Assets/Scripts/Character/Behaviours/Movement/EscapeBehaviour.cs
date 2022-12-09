@@ -41,7 +41,7 @@ public class EscapeBehaviour : BaseMovementBehaviour
             distance.y = 0;
             var direction = distance.normalized;
             walkBehaviour.Play(direction.x, direction.z, fitLookDirection);
-            LookDirection = -Mathf.RoundToInt(Mathf.Sign(direction.x));
+            MovableObject.rotation = -Mathf.RoundToInt(Mathf.Sign(direction.x));
         }, false);
     }
 

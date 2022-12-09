@@ -101,10 +101,10 @@ public class KnockbackBehaviour : ForcedBehaviour
         {
             case > 0 and < 90:
             case > 270 and < 360:
-                LookDirection = -1;
+                MovableObject.rotation = MovableObject.Rotation.Left;
                 break;
             case > 90 and < 270:
-                LookDirection = 1;
+                MovableObject.rotation = MovableObject.Rotation.Right;
                 break;
         }
 

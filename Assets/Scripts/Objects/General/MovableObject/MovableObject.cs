@@ -11,8 +11,8 @@ public class MovableObject : MonoBehaviour
     public MovableObject parent;
     public Renderer figureObject;
 
-    public Vector3 position;
-    public Vector3 rotation;
+    public Vector3 position = Vector3.zero;
+    public Rotation rotation = Rotation.Right;
     public Vector3 scale = Vector3.one;
 
     [ShowDebug] public Vector3 velocity;
@@ -24,7 +24,7 @@ public class MovableObject : MonoBehaviour
         set => position = parent ? parent.TransformToRelative(value) : value;
     }
 
-    public Vector3 WorldRotation => parent ? parent.WorldRotation + rotation : rotation;
+    public Rotation WorldRotation => parent ? (parent.WorldRotation * rotation) : rotation;
 
     public Vector3 WorldScale => parent ? Vector3.Scale(parent.WorldScale, scale) : scale;
 
@@ -70,7 +70,7 @@ public class MovableObject : MonoBehaviour
 
         //update position in scene
         transform.localPosition = GroundScreenCoordinates(position);
-        transform.localRotation = Quaternion.Euler(rotation);
+        transform.localRotation = rotation;
         transform.localScale = scale;
         if (figureObject)
         {
@@ -79,16 +79,15 @@ public class MovableObject : MonoBehaviour
         }
     }
 
-    private Matrix4x4 TransitionMatrix => Matrix4x4.TRS(WorldPosition, Quaternion.Euler(WorldRotation), WorldScale);
-
     public Vector3 TransformToWorld(Vector3 relativePoint)
     {
-        return TransitionMatrix.MultiplyPoint3x4(relativePoint);
+        return WorldPosition + Vector3.Scale(WorldRotation * relativePoint, WorldScale);
     }
 
     private Vector3 TransformToRelative(Vector3 worldPoint)
     {
-        return TransitionMatrix.inverse.MultiplyPoint3x4(worldPoint);
+        var inverseWorldScale = new Vector3(1 / WorldScale.x, 1 / WorldScale.y, 1 / WorldScale.z);
+        return Vector3.Scale(worldPoint - WorldPosition, -WorldRotation * inverseWorldScale);
     }
 
     public void UpdatePosition(Vector3 newPosition)
@@ -210,5 +209,77 @@ public class MovableObject : MonoBehaviour
     public static Vector3 ScreenCoordinates(Vector3 v)
     {
         return new Vector3(v.x, v.y + v.z * ZScale, 0);
+    }
+
+    public class Rotation
+    {
+        private readonly int value;
+
+        public static readonly Rotation Left = new(-1);
+        public static readonly Rotation Right = new(1);
+
+        private Rotation(int value)
+        {
+            this.value = value;
+        }
+
+        public static bool operator ==(Rotation a, Rotation b)
+        {
+            if (ReferenceEquals(a, b))
+                return true;
+            if (ReferenceEquals(a, null))
+                return false;
+            if (ReferenceEquals(b, null))
+                return false;
+            return a.Equals(b);
+        }
+
+        public static bool operator !=(Rotation a, Rotation b) => !(a == b);
+
+        private bool Equals(Rotation other)
+        {
+            if (ReferenceEquals(other, null))
+                return false;
+            if (ReferenceEquals(this, other))
+                return true;
+            return value.Equals(other.value);
+        }
+
+        public override bool Equals(object obj) => Equals(obj as Rotation);
+
+        public override int GetHashCode()
+        {
+            return value;
+        }
+
+        public static Rotation operator *(Rotation a, Rotation b)
+        {
+            return new Rotation(a.value * b.value);
+        }
+
+        public static Vector3 operator *(Rotation rotation, Vector3 relativePosition)
+        {
+            return Vector3.Scale(relativePosition, new Vector3(rotation.value, 1, 1));
+        }
+
+        public static Rotation operator -(Rotation rotation)
+        {
+            return new Rotation(-rotation.value);
+        }
+
+        public static implicit operator Quaternion(Rotation rotation)
+        {
+            return Quaternion.Euler(0, (1 - rotation.value) * 90, 0);
+        }
+
+        public static implicit operator int(Rotation rotation)
+        {
+            return rotation.value;
+        }
+
+        public static implicit operator Rotation(int value)
+        {
+            return new Rotation(value);
+        }
     }
 }

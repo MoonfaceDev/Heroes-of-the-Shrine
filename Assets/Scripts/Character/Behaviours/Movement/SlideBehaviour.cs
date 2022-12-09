@@ -38,7 +38,7 @@ public class SlideBehaviour : BaseMovementBehaviour
         StopBehaviours(typeof(WalkBehaviour));
         Slide = true;
         InvokeOnPlay();
-        float slideDirection = LookDirection;
+        float slideDirection = MovableObject.rotation;
         MovableObject.velocity.x = slideDirection * slideSpeedMultiplier * Mathf.Abs(MovableObject.velocity.x);
         MovableObject.acceleration.x = -slideDirection * slideStopAcceleration;
         MovableObject.velocity.z = 0;
