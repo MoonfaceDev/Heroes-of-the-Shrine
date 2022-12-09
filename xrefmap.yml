@@ -4945,6 +4945,12 @@ references:
   commentId: F:Global.PossessAttack.sourceActiveDuration
   fullName: PossessAttack.sourceActiveDuration
   nameWithType: PossessAttack.sourceActiveDuration
+- uid: Global.PossessAttack.sourceDamage
+  name: sourceDamage
+  href: api/Global.PossessAttack.html#Global_PossessAttack_sourceDamage
+  commentId: F:Global.PossessAttack.sourceDamage
+  fullName: PossessAttack.sourceDamage
+  nameWithType: PossessAttack.sourceDamage
 - uid: Global.PossessAttack.sourcesCount
   name: sourcesCount
   href: api/Global.PossessAttack.html#Global_PossessAttack_sourcesCount
@@ -5033,15 +5039,15 @@ references:
   commentId: T:Global.PossessSource
   fullName: PossessSource
   nameWithType: PossessSource
-- uid: Global.PossessSource.Activate(System.Single,System.Single,List{System.String},System.Single)
-  name: Activate(Single, Single, List<String>, Single)
-  href: api/Global.PossessSource.html#Global_PossessSource_Activate_System_Single_System_Single_List_System_String__System_Single_
-  commentId: M:Global.PossessSource.Activate(System.Single,System.Single,List{System.String},System.Single)
-  name.vb: Activate(Single, Single, List(Of String), Single)
-  fullName: PossessSource.Activate(System.Single, System.Single, List<System.String>, System.Single)
-  fullName.vb: PossessSource.Activate(System.Single, System.Single, List(Of System.String), System.Single)
-  nameWithType: PossessSource.Activate(Single, Single, List<String>, Single)
-  nameWithType.vb: PossessSource.Activate(Single, Single, List(Of String), Single)
+- uid: Global.PossessSource.Activate(System.Single,System.Single,List{System.String},System.Single,System.Int32)
+  name: Activate(Single, Single, List<String>, Single, Int32)
+  href: api/Global.PossessSource.html#Global_PossessSource_Activate_System_Single_System_Single_List_System_String__System_Single_System_Int32_
+  commentId: M:Global.PossessSource.Activate(System.Single,System.Single,List{System.String},System.Single,System.Int32)
+  name.vb: Activate(Single, Single, List(Of String), Single, Int32)
+  fullName: PossessSource.Activate(System.Single, System.Single, List<System.String>, System.Single, System.Int32)
+  fullName.vb: PossessSource.Activate(System.Single, System.Single, List(Of System.String), System.Single, System.Int32)
+  nameWithType: PossessSource.Activate(Single, Single, List<String>, Single, Int32)
+  nameWithType.vb: PossessSource.Activate(Single, Single, List(Of String), Single, Int32)
 - uid: Global.PossessSource.Activate*
   name: Activate
   href: api/Global.PossessSource.html#Global_PossessSource_Activate_
