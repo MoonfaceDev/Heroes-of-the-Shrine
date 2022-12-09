@@ -1399,38 +1399,12 @@ references:
   commentId: F:Global.Character.eventManager
   fullName: Character.eventManager
   nameWithType: Character.eventManager
-- uid: Global.Character.LookDirection
-  name: LookDirection
-  href: api/Global.Character.html#Global_Character_LookDirection
-  commentId: P:Global.Character.LookDirection
-  fullName: Character.LookDirection
-  nameWithType: Character.LookDirection
-- uid: Global.Character.LookDirection*
-  name: LookDirection
-  href: api/Global.Character.html#Global_Character_LookDirection_
-  commentId: Overload:Global.Character.LookDirection
-  isSpec: "True"
-  fullName: Character.LookDirection
-  nameWithType: Character.LookDirection
 - uid: Global.Character.movableObject
   name: movableObject
   href: api/Global.Character.html#Global_Character_movableObject
   commentId: F:Global.Character.movableObject
   fullName: Character.movableObject
   nameWithType: Character.movableObject
-- uid: Global.Character.OnDestroy
-  name: OnDestroy()
-  href: api/Global.Character.html#Global_Character_OnDestroy
-  commentId: M:Global.Character.OnDestroy
-  fullName: Character.OnDestroy()
-  nameWithType: Character.OnDestroy()
-- uid: Global.Character.OnDestroy*
-  name: OnDestroy
-  href: api/Global.Character.html#Global_Character_OnDestroy_
-  commentId: Overload:Global.Character.OnDestroy
-  isSpec: "True"
-  fullName: Character.OnDestroy
-  nameWithType: Character.OnDestroy
 - uid: Global.Character.physicalAttributes
   name: physicalAttributes
   href: api/Global.Character.html#Global_Character_physicalAttributes
@@ -1569,19 +1543,6 @@ references:
   isSpec: "True"
   fullName: CharacterBehaviour.IsPlaying
   nameWithType: CharacterBehaviour.IsPlaying
-- uid: Global.CharacterBehaviour.LookDirection
-  name: LookDirection
-  href: api/Global.CharacterBehaviour.html#Global_CharacterBehaviour_LookDirection
-  commentId: P:Global.CharacterBehaviour.LookDirection
-  fullName: CharacterBehaviour.LookDirection
-  nameWithType: CharacterBehaviour.LookDirection
-- uid: Global.CharacterBehaviour.LookDirection*
-  name: LookDirection
-  href: api/Global.CharacterBehaviour.html#Global_CharacterBehaviour_LookDirection_
-  commentId: Overload:Global.CharacterBehaviour.LookDirection
-  isSpec: "True"
-  fullName: CharacterBehaviour.LookDirection
-  nameWithType: CharacterBehaviour.LookDirection
 - uid: Global.CharacterBehaviour.MovableObject
   name: MovableObject
   href: api/Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableObject
@@ -4136,6 +4097,145 @@ references:
   commentId: F:Global.MovableObject.rotation
   fullName: MovableObject.rotation
   nameWithType: MovableObject.rotation
+- uid: Global.MovableObject.Rotation
+  name: MovableObject.Rotation
+  href: api/Global.MovableObject.Rotation.html
+  commentId: T:Global.MovableObject.Rotation
+  fullName: MovableObject.Rotation
+  nameWithType: MovableObject.Rotation
+- uid: Global.MovableObject.Rotation.Equals(System.Object)
+  name: Equals(Object)
+  href: api/Global.MovableObject.Rotation.html#Global_MovableObject_Rotation_Equals_System_Object_
+  commentId: M:Global.MovableObject.Rotation.Equals(System.Object)
+  fullName: MovableObject.Rotation.Equals(System.Object)
+  nameWithType: MovableObject.Rotation.Equals(Object)
+- uid: Global.MovableObject.Rotation.Equals*
+  name: Equals
+  href: api/Global.MovableObject.Rotation.html#Global_MovableObject_Rotation_Equals_
+  commentId: Overload:Global.MovableObject.Rotation.Equals
+  isSpec: "True"
+  fullName: MovableObject.Rotation.Equals
+  nameWithType: MovableObject.Rotation.Equals
+- uid: Global.MovableObject.Rotation.GetHashCode
+  name: GetHashCode()
+  href: api/Global.MovableObject.Rotation.html#Global_MovableObject_Rotation_GetHashCode
+  commentId: M:Global.MovableObject.Rotation.GetHashCode
+  fullName: MovableObject.Rotation.GetHashCode()
+  nameWithType: MovableObject.Rotation.GetHashCode()
+- uid: Global.MovableObject.Rotation.GetHashCode*
+  name: GetHashCode
+  href: api/Global.MovableObject.Rotation.html#Global_MovableObject_Rotation_GetHashCode_
+  commentId: Overload:Global.MovableObject.Rotation.GetHashCode
+  isSpec: "True"
+  fullName: MovableObject.Rotation.GetHashCode
+  nameWithType: MovableObject.Rotation.GetHashCode
+- uid: Global.MovableObject.Rotation.Left
+  name: Left
+  href: api/Global.MovableObject.Rotation.html#Global_MovableObject_Rotation_Left
+  commentId: F:Global.MovableObject.Rotation.Left
+  fullName: MovableObject.Rotation.Left
+  nameWithType: MovableObject.Rotation.Left
+- uid: Global.MovableObject.Rotation.op_Equality(MovableObject.Rotation,MovableObject.Rotation)
+  name: Equality(MovableObject.Rotation, MovableObject.Rotation)
+  href: api/Global.MovableObject.Rotation.html#Global_MovableObject_Rotation_op_Equality_MovableObject_Rotation_MovableObject_Rotation_
+  commentId: M:Global.MovableObject.Rotation.op_Equality(MovableObject.Rotation,MovableObject.Rotation)
+  fullName: MovableObject.Rotation.Equality(MovableObject.Rotation, MovableObject.Rotation)
+  nameWithType: MovableObject.Rotation.Equality(MovableObject.Rotation, MovableObject.Rotation)
+- uid: Global.MovableObject.Rotation.op_Equality*
+  name: Equality
+  href: api/Global.MovableObject.Rotation.html#Global_MovableObject_Rotation_op_Equality_
+  commentId: Overload:Global.MovableObject.Rotation.op_Equality
+  isSpec: "True"
+  fullName: MovableObject.Rotation.Equality
+  nameWithType: MovableObject.Rotation.Equality
+- uid: Global.MovableObject.Rotation.op_Implicit(MovableObject.Rotation)~Quaternion
+  name: Implicit(MovableObject.Rotation to Quaternion)
+  href: api/Global.MovableObject.Rotation.html#Global_MovableObject_Rotation_op_Implicit_MovableObject_Rotation__Quaternion
+  commentId: M:Global.MovableObject.Rotation.op_Implicit(MovableObject.Rotation)~Quaternion
+  name.vb: Widening(MovableObject.Rotation to Quaternion)
+  fullName: MovableObject.Rotation.Implicit(MovableObject.Rotation to Quaternion)
+  fullName.vb: MovableObject.Rotation.Widening(MovableObject.Rotation to Quaternion)
+  nameWithType: MovableObject.Rotation.Implicit(MovableObject.Rotation to Quaternion)
+  nameWithType.vb: MovableObject.Rotation.Widening(MovableObject.Rotation to Quaternion)
+- uid: Global.MovableObject.Rotation.op_Implicit(MovableObject.Rotation)~System.Int32
+  name: Implicit(MovableObject.Rotation to Int32)
+  href: api/Global.MovableObject.Rotation.html#Global_MovableObject_Rotation_op_Implicit_MovableObject_Rotation__System_Int32
+  commentId: M:Global.MovableObject.Rotation.op_Implicit(MovableObject.Rotation)~System.Int32
+  name.vb: Widening(MovableObject.Rotation to Int32)
+  fullName: MovableObject.Rotation.Implicit(MovableObject.Rotation to System.Int32)
+  fullName.vb: MovableObject.Rotation.Widening(MovableObject.Rotation to System.Int32)
+  nameWithType: MovableObject.Rotation.Implicit(MovableObject.Rotation to Int32)
+  nameWithType.vb: MovableObject.Rotation.Widening(MovableObject.Rotation to Int32)
+- uid: Global.MovableObject.Rotation.op_Implicit(System.Int32)~MovableObject.Rotation
+  name: Implicit(Int32 to MovableObject.Rotation)
+  href: api/Global.MovableObject.Rotation.html#Global_MovableObject_Rotation_op_Implicit_System_Int32__MovableObject_Rotation
+  commentId: M:Global.MovableObject.Rotation.op_Implicit(System.Int32)~MovableObject.Rotation
+  name.vb: Widening(Int32 to MovableObject.Rotation)
+  fullName: MovableObject.Rotation.Implicit(System.Int32 to MovableObject.Rotation)
+  fullName.vb: MovableObject.Rotation.Widening(System.Int32 to MovableObject.Rotation)
+  nameWithType: MovableObject.Rotation.Implicit(Int32 to MovableObject.Rotation)
+  nameWithType.vb: MovableObject.Rotation.Widening(Int32 to MovableObject.Rotation)
+- uid: Global.MovableObject.Rotation.op_Implicit*
+  name: Implicit
+  href: api/Global.MovableObject.Rotation.html#Global_MovableObject_Rotation_op_Implicit_
+  commentId: Overload:Global.MovableObject.Rotation.op_Implicit
+  isSpec: "True"
+  name.vb: Widening
+  fullName: MovableObject.Rotation.Implicit
+  fullName.vb: MovableObject.Rotation.Widening
+  nameWithType: MovableObject.Rotation.Implicit
+  nameWithType.vb: MovableObject.Rotation.Widening
+- uid: Global.MovableObject.Rotation.op_Inequality(MovableObject.Rotation,MovableObject.Rotation)
+  name: Inequality(MovableObject.Rotation, MovableObject.Rotation)
+  href: api/Global.MovableObject.Rotation.html#Global_MovableObject_Rotation_op_Inequality_MovableObject_Rotation_MovableObject_Rotation_
+  commentId: M:Global.MovableObject.Rotation.op_Inequality(MovableObject.Rotation,MovableObject.Rotation)
+  fullName: MovableObject.Rotation.Inequality(MovableObject.Rotation, MovableObject.Rotation)
+  nameWithType: MovableObject.Rotation.Inequality(MovableObject.Rotation, MovableObject.Rotation)
+- uid: Global.MovableObject.Rotation.op_Inequality*
+  name: Inequality
+  href: api/Global.MovableObject.Rotation.html#Global_MovableObject_Rotation_op_Inequality_
+  commentId: Overload:Global.MovableObject.Rotation.op_Inequality
+  isSpec: "True"
+  fullName: MovableObject.Rotation.Inequality
+  nameWithType: MovableObject.Rotation.Inequality
+- uid: Global.MovableObject.Rotation.op_Multiply(MovableObject.Rotation,MovableObject.Rotation)
+  name: Multiply(MovableObject.Rotation, MovableObject.Rotation)
+  href: api/Global.MovableObject.Rotation.html#Global_MovableObject_Rotation_op_Multiply_MovableObject_Rotation_MovableObject_Rotation_
+  commentId: M:Global.MovableObject.Rotation.op_Multiply(MovableObject.Rotation,MovableObject.Rotation)
+  fullName: MovableObject.Rotation.Multiply(MovableObject.Rotation, MovableObject.Rotation)
+  nameWithType: MovableObject.Rotation.Multiply(MovableObject.Rotation, MovableObject.Rotation)
+- uid: Global.MovableObject.Rotation.op_Multiply(MovableObject.Rotation,Vector3)
+  name: Multiply(MovableObject.Rotation, Vector3)
+  href: api/Global.MovableObject.Rotation.html#Global_MovableObject_Rotation_op_Multiply_MovableObject_Rotation_Vector3_
+  commentId: M:Global.MovableObject.Rotation.op_Multiply(MovableObject.Rotation,Vector3)
+  fullName: MovableObject.Rotation.Multiply(MovableObject.Rotation, Vector3)
+  nameWithType: MovableObject.Rotation.Multiply(MovableObject.Rotation, Vector3)
+- uid: Global.MovableObject.Rotation.op_Multiply*
+  name: Multiply
+  href: api/Global.MovableObject.Rotation.html#Global_MovableObject_Rotation_op_Multiply_
+  commentId: Overload:Global.MovableObject.Rotation.op_Multiply
+  isSpec: "True"
+  fullName: MovableObject.Rotation.Multiply
+  nameWithType: MovableObject.Rotation.Multiply
+- uid: Global.MovableObject.Rotation.op_UnaryNegation(MovableObject.Rotation)
+  name: UnaryNegation(MovableObject.Rotation)
+  href: api/Global.MovableObject.Rotation.html#Global_MovableObject_Rotation_op_UnaryNegation_MovableObject_Rotation_
+  commentId: M:Global.MovableObject.Rotation.op_UnaryNegation(MovableObject.Rotation)
+  fullName: MovableObject.Rotation.UnaryNegation(MovableObject.Rotation)
+  nameWithType: MovableObject.Rotation.UnaryNegation(MovableObject.Rotation)
+- uid: Global.MovableObject.Rotation.op_UnaryNegation*
+  name: UnaryNegation
+  href: api/Global.MovableObject.Rotation.html#Global_MovableObject_Rotation_op_UnaryNegation_
+  commentId: Overload:Global.MovableObject.Rotation.op_UnaryNegation
+  isSpec: "True"
+  fullName: MovableObject.Rotation.UnaryNegation
+  nameWithType: MovableObject.Rotation.UnaryNegation
+- uid: Global.MovableObject.Rotation.Right
+  name: Right
+  href: api/Global.MovableObject.Rotation.html#Global_MovableObject_Rotation_Right
+  commentId: F:Global.MovableObject.Rotation.Right
+  fullName: MovableObject.Rotation.Right
+  nameWithType: MovableObject.Rotation.Right
 - uid: Global.MovableObject.scale
   name: scale
   href: api/Global.MovableObject.html#Global_MovableObject_scale
