@@ -50,7 +50,7 @@ public class PossesAttack : BaseAttack
             {
                 var spawnPoint = GetSpawnPoint(alreadySpawned);
                 alreadySpawned.Add(spawnPoint);
-                var newPossesSource = Instantiate(possesSource.gameObject);
+                var newPossesSource = Instantiate(possesSource.gameObject, MovableObject.ScreenCoordinates(spawnPoint), Quaternion.identity);
                 newPossesSource.GetComponent<MovableObject>().WorldPosition = spawnPoint;
                 newPossesSource.GetComponent<PossesSource>().Activate(warningDuration, sourceActiveDuration,
                     AttackManager.hittableTags, effectDuration);

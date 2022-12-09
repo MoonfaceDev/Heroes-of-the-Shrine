@@ -39,7 +39,7 @@ public class SpawnAttack : BaseAttack
         var selectedPoints = GetRandomSpawnPoints(spawnCount);
         for (var i = 0; i < maxEnemyCount - currentEnemyCount; i++)
         {
-            var newEnemy = Instantiate(enemyPrefab);
+            var newEnemy = Instantiate(enemyPrefab, MovableObject.ScreenCoordinates(selectedPoints[i]), Quaternion.identity);
             newEnemy.GetComponent<MovableObject>().WorldPosition = selectedPoints[i];
             newEnemy.GetComponent<EnemyBrain>().Alarm();
         }

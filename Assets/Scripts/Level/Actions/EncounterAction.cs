@@ -66,10 +66,11 @@ public class EncounterAction : MonoBehaviour
         {
             var direction = GetDirection(definition.direction);
             var borderEdge = direction == -1 ? cameraBorder.xMin : cameraBorder.xMax;
-            var enemy = Instantiate(definition.prefab);
+            var spawnPoint = new Vector3(borderEdge + direction * spawnSourceDistance, 0, definition.z);
+            var enemy = Instantiate(definition.prefab, MovableObject.ScreenCoordinates(spawnPoint), Quaternion.identity);
             var movableObject = enemy.GetComponent<MovableObject>();
 
-            movableObject.WorldPosition = new Vector3(borderEdge + direction * spawnSourceDistance, 0, definition.z);
+            movableObject.WorldPosition = spawnPoint;
 
             if (definition.partOfWave)
             {
