@@ -4,9 +4,10 @@ using UnityEngine;
 [RequireComponent(typeof(BaseHitDetector))]
 public class PossesSource : MonoBehaviour
 {
+    public BaseHitDetector hitDetector;
     public Animator animator;
     public float hitAnimationDuration;
-    
+
     private static readonly int Warning = Animator.StringToHash("Warning");
     private static readonly int Active = Animator.StringToHash("Active");
     private static readonly int Hit = Animator.StringToHash("Hit");
@@ -18,7 +19,6 @@ public class PossesSource : MonoBehaviour
         {
             animator.SetBool(Warning, false);
             animator.SetBool(Active, true);
-            var hitDetector = GetComponent<BaseHitDetector>();
             hitDetector.StartDetector(hittable =>
             {
                 hitDetector.StopDetector();
