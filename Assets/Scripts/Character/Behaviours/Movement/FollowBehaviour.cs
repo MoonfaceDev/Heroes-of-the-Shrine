@@ -21,11 +21,6 @@ public class FollowBehaviour : BaseMovementBehaviour
         walkBehaviour = GetComponent<WalkBehaviour>();
     }
 
-    public void Start()
-    {
-        walkBehaviour.OnStop += Stop;
-    }
-
     public void Play(Vector3 destination, Func<Node[]> getExcluded = null)
     {
         if (!CanPlay())
