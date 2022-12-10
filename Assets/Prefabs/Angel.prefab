@@ -63,7 +63,6 @@ MonoBehaviour:
   parent: {fileID: 5102893360874897665}
   figureObject: {fileID: 0}
   position: {x: 0.695, y: 0.685, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -261,7 +260,6 @@ MonoBehaviour:
   parent: {fileID: 5102893360874897665}
   figureObject: {fileID: 0}
   position: {x: 0.055, y: 0.6, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -356,7 +354,6 @@ MonoBehaviour:
   parent: {fileID: 5102893360874897665}
   figureObject: {fileID: 0}
   position: {x: 0.025, y: 0.96, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -451,7 +448,6 @@ MonoBehaviour:
   parent: {fileID: 5102893360874897665}
   figureObject: {fileID: 0}
   position: {x: 0.7, y: 0.685, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -546,7 +542,6 @@ MonoBehaviour:
   parent: {fileID: 5102893360874897665}
   figureObject: {fileID: 0}
   position: {x: 1.115, y: 1.11, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -640,7 +635,6 @@ MonoBehaviour:
   parent: {fileID: 5102893360874897665}
   figureObject: {fileID: 0}
   position: {x: 0.15, y: 0.825, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -750,7 +744,6 @@ MonoBehaviour:
   parent: {fileID: 0}
   figureObject: {fileID: 5102893361555062420}
   position: {x: 0, y: 0, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -825,6 +818,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageMultiplier: 0
+  figure: {fileID: 0}
+  blinkColor: {r: 0, g: 0, b: 0, a: 0}
+  blinkTime: 0
 --- !u!114 &5102893360874897669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1665,7 +1661,6 @@ MonoBehaviour:
   parent: {fileID: 5102893360874897665}
   figureObject: {fileID: 0}
   position: {x: 1.565, y: 0.43, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -1746,7 +1741,6 @@ MonoBehaviour:
   parent: {fileID: 5102893360874897665}
   figureObject: {fileID: 0}
   position: {x: 0.975, y: 0.5, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -1827,7 +1821,6 @@ MonoBehaviour:
   parent: {fileID: 5102893360874897665}
   figureObject: {fileID: 0}
   position: {x: -0.06, y: 1, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -1920,7 +1913,6 @@ MonoBehaviour:
   parent: {fileID: 5102893360874897665}
   figureObject: {fileID: 0}
   position: {x: 0.81, y: 0.78, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -6783,7 +6775,6 @@ MonoBehaviour:
   parent: {fileID: 0}
   figureObject: {fileID: 5102893361279726062}
   position: {x: 0, y: 0, z: -0.01}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -6863,7 +6854,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -864071356, guid: c5ff4b58e1a846b42a910b03ccb02b42, type: 3}
+  m_Sprite: {fileID: 1875543373, guid: 8c763116169b6914092863133c2156f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6957,7 +6948,6 @@ MonoBehaviour:
   parent: {fileID: 5102893360874897665}
   figureObject: {fileID: 0}
   position: {x: 0.375, y: 0.675, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}

@@ -452,16 +452,16 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   anticipateDuration: 1.65
-  recoveryDuration: 3
+  recoveryDuration: 0
   sourcesCount: 5
-  spawnRadius: 8
-  minSourcesDistance: 1
+  spawnRadius: 5
+  minSourcesDistance: 0.5
   possessSource: {fileID: 6844794933150260862, guid: c619b10d9f747194c92416ed8fe7005a, type: 3}
-  warningDuration: 2
-  sourceActiveDuration: 3
+  warningDuration: 0.75
+  sourceActiveDuration: 1.5
   effectDuration: 5
-  sourceDamage: 5
-  waveCount: 2
+  sourceDamage: 10
+  waveCount: 1
 --- !u!114 &63080259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -994,6 +994,18 @@ PrefabInstance:
     - target: {fileID: 5826350637583987606, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: worldBorder.height
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826350637647170760, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: effects.Array.data[1].color.b
+      value: 0.735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826350637647170760, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: effects.Array.data[1].color.g
+      value: 0.735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826350637647170760, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: effects.Array.data[1].color.r
+      value: 0.735849
       objectReference: {fileID: 0}
     - target: {fileID: 5826350637955933940, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_Name
