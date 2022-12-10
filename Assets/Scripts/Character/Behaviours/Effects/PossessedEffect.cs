@@ -4,10 +4,18 @@ public class PossessedEffect : BaseEffect
 {
     private float currentDuration;
     private float currentStartTime;
+    
+    public override bool CanPlay()
+    {
+        return base.CanPlay() && AllStopped(typeof(PossessedEffect));
+    }
 
     public void Play(float maxDuration)
     {
-        StopBehaviours(typeof(PossessedEffect));
+        if (!CanPlay())
+        {
+            return;
+        }
         
         Active = true;
         InvokeOnPlay();
