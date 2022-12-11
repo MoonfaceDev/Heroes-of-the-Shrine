@@ -474,43 +474,6 @@ references:
   commentId: F:Global.AttackNode.startTime
   fullName: AttackNode.startTime
   nameWithType: AttackNode.startTime
-- uid: Global.AttackParticles
-  name: AttackParticles
-  href: api/Global.AttackParticles.html
-  commentId: T:Global.AttackParticles
-  fullName: AttackParticles
-  nameWithType: AttackParticles
-- uid: Global.AttackParticles.attachToCharacter
-  name: attachToCharacter
-  href: api/Global.AttackParticles.html#Global_AttackParticles_attachToCharacter
-  commentId: F:Global.AttackParticles.attachToCharacter
-  fullName: AttackParticles.attachToCharacter
-  nameWithType: AttackParticles.attachToCharacter
-- uid: Global.AttackParticles.particlePosition
-  name: particlePosition
-  href: api/Global.AttackParticles.html#Global_AttackParticles_particlePosition
-  commentId: F:Global.AttackParticles.particlePosition
-  fullName: AttackParticles.particlePosition
-  nameWithType: AttackParticles.particlePosition
-- uid: Global.AttackParticles.Play
-  name: Play()
-  href: api/Global.AttackParticles.html#Global_AttackParticles_Play
-  commentId: M:Global.AttackParticles.Play
-  fullName: AttackParticles.Play()
-  nameWithType: AttackParticles.Play()
-- uid: Global.AttackParticles.Play*
-  name: Play
-  href: api/Global.AttackParticles.html#Global_AttackParticles_Play_
-  commentId: Overload:Global.AttackParticles.Play
-  isSpec: "True"
-  fullName: AttackParticles.Play
-  nameWithType: AttackParticles.Play
-- uid: Global.AttackParticles.prefab
-  name: prefab
-  href: api/Global.AttackParticles.html#Global_AttackParticles_prefab
-  commentId: F:Global.AttackParticles.prefab
-  fullName: AttackParticles.prefab
-  nameWithType: AttackParticles.prefab
 - uid: Global.AttackPattern
   name: AttackPattern
   href: api/Global.AttackPattern.html
@@ -4504,6 +4467,43 @@ references:
   isSpec: "True"
   fullName: NormalAttack.Awake
   nameWithType: NormalAttack.Awake
+- uid: Global.Particles
+  name: Particles
+  href: api/Global.Particles.html
+  commentId: T:Global.Particles
+  fullName: Particles
+  nameWithType: Particles
+- uid: Global.Particles.attachToCharacter
+  name: attachToCharacter
+  href: api/Global.Particles.html#Global_Particles_attachToCharacter
+  commentId: F:Global.Particles.attachToCharacter
+  fullName: Particles.attachToCharacter
+  nameWithType: Particles.attachToCharacter
+- uid: Global.Particles.particlePosition
+  name: particlePosition
+  href: api/Global.Particles.html#Global_Particles_particlePosition
+  commentId: F:Global.Particles.particlePosition
+  fullName: Particles.particlePosition
+  nameWithType: Particles.particlePosition
+- uid: Global.Particles.Play
+  name: Play()
+  href: api/Global.Particles.html#Global_Particles_Play
+  commentId: M:Global.Particles.Play
+  fullName: Particles.Play()
+  nameWithType: Particles.Play()
+- uid: Global.Particles.Play*
+  name: Play
+  href: api/Global.Particles.html#Global_Particles_Play_
+  commentId: Overload:Global.Particles.Play
+  isSpec: "True"
+  fullName: Particles.Play
+  nameWithType: Particles.Play
+- uid: Global.Particles.prefab
+  name: prefab
+  href: api/Global.Particles.html#Global_Particles_prefab
+  commentId: F:Global.Particles.prefab
+  fullName: Particles.prefab
+  nameWithType: Particles.prefab
 - uid: Global.Pathfind
   name: Pathfind
   href: api/Global.Pathfind.html
@@ -4708,18 +4708,18 @@ references:
   isSpec: "True"
   fullName: PlayableBehaviour.InvokeOnStop
   nameWithType: PlayableBehaviour.InvokeOnStop
-- uid: Global.PlayableBehaviour.OnPlay
-  name: OnPlay
-  href: api/Global.PlayableBehaviour.html#Global_PlayableBehaviour_OnPlay
-  commentId: E:Global.PlayableBehaviour.OnPlay
-  fullName: PlayableBehaviour.OnPlay
-  nameWithType: PlayableBehaviour.OnPlay
-- uid: Global.PlayableBehaviour.OnStop
-  name: OnStop
-  href: api/Global.PlayableBehaviour.html#Global_PlayableBehaviour_OnStop
-  commentId: E:Global.PlayableBehaviour.OnStop
-  fullName: PlayableBehaviour.OnStop
-  nameWithType: PlayableBehaviour.OnStop
+- uid: Global.PlayableBehaviour.onPlay
+  name: onPlay
+  href: api/Global.PlayableBehaviour.html#Global_PlayableBehaviour_onPlay
+  commentId: F:Global.PlayableBehaviour.onPlay
+  fullName: PlayableBehaviour.onPlay
+  nameWithType: PlayableBehaviour.onPlay
+- uid: Global.PlayableBehaviour.onStop
+  name: onStop
+  href: api/Global.PlayableBehaviour.html#Global_PlayableBehaviour_onStop
+  commentId: F:Global.PlayableBehaviour.onStop
+  fullName: PlayableBehaviour.onStop
+  nameWithType: PlayableBehaviour.onStop
 - uid: Global.PlayableBehaviour.Playing
   name: Playing
   href: api/Global.PlayableBehaviour.html#Global_PlayableBehaviour_Playing
