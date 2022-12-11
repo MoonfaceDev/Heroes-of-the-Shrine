@@ -5,7 +5,7 @@ public class LineTrigger : BaseTrigger
     public float minimumX;
 
     private MovableObject playerMovableObject;
-    private bool fired = false;
+    private bool fired;
 
     private void Awake()
     {
