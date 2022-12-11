@@ -111,6 +111,7 @@ public class KnockbackBehaviour : ForcedBehaviour
         MovableObject.acceleration.y = -Character.physicalAttributes.gravityAcceleration;
         MovableObject.velocity.x = Mathf.Cos(Mathf.Deg2Rad * angleDegrees) * power;
         MovableObject.velocity.y = Mathf.Sin(Mathf.Deg2Rad * angleDegrees) * power;
+        MovableObject.velocity.z = 0;
     }
 
     private IEnumerator RecoverAfterTime()

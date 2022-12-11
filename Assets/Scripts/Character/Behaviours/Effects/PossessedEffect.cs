@@ -34,8 +34,8 @@ public class PossessedEffect : BaseEffect
         {
             MovableObject.velocity = Vector3.zero;
         }
-        DisableBehaviours(typeof(BaseAttack), typeof(BaseMovementBehaviour));
-        StopBehaviours(typeof(BaseAttack), typeof(BaseMovementBehaviour));
+        DisableBehaviours(typeof(BaseAttack), typeof(BaseMovementBehaviour), typeof(ForcedBehaviour));
+        StopBehaviours(typeof(BaseAttack), typeof(BaseMovementBehaviour), typeof(ForcedBehaviour));
     }
 
     private void OnHit(float damage)
@@ -62,7 +62,7 @@ public class PossessedEffect : BaseEffect
 
         currentDuration = 0;
 
-        EnableBehaviours(typeof(BaseAttack), typeof(BaseMovementBehaviour));
+        EnableBehaviours(typeof(BaseAttack), typeof(BaseMovementBehaviour), typeof(ForcedBehaviour));
     }
 
     public override float GetProgress()
