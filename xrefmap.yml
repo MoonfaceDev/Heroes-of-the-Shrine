@@ -4682,32 +4682,6 @@ references:
   isSpec: "True"
   fullName: PlayableBehaviour.CanPlay
   nameWithType: PlayableBehaviour.CanPlay
-- uid: Global.PlayableBehaviour.InvokeOnPlay
-  name: InvokeOnPlay()
-  href: api/Global.PlayableBehaviour.html#Global_PlayableBehaviour_InvokeOnPlay
-  commentId: M:Global.PlayableBehaviour.InvokeOnPlay
-  fullName: PlayableBehaviour.InvokeOnPlay()
-  nameWithType: PlayableBehaviour.InvokeOnPlay()
-- uid: Global.PlayableBehaviour.InvokeOnPlay*
-  name: InvokeOnPlay
-  href: api/Global.PlayableBehaviour.html#Global_PlayableBehaviour_InvokeOnPlay_
-  commentId: Overload:Global.PlayableBehaviour.InvokeOnPlay
-  isSpec: "True"
-  fullName: PlayableBehaviour.InvokeOnPlay
-  nameWithType: PlayableBehaviour.InvokeOnPlay
-- uid: Global.PlayableBehaviour.InvokeOnStop
-  name: InvokeOnStop()
-  href: api/Global.PlayableBehaviour.html#Global_PlayableBehaviour_InvokeOnStop
-  commentId: M:Global.PlayableBehaviour.InvokeOnStop
-  fullName: PlayableBehaviour.InvokeOnStop()
-  nameWithType: PlayableBehaviour.InvokeOnStop()
-- uid: Global.PlayableBehaviour.InvokeOnStop*
-  name: InvokeOnStop
-  href: api/Global.PlayableBehaviour.html#Global_PlayableBehaviour_InvokeOnStop_
-  commentId: Overload:Global.PlayableBehaviour.InvokeOnStop
-  isSpec: "True"
-  fullName: PlayableBehaviour.InvokeOnStop
-  nameWithType: PlayableBehaviour.InvokeOnStop
 - uid: Global.PlayableBehaviour.onPlay
   name: onPlay
   href: api/Global.PlayableBehaviour.html#Global_PlayableBehaviour_onPlay
@@ -6221,6 +6195,12 @@ references:
   isSpec: "True"
   fullName: SuperArmorEffect.HitArmor
   nameWithType: SuperArmorEffect.HitArmor
+- uid: Global.SuperArmorEffect.onBreak
+  name: onBreak
+  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_onBreak
+  commentId: F:Global.SuperArmorEffect.onBreak
+  fullName: SuperArmorEffect.onBreak
+  nameWithType: SuperArmorEffect.onBreak
 - uid: Global.SuperArmorEffect.Stop
   name: Stop()
   href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_Stop
