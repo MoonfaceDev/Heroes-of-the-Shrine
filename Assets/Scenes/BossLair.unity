@@ -413,9 +413,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 579c565da1e94b73a6686a85695e0bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armorHealth: 150
+  armorHealth: 100
   armorCooldown: 12
-  damageMultiplier: 0.6
+  damageMultiplier: 0.5
   armorCooldownStart: 0
 --- !u!114 &63080258
 MonoBehaviour:
@@ -588,7 +588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
-  rageHealthThreshold: 25
+  rageHealthThreshold: 150
   rageDamageMultiplier: 2
   distanceAnimatorParameters:
   - parameterName: Center
