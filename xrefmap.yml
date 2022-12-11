@@ -4819,12 +4819,6 @@ references:
   commentId: F:Global.PlayerController.possessedEffectTimeReducing
   fullName: PlayerController.possessedEffectTimeReducing
   nameWithType: PlayerController.possessedEffectTimeReducing
-- uid: Global.PlayerController.slidePriority
-  name: slidePriority
-  href: api/Global.PlayerController.html#Global_PlayerController_slidePriority
-  commentId: F:Global.PlayerController.slidePriority
-  fullName: PlayerController.slidePriority
-  nameWithType: PlayerController.slidePriority
 - uid: Global.PlayerController.Update
   name: Update()
   href: api/Global.PlayerController.html#Global_PlayerController_Update
@@ -5836,12 +5830,12 @@ references:
   isSpec: "True"
   fullName: SlideBehaviour.CanPlay
   nameWithType: SlideBehaviour.CanPlay
-- uid: Global.SlideBehaviour.Play
-  name: Play()
-  href: api/Global.SlideBehaviour.html#Global_SlideBehaviour_Play
-  commentId: M:Global.SlideBehaviour.Play
-  fullName: SlideBehaviour.Play()
-  nameWithType: SlideBehaviour.Play()
+- uid: Global.SlideBehaviour.Play(System.Int32)
+  name: Play(Int32)
+  href: api/Global.SlideBehaviour.html#Global_SlideBehaviour_Play_System_Int32_
+  commentId: M:Global.SlideBehaviour.Play(System.Int32)
+  fullName: SlideBehaviour.Play(System.Int32)
+  nameWithType: SlideBehaviour.Play(Int32)
 - uid: Global.SlideBehaviour.Play*
   name: Play
   href: api/Global.SlideBehaviour.html#Global_SlideBehaviour_Play_
