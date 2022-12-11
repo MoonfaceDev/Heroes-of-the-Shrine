@@ -31,16 +31,16 @@ public class PlayerController : CharacterController
     public RuntimeAnimatorController[] animatorControllers;
     [HideInInspector] public int activeSuitIndex;
 
-    [Header("Action buffering")] public float bufferingTime;
+    [Header("Action buffering")] 
+    public float bufferingTime;
     public BaseAttack[] nonBufferedAttacks;
 
     [Header("Buffered actions priorities")]
     public int jumpPriority;
-
-    public int slidePriority;
     public int attackPriority;
 
-    [Header("Special inputs")] public List<Button> possessedEffectTimeReducing;
+    [Header("Special inputs")] 
+    public List<Button> possessedEffectTimeReducing;
     public float possessedEffectDurationReduction;
 
     private WalkBehaviour walkBehaviour;
@@ -124,9 +124,13 @@ public class PlayerController : CharacterController
 
     private void ExecuteSlide()
     {
+        var horizontal = Direction(Input.GetAxisRaw("Horizontal"));
         if (slideBehaviour && Input.GetButtonDown(Button.Escape.ToString())) //pressed slide
         {
-            ExecuteAction(slideBehaviour.Play, slideBehaviour.CanPlay, slidePriority);
+            if (horizontal != 0)
+            {
+                slideBehaviour.Play(horizontal);
+            }
         }
     }
 

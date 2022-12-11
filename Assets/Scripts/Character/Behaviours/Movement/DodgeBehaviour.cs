@@ -43,7 +43,7 @@ public class DodgeBehaviour : BaseMovementBehaviour
     {
         var attackManager = GetComponent<AttackManager>();
         return base.CanPlay()
-            && AllStopped(typeof(JumpBehaviour), typeof(SlideBehaviour)) 
+            && AllStopped(typeof(JumpBehaviour), typeof(SlideBehaviour), typeof(DodgeBehaviour)) 
             && !(attackManager && !attackManager.IsInterruptible());
     }
 
@@ -53,12 +53,16 @@ public class DodgeBehaviour : BaseMovementBehaviour
         {
             return;
         }
+        
         DisableBehaviours(typeof(WalkBehaviour));
         StopBehaviours(typeof(WalkBehaviour), typeof(AttackManager));
+        
         Anticipating = true;
         InvokeOnPlay();
+        
         MovableObject.acceleration = Vector3.zero;
         MovableObject.velocity = Vector3.zero;
+        
         anticipateEvent = EventManager.StartTimeout(() =>
         {
             Anticipating = false;

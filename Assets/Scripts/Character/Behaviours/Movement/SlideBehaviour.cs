@@ -23,24 +23,28 @@ public class SlideBehaviour : BaseMovementBehaviour
 
     public override bool CanPlay()
     {
-        return base.CanPlay()
-            && AllStopped(typeof(AttackManager), typeof(JumpBehaviour), typeof(DodgeBehaviour))
-            && MovableObject.velocity.x != 0;
+        var attackManager = GetComponent<AttackManager>();
+        return base.CanPlay() 
+               && AllStopped(typeof(JumpBehaviour), typeof(SlideBehaviour), typeof(DodgeBehaviour))
+               && !(attackManager && !attackManager.IsInterruptible());
     }
 
-    public void Play()
+    public void Play(int direction)
     {
-        if (!CanPlay())
+        if (!(CanPlay() && direction != 0))
         {
             return;
         }
+        
         DisableBehaviours(typeof(WalkBehaviour));
-        StopBehaviours(typeof(WalkBehaviour));
+        StopBehaviours(typeof(WalkBehaviour), typeof(AttackManager));
+        
         Slide = true;
         InvokeOnPlay();
-        float slideDirection = MovableObject.rotation;
-        MovableObject.velocity.x = slideDirection * slideSpeedMultiplier * Mathf.Abs(MovableObject.velocity.x);
-        MovableObject.acceleration.x = -slideDirection * slideStopAcceleration;
+
+        MovableObject.rotation = direction;
+        MovableObject.velocity.x = direction * slideSpeedMultiplier * GetComponent<WalkBehaviour>().speed;
+        MovableObject.acceleration.x = -direction * slideStopAcceleration;
         MovableObject.velocity.z = 0;
         stopEvent = EventManager.Attach(
             () => Mathf.Approximately(Mathf.Sign(MovableObject.velocity.x), Mathf.Sign(MovableObject.acceleration.x)),

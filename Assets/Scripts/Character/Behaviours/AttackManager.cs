@@ -80,11 +80,11 @@ public class AttackManager : PlayableBehaviour
 
     public bool HardRecovering => AnyAttack(attack => attack.hardRecovery && attack.Recovering);
 
-    public override bool Playing => AnyAttack((attack) => attack.Playing);
+    public override bool Playing => AnyAttack(attack => attack.Playing);
 
     public bool IsInterruptible()
     {
-        return !AnyAttack((attack) => attack.Playing && !attack.interruptible);
+        return !AnyAttack(attack => attack.Playing && !attack.interruptible);
     }
 
     public override void Stop()
