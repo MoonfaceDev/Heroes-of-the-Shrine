@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af61f8ebac7a76742baddc8a44dddfa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 150
+  startHealth: 900
   health: 0
 --- !u!114 &63080249
 MonoBehaviour:
@@ -413,9 +413,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 579c565da1e94b73a6686a85695e0bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armorHealth: 50
-  armorCooldown: 10
-  damageMultiplier: 0.5
+  armorHealth: 150
+  armorCooldown: 12
+  damageMultiplier: 0.6
   armorCooldownStart: 0
 --- !u!114 &63080258
 MonoBehaviour:
@@ -453,9 +453,9 @@ MonoBehaviour:
         m_Calls: []
   anticipateDuration: 1.65
   recoveryDuration: 0
-  sourcesCount: 5
-  spawnRadius: 5
-  minSourcesDistance: 0.5
+  sourcesCount: 6
+  spawnRadius: 6
+  minSourcesDistance: 1.5
   possessSource: {fileID: 6844794933150260862, guid: c619b10d9f747194c92416ed8fe7005a, type: 3}
   warningDuration: 0.75
   sourceActiveDuration: 1.5
@@ -588,8 +588,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
-  rageHealthThreshold: 50
-  rageDamageMultiplier: 1
+  rageHealthThreshold: 25
+  rageDamageMultiplier: 2
   distanceAnimatorParameters:
   - parameterName: Center
     groundPoint: {x: 0, y: -3}
