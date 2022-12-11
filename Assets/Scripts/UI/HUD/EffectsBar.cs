@@ -36,19 +36,19 @@ public class EffectsBar : MonoBehaviour
         {
             var effect = player.GetComponent(definition.effectType) as BaseEffect;
             if (effect == null) continue;
-            effect.OnPlay += () =>
+            effect.onPlay.AddListener(() =>
             {
                 var bar = Instantiate(effectBarPrefab, container.transform);
                 bar.GetComponent<EffectBar>().effect = effect;
                 bar.transform.Find("Effect Icon").GetComponent<Image>().sprite = definition.icon;
                 bar.GetComponent<Scrollbar>().handleRect.GetComponent<Image>().color = definition.color;
                 bars.Add(definition.effectType, bar);
-            };
-            effect.OnStop += () =>
+            });
+            effect.onStop.AddListener(() =>
             {
                 Destroy(bars[definition.effectType]);
                 bars.Remove(definition.effectType);
-            };
+            });
         }
     }
 }

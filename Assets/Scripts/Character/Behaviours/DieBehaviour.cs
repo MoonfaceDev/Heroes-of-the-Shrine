@@ -46,7 +46,7 @@ public class DieBehaviour : CharacterBehaviour
 
         if (IsPlaying(typeof(KnockbackBehaviour)))
         {
-            GetComponent<KnockbackBehaviour>().OnStop += KillAfterKnockback;
+            GetComponent<KnockbackBehaviour>().onStop.AddListener(KillAfterKnockback);
         }
         else
         {

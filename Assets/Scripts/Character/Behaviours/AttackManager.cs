@@ -35,22 +35,22 @@ public class AttackManager : PlayableBehaviour
         foreach (var attack in attackComponents)
         {
             // Forward events
-            attack.OnPlay += InvokeOnPlay;
+            attack.onPlay.AddListener(InvokeOnPlay);
             attack.generalEvents.onStartAnticipating.AddListener(() => OnStartAnticipating?.Invoke());
             attack.generalEvents.onFinishAnticipating.AddListener(() => OnFinishAnticipating?.Invoke());
             attack.generalEvents.onStartActive.AddListener(() => OnStartActive?.Invoke());
             attack.generalEvents.onFinishActive.AddListener(() => OnFinishActive?.Invoke());
             attack.generalEvents.onStartRecovery.AddListener(() => OnStartRecovery?.Invoke());
             attack.generalEvents.onFinishRecovery.AddListener(() => OnFinishRecovery?.Invoke());
-            attack.OnStop += InvokeOnStop;
+            attack.onStop.AddListener(InvokeOnStop);
 
             // Combo handling
 
-            attack.OnPlay += () =>
+            attack.onPlay.AddListener(() =>
             {
                 EventManager.Detach(forgetComboEvent);
                 lastAttack = attack;
-            };
+            });
 
             void ForgetComboAction()
             {
@@ -62,7 +62,7 @@ public class AttackManager : PlayableBehaviour
             }
 
             attack.generalEvents.onFinishRecovery.AddListener(ForgetComboAction);
-            attack.OnStop += ForgetComboAction;
+            attack.onStop.AddListener(ForgetComboAction);
         }
     }
 

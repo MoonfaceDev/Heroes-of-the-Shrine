@@ -40,14 +40,14 @@ public class RunBehaviour : BaseMovementBehaviour
 
     public void Start()
     {
-        walkBehaviour.OnPlay += () =>
+        walkBehaviour.onPlay.AddListener(() =>
         {
             if (CanPlay())
             {
                 startCoroutine = StartCoroutine(RunAfter(timeToRun));
             }
-        };
-        walkBehaviour.OnStop += Stop;
+        });
+        walkBehaviour.onStop.AddListener(Stop);
         if (jumpBehaviour)
         {
             jumpBehaviour.OnJump += () =>

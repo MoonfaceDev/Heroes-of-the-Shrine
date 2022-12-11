@@ -20,7 +20,7 @@ public class ArcBehaviour : BaseMovementBehaviour
 
     public void Start()
     {
-        walkBehaviour.OnStop += Stop;
+        walkBehaviour.onStop.AddListener(Stop);
     }
 
     public void Play(MovableObject target, float speedMultiplier)

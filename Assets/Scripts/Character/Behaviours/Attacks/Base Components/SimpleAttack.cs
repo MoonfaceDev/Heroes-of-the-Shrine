@@ -76,7 +76,7 @@ public class SimpleAttack : BaseAttack
     public override void Awake()
     {
         base.Awake();
-        OnPlay += StopOtherAttacks;
+        onPlay.AddListener(StopOtherAttacks);
     }
 
     public void Start()
@@ -90,7 +90,7 @@ public class SimpleAttack : BaseAttack
     /// <param name="freeze">If <c>true</c>, changes the velocity to <see cref="Vector3.zero"/>.</param>
     protected void PreventWalking(bool freeze)
     {
-        OnPlay += () =>
+        onPlay.AddListener(() =>
         {
             DisableBehaviours(typeof(WalkBehaviour));
             StopBehaviours(typeof(WalkBehaviour));
@@ -98,9 +98,9 @@ public class SimpleAttack : BaseAttack
             {
                 MovableObject.velocity = Vector3.zero;
             }
-        };
+        });
         generalEvents.onFinishRecovery.AddListener(() => EnableBehaviours(typeof(WalkBehaviour)));
-        OnStop += () => EnableBehaviours(typeof(WalkBehaviour));
+        onStop.AddListener(() => EnableBehaviours(typeof(WalkBehaviour)));
     }
 
     private void StopOtherAttacks()

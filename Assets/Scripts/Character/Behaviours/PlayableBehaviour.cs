@@ -1,14 +1,11 @@
-using System;
+using UnityEngine.Events;
 
 public abstract class PlayableBehaviour : CharacterBehaviour
 {
-    public event Action OnPlay;
-    public event Action OnStop;
+    public UnityEvent onPlay;
+    public UnityEvent onStop;
 
-    public abstract bool Playing
-    {
-        get;
-    }
+    public abstract bool Playing { get; }
 
     public virtual bool CanPlay()
     {
@@ -19,12 +16,12 @@ public abstract class PlayableBehaviour : CharacterBehaviour
 
     protected void InvokeOnPlay()
     {
-        OnPlay?.Invoke();
+        onPlay.Invoke();
     }
 
     protected void InvokeOnStop()
     {
-        OnStop?.Invoke();
+        onStop.Invoke();
     }
 
     private void OnDestroy()

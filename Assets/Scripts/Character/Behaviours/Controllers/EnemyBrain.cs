@@ -68,15 +68,15 @@ public class EnemyBrain : CharacterController
         var knockbackBehaviour = GetComponent<KnockbackBehaviour>();
         if (knockbackBehaviour)
         {
-            knockbackBehaviour.OnPlay += () => stateMachine.SetBool(KnockbackParameter, true);
-            knockbackBehaviour.OnStop += () => stateMachine.SetBool(KnockbackParameter, false);
+            knockbackBehaviour.onPlay.AddListener(() => stateMachine.SetBool(KnockbackParameter, true));
+            knockbackBehaviour.onStop.AddListener(() => stateMachine.SetBool(KnockbackParameter, false));
         }
 
         var stunBehaviour = GetComponent<StunBehaviour>();
         if (stunBehaviour)
         {
-            stunBehaviour.OnPlay += () => stateMachine.SetBool(StunParameter, true);
-            stunBehaviour.OnStop += () => stateMachine.SetBool(StunParameter, false);
+            stunBehaviour.onPlay.AddListener(() => stateMachine.SetBool(StunParameter, true));
+            stunBehaviour.onStop.AddListener(() => stateMachine.SetBool(StunParameter, false));
         }
 
         var dieBehaviour = GetComponent<DieBehaviour>();
@@ -101,7 +101,7 @@ public class EnemyBrain : CharacterController
             var playerKnockbackBehaviour = player.GetComponent<KnockbackBehaviour>();
             if (knockbackBehaviour)
             {
-                playerKnockbackBehaviour.OnPlay += OnPlayerKnockbackPlay;
+                playerKnockbackBehaviour.onPlay.AddListener(OnPlayerKnockbackPlay);
                 playerKnockbackBehaviour.OnFinish += OnPlayerKnockbackStop;
                 playerKnockbackBehaviour.OnFinish += OnPlayerRecoveringFromKnockbackPlay;
                 playerKnockbackBehaviour.OnRecover += OnPlayerRecoveringFromKnockbackStop;
@@ -110,21 +110,21 @@ public class EnemyBrain : CharacterController
             var playerStunBehaviour = player.GetComponent<StunBehaviour>();
             if (playerStunBehaviour)
             {
-                playerStunBehaviour.OnPlay += OnPlayerStunPlay;
-                playerStunBehaviour.OnStop += OnPlayerStunStop;
+                playerStunBehaviour.onPlay.AddListener(OnPlayerStunPlay);
+                playerStunBehaviour.onStop.AddListener(OnPlayerStunStop);
             }
 
             var playerAttackManager = player.GetComponent<AttackManager>();
             if (playerAttackManager)
             {
-                playerAttackManager.OnPlay += OnPlayerAttackPlay;
+                playerAttackManager.onPlay.AddListener(OnPlayerAttackPlay);
                 playerAttackManager.OnStartAnticipating += OnPlayerAttackStartAnticipating;
                 playerAttackManager.OnFinishAnticipating += OnPlayerAttackFinishAnticipating;
                 playerAttackManager.OnStartActive += OnPlayerAttackStartActive;
                 playerAttackManager.OnFinishActive += OnPlayerAttackFinishActive;
                 playerAttackManager.OnStartRecovery += OnPlayerAttackStartRecovery;
                 playerAttackManager.OnFinishRecovery += OnPlayerAttackFinishRecovery;
-                playerAttackManager.OnStop += OnPlayerAttackStop;
+                playerAttackManager.onStop.AddListener(OnPlayerAttackStop);
             }
         }
     }
@@ -191,7 +191,7 @@ public class EnemyBrain : CharacterController
             var playerKnockbackBehaviour = player.GetComponent<KnockbackBehaviour>();
             if (playerKnockbackBehaviour)
             {
-                playerKnockbackBehaviour.OnPlay -= OnPlayerKnockbackPlay;
+                playerKnockbackBehaviour.onPlay.RemoveListener(OnPlayerKnockbackPlay);
                 playerKnockbackBehaviour.OnFinish -= OnPlayerKnockbackStop;
                 playerKnockbackBehaviour.OnFinish -= OnPlayerRecoveringFromKnockbackPlay;
                 playerKnockbackBehaviour.OnRecover -= OnPlayerRecoveringFromKnockbackStop;
@@ -200,21 +200,21 @@ public class EnemyBrain : CharacterController
             var playerStunBehaviour = player.GetComponent<StunBehaviour>();
             if (playerStunBehaviour)
             {
-                playerStunBehaviour.OnPlay -= OnPlayerStunPlay;
-                playerStunBehaviour.OnStop -= OnPlayerStunStop;
+                playerStunBehaviour.onPlay.RemoveListener(OnPlayerStunPlay);
+                playerStunBehaviour.onStop.RemoveListener(OnPlayerStunStop);
             }
 
             var playerAttackManager = player.GetComponent<AttackManager>();
             if (playerAttackManager)
             {
-                playerAttackManager.OnPlay -= OnPlayerAttackPlay;
+                playerAttackManager.onPlay.RemoveListener(OnPlayerAttackPlay);
                 playerAttackManager.OnStartAnticipating -= OnPlayerAttackStartAnticipating;
                 playerAttackManager.OnFinishAnticipating -= OnPlayerAttackFinishAnticipating;
                 playerAttackManager.OnStartActive -= OnPlayerAttackStartActive;
                 playerAttackManager.OnFinishActive -= OnPlayerAttackFinishActive;
                 playerAttackManager.OnStartRecovery -= OnPlayerAttackStartRecovery;
                 playerAttackManager.OnFinishRecovery -= OnPlayerAttackFinishRecovery;
-                playerAttackManager.OnStop -= OnPlayerAttackStop;
+                playerAttackManager.onStop.RemoveListener(OnPlayerAttackStop);
             }
         }
     }

@@ -21,7 +21,7 @@ public class EscapeBehaviour : BaseMovementBehaviour
     public void Start()
     {
         MovableObject.OnStuck += Stop;
-        walkBehaviour.OnStop += Stop;
+        walkBehaviour.onStop.AddListener(Stop);
     }
 
     public void Play(MovableObject target, float speedMultiplier, bool fitLookDirection = true)

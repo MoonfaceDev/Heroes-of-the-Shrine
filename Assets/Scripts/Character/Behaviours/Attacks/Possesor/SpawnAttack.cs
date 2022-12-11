@@ -20,14 +20,14 @@ public class SpawnAttack : BaseAttack
     public override void Awake()
     {
         base.Awake();
-        OnPlay += () =>
+        onPlay.AddListener(() =>
         {
             DisableBehaviours(typeof(WalkBehaviour));
             StopBehaviours(typeof(WalkBehaviour));
             MovableObject.velocity = Vector3.zero;
-        };
+        });
         generalEvents.onFinishRecovery.AddListener(() => EnableBehaviours(typeof(WalkBehaviour)));
-        OnStop += () => EnableBehaviours(typeof(WalkBehaviour));
+        onStop.AddListener(() => EnableBehaviours(typeof(WalkBehaviour)));
 
         generalEvents.onStartActive.AddListener(SpawnGoblins);
     }
