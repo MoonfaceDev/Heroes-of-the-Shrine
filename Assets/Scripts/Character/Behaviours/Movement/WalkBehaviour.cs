@@ -51,7 +51,7 @@ public class WalkBehaviour : BaseMovementBehaviour
         else if (!Walk) //first walking frame
         {
             Walk = true;
-            InvokeOnPlay();
+            onPlay.Invoke();
         }
     }
 
@@ -59,6 +59,6 @@ public class WalkBehaviour : BaseMovementBehaviour
     {
         if (!Walk) return;
         Walk = false;
-        InvokeOnStop();
+        onStop.Invoke();
     }
 }

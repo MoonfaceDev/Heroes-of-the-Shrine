@@ -31,7 +31,7 @@ public class EscapeBehaviour : BaseMovementBehaviour
             return;
         }
         Active = true;
-        InvokeOnPlay();
+        onPlay.Invoke();
 
         speedModifier = new MultiplierModifier(speedMultiplier);
         walkBehaviour.speed.AddModifier(speedModifier);
@@ -48,7 +48,7 @@ public class EscapeBehaviour : BaseMovementBehaviour
     public override void Stop()
     {
         if (!Active) return;
-        InvokeOnStop();
+        onStop.Invoke();
         Active = false;
         EventManager.Detach(escapeEvent);
         walkBehaviour.speed.RemoveModifier(speedModifier);

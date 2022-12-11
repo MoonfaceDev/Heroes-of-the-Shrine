@@ -40,7 +40,7 @@ public class SlideBehaviour : BaseMovementBehaviour
         StopBehaviours(typeof(WalkBehaviour), typeof(AttackManager));
         
         Slide = true;
-        InvokeOnPlay();
+        onPlay.Invoke();
 
         MovableObject.rotation = direction;
         MovableObject.velocity.x = direction * slideSpeedMultiplier * GetComponent<WalkBehaviour>().speed;
@@ -55,7 +55,7 @@ public class SlideBehaviour : BaseMovementBehaviour
     public override void Stop()
     {
         if (!Slide) return;
-        InvokeOnStop();
+        onStop.Invoke();
         EventManager.Detach(stopEvent);
         Slide = false;
         MovableObject.velocity.x = 0;

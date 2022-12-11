@@ -18,7 +18,7 @@ public class PossessedEffect : BaseEffect
         }
         
         Active = true;
-        InvokeOnPlay();
+        onPlay.Invoke();
 
         currentStartTime = Time.time;
         currentDuration = maxDuration;
@@ -52,7 +52,7 @@ public class PossessedEffect : BaseEffect
     {
         if (!Active) return;
         Active = false;
-        InvokeOnStop();
+        onStop.Invoke();
 
         var hittableBehaviour = GetComponent<HittableBehaviour>();
         if (hittableBehaviour)

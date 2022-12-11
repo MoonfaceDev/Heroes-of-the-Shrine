@@ -24,7 +24,7 @@ public class ElectrifiedEffect : BaseEffect
         StopBehaviours(typeof(RunBehaviour), typeof(SlideBehaviour), typeof(DodgeBehaviour), typeof(ElectrifiedEffect));
 
         Active = true;
-        InvokeOnPlay();
+        onPlay.Invoke();
 
         if (walkBehaviour)
         {
@@ -43,7 +43,7 @@ public class ElectrifiedEffect : BaseEffect
     {
         if (Active)
         {
-            InvokeOnStop();
+            onStop.Invoke();
             Active = false;
 
             if (walkBehaviour)

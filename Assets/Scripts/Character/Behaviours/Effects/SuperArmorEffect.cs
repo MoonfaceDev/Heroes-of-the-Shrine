@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class SuperArmorEffect : BaseEffect
 {
     public float armorHealth;
     public float armorCooldown;
     public float damageMultiplier = 1;
+
+    public UnityEvent onBreak;
 
     [HideInInspector] public float armorCooldownStart;
     [ShowDebug] private float currentArmorHealth;
@@ -17,8 +20,11 @@ public class SuperArmorEffect : BaseEffect
 
     private void InitializeArmor()
     {
-        currentArmorHealth = armorHealth;
         Active = true;
+        onPlay.Invoke();
+        
+        currentArmorHealth = armorHealth;
+        
         GetComponent<HittableBehaviour>().damageMultiplier *= damageMultiplier;
         DisableBehaviours(typeof(KnockbackBehaviour), typeof(StunBehaviour));
         EnableBehaviours(typeof(EnemyBrain));
@@ -26,14 +32,16 @@ public class SuperArmorEffect : BaseEffect
 
     private void CancelArmor()
     {
-        currentArmorHealth = 0;
         Active = false;
+        onStop.Invoke();
+        
+        currentArmorHealth = 0;
+        
         EnableBehaviours(typeof(KnockbackBehaviour), typeof(StunBehaviour));
         GetComponent<HittableBehaviour>().damageMultiplier /= damageMultiplier;
         StopBehaviours(typeof(BaseMovementBehaviour), typeof(ForcedBehaviour), typeof(AttackManager));
         DisableBehaviours(typeof(EnemyBrain));
         MovableObject.velocity = Vector3.zero;
-        InvokeOnPlay();
     }
 
     public void HitArmor(float damage)

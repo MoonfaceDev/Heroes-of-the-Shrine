@@ -193,7 +193,7 @@ public abstract class BaseAttack : PlayableBehaviour
             throw new CannotAttackException();
         }
 
-        InvokeOnPlay();
+        onPlay.Invoke();
         attackFlowCoroutine = StartCoroutine(AttackFlow());
     }
 
@@ -206,7 +206,7 @@ public abstract class BaseAttack : PlayableBehaviour
         if (Playing)
         {
             StopCoroutine(attackFlowCoroutine);
-            InvokeOnStop();
+            onStop.Invoke();
         }
 
         if (Anticipating)

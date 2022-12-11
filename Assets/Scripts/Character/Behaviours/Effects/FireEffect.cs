@@ -11,7 +11,7 @@ public class FireEffect : BaseEffect
     public void Play(float duration, float hitInterval, float damagePerHit)
     {
         Active = true;
-        InvokeOnPlay();
+        onPlay.Invoke();
         damageCoroutine = StartCoroutine(DoDamage(hitInterval, damagePerHit));
         startTime = Time.time;
         currentDuration = duration;
@@ -22,7 +22,7 @@ public class FireEffect : BaseEffect
     {
         if (!Active) return;
         Active = false;
-        InvokeOnStop();
+        onStop.Invoke();
 
         StopCoroutine(damageCoroutine);
 

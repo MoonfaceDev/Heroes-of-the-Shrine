@@ -64,7 +64,7 @@ public class KnockbackBehaviour : ForcedBehaviour
         StopBehaviours(typeof(BaseMovementBehaviour), typeof(AttackManager), typeof(StunBehaviour));
 
         Active = true;
-        InvokeOnPlay();
+        onPlay.Invoke();
         Bounce = 1;
         SetMovement(power, angleDegrees);
 
@@ -123,14 +123,14 @@ public class KnockbackBehaviour : ForcedBehaviour
     {
         Recovering = false;
         OnRecover?.Invoke();
-        InvokeOnStop();
+        onStop.Invoke();
     }
 
     public override void Stop()
     {
         if (Playing)
         {
-            InvokeOnStop();
+            onStop.Invoke();
         }
         if (Active)
         {

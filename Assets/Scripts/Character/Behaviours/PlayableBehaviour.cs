@@ -14,16 +14,6 @@ public abstract class PlayableBehaviour : CharacterBehaviour
 
     public abstract void Stop();
 
-    protected void InvokeOnPlay()
-    {
-        onPlay.Invoke();
-    }
-
-    protected void InvokeOnStop()
-    {
-        onStop.Invoke();
-    }
-
     private void OnDestroy()
     {
         Stop();

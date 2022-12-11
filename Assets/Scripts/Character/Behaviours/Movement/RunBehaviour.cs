@@ -77,14 +77,14 @@ public class RunBehaviour : BaseMovementBehaviour
         speedModifier = new MultiplierModifier(runSpeedMultiplier);
         walkBehaviour.speed.AddModifier(speedModifier);
         runParticles.Play();
-        InvokeOnPlay();
+        onPlay.Invoke();
     }
 
     public override void Stop()
     {
         if (Run)
         {
-            InvokeOnStop();
+            onStop.Invoke();
             Run = false;
             walkBehaviour.speed.RemoveModifier(speedModifier);
             runParticles.Stop();

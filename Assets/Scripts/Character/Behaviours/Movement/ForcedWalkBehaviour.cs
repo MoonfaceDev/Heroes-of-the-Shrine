@@ -19,7 +19,7 @@ public class ForcedWalkBehaviour : PlayableBehaviour
         DisableBehaviours(typeof(PlayerController));
         
         active = true;
-        InvokeOnPlay();
+        onPlay.Invoke();
 
         GetComponent<FollowBehaviour>().Play(point);
     }
@@ -28,7 +28,7 @@ public class ForcedWalkBehaviour : PlayableBehaviour
     {
         if (!active) return;
         
-        InvokeOnStop();
+        onStop.Invoke();
         active = false;
         
         StopBehaviours(typeof(FollowBehaviour));

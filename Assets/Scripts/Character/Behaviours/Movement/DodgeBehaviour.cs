@@ -58,7 +58,7 @@ public class DodgeBehaviour : BaseMovementBehaviour
         StopBehaviours(typeof(WalkBehaviour), typeof(AttackManager));
         
         Anticipating = true;
-        InvokeOnPlay();
+        onPlay.Invoke();
         
         MovableObject.acceleration = Vector3.zero;
         MovableObject.velocity = Vector3.zero;
@@ -77,7 +77,7 @@ public class DodgeBehaviour : BaseMovementBehaviour
     {
         if (Playing)
         {
-            InvokeOnStop();
+            onStop.Invoke();
             EnableBehaviours(typeof(WalkBehaviour));
         }
         if (Anticipating)

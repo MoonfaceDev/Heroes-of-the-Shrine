@@ -35,14 +35,14 @@ public class AttackManager : PlayableBehaviour
         foreach (var attack in attackComponents)
         {
             // Forward events
-            attack.onPlay.AddListener(InvokeOnPlay);
+            attack.onPlay.AddListener(onPlay.Invoke);
             attack.generalEvents.onStartAnticipating.AddListener(() => OnStartAnticipating?.Invoke());
             attack.generalEvents.onFinishAnticipating.AddListener(() => OnFinishAnticipating?.Invoke());
             attack.generalEvents.onStartActive.AddListener(() => OnStartActive?.Invoke());
             attack.generalEvents.onFinishActive.AddListener(() => OnFinishActive?.Invoke());
             attack.generalEvents.onStartRecovery.AddListener(() => OnStartRecovery?.Invoke());
             attack.generalEvents.onFinishRecovery.AddListener(() => OnFinishRecovery?.Invoke());
-            attack.onStop.AddListener(InvokeOnStop);
+            attack.onStop.AddListener(onStop.Invoke);
 
             // Combo handling
 

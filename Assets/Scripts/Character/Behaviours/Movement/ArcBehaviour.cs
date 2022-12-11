@@ -30,7 +30,7 @@ public class ArcBehaviour : BaseMovementBehaviour
             return;
         }
         Active = true;
-        InvokeOnPlay();
+        onPlay.Invoke();
 
         speedModifier = new MultiplierModifier(speedMultiplier);
         walkBehaviour.speed.AddModifier(speedModifier);
@@ -60,7 +60,7 @@ public class ArcBehaviour : BaseMovementBehaviour
     public override void Stop()
     {
         if (!Active) return;
-        InvokeOnStop();
+        onStop.Invoke();
         Active = false;
         EventManager.Detach(circleEvent);
         walkBehaviour.speed.RemoveModifier(speedModifier);

@@ -28,7 +28,7 @@ public class FollowBehaviour : BaseMovementBehaviour
             return;
         }
         active = true;
-        InvokeOnPlay();
+        onPlay.Invoke();
         
         followEvent = EventManager.Attach(() => true, () => {
             var direction = pathfind.Direction(MovableObject.WorldPosition, destination, getExcluded?.Invoke());
@@ -44,7 +44,7 @@ public class FollowBehaviour : BaseMovementBehaviour
             return;
         }
         active = true;
-        InvokeOnPlay();
+        onPlay.Invoke();
 
         followEvent = EventManager.Attach(() => true, () => {
             var direction = GetDirection(target, getExcluded?.Invoke(), getOverrideDirection);
@@ -69,7 +69,7 @@ public class FollowBehaviour : BaseMovementBehaviour
     public override void Stop()
     {
         if (!active) return;
-        InvokeOnStop();
+        onStop.Invoke();
         active = false;
         EventManager.Detach(followEvent);
         StopBehaviours(typeof(WalkBehaviour));

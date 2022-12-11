@@ -85,7 +85,7 @@ public class JumpBehaviour : BaseMovementBehaviour
         {
             return;
         }
-        InvokeOnPlay();
+        onPlay.Invoke();
         if (!IsPlaying(typeof(WalkBehaviour)) && MovableObject.WorldPosition.y == 0) //not moving and grounded
         {
             anticipateCoroutine = StartCoroutine(Anticipate());
@@ -132,7 +132,7 @@ public class JumpBehaviour : BaseMovementBehaviour
         }
         else
         {
-            InvokeOnStop();
+            onStop.Invoke();
         }
     }
 
@@ -150,7 +150,7 @@ public class JumpBehaviour : BaseMovementBehaviour
     {
         if (Playing)
         {
-            InvokeOnStop();
+            onStop.Invoke();
         }
         if (Anticipating)
         {

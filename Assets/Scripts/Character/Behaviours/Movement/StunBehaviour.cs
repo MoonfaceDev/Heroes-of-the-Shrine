@@ -45,7 +45,7 @@ public class StunBehaviour : ForcedBehaviour
 
         Stun = true;
         StunFrame = (StunFrame + 1) % stunFrames;
-        InvokeOnPlay();
+        onPlay.Invoke();
         stopCoroutine = StartCoroutine(StopAfter(time));
     }
 
@@ -53,14 +53,14 @@ public class StunBehaviour : ForcedBehaviour
     {
         yield return new WaitForSeconds(time);
         Stun = false;
-        InvokeOnStop();
+        onStop.Invoke();
     }
 
     public override void Stop()
     {
         if (Stun)
         {
-            InvokeOnStop();
+            onStop.Invoke();
             Stun = false;
             if (stopCoroutine != null)
             {
