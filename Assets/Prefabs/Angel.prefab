@@ -727,7 +727,7 @@ Transform:
   - {fileID: 5102893360866760424}
   - {fileID: 3850747449127629430}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360874897665
 MonoBehaviour:
@@ -833,6 +833,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e321a7af8378f45b972ec08f7089e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   cooldown: 0
   defaultSpeed: 6
 --- !u!114 &5102893360874897668
@@ -847,6 +853,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1146b9a9a2b3d2439f3aea5ac670bdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   cooldown: 0
   timeToRun: 1
   runSpeedMultiplier: 1.5
@@ -863,6 +875,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7da27b710763c4593ecc0f625595d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   cooldown: 0
   jumpSpeed: 10
   jumpAnticipateTime: 0
@@ -880,6 +898,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6ec1730c7ed3d49a2b8d7891202c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   cooldown: 1
   slideSpeedMultiplier: 3
   slideStopAcceleration: 50
@@ -895,6 +919,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4021a5b57a1ec1b4dacf3b967c9f3f9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   cooldown: 1
   dodgeDistance: 1.5
   anticipateTime: 0.05
@@ -911,6 +941,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82852d2e650fc4048ac887d4fc8710e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   knockbackRecoverTime: 1
 --- !u!114 &5102893360874897677
 MonoBehaviour:
@@ -924,6 +960,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87fda33e10ea24448ba9fe6c8dfffc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   stunFrames: 2
 --- !u!114 &5081049118965928474
 MonoBehaviour:
@@ -949,6 +991,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed9ec4fc5714304c83d532294f45bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   cooldown: 0
 --- !u!114 &2899137309724130339
 MonoBehaviour:
@@ -962,6 +1010,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d7bf6c9b367e544be42faf142779a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5102893360874897692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -974,6 +1028,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cfe8175de16ba346a6957969e6a94ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   particles: {fileID: 5102893361279726049}
 --- !u!114 &5102893360874897674
 MonoBehaviour:
@@ -987,6 +1047,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ba493242bffda44bd80bb0d4062f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1638938386684518268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -999,6 +1065,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f5303dff324830818deddd46b8e2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5102893360874897672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1011,6 +1083,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab68d069e0e79504ebe8ab7fd318ee7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   maxComboDelay: 0.05
   hittableTags:
   - Enemy
@@ -1055,7 +1133,6 @@ MonoBehaviour:
   nonBufferedAttacks:
   - {fileID: 5102893360874897673}
   jumpPriority: 0
-  slidePriority: 1
   attackPriority: 2
   possessedEffectTimeReducing: 00000000010000000200000003000000
   possessedEffectDurationReduction: 0.05
@@ -1071,6 +1148,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89faf720898d4f341980bbc5ad9c92c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   instant: 0
   interruptible: 1
   hardRecovery: 1
@@ -1118,6 +1201,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15028a98acbfc2140a1a48233734334d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   instant: 0
   interruptible: 1
   hardRecovery: 0
@@ -1163,6 +1252,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff8981c0a36794540a98151813755dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   instant: 0
   interruptible: 1
   hardRecovery: 0
@@ -1209,6 +1304,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 456a183db1e8752488fe8e192957fb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   instant: 0
   interruptible: 1
   hardRecovery: 0
@@ -1255,6 +1356,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120971cb774917b4593fc4bac3084f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   instant: 0
   interruptible: 1
   hardRecovery: 1
@@ -1301,6 +1408,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81118c65449267140834718ab26499e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   instant: 0
   interruptible: 1
   hardRecovery: 0
@@ -1351,6 +1464,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d19372dd6d0ab24db38e954cf9e4d87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   instant: 0
   interruptible: 0
   hardRecovery: 1
@@ -1411,6 +1530,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b302d29d571f744a696a43a533cefb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   instant: 0
   interruptible: 0
   hardRecovery: 0
@@ -1456,6 +1581,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d011c6d5c9cce11439fc487160458d20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   instant: 0
   interruptible: 0
   hardRecovery: 0
@@ -1502,6 +1633,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea921905e8155a14c9c413f58b72a537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   instant: 0
   interruptible: 0
   hardRecovery: 0
@@ -1550,6 +1687,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afab7b434bf82e940a658e3c4b4805cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   instant: 0
   interruptible: 0
   hardRecovery: 0
@@ -1851,6 +1994,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hittableBehaviour: {fileID: 5102893360874897666}
+  figure: {fileID: 5102893361555062420}
+  blinkMaterial: {fileID: 2100000, guid: 853f48af9c661484dbf60542fca9903b, type: 2}
+  blinkTime: 0.1
 --- !u!1 &5102893361076516094
 GameObject:
   m_ObjectHideFlags: 0

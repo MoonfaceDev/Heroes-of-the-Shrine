@@ -7,7 +7,7 @@ public class SingleHitDetector : BaseHitDetector
 
     protected override void DoStartDetector(Action<IHittable> hitCallable)
     {
-        var alreadyHit = new HashSet<HittableBehaviour>();
+        var alreadyHit = new HashSet<HittableHitbox>();
         eventListener = EventManager.Instance.Attach(
             () => true,
             () =>
@@ -15,9 +15,9 @@ public class SingleHitDetector : BaseHitDetector
                 var hittables = FindObjectsOfType<HittableHitbox>();
                 foreach (var hittable in hittables)
                 {
-                    if (!alreadyHit.Contains(hittable.hittableBehaviour) && hittable.Hitbox.OverlapHitbox(hitbox))
+                    if (!alreadyHit.Contains(hittable) && hittable.Hitbox.OverlapHitbox(hitbox))
                     {
-                        alreadyHit.Add(hittable.hittableBehaviour);
+                        alreadyHit.Add(hittable);
                         hitCallable(hittable);
                     }
                 }

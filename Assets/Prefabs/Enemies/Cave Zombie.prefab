@@ -132,7 +132,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3354150097728927390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6500001, y: -0.4000001, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -183,6 +183,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hittableBehaviour: {fileID: 3354150098320785784}
+  figure: {fileID: 3354150098403288961}
+  blinkMaterial: {fileID: 2100000, guid: e5a385067cc328d48b2fa6d7d205f7bb, type: 2}
+  blinkTime: 0.1
 --- !u!1 &3354150098320785675
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +356,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82852d2e650fc4048ac887d4fc8710e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   knockbackRecoverTime: 1
 --- !u!114 &3354150098320785782
 MonoBehaviour:
@@ -366,6 +375,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87fda33e10ea24448ba9fe6c8dfffc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   stunFrames: 2
 --- !u!114 &3354150098320785781
 MonoBehaviour:
@@ -379,6 +394,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e321a7af8378f45b972ec08f7089e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   cooldown: 0
   defaultSpeed: 2
 --- !u!114 &3354150098320785780
@@ -393,6 +414,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed9ec4fc5714304c83d532294f45bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   cooldown: 0
 --- !u!114 &3354150098320785779
 MonoBehaviour:
@@ -406,6 +433,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b548215346a08f438c0748856529dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   cooldown: 0
 --- !u!114 &-6127049497224296105
 MonoBehaviour:
@@ -419,6 +452,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d226a25c074d584e9eeda226ab1d673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   cooldown: 0
 --- !u!114 &3354150098320785778
 MonoBehaviour:
@@ -432,6 +471,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab68d069e0e79504ebe8ab7fd318ee7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   maxComboDelay: 0.5
   hittableTags:
   - Player
@@ -448,6 +493,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15028a98acbfc2140a1a48233734334d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   instant: 0
   interruptible: 1
   hardRecovery: 0
@@ -493,6 +544,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 456a183db1e8752488fe8e192957fb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   instant: 0
   interruptible: 1
   hardRecovery: 0
@@ -562,6 +619,7 @@ MonoBehaviour:
   playerTag: Player
   rageHealthThreshold: 30
   rageDamageMultiplier: 0.5
+  distanceAnimatorParameters: []
 --- !u!114 &3354150098320785677
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,10 +9,7 @@ public delegate void StunCallback(float damage, float time);
 public class HittableBehaviour : CharacterBehaviour, IHittable
 {
     [ShowDebug] public float damageMultiplier;
-    public SpriteRenderer figure;
-    public Color blinkColor;
-    public float blinkTime;
-    
+
     private const float StunLaunchPower = 1;
     private const float StunLaunchAngel = 90; // degrees
     public event HitCallback OnHit;
@@ -32,11 +29,6 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
         knockbackBehaviour = GetComponent<KnockbackBehaviour>();
         stunBehaviour = GetComponent<StunBehaviour>();
         damageMultiplier = 1;
-
-        if (figure)
-        {
-            OnHit += _ => Blink();
-        }
     }
 
     public bool CanGetHit()
@@ -58,12 +50,6 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
         var processedDamage = ProcessDamage(damage);
         healthSystem.health = Math.Max(healthSystem.health - processedDamage, 0);
         OnHit?.Invoke(processedDamage);
-    }
-
-    private void Blink()
-    {
-        figure.color = blinkColor;
-        blinkEvent = EventManager.Instance.StartTimeout(() => figure.color = Color.white, blinkTime);
     }
 
     private void DoKnockback(float damage, float power, float angleDegrees)

@@ -10,6 +10,7 @@ public class SuperArmorHittableHitbox : HittableHitbox
 
     public override void Hit(float damage)
     {
+        Blink();
         superArmorEffect.HitArmor(damage);
     }
 
