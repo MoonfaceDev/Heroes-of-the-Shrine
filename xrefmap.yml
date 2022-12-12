@@ -3270,18 +3270,6 @@ references:
   isSpec: "True"
   fullName: HittableBehaviour.Awake
   nameWithType: HittableBehaviour.Awake
-- uid: Global.HittableBehaviour.blinkColor
-  name: blinkColor
-  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_blinkColor
-  commentId: F:Global.HittableBehaviour.blinkColor
-  fullName: HittableBehaviour.blinkColor
-  nameWithType: HittableBehaviour.blinkColor
-- uid: Global.HittableBehaviour.blinkTime
-  name: blinkTime
-  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_blinkTime
-  commentId: F:Global.HittableBehaviour.blinkTime
-  fullName: HittableBehaviour.blinkTime
-  nameWithType: HittableBehaviour.blinkTime
 - uid: Global.HittableBehaviour.CanGetHit
   name: CanGetHit()
   href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_CanGetHit
@@ -3301,12 +3289,6 @@ references:
   commentId: F:Global.HittableBehaviour.damageMultiplier
   fullName: HittableBehaviour.damageMultiplier
   nameWithType: HittableBehaviour.damageMultiplier
-- uid: Global.HittableBehaviour.figure
-  name: figure
-  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_figure
-  commentId: F:Global.HittableBehaviour.figure
-  fullName: HittableBehaviour.figure
-  nameWithType: HittableBehaviour.figure
 - uid: Global.HittableBehaviour.Hit(System.Single)
   name: Hit(Single)
   href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_Hit_System_Single_
@@ -3383,6 +3365,31 @@ references:
   isSpec: "True"
   fullName: HittableHitbox.Awake
   nameWithType: HittableHitbox.Awake
+- uid: Global.HittableHitbox.Blink
+  name: Blink()
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Blink
+  commentId: M:Global.HittableHitbox.Blink
+  fullName: HittableHitbox.Blink()
+  nameWithType: HittableHitbox.Blink()
+- uid: Global.HittableHitbox.Blink*
+  name: Blink
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Blink_
+  commentId: Overload:Global.HittableHitbox.Blink
+  isSpec: "True"
+  fullName: HittableHitbox.Blink
+  nameWithType: HittableHitbox.Blink
+- uid: Global.HittableHitbox.blinkMaterial
+  name: blinkMaterial
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_blinkMaterial
+  commentId: F:Global.HittableHitbox.blinkMaterial
+  fullName: HittableHitbox.blinkMaterial
+  nameWithType: HittableHitbox.blinkMaterial
+- uid: Global.HittableHitbox.blinkTime
+  name: blinkTime
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_blinkTime
+  commentId: F:Global.HittableHitbox.blinkTime
+  fullName: HittableHitbox.blinkTime
+  nameWithType: HittableHitbox.blinkTime
 - uid: Global.HittableHitbox.Character
   name: Character
   href: api/Global.HittableHitbox.html#Global_HittableHitbox_Character
@@ -3396,6 +3403,12 @@ references:
   isSpec: "True"
   fullName: HittableHitbox.Character
   nameWithType: HittableHitbox.Character
+- uid: Global.HittableHitbox.figure
+  name: figure
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_figure
+  commentId: F:Global.HittableHitbox.figure
+  fullName: HittableHitbox.figure
+  nameWithType: HittableHitbox.figure
 - uid: Global.HittableHitbox.Hit(System.Single)
   name: Hit(Single)
   href: api/Global.HittableHitbox.html#Global_HittableHitbox_Hit_System_Single_
@@ -6195,12 +6208,6 @@ references:
   isSpec: "True"
   fullName: SuperArmorEffect.HitArmor
   nameWithType: SuperArmorEffect.HitArmor
-- uid: Global.SuperArmorEffect.onBreak
-  name: onBreak
-  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_onBreak
-  commentId: F:Global.SuperArmorEffect.onBreak
-  fullName: SuperArmorEffect.onBreak
-  nameWithType: SuperArmorEffect.onBreak
 - uid: Global.SuperArmorEffect.Stop
   name: Stop()
   href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_Stop
