@@ -193,6 +193,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab68d069e0e79504ebe8ab7fd318ee7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   maxComboDelay: 0.5
   hittableTags:
   - Player
@@ -209,6 +215,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d226a25c074d584e9eeda226ab1d673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   cooldown: 0
 --- !u!114 &63080242
 MonoBehaviour:
@@ -222,6 +234,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b548215346a08f438c0748856529dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   cooldown: 0
 --- !u!114 &63080243
 MonoBehaviour:
@@ -235,6 +253,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed9ec4fc5714304c83d532294f45bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   cooldown: 0
 --- !u!114 &63080244
 MonoBehaviour:
@@ -248,6 +272,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e321a7af8378f45b972ec08f7089e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   cooldown: 0
   defaultSpeed: 2
 --- !u!114 &63080245
@@ -262,6 +292,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87fda33e10ea24448ba9fe6c8dfffc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   stunFrames: 2
 --- !u!114 &63080246
 MonoBehaviour:
@@ -275,6 +311,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82852d2e650fc4048ac887d4fc8710e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   knockbackRecoverTime: 1
 --- !u!114 &63080248
 MonoBehaviour:
@@ -288,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af61f8ebac7a76742baddc8a44dddfa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 900
+  startHealth: 600
   health: 0
 --- !u!114 &63080249
 MonoBehaviour:
@@ -413,9 +455,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 579c565da1e94b73a6686a85695e0bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   armorHealth: 100
   armorCooldown: 12
   damageMultiplier: 0.5
+  onBreak:
+    m_PersistentCalls:
+      m_Calls: []
   armorCooldownStart: 0
 --- !u!114 &63080258
 MonoBehaviour:
@@ -429,6 +480,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9569bccaf17bff14bb7809fd39e6391d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   instant: 0
   interruptible: 1
   hardRecovery: 0
@@ -474,6 +531,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d06401bcbeae430e933d88d9ecdc16f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   instant: 0
   interruptible: 1
   hardRecovery: 1
@@ -517,6 +580,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cfe8175de16ba346a6957969e6a94ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   particles: {fileID: 0}
 --- !u!114 &63080261
 MonoBehaviour:
@@ -530,6 +599,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e86d033fb4f164abb77561de174642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   instant: 0
   interruptible: 1
   hardRecovery: 1
@@ -1611,6 +1686,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82852d2e650fc4048ac887d4fc8710e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+  onStop:
+    m_PersistentCalls:
+      m_Calls: []
   knockbackRecoverTime: 0
 --- !u!1 &863520701
 GameObject:
@@ -2658,6 +2739,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862601264}
   m_CullTransparentMesh: 1
+--- !u!1 &2001311741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2001311745}
+  - component: {fileID: 2001311744}
+  - component: {fileID: 2001311743}
+  - component: {fileID: 2001311742}
+  m_Layer: 0
+  m_Name: LBarrier
+  m_TagString: Barrier
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2001311742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001311741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679915e21248d4340a3599b8048c2ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cacheTag: Barrier
+  object: {fileID: 2001311743}
+--- !u!114 &2001311743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001311741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 5.5, y: 2, z: 2}
+--- !u!114 &2001311744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001311741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 0}
+  figureObject: {fileID: 0}
+  position: {x: -13.5, y: 1, z: -2.5}
+  scale: {x: 1, y: 1, z: 1}
+  velocity: {x: 0, y: 0, z: 0}
+  acceleration: {x: 0, y: 0, z: 0}
+--- !u!4 &2001311745
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001311741}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.5, y: -2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2074727357
 GameObject:
   m_ObjectHideFlags: 0
