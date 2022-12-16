@@ -687,6 +687,11 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 441269345065587785, guid: 20fadd8aced608b45a4014b623c766c3,
+        type: 3}
+      propertyPath: position.x
+      value: 10.25
+      objectReference: {fileID: 0}
     - target: {fileID: 441269345065587789, guid: 20fadd8aced608b45a4014b623c766c3,
         type: 3}
       propertyPath: m_RootOrder
@@ -695,7 +700,7 @@ PrefabInstance:
     - target: {fileID: 441269345065587789, guid: 20fadd8aced608b45a4014b623c766c3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.25
+      value: 10.25
       objectReference: {fileID: 0}
     - target: {fileID: 441269345065587789, guid: 20fadd8aced608b45a4014b623c766c3,
         type: 3}
@@ -823,6 +828,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: PossessedHuman (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 441269345576187498, guid: 20fadd8aced608b45a4014b623c766c3,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1572981186, guid: 53b0897a0bae432408144f4aa3cfcaa7,
+        type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 20fadd8aced608b45a4014b623c766c3, type: 3}
@@ -1146,7 +1157,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 055a8eff99848cc48bc2df787fb1e778, type: 2}
+      objectReference: {fileID: 22100000, guid: a43ed24befad6f04cb201e353ac6a913,
+        type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 20fadd8aced608b45a4014b623c766c3, type: 3}
@@ -1964,6 +1976,11 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 441269345065587785, guid: 20fadd8aced608b45a4014b623c766c3,
+        type: 3}
+      propertyPath: position.x
+      value: 3.25
+      objectReference: {fileID: 0}
     - target: {fileID: 441269345065587789, guid: 20fadd8aced608b45a4014b623c766c3,
         type: 3}
       propertyPath: m_RootOrder
@@ -1972,7 +1989,7 @@ PrefabInstance:
     - target: {fileID: 441269345065587789, guid: 20fadd8aced608b45a4014b623c766c3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.25
+      value: 3.25
       objectReference: {fileID: 0}
     - target: {fileID: 441269345065587789, guid: 20fadd8aced608b45a4014b623c766c3,
         type: 3}
@@ -2024,6 +2041,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: PossessedHuman (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 441269345576187499, guid: 20fadd8aced608b45a4014b623c766c3,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 38e31b6bf70dd264d87393c265be69e4,
+        type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 20fadd8aced608b45a4014b623c766c3, type: 3}
