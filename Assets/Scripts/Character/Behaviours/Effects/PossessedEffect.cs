@@ -29,13 +29,10 @@ public class PossessedEffect : BaseEffect
         {
             hittableBehaviour.OnHit += OnHit;
         }
-
-        if (IsPlaying(typeof(WalkBehaviour)))
-        {
-            MovableObject.velocity = Vector3.zero;
-        }
+        
         DisableBehaviours(typeof(BaseAttack), typeof(BaseMovementBehaviour), typeof(ForcedBehaviour));
         StopBehaviours(typeof(BaseAttack), typeof(BaseMovementBehaviour), typeof(ForcedBehaviour));
+        MovableObject.velocity = Vector3.zero;
     }
 
     private void OnHit(float damage)
