@@ -33,7 +33,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
 
     public bool CanGetHit()
     {
-        return healthSystem.health > 0 && !(knockbackBehaviour && knockbackBehaviour.Recovering);
+        return healthSystem.Alive && !(knockbackBehaviour && knockbackBehaviour.Recovering);
     }
 
     private float ProcessDamage(float damage)

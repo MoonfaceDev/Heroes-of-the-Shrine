@@ -15,7 +15,7 @@ public class RepositionPattern : BasePattern
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
-        
+
         var followBehaviour = animator.GetComponent<FollowBehaviour>();
 
         var walkBehaviour = animator.GetComponent<WalkBehaviour>();
@@ -31,7 +31,9 @@ public class RepositionPattern : BasePattern
             () =>
             {
                 otherEnemies = CachedObjectsManager.Instance.GetObjects<Character>("Enemy")
-                    .Where(enemy => enemy != followBehaviour.Character).ToArray();
+                    .Where(enemy => enemy != followBehaviour.Character)
+                    .Where(enemy => enemy.GetComponent<HealthSystem>().Alive)
+                    .ToArray();
             }, false);
 
         followBehaviour.Play(

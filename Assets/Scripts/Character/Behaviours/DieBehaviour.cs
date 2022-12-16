@@ -19,7 +19,7 @@ public class DieBehaviour : CharacterBehaviour
 
         hittableBehaviour.OnHit += _ =>
         {
-            if (healthSystem.health <= 0)
+            if (!healthSystem.Alive)
             {
                 Kill();
             }

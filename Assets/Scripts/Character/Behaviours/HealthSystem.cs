@@ -12,4 +12,6 @@ public class HealthSystem : CharacterBehaviour
         base.Awake();
         health = startHealth;
     }
+
+    public bool Alive => health > 0;
 }
