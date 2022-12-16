@@ -536,6 +536,57 @@ references:
   commentId: F:Global.AttackProperty.button
   fullName: AttackProperty.button
   nameWithType: AttackProperty.button
+- uid: Global.AudioManager
+  name: AudioManager
+  href: api/Global.AudioManager.html
+  commentId: T:Global.AudioManager
+  fullName: AudioManager
+  nameWithType: AudioManager
+- uid: Global.AudioManager.backgroundMusic
+  name: backgroundMusic
+  href: api/Global.AudioManager.html#Global_AudioManager_backgroundMusic
+  commentId: F:Global.AudioManager.backgroundMusic
+  fullName: AudioManager.backgroundMusic
+  nameWithType: AudioManager.backgroundMusic
+- uid: Global.AudioManager.Instance
+  name: Instance
+  href: api/Global.AudioManager.html#Global_AudioManager_Instance
+  commentId: P:Global.AudioManager.Instance
+  fullName: AudioManager.Instance
+  nameWithType: AudioManager.Instance
+- uid: Global.AudioManager.Instance*
+  name: Instance
+  href: api/Global.AudioManager.html#Global_AudioManager_Instance_
+  commentId: Overload:Global.AudioManager.Instance
+  isSpec: "True"
+  fullName: AudioManager.Instance
+  nameWithType: AudioManager.Instance
+- uid: Global.AudioManager.Play(AudioClip)
+  name: Play(AudioClip)
+  href: api/Global.AudioManager.html#Global_AudioManager_Play_AudioClip_
+  commentId: M:Global.AudioManager.Play(AudioClip)
+  fullName: AudioManager.Play(AudioClip)
+  nameWithType: AudioManager.Play(AudioClip)
+- uid: Global.AudioManager.Play*
+  name: Play
+  href: api/Global.AudioManager.html#Global_AudioManager_Play_
+  commentId: Overload:Global.AudioManager.Play
+  isSpec: "True"
+  fullName: AudioManager.Play
+  nameWithType: AudioManager.Play
+- uid: Global.AudioManager.PlayBackground(AudioClip)
+  name: PlayBackground(AudioClip)
+  href: api/Global.AudioManager.html#Global_AudioManager_PlayBackground_AudioClip_
+  commentId: M:Global.AudioManager.PlayBackground(AudioClip)
+  fullName: AudioManager.PlayBackground(AudioClip)
+  nameWithType: AudioManager.PlayBackground(AudioClip)
+- uid: Global.AudioManager.PlayBackground*
+  name: PlayBackground
+  href: api/Global.AudioManager.html#Global_AudioManager_PlayBackground_
+  commentId: Overload:Global.AudioManager.PlayBackground
+  isSpec: "True"
+  fullName: AudioManager.PlayBackground
+  nameWithType: AudioManager.PlayBackground
 - uid: Global.BaseAttack
   name: BaseAttack
   href: api/Global.BaseAttack.html

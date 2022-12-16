@@ -168,6 +168,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.AudioManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.AudioManager.html",
+          "hash": "gwcXYso5ognuHR3CSOQeZ3ccZqRGDEdmoRBlMfvs508="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.BaseAttack.yml",
       "output": {
         ".html": {
@@ -1636,7 +1648,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "lTTW2bgzaRqROVfOw8+wmTTs5bARJDi+1N7qNB4XzG0="
+          "hash": "yh+ZEB/zJsabf2JyX1Lm4Sqx+z508fJAnMK51k93INI="
         }
       },
       "is_incremental": false,
@@ -1648,7 +1660,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "PderxRCvDRrXKJFCiCyhTK6qiK/jL/SFt0SV/NYk+nI="
+          "hash": "Ct1cmP2TCdJGnolqJaeQvzzNYO2i1QllCWQGKthDnUU="
         }
       },
       "is_incremental": false,
@@ -1859,7 +1871,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 135,
+          "total_file_count": 136,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
