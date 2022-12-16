@@ -3524,6 +3524,12 @@ references:
   isSpec: "True"
   fullName: HittableHitbox.Knockback
   nameWithType: HittableHitbox.Knockback
+- uid: Global.HittableHitbox.onHit
+  name: onHit
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_onHit
+  commentId: F:Global.HittableHitbox.onHit
+  fullName: HittableHitbox.onHit
+  nameWithType: HittableHitbox.onHit
 - uid: Global.HittableHitbox.Stun(System.Single,System.Single)
   name: Stun(Single, Single)
   href: api/Global.HittableHitbox.html#Global_HittableHitbox_Stun_System_Single_System_Single_
@@ -5969,6 +5975,38 @@ references:
   isSpec: "True"
   fullName: SlideBehaviour.Stop
   nameWithType: SlideBehaviour.Stop
+- uid: Global.SoundEffect
+  name: SoundEffect
+  href: api/Global.SoundEffect.html
+  commentId: T:Global.SoundEffect
+  fullName: SoundEffect
+  nameWithType: SoundEffect
+- uid: Global.SoundEffect.Play(AudioClip)
+  name: Play(AudioClip)
+  href: api/Global.SoundEffect.html#Global_SoundEffect_Play_AudioClip_
+  commentId: M:Global.SoundEffect.Play(AudioClip)
+  fullName: SoundEffect.Play(AudioClip)
+  nameWithType: SoundEffect.Play(AudioClip)
+- uid: Global.SoundEffect.Play*
+  name: Play
+  href: api/Global.SoundEffect.html#Global_SoundEffect_Play_
+  commentId: Overload:Global.SoundEffect.Play
+  isSpec: "True"
+  fullName: SoundEffect.Play
+  nameWithType: SoundEffect.Play
+- uid: Global.SoundEffect.PlayBackground(AudioClip)
+  name: PlayBackground(AudioClip)
+  href: api/Global.SoundEffect.html#Global_SoundEffect_PlayBackground_AudioClip_
+  commentId: M:Global.SoundEffect.PlayBackground(AudioClip)
+  fullName: SoundEffect.PlayBackground(AudioClip)
+  nameWithType: SoundEffect.PlayBackground(AudioClip)
+- uid: Global.SoundEffect.PlayBackground*
+  name: PlayBackground
+  href: api/Global.SoundEffect.html#Global_SoundEffect_PlayBackground_
+  commentId: Overload:Global.SoundEffect.PlayBackground
+  isSpec: "True"
+  fullName: SoundEffect.PlayBackground
+  nameWithType: SoundEffect.PlayBackground
 - uid: Global.SpawnAttack
   name: SpawnAttack
   href: api/Global.SpawnAttack.html
@@ -6296,6 +6334,12 @@ references:
   isSpec: "True"
   fullName: SuperArmorEffect.HitArmor
   nameWithType: SuperArmorEffect.HitArmor
+- uid: Global.SuperArmorEffect.onHit
+  name: onHit
+  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_onHit
+  commentId: F:Global.SuperArmorEffect.onHit
+  fullName: SuperArmorEffect.onHit
+  nameWithType: SuperArmorEffect.onHit
 - uid: Global.SuperArmorEffect.Stop
   name: Stop()
   href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_Stop
