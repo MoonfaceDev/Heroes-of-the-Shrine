@@ -152,7 +152,8 @@ public class MovableObject : MonoBehaviour
     {
         var gridPosition = ToPlane(walkableGrid.movableObject.WorldPosition);
         var gridSize = ToPlane(walkableGrid.gridWorldSize);
-        return LineRectangleIntersections(previousGroundPosition, groundPosition, gridPosition, gridSize);
+        return LineRectangleIntersections(previousGroundPosition, groundPosition, gridPosition + gridSize / 2,
+            gridSize);
     }
 
     private IEnumerable<Vector2> GetCameraBorderIntersections(Vector2 previousGroundPosition, Vector2 groundPosition)
@@ -161,7 +162,7 @@ public class MovableObject : MonoBehaviour
         var gridPosition = ToPlane(walkableGrid.movableObject.WorldPosition);
         var gridSize = ToPlane(walkableGrid.gridWorldSize);
         return LineRectangleIntersections(previousGroundPosition, groundPosition,
-            new Vector2(border.xMin, gridPosition.y), new Vector2(border.width, gridSize.y));
+            new Vector2(border.center.x, gridPosition.y + gridSize.y / 2), new Vector2(border.width, gridSize.y));
     }
 
     private bool IsValidPosition(Vector3 newPosition)

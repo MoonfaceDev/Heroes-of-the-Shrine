@@ -68,9 +68,9 @@ public class Hitbox : MonoBehaviour
 
     public bool IsInside(Vector3 point)
     {
-        return point.x >= GetLeft() && point.x <= GetRight()
-                                    && point.y >= GetBottom() && point.y <= GetTop()
-                                    && point.z >= GetFar() && point.z <= GetNear();
+        return (point.x >= GetLeft() && point.x <= GetRight())
+               && (point.y >= GetBottom() && point.y <= GetTop())
+               && (point.z >= GetFar() && point.z <= GetNear());
     }
 
     static bool IsBetween(float min1, float max1, float min2, float max2)

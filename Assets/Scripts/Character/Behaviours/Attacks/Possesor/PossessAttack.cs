@@ -58,7 +58,7 @@ public class PossessAttack : BaseAttack
             }
             catch (NoSpawnPointException)
             {
-                Debug.LogError("Spawn point not found after 20 tries");
+                Debug.LogWarning("Spawn point not found after 20 tries");
                 break;
             }
         }
