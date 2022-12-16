@@ -154,6 +154,7 @@ GameObject:
   - component: {fileID: 63080262}
   - component: {fileID: 63080263}
   - component: {fileID: 63080237}
+  - component: {fileID: 63080264}
   m_Layer: 0
   m_Name: CaveGoblinPossesed
   m_TagString: Enemy.Goblin.Cave
@@ -642,7 +643,19 @@ MonoBehaviour:
   explosionHitDetector: {fileID: 1468609905}
   onExplosion:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 63080264}
+        m_TargetAssemblyTypeName: Particles, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   explosionKnockbackPower: 10
   explosionKnockbackDirection: 35
   explosionDamage: 15
@@ -677,6 +690,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595f0ae187581934e9415feea720a763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &63080264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63080233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d961789b6aee674bb3eb9ce45793ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 9064382892142360621, guid: 5651191ab569ef846a243be654ff865e, type: 3}
+  particlePosition: {x: 2.3, y: 0.5, z: 0}
+  attachToCharacter: 0
 --- !u!1001 &247483598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2762,7 +2790,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 448759350, guid: 91583023e17763d4fae0bc583dbe5fa6, type: 3}
+  m_Sprite: {fileID: -1400504230, guid: 91583023e17763d4fae0bc583dbe5fa6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
