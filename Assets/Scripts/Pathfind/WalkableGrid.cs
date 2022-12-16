@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,22 +38,22 @@ public class WalkableGrid : MonoBehaviour
 				grid[x, z] = new Node(x, z, true, worldPoint);
 			}
 		}
-		var hitboxes = FindObjectsOfType<Hitbox>();    
+		var barriers = CachedObjectsManager.Instance.GetObjects<Hitbox>("Barrier").ToArray();
 
-		foreach (var hitbox in hitboxes)
+		foreach (var barrier in barriers)
 		{
-			if (hitbox.CompareTag("Barrier") && (IsInside(hitbox.WorldPosition) || IsInside(hitbox.WorldPosition + hitbox.size)))
+			var bottomLeftPoint = barrier.WorldPosition - barrier.size / 2;
+			var topRightPoint = barrier.WorldPosition + barrier.size / 2;
+			if (!IsInside(bottomLeftPoint) && !IsInside(topRightPoint)) continue;
+			var bottomLeftIndex = IndexFromWorldPoint(bottomLeftPoint) - Vector2Int.one;
+			var topRightIndex = IndexFromWorldPoint(topRightPoint) + Vector2Int.one;
+			for (var x = bottomLeftIndex.x; x <= topRightIndex.x; x++)
 			{
-				var bottomLeftIndex = IndexFromWorldPoint(hitbox.WorldPosition) - new Vector2Int(1, 1);
-				var topRightIndex = IndexFromWorldPoint(hitbox.WorldPosition + hitbox.size) + new Vector2Int(1, 1);
-				for (var x = bottomLeftIndex.x; x <= topRightIndex.x; x++)
+				for (var y = bottomLeftIndex.y; y <= topRightIndex.y; y++)
 				{
-					for (var y = bottomLeftIndex.y; y <= topRightIndex.y; y++)
+					if (x >= 0 && x < GridSizeX && y >= 0 && y < GridSizeZ)
 					{
-						if (x >= 0 && x < GridSizeX && y >= 0 && y < GridSizeZ)
-						{
-							grid[x, y].walkable = false;
-						}
+						grid[x, y].walkable = false;
 					}
 				}
 			}
@@ -177,8 +178,11 @@ public class WalkableGrid : MonoBehaviour
 		if (!movableObject) return;
 		Gizmos.color = Color.yellow;
 		Gizmos.DrawWireCube(MovableObject.GroundScreenCoordinates(movableObject.WorldPosition + gridWorldSize / 2), MovableObject.GroundScreenCoordinates(gridWorldSize));
+	}
 
-		if (grid == null || Application.isEditor) return;
+	private void OnDrawGizmosSelected()
+	{
+		if (grid == null) return;
 		foreach (var n in grid)
 		{
 			Gizmos.color = n.walkable ? Color.white : Color.red;

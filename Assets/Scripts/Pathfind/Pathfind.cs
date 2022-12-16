@@ -14,10 +14,6 @@ public class Pathfind : MonoBehaviour
     public Vector3 Direction(Vector3 start, Vector3 end, Node[] excluded = null)
     {
         var startNode = grid.NodeFromWorldPoint(start);
-        if (!WalkableGrid.IsWalkable(startNode, excluded))
-        {
-            return Vector3.zero;
-        }
         var endNode = grid.ClosestWalkableNode(end, excluded);
         var path = ThetaStar(startNode, endNode, excluded) ?? new List<Node>{ startNode, endNode };
         gizmosPath = path;
