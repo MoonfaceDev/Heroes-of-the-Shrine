@@ -3034,6 +3034,19 @@ references:
   commentId: T:Global.HealthSystem
   fullName: HealthSystem
   nameWithType: HealthSystem
+- uid: Global.HealthSystem.Alive
+  name: Alive
+  href: api/Global.HealthSystem.html#Global_HealthSystem_Alive
+  commentId: P:Global.HealthSystem.Alive
+  fullName: HealthSystem.Alive
+  nameWithType: HealthSystem.Alive
+- uid: Global.HealthSystem.Alive*
+  name: Alive
+  href: api/Global.HealthSystem.html#Global_HealthSystem_Alive_
+  commentId: Overload:Global.HealthSystem.Alive
+  isSpec: "True"
+  fullName: HealthSystem.Alive
+  nameWithType: HealthSystem.Alive
 - uid: Global.HealthSystem.Awake
   name: Awake()
   href: api/Global.HealthSystem.html#Global_HealthSystem_Awake
@@ -5014,6 +5027,24 @@ references:
   isSpec: "True"
   fullName: PossessedEffect.Stop
   nameWithType: PossessedEffect.Stop
+- uid: Global.PossessedHumanBrain
+  name: PossessedHumanBrain
+  href: api/Global.PossessedHumanBrain.html
+  commentId: T:Global.PossessedHumanBrain
+  fullName: PossessedHumanBrain
+  nameWithType: PossessedHumanBrain
+- uid: Global.PossessedHumanBrain.animator
+  name: animator
+  href: api/Global.PossessedHumanBrain.html#Global_PossessedHumanBrain_animator
+  commentId: F:Global.PossessedHumanBrain.animator
+  fullName: PossessedHumanBrain.animator
+  nameWithType: PossessedHumanBrain.animator
+- uid: Global.PossessedHumanBrain.bossTag
+  name: bossTag
+  href: api/Global.PossessedHumanBrain.html#Global_PossessedHumanBrain_bossTag
+  commentId: F:Global.PossessedHumanBrain.bossTag
+  fullName: PossessedHumanBrain.bossTag
+  nameWithType: PossessedHumanBrain.bossTag
 - uid: Global.PossessSource
   name: PossessSource
   href: api/Global.PossessSource.html
