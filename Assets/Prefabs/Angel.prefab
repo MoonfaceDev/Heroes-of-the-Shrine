@@ -585,6 +585,7 @@ GameObject:
   - component: {fileID: 5102893360866760427}
   - component: {fileID: 2748543002303246879}
   - component: {fileID: 3262553446811620699}
+  - component: {fileID: 7464119798599608225}
   m_Layer: 0
   m_Name: SlashAttackHitbox
   m_TagString: Untagged
@@ -652,6 +653,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   includedHittableTags: []
   excludedHittableTags: []
+--- !u!114 &7464119798599608225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893360866760426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7368109035975547894, guid: dd46b3ae7d054024c87a55ea5268a893, type: 3}
+  particlePosition: {x: -0.15, y: -0.15, z: 0}
 --- !u!1 &5102893360874897723
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,7 +742,7 @@ Transform:
   - {fileID: 5102893360866760424}
   - {fileID: 3850747449127629430}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360874897665
 MonoBehaviour:
@@ -818,9 +833,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageMultiplier: 0
-  figure: {fileID: 5102893361555062420}
-  blinkColor: {r: 0.9528302, g: 0.46203277, b: 0.79480326, a: 1}
-  blinkTime: 0.1
 --- !u!114 &5102893360874897669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2208,7 +2220,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.5
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -2261,7 +2273,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.01
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -2754,7 +2766,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 18
+    type: 12
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -2838,10 +2850,10 @@ ParticleSystem:
     m_TextureAlphaAffectsParticles: 1
     m_TextureBilinearFiltering: 0
     randomDirectionAmount: 0
-    sphericalDirectionAmount: 1
-    randomPositionAmount: 0
+    sphericalDirectionAmount: 0
+    randomPositionAmount: 0.4
     radius:
-      value: 0.3
+      value: 0.6
       mode: 0
       spread: 0
       speed:
@@ -2960,7 +2972,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 4
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -3013,7 +3025,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.7
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -6881,7 +6893,7 @@ ParticleSystemRenderer:
   m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.01
+  m_MaxParticleSize: 0.02
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
@@ -6921,7 +6933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
   figureObject: {fileID: 5102893361279726062}
-  position: {x: 0, y: 0, z: -0.01}
+  position: {x: 0, y: 0, z: 0.01}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
