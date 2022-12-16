@@ -1620,6 +1620,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.WalkSoundEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.WalkSoundEffect.html",
+          "hash": "MgPOUvSbPK9R4Q+EYIQsaFvJO4zUdGjJ0nATN8ENqYs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.WalkableGrid.yml",
       "output": {
         ".html": {
@@ -1660,7 +1672,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "yLJh8yHI/r/rGUGX166hi4DgiRg0TdIsToUdO3U4wb4="
+          "hash": "Lm4V4KBfsx5AfP3ZEnOjCrsFRau/gawnnqgKZIW0cNs="
         }
       },
       "is_incremental": false,
@@ -1672,7 +1684,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "FbEdbGfAyLbBZxytJyCWLwTV+u4k/YInDiJd4GXQ2gA="
+          "hash": "05lsoaK3reeEsouWftBj1aP59TpNDJK+YGDvEBRo3pw="
         }
       },
       "is_incremental": false,
@@ -1883,7 +1895,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 137,
+          "total_file_count": 138,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
