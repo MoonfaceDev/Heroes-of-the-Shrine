@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 public class ElectrifyAttack : NormalAttack
@@ -11,6 +12,7 @@ public class ElectrifyAttack : NormalAttack
     public float periodicStunTime;
     public float periodicDamage;
     [Header("Explosion")] public BaseHitDetector explosionHitDetector;
+    public UnityEvent onExplosion;
 
     [FormerlySerializedAs("epxlosionKnockbackPower")]
     public float explosionKnockbackPower;
@@ -18,7 +20,7 @@ public class ElectrifyAttack : NormalAttack
     public float explosionKnockbackDirection;
     public float explosionDamage;
     public float explosionStunTime;
-
+    
     protected override void ConfigureHitDetector()
     {
         float detectCount = 0;
@@ -73,6 +75,7 @@ public class ElectrifyAttack : NormalAttack
 
     private void ExplosionHitCallable(IHittable hittable)
     {
+        onExplosion.Invoke();
         var processedDamage = CalculateExplosionDamage(hittable.Character);
         print(hittable.Character.name + " hit by explosion " + AttackName);
         var hitDirection =
