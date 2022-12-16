@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5884619157288324021}
   - component: {fileID: 5533764411884718115}
   - component: {fileID: 5046126295531141603}
+  - component: {fileID: 110950560831635055}
   m_Layer: 0
   m_Name: ElectrifyAttackHitbox
   m_TagString: Untagged
@@ -81,6 +82,20 @@ MonoBehaviour:
   excludedHittableTags: []
   interval: 0.1
   startImmediately: 1
+--- !u!114 &110950560831635055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5884619157288324023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7368109035975547894, guid: faab43d0b7c5cfa448b93f624f98e583, type: 3}
+  particlePosition: {x: 0.75, y: 0, z: 0}
 --- !u!1 &5884619157808626362
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +170,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -116351853, guid: c558e1a82a9402a479f9228bc5d85cce, type: 3}
+  m_Sprite: {fileID: 1868346238, guid: c558e1a82a9402a479f9228bc5d85cce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -292,6 +307,7 @@ GameObject:
   - component: {fileID: 5884619158051856710}
   - component: {fileID: 6946030317013343167}
   - component: {fileID: 4349693572784965940}
+  - component: {fileID: 5400955995747365530}
   m_Layer: 0
   m_Name: UppercutHitbox
   m_TagString: Untagged
@@ -359,6 +375,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   includedHittableTags: []
   excludedHittableTags: []
+--- !u!114 &5400955995747365530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5884619158051856729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 9064382892142360621, guid: feb02b7ab9f75274f8294c0f6dfb6adb, type: 3}
+  particlePosition: {x: 0.7, y: 0.2, z: 0}
 --- !u!1 &5884619158362908890
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,9 +828,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageMultiplier: 0
-  figure: {fileID: 5884619157808626360}
-  blinkColor: {r: 1, g: 0.20392157, b: 0.20392157, a: 1}
-  blinkTime: 0.1
 --- !u!114 &5884619158741390436
 MonoBehaviour:
   m_ObjectHideFlags: 0
