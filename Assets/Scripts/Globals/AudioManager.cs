@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -16,7 +15,7 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             if (backgroundMusic)
             {
-                Instance.PlayBackground(backgroundMusic);
+                PlayBackground(backgroundMusic);
             }
 
             return;
@@ -36,14 +35,14 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayBackground(AudioClip clip)
+    public static void PlayBackground(AudioClip clip)
     {
-        audioSource.clip = clip;
-        audioSource.Play();
+        Instance.audioSource.clip = clip;
+        Instance.audioSource.Play();
     }
 
-    public void Play(AudioClip clip)
+    public static void Play(AudioClip clip)
     {
-        audioSource.PlayOneShot(clip);
+        Instance.audioSource.PlayOneShot(clip);
     }
 }

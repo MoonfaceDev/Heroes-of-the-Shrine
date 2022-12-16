@@ -461,6 +461,21 @@ MonoBehaviour:
   armorHealth: 100
   armorCooldown: 12
   damageMultiplier: 0.5
+  onHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2074727361}
+        m_TargetAssemblyTypeName: SoundEffect, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 7ea0e61697907c546b162a3ecb51a41a, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   armorCooldownStart: 0
 --- !u!114 &63080258
 MonoBehaviour:
@@ -893,6 +908,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hittableBehaviour: {fileID: 63080256}
+  onHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2074727361}
+        m_TargetAssemblyTypeName: SoundEffect, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: a4fb2c77fcef3c349b6d7faae02eb82b, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   figure: {fileID: 2074727359}
   blinkMaterial: {fileID: 2100000, guid: 139e10840e012fe4993c21c4f729a2c7, type: 2}
   blinkTime: 0.1
@@ -1333,34 +1363,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5826350638490993473, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5826350638490993473, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5826350638490993473, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 615463056}
-    - target: {fileID: 5826350638490993473, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5826350638490993473, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Invoke
-      objectReference: {fileID: 0}
-    - target: {fileID: 5826350638490993473, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DeathAction, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5826350638490993473, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 5826350638490993486, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: objectsToDestroy.Array.size
       value: 2
@@ -1479,17 +1481,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5826350637849315247, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
   m_PrefabInstance: {fileID: 615463054}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &615463056 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5826350638490993486, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-  m_PrefabInstance: {fileID: 615463054}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 018754af8c72e684ba346cdfe11831b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &713322109
 GameObject:
   m_ObjectHideFlags: 0
@@ -2381,6 +2372,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hittableBehaviour: {fileID: 63080256}
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
   figure: {fileID: 2074727359}
   blinkMaterial: {fileID: 2100000, guid: 8513bf6e8870c9b41b3e724cfc5bc64e, type: 2}
   blinkTime: 0.1
@@ -2694,6 +2688,7 @@ GameObject:
   - component: {fileID: 2074727360}
   - component: {fileID: 2074727359}
   - component: {fileID: 2074727358}
+  - component: {fileID: 2074727361}
   m_Layer: 0
   m_Name: CaveGoblinPossesed Figure
   m_TagString: Untagged
@@ -2788,6 +2783,18 @@ Transform:
   m_Father: {fileID: 63080253}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2074727361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074727357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6142a1f1c687491499aaa05fb1046b31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2106453633
 GameObject:
   m_ObjectHideFlags: 0

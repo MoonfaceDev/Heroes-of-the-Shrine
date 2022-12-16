@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class SuperArmorEffect : BaseEffect
 {
     public float armorHealth;
     public float armorCooldown;
     public float damageMultiplier = 1;
+    public UnityEvent onHit;
 
     private EventListener reloadEvent;
 
@@ -46,6 +48,7 @@ public class SuperArmorEffect : BaseEffect
     public void HitArmor(float damage)
     {
         if (!Active) return;
+        onHit.Invoke();
         currentArmorHealth = Mathf.Max(currentArmorHealth - damage, 0);
         if (currentArmorHealth == 0)
         {

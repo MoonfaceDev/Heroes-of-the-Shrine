@@ -341,9 +341,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageMultiplier: 0
-  figure: {fileID: 3354150098403288961}
-  blinkColor: {r: 1, g: 0.20350403, b: 0.20350403, a: 1}
-  blinkTime: 0.1
 --- !u!114 &3354150098320785783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -643,6 +640,7 @@ GameObject:
   - component: {fileID: 3354150098403288962}
   - component: {fileID: 3354150098403288961}
   - component: {fileID: 3354150098403288960}
+  - component: {fileID: 7224905273740248619}
   m_Layer: 0
   m_Name: Goblin Figure
   m_TagString: Untagged
@@ -737,6 +735,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7224905273740248619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354150098403288991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6142a1f1c687491499aaa05fb1046b31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3354150098559167058
 GameObject:
   m_ObjectHideFlags: 0

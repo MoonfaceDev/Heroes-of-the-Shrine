@@ -632,6 +632,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3344953106161015587, guid: 4f2197b95c98d99468c5ad33d8249e9f, type: 3}
+      propertyPath: backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4f4604aaaa4b5e14c9a3efb04aec1b36, type: 3}
     - target: {fileID: 3344953106161015596, guid: 4f2197b95c98d99468c5ad33d8249e9f, type: 3}
       propertyPath: m_Name
       value: Audio Source
@@ -1125,34 +1129,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5826350638490993473, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5826350638490993473, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5826350638490993473, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1500296615}
-    - target: {fileID: 5826350638490993473, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5826350638490993473, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Invoke
-      objectReference: {fileID: 0}
-    - target: {fileID: 5826350638490993473, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DeathAction, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5826350638490993473, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 5826350638490993486, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: objectsToDestroy.Array.size
       value: 2
@@ -1192,17 +1168,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
---- !u!114 &1500296615 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5826350638490993486, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-  m_PrefabInstance: {fileID: 1500296614}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 018754af8c72e684ba346cdfe11831b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!320 &1500296616 stripped
 PlayableDirector:
   m_CorrespondingSourceObject: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}

@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Hitbox))]
 public class HittableHitbox : MonoBehaviour, IHittable
 {
     public HittableBehaviour hittableBehaviour;
-    
+    public UnityEvent onHit;
+
     [Header("Blink Effect")]
     public SpriteRenderer figure;
     public Material blinkMaterial;
@@ -19,6 +21,13 @@ public class HittableHitbox : MonoBehaviour, IHittable
     {
         Hitbox = GetComponent<Hitbox>();
         defaultMaterial = figure.material;
+        onHit.AddListener(() =>
+        {
+            if (figure && hittableBehaviour.CanGetHit())
+            {
+                Blink();
+            }
+        });
     }
 
     public Character Character => hittableBehaviour.Character;
@@ -33,25 +42,19 @@ public class HittableHitbox : MonoBehaviour, IHittable
 
     public virtual void Hit(float damage)
     {
-        Blink();
+        onHit.Invoke();
         hittableBehaviour.Hit(damage);
     }
 
     public virtual void Knockback(float damage, float power, float angleDegrees, float stunTime)
     {
-        if (figure && hittableBehaviour.CanGetHit())
-        {
-            Blink();
-        }
+        onHit.Invoke();
         hittableBehaviour.Knockback(damage, power, angleDegrees, stunTime);
     }
 
     public virtual void Stun(float damage, float time)
     {
-        if (figure && hittableBehaviour.CanGetHit())
-        {
-            Blink();
-        }
+        onHit.Invoke();
         hittableBehaviour.Stun(damage, time);
     }
     
