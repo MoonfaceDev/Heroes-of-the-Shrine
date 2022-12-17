@@ -1,8 +1,19 @@
 using UnityEngine;
 
 public class PauseManager : MonoBehaviour
-{ 
-    public GameObject pauseMenu;
+{
+    public static PauseManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+
+        Instance = this;
+    }
 
     public bool Paused
     {
@@ -10,18 +21,9 @@ public class PauseManager : MonoBehaviour
         {
             paused = value;
             Time.timeScale = paused ? 0 : 1;
-            pauseMenu.SetActive(paused);
         }
         get => paused;
     }
 
     private bool paused;
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Paused = !Paused;
-        }
-    }
 }
