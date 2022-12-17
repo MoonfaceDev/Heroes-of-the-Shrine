@@ -1070,7 +1070,7 @@ PlayableDirector:
   - key: {fileID: 388720286087430209, guid: 7919f1923695abc408c9fb3edd97b71b, type: 2}
     value: {fileID: 2542200780353046346}
   - key: {fileID: 8107254591928678865, guid: 7919f1923695abc408c9fb3edd97b71b, type: 2}
-    value: {fileID: 1772566193}
+    value: {fileID: 1745739317}
   - key: {fileID: 8815703062542310295, guid: 7919f1923695abc408c9fb3edd97b71b, type: 2}
     value: {fileID: 2542200778651597027}
   - key: {fileID: 8845671969755884950, guid: 7919f1923695abc408c9fb3edd97b71b, type: 2}
@@ -1092,6 +1092,7 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 36da970d1bd7b17419f707b911424d1b, type: 2}
+    - {fileID: 11400000, guid: 0dcfdbb183711c541808203ad0ea1111, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -1107,6 +1108,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1772566191}
+          m_TargetAssemblyTypeName: EncounterAction, Assembly-CSharp
+          m_MethodName: Invoke
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1772566190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,7 +1132,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1772566192}
   - component: {fileID: 1772566191}
-  - component: {fileID: 1772566193}
   m_Layer: 0
   m_Name: Encounter 1
   m_TagString: Untagged
@@ -1200,36 +1214,6 @@ Transform:
   m_Father: {fileID: 2040416109}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1772566193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772566190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 0dcfdbb183711c541808203ad0ea1111, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1772566191}
-          m_TargetAssemblyTypeName: EncounterAction, Assembly-CSharp
-          m_MethodName: Invoke
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!320 &1849255318 stripped
 PlayableDirector:
   m_CorrespondingSourceObject: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
