@@ -1,9 +1,7 @@
-using System;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 
-[ExecuteInEditMode]
 [RequireComponent(typeof(MovableObject))]
 public class WalkableGrid : MonoBehaviour
 {
