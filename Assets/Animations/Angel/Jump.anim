@@ -18,8 +18,7 @@ AnimationClip:
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves:
-  - serializedVersion: 2
-    curve:
+  - curve:
     - time: 0
       value: {fileID: 1648969927, guid: 9c3fa839077a4b441af60523acaec38f, type: 3}
     - time: 0.1
@@ -44,7 +43,6 @@ AnimationClip:
     path: 
     classID: 212
     script: {fileID: 0}
-    flags: 0
   m_SampleRate: 20
   m_WrapMode: 0
   m_Bounds:
@@ -60,7 +58,6 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
       isIntCurve: 0
-      isSerializeReferenceCurve: 0
     pptrCurveMapping:
     - {fileID: 1648969927, guid: 9c3fa839077a4b441af60523acaec38f, type: 3}
     - {fileID: 2133770656, guid: 9c3fa839077a4b441af60523acaec38f, type: 3}
@@ -96,4 +93,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0
+    functionName: Play
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: b6e7985464a2b5d4389250c9cf6e274e, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

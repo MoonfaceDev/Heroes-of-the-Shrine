@@ -838,6 +838,7 @@ GameObject:
   - component: {fileID: 5102893360874897675}
   - component: {fileID: 4916786187361843125}
   - component: {fileID: 2810455707820001631}
+  - component: {fileID: 1303490756395571274}
   m_Layer: 0
   m_Name: Angel
   m_TagString: Player
@@ -872,7 +873,7 @@ Transform:
   - {fileID: 3850747449127629430}
   - {fileID: 3970267090279809017}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360874897665
 MonoBehaviour:
@@ -977,18 +978,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onPlay:
     m_PersistentCalls:
-      m_Calls: [{m_Target: {fileID: 3541930184749892774}, m_TargetAssemblyTypeName: 'UnityEngine.AudioSource,
-            UnityEngine', m_MethodName: Play, m_Mode: 1, m_Arguments: {m_ObjectArgument: {
-              fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object, UnityEngine',
-            m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: '', m_BoolArgument: 0},
-          m_CallState: 2}]
+      m_Calls: []
   onStop:
     m_PersistentCalls:
-      m_Calls: [{m_Target: {fileID: 3541930184749892774}, m_TargetAssemblyTypeName: 'UnityEngine.AudioSource,
-            UnityEngine', m_MethodName: Stop, m_Mode: 1, m_Arguments: {m_ObjectArgument: {
-              fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object, UnityEngine',
-            m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: '', m_BoolArgument: 0},
-          m_CallState: 2}]
+      m_Calls: []
   cooldown: 0
   defaultSpeed: 6
 --- !u!114 &5102893360874897668
@@ -1005,18 +998,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onPlay:
     m_PersistentCalls:
-      m_Calls: [{m_Target: {fileID: 3541930184749892774}, m_TargetAssemblyTypeName: 'UnityEngine.AudioSource,
-            UnityEngine', m_MethodName: set_pitch, m_Mode: 4, m_Arguments: {m_ObjectArgument: {
-              fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object, UnityEngine',
-            m_IntArgument: 0, m_FloatArgument: 1.25, m_StringArgument: '', m_BoolArgument: 0},
-          m_CallState: 2}]
+      m_Calls:
+      - m_Target: {fileID: 3541930184749892774}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: set_pitch
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1.25
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onStop:
     m_PersistentCalls:
-      m_Calls: [{m_Target: {fileID: 3541930184749892774}, m_TargetAssemblyTypeName: 'UnityEngine.AudioSource,
-            UnityEngine', m_MethodName: set_pitch, m_Mode: 4, m_Arguments: {m_ObjectArgument: {
-              fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object, UnityEngine',
-            m_IntArgument: 0, m_FloatArgument: 1, m_StringArgument: '', m_BoolArgument: 0},
-          m_CallState: 2}]
+      m_Calls:
+      - m_Target: {fileID: 3541930184749892774}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: set_pitch
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   cooldown: 0
   timeToRun: 1
   runSpeedMultiplier: 1.5
@@ -1225,11 +1234,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onPlay:
     m_PersistentCalls:
-      m_Calls: [{m_Target: {fileID: 2810455707820001631}, m_TargetAssemblyTypeName: 'Particles,
-            Assembly-CSharp', m_MethodName: Play, m_Mode: 1, m_Arguments: {m_ObjectArgument: {
-              fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object, UnityEngine',
-            m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: '', m_BoolArgument: 0},
-          m_CallState: 2}]
+      m_Calls:
+      - m_Target: {fileID: 2810455707820001631}
+        m_TargetAssemblyTypeName: Particles, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onStop:
     m_PersistentCalls:
       m_Calls: []
@@ -1920,6 +1937,19 @@ MonoBehaviour:
   prefab: {fileID: 7368109035975547894, guid: fd96fc8c50b008042bee8d068f1e8051, type: 3}
   particlePosition: {x: 0, y: 1.35, z: 0}
   attachToCharacter: 0
+--- !u!114 &1303490756395571274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893360874897723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb8e94fc11f20cd43bb78246d3d31861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkAudioSource: {fileID: 3541930184749892774}
 --- !u!1 &5102893360938488515
 GameObject:
   m_ObjectHideFlags: 0
