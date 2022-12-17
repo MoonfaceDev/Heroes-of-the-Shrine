@@ -2985,6 +2985,18 @@ references:
   isSpec: "True"
   fullName: ForcedWalkBehaviour.Stop
   nameWithType: ForcedWalkBehaviour.Stop
+- uid: Global.FullScreenToggle
+  name: FullScreenToggle
+  href: api/Global.FullScreenToggle.html
+  commentId: T:Global.FullScreenToggle
+  fullName: FullScreenToggle
+  nameWithType: FullScreenToggle
+- uid: Global.FullScreenToggle.button
+  name: button
+  href: api/Global.FullScreenToggle.html#Global_FullScreenToggle_button
+  commentId: F:Global.FullScreenToggle.button
+  fullName: FullScreenToggle.button
+  nameWithType: FullScreenToggle.button
 - uid: Global.GameManager
   name: GameManager
   href: api/Global.GameManager.html
@@ -4005,6 +4017,50 @@ references:
   isSpec: "True"
   fullName: MathUtils.ToSpace
   nameWithType: MathUtils.ToSpace
+- uid: Global.MenuManger
+  name: MenuManger
+  href: api/Global.MenuManger.html
+  commentId: T:Global.MenuManger
+  fullName: MenuManger
+  nameWithType: MenuManger
+- uid: Global.MenuManger.optionsPanel
+  name: optionsPanel
+  href: api/Global.MenuManger.html#Global_MenuManger_optionsPanel
+  commentId: F:Global.MenuManger.optionsPanel
+  fullName: MenuManger.optionsPanel
+  nameWithType: MenuManger.optionsPanel
+- uid: Global.MenuManger.pausePanel
+  name: pausePanel
+  href: api/Global.MenuManger.html#Global_MenuManger_pausePanel
+  commentId: F:Global.MenuManger.pausePanel
+  fullName: MenuManger.pausePanel
+  nameWithType: MenuManger.pausePanel
+- uid: Global.MenuManger.ToggleOptionsPanel(System.Boolean)
+  name: ToggleOptionsPanel(Boolean)
+  href: api/Global.MenuManger.html#Global_MenuManger_ToggleOptionsPanel_System_Boolean_
+  commentId: M:Global.MenuManger.ToggleOptionsPanel(System.Boolean)
+  fullName: MenuManger.ToggleOptionsPanel(System.Boolean)
+  nameWithType: MenuManger.ToggleOptionsPanel(Boolean)
+- uid: Global.MenuManger.ToggleOptionsPanel*
+  name: ToggleOptionsPanel
+  href: api/Global.MenuManger.html#Global_MenuManger_ToggleOptionsPanel_
+  commentId: Overload:Global.MenuManger.ToggleOptionsPanel
+  isSpec: "True"
+  fullName: MenuManger.ToggleOptionsPanel
+  nameWithType: MenuManger.ToggleOptionsPanel
+- uid: Global.MenuManger.TogglePausePanel(System.Boolean)
+  name: TogglePausePanel(Boolean)
+  href: api/Global.MenuManger.html#Global_MenuManger_TogglePausePanel_System_Boolean_
+  commentId: M:Global.MenuManger.TogglePausePanel(System.Boolean)
+  fullName: MenuManger.TogglePausePanel(System.Boolean)
+  nameWithType: MenuManger.TogglePausePanel(Boolean)
+- uid: Global.MenuManger.TogglePausePanel*
+  name: TogglePausePanel
+  href: api/Global.MenuManger.html#Global_MenuManger_TogglePausePanel_
+  commentId: Overload:Global.MenuManger.TogglePausePanel
+  isSpec: "True"
+  fullName: MenuManger.TogglePausePanel
+  nameWithType: MenuManger.TogglePausePanel
 - uid: Global.ModifiableValue
   name: ModifiableValue
   href: api/Global.ModifiableValue.html
@@ -4621,6 +4677,19 @@ references:
   commentId: T:Global.PauseManager
   fullName: PauseManager
   nameWithType: PauseManager
+- uid: Global.PauseManager.Instance
+  name: Instance
+  href: api/Global.PauseManager.html#Global_PauseManager_Instance
+  commentId: P:Global.PauseManager.Instance
+  fullName: PauseManager.Instance
+  nameWithType: PauseManager.Instance
+- uid: Global.PauseManager.Instance*
+  name: Instance
+  href: api/Global.PauseManager.html#Global_PauseManager_Instance_
+  commentId: Overload:Global.PauseManager.Instance
+  isSpec: "True"
+  fullName: PauseManager.Instance
+  nameWithType: PauseManager.Instance
 - uid: Global.PauseManager.Paused
   name: Paused
   href: api/Global.PauseManager.html#Global_PauseManager_Paused
@@ -4634,12 +4703,6 @@ references:
   isSpec: "True"
   fullName: PauseManager.Paused
   nameWithType: PauseManager.Paused
-- uid: Global.PauseManager.pauseMenu
-  name: pauseMenu
-  href: api/Global.PauseManager.html#Global_PauseManager_pauseMenu
-  commentId: F:Global.PauseManager.pauseMenu
-  fullName: PauseManager.pauseMenu
-  nameWithType: PauseManager.pauseMenu
 - uid: Global.PeriodicAbsoluteHitDetector
   name: PeriodicAbsoluteHitDetector
   href: api/Global.PeriodicAbsoluteHitDetector.html
@@ -6472,6 +6535,18 @@ references:
   commentId: T:Global.Uppercut
   fullName: Uppercut
   nameWithType: Uppercut
+- uid: Global.VolumeSlider
+  name: VolumeSlider
+  href: api/Global.VolumeSlider.html
+  commentId: T:Global.VolumeSlider
+  fullName: VolumeSlider
+  nameWithType: VolumeSlider
+- uid: Global.VolumeSlider.slider
+  name: slider
+  href: api/Global.VolumeSlider.html#Global_VolumeSlider_slider
+  commentId: F:Global.VolumeSlider.slider
+  fullName: VolumeSlider.slider
+  nameWithType: VolumeSlider.slider
 - uid: Global.WalkableGrid
   name: WalkableGrid
   href: api/Global.WalkableGrid.html
