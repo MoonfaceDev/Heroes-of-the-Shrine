@@ -1169,9 +1169,7 @@ MonoBehaviour:
   playerTag: Player
   rageHealthThreshold: 35
   rageDamageMultiplier: 1.1
-  distanceAnimatorParameters:
-  - parameterName: distanceFromCenter
-    groundPoint: {x: 0, y: 0}
+  distanceAnimatorParameters: []
 --- !u!114 &5884619158741390418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1355,6 +1353,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hittableBehaviour: {fileID: 5884619158741390459}
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
   figure: {fileID: 5884619157808626360}
   blinkMaterial: {fileID: 2100000, guid: e5a385067cc328d48b2fa6d7d205f7bb, type: 2}
   blinkTime: 0.1

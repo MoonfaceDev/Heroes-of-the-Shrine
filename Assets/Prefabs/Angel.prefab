@@ -873,7 +873,7 @@ Transform:
   - {fileID: 3850747449127629430}
   - {fileID: 3970267090279809017}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360874897665
 MonoBehaviour:
@@ -2206,7 +2206,7 @@ MonoBehaviour:
       m_Calls: []
   figure: {fileID: 5102893361555062420}
   blinkMaterial: {fileID: 2100000, guid: 853f48af9c661484dbf60542fca9903b, type: 2}
-  blinkTime: 0.1
+  blinkTime: 0.05
 --- !u!1 &5102893361076516094
 GameObject:
   m_ObjectHideFlags: 0
