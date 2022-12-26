@@ -241,7 +241,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.36
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -819,7 +819,7 @@ ParticleSystem:
     m_TextureBilinearFiltering: 0
     randomDirectionAmount: 1
     sphericalDirectionAmount: 1
-    randomPositionAmount: 0
+    randomPositionAmount: 0.28
     radius:
       value: 2.02
       mode: 0
@@ -1100,8 +1100,8 @@ ParticleSystem:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-      cycleCount: 2
-      repeatInterval: 0.01
+      cycleCount: 0
+      repeatInterval: 0.03
       probability: 1
   SizeModule:
     enabled: 1

@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 1.3, y: 1.82, z: 1}
+  size: {x: 1.2, y: 1.82, z: 1}
 --- !u!114 &8970878191373511145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,6 +183,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hittableBehaviour: {fileID: 3354150098320785784}
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
   figure: {fileID: 3354150098403288961}
   blinkMaterial: {fileID: 2100000, guid: e5a385067cc328d48b2fa6d7d205f7bb, type: 2}
   blinkTime: 0.1
@@ -704,7 +707,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 569408237, guid: 6c59a358421d3e44faabcebc873bcab6, type: 3}
+  m_Sprite: {fileID: -1743024528, guid: 6c59a358421d3e44faabcebc873bcab6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
