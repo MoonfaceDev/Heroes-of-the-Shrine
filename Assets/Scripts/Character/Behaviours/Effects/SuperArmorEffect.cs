@@ -7,6 +7,7 @@ public class SuperArmorEffect : BaseEffect
     public float armorCooldown;
     public float damageMultiplier = 1;
     public UnityEvent onHit;
+    public UnityEvent onBreak;
 
     private EventListener reloadEvent;
 
@@ -53,6 +54,7 @@ public class SuperArmorEffect : BaseEffect
         if (currentArmorHealth == 0)
         {
             CancelArmor();
+            onBreak.Invoke();
             armorCooldownStart = Time.time;
             reloadEvent = EventManager.StartTimeout(InitializeArmor, armorCooldown);
         }
