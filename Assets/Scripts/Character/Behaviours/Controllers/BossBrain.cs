@@ -3,14 +3,26 @@
 public class BossBrain : GoblinBrain
 {
     private static readonly int SuperArmorHealth = Animator.StringToHash("superArmorHealth");
+    private SuperArmorEffect superArmorEffect;
+
+    public override void Awake()
+    {
+        base.Awake();
+        superArmorEffect = GetComponent<SuperArmorEffect>();
+    }
 
     public override void Start()
     {
         base.Start();
-        var superArmorEffect = GetComponent<SuperArmorEffect>();
         if (superArmorEffect)
         {
-            superArmorEffect.onHit.AddListener(() => stateMachine.SetFloat(SuperArmorHealth, superArmorEffect.armorHealth));
+            UpdateSuperArmorHealth();
+            superArmorEffect.onHit.AddListener(UpdateSuperArmorHealth);
         }
+    }
+
+    private void UpdateSuperArmorHealth()
+    {
+        stateMachine.SetFloat(SuperArmorHealth, superArmorEffect.armorHealth);
     }
 }
