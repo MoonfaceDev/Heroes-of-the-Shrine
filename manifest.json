@@ -264,6 +264,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.BossBrain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.BossBrain.html",
+          "hash": "aDaMSR38Ha7H6lMrew70jCh251VZg43Z1Rgdus/5pTY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.BossHittableHitbox.yml",
       "output": {
         ".html": {
@@ -604,7 +616,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.EnemyBrain.html",
-          "hash": "6bz/Fjj4rR+LoVpDSf1xkp+U1i2HYDolHM/M/CUEL94="
+          "hash": "X/P5C4geJEU2r1B4Lb1OY1aIeqBpBNLlqVwnnB8f0WY="
         }
       },
       "is_incremental": false,
@@ -844,7 +856,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.GoblinBrain.html",
-          "hash": "Nvj+atnlG2iBwjU5g0UC9xpBrcvsLJj+qAZ1vndXXZ8="
+          "hash": "QsngtIMHrS8RxdMb21QtUdZom/IYQecs3ObRUjb823Y="
         }
       },
       "is_incremental": false,
@@ -1708,7 +1720,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "I/t84D1Sp2x9Qvx8uIbo7QOo9wpbYF/Ls5xtPTm2rvs="
+          "hash": "ol7kLu5m70nQ0ijXhhqNF8hmzfdbnMK8T2GeWb0TLjc="
         }
       },
       "is_incremental": false,
@@ -1720,7 +1732,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "BY3+A6+LzTRbVQ/o8Wilb79c0mRlAnYLuTxV5hkXcvo="
+          "hash": "ld5x8wQi8Cm23tQhIsmQTMgBTalTj4SR5HkZRfR3724="
         }
       },
       "is_incremental": false,
@@ -1931,7 +1943,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 141,
+          "total_file_count": 142,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

@@ -1057,6 +1057,25 @@ references:
   commentId: F:Global.BaseTrigger.action
   fullName: BaseTrigger.action
   nameWithType: BaseTrigger.action
+- uid: Global.BossBrain
+  name: BossBrain
+  href: api/Global.BossBrain.html
+  commentId: T:Global.BossBrain
+  fullName: BossBrain
+  nameWithType: BossBrain
+- uid: Global.BossBrain.Start
+  name: Start()
+  href: api/Global.BossBrain.html#Global_BossBrain_Start
+  commentId: M:Global.BossBrain.Start
+  fullName: BossBrain.Start()
+  nameWithType: BossBrain.Start()
+- uid: Global.BossBrain.Start*
+  name: Start
+  href: api/Global.BossBrain.html#Global_BossBrain_Start_
+  commentId: Overload:Global.BossBrain.Start
+  isSpec: "True"
+  fullName: BossBrain.Start
+  nameWithType: BossBrain.Start
 - uid: Global.BossHittableHitbox
   name: BossHittableHitbox
   href: api/Global.BossHittableHitbox.html
@@ -2306,6 +2325,12 @@ references:
   isSpec: "True"
   fullName: EnemyBrain.Start
   nameWithType: EnemyBrain.Start
+- uid: Global.EnemyBrain.stateMachine
+  name: stateMachine
+  href: api/Global.EnemyBrain.html#Global_EnemyBrain_stateMachine
+  commentId: F:Global.EnemyBrain.stateMachine
+  fullName: EnemyBrain.stateMachine
+  nameWithType: EnemyBrain.stateMachine
 - uid: Global.EnemyBrain.Update
   name: Update()
   href: api/Global.EnemyBrain.html#Global_EnemyBrain_Update
