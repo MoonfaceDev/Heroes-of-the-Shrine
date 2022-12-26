@@ -25,7 +25,7 @@ public class EnemyBrain : CharacterController
 
     private GameObject player;
     private MovableObject playerMovableObject;
-    private Animator stateMachine;
+    protected Animator stateMachine;
     
     private static readonly int AlarmParameter = Animator.StringToHash("Alarm");
     private static readonly int KnockbackParameter = Animator.StringToHash("knockback");
@@ -57,7 +57,7 @@ public class EnemyBrain : CharacterController
         stateMachine = GetComponent<Animator>();
     }
 
-    public void Start()
+    public virtual void Start()
     {
         player = GameObject.FindGameObjectWithTag(playerTag);
         if (player)

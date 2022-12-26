@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 63080259}
   - component: {fileID: 63080257}
   - component: {fileID: 63080260}
-  - component: {fileID: 63080262}
+  - component: {fileID: 63080266}
   - component: {fileID: 63080263}
   - component: {fileID: 63080237}
   - component: {fileID: 63080264}
@@ -688,24 +688,6 @@ MonoBehaviour:
   explosionKnockbackDirection: 35
   explosionDamage: 15
   explosionStunTime: 0.5
---- !u!114 &63080262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63080233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dee681c79c0155346bc8110bd1bdb610, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTag: Player
-  rageHealthThreshold: 150
-  rageDamageMultiplier: 2
-  distanceAnimatorParameters:
-  - parameterName: Center
-    groundPoint: {x: 0, y: -3}
 --- !u!114 &63080263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,6 +730,24 @@ MonoBehaviour:
   prefab: {fileID: 1914151399083900665, guid: 2bb48d148375a9f468e626701b74a371, type: 3}
   particlePosition: {x: 0, y: 0.8, z: 0}
   attachToCharacter: 0
+--- !u!114 &63080266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63080233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8813735e6ec04e3aa5d2b23ce651ceba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTag: Player
+  rageHealthThreshold: 150
+  rageDamageMultiplier: 2
+  distanceAnimatorParameters:
+  - parameterName: Center
+    groundPoint: {x: 0, y: -3}
 --- !u!1001 &247483598
 PrefabInstance:
   m_ObjectHideFlags: 0
