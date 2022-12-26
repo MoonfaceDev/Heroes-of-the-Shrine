@@ -4,7 +4,8 @@ public class PossessedEffect : BaseEffect
 {
     private float currentDuration;
     private float currentStartTime;
-    
+    private EventListener stopEvent;
+
     public override bool CanPlay()
     {
         return base.CanPlay() && AllStopped(typeof(PossessedEffect));
@@ -22,7 +23,7 @@ public class PossessedEffect : BaseEffect
 
         currentStartTime = Time.time;
         currentDuration = maxDuration;
-        EventManager.Attach(() => Time.time - currentStartTime > currentDuration, Stop, false);
+        stopEvent = EventManager.Attach(() => Time.time - currentStartTime > currentDuration, Stop);
 
         var hittableBehaviour = GetComponent<HittableBehaviour>();
         if (hittableBehaviour)
@@ -60,6 +61,7 @@ public class PossessedEffect : BaseEffect
         currentDuration = 0;
 
         EnableBehaviours(typeof(BaseAttack), typeof(BaseMovementBehaviour), typeof(ForcedBehaviour));
+        EventManager.Detach(stopEvent);
     }
 
     public override float GetProgress()
