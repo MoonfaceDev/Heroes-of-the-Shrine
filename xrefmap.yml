@@ -1722,12 +1722,6 @@ references:
   commentId: F:Global.DeathPanel.transitions
   fullName: DeathPanel.transitions
   nameWithType: DeathPanel.transitions
-- uid: Global.DeathTrigger
-  name: DeathTrigger
-  href: api/Global.DeathTrigger.html
-  commentId: T:Global.DeathTrigger
-  fullName: DeathTrigger
-  nameWithType: DeathTrigger
 - uid: Global.DieBehaviour
   name: DieBehaviour
   href: api/Global.DieBehaviour.html
@@ -1759,12 +1753,12 @@ references:
   isSpec: "True"
   fullName: DieBehaviour.Kill
   nameWithType: DieBehaviour.Kill
-- uid: Global.DieBehaviour.OnDie
-  name: OnDie
-  href: api/Global.DieBehaviour.html#Global_DieBehaviour_OnDie
-  commentId: E:Global.DieBehaviour.OnDie
-  fullName: DieBehaviour.OnDie
-  nameWithType: DieBehaviour.OnDie
+- uid: Global.DieBehaviour.onDie
+  name: onDie
+  href: api/Global.DieBehaviour.html#Global_DieBehaviour_onDie
+  commentId: F:Global.DieBehaviour.onDie
+  fullName: DieBehaviour.onDie
+  nameWithType: DieBehaviour.onDie
 - uid: Global.Direction
   name: Direction
   href: api/Global.Direction.html
