@@ -82,7 +82,7 @@ public class EnemyBrain : CharacterController
         var dieBehaviour = GetComponent<DieBehaviour>();
         if (dieBehaviour)
         {
-            dieBehaviour.OnDie += () => stateMachine.SetBool(DeadParameter, true);
+            dieBehaviour.onDie.AddListener(() => stateMachine.SetBool(DeadParameter, true));
         }
 
         var attackManager = GetComponent<AttackManager>();

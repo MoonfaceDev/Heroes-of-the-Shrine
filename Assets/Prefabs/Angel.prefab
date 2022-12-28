@@ -873,7 +873,7 @@ Transform:
   - {fileID: 3850747449127629430}
   - {fileID: 3970267090279809017}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360874897665
 MonoBehaviour:
@@ -951,6 +951,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyOnDeath: 0
   deathAnimationDuration: 3
+  onDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1727742673761222668}
+        m_TargetAssemblyTypeName: SoundEffect, Assembly-CSharp
+        m_MethodName: PlayBackground
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: eb62d56ef099fa04ebc013540362ca7b, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5102893360874897666
 MonoBehaviour:
   m_ObjectHideFlags: 0

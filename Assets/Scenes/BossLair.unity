@@ -427,8 +427,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f271e06fd2ef53a4c87299bd48bc9f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyOnDeath: 1
+  destroyOnDeath: 0
   deathAnimationDuration: 3
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &63080256
 MonoBehaviour:
   m_ObjectHideFlags: 0

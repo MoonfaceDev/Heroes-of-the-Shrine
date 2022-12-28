@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 [RequireComponent(typeof(HittableBehaviour))]
@@ -10,7 +11,7 @@ public class DieBehaviour : CharacterBehaviour
     
     private static readonly int DeadParameter = Animator.StringToHash("dead");
 
-    public event Action OnDie;
+    public UnityEvent onDie;
 
     private void Start()
     {
@@ -35,7 +36,7 @@ public class DieBehaviour : CharacterBehaviour
 
         void KillAfterKnockback()
         {
-            OnDie?.Invoke();
+            onDie.Invoke();
             Animator.SetBool(DeadParameter, true);
             StopBehaviours(typeof(BaseEffect));
             if (destroyOnDeath)
