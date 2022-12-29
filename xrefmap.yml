@@ -587,6 +587,19 @@ references:
   isSpec: "True"
   fullName: AudioManager.PlayBackground
   nameWithType: AudioManager.PlayBackground
+- uid: Global.AudioManager.StopBackground
+  name: StopBackground()
+  href: api/Global.AudioManager.html#Global_AudioManager_StopBackground
+  commentId: M:Global.AudioManager.StopBackground
+  fullName: AudioManager.StopBackground()
+  nameWithType: AudioManager.StopBackground()
+- uid: Global.AudioManager.StopBackground*
+  name: StopBackground
+  href: api/Global.AudioManager.html#Global_AudioManager_StopBackground_
+  commentId: Overload:Global.AudioManager.StopBackground
+  isSpec: "True"
+  fullName: AudioManager.StopBackground
+  nameWithType: AudioManager.StopBackground
 - uid: Global.BaseAttack
   name: BaseAttack
   href: api/Global.BaseAttack.html
@@ -1576,6 +1589,19 @@ references:
   isSpec: "True"
   fullName: CharacterBehaviour.EventManager
   nameWithType: CharacterBehaviour.EventManager
+- uid: Global.CharacterBehaviour.ForceEnable
+  name: ForceEnable()
+  href: api/Global.CharacterBehaviour.html#Global_CharacterBehaviour_ForceEnable
+  commentId: M:Global.CharacterBehaviour.ForceEnable
+  fullName: CharacterBehaviour.ForceEnable()
+  nameWithType: CharacterBehaviour.ForceEnable()
+- uid: Global.CharacterBehaviour.ForceEnable*
+  name: ForceEnable
+  href: api/Global.CharacterBehaviour.html#Global_CharacterBehaviour_ForceEnable_
+  commentId: Overload:Global.CharacterBehaviour.ForceEnable
+  isSpec: "True"
+  fullName: CharacterBehaviour.ForceEnable
+  nameWithType: CharacterBehaviour.ForceEnable
 - uid: Global.CharacterBehaviour.IsPlaying(Type)
   name: IsPlaying(Type)
   href: api/Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying_Type_
@@ -2351,6 +2377,31 @@ references:
   isSpec: "True"
   fullName: EnemyBrain.Update
   nameWithType: EnemyBrain.Update
+- uid: Global.EnemyDestroyAction
+  name: EnemyDestroyAction
+  href: api/Global.EnemyDestroyAction.html
+  commentId: T:Global.EnemyDestroyAction
+  fullName: EnemyDestroyAction
+  nameWithType: EnemyDestroyAction
+- uid: Global.EnemyDestroyAction.Invoke
+  name: Invoke()
+  href: api/Global.EnemyDestroyAction.html#Global_EnemyDestroyAction_Invoke
+  commentId: M:Global.EnemyDestroyAction.Invoke
+  fullName: EnemyDestroyAction.Invoke()
+  nameWithType: EnemyDestroyAction.Invoke()
+- uid: Global.EnemyDestroyAction.Invoke*
+  name: Invoke
+  href: api/Global.EnemyDestroyAction.html#Global_EnemyDestroyAction_Invoke_
+  commentId: Overload:Global.EnemyDestroyAction.Invoke
+  isSpec: "True"
+  fullName: EnemyDestroyAction.Invoke
+  nameWithType: EnemyDestroyAction.Invoke
+- uid: Global.EnemyDestroyAction.tags
+  name: tags
+  href: api/Global.EnemyDestroyAction.html#Global_EnemyDestroyAction_tags
+  commentId: F:Global.EnemyDestroyAction.tags
+  fullName: EnemyDestroyAction.tags
+  nameWithType: EnemyDestroyAction.tags
 - uid: Global.EnemyGroup
   name: EnemyGroup
   href: api/Global.EnemyGroup.html
