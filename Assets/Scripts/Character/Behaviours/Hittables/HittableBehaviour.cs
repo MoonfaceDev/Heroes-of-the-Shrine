@@ -2,7 +2,9 @@ using System;
 using UnityEngine;
 
 public delegate void HitCallback(float damage);
+
 public delegate void KnockbackCallback(float damage, float power, float angleDegrees);
+
 public delegate void StunCallback(float damage, float time);
 
 [RequireComponent(typeof(HealthSystem))]
@@ -19,6 +21,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
     private HealthSystem healthSystem;
     private KnockbackBehaviour knockbackBehaviour;
     private StunBehaviour stunBehaviour;
+    private ForcedWalkBehaviour forcedWalkBehaviour;
 
     private EventListener blinkEvent;
 
@@ -33,20 +36,23 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
 
     public bool CanGetHit()
     {
-        return healthSystem.Alive && !(knockbackBehaviour && knockbackBehaviour.Recovering);
+        return healthSystem.Alive
+               && !(knockbackBehaviour && knockbackBehaviour.Recovering)
+               && !(forcedWalkBehaviour && forcedWalkBehaviour.Playing);
     }
 
     private float ProcessDamage(float damage)
     {
         return damage * damageMultiplier;
     }
-    
+
     public void Hit(float damage)
     {
         if (!CanGetHit())
         {
             return;
         }
+
         var processedDamage = ProcessDamage(damage);
         healthSystem.health = Math.Max(healthSystem.health - processedDamage, 0);
         OnHit?.Invoke(processedDamage);
@@ -67,6 +73,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
         {
             return;
         }
+
         Hit(damage);
         DoKnockback(damage, power, angleDegrees);
     }
@@ -86,11 +93,13 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
         {
             return;
         }
+
         if (MovableObject.WorldPosition.y > 0)
         {
             Knockback(damage, StunLaunchPower, StunLaunchAngel, time);
             return;
         }
+
         Hit(damage);
         DoStun(damage, time);
     }

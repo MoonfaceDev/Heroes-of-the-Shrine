@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(FollowBehaviour))]
@@ -16,11 +15,14 @@ public class ForcedWalkBehaviour : PlayableBehaviour
         }
 
         StopBehaviours(typeof(PlayableBehaviour));
-        DisableBehaviours(typeof(PlayerController));
-        
+        DisableBehaviours(typeof(CharacterController));
+        DisableBehaviours(typeof(ForcedBehaviour));
+
         active = true;
         onPlay.Invoke();
 
+        GetComponent<FollowBehaviour>().ForceEnable();
+        GetComponent<WalkBehaviour>().ForceEnable();
         GetComponent<FollowBehaviour>().Play(point);
     }
 

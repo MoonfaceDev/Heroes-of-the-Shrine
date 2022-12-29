@@ -41,6 +41,11 @@ public class AudioManager : MonoBehaviour
         Instance.audioSource.Play();
     }
 
+    public static void StopBackground()
+    {
+        Instance.audioSource.Stop();
+    }
+
     public static void Play(AudioClip clip)
     {
         Instance.audioSource.PlayOneShot(clip);

@@ -25,7 +25,7 @@ public class CutsceneAction : MonoBehaviour
     public PlayableDirector director;
     public UnityEvent postCutsceneEvent;
 
-    private const float WantedDistance = 0.2f;
+    private const float WantedDistance = 0.5f;
 
     public void Invoke()
     {

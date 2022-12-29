@@ -36,9 +36,9 @@ public class DieBehaviour : CharacterBehaviour
 
         void KillAfterKnockback()
         {
-            onDie.Invoke();
             Animator.SetBool(DeadParameter, true);
             StopBehaviours(typeof(BaseEffect));
+            onDie.Invoke();
             if (destroyOnDeath)
             {
                 Destroy(gameObject, deathAnimationDuration);
