@@ -1260,6 +1260,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.PlayOnce.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.PlayOnce.html",
+          "hash": "g0OSwq3ESNN/iBv71yP3ZuBuoyUsfIAlBJPCFRt1jrA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.PlayableBehaviour.yml",
       "output": {
         ".html": {
@@ -1744,7 +1756,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "yJDWAzr7IRzitsieQ0nT66Kqv/Y6wqC46HnRzrrFDHA="
+          "hash": "tRZ96MYhVDrHEsigN3F4yrWBLHEg645JjRI+5TiFH1U="
         }
       },
       "is_incremental": false,
@@ -1756,7 +1768,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "JaT867mw4YDFUaqNjc3xFlNNoEeebwDx9p3o9lW5698="
+          "hash": "jQTC9VzqL9dqHPeZSX86HFlHnQvz++Vc9vH7PA3e0hE="
         }
       },
       "is_incremental": false,
@@ -1967,7 +1979,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 144,
+          "total_file_count": 145,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
