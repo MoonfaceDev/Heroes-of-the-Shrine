@@ -86,6 +86,7 @@ public class EventManager : MonoBehaviour
         eventListeners.CopyTo(lockedEventListeners);
         foreach (var eventListener in lockedEventListeners)
         {
+            if (!eventListeners.Contains(eventListener)) continue;
             if (!eventListener.condition()) continue;
             if (eventListener.single)
             {

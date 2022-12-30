@@ -17,7 +17,7 @@ public class Pathfind : MonoBehaviour
         var endNode = grid.ClosestWalkableNode(end, excluded);
         var path = ThetaStar(startNode, endNode, excluded) ?? new List<Node>{ startNode, endNode };
         gizmosPath = path;
-        return Vector3.Normalize(path[1].position - startNode.position);
+        return Vector3.Normalize(path.Count == 2 ? end - start : path[1].position - startNode.position);
     }
 
     private void OnDrawGizmos()
