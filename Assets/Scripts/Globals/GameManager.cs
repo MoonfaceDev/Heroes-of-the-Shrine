@@ -23,6 +23,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void PlayAgain(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
     public void Respawn()
     {
         var player = GameObject.FindGameObjectWithTag("Player");
