@@ -31,7 +31,7 @@ public class CutsceneAction : MonoBehaviour
     {
         foreach (var definition in moveDefinitions.Where(definition => definition.target))
         {
-            definition.target.Play(definition.position);
+            definition.target.Play(definition.position, WantedDistance);
         }
 
         EventManager.Instance.Attach(

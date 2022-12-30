@@ -30,12 +30,6 @@ public abstract class CharacterBehaviour : MonoBehaviour
         }
     }
 
-    public void ForceEnable()
-    {
-        disableCount = 0;
-        Enabled = true;
-    }
-
     private int disableCount;
 
     public virtual void Awake()

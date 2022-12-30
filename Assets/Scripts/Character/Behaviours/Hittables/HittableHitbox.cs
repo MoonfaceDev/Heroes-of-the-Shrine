@@ -40,6 +40,11 @@ public class HittableHitbox : MonoBehaviour, IHittable
         blinkEvent = EventManager.Instance.StartTimeout(() => figure.material = defaultMaterial, blinkTime);
     }
 
+    public bool CanGetHit()
+    {
+        return hittableBehaviour.CanGetHit();
+    }
+
     public virtual void Hit(float damage)
     {
         onHit.Invoke();
