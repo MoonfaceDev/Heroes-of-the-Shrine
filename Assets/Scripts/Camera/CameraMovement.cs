@@ -4,6 +4,7 @@ public class CameraMovement : MonoBehaviour
 {
     public Rect worldBorder;
     [HideInInspector] public Rect border;
+    [ShowDebug] public Vector3 targetPosition;
     public float lerpSpeed = 3.0f;
 
     private Camera mainCamera;
@@ -32,10 +33,10 @@ public class CameraMovement : MonoBehaviour
         Lock(worldBorder);
     }
 
-    public void Move(Vector3 targetPos)
+    private void UpdatePosition()
     {
         var position = transform.position;
-        var next = Vector3.Lerp(position, targetPos, lerpSpeed * Time.deltaTime);
+        var next = Vector3.Lerp(position, targetPosition, lerpSpeed * Time.deltaTime);
         if ((next.x - CameraWidth / 2 > border.xMin && next.x + CameraWidth / 2 < border.xMax) || (position.x < next.x && position.x - CameraWidth / 2 < border.xMin) || (position.x > next.x && position.x + CameraWidth / 2 > border.xMax))
         {
             position += (next.x - position.x) * Vector3.right;
@@ -45,6 +46,11 @@ public class CameraMovement : MonoBehaviour
             position += (next.y - position.y) * Vector3.up;
         }
         transform.position = position;
+    }
+    
+    private void LateUpdate()
+    {
+        UpdatePosition();
     }
 
     private void OnDrawGizmos()

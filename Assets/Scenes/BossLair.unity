@@ -1727,6 +1727,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5826350637849315247, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
   m_PrefabInstance: {fileID: 615463054}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &615463056 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5826350637583987606, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+  m_PrefabInstance: {fileID: 615463054}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb3dfbeaa9414d4e83b766e1ee3cbe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &713322109
 GameObject:
   m_ObjectHideFlags: 0
@@ -3326,6 +3337,8 @@ GameObject:
   - component: {fileID: 2047257164}
   - component: {fileID: 2047257166}
   - component: {fileID: 2047257165}
+  - component: {fileID: 2047257167}
+  - component: {fileID: 2047257168}
   m_Layer: 0
   m_Name: PossessorDeath
   m_TagString: Untagged
@@ -3433,12 +3446,42 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 9fbe0b789cffeb84c8eb4a7285e6d4a7, type: 2}
+    - {fileID: 11400000, guid: dc439feff05e59c47b282d72a36fadb4, type: 2}
+    - {fileID: 11400000, guid: 05cf48f7609b320499fb689e3925ae6b, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 63080268}
           m_TargetAssemblyTypeName: Particles, Assembly-CSharp
           m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2047257167}
+          m_TargetAssemblyTypeName: MoveCamera, Assembly-CSharp
+          m_MethodName: Invoke
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2047257168}
+          m_TargetAssemblyTypeName: MoveCamera, Assembly-CSharp
+          m_MethodName: Invoke
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3460,6 +3503,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7480466f59ac8c546b35cc75a8bb93f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2047257167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047257160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b215518c41cfc64893a44597ddf0f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraMovement: {fileID: 615463056}
+  target: {x: 2, y: -2, z: -10}
+--- !u!114 &2047257168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047257160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b215518c41cfc64893a44597ddf0f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraMovement: {fileID: 615463056}
+  target: {x: -1.5, y: -1, z: -10}
 --- !u!1 &2074727357
 GameObject:
   m_ObjectHideFlags: 0

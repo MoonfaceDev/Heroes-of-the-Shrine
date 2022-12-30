@@ -25,6 +25,6 @@ public class CameraFollow : MonoBehaviour
     {
         if (!target) return;
         var targetPosition = MovableObject.GroundScreenCoordinates(target.WorldPosition) + offset;
-        cameraMovement.Move(targetPosition);
+        cameraMovement.targetPosition = targetPosition;
     }
 }

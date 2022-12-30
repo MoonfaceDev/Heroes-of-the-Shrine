@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PossessSource : MonoBehaviour
@@ -6,6 +7,9 @@ public class PossessSource : MonoBehaviour
     public BaseHitDetector hitDetector;
     public Animator animator;
     public float hitAnimationDuration;
+
+    private EventListener activateEvent;
+    private EventListener destroyEvent;
 
     private static readonly int Warning = Animator.StringToHash("Warning");
     private static readonly int Active = Animator.StringToHash("Active");
@@ -15,12 +19,12 @@ public class PossessSource : MonoBehaviour
         int hitDamage)
     {
         animator.SetBool(Warning, true);
-        EventManager.Instance.StartTimeout(() =>
+        activateEvent = EventManager.Instance.StartTimeout(() =>
         {
             animator.SetBool(Warning, false);
             animator.SetBool(Active, true);
 
-            var destroyEvent = EventManager.Instance.StartTimeout(() =>
+            destroyEvent = EventManager.Instance.StartTimeout(() =>
             {
                 hitDetector.StopDetector();
                 animator.SetBool(Active, false);
@@ -43,5 +47,16 @@ public class PossessSource : MonoBehaviour
                 }
             }, hittableTags);
         }, warningDuration);
+    }
+
+    public void Stop()
+    {
+        EventManager.Instance.Detach(activateEvent);
+        EventManager.Instance.Detach(destroyEvent);
+    }
+
+    private void OnDestroy()
+    {
+        Stop();
     }
 }
