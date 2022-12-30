@@ -172,7 +172,7 @@
   "api/Global.CutsceneAction.html": {
     "href": "api/Global.CutsceneAction.html",
     "title": "Class CutsceneAction | Heroes of the Shrine",
-    "keywords": "Class CutsceneAction Inheritance Object CutsceneAction Namespace : Global Assembly : cs.temp.dll.dll Syntax public class CutsceneAction : MonoBehaviour Fields director Declaration public PlayableDirector director Field Value Type Description PlayableDirector moveDefinitions Declaration public List<MoveDefinition> moveDefinitions Field Value Type Description List < MoveDefinition > postCutsceneEvent Declaration public UnityEvent postCutsceneEvent Field Value Type Description UnityEvent Methods Invoke() Declaration public void Invoke()"
+    "keywords": "Class CutsceneAction Inheritance Object CutsceneAction Namespace : Global Assembly : cs.temp.dll.dll Syntax public class CutsceneAction : MonoBehaviour Fields director Declaration public PlayableDirector director Field Value Type Description PlayableDirector moveDefinitions Declaration public List<MoveDefinition> moveDefinitions Field Value Type Description List < MoveDefinition > playOnAwake Declaration public bool playOnAwake Field Value Type Description Boolean postCutsceneEvent Declaration public UnityEvent postCutsceneEvent Field Value Type Description UnityEvent Methods Invoke() Declaration public void Invoke()"
   },
   "api/Global.DamageBonus.html": {
     "href": "api/Global.DamageBonus.html",
