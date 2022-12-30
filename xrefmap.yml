@@ -1589,19 +1589,6 @@ references:
   isSpec: "True"
   fullName: CharacterBehaviour.EventManager
   nameWithType: CharacterBehaviour.EventManager
-- uid: Global.CharacterBehaviour.ForceEnable
-  name: ForceEnable()
-  href: api/Global.CharacterBehaviour.html#Global_CharacterBehaviour_ForceEnable
-  commentId: M:Global.CharacterBehaviour.ForceEnable
-  fullName: CharacterBehaviour.ForceEnable()
-  nameWithType: CharacterBehaviour.ForceEnable()
-- uid: Global.CharacterBehaviour.ForceEnable*
-  name: ForceEnable
-  href: api/Global.CharacterBehaviour.html#Global_CharacterBehaviour_ForceEnable_
-  commentId: Overload:Global.CharacterBehaviour.ForceEnable
-  isSpec: "True"
-  fullName: CharacterBehaviour.ForceEnable
-  nameWithType: CharacterBehaviour.ForceEnable
 - uid: Global.CharacterBehaviour.IsPlaying(Type)
   name: IsPlaying(Type)
   href: api/Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying_Type_
@@ -3029,12 +3016,12 @@ references:
   commentId: T:Global.ForcedWalkBehaviour
   fullName: ForcedWalkBehaviour
   nameWithType: ForcedWalkBehaviour
-- uid: Global.ForcedWalkBehaviour.Play(Vector3)
-  name: Play(Vector3)
-  href: api/Global.ForcedWalkBehaviour.html#Global_ForcedWalkBehaviour_Play_Vector3_
-  commentId: M:Global.ForcedWalkBehaviour.Play(Vector3)
-  fullName: ForcedWalkBehaviour.Play(Vector3)
-  nameWithType: ForcedWalkBehaviour.Play(Vector3)
+- uid: Global.ForcedWalkBehaviour.Play(Vector3,System.Single)
+  name: Play(Vector3, Single)
+  href: api/Global.ForcedWalkBehaviour.html#Global_ForcedWalkBehaviour_Play_Vector3_System_Single_
+  commentId: M:Global.ForcedWalkBehaviour.Play(Vector3,System.Single)
+  fullName: ForcedWalkBehaviour.Play(Vector3, System.Single)
+  nameWithType: ForcedWalkBehaviour.Play(Vector3, Single)
 - uid: Global.ForcedWalkBehaviour.Play*
   name: Play
   href: api/Global.ForcedWalkBehaviour.html#Global_ForcedWalkBehaviour_Play_
@@ -3555,6 +3542,19 @@ references:
   commentId: F:Global.HittableHitbox.blinkTime
   fullName: HittableHitbox.blinkTime
   nameWithType: HittableHitbox.blinkTime
+- uid: Global.HittableHitbox.CanGetHit
+  name: CanGetHit()
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_CanGetHit
+  commentId: M:Global.HittableHitbox.CanGetHit
+  fullName: HittableHitbox.CanGetHit()
+  nameWithType: HittableHitbox.CanGetHit()
+- uid: Global.HittableHitbox.CanGetHit*
+  name: CanGetHit
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_CanGetHit_
+  commentId: Overload:Global.HittableHitbox.CanGetHit
+  isSpec: "True"
+  fullName: HittableHitbox.CanGetHit
+  nameWithType: HittableHitbox.CanGetHit
 - uid: Global.HittableHitbox.Character
   name: Character
   href: api/Global.HittableHitbox.html#Global_HittableHitbox_Character
@@ -3668,6 +3668,19 @@ references:
   commentId: T:Global.IHittable
   fullName: IHittable
   nameWithType: IHittable
+- uid: Global.IHittable.CanGetHit
+  name: CanGetHit()
+  href: api/Global.IHittable.html#Global_IHittable_CanGetHit
+  commentId: M:Global.IHittable.CanGetHit
+  fullName: IHittable.CanGetHit()
+  nameWithType: IHittable.CanGetHit()
+- uid: Global.IHittable.CanGetHit*
+  name: CanGetHit
+  href: api/Global.IHittable.html#Global_IHittable_CanGetHit_
+  commentId: Overload:Global.IHittable.CanGetHit
+  isSpec: "True"
+  fullName: IHittable.CanGetHit
+  nameWithType: IHittable.CanGetHit
 - uid: Global.IHittable.Character
   name: Character
   href: api/Global.IHittable.html#Global_IHittable_Character
@@ -5294,6 +5307,25 @@ references:
   commentId: F:Global.PossessSource.hitDetector
   fullName: PossessSource.hitDetector
   nameWithType: PossessSource.hitDetector
+- uid: Global.PossessSourcesDestroyAction
+  name: PossessSourcesDestroyAction
+  href: api/Global.PossessSourcesDestroyAction.html
+  commentId: T:Global.PossessSourcesDestroyAction
+  fullName: PossessSourcesDestroyAction
+  nameWithType: PossessSourcesDestroyAction
+- uid: Global.PossessSourcesDestroyAction.Invoke
+  name: Invoke()
+  href: api/Global.PossessSourcesDestroyAction.html#Global_PossessSourcesDestroyAction_Invoke
+  commentId: M:Global.PossessSourcesDestroyAction.Invoke
+  fullName: PossessSourcesDestroyAction.Invoke()
+  nameWithType: PossessSourcesDestroyAction.Invoke()
+- uid: Global.PossessSourcesDestroyAction.Invoke*
+  name: Invoke
+  href: api/Global.PossessSourcesDestroyAction.html#Global_PossessSourcesDestroyAction_Invoke_
+  commentId: Overload:Global.PossessSourcesDestroyAction.Invoke
+  isSpec: "True"
+  fullName: PossessSourcesDestroyAction.Invoke
+  nameWithType: PossessSourcesDestroyAction.Invoke
 - uid: Global.PriorityQueue`1
   name: PriorityQueue<T>
   href: api/Global.PriorityQueue-1.html
