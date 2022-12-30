@@ -25,8 +25,17 @@ public class CutsceneAction : MonoBehaviour
     public List<MoveDefinition> moveDefinitions;
     public PlayableDirector director;
     public UnityEvent postCutsceneEvent;
+    public bool playOnAwake;
 
     private const float WantedDistance = 0.1f;
+
+    private void Awake()
+    {
+        if (playOnAwake)
+        {
+            Invoke();
+        }
+    }
 
     public void Invoke()
     {
