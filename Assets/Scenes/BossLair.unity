@@ -1712,10 +1712,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 404400072594527677, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_InitialState
       value: 0
@@ -1944,18 +1940,6 @@ PrefabInstance:
       propertyPath: objectsToDestroy.Array.data[2]
       value: 
       objectReference: {fileID: 1664371913}
-    - target: {fileID: 5826350638832563138, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5826350639144267948, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5826350639144267948, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7892979979956269628, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_AssetsPPU
       value: 135
