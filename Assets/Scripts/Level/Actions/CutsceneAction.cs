@@ -15,6 +15,7 @@ public class MoveDefinition
     }
 
     public ForcedWalkBehaviour target;
+    public float speedMultiplier = 1;
     public Vector3 position;
     public Direction lookDirection = Direction.Right;
 }
@@ -31,6 +32,7 @@ public class CutsceneAction : MonoBehaviour
     {
         foreach (var definition in moveDefinitions.Where(definition => definition.target))
         {
+            definition.target.GetComponent<WalkBehaviour>().speed *= definition.speedMultiplier;
             definition.target.Play(definition.position, WantedDistance);
         }
 
@@ -38,10 +40,11 @@ public class CutsceneAction : MonoBehaviour
             () => moveDefinitions.TrueForAll(definition =>
                 definition.target.MovableObject.GroundDistance(definition.position) < WantedDistance), () =>
             {
-                moveDefinitions.ForEach(subject =>
+                moveDefinitions.ForEach(definition =>
                 {
-                    subject.target.Stop();
-                    subject.target.MovableObject.rotation = (int)subject.lookDirection;
+                    definition.target.Stop();
+                    definition.target.GetComponent<WalkBehaviour>().speed /= definition.speedMultiplier;
+                    definition.target.MovableObject.rotation = (int)definition.lookDirection;
                 });
                 foreach (var controller in FindObjectsOfType<CharacterController>())
                 {
