@@ -977,6 +977,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1745739314}
   - component: {fileID: 1745739313}
+  - component: {fileID: 1745739318}
   - component: {fileID: 1745739312}
   - component: {fileID: 1745739316}
   - component: {fileID: 1745739317}
@@ -1001,6 +1002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDefinitions:
   - target: {fileID: 5826350637269321226}
+    speedMultiplier: 1
     position: {x: 3, y: 0, z: -3}
     lookDirection: 1
   director: {fileID: 1745739316}
@@ -1022,9 +1024,9 @@ MonoBehaviour:
   action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1745739312}
-        m_TargetAssemblyTypeName: CutsceneAction, Assembly-CSharp
-        m_MethodName: Invoke
+      - m_Target: {fileID: 1745739318}
+        m_TargetAssemblyTypeName: CutscenePlayer, Assembly-CSharp
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1122,6 +1124,48 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1745739318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745739311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b502f5bb4c77acb408c8914091f593f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1745739312}
+        m_TargetAssemblyTypeName: CutsceneAction, Assembly-CSharp
+        m_MethodName: Invoke
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  restEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1772566191}
+        m_TargetAssemblyTypeName: EncounterAction, Assembly-CSharp
+        m_MethodName: Invoke
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1772566190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1304,7 +1348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &2542200778879860092
 SpriteRenderer:
   m_ObjectHideFlags: 0

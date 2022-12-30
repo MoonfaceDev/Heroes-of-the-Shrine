@@ -1418,6 +1418,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_InitialState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_PlayableAsset
       value: 
       objectReference: {fileID: 11400000, guid: 77085e8a2c8bcc449b97fa6eb75cc685, type: 2}
@@ -1860,7 +1864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &721293575
 Transform:
   m_ObjectHideFlags: 0
@@ -2289,6 +2293,81 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 20fadd8aced608b45a4014b623c766c3, type: 3}
+--- !u!1 &1213456983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1213456985}
+  - component: {fileID: 1213456984}
+  m_Layer: 0
+  m_Name: EntranceCutscene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1213456984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213456983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b502f5bb4c77acb408c8914091f593f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1574004470}
+        m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  restEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 578298341}
+        m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  playOnAwake: 1
+--- !u!4 &1213456985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213456983}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1340466845
 GameObject:
   m_ObjectHideFlags: 0
@@ -2638,7 +2717,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: ae283ec6516654e40973614dda01dbd2, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -2655,6 +2734,8 @@ PlayableDirector:
     value: {fileID: 1646802292}
   - key: {fileID: -8932182294748880173, guid: ae283ec6516654e40973614dda01dbd2, type: 2}
     value: {fileID: 1646802293}
+  - key: {fileID: -4211834597622144845, guid: ae283ec6516654e40973614dda01dbd2, type: 2}
+    value: {fileID: 817068150}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1574004471
@@ -2736,7 +2817,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1646802293
 Animator:
   serializedVersion: 4
@@ -3393,9 +3474,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDefinitions:
   - target: {fileID: 1506894265}
+    speedMultiplier: 1
     position: {x: 4.5, y: 0, z: -5}
     lookDirection: -1
   - target: {fileID: 63080267}
+    speedMultiplier: 1
     position: {x: 0, y: 0, z: -3.5}
     lookDirection: 1
   director: {fileID: 2047257161}
