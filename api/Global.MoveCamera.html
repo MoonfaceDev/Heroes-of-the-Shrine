@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class PossessSource
+    <title>Class MoveCamera
    | Heroes of the Shrine </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class PossessSource
+    <meta name="title" content="Class MoveCamera
    | Heroes of the Shrine ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,34 +78,34 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Global.PossessSource">
+            <article class="content wrap" id="_content" data-uid="Global.MoveCamera">
   
   
-  <h1 id="Global_PossessSource" data-uid="Global.PossessSource" class="text-break">Class PossessSource
+  <h1 id="Global_MoveCamera" data-uid="Global.MoveCamera" class="text-break">Class MoveCamera
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">PossessSource</span></div>
+    <div class="level1"><span class="xref">MoveCamera</span></div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Global_PossessSource_syntax">Syntax</h5>
+  <h5 id="Global_MoveCamera_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class PossessSource : MonoBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class MoveCamera : MonoBehaviour</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
   
   
-  <h4 id="Global_PossessSource_animator" data-uid="Global.PossessSource.animator">animator</h4>
+  <h4 id="Global_MoveCamera_cameraMovement" data-uid="Global.MoveCamera.cameraMovement">cameraMovement</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Animator animator</code></pre>
+    <pre><code class="lang-csharp hljs">public CameraMovement cameraMovement</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -117,19 +117,19 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Animator</span></td>
+        <td><a class="xref" href="Global.CameraMovement.html">CameraMovement</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <h4 id="Global_PossessSource_hitAnimationDuration" data-uid="Global.PossessSource.hitAnimationDuration">hitAnimationDuration</h4>
+  <h4 id="Global_MoveCamera_target" data-uid="Global.MoveCamera.target">target</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float hitAnimationDuration</code></pre>
+    <pre><code class="lang-csharp hljs">public Vector3 target</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -141,31 +141,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_PossessSource_hitDetector" data-uid="Global.PossessSource.hitDetector">hitDetector</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public BaseHitDetector hitDetector</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.BaseHitDetector.html">BaseHitDetector</a></td>
+        <td><span class="xref">Vector3</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -174,60 +150,13 @@
   </h3>
   
   
-  <a id="Global_PossessSource_Activate_" data-uid="Global.PossessSource.Activate*"></a>
-  <h4 id="Global_PossessSource_Activate_System_Single_System_Single_List_System_String__System_Single_System_Int32_" data-uid="Global.PossessSource.Activate(System.Single,System.Single,List{System.String},System.Single,System.Int32)">Activate(Single, Single, List&lt;String&gt;, Single, Int32)</h4>
+  <a id="Global_MoveCamera_Invoke_" data-uid="Global.MoveCamera.Invoke*"></a>
+  <h4 id="Global_MoveCamera_Invoke" data-uid="Global.MoveCamera.Invoke">Invoke()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Activate(float warningDuration, float activeDuration, List&lt;string&gt; hittableTags, float effectDuration, int hitDamage)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">warningDuration</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">activeDuration</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
-        <td><span class="parametername">hittableTags</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">effectDuration</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">hitDamage</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_PossessSource_Stop_" data-uid="Global.PossessSource.Stop*"></a>
-  <h4 id="Global_PossessSource_Stop" data-uid="Global.PossessSource.Stop">Stop()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Stop()</code></pre>
+    <pre><code class="lang-csharp hljs">public void Invoke()</code></pre>
   </div>
 </article>
           </div>

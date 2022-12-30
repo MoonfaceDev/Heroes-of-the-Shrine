@@ -376,7 +376,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.CameraMovement.html",
-          "hash": "uN2SVEiVNRuqbaRR+ybj7GdGm9BUMe+GGa9dZVmIqG8="
+          "hash": "Xz3hyaUGF0n9X233iLPvp66SiwluEjIsuH1ch01pOss="
         }
       },
       "is_incremental": false,
@@ -1116,6 +1116,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.MoveCamera.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.MoveCamera.html",
+          "hash": "nakCRuIjPcNCbv77L5KkjXxiniHTplXHrs8p0MAblR4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.MoveDefinition.Direction.yml",
       "output": {
         ".html": {
@@ -1288,7 +1300,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.PossessSource.html",
-          "hash": "z/nl3ZRNF+R8Sb+NRt6oUcFW3XD4nJlBavQgIfSLvCQ="
+          "hash": "/QrLvjMSeo7Z5BtCR1ubTQvdzfjDkuIZkvUt4qtBC1U="
         }
       },
       "is_incremental": false,
@@ -1732,7 +1744,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "BQXy/319tjmY84Ls8cTG3697XI2sgag4LTkmrKFf4E8="
+          "hash": "yJDWAzr7IRzitsieQ0nT66Kqv/Y6wqC46HnRzrrFDHA="
         }
       },
       "is_incremental": false,
@@ -1744,7 +1756,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "LebRpMOPSGjRL98bLEH25k/zgETbgrHbe+RWFn83Dn0="
+          "hash": "JaT867mw4YDFUaqNjc3xFlNNoEeebwDx9p3o9lW5698="
         }
       },
       "is_incremental": false,
@@ -1955,7 +1967,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 143,
+          "total_file_count": 144,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

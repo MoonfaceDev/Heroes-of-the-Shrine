@@ -1389,19 +1389,12 @@ references:
   isSpec: "True"
   fullName: CameraMovement.Lock
   nameWithType: CameraMovement.Lock
-- uid: Global.CameraMovement.Move(Vector3)
-  name: Move(Vector3)
-  href: api/Global.CameraMovement.html#Global_CameraMovement_Move_Vector3_
-  commentId: M:Global.CameraMovement.Move(Vector3)
-  fullName: CameraMovement.Move(Vector3)
-  nameWithType: CameraMovement.Move(Vector3)
-- uid: Global.CameraMovement.Move*
-  name: Move
-  href: api/Global.CameraMovement.html#Global_CameraMovement_Move_
-  commentId: Overload:Global.CameraMovement.Move
-  isSpec: "True"
-  fullName: CameraMovement.Move
-  nameWithType: CameraMovement.Move
+- uid: Global.CameraMovement.targetPosition
+  name: targetPosition
+  href: api/Global.CameraMovement.html#Global_CameraMovement_targetPosition
+  commentId: F:Global.CameraMovement.targetPosition
+  fullName: CameraMovement.targetPosition
+  nameWithType: CameraMovement.targetPosition
 - uid: Global.CameraMovement.Unlock
   name: Unlock()
   href: api/Global.CameraMovement.html#Global_CameraMovement_Unlock
@@ -4572,6 +4565,37 @@ references:
   isSpec: "True"
   fullName: MovableObject.WorldScale
   nameWithType: MovableObject.WorldScale
+- uid: Global.MoveCamera
+  name: MoveCamera
+  href: api/Global.MoveCamera.html
+  commentId: T:Global.MoveCamera
+  fullName: MoveCamera
+  nameWithType: MoveCamera
+- uid: Global.MoveCamera.cameraMovement
+  name: cameraMovement
+  href: api/Global.MoveCamera.html#Global_MoveCamera_cameraMovement
+  commentId: F:Global.MoveCamera.cameraMovement
+  fullName: MoveCamera.cameraMovement
+  nameWithType: MoveCamera.cameraMovement
+- uid: Global.MoveCamera.Invoke
+  name: Invoke()
+  href: api/Global.MoveCamera.html#Global_MoveCamera_Invoke
+  commentId: M:Global.MoveCamera.Invoke
+  fullName: MoveCamera.Invoke()
+  nameWithType: MoveCamera.Invoke()
+- uid: Global.MoveCamera.Invoke*
+  name: Invoke
+  href: api/Global.MoveCamera.html#Global_MoveCamera_Invoke_
+  commentId: Overload:Global.MoveCamera.Invoke
+  isSpec: "True"
+  fullName: MoveCamera.Invoke
+  nameWithType: MoveCamera.Invoke
+- uid: Global.MoveCamera.target
+  name: target
+  href: api/Global.MoveCamera.html#Global_MoveCamera_target
+  commentId: F:Global.MoveCamera.target
+  fullName: MoveCamera.target
+  nameWithType: MoveCamera.target
 - uid: Global.MoveDefinition
   name: MoveDefinition
   href: api/Global.MoveDefinition.html
@@ -5307,6 +5331,19 @@ references:
   commentId: F:Global.PossessSource.hitDetector
   fullName: PossessSource.hitDetector
   nameWithType: PossessSource.hitDetector
+- uid: Global.PossessSource.Stop
+  name: Stop()
+  href: api/Global.PossessSource.html#Global_PossessSource_Stop
+  commentId: M:Global.PossessSource.Stop
+  fullName: PossessSource.Stop()
+  nameWithType: PossessSource.Stop()
+- uid: Global.PossessSource.Stop*
+  name: Stop
+  href: api/Global.PossessSource.html#Global_PossessSource_Stop_
+  commentId: Overload:Global.PossessSource.Stop
+  isSpec: "True"
+  fullName: PossessSource.Stop
+  nameWithType: PossessSource.Stop
 - uid: Global.PossessSourcesDestroyAction
   name: PossessSourcesDestroyAction
   href: api/Global.PossessSourcesDestroyAction.html
