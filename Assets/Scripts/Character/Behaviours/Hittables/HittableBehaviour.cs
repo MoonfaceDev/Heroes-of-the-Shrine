@@ -74,8 +74,8 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
             return;
         }
 
-        Hit(damage);
         DoKnockback(damage, power, angleDegrees);
+        Hit(damage);
     }
 
     private void DoStun(float damage, float time)
@@ -100,8 +100,8 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
             return;
         }
 
-        Hit(damage);
         DoStun(damage, time);
+        Hit(damage);
     }
 
     private void OnDestroy()

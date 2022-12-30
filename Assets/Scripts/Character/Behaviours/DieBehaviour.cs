@@ -29,15 +29,12 @@ public class DieBehaviour : CharacterBehaviour
 
     public void Kill()
     {
-        DisableBehaviours(typeof(KnockbackBehaviour), typeof(BaseEffect));
-        Type[] behavioursToStop = { typeof(BaseMovementBehaviour), typeof(AttackManager), typeof(StunBehaviour) };
-        DisableBehaviours(behavioursToStop);
-        StopBehaviours(behavioursToStop);
+        DisableBehaviours(typeof(BaseEffect), typeof(CharacterController));
+        StopBehaviours(typeof(BaseEffect), typeof(BaseMovementBehaviour), typeof(AttackManager), typeof(StunBehaviour));
 
         void KillAfterKnockback()
         {
             Animator.SetBool(DeadParameter, true);
-            StopBehaviours(typeof(BaseEffect));
             onDie.Invoke();
             if (destroyOnDeath)
             {
