@@ -16,7 +16,7 @@ public class ForcedWalkBehaviour : PlayableBehaviour
         }
 
         StopBehaviours(typeof(PlayableBehaviour));
-        DisableBehaviours(typeof(CharacterController));
+        DisableBehaviours(typeof(CharacterController), typeof(RunBehaviour));
 
         active = true;
         onPlay.Invoke();
@@ -38,7 +38,7 @@ public class ForcedWalkBehaviour : PlayableBehaviour
 
         EventManager.Instance.Detach(stopEvent);
         StopBehaviours(typeof(FollowBehaviour));
-        EnableBehaviours(typeof(PlayerController));
+        EnableBehaviours(typeof(PlayerController), typeof(RunBehaviour));
 
         MovableObject.velocity = Vector3.zero;
     }
