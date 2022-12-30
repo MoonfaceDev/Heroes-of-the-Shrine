@@ -9,6 +9,9 @@ public class ElectrifyAttack : NormalAttack
     [Header("Periodic hits")] public PeriodicAbsoluteHitDetector periodicHitDetector;
     public int periodicHitCount;
     public float periodicHitElectrifyRate;
+    public HitType periodicHitType = HitType.Stun;
+    public float periodicKnockbackPower;
+    public float periodicKnockbackDirection;
     public float periodicStunTime;
     public float periodicDamage;
     [Header("Explosion")] public BaseHitDetector explosionHitDetector;
@@ -20,7 +23,7 @@ public class ElectrifyAttack : NormalAttack
     public float explosionKnockbackDirection;
     public float explosionDamage;
     public float explosionStunTime;
-    
+
     protected override void ConfigureHitDetector()
     {
         float detectCount = 0;
@@ -57,7 +60,18 @@ public class ElectrifyAttack : NormalAttack
         InvokeOnHit(hittable);
         var processedDamage = CalculateDamage(hittable.Character);
         print(hittable.Character.name + " hit by periodic " + AttackName);
-        hittable.Stun(processedDamage, periodicStunTime);
+        if (periodicHitType == HitType.Stun)
+        {
+            hittable.Stun(processedDamage, periodicStunTime);
+        }
+        else
+        {
+            var hitDirection =
+                (int)Mathf.Sign(hittable.Character.movableObject.WorldPosition.x - MovableObject.WorldPosition.x);
+            hittable.Knockback(processedDamage, periodicKnockbackPower,
+                KnockbackBehaviour.GetRelativeDirection(periodicKnockbackDirection, hitDirection), periodicStunTime);
+        }
+
         if (Random.Range(0f, 1f) < periodicHitElectrifyRate)
         {
             var electrifiedEffect = hittable.Character.GetComponent<ElectrifiedEffect>();
