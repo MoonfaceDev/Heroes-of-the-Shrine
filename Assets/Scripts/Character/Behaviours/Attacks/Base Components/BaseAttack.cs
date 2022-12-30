@@ -239,5 +239,6 @@ public abstract class BaseAttack : PlayableBehaviour
         Recovering = true;
         yield return RecoveryCoroutine();
         Recovering = false;
+        onStop.Invoke();
     }
 }

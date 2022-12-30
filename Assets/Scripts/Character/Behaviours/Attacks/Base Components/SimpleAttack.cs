@@ -99,7 +99,6 @@ public class SimpleAttack : BaseAttack
                 MovableObject.velocity = Vector3.zero;
             }
         });
-        generalEvents.onFinishRecovery.AddListener(() => EnableBehaviours(typeof(WalkBehaviour)));
         onStop.AddListener(() => EnableBehaviours(typeof(WalkBehaviour)));
     }
 

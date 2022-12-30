@@ -34,7 +34,6 @@ public class PossessAttack : BaseAttack
             StopBehaviours(typeof(WalkBehaviour));
             MovableObject.velocity = Vector3.zero;
         });
-        generalEvents.onFinishRecovery.AddListener(() => EnableBehaviours(typeof(WalkBehaviour)));
         onStop.AddListener(() => EnableBehaviours(typeof(WalkBehaviour)));
         walkableGrid = FindObjectOfType<WalkableGrid>();
 

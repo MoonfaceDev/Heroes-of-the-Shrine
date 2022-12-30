@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class SlideBehaviour : BaseMovementBehaviour
@@ -31,14 +32,14 @@ public class SlideBehaviour : BaseMovementBehaviour
 
     public void Play(int direction)
     {
-        if (!(CanPlay() && direction != 0))
+        if (!(CanPlay() && !Mathf.Approximately(direction, 0)))
         {
             return;
         }
-        
-        DisableBehaviours(typeof(WalkBehaviour));
+
         StopBehaviours(typeof(WalkBehaviour), typeof(AttackManager));
-        
+        DisableBehaviours(typeof(WalkBehaviour));
+
         Slide = true;
         onPlay.Invoke();
 
@@ -47,7 +48,7 @@ public class SlideBehaviour : BaseMovementBehaviour
         MovableObject.acceleration.x = -direction * slideStopAcceleration;
         MovableObject.velocity.z = 0;
         stopEvent = EventManager.Attach(
-            () => Mathf.Approximately(Mathf.Sign(MovableObject.velocity.x), Mathf.Sign(MovableObject.acceleration.x)),
+            () => !Mathf.Approximately(Mathf.Sign(MovableObject.velocity.x), direction),
             Stop
         );
     }

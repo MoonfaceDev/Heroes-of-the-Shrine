@@ -61,7 +61,6 @@ public class AttackManager : PlayableBehaviour
                 }, maxComboDelay);
             }
 
-            attack.generalEvents.onFinishRecovery.AddListener(ForgetComboAction);
             attack.onStop.AddListener(ForgetComboAction);
         }
     }

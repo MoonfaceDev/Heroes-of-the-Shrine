@@ -117,14 +117,7 @@ public class KnockbackBehaviour : ForcedBehaviour
     private IEnumerator RecoverAfterTime()
     {
         yield return new WaitForSeconds(knockbackRecoverTime);
-        Recover();
-    }
-
-    private void Recover()
-    {
-        Recovering = false;
-        OnRecover?.Invoke();
-        onStop.Invoke();
+        Stop();
     }
 
     public override void Stop()
@@ -146,7 +139,8 @@ public class KnockbackBehaviour : ForcedBehaviour
         if (Recovering)
         {
             StopCoroutine(recoverCoroutine);
-            Recover();
+            Recovering = false;
+            OnRecover?.Invoke();
         }
     }
 
