@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(ShadowObject))]
@@ -27,11 +26,14 @@ internal class ShadowObjectEditor : Editor
         {
             shadowObject.movableObject = (MovableObject)movableObjectField.GetValue(target);
         }
+
         if (shadowObject.movableObject)
         {
             var scale = 2 / (1 + Mathf.Exp(0.2f * shadowObject.movableObject.WorldPosition.y));
-            shadowObject.transform.localScale = MovableObject.GroundScreenCoordinates(Vector3.Scale(shadowObject.shadowScale, scale * Vector3.one));
+            shadowObject.transform.localScale =
+                MovableObject.GroundScreenCoordinates(Vector3.Scale(shadowObject.shadowScale, scale * Vector3.one));
         }
+
         serializedObject.ApplyModifiedProperties();
         if (GUI.changed)
         {
