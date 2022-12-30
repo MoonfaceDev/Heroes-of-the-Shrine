@@ -734,6 +734,9 @@ MonoBehaviour:
   periodicHitDetector: {fileID: 1340466846}
   periodicHitCount: 2
   periodicHitElectrifyRate: 0.1
+  periodicHitType: 0
+  periodicKnockbackPower: 7
+  periodicKnockbackDirection: 30
   periodicStunTime: 0.5
   periodicDamage: 2.5
   explosionHitDetector: {fileID: 1468609905}
