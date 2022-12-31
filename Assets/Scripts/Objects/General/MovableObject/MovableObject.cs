@@ -63,7 +63,6 @@ public class MovableObject : MonoBehaviour
         {
             var wantedPosition = position + Time.deltaTime * velocity +
                                  0.5f * Mathf.Pow(Time.deltaTime, 2) * acceleration;
-            print(name + ", " + wantedPosition + ", " + position + ", " + Time.deltaTime + ", " + velocity + ", " + acceleration);
             UpdatePosition(position + Vector3.right * (wantedPosition.x - position.x));
             UpdatePosition(position + Vector3.up * (wantedPosition.y - position.y));
             UpdatePosition(position + Vector3.forward * (wantedPosition.z - position.z));

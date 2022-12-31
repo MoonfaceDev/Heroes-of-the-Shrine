@@ -1580,7 +1580,7 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -1, y: 3}
   m_SizeDelta: {x: 0.0000027418137, y: -4.9999986}
   m_Pivot: {x: 0, y: 0}
@@ -2167,10 +2167,7 @@ PrefabInstance:
       addedObject: {fileID: 922160257}
     - targetCorrespondingSourceObject: {fileID: 5826350637849315247, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 863520702}
-    - targetCorrespondingSourceObject: {fileID: 5826350637849315247, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1862601265}
+      addedObject: {fileID: 1216626312}
   m_SourcePrefab: {fileID: 100100000, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
 --- !u!224 &615463055 stripped
 RectTransform:
@@ -2235,6 +2232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b502f5bb4c77acb408c8914091f593f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uniqueId: Boss Entrance
   firstEvent:
     m_PersistentCalls:
       m_Calls:
@@ -2278,8 +2276,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   playOnAwake: 0
-  warning: 'Pay attention: game object name has to be unique in the game! (across
-    all scenes)'
 --- !u!114 &615463061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2310,6 +2306,62 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &615463062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615463057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b502f5bb4c77acb408c8914091f593f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueId: Player Entrance
+  firstEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1216626311}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 615463058}
+        m_TargetAssemblyTypeName: CutsceneAction, Assembly-CSharp
+        m_MethodName: Invoke
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  restEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 615463058}
+        m_TargetAssemblyTypeName: CutsceneAction, Assembly-CSharp
+        m_MethodName: Invoke
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  playOnAwake: 0
 --- !u!1 &618980458
 GameObject:
   m_ObjectHideFlags: 0
@@ -2920,7 +2972,7 @@ RectTransform:
   m_Children:
   - {fileID: 1522698584}
   - {fileID: 1031711858}
-  m_Father: {fileID: 615463055}
+  m_Father: {fileID: 1216626312}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
@@ -3062,7 +3114,7 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.000061035156, y: 0.000015258789}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
@@ -3437,6 +3489,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1060354727}
   m_CullTransparentMesh: 1
+--- !u!1 &1216626311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1216626312}
+  - component: {fileID: 1216626313}
+  m_Layer: 5
+  m_Name: Boss Bars
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1216626312
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216626311}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 863520702}
+  - {fileID: 1862601265}
+  m_Father: {fileID: 615463055}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 768, y: 200}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!95 &1216626313
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216626311}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1340466845
 GameObject:
   m_ObjectHideFlags: 0
@@ -3883,6 +3994,10 @@ PlayableDirector:
     value: {fileID: 1646802293}
   - key: {fileID: -4211834597622144845, guid: ae283ec6516654e40973614dda01dbd2, type: 2}
     value: {fileID: 817068150}
+  - key: {fileID: 6067358489673490547, guid: ae283ec6516654e40973614dda01dbd2, type: 2}
+    value: {fileID: 1216626313}
+  - key: {fileID: -4884462108095875369, guid: ae283ec6516654e40973614dda01dbd2, type: 2}
+    value: {fileID: 1216626311}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1574004471
@@ -4790,7 +4905,7 @@ RectTransform:
   m_Children:
   - {fileID: 1372187417}
   - {fileID: 1405676969}
-  m_Father: {fileID: 615463055}
+  m_Father: {fileID: 1216626312}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}

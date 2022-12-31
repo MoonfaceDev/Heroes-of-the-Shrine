@@ -1137,6 +1137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b502f5bb4c77acb408c8914091f593f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uniqueId: Possessor Introduction
   firstEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1168,8 +1169,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   playOnAwake: 0
-  warning: 'Pay attention: game object name has to be unique in the game! (across
-    all scenes)'
 --- !u!1 &1772566190
 GameObject:
   m_ObjectHideFlags: 0

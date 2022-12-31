@@ -4,7 +4,9 @@ using UnityEngine.Events;
 
 public class PlayOnce : MonoBehaviour
 {
-    private static readonly HashSet<string> _played = new();
+    private static readonly HashSet<string> Played = new();
+
+    public string uniqueId;
 
     public UnityEvent firstEvent;
 
@@ -12,14 +14,11 @@ public class PlayOnce : MonoBehaviour
 
     public bool playOnAwake;
 
-    [Readonly] [TextArea]
-    public string warning = "Pay attention: game object name has to be unique in the game! (across all scenes)";
-
     public void Play()
     {
-        if (!_played.Contains(name))
+        if (!Played.Contains(uniqueId))
         {
-            _played.Add(name);
+            Played.Add(uniqueId);
             firstEvent.Invoke();
         }
         else

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(WalkBehaviour))]
@@ -30,12 +29,15 @@ public class EscapeBehaviour : BaseMovementBehaviour
         {
             return;
         }
+
         Active = true;
         onPlay.Invoke();
 
+        currentSpeedMultiplier = speedMultiplier;
         walkBehaviour.speed *= currentSpeedMultiplier;
 
-        escapeEvent = EventManager.Attach(() => true, () => {
+        escapeEvent = EventManager.Attach(() => true, () =>
+        {
             var distance = MovableObject.WorldPosition - target.WorldPosition;
             distance.y = 0;
             var direction = distance.normalized;
