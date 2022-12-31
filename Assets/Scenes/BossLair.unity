@@ -1960,6 +1960,22 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5826350637558136107, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826350637558136107, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826350637558136107, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826350637558136107, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5826350637583987562, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_ForceIntoRT
       value: 0
@@ -2092,6 +2108,14 @@ PrefabInstance:
       propertyPath: objectsToDestroy.Array.data[2]
       value: 
       objectReference: {fileID: 1664371913}
+    - target: {fileID: 5826350638886052853, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826350638886052853, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7892979979956269628, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_AssetsPPU
       value: 135
