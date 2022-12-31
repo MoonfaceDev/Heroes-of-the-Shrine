@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af61f8ebac7a76742baddc8a44dddfa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 700
+  startHealth: 1
   health: 0
 --- !u!114 &63080249
 MonoBehaviour:
@@ -2760,6 +2760,7 @@ GameObject:
   - component: {fileID: 721293575}
   - component: {fileID: 721293576}
   - component: {fileID: 721293577}
+  - component: {fileID: 721293578}
   m_Layer: 0
   m_Name: Possess Source
   m_TagString: Untagged
@@ -2854,6 +2855,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &721293578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721293574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6142a1f1c687491499aaa05fb1046b31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &739543964
 GameObject:
   m_ObjectHideFlags: 0
@@ -5424,7 +5437,7 @@ MonoBehaviour:
           m_MethodName: Play
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: 8b0bc5f278c2f184f81efb8a9d7d4d9d, type: 3}
+            m_ObjectArgument: {fileID: 8300000, guid: 45c539764ca27524b9f18b9966457a3f, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -5456,7 +5469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraMovement: {fileID: 615463056}
-  target: {x: 2, y: -2, z: -10}
+  target: {x: 2, y: -2.5, z: -10}
 --- !u!114 &2047257168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5470,7 +5483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraMovement: {fileID: 615463056}
-  target: {x: -1.5, y: -1, z: -10}
+  target: {x: -1.5, y: -1.5, z: -10}
 --- !u!1 &2074727357
 GameObject:
   m_ObjectHideFlags: 0

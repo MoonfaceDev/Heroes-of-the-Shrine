@@ -173,7 +173,6 @@ public class PlayerController : CharacterController
         if (selectedAttack != null && !(isBuffered && nonBufferedAttacks.Contains(selectedAttack.attack)))
         {
             selectedAttack.attack.Play();
-            Debug.Log("Started attack " + selectedAttack.attack.AttackName);
             return true;
         }
 
