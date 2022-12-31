@@ -18,6 +18,7 @@ public class ShowDebugAttribute : ReadonlyAttribute
     }
 }
 
+#if UNITY_EDITOR
 [CustomPropertyDrawer(typeof(ReadonlyAttribute), true)]
 public class ReadonlyDrawer : PropertyDrawer
 {
@@ -39,3 +40,4 @@ public class ReadonlyDrawer : PropertyDrawer
         return !((ReadonlyAttribute)attribute).playMode || Application.isPlaying;
     }
 }
+#endif

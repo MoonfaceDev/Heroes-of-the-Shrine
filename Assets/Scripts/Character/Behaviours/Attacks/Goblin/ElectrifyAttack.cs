@@ -59,7 +59,6 @@ public class ElectrifyAttack : NormalAttack
     {
         InvokeOnHit(hittable);
         var processedDamage = CalculateDamage(hittable.Character);
-        print(hittable.Character.name + " hit by periodic " + AttackName);
         if (periodicHitType == HitType.Stun)
         {
             hittable.Stun(processedDamage, periodicStunTime);
@@ -91,7 +90,6 @@ public class ElectrifyAttack : NormalAttack
     {
         onExplosion.Invoke();
         var processedDamage = CalculateExplosionDamage(hittable.Character);
-        print(hittable.Character.name + " hit by explosion " + AttackName);
         var hitDirection =
             (int)Mathf.Sign(hittable.Character.movableObject.WorldPosition.x - MovableObject.WorldPosition.x);
         hittable.Knockback(processedDamage, explosionKnockbackPower,

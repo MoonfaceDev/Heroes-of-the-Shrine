@@ -1009,6 +1009,7 @@ MonoBehaviour:
   postCutsceneEvent:
     m_PersistentCalls:
       m_Calls: []
+  playOnAwake: 0
 --- !u!114 &1745739313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1166,6 +1167,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  playOnAwake: 0
+  warning: 'Pay attention: game object name has to be unique in the game! (across
+    all scenes)'
 --- !u!1 &1772566190
 GameObject:
   m_ObjectHideFlags: 0

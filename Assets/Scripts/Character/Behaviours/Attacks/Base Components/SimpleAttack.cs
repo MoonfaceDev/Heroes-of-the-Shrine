@@ -172,7 +172,6 @@ public class SimpleAttack : BaseAttack
     {
         InvokeOnHit(hittable);
         var processedDamage = CalculateDamage(hittable.Character);
-        print(hittable.Character.name + " hit by " + AttackName);
         switch (hitType)
         {
             case HitType.Knockback:
