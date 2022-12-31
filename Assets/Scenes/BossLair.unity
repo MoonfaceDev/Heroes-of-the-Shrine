@@ -1960,22 +1960,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5826350637558136107, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5826350637558136107, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5826350637558136107, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5826350637558136107, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5826350637583987562, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_ForceIntoRT
       value: 0
@@ -2002,7 +1986,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826350637583987565, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 5826350637583987565, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2108,14 +2092,6 @@ PrefabInstance:
       propertyPath: objectsToDestroy.Array.data[2]
       value: 
       objectReference: {fileID: 1664371913}
-    - target: {fileID: 5826350638886052853, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -0.000015258789
-      objectReference: {fileID: 0}
-    - target: {fileID: 5826350638886052853, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7892979979956269628, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_AssetsPPU
       value: 135
@@ -3575,7 +3551,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 768, y: 200}
+  m_SizeDelta: {x: 672, y: 152}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!95 &1216626313
 Animator:

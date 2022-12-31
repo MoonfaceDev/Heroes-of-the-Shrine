@@ -818,6 +818,31 @@ MonoBehaviour:
       direction: 0
       z: -3.28
       partOfWave: 1
+  - spawnDefinitions:
+    - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
+      direction: 0
+      z: -1.77
+      partOfWave: 1
+    - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
+      direction: 0
+      z: -3.28
+      partOfWave: 1
+    - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
+      direction: 0
+      z: -2.7
+      partOfWave: 1
+    - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
+      direction: 1
+      z: -4
+      partOfWave: 1
+    - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
+      direction: 1
+      z: -2
+      partOfWave: 1
+    - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
+      direction: 1
+      z: -3
+      partOfWave: 1
   firstWavePreSpawnedEnemies:
   - {fileID: 1810564810}
   timeToAlarm: 0.5
@@ -1146,6 +1171,14 @@ PrefabInstance:
       propertyPath: objectsToDestroy.Array.data[1]
       value: 
       objectReference: {fileID: 2083560094}
+    - target: {fileID: 8011096904507608567, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011096904507608567, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8011096904622113216, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.5
@@ -1161,6 +1194,10 @@ PrefabInstance:
     - target: {fileID: 8011096904622113223, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: position.z
       value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011096904630261294, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9138288699133641890, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: director
