@@ -24,7 +24,6 @@ public class RunBehaviour : BaseMovementBehaviour
     private JumpBehaviour jumpBehaviour;
     private Coroutine startCoroutine;
     private ParticleSystem.MainModule runParticlesMain;
-    private IModifier speedModifier;
     private bool run;
     
     private static readonly int RunParameter = Animator.StringToHash("run");
@@ -74,8 +73,7 @@ public class RunBehaviour : BaseMovementBehaviour
             return;
         }
         Run = true;
-        speedModifier = new MultiplierModifier(runSpeedMultiplier);
-        walkBehaviour.speed.AddModifier(speedModifier);
+        walkBehaviour.speed *= runSpeedMultiplier;
         runParticles.Play();
         onPlay.Invoke();
     }
@@ -86,7 +84,7 @@ public class RunBehaviour : BaseMovementBehaviour
         {
             onStop.Invoke();
             Run = false;
-            walkBehaviour.speed.RemoveModifier(speedModifier);
+            walkBehaviour.speed /= runSpeedMultiplier;
             runParticles.Stop();
         }
         if (startCoroutine != null)

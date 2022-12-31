@@ -9,7 +9,6 @@ public class FollowPattern : BasePattern
 
     private const float DistanceFromOtherEnemies = 0.5f;
 
-    private IModifier speedModifier;
     private EventListener otherEnemiesEvent;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -27,8 +26,7 @@ public class FollowPattern : BasePattern
         var followBehaviour = animator.GetComponent<FollowBehaviour>();
 
         var walkBehaviour = animator.GetComponent<WalkBehaviour>();
-        speedModifier = new MultiplierModifier(speedMultiplier);
-        walkBehaviour.speed.AddModifier(speedModifier);
+        walkBehaviour.speed *= speedMultiplier;
 
         var grid = FindObjectOfType<WalkableGrid>();
         var nodeRadius = grid.nodeRadius;
@@ -88,7 +86,7 @@ public class FollowPattern : BasePattern
         followBehaviour.Stop();
 
         var walkBehaviour = animator.GetComponent<WalkBehaviour>();
-        walkBehaviour.speed.RemoveModifier(speedModifier);
+        walkBehaviour.speed /= speedMultiplier;
     }
 
     private void OnDestroy()

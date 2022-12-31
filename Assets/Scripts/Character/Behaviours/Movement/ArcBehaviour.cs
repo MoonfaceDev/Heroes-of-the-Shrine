@@ -9,7 +9,7 @@ public class ArcBehaviour : BaseMovementBehaviour
     public override bool Playing => Active;
 
     private WalkBehaviour walkBehaviour;
-    private IModifier speedModifier;
+    private float currentSpeedMultiplier;
     private EventListener circleEvent;
 
     public override void Awake()
@@ -32,8 +32,8 @@ public class ArcBehaviour : BaseMovementBehaviour
         Active = true;
         onPlay.Invoke();
 
-        speedModifier = new MultiplierModifier(speedMultiplier);
-        walkBehaviour.speed.AddModifier(speedModifier);
+        currentSpeedMultiplier = speedMultiplier;
+        walkBehaviour.speed *= speedMultiplier;
 
         var playerPosition = target.WorldPosition;
         var initialDistance = walkBehaviour.MovableObject.WorldPosition - playerPosition;
@@ -63,7 +63,7 @@ public class ArcBehaviour : BaseMovementBehaviour
         onStop.Invoke();
         Active = false;
         EventManager.Detach(circleEvent);
-        walkBehaviour.speed.RemoveModifier(speedModifier);
+        walkBehaviour.speed /= currentSpeedMultiplier;
         StopBehaviours(typeof(WalkBehaviour));
         MovableObject.velocity = Vector3.zero;
     }

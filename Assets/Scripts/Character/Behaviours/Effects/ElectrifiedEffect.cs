@@ -8,7 +8,7 @@ public class ElectrifiedEffect : BaseEffect
     private float startTime;
     private float currentDuration;
     private WalkBehaviour walkBehaviour;
-    private IModifier speedModifier;
+    private float currentSpeedMultiplier;
     private EventListener stopEvent;
 
     private static readonly Type[] DisabledBehaviours = { typeof(RunBehaviour), typeof(SlideBehaviour), typeof(DodgeBehaviour), typeof(JumpBehaviour) };
@@ -26,10 +26,10 @@ public class ElectrifiedEffect : BaseEffect
         Active = true;
         onPlay.Invoke();
 
+        currentSpeedMultiplier = speedReductionMultiplier;
         if (walkBehaviour)
         {
-            speedModifier = new MultiplierModifier(speedReductionMultiplier);
-            walkBehaviour.speed.AddModifier(speedModifier);
+            walkBehaviour.speed *= currentSpeedMultiplier;
         }
         DisableBehaviours(DisabledBehaviours);
         particles.Play();
@@ -48,7 +48,7 @@ public class ElectrifiedEffect : BaseEffect
 
             if (walkBehaviour)
             {
-                walkBehaviour.speed.RemoveModifier(speedModifier);
+                walkBehaviour.speed /= currentSpeedMultiplier;
             }
             EnableBehaviours(DisabledBehaviours);
             particles.Stop(true, stopBehavior: ParticleSystemStopBehavior.StopEmittingAndClear);

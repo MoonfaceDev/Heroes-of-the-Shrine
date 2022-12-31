@@ -9,7 +9,7 @@ public class EscapeBehaviour : BaseMovementBehaviour
     public override bool Playing => Active;
 
     private WalkBehaviour walkBehaviour;
-    private IModifier speedModifier;
+    private float currentSpeedMultiplier;
     private EventListener escapeEvent;
 
     public override void Awake()
@@ -33,8 +33,7 @@ public class EscapeBehaviour : BaseMovementBehaviour
         Active = true;
         onPlay.Invoke();
 
-        speedModifier = new MultiplierModifier(speedMultiplier);
-        walkBehaviour.speed.AddModifier(speedModifier);
+        walkBehaviour.speed *= currentSpeedMultiplier;
 
         escapeEvent = EventManager.Attach(() => true, () => {
             var distance = MovableObject.WorldPosition - target.WorldPosition;
@@ -51,7 +50,7 @@ public class EscapeBehaviour : BaseMovementBehaviour
         onStop.Invoke();
         Active = false;
         EventManager.Detach(escapeEvent);
-        walkBehaviour.speed.RemoveModifier(speedModifier);
+        walkBehaviour.speed /= currentSpeedMultiplier;
         StopBehaviours(typeof(WalkBehaviour));
         MovableObject.velocity = Vector3.zero;
     }

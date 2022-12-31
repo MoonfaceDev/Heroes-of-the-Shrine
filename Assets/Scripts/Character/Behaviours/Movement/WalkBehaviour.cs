@@ -5,7 +5,7 @@ public class WalkBehaviour : BaseMovementBehaviour
 {
     public float defaultSpeed;
 
-    public ModifiableValue speed;
+    public float speed;
     
     public bool Walk
     {
@@ -26,7 +26,7 @@ public class WalkBehaviour : BaseMovementBehaviour
     public override void Awake()
     {
         base.Awake();
-        speed = new ModifiableValue(defaultSpeed);
+        speed = defaultSpeed;
     }
 
     public void Play(float xAxis, float zAxis, bool fitLookDirection = true)
