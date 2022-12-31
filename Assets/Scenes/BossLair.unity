@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af61f8ebac7a76742baddc8a44dddfa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 700
+  startHealth: 1
   health: 0
 --- !u!114 &63080249
 MonoBehaviour:
@@ -2925,7 +2925,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 570, y: 105.119995}
+  m_AnchoredPosition: {x: 0, y: 150}
   m_SizeDelta: {x: 768, y: 384}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &863520704
@@ -4795,7 +4795,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 570, y: 122}
+  m_AnchoredPosition: {x: 0, y: 175}
   m_SizeDelta: {x: 768, y: 384}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1862601266
@@ -5216,6 +5216,9 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 9fbe0b789cffeb84c8eb4a7285e6d4a7, type: 2}
     - {fileID: 11400000, guid: dc439feff05e59c47b282d72a36fadb4, type: 2}
     - {fileID: 11400000, guid: 05cf48f7609b320499fb689e3925ae6b, type: 2}
+    - {fileID: 11400000, guid: 8cb0f520845bb71439de57a9f61edad6, type: 2}
+    - {fileID: 11400000, guid: d12df438f796e9244bf4bfce40fd388b, type: 2}
+    - {fileID: 11400000, guid: b1a287b0e51cc47428789ca2bde47ab2, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -5226,6 +5229,18 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1738993431}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: dedf6b62d7338e1488a0a15475e0b4bb, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -5254,6 +5269,48 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1738993431}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 2d1f9fa2515fb794db4d008587db4df3, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1738993431}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: d967af01483253f4085716ed703eba29, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1738993431}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 8b0bc5f278c2f184f81efb8a9d7d4d9d, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
