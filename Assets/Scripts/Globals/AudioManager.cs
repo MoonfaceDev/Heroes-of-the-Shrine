@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public AudioSource musicAudioSource;
+    public AudioSource soundEffectsAudioSource;
     public AudioClip backgroundMusic;
-
+    
     public static AudioManager Instance { get; private set; }
-
-    private AudioSource audioSource;
-
+    
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -23,8 +23,6 @@ public class AudioManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
-        audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -37,17 +35,17 @@ public class AudioManager : MonoBehaviour
 
     public static void PlayBackground(AudioClip clip)
     {
-        Instance.audioSource.clip = clip;
-        Instance.audioSource.Play();
+        Instance.musicAudioSource.clip = clip;
+        Instance.musicAudioSource.Play();
     }
 
     public static void StopBackground()
     {
-        Instance.audioSource.Stop();
+        Instance.musicAudioSource.Stop();
     }
 
     public static void Play(AudioClip clip)
     {
-        Instance.audioSource.PlayOneShot(clip);
+        Instance.soundEffectsAudioSource.PlayOneShot(clip);
     }
 }

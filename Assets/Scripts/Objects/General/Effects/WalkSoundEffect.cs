@@ -28,5 +28,8 @@ public class WalkSoundEffect : MonoBehaviour
                 }
             });
         }
+
+        EventManager.Instance.Attach(() => true,
+            () => walkAudioSource.volume = AudioManager.Instance.soundEffectsAudioSource.volume, false);
     }
 }

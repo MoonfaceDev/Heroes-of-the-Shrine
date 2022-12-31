@@ -33,7 +33,7 @@ public class DeathAction : MonoBehaviour
             var cameraFollow = camera.GetComponent<CameraFollow>();
             cameraFollow.enabled = false;
             var cameraFocus = camera.GetComponent<CameraFocus>();
-            cameraFocus.Zoom((Vector2)player.transform.position + 1f * Vector2.up, cameraZoomFactor);
+            cameraFocus.Zoom(player.transform.position, cameraZoomFactor);
         }
 
         EventManager.Instance.StartTimeout(() => deathPanel.SetActive(true), deathPanelTransitionDelay);
