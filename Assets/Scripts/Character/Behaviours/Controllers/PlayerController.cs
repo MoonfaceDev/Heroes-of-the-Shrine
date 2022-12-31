@@ -36,6 +36,7 @@ public class PlayerController : CharacterController
     public BaseAttack[] nonBufferedAttacks;
 
     [Header("Buffered actions priorities")]
+    public int walkPriority;
     public int jumpPriority;
     public int attackPriority;
 
@@ -92,14 +93,9 @@ public class PlayerController : CharacterController
                 bufferedActions.Clear();
             }
         }
-
-        var horizontal = Direction(Input.GetAxisRaw("Horizontal"));
-        var vertical = Direction(Input.GetAxisRaw("Vertical"));
-        if (walkBehaviour)
-        {
-            walkBehaviour.Play(horizontal, vertical);
-        }
-
+        
+        //walking
+        ExecuteWalk();
         //jumping
         ExecuteJump();
         //sliding
@@ -112,6 +108,16 @@ public class PlayerController : CharacterController
         if (!Input.GetKeyDown(KeyCode.Alpha7)) return;
         activeSuitIndex = 1 - activeSuitIndex;
         Animator.runtimeAnimatorController = animatorControllers[activeSuitIndex];
+    }
+
+    private void ExecuteWalk()
+    {
+        var horizontal = Direction(Input.GetAxisRaw("Horizontal"));
+        var vertical = Direction(Input.GetAxisRaw("Vertical"));
+        if (walkBehaviour)
+        {
+            ExecuteAction(() => walkBehaviour.Play(horizontal, vertical), walkBehaviour.CanPlay, walkPriority);
+        }
     }
 
     private void ExecuteJump()
