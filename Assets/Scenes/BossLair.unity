@@ -284,6 +284,7 @@ MonoBehaviour:
       m_Calls: []
   cooldown: 0
   defaultSpeed: 2
+  speed: 0
 --- !u!114 &63080245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3916,6 +3917,8 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 6f72a4b6de8c36d41b346ae4e55acb49, type: 2}
+    - {fileID: 11400000, guid: 8ba8f1f4e0cdf8f459eb892555eaf5ff, type: 2}
+    - {fileID: 11400000, guid: 9c0e5a506948b6b488e6ebf2aed7afb8, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -3926,6 +3929,46 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1738993431}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 6154ea81b4cee53488eba1f5c813e4c1, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1738993431}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: a4fb2c77fcef3c349b6d7faae02eb82b, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1738993431}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 54296b990bfb04247942b654d9183104, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
