@@ -873,7 +873,7 @@ Transform:
   - {fileID: 3850747449127629430}
   - {fileID: 3970267090279809017}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360874897665
 MonoBehaviour:
@@ -1703,15 +1703,15 @@ MonoBehaviour:
   midair: 0
   anticipateDuration: 0.05
   activeDuration: 0
-  recoveryDuration: 0.4
+  recoveryDuration: 0.3
   hitDetector: {fileID: 3262553446811620699}
   damage: 15
   hitType: 0
-  knockbackPower: 10
+  knockbackPower: 12.5
   knockbackDirection: 60
   stunTime: 0.5
-  velocity: 100
-  acceleration: 1000
+  velocity: 50
+  acceleration: 250
 --- !u!114 &5102893360874897681
 MonoBehaviour:
   m_ObjectHideFlags: 0
