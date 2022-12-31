@@ -172,7 +172,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.AudioManager.html",
-          "hash": "PMw3Cv+23wSETFnAgTyPAHiTL1MGfQr4DzdEAL7DZuM="
+          "hash": "93crX16vIegeSaSikiRlwGiqnaoN9z0qyoeYYHQGF7A="
         }
       },
       "is_incremental": false,
@@ -1116,6 +1116,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.MusicVolumeSlider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.MusicVolumeSlider.html",
+          "hash": "lfvxpY4spSQlpIiPMrqs+vSfdRWe+MD57FIitkFx5Qs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.Node.yml",
       "output": {
         ".html": {
@@ -1488,6 +1500,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.SoundEffectsVolumeSlider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.SoundEffectsVolumeSlider.html",
+          "hash": "C8ylp6q5flsue8rERYIhkYir0YoI13lUH3j1xRKdRyw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.SpawnAttack.yml",
       "output": {
         ".html": {
@@ -1632,18 +1656,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.VolumeSlider.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.VolumeSlider.html",
-          "hash": "lACU+XN4ATtEEMcLfF7fK24LaEcXXw+s+uyMckYAn5s="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Global.WalkBehaviour.yml",
       "output": {
         ".html": {
@@ -1708,7 +1720,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "zW6/cBmWAKUM8gKSZ26gnW4JP8GOdNxarOGOCbG3m9k="
+          "hash": "QM6IJk/7Fv0c4KonB0WWJvOE0OWEeCkvOfCu1MwWyr0="
         }
       },
       "is_incremental": false,
@@ -1720,7 +1732,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "qCKqpDsUwmj18jNhNSuoE2BOUXecxAh1IVucliUCYsI="
+          "hash": "sO4XKIG9CKQZmfkxYDBbuG28bhA9s1fMYklz1aDDlkA="
         }
       },
       "is_incremental": false,
@@ -1931,7 +1943,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 141,
+          "total_file_count": 142,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

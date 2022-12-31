@@ -561,6 +561,12 @@ references:
   isSpec: "True"
   fullName: AudioManager.Instance
   nameWithType: AudioManager.Instance
+- uid: Global.AudioManager.musicAudioSource
+  name: musicAudioSource
+  href: api/Global.AudioManager.html#Global_AudioManager_musicAudioSource
+  commentId: F:Global.AudioManager.musicAudioSource
+  fullName: AudioManager.musicAudioSource
+  nameWithType: AudioManager.musicAudioSource
 - uid: Global.AudioManager.Play(AudioClip)
   name: Play(AudioClip)
   href: api/Global.AudioManager.html#Global_AudioManager_Play_AudioClip_
@@ -587,6 +593,12 @@ references:
   isSpec: "True"
   fullName: AudioManager.PlayBackground
   nameWithType: AudioManager.PlayBackground
+- uid: Global.AudioManager.soundEffectsAudioSource
+  name: soundEffectsAudioSource
+  href: api/Global.AudioManager.html#Global_AudioManager_soundEffectsAudioSource
+  commentId: F:Global.AudioManager.soundEffectsAudioSource
+  fullName: AudioManager.soundEffectsAudioSource
+  nameWithType: AudioManager.soundEffectsAudioSource
 - uid: Global.AudioManager.StopBackground
   name: StopBackground()
   href: api/Global.AudioManager.html#Global_AudioManager_StopBackground
@@ -4557,6 +4569,18 @@ references:
   commentId: F:Global.MoveDefinition.target
   fullName: MoveDefinition.target
   nameWithType: MoveDefinition.target
+- uid: Global.MusicVolumeSlider
+  name: MusicVolumeSlider
+  href: api/Global.MusicVolumeSlider.html
+  commentId: T:Global.MusicVolumeSlider
+  fullName: MusicVolumeSlider
+  nameWithType: MusicVolumeSlider
+- uid: Global.MusicVolumeSlider.slider
+  name: slider
+  href: api/Global.MusicVolumeSlider.html#Global_MusicVolumeSlider_slider
+  commentId: F:Global.MusicVolumeSlider.slider
+  fullName: MusicVolumeSlider.slider
+  nameWithType: MusicVolumeSlider.slider
 - uid: Global.Node
   name: Node
   href: api/Global.Node.html
@@ -6126,6 +6150,18 @@ references:
   isSpec: "True"
   fullName: SoundEffect.PlayBackground
   nameWithType: SoundEffect.PlayBackground
+- uid: Global.SoundEffectsVolumeSlider
+  name: SoundEffectsVolumeSlider
+  href: api/Global.SoundEffectsVolumeSlider.html
+  commentId: T:Global.SoundEffectsVolumeSlider
+  fullName: SoundEffectsVolumeSlider
+  nameWithType: SoundEffectsVolumeSlider
+- uid: Global.SoundEffectsVolumeSlider.slider
+  name: slider
+  href: api/Global.SoundEffectsVolumeSlider.html#Global_SoundEffectsVolumeSlider_slider
+  commentId: F:Global.SoundEffectsVolumeSlider.slider
+  fullName: SoundEffectsVolumeSlider.slider
+  nameWithType: SoundEffectsVolumeSlider.slider
 - uid: Global.SpawnAttack
   name: SpawnAttack
   href: api/Global.SpawnAttack.html
@@ -6622,18 +6658,6 @@ references:
   commentId: T:Global.Uppercut
   fullName: Uppercut
   nameWithType: Uppercut
-- uid: Global.VolumeSlider
-  name: VolumeSlider
-  href: api/Global.VolumeSlider.html
-  commentId: T:Global.VolumeSlider
-  fullName: VolumeSlider
-  nameWithType: VolumeSlider
-- uid: Global.VolumeSlider.slider
-  name: slider
-  href: api/Global.VolumeSlider.html#Global_VolumeSlider_slider
-  commentId: F:Global.VolumeSlider.slider
-  fullName: VolumeSlider.slider
-  nameWithType: VolumeSlider.slider
 - uid: Global.WalkableGrid
   name: WalkableGrid
   href: api/Global.WalkableGrid.html
