@@ -756,18 +756,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.FlatModifier.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.FlatModifier.html",
-          "hash": "iO/RHV2zMWhHP4hROA7xQfzPRKhKkl7xNwn9K5EYMN8="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Global.FollowBehaviour.yml",
       "output": {
         ".html": {
@@ -972,18 +960,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.IModifier.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.IModifier.html",
-          "hash": "cckHV2Xxv2N7/BFD6ui0ShvdVTOY7JXj2MDXSMzrno0="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Global.IdlePattern.yml",
       "output": {
         ".html": {
@@ -1080,18 +1056,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.ModifiableValue.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.ModifiableValue.html",
-          "hash": "vSZfVuRW/4z1eMKHjXLbvmtLZ2naGQJkMqFrraXjES0="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Global.MovableObject.Rotation.yml",
       "output": {
         ".html": {
@@ -1145,18 +1109,6 @@
         ".html": {
           "relative_path": "api/Global.MoveDefinition.html",
           "hash": "LxbHViXfI/2+dIlZPlIBla9dr+PB0R7VeyR0qJG6QaU="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.MultiplierModifier.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.MultiplierModifier.html",
-          "hash": "0NElAlVOEcP0fTETxxGwvZ11z0Uluc0Hj4EgL3HG2mI="
         }
       },
       "is_incremental": false,
@@ -1696,7 +1648,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.WalkBehaviour.html",
-          "hash": "E96nx73P+jo6QX1JTkcUI+CM+p2qRaFLKjtJGYfO2I8="
+          "hash": "8UrwgubDrYFTgrqmccgPCINZBxBh+PAGSbYYFp1XJTs="
         }
       },
       "is_incremental": false,
@@ -1756,7 +1708,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "eHGK+3MaX8F3X+6qSalhAFt1B6L9t3yl523iQSZwaWs="
+          "hash": "zW6/cBmWAKUM8gKSZ26gnW4JP8GOdNxarOGOCbG3m9k="
         }
       },
       "is_incremental": false,
@@ -1768,7 +1720,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "+tcXK9AwRQxXQ6c6nTj/ow4nUrHiDdq2DvuJzp38/Hs="
+          "hash": "qCKqpDsUwmj18jNhNSuoE2BOUXecxAh1IVucliUCYsI="
         }
       },
       "is_incremental": false,
@@ -1979,7 +1931,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 145,
+          "total_file_count": 141,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

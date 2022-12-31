@@ -2875,38 +2875,6 @@ references:
   isSpec: "True"
   fullName: FireEffect.Stop
   nameWithType: FireEffect.Stop
-- uid: Global.FlatModifier
-  name: FlatModifier
-  href: api/Global.FlatModifier.html
-  commentId: T:Global.FlatModifier
-  fullName: FlatModifier
-  nameWithType: FlatModifier
-- uid: Global.FlatModifier.#ctor(System.Single)
-  name: FlatModifier(Single)
-  href: api/Global.FlatModifier.html#Global_FlatModifier__ctor_System_Single_
-  commentId: M:Global.FlatModifier.#ctor(System.Single)
-  fullName: FlatModifier.FlatModifier(System.Single)
-  nameWithType: FlatModifier.FlatModifier(Single)
-- uid: Global.FlatModifier.#ctor*
-  name: FlatModifier
-  href: api/Global.FlatModifier.html#Global_FlatModifier__ctor_
-  commentId: Overload:Global.FlatModifier.#ctor
-  isSpec: "True"
-  fullName: FlatModifier.FlatModifier
-  nameWithType: FlatModifier.FlatModifier
-- uid: Global.FlatModifier.Modify(System.Single)
-  name: Modify(Single)
-  href: api/Global.FlatModifier.html#Global_FlatModifier_Modify_System_Single_
-  commentId: M:Global.FlatModifier.Modify(System.Single)
-  fullName: FlatModifier.Modify(System.Single)
-  nameWithType: FlatModifier.Modify(Single)
-- uid: Global.FlatModifier.Modify*
-  name: Modify
-  href: api/Global.FlatModifier.html#Global_FlatModifier_Modify_
-  commentId: Overload:Global.FlatModifier.Modify
-  isSpec: "True"
-  fullName: FlatModifier.Modify
-  nameWithType: FlatModifier.Modify
 - uid: Global.FollowBehaviour
   name: FollowBehaviour
   href: api/Global.FollowBehaviour.html
@@ -3763,25 +3731,6 @@ references:
   isSpec: "True"
   fullName: IHittable.Stun
   nameWithType: IHittable.Stun
-- uid: Global.IModifier
-  name: IModifier
-  href: api/Global.IModifier.html
-  commentId: T:Global.IModifier
-  fullName: IModifier
-  nameWithType: IModifier
-- uid: Global.IModifier.Modify(System.Single)
-  name: Modify(Single)
-  href: api/Global.IModifier.html#Global_IModifier_Modify_System_Single_
-  commentId: M:Global.IModifier.Modify(System.Single)
-  fullName: IModifier.Modify(System.Single)
-  nameWithType: IModifier.Modify(Single)
-- uid: Global.IModifier.Modify*
-  name: Modify
-  href: api/Global.IModifier.html#Global_IModifier_Modify_
-  commentId: Overload:Global.IModifier.Modify
-  isSpec: "True"
-  fullName: IModifier.Modify
-  nameWithType: IModifier.Modify
 - uid: Global.JumpBehaviour
   name: JumpBehaviour
   href: api/Global.JumpBehaviour.html
@@ -4187,79 +4136,6 @@ references:
   isSpec: "True"
   fullName: MenuManager.TogglePausePanel
   nameWithType: MenuManager.TogglePausePanel
-- uid: Global.ModifiableValue
-  name: ModifiableValue
-  href: api/Global.ModifiableValue.html
-  commentId: T:Global.ModifiableValue
-  fullName: ModifiableValue
-  nameWithType: ModifiableValue
-- uid: Global.ModifiableValue.#ctor(System.Single)
-  name: ModifiableValue(Single)
-  href: api/Global.ModifiableValue.html#Global_ModifiableValue__ctor_System_Single_
-  commentId: M:Global.ModifiableValue.#ctor(System.Single)
-  fullName: ModifiableValue.ModifiableValue(System.Single)
-  nameWithType: ModifiableValue.ModifiableValue(Single)
-- uid: Global.ModifiableValue.#ctor*
-  name: ModifiableValue
-  href: api/Global.ModifiableValue.html#Global_ModifiableValue__ctor_
-  commentId: Overload:Global.ModifiableValue.#ctor
-  isSpec: "True"
-  fullName: ModifiableValue.ModifiableValue
-  nameWithType: ModifiableValue.ModifiableValue
-- uid: Global.ModifiableValue.AddModifier(IModifier)
-  name: AddModifier(IModifier)
-  href: api/Global.ModifiableValue.html#Global_ModifiableValue_AddModifier_IModifier_
-  commentId: M:Global.ModifiableValue.AddModifier(IModifier)
-  fullName: ModifiableValue.AddModifier(IModifier)
-  nameWithType: ModifiableValue.AddModifier(IModifier)
-- uid: Global.ModifiableValue.AddModifier*
-  name: AddModifier
-  href: api/Global.ModifiableValue.html#Global_ModifiableValue_AddModifier_
-  commentId: Overload:Global.ModifiableValue.AddModifier
-  isSpec: "True"
-  fullName: ModifiableValue.AddModifier
-  nameWithType: ModifiableValue.AddModifier
-- uid: Global.ModifiableValue.op_Implicit(ModifiableValue)~System.Single
-  name: Implicit(ModifiableValue to Single)
-  href: api/Global.ModifiableValue.html#Global_ModifiableValue_op_Implicit_ModifiableValue__System_Single
-  commentId: M:Global.ModifiableValue.op_Implicit(ModifiableValue)~System.Single
-  name.vb: Widening(ModifiableValue to Single)
-  fullName: ModifiableValue.Implicit(ModifiableValue to System.Single)
-  fullName.vb: ModifiableValue.Widening(ModifiableValue to System.Single)
-  nameWithType: ModifiableValue.Implicit(ModifiableValue to Single)
-  nameWithType.vb: ModifiableValue.Widening(ModifiableValue to Single)
-- uid: Global.ModifiableValue.op_Implicit(System.Single)~ModifiableValue
-  name: Implicit(Single to ModifiableValue)
-  href: api/Global.ModifiableValue.html#Global_ModifiableValue_op_Implicit_System_Single__ModifiableValue
-  commentId: M:Global.ModifiableValue.op_Implicit(System.Single)~ModifiableValue
-  name.vb: Widening(Single to ModifiableValue)
-  fullName: ModifiableValue.Implicit(System.Single to ModifiableValue)
-  fullName.vb: ModifiableValue.Widening(System.Single to ModifiableValue)
-  nameWithType: ModifiableValue.Implicit(Single to ModifiableValue)
-  nameWithType.vb: ModifiableValue.Widening(Single to ModifiableValue)
-- uid: Global.ModifiableValue.op_Implicit*
-  name: Implicit
-  href: api/Global.ModifiableValue.html#Global_ModifiableValue_op_Implicit_
-  commentId: Overload:Global.ModifiableValue.op_Implicit
-  isSpec: "True"
-  name.vb: Widening
-  fullName: ModifiableValue.Implicit
-  fullName.vb: ModifiableValue.Widening
-  nameWithType: ModifiableValue.Implicit
-  nameWithType.vb: ModifiableValue.Widening
-- uid: Global.ModifiableValue.RemoveModifier(IModifier)
-  name: RemoveModifier(IModifier)
-  href: api/Global.ModifiableValue.html#Global_ModifiableValue_RemoveModifier_IModifier_
-  commentId: M:Global.ModifiableValue.RemoveModifier(IModifier)
-  fullName: ModifiableValue.RemoveModifier(IModifier)
-  nameWithType: ModifiableValue.RemoveModifier(IModifier)
-- uid: Global.ModifiableValue.RemoveModifier*
-  name: RemoveModifier
-  href: api/Global.ModifiableValue.html#Global_ModifiableValue_RemoveModifier_
-  commentId: Overload:Global.ModifiableValue.RemoveModifier
-  isSpec: "True"
-  fullName: ModifiableValue.RemoveModifier
-  nameWithType: ModifiableValue.RemoveModifier
 - uid: Global.MovableObject
   name: MovableObject
   href: api/Global.MovableObject.html
@@ -4681,38 +4557,6 @@ references:
   commentId: F:Global.MoveDefinition.target
   fullName: MoveDefinition.target
   nameWithType: MoveDefinition.target
-- uid: Global.MultiplierModifier
-  name: MultiplierModifier
-  href: api/Global.MultiplierModifier.html
-  commentId: T:Global.MultiplierModifier
-  fullName: MultiplierModifier
-  nameWithType: MultiplierModifier
-- uid: Global.MultiplierModifier.#ctor(System.Single)
-  name: MultiplierModifier(Single)
-  href: api/Global.MultiplierModifier.html#Global_MultiplierModifier__ctor_System_Single_
-  commentId: M:Global.MultiplierModifier.#ctor(System.Single)
-  fullName: MultiplierModifier.MultiplierModifier(System.Single)
-  nameWithType: MultiplierModifier.MultiplierModifier(Single)
-- uid: Global.MultiplierModifier.#ctor*
-  name: MultiplierModifier
-  href: api/Global.MultiplierModifier.html#Global_MultiplierModifier__ctor_
-  commentId: Overload:Global.MultiplierModifier.#ctor
-  isSpec: "True"
-  fullName: MultiplierModifier.MultiplierModifier
-  nameWithType: MultiplierModifier.MultiplierModifier
-- uid: Global.MultiplierModifier.Modify(System.Single)
-  name: Modify(Single)
-  href: api/Global.MultiplierModifier.html#Global_MultiplierModifier_Modify_System_Single_
-  commentId: M:Global.MultiplierModifier.Modify(System.Single)
-  fullName: MultiplierModifier.Modify(System.Single)
-  nameWithType: MultiplierModifier.Modify(Single)
-- uid: Global.MultiplierModifier.Modify*
-  name: Modify
-  href: api/Global.MultiplierModifier.html#Global_MultiplierModifier_Modify_
-  commentId: Overload:Global.MultiplierModifier.Modify
-  isSpec: "True"
-  fullName: MultiplierModifier.Modify
-  nameWithType: MultiplierModifier.Modify
 - uid: Global.Node
   name: Node
   href: api/Global.Node.html
