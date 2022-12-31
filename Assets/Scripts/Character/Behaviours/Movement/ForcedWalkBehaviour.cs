@@ -21,7 +21,6 @@ public class ForcedWalkBehaviour : PlayableBehaviour
         active = true;
         onPlay.Invoke();
 
-        print(GetComponent<WalkBehaviour>().speed);
         GetComponent<FollowBehaviour>().Play(point);
         stopEvent = EventManager.Instance.Attach(() => MovableObject.GroundDistance(point) < wantedDistance, () =>
         {
