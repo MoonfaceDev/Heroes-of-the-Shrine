@@ -748,7 +748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 3.35, y: 1.15, z: 1}
+  size: {x: 3, y: 1.15, z: 1}
 --- !u!114 &2748543002303246879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1705,11 +1705,11 @@ MonoBehaviour:
   midair: 0
   anticipateDuration: 0.05
   activeDuration: 0
-  recoveryDuration: 0.3
+  recoveryDuration: 0.2
   hitDetector: {fileID: 3262553446811620699}
   damage: 15
   hitType: 0
-  knockbackPower: 12.5
+  knockbackPower: 11
   knockbackDirection: 60
   stunTime: 0.5
   velocity: 50
