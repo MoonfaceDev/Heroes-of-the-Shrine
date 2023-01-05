@@ -39,6 +39,11 @@ public class CutsceneAction : MonoBehaviour
 
     public void Invoke()
     {
+        foreach (var controller in FindObjectsOfType<CharacterController>())
+        {
+            controller.Enabled = false;
+        }
+        
         foreach (var definition in moveDefinitions.Where(definition => definition.target))
         {
             definition.target.GetComponent<WalkBehaviour>().speed *= definition.speedMultiplier;
@@ -55,10 +60,6 @@ public class CutsceneAction : MonoBehaviour
                     definition.target.GetComponent<WalkBehaviour>().speed /= definition.speedMultiplier;
                     definition.target.MovableObject.rotation = (int)definition.lookDirection;
                 });
-                foreach (var controller in FindObjectsOfType<CharacterController>())
-                {
-                    controller.Enabled = false;
-                }
 
                 if (director)
                 {
