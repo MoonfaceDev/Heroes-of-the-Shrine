@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pathfind : MonoBehaviour
+public class Pathfind : BaseComponent
 {
     private WalkableGrid grid;
     private List<Node> gizmosPath;

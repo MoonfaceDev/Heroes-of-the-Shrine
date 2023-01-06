@@ -7,7 +7,7 @@ public class PeriodicAbsoluteHitDetector : BaseHitDetector
     
     public event Action OnDetect;
 
-    private EventListener detectPeriodicallyEvent;
+    private string detectionInterval;
 
     protected override void DoStartDetector(Action<IHittable> hitCallable)
     {
@@ -15,7 +15,7 @@ public class PeriodicAbsoluteHitDetector : BaseHitDetector
         {
             DetectHits(hitCallable);
         }
-        detectPeriodicallyEvent = EventManager.Instance.StartInterval(() => DetectHits(hitCallable), interval);
+        detectionInterval = StartInterval(() => DetectHits(hitCallable), interval);
     }
 
     private void DetectHits(Action<IHittable> hitCallable)
@@ -33,6 +33,6 @@ public class PeriodicAbsoluteHitDetector : BaseHitDetector
 
     public override void StopDetector()
     {
-        EventManager.Instance.Detach(detectPeriodicallyEvent);
+        Unregister(detectionInterval);
     }
 }

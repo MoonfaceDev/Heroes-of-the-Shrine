@@ -31,17 +31,16 @@ public class PlayerController : CharacterController
     public RuntimeAnimatorController[] animatorControllers;
     [HideInInspector] public int activeSuitIndex;
 
-    [Header("Action buffering")] 
-    public float bufferingTime;
+    [Header("Action buffering")] public float bufferingTime;
     public BaseAttack[] nonBufferedAttacks;
 
     [Header("Buffered actions priorities")]
     public int walkPriority;
+
     public int jumpPriority;
     public int attackPriority;
 
-    [Header("Special inputs")] 
-    public List<Button> possessedEffectTimeReducing;
+    [Header("Special inputs")] public List<Button> possessedEffectTimeReducing;
     public float possessedEffectDurationReduction;
 
     private WalkBehaviour walkBehaviour;
@@ -65,11 +64,10 @@ public class PlayerController : CharacterController
     private void Start()
     {
         // clear expired buffered actions
-        EventManager.Attach(() => true,
-            () =>
-            {
-                bufferedActions = bufferedActions.FindAll(action => Time.time < action.insertionTime + bufferingTime);
-            }, false);
+        Register(() =>
+        {
+            bufferedActions = bufferedActions.FindAll(action => Time.time < action.insertionTime + bufferingTime);
+        });
     }
 
     public void Update()
@@ -93,7 +91,7 @@ public class PlayerController : CharacterController
                 bufferedActions.Clear();
             }
         }
-        
+
         //walking
         ExecuteWalk();
         //jumping

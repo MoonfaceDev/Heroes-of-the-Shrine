@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class SlideBehaviour : BaseMovementBehaviour
@@ -9,7 +8,8 @@ public class SlideBehaviour : BaseMovementBehaviour
     public bool Slide
     {
         get => slide;
-        private set { 
+        private set
+        {
             slide = value;
             Animator.SetBool(SlideParameter, slide);
         }
@@ -18,14 +18,14 @@ public class SlideBehaviour : BaseMovementBehaviour
     public override bool Playing => Slide;
 
     private bool slide;
-    private EventListener stopEvent;
-    
+    private string stopListener;
+
     private static readonly int SlideParameter = Animator.StringToHash("slide");
 
     public override bool CanPlay()
     {
         var attackManager = GetComponent<AttackManager>();
-        return base.CanPlay() 
+        return base.CanPlay()
                && AllStopped(typeof(JumpBehaviour), typeof(SlideBehaviour), typeof(DodgeBehaviour))
                && !(attackManager && !attackManager.IsInterruptible());
     }
@@ -47,7 +47,7 @@ public class SlideBehaviour : BaseMovementBehaviour
         MovableObject.velocity.x = direction * slideSpeedMultiplier * GetComponent<WalkBehaviour>().speed;
         MovableObject.acceleration.x = -direction * slideStopAcceleration;
         MovableObject.velocity.z = 0;
-        stopEvent = EventManager.Attach(
+        stopListener = InvokeWhen(
             () => !Mathf.Approximately(Mathf.Sign(MovableObject.velocity.x), direction),
             Stop
         );
@@ -57,7 +57,7 @@ public class SlideBehaviour : BaseMovementBehaviour
     {
         if (!Slide) return;
         onStop.Invoke();
-        EventManager.Detach(stopEvent);
+        Cancel(stopListener);
         Slide = false;
         MovableObject.velocity.x = 0;
         MovableObject.acceleration.x = 0;

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Scrollbar))]
-public class EffectBar : MonoBehaviour
+public class EffectBar : BaseComponent
 {
     public BaseEffect effect;
 

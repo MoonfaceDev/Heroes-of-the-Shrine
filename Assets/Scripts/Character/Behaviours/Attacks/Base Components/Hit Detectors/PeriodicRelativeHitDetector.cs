@@ -7,12 +7,12 @@ public class PeriodicRelativeHitDetector : BaseHitDetector
     public float interval;
     public bool startImmediately = true;
     
-    private EventListener detectPeriodicallyEvent;
+    private string detectionListener;
 
     protected override void DoStartDetector(Action<IHittable> hitCallable)
     {
         var hitTimes = new Dictionary<HittableBehaviour, float>();
-        detectPeriodicallyEvent = EventManager.Instance.Attach(() => true, () => DetectHits(hitCallable, hitTimes));
+        detectionListener = Register(() => DetectHits(hitCallable, hitTimes));
     }
 
     private void DetectHits(Action<IHittable> hitCallable, IDictionary<HittableBehaviour, float> hitTimes)
@@ -38,6 +38,6 @@ public class PeriodicRelativeHitDetector : BaseHitDetector
 
     public override void StopDetector()
     {
-        EventManager.Instance.Detach(detectPeriodicallyEvent);
+        Unregister(detectionListener);
     }
 }

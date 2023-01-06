@@ -33,8 +33,8 @@ public class DodgeBehaviour : BaseMovementBehaviour
 
     private bool anticipating;
     private bool recovering;
-    private EventListener anticipateEvent;
-    private EventListener recoverEvent;
+    private string anticipateTimeout;
+    private string recoverTimeout;
     
     private static readonly int RecoveringFromDodgeParameter = Animator.StringToHash("recoveringFromDodge");
     private static readonly int AnticipatingDodgeParameter = Animator.StringToHash("anticipatingDodge");
@@ -63,13 +63,13 @@ public class DodgeBehaviour : BaseMovementBehaviour
         MovableObject.acceleration = Vector3.zero;
         MovableObject.velocity = Vector3.zero;
         
-        anticipateEvent = EventManager.StartTimeout(() =>
+        anticipateTimeout = StartTimeout(() =>
         {
             Anticipating = false;
             MovableObject.UpdatePosition(MovableObject.position + direction * dodgeDistance * Vector3.forward);
             OnDodge?.Invoke();
             Recovering = true;
-            recoverEvent = EventManager.StartTimeout(Stop, recoveryTime);
+            recoverTimeout = StartTimeout(Stop, recoveryTime);
         }, anticipateTime);
     }
 
@@ -82,12 +82,12 @@ public class DodgeBehaviour : BaseMovementBehaviour
         }
         if (Anticipating)
         {
-            EventManager.Detach(anticipateEvent);
+            Cancel(anticipateTimeout);
             Anticipating = false;
         }
         if (Recovering)
         {
-            EventManager.Detach(recoverEvent);
+            Cancel(recoverTimeout);
             Recovering = false;
             OnRecover?.Invoke();
         }

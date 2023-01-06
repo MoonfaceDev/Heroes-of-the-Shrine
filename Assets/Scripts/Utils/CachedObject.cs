@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CachedObject : MonoBehaviour
+public class CachedObject : BaseComponent
 {
     public string cacheTag;
     public Object @object;

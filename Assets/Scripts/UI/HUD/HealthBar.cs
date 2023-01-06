@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Scrollbar))]
-public class HealthBar : MonoBehaviour
+public class HealthBar : BaseComponent
 {
     public HealthSystem healthSystem;
     

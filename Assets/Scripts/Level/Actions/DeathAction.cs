@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class DeathAction : MonoBehaviour
+public class DeathAction : BaseComponent
 {
     public float cameraZoomFactor;
     [FormerlySerializedAs("objctsToDestory")] public GameObject[] objectsToDestroy;
@@ -36,6 +36,6 @@ public class DeathAction : MonoBehaviour
             cameraFocus.Zoom(player.transform.position, cameraZoomFactor);
         }
 
-        EventManager.Instance.StartTimeout(() => deathPanel.SetActive(true), deathPanelTransitionDelay);
+        StartTimeout(() => deathPanel.SetActive(true), deathPanelTransitionDelay);
     }
 }

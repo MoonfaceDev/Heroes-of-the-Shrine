@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : BaseComponent
 {
     public FadePanel fadePanel;
     public float fadeDelay;
@@ -34,10 +34,10 @@ public class GameManager : MonoBehaviour
         var playerAnimator = player.GetComponent<MovableObject>().figureObject.GetComponent<Animator>();
         playerAnimator.SetBool(RespawnParameter, true);
 
-        EventManager.Instance.StartTimeout(() =>
+        StartTimeout(() =>
         {
             fadePanel.FadeOut(fadeDuration);
-            EventManager.Instance.StartTimeout(Restart, fadeDuration);
+            StartTimeout(Restart, fadeDuration);
         }, fadeDelay);
     }
 }

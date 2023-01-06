@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(MovableObject))]
-public class Particles : MonoBehaviour
+public class Particles : BaseComponent
 {
     public ParticleSystem prefab;
     public Vector3 particlePosition;

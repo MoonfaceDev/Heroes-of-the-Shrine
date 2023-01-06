@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FullScreenToggle : MonoBehaviour
+public class FullScreenToggle : BaseComponent
 {
     public Toggle button;
 
@@ -9,6 +9,6 @@ public class FullScreenToggle : MonoBehaviour
     {
         button.onValueChanged.AddListener(value => Screen.fullScreen = value);
 
-        EventManager.Instance.Attach(() => true, () => button.isOn = Screen.fullScreen);
+        Register(() => button.isOn = Screen.fullScreen);
     }
 }

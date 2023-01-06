@@ -13,14 +13,14 @@ public class SpinningSwordsAttack : NormalAttack
 
     protected override void ConfigureHitDetector()
     {
-        EventListener disableHitDetector1 = null;
-        EventListener enableHitDetector2 = null;
+        string disableHitDetector1Timeout = null;
+        string enableHitDetector2Timeout = null;
 
         generalEvents.onStartActive.AddListener(() =>
         {
             hitDetector1.StartDetector(HitCallable, AttackManager.hittableTags);
-            disableHitDetector1 = EventManager.Instance.StartTimeout(hitDetector1.StopDetector, detector1FinishTime);
-            enableHitDetector2 = EventManager.Instance.StartTimeout(
+            disableHitDetector1Timeout = StartTimeout(hitDetector1.StopDetector, detector1FinishTime);
+            enableHitDetector2Timeout = StartTimeout(
                 () => hitDetector2.StartDetector(HitCallable, AttackManager.hittableTags),
                 detector2StartTime
             );
@@ -30,8 +30,8 @@ public class SpinningSwordsAttack : NormalAttack
         {
             hitDetector1.StopDetector();
             hitDetector2.StopDetector();
-            EventManager.Instance.Detach(disableHitDetector1);
-            EventManager.Instance.Detach(enableHitDetector2);
+            Unregister(disableHitDetector1Timeout);
+            Unregister(enableHitDetector2Timeout);
         });
     }
 }

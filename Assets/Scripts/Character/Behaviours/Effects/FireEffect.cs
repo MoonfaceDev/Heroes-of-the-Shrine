@@ -6,7 +6,7 @@ public class FireEffect : BaseEffect
     private Coroutine damageCoroutine;
     private float startTime;
     private float currentDuration;
-    private EventListener stopEvent;
+    private string stopListener;
 
     public void Play(float duration, float hitInterval, float damagePerHit)
     {
@@ -15,7 +15,7 @@ public class FireEffect : BaseEffect
         damageCoroutine = StartCoroutine(DoDamage(hitInterval, damagePerHit));
         startTime = Time.time;
         currentDuration = duration;
-        stopEvent = EventManager.Attach(() => Time.time - startTime > duration, Stop);
+        stopListener = InvokeWhen(() => Time.time - startTime > duration, Stop);
     }
 
     public override void Stop()
@@ -27,7 +27,7 @@ public class FireEffect : BaseEffect
         StopCoroutine(damageCoroutine);
 
         currentDuration = 0;
-        EventManager.Detach(stopEvent);
+        Cancel(stopListener);
     }
 
     public override float GetProgress()

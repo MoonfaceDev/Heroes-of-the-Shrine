@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PossessedHumanBrain : MonoBehaviour
+public class PossessedHumanBrain : BaseComponent
 {
     public Animator animator;
     public string bossTag;

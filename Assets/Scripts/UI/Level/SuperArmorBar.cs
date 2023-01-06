@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Scrollbar))]
-public class SuperArmorBar : MonoBehaviour
+public class SuperArmorBar : BaseComponent
 {
     public SuperArmorEffect superArmorEffect;
 

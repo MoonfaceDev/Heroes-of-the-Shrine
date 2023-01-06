@@ -9,7 +9,7 @@ public class FollowPattern : BasePattern
 
     private const float DistanceFromOtherEnemies = 0.5f;
 
-    private EventListener otherEnemiesEvent;
+    private string otherEnemiesListener;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -33,14 +33,13 @@ public class FollowPattern : BasePattern
 
         var otherEnemies = Array.Empty<Character>();
 
-        otherEnemiesEvent = EventManager.Instance.Attach(() => true,
-            () =>
-            {
-                otherEnemies = CachedObjectsManager.Instance.GetObjects<Character>("Enemy")
-                    .Where(enemy => enemy != followBehaviour.Character)
-                    .Where(enemy => enemy.GetComponent<HealthSystem>().Alive)
-                    .ToArray();
-            }, false);
+        otherEnemiesListener = EventManager.Instance.Register(() =>
+        {
+            otherEnemies = CachedObjectsManager.Instance.GetObjects<Character>("Enemy")
+                .Where(enemy => enemy != followBehaviour.Character)
+                .Where(enemy => enemy.GetComponent<HealthSystem>().Alive)
+                .ToArray();
+        });
 
         followBehaviour.Play(
             target,
@@ -80,7 +79,7 @@ public class FollowPattern : BasePattern
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
 
-        EventManager.Instance.Detach(otherEnemiesEvent);
+        EventManager.Instance.Unregister(otherEnemiesListener);
 
         var followBehaviour = animator.GetComponent<FollowBehaviour>();
         followBehaviour.Stop();
@@ -91,6 +90,6 @@ public class FollowPattern : BasePattern
 
     private void OnDestroy()
     {
-        EventManager.Instance.Detach(otherEnemiesEvent);
+        EventManager.Instance.Unregister(otherEnemiesListener);
     }
 }

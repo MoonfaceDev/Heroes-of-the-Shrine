@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MenuManager : MonoBehaviour
+public class MenuManager : BaseComponent
 {
     public GameObject pausePanel;
     public GameObject optionsPanel;

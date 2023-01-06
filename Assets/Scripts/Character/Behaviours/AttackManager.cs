@@ -18,7 +18,7 @@ public class AttackManager : PlayableBehaviour
     public event Action OnStartRecovery;
     public event Action OnFinishRecovery;
 
-    private EventListener forgetComboEvent;
+    private string forgetComboTimeout;
     private List<DamageBonus> damageBonuses;
     private List<DamageBonus> damageMultipliers;
 
@@ -48,17 +48,14 @@ public class AttackManager : PlayableBehaviour
 
             attack.onPlay.AddListener(() =>
             {
-                EventManager.Detach(forgetComboEvent);
+                Cancel(forgetComboTimeout);
                 lastAttack = attack;
             });
 
             void ForgetComboAction()
             {
-                EventManager.Detach(forgetComboEvent);
-                forgetComboEvent = EventManager.StartTimeout(() =>
-                {
-                    lastAttack = null;
-                }, maxComboDelay);
+                Cancel(forgetComboTimeout);
+                forgetComboTimeout = StartTimeout(() => lastAttack = null, maxComboDelay);
             }
 
             attack.onStop.AddListener(ForgetComboAction);

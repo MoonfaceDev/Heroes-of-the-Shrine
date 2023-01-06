@@ -9,7 +9,7 @@ public class SuperArmorEffect : BaseEffect
     public UnityEvent onHit;
     public UnityEvent onBreak;
 
-    private EventListener reloadEvent;
+    private string reloadTimeout;
 
     [HideInInspector] public float armorCooldownStart;
     [ShowDebug] private float currentArmorHealth;
@@ -56,13 +56,13 @@ public class SuperArmorEffect : BaseEffect
             CancelArmor();
             onBreak.Invoke();
             armorCooldownStart = Time.time;
-            reloadEvent = EventManager.StartTimeout(InitializeArmor, armorCooldown);
+            reloadTimeout = StartTimeout(InitializeArmor, armorCooldown);
         }
     }
 
     public override void Stop()
     {
-        EventManager.Instance.Detach(reloadEvent);
+        Cancel(reloadTimeout);
         CancelArmor();
     }
 

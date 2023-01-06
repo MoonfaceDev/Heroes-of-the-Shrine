@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WalkSoundEffect : MonoBehaviour
+public class WalkSoundEffect : BaseComponent
 {
     public AudioSource walkAudioSource;
     
@@ -29,7 +29,6 @@ public class WalkSoundEffect : MonoBehaviour
             });
         }
 
-        EventManager.Instance.Attach(() => true,
-            () => walkAudioSource.volume = AudioManager.Instance.soundEffectsAudioSource.volume, false);
+        Register(() => walkAudioSource.volume = AudioManager.Instance.soundEffectsAudioSource.volume);
     }
 }

@@ -12,7 +12,7 @@ public class FollowBehaviour : BaseMovementBehaviour
     private bool active;
     private Pathfind pathfind;
     private WalkBehaviour walkBehaviour;
-    private EventListener followEvent;
+    private string followListener;
 
     public override void Awake()
     {
@@ -30,11 +30,11 @@ public class FollowBehaviour : BaseMovementBehaviour
         active = true;
         onPlay.Invoke();
         
-        followEvent = EventManager.Attach(() => true, () => {
+        followListener = Register(() => {
             var direction = pathfind.Direction(MovableObject.WorldPosition, destination, getExcluded?.Invoke());
             walkBehaviour.Play(direction.x, direction.z, false);
             MovableObject.rotation = Mathf.RoundToInt(Mathf.Sign(destination.x - MovableObject.WorldPosition.x));
-        }, false);
+        });
     }
 
     public void Play(MovableObject target, Func<Node[]> getExcluded = null, GetOverrideDirection getOverrideDirection = null)
@@ -46,11 +46,11 @@ public class FollowBehaviour : BaseMovementBehaviour
         active = true;
         onPlay.Invoke();
 
-        followEvent = EventManager.Attach(() => true, () => {
+        followListener = Register(() => {
             var direction = GetDirection(target, getExcluded?.Invoke(), getOverrideDirection);
             walkBehaviour.Play(direction.x, direction.z, false);
             MovableObject.rotation = Mathf.RoundToInt(Mathf.Sign(target.WorldPosition.x - MovableObject.WorldPosition.x));
-        }, false);
+        });
     }
 
     private Vector3 GetDirection(MovableObject target, Node[] excluded = null, GetOverrideDirection getOverrideDirection = null)
@@ -71,7 +71,7 @@ public class FollowBehaviour : BaseMovementBehaviour
         if (!active) return;
         onStop.Invoke();
         active = false;
-        EventManager.Detach(followEvent);
+        Unregister(followListener);
         StopBehaviours(typeof(WalkBehaviour));
         MovableObject.velocity = Vector3.zero;
     }

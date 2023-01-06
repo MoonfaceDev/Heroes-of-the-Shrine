@@ -3,31 +3,27 @@ using System.Collections.Generic;
 
 public class SingleHitDetector : BaseHitDetector
 {
-    private EventListener eventListener;
+    private string detectionListener;
 
     protected override void DoStartDetector(Action<IHittable> hitCallable)
     {
         var alreadyHit = new HashSet<HittableHitbox>();
-        eventListener = EventManager.Instance.Attach(
-            () => true,
-            () =>
+        detectionListener = Register(() =>
+        {
+            var hittables = FindObjectsOfType<HittableHitbox>();
+            foreach (var hittable in hittables)
             {
-                var hittables = FindObjectsOfType<HittableHitbox>();
-                foreach (var hittable in hittables)
+                if (!alreadyHit.Contains(hittable) && hittable.Hitbox.OverlapHitbox(hitbox))
                 {
-                    if (!alreadyHit.Contains(hittable) && hittable.Hitbox.OverlapHitbox(hitbox))
-                    {
-                        alreadyHit.Add(hittable);
-                        hitCallable(hittable);
-                    }
+                    alreadyHit.Add(hittable);
+                    hitCallable(hittable);
                 }
-            },
-            single: false
-        );
+            }
+        });
     }
 
     public override void StopDetector()
     {
-        EventManager.Instance.Detach(eventListener);
+        Unregister(detectionListener);
     }
 }

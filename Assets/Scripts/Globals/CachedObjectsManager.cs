@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-public class CachedObjectsManager : MonoBehaviour
+public class CachedObjectsManager : BaseComponent
 {
     public string[] cacheTags;
 

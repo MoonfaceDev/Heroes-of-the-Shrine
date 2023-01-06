@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraMovement : MonoBehaviour
+public class CameraMovement : BaseComponent
 {
     public Rect worldBorder;
     [HideInInspector] public Rect border;

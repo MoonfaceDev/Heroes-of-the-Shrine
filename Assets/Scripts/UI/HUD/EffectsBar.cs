@@ -14,7 +14,7 @@ public class EffectDefinition
 }
 
 [RequireComponent(typeof(VerticalLayoutGroup))]
-public class EffectsBar : MonoBehaviour
+public class EffectsBar : BaseComponent
 {
     [FormerlySerializedAs("EffectBarPrefab")] public GameObject effectBarPrefab;
     public EffectDefinition[] effects;

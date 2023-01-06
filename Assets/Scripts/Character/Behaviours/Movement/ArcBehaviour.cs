@@ -10,7 +10,7 @@ public class ArcBehaviour : BaseMovementBehaviour
 
     private WalkBehaviour walkBehaviour;
     private float currentSpeedMultiplier;
-    private EventListener circleEvent;
+    private string circleListener;
 
     public override void Awake()
     {
@@ -41,7 +41,7 @@ public class ArcBehaviour : BaseMovementBehaviour
         var radius = initialDistance.magnitude;
         var clockwise = Mathf.Sign(Random.Range(-1f, 1f));
 
-        circleEvent = EventManager.Attach(() => true, () => {
+        circleListener = Register(() => {
             var distance = walkBehaviour.MovableObject.WorldPosition - playerPosition;
             distance.y = 0;
             distance *= radius / distance.magnitude;
@@ -54,7 +54,7 @@ public class ArcBehaviour : BaseMovementBehaviour
             {
                 walkBehaviour.MovableObject.rotation = Mathf.RoundToInt(Mathf.Sign((target.WorldPosition - walkBehaviour.MovableObject.WorldPosition).x));
             }
-        }, false);
+        });
     }
 
     public override void Stop()
@@ -62,7 +62,7 @@ public class ArcBehaviour : BaseMovementBehaviour
         if (!Active) return;
         onStop.Invoke();
         Active = false;
-        EventManager.Detach(circleEvent);
+        Unregister(circleListener);
         walkBehaviour.speed /= currentSpeedMultiplier;
         StopBehaviours(typeof(WalkBehaviour));
         MovableObject.velocity = Vector3.zero;

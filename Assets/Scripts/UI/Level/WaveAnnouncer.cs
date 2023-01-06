@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class WaveAnnouncer : MonoBehaviour
+public class WaveAnnouncer : BaseComponent
 {
     public TMP_Text text;
     public float duration;

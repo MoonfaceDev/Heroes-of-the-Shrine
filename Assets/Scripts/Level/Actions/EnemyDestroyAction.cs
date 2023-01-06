@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyDestroyAction : MonoBehaviour
+public class EnemyDestroyAction : BaseComponent
 {
     public string[] tags;
 

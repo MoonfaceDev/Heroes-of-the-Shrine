@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class PossessSource : MonoBehaviour
+public class PossessSource : BaseComponent
 {
     public BaseHitDetector hitDetector;
     public Animator animator;
     public float hitAnimationDuration;
 
-    private EventListener activateEvent;
-    private EventListener destroyEvent;
+    private string destroyTimeout;
 
     private static readonly int Warning = Animator.StringToHash("Warning");
     private static readonly int Active = Animator.StringToHash("Active");
@@ -19,12 +17,12 @@ public class PossessSource : MonoBehaviour
         int hitDamage)
     {
         animator.SetBool(Warning, true);
-        activateEvent = EventManager.Instance.StartTimeout(() =>
+        StartTimeout(() =>
         {
             animator.SetBool(Warning, false);
             animator.SetBool(Active, true);
 
-            destroyEvent = EventManager.Instance.StartTimeout(() =>
+            destroyTimeout = StartTimeout(() =>
             {
                 hitDetector.StopDetector();
                 animator.SetBool(Active, false);
@@ -36,7 +34,7 @@ public class PossessSource : MonoBehaviour
                 hitDetector.StopDetector();
                 animator.SetBool(Hit, true);
                 Destroy(gameObject, hitAnimationDuration);
-                EventManager.Instance.Detach(destroyEvent);
+                Cancel(destroyTimeout);
 
                 if (!hittable.CanGetHit()) return;
                 hittable.Hit(hitDamage);
@@ -47,16 +45,5 @@ public class PossessSource : MonoBehaviour
                 }
             }, hittableTags);
         }, warningDuration);
-    }
-
-    public void Stop()
-    {
-        EventManager.Instance.Detach(activateEvent);
-        EventManager.Instance.Detach(destroyEvent);
-    }
-
-    private void OnDestroy()
-    {
-        Stop();
     }
 }

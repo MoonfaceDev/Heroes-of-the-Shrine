@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : BaseComponent
 {
     public AudioSource musicAudioSource;
     public AudioSource soundEffectsAudioSource;

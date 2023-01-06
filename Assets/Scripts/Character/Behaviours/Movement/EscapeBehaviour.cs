@@ -9,7 +9,7 @@ public class EscapeBehaviour : BaseMovementBehaviour
 
     private WalkBehaviour walkBehaviour;
     private float currentSpeedMultiplier;
-    private EventListener escapeEvent;
+    private string escapeListener;
 
     public override void Awake()
     {
@@ -36,14 +36,14 @@ public class EscapeBehaviour : BaseMovementBehaviour
         currentSpeedMultiplier = speedMultiplier;
         walkBehaviour.speed *= currentSpeedMultiplier;
 
-        escapeEvent = EventManager.Attach(() => true, () =>
+        escapeListener = Register(() =>
         {
             var distance = MovableObject.WorldPosition - target.WorldPosition;
             distance.y = 0;
             var direction = distance.normalized;
             walkBehaviour.Play(direction.x, direction.z, fitLookDirection);
             MovableObject.rotation = -Mathf.RoundToInt(Mathf.Sign(direction.x));
-        }, false);
+        });
     }
 
     public override void Stop()
@@ -51,7 +51,7 @@ public class EscapeBehaviour : BaseMovementBehaviour
         if (!Active) return;
         onStop.Invoke();
         Active = false;
-        EventManager.Detach(escapeEvent);
+        Unregister(escapeListener);
         walkBehaviour.speed /= currentSpeedMultiplier;
         StopBehaviours(typeof(WalkBehaviour));
         MovableObject.velocity = Vector3.zero;

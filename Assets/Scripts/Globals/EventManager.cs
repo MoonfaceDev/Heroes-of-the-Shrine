@@ -1,22 +1,6 @@
 using System;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class EventListener
-{
-    public readonly Func<bool> condition;
-    public readonly Action action;
-    public readonly bool single;
-
-    public EventListener(Func<bool> eventCondition, Action eventAction, bool single)
-    {
-        condition = eventCondition;
-        action = eventAction;
-        this.single = single;
-    }
-}
-
-public class EventManager : MonoBehaviour
+public class EventManager : BaseComponent
 {
     public static EventManager Instance { get; private set; }
 
@@ -27,72 +11,57 @@ public class EventManager : MonoBehaviour
             Destroy(this);
             return;
         }
+
         Instance = this;
     }
 
-    private readonly HashSet<EventListener> eventListeners = new();
-
-    public EventListener Attach(Func<bool> condition, Action action, bool single = true)
+    /// <summary>
+    /// Executes a callable `action` every frame
+    /// </summary>
+    /// <param name="action">Callable to execute</param>
+    /// <returns>ID of the registered callable</returns>
+    public new string Register(Action action)
     {
-        EventListener eventListener = new(condition, action, single);
-        eventListeners.Add(eventListener);
-        return eventListener;
+        return base.Register(action);
     }
 
-    public void Detach(EventListener callbackEvent)
+    /// <summary>
+    /// Unregisters a callable with given `id`. Nothing happens if `id` is not an existing callable
+    /// </summary>
+    /// <param name="id">ID of the callable to unregister</param>
+    public new void Unregister(string id)
     {
-        eventListeners.Remove(callbackEvent);
+        base.Unregister(id);
     }
 
-    public EventListener StartTimeout(Action action, float timeout)
+    /// <summary>
+    /// Executes a callable `action` when condition `condition` is met
+    /// </summary>
+    /// <param name="condition">Condition to check every frame</param>
+    /// <param name="action">Callable to execute</param>
+    /// <returns>ID of the registered callable</returns>
+    public new string InvokeWhen(Func<bool> condition, Action action)
     {
-        var startTime = Time.time;
-        return Attach(() => Time.time - startTime >= timeout, action);
+        return base.InvokeWhen(condition, action);
     }
 
-    public delegate void StopInterval();
-
-    public EventListener StartInterval(Action<StopInterval> action, float interval)
+    /// <summary>
+    /// Cancels a callable with given `id`. Nothing happens if `id` is not an existing callable
+    /// </summary>
+    /// <param name="id">ID of the callable to cancel</param>
+    public new void Cancel(string id)
     {
-        float startTime;
-        void StartOneInterval()
-        {
-            startTime = Time.time;
-        }
-        StartOneInterval();
-        EventListener eventListener = null;
-        eventListener = Attach(() => Time.time - startTime >= interval, () => { 
-            StartOneInterval();
-            action(() => Detach(eventListener));
-            }, false);
-        return eventListener;
+        base.Cancel(id);
     }
 
-    public EventListener StartInterval(Action action, float interval)
+    /// <summary>
+    /// Executes a callable after a certain delay
+    /// </summary>
+    /// <param name="action">Callable to execute</param>
+    /// <param name="timeout">Time to wait before execution, in seconds</param>
+    /// <returns>ID of the registered callable</returns>
+    public new string StartTimeout(Action action, float timeout)
     {
-        float startTime;
-        void StartOneInterval()
-        {
-            startTime = Time.time;
-        }
-        StartOneInterval();
-        return Attach(() => Time.time - startTime >= interval, StartOneInterval + action, false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        var lockedEventListeners = new EventListener[eventListeners.Count];
-        eventListeners.CopyTo(lockedEventListeners);
-        foreach (var eventListener in lockedEventListeners)
-        {
-            if (!eventListeners.Contains(eventListener)) continue;
-            if (!eventListener.condition()) continue;
-            if (eventListener.single)
-            {
-                Detach(eventListener);
-            }
-            eventListener.action();
-        }
+        return base.StartTimeout(action, timeout);
     }
 }

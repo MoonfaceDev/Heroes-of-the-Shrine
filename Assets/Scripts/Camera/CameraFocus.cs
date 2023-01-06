@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.U2D;
 
-public class CameraFocus : MonoBehaviour
+public class CameraFocus : BaseComponent
 {
     public float lerpSpeed = 3.0f;
 

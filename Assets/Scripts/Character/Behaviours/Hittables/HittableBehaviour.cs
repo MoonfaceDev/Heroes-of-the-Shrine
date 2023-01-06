@@ -22,9 +22,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
     private KnockbackBehaviour knockbackBehaviour;
     private StunBehaviour stunBehaviour;
     private ForcedWalkBehaviour forcedWalkBehaviour;
-
-    private EventListener blinkEvent;
-
+    
     public override void Awake()
     {
         base.Awake();
@@ -102,10 +100,5 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
 
         DoStun(damage, time);
         Hit(damage);
-    }
-
-    private void OnDestroy()
-    {
-        EventManager.Instance.Detach(blinkEvent);
     }
 }

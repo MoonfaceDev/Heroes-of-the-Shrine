@@ -23,7 +23,7 @@ public class EnergyBurstAttack : SimpleAttack
             MovableObject.velocity.x = direction * burstVelocity;
             MovableObject.velocity.z = 0;
             MovableObject.acceleration.x = -direction * burstAcceleration;
-            EventManager.Attach(() => Mathf.Approximately(MovableObject.velocity.x, 0) || Mathf.RoundToInt(Mathf.Sign(MovableObject.velocity.x)) != direction, () => isMoving = false);
+            InvokeWhen(() => Mathf.Approximately(MovableObject.velocity.x, 0) || Mathf.RoundToInt(Mathf.Sign(MovableObject.velocity.x)) != direction, () => isMoving = false);
         });
 
         generalEvents.onFinishActive.AddListener(() => 

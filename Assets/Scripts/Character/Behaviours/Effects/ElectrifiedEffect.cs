@@ -9,7 +9,7 @@ public class ElectrifiedEffect : BaseEffect
     private float currentDuration;
     private WalkBehaviour walkBehaviour;
     private float currentSpeedMultiplier;
-    private EventListener stopEvent;
+    private string stopListener;
 
     private static readonly Type[] DisabledBehaviours = { typeof(RunBehaviour), typeof(SlideBehaviour), typeof(DodgeBehaviour), typeof(JumpBehaviour) };
 
@@ -36,7 +36,7 @@ public class ElectrifiedEffect : BaseEffect
 
         startTime = Time.time;
         currentDuration = duration;
-        stopEvent = EventManager.Attach(() => Time.time - startTime > duration, Stop);
+        stopListener = InvokeWhen(() => Time.time - startTime > duration, Stop);
     }
 
     public override void Stop()
@@ -54,7 +54,7 @@ public class ElectrifiedEffect : BaseEffect
             particles.Stop(true, stopBehavior: ParticleSystemStopBehavior.StopEmittingAndClear);
 
             currentDuration = 0;
-            EventManager.Detach(stopEvent);
+            Cancel(stopListener);
         }
     }
 

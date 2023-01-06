@@ -4,7 +4,7 @@ using UnityEngine;
 public class ForcedWalkBehaviour : PlayableBehaviour
 {
     private bool active;
-    private EventListener stopEvent;
+    private string stopListener;
 
     public override bool Playing => active;
 
@@ -22,7 +22,7 @@ public class ForcedWalkBehaviour : PlayableBehaviour
         onPlay.Invoke();
 
         GetComponent<FollowBehaviour>().Play(point);
-        stopEvent = EventManager.Instance.Attach(() => MovableObject.GroundDistance(point) < wantedDistance, () =>
+        stopListener = InvokeWhen(() => MovableObject.GroundDistance(point) < wantedDistance, () =>
         {
             MovableObject.position = point;
             Stop();
@@ -36,7 +36,7 @@ public class ForcedWalkBehaviour : PlayableBehaviour
         onStop.Invoke();
         active = false;
 
-        EventManager.Instance.Detach(stopEvent);
+        Cancel(stopListener);
         StopBehaviours(typeof(FollowBehaviour));
         EnableBehaviours(typeof(PlayerController), typeof(RunBehaviour));
 

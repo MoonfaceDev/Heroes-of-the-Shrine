@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SoundEffect : MonoBehaviour
+public class SoundEffect : BaseComponent
 {
     public void Play(AudioClip clip)
     {

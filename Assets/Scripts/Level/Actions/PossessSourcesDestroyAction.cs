@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PossessSourcesDestroyAction : MonoBehaviour
+public class PossessSourcesDestroyAction : BaseComponent
 {
     public void Invoke()
     {

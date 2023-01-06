@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using static MathUtils;
 
-public class MovableObject : MonoBehaviour
+public class MovableObject : BaseComponent
 {
     private const float ZScale = 0.8f;
 

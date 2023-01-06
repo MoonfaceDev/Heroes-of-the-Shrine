@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MoveCamera : MonoBehaviour
+public class MoveCamera : BaseComponent
 {
     public CameraMovement cameraMovement;
     public Vector3 target;

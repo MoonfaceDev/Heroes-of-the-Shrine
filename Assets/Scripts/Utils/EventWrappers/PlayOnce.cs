@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayOnce : MonoBehaviour
+public class PlayOnce : BaseComponent
 {
     private static readonly HashSet<string> Played = new();
 

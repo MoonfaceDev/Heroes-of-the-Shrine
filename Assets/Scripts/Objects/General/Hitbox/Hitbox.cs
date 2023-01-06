@@ -4,7 +4,7 @@ using static MathUtils;
 
 [ExecuteInEditMode]
 [RequireComponent(typeof(MovableObject))]
-public class Hitbox : MonoBehaviour
+public class Hitbox : BaseComponent
 {
     public Vector3 size;
 

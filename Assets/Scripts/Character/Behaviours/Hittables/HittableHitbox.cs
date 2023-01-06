@@ -2,7 +2,7 @@
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Hitbox))]
-public class HittableHitbox : MonoBehaviour, IHittable
+public class HittableHitbox : BaseComponent, IHittable
 {
     public HittableBehaviour hittableBehaviour;
     public UnityEvent onHit;
@@ -15,7 +15,6 @@ public class HittableHitbox : MonoBehaviour, IHittable
     public Hitbox Hitbox { get; private set; }
     
     private Material defaultMaterial;
-    private EventListener blinkEvent;
 
     protected virtual void Awake()
     {
@@ -37,7 +36,7 @@ public class HittableHitbox : MonoBehaviour, IHittable
         if (!figure || !hittableBehaviour.CanGetHit()) return;
         
         figure.material = blinkMaterial;
-        blinkEvent = EventManager.Instance.StartTimeout(() => figure.material = defaultMaterial, blinkTime);
+        StartTimeout(() => figure.material = defaultMaterial, blinkTime);
     }
 
     public bool CanGetHit()
@@ -61,10 +60,5 @@ public class HittableHitbox : MonoBehaviour, IHittable
     {
         onHit.Invoke();
         hittableBehaviour.Stun(damage, time);
-    }
-    
-    private void OnDestroy()
-    {
-        EventManager.Instance.Detach(blinkEvent);
     }
 }

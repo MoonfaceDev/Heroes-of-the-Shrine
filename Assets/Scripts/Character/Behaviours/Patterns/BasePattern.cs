@@ -8,9 +8,7 @@ public abstract class BasePattern : StateMachineBehaviour
     public float maxTime;
 
     private float timeout;
-
-    protected static EventManager EventManager => FindObjectOfType<EventManager>();
-
+    
     public event Action OnEnter;
     public event Action OnExit;
 

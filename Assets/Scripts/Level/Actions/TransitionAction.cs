@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TransitionAction : MonoBehaviour
+public class TransitionAction : BaseComponent
 {
     public string sceneName;
 

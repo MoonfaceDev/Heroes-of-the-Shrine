@@ -9,7 +9,7 @@ public class AnimationDefinition
 }
 
 [ExecuteInEditMode]
-public class ShadowObject : MonoBehaviour
+public class ShadowObject : BaseComponent
 {
     public MovableObject movableObject;
     public Vector3 shadowScale;

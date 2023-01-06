@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TextLink : MonoBehaviour
+public class TextLink : BaseComponent
 {
     public string url;
 

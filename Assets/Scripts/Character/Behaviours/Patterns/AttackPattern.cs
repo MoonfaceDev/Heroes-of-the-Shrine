@@ -32,7 +32,7 @@ public class AttackPattern : BasePattern
 
         var movableObject = animator.GetComponent<MovableObject>();
         movableObject.rotation = Mathf.RoundToInt(Mathf.Sign((player.GetComponent<MovableObject>().WorldPosition - movableObject.WorldPosition).x));
-        attackCoroutine = EventManager.StartCoroutine(AttackCoroutine(animator));
+        attackCoroutine = EventManager.Instance.StartCoroutine(AttackCoroutine(animator));
     }
 
     private IEnumerator AttackCoroutine(Animator animator)
@@ -61,7 +61,7 @@ public class AttackPattern : BasePattern
 
         if (attackCoroutine != null)
         {
-            EventManager.StopCoroutine(attackCoroutine);
+            EventManager.Instance.StopCoroutine(attackCoroutine);
         }
     }
 

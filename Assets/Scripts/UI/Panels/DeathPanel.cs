@@ -12,19 +12,20 @@ public class Transition
 }
 
 [RequireComponent(typeof(Image))]
-public class DeathPanel : MonoBehaviour
+public class DeathPanel : BaseComponent
 {
     public Transition[] transitions;
 
     private void Start()
     {
         var startTime = Time.time;
-        EventManager.Instance.Attach(() => true, () =>
+        Register(() =>
         {
             foreach (var transition in transitions)
             {
-                transition.graphic.color = Color.Lerp(transition.startColor, transition.finalColor, (Time.time - startTime) / transition.transitionDuration);
+                transition.graphic.color = Color.Lerp(transition.startColor, transition.finalColor,
+                    (Time.time - startTime) / transition.transitionDuration);
             }
-        }, false);
+        });
     }
 }

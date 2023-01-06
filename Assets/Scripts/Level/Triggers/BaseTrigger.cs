@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class BaseTrigger : MonoBehaviour
+public abstract class BaseTrigger : BaseComponent
 {
     public UnityEvent action;
 }

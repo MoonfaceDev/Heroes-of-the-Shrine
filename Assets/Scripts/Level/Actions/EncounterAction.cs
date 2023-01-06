@@ -25,7 +25,7 @@ public class WaveDefinition
     public EnemySpawnDefinition[] spawnDefinitions;
 }
 
-public class EncounterAction : MonoBehaviour
+public class EncounterAction : BaseComponent
 {
     public WaveAnnouncer waveAnnouncerPrefab;
     public WaveDefinition[] waveDefinitions;
@@ -39,10 +39,10 @@ public class EncounterAction : MonoBehaviour
 
     public void Invoke()
     {
-        var camera = Camera.main;
-        if (camera != null)
+        var mainCamera = Camera.main;
+        if (mainCamera != null)
         {
-            var cameraMovement = camera.GetComponent<CameraMovement>();
+            var cameraMovement = mainCamera.GetComponent<CameraMovement>();
             cameraMovement.Lock(cameraBorder);
         }
 
@@ -51,7 +51,6 @@ public class EncounterAction : MonoBehaviour
 
     private void StartWave(int index)
     {
-        var eventManager = FindObjectOfType<EventManager>();
         var wave = waveDefinitions[index];
 
         if (waveAnnouncerPrefab)
@@ -78,11 +77,11 @@ public class EncounterAction : MonoBehaviour
             }
             else
             {
-                eventManager.StartTimeout(() => enemy.GetComponent<EnemyBrain>().Alarm(), timeToAlarm);
+                StartTimeout(() => enemy.GetComponent<EnemyBrain>().Alarm(), timeToAlarm);
             }
         }
 
-        eventManager.StartTimeout(() =>
+        StartTimeout(() =>
         {
             foreach (var enemy in waveEnemies.Where(enemy => enemy))
             {
@@ -90,7 +89,7 @@ public class EncounterAction : MonoBehaviour
             }
         }, timeToAlarm);
 
-        eventManager.Attach(() => waveEnemies.TrueForAll(enemy => !enemy), () =>
+        InvokeWhen(() => waveEnemies.TrueForAll(enemy => !enemy), () =>
         {
             if (!stopped && index + 1 < waveDefinitions.Length)
             {
@@ -98,10 +97,10 @@ public class EncounterAction : MonoBehaviour
             }
             else
             {
-                var camera = Camera.main;
-                if (camera != null)
+                var mainCamera = Camera.main;
+                if (mainCamera != null)
                 {
-                    var cameraMovement = camera.GetComponent<CameraMovement>();
+                    var cameraMovement = mainCamera.GetComponent<CameraMovement>();
                     cameraMovement.Unlock();
                 }
                 

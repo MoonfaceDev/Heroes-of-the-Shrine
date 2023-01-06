@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PauseManager : MonoBehaviour
+public class PauseManager : BaseComponent
 {
     public static PauseManager Instance { get; private set; }
 

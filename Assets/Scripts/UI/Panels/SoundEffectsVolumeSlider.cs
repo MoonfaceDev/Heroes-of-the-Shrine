@@ -1,7 +1,6 @@
-using UnityEngine;
 using UnityEngine.UI;
 
-public class SoundEffectsVolumeSlider : MonoBehaviour
+public class SoundEffectsVolumeSlider : BaseComponent
 {
     public Slider slider;
 
@@ -9,6 +8,6 @@ public class SoundEffectsVolumeSlider : MonoBehaviour
     {
         slider.onValueChanged.AddListener(value => AudioManager.Instance.soundEffectsAudioSource.volume = value);
 
-        EventManager.Instance.Attach(() => true, () => slider.value = AudioManager.Instance.soundEffectsAudioSource.volume);
+        Register(() => slider.value = AudioManager.Instance.soundEffectsAudioSource.volume);
     }
 }

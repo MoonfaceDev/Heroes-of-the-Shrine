@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 [RequireComponent(typeof(MovableObject))]
-public class WalkableGrid : MonoBehaviour
+public class WalkableGrid : BaseComponent
 {
 	public Vector3 gridWorldSize;
 	public float nodeRadius;

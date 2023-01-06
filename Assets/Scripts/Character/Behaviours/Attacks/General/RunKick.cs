@@ -24,7 +24,7 @@ public class RunKick : SimpleAttack
             MovableObject.velocity.x = direction * velocity;
             MovableObject.velocity.z = 0;
             MovableObject.acceleration.x = -direction * acceleration;
-            EventManager.Attach(() => Mathf.Approximately(MovableObject.velocity.x, 0) || Mathf.RoundToInt(Mathf.Sign(MovableObject.velocity.x)) != direction, () => isMoving = false);
+            InvokeWhen(() => Mathf.Approximately(MovableObject.velocity.x, 0) || Mathf.RoundToInt(Mathf.Sign(MovableObject.velocity.x)) != direction, () => isMoving = false);
         });
 
         generalEvents.onFinishActive.AddListener(() => 

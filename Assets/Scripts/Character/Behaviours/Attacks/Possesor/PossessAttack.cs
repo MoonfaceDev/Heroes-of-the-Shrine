@@ -64,7 +64,7 @@ public class PossessAttack : BaseAttack
 
         if (waveIndex + 1 < waveCount)
         {
-            EventManager.Instance.StartTimeout(() => StartWave(waveIndex + 1), warningDuration + sourceActiveDuration);
+            StartTimeout(() => StartWave(waveIndex + 1), warningDuration + sourceActiveDuration);
         }
     }
 

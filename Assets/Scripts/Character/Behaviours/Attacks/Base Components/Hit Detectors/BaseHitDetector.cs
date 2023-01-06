@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Hitbox))]
-public abstract class BaseHitDetector : MonoBehaviour
+public abstract class BaseHitDetector : BaseComponent
 {
     /// <value>
     /// Additional tags of objects this attack can hit.

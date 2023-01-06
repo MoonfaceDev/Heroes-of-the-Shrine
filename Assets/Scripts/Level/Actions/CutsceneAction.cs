@@ -20,7 +20,7 @@ public class MoveDefinition
     public Direction lookDirection = Direction.Right;
 }
 
-public class CutsceneAction : MonoBehaviour
+public class CutsceneAction : BaseComponent
 {
     public List<MoveDefinition> moveDefinitions;
     public PlayableDirector director;
@@ -43,16 +43,17 @@ public class CutsceneAction : MonoBehaviour
         {
             controller.Enabled = false;
         }
-        
+
         foreach (var definition in moveDefinitions.Where(definition => definition.target))
         {
             definition.target.GetComponent<WalkBehaviour>().speed *= definition.speedMultiplier;
             definition.target.Play(definition.position, WantedDistance);
         }
 
-        EventManager.Instance.Attach(
+        InvokeWhen(
             () => moveDefinitions.TrueForAll(definition =>
-                definition.target.MovableObject.GroundDistance(definition.position) < WantedDistance), () =>
+                definition.target.MovableObject.GroundDistance(definition.position) < WantedDistance),
+            () =>
             {
                 moveDefinitions.ForEach(definition =>
                 {
@@ -70,7 +71,8 @@ public class CutsceneAction : MonoBehaviour
                 {
                     OnStop(director);
                 }
-            });
+            }
+        );
     }
 
     private void OnStop(PlayableDirector stoppedDirector)

@@ -3,12 +3,11 @@ using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Character))]
-public abstract class CharacterBehaviour : MonoBehaviour
+public abstract class CharacterBehaviour : BaseComponent
 {
     public Character Character { get; private set; }
 
     protected Animator Animator => Character.animator;
-    protected EventManager EventManager => Character.eventManager;
     public MovableObject MovableObject => Character.movableObject;
 
     public bool Enabled
