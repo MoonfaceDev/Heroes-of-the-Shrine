@@ -98,21 +98,4 @@ public class SimpleAttackEditor : Editor
 
         return false;
     }
-
-    private static bool HasProperty(SimpleAttack attack, string name)
-    {
-        var type = attack.GetType();
-        while (type != typeof(SimpleAttack) && type != null)
-        {
-            var property = type.GetProperty(name, OverridableFlags);
-            if (property != null)
-            {
-                return true;
-            }
-
-            type = type.BaseType;
-        }
-
-        return false;
-    }
 }

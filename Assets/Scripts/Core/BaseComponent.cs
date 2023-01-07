@@ -19,7 +19,7 @@ public class BaseComponent : MonoBehaviour
     private readonly Dictionary<string, EventListener> eventListeners = new();
 
     /// <summary>
-    /// Executes a callable `action` every frame
+    /// Executes a callable every frame
     /// </summary>
     /// <param name="action">Callable to execute</param>
     /// <returns>ID of the registered callable</returns>
@@ -31,7 +31,7 @@ public class BaseComponent : MonoBehaviour
     }
 
     /// <summary>
-    /// Unregisters a callable with given `id`. Nothing happens if `id` is not an existing callable
+    /// Unregisters a callable with given id. Nothing happens if <see cref="id"/> is not an existing callable
     /// </summary>
     /// <param name="id">ID of the callable to unregister</param>
     protected void Unregister(string id)
@@ -43,7 +43,7 @@ public class BaseComponent : MonoBehaviour
     }
 
     /// <summary>
-    /// Executes a callable `action` when condition `condition` is met
+    /// Executes a callable when a condition is met
     /// </summary>
     /// <param name="condition">Condition to check every frame</param>
     /// <param name="action">Callable to execute</param>
@@ -56,7 +56,7 @@ public class BaseComponent : MonoBehaviour
     }
 
     /// <summary>
-    /// Cancels a callable with given `id`. Nothing happens if `id` is not an existing callable
+    /// Cancels a callable with given id. Nothing happens if <see cref="id"/> is not an existing callable
     /// </summary>
     /// <param name="id">ID of the callable to cancel</param>
     protected void Cancel(string id)

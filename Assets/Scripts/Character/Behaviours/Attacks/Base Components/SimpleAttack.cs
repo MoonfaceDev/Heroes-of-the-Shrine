@@ -13,7 +13,7 @@ public class SimpleAttack : BaseAttack
     public List<BaseAttack> previousAttacks;
 
     /// <value>
-    /// If `true`, this attack can only play when <see cref="JumpBehaviour"/> is playing
+    /// If <c>true</c>, this attack can only play when <see cref="JumpBehaviour"/> is playing
     /// </value>
     public bool midair;
 

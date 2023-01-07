@@ -27,7 +27,7 @@ public interface IPlayableBehaviour
     public PlayEvents PlayEvents { get; }
 
     /// <value>
-    /// `true` if behaviour is currently playing
+    /// <c>true</c> if behaviour is currently playing
     /// </value>
     public bool Playing { get; }
 
