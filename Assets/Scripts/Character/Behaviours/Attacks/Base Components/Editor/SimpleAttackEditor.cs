@@ -11,11 +11,7 @@ public class SimpleAttackEditor : Editor
     private SerializedProperty activeDuration;
     private SerializedProperty recoveryDuration;
     private SerializedProperty hitDetector;
-    private SerializedProperty damage;
-    private SerializedProperty hitTypeIndex;
-    private SerializedProperty knockbackPower;
-    private SerializedProperty knockbackDirection;
-    private SerializedProperty stunTime;
+    private SerializedProperty hitDefinition;
 
     private const BindingFlags OverridableFlags =
         BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
@@ -27,18 +23,14 @@ public class SimpleAttackEditor : Editor
         activeDuration = serializedObject.FindProperty("activeDuration");
         recoveryDuration = serializedObject.FindProperty("recoveryDuration");
         hitDetector = serializedObject.FindProperty("hitDetector");
-        damage = serializedObject.FindProperty("damage");
-        hitTypeIndex = serializedObject.FindProperty("hitType");
-        knockbackPower = serializedObject.FindProperty("knockbackPower");
-        knockbackDirection = serializedObject.FindProperty("knockbackDirection");
-        stunTime = serializedObject.FindProperty("stunTime");
+        hitDefinition = serializedObject.FindProperty("hitDefinition");
     }
 
     public override void OnInspectorGUI()
     {
         serializedObject.Update();
         DrawPropertiesExcluding(serializedObject, "previousAttacks", "anticipateDuration", "activeDuration",
-            "recoveryDuration", "hitDetector", "damage", "hitType", "knockbackPower", "knockbackDirection", "stunTime");
+            "recoveryDuration", "hitDetector", "hitDefinition");
         var attack = (SimpleAttack)target;
 
         if (!HasMethod(attack, "ComboCondition"))
@@ -77,27 +69,10 @@ public class SimpleAttackEditor : Editor
             attack.hitDetector = (BaseHitDetector)hitDetector.objectReferenceValue;
         }
 
-        if (!HasMethod(attack, "CalculateDamage"))
-        {
-            EditorGUILayout.PropertyField(damage);
-            attack.damage = damage.floatValue;
-        }
-
         if (!HasMethod(attack, "HitCallable"))
         {
-            EditorGUILayout.PropertyField(hitTypeIndex);
-            var hitTypeValue = (HitType)typeof(HitType).GetEnumValues().GetValue(hitTypeIndex.enumValueIndex);
-            attack.hitType = hitTypeValue;
-            if (hitTypeValue == HitType.Knockback)
-            {
-                EditorGUILayout.PropertyField(knockbackPower);
-                EditorGUILayout.PropertyField(knockbackDirection);
-                attack.knockbackPower = knockbackPower.floatValue;
-                attack.knockbackDirection = knockbackDirection.floatValue;
-            }
-
-            EditorGUILayout.PropertyField(stunTime);
-            attack.stunTime = stunTime.floatValue;
+            EditorGUILayout.PropertyField(hitDefinition);
+            attack.hitDefinition = (HitDefinition) hitDefinition.boxedValue;
         }
 
         serializedObject.ApplyModifiedProperties();

@@ -538,6 +538,12 @@ MonoBehaviour:
   activeDuration: 0.2
   recoveryDuration: 0.1
   hitDetector: {fileID: 3056088687185938479}
+  hitDefinition:
+    damage: 10
+    hitType: 1
+    knockbackPower: 0
+    knockbackDirection: 0
+    stunTime: 0.5
   damage: 10
   hitType: 1
   knockbackPower: 20
@@ -594,6 +600,12 @@ MonoBehaviour:
   activeDuration: 0.2
   recoveryDuration: 0.1
   hitDetector: {fileID: 3056088687185938479}
+  hitDefinition:
+    damage: 10
+    hitType: 1
+    knockbackPower: 0
+    knockbackDirection: 0
+    stunTime: 0.5
   damage: 10
   hitType: 1
   knockbackPower: 0

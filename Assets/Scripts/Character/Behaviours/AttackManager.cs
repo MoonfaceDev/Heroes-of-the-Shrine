@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
-public delegate float DamageBonus(BaseAttack attack, Character character);
+public delegate float DamageBonus(BaseAttack attack, IHittable hittable);
 
 public class AttackManager : CharacterBehaviour
 {
@@ -86,10 +86,10 @@ public class AttackManager : CharacterBehaviour
         return !AnyAttack(attack => attack.Playing && !attack.interruptible);
     }
 
-    public float TranspileDamage(BaseAttack attack, Character character, float damage)
+    public float TranspileDamage(BaseAttack attack, IHittable hittable, float damage)
     {
-        damage += damageBonuses.Sum(bonus => bonus(attack, character));
-        return damageMultipliers.Aggregate(damage, (current, bonus) => current * bonus(attack, character));
+        damage += damageBonuses.Sum(bonus => bonus(attack, hittable));
+        return damageMultipliers.Aggregate(damage, (current, bonus) => current * bonus(attack, hittable));
     }
 
     public void AttachDamageBonus(DamageBonus bonus)

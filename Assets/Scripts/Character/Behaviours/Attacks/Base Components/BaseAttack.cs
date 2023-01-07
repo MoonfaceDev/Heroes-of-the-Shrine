@@ -3,6 +3,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Contains start and finish events for all attack phases
+/// </summary>
 [Serializable]
 public class AttackEvents
 {
@@ -41,6 +44,9 @@ public class BaseAttackCommand : ICommand
 {
 }
 
+/// <summary>
+/// Base class for all attacks. Most attacks should derive from <see cref="SimpleAttack"/>, which has more members and helper methods.
+/// </summary>
 [RequireComponent(typeof(AttackManager))]
 public abstract class BaseAttack : PlayableBehaviour<BaseAttackCommand>
 {

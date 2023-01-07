@@ -749,11 +749,12 @@ MonoBehaviour:
   activeDuration: 0.5
   recoveryDuration: 0.85
   hitDetector: {fileID: 0}
-  damage: 0
-  hitType: 0
-  knockbackPower: 0
-  knockbackDirection: 0
-  stunTime: 0.5
+  hitDefinition:
+    damage: 0
+    hitType: 0
+    knockbackPower: 0
+    knockbackDirection: 0
+    stunTime: 0.5
   onHit:
     m_PersistentCalls:
       m_Calls: []
@@ -762,12 +763,24 @@ MonoBehaviour:
   periodicHitDetector: {fileID: 1340466846}
   periodicHitCount: 2
   periodicHitElectrifyRate: 0.1
+  periodicHitDefinition:
+    damage: 2.5
+    hitType: 0
+    knockbackPower: 7
+    knockbackDirection: 30
+    stunTime: 0.5
   periodicHitType: 0
   periodicKnockbackPower: 7
   periodicKnockbackDirection: 30
   periodicStunTime: 0.5
   periodicDamage: 2.5
   explosionHitDetector: {fileID: 1468609905}
+  explosionHitDefinition:
+    damage: 15
+    hitType: 0
+    knockbackPower: 10
+    knockbackDirection: 35
+    stunTime: 0.5
   onExplosion:
     m_PersistentCalls:
       m_Calls:

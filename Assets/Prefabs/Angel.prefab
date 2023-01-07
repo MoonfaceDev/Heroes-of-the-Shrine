@@ -1412,6 +1412,12 @@ MonoBehaviour:
   activeDuration: 0
   recoveryDuration: 0.15
   hitDetector: {fileID: 6205691515461635864}
+  hitDefinition:
+    damage: 10
+    hitType: 0
+    knockbackPower: 10
+    knockbackDirection: 10
+    stunTime: 0.5
   damage: 10
   hitType: 0
   knockbackPower: 10
@@ -1469,6 +1475,12 @@ MonoBehaviour:
   activeDuration: 0.15
   recoveryDuration: 0.2
   hitDetector: {fileID: 1378128598374464822}
+  hitDefinition:
+    damage: 7
+    hitType: 1
+    knockbackPower: 0
+    knockbackDirection: 0
+    stunTime: 1
   damage: 7
   hitType: 1
   knockbackPower: 0
@@ -1525,6 +1537,12 @@ MonoBehaviour:
   activeDuration: 0.14
   recoveryDuration: 0.01
   hitDetector: {fileID: 210030094719651067}
+  hitDefinition:
+    damage: 15
+    hitType: 1
+    knockbackPower: 0
+    knockbackDirection: 0
+    stunTime: 0.5
   damage: 15
   hitType: 1
   knockbackPower: 0
@@ -1581,6 +1599,12 @@ MonoBehaviour:
   activeDuration: 0.14
   recoveryDuration: 0.3
   hitDetector: {fileID: 8845085713669517856}
+  hitDefinition:
+    damage: 5
+    hitType: 1
+    knockbackPower: 0
+    knockbackDirection: 0
+    stunTime: 0.5
   damage: 5
   hitType: 1
   knockbackPower: 0
@@ -1637,6 +1661,12 @@ MonoBehaviour:
   activeDuration: 0.15
   recoveryDuration: 0.2
   hitDetector: {fileID: 4499705321448943879}
+  hitDefinition:
+    damage: 10
+    hitType: 0
+    knockbackPower: 10
+    knockbackDirection: 85
+    stunTime: 0.5
   damage: 10
   hitType: 0
   knockbackPower: 10
@@ -1693,6 +1723,12 @@ MonoBehaviour:
   activeDuration: 0.8
   recoveryDuration: 0.3
   hitDetector: {fileID: 0}
+  hitDefinition:
+    damage: 10
+    hitType: 0
+    knockbackPower: 6
+    knockbackDirection: 95
+    stunTime: 0.5
   damage: 10
   hitType: 0
   knockbackPower: 6
@@ -1765,6 +1801,12 @@ MonoBehaviour:
   activeDuration: 0
   recoveryDuration: 0.2
   hitDetector: {fileID: 3262553446811620699}
+  hitDefinition:
+    damage: 15
+    hitType: 0
+    knockbackPower: 11
+    knockbackDirection: 60
+    stunTime: 0.5
   damage: 15
   hitType: 0
   knockbackPower: 11
@@ -1822,6 +1864,12 @@ MonoBehaviour:
   activeDuration: 0.1
   recoveryDuration: 0.3
   hitDetector: {fileID: 1378128598374464822}
+  hitDefinition:
+    damage: 5
+    hitType: 0
+    knockbackPower: 5
+    knockbackDirection: 30
+    stunTime: 0.5
   damage: 5
   hitType: 0
   knockbackPower: 5
@@ -1878,6 +1926,12 @@ MonoBehaviour:
   activeDuration: 0.14
   recoveryDuration: 0.3
   hitDetector: {fileID: 8845085713669517856}
+  hitDefinition:
+    damage: 5
+    hitType: 0
+    knockbackPower: 5
+    knockbackDirection: 30
+    stunTime: 0.5
   damage: 5
   hitType: 0
   knockbackPower: 5
@@ -1936,6 +1990,12 @@ MonoBehaviour:
   activeDuration: 0.225
   recoveryDuration: 0.1
   hitDetector: {fileID: 9212607366117902189}
+  hitDefinition:
+    damage: 7
+    hitType: 0
+    knockbackPower: 6
+    knockbackDirection: 110
+    stunTime: 0.5
   damage: 7
   hitType: 0
   knockbackPower: 6
@@ -1991,6 +2051,12 @@ MonoBehaviour:
   activeDuration: 0
   recoveryDuration: 0
   hitDetector: {fileID: 3460205721541166853}
+  hitDefinition:
+    damage: 0
+    hitType: 0
+    knockbackPower: 0
+    knockbackDirection: 0
+    stunTime: 0.5
   damage: 0
   hitType: 0
   knockbackPower: 0

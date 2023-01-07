@@ -1036,11 +1036,12 @@ MonoBehaviour:
   activeDuration: 0.1
   recoveryDuration: 0.05
   hitDetector: {fileID: 384846321737885714}
-  damage: 5
-  hitType: 1
-  knockbackPower: 20
-  knockbackDirection: 90
-  stunTime: 0.5
+  hitDefinition:
+    damage: 5
+    hitType: 1
+    knockbackPower: 0
+    knockbackDirection: 0
+    stunTime: 0.5
   onHit:
     m_PersistentCalls:
       m_Calls: []
@@ -1092,11 +1093,12 @@ MonoBehaviour:
   activeDuration: 0.15
   recoveryDuration: 0.1
   hitDetector: {fileID: 7845899968168809158}
-  damage: 5
-  hitType: 1
-  knockbackPower: 0
-  knockbackDirection: 0
-  stunTime: 0.5
+  hitDefinition:
+    damage: 5
+    hitType: 1
+    knockbackPower: 0
+    knockbackDirection: 0
+    stunTime: 0.5
   onHit:
     m_PersistentCalls:
       m_Calls: []
@@ -1148,11 +1150,12 @@ MonoBehaviour:
   activeDuration: 0.15
   recoveryDuration: 0.05
   hitDetector: {fileID: 4349693572784965940}
-  damage: 15
-  hitType: 0
-  knockbackPower: 10
-  knockbackDirection: 75
-  stunTime: 0.5
+  hitDefinition:
+    damage: 15
+    hitType: 0
+    knockbackPower: 10
+    knockbackDirection: 75
+    stunTime: 0.5
   onHit:
     m_PersistentCalls:
       m_Calls: []
@@ -1251,11 +1254,12 @@ MonoBehaviour:
   activeDuration: 0.5
   recoveryDuration: 0.15
   hitDetector: {fileID: 0}
-  damage: 5
-  hitType: 0
-  knockbackPower: 0
-  knockbackDirection: 0
-  stunTime: 0
+  hitDefinition:
+    damage: 0
+    hitType: 0
+    knockbackPower: 0
+    knockbackDirection: 0
+    stunTime: 0.5
   onHit:
     m_PersistentCalls:
       m_Calls: []
@@ -1264,12 +1268,24 @@ MonoBehaviour:
   periodicHitDetector: {fileID: 5046126295531141603}
   periodicHitCount: 4
   periodicHitElectrifyRate: 0.2
+  periodicHitDefinition:
+    damage: 2.5
+    hitType: 1
+    knockbackPower: 0
+    knockbackDirection: 0
+    stunTime: 0.5
   periodicHitType: 1
   periodicKnockbackPower: 0
   periodicKnockbackDirection: 0
   periodicStunTime: 0.5
   periodicDamage: 2.5
   explosionHitDetector: {fileID: 6023447303259930158}
+  explosionHitDefinition:
+    damage: 10
+    hitType: 0
+    knockbackPower: 10
+    knockbackDirection: 30
+    stunTime: 0
   onExplosion:
     m_PersistentCalls:
       m_Calls:

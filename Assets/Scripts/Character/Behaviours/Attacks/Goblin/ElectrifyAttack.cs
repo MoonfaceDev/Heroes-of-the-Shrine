@@ -5,21 +5,15 @@ public class ElectrifyAttack : NormalAttack
 {
     [Header("Electrify")] public float electrifyDuration;
     public float electrifySpeedMultiplier;
+
     [Header("Periodic hits")] public PeriodicAbsoluteHitDetector periodicHitDetector;
     public int periodicHitCount;
     public float periodicHitElectrifyRate;
-    public HitType periodicHitType = HitType.Stun;
-    public float periodicKnockbackPower;
-    public float periodicKnockbackDirection;
-    public float periodicStunTime;
-    public float periodicDamage;
-    [Header("Explosion")] public BaseHitDetector explosionHitDetector;
-    public UnityEvent onExplosion;
+    public HitDefinition periodicHitDefinition;
 
-    public float explosionKnockbackPower;
-    public float explosionKnockbackDirection;
-    public float explosionDamage;
-    public float explosionStunTime;
+    [Header("Explosion")] public BaseHitDetector explosionHitDetector;
+    public HitDefinition explosionHitDefinition;
+    public UnityEvent onExplosion;
 
     protected override void ConfigureHitDetector()
     {
@@ -47,25 +41,21 @@ public class ElectrifyAttack : NormalAttack
         });
     }
 
-    protected override float CalculateDamage(Character character)
-    {
-        return GetComponent<AttackManager>().TranspileDamage(this, character, periodicDamage);
-    }
-
     protected override void HitCallable(IHittable hittable)
     {
         onHit.Invoke(hittable);
-        var processedDamage = CalculateDamage(hittable.Character);
-        if (periodicHitType == HitType.Stun)
+        var processedDamage = AttackManager.TranspileDamage(this, hittable, periodicHitDefinition.damage);
+        if (periodicHitDefinition.hitType == HitType.Stun)
         {
-            hittable.Stun(processedDamage, periodicStunTime);
+            hittable.Stun(processedDamage, periodicHitDefinition.stunTime);
         }
         else
         {
             var hitDirection =
                 (int)Mathf.Sign(hittable.Character.movableObject.WorldPosition.x - MovableObject.WorldPosition.x);
-            hittable.Knockback(processedDamage, periodicKnockbackPower,
-                KnockbackBehaviour.GetRelativeDirection(periodicKnockbackDirection, hitDirection), periodicStunTime);
+            hittable.Knockback(processedDamage, periodicHitDefinition.knockbackPower,
+                KnockbackBehaviour.GetRelativeDirection(periodicHitDefinition.knockbackDirection, hitDirection),
+                periodicHitDefinition.stunTime);
         }
 
         if (Random.Range(0f, 1f) < periodicHitElectrifyRate)
@@ -78,19 +68,16 @@ public class ElectrifyAttack : NormalAttack
         }
     }
 
-    private float CalculateExplosionDamage(Character character)
-    {
-        return GetComponent<AttackManager>().TranspileDamage(this, character, explosionDamage);
-    }
-
     private void ExplosionHitCallable(IHittable hittable)
     {
+        onHit.Invoke(hittable);
         onExplosion.Invoke();
-        var processedDamage = CalculateExplosionDamage(hittable.Character);
+        var processedDamage = AttackManager.TranspileDamage(this, hittable, explosionHitDefinition.damage);
         var hitDirection =
             (int)Mathf.Sign(hittable.Character.movableObject.WorldPosition.x - MovableObject.WorldPosition.x);
-        hittable.Knockback(processedDamage, explosionKnockbackPower,
-            KnockbackBehaviour.GetRelativeDirection(explosionKnockbackDirection, hitDirection), explosionStunTime);
+        hittable.Knockback(processedDamage, explosionHitDefinition.knockbackPower,
+            KnockbackBehaviour.GetRelativeDirection(explosionHitDefinition.knockbackDirection, hitDirection),
+            explosionHitDefinition.stunTime);
         var electrifiedEffect = hittable.Character.GetComponent<ElectrifiedEffect>();
         if (electrifiedEffect)
         {
