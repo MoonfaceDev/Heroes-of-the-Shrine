@@ -1,14 +1,8 @@
-using UnityEngine.Serialization;
-
 public class SpinningSwordsAttack : NormalAttack
 {
     public BaseHitDetector hitDetector1;
     public BaseHitDetector hitDetector2;
-
-    [FormerlySerializedAs("hitbox1FinishTime")]
     public float detector1FinishTime;
-
-    [FormerlySerializedAs("hitbox2StartTime")]
     public float detector2StartTime;
 
     protected override void ConfigureHitDetector()
@@ -16,7 +10,7 @@ public class SpinningSwordsAttack : NormalAttack
         string disableHitDetector1Timeout = null;
         string enableHitDetector2Timeout = null;
 
-        generalEvents.onStartActive.AddListener(() =>
+        attackEvents.onStartActive.AddListener(() =>
         {
             hitDetector1.StartDetector(HitCallable, AttackManager.hittableTags);
             disableHitDetector1Timeout = StartTimeout(hitDetector1.StopDetector, detector1FinishTime);
@@ -26,7 +20,7 @@ public class SpinningSwordsAttack : NormalAttack
             );
         });
 
-        generalEvents.onFinishActive.AddListener(() =>
+        attackEvents.onFinishActive.AddListener(() =>
         {
             hitDetector1.StopDetector();
             hitDetector2.StopDetector();

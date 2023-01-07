@@ -1,1 +1,3 @@
-public class CharacterController : CharacterBehaviour { }
+public class CharacterController : CharacterBehaviour
+{
+}

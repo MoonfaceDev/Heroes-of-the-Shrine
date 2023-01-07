@@ -819,6 +819,7 @@ GameObject:
   - component: {fileID: 5102893360874897677}
   - component: {fileID: 5081049118965928474}
   - component: {fileID: 4105917478859101225}
+  - component: {fileID: 4937438101241777289}
   - component: {fileID: 2899137309724130339}
   - component: {fileID: 5102893360874897692}
   - component: {fileID: 5102893360874897674}
@@ -921,8 +922,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   physicalAttributes: {fileID: 11400000, guid: 7a04245b53151b344823f01dcf190584, type: 2}
   animator: {fileID: 5102893361555062418}
-  eventManager: {fileID: 0}
   movableObject: {fileID: 0}
+  attackManager: {fileID: 0}
 --- !u!114 &5102893360874897667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -991,12 +992,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e321a7af8378f45b972ec08f7089e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   cooldown: 0
   defaultSpeed: 6
   speed: 0
@@ -1012,36 +1014,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1146b9a9a2b3d2439f3aea5ac670bdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3541930184749892774}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: set_pitch
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1.25
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onStop:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3541930184749892774}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: set_pitch
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3541930184749892774}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: set_pitch
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1.25
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onStop:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3541930184749892774}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: set_pitch
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   cooldown: 0
   timeToRun: 1
   runSpeedMultiplier: 1.5
@@ -1058,12 +1061,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7da27b710763c4593ecc0f625595d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   cooldown: 0
   jumpSpeed: 10
   jumpAnticipateTime: 0
@@ -1081,12 +1085,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6ec1730c7ed3d49a2b8d7891202c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   cooldown: 1
   slideSpeedMultiplier: 3
   slideStopAcceleration: 50
@@ -1102,12 +1107,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4021a5b57a1ec1b4dacf3b967c9f3f9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   cooldown: 1
   dodgeDistance: 1.5
   anticipateTime: 0.05
@@ -1124,12 +1130,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82852d2e650fc4048ac887d4fc8710e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   knockbackRecoverTime: 1
 --- !u!114 &5102893360874897677
 MonoBehaviour:
@@ -1143,12 +1150,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87fda33e10ea24448ba9fe6c8dfffc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   stunFrames: 2
 --- !u!114 &5081049118965928474
 MonoBehaviour:
@@ -1174,12 +1182,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed9ec4fc5714304c83d532294f45bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
+  cooldown: 0
+--- !u!114 &4937438101241777289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893360874897723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca77d11292e641d183033adcb404ad67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   cooldown: 0
 --- !u!114 &2899137309724130339
 MonoBehaviour:
@@ -1193,12 +1222,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d7bf6c9b367e544be42faf142779a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &5102893360874897692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1211,12 +1241,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cfe8175de16ba346a6957969e6a94ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   particles: {fileID: 5102893361279726049}
 --- !u!114 &5102893360874897674
 MonoBehaviour:
@@ -1230,12 +1261,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ba493242bffda44bd80bb0d4062f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &1638938386684518268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1248,24 +1280,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f5303dff324830818deddd46b8e2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2810455707820001631}
-        m_TargetAssemblyTypeName: Particles, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4916786187361843125}
+          m_TargetAssemblyTypeName: Particles, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &5102893360874897672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1278,17 +1311,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab68d069e0e79504ebe8ab7fd318ee7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxComboDelay: 0.05
+  hittableTags:
+  - Enemy
+  - Prop
+  lastAttack: {fileID: 0}
   onPlay:
     m_PersistentCalls:
       m_Calls: []
   onStop:
     m_PersistentCalls:
       m_Calls: []
-  maxComboDelay: 0.05
-  hittableTags:
-  - Enemy
-  - Prop
-  lastAttack: {fileID: 0}
 --- !u!114 &5102893360874897678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1344,16 +1377,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89faf720898d4f341980bbc5ad9c92c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   instant: 0
   interruptible: 1
   hardRecovery: 1
-  generalEvents:
+  attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
         m_Calls: []
@@ -1383,6 +1417,9 @@ MonoBehaviour:
   knockbackPower: 10
   knockbackDirection: 10
   stunTime: 0.5
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
   velocity: 10
   acceleration: 10
 --- !u!114 &5102893360874897686
@@ -1397,16 +1434,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15028a98acbfc2140a1a48233734334d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  generalEvents:
+  attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
         m_Calls: []
@@ -1436,6 +1474,9 @@ MonoBehaviour:
   knockbackPower: 0
   knockbackDirection: 0
   stunTime: 1
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5102893360874897683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1448,16 +1489,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff8981c0a36794540a98151813755dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  generalEvents:
+  attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
         m_Calls: []
@@ -1488,6 +1530,9 @@ MonoBehaviour:
   knockbackPower: 0
   knockbackDirection: 0
   stunTime: 0.5
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5102893360874897687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1500,16 +1545,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 456a183db1e8752488fe8e192957fb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  generalEvents:
+  attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
         m_Calls: []
@@ -1540,6 +1586,9 @@ MonoBehaviour:
   knockbackPower: 0
   knockbackDirection: 0
   stunTime: 0.5
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5102893360874897684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1552,16 +1601,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120971cb774917b4593fc4bac3084f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   instant: 0
   interruptible: 1
   hardRecovery: 1
-  generalEvents:
+  attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
         m_Calls: []
@@ -1592,6 +1642,9 @@ MonoBehaviour:
   knockbackPower: 10
   knockbackDirection: 85
   stunTime: 0.5
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5102893360874897685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1604,16 +1657,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81118c65449267140834718ab26499e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  generalEvents:
+  attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
         m_Calls: []
@@ -1644,6 +1698,9 @@ MonoBehaviour:
   knockbackPower: 6
   knockbackDirection: 95
   stunTime: 0.5
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
   hitDetector1: {fileID: 3331154466096814319}
   hitDetector2: {fileID: 1090857225183363841}
   detector1FinishTime: 0.4
@@ -1660,16 +1717,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d19372dd6d0ab24db38e954cf9e4d87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   instant: 0
   interruptible: 0
   hardRecovery: 1
-  generalEvents:
+  attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
         m_Calls:
@@ -1712,6 +1770,9 @@ MonoBehaviour:
   knockbackPower: 11
   knockbackDirection: 60
   stunTime: 0.5
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
   velocity: 50
   acceleration: 250
 --- !u!114 &5102893360874897681
@@ -1726,16 +1787,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b302d29d571f744a696a43a533cefb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   instant: 0
   interruptible: 0
   hardRecovery: 0
-  generalEvents:
+  attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
         m_Calls: []
@@ -1765,6 +1827,9 @@ MonoBehaviour:
   knockbackPower: 5
   knockbackDirection: 30
   stunTime: 0.5
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5102893360874897680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1777,16 +1842,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d011c6d5c9cce11439fc487160458d20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   instant: 0
   interruptible: 0
   hardRecovery: 0
-  generalEvents:
+  attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
         m_Calls: []
@@ -1817,6 +1883,9 @@ MonoBehaviour:
   knockbackPower: 5
   knockbackDirection: 30
   stunTime: 0.5
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5102893360874897694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1829,16 +1898,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea921905e8155a14c9c413f58b72a537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   instant: 0
   interruptible: 0
   hardRecovery: 0
-  generalEvents:
+  attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
         m_Calls: []
@@ -1871,6 +1941,9 @@ MonoBehaviour:
   knockbackPower: 6
   knockbackDirection: 110
   stunTime: 0.5
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5102893360874897675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1883,16 +1956,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afab7b434bf82e940a658e3c4b4805cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   instant: 0
   interruptible: 0
   hardRecovery: 0
-  generalEvents:
+  attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
         m_Calls: []
@@ -1922,6 +1996,9 @@ MonoBehaviour:
   knockbackPower: 0
   knockbackDirection: 0
   stunTime: 0.5
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
   burstVelocity: 0
   burstAcceleration: 0
 --- !u!114 &4916786187361843125

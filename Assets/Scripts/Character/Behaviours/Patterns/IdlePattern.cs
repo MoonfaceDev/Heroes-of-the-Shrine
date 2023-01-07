@@ -1,1 +1,3 @@
-public class IdlePattern : BasePattern { }
+public class IdlePattern : BasePattern
+{
+}

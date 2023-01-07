@@ -7,13 +7,12 @@ public class HittableHitbox : BaseComponent, IHittable
     public HittableBehaviour hittableBehaviour;
     public UnityEvent onHit;
 
-    [Header("Blink Effect")]
-    public SpriteRenderer figure;
+    [Header("Blink Effect")] public SpriteRenderer figure;
     public Material blinkMaterial;
     public float blinkTime;
 
     public Hitbox Hitbox { get; private set; }
-    
+
     private Material defaultMaterial;
 
     protected virtual void Awake()
@@ -30,11 +29,11 @@ public class HittableHitbox : BaseComponent, IHittable
     }
 
     public Character Character => hittableBehaviour.Character;
-    
+
     protected void Blink()
     {
         if (!figure || !hittableBehaviour.CanGetHit()) return;
-        
+
         figure.material = blinkMaterial;
         StartTimeout(() => figure.material = defaultMaterial, blinkTime);
     }

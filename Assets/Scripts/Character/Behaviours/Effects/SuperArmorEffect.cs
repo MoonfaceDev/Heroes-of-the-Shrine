@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-public class SuperArmorEffect : BaseEffect
+public class SuperArmorEffectCommand : ICommand
+{
+}
+
+public class SuperArmorEffect : BaseEffect<SuperArmorEffectCommand>
 {
     public float armorHealth;
     public float armorCooldown;
@@ -14,36 +18,21 @@ public class SuperArmorEffect : BaseEffect
     [HideInInspector] public float armorCooldownStart;
     [ShowDebug] private float currentArmorHealth;
 
-    public override void Awake()
+    public void Start()
     {
-        base.Awake();
-        InitializeArmor();
+        Play(new SuperArmorEffectCommand());
     }
 
-    private void InitializeArmor()
+    protected override void DoPlay(SuperArmorEffectCommand command)
     {
         Active = true;
-        onPlay.Invoke();
 
         currentArmorHealth = armorHealth;
 
         GetComponent<HittableBehaviour>().damageMultiplier *= damageMultiplier;
-        DisableBehaviours(typeof(KnockbackBehaviour), typeof(StunBehaviour));
+        DisableBehaviours(typeof(StunBehaviour));
+        StopBehaviours(typeof(StunBehaviour));
         EnableBehaviours(typeof(EnemyBrain));
-    }
-
-    private void CancelArmor()
-    {
-        Active = false;
-        onStop.Invoke();
-
-        currentArmorHealth = 0;
-
-        EnableBehaviours(typeof(KnockbackBehaviour), typeof(StunBehaviour));
-        GetComponent<HittableBehaviour>().damageMultiplier /= damageMultiplier;
-        StopBehaviours(typeof(BaseMovementBehaviour), typeof(ForcedBehaviour), typeof(AttackManager));
-        DisableBehaviours(typeof(EnemyBrain));
-        MovableObject.velocity = Vector3.zero;
     }
 
     public void HitArmor(float damage)
@@ -53,17 +42,25 @@ public class SuperArmorEffect : BaseEffect
         currentArmorHealth = Mathf.Max(currentArmorHealth - damage, 0);
         if (currentArmorHealth == 0)
         {
-            CancelArmor();
+            Stop();
             onBreak.Invoke();
             armorCooldownStart = Time.time;
-            reloadTimeout = StartTimeout(InitializeArmor, armorCooldown);
+            reloadTimeout = StartTimeout(() => Play(new SuperArmorEffectCommand()), armorCooldown);
         }
     }
 
-    public override void Stop()
+    protected override void DoStop()
     {
         Cancel(reloadTimeout);
-        CancelArmor();
+        Active = false;
+
+        currentArmorHealth = 0;
+
+        GetComponent<HittableBehaviour>().damageMultiplier /= damageMultiplier;
+        EnableBehaviours(typeof(StunBehaviour));
+        StopBehaviours(typeof(IMovementBehaviour), typeof(BaseAttack));
+        DisableBehaviours(typeof(EnemyBrain));
+        MovableObject.velocity = Vector3.zero;
     }
 
     public override float GetProgress()

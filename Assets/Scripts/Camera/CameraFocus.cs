@@ -33,7 +33,8 @@ public class CameraFocus : BaseComponent
     {
         if (!active) return;
         var position = transform.position;
-        position = Vector3.Lerp(position, new Vector3(currentPosition.x, currentPosition.y, position.z), lerpSpeed * Time.deltaTime);
+        position = Vector3.Lerp(position, new Vector3(currentPosition.x, currentPosition.y, position.z),
+            lerpSpeed * Time.deltaTime);
         transform.position = position;
         mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, targetSize, lerpSpeed * Time.deltaTime);
     }

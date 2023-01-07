@@ -17,7 +17,8 @@ public class EnemyGroup : CharacterBehaviour
 
     private void Update()
     {
-        var enemies = CachedObjectsManager.Instance.GetObjects<Character>("Enemy").Select(enemy => enemy.GetComponent<EnemyGroup>()).ToArray();
+        var enemies = CachedObjectsManager.Instance.GetObjects<Character>("Enemy")
+            .Select(enemy => enemy.GetComponent<EnemyGroup>()).ToArray();
 
         // Enemy count
         stateMachine.SetInteger(EnemyCountParameter, enemies.Length);
@@ -32,11 +33,13 @@ public class EnemyGroup : CharacterBehaviour
                 {
                     return prev;
                 }
+
                 var nextDistance = MovableObject.GroundDistance(next.GetComponent<MovableObject>().WorldPosition);
                 var prevDistance = MovableObject.GroundDistance(prev.GetComponent<MovableObject>().WorldPosition);
                 return nextDistance < prevDistance ? next : prev;
             }).GetComponent<MovableObject>();
-            stateMachine.SetFloat(ClosestEnemyDistanceParameter, MovableObject.GroundDistance(closestEnemy.WorldPosition));
+            stateMachine.SetFloat(ClosestEnemyDistanceParameter,
+                MovableObject.GroundDistance(closestEnemy.WorldPosition));
         }
 
         // Closest to the player

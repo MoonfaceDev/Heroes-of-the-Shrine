@@ -1,6 +1,10 @@
 using UnityEngine;
 
-public abstract class BaseMovementBehaviour : PlayableBehaviour
+public interface IMovementBehaviour : IPlayableBehaviour
+{
+}
+
+public abstract class BaseMovementBehaviour<T> : PlayableBehaviour<T>, IMovementBehaviour where T : ICommand
 {
     public float cooldown;
 
@@ -12,14 +16,14 @@ public abstract class BaseMovementBehaviour : PlayableBehaviour
         if (cooldown > 0)
         {
             cooldownStartTime = Time.time - cooldown;
-            onPlay.AddListener(() => cooldownStartTime = Time.time);
+            PlayEvents.onPlay.AddListener(() => cooldownStartTime = Time.time);
         }
     }
 
-    public override bool CanPlay()
+    public override bool CanPlay(T command)
     {
-        return base.CanPlay()
-            && AllStopped(typeof(ForcedBehaviour))
-            && (cooldown <= 0 || Time.time - cooldownStartTime > cooldown);
+        return base.CanPlay(command)
+               && !IsPlaying<IForcedBehaviour>()
+               && (cooldown <= 0 || Time.time - cooldownStartTime > cooldown);
     }
 }

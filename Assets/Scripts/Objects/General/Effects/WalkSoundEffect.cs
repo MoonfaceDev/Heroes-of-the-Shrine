@@ -1,26 +1,30 @@
 using UnityEngine;
 
+[RequireComponent(typeof(WalkBehaviour))]
 public class WalkSoundEffect : BaseComponent
 {
     public AudioSource walkAudioSource;
-    
+
     private void Awake()
     {
         var walkBehaviour = GetComponent<WalkBehaviour>();
         var jumpBehaviour = GetComponent<JumpBehaviour>();
-        
-        walkBehaviour.onPlay.AddListener(() =>
+
+        walkBehaviour.PlayEvents.onPlay.AddListener(() =>
         {
-            if (jumpBehaviour && jumpBehaviour.Playing) return; 
-            walkAudioSource.Play();
+            if (jumpBehaviour && jumpBehaviour.Playing) return;
+            if (!walkAudioSource.isPlaying)
+            {
+                walkAudioSource.Play();
+            }
         });
-        
-        walkBehaviour.onStop.AddListener(() => walkAudioSource.Stop());
+
+        walkBehaviour.PlayEvents.onStop.AddListener(() => walkAudioSource.Stop());
 
         if (jumpBehaviour)
         {
-            jumpBehaviour.onPlay.AddListener(() => walkAudioSource.Stop());
-            jumpBehaviour.onStop.AddListener(() =>
+            jumpBehaviour.PlayEvents.onPlay.AddListener(() => walkAudioSource.Stop());
+            jumpBehaviour.PlayEvents.onStop.AddListener(() =>
             {
                 if (walkBehaviour.Playing)
                 {

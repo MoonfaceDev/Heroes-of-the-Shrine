@@ -2,15 +2,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public delegate float DamageBonus(BaseAttack attack, Character character);
 
-public class AttackManager : PlayableBehaviour
+public class AttackManager : CharacterBehaviour
 {
     public float maxComboDelay;
     public List<string> hittableTags;
     [HideInInspector] public BaseAttack lastAttack;
 
+    public UnityEvent onPlay;
+    public UnityEvent onStop;
     public event Action OnStartAnticipating;
     public event Action OnFinishAnticipating;
     public event Action OnStartActive;
@@ -35,18 +38,18 @@ public class AttackManager : PlayableBehaviour
         foreach (var attack in attackComponents)
         {
             // Forward events
-            attack.onPlay.AddListener(onPlay.Invoke);
-            attack.generalEvents.onStartAnticipating.AddListener(() => OnStartAnticipating?.Invoke());
-            attack.generalEvents.onFinishAnticipating.AddListener(() => OnFinishAnticipating?.Invoke());
-            attack.generalEvents.onStartActive.AddListener(() => OnStartActive?.Invoke());
-            attack.generalEvents.onFinishActive.AddListener(() => OnFinishActive?.Invoke());
-            attack.generalEvents.onStartRecovery.AddListener(() => OnStartRecovery?.Invoke());
-            attack.generalEvents.onFinishRecovery.AddListener(() => OnFinishRecovery?.Invoke());
-            attack.onStop.AddListener(onStop.Invoke);
+            attack.PlayEvents.onPlay.AddListener(onPlay.Invoke);
+            attack.attackEvents.onStartAnticipating.AddListener(() => OnStartAnticipating?.Invoke());
+            attack.attackEvents.onFinishAnticipating.AddListener(() => OnFinishAnticipating?.Invoke());
+            attack.attackEvents.onStartActive.AddListener(() => OnStartActive?.Invoke());
+            attack.attackEvents.onFinishActive.AddListener(() => OnFinishActive?.Invoke());
+            attack.attackEvents.onStartRecovery.AddListener(() => OnStartRecovery?.Invoke());
+            attack.attackEvents.onFinishRecovery.AddListener(() => OnFinishRecovery?.Invoke());
+            attack.PlayEvents.onStop.AddListener(onStop.Invoke);
 
             // Combo handling
 
-            attack.onPlay.AddListener(() =>
+            attack.PlayEvents.onPlay.AddListener(() =>
             {
                 Cancel(forgetComboTimeout);
                 lastAttack = attack;
@@ -58,7 +61,7 @@ public class AttackManager : PlayableBehaviour
                 forgetComboTimeout = StartTimeout(() => lastAttack = null, maxComboDelay);
             }
 
-            attack.onStop.AddListener(ForgetComboAction);
+            attack.PlayEvents.onStop.AddListener(ForgetComboAction);
         }
     }
 
@@ -76,20 +79,11 @@ public class AttackManager : PlayableBehaviour
 
     public bool HardRecovering => AnyAttack(attack => attack.hardRecovery && attack.Recovering);
 
-    public override bool Playing => AnyAttack(attack => attack.Playing);
+    public bool Playing => AnyAttack(attack => attack.Playing);
 
     public bool IsInterruptible()
     {
         return !AnyAttack(attack => attack.Playing && !attack.interruptible);
-    }
-
-    public override void Stop()
-    {
-        var attackComponents = GetComponents<BaseAttack>();
-        foreach (var attack in attackComponents)
-        {
-            attack.Stop();
-        }
     }
 
     public float TranspileDamage(BaseAttack attack, Character character, float damage)

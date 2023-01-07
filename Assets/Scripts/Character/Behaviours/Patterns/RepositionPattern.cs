@@ -15,7 +15,7 @@ public class RepositionPattern : BasePattern
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
-        var followBehaviour = animator.GetComponent<FollowBehaviour>();
+        var autoWalkBehaviour = animator.GetComponent<AutoWalkBehaviour>();
 
         var walkBehaviour = animator.GetComponent<WalkBehaviour>();
         walkBehaviour.speed *= speedMultiplier;
@@ -28,12 +28,12 @@ public class RepositionPattern : BasePattern
         otherEnemiesListener = EventManager.Instance.Register(() =>
         {
             otherEnemies = CachedObjectsManager.Instance.GetObjects<Character>("Enemy")
-                .Where(enemy => enemy != followBehaviour.Character)
+                .Where(enemy => enemy != autoWalkBehaviour.Character)
                 .Where(enemy => enemy.GetComponent<HealthSystem>().Alive)
                 .ToArray();
         });
 
-        followBehaviour.Play(
+        autoWalkBehaviour.Play(new AutoWalkCommand(
             destination,
             () =>
             {
@@ -41,7 +41,7 @@ public class RepositionPattern : BasePattern
                         grid.GetCircle(enemy.movableObject.GroundWorldPosition, DistanceFromOtherEnemies + nodeRadius))
                     .ToArray();
             }
-        );
+        ));
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -50,8 +50,8 @@ public class RepositionPattern : BasePattern
 
         EventManager.Instance.Unregister(otherEnemiesListener);
 
-        var followBehaviour = animator.GetComponent<FollowBehaviour>();
-        followBehaviour.Stop();
+        var autoWalkBehaviour = animator.GetComponent<AutoWalkBehaviour>();
+        autoWalkBehaviour.Stop();
 
         var walkBehaviour = animator.GetComponent<WalkBehaviour>();
         walkBehaviour.speed /= speedMultiplier;

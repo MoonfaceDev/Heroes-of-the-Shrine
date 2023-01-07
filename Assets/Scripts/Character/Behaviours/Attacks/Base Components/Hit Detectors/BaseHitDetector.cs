@@ -42,7 +42,7 @@ public abstract class BaseHitDetector : BaseComponent
         DoStartDetector(hittable =>
         {
             if (!IsHittable(hittable, hittableTags)) return;
-            
+
             var hitParticles = GetComponent<HitParticles>();
             if (hitParticles && ShouldPlayHitParticles(hittable))
             {

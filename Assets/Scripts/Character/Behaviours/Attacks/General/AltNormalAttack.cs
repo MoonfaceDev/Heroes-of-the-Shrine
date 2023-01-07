@@ -1,1 +1,3 @@
-public class AltNormalAttack : NormalAttack { }
+public class AltNormalAttack : NormalAttack
+{
+}

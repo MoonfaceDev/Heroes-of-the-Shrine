@@ -22,7 +22,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
     private KnockbackBehaviour knockbackBehaviour;
     private StunBehaviour stunBehaviour;
     private ForcedWalkBehaviour forcedWalkBehaviour;
-    
+
     public override void Awake()
     {
         base.Awake();
@@ -61,7 +61,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
         OnKnockback?.Invoke(damage, power, angleDegrees);
         if (knockbackBehaviour)
         {
-            knockbackBehaviour.Play(power, angleDegrees);
+            knockbackBehaviour.Play(new KnockbackCommand(power, angleDegrees));
         }
     }
 
@@ -81,7 +81,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
         OnStun?.Invoke(damage, time);
         if (stunBehaviour)
         {
-            stunBehaviour.Play(time);
+            stunBehaviour.Play(new StunCommand(time));
         }
     }
 

@@ -18,6 +18,7 @@ public class CachedObjectsManager : BaseComponent
             Destroy(this);
             return;
         }
+
         Instance = this;
         objects = new Dictionary<string, List<Object>>();
         foreach (var cacheTag in cacheTags)
@@ -50,7 +51,7 @@ public class CachedObjectsManager : BaseComponent
 
     public T[] GetObjects<T>(string cacheTag) where T : Object
     {
-        return SafeGet(cacheTag).Select(@object => (T) @object).ToArray();
+        return SafeGet(cacheTag).Select(@object => (T)@object).ToArray();
     }
 
     public T GetObject<T>(string cacheTag) where T : Object

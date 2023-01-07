@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 public class ElectrifyAttack : NormalAttack
 {
@@ -17,9 +16,7 @@ public class ElectrifyAttack : NormalAttack
     [Header("Explosion")] public BaseHitDetector explosionHitDetector;
     public UnityEvent onExplosion;
 
-    [FormerlySerializedAs("epxlosionKnockbackPower")]
     public float explosionKnockbackPower;
-
     public float explosionKnockbackDirection;
     public float explosionDamage;
     public float explosionStunTime;
@@ -31,7 +28,7 @@ public class ElectrifyAttack : NormalAttack
 
         string switchDetectorsListener = null;
 
-        generalEvents.onStartActive.AddListener(() =>
+        attackEvents.onStartActive.AddListener(() =>
         {
             periodicHitDetector.StartDetector(HitCallable, AttackManager.hittableTags);
             switchDetectorsListener = InvokeWhen(() => detectCount >= periodicHitCount, () =>
@@ -42,7 +39,7 @@ public class ElectrifyAttack : NormalAttack
             });
         });
 
-        generalEvents.onFinishActive.AddListener(() =>
+        attackEvents.onFinishActive.AddListener(() =>
         {
             periodicHitDetector.StopDetector();
             explosionHitDetector.StopDetector();
@@ -57,7 +54,7 @@ public class ElectrifyAttack : NormalAttack
 
     protected override void HitCallable(IHittable hittable)
     {
-        InvokeOnHit(hittable);
+        onHit.Invoke(hittable);
         var processedDamage = CalculateDamage(hittable.Character);
         if (periodicHitType == HitType.Stun)
         {
@@ -76,7 +73,7 @@ public class ElectrifyAttack : NormalAttack
             var electrifiedEffect = hittable.Character.GetComponent<ElectrifiedEffect>();
             if (electrifiedEffect)
             {
-                electrifiedEffect.Play(electrifyDuration, electrifySpeedMultiplier);
+                electrifiedEffect.Play(new ElectrifiedEffectCommand(electrifyDuration, electrifySpeedMultiplier));
             }
         }
     }
@@ -97,7 +94,7 @@ public class ElectrifyAttack : NormalAttack
         var electrifiedEffect = hittable.Character.GetComponent<ElectrifiedEffect>();
         if (electrifiedEffect)
         {
-            electrifiedEffect.Play(electrifyDuration, electrifySpeedMultiplier);
+            electrifiedEffect.Play(new ElectrifiedEffectCommand(electrifyDuration, electrifySpeedMultiplier));
         }
     }
 }

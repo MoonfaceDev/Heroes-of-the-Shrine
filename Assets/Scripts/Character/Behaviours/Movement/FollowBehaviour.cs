@@ -1,11 +1,26 @@
 using System;
 using UnityEngine;
 
+public class FollowCommand : ICommand
+{
+    public readonly MovableObject target;
+    public readonly Func<Node[]> getExcluded;
+    public readonly GetOverrideDirection getOverrideDirection;
+
+    public FollowCommand(MovableObject target, Func<Node[]> getExcluded = null,
+        GetOverrideDirection getOverrideDirection = null)
+    {
+        this.target = target;
+        this.getExcluded = getExcluded;
+        this.getOverrideDirection = getOverrideDirection;
+    }
+}
+
 public delegate bool GetOverrideDirection(out Vector3 direction);
 
 [RequireComponent(typeof(Pathfind))]
 [RequireComponent(typeof(WalkBehaviour))]
-public class FollowBehaviour : BaseMovementBehaviour
+public class FollowBehaviour : BaseMovementBehaviour<FollowCommand>
 {
     public override bool Playing => active;
 
@@ -21,58 +36,38 @@ public class FollowBehaviour : BaseMovementBehaviour
         walkBehaviour = GetComponent<WalkBehaviour>();
     }
 
-    public void Play(Vector3 destination, Func<Node[]> getExcluded = null)
+    protected override void DoPlay(FollowCommand command)
     {
-        if (!CanPlay())
-        {
-            return;
-        }
         active = true;
-        onPlay.Invoke();
-        
-        followListener = Register(() => {
-            var direction = pathfind.Direction(MovableObject.WorldPosition, destination, getExcluded?.Invoke());
-            walkBehaviour.Play(direction.x, direction.z, false);
-            MovableObject.rotation = Mathf.RoundToInt(Mathf.Sign(destination.x - MovableObject.WorldPosition.x));
+
+        followListener = Register(() =>
+        {
+            var direction = GetDirection(command.target, command.getExcluded?.Invoke(), command.getOverrideDirection);
+            walkBehaviour.Play(new WalkCommand(direction.x, direction.z, false));
+            MovableObject.rotation =
+                Mathf.RoundToInt(Mathf.Sign(command.target.WorldPosition.x - MovableObject.WorldPosition.x));
         });
     }
 
-    public void Play(MovableObject target, Func<Node[]> getExcluded = null, GetOverrideDirection getOverrideDirection = null)
-    {
-        if (!CanPlay())
-        {
-            return;
-        }
-        active = true;
-        onPlay.Invoke();
-
-        followListener = Register(() => {
-            var direction = GetDirection(target, getExcluded?.Invoke(), getOverrideDirection);
-            walkBehaviour.Play(direction.x, direction.z, false);
-            MovableObject.rotation = Mathf.RoundToInt(Mathf.Sign(target.WorldPosition.x - MovableObject.WorldPosition.x));
-        });
-    }
-
-    private Vector3 GetDirection(MovableObject target, Node[] excluded = null, GetOverrideDirection getOverrideDirection = null)
+    private Vector3 GetDirection(MovableObject target, Node[] excluded = null,
+        GetOverrideDirection getOverrideDirection = null)
     {
         if (getOverrideDirection != null)
         {
-            var shouldOverride = getOverrideDirection(out Vector3 direction);
+            var shouldOverride = getOverrideDirection(out var direction);
             if (shouldOverride)
             {
                 return direction;
             }
         }
+
         return pathfind.Direction(MovableObject.WorldPosition, target.WorldPosition, excluded);
     }
 
-    public override void Stop()
+    protected override void DoStop()
     {
-        if (!active) return;
-        onStop.Invoke();
         active = false;
         Unregister(followListener);
-        StopBehaviours(typeof(WalkBehaviour));
-        MovableObject.velocity = Vector3.zero;
+        walkBehaviour.Stop();
     }
 }

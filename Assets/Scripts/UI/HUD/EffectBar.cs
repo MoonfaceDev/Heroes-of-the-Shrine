@@ -4,7 +4,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Scrollbar))]
 public class EffectBar : BaseComponent
 {
-    public BaseEffect effect;
+    public IEffect effect;
 
     private Scrollbar scrollbar;
 

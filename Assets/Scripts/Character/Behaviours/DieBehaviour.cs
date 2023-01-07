@@ -1,14 +1,12 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 [RequireComponent(typeof(HittableBehaviour))]
 public class DieBehaviour : CharacterBehaviour
 {
-    [FormerlySerializedAs("destoryOnDeath")] public bool destroyOnDeath = true;
+    public bool destroyOnDeath = true;
     public float deathAnimationDuration;
-    
+
     private static readonly int DeadParameter = Animator.StringToHash("dead");
 
     public UnityEvent onDie;
@@ -29,8 +27,9 @@ public class DieBehaviour : CharacterBehaviour
 
     public void Kill()
     {
-        DisableBehaviours(typeof(BaseEffect), typeof(CharacterController));
-        StopBehaviours(typeof(BaseEffect), typeof(BaseMovementBehaviour), typeof(AttackManager), typeof(StunBehaviour));
+        DisableBehaviours(typeof(IEffect), typeof(CharacterController));
+        StopBehaviours(typeof(IEffect), typeof(IMovementBehaviour), typeof(BaseAttack),
+            typeof(StunBehaviour));
 
         void KillAfterKnockback()
         {
@@ -42,9 +41,9 @@ public class DieBehaviour : CharacterBehaviour
             }
         }
 
-        if (IsPlaying(typeof(KnockbackBehaviour)))
+        if (IsPlaying<KnockbackBehaviour>())
         {
-            GetComponent<KnockbackBehaviour>().onStop.AddListener(KillAfterKnockback);
+            GetComponent<KnockbackBehaviour>().PlayEvents.onStop.AddListener(KillAfterKnockback);
         }
         else
         {

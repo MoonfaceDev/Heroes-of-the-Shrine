@@ -25,16 +25,17 @@ public class RectTrigger : BaseTrigger
             action.Invoke();
         }
     }
-    
+
     private bool IsInside(Vector3 point)
     {
         return point.x > position.x && point.x < position.x + size.x
-            && point.z > position.z && point.z < position.z + size.z;
+                                    && point.z > position.z && point.z < position.z + size.z;
     }
 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.magenta;
-        Gizmos.DrawWireCube(MovableObject.GroundScreenCoordinates(position + size/2), MovableObject.GroundScreenCoordinates(size));
+        Gizmos.DrawWireCube(MovableObject.GroundScreenCoordinates(position + size / 2),
+            MovableObject.GroundScreenCoordinates(size));
     }
 }

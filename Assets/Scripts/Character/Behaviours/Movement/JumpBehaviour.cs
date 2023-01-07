@@ -1,10 +1,13 @@
 using System;
-using System.Collections;
 using UnityEngine;
 
 public delegate void JumpsChangedCallback(int jumps);
 
-public class JumpBehaviour : BaseMovementBehaviour
+public class JumpCommand : ICommand
+{
+}
+
+public class JumpBehaviour : BaseMovementBehaviour<JumpCommand>
 {
     public float jumpSpeed;
     public float jumpAnticipateTime;
@@ -25,22 +28,27 @@ public class JumpBehaviour : BaseMovementBehaviour
             Animator.SetBool(AnticipatingJumpParameter, anticipating);
         }
     }
+
     public bool Active
     {
         get => active;
-        private set { 
+        private set
+        {
             active = value;
             Animator.SetBool(JumpParameter, active);
         }
     }
+
     public bool Recovering
     {
         get => recovering;
-        private set { 
+        private set
+        {
             recovering = value;
             Animator.SetBool(RecoveringFromJumpParameter, recovering);
         }
     }
+
     public int Jumps
     {
         get => jumps;
@@ -57,10 +65,10 @@ public class JumpBehaviour : BaseMovementBehaviour
     private bool recovering;
     private bool anticipating;
     private int jumps;
-    private Coroutine anticipateCoroutine;
-    private Coroutine recoverCoroutine;
+    private string anticipateTimeout;
+    private string recoverTimeout;
     private WalkBehaviour walkBehaviour;
-    
+
     private static readonly int AnticipatingJumpParameter = Animator.StringToHash("anticipatingJump");
     private static readonly int JumpParameter = Animator.StringToHash("jump");
     private static readonly int RecoveringFromJumpParameter = Animator.StringToHash("recoveringFromJump");
@@ -72,38 +80,30 @@ public class JumpBehaviour : BaseMovementBehaviour
         walkBehaviour = GetComponent<WalkBehaviour>();
     }
 
-    public override bool CanPlay()
+    public override bool CanPlay(JumpCommand command)
     {
-        return base.CanPlay() 
-            && AllStopped(typeof(AttackManager), typeof(SlideBehaviour), typeof(DodgeBehaviour))
-            && (!Active || jumps < maxJumps);
+        return base.CanPlay(command)
+               && !AttackManager.Playing && !IsPlaying<SlideBehaviour>() && !IsPlaying<DodgeBehaviour>()
+               && (!Active || jumps < maxJumps);
     }
 
-    public void Play()
+    protected override void DoPlay(JumpCommand command)
     {
-        if (!CanPlay())
+        if (!IsPlaying<WalkBehaviour>() && MovableObject.WorldPosition.y == 0) //not moving and grounded
         {
-            return;
-        }
-        onPlay.Invoke();
-        if (!IsPlaying(typeof(WalkBehaviour)) && MovableObject.WorldPosition.y == 0) //not moving and grounded
-        {
-            anticipateCoroutine = StartCoroutine(Anticipate());
+            Anticipating = true;
+            walkBehaviour.Enabled = false;
+            anticipateTimeout = StartTimeout(() =>
+            {
+                walkBehaviour.Enabled = true;
+                Anticipating = false;
+                StartJump();
+            }, jumpAnticipateTime);
         }
         else //moving or mid-air
         {
             StartJump();
         }
-    }
-
-    private IEnumerator Anticipate()
-    {
-        Anticipating = true;
-        walkBehaviour.Enabled = false;
-        yield return new WaitForSeconds(jumpAnticipateTime);
-        walkBehaviour.Enabled = true;
-        Anticipating = false;
-        StartJump();
     }
 
     private void StartJump()
@@ -128,36 +128,29 @@ public class JumpBehaviour : BaseMovementBehaviour
 
         if (walkBehaviour && !walkBehaviour.Walk) //not moving
         {
-            recoverCoroutine = StartCoroutine(RecoverAfterTime());
+            Recovering = true;
+            walkBehaviour.Enabled = false;
+            recoverTimeout = StartTimeout(() =>
+            {
+                walkBehaviour.Enabled = true;
+                Stop();
+            }, jumpRecoverTime);
         }
         else
         {
-            onStop.Invoke();
+            Stop();
         }
     }
 
-    private IEnumerator RecoverAfterTime()
+    protected override void DoStop()
     {
-        Recovering = true;
-        walkBehaviour.Enabled = false;
-        yield return new WaitForSeconds(jumpRecoverTime);
-        walkBehaviour.Enabled = true;
-        Recovering = false;
-        OnRecover?.Invoke();
-    }
-
-    public override void Stop()
-    {
-        if (Playing)
-        {
-            onStop.Invoke();
-        }
         if (Anticipating)
         {
-            StopCoroutine(anticipateCoroutine);
+            StopCoroutine(anticipateTimeout);
             walkBehaviour.Enabled = true;
             Anticipating = false;
         }
+
         if (Active)
         {
             MovableObject.velocity.y = 0;
@@ -166,9 +159,10 @@ public class JumpBehaviour : BaseMovementBehaviour
             Jumps = 0;
             OnJumpsChanged?.Invoke(Jumps);
         }
+
         if (Recovering)
         {
-            StopCoroutine(recoverCoroutine);
+            StopCoroutine(recoverTimeout);
             walkBehaviour.Enabled = true;
             Recovering = false;
             OnRecover?.Invoke();

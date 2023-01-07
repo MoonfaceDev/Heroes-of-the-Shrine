@@ -8,9 +8,11 @@ public class Character : BaseComponent
     public Animator animator;
 
     [HideInInspector] public MovableObject movableObject;
+    [HideInInspector] public AttackManager attackManager;
 
     public void Awake()
     {
         movableObject = GetComponent<MovableObject>();
+        attackManager = GetComponent<AttackManager>();
     }
 }

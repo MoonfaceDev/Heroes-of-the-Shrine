@@ -1,1 +1,3 @@
-public class AirAttack : SimpleAttack { } 
+public class AirAttack : SimpleAttack
+{
+}

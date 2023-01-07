@@ -10,9 +10,9 @@ public class SpawnAttack : BaseAttack
     public GameObject enemyPrefab;
     public Vector3[] spawnPoints;
 
-    public override bool CanPlay()
+    public override bool CanPlay(BaseAttackCommand command)
     {
-        return base.CanPlay() &&
+        return base.CanPlay(command) &&
                !((AttackManager.Anticipating || AttackManager.Active || AttackManager.HardRecovering) &&
                  !(instant && AttackManager.IsInterruptible()));
     }
@@ -20,15 +20,14 @@ public class SpawnAttack : BaseAttack
     public override void Awake()
     {
         base.Awake();
-        onPlay.AddListener(() =>
+        PlayEvents.onPlay.AddListener(() =>
         {
             DisableBehaviours(typeof(WalkBehaviour));
             StopBehaviours(typeof(WalkBehaviour));
-            MovableObject.velocity = Vector3.zero;
         });
-        onStop.AddListener(() => EnableBehaviours(typeof(WalkBehaviour)));
+        PlayEvents.onStop.AddListener(() => EnableBehaviours(typeof(WalkBehaviour)));
 
-        generalEvents.onStartActive.AddListener(SpawnGoblins);
+        attackEvents.onStartActive.AddListener(SpawnGoblins);
     }
 
     private void SpawnGoblins()
@@ -38,7 +37,8 @@ public class SpawnAttack : BaseAttack
         var selectedPoints = GetRandomSpawnPoints(spawnCount);
         for (var i = 0; i < maxEnemyCount - currentEnemyCount; i++)
         {
-            var newEnemy = Instantiate(enemyPrefab, MovableObject.ScreenCoordinates(selectedPoints[i]), Quaternion.identity);
+            var newEnemy = Instantiate(enemyPrefab, MovableObject.ScreenCoordinates(selectedPoints[i]),
+                Quaternion.identity);
             newEnemy.GetComponent<MovableObject>().WorldPosition = selectedPoints[i];
             newEnemy.GetComponent<EnemyBrain>().Alarm();
         }

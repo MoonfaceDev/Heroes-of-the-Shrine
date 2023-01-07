@@ -15,7 +15,7 @@ public class Pathfind : BaseComponent
     {
         var startNode = grid.NodeFromWorldPoint(start);
         var endNode = grid.ClosestWalkableNode(end, excluded);
-        var path = ThetaStar(startNode, endNode, excluded) ?? new List<Node>{ startNode, endNode };
+        var path = ThetaStar(startNode, endNode, excluded) ?? new List<Node> { startNode, endNode };
         gizmosPath = path;
         return Vector3.Normalize(path.Count == 2 ? end - start : path[1].position - startNode.position);
     }
@@ -27,7 +27,8 @@ public class Pathfind : BaseComponent
         foreach (var n in gizmosPath)
         {
             Gizmos.color = i == 1 ? Color.green : Color.blue;
-            Gizmos.DrawCube(MovableObject.GroundScreenCoordinates(n.position) + 0.1f * Vector3.forward, MovableObject.GroundScreenCoordinates(Vector3.one * (grid.nodeRadius * 2f)));
+            Gizmos.DrawCube(MovableObject.GroundScreenCoordinates(n.position) + 0.1f * Vector3.forward,
+                MovableObject.GroundScreenCoordinates(Vector3.one * (grid.nodeRadius * 2f)));
             i++;
         }
     }
@@ -46,10 +47,12 @@ public class Pathfind : BaseComponent
             path.Add(current);
             current = cameFrom[current];
         }
+
         if (start == end)
         {
             path.Add(end);
         }
+
         path.Add(start);
         path.Reverse();
         return path;
@@ -59,8 +62,8 @@ public class Pathfind : BaseComponent
     {
         PriorityQueue<Node> frontier = new();
         frontier.Enqueue(start, 0);
-        Dictionary<Node, Node> cameFrom = new(){[start] = null};
-        Dictionary<Node, float> costSoFar = new(){[start] = 0};
+        Dictionary<Node, Node> cameFrom = new() { [start] = null };
+        Dictionary<Node, float> costSoFar = new() { [start] = 0 };
         while (frontier.Count > 0)
         {
             var current = frontier.Dequeue();
@@ -75,6 +78,7 @@ public class Pathfind : BaseComponent
                 {
                     newCost = costSoFar[current] + 1.41f;
                 }
+
                 if (!costSoFar.ContainsKey(node) || newCost < costSoFar[node])
                 {
                     costSoFar[node] = newCost;
@@ -90,11 +94,13 @@ public class Pathfind : BaseComponent
                     }
                 }
             }
+
             if (current == end)
             {
                 return BuildPath(cameFrom, start, end);
             }
         }
+
         return null;
     }
 }

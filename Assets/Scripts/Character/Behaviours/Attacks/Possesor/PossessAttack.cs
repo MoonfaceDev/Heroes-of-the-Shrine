@@ -28,16 +28,15 @@ public class PossessAttack : BaseAttack
     public override void Awake()
     {
         base.Awake();
-        onPlay.AddListener(() =>
+        PlayEvents.onPlay.AddListener(() =>
         {
             DisableBehaviours(typeof(WalkBehaviour));
             StopBehaviours(typeof(WalkBehaviour));
-            MovableObject.velocity = Vector3.zero;
         });
-        onStop.AddListener(() => EnableBehaviours(typeof(WalkBehaviour)));
+        PlayEvents.onStop.AddListener(() => EnableBehaviours(typeof(WalkBehaviour)));
         walkableGrid = FindObjectOfType<WalkableGrid>();
 
-        generalEvents.onStartActive.AddListener(() => StartWave(0));
+        attackEvents.onStartActive.AddListener(() => StartWave(0));
     }
 
     private void StartWave(int waveIndex)
@@ -50,7 +49,8 @@ public class PossessAttack : BaseAttack
             {
                 var spawnPoint = GetSpawnPoint(alreadySpawned);
                 alreadySpawned.Add(spawnPoint);
-                var newPossessSource = Instantiate(possessSource.gameObject, MovableObject.ScreenCoordinates(spawnPoint), Quaternion.identity);
+                var newPossessSource = Instantiate(possessSource.gameObject,
+                    MovableObject.ScreenCoordinates(spawnPoint), Quaternion.identity);
                 newPossessSource.GetComponent<MovableObject>().WorldPosition = spawnPoint;
                 newPossessSource.GetComponent<PossessSource>().Activate(warningDuration, sourceActiveDuration,
                     AttackManager.hittableTags, effectDuration, sourceDamage);

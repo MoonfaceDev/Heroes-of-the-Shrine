@@ -1,12 +1,26 @@
 using UnityEngine;
 
+public class WalkCommand : ICommand
+{
+    public readonly float xAxis;
+    public readonly float zAxis;
+    public readonly bool fitLookDirection;
+
+    public WalkCommand(float xAxis, float zAxis, bool fitLookDirection = true)
+    {
+        this.xAxis = xAxis;
+        this.zAxis = zAxis;
+        this.fitLookDirection = fitLookDirection;
+    }
+}
+
 [RequireComponent(typeof(MovableObject))]
-public class WalkBehaviour : BaseMovementBehaviour
+public class WalkBehaviour : BaseMovementBehaviour<WalkCommand>
 {
     public float defaultSpeed;
 
     public float speed;
-    
+
     public bool Walk
     {
         get => walk;
@@ -20,7 +34,7 @@ public class WalkBehaviour : BaseMovementBehaviour
     public override bool Playing => Walk;
 
     private bool walk; //walking or running
-    
+
     private static readonly int WalkParameter = Animator.StringToHash("walk");
 
     public override void Awake()
@@ -29,36 +43,30 @@ public class WalkBehaviour : BaseMovementBehaviour
         speed = defaultSpeed;
     }
 
-    public void Play(float xAxis, float zAxis, bool fitLookDirection = true)
+    public override bool CanPlay(WalkCommand command)
     {
-        if (!CanPlay())
-        {
-            return;
-        }
+        return base.CanPlay(command) && new Vector2(command.xAxis, command.zAxis) != Vector2.zero;
+    }
+
+    protected override void DoPlay(WalkCommand command)
+    {
+        Walk = true;
+
         // move speed
-        MovableObject.velocity.x = xAxis * speed;
-        MovableObject.velocity.z = zAxis * speed;
+        MovableObject.velocity.x = command.xAxis * speed;
+        MovableObject.velocity.z = command.zAxis * speed;
+
         // look direction
-        if (xAxis != 0 & fitLookDirection)
+        if (command.xAxis != 0 & command.fitLookDirection)
         {
-            MovableObject.rotation = Mathf.RoundToInt(Mathf.Sign(xAxis));
-        }
-        // run callbacks
-        if (new Vector2(xAxis, zAxis) == Vector2.zero)
-        {
-            Stop();
-        }
-        else if (!Walk) //first walking frame
-        {
-            Walk = true;
-            onPlay.Invoke();
+            MovableObject.rotation = Mathf.RoundToInt(Mathf.Sign(command.xAxis));
         }
     }
 
-    public override void Stop()
+    protected override void DoStop()
     {
-        if (!Walk) return;
         Walk = false;
-        onStop.Invoke();
+        MovableObject.velocity.x = 0;
+        MovableObject.velocity.z = 0;
     }
 }

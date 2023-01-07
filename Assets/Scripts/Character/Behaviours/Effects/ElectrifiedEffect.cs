@@ -1,7 +1,19 @@
 using System;
 using UnityEngine;
 
-public class ElectrifiedEffect : BaseEffect
+public class ElectrifiedEffectCommand : ICommand
+{
+    public readonly float duration;
+    public readonly float speedReductionMultiplier;
+
+    public ElectrifiedEffectCommand(float duration, float speedReductionMultiplier)
+    {
+        this.duration = duration;
+        this.speedReductionMultiplier = speedReductionMultiplier;
+    }
+}
+
+public class ElectrifiedEffect : BaseEffect<ElectrifiedEffectCommand>
 {
     public ParticleSystem particles;
 
@@ -11,7 +23,8 @@ public class ElectrifiedEffect : BaseEffect
     private float currentSpeedMultiplier;
     private string stopListener;
 
-    private static readonly Type[] DisabledBehaviours = { typeof(RunBehaviour), typeof(SlideBehaviour), typeof(DodgeBehaviour), typeof(JumpBehaviour) };
+    private static readonly Type[] DisabledBehaviours =
+        { typeof(RunBehaviour), typeof(SlideBehaviour), typeof(DodgeBehaviour), typeof(JumpBehaviour) };
 
     public override void Awake()
     {
@@ -19,43 +32,40 @@ public class ElectrifiedEffect : BaseEffect
         walkBehaviour = GetComponent<WalkBehaviour>();
     }
 
-    public void Play(float duration, float speedReductionMultiplier)
+    protected override void DoPlay(ElectrifiedEffectCommand command)
     {
         StopBehaviours(typeof(RunBehaviour), typeof(SlideBehaviour), typeof(DodgeBehaviour), typeof(ElectrifiedEffect));
 
         Active = true;
-        onPlay.Invoke();
 
-        currentSpeedMultiplier = speedReductionMultiplier;
+        currentSpeedMultiplier = command.speedReductionMultiplier;
         if (walkBehaviour)
         {
             walkBehaviour.speed *= currentSpeedMultiplier;
         }
+
         DisableBehaviours(DisabledBehaviours);
         particles.Play();
 
         startTime = Time.time;
-        currentDuration = duration;
-        stopListener = InvokeWhen(() => Time.time - startTime > duration, Stop);
+        currentDuration = command.duration;
+        stopListener = InvokeWhen(() => Time.time - startTime > command.duration, Stop);
     }
 
-    public override void Stop()
+    protected override void DoStop()
     {
-        if (Active)
+        Active = false;
+
+        if (walkBehaviour)
         {
-            onStop.Invoke();
-            Active = false;
-
-            if (walkBehaviour)
-            {
-                walkBehaviour.speed /= currentSpeedMultiplier;
-            }
-            EnableBehaviours(DisabledBehaviours);
-            particles.Stop(true, stopBehavior: ParticleSystemStopBehavior.StopEmittingAndClear);
-
-            currentDuration = 0;
-            Cancel(stopListener);
+            walkBehaviour.speed /= currentSpeedMultiplier;
         }
+
+        EnableBehaviours(DisabledBehaviours);
+        particles.Stop(true, stopBehavior: ParticleSystemStopBehavior.StopEmittingAndClear);
+
+        currentDuration = 0;
+        Cancel(stopListener);
     }
 
     public override float GetProgress()

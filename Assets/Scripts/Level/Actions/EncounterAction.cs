@@ -66,7 +66,8 @@ public class EncounterAction : BaseComponent
             var direction = GetDirection(definition.direction);
             var borderEdge = direction == -1 ? cameraBorder.xMin : cameraBorder.xMax;
             var spawnPoint = new Vector3(borderEdge + direction * spawnSourceDistance, 0, definition.z);
-            var enemy = Instantiate(definition.prefab, MovableObject.ScreenCoordinates(spawnPoint), Quaternion.identity);
+            var enemy = Instantiate(definition.prefab, MovableObject.ScreenCoordinates(spawnPoint),
+                Quaternion.identity);
             var movableObject = enemy.GetComponent<MovableObject>();
 
             movableObject.WorldPosition = spawnPoint;
@@ -103,7 +104,7 @@ public class EncounterAction : BaseComponent
                     var cameraMovement = mainCamera.GetComponent<CameraMovement>();
                     cameraMovement.Unlock();
                 }
-                
+
                 postEncounterEvent.Invoke();
             }
         });
@@ -117,7 +118,8 @@ public class EncounterAction : BaseComponent
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(new Vector3(cameraBorder.center.x, cameraBorder.center.y, 0.01f), new Vector3(cameraBorder.size.x, cameraBorder.size.y, 0.01f));
+        Gizmos.DrawWireCube(new Vector3(cameraBorder.center.x, cameraBorder.center.y, 0.01f),
+            new Vector3(cameraBorder.size.x, cameraBorder.size.y, 0.01f));
 
         Gizmos.color = Color.green;
         for (var wave = 0; wave < waveDefinitions.Length; wave++)
@@ -127,10 +129,14 @@ public class EncounterAction : BaseComponent
                 switch (definition.direction)
                 {
                     case Direction.Left:
-                        Gizmos.DrawWireSphere(MovableObject.ScreenCoordinates(new Vector3(cameraBorder.xMin, 0, definition.z)), 0.1f * (wave + 1));
+                        Gizmos.DrawWireSphere(
+                            MovableObject.ScreenCoordinates(new Vector3(cameraBorder.xMin, 0, definition.z)),
+                            0.1f * (wave + 1));
                         break;
                     case Direction.Right:
-                        Gizmos.DrawWireSphere(MovableObject.ScreenCoordinates(new Vector3(cameraBorder.xMax, 0, definition.z)), 0.1f * (wave + 1));
+                        Gizmos.DrawWireSphere(
+                            MovableObject.ScreenCoordinates(new Vector3(cameraBorder.xMax, 0, definition.z)),
+                            0.1f * (wave + 1));
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();

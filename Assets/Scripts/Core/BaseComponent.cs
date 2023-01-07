@@ -15,7 +15,7 @@ public class BaseComponent : MonoBehaviour
             this.condition = condition;
         }
     }
-    
+
     private readonly Dictionary<string, EventListener> eventListeners = new();
 
     /// <summary>
@@ -75,7 +75,7 @@ public class BaseComponent : MonoBehaviour
         var startTime = Time.time;
         return InvokeWhen(() => Time.time - startTime >= timeout, action);
     }
-    
+
     /// <summary>
     /// Executes a callable repeatedly with a time delay between each call
     /// </summary>

@@ -1,43 +1,46 @@
 using UnityEngine;
 
-[RequireComponent(typeof(FollowBehaviour))]
-public class ForcedWalkBehaviour : PlayableBehaviour
+public class ForcedWalkCommand : ICommand
+{
+    public readonly Vector3 point;
+    public readonly float wantedDistance;
+
+    public ForcedWalkCommand(Vector3 point, float wantedDistance = 0.1f)
+    {
+        this.point = point;
+        this.wantedDistance = wantedDistance;
+    }
+}
+
+[RequireComponent(typeof(AutoWalkBehaviour))]
+public class ForcedWalkBehaviour : PlayableBehaviour<ForcedWalkCommand>
 {
     private bool active;
     private string stopListener;
 
     public override bool Playing => active;
 
-    public void Play(Vector3 point, float wantedDistance = 0.1f)
+    protected override void DoPlay(ForcedWalkCommand command)
     {
-        if (!CanPlay())
-        {
-            return;
-        }
-
-        StopBehaviours(typeof(PlayableBehaviour));
+        StopBehaviours(typeof(IPlayableBehaviour));
         DisableBehaviours(typeof(CharacterController), typeof(RunBehaviour));
 
         active = true;
-        onPlay.Invoke();
 
-        GetComponent<FollowBehaviour>().Play(point);
-        stopListener = InvokeWhen(() => MovableObject.GroundDistance(point) < wantedDistance, () =>
+        GetComponent<AutoWalkBehaviour>().Play(new AutoWalkCommand(command.point));
+        stopListener = InvokeWhen(() => MovableObject.GroundDistance(command.point) < command.wantedDistance, () =>
         {
-            MovableObject.position = point;
+            MovableObject.position = command.point;
             Stop();
         });
     }
 
-    public override void Stop()
+    protected override void DoStop()
     {
-        if (!active) return;
-
-        onStop.Invoke();
         active = false;
 
         Cancel(stopListener);
-        StopBehaviours(typeof(FollowBehaviour));
+        StopBehaviours(typeof(AutoWalkBehaviour));
         EnableBehaviours(typeof(PlayerController), typeof(RunBehaviour));
 
         MovableObject.velocity = Vector3.zero;

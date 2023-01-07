@@ -1,1 +1,3 @@
-public class Uppercut : NormalAttack { }
+public class Uppercut : NormalAttack
+{
+}

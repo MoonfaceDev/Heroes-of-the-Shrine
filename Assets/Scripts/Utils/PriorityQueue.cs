@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 public class PriorityQueue<T>
 {
-
     private readonly List<Tuple<T, double>> elements = new();
 
     public int Count => elements.Count;

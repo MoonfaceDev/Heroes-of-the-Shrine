@@ -17,7 +17,7 @@ public class EnemyBrain : CharacterController
         public string parameterName;
         public Vector2 groundPoint;
     }
-    
+
     /// <value>
     /// Mapping from animator parameter name, to the point (on the ground) from which distance is measured.
     /// </value>
@@ -26,19 +26,28 @@ public class EnemyBrain : CharacterController
     private GameObject player;
     private MovableObject playerMovableObject;
     protected Animator stateMachine;
-    
+
     private static readonly int AlarmParameter = Animator.StringToHash("Alarm");
     private static readonly int KnockbackParameter = Animator.StringToHash("knockback");
     private static readonly int StunParameter = Animator.StringToHash("stun");
     private static readonly int DeadParameter = Animator.StringToHash("dead");
     private static readonly int AggressionParameter = Animator.StringToHash("aggression");
     private static readonly int PlayerKnockbackParameter = Animator.StringToHash("playerKnockback");
-    private static readonly int PlayerRecoveringFromKnockbackParameter = Animator.StringToHash("playerRecoveringFromKnockback");
+
+    private static readonly int PlayerRecoveringFromKnockbackParameter =
+        Animator.StringToHash("playerRecoveringFromKnockback");
+
     private static readonly int PlayerStunParameter = Animator.StringToHash("playerStun");
     private static readonly int PlayerAttackingParameter = Animator.StringToHash("playerAttacking");
-    private static readonly int PlayerAttackingAnticipatingParameter = Animator.StringToHash("playerAttacking-anticipating");
+
+    private static readonly int PlayerAttackingAnticipatingParameter =
+        Animator.StringToHash("playerAttacking-anticipating");
+
     private static readonly int PlayerAttackingActiveParameter = Animator.StringToHash("playerAttacking-active");
-    private static readonly int PlayerAttackingRecoveringParameter = Animator.StringToHash("playerAttacking-recovering");
+
+    private static readonly int PlayerAttackingRecoveringParameter =
+        Animator.StringToHash("playerAttacking-recovering");
+
     private static readonly int HealthParameter = Animator.StringToHash("health");
     private static readonly int RageParameter = Animator.StringToHash("rage");
     private static readonly int PlayerDistanceParameter = Animator.StringToHash("playerDistance");
@@ -68,15 +77,15 @@ public class EnemyBrain : CharacterController
         var knockbackBehaviour = GetComponent<KnockbackBehaviour>();
         if (knockbackBehaviour)
         {
-            knockbackBehaviour.onPlay.AddListener(() => stateMachine.SetBool(KnockbackParameter, true));
-            knockbackBehaviour.onStop.AddListener(() => stateMachine.SetBool(KnockbackParameter, false));
+            knockbackBehaviour.PlayEvents.onPlay.AddListener(() => stateMachine.SetBool(KnockbackParameter, true));
+            knockbackBehaviour.PlayEvents.onStop.AddListener(() => stateMachine.SetBool(KnockbackParameter, false));
         }
 
         var stunBehaviour = GetComponent<StunBehaviour>();
         if (stunBehaviour)
         {
-            stunBehaviour.onPlay.AddListener(() => stateMachine.SetBool(StunParameter, true));
-            stunBehaviour.onStop.AddListener(() => stateMachine.SetBool(StunParameter, false));
+            stunBehaviour.PlayEvents.onPlay.AddListener(() => stateMachine.SetBool(StunParameter, true));
+            stunBehaviour.PlayEvents.onStop.AddListener(() => stateMachine.SetBool(StunParameter, false));
         }
 
         var dieBehaviour = GetComponent<DieBehaviour>();
@@ -101,7 +110,7 @@ public class EnemyBrain : CharacterController
             var playerKnockbackBehaviour = player.GetComponent<KnockbackBehaviour>();
             if (knockbackBehaviour)
             {
-                playerKnockbackBehaviour.onPlay.AddListener(OnPlayerKnockbackPlay);
+                playerKnockbackBehaviour.PlayEvents.onPlay.AddListener(OnPlayerKnockbackPlay);
                 playerKnockbackBehaviour.OnFinish += OnPlayerKnockbackStop;
                 playerKnockbackBehaviour.OnFinish += OnPlayerRecoveringFromKnockbackPlay;
                 playerKnockbackBehaviour.OnRecover += OnPlayerRecoveringFromKnockbackStop;
@@ -110,8 +119,8 @@ public class EnemyBrain : CharacterController
             var playerStunBehaviour = player.GetComponent<StunBehaviour>();
             if (playerStunBehaviour)
             {
-                playerStunBehaviour.onPlay.AddListener(OnPlayerStunPlay);
-                playerStunBehaviour.onStop.AddListener(OnPlayerStunStop);
+                playerStunBehaviour.PlayEvents.onPlay.AddListener(OnPlayerStunPlay);
+                playerStunBehaviour.PlayEvents.onStop.AddListener(OnPlayerStunStop);
             }
 
             var playerAttackManager = player.GetComponent<AttackManager>();
@@ -131,13 +140,21 @@ public class EnemyBrain : CharacterController
 
     private void OnPlayerKnockbackPlay() => stateMachine.SetBool(PlayerKnockbackParameter, true);
     private void OnPlayerKnockbackStop() => stateMachine.SetBool(PlayerKnockbackParameter, false);
-    private void OnPlayerRecoveringFromKnockbackPlay() => stateMachine.SetBool(PlayerRecoveringFromKnockbackParameter, true);
-    private void OnPlayerRecoveringFromKnockbackStop() => stateMachine.SetBool(PlayerRecoveringFromKnockbackParameter, false);
+
+    private void OnPlayerRecoveringFromKnockbackPlay() =>
+        stateMachine.SetBool(PlayerRecoveringFromKnockbackParameter, true);
+
+    private void OnPlayerRecoveringFromKnockbackStop() =>
+        stateMachine.SetBool(PlayerRecoveringFromKnockbackParameter, false);
+
     private void OnPlayerStunPlay() => stateMachine.SetBool(PlayerStunParameter, true);
     private void OnPlayerStunStop() => stateMachine.SetBool(PlayerStunParameter, false);
     private void OnPlayerAttackPlay() => stateMachine.SetBool(PlayerAttackingParameter, true);
     private void OnPlayerAttackStartAnticipating() => stateMachine.SetBool(PlayerAttackingAnticipatingParameter, true);
-    private void OnPlayerAttackFinishAnticipating() => stateMachine.SetBool(PlayerAttackingAnticipatingParameter, false);
+
+    private void OnPlayerAttackFinishAnticipating() =>
+        stateMachine.SetBool(PlayerAttackingAnticipatingParameter, false);
+
     private void OnPlayerAttackStartActive() => stateMachine.SetBool(PlayerAttackingActiveParameter, true);
     private void OnPlayerAttackFinishActive() => stateMachine.SetBool(PlayerAttackingActiveParameter, false);
     private void OnPlayerAttackStartRecovery() => stateMachine.SetBool(PlayerAttackingRecoveringParameter, true);
@@ -150,21 +167,28 @@ public class EnemyBrain : CharacterController
         if (healthSystem)
         {
             stateMachine.SetFloat(HealthParameter, healthSystem.health);
-            if (IsEnraged()) {
+            if (IsEnraged())
+            {
                 stateMachine.SetBool(RageParameter, true);
             }
         }
+
         if (playerMovableObject)
         {
-            stateMachine.SetFloat(PlayerDistanceParameter, Vector2.Distance(ToPlane(MovableObject.WorldPosition), ToPlane(playerMovableObject.WorldPosition)));
-            stateMachine.SetFloat(PlayerDistanceXParameter, Mathf.Abs((MovableObject.WorldPosition - playerMovableObject.WorldPosition).x));
-            stateMachine.SetFloat(PlayerDistanceYParameter, Mathf.Abs((MovableObject.WorldPosition - playerMovableObject.WorldPosition).y));
-            stateMachine.SetFloat(PlayerDistanceZParameter, Mathf.Abs((MovableObject.WorldPosition - playerMovableObject.WorldPosition).z));
+            stateMachine.SetFloat(PlayerDistanceParameter,
+                Vector2.Distance(ToPlane(MovableObject.WorldPosition), ToPlane(playerMovableObject.WorldPosition)));
+            stateMachine.SetFloat(PlayerDistanceXParameter,
+                Mathf.Abs((MovableObject.WorldPosition - playerMovableObject.WorldPosition).x));
+            stateMachine.SetFloat(PlayerDistanceYParameter,
+                Mathf.Abs((MovableObject.WorldPosition - playerMovableObject.WorldPosition).y));
+            stateMachine.SetFloat(PlayerDistanceZParameter,
+                Mathf.Abs((MovableObject.WorldPosition - playerMovableObject.WorldPosition).z));
         }
 
         foreach (var entry in distanceAnimatorParameters)
         {
-            stateMachine.SetFloat(entry.parameterName,  Vector2.Distance(ToPlane(MovableObject.WorldPosition), entry.groundPoint));
+            stateMachine.SetFloat(entry.parameterName,
+                Vector2.Distance(ToPlane(MovableObject.WorldPosition), entry.groundPoint));
         }
     }
 
@@ -191,7 +215,7 @@ public class EnemyBrain : CharacterController
             var playerKnockbackBehaviour = player.GetComponent<KnockbackBehaviour>();
             if (playerKnockbackBehaviour)
             {
-                playerKnockbackBehaviour.onPlay.RemoveListener(OnPlayerKnockbackPlay);
+                playerKnockbackBehaviour.PlayEvents.onPlay.RemoveListener(OnPlayerKnockbackPlay);
                 playerKnockbackBehaviour.OnFinish -= OnPlayerKnockbackStop;
                 playerKnockbackBehaviour.OnFinish -= OnPlayerRecoveringFromKnockbackPlay;
                 playerKnockbackBehaviour.OnRecover -= OnPlayerRecoveringFromKnockbackStop;
@@ -200,8 +224,8 @@ public class EnemyBrain : CharacterController
             var playerStunBehaviour = player.GetComponent<StunBehaviour>();
             if (playerStunBehaviour)
             {
-                playerStunBehaviour.onPlay.RemoveListener(OnPlayerStunPlay);
-                playerStunBehaviour.onStop.RemoveListener(OnPlayerStunStop);
+                playerStunBehaviour.PlayEvents.onPlay.RemoveListener(OnPlayerStunPlay);
+                playerStunBehaviour.PlayEvents.onStop.RemoveListener(OnPlayerStunStop);
             }
 
             var playerAttackManager = player.GetComponent<AttackManager>();

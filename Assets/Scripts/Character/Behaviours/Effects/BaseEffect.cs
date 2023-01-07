@@ -1,4 +1,10 @@
-public abstract class BaseEffect : PlayableBehaviour
+public interface IEffect : IPlayableBehaviour
+{
+    public bool Active { get; }
+    public float GetProgress();
+}
+
+public abstract class BaseEffect<T> : PlayableBehaviour<T>, IEffect where T : ICommand
 {
     public bool Active
     {

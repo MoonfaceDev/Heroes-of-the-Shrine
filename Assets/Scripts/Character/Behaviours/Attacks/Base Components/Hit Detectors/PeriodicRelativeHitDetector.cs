@@ -6,7 +6,7 @@ public class PeriodicRelativeHitDetector : BaseHitDetector
 {
     public float interval;
     public bool startImmediately = true;
-    
+
     private string detectionListener;
 
     protected override void DoStartDetector(Action<IHittable> hitCallable)
@@ -27,6 +27,7 @@ public class PeriodicRelativeHitDetector : BaseHitDetector
                     hitTimes[hittable.hittableBehaviour] = Time.time;
                     continue;
                 }
+
                 if (Time.time - hitTimes[hittable.hittableBehaviour] >= interval)
                 {
                     hitTimes[hittable.hittableBehaviour] = Time.time;

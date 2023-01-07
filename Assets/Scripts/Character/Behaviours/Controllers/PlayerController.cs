@@ -112,9 +112,14 @@ public class PlayerController : CharacterController
     {
         var horizontal = Direction(Input.GetAxisRaw("Horizontal"));
         var vertical = Direction(Input.GetAxisRaw("Vertical"));
-        if (walkBehaviour)
+        if (!walkBehaviour) return;
+        if (horizontal != 0 || vertical != 0)
         {
-            ExecuteAction(() => walkBehaviour.Play(horizontal, vertical), walkBehaviour.CanPlay, walkPriority);
+            walkBehaviour.Play(new WalkCommand(horizontal, vertical));
+        }
+        else
+        {
+            walkBehaviour.Stop();
         }
     }
 
@@ -122,7 +127,7 @@ public class PlayerController : CharacterController
     {
         if (jumpBehaviour && Input.GetButtonDown(Button.Jump.ToString())) //pressed jump
         {
-            ExecuteAction(jumpBehaviour.Play, jumpBehaviour.CanPlay, jumpPriority);
+            ExecuteAction(jumpBehaviour, new JumpCommand(), jumpPriority);
         }
     }
 
@@ -133,7 +138,7 @@ public class PlayerController : CharacterController
         {
             if (horizontal != 0)
             {
-                slideBehaviour.Play(horizontal);
+                slideBehaviour.Play(new SlideCommand(horizontal));
             }
         }
     }
@@ -145,7 +150,7 @@ public class PlayerController : CharacterController
         {
             if (vertical != 0)
             {
-                dodgeBehaviour.Play(vertical);
+                dodgeBehaviour.Play(new DodgeCommand(vertical));
             }
         }
     }
@@ -156,7 +161,7 @@ public class PlayerController : CharacterController
 
         foreach (var property in attacks)
         {
-            if (!property.attack.CanPlay()) continue;
+            if (!property.attack.CanPlay(new BaseAttackCommand())) continue;
             if (isBuffered && bufferedButtons != null && bufferedButtons.Contains(property.button))
             {
                 selectedAttack = property;
@@ -170,7 +175,7 @@ public class PlayerController : CharacterController
 
         if (selectedAttack != null && !(isBuffered && nonBufferedAttacks.Contains(selectedAttack.attack)))
         {
-            selectedAttack.attack.Play();
+            selectedAttack.attack.Play(new BaseAttackCommand());
             return true;
         }
 
@@ -190,11 +195,12 @@ public class PlayerController : CharacterController
         return false;
     }
 
-    private void ExecuteAction(Action play, Func<bool> canPlay, int bufferingPriority)
+    private void ExecuteAction<T>(PlayableBehaviour<T> playableBehaviour, T command, int bufferingPriority)
+        where T : ICommand
     {
-        if (canPlay())
+        if (playableBehaviour.CanPlay(command))
         {
-            play();
+            playableBehaviour.Play(command);
         }
         else
         {
@@ -202,8 +208,8 @@ public class PlayerController : CharacterController
             {
                 action = () =>
                 {
-                    if (!canPlay()) return false;
-                    play();
+                    if (!playableBehaviour.CanPlay(command)) return false;
+                    playableBehaviour.Play(command);
                     return true;
                 },
                 priority = bufferingPriority,

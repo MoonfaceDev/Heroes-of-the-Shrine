@@ -41,7 +41,7 @@ public class FollowPattern : BasePattern
                 .ToArray();
         });
 
-        followBehaviour.Play(
+        followBehaviour.Play(new FollowCommand(
             target,
             () =>
             {
@@ -72,7 +72,7 @@ public class FollowPattern : BasePattern
                 direction = (followBehaviour.MovableObject.WorldPosition - center).normalized;
                 return true;
             }
-        );
+        ));
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

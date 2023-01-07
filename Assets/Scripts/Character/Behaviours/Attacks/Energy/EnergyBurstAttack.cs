@@ -12,21 +12,23 @@ public class EnergyBurstAttack : SimpleAttack
     {
         base.Awake();
 
-        PreventWalking(false);
+        PreventWalking(true);
 
         var direction = 0;
-        onPlay.AddListener(() => direction = MovableObject.rotation);
+        PlayEvents.onPlay.AddListener(() => direction = MovableObject.rotation);
 
-        generalEvents.onStartActive.AddListener(() =>
+        attackEvents.onStartActive.AddListener(() =>
         {
             isMoving = true;
             MovableObject.velocity.x = direction * burstVelocity;
             MovableObject.velocity.z = 0;
             MovableObject.acceleration.x = -direction * burstAcceleration;
-            InvokeWhen(() => Mathf.Approximately(MovableObject.velocity.x, 0) || Mathf.RoundToInt(Mathf.Sign(MovableObject.velocity.x)) != direction, () => isMoving = false);
+            InvokeWhen(
+                () => Mathf.Approximately(MovableObject.velocity.x, 0) ||
+                      Mathf.RoundToInt(Mathf.Sign(MovableObject.velocity.x)) != direction, () => isMoving = false);
         });
 
-        generalEvents.onFinishActive.AddListener(() => 
+        attackEvents.onFinishActive.AddListener(() =>
         {
             MovableObject.velocity.x = 0;
             MovableObject.acceleration.x = 0;

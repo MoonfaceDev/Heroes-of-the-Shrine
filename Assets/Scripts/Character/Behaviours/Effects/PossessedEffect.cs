@@ -1,28 +1,32 @@
 ﻿using UnityEngine;
 
-public class PossessedEffect : BaseEffect
+public class PossessedEffectCommand : ICommand
+{
+    public readonly float maxDuration;
+
+    public PossessedEffectCommand(float maxDuration)
+    {
+        this.maxDuration = maxDuration;
+    }
+}
+
+public class PossessedEffect : BaseEffect<PossessedEffectCommand>
 {
     private float currentDuration;
     private float currentStartTime;
     private string stopListener;
 
-    public override bool CanPlay()
+    public override bool CanPlay(PossessedEffectCommand command)
     {
-        return base.CanPlay() && AllStopped(typeof(PossessedEffect));
+        return base.CanPlay(command) && !IsPlaying<PossessedEffect>();
     }
 
-    public void Play(float maxDuration)
+    protected override void DoPlay(PossessedEffectCommand command)
     {
-        if (!CanPlay())
-        {
-            return;
-        }
-        
         Active = true;
-        onPlay.Invoke();
 
         currentStartTime = Time.time;
-        currentDuration = maxDuration;
+        currentDuration = command.maxDuration;
         stopListener = InvokeWhen(() => Time.time - currentStartTime > currentDuration, Stop);
 
         var hittableBehaviour = GetComponent<HittableBehaviour>();
@@ -30,9 +34,9 @@ public class PossessedEffect : BaseEffect
         {
             hittableBehaviour.OnHit += OnHit;
         }
-        
-        DisableBehaviours(typeof(BaseAttack), typeof(BaseMovementBehaviour), typeof(ForcedBehaviour));
-        StopBehaviours(typeof(BaseAttack), typeof(BaseMovementBehaviour), typeof(ForcedBehaviour));
+
+        DisableBehaviours(typeof(BaseAttack), typeof(IMovementBehaviour), typeof(IForcedBehaviour));
+        StopBehaviours(typeof(BaseAttack), typeof(IMovementBehaviour), typeof(IForcedBehaviour));
         MovableObject.velocity = Vector3.zero;
     }
 
@@ -46,11 +50,9 @@ public class PossessedEffect : BaseEffect
         currentDuration -= durationPart * currentDuration;
     }
 
-    public override void Stop()
+    protected override void DoStop()
     {
-        if (!Active) return;
         Active = false;
-        onStop.Invoke();
 
         var hittableBehaviour = GetComponent<HittableBehaviour>();
         if (hittableBehaviour)
@@ -60,7 +62,7 @@ public class PossessedEffect : BaseEffect
 
         currentDuration = 0;
 
-        EnableBehaviours(typeof(BaseAttack), typeof(BaseMovementBehaviour), typeof(ForcedBehaviour));
+        EnableBehaviours(typeof(BaseAttack), typeof(IMovementBehaviour), typeof(IForcedBehaviour));
         Cancel(stopListener);
     }
 

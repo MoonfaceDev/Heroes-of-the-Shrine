@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class HealthBar : BaseComponent
 {
     public HealthSystem healthSystem;
-    
+
     private Scrollbar scrollbar;
 
     public void Awake()
@@ -19,6 +19,7 @@ public class HealthBar : BaseComponent
         {
             Destroy(gameObject);
         }
+
         scrollbar.size = Mathf.Lerp(scrollbar.size, healthSystem.Fraction, 3f * Time.deltaTime);
     }
 }

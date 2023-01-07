@@ -1,10 +1,9 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class DeathAction : BaseComponent
 {
     public float cameraZoomFactor;
-    [FormerlySerializedAs("objctsToDestory")] public GameObject[] objectsToDestroy;
+    public GameObject[] objectsToDestroy;
     public GameObject deathPanel;
     public float deathPanelTransitionDelay;
 

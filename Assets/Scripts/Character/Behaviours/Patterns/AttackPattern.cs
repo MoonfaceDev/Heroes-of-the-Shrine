@@ -7,8 +7,7 @@ using TypeReferences;
 [Serializable]
 public class AttackNode
 {
-    [Inherits(typeof(BaseAttack))]
-    public TypeReference attackType;
+    [Inherits(typeof(BaseAttack))] public TypeReference attackType;
     public float startTime;
 }
 
@@ -31,7 +30,9 @@ public class AttackPattern : BasePattern
         }
 
         var movableObject = animator.GetComponent<MovableObject>();
-        movableObject.rotation = Mathf.RoundToInt(Mathf.Sign((player.GetComponent<MovableObject>().WorldPosition - movableObject.WorldPosition).x));
+        movableObject.rotation =
+            Mathf.RoundToInt(Mathf.Sign((player.GetComponent<MovableObject>().WorldPosition -
+                                         movableObject.WorldPosition).x));
         attackCoroutine = EventManager.Instance.StartCoroutine(AttackCoroutine(animator));
     }
 
@@ -44,14 +45,7 @@ public class AttackPattern : BasePattern
             yield return new WaitForSeconds(node.startTime - (Time.time - startTime));
             var attack = animator.GetComponent(node.attackType) as BaseAttack;
             if (attack == null) continue;
-            try
-            {
-                attack.Play();
-            }
-            catch (CannotAttackException)
-            {
-                Debug.LogWarning("[" + (Time.time - startTime) + "s] Cannot execute " + attack.AttackName);
-            }
+            attack.Play(new BaseAttackCommand());
         }
     }
 

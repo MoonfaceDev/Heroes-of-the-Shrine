@@ -1,7 +1,16 @@
-using System.Collections;
 using UnityEngine;
 
-public class StunBehaviour : ForcedBehaviour
+public class StunCommand : ICommand
+{
+    public readonly float time;
+
+    public StunCommand(float time)
+    {
+        this.time = time;
+    }
+}
+
+public class StunBehaviour : ForcedBehaviour<StunCommand>
 {
     public int stunFrames;
 
@@ -29,43 +38,23 @@ public class StunBehaviour : ForcedBehaviour
 
     private bool stun;
     private int stunFrame;
-    private Coroutine stopCoroutine;
+    private string stopTimeout;
     private static readonly int StunParameter = Animator.StringToHash("stun");
     private static readonly int StunFrameParameter = Animator.StringToHash("stunFrame");
 
-    public void Play(float time)
+    protected override void DoPlay(StunCommand command)
     {
-        if (!CanPlay())
-        {
-            return;
-        }
-
-        StopBehaviours(typeof(BaseMovementBehaviour), typeof(ForcedBehaviour), typeof(AttackManager));
+        StopBehaviours(typeof(IMovementBehaviour), typeof(IForcedBehaviour), typeof(BaseAttack));
         MovableObject.velocity = Vector3.zero;
 
         Stun = true;
         StunFrame = (StunFrame + 1) % stunFrames;
-        onPlay.Invoke();
-        stopCoroutine = StartCoroutine(StopAfter(time));
+        stopTimeout = StartTimeout(Stop, command.time);
     }
 
-    private IEnumerator StopAfter(float time)
+    protected override void DoStop()
     {
-        yield return new WaitForSeconds(time);
         Stun = false;
-        onStop.Invoke();
-    }
-
-    public override void Stop()
-    {
-        if (Stun)
-        {
-            onStop.Invoke();
-            Stun = false;
-            if (stopCoroutine != null)
-            {
-                StopCoroutine(stopCoroutine);
-            }
-        }
+        Cancel(stopTimeout);
     }
 }

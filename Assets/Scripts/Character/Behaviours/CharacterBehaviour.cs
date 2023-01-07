@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -7,13 +8,15 @@ public abstract class CharacterBehaviour : BaseComponent
 {
     public Character Character { get; private set; }
 
-    protected Animator Animator => Character.animator;
     public MovableObject MovableObject => Character.movableObject;
+    protected Animator Animator => Character.animator;
+    protected AttackManager AttackManager => Character.attackManager;
 
     public bool Enabled
     {
         get => disableCount == 0;
-        set {
+        set
+        {
             if (value)
             {
                 if (disableCount > 0)
@@ -25,6 +28,7 @@ public abstract class CharacterBehaviour : BaseComponent
             {
                 disableCount++;
             }
+
             enabled = disableCount == 0;
         }
     }
@@ -36,7 +40,7 @@ public abstract class CharacterBehaviour : BaseComponent
         Character = GetComponent<Character>();
     }
 
-    private void SetBehavioursEnabled(bool enabledValue, Type[] behaviours)
+    private void SetBehavioursEnabled(bool enabledValue, IEnumerable<Type> behaviours)
     {
         foreach (var type in behaviours)
         {
@@ -64,20 +68,15 @@ public abstract class CharacterBehaviour : BaseComponent
         {
             foreach (var component in GetComponents(type))
             {
-                var behaviour = (PlayableBehaviour)component;
+                var behaviour = (IPlayableBehaviour)component;
                 behaviour.Stop();
             }
         }
     }
 
-    public bool IsPlaying(Type type)
+    public bool IsPlaying<T>() where T : IPlayableBehaviour
     {
-        var behaviour = GetComponent(type) as PlayableBehaviour;
-        return behaviour && behaviour.Playing;
-    }
-
-    public bool AllStopped(params Type[] types)
-    {
-        return types.Select(GetComponents).All(behaviours => behaviours.All(behaviour => !((PlayableBehaviour)behaviour).Playing));
+        var behaviours = GetComponents<T>();
+        return behaviours.Any(behaviour => behaviour.Playing);
     }
 }

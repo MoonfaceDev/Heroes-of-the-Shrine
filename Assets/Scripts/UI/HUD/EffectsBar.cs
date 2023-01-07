@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using TypeReferences;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 [Serializable]
 public class EffectDefinition
 {
+    [SerializeField, TypeOptions(SerializableOnly = true)]
     public TypeReference effectType;
+
     public Sprite icon;
     public Color color;
 }
@@ -16,7 +17,7 @@ public class EffectDefinition
 [RequireComponent(typeof(VerticalLayoutGroup))]
 public class EffectsBar : BaseComponent
 {
-    [FormerlySerializedAs("EffectBarPrefab")] public GameObject effectBarPrefab;
+    public GameObject effectBarPrefab;
     public EffectDefinition[] effects;
 
     private VerticalLayoutGroup container;
@@ -34,9 +35,9 @@ public class EffectsBar : BaseComponent
     {
         foreach (var definition in effects)
         {
-            var effect = player.GetComponent(definition.effectType) as BaseEffect;
+            var effect = player.GetComponent(definition.effectType) as IEffect;
             if (effect == null) continue;
-            effect.onPlay.AddListener(() =>
+            effect.PlayEvents.onPlay.AddListener(() =>
             {
                 var bar = Instantiate(effectBarPrefab, container.transform);
                 bar.GetComponent<EffectBar>().effect = effect;
@@ -44,7 +45,7 @@ public class EffectsBar : BaseComponent
                 bar.GetComponent<Scrollbar>().handleRect.GetComponent<Image>().color = definition.color;
                 bars.Add(definition.effectType, bar);
             });
-            effect.onStop.AddListener(() =>
+            effect.PlayEvents.onStop.AddListener(() =>
             {
                 Destroy(bars[definition.effectType]);
                 bars.Remove(definition.effectType);

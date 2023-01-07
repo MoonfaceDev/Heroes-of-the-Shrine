@@ -9,7 +9,7 @@ public class PossessedHumanBrain : BaseComponent
     private void Start()
     {
         var possessAttack = GameObject.FindWithTag(bossTag).GetComponent<PossessAttack>();
-        possessAttack.generalEvents.onStartActive.AddListener(() => animator.SetBool(BossPossessActive, true));
-        possessAttack.generalEvents.onFinishActive.AddListener(() => animator.SetBool(BossPossessActive, false));
+        possessAttack.attackEvents.onStartActive.AddListener(() => animator.SetBool(BossPossessActive, true));
+        possessAttack.attackEvents.onFinishActive.AddListener(() => animator.SetBool(BossPossessActive, false));
     }
 }

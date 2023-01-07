@@ -19,6 +19,7 @@ public class SuperArmorBar : BaseComponent
         {
             Destroy(gameObject);
         }
+
         scrollbar.size = Mathf.Lerp(scrollbar.size, GetValue(), 3f * Time.deltaTime);
     }
 

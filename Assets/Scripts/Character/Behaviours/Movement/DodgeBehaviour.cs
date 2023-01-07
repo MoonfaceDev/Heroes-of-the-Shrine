@@ -1,7 +1,17 @@
 using System;
 using UnityEngine;
 
-public class DodgeBehaviour : BaseMovementBehaviour
+public class DodgeCommand : ICommand
+{
+    public readonly int direction;
+
+    public DodgeCommand(int direction)
+    {
+        this.direction = direction;
+    }
+}
+
+public class DodgeBehaviour : BaseMovementBehaviour<DodgeCommand>
 {
     public float dodgeDistance;
     public float anticipateTime;
@@ -19,6 +29,7 @@ public class DodgeBehaviour : BaseMovementBehaviour
             Animator.SetBool(RecoveringFromDodgeParameter, recovering);
         }
     }
+
     public bool Anticipating
     {
         get => anticipating;
@@ -35,56 +46,50 @@ public class DodgeBehaviour : BaseMovementBehaviour
     private bool recovering;
     private string anticipateTimeout;
     private string recoverTimeout;
-    
+
     private static readonly int RecoveringFromDodgeParameter = Animator.StringToHash("recoveringFromDodge");
     private static readonly int AnticipatingDodgeParameter = Animator.StringToHash("anticipatingDodge");
 
-    public override bool CanPlay()
+    public override bool CanPlay(DodgeCommand command)
     {
         var attackManager = GetComponent<AttackManager>();
-        return base.CanPlay()
-            && AllStopped(typeof(JumpBehaviour), typeof(SlideBehaviour), typeof(DodgeBehaviour)) 
-            && !(attackManager && !attackManager.IsInterruptible());
+        return base.CanPlay(command)
+               && !IsPlaying<JumpBehaviour>() && !IsPlaying<SlideBehaviour>() && !IsPlaying<DodgeBehaviour>()
+               && !(attackManager && !attackManager.IsInterruptible());
     }
 
-    public void Play(int direction)
+    protected override void DoPlay(DodgeCommand command)
     {
-        if (!(CanPlay() && direction != 0))
+        if (command.direction == 0)
         {
             return;
         }
-        
+
         DisableBehaviours(typeof(WalkBehaviour));
-        StopBehaviours(typeof(WalkBehaviour), typeof(AttackManager));
-        
+        StopBehaviours(typeof(WalkBehaviour), typeof(BaseAttack));
+
         Anticipating = true;
-        onPlay.Invoke();
-        
-        MovableObject.acceleration = Vector3.zero;
-        MovableObject.velocity = Vector3.zero;
-        
+
         anticipateTimeout = StartTimeout(() =>
         {
             Anticipating = false;
-            MovableObject.UpdatePosition(MovableObject.position + direction * dodgeDistance * Vector3.forward);
+            MovableObject.UpdatePosition(MovableObject.position + command.direction * dodgeDistance * Vector3.forward);
             OnDodge?.Invoke();
             Recovering = true;
             recoverTimeout = StartTimeout(Stop, recoveryTime);
         }, anticipateTime);
     }
 
-    public override void Stop()
+    protected override void DoStop()
     {
-        if (Playing)
-        {
-            onStop.Invoke();
-            EnableBehaviours(typeof(WalkBehaviour));
-        }
+        EnableBehaviours(typeof(WalkBehaviour));
+
         if (Anticipating)
         {
             Cancel(anticipateTimeout);
             Anticipating = false;
         }
+
         if (Recovering)
         {
             Cancel(recoverTimeout);

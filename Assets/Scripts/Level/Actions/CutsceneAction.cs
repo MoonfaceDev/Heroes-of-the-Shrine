@@ -47,7 +47,7 @@ public class CutsceneAction : BaseComponent
         foreach (var definition in moveDefinitions.Where(definition => definition.target))
         {
             definition.target.GetComponent<WalkBehaviour>().speed *= definition.speedMultiplier;
-            definition.target.Play(definition.position, WantedDistance);
+            definition.target.Play(new ForcedWalkCommand(definition.position, WantedDistance));
         }
 
         InvokeWhen(

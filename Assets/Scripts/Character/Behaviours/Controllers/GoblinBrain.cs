@@ -1,1 +1,3 @@
-public class GoblinBrain : EnemyBrain { }
+public class GoblinBrain : EnemyBrain
+{
+}

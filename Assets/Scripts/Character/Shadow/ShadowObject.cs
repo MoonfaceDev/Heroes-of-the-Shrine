@@ -28,6 +28,7 @@ public class ShadowObject : BaseComponent
                 break;
             }
         }
+
         transform.localScale = MovableObject.GroundScreenCoordinates(Vector3.Scale(shadowScale, scale * Vector3.one));
     }
 }

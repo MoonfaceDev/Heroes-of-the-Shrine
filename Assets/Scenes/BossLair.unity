@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 63080245}
   - component: {fileID: 63080244}
   - component: {fileID: 63080243}
+  - component: {fileID: 63080269}
   - component: {fileID: 63080242}
   - component: {fileID: 63080241}
   - component: {fileID: 63080240}
@@ -197,16 +198,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab68d069e0e79504ebe8ab7fd318ee7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxComboDelay: 0.5
+  hittableTags:
+  - Player
+  lastAttack: {fileID: 0}
   onPlay:
     m_PersistentCalls:
       m_Calls: []
   onStop:
     m_PersistentCalls:
       m_Calls: []
-  maxComboDelay: 0.5
-  hittableTags:
-  - Player
-  lastAttack: {fileID: 0}
 --- !u!114 &63080241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,12 +220,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d226a25c074d584e9eeda226ab1d673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   cooldown: 0
 --- !u!114 &63080242
 MonoBehaviour:
@@ -238,12 +240,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b548215346a08f438c0748856529dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   cooldown: 0
 --- !u!114 &63080243
 MonoBehaviour:
@@ -257,12 +260,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed9ec4fc5714304c83d532294f45bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   cooldown: 0
 --- !u!114 &63080244
 MonoBehaviour:
@@ -276,12 +280,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e321a7af8378f45b972ec08f7089e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   cooldown: 0
   defaultSpeed: 2
   speed: 0
@@ -297,12 +302,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87fda33e10ea24448ba9fe6c8dfffc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   stunFrames: 2
 --- !u!114 &63080246
 MonoBehaviour:
@@ -316,12 +322,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82852d2e650fc4048ac887d4fc8710e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   knockbackRecoverTime: 1
 --- !u!114 &63080248
 MonoBehaviour:
@@ -363,8 +370,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   physicalAttributes: {fileID: 11400000, guid: 7a04245b53151b344823f01dcf190584, type: 2}
   animator: {fileID: 2074727358}
-  eventManager: {fileID: 0}
   movableObject: {fileID: 0}
+  attackManager: {fileID: 0}
 --- !u!114 &63080251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,12 +527,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 579c565da1e94b73a6686a85695e0bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   armorHealth: 100
   armorCooldown: 7
   damageMultiplier: 0.75
@@ -584,16 +592,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9569bccaf17bff14bb7809fd39e6391d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  generalEvents:
+  attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
         m_Calls: []
@@ -635,16 +644,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d06401bcbeae430e933d88d9ecdc16f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   instant: 0
   interruptible: 1
   hardRecovery: 1
-  generalEvents:
+  attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
         m_Calls: []
@@ -684,12 +694,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cfe8175de16ba346a6957969e6a94ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   particles: {fileID: 0}
 --- !u!114 &63080261
 MonoBehaviour:
@@ -703,16 +714,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e86d033fb4f164abb77561de174642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
   instant: 0
   interruptible: 1
   hardRecovery: 1
-  generalEvents:
+  attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
         m_Calls: []
@@ -742,6 +754,9 @@ MonoBehaviour:
   knockbackPower: 0
   knockbackDirection: 0
   stunTime: 0.5
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
   electrifyDuration: 4
   electrifySpeedMultiplier: 0.5
   periodicHitDetector: {fileID: 1340466846}
@@ -844,12 +859,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d7bf6c9b367e544be42faf142779a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &63080268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -865,6 +881,26 @@ MonoBehaviour:
   prefab: {fileID: 1930868287703478567, guid: 2716637b056b80c44a1ffb1a46712570, type: 3}
   particlePosition: {x: -0.4, y: 1, z: 0}
   attachToCharacter: 0
+--- !u!114 &63080269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63080233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca77d11292e641d183033adcb404ad67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
+  cooldown: 0
 --- !u!1 &154036043
 GameObject:
   m_ObjectHideFlags: 0
@@ -2143,18 +2179,6 @@ PrefabInstance:
     - target: {fileID: 8011096904622113223, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: position.z
       value: -6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8011096904622113236, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: generalEvents.onStartActive.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8011096904622113236, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: generalEvents.onStartActive.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8011096904622113236, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: generalEvents.onStartActive.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8011096905049079378, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_Color.a

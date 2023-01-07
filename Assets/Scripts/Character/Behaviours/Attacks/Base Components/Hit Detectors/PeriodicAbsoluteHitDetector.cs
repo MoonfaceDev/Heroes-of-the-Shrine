@@ -4,7 +4,7 @@ public class PeriodicAbsoluteHitDetector : BaseHitDetector
 {
     public float interval;
     public bool startImmediately = true;
-    
+
     public event Action OnDetect;
 
     private string detectionInterval;
@@ -15,6 +15,7 @@ public class PeriodicAbsoluteHitDetector : BaseHitDetector
         {
             DetectHits(hitCallable);
         }
+
         detectionInterval = StartInterval(() => DetectHits(hitCallable), interval);
     }
 

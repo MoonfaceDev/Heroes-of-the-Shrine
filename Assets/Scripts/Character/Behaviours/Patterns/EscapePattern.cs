@@ -7,7 +7,7 @@ public class EscapePattern : BasePattern
     public float speedMultiplier;
 
     private Action onStop;
-    
+
     private static readonly int StuckParameter = Animator.StringToHash("stuck");
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -21,7 +21,7 @@ public class EscapePattern : BasePattern
             return;
         }
 
-        escapeBehaviour.Play(player.GetComponent<MovableObject>(), speedMultiplier);
+        escapeBehaviour.Play(new EscapeCommand(player.GetComponent<MovableObject>(), speedMultiplier));
 
         onStop = () => animator.SetTrigger(StuckParameter);
         escapeBehaviour.MovableObject.OnStuck += onStop;

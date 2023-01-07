@@ -1,7 +1,21 @@
 using UnityEngine;
 
+public class EscapeCommand : ICommand
+{
+    public readonly MovableObject target;
+    public readonly float speedMultiplier;
+    public readonly bool fitLookDirection;
+
+    public EscapeCommand(MovableObject target, float speedMultiplier, bool fitLookDirection = true)
+    {
+        this.target = target;
+        this.speedMultiplier = speedMultiplier;
+        this.fitLookDirection = fitLookDirection;
+    }
+}
+
 [RequireComponent(typeof(WalkBehaviour))]
-public class EscapeBehaviour : BaseMovementBehaviour
+public class EscapeBehaviour : BaseMovementBehaviour<EscapeCommand>
 {
     public bool Active { get; private set; }
 
@@ -20,40 +34,32 @@ public class EscapeBehaviour : BaseMovementBehaviour
     public void Start()
     {
         MovableObject.OnStuck += Stop;
-        walkBehaviour.onStop.AddListener(Stop);
+        walkBehaviour.PlayEvents.onStop.AddListener(Stop);
     }
 
-    public void Play(MovableObject target, float speedMultiplier, bool fitLookDirection = true)
+    protected override void DoPlay(EscapeCommand command)
     {
-        if (!CanPlay())
-        {
-            return;
-        }
-
         Active = true;
-        onPlay.Invoke();
 
-        currentSpeedMultiplier = speedMultiplier;
+        currentSpeedMultiplier = command.speedMultiplier;
         walkBehaviour.speed *= currentSpeedMultiplier;
 
         escapeListener = Register(() =>
         {
-            var distance = MovableObject.WorldPosition - target.WorldPosition;
+            var distance = MovableObject.WorldPosition - command.target.WorldPosition;
             distance.y = 0;
             var direction = distance.normalized;
-            walkBehaviour.Play(direction.x, direction.z, fitLookDirection);
+            walkBehaviour.Play(new WalkCommand(direction.x, direction.z, command.fitLookDirection));
             MovableObject.rotation = -Mathf.RoundToInt(Mathf.Sign(direction.x));
         });
     }
 
-    public override void Stop()
+    protected override void DoStop()
     {
-        if (!Active) return;
-        onStop.Invoke();
         Active = false;
         Unregister(escapeListener);
         walkBehaviour.speed /= currentSpeedMultiplier;
-        StopBehaviours(typeof(WalkBehaviour));
+        walkBehaviour.Stop();
         MovableObject.velocity = Vector3.zero;
     }
 }
