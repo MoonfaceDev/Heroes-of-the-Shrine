@@ -35,8 +35,6 @@ public abstract class BaseHitDetector : BaseComponent
             .Any(hittableTag => IsTagIncluded(hittable.Character.tag, hittableTag));
     }
 
-    protected abstract void DoStartDetector(Action<IHittable> hitCallable);
-
     public void StartDetector(Action<IHittable> hitCallable, List<string> hittableTags)
     {
         DoStartDetector(hittable =>
@@ -44,7 +42,7 @@ public abstract class BaseHitDetector : BaseComponent
             if (!IsHittable(hittable, hittableTags)) return;
 
             var hitParticles = GetComponent<HitParticles>();
-            if (hitParticles && ShouldPlayHitParticles(hittable))
+            if (hitParticles && ShouldPlayParticles(hittable))
             {
                 hitParticles.Play(hittable);
             }
@@ -53,7 +51,9 @@ public abstract class BaseHitDetector : BaseComponent
         });
     }
 
-    private bool ShouldPlayHitParticles(IHittable hittable)
+    protected abstract void DoStartDetector(Action<IHittable> hitCallable);
+
+    private static bool ShouldPlayParticles(IHittable hittable)
     {
         return hittable.Character.GetComponent<HittableBehaviour>().CanGetHit();
     }

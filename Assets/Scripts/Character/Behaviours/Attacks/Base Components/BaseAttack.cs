@@ -133,26 +133,10 @@ public abstract class BaseAttack : PlayableBehaviour<BaseAttackCommand>
 
     private Coroutine attackFlowCoroutine;
 
-    /// <summary>
-    /// Coroutine played while attack is <see cref="Anticipating"/>.
-    /// When the coroutine finishes, the anticipation finishes.
-    /// </summary>
-    /// <returns>Started coroutine.</returns>
-    protected abstract IEnumerator AnticipateCoroutine();
+    protected abstract IAttackFlow AttackFlow { get; }
 
-    /// <summary>
-    /// Coroutine played while attack is <see cref="Active"/>.
-    /// When the coroutine finishes, the active phase finishes.
-    /// </summary>
-    /// <returns>Started coroutine.</returns>
-    protected abstract IEnumerator ActiveCoroutine();
-
-    /// <summary>
-    /// Coroutine played while attack is <see cref="Recovering"/>.
-    /// When the coroutine finishes, the recovery finishes.
-    /// </summary>
-    /// <returns>Started coroutine.</returns>
-    protected abstract IEnumerator RecoveryCoroutine();
+    [SerializeReference]
+    public IAttackFlow attackFlow2;
 
     /// <summary>
     /// Tells if the attack can be played.
@@ -170,19 +154,19 @@ public abstract class BaseAttack : PlayableBehaviour<BaseAttackCommand>
     /// </summary>
     protected override void DoPlay(BaseAttackCommand command)
     {
-        attackFlowCoroutine = StartCoroutine(AttackFlow());
+        attackFlowCoroutine = StartCoroutine(AttackFlowCoroutine());
     }
 
-    private IEnumerator AttackFlow()
+    private IEnumerator AttackFlowCoroutine()
     {
         Anticipating = true;
-        yield return AnticipateCoroutine();
+        yield return AttackFlow.AnticipationPhase.Play();
         Anticipating = false;
         Active = true;
-        yield return ActiveCoroutine();
+        yield return AttackFlow.ActivePhase.Play();
         Active = false;
         Recovering = true;
-        yield return RecoveryCoroutine();
+        yield return AttackFlow.RecoveryPhase.Play();
         Stop();
     }
 

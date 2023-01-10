@@ -1,14 +1,27 @@
-﻿using System.Collections;
+﻿using System;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
+[Serializable]
+public class SpawnAttackFlow : IAttackFlow
+{
+    public TimedAttackPhase anticipationPhase;
+    public EmptyAttackPhase activePhase;
+    public TimedAttackPhase recoveryPhase;
+    public IAttackPhase AnticipationPhase => anticipationPhase;
+    public IAttackPhase ActivePhase => activePhase;
+    public IAttackPhase RecoveryPhase => recoveryPhase;
+}
 
 public class SpawnAttack : BaseAttack
 {
-    public float anticipateDuration;
-    public float recoveryDuration;
+    public SpawnAttackFlow spawnAttackFlow;
     public int maxEnemyCount;
     public GameObject enemyPrefab;
     public Vector3[] spawnPoints;
+
+    protected override IAttackFlow AttackFlow => spawnAttackFlow;
 
     public override bool CanPlay(BaseAttackCommand command)
     {
@@ -57,21 +70,6 @@ public class SpawnAttack : BaseAttack
         }
 
         return selectedPoints;
-    }
-
-    protected override IEnumerator AnticipateCoroutine()
-    {
-        yield return new WaitForSeconds(anticipateDuration);
-    }
-
-    protected override IEnumerator ActiveCoroutine()
-    {
-        yield return new WaitForSeconds(0);
-    }
-
-    protected override IEnumerator RecoveryCoroutine()
-    {
-        yield return new WaitForSeconds(recoveryDuration);
     }
 
     private void OnDrawGizmosSelected()

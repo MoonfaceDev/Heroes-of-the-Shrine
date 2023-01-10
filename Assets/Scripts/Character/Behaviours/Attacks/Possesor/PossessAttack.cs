@@ -5,23 +5,43 @@ using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+[Serializable]
+public class PossessActivePhase : IAttackPhase
+{
+    public float warningDuration;
+    public float sourceActiveDuration;
+    public int waveCount = 1;
+
+    public IEnumerator Play()
+    {
+        yield return new WaitForSeconds((warningDuration + sourceActiveDuration) * waveCount);
+    }
+}
+
+[Serializable]
+public class PossessAttackFlow : IAttackFlow
+{
+    public TimedAttackPhase anticipationPhase;
+    public PossessActivePhase activePhase;
+    public TimedAttackPhase recoveryPhase;
+    public IAttackPhase AnticipationPhase => anticipationPhase;
+    public IAttackPhase ActivePhase => activePhase;
+    public IAttackPhase RecoveryPhase => recoveryPhase;
+}
+
 internal class NoSpawnPointException : Exception
 {
 }
 
 public class PossessAttack : BaseAttack
 {
-    public float anticipateDuration;
-    public float recoveryDuration;
+    public PossessAttackFlow possessAttackFlow;
     public int sourcesCount;
     public float spawnRadius;
     public float minSourcesDistance;
     public PossessSource possessSource;
-    public float warningDuration;
-    public float sourceActiveDuration;
     public float effectDuration;
     public int sourceDamage;
-    public int waveCount = 1;
 
     private WalkableGrid walkableGrid;
 
@@ -52,8 +72,13 @@ public class PossessAttack : BaseAttack
                 var newPossessSource = Instantiate(possessSource.gameObject,
                     MovableObject.ScreenCoordinates(spawnPoint), Quaternion.identity);
                 newPossessSource.GetComponent<MovableObject>().WorldPosition = spawnPoint;
-                newPossessSource.GetComponent<PossessSource>().Activate(warningDuration, sourceActiveDuration,
-                    AttackManager.hittableTags, effectDuration, sourceDamage);
+                newPossessSource.GetComponent<PossessSource>().Activate(
+                    possessAttackFlow.activePhase.warningDuration,
+                    possessAttackFlow.activePhase.sourceActiveDuration,
+                    AttackManager.hittableTags,
+                    effectDuration,
+                    sourceDamage
+                );
             }
             catch (NoSpawnPointException)
             {
@@ -62,9 +87,10 @@ public class PossessAttack : BaseAttack
             }
         }
 
-        if (waveIndex + 1 < waveCount)
+        if (waveIndex + 1 < possessAttackFlow.activePhase.waveCount)
         {
-            StartTimeout(() => StartWave(waveIndex + 1), warningDuration + sourceActiveDuration);
+            StartTimeout(() => StartWave(waveIndex + 1),
+                possessAttackFlow.activePhase.warningDuration + possessAttackFlow.activePhase.sourceActiveDuration);
         }
     }
 
@@ -96,18 +122,5 @@ public class PossessAttack : BaseAttack
                    Vector3.Distance(newPosition, existingPosition) > 2 * minSourcesDistance);
     }
 
-    protected override IEnumerator AnticipateCoroutine()
-    {
-        yield return new WaitForSeconds(anticipateDuration);
-    }
-
-    protected override IEnumerator ActiveCoroutine()
-    {
-        yield return new WaitForSeconds((warningDuration + sourceActiveDuration) * waveCount);
-    }
-
-    protected override IEnumerator RecoveryCoroutine()
-    {
-        yield return new WaitForSeconds(recoveryDuration);
-    }
+    protected override IAttackFlow AttackFlow => possessAttackFlow;
 }

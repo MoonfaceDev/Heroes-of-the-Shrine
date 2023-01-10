@@ -1406,11 +1406,16 @@ MonoBehaviour:
     onFinishRecovery:
       m_PersistentCalls:
         m_Calls: []
+  attackFlow2:
+    rid: -2
   previousAttacks: []
-  midair: 0
-  anticipateDuration: 0.1
-  activeDuration: 0
-  recoveryDuration: 0.15
+  attackFlow:
+    anticipationPhase:
+      duration: 0
+    activePhase:
+      duration: 0
+    recoveryPhase:
+      duration: 0
   hitDetector: {fileID: 6205691515461635864}
   hitDefinition:
     damage: 10
@@ -1418,16 +1423,21 @@ MonoBehaviour:
     knockbackPower: 10
     knockbackDirection: 10
     stunTime: 0.5
-  damage: 10
-  hitType: 0
-  knockbackPower: 10
-  knockbackDirection: 10
-  stunTime: 0.5
   onHit:
     m_PersistentCalls:
       m_Calls: []
   velocity: 10
   acceleration: 10
+  motionAttackFlow:
+    anticipationPhase:
+      duration: 0.1
+    recoveryPhase:
+      duration: 0.15
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &5102893360874897686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1469,11 +1479,16 @@ MonoBehaviour:
     onFinishRecovery:
       m_PersistentCalls:
         m_Calls: []
+  attackFlow2:
+    rid: -2
   previousAttacks: []
-  midair: 0
-  anticipateDuration: 0.2
-  activeDuration: 0.15
-  recoveryDuration: 0.2
+  attackFlow:
+    anticipationPhase:
+      duration: 0.2
+    activePhase:
+      duration: 0.15
+    recoveryPhase:
+      duration: 0.2
   hitDetector: {fileID: 1378128598374464822}
   hitDefinition:
     damage: 7
@@ -1481,14 +1496,14 @@ MonoBehaviour:
     knockbackPower: 0
     knockbackDirection: 0
     stunTime: 1
-  damage: 7
-  hitType: 1
-  knockbackPower: 0
-  knockbackDirection: 0
-  stunTime: 1
   onHit:
     m_PersistentCalls:
       m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &5102893360874897683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1530,12 +1545,17 @@ MonoBehaviour:
     onFinishRecovery:
       m_PersistentCalls:
         m_Calls: []
+  attackFlow2:
+    rid: -2
   previousAttacks:
   - {fileID: 5102893360874897686}
-  midair: 0
-  anticipateDuration: 0.05
-  activeDuration: 0.14
-  recoveryDuration: 0.01
+  attackFlow:
+    anticipationPhase:
+      duration: 0.05
+    activePhase:
+      duration: 0.14
+    recoveryPhase:
+      duration: 0.01
   hitDetector: {fileID: 210030094719651067}
   hitDefinition:
     damage: 15
@@ -1543,14 +1563,14 @@ MonoBehaviour:
     knockbackPower: 0
     knockbackDirection: 0
     stunTime: 0.5
-  damage: 15
-  hitType: 1
-  knockbackPower: 0
-  knockbackDirection: 0
-  stunTime: 0.5
   onHit:
     m_PersistentCalls:
       m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &5102893360874897687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1592,12 +1612,17 @@ MonoBehaviour:
     onFinishRecovery:
       m_PersistentCalls:
         m_Calls: []
+  attackFlow2:
+    rid: -2
   previousAttacks:
   - {fileID: 5102893360874897686}
-  midair: 0
-  anticipateDuration: 0.01
-  activeDuration: 0.14
-  recoveryDuration: 0.3
+  attackFlow:
+    anticipationPhase:
+      duration: 0.01
+    activePhase:
+      duration: 0.14
+    recoveryPhase:
+      duration: 0.3
   hitDetector: {fileID: 8845085713669517856}
   hitDefinition:
     damage: 5
@@ -1605,14 +1630,14 @@ MonoBehaviour:
     knockbackPower: 0
     knockbackDirection: 0
     stunTime: 0.5
-  damage: 5
-  hitType: 1
-  knockbackPower: 0
-  knockbackDirection: 0
-  stunTime: 0.5
   onHit:
     m_PersistentCalls:
       m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &5102893360874897684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1654,12 +1679,17 @@ MonoBehaviour:
     onFinishRecovery:
       m_PersistentCalls:
         m_Calls: []
+  attackFlow2:
+    rid: -2
   previousAttacks:
   - {fileID: 5102893360874897687}
-  midair: 0
-  anticipateDuration: 0.05
-  activeDuration: 0.15
-  recoveryDuration: 0.2
+  attackFlow:
+    anticipationPhase:
+      duration: 0.05
+    activePhase:
+      duration: 0.15
+    recoveryPhase:
+      duration: 0.2
   hitDetector: {fileID: 4499705321448943879}
   hitDefinition:
     damage: 10
@@ -1667,14 +1697,14 @@ MonoBehaviour:
     knockbackPower: 10
     knockbackDirection: 85
     stunTime: 0.5
-  damage: 10
-  hitType: 0
-  knockbackPower: 10
-  knockbackDirection: 85
-  stunTime: 0.5
   onHit:
     m_PersistentCalls:
       m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &5102893360874897685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1716,12 +1746,17 @@ MonoBehaviour:
     onFinishRecovery:
       m_PersistentCalls:
         m_Calls: []
+  attackFlow2:
+    rid: -2
   previousAttacks:
   - {fileID: 5102893360874897687}
-  midair: 0
-  anticipateDuration: 0.3
-  activeDuration: 0.8
-  recoveryDuration: 0.3
+  attackFlow:
+    anticipationPhase:
+      duration: 0.3
+    activePhase:
+      duration: 0.8
+    recoveryPhase:
+      duration: 0.3
   hitDetector: {fileID: 0}
   hitDefinition:
     damage: 10
@@ -1729,11 +1764,6 @@ MonoBehaviour:
     knockbackPower: 6
     knockbackDirection: 95
     stunTime: 0.5
-  damage: 10
-  hitType: 0
-  knockbackPower: 6
-  knockbackDirection: 95
-  stunTime: 0.5
   onHit:
     m_PersistentCalls:
       m_Calls: []
@@ -1741,6 +1771,11 @@ MonoBehaviour:
   hitDetector2: {fileID: 1090857225183363841}
   detector1FinishTime: 0.4
   detector2StartTime: 0.5
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &5102893360874897682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1794,12 +1829,17 @@ MonoBehaviour:
     onFinishRecovery:
       m_PersistentCalls:
         m_Calls: []
+  attackFlow2:
+    rid: -2
   previousAttacks:
   - {fileID: 5102893360874897685}
-  midair: 0
-  anticipateDuration: 0.05
-  activeDuration: 0
-  recoveryDuration: 0.2
+  attackFlow:
+    anticipationPhase:
+      duration: 0
+    activePhase:
+      duration: 0
+    recoveryPhase:
+      duration: 0
   hitDetector: {fileID: 3262553446811620699}
   hitDefinition:
     damage: 15
@@ -1807,16 +1847,21 @@ MonoBehaviour:
     knockbackPower: 11
     knockbackDirection: 60
     stunTime: 0.5
-  damage: 15
-  hitType: 0
-  knockbackPower: 11
-  knockbackDirection: 60
-  stunTime: 0.5
   onHit:
     m_PersistentCalls:
       m_Calls: []
   velocity: 50
   acceleration: 250
+  motionAttackFlow:
+    anticipationPhase:
+      duration: 0.05
+    recoveryPhase:
+      duration: 0.2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &5102893360874897681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1858,11 +1903,16 @@ MonoBehaviour:
     onFinishRecovery:
       m_PersistentCalls:
         m_Calls: []
+  attackFlow2:
+    rid: -2
   previousAttacks: []
-  midair: 1
-  anticipateDuration: 0.1
-  activeDuration: 0.1
-  recoveryDuration: 0.3
+  attackFlow:
+    anticipationPhase:
+      duration: 0.1
+    activePhase:
+      duration: 0.1
+    recoveryPhase:
+      duration: 0.3
   hitDetector: {fileID: 1378128598374464822}
   hitDefinition:
     damage: 5
@@ -1870,14 +1920,14 @@ MonoBehaviour:
     knockbackPower: 5
     knockbackDirection: 30
     stunTime: 0.5
-  damage: 5
-  hitType: 0
-  knockbackPower: 5
-  knockbackDirection: 30
-  stunTime: 0.5
   onHit:
     m_PersistentCalls:
       m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &5102893360874897680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1919,12 +1969,17 @@ MonoBehaviour:
     onFinishRecovery:
       m_PersistentCalls:
         m_Calls: []
+  attackFlow2:
+    rid: -2
   previousAttacks:
   - {fileID: 5102893360874897681}
-  midair: 1
-  anticipateDuration: 0.01
-  activeDuration: 0.14
-  recoveryDuration: 0.3
+  attackFlow:
+    anticipationPhase:
+      duration: 0.01
+    activePhase:
+      duration: 0.14
+    recoveryPhase:
+      duration: 0.3
   hitDetector: {fileID: 8845085713669517856}
   hitDefinition:
     damage: 5
@@ -1932,14 +1987,14 @@ MonoBehaviour:
     knockbackPower: 5
     knockbackDirection: 30
     stunTime: 0.5
-  damage: 5
-  hitType: 0
-  knockbackPower: 5
-  knockbackDirection: 30
-  stunTime: 0.5
   onHit:
     m_PersistentCalls:
       m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &5102893360874897694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1981,14 +2036,19 @@ MonoBehaviour:
     onFinishRecovery:
       m_PersistentCalls:
         m_Calls: []
+  attackFlow2:
+    rid: -2
   previousAttacks:
   - {fileID: 0}
   - {fileID: 5102893360874897681}
   - {fileID: 5102893360874897680}
-  midair: 1
-  anticipateDuration: 0.075
-  activeDuration: 0.225
-  recoveryDuration: 0.1
+  attackFlow:
+    anticipationPhase:
+      duration: 0.075
+    activePhase:
+      duration: 0.225
+    recoveryPhase:
+      duration: 0.1
   hitDetector: {fileID: 9212607366117902189}
   hitDefinition:
     damage: 7
@@ -1996,14 +2056,14 @@ MonoBehaviour:
     knockbackPower: 6
     knockbackDirection: 110
     stunTime: 0.5
-  damage: 7
-  hitType: 0
-  knockbackPower: 6
-  knockbackDirection: 110
-  stunTime: 0.5
   onHit:
     m_PersistentCalls:
       m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &5102893360874897675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2045,11 +2105,16 @@ MonoBehaviour:
     onFinishRecovery:
       m_PersistentCalls:
         m_Calls: []
+  attackFlow2:
+    rid: -2
   previousAttacks: []
-  midair: 0
-  anticipateDuration: 0
-  activeDuration: 0
-  recoveryDuration: 0
+  attackFlow:
+    anticipationPhase:
+      duration: 0
+    activePhase:
+      duration: 0
+    recoveryPhase:
+      duration: 0
   hitDetector: {fileID: 3460205721541166853}
   hitDefinition:
     damage: 0
@@ -2057,16 +2122,21 @@ MonoBehaviour:
     knockbackPower: 0
     knockbackDirection: 0
     stunTime: 0.5
-  damage: 0
-  hitType: 0
-  knockbackPower: 0
-  knockbackDirection: 0
-  stunTime: 0.5
   onHit:
     m_PersistentCalls:
       m_Calls: []
-  burstVelocity: 0
-  burstAcceleration: 0
+  velocity: 0
+  acceleration: 0
+  motionAttackFlow:
+    anticipationPhase:
+      duration: 0
+    recoveryPhase:
+      duration: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!114 &4916786187361843125
 MonoBehaviour:
   m_ObjectHideFlags: 0

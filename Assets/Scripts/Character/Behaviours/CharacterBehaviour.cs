@@ -10,7 +10,7 @@ public abstract class CharacterBehaviour : BaseComponent
 
     public MovableObject MovableObject => Character.movableObject;
     protected Animator Animator => Character.animator;
-    protected AttackManager AttackManager => Character.attackManager;
+    public AttackManager AttackManager => Character.attackManager;
 
     public bool Enabled
     {
@@ -40,43 +40,23 @@ public abstract class CharacterBehaviour : BaseComponent
         Character = GetComponent<Character>();
     }
 
-    private void SetBehavioursEnabled(bool enabledValue, IEnumerable<Type> behaviours)
+    protected void EnableBehaviours(params Type[] behaviours)
     {
-        foreach (var type in behaviours)
-        {
-            foreach (var component in GetComponents(type))
-            {
-                var behaviour = (CharacterBehaviour)component;
-                behaviour.Enabled = enabledValue;
-            }
-        }
+        Character.EnableBehaviours(behaviours);
     }
 
-    public void EnableBehaviours(params Type[] behaviours)
+    protected void DisableBehaviours(params Type[] behaviours)
     {
-        SetBehavioursEnabled(true, behaviours);
+        Character.DisableBehaviours(behaviours);
     }
 
-    public void DisableBehaviours(params Type[] behaviours)
+    protected void StopBehaviours(params Type[] behaviours)
     {
-        SetBehavioursEnabled(false, behaviours);
+        Character.StopBehaviours(behaviours);
     }
 
-    public void StopBehaviours(params Type[] behaviours)
+    protected bool IsPlaying<T>() where T : IPlayableBehaviour
     {
-        foreach (var type in behaviours)
-        {
-            foreach (var component in GetComponents(type))
-            {
-                var behaviour = (IPlayableBehaviour)component;
-                behaviour.Stop();
-            }
-        }
-    }
-
-    public bool IsPlaying<T>() where T : IPlayableBehaviour
-    {
-        var behaviours = GetComponents<T>();
-        return behaviours.Any(behaviour => behaviour.Playing);
+        return Character.IsPlaying<T>();
     }
 }
