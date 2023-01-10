@@ -135,9 +135,6 @@ public abstract class BaseAttack : PlayableBehaviour<BaseAttackCommand>
 
     protected abstract IAttackFlow AttackFlow { get; }
 
-    [SerializeReference]
-    public IAttackFlow attackFlow2;
-
     /// <summary>
     /// Tells if the attack can be played.
     /// By default, any attack can be played if it is <see cref="CharacterBehaviour.Enabled"/>, and the character is not under knockback or stunned.
