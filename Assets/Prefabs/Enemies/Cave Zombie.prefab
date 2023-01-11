@@ -510,9 +510,6 @@ MonoBehaviour:
     onStop:
       m_PersistentCalls:
         m_Calls: []
-  instant: 0
-  interruptible: 1
-  hardRecovery: 0
   attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
@@ -533,25 +530,21 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   previousAttacks: []
-  midair: 0
-  anticipateDuration: 0.2
-  activeDuration: 0.2
-  recoveryDuration: 0.1
+  instant: 0
+  interruptible: 1
+  hardRecovery: 0
+  attackFlow:
+    anticipationDuration: 0.2
+    activeDuration: 0.2
+    recoveryDuration: 0.1
   hitDetector: {fileID: 3056088687185938479}
-  hitDefinition:
-    damage: 10
-    hitType: 1
-    knockbackPower: 0
-    knockbackDirection: 0
-    stunTime: 0.5
-  damage: 10
-  hitType: 1
-  knockbackPower: 20
-  knockbackDirection: 90
-  stunTime: 0.5
-  onHit:
-    m_PersistentCalls:
-      m_Calls: []
+  hitExecutor:
+    hitDefinition:
+      damage: 10
+      hitType: 1
+      knockbackPower: 0
+      knockbackDirection: 0
+      stunTime: 0.5
 --- !u!114 &3354150098320785776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,9 +564,6 @@ MonoBehaviour:
     onStop:
       m_PersistentCalls:
         m_Calls: []
-  instant: 0
-  interruptible: 1
-  hardRecovery: 0
   attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
@@ -595,25 +585,21 @@ MonoBehaviour:
         m_Calls: []
   previousAttacks:
   - {fileID: 3354150098320785777}
-  midair: 0
-  anticipateDuration: 0.2
-  activeDuration: 0.2
-  recoveryDuration: 0.1
+  instant: 0
+  interruptible: 1
+  hardRecovery: 0
+  attackFlow:
+    anticipationDuration: 0.2
+    activeDuration: 0.2
+    recoveryDuration: 0.1
   hitDetector: {fileID: 3056088687185938479}
-  hitDefinition:
-    damage: 10
-    hitType: 1
-    knockbackPower: 0
-    knockbackDirection: 0
-    stunTime: 0.5
-  damage: 10
-  hitType: 1
-  knockbackPower: 0
-  knockbackDirection: 0
-  stunTime: 0.5
-  onHit:
-    m_PersistentCalls:
-      m_Calls: []
+  hitExecutor:
+    hitDefinition:
+      damage: 10
+      hitType: 1
+      knockbackPower: 0
+      knockbackDirection: 0
+      stunTime: 0.5
 --- !u!95 &3354150098320785679
 Animator:
   serializedVersion: 4

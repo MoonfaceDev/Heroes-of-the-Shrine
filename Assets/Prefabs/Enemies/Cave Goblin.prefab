@@ -1008,9 +1008,6 @@ MonoBehaviour:
     onStop:
       m_PersistentCalls:
         m_Calls: []
-  instant: 0
-  interruptible: 1
-  hardRecovery: 0
   attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
@@ -1031,20 +1028,21 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   previousAttacks: []
-  midair: 0
-  anticipateDuration: 0.1
-  activeDuration: 0.1
-  recoveryDuration: 0.05
+  instant: 0
+  interruptible: 1
+  hardRecovery: 0
+  attackFlow:
+    anticipationDuration: 0.1
+    activeDuration: 0.1
+    recoveryDuration: 0.05
   hitDetector: {fileID: 384846321737885714}
-  hitDefinition:
-    damage: 5
-    hitType: 1
-    knockbackPower: 0
-    knockbackDirection: 0
-    stunTime: 0.5
-  onHit:
-    m_PersistentCalls:
-      m_Calls: []
+  hitExecutor:
+    hitDefinition:
+      damage: 5
+      hitType: 1
+      knockbackPower: 0
+      knockbackDirection: 0
+      stunTime: 0.5
 --- !u!114 &5884619158741390442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1064,9 +1062,6 @@ MonoBehaviour:
     onStop:
       m_PersistentCalls:
         m_Calls: []
-  instant: 0
-  interruptible: 1
-  hardRecovery: 0
   attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
@@ -1088,20 +1083,21 @@ MonoBehaviour:
         m_Calls: []
   previousAttacks:
   - {fileID: 5884619158741390443}
-  midair: 0
-  anticipateDuration: 0.1
-  activeDuration: 0.15
-  recoveryDuration: 0.1
+  instant: 0
+  interruptible: 1
+  hardRecovery: 0
+  attackFlow:
+    anticipationDuration: 0.1
+    activeDuration: 0.15
+    recoveryDuration: 0.1
   hitDetector: {fileID: 7845899968168809158}
-  hitDefinition:
-    damage: 5
-    hitType: 1
-    knockbackPower: 0
-    knockbackDirection: 0
-    stunTime: 0.5
-  onHit:
-    m_PersistentCalls:
-      m_Calls: []
+  hitExecutor:
+    hitDefinition:
+      damage: 5
+      hitType: 1
+      knockbackPower: 0
+      knockbackDirection: 0
+      stunTime: 0.5
 --- !u!114 &5884619158741390445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1121,9 +1117,6 @@ MonoBehaviour:
     onStop:
       m_PersistentCalls:
         m_Calls: []
-  instant: 0
-  interruptible: 1
-  hardRecovery: 0
   attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
@@ -1145,20 +1138,21 @@ MonoBehaviour:
         m_Calls: []
   previousAttacks:
   - {fileID: 5884619158741390442}
-  midair: 0
-  anticipateDuration: 0.05
-  activeDuration: 0.15
-  recoveryDuration: 0.05
+  instant: 0
+  interruptible: 1
+  hardRecovery: 0
+  attackFlow:
+    anticipationDuration: 0.05
+    activeDuration: 0.15
+    recoveryDuration: 0.05
   hitDetector: {fileID: 4349693572784965940}
-  hitDefinition:
-    damage: 15
-    hitType: 0
-    knockbackPower: 10
-    knockbackDirection: 75
-    stunTime: 0.5
-  onHit:
-    m_PersistentCalls:
-      m_Calls: []
+  hitExecutor:
+    hitDefinition:
+      damage: 15
+      hitType: 0
+      knockbackPower: 10
+      knockbackDirection: 75
+      stunTime: 0.5
 --- !u!95 &5884619158741390420
 Animator:
   serializedVersion: 4
@@ -1226,9 +1220,6 @@ MonoBehaviour:
     onStop:
       m_PersistentCalls:
         m_Calls: []
-  instant: 0
-  interruptible: 1
-  hardRecovery: 0
   attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
@@ -1249,43 +1240,39 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   previousAttacks: []
-  midair: 0
-  anticipateDuration: 0.45
-  activeDuration: 0.5
-  recoveryDuration: 0.15
-  hitDetector: {fileID: 0}
-  hitDefinition:
-    damage: 0
-    hitType: 0
-    knockbackPower: 0
-    knockbackDirection: 0
-    stunTime: 0.5
-  onHit:
-    m_PersistentCalls:
-      m_Calls: []
-  electrifyDuration: 3
-  electrifySpeedMultiplier: 0.5
+  instant: 0
+  interruptible: 1
+  hardRecovery: 0
+  attackFlow:
+    anticipationDuration: 0.45
+    activeDuration: 0.5
+    recoveryDuration: 0.15
   periodicHitDetector: {fileID: 5046126295531141603}
   periodicHitCount: 4
-  periodicHitElectrifyRate: 0.2
-  periodicHitDefinition:
-    damage: 2.5
-    hitType: 1
-    knockbackPower: 0
-    knockbackDirection: 0
-    stunTime: 0.5
-  periodicHitType: 1
-  periodicKnockbackPower: 0
-  periodicKnockbackDirection: 0
-  periodicStunTime: 0.5
-  periodicDamage: 2.5
+  periodicHitExecutor:
+    simpleHitExecutor:
+      hitDefinition:
+        damage: 2.5
+        hitType: 1
+        knockbackPower: 0
+        knockbackDirection: 0
+        stunTime: 0.5
+    electrifyRate: 0.2
+    electrifyEffect:
+      duration: 3
+      speedMultiplier: 0.5
   explosionHitDetector: {fileID: 6023447303259930158}
-  explosionHitDefinition:
-    damage: 10
-    hitType: 0
-    knockbackPower: 10
-    knockbackDirection: 30
-    stunTime: 0
+  explosionHitExecutor:
+    simpleHitExecutor:
+      hitDefinition:
+        damage: 10
+        hitType: 0
+        knockbackPower: 10
+        knockbackDirection: 30
+        stunTime: 0
+    electrifyEffect:
+      duration: 3
+      speedMultiplier: 0.5
   onExplosion:
     m_PersistentCalls:
       m_Calls:
@@ -1301,10 +1288,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  explosionKnockbackPower: 10
-  explosionKnockbackDirection: 30
-  explosionDamage: 10
-  explosionStunTime: 0
 --- !u!114 &3373608863436215288
 MonoBehaviour:
   m_ObjectHideFlags: 0

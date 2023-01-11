@@ -599,9 +599,6 @@ MonoBehaviour:
     onStop:
       m_PersistentCalls:
         m_Calls: []
-  instant: 0
-  interruptible: 1
-  hardRecovery: 0
   attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
@@ -621,28 +618,22 @@ MonoBehaviour:
     onFinishRecovery:
       m_PersistentCalls:
         m_Calls: []
-  attackFlow2:
-    rid: -2
-  possessAttackFlow:
-    anticipationPhase:
-      duration: 1.65
-    activePhase:
-      warningDuration: 0.75
-      sourceActiveDuration: 1.5
-      waveCount: 1
-    recoveryPhase:
-      duration: 0
+  previousAttacks: []
+  instant: 0
+  interruptible: 1
+  hardRecovery: 0
+  attackFlow:
+    anticipationDuration: 1.65
+    warningDuration: 0.75
+    sourceActiveDuration: 1.5
+    waveCount: 1
+    recoveryDuration: 0
+  possessSource: {fileID: 6844794933150260862, guid: c619b10d9f747194c92416ed8fe7005a, type: 3}
   sourcesCount: 6
   spawnRadius: 6
   minSourcesDistance: 1.5
-  possessSource: {fileID: 6844794933150260862, guid: c619b10d9f747194c92416ed8fe7005a, type: 3}
   effectDuration: 5
   sourceDamage: 10
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
 --- !u!114 &63080259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -662,9 +653,6 @@ MonoBehaviour:
     onStop:
       m_PersistentCalls:
         m_Calls: []
-  instant: 0
-  interruptible: 1
-  hardRecovery: 1
   attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
@@ -684,13 +672,13 @@ MonoBehaviour:
     onFinishRecovery:
       m_PersistentCalls:
         m_Calls: []
-  attackFlow2:
-    rid: -2
-  spawnAttackFlow:
-    anticipationPhase:
-      duration: 0
-    recoveryPhase:
-      duration: 0
+  previousAttacks: []
+  instant: 0
+  interruptible: 1
+  hardRecovery: 1
+  attackFlow:
+    anticipationDuration: 0.5
+    recoveryDuration: 1
   maxEnemyCount: 5
   enemyPrefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
   spawnPoints:
@@ -698,11 +686,6 @@ MonoBehaviour:
   - {x: 15.5, y: 0, z: 1}
   - {x: 15.5, y: 0, z: -7}
   - {x: -15.5, y: 0, z: -7}
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
 --- !u!114 &63080260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,9 +725,6 @@ MonoBehaviour:
     onStop:
       m_PersistentCalls:
         m_Calls: []
-  instant: 0
-  interruptible: 1
-  hardRecovery: 1
   attackEvents:
     onStartAnticipating:
       m_PersistentCalls:
@@ -764,49 +744,38 @@ MonoBehaviour:
     onFinishRecovery:
       m_PersistentCalls:
         m_Calls: []
-  attackFlow2:
-    rid: -2
   previousAttacks: []
+  instant: 0
+  interruptible: 1
+  hardRecovery: 1
   attackFlow:
-    anticipationPhase:
-      duration: 0.4
-    activePhase:
-      duration: 0.5
-    recoveryPhase:
-      duration: 0.85
-  hitDetector: {fileID: 0}
-  hitDefinition:
-    damage: 0
-    hitType: 0
-    knockbackPower: 0
-    knockbackDirection: 0
-    stunTime: 0.5
-  onHit:
-    m_PersistentCalls:
-      m_Calls: []
-  electrifyDuration: 4
-  electrifySpeedMultiplier: 0.5
+    anticipationDuration: 0.4
+    activeDuration: 0.5
+    recoveryDuration: 0.85
   periodicHitDetector: {fileID: 1340466846}
   periodicHitCount: 2
-  periodicHitElectrifyRate: 0.1
-  periodicHitDefinition:
-    damage: 2.5
-    hitType: 0
-    knockbackPower: 7
-    knockbackDirection: 30
-    stunTime: 0.5
+  periodicHitExecutor:
+    simpleHitExecutor:
+      hitDefinition:
+        damage: 2.5
+        hitType: 0
+        knockbackPower: 7
+        knockbackDirection: 30
+        stunTime: 0.5
     electrifyRate: 0.1
-    electrifyEffectDefinition:
+    electrifyEffect:
       duration: 4
       speedMultiplier: 0.5
   explosionHitDetector: {fileID: 1468609905}
-  explosionHitDefinition:
-    damage: 15
-    hitType: 0
-    knockbackPower: 10
-    knockbackDirection: 35
-    stunTime: 0.5
-    electrifyEffectDefinition:
+  explosionHitExecutor:
+    simpleHitExecutor:
+      hitDefinition:
+        damage: 15
+        hitType: 0
+        knockbackPower: 10
+        knockbackDirection: 35
+        stunTime: 0.5
+    electrifyEffect:
       duration: 4
       speedMultiplier: 0.5
   onExplosion:
@@ -824,11 +793,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
 --- !u!114 &63080263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2109,6 +2073,10 @@ PrefabInstance:
     - target: {fileID: 5826350637647170760, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: effects.Array.data[1].color.r
       value: 0.735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826350637779532336, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 5826350637955933940, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_Name
