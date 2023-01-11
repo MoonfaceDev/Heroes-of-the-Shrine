@@ -55,6 +55,7 @@ public class SpinningSwordsAttack : BaseAttack
 
     protected override IEnumerator ActivePhase()
     {
+        currentTimeouts = new List<string>();
         ConfigureHitDetector(hitDetector1, attackFlow.detector1StartTime, attackFlow.detector1Duration);
         ConfigureHitDetector(hitDetector2, attackFlow.detector2StartTime, attackFlow.detector2Duration);
         yield return new WaitForSeconds(attackFlow.activeDuration);
