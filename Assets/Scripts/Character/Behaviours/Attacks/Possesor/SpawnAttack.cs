@@ -1,46 +1,37 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-[Serializable]
-public class SpawnAttackFlow : IAttackFlow
-{
-    public TimedAttackPhase anticipationPhase;
-    public EmptyAttackPhase activePhase;
-    public TimedAttackPhase recoveryPhase;
-    public IAttackPhase AnticipationPhase => anticipationPhase;
-    public IAttackPhase ActivePhase => activePhase;
-    public IAttackPhase RecoveryPhase => recoveryPhase;
-}
-
 public class SpawnAttack : BaseAttack
 {
-    public SpawnAttackFlow spawnAttackFlow;
+    [Serializable]
+    public class AttackFlow
+    {
+        public float anticipationDuration;
+        public float recoveryDuration;
+    }
+
+    public AttackFlow attackFlow;
     public int maxEnemyCount;
     public GameObject enemyPrefab;
     public Vector3[] spawnPoints;
 
-    protected override IAttackFlow AttackFlow => spawnAttackFlow;
-
-    public override bool CanPlay(BaseAttackCommand command)
+    protected override IEnumerator AnticipationPhase()
     {
-        return base.CanPlay(command) &&
-               !((AttackManager.Anticipating || AttackManager.Active || AttackManager.HardRecovering) &&
-                 !(instant && AttackManager.IsInterruptible()));
+        yield return new WaitForSeconds(attackFlow.anticipationDuration);
     }
 
-    public override void Awake()
+    protected override IEnumerator ActivePhase()
     {
-        base.Awake();
-        PlayEvents.onPlay.AddListener(() =>
-        {
-            DisableBehaviours(typeof(WalkBehaviour));
-            StopBehaviours(typeof(WalkBehaviour));
-        });
-        PlayEvents.onStop.AddListener(() => EnableBehaviours(typeof(WalkBehaviour)));
+        SpawnGoblins();
+        yield return new WaitForSeconds(0);
+    }
 
-        attackEvents.onStartActive.AddListener(SpawnGoblins);
+    protected override IEnumerator RecoveryPhase()
+    {
+        yield return new WaitForSeconds(attackFlow.recoveryDuration);
     }
 
     private void SpawnGoblins()

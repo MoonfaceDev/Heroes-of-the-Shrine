@@ -1,108 +1,24 @@
-using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-using Random = UnityEngine.Random;
 
-[Serializable]
-public class ElectrifyEffectDefinition
+public class ElectrifyAttack : BaseAttack
 {
-    public float duration;
-    public float speedMultiplier;
-}
-
-[Serializable]
-public class PeriodicHitDefinition : HitDefinition
-{
-    public float electrifyRate;
-    public ElectrifyEffectDefinition electrifyEffectDefinition;
-}
-
-[Serializable]
-public class ExplosionHitDefinition : HitDefinition
-{
-    public ElectrifyEffectDefinition electrifyEffectDefinition;
-}
-
-public class PeriodicHitExecutor : HitExecutor<PeriodicHitDefinition>
-{
-    public PeriodicHitExecutor(PeriodicHitDefinition hitDefinition)
-    {
-        HitDefinition = hitDefinition;
-    }
-
-    protected override PeriodicHitDefinition HitDefinition { get; }
-
-    public override void Execute(BaseAttack attack, IHittable hittable)
-    {
-        base.Execute(attack, hittable);
-        if (Random.Range(0f, 1f) < HitDefinition.electrifyRate)
-        {
-            var electrifiedEffect = hittable.Character.GetComponent<ElectrifiedEffect>();
-            if (electrifiedEffect)
-            {
-                var electrifyEffectDefinition = HitDefinition.electrifyEffectDefinition;
-                electrifiedEffect.Play(new ElectrifiedEffectCommand(electrifyEffectDefinition.duration,
-                    electrifyEffectDefinition.speedMultiplier));
-            }
-        }
-    }
-}
-
-public class ExplosionHitExecutor : HitExecutor<ExplosionHitDefinition>
-{
-    public ExplosionHitExecutor(ExplosionHitDefinition hitDefinition)
-    {
-        HitDefinition = hitDefinition;
-    }
-
-    protected override ExplosionHitDefinition HitDefinition { get; }
-
-    public override void Execute(BaseAttack attack, IHittable hittable)
-    {
-        base.Execute(attack, hittable);
-        var electrifiedEffect = hittable.Character.GetComponent<ElectrifiedEffect>();
-        if (electrifiedEffect)
-        {
-            var electrifyEffectDefinition = HitDefinition.electrifyEffectDefinition;
-            electrifiedEffect.Play(new ElectrifiedEffectCommand(electrifyEffectDefinition.duration,
-                electrifyEffectDefinition.speedMultiplier));
-        }
-    }
-}
-
-public class ElectrifyAttack : NormalAttack
-{
-    [Header("Electrify")] public float electrifyDuration; // TODO: Remove
-    public float electrifySpeedMultiplier; // TODO: Remove
+    public SimpleAttack.AttackFlow attackFlow;
 
     [Header("Periodic hits")] public PeriodicAbsoluteHitDetector periodicHitDetector;
     public int periodicHitCount;
-    public float periodicHitElectrifyRate; // TODO: Remove
-    public PeriodicHitDefinition periodicHitDefinition;
+    public ElectricHitExecutor periodicHitExecutor;
 
     [Header("Explosion")] public BaseHitDetector explosionHitDetector;
-    public ExplosionHitDefinition explosionHitDefinition;
+    public ElectricExplosionHitExecutor explosionHitExecutor;
     public UnityEvent onExplosion;
 
-    protected override void ConfigureHitDetector()
+    private string switchDetectorsListener;
+
+    public void Start()
     {
-        float detectCount = 0;
-        periodicHitDetector.OnDetect += () => detectCount++;
-
-        string switchDetectorsListener = null;
-
-        attackEvents.onStartActive.AddListener(() =>
-        {
-            periodicHitDetector.StartDetector(HitCallable, AttackManager.hittableTags);
-            switchDetectorsListener = InvokeWhen(() => detectCount >= periodicHitCount, () =>
-            {
-                periodicHitDetector.StopDetector();
-                explosionHitDetector.StartDetector(ExplosionHitCallable, AttackManager.hittableTags);
-                detectCount = 0;
-            });
-        });
-
-        attackEvents.onFinishActive.AddListener(() =>
+        PlayEvents.onStop.AddListener(() =>
         {
             periodicHitDetector.StopDetector();
             explosionHitDetector.StopDetector();
@@ -110,16 +26,38 @@ public class ElectrifyAttack : NormalAttack
         });
     }
 
-    protected override void HitCallable(IHittable hittable)
+    protected override IEnumerator AnticipationPhase()
     {
-        onHit.Invoke(hittable);
-        new PeriodicHitExecutor(periodicHitDefinition).Execute(this, hittable);
+        yield return new WaitForSeconds(attackFlow.anticipationDuration);
     }
 
-    private void ExplosionHitCallable(IHittable hittable)
+    protected override IEnumerator ActivePhase()
     {
-        onHit.Invoke(hittable);
-        onExplosion.Invoke();
-        new ExplosionHitExecutor(explosionHitDefinition).Execute(this, hittable);
+        float detectCount = 0;
+        periodicHitDetector.OnDetect += () => detectCount++;
+
+        periodicHitDetector.StartDetector(hittable => periodicHitExecutor.Execute(this, hittable),
+            AttackManager.hittableTags);
+
+        switchDetectorsListener = InvokeWhen(() => detectCount >= periodicHitCount, () =>
+        {
+            periodicHitDetector.StopDetector();
+            explosionHitDetector.StartDetector(hittable =>
+                {
+                    explosionHitExecutor.Execute(this, hittable);
+                    onExplosion.Invoke();
+                },
+                AttackManager.hittableTags);
+            detectCount = 0;
+        });
+
+        yield return new WaitForSeconds(attackFlow.activeDuration);
+
+        explosionHitDetector.StopDetector();
+    }
+
+    protected override IEnumerator RecoveryPhase()
+    {
+        yield return new WaitForSeconds(attackFlow.recoveryDuration);
     }
 }

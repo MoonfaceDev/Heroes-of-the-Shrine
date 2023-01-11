@@ -5,41 +5,28 @@ using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-[Serializable]
-public class PossessActivePhase : IAttackPhase
-{
-    public float warningDuration;
-    public float sourceActiveDuration;
-    public int waveCount = 1;
-
-    public IEnumerator Play()
-    {
-        yield return new WaitForSeconds((warningDuration + sourceActiveDuration) * waveCount);
-    }
-}
-
-[Serializable]
-public class PossessAttackFlow : IAttackFlow
-{
-    public TimedAttackPhase anticipationPhase;
-    public PossessActivePhase activePhase;
-    public TimedAttackPhase recoveryPhase;
-    public IAttackPhase AnticipationPhase => anticipationPhase;
-    public IAttackPhase ActivePhase => activePhase;
-    public IAttackPhase RecoveryPhase => recoveryPhase;
-}
-
-internal class NoSpawnPointException : Exception
-{
-}
-
 public class PossessAttack : BaseAttack
 {
-    public PossessAttackFlow possessAttackFlow;
+    private class NoSpawnPointException : Exception
+    {
+    }
+
+    [Serializable]
+    public class AttackFlow
+    {
+        public float anticipationDuration;
+        public float warningDuration;
+        public float sourceActiveDuration;
+        public int waveCount = 1;
+        public float recoveryDuration;
+    }
+
+    public AttackFlow attackFlow;
+
+    public PossessSource possessSource;
     public int sourcesCount;
     public float spawnRadius;
     public float minSourcesDistance;
-    public PossessSource possessSource;
     public float effectDuration;
     public int sourceDamage;
 
@@ -48,15 +35,24 @@ public class PossessAttack : BaseAttack
     public override void Awake()
     {
         base.Awake();
-        PlayEvents.onPlay.AddListener(() =>
-        {
-            DisableBehaviours(typeof(WalkBehaviour));
-            StopBehaviours(typeof(WalkBehaviour));
-        });
-        PlayEvents.onStop.AddListener(() => EnableBehaviours(typeof(WalkBehaviour)));
         walkableGrid = FindObjectOfType<WalkableGrid>();
+    }
 
-        attackEvents.onStartActive.AddListener(() => StartWave(0));
+    protected override IEnumerator AnticipationPhase()
+    {
+        yield return new WaitForSeconds(attackFlow.anticipationDuration);
+    }
+
+    protected override IEnumerator ActivePhase()
+    {
+        StartWave(0);
+        yield return new WaitForSeconds((attackFlow.warningDuration + attackFlow.sourceActiveDuration) *
+                                        attackFlow.waveCount);
+    }
+
+    protected override IEnumerator RecoveryPhase()
+    {
+        yield return new WaitForSeconds(attackFlow.recoveryDuration);
     }
 
     private void StartWave(int waveIndex)
@@ -73,8 +69,8 @@ public class PossessAttack : BaseAttack
                     MovableObject.ScreenCoordinates(spawnPoint), Quaternion.identity);
                 newPossessSource.GetComponent<MovableObject>().WorldPosition = spawnPoint;
                 newPossessSource.GetComponent<PossessSource>().Activate(
-                    possessAttackFlow.activePhase.warningDuration,
-                    possessAttackFlow.activePhase.sourceActiveDuration,
+                    attackFlow.warningDuration,
+                    attackFlow.sourceActiveDuration,
                     AttackManager.hittableTags,
                     effectDuration,
                     sourceDamage
@@ -87,10 +83,9 @@ public class PossessAttack : BaseAttack
             }
         }
 
-        if (waveIndex + 1 < possessAttackFlow.activePhase.waveCount)
+        if (waveIndex + 1 < attackFlow.waveCount)
         {
-            StartTimeout(() => StartWave(waveIndex + 1),
-                possessAttackFlow.activePhase.warningDuration + possessAttackFlow.activePhase.sourceActiveDuration);
+            StartTimeout(() => StartWave(waveIndex + 1), attackFlow.warningDuration + attackFlow.sourceActiveDuration);
         }
     }
 
@@ -121,6 +116,4 @@ public class PossessAttack : BaseAttack
                && alreadySpawned.All(existingPosition =>
                    Vector3.Distance(newPosition, existingPosition) > 2 * minSourcesDistance);
     }
-
-    protected override IAttackFlow AttackFlow => possessAttackFlow;
 }

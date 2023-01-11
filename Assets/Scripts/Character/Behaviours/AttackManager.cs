@@ -86,6 +86,11 @@ public class AttackManager : CharacterBehaviour
         return !AnyAttack(attack => attack.Playing && !attack.interruptible);
     }
 
+    public bool CanPlayAttack(bool instant)
+    {
+        return !((Anticipating || Active || HardRecovering) && !(instant && IsInterruptible()));
+    }
+
     public float TranspileDamage(BaseAttack attack, IHittable hittable, float damage)
     {
         damage += damageBonuses.Sum(bonus => bonus(attack, hittable));

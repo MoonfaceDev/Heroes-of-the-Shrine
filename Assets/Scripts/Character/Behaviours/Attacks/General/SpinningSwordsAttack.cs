@@ -1,31 +1,67 @@
-public class SpinningSwordsAttack : NormalAttack
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SpinningSwordsAttack : BaseAttack
 {
+    [Serializable]
+    public class AttackFlow
+    {
+        public float anticipationDuration;
+        public float activeDuration;
+        public float detector1StartTime;
+        public float detector1Duration;
+        public float detector2StartTime;
+        public float detector2Duration;
+        public float recoveryDuration;
+    }
+
+    public AttackFlow attackFlow;
     public BaseHitDetector hitDetector1;
     public BaseHitDetector hitDetector2;
-    public float detector1FinishTime;
-    public float detector2StartTime;
+    public SimpleHitExecutor hitExecutor;
 
-    protected override void ConfigureHitDetector()
+    private List<string> currentTimeouts;
+
+    public void Start()
     {
-        string disableHitDetector1Timeout = null;
-        string enableHitDetector2Timeout = null;
-
-        attackEvents.onStartActive.AddListener(() =>
-        {
-            hitDetector1.StartDetector(HitCallable, AttackManager.hittableTags);
-            disableHitDetector1Timeout = StartTimeout(hitDetector1.StopDetector, detector1FinishTime);
-            enableHitDetector2Timeout = StartTimeout(
-                () => hitDetector2.StartDetector(HitCallable, AttackManager.hittableTags),
-                detector2StartTime
-            );
-        });
-
-        attackEvents.onFinishActive.AddListener(() =>
+        PlayEvents.onStop.AddListener(() =>
         {
             hitDetector1.StopDetector();
             hitDetector2.StopDetector();
-            Unregister(disableHitDetector1Timeout);
-            Unregister(enableHitDetector2Timeout);
+            foreach (var timeout in currentTimeouts)
+            {
+                Cancel(timeout);
+            }
+
+            currentTimeouts.Clear();
         });
+    }
+
+    private void ConfigureHitDetector(BaseHitDetector hitDetector, float startTime, float duration)
+    {
+        currentTimeouts.Add(StartTimeout(() =>
+        {
+            hitDetector.StartDetector(hittable => hitExecutor.Execute(this, hittable), AttackManager.hittableTags);
+            currentTimeouts.Add(StartTimeout(hitDetector.StopDetector, duration));
+        }, startTime));
+    }
+
+    protected override IEnumerator AnticipationPhase()
+    {
+        yield return new WaitForSeconds(attackFlow.anticipationDuration);
+    }
+
+    protected override IEnumerator ActivePhase()
+    {
+        ConfigureHitDetector(hitDetector1, attackFlow.detector1StartTime, attackFlow.detector1Duration);
+        ConfigureHitDetector(hitDetector2, attackFlow.detector2StartTime, attackFlow.detector2Duration);
+        yield return new WaitForSeconds(attackFlow.activeDuration);
+    }
+
+    protected override IEnumerator RecoveryPhase()
+    {
+        yield return new WaitForSeconds(attackFlow.recoveryDuration);
     }
 }

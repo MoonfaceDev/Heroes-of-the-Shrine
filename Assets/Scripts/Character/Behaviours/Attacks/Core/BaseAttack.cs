@@ -1,43 +1,15 @@
-using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 /// <summary>
-/// Contains start and finish events for all attack phases
+/// Motion settings when playing attacks
 /// </summary>
-[Serializable]
-public class AttackEvents
+public enum MotionSettings
 {
-    /// <value>
-    /// Attack anticipation has started
-    /// </value>
-    public UnityEvent onStartAnticipating;
-
-    /// <value>
-    /// Attack anticipation has finished, also fires if the attack was stopped while in anticipation
-    /// </value>
-    public UnityEvent onFinishAnticipating;
-
-    /// <value>
-    /// Attack active phase has started
-    /// </value>
-    public UnityEvent onStartActive;
-
-    /// <value>
-    /// Attack active phase has finished, also fires if the attack was stopped while in active phase
-    /// </value>
-    public UnityEvent onFinishActive;
-
-    /// <value>
-    /// Attack recovery has started
-    /// </value>
-    public UnityEvent onStartRecovery;
-
-    /// <value>
-    /// Attack recovery has finished, also fires if the attack was stopped while in recovery
-    /// </value>
-    public UnityEvent onFinishRecovery;
+    WalkingEnabled, // Character can walk
+    WalkingDisabled, // Character cannot walk, but it will keep moving in the same speed
+    Static, // Character cannot walk, and stop right when attack is played
 }
 
 public class BaseAttackCommand : ICommand
@@ -50,6 +22,18 @@ public class BaseAttackCommand : ICommand
 [RequireComponent(typeof(AttackManager))]
 public abstract class BaseAttack : PlayableBehaviour<BaseAttackCommand>
 {
+    /// <value>
+    /// General attack events
+    /// </value>
+    public AttackEvents attackEvents;
+
+    /// <value>
+    /// This attack can be played only if the previous attack is one of the <c>previousAttacks</c>.
+    /// If the attack can also be played without a previous attack, add <c>null</c> to the list.
+    /// If the list is left empty, the attack can be played after any attack (including <c>null</c>).
+    /// </value>
+    public List<BaseAttack> previousAttacks;
+
     /// <value>
     /// If true, the attack can be played while another interruptible attack is playing.
     /// </value>
@@ -66,10 +50,14 @@ public abstract class BaseAttack : PlayableBehaviour<BaseAttackCommand>
     public bool hardRecovery;
 
     /// <value>
-    /// Name of the attack, in the format <c>CamelCase</c>.
-    /// Used in combo system, and in animator parameters.
+    /// Motion setting
     /// </value>
-    public string AttackName => GetType().Name;
+    protected virtual MotionSettings Motion => MotionSettings.Static;
+
+    /// <value>
+    /// If <c>true</c>, this attack can only play when <see cref="JumpBehaviour"/> is playing
+    /// </value>
+    protected virtual bool IsMidair => false;
 
     /// <value>
     /// Attack is anticipating.
@@ -116,34 +104,27 @@ public abstract class BaseAttack : PlayableBehaviour<BaseAttackCommand>
         }
     }
 
-    /// <value>
-    /// Attack is playing.
-    /// True if attack is either <see cref="Anticipating"/>, <see cref="Active"/> or <see cref="Recovering"/>.
-    /// </value>
     public override bool Playing => Anticipating || Active || Recovering;
 
-    /// <value>
-    /// General attack events
-    /// </value>
-    public AttackEvents attackEvents;
-
+    private string AttackName => GetType().Name;
     private bool anticipating;
     private bool active;
     private bool recovering;
-
     private Coroutine attackFlowCoroutine;
 
-    protected abstract IAttackFlow AttackFlow { get; }
-
-    /// <summary>
-    /// Tells if the attack can be played.
-    /// By default, any attack can be played if it is <see cref="CharacterBehaviour.Enabled"/>, and the character is not under knockback or stunned.
-    /// Override to add more conditions that attack requires.
-    /// </summary>
-    /// <returns><c>true</c> if the attack can be played</returns>
     public override bool CanPlay(BaseAttackCommand command)
     {
-        return base.CanPlay(command) && !IsPlaying<KnockbackBehaviour>() && !IsPlaying<StunBehaviour>();
+        return base.CanPlay(command)
+               && !IsPlaying<KnockbackBehaviour>() && !IsPlaying<StunBehaviour>()
+               && !IsPlaying<SlideBehaviour>() && !IsPlaying<DodgeBehaviour>()
+               && IsMidair == IsPlaying<JumpBehaviour>()
+               && AttackManager.CanPlayAttack(instant)
+               && ComboCondition();
+    }
+
+    private bool ComboCondition()
+    {
+        return previousAttacks.Count == 0 || previousAttacks.Contains(AttackManager.lastAttack);
     }
 
     /// <summary>
@@ -151,19 +132,35 @@ public abstract class BaseAttack : PlayableBehaviour<BaseAttackCommand>
     /// </summary>
     protected override void DoPlay(BaseAttackCommand command)
     {
+        if (Motion != MotionSettings.WalkingEnabled)
+        {
+            var velocityBefore = MovableObject.velocity;
+            DisableBehaviours(typeof(WalkBehaviour));
+            StopBehaviours(typeof(WalkBehaviour));
+            if (Motion != MotionSettings.Static)
+            {
+                MovableObject.velocity = velocityBefore;
+            }
+        }
+
+        StopBehaviours(typeof(BaseAttack));
         attackFlowCoroutine = StartCoroutine(AttackFlowCoroutine());
     }
+
+    protected abstract IEnumerator AnticipationPhase();
+    protected abstract IEnumerator ActivePhase();
+    protected abstract IEnumerator RecoveryPhase();
 
     private IEnumerator AttackFlowCoroutine()
     {
         Anticipating = true;
-        yield return AttackFlow.AnticipationPhase.Play();
+        yield return AnticipationPhase();
         Anticipating = false;
         Active = true;
-        yield return AttackFlow.ActivePhase.Play();
+        yield return ActivePhase();
         Active = false;
         Recovering = true;
-        yield return AttackFlow.RecoveryPhase.Play();
+        yield return RecoveryPhase();
         Stop();
     }
 
@@ -174,6 +171,11 @@ public abstract class BaseAttack : PlayableBehaviour<BaseAttackCommand>
     protected override void DoStop()
     {
         StopCoroutine(attackFlowCoroutine);
+
+        if (Motion != MotionSettings.WalkingEnabled)
+        {
+            EnableBehaviours(typeof(WalkBehaviour));
+        }
 
         if (Anticipating)
         {
