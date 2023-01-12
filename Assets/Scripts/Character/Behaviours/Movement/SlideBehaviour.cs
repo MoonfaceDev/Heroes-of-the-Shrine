@@ -37,16 +37,12 @@ public class SlideBehaviour : BaseMovementBehaviour<SlideCommand>
         var attackManager = GetComponent<AttackManager>();
         return base.CanPlay(command)
                && !IsPlaying<JumpBehaviour>() && !IsPlaying<SlideBehaviour>() && !IsPlaying<DodgeBehaviour>()
+               && command.direction != 0
                && !(attackManager && !attackManager.IsInterruptible());
     }
 
     protected override void DoPlay(SlideCommand command)
     {
-        if (command.direction == 0)
-        {
-            return;
-        }
-
         StopBehaviours(typeof(WalkBehaviour), typeof(BaseAttack));
         DisableBehaviours(typeof(WalkBehaviour));
 

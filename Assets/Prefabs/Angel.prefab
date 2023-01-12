@@ -1357,11 +1357,11 @@ MonoBehaviour:
     button: 3
   animatorControllers: []
   activeSuitIndex: 0
-  bufferingTime: 0.3
-  nonBufferedAttacks:
-  - {fileID: 5102893360874897673}
-  walkPriority: 3
-  jumpPriority: 0
+  bufferingTime: 0.2
+  walkPriority: 0
+  jumpPriority: 1
+  slidePriority: 3
+  dodgePriority: 4
   attackPriority: 2
   possessedEffectTimeReducing: 00000000010000000200000003000000
   possessedEffectDurationReduction: 0.05
