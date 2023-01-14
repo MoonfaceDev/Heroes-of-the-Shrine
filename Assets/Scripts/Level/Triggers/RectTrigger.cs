@@ -17,8 +17,9 @@ public class RectTrigger : BaseTrigger
         }
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
         if (playerMovableObject && IsInside(playerMovableObject.WorldPosition) && !fired)
         {
             fired = true;
@@ -32,10 +33,10 @@ public class RectTrigger : BaseTrigger
                                     && point.z > position.z && point.z < position.z + size.z;
     }
 
-    void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.magenta;
-        Gizmos.DrawWireCube(MovableObject.GroundScreenCoordinates(position + size / 2),
-            MovableObject.GroundScreenCoordinates(size));
+        Gizmos.DrawWireCube(GameEntity.GroundScreenCoordinates(position + size / 2),
+            GameEntity.GroundScreenCoordinates(size));
     }
 }

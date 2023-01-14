@@ -13,8 +13,10 @@ public class SuperArmorBar : BaseComponent
         scrollbar = GetComponent<Scrollbar>();
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
+        
         if (!superArmorEffect)
         {
             Destroy(gameObject);

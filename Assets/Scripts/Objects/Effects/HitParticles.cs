@@ -1,18 +1,18 @@
 using UnityEngine;
 
-[RequireComponent(typeof(MovableObject))]
+[RequireComponent(typeof(GameEntity))]
 public class HitParticles : BaseComponent
 {
     public ParticleSystem prefab;
 
     public void Play(Vector3 hitPoint, IHittable hittable)
     {
-        var movableObject = GetComponent<MovableObject>();
+        var entity = GetComponent<GameEntity>();
         var clone = Instantiate(prefab);
-        clone.transform.position = MovableObject.ScreenCoordinates(hitPoint);
-        clone.transform.rotation = movableObject.WorldRotation;
+        clone.transform.position = GameEntity.ScreenCoordinates(hitPoint);
+        clone.transform.rotation = entity.WorldRotation;
         clone.GetComponent<Renderer>().sortingOrder = Mathf.Max(
-            movableObject.parent.SortingOrder,
+            entity.parent.SortingOrder,
             hittable.Character.movableObject.SortingOrder
         ) + 1;
         clone.GetComponent<ParticleSystem>().Play();

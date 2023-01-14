@@ -17,14 +17,14 @@ public class CameraFollow : BaseComponent
     {
         target = GameObject.FindGameObjectWithTag(targetTag).GetComponent<MovableObject>();
         if (!target) return;
-        offset = transform.position - MovableObject.GroundScreenCoordinates(target.WorldPosition);
+        offset = transform.position - GameEntity.GroundScreenCoordinates(target.WorldPosition);
         offset.x = 0;
     }
 
     private void LateUpdate()
     {
         if (!target) return;
-        var targetPosition = MovableObject.GroundScreenCoordinates(target.WorldPosition) + offset;
+        var targetPosition = GameEntity.GroundScreenCoordinates(target.WorldPosition) + offset;
         cameraMovement.targetPosition = targetPosition;
     }
 }

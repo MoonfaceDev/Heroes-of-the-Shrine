@@ -81,8 +81,10 @@ public class PlayerController : CharacterController
         bufferedActions = new List<BufferedAction>();
     }
 
-    public void Update()
+    protected override void Update()
     {
+        base.Update();
+        
         // reduce duration of possessed effect
         if (possessedEffectTimeReducing.Any(button => Input.GetButtonDown(button.ToString())))
         {

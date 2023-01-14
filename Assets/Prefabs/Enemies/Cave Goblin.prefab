@@ -60,9 +60,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5884619158741390438}
-  figureObject: {fileID: 0}
   position: {x: 1.55, y: 0.995, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &110950560831635055
@@ -78,7 +78,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 7368109035975547894, guid: faab43d0b7c5cfa448b93f624f98e583, type: 3}
-  particlePosition: {x: 0.75, y: 0, z: 0}
 --- !u!1 &5884619157808626362
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,6 +90,7 @@ GameObject:
   - component: {fileID: 5884619157808626360}
   - component: {fileID: 5884619157808626363}
   - component: {fileID: 7348572251056873591}
+  - component: {fileID: 1658044155606062768}
   m_Layer: 0
   m_Name: Goblin Figure
   m_TagString: Untagged
@@ -153,7 +153,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2910
   m_Sprite: {fileID: 1476566322, guid: c558e1a82a9402a479f9228bc5d85cce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -197,6 +197,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6142a1f1c687491499aaa05fb1046b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1658044155606062768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5884619157808626362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90306126b25f448f98b2587e24ff902e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movableObject: {fileID: 5884619158741390438}
 --- !u!1 &5884619157950951727
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,9 +270,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5884619158741390438}
-  figureObject: {fileID: 0}
   position: {x: 0.675, y: 0.9, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &194388456993999270
@@ -275,7 +288,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 9064382892142360621, guid: 4d8c5fbcca0950e4291a8586725017e8, type: 3}
-  particlePosition: {x: 0.4, y: -0.2, z: 0}
 --- !u!1 &5884619158051856729
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,9 +348,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5884619158741390438}
-  figureObject: {fileID: 0}
   position: {x: 0.95, y: 0.9, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &5400955995747365530
@@ -354,7 +366,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 9064382892142360621, guid: feb02b7ab9f75274f8294c0f6dfb6adb, type: 3}
-  particlePosition: {x: 0.7, y: 0.2, z: 0}
 --- !u!1 &5884619158362908890
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,9 +530,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5884619158741390438}
-  figureObject: {fileID: 0}
   position: {x: 2.25, y: 1.05, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!1 &5884619158596542725
@@ -584,9 +595,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5884619158741390438}
-  figureObject: {fileID: 0}
   position: {x: 0.875, y: 0.9, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &8315404211282100638
@@ -602,7 +613,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 9064382892142360621, guid: 4d8c5fbcca0950e4291a8586725017e8, type: 3}
-  particlePosition: {x: 0.3, y: 0, z: 0}
 --- !u!1 &5884619158741390458
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,9 +687,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  figureObject: {fileID: 5884619157808626360}
   position: {x: 1.84, y: 0, z: -2.91}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &6526483692788110630
@@ -906,12 +916,32 @@ MonoBehaviour:
   hittableTags:
   - Player
   lastAttack: {fileID: 0}
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
+  attackEvents:
+    onStartAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartRecovery:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishRecovery:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &5884619158741390443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1323,9 +1353,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5884619158741390438}
-  figureObject: {fileID: 0}
   position: {x: 0, y: 0.91, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &5884619159192989553

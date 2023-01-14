@@ -41,7 +41,7 @@ public class SpawnAttack : BaseAttack
         var selectedPoints = GetRandomSpawnPoints(spawnCount);
         for (var i = 0; i < maxEnemyCount - currentEnemyCount; i++)
         {
-            var newEnemy = Instantiate(enemyPrefab, MovableObject.ScreenCoordinates(selectedPoints[i]),
+            var newEnemy = Instantiate(enemyPrefab, GameEntity.ScreenCoordinates(selectedPoints[i]),
                 Quaternion.identity);
             newEnemy.GetComponent<MovableObject>().WorldPosition = selectedPoints[i];
             newEnemy.GetComponent<EnemyBrain>().Alarm();
@@ -73,7 +73,7 @@ public class SpawnAttack : BaseAttack
         Gizmos.color = Color.green;
         foreach (var point in spawnPoints)
         {
-            Gizmos.DrawWireSphere(MovableObject.ScreenCoordinates(point), 0.2f);
+            Gizmos.DrawWireSphere(GameEntity.ScreenCoordinates(point), 0.2f);
         }
     }
 }

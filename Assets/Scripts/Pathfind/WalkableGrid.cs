@@ -1,15 +1,16 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.Serialization;
 
-[RequireComponent(typeof(MovableObject))]
+[RequireComponent(typeof(GameEntity))]
 public class WalkableGrid : BaseComponent
 {
     public Vector3 gridWorldSize;
     public float nodeRadius;
 
     private Node[,] grid;
-    [HideInInspector] public MovableObject movableObject;
+    [HideInInspector] public GameEntity entity;
 
     private float NodeDiameter => nodeRadius * 2;
     private int GridSizeX => Mathf.RoundToInt(gridWorldSize.x / NodeDiameter);
@@ -17,7 +18,7 @@ public class WalkableGrid : BaseComponent
 
     private void Awake()
     {
-        movableObject = GetComponent<MovableObject>();
+        entity = GetComponent<GameEntity>();
     }
 
     private void Start()
@@ -32,7 +33,7 @@ public class WalkableGrid : BaseComponent
         {
             for (var z = 0; z < GridSizeZ; z++)
             {
-                var worldPoint = movableObject.WorldPosition + Vector3.right * (x * NodeDiameter + nodeRadius) +
+                var worldPoint = entity.WorldPosition + Vector3.right * (x * NodeDiameter + nodeRadius) +
                                  Vector3.forward * (z * NodeDiameter + nodeRadius);
                 grid[x, z] = new Node(x, z, true, worldPoint);
             }
@@ -62,8 +63,8 @@ public class WalkableGrid : BaseComponent
 
     private Vector2Int IndexFromWorldPoint(Vector3 worldPosition)
     {
-        var percentX = Mathf.Clamp01((worldPosition.x - movableObject.WorldPosition.x) / gridWorldSize.x);
-        var percentZ = Mathf.Clamp01((worldPosition.z - movableObject.WorldPosition.z) / gridWorldSize.z);
+        var percentX = Mathf.Clamp01((worldPosition.x - entity.WorldPosition.x) / gridWorldSize.x);
+        var percentZ = Mathf.Clamp01((worldPosition.z - entity.WorldPosition.z) / gridWorldSize.z);
         var x = Mathf.RoundToInt((GridSizeX - 1) * percentX);
         var y = Mathf.RoundToInt((GridSizeZ - 1) * percentZ);
         return new Vector2Int(x, y);
@@ -103,7 +104,7 @@ public class WalkableGrid : BaseComponent
 
     public bool IsInside(Vector3 point)
     {
-        var bottomLeft = movableObject.WorldPosition;
+        var bottomLeft = entity.WorldPosition;
         var topRight = bottomLeft + gridWorldSize;
         return !(point.x < bottomLeft.x || point.x > topRight.x || point.z < bottomLeft.z || point.z > topRight.z);
     }
@@ -186,10 +187,10 @@ public class WalkableGrid : BaseComponent
 
     private void OnDrawGizmos()
     {
-        if (!movableObject) return;
+        if (!entity) return;
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(MovableObject.GroundScreenCoordinates(movableObject.WorldPosition + gridWorldSize / 2),
-            MovableObject.GroundScreenCoordinates(gridWorldSize));
+        Gizmos.DrawWireCube(GameEntity.GroundScreenCoordinates(entity.WorldPosition + gridWorldSize / 2),
+            GameEntity.GroundScreenCoordinates(gridWorldSize));
     }
 
     private void OnDrawGizmosSelected()
@@ -198,8 +199,8 @@ public class WalkableGrid : BaseComponent
         foreach (var n in grid)
         {
             Gizmos.color = n.walkable ? Color.white : Color.red;
-            Gizmos.DrawCube(MovableObject.GroundScreenCoordinates(n.position),
-                MovableObject.GroundScreenCoordinates(Vector3.one * (NodeDiameter * 0.75f)));
+            Gizmos.DrawCube(GameEntity.GroundScreenCoordinates(n.position),
+                GameEntity.GroundScreenCoordinates(Vector3.one * (NodeDiameter * 0.75f)));
         }
     }
 }

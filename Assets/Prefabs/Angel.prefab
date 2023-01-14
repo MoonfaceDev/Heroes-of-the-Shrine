@@ -60,9 +60,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
-  figureObject: {fileID: 0}
   position: {x: 0.695, y: 0.685, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &9085019184276698034
@@ -78,7 +78,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 6160012718991474138, guid: 4beee89b5f87b224189fe289925793fb, type: 3}
-  particlePosition: {x: 0.6, y: 0.3, z: 0}
 --- !u!1 &4022763946346589053
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,9 +369,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
-  figureObject: {fileID: 0}
   position: {x: 0.055, y: 0.6, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &234424136118286085
@@ -388,7 +387,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1914151399083900665, guid: 97424818f1eb2994fa6429d2ec6974de, type: 3}
-  particlePosition: {x: 0, y: 0, z: 0}
 --- !u!1 &5102893360422186050
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,9 +447,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
-  figureObject: {fileID: 0}
   position: {x: 0.025, y: 0.96, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &9123332027102438765
@@ -467,7 +465,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2661468372341986182, guid: b27efde971e356747b9bdce37c18c7be, type: 3}
-  particlePosition: {x: 0.6, y: -0.7, z: 0}
 --- !u!1 &5102893360536826754
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,9 +525,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
-  figureObject: {fileID: 0}
   position: {x: 0.7, y: 0.685, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &3603120142536149105
@@ -546,7 +543,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 7368109035975547894, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
-  particlePosition: {x: 0.5, y: 0.1, z: 0}
 --- !u!1 &5102893360763890665
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,9 +603,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
-  figureObject: {fileID: 0}
   position: {x: 1.115, y: 1.11, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &5133938250452459189
@@ -625,7 +621,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 8245450162260640053, guid: e9a1faa674d113a428519eb042e2e097, type: 3}
-  particlePosition: {x: 0.2, y: 0.4, z: 0}
 --- !u!1 &5102893360866760426
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,9 +681,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
-  figureObject: {fileID: 0}
   position: {x: 0.15, y: 0.825, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &2002257862998933130
@@ -704,7 +699,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 7368109035975547894, guid: dd46b3ae7d054024c87a55ea5268a893, type: 3}
-  particlePosition: {x: -0.15, y: -0.15, z: 0}
 --- !u!1 &5102893360874897723
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,7 +778,7 @@ Transform:
   - {fileID: 3850747449127629430}
   - {fileID: 3970267090279809017}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360874897665
 MonoBehaviour:
@@ -799,9 +793,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  figureObject: {fileID: 5102893361555062420}
   position: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &9052240310973488254
@@ -982,7 +976,12 @@ MonoBehaviour:
   jumpSpeed: 10
   jumpAnticipateTime: 0.1
   jumpRecoverTime: 0.05
-  maxJumps: 1
+  onStartActive:
+    m_PersistentCalls:
+      m_Calls: []
+  onFinishActive:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5102893360874897679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1226,12 +1225,32 @@ MonoBehaviour:
   - Enemy
   - Prop
   lastAttack: {fileID: 0}
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
+  attackEvents:
+    onStartAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartRecovery:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishRecovery:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &5102893360874897678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2129,9 +2148,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
-  figureObject: {fileID: 0}
   position: {x: 1.565, y: 0.43, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!1 &5102893361029256207
@@ -2194,9 +2213,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
-  figureObject: {fileID: 0}
   position: {x: 0.975, y: 0.5, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &2515481451582170628
@@ -2212,7 +2231,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 3843020969008119030, guid: baca1c3b16caaf246824b26b93c8130a, type: 3}
-  particlePosition: {x: 0, y: 0, z: 0}
 --- !u!1 &5102893361031154992
 GameObject:
   m_ObjectHideFlags: 0
@@ -2260,9 +2278,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
-  figureObject: {fileID: 0}
   position: {x: -0.06, y: 1, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893361031155006
@@ -2357,9 +2375,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
-  figureObject: {fileID: 0}
   position: {x: 0.81, y: 0.78, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &4347562249962238493
@@ -2375,7 +2393,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 6176859053047132887, guid: 4149b67738ee91743826106b7544e3e7, type: 3}
-  particlePosition: {x: 0.7, y: 0.45, z: 0}
 --- !u!1 &5102893361279726048
 GameObject:
   m_ObjectHideFlags: 0
@@ -2388,6 +2405,7 @@ GameObject:
   - component: {fileID: 5102893361279726049}
   - component: {fileID: 5102893361279726062}
   - component: {fileID: 5102893361279726060}
+  - component: {fileID: 1268138786999904315}
   m_Layer: 0
   m_Name: Electrified Particles
   m_TagString: Untagged
@@ -7161,7 +7179,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 100
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -7205,11 +7223,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
-  figureObject: {fileID: 5102893361279726062}
   position: {x: 0, y: 0, z: -0.1}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
+--- !u!114 &1268138786999904315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893361279726048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90306126b25f448f98b2587e24ff902e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movableObject: {fileID: 5102893361279726060}
 --- !u!1 &5102893361555062423
 GameObject:
   m_ObjectHideFlags: 0
@@ -7222,6 +7253,7 @@ GameObject:
   - component: {fileID: 5102893361555062420}
   - component: {fileID: 5102893361555062418}
   - component: {fileID: 1727742673761222668}
+  - component: {fileID: 182527414214252825}
   m_Layer: 0
   m_Name: Angel Figure
   m_TagString: Untagged
@@ -7330,6 +7362,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6142a1f1c687491499aaa05fb1046b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &182527414214252825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893361555062423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90306126b25f448f98b2587e24ff902e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movableObject: {fileID: 5102893360874897665}
 --- !u!1 &5102893361817772764
 GameObject:
   m_ObjectHideFlags: 0
@@ -7390,9 +7435,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
-  figureObject: {fileID: 0}
   position: {x: 0.375, y: 0.675, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &1596551910517510343
@@ -7408,7 +7453,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 7368109035975547894, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
-  particlePosition: {x: 0.45, y: -0.2, z: 0}
 --- !u!1 &5102893361865183972
 GameObject:
   m_ObjectHideFlags: 0
@@ -7421,6 +7465,7 @@ GameObject:
   - component: {fileID: 5102893361865183971}
   - component: {fileID: 5102893361865183970}
   - component: {fileID: 5510860288221320503}
+  - component: {fileID: 4871257472338205888}
   m_Layer: 0
   m_Name: Run Particles
   m_TagString: Untagged
@@ -7436,7 +7481,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893361865183972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.080000006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12193,7 +12238,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -100
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -12237,8 +12282,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
-  figureObject: {fileID: 5102893361865183970}
   position: {x: 0, y: 0, z: 0.1}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
+--- !u!114 &4871257472338205888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893361865183972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90306126b25f448f98b2587e24ff902e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movableObject: {fileID: 5510860288221320503}

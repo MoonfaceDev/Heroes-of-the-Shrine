@@ -31,8 +31,7 @@ public class GameManager : BaseComponent
     public void Respawn()
     {
         var player = GameObject.FindGameObjectWithTag("Player");
-        var playerAnimator = player.GetComponent<MovableObject>().figureObject.GetComponent<Animator>();
-        playerAnimator.SetBool(RespawnParameter, true);
+        player.GetComponent<DieBehaviour>().Respawn();
 
         StartTimeout(() =>
         {

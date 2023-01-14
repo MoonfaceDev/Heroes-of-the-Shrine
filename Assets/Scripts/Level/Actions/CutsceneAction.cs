@@ -100,7 +100,7 @@ public class CutsceneAction : BaseComponent
         Gizmos.color = Color.white;
         foreach (var definition in moveDefinitions)
         {
-            Gizmos.DrawWireSphere(MovableObject.ScreenCoordinates(definition.position), 0.2f);
+            Gizmos.DrawWireSphere(GameEntity.ScreenCoordinates(definition.position), 0.2f);
         }
     }
 }

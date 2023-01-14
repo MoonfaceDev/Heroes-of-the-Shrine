@@ -13,8 +13,9 @@ public class EffectBar : BaseComponent
         scrollbar = GetComponent<Scrollbar>();
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
         scrollbar.size = 1 - effect.GetProgress();
     }
 }

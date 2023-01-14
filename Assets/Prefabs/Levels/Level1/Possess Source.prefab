@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8808664771124120978}
   - component: {fileID: 7962402519297729027}
   - component: {fileID: 7833785474643422092}
+  - component: {fileID: 5132956184775586537}
   m_Layer: 0
   m_Name: Figure
   m_TagString: Untagged
@@ -118,6 +119,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6142a1f1c687491499aaa05fb1046b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5132956184775586537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085553163995403576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90306126b25f448f98b2587e24ff902e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movableObject: {fileID: 5916882827402875226}
 --- !u!1 &4935747359819157664
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,9 +180,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  figureObject: {fileID: 7962402519297729027}
   position: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &6844794933150260862
@@ -243,9 +257,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5916882827402875226}
-  figureObject: {fileID: 0}
   position: {x: 0, y: 0.2, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &1815740459291873946

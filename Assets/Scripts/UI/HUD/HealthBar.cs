@@ -13,8 +13,9 @@ public class HealthBar : BaseComponent
         scrollbar = GetComponent<Scrollbar>();
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
         if (!healthSystem)
         {
             Destroy(gameObject);

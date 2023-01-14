@@ -15,8 +15,9 @@ public class EnemyGroup : CharacterBehaviour
         stateMachine = GetComponent<Animator>();
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
         var enemies = CachedObjectsManager.Instance.GetObjects<Character>("Enemy")
             .Select(enemy => enemy.GetComponent<EnemyGroup>()).ToArray();
 

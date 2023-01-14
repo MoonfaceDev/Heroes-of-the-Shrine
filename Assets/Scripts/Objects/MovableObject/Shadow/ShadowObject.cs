@@ -17,8 +17,10 @@ public class ShadowObject : BaseComponent
     public AnimationDefinition[] animationDefinitions;
 
     // Update is called once per frame
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
+        
         var scale = 2 / (1 + Mathf.Exp(0.2f * movableObject.WorldPosition.y));
         foreach (var definition in animationDefinitions)
         {
@@ -29,6 +31,6 @@ public class ShadowObject : BaseComponent
             }
         }
 
-        transform.localScale = MovableObject.GroundScreenCoordinates(Vector3.Scale(shadowScale, scale * Vector3.one));
+        transform.localScale = GameEntity.GroundScreenCoordinates(Vector3.Scale(shadowScale, scale * Vector3.one));
     }
 }

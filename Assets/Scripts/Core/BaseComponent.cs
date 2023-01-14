@@ -97,7 +97,7 @@ public class BaseComponent : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    protected virtual void Update()
     {
         var lockedEventListeners = new Dictionary<string, EventListener>(eventListeners);
         foreach (var id in lockedEventListeners.Keys)

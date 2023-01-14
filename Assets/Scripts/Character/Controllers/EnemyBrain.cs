@@ -161,8 +161,9 @@ public class EnemyBrain : CharacterController
     private void OnPlayerAttackFinishRecovery() => stateMachine.SetBool(PlayerAttackingRecoveringParameter, false);
     private void OnPlayerAttackStop() => stateMachine.SetBool(PlayerAttackingParameter, false);
 
-    public void Update()
+    protected override void Update()
     {
+        base.Update();
         var healthSystem = GetComponent<HealthSystem>();
         if (healthSystem)
         {

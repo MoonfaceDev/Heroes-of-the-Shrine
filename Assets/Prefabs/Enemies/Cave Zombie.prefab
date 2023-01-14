@@ -152,9 +152,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 3354150098320785788}
-  figureObject: {fileID: 0}
   position: {x: 0, y: 0.91, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &3354150097728927391
@@ -256,9 +256,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  figureObject: {fileID: 3354150098403288961}
   position: {x: 5.16, y: 0, z: -2.91}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &6093531673381940708
@@ -485,12 +485,32 @@ MonoBehaviour:
   hittableTags:
   - Player
   lastAttack: {fileID: 0}
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
+  attackEvents:
+    onStartAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartRecovery:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishRecovery:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &3354150098320785777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,6 +702,7 @@ GameObject:
   - component: {fileID: 3354150098403288961}
   - component: {fileID: 3354150098403288960}
   - component: {fileID: 7224905273740248619}
+  - component: {fileID: 3136730822051977527}
   m_Layer: 0
   m_Name: Goblin Figure
   m_TagString: Untagged
@@ -744,7 +765,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2910
   m_Sprite: {fileID: -1743024528, guid: 6c59a358421d3e44faabcebc873bcab6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -788,6 +809,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6142a1f1c687491499aaa05fb1046b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3136730822051977527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354150098403288991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90306126b25f448f98b2587e24ff902e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movableObject: {fileID: 3354150098320785788}
 --- !u!1 &3354150098559167058
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,9 +882,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 3354150098320785788}
-  figureObject: {fileID: 0}
   position: {x: 0.8, y: 0.9, z: 0}
   scale: {x: 1, y: 1, z: 1}
+  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &834799260672018682
@@ -866,4 +900,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 9064382892142360621, guid: 4d8c5fbcca0950e4291a8586725017e8, type: 3}
-  particlePosition: {x: 0.45, y: 0, z: 0}

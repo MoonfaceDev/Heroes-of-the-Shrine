@@ -66,7 +66,7 @@ public class EncounterAction : BaseComponent
             var direction = GetDirection(definition.direction);
             var borderEdge = direction == -1 ? cameraBorder.xMin : cameraBorder.xMax;
             var spawnPoint = new Vector3(borderEdge + direction * spawnSourceDistance, 0, definition.z);
-            var enemy = Instantiate(definition.prefab, MovableObject.ScreenCoordinates(spawnPoint),
+            var enemy = Instantiate(definition.prefab, GameEntity.ScreenCoordinates(spawnPoint),
                 Quaternion.identity);
             var movableObject = enemy.GetComponent<MovableObject>();
 
@@ -130,12 +130,12 @@ public class EncounterAction : BaseComponent
                 {
                     case Direction.Left:
                         Gizmos.DrawWireSphere(
-                            MovableObject.ScreenCoordinates(new Vector3(cameraBorder.xMin, 0, definition.z)),
+                            GameEntity.ScreenCoordinates(new Vector3(cameraBorder.xMin, 0, definition.z)),
                             0.1f * (wave + 1));
                         break;
                     case Direction.Right:
                         Gizmos.DrawWireSphere(
-                            MovableObject.ScreenCoordinates(new Vector3(cameraBorder.xMax, 0, definition.z)),
+                            GameEntity.ScreenCoordinates(new Vector3(cameraBorder.xMax, 0, definition.z)),
                             0.1f * (wave + 1));
                         break;
                     default:

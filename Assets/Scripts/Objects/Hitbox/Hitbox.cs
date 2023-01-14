@@ -83,25 +83,25 @@ internal class Box
 }
 
 [ExecuteInEditMode]
-[RequireComponent(typeof(MovableObject))]
+[RequireComponent(typeof(GameEntity))]
 public class Hitbox : BaseComponent
 {
     public Vector3 size;
 
-    public Vector3 WorldPosition => movableObject.WorldPosition;
+    public Vector3 WorldPosition => entity.WorldPosition;
 
-    private MovableObject movableObject;
+    private GameEntity entity;
     private Box box;
 
     private void Awake()
     {
-        movableObject = GetComponent<MovableObject>();
+        entity = GetComponent<GameEntity>();
         box = new Box(() => WorldPosition, size);
     }
 
     private void OnDrawGizmosSelected()
     {
-        if (!movableObject) return;
+        if (!entity) return;
         Color lineColor = new(1.0f, 0.5f, 0.0f);
         Color fillColor = new(1.0f, 0.5f, 0.0f, 0.3f);
         DrawHitbox(lineColor, fillColor);
@@ -109,12 +109,12 @@ public class Hitbox : BaseComponent
 
     private void DrawHitbox(Color lineColor, Color fillColor)
     {
-        DrawOutline(MovableObject.ScreenCoordinates(WorldPosition + size.z / 2 * Vector3.back),
-            MovableObject.ScreenCoordinates(size + size.z * Vector3.back), lineColor);
-        DrawBoth(MovableObject.ScreenCoordinates(WorldPosition + size.y / 2 * Vector3.up),
-            MovableObject.ScreenCoordinates(size + size.y * Vector3.down), lineColor, fillColor);
-        DrawFill(MovableObject.ScreenCoordinates(WorldPosition + WorldPosition.y * Vector3.down),
-            MovableObject.ScreenCoordinates(size + size.y * Vector3.down), new Color(0, 0, 0, 0.5f));
+        DrawOutline(GameEntity.ScreenCoordinates(WorldPosition + size.z / 2 * Vector3.back),
+            GameEntity.ScreenCoordinates(size + size.z * Vector3.back), lineColor);
+        DrawBoth(GameEntity.ScreenCoordinates(WorldPosition + size.y / 2 * Vector3.up),
+            GameEntity.ScreenCoordinates(size + size.y * Vector3.down), lineColor, fillColor);
+        DrawFill(GameEntity.ScreenCoordinates(WorldPosition + WorldPosition.y * Vector3.down),
+            GameEntity.ScreenCoordinates(size + size.y * Vector3.down), new Color(0, 0, 0, 0.5f));
     }
 
     private static void DrawBoth(Vector2 screenCenter, Vector2 screenSize, Color lineColor, Color fillColor)

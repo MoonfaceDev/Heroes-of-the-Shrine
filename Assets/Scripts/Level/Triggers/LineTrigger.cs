@@ -16,8 +16,9 @@ public class LineTrigger : BaseTrigger
         }
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
         if (playerMovableObject && playerMovableObject.WorldPosition.x >= minimumX && !fired)
         {
             fired = true;

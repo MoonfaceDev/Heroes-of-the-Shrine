@@ -27,8 +27,8 @@ public class Pathfind : BaseComponent
         foreach (var n in gizmosPath)
         {
             Gizmos.color = i == 1 ? Color.green : Color.blue;
-            Gizmos.DrawCube(MovableObject.GroundScreenCoordinates(n.position) + 0.1f * Vector3.forward,
-                MovableObject.GroundScreenCoordinates(Vector3.one * (grid.nodeRadius * 2f)));
+            Gizmos.DrawCube(GameEntity.GroundScreenCoordinates(n.position) + 0.1f * Vector3.forward,
+                GameEntity.GroundScreenCoordinates(Vector3.one * (grid.nodeRadius * 2f)));
             i++;
         }
     }
