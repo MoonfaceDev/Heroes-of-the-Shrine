@@ -1,6 +1,9 @@
 using System;
 using Object = UnityEngine.Object;
 
+/// <summary>
+/// An hit detector that detects hits periodically, with a given interval
+/// </summary>
 [Serializable]
 public class PeriodicAbsoluteHitDetector : BaseHitDetector
 {

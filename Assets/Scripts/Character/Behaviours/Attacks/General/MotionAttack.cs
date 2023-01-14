@@ -2,6 +2,11 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// An attack that has a single hit detector, hit executor, and has an anticipation and recovery phases with fixed
+/// duration. During the active phase, the character moves in the direction it looked at with a reducing speed, until it
+/// reaches zero.
+/// </summary>
 public class MotionAttack : BaseAttack
 {
     [Serializable]
@@ -12,7 +17,7 @@ public class MotionAttack : BaseAttack
         public float acceleration;
         public float recoveryDuration;
     }
-    
+
     public AttackFlow attackFlow;
 
     [SerializeInterface] [SerializeReference]

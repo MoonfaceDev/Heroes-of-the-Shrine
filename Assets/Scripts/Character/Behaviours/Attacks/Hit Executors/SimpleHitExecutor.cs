@@ -1,6 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
+/// <summary>
+/// Simple implementation of <see cref="IHitExecutor"/> that deals damage and applies stun or knockback on an hittable
+/// </summary>
 [Serializable]
 public class SimpleHitExecutor : IHitExecutor
 {

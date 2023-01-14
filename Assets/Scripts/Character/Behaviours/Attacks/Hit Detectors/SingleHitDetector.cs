@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using Object = UnityEngine.Object;
 
+/// <summary>
+/// An hit detector for which each object can be detected only once
+/// </summary>
 [Serializable]
 public class SingleHitDetector : BaseHitDetector
 {

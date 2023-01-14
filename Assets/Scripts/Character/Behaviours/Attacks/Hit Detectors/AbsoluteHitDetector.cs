@@ -1,6 +1,9 @@
 using System;
 using Object = UnityEngine.Object;
 
+/// <summary>
+/// An hit detector that detects hits only in the frame it is started
+/// </summary>
 [Serializable]
 public class AbsoluteHitDetector : BaseHitDetector
 {

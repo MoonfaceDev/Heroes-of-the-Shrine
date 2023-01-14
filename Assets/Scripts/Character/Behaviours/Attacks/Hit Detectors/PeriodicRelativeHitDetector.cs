@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
+/// <summary>
+/// An hit detector that detects hits periodically, with a given interval, relative to the hit object
+/// </summary>
 [Serializable]
 public class PeriodicRelativeHitDetector : BaseHitDetector
 {
