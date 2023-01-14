@@ -202,12 +202,32 @@ MonoBehaviour:
   hittableTags:
   - Player
   lastAttack: {fileID: 0}
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onStop:
-    m_PersistentCalls:
-      m_Calls: []
+  playEvents:
+    onPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    onStop:
+      m_PersistentCalls:
+        m_Calls: []
+  attackEvents:
+    onStartAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishAnticipating:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishActive:
+      m_PersistentCalls:
+        m_Calls: []
+    onStartRecovery:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinishRecovery:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &63080241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3846,7 +3866,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 7368109035975547894, guid: faab43d0b7c5cfa448b93f624f98e583, type: 3}
-  particlePosition: {x: 0.6, y: 0.2, z: 0}
 --- !u!1 &1372187416
 GameObject:
   m_ObjectHideFlags: 0
