@@ -18,8 +18,13 @@ public class SpinningSwordsAttack : BaseAttack
     }
 
     public AttackFlow attackFlow;
+
+    [SerializeInterface] [SerializeReference]
     public BaseHitDetector hitDetector1;
+
+    [SerializeInterface] [SerializeReference]
     public BaseHitDetector hitDetector2;
+
     public SimpleHitExecutor hitExecutor;
 
     private List<string> currentTimeouts;

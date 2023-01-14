@@ -64,4 +64,15 @@ public class EventManager : BaseComponent
     {
         return base.StartTimeout(action, timeout);
     }
+
+    /// <summary>
+    /// Executes a callable repeatedly with a time delay between each call
+    /// </summary>
+    /// <param name="action">Callable to execute</param>
+    /// <param name="interval">Time to wait between executions, in seconds</param>
+    /// <returns>ID of the registered callable</returns>
+    public new string StartInterval(Action action, float interval)
+    {
+        return base.StartInterval(action, interval);
+    }
 }

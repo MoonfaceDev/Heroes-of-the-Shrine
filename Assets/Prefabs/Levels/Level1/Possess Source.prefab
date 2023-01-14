@@ -183,9 +183,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df8dd7a80b64456a7d0d2915f617572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitDetector: {fileID: 7882393571395824768}
+  hitDetector:
+    rid: 3181427246007058606
   animator: {fileID: 8808664771124120978}
   hitAnimationDuration: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 3181427246007058606
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 1815740459291873946}
+        hitParticles: {fileID: 0}
+        includedHittableTags: []
+        excludedHittableTags: []
 --- !u!1 &8436393641562852876
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +208,6 @@ GameObject:
   - component: {fileID: 7140694659298816723}
   - component: {fileID: 6765827481344271966}
   - component: {fileID: 1815740459291873946}
-  - component: {fileID: 7882393571395824768}
   m_Layer: 0
   m_Name: Hitbox
   m_TagString: Untagged
@@ -251,17 +261,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 1.6, y: 0.5, z: 0.55}
---- !u!114 &7882393571395824768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8436393641562852876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  includedHittableTags: []
-  excludedHittableTags: []

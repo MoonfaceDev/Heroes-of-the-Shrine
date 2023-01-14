@@ -65,8 +65,8 @@ public class RunBehaviour : BaseMovementBehaviour<RunCommand>
 
         if (jumpBehaviour)
         {
-            jumpBehaviour.OnJump += () => { runParticlesMain.gravityModifier = 1f; };
-            jumpBehaviour.OnLand += () => { runParticlesMain.gravityModifier = 0; };
+            jumpBehaviour.onStartActive.AddListener(() => runParticlesMain.gravityModifier = 1f);
+            jumpBehaviour.onFinishActive.AddListener(() => runParticlesMain.gravityModifier = 0);
         }
     }
 

@@ -8,7 +8,9 @@ public class SimpleHitExecutor : IHitExecutor
 
     public void Execute(BaseAttack attack, IHittable hittable)
     {
-        var processedDamage = attack.AttackManager.TranspileDamage(attack, hittable, hitDefinition.damage);
+        var processedDamage =
+            attack.AttackManager.DamageTranspiler.TranspileDamage(attack, hittable, hitDefinition.damage);
+
         switch (hitDefinition.hitType)
         {
             case HitType.Knockback:

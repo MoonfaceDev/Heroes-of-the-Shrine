@@ -1,6 +1,86 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using static MathUtils;
+
+internal class Box
+{
+    private readonly Vector3 size;
+    private readonly Func<Vector3> position;
+
+    private Vector3 Position => position();
+
+    public Box(Func<Vector3> position, Vector3 size)
+    {
+        this.position = position;
+        this.size = size;
+    }
+
+    private static bool IsBetween(float min1, float max1, float min2, float max2)
+    {
+        return max1 >= min2 && max2 >= min1;
+    }
+
+    public bool OverlapBox(Box other)
+    {
+        return IsBetween(GetLeft(), GetRight(), other.GetLeft(), other.GetRight()) &&
+               IsBetween(GetBottom(), GetTop(), other.GetBottom(), other.GetTop()) &&
+               IsBetween(GetFar(), GetNear(), other.GetFar(), other.GetNear());
+    }
+
+    public bool IsInside(Vector3 point)
+    {
+        return (point.x >= GetLeft() && point.x <= GetRight())
+               && (point.y >= GetBottom() && point.y <= GetTop())
+               && (point.z >= GetFar() && point.z <= GetNear());
+    }
+
+    public IEnumerable<Vector2> GetSegmentIntersections(Vector2 start, Vector2 end)
+    {
+        return LineRectangleIntersections(start, end, ToPlane(Position), ToPlane(size));
+    }
+
+    public Vector3 GetIntersectionCenter(Box other)
+    {
+        var left = Mathf.Max(GetLeft(), other.GetLeft());
+        var right = Mathf.Min(GetRight(), other.GetRight());
+        var bottom = Mathf.Max(GetBottom(), other.GetBottom());
+        var top = Mathf.Min(GetTop(), other.GetTop());
+        var far = Mathf.Max(GetFar(), other.GetFar());
+        var near = Mathf.Min(GetNear(), other.GetNear());
+        return (new Vector3(left, bottom, far) + new Vector3(right, top, near)) / 2;
+    }
+
+    private float GetLeft()
+    {
+        return Position.x - size.x / 2;
+    }
+
+    private float GetRight()
+    {
+        return Position.x + size.x / 2;
+    }
+
+    private float GetBottom()
+    {
+        return Position.y - size.y / 2;
+    }
+
+    private float GetTop()
+    {
+        return Position.y + size.y / 2;
+    }
+
+    private float GetFar()
+    {
+        return Position.z - size.z / 2;
+    }
+
+    private float GetNear()
+    {
+        return Position.z + size.z / 2;
+    }
+}
 
 [ExecuteInEditMode]
 [RequireComponent(typeof(MovableObject))]
@@ -8,33 +88,23 @@ public class Hitbox : BaseComponent
 {
     public Vector3 size;
 
+    public Vector3 WorldPosition => movableObject.WorldPosition;
+
     private MovableObject movableObject;
+    private Box box;
 
     private void Awake()
     {
         movableObject = GetComponent<MovableObject>();
+        box = new Box(() => WorldPosition, size);
     }
 
-    public Vector3 WorldPosition => movableObject.WorldPosition;
-
-    void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
-        if (movableObject && CompareTag("Barrier"))
-        {
-            Color lineColor = new(1.0f, 0.5f, 0.0f);
-            Color fillColor = new(1.0f, 0.5f, 0.0f, 0.3f);
-            DrawHitbox(lineColor, fillColor);
-        }
-    }
-
-    void OnDrawGizmosSelected()
-    {
-        if (movableObject && !CompareTag("Barrier"))
-        {
-            Color lineColor = new(1.0f, 0.5f, 0.0f);
-            Color fillColor = new(1.0f, 0.5f, 0.0f, 0.3f);
-            DrawHitbox(lineColor, fillColor);
-        }
+        if (!movableObject) return;
+        Color lineColor = new(1.0f, 0.5f, 0.0f);
+        Color fillColor = new(1.0f, 0.5f, 0.0f, 0.3f);
+        DrawHitbox(lineColor, fillColor);
     }
 
     private void DrawHitbox(Color lineColor, Color fillColor)
@@ -47,20 +117,20 @@ public class Hitbox : BaseComponent
             MovableObject.ScreenCoordinates(size + size.y * Vector3.down), new Color(0, 0, 0, 0.5f));
     }
 
-    void DrawBoth(Vector2 screenCenter, Vector2 screenSize, Color lineColor, Color fillColor)
+    private static void DrawBoth(Vector2 screenCenter, Vector2 screenSize, Color lineColor, Color fillColor)
     {
         DrawOutline(screenCenter, screenSize, lineColor);
         DrawFill(screenCenter, screenSize, fillColor);
     }
 
-    void DrawOutline(Vector2 screenCenter, Vector2 screenSize, Color lineColor)
+    private static void DrawOutline(Vector2 screenCenter, Vector2 screenSize, Color lineColor)
     {
         Gizmos.color = lineColor;
         Gizmos.DrawWireCube((Vector3)screenCenter + 0.01f * Vector3.forward,
             (Vector3)screenSize + 0.01f * Vector3.forward);
     }
 
-    void DrawFill(Vector2 screenCenter, Vector2 screenSize, Color fillColor)
+    private static void DrawFill(Vector2 screenCenter, Vector2 screenSize, Color fillColor)
     {
         Gizmos.color = fillColor;
         Gizmos.DrawCube((Vector3)screenCenter + 0.01f * Vector3.forward, (Vector3)screenSize + 0.01f * Vector3.forward);
@@ -68,58 +138,21 @@ public class Hitbox : BaseComponent
 
     public bool IsInside(Vector3 point)
     {
-        return (point.x >= GetLeft() && point.x <= GetRight())
-               && (point.y >= GetBottom() && point.y <= GetTop())
-               && (point.z >= GetFar() && point.z <= GetNear());
+        return box.IsInside(point);
     }
 
-    static bool IsBetween(float min1, float max1, float min2, float max2)
+    public bool OverlapHitbox(Hitbox other)
     {
-        return max1 >= min2 && max2 >= min1;
+        return box.OverlapBox(other.box);
     }
 
-    public bool OverlapHitbox(Hitbox hitbox, float padding = 0)
+    public IEnumerable<Vector2> GetSegmentIntersections(Vector2 start, Vector2 end)
     {
-        return IsBetween(GetLeft() + padding, GetRight() - padding, hitbox.GetLeft() + padding,
-                   hitbox.GetRight() - padding) &&
-               IsBetween(GetBottom() + padding, GetTop() - padding, hitbox.GetBottom() + padding,
-                   hitbox.GetTop() - padding) &&
-               IsBetween(GetFar() + padding, GetNear() - padding, hitbox.GetFar() + padding,
-                   hitbox.GetNear() - padding);
+        return box.GetSegmentIntersections(start, end);
     }
 
-    public List<Vector2> GetSegmentIntersections(Vector2 start, Vector2 end)
+    public Vector3 GetIntersectionCenter(Hitbox other)
     {
-        return LineRectangleIntersections(start, end, ToPlane(WorldPosition), ToPlane(size));
-    }
-
-    public float GetLeft()
-    {
-        return WorldPosition.x - size.x / 2;
-    }
-
-    public float GetRight()
-    {
-        return WorldPosition.x + size.x / 2;
-    }
-
-    public float GetBottom()
-    {
-        return WorldPosition.y - size.y / 2;
-    }
-
-    public float GetTop()
-    {
-        return WorldPosition.y + size.y / 2;
-    }
-
-    public float GetFar()
-    {
-        return WorldPosition.z - size.z / 2;
-    }
-
-    public float GetNear()
-    {
-        return WorldPosition.z + size.z / 2;
+        return box.GetIntersectionCenter(other.box);
     }
 }

@@ -14,6 +14,7 @@ public class SimpleAttack : BaseAttack
 
     public AttackFlow attackFlow;
 
+    [SerializeInterface] [SerializeReference]
     public BaseHitDetector hitDetector;
 
     public SimpleHitExecutor hitExecutor;

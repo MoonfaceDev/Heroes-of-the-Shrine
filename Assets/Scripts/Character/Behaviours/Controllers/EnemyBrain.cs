@@ -97,7 +97,7 @@ public class EnemyBrain : CharacterController
         var attackManager = GetComponent<AttackManager>();
         if (attackManager)
         {
-            attackManager.AttachDamageMultiplier((_, _) => IsEnraged() ? rageDamageMultiplier : 1);
+            attackManager.DamageTranspiler.AttachDamageMultiplier((_, _) => IsEnraged() ? rageDamageMultiplier : 1);
         }
 
         foreach (var pattern in stateMachine.GetBehaviours<BasePattern>())
@@ -126,14 +126,14 @@ public class EnemyBrain : CharacterController
             var playerAttackManager = player.GetComponent<AttackManager>();
             if (playerAttackManager)
             {
-                playerAttackManager.onPlay.AddListener(OnPlayerAttackPlay);
-                playerAttackManager.OnStartAnticipating += OnPlayerAttackStartAnticipating;
-                playerAttackManager.OnFinishAnticipating += OnPlayerAttackFinishAnticipating;
-                playerAttackManager.OnStartActive += OnPlayerAttackStartActive;
-                playerAttackManager.OnFinishActive += OnPlayerAttackFinishActive;
-                playerAttackManager.OnStartRecovery += OnPlayerAttackStartRecovery;
-                playerAttackManager.OnFinishRecovery += OnPlayerAttackFinishRecovery;
-                playerAttackManager.onStop.AddListener(OnPlayerAttackStop);
+                playerAttackManager.PlayEvents.onPlay.AddListener(OnPlayerAttackPlay);
+                playerAttackManager.attackEvents.onStartAnticipating.AddListener(OnPlayerAttackStartAnticipating);
+                playerAttackManager.attackEvents.onFinishAnticipating.AddListener(OnPlayerAttackFinishAnticipating);
+                playerAttackManager.attackEvents.onStartActive.AddListener(OnPlayerAttackStartActive);
+                playerAttackManager.attackEvents.onFinishActive.AddListener(OnPlayerAttackFinishActive);
+                playerAttackManager.attackEvents.onStartRecovery.AddListener(OnPlayerAttackStartRecovery);
+                playerAttackManager.attackEvents.onFinishRecovery.AddListener(OnPlayerAttackFinishRecovery);
+                playerAttackManager.PlayEvents.onStop.AddListener(OnPlayerAttackStop);
             }
         }
     }
@@ -231,14 +231,14 @@ public class EnemyBrain : CharacterController
             var playerAttackManager = player.GetComponent<AttackManager>();
             if (playerAttackManager)
             {
-                playerAttackManager.onPlay.RemoveListener(OnPlayerAttackPlay);
-                playerAttackManager.OnStartAnticipating -= OnPlayerAttackStartAnticipating;
-                playerAttackManager.OnFinishAnticipating -= OnPlayerAttackFinishAnticipating;
-                playerAttackManager.OnStartActive -= OnPlayerAttackStartActive;
-                playerAttackManager.OnFinishActive -= OnPlayerAttackFinishActive;
-                playerAttackManager.OnStartRecovery -= OnPlayerAttackStartRecovery;
-                playerAttackManager.OnFinishRecovery -= OnPlayerAttackFinishRecovery;
-                playerAttackManager.onStop.RemoveListener(OnPlayerAttackStop);
+                playerAttackManager.PlayEvents.onPlay.RemoveListener(OnPlayerAttackPlay);
+                playerAttackManager.attackEvents.onStartAnticipating.RemoveListener(OnPlayerAttackStartAnticipating);
+                playerAttackManager.attackEvents.onFinishAnticipating.RemoveListener(OnPlayerAttackFinishAnticipating);
+                playerAttackManager.attackEvents.onStartActive.RemoveListener(OnPlayerAttackStartActive);
+                playerAttackManager.attackEvents.onFinishActive.RemoveListener(OnPlayerAttackFinishActive);
+                playerAttackManager.attackEvents.onStartRecovery.RemoveListener(OnPlayerAttackStartRecovery);
+                playerAttackManager.attackEvents.onFinishRecovery.RemoveListener(OnPlayerAttackFinishRecovery);
+                playerAttackManager.PlayEvents.onStop.RemoveListener(OnPlayerAttackStop);
             }
         }
     }

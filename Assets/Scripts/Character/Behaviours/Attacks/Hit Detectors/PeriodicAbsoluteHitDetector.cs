@@ -1,5 +1,7 @@
 using System;
+using Object = UnityEngine.Object;
 
+[Serializable]
 public class PeriodicAbsoluteHitDetector : BaseHitDetector
 {
     public float interval;
@@ -9,20 +11,20 @@ public class PeriodicAbsoluteHitDetector : BaseHitDetector
 
     private string detectionInterval;
 
-    protected override void DoStartDetector(Action<IHittable> hitCallable)
+    protected override void DoStartDetector(Action<HittableHitbox> hitCallable)
     {
         if (startImmediately)
         {
             DetectHits(hitCallable);
         }
 
-        detectionInterval = StartInterval(() => DetectHits(hitCallable), interval);
+        detectionInterval = EventManager.Instance.StartInterval(() => DetectHits(hitCallable), interval);
     }
 
-    private void DetectHits(Action<IHittable> hitCallable)
+    private void DetectHits(Action<HittableHitbox> hitCallable)
     {
         OnDetect?.Invoke();
-        var hittables = FindObjectsOfType<HittableHitbox>();
+        var hittables = Object.FindObjectsOfType<HittableHitbox>();
         foreach (var hittable in hittables)
         {
             if (hittable.Hitbox.OverlapHitbox(hitbox))
@@ -34,6 +36,6 @@ public class PeriodicAbsoluteHitDetector : BaseHitDetector
 
     public override void StopDetector()
     {
-        Unregister(detectionInterval);
+        EventManager.Instance.Unregister(detectionInterval);
     }
 }

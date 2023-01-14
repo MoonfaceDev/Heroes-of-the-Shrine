@@ -81,12 +81,6 @@ public class PlayerController : CharacterController
         bufferedActions = new List<BufferedAction>();
     }
 
-    private void Start()
-    {
-        // clear expired buffered actions
-        Register(() => bufferedActions = bufferedActions.FindAll(action => !action.IsExpired()));
-    }
-
     public void Update()
     {
         // reduce duration of possessed effect
@@ -121,6 +115,8 @@ public class PlayerController : CharacterController
 
     private void ExecuteBufferedActions()
     {
+        // clear expired buffered actions
+        bufferedActions = bufferedActions.FindAll(action => !action.IsExpired());
         if (bufferedActions.Count == 0) return;
         foreach (var action in bufferedActions.OrderByDescending(action => action.Priority))
         {
@@ -140,7 +136,7 @@ public class PlayerController : CharacterController
         if (!walkBehaviour) return;
         if (horizontal != 0 || vertical != 0)
         {
-            ExecutePlayable(walkBehaviour, new WalkCommand(horizontal, vertical), walkPriority);
+            walkBehaviour.Play(new WalkCommand(horizontal, vertical));
         }
         else
         {
@@ -177,6 +173,10 @@ public class PlayerController : CharacterController
     private void ExecuteAttack()
     {
         var downButtons = GetDownButtons();
+        if (downButtons.Length == 0)
+        {
+            return;
+        }
         if (!TryExecuteAttack(downButtons))
         {
             bufferedActions.Add(new BufferedAction(

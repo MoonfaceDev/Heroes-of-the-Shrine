@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
+[Serializable]
 public class PeriodicRelativeHitDetector : BaseHitDetector
 {
     public float interval;
@@ -9,15 +11,15 @@ public class PeriodicRelativeHitDetector : BaseHitDetector
 
     private string detectionListener;
 
-    protected override void DoStartDetector(Action<IHittable> hitCallable)
+    protected override void DoStartDetector(Action<HittableHitbox> hitCallable)
     {
         var hitTimes = new Dictionary<HittableBehaviour, float>();
-        detectionListener = Register(() => DetectHits(hitCallable, hitTimes));
+        detectionListener = EventManager.Instance.Register(() => DetectHits(hitCallable, hitTimes));
     }
 
-    private void DetectHits(Action<IHittable> hitCallable, IDictionary<HittableBehaviour, float> hitTimes)
+    private void DetectHits(Action<HittableHitbox> hitCallable, IDictionary<HittableBehaviour, float> hitTimes)
     {
-        var hittables = FindObjectsOfType<HittableHitbox>();
+        var hittables = Object.FindObjectsOfType<HittableHitbox>();
         foreach (var hittable in hittables)
         {
             if (hittable.Hitbox.OverlapHitbox(hitbox) && !hitTimes.ContainsKey(hittable.hittableBehaviour))
@@ -39,6 +41,6 @@ public class PeriodicRelativeHitDetector : BaseHitDetector
 
     public override void StopDetector()
     {
-        Unregister(detectionListener);
+        EventManager.Instance.Unregister(detectionListener);
     }
 }

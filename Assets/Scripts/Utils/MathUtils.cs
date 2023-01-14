@@ -51,7 +51,7 @@ public static class MathUtils
         return IsBetween(start1, end1, intersection) && IsBetween(start2, end2, intersection);
     }
 
-    public static List<Vector2> LineRectangleIntersections(Vector2 start, Vector2 end, Vector2 rectanglePosition,
+    public static IEnumerable<Vector2> LineRectangleIntersections(Vector2 start, Vector2 end, Vector2 rectanglePosition,
         Vector2 rectangleSize)
     {
         List<Vector2> intersections = new();

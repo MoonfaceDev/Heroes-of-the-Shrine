@@ -1,16 +1,18 @@
 using System;
 using System.Collections.Generic;
+using Object = UnityEngine.Object;
 
+[Serializable]
 public class SingleHitDetector : BaseHitDetector
 {
     private string detectionListener;
 
-    protected override void DoStartDetector(Action<IHittable> hitCallable)
+    protected override void DoStartDetector(Action<HittableHitbox> hitCallable)
     {
         var alreadyHit = new HashSet<HittableHitbox>();
-        detectionListener = Register(() =>
+        detectionListener = EventManager.Instance.Register(() =>
         {
-            var hittables = FindObjectsOfType<HittableHitbox>();
+            var hittables = Object.FindObjectsOfType<HittableHitbox>();
             foreach (var hittable in hittables)
             {
                 if (!alreadyHit.Contains(hittable) && hittable.Hitbox.OverlapHitbox(hitbox))
@@ -24,6 +26,6 @@ public class SingleHitDetector : BaseHitDetector
 
     public override void StopDetector()
     {
-        Unregister(detectionListener);
+        EventManager.Instance.Unregister(detectionListener);
     }
 }

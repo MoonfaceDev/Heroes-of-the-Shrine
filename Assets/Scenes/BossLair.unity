@@ -752,7 +752,13 @@ MonoBehaviour:
     anticipationDuration: 0.4
     activeDuration: 0.5
     recoveryDuration: 0.85
-  periodicHitDetector: {fileID: 1340466846}
+  periodicHitDetector:
+    hitbox: {fileID: 1340466848}
+    hitParticles: {fileID: 1340466850}
+    includedHittableTags: []
+    excludedHittableTags: []
+    interval: 0.05
+    startImmediately: 1
   periodicHitCount: 2
   periodicHitExecutor:
     simpleHitExecutor:
@@ -766,7 +772,8 @@ MonoBehaviour:
     electrifyEffect:
       duration: 4
       speedMultiplier: 0.5
-  explosionHitDetector: {fileID: 1468609905}
+  explosionHitDetector:
+    rid: 3181427246007058591
   explosionHitExecutor:
     simpleHitExecutor:
       hitDefinition:
@@ -793,6 +800,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  references:
+    version: 2
+    RefIds:
+    - rid: 3181427246007058591
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 1468609907}
+        hitParticles: {fileID: 0}
+        includedHittableTags: []
+        excludedHittableTags: []
 --- !u!114 &63080263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3762,7 +3779,6 @@ GameObject:
   - component: {fileID: 1340466849}
   - component: {fileID: 1340466848}
   - component: {fileID: 1340466847}
-  - component: {fileID: 1340466846}
   - component: {fileID: 1340466850}
   m_Layer: 0
   m_Name: ElectrifyAttackHitbox
@@ -3771,22 +3787,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1340466846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1340466845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04d83c1371e2c6b4abf3f1635112fab6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  includedHittableTags: []
-  excludedHittableTags: []
-  interval: 0.05
-  startImmediately: 1
 --- !u!114 &1340466847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4007,7 +4007,6 @@ GameObject:
   - component: {fileID: 1468609908}
   - component: {fileID: 1468609907}
   - component: {fileID: 1468609906}
-  - component: {fileID: 1468609905}
   m_Layer: 0
   m_Name: ElectrifyExploationHitbox
   m_TagString: Untagged
@@ -4015,20 +4014,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1468609905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468609904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  includedHittableTags: []
-  excludedHittableTags: []
 --- !u!114 &1468609906
 MonoBehaviour:
   m_ObjectHideFlags: 0

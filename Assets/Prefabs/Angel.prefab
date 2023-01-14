@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4058469792659233068}
   - component: {fileID: 2452591022739808639}
   - component: {fileID: 9085019184276698034}
-  - component: {fileID: 210030094719651067}
   m_Layer: 0
   m_Name: StabAttackHitbox
   m_TagString: Untagged
@@ -80,20 +79,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 6160012718991474138, guid: 4beee89b5f87b224189fe289925793fb, type: 3}
   particlePosition: {x: 0.6, y: 0.3, z: 0}
---- !u!114 &210030094719651067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 307263992615725128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  includedHittableTags: []
-  excludedHittableTags: []
 --- !u!1 &4022763946346589053
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,7 +322,6 @@ GameObject:
   - component: {fileID: 5102893360398477695}
   - component: {fileID: 4204961340021553250}
   - component: {fileID: 234424136118286085}
-  - component: {fileID: 3331154466096814319}
   m_Layer: 0
   m_Name: SpiningSwordAttackHitbox (1)
   m_TagString: Untagged
@@ -405,20 +389,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1914151399083900665, guid: 97424818f1eb2994fa6429d2ec6974de, type: 3}
   particlePosition: {x: 0, y: 0, z: 0}
---- !u!114 &3331154466096814319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360398477681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  includedHittableTags: []
-  excludedHittableTags: []
 --- !u!1 &5102893360422186050
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +401,6 @@ GameObject:
   - component: {fileID: 5102893360422186048}
   - component: {fileID: 2601094941652560139}
   - component: {fileID: 9123332027102438765}
-  - component: {fileID: 9212607366117902189}
   m_Layer: 0
   m_Name: AirSpinAttackHitbox
   m_TagString: Untagged
@@ -499,20 +468,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 2661468372341986182, guid: b27efde971e356747b9bdce37c18c7be, type: 3}
   particlePosition: {x: 0.6, y: -0.7, z: 0}
---- !u!114 &9212607366117902189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360422186050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  includedHittableTags: []
-  excludedHittableTags: []
 --- !u!1 &5102893360536826754
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,7 +480,6 @@ GameObject:
   - component: {fileID: 5102893360536826755}
   - component: {fileID: 6156904755942689786}
   - component: {fileID: 3603120142536149105}
-  - component: {fileID: 1378128598374464822}
   m_Layer: 0
   m_Name: NormalAttackHitbox
   m_TagString: Untagged
@@ -593,20 +547,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 7368109035975547894, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
   particlePosition: {x: 0.5, y: 0.1, z: 0}
---- !u!114 &1378128598374464822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360536826754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  includedHittableTags: []
-  excludedHittableTags: []
 --- !u!1 &5102893360763890665
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,7 +559,6 @@ GameObject:
   - component: {fileID: 5102893360763890678}
   - component: {fileID: 4490768084976023015}
   - component: {fileID: 5133938250452459189}
-  - component: {fileID: 4499705321448943879}
   m_Layer: 0
   m_Name: UppercutHitbox
   m_TagString: Untagged
@@ -687,20 +626,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 8245450162260640053, guid: e9a1faa674d113a428519eb042e2e097, type: 3}
   particlePosition: {x: 0.2, y: 0.4, z: 0}
---- !u!114 &4499705321448943879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360763890665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  includedHittableTags: []
-  excludedHittableTags: []
 --- !u!1 &5102893360866760426
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,8 +637,7 @@ GameObject:
   - component: {fileID: 5102893360866760424}
   - component: {fileID: 5102893360866760427}
   - component: {fileID: 2748543002303246879}
-  - component: {fileID: 3262553446811620699}
-  - component: {fileID: 7464119798599608225}
+  - component: {fileID: 2002257862998933130}
   m_Layer: 0
   m_Name: SlashAttackHitbox
   m_TagString: Untagged
@@ -767,21 +691,7 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
---- !u!114 &3262553446811620699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360866760426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  includedHittableTags: []
-  excludedHittableTags: []
---- !u!114 &7464119798599608225
+--- !u!114 &2002257862998933130
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1070,8 +980,8 @@ MonoBehaviour:
         m_Calls: []
   cooldown: 0
   jumpSpeed: 10
-  jumpAnticipateTime: 0
-  jumpRecoverTime: 0.1
+  jumpAnticipateTime: 0.1
+  jumpRecoverTime: 0.05
   maxJumps: 1
 --- !u!114 &5102893360874897679
 MonoBehaviour:
@@ -1412,7 +1322,8 @@ MonoBehaviour:
     velocity: 10
     acceleration: 10
     recoveryDuration: 0.15
-  hitDetector: {fileID: 6205691515461635864}
+  hitDetector:
+    rid: 3181427246007058570
   hitExecutor:
     hitDefinition:
       damage: 10
@@ -1420,6 +1331,16 @@ MonoBehaviour:
       knockbackPower: 10
       knockbackDirection: 10
       stunTime: 0.5
+  references:
+    version: 2
+    RefIds:
+    - rid: 3181427246007058570
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 5102893361029256204}
+        hitParticles: {fileID: 2515481451582170628}
+        includedHittableTags: []
+        excludedHittableTags: []
 --- !u!114 &5102893360874897686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1466,7 +1387,8 @@ MonoBehaviour:
     anticipationDuration: 0.2
     activeDuration: 0.15
     recoveryDuration: 0.2
-  hitDetector: {fileID: 1378128598374464822}
+  hitDetector:
+    rid: 3181427246007058563
   hitExecutor:
     hitDefinition:
       damage: 7
@@ -1474,6 +1396,16 @@ MonoBehaviour:
       knockbackPower: 0
       knockbackDirection: 0
       stunTime: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 3181427246007058563
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 5102893360536826755}
+        hitParticles: {fileID: 3603120142536149105}
+        includedHittableTags: []
+        excludedHittableTags: []
 --- !u!114 &5102893360874897683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1521,7 +1453,8 @@ MonoBehaviour:
     anticipationDuration: 0.05
     activeDuration: 0.14
     recoveryDuration: 0.01
-  hitDetector: {fileID: 210030094719651067}
+  hitDetector:
+    rid: 3181427246007058572
   hitExecutor:
     hitDefinition:
       damage: 15
@@ -1529,6 +1462,16 @@ MonoBehaviour:
       knockbackPower: 0
       knockbackDirection: 0
       stunTime: 0.5
+  references:
+    version: 2
+    RefIds:
+    - rid: 3181427246007058572
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 4058469792659233068}
+        hitParticles: {fileID: 9085019184276698034}
+        includedHittableTags: []
+        excludedHittableTags: []
 --- !u!114 &5102893360874897687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1576,7 +1519,8 @@ MonoBehaviour:
     anticipationDuration: 0.01
     activeDuration: 0.14
     recoveryDuration: 0.3
-  hitDetector: {fileID: 8845085713669517856}
+  hitDetector:
+    rid: 3181427246007058574
   hitExecutor:
     hitDefinition:
       damage: 5
@@ -1584,6 +1528,16 @@ MonoBehaviour:
       knockbackPower: 0
       knockbackDirection: 0
       stunTime: 0.5
+  references:
+    version: 2
+    RefIds:
+    - rid: 3181427246007058574
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 5102893361817772762}
+        hitParticles: {fileID: 1596551910517510343}
+        includedHittableTags: []
+        excludedHittableTags: []
 --- !u!114 &5102893360874897684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1631,7 +1585,8 @@ MonoBehaviour:
     anticipationDuration: 0.05
     activeDuration: 0.15
     recoveryDuration: 0.2
-  hitDetector: {fileID: 4499705321448943879}
+  hitDetector:
+    rid: 3181427246007058576
   hitExecutor:
     hitDefinition:
       damage: 10
@@ -1639,6 +1594,16 @@ MonoBehaviour:
       knockbackPower: 10
       knockbackDirection: 85
       stunTime: 0.5
+  references:
+    version: 2
+    RefIds:
+    - rid: 3181427246007058576
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 5102893360763890678}
+        hitParticles: {fileID: 5133938250452459189}
+        includedHittableTags: []
+        excludedHittableTags: []
 --- !u!114 &5102893360874897685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1690,8 +1655,10 @@ MonoBehaviour:
     detector2StartTime: 0.5
     detector2Duration: 0.3
     recoveryDuration: 0.3
-  hitDetector1: {fileID: 3331154466096814319}
-  hitDetector2: {fileID: 1090857225183363841}
+  hitDetector1:
+    rid: 3181427246007058579
+  hitDetector2:
+    rid: 3181427246007058585
   hitExecutor:
     hitDefinition:
       damage: 10
@@ -1699,6 +1666,23 @@ MonoBehaviour:
       knockbackPower: 6
       knockbackDirection: 95
       stunTime: 0.5
+  references:
+    version: 2
+    RefIds:
+    - rid: 3181427246007058579
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 5102893360398477695}
+        hitParticles: {fileID: 234424136118286085}
+        includedHittableTags: []
+        excludedHittableTags: []
+    - rid: 3181427246007058585
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 5102893361076516092}
+        hitParticles: {fileID: 4347562249962238493}
+        includedHittableTags: []
+        excludedHittableTags: []
 --- !u!114 &5102893360874897682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1759,7 +1743,8 @@ MonoBehaviour:
     velocity: 50
     acceleration: 250
     recoveryDuration: 0.2
-  hitDetector: {fileID: 3262553446811620699}
+  hitDetector:
+    rid: 3181427246007058586
   hitExecutor:
     hitDefinition:
       damage: 10
@@ -1767,6 +1752,16 @@ MonoBehaviour:
       knockbackPower: 11
       knockbackDirection: 60
       stunTime: 0.5
+  references:
+    version: 2
+    RefIds:
+    - rid: 3181427246007058586
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 5102893360866760427}
+        hitParticles: {fileID: 2002257862998933130}
+        includedHittableTags: []
+        excludedHittableTags: []
 --- !u!114 &5102893360874897681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1813,7 +1808,8 @@ MonoBehaviour:
     anticipationDuration: 0.1
     activeDuration: 0.1
     recoveryDuration: 0.3
-  hitDetector: {fileID: 1378128598374464822}
+  hitDetector:
+    rid: 3181427246007058587
   hitExecutor:
     hitDefinition:
       damage: 5
@@ -1821,6 +1817,16 @@ MonoBehaviour:
       knockbackPower: 5
       knockbackDirection: 30
       stunTime: 0.5
+  references:
+    version: 2
+    RefIds:
+    - rid: 3181427246007058587
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 5102893360536826755}
+        hitParticles: {fileID: 3603120142536149105}
+        includedHittableTags: []
+        excludedHittableTags: []
 --- !u!114 &5102893360874897680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1868,7 +1874,8 @@ MonoBehaviour:
     anticipationDuration: 0.01
     activeDuration: 0.14
     recoveryDuration: 0.3
-  hitDetector: {fileID: 8845085713669517856}
+  hitDetector:
+    rid: 3181427246007058588
   hitExecutor:
     hitDefinition:
       damage: 5
@@ -1876,6 +1883,16 @@ MonoBehaviour:
       knockbackPower: 5
       knockbackDirection: 30
       stunTime: 0.5
+  references:
+    version: 2
+    RefIds:
+    - rid: 3181427246007058588
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 5102893361817772762}
+        hitParticles: {fileID: 1596551910517510343}
+        includedHittableTags: []
+        excludedHittableTags: []
 --- !u!114 &5102893360874897694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1925,7 +1942,8 @@ MonoBehaviour:
     anticipationDuration: 0.075
     activeDuration: 0.225
     recoveryDuration: 0.1
-  hitDetector: {fileID: 9212607366117902189}
+  hitDetector:
+    rid: 3181427246007058589
   hitExecutor:
     hitDefinition:
       damage: 7
@@ -1933,6 +1951,16 @@ MonoBehaviour:
       knockbackPower: 6
       knockbackDirection: 110
       stunTime: 0.5
+  references:
+    version: 2
+    RefIds:
+    - rid: 3181427246007058589
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 5102893360422186048}
+        hitParticles: {fileID: 9123332027102438765}
+        includedHittableTags: []
+        excludedHittableTags: []
 --- !u!114 &5102893360874897675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1980,7 +2008,8 @@ MonoBehaviour:
     velocity: 0
     acceleration: 0
     recoveryDuration: 0
-  hitDetector: {fileID: 3460205721541166853}
+  hitDetector:
+    rid: 3181427246007058590
   hitExecutor:
     hitDefinition:
       damage: 0
@@ -1988,6 +2017,16 @@ MonoBehaviour:
       knockbackPower: 0
       knockbackDirection: 0
       stunTime: 0.5
+  references:
+    version: 2
+    RefIds:
+    - rid: 3181427246007058590
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 5102893360938488512}
+        hitParticles: {fileID: 0}
+        includedHittableTags: []
+        excludedHittableTags: []
 --- !u!114 &4916786187361843125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2042,7 +2081,6 @@ GameObject:
   - component: {fileID: 5102893360938488513}
   - component: {fileID: 5102893360938488512}
   - component: {fileID: 8265206534415596788}
-  - component: {fileID: 3460205721541166853}
   m_Layer: 0
   m_Name: EnergyBurstHitbox
   m_TagString: Untagged
@@ -2096,20 +2134,6 @@ MonoBehaviour:
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
---- !u!114 &3460205721541166853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360938488515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  includedHittableTags: []
-  excludedHittableTags: []
 --- !u!1 &5102893361029256207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2122,7 +2146,6 @@ GameObject:
   - component: {fileID: 5102893361029256204}
   - component: {fileID: 8408330998147681252}
   - component: {fileID: 2515481451582170628}
-  - component: {fileID: 6205691515461635864}
   m_Layer: 0
   m_Name: RunKickHitbox
   m_TagString: Untagged
@@ -2190,20 +2213,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 3843020969008119030, guid: baca1c3b16caaf246824b26b93c8130a, type: 3}
   particlePosition: {x: 0, y: 0, z: 0}
---- !u!114 &6205691515461635864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893361029256207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  includedHittableTags: []
-  excludedHittableTags: []
 --- !u!1 &5102893361031154992
 GameObject:
   m_ObjectHideFlags: 0
@@ -2300,7 +2309,6 @@ GameObject:
   - component: {fileID: 5102893361076516092}
   - component: {fileID: 1435858954811333285}
   - component: {fileID: 4347562249962238493}
-  - component: {fileID: 1090857225183363841}
   m_Layer: 0
   m_Name: SpiningSwordAttackHitbox (2)
   m_TagString: Untagged
@@ -2368,20 +2376,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 6176859053047132887, guid: 4149b67738ee91743826106b7544e3e7, type: 3}
   particlePosition: {x: 0.7, y: 0.45, z: 0}
---- !u!114 &1090857225183363841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893361076516094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  includedHittableTags: []
-  excludedHittableTags: []
 --- !u!1 &5102893361279726048
 GameObject:
   m_ObjectHideFlags: 0
@@ -7348,7 +7342,6 @@ GameObject:
   - component: {fileID: 5102893361817772762}
   - component: {fileID: 5622713660951101158}
   - component: {fileID: 1596551910517510343}
-  - component: {fileID: 8845085713669517856}
   m_Layer: 0
   m_Name: AltNormalAttackHitbox
   m_TagString: Untagged
@@ -7416,20 +7409,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 7368109035975547894, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
   particlePosition: {x: 0.45, y: -0.2, z: 0}
---- !u!114 &8845085713669517856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893361817772764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d6cd287f3f958468b51e026093eb71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  includedHittableTags: []
-  excludedHittableTags: []
 --- !u!1 &5102893361865183972
 GameObject:
   m_ObjectHideFlags: 0

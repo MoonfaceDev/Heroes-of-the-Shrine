@@ -10,7 +10,9 @@ public class ElectrifyAttack : BaseAttack
     public int periodicHitCount;
     public ElectricHitExecutor periodicHitExecutor;
 
-    [Header("Explosion")] public BaseHitDetector explosionHitDetector;
+    [Header("Explosion")] [SerializeInterface] [SerializeReference]
+    public BaseHitDetector explosionHitDetector;
+
     public ElectricExplosionHitExecutor explosionHitExecutor;
     public UnityEvent onExplosion;
 

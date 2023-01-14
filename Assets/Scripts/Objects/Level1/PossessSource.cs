@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class PossessSource : BaseComponent
 {
+    [SerializeInterface] [SerializeReference]
     public BaseHitDetector hitDetector;
+
     public Animator animator;
     public float hitAnimationDuration;
 
