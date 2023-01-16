@@ -83,37 +83,49 @@
   
   <h1 id="Global_BaseAttack" data-uid="Global.BaseAttack" class="text-break">Class BaseAttack
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Base class for all attacks. Most attacks should derive from <span class="xref">SimpleAttack</span>, which has more members and helper methods.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-    <div class="level2"><a class="xref" href="Global.PlayableBehaviour.html">PlayableBehaviour</a></div>
-    <div class="level3"><span class="xref">BaseAttack</span></div>
-      <div class="level4"><a class="xref" href="Global.PossessAttack.html">PossessAttack</a></div>
-      <div class="level4"><a class="xref" href="Global.SimpleAttack.html">SimpleAttack</a></div>
-      <div class="level4"><a class="xref" href="Global.SpawnAttack.html">SpawnAttack</a></div>
+    <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
+    <div class="level2"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
+    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.BaseAttackCommand.html">BaseAttackCommand</a>&gt;</div>
+    <div class="level4"><span class="xref">BaseAttack</span></div>
+      <div class="level5"><a class="xref" href="Global.ElectrifyAttack.html">ElectrifyAttack</a></div>
+      <div class="level5"><a class="xref" href="Global.MotionAttack.html">MotionAttack</a></div>
+      <div class="level5"><a class="xref" href="Global.PossessAttack.html">PossessAttack</a></div>
+      <div class="level5"><a class="xref" href="Global.SimpleAttack.html">SimpleAttack</a></div>
+      <div class="level5"><a class="xref" href="Global.SpawnAttack.html">SpawnAttack</a></div>
+      <div class="level5"><a class="xref" href="Global.SpinningSwordsAttack.html">SpinningSwordsAttack</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Global.IPlayableBehaviour.html">IPlayableBehaviour</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_onPlay">PlayableBehaviour.onPlay</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;BaseAttackCommand&gt;.PlayEvents</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_onStop">PlayableBehaviour.onStop</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;BaseAttackCommand&gt;.Play(BaseAttackCommand)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;BaseAttackCommand&gt;.Stop()</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
     </div>
     <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableEntity">CharacterBehaviour.MovableEntity</a>
+    </div>
+    <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Animator">CharacterBehaviour.Animator</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_EventManager">CharacterBehaviour.EventManager</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableObject">CharacterBehaviour.MovableObject</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_AttackManager">CharacterBehaviour.AttackManager</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Enabled">CharacterBehaviour.Enabled</a>
@@ -131,28 +143,46 @@
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_StopBehaviours_Type___">CharacterBehaviour.StopBehaviours(Type[])</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying_Type_">CharacterBehaviour.IsPlaying(Type)</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying__1">CharacterBehaviour.IsPlaying&lt;T&gt;()</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_AllStopped_Type___">CharacterBehaviour.AllStopped(Type[])</a>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Register_Action_">BaseComponent.Register(Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Unregister_System_String_">BaseComponent.Unregister(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_InvokeWhen_Func_System_Boolean__Action_">BaseComponent.InvokeWhen(Func&lt;Boolean&gt;, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Cancel_System_String_">BaseComponent.Cancel(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartTimeout_Action_System_Single_">BaseComponent.StartTimeout(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartInterval_Action_System_Single_">BaseComponent.StartInterval(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Update">BaseComponent.Update()</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_BaseAttack_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class BaseAttack : PlayableBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class BaseAttack : PlayableBehaviour&lt;BaseAttackCommand&gt;, IPlayableBehaviour</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
   
   
-  <h4 id="Global_BaseAttack_generalEvents" data-uid="Global.BaseAttack.generalEvents">generalEvents</h4>
+  <h4 id="Global_BaseAttack_attackEvents" data-uid="Global.BaseAttack.attackEvents">attackEvents</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Events generalEvents</code></pre>
+    <pre><code class="lang-csharp hljs">public AttackEvents attackEvents</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -164,7 +194,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.Events.html">Events</a></td>
+        <td><a class="xref" href="Global.AttackEvents.html">AttackEvents</a></td>
         <td><p>General attack events</p>
 </td>
       </tr>
@@ -245,6 +275,33 @@
       </tr>
     </tbody>
   </table>
+  
+  
+  <h4 id="Global_BaseAttack_previousAttacks" data-uid="Global.BaseAttack.previousAttacks">previousAttacks</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;BaseAttack&gt; previousAttacks</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="Global.BaseAttack.html">BaseAttack</a>&gt;</td>
+        <td><p>This attack can be played only if the previous attack is one of the <code>previousAttacks</code>.
+If the attack can also be played without a previous attack, add <code>null</code> to the list.
+If the list is left empty, the attack can be played after any attack (including <code>null</code>).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="properties">Properties
   </h3>
   
@@ -303,13 +360,13 @@ It also sets the animator parameter: <code>{attackName}-anticipating</code>.</p>
   </table>
   
   
-  <a id="Global_BaseAttack_AttackManager_" data-uid="Global.BaseAttack.AttackManager*"></a>
-  <h4 id="Global_BaseAttack_AttackManager" data-uid="Global.BaseAttack.AttackManager">AttackManager</h4>
+  <a id="Global_BaseAttack_IsMidair_" data-uid="Global.BaseAttack.IsMidair*"></a>
+  <h4 id="Global_BaseAttack_IsMidair" data-uid="Global.BaseAttack.IsMidair">IsMidair</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected AttackManager AttackManager { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual bool IsMidair { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -321,20 +378,21 @@ It also sets the animator parameter: <code>{attackName}-anticipating</code>.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.AttackManager.html">AttackManager</a></td>
-        <td></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>If <code>true</code>, this attack can only play when <span class="xref">JumpBehaviour</span> is playing</p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="Global_BaseAttack_AttackName_" data-uid="Global.BaseAttack.AttackName*"></a>
-  <h4 id="Global_BaseAttack_AttackName" data-uid="Global.BaseAttack.AttackName">AttackName</h4>
+  <a id="Global_BaseAttack_Motion_" data-uid="Global.BaseAttack.Motion*"></a>
+  <h4 id="Global_BaseAttack_Motion" data-uid="Global.BaseAttack.Motion">Motion</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string AttackName { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual MotionSettings Motion { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -346,9 +404,8 @@ It also sets the animator parameter: <code>{attackName}-anticipating</code>.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><p>Name of the attack, in the format <code>CamelCase</code>.
-Used in combo system, and in animator parameters.</p>
+        <td><a class="xref" href="Global.MotionSettings.html">MotionSettings</a></td>
+        <td><p>Motion setting</p>
 </td>
       </tr>
     </tbody>
@@ -374,14 +431,12 @@ Used in combo system, and in animator parameters.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p>Attack is playing.
-True if attack is either <span class="xref">BaseAttack.Anticipating</span>, <span class="xref">BaseAttack.Active</span> or <span class="xref">BaseAttack.Recovering</span>.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_Playing">PlayableBehaviour.Playing</a></div>
+  <div><span class="xref">PlayableBehaviour&lt;BaseAttackCommand&gt;.Playing</span></div>
   
   
   <a id="Global_BaseAttack_Recovering_" data-uid="Global.BaseAttack.Recovering*"></a>
@@ -413,15 +468,13 @@ It also sets the animator parameter: <code>{attackName}-recovering</code>.</p>
   </h3>
   
   
-  <a id="Global_BaseAttack_ActiveCoroutine_" data-uid="Global.BaseAttack.ActiveCoroutine*"></a>
-  <h4 id="Global_BaseAttack_ActiveCoroutine" data-uid="Global.BaseAttack.ActiveCoroutine">ActiveCoroutine()</h4>
-  <div class="markdown level1 summary"><p>Coroutine played while attack is <span class="xref">BaseAttack.Active</span>.
-When the coroutine finishes, the active phase finishes.</p>
-</div>
+  <a id="Global_BaseAttack_ActivePhase_" data-uid="Global.BaseAttack.ActivePhase*"></a>
+  <h4 id="Global_BaseAttack_ActivePhase" data-uid="Global.BaseAttack.ActivePhase">ActivePhase()</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected abstract IEnumerator ActiveCoroutine()</code></pre>
+    <pre><code class="lang-csharp hljs">protected abstract IEnumerator ActivePhase()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -434,22 +487,19 @@ When the coroutine finishes, the active phase finishes.</p>
     <tbody>
       <tr>
         <td><span class="xref">IEnumerator</span></td>
-        <td><p>Started coroutine.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="Global_BaseAttack_AnticipateCoroutine_" data-uid="Global.BaseAttack.AnticipateCoroutine*"></a>
-  <h4 id="Global_BaseAttack_AnticipateCoroutine" data-uid="Global.BaseAttack.AnticipateCoroutine">AnticipateCoroutine()</h4>
-  <div class="markdown level1 summary"><p>Coroutine played while attack is <span class="xref">BaseAttack.Anticipating</span>.
-When the coroutine finishes, the anticipation finishes.</p>
-</div>
+  <a id="Global_BaseAttack_AnticipationPhase_" data-uid="Global.BaseAttack.AnticipationPhase*"></a>
+  <h4 id="Global_BaseAttack_AnticipationPhase" data-uid="Global.BaseAttack.AnticipationPhase">AnticipationPhase()</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected abstract IEnumerator AnticipateCoroutine()</code></pre>
+    <pre><code class="lang-csharp hljs">protected abstract IEnumerator AnticipationPhase()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -462,24 +512,37 @@ When the coroutine finishes, the anticipation finishes.</p>
     <tbody>
       <tr>
         <td><span class="xref">IEnumerator</span></td>
-        <td><p>Started coroutine.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   
   
   <a id="Global_BaseAttack_CanPlay_" data-uid="Global.BaseAttack.CanPlay*"></a>
-  <h4 id="Global_BaseAttack_CanPlay" data-uid="Global.BaseAttack.CanPlay">CanPlay()</h4>
-  <div class="markdown level1 summary"><p>Tells if the attack can be played.
-By default, any attack can be played if it is <span class="xref">CharacterBehaviour.Enabled</span>, and the character is not under knockback or stunned.
-Override to add more conditions that attack requires.</p>
-</div>
+  <h4 id="Global_BaseAttack_CanPlay_BaseAttackCommand_" data-uid="Global.BaseAttack.CanPlay(BaseAttackCommand)">CanPlay(BaseAttackCommand)</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool CanPlay()</code></pre>
+    <pre><code class="lang-csharp hljs">public override bool CanPlay(BaseAttackCommand command)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.BaseAttackCommand.html">BaseAttackCommand</a></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -491,51 +554,65 @@ Override to add more conditions that attack requires.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><code>true</code> if the attack can be played</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_CanPlay">PlayableBehaviour.CanPlay()</a></div>
+  <div><span class="xref">PlayableBehaviour&lt;BaseAttackCommand&gt;.CanPlay(BaseAttackCommand)</span></div>
   
   
-  <a id="Global_BaseAttack_Play_" data-uid="Global.BaseAttack.Play*"></a>
-  <h4 id="Global_BaseAttack_Play" data-uid="Global.BaseAttack.Play">Play()</h4>
-  <div class="markdown level1 summary"><p>Play the attack phases.</p>
+  <a id="Global_BaseAttack_DoPlay_" data-uid="Global.BaseAttack.DoPlay*"></a>
+  <h4 id="Global_BaseAttack_DoPlay_BaseAttackCommand_" data-uid="Global.BaseAttack.DoPlay(BaseAttackCommand)">DoPlay(BaseAttackCommand)</h4>
+  <div class="markdown level1 summary"><p>Play the attack phases</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Play()</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void DoPlay(BaseAttackCommand command)</code></pre>
   </div>
-  <h5 class="exceptions">Exceptions</h5>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Condition</th>
+        <th>Name</th>
+        <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">CannotAttackException</span></td>
-        <td><p>Thrown if attack cannot be played.</p>
-</td>
+        <td><a class="xref" href="Global.BaseAttackCommand.html">BaseAttackCommand</a></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">PlayableBehaviour&lt;BaseAttackCommand&gt;.DoPlay(BaseAttackCommand)</span></div>
   
   
-  <a id="Global_BaseAttack_RecoveryCoroutine_" data-uid="Global.BaseAttack.RecoveryCoroutine*"></a>
-  <h4 id="Global_BaseAttack_RecoveryCoroutine" data-uid="Global.BaseAttack.RecoveryCoroutine">RecoveryCoroutine()</h4>
-  <div class="markdown level1 summary"><p>Coroutine played while attack is <span class="xref">BaseAttack.Recovering</span>.
-When the coroutine finishes, the recovery finishes.</p>
+  <a id="Global_BaseAttack_DoStop_" data-uid="Global.BaseAttack.DoStop*"></a>
+  <h4 id="Global_BaseAttack_DoStop" data-uid="Global.BaseAttack.DoStop">DoStop()</h4>
+  <div class="markdown level1 summary"><p>Stops the attack immediately in any of its phases.
+Can be safely called even if attack is not currently playing, as it will do nothing.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected abstract IEnumerator RecoveryCoroutine()</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void DoStop()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">PlayableBehaviour&lt;BaseAttackCommand&gt;.DoStop()</span></div>
+  
+  
+  <a id="Global_BaseAttack_RecoveryPhase_" data-uid="Global.BaseAttack.RecoveryPhase*"></a>
+  <h4 id="Global_BaseAttack_RecoveryPhase" data-uid="Global.BaseAttack.RecoveryPhase">RecoveryPhase()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract IEnumerator RecoveryPhase()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -548,25 +625,14 @@ When the coroutine finishes, the recovery finishes.</p>
     <tbody>
       <tr>
         <td><span class="xref">IEnumerator</span></td>
-        <td><p>Started coroutine.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-  
-  
-  <a id="Global_BaseAttack_Stop_" data-uid="Global.BaseAttack.Stop*"></a>
-  <h4 id="Global_BaseAttack_Stop" data-uid="Global.BaseAttack.Stop">Stop()</h4>
-  <div class="markdown level1 summary"><p>Stops the attack immediately in any of its phases.
-Can be safely called even if attack is not currently playing, as it will do nothing.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Stop()</code></pre>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Global.IPlayableBehaviour.html">IPlayableBehaviour</a>
   </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_Stop">PlayableBehaviour.Stop()</a></div>
 </article>
           </div>
           

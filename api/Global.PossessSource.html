@@ -88,13 +88,38 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">PossessSource</span></div>
+    <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
+    <div class="level2"><span class="xref">PossessSource</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Register_Action_">BaseComponent.Register(Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Unregister_System_String_">BaseComponent.Unregister(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_InvokeWhen_Func_System_Boolean__Action_">BaseComponent.InvokeWhen(Func&lt;Boolean&gt;, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Cancel_System_String_">BaseComponent.Cancel(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartTimeout_Action_System_Single_">BaseComponent.StartTimeout(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartInterval_Action_System_Single_">BaseComponent.StartInterval(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Update">BaseComponent.Update()</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_PossessSource_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class PossessSource : MonoBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class PossessSource : BaseComponent</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -175,12 +200,12 @@
   
   
   <a id="Global_PossessSource_Activate_" data-uid="Global.PossessSource.Activate*"></a>
-  <h4 id="Global_PossessSource_Activate_System_Single_System_Single_List_System_String__System_Single_System_Int32_" data-uid="Global.PossessSource.Activate(System.Single,System.Single,List{System.String},System.Single,System.Int32)">Activate(Single, Single, List&lt;String&gt;, Single, Int32)</h4>
+  <h4 id="Global_PossessSource_Activate_System_Single_System_Single_Tags_System_Single_System_Int32_" data-uid="Global.PossessSource.Activate(System.Single,System.Single,Tags,System.Single,System.Int32)">Activate(Single, Single, Tags, Single, Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Activate(float warningDuration, float activeDuration, List&lt;string&gt; hittableTags, float effectDuration, int hitDamage)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Activate(float warningDuration, float activeDuration, Tags hittableTags, float effectDuration, int hitDamage)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -203,7 +228,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td><a class="xref" href="Global.Tags.html">Tags</a></td>
         <td><span class="parametername">hittableTags</span></td>
         <td></td>
       </tr>
@@ -219,16 +244,6 @@
       </tr>
     </tbody>
   </table>
-  
-  
-  <a id="Global_PossessSource_Stop_" data-uid="Global.PossessSource.Stop*"></a>
-  <h4 id="Global_PossessSource_Stop" data-uid="Global.PossessSource.Stop">Stop()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Stop()</code></pre>
-  </div>
 </article>
           </div>
           

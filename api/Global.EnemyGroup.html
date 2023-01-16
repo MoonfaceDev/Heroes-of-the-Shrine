@@ -88,8 +88,9 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-    <div class="level2"><span class="xref">EnemyGroup</span></div>
+    <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
+    <div class="level2"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
+    <div class="level3"><span class="xref">EnemyGroup</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -97,13 +98,13 @@
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
     </div>
     <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableEntity">CharacterBehaviour.MovableEntity</a>
+    </div>
+    <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Animator">CharacterBehaviour.Animator</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_EventManager">CharacterBehaviour.EventManager</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableObject">CharacterBehaviour.MovableObject</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_AttackManager">CharacterBehaviour.AttackManager</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Enabled">CharacterBehaviour.Enabled</a>
@@ -118,10 +119,25 @@
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_StopBehaviours_Type___">CharacterBehaviour.StopBehaviours(Type[])</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying_Type_">CharacterBehaviour.IsPlaying(Type)</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying__1">CharacterBehaviour.IsPlaying&lt;T&gt;()</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_AllStopped_Type___">CharacterBehaviour.AllStopped(Type[])</a>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Register_Action_">BaseComponent.Register(Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Unregister_System_String_">BaseComponent.Unregister(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_InvokeWhen_Func_System_Boolean__Action_">BaseComponent.InvokeWhen(Func&lt;Boolean&gt;, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Cancel_System_String_">BaseComponent.Cancel(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartTimeout_Action_System_Single_">BaseComponent.StartTimeout(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartInterval_Action_System_Single_">BaseComponent.StartInterval(Action, Single)</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
@@ -144,6 +160,18 @@
   </div>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Awake">CharacterBehaviour.Awake()</a></div>
+  
+  
+  <a id="Global_EnemyGroup_Update_" data-uid="Global.EnemyGroup.Update*"></a>
+  <h4 id="Global_EnemyGroup_Update" data-uid="Global.EnemyGroup.Update">Update()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Update()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Update">BaseComponent.Update()</a></div>
 </article>
           </div>
           

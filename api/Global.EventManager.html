@@ -88,13 +88,20 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">EventManager</span></div>
+    <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
+    <div class="level2"><span class="xref">EventManager</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Update">BaseComponent.Update()</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_EventManager_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class EventManager : MonoBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class EventManager : BaseComponent</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
@@ -127,13 +134,43 @@
   </h3>
   
   
-  <a id="Global_EventManager_Attach_" data-uid="Global.EventManager.Attach*"></a>
-  <h4 id="Global_EventManager_Attach_Func_System_Boolean__Action_System_Boolean_" data-uid="Global.EventManager.Attach(Func{System.Boolean},Action,System.Boolean)">Attach(Func&lt;Boolean&gt;, Action, Boolean)</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Global_EventManager_Cancel_" data-uid="Global.EventManager.Cancel*"></a>
+  <h4 id="Global_EventManager_Cancel_System_String_" data-uid="Global.EventManager.Cancel(System.String)">Cancel(String)</h4>
+  <div class="markdown level1 summary"><p>Cancels a callable with given id. Nothing happens if <see cref="!:id"></see> is not an existing callable</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public EventListener Attach(Func&lt;bool&gt; condition, Action action, bool single = true)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Cancel(string id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>ID of the callable to cancel</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Global_EventManager_InvokeWhen_" data-uid="Global.EventManager.InvokeWhen*"></a>
+  <h4 id="Global_EventManager_InvokeWhen_Func_System_Boolean__Action_" data-uid="Global.EventManager.InvokeWhen(Func{System.Boolean},Action)">InvokeWhen(Func&lt;Boolean&gt;, Action)</h4>
+  <div class="markdown level1 summary"><p>Executes a callable when a condition is met</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string InvokeWhen(Func&lt;bool&gt; condition, Action action)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -148,17 +185,14 @@
       <tr>
         <td><span class="xref">Func</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a>&gt;</td>
         <td><span class="parametername">condition</span></td>
-        <td></td>
+        <td><p>Condition to check every frame</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">Action</span></td>
         <td><span class="parametername">action</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><span class="parametername">single</span></td>
-        <td></td>
+        <td><p>Callable to execute</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -172,20 +206,22 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.EventListener.html">EventListener</a></td>
-        <td></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>ID of the registered callable</p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="Global_EventManager_Detach_" data-uid="Global.EventManager.Detach*"></a>
-  <h4 id="Global_EventManager_Detach_EventListener_" data-uid="Global.EventManager.Detach(EventListener)">Detach(EventListener)</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Global_EventManager_Register_" data-uid="Global.EventManager.Register*"></a>
+  <h4 id="Global_EventManager_Register_Action_" data-uid="Global.EventManager.Register(Action)">Register(Action)</h4>
+  <div class="markdown level1 summary"><p>Executes a callable every frame</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Detach(EventListener callbackEvent)</code></pre>
+    <pre><code class="lang-csharp hljs">public string Register(Action action)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -198,9 +234,26 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.EventListener.html">EventListener</a></td>
-        <td><span class="parametername">callbackEvent</span></td>
-        <td></td>
+        <td><span class="xref">Action</span></td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Callable to execute</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>ID of the registered callable</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -208,11 +261,12 @@
   
   <a id="Global_EventManager_StartInterval_" data-uid="Global.EventManager.StartInterval*"></a>
   <h4 id="Global_EventManager_StartInterval_Action_System_Single_" data-uid="Global.EventManager.StartInterval(Action,System.Single)">StartInterval(Action, Single)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Executes a callable repeatedly with a time delay between each call</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public EventListener StartInterval(Action action, float interval)</code></pre>
+    <pre><code class="lang-csharp hljs">public string StartInterval(Action action, float interval)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -227,12 +281,14 @@
       <tr>
         <td><span class="xref">Action</span></td>
         <td><span class="parametername">action</span></td>
-        <td></td>
+        <td><p>Callable to execute</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
         <td><span class="parametername">interval</span></td>
-        <td></td>
+        <td><p>Time to wait between executions, in seconds</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -246,55 +302,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.EventListener.html">EventListener</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_EventManager_StartInterval_" data-uid="Global.EventManager.StartInterval*"></a>
-  <h4 id="Global_EventManager_StartInterval_Action_EventManager_StopInterval__System_Single_" data-uid="Global.EventManager.StartInterval(Action{EventManager.StopInterval},System.Single)">StartInterval(Action&lt;EventManager.StopInterval&gt;, Single)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public EventListener StartInterval(Action&lt;EventManager.StopInterval&gt; action, float interval)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Action</span>&lt;<a class="xref" href="Global.EventManager.StopInterval.html">EventManager.StopInterval</a>&gt;</td>
-        <td><span class="parametername">action</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">interval</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.EventListener.html">EventListener</a></td>
-        <td></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>ID of the registered callable</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -302,11 +312,12 @@
   
   <a id="Global_EventManager_StartTimeout_" data-uid="Global.EventManager.StartTimeout*"></a>
   <h4 id="Global_EventManager_StartTimeout_Action_System_Single_" data-uid="Global.EventManager.StartTimeout(Action,System.Single)">StartTimeout(Action, Single)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Executes a callable after a certain delay</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public EventListener StartTimeout(Action action, float timeout)</code></pre>
+    <pre><code class="lang-csharp hljs">public string StartTimeout(Action action, float timeout)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -321,12 +332,14 @@
       <tr>
         <td><span class="xref">Action</span></td>
         <td><span class="parametername">action</span></td>
-        <td></td>
+        <td><p>Callable to execute</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
         <td><span class="parametername">timeout</span></td>
-        <td></td>
+        <td><p>Time to wait before execution, in seconds</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -340,8 +353,38 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.EventListener.html">EventListener</a></td>
-        <td></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>ID of the registered callable</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Global_EventManager_Unregister_" data-uid="Global.EventManager.Unregister*"></a>
+  <h4 id="Global_EventManager_Unregister_System_String_" data-uid="Global.EventManager.Unregister(System.String)">Unregister(String)</h4>
+  <div class="markdown level1 summary"><p>Unregisters a callable with given id. Nothing happens if <see cref="!:id"></see> is not an existing callable</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Unregister(string id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>ID of the callable to unregister</p>
+</td>
       </tr>
     </tbody>
   </table>

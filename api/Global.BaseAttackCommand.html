@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class Events
+    <title>Class BaseAttackCommand
    | Heroes of the Shrine </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class Events
+    <meta name="title" content="Class BaseAttackCommand
    | Heroes of the Shrine ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,17 +78,21 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Global.Events">
+            <article class="content wrap" id="_content" data-uid="Global.BaseAttackCommand">
   
   
-  <h1 id="Global_Events" data-uid="Global.Events" class="text-break">Class Events
+  <h1 id="Global_BaseAttackCommand" data-uid="Global.BaseAttackCommand" class="text-break">Class BaseAttackCommand
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">Events</span></div>
+    <div class="level1"><span class="xref">BaseAttackCommand</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Global.ICommand.html">ICommand</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -116,165 +120,14 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Global_Events_syntax">Syntax</h5>
+  <h5 id="Global_BaseAttackCommand_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Events</code></pre>
+    <pre><code class="lang-csharp hljs">public class BaseAttackCommand : ICommand</code></pre>
   </div>
-  <h3 id="fields">Fields
-  </h3>
-  
-  
-  <h4 id="Global_Events_onFinishActive" data-uid="Global.Events.onFinishActive">onFinishActive</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public UnityEvent onFinishActive</code></pre>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Global.ICommand.html">ICommand</a>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">UnityEvent</span></td>
-        <td><p>Attack active phase has finished.
-Also fires if the attack was stopped while in active phase.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_Events_onFinishAnticipating" data-uid="Global.Events.onFinishAnticipating">onFinishAnticipating</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public UnityEvent onFinishAnticipating</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">UnityEvent</span></td>
-        <td><p>Attack anticipation has finished.
-Also fires if the attack was stopped while in anticipation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_Events_onFinishRecovery" data-uid="Global.Events.onFinishRecovery">onFinishRecovery</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public UnityEvent onFinishRecovery</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">UnityEvent</span></td>
-        <td><p>Attack recovery has finished.
-Also fires if the attack was stopped while in recovery.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_Events_onStartActive" data-uid="Global.Events.onStartActive">onStartActive</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public UnityEvent onStartActive</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">UnityEvent</span></td>
-        <td><p>Attack active phase has started.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_Events_onStartAnticipating" data-uid="Global.Events.onStartAnticipating">onStartAnticipating</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public UnityEvent onStartAnticipating</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">UnityEvent</span></td>
-        <td><p>Attack anticipation has started.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_Events_onStartRecovery" data-uid="Global.Events.onStartRecovery">onStartRecovery</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public UnityEvent onStartRecovery</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">UnityEvent</span></td>
-        <td><p>Attack recovery has started.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
 </article>
           </div>
           

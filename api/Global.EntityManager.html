@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class CachedObjectsManager
+    <title>Class EntityManager
    | Heroes of the Shrine </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class CachedObjectsManager
+    <meta name="title" content="Class EntityManager
    | Heroes of the Shrine ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,61 +78,60 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Global.CachedObjectsManager">
+            <article class="content wrap" id="_content" data-uid="Global.EntityManager">
   
   
-  <h1 id="Global_CachedObjectsManager" data-uid="Global.CachedObjectsManager" class="text-break">Class CachedObjectsManager
+  <h1 id="Global_EntityManager" data-uid="Global.EntityManager" class="text-break">Class EntityManager
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">CachedObjectsManager</span></div>
+    <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
+    <div class="level2"><span class="xref">EntityManager</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Register_Action_">BaseComponent.Register(Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Unregister_System_String_">BaseComponent.Unregister(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_InvokeWhen_Func_System_Boolean__Action_">BaseComponent.InvokeWhen(Func&lt;Boolean&gt;, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Cancel_System_String_">BaseComponent.Cancel(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartTimeout_Action_System_Single_">BaseComponent.StartTimeout(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartInterval_Action_System_Single_">BaseComponent.StartInterval(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Update">BaseComponent.Update()</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Global_CachedObjectsManager_syntax">Syntax</h5>
+  <h5 id="Global_EntityManager_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CachedObjectsManager : MonoBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class EntityManager : BaseComponent</code></pre>
   </div>
-  <h3 id="fields">Fields
-  </h3>
-  
-  
-  <h4 id="Global_CachedObjectsManager_cacheTags" data-uid="Global.CachedObjectsManager.cacheTags">cacheTags</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string[] cacheTags</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="properties">Properties
   </h3>
   
   
-  <a id="Global_CachedObjectsManager_Instance_" data-uid="Global.CachedObjectsManager.Instance*"></a>
-  <h4 id="Global_CachedObjectsManager_Instance" data-uid="Global.CachedObjectsManager.Instance">Instance</h4>
+  <a id="Global_EntityManager_Instance_" data-uid="Global.EntityManager.Instance*"></a>
+  <h4 id="Global_EntityManager_Instance" data-uid="Global.EntityManager.Instance">Instance</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static CachedObjectsManager Instance { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static EntityManager Instance { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -144,7 +143,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.CachedObjectsManager.html">CachedObjectsManager</a></td>
+        <td><a class="xref" href="Global.EntityManager.html">EntityManager</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -153,13 +152,13 @@
   </h3>
   
   
-  <a id="Global_CachedObjectsManager_AddObject_" data-uid="Global.CachedObjectsManager.AddObject*"></a>
-  <h4 id="Global_CachedObjectsManager_AddObject_System_String_Object_" data-uid="Global.CachedObjectsManager.AddObject(System.String,Object)">AddObject(String, Object)</h4>
+  <a id="Global_EntityManager_AddEntity_" data-uid="Global.EntityManager.AddEntity*"></a>
+  <h4 id="Global_EntityManager_AddEntity_Tags_GameEntity_" data-uid="Global.EntityManager.AddEntity(Tags,GameEntity)">AddEntity(Tags, GameEntity)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void AddObject(string cacheTag, Object object)</code></pre>
+    <pre><code class="lang-csharp hljs">public void AddEntity(Tags tags, GameEntity entity)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -172,27 +171,26 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">cacheTag</span></td>
+        <td><a class="xref" href="Global.Tags.html">Tags</a></td>
+        <td><span class="parametername">tags</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Object</span></td>
-        <td><span class="parametername">object</span></td>
+        <td><a class="xref" href="Global.GameEntity.html">GameEntity</a></td>
+        <td><span class="parametername">entity</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="Global_CachedObjectsManager_GetObject_" data-uid="Global.CachedObjectsManager.GetObject*"></a>
-  <h4 id="Global_CachedObjectsManager_GetObject__1_System_String_" data-uid="Global.CachedObjectsManager.GetObject``1(System.String)">GetObject&lt;T&gt;(String)</h4>
+  <a id="Global_EntityManager_CountEntities_" data-uid="Global.EntityManager.CountEntities*"></a>
+  <h4 id="Global_EntityManager_CountEntities_Tag_" data-uid="Global.EntityManager.CountEntities(Tag)">CountEntities(Tag)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public T GetObject&lt;T&gt;(string cacheTag)
-    where T : Object</code></pre>
+    <pre><code class="lang-csharp hljs">public int CountEntities(Tag key)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -205,8 +203,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">cacheTag</span></td>
+        <td><a class="xref" href="Global.Tag.html">Tag</a></td>
+        <td><span class="parametername">key</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -221,36 +219,20 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">T</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="Global_CachedObjectsManager_GetObjects_" data-uid="Global.CachedObjectsManager.GetObjects*"></a>
-  <h4 id="Global_CachedObjectsManager_GetObjects__1_System_String_" data-uid="Global.CachedObjectsManager.GetObjects``1(System.String)">GetObjects&lt;T&gt;(String)</h4>
+  <a id="Global_EntityManager_GetEntities_" data-uid="Global.EntityManager.GetEntities*"></a>
+  <h4 id="Global_EntityManager_GetEntities_Tag_" data-uid="Global.EntityManager.GetEntities(Tag)">GetEntities(Tag)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public T[] GetObjects&lt;T&gt;(string cacheTag)
-    where T : Object</code></pre>
+    <pre><code class="lang-csharp hljs">public GameEntity[] GetEntities(Tag key)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -263,8 +245,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">cacheTag</span></td>
+        <td><a class="xref" href="Global.Tag.html">Tag</a></td>
+        <td><span class="parametername">key</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -279,35 +261,20 @@
     </thead>
     <tbody>
       <tr>
-        <td>T[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
+        <td><a class="xref" href="Global.GameEntity.html">GameEntity</a>[]</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="Global_CachedObjectsManager_RemoveObject_" data-uid="Global.CachedObjectsManager.RemoveObject*"></a>
-  <h4 id="Global_CachedObjectsManager_RemoveObject_System_String_Object_" data-uid="Global.CachedObjectsManager.RemoveObject(System.String,Object)">RemoveObject(String, Object)</h4>
+  <a id="Global_EntityManager_GetEntity_" data-uid="Global.EntityManager.GetEntity*"></a>
+  <h4 id="Global_EntityManager_GetEntity_Tag_" data-uid="Global.EntityManager.GetEntity(Tag)">GetEntity(Tag)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void RemoveObject(string cacheTag, Object object)</code></pre>
+    <pre><code class="lang-csharp hljs">public GameEntity GetEntity(Tag key)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -320,13 +287,55 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">cacheTag</span></td>
+        <td><a class="xref" href="Global.Tag.html">Tag</a></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.GameEntity.html">GameEntity</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Global_EntityManager_RemoveEntity_" data-uid="Global.EntityManager.RemoveEntity*"></a>
+  <h4 id="Global_EntityManager_RemoveEntity_Tags_GameEntity_" data-uid="Global.EntityManager.RemoveEntity(Tags,GameEntity)">RemoveEntity(Tags, GameEntity)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveEntity(Tags tags, GameEntity entity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.Tags.html">Tags</a></td>
+        <td><span class="parametername">tags</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Object</span></td>
-        <td><span class="parametername">object</span></td>
+        <td><a class="xref" href="Global.GameEntity.html">GameEntity</a></td>
+        <td><span class="parametername">entity</span></td>
         <td></td>
       </tr>
     </tbody>

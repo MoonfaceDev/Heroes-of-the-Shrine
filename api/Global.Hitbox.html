@@ -88,13 +88,38 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">Hitbox</span></div>
+    <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
+    <div class="level2"><span class="xref">Hitbox</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Register_Action_">BaseComponent.Register(Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Unregister_System_String_">BaseComponent.Unregister(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_InvokeWhen_Func_System_Boolean__Action_">BaseComponent.InvokeWhen(Func&lt;Boolean&gt;, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Cancel_System_String_">BaseComponent.Cancel(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartTimeout_Action_System_Single_">BaseComponent.StartTimeout(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartInterval_Action_System_Single_">BaseComponent.StartInterval(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Update">BaseComponent.Update()</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_Hitbox_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Hitbox : MonoBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class Hitbox : BaseComponent</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -153,39 +178,31 @@
   </h3>
   
   
-  <a id="Global_Hitbox_GetBottom_" data-uid="Global.Hitbox.GetBottom*"></a>
-  <h4 id="Global_Hitbox_GetBottom" data-uid="Global.Hitbox.GetBottom">GetBottom()</h4>
+  <a id="Global_Hitbox_GetIntersectionCenter_" data-uid="Global.Hitbox.GetIntersectionCenter*"></a>
+  <h4 id="Global_Hitbox_GetIntersectionCenter_Hitbox_" data-uid="Global.Hitbox.GetIntersectionCenter(Hitbox)">GetIntersectionCenter(Hitbox)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float GetBottom()</code></pre>
+    <pre><code class="lang-csharp hljs">public Vector3 GetIntersectionCenter(Hitbox other)</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
+        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><a class="xref" href="Global.Hitbox.html">Hitbox</a></td>
+        <td><span class="parametername">other</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  
-  
-  <a id="Global_Hitbox_GetFar_" data-uid="Global.Hitbox.GetFar*"></a>
-  <h4 id="Global_Hitbox_GetFar" data-uid="Global.Hitbox.GetFar">GetFar()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float GetFar()</code></pre>
-  </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -196,82 +213,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_Hitbox_GetLeft_" data-uid="Global.Hitbox.GetLeft*"></a>
-  <h4 id="Global_Hitbox_GetLeft" data-uid="Global.Hitbox.GetLeft">GetLeft()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float GetLeft()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_Hitbox_GetNear_" data-uid="Global.Hitbox.GetNear*"></a>
-  <h4 id="Global_Hitbox_GetNear" data-uid="Global.Hitbox.GetNear">GetNear()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float GetNear()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_Hitbox_GetRight_" data-uid="Global.Hitbox.GetRight*"></a>
-  <h4 id="Global_Hitbox_GetRight" data-uid="Global.Hitbox.GetRight">GetRight()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float GetRight()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="xref">Vector3</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -284,7 +226,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;Vector2&gt; GetSegmentIntersections(Vector2 start, Vector2 end)</code></pre>
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Vector2&gt; GetSegmentIntersections(Vector2 start, Vector2 end)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -318,32 +260,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<span class="xref">Vector2</span>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_Hitbox_GetTop_" data-uid="Global.Hitbox.GetTop*"></a>
-  <h4 id="Global_Hitbox_GetTop" data-uid="Global.Hitbox.GetTop">GetTop()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float GetTop()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Vector2</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -393,12 +310,12 @@
   
   
   <a id="Global_Hitbox_OverlapHitbox_" data-uid="Global.Hitbox.OverlapHitbox*"></a>
-  <h4 id="Global_Hitbox_OverlapHitbox_Hitbox_System_Single_" data-uid="Global.Hitbox.OverlapHitbox(Hitbox,System.Single)">OverlapHitbox(Hitbox, Single)</h4>
+  <h4 id="Global_Hitbox_OverlapHitbox_Hitbox_" data-uid="Global.Hitbox.OverlapHitbox(Hitbox)">OverlapHitbox(Hitbox)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool OverlapHitbox(Hitbox hitbox, float padding = 0F)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool OverlapHitbox(Hitbox other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -412,12 +329,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Global.Hitbox.html">Hitbox</a></td>
-        <td><span class="parametername">hitbox</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">padding</span></td>
+        <td><span class="parametername">other</span></td>
         <td></td>
       </tr>
     </tbody>

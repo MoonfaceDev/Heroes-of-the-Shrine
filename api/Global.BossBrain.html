@@ -88,17 +88,15 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-    <div class="level2"><a class="xref" href="Global.CharacterController.html">CharacterController</a></div>
-    <div class="level3"><a class="xref" href="Global.EnemyBrain.html">EnemyBrain</a></div>
-    <div class="level4"><a class="xref" href="Global.GoblinBrain.html">GoblinBrain</a></div>
-    <div class="level5"><span class="xref">BossBrain</span></div>
+    <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
+    <div class="level2"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
+    <div class="level3"><a class="xref" href="Global.CharacterController.html">CharacterController</a></div>
+    <div class="level4"><a class="xref" href="Global.EnemyBrain.html">EnemyBrain</a></div>
+    <div class="level5"><a class="xref" href="Global.GoblinBrain.html">GoblinBrain</a></div>
+    <div class="level6"><span class="xref">BossBrain</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="Global.EnemyBrain.html#Global_EnemyBrain_playerTag">EnemyBrain.playerTag</a>
-    </div>
     <div>
       <a class="xref" href="Global.EnemyBrain.html#Global_EnemyBrain_rageHealthThreshold">EnemyBrain.rageHealthThreshold</a>
     </div>
@@ -121,13 +119,13 @@
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
     </div>
     <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableEntity">CharacterBehaviour.MovableEntity</a>
+    </div>
+    <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Animator">CharacterBehaviour.Animator</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_EventManager">CharacterBehaviour.EventManager</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableObject">CharacterBehaviour.MovableObject</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_AttackManager">CharacterBehaviour.AttackManager</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Enabled">CharacterBehaviour.Enabled</a>
@@ -142,10 +140,25 @@
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_StopBehaviours_Type___">CharacterBehaviour.StopBehaviours(Type[])</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying_Type_">CharacterBehaviour.IsPlaying(Type)</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying__1">CharacterBehaviour.IsPlaying&lt;T&gt;()</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_AllStopped_Type___">CharacterBehaviour.AllStopped(Type[])</a>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Register_Action_">BaseComponent.Register(Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Unregister_System_String_">BaseComponent.Unregister(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_InvokeWhen_Func_System_Boolean__Action_">BaseComponent.InvokeWhen(Func&lt;Boolean&gt;, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Cancel_System_String_">BaseComponent.Cancel(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartTimeout_Action_System_Single_">BaseComponent.StartTimeout(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartInterval_Action_System_Single_">BaseComponent.StartInterval(Action, Single)</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>

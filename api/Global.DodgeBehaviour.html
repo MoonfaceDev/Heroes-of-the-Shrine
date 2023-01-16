@@ -88,36 +88,45 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-    <div class="level2"><a class="xref" href="Global.PlayableBehaviour.html">PlayableBehaviour</a></div>
-    <div class="level3"><a class="xref" href="Global.BaseMovementBehaviour.html">BaseMovementBehaviour</a></div>
-    <div class="level4"><span class="xref">DodgeBehaviour</span></div>
+    <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
+    <div class="level2"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
+    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.DodgeCommand.html">DodgeCommand</a>&gt;</div>
+    <div class="level4"><a class="xref" href="Global.BaseMovementBehaviour-1.html">BaseMovementBehaviour</a>&lt;<a class="xref" href="Global.DodgeCommand.html">DodgeCommand</a>&gt;</div>
+    <div class="level5"><span class="xref">DodgeBehaviour</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Global.IMovementBehaviour.html">IMovementBehaviour</a></div>
+    <div><a class="xref" href="Global.IPlayableBehaviour.html">IPlayableBehaviour</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Global.BaseMovementBehaviour.html#Global_BaseMovementBehaviour_cooldown">BaseMovementBehaviour.cooldown</a>
+      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_cooldown">BaseMovementBehaviour&lt;DodgeCommand&gt;.cooldown</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseMovementBehaviour.html#Global_BaseMovementBehaviour_Awake">BaseMovementBehaviour.Awake()</a>
+      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_Awake">BaseMovementBehaviour&lt;DodgeCommand&gt;.Awake()</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_onPlay">PlayableBehaviour.onPlay</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;DodgeCommand&gt;.PlayEvents</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_onStop">PlayableBehaviour.onStop</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;DodgeCommand&gt;.Play(DodgeCommand)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;DodgeCommand&gt;.Stop()</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
     </div>
     <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableEntity">CharacterBehaviour.MovableEntity</a>
+    </div>
+    <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Animator">CharacterBehaviour.Animator</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_EventManager">CharacterBehaviour.EventManager</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableObject">CharacterBehaviour.MovableObject</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_AttackManager">CharacterBehaviour.AttackManager</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Enabled">CharacterBehaviour.Enabled</a>
@@ -132,17 +141,35 @@
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_StopBehaviours_Type___">CharacterBehaviour.StopBehaviours(Type[])</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying_Type_">CharacterBehaviour.IsPlaying(Type)</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying__1">CharacterBehaviour.IsPlaying&lt;T&gt;()</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_AllStopped_Type___">CharacterBehaviour.AllStopped(Type[])</a>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Register_Action_">BaseComponent.Register(Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Unregister_System_String_">BaseComponent.Unregister(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_InvokeWhen_Func_System_Boolean__Action_">BaseComponent.InvokeWhen(Func&lt;Boolean&gt;, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Cancel_System_String_">BaseComponent.Cancel(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartTimeout_Action_System_Single_">BaseComponent.StartTimeout(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartInterval_Action_System_Single_">BaseComponent.StartInterval(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Update">BaseComponent.Update()</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_DodgeBehaviour_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class DodgeBehaviour : BaseMovementBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class DodgeBehaviour : BaseMovementBehaviour&lt;DodgeCommand&gt;, IMovementBehaviour, IPlayableBehaviour</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -271,7 +298,7 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_Playing">PlayableBehaviour.Playing</a></div>
+  <div><span class="xref">PlayableBehaviour&lt;DodgeCommand&gt;.Playing</span></div>
   
   
   <a id="Global_DodgeBehaviour_Recovering_" data-uid="Global.DodgeBehaviour.Recovering*"></a>
@@ -302,13 +329,30 @@
   
   
   <a id="Global_DodgeBehaviour_CanPlay_" data-uid="Global.DodgeBehaviour.CanPlay*"></a>
-  <h4 id="Global_DodgeBehaviour_CanPlay" data-uid="Global.DodgeBehaviour.CanPlay">CanPlay()</h4>
+  <h4 id="Global_DodgeBehaviour_CanPlay_DodgeCommand_" data-uid="Global.DodgeBehaviour.CanPlay(DodgeCommand)">CanPlay(DodgeCommand)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool CanPlay()</code></pre>
+    <pre><code class="lang-csharp hljs">public override bool CanPlay(DodgeCommand command)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.DodgeCommand.html">DodgeCommand</a></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -325,16 +369,16 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.BaseMovementBehaviour.html#Global_BaseMovementBehaviour_CanPlay">BaseMovementBehaviour.CanPlay()</a></div>
+  <div><span class="xref">BaseMovementBehaviour&lt;DodgeCommand&gt;.CanPlay(DodgeCommand)</span></div>
   
   
-  <a id="Global_DodgeBehaviour_Play_" data-uid="Global.DodgeBehaviour.Play*"></a>
-  <h4 id="Global_DodgeBehaviour_Play_System_Int32_" data-uid="Global.DodgeBehaviour.Play(System.Int32)">Play(Int32)</h4>
+  <a id="Global_DodgeBehaviour_DoPlay_" data-uid="Global.DodgeBehaviour.DoPlay*"></a>
+  <h4 id="Global_DodgeBehaviour_DoPlay_DodgeCommand_" data-uid="Global.DodgeBehaviour.DoPlay(DodgeCommand)">DoPlay(DodgeCommand)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Play(int direction)</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void DoPlay(DodgeCommand command)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -347,24 +391,26 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">direction</span></td>
+        <td><a class="xref" href="Global.DodgeCommand.html">DodgeCommand</a></td>
+        <td><span class="parametername">command</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">PlayableBehaviour&lt;DodgeCommand&gt;.DoPlay(DodgeCommand)</span></div>
   
   
-  <a id="Global_DodgeBehaviour_Stop_" data-uid="Global.DodgeBehaviour.Stop*"></a>
-  <h4 id="Global_DodgeBehaviour_Stop" data-uid="Global.DodgeBehaviour.Stop">Stop()</h4>
+  <a id="Global_DodgeBehaviour_DoStop_" data-uid="Global.DodgeBehaviour.DoStop*"></a>
+  <h4 id="Global_DodgeBehaviour_DoStop" data-uid="Global.DodgeBehaviour.DoStop">DoStop()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Stop()</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void DoStop()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_Stop">PlayableBehaviour.Stop()</a></div>
+  <div><span class="xref">PlayableBehaviour&lt;DodgeCommand&gt;.DoStop()</span></div>
   <h3 id="events">Events
   </h3>
   
@@ -415,6 +461,13 @@
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Global.IMovementBehaviour.html">IMovementBehaviour</a>
+  </div>
+  <div>
+      <a class="xref" href="Global.IPlayableBehaviour.html">IPlayableBehaviour</a>
+  </div>
 </article>
           </div>
           

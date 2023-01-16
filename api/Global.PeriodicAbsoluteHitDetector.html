@@ -83,7 +83,8 @@
   
   <h1 id="Global_PeriodicAbsoluteHitDetector" data-uid="Global.PeriodicAbsoluteHitDetector" class="text-break">Class PeriodicAbsoluteHitDetector
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>An hit detector that detects hits periodically, with a given interval</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -94,19 +95,40 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
+      <a class="xref" href="Global.BaseHitDetector.html#Global_BaseHitDetector_hitbox">BaseHitDetector.hitbox</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseHitDetector.html#Global_BaseHitDetector_hitParticles">BaseHitDetector.hitParticles</a>
+    </div>
+    <div>
       <a class="xref" href="Global.BaseHitDetector.html#Global_BaseHitDetector_includedHittableTags">BaseHitDetector.includedHittableTags</a>
     </div>
     <div>
       <a class="xref" href="Global.BaseHitDetector.html#Global_BaseHitDetector_excludedHittableTags">BaseHitDetector.excludedHittableTags</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseHitDetector.html#Global_BaseHitDetector_hitbox">BaseHitDetector.hitbox</a>
+      <a class="xref" href="Global.BaseHitDetector.html#Global_BaseHitDetector_StartDetector_Action_HittableHitbox__Tags_">BaseHitDetector.StartDetector(Action&lt;HittableHitbox&gt;, Tags)</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseHitDetector.html#Global_BaseHitDetector_Awake">BaseHitDetector.Awake()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">Object.ToString()</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseHitDetector.html#Global_BaseHitDetector_StartDetector_Action_IHittable__List_System_String__">BaseHitDetector.StartDetector(Action&lt;IHittable&gt;, List&lt;String&gt;)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">Object.MemberwiseClone()</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
@@ -170,12 +192,12 @@
   
   
   <a id="Global_PeriodicAbsoluteHitDetector_DoStartDetector_" data-uid="Global.PeriodicAbsoluteHitDetector.DoStartDetector*"></a>
-  <h4 id="Global_PeriodicAbsoluteHitDetector_DoStartDetector_Action_IHittable__" data-uid="Global.PeriodicAbsoluteHitDetector.DoStartDetector(Action{IHittable})">DoStartDetector(Action&lt;IHittable&gt;)</h4>
+  <h4 id="Global_PeriodicAbsoluteHitDetector_DoStartDetector_Action_HittableHitbox__" data-uid="Global.PeriodicAbsoluteHitDetector.DoStartDetector(Action{HittableHitbox})">DoStartDetector(Action&lt;HittableHitbox&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void DoStartDetector(Action&lt;IHittable&gt; hitCallable)</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void DoStartDetector(Action&lt;HittableHitbox&gt; hitCallable)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -188,14 +210,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Action</span>&lt;<a class="xref" href="Global.IHittable.html">IHittable</a>&gt;</td>
+        <td><span class="xref">Action</span>&lt;<a class="xref" href="Global.HittableHitbox.html">HittableHitbox</a>&gt;</td>
         <td><span class="parametername">hitCallable</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.BaseHitDetector.html#Global_BaseHitDetector_DoStartDetector_Action_IHittable__">BaseHitDetector.DoStartDetector(Action&lt;IHittable&gt;)</a></div>
+  <div><a class="xref" href="Global.BaseHitDetector.html#Global_BaseHitDetector_DoStartDetector_Action_HittableHitbox__">BaseHitDetector.DoStartDetector(Action&lt;HittableHitbox&gt;)</a></div>
   
   
   <a id="Global_PeriodicAbsoluteHitDetector_StopDetector_" data-uid="Global.PeriodicAbsoluteHitDetector.StopDetector*"></a>

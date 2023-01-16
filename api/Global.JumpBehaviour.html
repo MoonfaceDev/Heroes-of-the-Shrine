@@ -88,33 +88,42 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-    <div class="level2"><a class="xref" href="Global.PlayableBehaviour.html">PlayableBehaviour</a></div>
-    <div class="level3"><a class="xref" href="Global.BaseMovementBehaviour.html">BaseMovementBehaviour</a></div>
-    <div class="level4"><span class="xref">JumpBehaviour</span></div>
+    <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
+    <div class="level2"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
+    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.JumpCommand.html">JumpCommand</a>&gt;</div>
+    <div class="level4"><a class="xref" href="Global.BaseMovementBehaviour-1.html">BaseMovementBehaviour</a>&lt;<a class="xref" href="Global.JumpCommand.html">JumpCommand</a>&gt;</div>
+    <div class="level5"><span class="xref">JumpBehaviour</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Global.IMovementBehaviour.html">IMovementBehaviour</a></div>
+    <div><a class="xref" href="Global.IPlayableBehaviour.html">IPlayableBehaviour</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Global.BaseMovementBehaviour.html#Global_BaseMovementBehaviour_cooldown">BaseMovementBehaviour.cooldown</a>
+      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_cooldown">BaseMovementBehaviour&lt;JumpCommand&gt;.cooldown</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_onPlay">PlayableBehaviour.onPlay</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;JumpCommand&gt;.PlayEvents</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_onStop">PlayableBehaviour.onStop</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;JumpCommand&gt;.Play(JumpCommand)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;JumpCommand&gt;.Stop()</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
     </div>
     <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableEntity">CharacterBehaviour.MovableEntity</a>
+    </div>
+    <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Animator">CharacterBehaviour.Animator</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_EventManager">CharacterBehaviour.EventManager</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableObject">CharacterBehaviour.MovableObject</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_AttackManager">CharacterBehaviour.AttackManager</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Enabled">CharacterBehaviour.Enabled</a>
@@ -129,17 +138,35 @@
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_StopBehaviours_Type___">CharacterBehaviour.StopBehaviours(Type[])</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying_Type_">CharacterBehaviour.IsPlaying(Type)</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying__1">CharacterBehaviour.IsPlaying&lt;T&gt;()</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_AllStopped_Type___">CharacterBehaviour.AllStopped(Type[])</a>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Register_Action_">BaseComponent.Register(Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Unregister_System_String_">BaseComponent.Unregister(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_InvokeWhen_Func_System_Boolean__Action_">BaseComponent.InvokeWhen(Func&lt;Boolean&gt;, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Cancel_System_String_">BaseComponent.Cancel(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartTimeout_Action_System_Single_">BaseComponent.StartTimeout(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartInterval_Action_System_Single_">BaseComponent.StartInterval(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Update">BaseComponent.Update()</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_JumpBehaviour_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class JumpBehaviour : BaseMovementBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class JumpBehaviour : BaseMovementBehaviour&lt;JumpCommand&gt;, IMovementBehaviour, IPlayableBehaviour</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -217,12 +244,12 @@
   </table>
   
   
-  <h4 id="Global_JumpBehaviour_maxJumps" data-uid="Global.JumpBehaviour.maxJumps">maxJumps</h4>
+  <h4 id="Global_JumpBehaviour_onFinishActive" data-uid="Global.JumpBehaviour.onFinishActive">onFinishActive</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int maxJumps</code></pre>
+    <pre><code class="lang-csharp hljs">public UnityEvent onFinishActive</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -234,7 +261,31 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="xref">UnityEvent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Global_JumpBehaviour_onStartActive" data-uid="Global.JumpBehaviour.onStartActive">onStartActive</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UnityEvent onStartActive</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEvent</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -293,31 +344,6 @@
   </table>
   
   
-  <a id="Global_JumpBehaviour_Jumps_" data-uid="Global.JumpBehaviour.Jumps*"></a>
-  <h4 id="Global_JumpBehaviour_Jumps" data-uid="Global.JumpBehaviour.Jumps">Jumps</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int Jumps { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
   <a id="Global_JumpBehaviour_Playing_" data-uid="Global.JumpBehaviour.Playing*"></a>
   <h4 id="Global_JumpBehaviour_Playing" data-uid="Global.JumpBehaviour.Playing">Playing</h4>
   <div class="markdown level1 summary"></div>
@@ -342,7 +368,7 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_Playing">PlayableBehaviour.Playing</a></div>
+  <div><span class="xref">PlayableBehaviour&lt;JumpCommand&gt;.Playing</span></div>
   
   
   <a id="Global_JumpBehaviour_Recovering_" data-uid="Global.JumpBehaviour.Recovering*"></a>
@@ -381,17 +407,34 @@
     <pre><code class="lang-csharp hljs">public override void Awake()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.BaseMovementBehaviour.html#Global_BaseMovementBehaviour_Awake">BaseMovementBehaviour.Awake()</a></div>
+  <div><span class="xref">BaseMovementBehaviour&lt;JumpCommand&gt;.Awake()</span></div>
   
   
   <a id="Global_JumpBehaviour_CanPlay_" data-uid="Global.JumpBehaviour.CanPlay*"></a>
-  <h4 id="Global_JumpBehaviour_CanPlay" data-uid="Global.JumpBehaviour.CanPlay">CanPlay()</h4>
+  <h4 id="Global_JumpBehaviour_CanPlay_JumpCommand_" data-uid="Global.JumpBehaviour.CanPlay(JumpCommand)">CanPlay(JumpCommand)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool CanPlay()</code></pre>
+    <pre><code class="lang-csharp hljs">public override bool CanPlay(JumpCommand command)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.JumpCommand.html">JumpCommand</a></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -408,127 +451,55 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.BaseMovementBehaviour.html#Global_BaseMovementBehaviour_CanPlay">BaseMovementBehaviour.CanPlay()</a></div>
+  <div><span class="xref">BaseMovementBehaviour&lt;JumpCommand&gt;.CanPlay(JumpCommand)</span></div>
   
   
-  <a id="Global_JumpBehaviour_Play_" data-uid="Global.JumpBehaviour.Play*"></a>
-  <h4 id="Global_JumpBehaviour_Play" data-uid="Global.JumpBehaviour.Play">Play()</h4>
+  <a id="Global_JumpBehaviour_DoPlay_" data-uid="Global.JumpBehaviour.DoPlay*"></a>
+  <h4 id="Global_JumpBehaviour_DoPlay_JumpCommand_" data-uid="Global.JumpBehaviour.DoPlay(JumpCommand)">DoPlay(JumpCommand)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Play()</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void DoPlay(JumpCommand command)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.JumpCommand.html">JumpCommand</a></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">PlayableBehaviour&lt;JumpCommand&gt;.DoPlay(JumpCommand)</span></div>
   
   
-  <a id="Global_JumpBehaviour_Stop_" data-uid="Global.JumpBehaviour.Stop*"></a>
-  <h4 id="Global_JumpBehaviour_Stop" data-uid="Global.JumpBehaviour.Stop">Stop()</h4>
+  <a id="Global_JumpBehaviour_DoStop_" data-uid="Global.JumpBehaviour.DoStop*"></a>
+  <h4 id="Global_JumpBehaviour_DoStop" data-uid="Global.JumpBehaviour.DoStop">DoStop()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Stop()</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void DoStop()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_Stop">PlayableBehaviour.Stop()</a></div>
-  <h3 id="events">Events
-  </h3>
-  
-  
-  <h4 id="Global_JumpBehaviour_OnJump" data-uid="Global.JumpBehaviour.OnJump">OnJump</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event Action OnJump</code></pre>
+  <div><span class="xref">PlayableBehaviour&lt;JumpCommand&gt;.DoStop()</span></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Global.IMovementBehaviour.html">IMovementBehaviour</a>
   </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Action</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_JumpBehaviour_OnJumpsChanged" data-uid="Global.JumpBehaviour.OnJumpsChanged">OnJumpsChanged</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event JumpsChangedCallback OnJumpsChanged</code></pre>
+  <div>
+      <a class="xref" href="Global.IPlayableBehaviour.html">IPlayableBehaviour</a>
   </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.JumpsChangedCallback.html">JumpsChangedCallback</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_JumpBehaviour_OnLand" data-uid="Global.JumpBehaviour.OnLand">OnLand</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event Action OnLand</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Action</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_JumpBehaviour_OnRecover" data-uid="Global.JumpBehaviour.OnRecover">OnRecover</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event Action OnRecover</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Action</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
 </article>
           </div>
           

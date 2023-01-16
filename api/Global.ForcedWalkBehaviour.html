@@ -88,32 +88,40 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-    <div class="level2"><a class="xref" href="Global.PlayableBehaviour.html">PlayableBehaviour</a></div>
-    <div class="level3"><span class="xref">ForcedWalkBehaviour</span></div>
+    <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
+    <div class="level2"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
+    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.ForcedWalkCommand.html">ForcedWalkCommand</a>&gt;</div>
+    <div class="level4"><span class="xref">ForcedWalkBehaviour</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Global.IPlayableBehaviour.html">IPlayableBehaviour</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_onPlay">PlayableBehaviour.onPlay</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;ForcedWalkCommand&gt;.PlayEvents</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_onStop">PlayableBehaviour.onStop</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_CanPlay__0_">PlayableBehaviour&lt;ForcedWalkCommand&gt;.CanPlay(ForcedWalkCommand)</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_CanPlay">PlayableBehaviour.CanPlay()</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;ForcedWalkCommand&gt;.Play(ForcedWalkCommand)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;ForcedWalkCommand&gt;.Stop()</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
     </div>
     <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableEntity">CharacterBehaviour.MovableEntity</a>
+    </div>
+    <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Animator">CharacterBehaviour.Animator</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_EventManager">CharacterBehaviour.EventManager</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableObject">CharacterBehaviour.MovableObject</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_AttackManager">CharacterBehaviour.AttackManager</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Enabled">CharacterBehaviour.Enabled</a>
@@ -131,17 +139,35 @@
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_StopBehaviours_Type___">CharacterBehaviour.StopBehaviours(Type[])</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying_Type_">CharacterBehaviour.IsPlaying(Type)</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying__1">CharacterBehaviour.IsPlaying&lt;T&gt;()</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_AllStopped_Type___">CharacterBehaviour.AllStopped(Type[])</a>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Register_Action_">BaseComponent.Register(Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Unregister_System_String_">BaseComponent.Unregister(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_InvokeWhen_Func_System_Boolean__Action_">BaseComponent.InvokeWhen(Func&lt;Boolean&gt;, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Cancel_System_String_">BaseComponent.Cancel(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartTimeout_Action_System_Single_">BaseComponent.StartTimeout(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartInterval_Action_System_Single_">BaseComponent.StartInterval(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Update">BaseComponent.Update()</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_ForcedWalkBehaviour_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ForcedWalkBehaviour : PlayableBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class ForcedWalkBehaviour : PlayableBehaviour&lt;ForcedWalkCommand&gt;, IPlayableBehaviour</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
@@ -171,18 +197,18 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_Playing">PlayableBehaviour.Playing</a></div>
+  <div><span class="xref">PlayableBehaviour&lt;ForcedWalkCommand&gt;.Playing</span></div>
   <h3 id="methods">Methods
   </h3>
   
   
-  <a id="Global_ForcedWalkBehaviour_Play_" data-uid="Global.ForcedWalkBehaviour.Play*"></a>
-  <h4 id="Global_ForcedWalkBehaviour_Play_Vector3_System_Single_" data-uid="Global.ForcedWalkBehaviour.Play(Vector3,System.Single)">Play(Vector3, Single)</h4>
+  <a id="Global_ForcedWalkBehaviour_DoPlay_" data-uid="Global.ForcedWalkBehaviour.DoPlay*"></a>
+  <h4 id="Global_ForcedWalkBehaviour_DoPlay_ForcedWalkCommand_" data-uid="Global.ForcedWalkBehaviour.DoPlay(ForcedWalkCommand)">DoPlay(ForcedWalkCommand)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Play(Vector3 point, float wantedDistance = 0.1F)</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void DoPlay(ForcedWalkCommand command)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -195,29 +221,30 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Vector3</span></td>
-        <td><span class="parametername">point</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">wantedDistance</span></td>
+        <td><a class="xref" href="Global.ForcedWalkCommand.html">ForcedWalkCommand</a></td>
+        <td><span class="parametername">command</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">PlayableBehaviour&lt;ForcedWalkCommand&gt;.DoPlay(ForcedWalkCommand)</span></div>
   
   
-  <a id="Global_ForcedWalkBehaviour_Stop_" data-uid="Global.ForcedWalkBehaviour.Stop*"></a>
-  <h4 id="Global_ForcedWalkBehaviour_Stop" data-uid="Global.ForcedWalkBehaviour.Stop">Stop()</h4>
+  <a id="Global_ForcedWalkBehaviour_DoStop_" data-uid="Global.ForcedWalkBehaviour.DoStop*"></a>
+  <h4 id="Global_ForcedWalkBehaviour_DoStop" data-uid="Global.ForcedWalkBehaviour.DoStop">DoStop()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Stop()</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void DoStop()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_Stop">PlayableBehaviour.Stop()</a></div>
+  <div><span class="xref">PlayableBehaviour&lt;ForcedWalkCommand&gt;.DoStop()</span></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Global.IPlayableBehaviour.html">IPlayableBehaviour</a>
+  </div>
 </article>
           </div>
           

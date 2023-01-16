@@ -88,13 +88,24 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-    <div class="level2"><a class="xref" href="Global.PlayableBehaviour.html">PlayableBehaviour</a></div>
-    <div class="level3"><a class="xref" href="Global.BaseAttack.html">BaseAttack</a></div>
-    <div class="level4"><span class="xref">SpawnAttack</span></div>
+    <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
+    <div class="level2"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
+    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.BaseAttackCommand.html">BaseAttackCommand</a>&gt;</div>
+    <div class="level4"><a class="xref" href="Global.BaseAttack.html">BaseAttack</a></div>
+    <div class="level5"><span class="xref">SpawnAttack</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Global.IPlayableBehaviour.html">IPlayableBehaviour</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_attackEvents">BaseAttack.attackEvents</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_previousAttacks">BaseAttack.previousAttacks</a>
+    </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_instant">BaseAttack.instant</a>
     </div>
@@ -105,7 +116,10 @@
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_hardRecovery">BaseAttack.hardRecovery</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_AttackName">BaseAttack.AttackName</a>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Motion">BaseAttack.Motion</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_IsMidair">BaseAttack.IsMidair</a>
     </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Anticipating">BaseAttack.Anticipating</a>
@@ -120,37 +134,40 @@
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Playing">BaseAttack.Playing</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_generalEvents">BaseAttack.generalEvents</a>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_CanPlay_BaseAttackCommand_">BaseAttack.CanPlay(BaseAttackCommand)</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_AttackManager">BaseAttack.AttackManager</a>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_DoPlay_BaseAttackCommand_">BaseAttack.DoPlay(BaseAttackCommand)</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Play">BaseAttack.Play()</a>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_DoStop">BaseAttack.DoStop()</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Stop">BaseAttack.Stop()</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;BaseAttackCommand&gt;.PlayEvents</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_onPlay">PlayableBehaviour.onPlay</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;BaseAttackCommand&gt;.Play(BaseAttackCommand)</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_onStop">PlayableBehaviour.onStop</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;BaseAttackCommand&gt;.Stop()</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
     </div>
     <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableEntity">CharacterBehaviour.MovableEntity</a>
+    </div>
+    <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Animator">CharacterBehaviour.Animator</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_EventManager">CharacterBehaviour.EventManager</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableObject">CharacterBehaviour.MovableObject</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_AttackManager">CharacterBehaviour.AttackManager</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Enabled">CharacterBehaviour.Enabled</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Awake">CharacterBehaviour.Awake()</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_EnableBehaviours_Type___">CharacterBehaviour.EnableBehaviours(Type[])</a>
@@ -162,28 +179,46 @@
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_StopBehaviours_Type___">CharacterBehaviour.StopBehaviours(Type[])</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying_Type_">CharacterBehaviour.IsPlaying(Type)</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying__1">CharacterBehaviour.IsPlaying&lt;T&gt;()</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_AllStopped_Type___">CharacterBehaviour.AllStopped(Type[])</a>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Register_Action_">BaseComponent.Register(Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Unregister_System_String_">BaseComponent.Unregister(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_InvokeWhen_Func_System_Boolean__Action_">BaseComponent.InvokeWhen(Func&lt;Boolean&gt;, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Cancel_System_String_">BaseComponent.Cancel(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartTimeout_Action_System_Single_">BaseComponent.StartTimeout(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartInterval_Action_System_Single_">BaseComponent.StartInterval(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Update">BaseComponent.Update()</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_SpawnAttack_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SpawnAttack : BaseAttack</code></pre>
+    <pre><code class="lang-csharp hljs">public class SpawnAttack : BaseAttack, IPlayableBehaviour</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
   
   
-  <h4 id="Global_SpawnAttack_anticipateDuration" data-uid="Global.SpawnAttack.anticipateDuration">anticipateDuration</h4>
+  <h4 id="Global_SpawnAttack_attackFlow" data-uid="Global.SpawnAttack.attackFlow">attackFlow</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float anticipateDuration</code></pre>
+    <pre><code class="lang-csharp hljs">public SpawnAttack.AttackFlow attackFlow</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -195,7 +230,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><a class="xref" href="Global.SpawnAttack.AttackFlow.html">SpawnAttack.AttackFlow</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -250,30 +285,6 @@
   </table>
   
   
-  <h4 id="Global_SpawnAttack_recoveryDuration" data-uid="Global.SpawnAttack.recoveryDuration">recoveryDuration</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float recoveryDuration</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
   <h4 id="Global_SpawnAttack_spawnPoints" data-uid="Global.SpawnAttack.spawnPoints">spawnPoints</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
@@ -300,13 +311,13 @@
   </h3>
   
   
-  <a id="Global_SpawnAttack_ActiveCoroutine_" data-uid="Global.SpawnAttack.ActiveCoroutine*"></a>
-  <h4 id="Global_SpawnAttack_ActiveCoroutine" data-uid="Global.SpawnAttack.ActiveCoroutine">ActiveCoroutine()</h4>
+  <a id="Global_SpawnAttack_ActivePhase_" data-uid="Global.SpawnAttack.ActivePhase*"></a>
+  <h4 id="Global_SpawnAttack_ActivePhase" data-uid="Global.SpawnAttack.ActivePhase">ActivePhase()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override IEnumerator ActiveCoroutine()</code></pre>
+    <pre><code class="lang-csharp hljs">protected override IEnumerator ActivePhase()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -324,16 +335,16 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_ActiveCoroutine">BaseAttack.ActiveCoroutine()</a></div>
+  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_ActivePhase">BaseAttack.ActivePhase()</a></div>
   
   
-  <a id="Global_SpawnAttack_AnticipateCoroutine_" data-uid="Global.SpawnAttack.AnticipateCoroutine*"></a>
-  <h4 id="Global_SpawnAttack_AnticipateCoroutine" data-uid="Global.SpawnAttack.AnticipateCoroutine">AnticipateCoroutine()</h4>
+  <a id="Global_SpawnAttack_AnticipationPhase_" data-uid="Global.SpawnAttack.AnticipationPhase*"></a>
+  <h4 id="Global_SpawnAttack_AnticipationPhase" data-uid="Global.SpawnAttack.AnticipationPhase">AnticipationPhase()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override IEnumerator AnticipateCoroutine()</code></pre>
+    <pre><code class="lang-csharp hljs">protected override IEnumerator AnticipationPhase()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -351,55 +362,16 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_AnticipateCoroutine">BaseAttack.AnticipateCoroutine()</a></div>
+  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_AnticipationPhase">BaseAttack.AnticipationPhase()</a></div>
   
   
-  <a id="Global_SpawnAttack_Awake_" data-uid="Global.SpawnAttack.Awake*"></a>
-  <h4 id="Global_SpawnAttack_Awake" data-uid="Global.SpawnAttack.Awake">Awake()</h4>
+  <a id="Global_SpawnAttack_RecoveryPhase_" data-uid="Global.SpawnAttack.RecoveryPhase*"></a>
+  <h4 id="Global_SpawnAttack_RecoveryPhase" data-uid="Global.SpawnAttack.RecoveryPhase">RecoveryPhase()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Awake()</code></pre>
-  </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Awake">CharacterBehaviour.Awake()</a></div>
-  
-  
-  <a id="Global_SpawnAttack_CanPlay_" data-uid="Global.SpawnAttack.CanPlay*"></a>
-  <h4 id="Global_SpawnAttack_CanPlay" data-uid="Global.SpawnAttack.CanPlay">CanPlay()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool CanPlay()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_CanPlay">BaseAttack.CanPlay()</a></div>
-  
-  
-  <a id="Global_SpawnAttack_RecoveryCoroutine_" data-uid="Global.SpawnAttack.RecoveryCoroutine*"></a>
-  <h4 id="Global_SpawnAttack_RecoveryCoroutine" data-uid="Global.SpawnAttack.RecoveryCoroutine">RecoveryCoroutine()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override IEnumerator RecoveryCoroutine()</code></pre>
+    <pre><code class="lang-csharp hljs">protected override IEnumerator RecoveryPhase()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -417,7 +389,11 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_RecoveryCoroutine">BaseAttack.RecoveryCoroutine()</a></div>
+  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_RecoveryPhase">BaseAttack.RecoveryPhase()</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Global.IPlayableBehaviour.html">IPlayableBehaviour</a>
+  </div>
 </article>
           </div>
           

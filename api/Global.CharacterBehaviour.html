@@ -88,19 +88,45 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">CharacterBehaviour</span></div>
-      <div class="level2"><a class="xref" href="Global.CharacterController.html">CharacterController</a></div>
-      <div class="level2"><a class="xref" href="Global.DieBehaviour.html">DieBehaviour</a></div>
-      <div class="level2"><a class="xref" href="Global.EnemyGroup.html">EnemyGroup</a></div>
-      <div class="level2"><a class="xref" href="Global.HealthSystem.html">HealthSystem</a></div>
-      <div class="level2"><a class="xref" href="Global.HittableBehaviour.html">HittableBehaviour</a></div>
-      <div class="level2"><a class="xref" href="Global.PlayableBehaviour.html">PlayableBehaviour</a></div>
+    <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
+    <div class="level2"><span class="xref">CharacterBehaviour</span></div>
+      <div class="level3"><a class="xref" href="Global.AttackManager.html">AttackManager</a></div>
+      <div class="level3"><a class="xref" href="Global.CharacterController.html">CharacterController</a></div>
+      <div class="level3"><a class="xref" href="Global.DieBehaviour.html">DieBehaviour</a></div>
+      <div class="level3"><a class="xref" href="Global.EnemyGroup.html">EnemyGroup</a></div>
+      <div class="level3"><a class="xref" href="Global.HealthSystem.html">HealthSystem</a></div>
+      <div class="level3"><a class="xref" href="Global.HittableBehaviour.html">HittableBehaviour</a></div>
+      <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour&lt;T&gt;</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Register_Action_">BaseComponent.Register(Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Unregister_System_String_">BaseComponent.Unregister(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_InvokeWhen_Func_System_Boolean__Action_">BaseComponent.InvokeWhen(Func&lt;Boolean&gt;, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Cancel_System_String_">BaseComponent.Cancel(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartTimeout_Action_System_Single_">BaseComponent.StartTimeout(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartInterval_Action_System_Single_">BaseComponent.StartInterval(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Update">BaseComponent.Update()</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_CharacterBehaviour_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class CharacterBehaviour : MonoBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class CharacterBehaviour : BaseComponent</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
@@ -125,6 +151,31 @@
     <tbody>
       <tr>
         <td><span class="xref">Animator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Global_CharacterBehaviour_AttackManager_" data-uid="Global.CharacterBehaviour.AttackManager*"></a>
+  <h4 id="Global_CharacterBehaviour_AttackManager" data-uid="Global.CharacterBehaviour.AttackManager">AttackManager</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AttackManager AttackManager { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.AttackManager.html">AttackManager</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -181,13 +232,13 @@
   </table>
   
   
-  <a id="Global_CharacterBehaviour_EventManager_" data-uid="Global.CharacterBehaviour.EventManager*"></a>
-  <h4 id="Global_CharacterBehaviour_EventManager" data-uid="Global.CharacterBehaviour.EventManager">EventManager</h4>
+  <a id="Global_CharacterBehaviour_MovableEntity_" data-uid="Global.CharacterBehaviour.MovableEntity*"></a>
+  <h4 id="Global_CharacterBehaviour_MovableEntity" data-uid="Global.CharacterBehaviour.MovableEntity">MovableEntity</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected EventManager EventManager { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public MovableEntity MovableEntity { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -199,80 +250,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.EventManager.html">EventManager</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_CharacterBehaviour_MovableObject_" data-uid="Global.CharacterBehaviour.MovableObject*"></a>
-  <h4 id="Global_CharacterBehaviour_MovableObject" data-uid="Global.CharacterBehaviour.MovableObject">MovableObject</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MovableObject MovableObject { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.MovableObject.html">MovableObject</a></td>
+        <td><a class="xref" href="Global.MovableEntity.html">MovableEntity</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h3 id="methods">Methods
   </h3>
-  
-  
-  <a id="Global_CharacterBehaviour_AllStopped_" data-uid="Global.CharacterBehaviour.AllStopped*"></a>
-  <h4 id="Global_CharacterBehaviour_AllStopped_Type___" data-uid="Global.CharacterBehaviour.AllStopped(Type[])">AllStopped(Type[])</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected bool AllStopped(params Type[] types)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Type</span>[]</td>
-        <td><span class="parametername">types</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   
   
   <a id="Global_CharacterBehaviour_Awake_" data-uid="Global.CharacterBehaviour.Awake*"></a>
@@ -340,30 +324,14 @@
   
   
   <a id="Global_CharacterBehaviour_IsPlaying_" data-uid="Global.CharacterBehaviour.IsPlaying*"></a>
-  <h4 id="Global_CharacterBehaviour_IsPlaying_Type_" data-uid="Global.CharacterBehaviour.IsPlaying(Type)">IsPlaying(Type)</h4>
+  <h4 id="Global_CharacterBehaviour_IsPlaying__1" data-uid="Global.CharacterBehaviour.IsPlaying``1">IsPlaying&lt;T&gt;()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected bool IsPlaying(Type type)</code></pre>
+    <pre><code class="lang-csharp hljs">protected bool IsPlaying&lt;T&gt;()
+    where T : IPlayableBehaviour</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Type</span></td>
-        <td><span class="parametername">type</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -375,6 +343,21 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
         <td></td>
       </tr>
     </tbody>

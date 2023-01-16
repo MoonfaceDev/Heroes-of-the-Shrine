@@ -83,7 +83,8 @@
   
   <h1 id="Global_BaseHitDetector" data-uid="Global.BaseHitDetector" class="text-break">Class BaseHitDetector
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Abstract base class for hit detectors, responsible for detecting hits and calling a given function for every hit object</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -94,11 +95,35 @@
       <div class="level2"><a class="xref" href="Global.PeriodicRelativeHitDetector.html">PeriodicRelativeHitDetector</a></div>
       <div class="level2"><a class="xref" href="Global.SingleHitDetector.html">SingleHitDetector</a></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">Object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">Object.MemberwiseClone()</a>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_BaseHitDetector_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class BaseHitDetector : MonoBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class BaseHitDetector</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -109,7 +134,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;string&gt; excludedHittableTags</code></pre>
+    <pre><code class="lang-csharp hljs">public Tags excludedHittableTags</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -121,7 +146,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td><a class="xref" href="Global.Tags.html">Tags</a></td>
         <td><p>Tags of objects this attack cannot hit.</p>
 </td>
       </tr>
@@ -134,7 +159,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected Hitbox hitbox</code></pre>
+    <pre><code class="lang-csharp hljs">public Hitbox hitbox</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -147,18 +172,19 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Global.Hitbox.html">Hitbox</a></td>
-        <td></td>
+        <td><p>Attached hitbox</p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
-  <h4 id="Global_BaseHitDetector_includedHittableTags" data-uid="Global.BaseHitDetector.includedHittableTags">includedHittableTags</h4>
+  <h4 id="Global_BaseHitDetector_hitParticles" data-uid="Global.BaseHitDetector.hitParticles">hitParticles</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;string&gt; includedHittableTags</code></pre>
+    <pre><code class="lang-csharp hljs">public HitParticles hitParticles</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -170,7 +196,32 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td><a class="xref" href="Global.HitParticles.html">HitParticles</a></td>
+        <td><p>Attached hit particles</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Global_BaseHitDetector_includedHittableTags" data-uid="Global.BaseHitDetector.includedHittableTags">includedHittableTags</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Tags includedHittableTags</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.Tags.html">Tags</a></td>
         <td><p>Additional tags of objects this attack can hit.</p>
 </td>
       </tr>
@@ -180,23 +231,14 @@
   </h3>
   
   
-  <a id="Global_BaseHitDetector_Awake_" data-uid="Global.BaseHitDetector.Awake*"></a>
-  <h4 id="Global_BaseHitDetector_Awake" data-uid="Global.BaseHitDetector.Awake">Awake()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void Awake()</code></pre>
-  </div>
-  
-  
   <a id="Global_BaseHitDetector_DoStartDetector_" data-uid="Global.BaseHitDetector.DoStartDetector*"></a>
-  <h4 id="Global_BaseHitDetector_DoStartDetector_Action_IHittable__" data-uid="Global.BaseHitDetector.DoStartDetector(Action{IHittable})">DoStartDetector(Action&lt;IHittable&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Global_BaseHitDetector_DoStartDetector_Action_HittableHitbox__" data-uid="Global.BaseHitDetector.DoStartDetector(Action{HittableHitbox})">DoStartDetector(Action&lt;HittableHitbox&gt;)</h4>
+  <div class="markdown level1 summary"><p>Abstract method that starts detecting hits. Implementations should include the concrete logic of hit detection.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected abstract void DoStartDetector(Action&lt;IHittable&gt; hitCallable)</code></pre>
+    <pre><code class="lang-csharp hljs">protected abstract void DoStartDetector(Action&lt;HittableHitbox&gt; hitCallable)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -209,21 +251,23 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Action</span>&lt;<a class="xref" href="Global.IHittable.html">IHittable</a>&gt;</td>
+        <td><span class="xref">Action</span>&lt;<a class="xref" href="Global.HittableHitbox.html">HittableHitbox</a>&gt;</td>
         <td><span class="parametername">hitCallable</span></td>
-        <td></td>
+        <td><p>Function to be called on detected hit</p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
   <a id="Global_BaseHitDetector_StartDetector_" data-uid="Global.BaseHitDetector.StartDetector*"></a>
-  <h4 id="Global_BaseHitDetector_StartDetector_Action_IHittable__List_System_String__" data-uid="Global.BaseHitDetector.StartDetector(Action{IHittable},List{System.String})">StartDetector(Action&lt;IHittable&gt;, List&lt;String&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Global_BaseHitDetector_StartDetector_Action_HittableHitbox__Tags_" data-uid="Global.BaseHitDetector.StartDetector(Action{HittableHitbox},Tags)">StartDetector(Action&lt;HittableHitbox&gt;, Tags)</h4>
+  <div class="markdown level1 summary"><p>Starts detecting hits</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void StartDetector(Action&lt;IHittable&gt; hitCallable, List&lt;string&gt; hittableTags)</code></pre>
+    <pre><code class="lang-csharp hljs">public void StartDetector(Action&lt;HittableHitbox&gt; hitCallable, Tags hittableTags)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -236,14 +280,16 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Action</span>&lt;<a class="xref" href="Global.IHittable.html">IHittable</a>&gt;</td>
+        <td><span class="xref">Action</span>&lt;<a class="xref" href="Global.HittableHitbox.html">HittableHitbox</a>&gt;</td>
         <td><span class="parametername">hitCallable</span></td>
-        <td></td>
+        <td><p>Function to be called on detected hit</p>
+</td>
       </tr>
       <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td><a class="xref" href="Global.Tags.html">Tags</a></td>
         <td><span class="parametername">hittableTags</span></td>
-        <td></td>
+        <td><p>Tags of object that can get hit</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -251,7 +297,8 @@
   
   <a id="Global_BaseHitDetector_StopDetector_" data-uid="Global.BaseHitDetector.StopDetector*"></a>
   <h4 id="Global_BaseHitDetector_StopDetector" data-uid="Global.BaseHitDetector.StopDetector">StopDetector()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Abstract method that stops detecting hits. Implementations should stop anything that <span class="xref">BaseHitDetector.DoStartDetector(Action{HittableHitbox})</span> started.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">

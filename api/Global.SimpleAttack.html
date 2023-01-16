@@ -83,23 +83,32 @@
   
   <h1 id="Global_SimpleAttack" data-uid="Global.SimpleAttack" class="text-break">Class SimpleAttack
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Simple implementation of <span class="xref">BaseAttack</span>, which has a single hit detector, hit executor, and all attack phases have a fixed duration</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-    <div class="level2"><a class="xref" href="Global.PlayableBehaviour.html">PlayableBehaviour</a></div>
-    <div class="level3"><a class="xref" href="Global.BaseAttack.html">BaseAttack</a></div>
-    <div class="level4"><span class="xref">SimpleAttack</span></div>
-      <div class="level5"><a class="xref" href="Global.AirAttack.html">AirAttack</a></div>
-      <div class="level5"><a class="xref" href="Global.EnergyBurstAttack.html">EnergyBurstAttack</a></div>
-      <div class="level5"><a class="xref" href="Global.NormalAttack.html">NormalAttack</a></div>
-      <div class="level5"><a class="xref" href="Global.RunKick.html">RunKick</a></div>
-      <div class="level5"><a class="xref" href="Global.SlashAttack.html">SlashAttack</a></div>
+    <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
+    <div class="level2"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
+    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.BaseAttackCommand.html">BaseAttackCommand</a>&gt;</div>
+    <div class="level4"><a class="xref" href="Global.BaseAttack.html">BaseAttack</a></div>
+    <div class="level5"><span class="xref">SimpleAttack</span></div>
+      <div class="level6"><a class="xref" href="Global.AirAttack.html">AirAttack</a></div>
+      <div class="level6"><a class="xref" href="Global.NormalAttack.html">NormalAttack</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Global.IPlayableBehaviour.html">IPlayableBehaviour</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_attackEvents">BaseAttack.attackEvents</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_previousAttacks">BaseAttack.previousAttacks</a>
+    </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_instant">BaseAttack.instant</a>
     </div>
@@ -110,7 +119,10 @@
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_hardRecovery">BaseAttack.hardRecovery</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_AttackName">BaseAttack.AttackName</a>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Motion">BaseAttack.Motion</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_IsMidair">BaseAttack.IsMidair</a>
     </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Anticipating">BaseAttack.Anticipating</a>
@@ -125,37 +137,40 @@
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Playing">BaseAttack.Playing</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_generalEvents">BaseAttack.generalEvents</a>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_CanPlay_BaseAttackCommand_">BaseAttack.CanPlay(BaseAttackCommand)</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_AttackManager">BaseAttack.AttackManager</a>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_DoPlay_BaseAttackCommand_">BaseAttack.DoPlay(BaseAttackCommand)</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Play">BaseAttack.Play()</a>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_DoStop">BaseAttack.DoStop()</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Stop">BaseAttack.Stop()</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;BaseAttackCommand&gt;.PlayEvents</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_onPlay">PlayableBehaviour.onPlay</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;BaseAttackCommand&gt;.Play(BaseAttackCommand)</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_onStop">PlayableBehaviour.onStop</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;BaseAttackCommand&gt;.Stop()</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
     </div>
     <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableEntity">CharacterBehaviour.MovableEntity</a>
+    </div>
+    <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Animator">CharacterBehaviour.Animator</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_EventManager">CharacterBehaviour.EventManager</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableObject">CharacterBehaviour.MovableObject</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_AttackManager">CharacterBehaviour.AttackManager</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Enabled">CharacterBehaviour.Enabled</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Awake">CharacterBehaviour.Awake()</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_EnableBehaviours_Type___">CharacterBehaviour.EnableBehaviours(Type[])</a>
@@ -167,28 +182,46 @@
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_StopBehaviours_Type___">CharacterBehaviour.StopBehaviours(Type[])</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying_Type_">CharacterBehaviour.IsPlaying(Type)</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying__1">CharacterBehaviour.IsPlaying&lt;T&gt;()</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_AllStopped_Type___">CharacterBehaviour.AllStopped(Type[])</a>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Register_Action_">BaseComponent.Register(Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Unregister_System_String_">BaseComponent.Unregister(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_InvokeWhen_Func_System_Boolean__Action_">BaseComponent.InvokeWhen(Func&lt;Boolean&gt;, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Cancel_System_String_">BaseComponent.Cancel(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartTimeout_Action_System_Single_">BaseComponent.StartTimeout(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartInterval_Action_System_Single_">BaseComponent.StartInterval(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Update">BaseComponent.Update()</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_SimpleAttack_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SimpleAttack : BaseAttack</code></pre>
+    <pre><code class="lang-csharp hljs">public class SimpleAttack : BaseAttack, IPlayableBehaviour</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
   
   
-  <h4 id="Global_SimpleAttack_activeDuration" data-uid="Global.SimpleAttack.activeDuration">activeDuration</h4>
+  <h4 id="Global_SimpleAttack_attackFlow" data-uid="Global.SimpleAttack.attackFlow">attackFlow</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float activeDuration</code></pre>
+    <pre><code class="lang-csharp hljs">public SimpleAttack.AttackFlow attackFlow</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -200,59 +233,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><p>Duration of the active phase, in seconds.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_SimpleAttack_anticipateDuration" data-uid="Global.SimpleAttack.anticipateDuration">anticipateDuration</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float anticipateDuration</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><p>Duration of the anticipation phase, in seconds.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_SimpleAttack_damage" data-uid="Global.SimpleAttack.damage">damage</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float damage</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><p>Health reduced to hit characters.</p>
-</td>
+        <td><a class="xref" href="Global.SimpleAttack.AttackFlow.html">SimpleAttack.AttackFlow</a></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -276,19 +258,18 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Global.BaseHitDetector.html">BaseHitDetector</a></td>
-        <td><p>Hit detector that detect hits.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <h4 id="Global_SimpleAttack_hitType" data-uid="Global.SimpleAttack.hitType">hitType</h4>
+  <h4 id="Global_SimpleAttack_hitExecutor" data-uid="Global.SimpleAttack.hitExecutor">hitExecutor</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public HitType hitType</code></pre>
+    <pre><code class="lang-csharp hljs">public SimpleHitExecutor hitExecutor</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -300,161 +281,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.HitType.html">HitType</a></td>
-        <td><p>Side effect of the hit, either knockback or stun.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_SimpleAttack_knockbackDirection" data-uid="Global.SimpleAttack.knockbackDirection">knockbackDirection</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float knockbackDirection</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><p>Direction of the knockback in degrees, relative to X axis, in the direction of the hit. </p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_SimpleAttack_knockbackPower" data-uid="Global.SimpleAttack.knockbackPower">knockbackPower</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float knockbackPower</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><p>Power of the knockback, affects its initial speed.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_SimpleAttack_midair" data-uid="Global.SimpleAttack.midair">midair</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool midair</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p>If true, this attack can only play when <span class="xref">JumpBehaviour</span> is playing.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_SimpleAttack_previousAttacks" data-uid="Global.SimpleAttack.previousAttacks">previousAttacks</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;BaseAttack&gt; previousAttacks</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="Global.BaseAttack.html">BaseAttack</a>&gt;</td>
-        <td><p>This attack can be played only if the previous attack is one of the <code>previousAttacks</code>.
-If the attack can also be played without a previous attack, add <code>null</code> to the list.
-If the list is left empty, the attack can be played after any attack (including <code>null</code>).</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_SimpleAttack_recoveryDuration" data-uid="Global.SimpleAttack.recoveryDuration">recoveryDuration</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float recoveryDuration</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><p>Duration of the recovery phase, in seconds.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_SimpleAttack_stunTime" data-uid="Global.SimpleAttack.stunTime">stunTime</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float stunTime</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><p>Duration of stun effect caused by hit. If enemy is resistant to knockback, this value will be used too. </p>
-</td>
+        <td><a class="xref" href="Global.SimpleHitExecutor.html">SimpleHitExecutor</a></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -462,13 +290,13 @@ If the list is left empty, the attack can be played after any attack (including 
   </h3>
   
   
-  <a id="Global_SimpleAttack_ActiveCoroutine_" data-uid="Global.SimpleAttack.ActiveCoroutine*"></a>
-  <h4 id="Global_SimpleAttack_ActiveCoroutine" data-uid="Global.SimpleAttack.ActiveCoroutine">ActiveCoroutine()</h4>
+  <a id="Global_SimpleAttack_ActivePhase_" data-uid="Global.SimpleAttack.ActivePhase*"></a>
+  <h4 id="Global_SimpleAttack_ActivePhase" data-uid="Global.SimpleAttack.ActivePhase">ActivePhase()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override IEnumerator ActiveCoroutine()</code></pre>
+    <pre><code class="lang-csharp hljs">protected override IEnumerator ActivePhase()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -481,22 +309,21 @@ If the list is left empty, the attack can be played after any attack (including 
     <tbody>
       <tr>
         <td><span class="xref">IEnumerator</span></td>
-        <td><p>Coroutine that waits for <span class="xref">SimpleAttack.activeDuration</span>.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_ActiveCoroutine">BaseAttack.ActiveCoroutine()</a></div>
+  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_ActivePhase">BaseAttack.ActivePhase()</a></div>
   
   
-  <a id="Global_SimpleAttack_AnticipateCoroutine_" data-uid="Global.SimpleAttack.AnticipateCoroutine*"></a>
-  <h4 id="Global_SimpleAttack_AnticipateCoroutine" data-uid="Global.SimpleAttack.AnticipateCoroutine">AnticipateCoroutine()</h4>
+  <a id="Global_SimpleAttack_AnticipationPhase_" data-uid="Global.SimpleAttack.AnticipationPhase*"></a>
+  <h4 id="Global_SimpleAttack_AnticipationPhase" data-uid="Global.SimpleAttack.AnticipationPhase">AnticipationPhase()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override IEnumerator AnticipateCoroutine()</code></pre>
+    <pre><code class="lang-csharp hljs">protected override IEnumerator AnticipationPhase()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -509,209 +336,21 @@ If the list is left empty, the attack can be played after any attack (including 
     <tbody>
       <tr>
         <td><span class="xref">IEnumerator</span></td>
-        <td><p>Coroutine that waits for <span class="xref">SimpleAttack.anticipateDuration</span>.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_AnticipateCoroutine">BaseAttack.AnticipateCoroutine()</a></div>
+  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_AnticipationPhase">BaseAttack.AnticipationPhase()</a></div>
   
   
-  <a id="Global_SimpleAttack_Awake_" data-uid="Global.SimpleAttack.Awake*"></a>
-  <h4 id="Global_SimpleAttack_Awake" data-uid="Global.SimpleAttack.Awake">Awake()</h4>
+  <a id="Global_SimpleAttack_RecoveryPhase_" data-uid="Global.SimpleAttack.RecoveryPhase*"></a>
+  <h4 id="Global_SimpleAttack_RecoveryPhase" data-uid="Global.SimpleAttack.RecoveryPhase">RecoveryPhase()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Awake()</code></pre>
-  </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Awake">CharacterBehaviour.Awake()</a></div>
-  
-  
-  <a id="Global_SimpleAttack_CalculateDamage_" data-uid="Global.SimpleAttack.CalculateDamage*"></a>
-  <h4 id="Global_SimpleAttack_CalculateDamage_Character_" data-uid="Global.SimpleAttack.CalculateDamage(Character)">CalculateDamage(Character)</h4>
-  <div class="markdown level1 summary"><p>Calculates the attack damage on a specific hittable.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual float CalculateDamage(Character character)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.Character.html">Character</a></td>
-        <td><span class="parametername">character</span></td>
-        <td><p>Character to calculate the damage for.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><p>Damage result.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_SimpleAttack_CanPlay_" data-uid="Global.SimpleAttack.CanPlay*"></a>
-  <h4 id="Global_SimpleAttack_CanPlay" data-uid="Global.SimpleAttack.CanPlay">CanPlay()</h4>
-  <div class="markdown level1 summary"><p>Tells if the attack can be played.
-Override to add more conditions that attack requires.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool CanPlay()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><code>true</code> if the attack can be played.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_CanPlay">BaseAttack.CanPlay()</a></div>
-  
-  
-  <a id="Global_SimpleAttack_ConfigureHitDetector_" data-uid="Global.SimpleAttack.ConfigureHitDetector*"></a>
-  <h4 id="Global_SimpleAttack_ConfigureHitDetector" data-uid="Global.SimpleAttack.ConfigureHitDetector">ConfigureHitDetector()</h4>
-  <div class="markdown level1 summary"><p>Configures the <span class="xref">SimpleAttack.hitDetector</span>.
-The hit detector will detect hits when attack is during active phase.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void ConfigureHitDetector()</code></pre>
-  </div>
-  
-  
-  <a id="Global_SimpleAttack_HitCallable_" data-uid="Global.SimpleAttack.HitCallable*"></a>
-  <h4 id="Global_SimpleAttack_HitCallable_IHittable_" data-uid="Global.SimpleAttack.HitCallable(IHittable)">HitCallable(IHittable)</h4>
-  <div class="markdown level1 summary"><p>Communicates with the hittable when hit by this attack.
-By default, Applies damage and performs knockback or stun.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void HitCallable(IHittable hittable)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.IHittable.html">IHittable</a></td>
-        <td><span class="parametername">hittable</span></td>
-        <td><p>The hittable hit by the attack.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_SimpleAttack_InvokeOnHit_" data-uid="Global.SimpleAttack.InvokeOnHit*"></a>
-  <h4 id="Global_SimpleAttack_InvokeOnHit_IHittable_" data-uid="Global.SimpleAttack.InvokeOnHit(IHittable)">InvokeOnHit(IHittable)</h4>
-  <div class="markdown level1 summary"><p>Invokes <span class="xref">SimpleAttack.OnHit</span> event</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void InvokeOnHit(IHittable hittable)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.IHittable.html">IHittable</a></td>
-        <td><span class="parametername">hittable</span></td>
-        <td><p>Hittable hit by the attack</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_SimpleAttack_PreventWalking_" data-uid="Global.SimpleAttack.PreventWalking*"></a>
-  <h4 id="Global_SimpleAttack_PreventWalking_System_Boolean_" data-uid="Global.SimpleAttack.PreventWalking(System.Boolean)">PreventWalking(Boolean)</h4>
-  <div class="markdown level1 summary"><p>Disables walking when attack is playing, and re-enables it when attack is finished. </p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void PreventWalking(bool freeze)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><span class="parametername">freeze</span></td>
-        <td><p>If <code>true</code>, changes the velocity to <see cref="!:Vector3.zero"></see>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_SimpleAttack_RecoveryCoroutine_" data-uid="Global.SimpleAttack.RecoveryCoroutine*"></a>
-  <h4 id="Global_SimpleAttack_RecoveryCoroutine" data-uid="Global.SimpleAttack.RecoveryCoroutine">RecoveryCoroutine()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override IEnumerator RecoveryCoroutine()</code></pre>
+    <pre><code class="lang-csharp hljs">protected override IEnumerator RecoveryPhase()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -724,13 +363,12 @@ By default, Applies damage and performs knockback or stun.</p>
     <tbody>
       <tr>
         <td><span class="xref">IEnumerator</span></td>
-        <td><p>Coroutine that waits for <span class="xref">SimpleAttack.recoveryDuration</span>.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_RecoveryCoroutine">BaseAttack.RecoveryCoroutine()</a></div>
+  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_RecoveryPhase">BaseAttack.RecoveryPhase()</a></div>
   
   
   <a id="Global_SimpleAttack_Start_" data-uid="Global.SimpleAttack.Start*"></a>
@@ -741,33 +379,10 @@ By default, Applies damage and performs knockback or stun.</p>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Start()</code></pre>
   </div>
-  <h3 id="events">Events
-  </h3>
-  
-  
-  <h4 id="Global_SimpleAttack_OnHit" data-uid="Global.SimpleAttack.OnHit">OnHit</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event Action&lt;IHittable&gt; OnHit</code></pre>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Global.IPlayableBehaviour.html">IPlayableBehaviour</a>
   </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Action</span>&lt;<a class="xref" href="Global.IHittable.html">IHittable</a>&gt;</td>
-        <td><p>An hittable was hit by this attack.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
 </article>
           </div>
           

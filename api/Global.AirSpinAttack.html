@@ -88,83 +88,52 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-    <div class="level2"><a class="xref" href="Global.PlayableBehaviour.html">PlayableBehaviour</a></div>
-    <div class="level3"><a class="xref" href="Global.BaseAttack.html">BaseAttack</a></div>
-    <div class="level4"><a class="xref" href="Global.SimpleAttack.html">SimpleAttack</a></div>
-    <div class="level5"><a class="xref" href="Global.AirAttack.html">AirAttack</a></div>
-    <div class="level6"><span class="xref">AirSpinAttack</span></div>
+    <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
+    <div class="level2"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
+    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.BaseAttackCommand.html">BaseAttackCommand</a>&gt;</div>
+    <div class="level4"><a class="xref" href="Global.BaseAttack.html">BaseAttack</a></div>
+    <div class="level5"><a class="xref" href="Global.SimpleAttack.html">SimpleAttack</a></div>
+    <div class="level6"><a class="xref" href="Global.AirAttack.html">AirAttack</a></div>
+    <div class="level7"><span class="xref">AirSpinAttack</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Global.IPlayableBehaviour.html">IPlayableBehaviour</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_previousAttacks">SimpleAttack.previousAttacks</a>
+      <a class="xref" href="Global.AirAttack.html#Global_AirAttack_Motion">AirAttack.Motion</a>
     </div>
     <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_midair">SimpleAttack.midair</a>
+      <a class="xref" href="Global.AirAttack.html#Global_AirAttack_IsMidair">AirAttack.IsMidair</a>
     </div>
     <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_anticipateDuration">SimpleAttack.anticipateDuration</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_activeDuration">SimpleAttack.activeDuration</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_recoveryDuration">SimpleAttack.recoveryDuration</a>
+      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_attackFlow">SimpleAttack.attackFlow</a>
     </div>
     <div>
       <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_hitDetector">SimpleAttack.hitDetector</a>
     </div>
     <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_damage">SimpleAttack.damage</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_hitType">SimpleAttack.hitType</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_knockbackPower">SimpleAttack.knockbackPower</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_knockbackDirection">SimpleAttack.knockbackDirection</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_stunTime">SimpleAttack.stunTime</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_OnHit">SimpleAttack.OnHit</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_Awake">SimpleAttack.Awake()</a>
+      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_hitExecutor">SimpleAttack.hitExecutor</a>
     </div>
     <div>
       <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_Start">SimpleAttack.Start()</a>
     </div>
     <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_PreventWalking_System_Boolean_">SimpleAttack.PreventWalking(Boolean)</a>
+      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_AnticipationPhase">SimpleAttack.AnticipationPhase()</a>
     </div>
     <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_ConfigureHitDetector">SimpleAttack.ConfigureHitDetector()</a>
+      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_ActivePhase">SimpleAttack.ActivePhase()</a>
     </div>
     <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_CanPlay">SimpleAttack.CanPlay()</a>
+      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_RecoveryPhase">SimpleAttack.RecoveryPhase()</a>
     </div>
     <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_CalculateDamage_Character_">SimpleAttack.CalculateDamage(Character)</a>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_attackEvents">BaseAttack.attackEvents</a>
     </div>
     <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_InvokeOnHit_IHittable_">SimpleAttack.InvokeOnHit(IHittable)</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_HitCallable_IHittable_">SimpleAttack.HitCallable(IHittable)</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_AnticipateCoroutine">SimpleAttack.AnticipateCoroutine()</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_ActiveCoroutine">SimpleAttack.ActiveCoroutine()</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_RecoveryCoroutine">SimpleAttack.RecoveryCoroutine()</a>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_previousAttacks">BaseAttack.previousAttacks</a>
     </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_instant">BaseAttack.instant</a>
@@ -174,9 +143,6 @@
     </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_hardRecovery">BaseAttack.hardRecovery</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_AttackName">BaseAttack.AttackName</a>
     </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Anticipating">BaseAttack.Anticipating</a>
@@ -191,37 +157,40 @@
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Playing">BaseAttack.Playing</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_generalEvents">BaseAttack.generalEvents</a>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_CanPlay_BaseAttackCommand_">BaseAttack.CanPlay(BaseAttackCommand)</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_AttackManager">BaseAttack.AttackManager</a>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_DoPlay_BaseAttackCommand_">BaseAttack.DoPlay(BaseAttackCommand)</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Play">BaseAttack.Play()</a>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_DoStop">BaseAttack.DoStop()</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Stop">BaseAttack.Stop()</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;BaseAttackCommand&gt;.PlayEvents</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_onPlay">PlayableBehaviour.onPlay</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;BaseAttackCommand&gt;.Play(BaseAttackCommand)</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour.html#Global_PlayableBehaviour_onStop">PlayableBehaviour.onStop</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;BaseAttackCommand&gt;.Stop()</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
     </div>
     <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableEntity">CharacterBehaviour.MovableEntity</a>
+    </div>
+    <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Animator">CharacterBehaviour.Animator</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_EventManager">CharacterBehaviour.EventManager</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableObject">CharacterBehaviour.MovableObject</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_AttackManager">CharacterBehaviour.AttackManager</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Enabled">CharacterBehaviour.Enabled</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Awake">CharacterBehaviour.Awake()</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_EnableBehaviours_Type___">CharacterBehaviour.EnableBehaviours(Type[])</a>
@@ -233,17 +202,39 @@
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_StopBehaviours_Type___">CharacterBehaviour.StopBehaviours(Type[])</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying_Type_">CharacterBehaviour.IsPlaying(Type)</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying__1">CharacterBehaviour.IsPlaying&lt;T&gt;()</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_AllStopped_Type___">CharacterBehaviour.AllStopped(Type[])</a>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Register_Action_">BaseComponent.Register(Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Unregister_System_String_">BaseComponent.Unregister(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_InvokeWhen_Func_System_Boolean__Action_">BaseComponent.InvokeWhen(Func&lt;Boolean&gt;, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Cancel_System_String_">BaseComponent.Cancel(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartTimeout_Action_System_Single_">BaseComponent.StartTimeout(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartInterval_Action_System_Single_">BaseComponent.StartInterval(Action, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Update">BaseComponent.Update()</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_AirSpinAttack_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AirSpinAttack : AirAttack</code></pre>
+    <pre><code class="lang-csharp hljs">public class AirSpinAttack : AirAttack, IPlayableBehaviour</code></pre>
+  </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Global.IPlayableBehaviour.html">IPlayableBehaviour</a>
   </div>
 </article>
           </div>
