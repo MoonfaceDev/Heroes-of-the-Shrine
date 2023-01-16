@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnemyDestroyAction : BaseComponent
 {
     public Tags tags;
+    public Tags excludedTags;
 
     public void Invoke()
     {
@@ -16,6 +17,7 @@ public class EnemyDestroyAction : BaseComponent
 
     private void DestroyIfIncluded(GameEntity entity)
     {
+        if (entity.tags.Intersect(excludedTags).Any()) return;
         if (!entity.tags.Intersect(tags).Any()) return;
 
         var dieBehaviour = entity.GetComponent<DieBehaviour>();
