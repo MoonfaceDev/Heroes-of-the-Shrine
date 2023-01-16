@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EscapePattern : BasePattern
 {
-    public string targetTag;
+    public Tag targetTag;
     public float speedMultiplier;
 
     private Action onStop;
@@ -15,16 +15,16 @@ public class EscapePattern : BasePattern
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
         var escapeBehaviour = animator.GetComponent<EscapeBehaviour>();
-        var player = GameObject.FindGameObjectWithTag(targetTag);
+        var player = EntityManager.Instance.GetEntity(targetTag);
         if (!player)
         {
             return;
         }
 
-        escapeBehaviour.Play(new EscapeCommand(player.GetComponent<MovableObject>(), speedMultiplier));
+        escapeBehaviour.Play(new EscapeCommand(player.GetComponent<MovableEntity>(), speedMultiplier));
 
         onStop = () => animator.SetTrigger(StuckParameter);
-        escapeBehaviour.MovableObject.OnStuck += onStop;
+        escapeBehaviour.MovableEntity.OnStuck += onStop;
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -33,7 +33,7 @@ public class EscapePattern : BasePattern
 
         var escapeBehaviour = animator.GetComponent<EscapeBehaviour>();
 
-        escapeBehaviour.MovableObject.OnStuck -= onStop;
+        escapeBehaviour.MovableEntity.OnStuck -= onStop;
         escapeBehaviour.Stop();
     }
 }

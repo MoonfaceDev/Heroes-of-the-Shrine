@@ -18,7 +18,7 @@ public class EnemyGroup : CharacterBehaviour
     protected override void Update()
     {
         base.Update();
-        var enemies = CachedObjectsManager.Instance.GetObjects<Character>("Enemy")
+        var enemies = EntityManager.Instance.GetEntities(Tag.Enemy)
             .Select(enemy => enemy.GetComponent<EnemyGroup>()).ToArray();
 
         // Enemy count
@@ -35,25 +35,25 @@ public class EnemyGroup : CharacterBehaviour
                     return prev;
                 }
 
-                var nextDistance = MovableObject.GroundDistance(next.GetComponent<MovableObject>().WorldPosition);
-                var prevDistance = MovableObject.GroundDistance(prev.GetComponent<MovableObject>().WorldPosition);
+                var nextDistance = MovableEntity.GroundDistance(next.GetComponent<MovableEntity>().WorldPosition);
+                var prevDistance = MovableEntity.GroundDistance(prev.GetComponent<MovableEntity>().WorldPosition);
                 return nextDistance < prevDistance ? next : prev;
-            }).GetComponent<MovableObject>();
+            }).GetComponent<MovableEntity>();
             stateMachine.SetFloat(ClosestEnemyDistanceParameter,
-                MovableObject.GroundDistance(closestEnemy.WorldPosition));
+                MovableEntity.GroundDistance(closestEnemy.WorldPosition));
         }
 
         // Closest to the player
-        var player = CachedObjectsManager.Instance.GetObject<Character>("Player");
+        var player = EntityManager.Instance.GetEntity(Tag.Player);
         if (player)
         {
-            var playerMovableObject = player.GetComponent<MovableObject>();
+            var playerMovableObject = player.GetComponent<MovableEntity>();
             var closestEnemy = enemies.Aggregate(enemies[0], (prev, next) =>
             {
                 if (!prev) return next;
                 if (!next) return prev;
-                var nextDistance = playerMovableObject.GroundDistance(next.GetComponent<MovableObject>().WorldPosition);
-                var prevDistance = playerMovableObject.GroundDistance(prev.GetComponent<MovableObject>().WorldPosition);
+                var nextDistance = playerMovableObject.GroundDistance(next.GetComponent<MovableEntity>().WorldPosition);
+                var prevDistance = playerMovableObject.GroundDistance(prev.GetComponent<MovableEntity>().WorldPosition);
                 return nextDistance < prevDistance ? next : prev;
             });
             stateMachine.SetBool(IsClosestToPlayerParameter, this == closestEnemy);

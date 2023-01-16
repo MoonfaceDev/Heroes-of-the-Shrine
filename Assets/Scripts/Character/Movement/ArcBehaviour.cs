@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class ArcCommand : ICommand
 {
-    public readonly MovableObject target;
+    public readonly MovableEntity target;
     public readonly float speedMultiplier;
 
-    public ArcCommand(MovableObject target, float speedMultiplier)
+    public ArcCommand(MovableEntity target, float speedMultiplier)
     {
         this.target = target;
         this.speedMultiplier = speedMultiplier;
@@ -42,25 +42,25 @@ public class ArcBehaviour : BaseMovementBehaviour<ArcCommand>
         walkBehaviour.speed *= command.speedMultiplier;
 
         var playerPosition = command.target.WorldPosition;
-        var initialDistance = walkBehaviour.MovableObject.WorldPosition - playerPosition;
+        var initialDistance = walkBehaviour.MovableEntity.WorldPosition - playerPosition;
         initialDistance.y = 0;
         var radius = initialDistance.magnitude;
         var clockwise = Mathf.Sign(Random.Range(-1f, 1f));
 
         circleListener = Register(() =>
         {
-            var distance = walkBehaviour.MovableObject.WorldPosition - playerPosition;
+            var distance = walkBehaviour.MovableEntity.WorldPosition - playerPosition;
             distance.y = 0;
             distance *= radius / distance.magnitude;
             var newPosition = playerPosition + distance;
-            newPosition.y = walkBehaviour.MovableObject.WorldPosition.y;
-            walkBehaviour.MovableObject.WorldPosition = newPosition;
+            newPosition.y = walkBehaviour.MovableEntity.WorldPosition.y;
+            walkBehaviour.MovableEntity.WorldPosition = newPosition;
             var direction = clockwise * Vector3.Cross(distance, Vector3.up).normalized;
             walkBehaviour.Play(new WalkCommand(direction.x, direction.z, false));
-            if ((command.target.WorldPosition - walkBehaviour.MovableObject.WorldPosition).x != 0)
+            if ((command.target.WorldPosition - walkBehaviour.MovableEntity.WorldPosition).x != 0)
             {
-                walkBehaviour.MovableObject.rotation = Mathf.RoundToInt(
-                    Mathf.Sign((command.target.WorldPosition - walkBehaviour.MovableObject.WorldPosition).x));
+                walkBehaviour.MovableEntity.rotation = Mathf.RoundToInt(
+                    Mathf.Sign((command.target.WorldPosition - walkBehaviour.MovableEntity.WorldPosition).x));
             }
         });
     }
@@ -71,6 +71,6 @@ public class ArcBehaviour : BaseMovementBehaviour<ArcCommand>
         Unregister(circleListener);
         walkBehaviour.speed /= currentSpeedMultiplier;
         walkBehaviour.Stop();
-        MovableObject.velocity = Vector3.zero;
+        MovableEntity.velocity = Vector3.zero;
     }
 }

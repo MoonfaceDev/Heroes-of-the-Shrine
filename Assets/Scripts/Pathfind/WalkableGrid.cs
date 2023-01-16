@@ -1,7 +1,6 @@
-using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine.Serialization;
+using UnityEngine;
 
 [RequireComponent(typeof(GameEntity))]
 public class WalkableGrid : BaseComponent
@@ -39,12 +38,13 @@ public class WalkableGrid : BaseComponent
             }
         }
 
-        var barriers = CachedObjectsManager.Instance.GetObjects<Hitbox>("Barrier").ToArray();
+        var barriers = EntityManager.Instance.GetEntities(Tag.Barrier).ToArray();
 
         foreach (var barrier in barriers)
         {
-            var bottomLeftPoint = barrier.WorldPosition - barrier.size / 2;
-            var topRightPoint = barrier.WorldPosition + barrier.size / 2;
+            var hitbox = barrier.GetComponent<Hitbox>();
+            var bottomLeftPoint = hitbox.WorldPosition - hitbox.size / 2;
+            var topRightPoint = hitbox.WorldPosition + hitbox.size / 2;
             if (!IsInside(bottomLeftPoint) && !IsInside(topRightPoint)) continue;
             var bottomLeftIndex = IndexFromWorldPoint(bottomLeftPoint) - Vector2Int.one;
             var topRightIndex = IndexFromWorldPoint(topRightPoint) + Vector2Int.one;

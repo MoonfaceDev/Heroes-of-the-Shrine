@@ -14,7 +14,7 @@ public class WalkCommand : ICommand
     }
 }
 
-[RequireComponent(typeof(MovableObject))]
+[RequireComponent(typeof(MovableEntity))]
 public class WalkBehaviour : BaseMovementBehaviour<WalkCommand>
 {
     public float defaultSpeed;
@@ -53,20 +53,20 @@ public class WalkBehaviour : BaseMovementBehaviour<WalkCommand>
         Walk = true;
 
         // move speed
-        MovableObject.velocity.x = command.xAxis * speed;
-        MovableObject.velocity.z = command.zAxis * speed;
+        MovableEntity.velocity.x = command.xAxis * speed;
+        MovableEntity.velocity.z = command.zAxis * speed;
 
         // look direction
         if (command.xAxis != 0 & command.fitLookDirection)
         {
-            MovableObject.rotation = Mathf.RoundToInt(Mathf.Sign(command.xAxis));
+            MovableEntity.rotation = Mathf.RoundToInt(Mathf.Sign(command.xAxis));
         }
     }
 
     protected override void DoStop()
     {
         Walk = false;
-        MovableObject.velocity.x = 0;
-        MovableObject.velocity.z = 0;
+        MovableEntity.velocity.x = 0;
+        MovableEntity.velocity.z = 0;
     }
 }

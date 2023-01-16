@@ -1,32 +1,29 @@
+using System.Linq;
 using UnityEngine;
 
 public class EnemyDestroyAction : BaseComponent
 {
-    public string[] tags;
+    public Tags tags;
 
     public void Invoke()
     {
-        var characters = CachedObjectsManager.Instance.GetObjects<Character>("Enemy");
-        foreach (var character in characters)
+        var enemies = EntityManager.Instance.GetEntities(Tag.Enemy);
+        foreach (var enemy in enemies)
         {
-            DestroyIfIncluded(character);
+            DestroyIfIncluded(enemy);
         }
     }
 
-    private void DestroyIfIncluded(Character character)
+    private void DestroyIfIncluded(GameEntity entity)
     {
-        foreach (var group in tags)
-        {
-            var testedTag = character.tag;
-            if (!(testedTag == group || testedTag.StartsWith(group + "."))) continue;
-            var dieBehaviour = character.GetComponent<DieBehaviour>();
-            if (!dieBehaviour)
-            {
-                Debug.LogWarning("No death behaviour!");
-            }
+        if (!entity.tags.Intersect(tags).Any()) return;
 
-            dieBehaviour.Kill();
-            return;
+        var dieBehaviour = entity.GetComponent<DieBehaviour>();
+        if (!dieBehaviour)
+        {
+            Debug.LogWarning("No death behaviour!");
         }
+
+        dieBehaviour.Kill();
     }
 }

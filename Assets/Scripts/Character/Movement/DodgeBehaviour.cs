@@ -69,7 +69,7 @@ public class DodgeBehaviour : BaseMovementBehaviour<DodgeCommand>
         anticipateTimeout = StartTimeout(() =>
         {
             Anticipating = false;
-            MovableObject.UpdatePosition(MovableObject.position + command.direction * dodgeDistance * Vector3.forward);
+            MovableEntity.UpdatePosition(MovableEntity.position + command.direction * dodgeDistance * Vector3.forward);
             OnDodge?.Invoke();
             Recovering = true;
             recoverTimeout = StartTimeout(Stop, recoveryTime);

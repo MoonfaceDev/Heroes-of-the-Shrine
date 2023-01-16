@@ -13,7 +13,7 @@ public class HitParticles : BaseComponent
         clone.transform.rotation = entity.WorldRotation;
         clone.GetComponent<Renderer>().sortingOrder = Mathf.Max(
             entity.parent.SortingOrder,
-            hittable.Character.movableObject.SortingOrder
+            hittable.Character.movableEntity.SortingOrder
         ) + 1;
         clone.GetComponent<ParticleSystem>().Play();
     }

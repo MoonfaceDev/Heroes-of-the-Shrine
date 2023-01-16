@@ -84,7 +84,7 @@ MonoBehaviour:
   hasRandomExitTime: 0
   minTime: 3
   maxTime: 6
-  targetTag: Player
+  targetTag: 1
   speedMultiplier: 1
 --- !u!1101 &-7333508958200240358
 AnimatorStateTransition:
@@ -154,7 +154,7 @@ MonoBehaviour:
   hasRandomExitTime: 0
   minTime: 0
   maxTime: 0
-  targetTag: Player
+  targetTag: 1
   attacks:
   - attackType:
       GuidAssignmentFailed: 0
@@ -383,7 +383,7 @@ MonoBehaviour:
   hasRandomExitTime: 1
   minTime: 0
   maxTime: 1
-  targetTag: Player
+  targetTag: 1
   speedMultiplier: 2
 --- !u!1101 &-6084092208311853540
 AnimatorStateTransition:
@@ -458,7 +458,7 @@ MonoBehaviour:
   hasRandomExitTime: 1
   minTime: 1.5
   maxTime: 3
-  targetTag: Player
+  targetTag: 1
   speedMultiplier: 1
 --- !u!1101 &-5897763179227494431
 AnimatorStateTransition:
@@ -1136,7 +1136,7 @@ MonoBehaviour:
   hasRandomExitTime: 0
   minTime: 0
   maxTime: 0
-  targetTag: Player
+  targetTag: 1
   attacks:
   - attackType:
       GuidAssignmentFailed: 0
@@ -2345,7 +2345,7 @@ MonoBehaviour:
   hasRandomExitTime: 1
   minTime: 1
   maxTime: 3.5
-  targetTag: Player
+  targetTag: 1
   speedMultiplier: 1
 --- !u!1101 &4269892930960822807
 AnimatorStateTransition:
@@ -2905,7 +2905,7 @@ MonoBehaviour:
   hasRandomExitTime: 0
   minTime: 0
   maxTime: 0
-  targetTag: Player
+  targetTag: 1
   attacks:
   - attackType:
       GuidAssignmentFailed: 0

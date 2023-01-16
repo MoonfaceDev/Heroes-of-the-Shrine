@@ -144,7 +144,7 @@ MonoBehaviour:
   hasRandomExitTime: 0
   minTime: 1
   maxTime: 3
-  targetTag: Player
+  targetTag: 1
   speedMultiplier: 2.5
 --- !u!1101 &-8501226792224343669
 AnimatorStateTransition:
@@ -257,7 +257,7 @@ MonoBehaviour:
   hasRandomExitTime: 1
   minTime: 2
   maxTime: 3
-  targetTag: Player
+  targetTag: 1
   speedMultiplier: 1.5
 --- !u!1101 &-8071153162216204323
 AnimatorStateTransition:
@@ -296,7 +296,7 @@ MonoBehaviour:
   hasRandomExitTime: 0
   minTime: 3
   maxTime: 6
-  targetTag: Player
+  targetTag: 1
   speedMultiplier: 1
 --- !u!1101 &-7425926401780152803
 AnimatorStateTransition:
@@ -394,7 +394,7 @@ MonoBehaviour:
   hasRandomExitTime: 0
   minTime: 0
   maxTime: 0
-  targetTag: Player
+  targetTag: 1
   attacks:
   - attackType:
       GuidAssignmentFailed: 0
@@ -501,7 +501,7 @@ MonoBehaviour:
   hasRandomExitTime: 0
   minTime: 0
   maxTime: 0
-  targetTag: Player
+  targetTag: 1
   attacks:
   - attackType:
       GuidAssignmentFailed: 0
@@ -952,7 +952,7 @@ MonoBehaviour:
   hasRandomExitTime: 0
   minTime: 0
   maxTime: 0
-  targetTag: Player
+  targetTag: 1
   attacks:
   - attackType:
       GuidAssignmentFailed: 0
@@ -1672,7 +1672,7 @@ MonoBehaviour:
   hasRandomExitTime: 0
   minTime: 1
   maxTime: 3
-  targetTag: Player
+  targetTag: 1
   speedMultiplier: 2
 --- !u!1101 &-635227649442144264
 AnimatorStateTransition:
@@ -1966,7 +1966,7 @@ MonoBehaviour:
   hasRandomExitTime: 0
   minTime: 0
   maxTime: 0
-  targetTag: Player
+  targetTag: 1
   attacks:
   - attackType:
       GuidAssignmentFailed: 0
@@ -2001,7 +2001,7 @@ MonoBehaviour:
   hasRandomExitTime: 0
   minTime: 3
   maxTime: 6
-  targetTag: Player
+  targetTag: 1
   speedMultiplier: 1.25
 --- !u!1102 &658858126574353543
 AnimatorState:
@@ -2541,7 +2541,7 @@ MonoBehaviour:
   hasRandomExitTime: 0
   minTime: 0
   maxTime: 0
-  targetTag: Player
+  targetTag: 1
   attacks:
   - attackType:
       GuidAssignmentFailed: 0
@@ -2620,7 +2620,7 @@ MonoBehaviour:
   hasRandomExitTime: 1
   minTime: 3
   maxTime: 4
-  targetTag: Player
+  targetTag: 1
   speedMultiplier: 1
 --- !u!1102 &3612989089620173010
 AnimatorState:
@@ -2869,7 +2869,7 @@ MonoBehaviour:
   hasRandomExitTime: 1
   minTime: 0
   maxTime: 2
-  targetTag: Player
+  targetTag: 1
   speedMultiplier: 2
 --- !u!114 &4781829706838427772
 MonoBehaviour:
@@ -2886,7 +2886,7 @@ MonoBehaviour:
   hasRandomExitTime: 1
   minTime: 0
   maxTime: 3
-  targetTag: Player
+  targetTag: 1
   speedMultiplier: 1.5
 --- !u!1102 &4921882366354855378
 AnimatorState:

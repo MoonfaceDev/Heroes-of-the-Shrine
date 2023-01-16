@@ -13,7 +13,7 @@ public class AttackNode
 
 public class AttackPattern : BasePattern
 {
-    public string targetTag;
+    public Tag targetTag;
     public List<AttackNode> attacks;
 
     private Coroutine attackCoroutine;
@@ -22,16 +22,16 @@ public class AttackPattern : BasePattern
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
-        var player = GameObject.FindGameObjectWithTag(targetTag);
+        var player = EntityManager.Instance.GetEntity(targetTag);
 
         if (!player)
         {
             return;
         }
 
-        var movableObject = animator.GetComponent<MovableObject>();
+        var movableObject = animator.GetComponent<MovableEntity>();
         movableObject.rotation =
-            Mathf.RoundToInt(Mathf.Sign((player.GetComponent<MovableObject>().WorldPosition -
+            Mathf.RoundToInt(Mathf.Sign((player.GetComponent<MovableEntity>().WorldPosition -
                                          movableObject.WorldPosition).x));
         attackCoroutine = EventManager.Instance.StartCoroutine(AttackCoroutine(animator));
     }

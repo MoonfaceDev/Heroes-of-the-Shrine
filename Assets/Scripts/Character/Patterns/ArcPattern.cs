@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ArcPattern : BasePattern
 {
-    public string targetTag;
+    public Tag targetTag;
     public float speedMultiplier;
 
     private Action onStop;
@@ -14,16 +14,16 @@ public class ArcPattern : BasePattern
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
         var arcBehaviour = animator.GetComponent<ArcBehaviour>();
-        var player = GameObject.FindGameObjectWithTag(targetTag);
+        var player = EntityManager.Instance.GetEntity(targetTag);
         if (!player)
         {
             return;
         }
 
-        arcBehaviour.Play(new ArcCommand(player.GetComponent<MovableObject>(), speedMultiplier));
+        arcBehaviour.Play(new ArcCommand(player.GetComponent<MovableEntity>(), speedMultiplier));
 
         onStop = () => animator.SetTrigger(StuckParameter);
-        arcBehaviour.MovableObject.OnStuck += onStop;
+        arcBehaviour.MovableEntity.OnStuck += onStop;
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -32,7 +32,7 @@ public class ArcPattern : BasePattern
 
         var arcBehaviour = animator.GetComponent<ArcBehaviour>();
 
-        arcBehaviour.MovableObject.OnStuck -= onStop;
+        arcBehaviour.MovableEntity.OnStuck -= onStop;
         arcBehaviour.Stop();
     }
 }

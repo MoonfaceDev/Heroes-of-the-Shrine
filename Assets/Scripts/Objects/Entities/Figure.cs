@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 [ExecuteInEditMode]
 [RequireComponent(typeof(Renderer))]
 public class Figure : BaseComponent
 {
-    public MovableObject movableObject;
+    [FormerlySerializedAs("movableObject")] public MovableEntity movableEntity;
 
     private new Renderer renderer;
 
@@ -16,13 +17,13 @@ public class Figure : BaseComponent
     protected override void Update()
     {
         base.Update();
-        if (!Application.isPlaying && !movableObject) return;
-        transform.localPosition = GameEntity.ScreenCoordinates(movableObject.WorldPosition.y * Vector3.up);
+        if (!Application.isPlaying && !movableEntity) return;
+        transform.localPosition = GameEntity.ScreenCoordinates(movableEntity.WorldPosition.y * Vector3.up);
         UpdateSortingOrder();
     }
 
     private void UpdateSortingOrder()
     {
-        renderer.sortingOrder = movableObject.SortingOrder;
+        renderer.sortingOrder = movableEntity.SortingOrder;
     }
 }

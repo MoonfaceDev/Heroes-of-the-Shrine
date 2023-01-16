@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class EscapeCommand : ICommand
 {
-    public readonly MovableObject target;
+    public readonly MovableEntity target;
     public readonly float speedMultiplier;
     public readonly bool fitLookDirection;
 
-    public EscapeCommand(MovableObject target, float speedMultiplier, bool fitLookDirection = true)
+    public EscapeCommand(MovableEntity target, float speedMultiplier, bool fitLookDirection = true)
     {
         this.target = target;
         this.speedMultiplier = speedMultiplier;
@@ -33,7 +33,7 @@ public class EscapeBehaviour : BaseMovementBehaviour<EscapeCommand>
 
     public void Start()
     {
-        MovableObject.OnStuck += Stop;
+        MovableEntity.OnStuck += Stop;
         walkBehaviour.PlayEvents.onStop.AddListener(Stop);
     }
 
@@ -46,11 +46,11 @@ public class EscapeBehaviour : BaseMovementBehaviour<EscapeCommand>
 
         escapeListener = Register(() =>
         {
-            var distance = MovableObject.WorldPosition - command.target.WorldPosition;
+            var distance = MovableEntity.WorldPosition - command.target.WorldPosition;
             distance.y = 0;
             var direction = distance.normalized;
             walkBehaviour.Play(new WalkCommand(direction.x, direction.z, command.fitLookDirection));
-            MovableObject.rotation = -Mathf.RoundToInt(Mathf.Sign(direction.x));
+            MovableEntity.rotation = -Mathf.RoundToInt(Mathf.Sign(direction.x));
         });
     }
 
@@ -60,6 +60,6 @@ public class EscapeBehaviour : BaseMovementBehaviour<EscapeCommand>
         Unregister(escapeListener);
         walkBehaviour.speed /= currentSpeedMultiplier;
         walkBehaviour.Stop();
-        MovableObject.velocity = Vector3.zero;
+        MovableEntity.velocity = Vector3.zero;
     }
 }

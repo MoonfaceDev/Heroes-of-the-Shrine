@@ -18,8 +18,8 @@ public class SimpleHitExecutor : IHitExecutor
         {
             case HitType.Knockback:
                 var hitDirection =
-                    (int)Mathf.Sign(hittable.Character.movableObject.WorldPosition.x -
-                                    attack.MovableObject.WorldPosition.x);
+                    (int)Mathf.Sign(hittable.Character.movableEntity.WorldPosition.x -
+                                    attack.MovableEntity.WorldPosition.x);
                 hittable.Knockback(processedDamage, hitDefinition.knockbackPower,
                     KnockbackBehaviour.GetRelativeDirection(hitDefinition.knockbackDirection, hitDirection),
                     hitDefinition.stunTime);

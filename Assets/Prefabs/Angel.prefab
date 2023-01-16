@@ -60,9 +60,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
   position: {x: 0.695, y: 0.685, z: 0}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &9085019184276698034
@@ -303,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deafd5b62807574da9835b75b8a0254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movableObject: {fileID: 5102893360874897665}
+  movableEntity: {fileID: 5102893360874897665}
   shadowScale: {x: 1.5, y: 0, z: 1}
   figure: {fileID: 5102893361555062418}
   animationDefinitions:
@@ -369,9 +370,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
   position: {x: 0.055, y: 0.6, z: 0}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &234424136118286085
@@ -447,9 +449,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
   position: {x: 0.025, y: 0.96, z: 0}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &9123332027102438765
@@ -525,9 +528,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
   position: {x: 0.7, y: 0.685, z: 0}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &3603120142536149105
@@ -603,9 +607,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
   position: {x: 1.115, y: 1.11, z: 0}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &5133938250452459189
@@ -681,9 +686,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
   position: {x: 0.15, y: 0.825, z: 0}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &2002257862998933130
@@ -709,7 +715,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5102893360874897670}
   - component: {fileID: 5102893360874897665}
-  - component: {fileID: 9052240310973488254}
   - component: {fileID: 5102893360874897664}
   - component: {fileID: 5102893360874897667}
   - component: {fileID: 6922206664831023246}
@@ -746,7 +751,7 @@ GameObject:
   - component: {fileID: 1303490756395571274}
   m_Layer: 0
   m_Name: Angel
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -778,7 +783,7 @@ Transform:
   - {fileID: 3850747449127629430}
   - {fileID: 3970267090279809017}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360874897665
 MonoBehaviour:
@@ -793,25 +798,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
+  tags:
+    tags: 01000000
   position: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
---- !u!114 &9052240310973488254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 679915e21248d4340a3599b8048c2ce1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cacheTag: Player
-  object: {fileID: 5102893360874897664}
 --- !u!114 &5102893360874897664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -826,7 +818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   physicalAttributes: {fileID: 11400000, guid: 7a04245b53151b344823f01dcf190584, type: 2}
   animator: {fileID: 5102893361555062418}
-  movableObject: {fileID: 0}
+  movableEntity: {fileID: 0}
   attackManager: {fileID: 0}
 --- !u!114 &5102893360874897667
 MonoBehaviour:
@@ -1222,8 +1214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxComboDelay: 0.05
   hittableTags:
-  - Enemy
-  - Prop
+    tags: 0200000006000000
   lastAttack: {fileID: 0}
   playEvents:
     onPlay:
@@ -1358,8 +1349,10 @@ MonoBehaviour:
       data:
         hitbox: {fileID: 5102893361029256204}
         hitParticles: {fileID: 2515481451582170628}
-        includedHittableTags: []
-        excludedHittableTags: []
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
 --- !u!114 &5102893360874897686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1423,8 +1416,10 @@ MonoBehaviour:
       data:
         hitbox: {fileID: 5102893360536826755}
         hitParticles: {fileID: 3603120142536149105}
-        includedHittableTags: []
-        excludedHittableTags: []
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
 --- !u!114 &5102893360874897683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1489,8 +1484,10 @@ MonoBehaviour:
       data:
         hitbox: {fileID: 4058469792659233068}
         hitParticles: {fileID: 9085019184276698034}
-        includedHittableTags: []
-        excludedHittableTags: []
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
 --- !u!114 &5102893360874897687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1555,8 +1552,10 @@ MonoBehaviour:
       data:
         hitbox: {fileID: 5102893361817772762}
         hitParticles: {fileID: 1596551910517510343}
-        includedHittableTags: []
-        excludedHittableTags: []
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
 --- !u!114 &5102893360874897684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1621,8 +1620,10 @@ MonoBehaviour:
       data:
         hitbox: {fileID: 5102893360763890678}
         hitParticles: {fileID: 5133938250452459189}
-        includedHittableTags: []
-        excludedHittableTags: []
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
 --- !u!114 &5102893360874897685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1693,15 +1694,19 @@ MonoBehaviour:
       data:
         hitbox: {fileID: 5102893360398477695}
         hitParticles: {fileID: 234424136118286085}
-        includedHittableTags: []
-        excludedHittableTags: []
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
     - rid: 3181427246007058585
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
         hitbox: {fileID: 5102893361076516092}
         hitParticles: {fileID: 4347562249962238493}
-        includedHittableTags: []
-        excludedHittableTags: []
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
 --- !u!114 &5102893360874897682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1779,8 +1784,10 @@ MonoBehaviour:
       data:
         hitbox: {fileID: 5102893360866760427}
         hitParticles: {fileID: 2002257862998933130}
-        includedHittableTags: []
-        excludedHittableTags: []
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
 --- !u!114 &5102893360874897681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1844,8 +1851,10 @@ MonoBehaviour:
       data:
         hitbox: {fileID: 5102893360536826755}
         hitParticles: {fileID: 3603120142536149105}
-        includedHittableTags: []
-        excludedHittableTags: []
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
 --- !u!114 &5102893360874897680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1910,8 +1919,10 @@ MonoBehaviour:
       data:
         hitbox: {fileID: 5102893361817772762}
         hitParticles: {fileID: 1596551910517510343}
-        includedHittableTags: []
-        excludedHittableTags: []
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
 --- !u!114 &5102893360874897694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1978,8 +1989,10 @@ MonoBehaviour:
       data:
         hitbox: {fileID: 5102893360422186048}
         hitParticles: {fileID: 9123332027102438765}
-        includedHittableTags: []
-        excludedHittableTags: []
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
 --- !u!114 &5102893360874897675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2044,8 +2057,10 @@ MonoBehaviour:
       data:
         hitbox: {fileID: 5102893360938488512}
         hitParticles: {fileID: 0}
-        includedHittableTags: []
-        excludedHittableTags: []
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
 --- !u!114 &4916786187361843125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2148,9 +2163,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
   position: {x: 1.565, y: 0.43, z: 0}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!1 &5102893361029256207
@@ -2213,9 +2229,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
   position: {x: 0.975, y: 0.5, z: 0}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &2515481451582170628
@@ -2278,9 +2295,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
   position: {x: -0.06, y: 1, z: 0}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893361031155006
@@ -2375,9 +2393,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
   position: {x: 0.81, y: 0.78, z: 0}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &4347562249962238493
@@ -2421,7 +2440,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893361279726048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.080000006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7223,9 +7242,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
   position: {x: 0, y: 0, z: -0.1}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &1268138786999904315
@@ -7240,7 +7260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90306126b25f448f98b2587e24ff902e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movableObject: {fileID: 5102893361279726060}
+  movableEntity: {fileID: 5102893361279726060}
 --- !u!1 &5102893361555062423
 GameObject:
   m_ObjectHideFlags: 0
@@ -7374,7 +7394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90306126b25f448f98b2587e24ff902e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movableObject: {fileID: 5102893360874897665}
+  movableEntity: {fileID: 5102893360874897665}
 --- !u!1 &5102893361817772764
 GameObject:
   m_ObjectHideFlags: 0
@@ -7435,9 +7455,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
   position: {x: 0.375, y: 0.675, z: 0}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &1596551910517510343
@@ -12282,9 +12303,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
   position: {x: 0, y: 0, z: 0.1}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &4871257472338205888
@@ -12299,4 +12321,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90306126b25f448f98b2587e24ff902e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movableObject: {fileID: 5510860288221320503}
+  movableEntity: {fileID: 5510860288221320503}

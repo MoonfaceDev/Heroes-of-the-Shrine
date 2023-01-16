@@ -1308,9 +1308,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
+  tags:
+    tags: 
   position: {x: 29.2, y: 0, z: -3}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!4 &2542200778651597022
@@ -1412,7 +1413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deafd5b62807574da9835b75b8a0254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movableObject: {fileID: 2542200778651597017}
+  movableEntity: {fileID: 2542200778651597017}
   shadowScale: {x: 1.5, y: 0, z: 1}
   figure: {fileID: 2542200780353046346}
   animationDefinitions: []
@@ -1601,7 +1602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90306126b25f448f98b2587e24ff902e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movableObject: {fileID: 2542200778651597017}
+  movableEntity: {fileID: 2542200778651597017}
 --- !u!1001 &5826350637269321193
 PrefabInstance:
   m_ObjectHideFlags: 0

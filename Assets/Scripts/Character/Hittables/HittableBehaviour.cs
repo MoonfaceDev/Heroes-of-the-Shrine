@@ -92,7 +92,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
             return;
         }
 
-        if (MovableObject.WorldPosition.y > 0)
+        if (MovableEntity.WorldPosition.y > 0)
         {
             Knockback(damage, StunLaunchPower, StunLaunchAngel, time);
             return;

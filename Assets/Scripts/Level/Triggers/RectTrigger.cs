@@ -5,22 +5,18 @@ public class RectTrigger : BaseTrigger
     public Vector3 position;
     public Vector3 size;
 
-    private MovableObject playerMovableObject;
-    private bool fired = false;
+    private GameEntity player;
+    private bool fired;
 
     private void Awake()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player)
-        {
-            playerMovableObject = player.GetComponent<MovableObject>();
-        }
+        player = EntityManager.Instance.GetEntity(Tag.Player);
     }
 
     protected override void Update()
     {
         base.Update();
-        if (playerMovableObject && IsInside(playerMovableObject.WorldPosition) && !fired)
+        if (player && IsInside(player.WorldPosition) && !fired)
         {
             fired = true;
             action.Invoke();

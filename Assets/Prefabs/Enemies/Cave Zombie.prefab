@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deafd5b62807574da9835b75b8a0254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movableObject: {fileID: 3354150098320785788}
+  movableEntity: {fileID: 3354150098320785788}
   shadowScale: {x: 1.5, y: 0, z: 1}
   figure: {fileID: 3354150098403288960}
   animationDefinitions:
@@ -146,15 +146,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3354150097728927390}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 3354150098320785788}
+  tags:
+    tags: 
   position: {x: 0, y: 0.91, z: 0}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &3354150097728927391
@@ -199,7 +200,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3354150098320785789}
   - component: {fileID: 3354150098320785788}
-  - component: {fileID: 6093531673381940708}
   - component: {fileID: 3354150098320785787}
   - component: {fileID: 3354150098320785786}
   - component: {fileID: 3354150098320785785}
@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 3354150098320785677}
   m_Layer: 0
   m_Name: Cave Zombie
-  m_TagString: Enemy.Goblin.Cave
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -256,25 +256,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
+  tags:
+    tags: 0200000004000000
   position: {x: 5.16, y: 0, z: -2.91}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
---- !u!114 &6093531673381940708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3354150098320785675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 679915e21248d4340a3599b8048c2ce1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cacheTag: Enemy
-  object: {fileID: 3354150098320785787}
 --- !u!114 &3354150098320785787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,7 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   physicalAttributes: {fileID: 11400000, guid: 7a04245b53151b344823f01dcf190584, type: 2}
   animator: {fileID: 3354150098403288960}
-  movableObject: {fileID: 0}
+  movableEntity: {fileID: 0}
   attackManager: {fileID: 0}
 --- !u!114 &3354150098320785786
 MonoBehaviour:
@@ -483,7 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxComboDelay: 0.5
   hittableTags:
-  - Player
+    tags: 01000000
   lastAttack: {fileID: 0}
   playEvents:
     onPlay:
@@ -574,8 +561,10 @@ MonoBehaviour:
       data:
         hitbox: {fileID: 3354150098559167059}
         hitParticles: {fileID: 834799260672018682}
-        includedHittableTags: []
-        excludedHittableTags: []
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
 --- !u!114 &3354150098320785776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,8 +629,10 @@ MonoBehaviour:
       data:
         hitbox: {fileID: 3354150098559167059}
         hitParticles: {fileID: 834799260672018682}
-        includedHittableTags: []
-        excludedHittableTags: []
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
 --- !u!95 &3354150098320785679
 Animator:
   serializedVersion: 4
@@ -674,7 +665,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f845d9457f00da341ab2556b6b7cc9b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
   rageHealthThreshold: 30
   rageDamageMultiplier: 0.5
   distanceAnimatorParameters: []
@@ -821,7 +811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90306126b25f448f98b2587e24ff902e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movableObject: {fileID: 3354150098320785788}
+  movableEntity: {fileID: 3354150098320785788}
 --- !u!1 &3354150098559167058
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,15 +866,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3354150098559167058}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 3354150098320785788}
+  tags:
+    tags: 
   position: {x: 0.8, y: 0.9, z: 0}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &834799260672018682

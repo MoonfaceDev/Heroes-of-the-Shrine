@@ -60,7 +60,7 @@ public class SuperArmorEffect : BaseEffect<SuperArmorEffectCommand>
         EnableBehaviours(typeof(StunBehaviour));
         StopBehaviours(typeof(IMovementBehaviour), typeof(BaseAttack));
         DisableBehaviours(typeof(EnemyBrain));
-        MovableObject.velocity = Vector3.zero;
+        MovableEntity.velocity = Vector3.zero;
     }
 
     public override float GetProgress()

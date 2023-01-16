@@ -30,7 +30,7 @@ public class GameManager : BaseComponent
 
     public void Respawn()
     {
-        var player = GameObject.FindGameObjectWithTag("Player");
+        var player = EntityManager.Instance.GetEntity(Tag.Player);
         player.GetComponent<DieBehaviour>().Respawn();
 
         StartTimeout(() =>

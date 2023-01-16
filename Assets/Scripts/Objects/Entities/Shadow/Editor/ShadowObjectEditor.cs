@@ -24,12 +24,12 @@ internal class ShadowObjectEditor : Editor
         var movableObjectField = target.GetType().GetField(movableObject.propertyPath);
         if (movableObjectField != null)
         {
-            shadowObject.movableObject = (MovableObject)movableObjectField.GetValue(target);
+            shadowObject.movableEntity = (MovableEntity)movableObjectField.GetValue(target);
         }
 
-        if (shadowObject.movableObject)
+        if (shadowObject.movableEntity)
         {
-            var scale = 2 / (1 + Mathf.Exp(0.2f * shadowObject.movableObject.WorldPosition.y));
+            var scale = 2 / (1 + Mathf.Exp(0.2f * shadowObject.movableEntity.WorldPosition.y));
             shadowObject.transform.localScale =
                 GameEntity.GroundScreenCoordinates(Vector3.Scale(shadowObject.shadowScale, scale * Vector3.one));
         }

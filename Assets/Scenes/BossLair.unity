@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 63080253}
   - component: {fileID: 63080252}
-  - component: {fileID: 63080251}
   - component: {fileID: 63080250}
   - component: {fileID: 63080249}
   - component: {fileID: 63080248}
@@ -161,7 +160,7 @@ GameObject:
   - component: {fileID: 63080268}
   m_Layer: 0
   m_Name: CaveGoblinPossesed
-  m_TagString: Enemy.Boss
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,7 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxComboDelay: 0.5
   hittableTags:
-  - Player
+    tags: 01000000
   lastAttack: {fileID: 0}
   playEvents:
     onPlay:
@@ -390,22 +389,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   physicalAttributes: {fileID: 11400000, guid: 7a04245b53151b344823f01dcf190584, type: 2}
   animator: {fileID: 2074727358}
-  movableObject: {fileID: 0}
+  movableEntity: {fileID: 0}
   attackManager: {fileID: 0}
---- !u!114 &63080251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63080233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 679915e21248d4340a3599b8048c2ce1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cacheTag: Enemy
-  object: {fileID: 63080250}
 --- !u!114 &63080252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,6 +404,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
+  tags:
+    tags: 020000000300000005000000
   position: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
@@ -774,8 +761,10 @@ MonoBehaviour:
   periodicHitDetector:
     hitbox: {fileID: 1340466848}
     hitParticles: {fileID: 1340466850}
-    includedHittableTags: []
-    excludedHittableTags: []
+    includedHittableTags:
+      tags: 
+    excludedHittableTags:
+      tags: 
     interval: 0.05
     startImmediately: 1
   periodicHitCount: 2
@@ -827,8 +816,10 @@ MonoBehaviour:
       data:
         hitbox: {fileID: 1468609907}
         hitParticles: {fileID: 0}
-        includedHittableTags: []
-        excludedHittableTags: []
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
 --- !u!114 &63080263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -883,7 +874,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8813735e6ec04e3aa5d2b23ce651ceba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
   rageHealthThreshold: 150
   rageDamageMultiplier: 2
   distanceAnimatorParameters:
@@ -1368,6 +1358,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 63080252}
+  tags:
+    tags: 
   position: {x: -0.8, y: 1.3, z: 0.01}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
@@ -2999,29 +2991,14 @@ GameObject:
   - component: {fileID: 739543968}
   - component: {fileID: 739543967}
   - component: {fileID: 739543966}
-  - component: {fileID: 739543965}
   - component: {fileID: 739543969}
   m_Layer: 0
   m_Name: LBarrier
-  m_TagString: Barrier
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &739543965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 739543964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 679915e21248d4340a3599b8048c2ce1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cacheTag: Barrier
-  object: {fileID: 739543966}
 --- !u!114 &739543966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3048,6 +3025,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
+  tags:
+    tags: 00000000
   position: {x: -13.5, y: 1, z: -3.25}
   scale: {x: 1, y: 1, z: 1}
 --- !u!4 &739543968
@@ -3078,6 +3057,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
+  tags:
+    tags: 
   position: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
@@ -3865,6 +3846,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 63080252}
+  tags:
+    tags: 
   position: {x: 1.3, y: 0.5, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
@@ -4090,6 +4073,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 63080252}
+  tags:
+    tags: 
   position: {x: 2.3, y: 0.6, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
@@ -4748,6 +4733,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 63080252}
+  tags:
+    tags: 
   position: {x: 0.35, y: 0.85, z: -0.01}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
@@ -4976,7 +4963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deafd5b62807574da9835b75b8a0254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movableObject: {fileID: 63080252}
+  movableEntity: {fileID: 63080252}
   shadowScale: {x: 2.25, y: 0, z: 1.2}
   figure: {fileID: 2074727358}
   animationDefinitions:
@@ -5710,7 +5697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags:
-  - Enemy.Goblin.Cave
+    tags: 02000000
 --- !u!114 &2047257165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5999,7 +5986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90306126b25f448f98b2587e24ff902e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movableObject: {fileID: 63080252}
+  movableEntity: {fileID: 63080252}
 --- !u!1 &2106453633
 GameObject:
   m_ObjectHideFlags: 0
@@ -6011,11 +5998,10 @@ GameObject:
   - component: {fileID: 2106453636}
   - component: {fileID: 2106453635}
   - component: {fileID: 2106453634}
-  - component: {fileID: 2106453637}
   - component: {fileID: 2106453638}
   m_Layer: 0
   m_Name: RBarrier
-  m_TagString: Barrier
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6046,6 +6032,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
+  tags:
+    tags: 00000000
   position: {x: 13.5, y: 1, z: -3.25}
   scale: {x: 1, y: 1, z: 1}
 --- !u!4 &2106453636
@@ -6063,20 +6051,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2106453637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2106453633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 679915e21248d4340a3599b8048c2ce1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cacheTag: Barrier
-  object: {fileID: 2106453634}
 --- !u!114 &2106453638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6090,6 +6064,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
+  tags:
+    tags: 
   position: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}

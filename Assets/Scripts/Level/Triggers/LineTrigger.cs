@@ -4,22 +4,18 @@ public class LineTrigger : BaseTrigger
 {
     public float minimumX;
 
-    private MovableObject playerMovableObject;
+    private GameEntity player;
     private bool fired;
 
     private void Awake()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player)
-        {
-            playerMovableObject = player.GetComponent<MovableObject>();
-        }
+        player = EntityManager.Instance.GetEntity(Tag.Player);
     }
 
     protected override void Update()
     {
         base.Update();
-        if (playerMovableObject && playerMovableObject.WorldPosition.x >= minimumX && !fired)
+        if (player && player.WorldPosition.x >= minimumX && !fired)
         {
             fired = true;
             action.Invoke();

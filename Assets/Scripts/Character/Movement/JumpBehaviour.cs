@@ -76,7 +76,7 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpCommand>
     {
         StopBehaviours(typeof(BaseAttack));
         
-        if (!IsPlaying<WalkBehaviour>() && MovableObject.WorldPosition.y == 0) //not moving and grounded
+        if (!IsPlaying<WalkBehaviour>() && MovableEntity.WorldPosition.y == 0) //not moving and grounded
         {
             Anticipating = true;
             
@@ -98,15 +98,15 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpCommand>
     {
         Active = true;
         
-        MovableObject.velocity.y = jumpSpeed;
-        MovableObject.acceleration.y = -Character.physicalAttributes.gravityAcceleration;
+        MovableEntity.velocity.y = jumpSpeed;
+        MovableEntity.acceleration.y = -Character.physicalAttributes.gravityAcceleration;
         
-        MovableObject.OnLand += Land;
+        MovableEntity.OnLand += Land;
     }
 
     private void Land()
     {
-        MovableObject.OnLand -= Land;
+        MovableEntity.OnLand -= Land;
 
         Active = false;
         Recovering = true;
@@ -126,8 +126,8 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpCommand>
 
         if (Active)
         {
-            MovableObject.velocity.y = 0;
-            MovableObject.OnLand -= Land;
+            MovableEntity.velocity.y = 0;
+            MovableEntity.OnLand -= Land;
             Active = false;
         }
 

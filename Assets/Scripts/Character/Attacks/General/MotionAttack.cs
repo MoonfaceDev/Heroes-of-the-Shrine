@@ -37,25 +37,25 @@ public class MotionAttack : BaseAttack
     private void FinishActive()
     {
         hitDetector.StopDetector();
-        MovableObject.velocity.x = 0;
-        MovableObject.acceleration.x = 0;
+        MovableEntity.velocity.x = 0;
+        MovableEntity.acceleration.x = 0;
     }
 
     protected override IEnumerator AnticipationPhase()
     {
-        originalDirection = MovableObject.rotation;
+        originalDirection = MovableEntity.rotation;
         yield return new WaitForSeconds(attackFlow.anticipationDuration);
     }
 
     protected override IEnumerator ActivePhase()
     {
-        MovableObject.velocity.x = originalDirection * attackFlow.velocity;
-        MovableObject.velocity.z = 0;
-        MovableObject.acceleration.x = -originalDirection * attackFlow.acceleration;
+        MovableEntity.velocity.x = originalDirection * attackFlow.velocity;
+        MovableEntity.velocity.z = 0;
+        MovableEntity.acceleration.x = -originalDirection * attackFlow.acceleration;
         hitDetector.StartDetector(hittable => hitExecutor.Execute(this, hittable), AttackManager.hittableTags);
         yield return new WaitUntil(() =>
-            Mathf.Approximately(MovableObject.velocity.x, 0) ||
-            !Mathf.Approximately(Mathf.Sign(MovableObject.velocity.x), originalDirection)
+            Mathf.Approximately(MovableEntity.velocity.x, 0) ||
+            !Mathf.Approximately(Mathf.Sign(MovableEntity.velocity.x), originalDirection)
         );
         FinishActive();
     }

@@ -41,15 +41,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 441269344925677699}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 441269345065587785}
+  tags:
+    tags: 
   position: {x: 0, y: 1, z: 0}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &441269344925677758
@@ -93,7 +94,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 441269345065587789}
-  - component: {fileID: 441269345065587786}
   - component: {fileID: 441269345065587784}
   - component: {fileID: 441269345065587785}
   - component: {fileID: 441269345065587791}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 441269345065587780}
   m_Layer: 0
   m_Name: PossessedHuman
-  m_TagString: Prop
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,20 +125,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &441269345065587786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 441269345065587795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 679915e21248d4340a3599b8048c2ce1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cacheTag: Prop
-  object: {fileID: 441269345065587784}
 --- !u!114 &441269345065587784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   physicalAttributes: {fileID: 11400000, guid: 7a04245b53151b344823f01dcf190584, type: 2}
   animator: {fileID: 441269345576187499}
-  movableObject: {fileID: 0}
+  movableEntity: {fileID: 0}
   attackManager: {fileID: 0}
 --- !u!114 &441269345065587785
 MonoBehaviour:
@@ -168,9 +154,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
+  tags:
+    tags: 06000000
   position: {x: -3.25, y: 2.2, z: 3.45}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &441269345065587791
@@ -233,7 +220,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 441269345576187499}
-  bossTag: Enemy.Boss
 --- !u!1 &441269345273701126
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deafd5b62807574da9835b75b8a0254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movableObject: {fileID: 441269345065587785}
+  movableEntity: {fileID: 441269345065587785}
   shadowScale: {x: 1.5, y: 0, z: 1}
   figure: {fileID: 441269345576187499}
   animationDefinitions:
@@ -457,4 +443,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90306126b25f448f98b2587e24ff902e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movableObject: {fileID: 441269345065587785}
+  movableEntity: {fileID: 441269345065587785}

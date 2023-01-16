@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -16,7 +15,7 @@ public class AttackManager : CharacterBehaviour
     /// <value>
     /// Tags of objects that can get hit by character's attacks
     /// </value>
-    public List<string> hittableTags;
+    public Tags hittableTags;
 
     /// <summary>
     /// Last attack dealt

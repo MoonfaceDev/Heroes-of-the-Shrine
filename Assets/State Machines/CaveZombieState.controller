@@ -274,7 +274,7 @@ MonoBehaviour:
   hasRandomExitTime: 0
   minTime: 0
   maxTime: 0
-  targetTag: Player
+  targetTag: 1
   attacks:
   - attackType:
       GuidAssignmentFailed: 0
@@ -904,7 +904,7 @@ MonoBehaviour:
   hasRandomExitTime: 1
   minTime: 3
   maxTime: 6
-  targetTag: Player
+  targetTag: 1
   speedMultiplier: 1
 --- !u!1101 &691616881124209184
 AnimatorStateTransition:
@@ -1105,7 +1105,7 @@ MonoBehaviour:
   hasRandomExitTime: 0
   minTime: 0
   maxTime: 0
-  targetTag: Player
+  targetTag: 1
   attacks:
   - attackType:
       GuidAssignmentFailed: 0

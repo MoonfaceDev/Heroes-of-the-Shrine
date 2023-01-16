@@ -6,7 +6,7 @@ public abstract class CharacterBehaviour : BaseComponent
 {
     public Character Character { get; private set; }
 
-    public MovableObject MovableObject => Character.movableObject;
+    public MovableEntity MovableEntity => Character.movableEntity;
     protected Animator Animator => Character.animator;
     public AttackManager AttackManager => Character.attackManager;
 

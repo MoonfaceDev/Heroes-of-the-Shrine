@@ -68,7 +68,7 @@ public class EncounterAction : BaseComponent
             var spawnPoint = new Vector3(borderEdge + direction * spawnSourceDistance, 0, definition.z);
             var enemy = Instantiate(definition.prefab, GameEntity.ScreenCoordinates(spawnPoint),
                 Quaternion.identity);
-            var movableObject = enemy.GetComponent<MovableObject>();
+            var movableObject = enemy.GetComponent<MovableEntity>();
 
             movableObject.WorldPosition = spawnPoint;
 

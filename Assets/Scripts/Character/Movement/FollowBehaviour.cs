@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class FollowCommand : ICommand
 {
-    public readonly MovableObject target;
+    public readonly MovableEntity target;
     public readonly Func<Node[]> getExcluded;
     public readonly GetOverrideDirection getOverrideDirection;
 
-    public FollowCommand(MovableObject target, Func<Node[]> getExcluded = null,
+    public FollowCommand(MovableEntity target, Func<Node[]> getExcluded = null,
         GetOverrideDirection getOverrideDirection = null)
     {
         this.target = target;
@@ -44,12 +44,12 @@ public class FollowBehaviour : BaseMovementBehaviour<FollowCommand>
         {
             var direction = GetDirection(command.target, command.getExcluded?.Invoke(), command.getOverrideDirection);
             walkBehaviour.Play(new WalkCommand(direction.x, direction.z, false));
-            MovableObject.rotation =
-                Mathf.RoundToInt(Mathf.Sign(command.target.WorldPosition.x - MovableObject.WorldPosition.x));
+            MovableEntity.rotation =
+                Mathf.RoundToInt(Mathf.Sign(command.target.WorldPosition.x - MovableEntity.WorldPosition.x));
         });
     }
 
-    private Vector3 GetDirection(MovableObject target, Node[] excluded = null,
+    private Vector3 GetDirection(MovableEntity target, Node[] excluded = null,
         GetOverrideDirection getOverrideDirection = null)
     {
         if (getOverrideDirection != null)
@@ -61,7 +61,7 @@ public class FollowBehaviour : BaseMovementBehaviour<FollowCommand>
             }
         }
 
-        return pathfind.Direction(MovableObject.WorldPosition, target.WorldPosition, excluded);
+        return pathfind.Direction(MovableEntity.WorldPosition, target.WorldPosition, excluded);
     }
 
     protected override void DoStop()

@@ -23,12 +23,12 @@ public class RepositionPattern : BasePattern
         var grid = FindObjectOfType<WalkableGrid>();
         var nodeRadius = grid.nodeRadius;
 
-        var otherEnemies = Array.Empty<Character>();
+        var otherEnemies = Array.Empty<GameEntity>();
 
         otherEnemiesListener = EventManager.Instance.Register(() =>
         {
-            otherEnemies = CachedObjectsManager.Instance.GetObjects<Character>("Enemy")
-                .Where(enemy => enemy != autoWalkBehaviour.Character)
+            otherEnemies = EntityManager.Instance.GetEntities(Tag.Enemy)
+                .Where(enemy => enemy != autoWalkBehaviour.MovableEntity)
                 .Where(enemy => enemy.GetComponent<HealthSystem>().Alive)
                 .ToArray();
         });
@@ -38,7 +38,7 @@ public class RepositionPattern : BasePattern
             () =>
             {
                 return otherEnemies.SelectMany(enemy =>
-                        grid.GetCircle(enemy.movableObject.GroundWorldPosition, DistanceFromOtherEnemies + nodeRadius))
+                        grid.GetCircle(enemy.GroundWorldPosition, DistanceFromOtherEnemies + nodeRadius))
                     .ToArray();
             }
         ));

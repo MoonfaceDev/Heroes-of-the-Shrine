@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [Serializable]
 public class AnimationDefinition
@@ -11,7 +12,7 @@ public class AnimationDefinition
 [ExecuteInEditMode]
 public class ShadowObject : BaseComponent
 {
-    public MovableObject movableObject;
+    [FormerlySerializedAs("movableObject")] public MovableEntity movableEntity;
     public Vector3 shadowScale;
     public Animator figure;
     public AnimationDefinition[] animationDefinitions;
@@ -21,7 +22,7 @@ public class ShadowObject : BaseComponent
     {
         base.Update();
         
-        var scale = 2 / (1 + Mathf.Exp(0.2f * movableObject.WorldPosition.y));
+        var scale = 2 / (1 + Mathf.Exp(0.2f * movableEntity.WorldPosition.y));
         foreach (var definition in animationDefinitions)
         {
             if (figure.GetCurrentAnimatorStateInfo(0).IsName(definition.animationStateName))

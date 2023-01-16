@@ -78,27 +78,27 @@ public class KnockbackBehaviour : ForcedBehaviour<KnockbackCommand>
 
         void Land()
         {
-            MovableObject.OnLand -= Land;
+            MovableEntity.OnLand -= Land;
             currentLandEvent = null;
             Active = false;
             Bounce = 0;
             Recovering = true;
-            MovableObject.velocity.x = 0;
+            MovableEntity.velocity.x = 0;
             OnFinish?.Invoke();
             recoverCoroutine = StartCoroutine(RecoverAfterTime());
         }
 
         void SecondBounce()
         {
-            MovableObject.OnLand -= SecondBounce;
+            MovableEntity.OnLand -= SecondBounce;
             Bounce = 2;
             SetMovement(command.power * SecondBouncePowerMultiplier, 180 - Mathf.Abs(command.angleDegrees % 360 - 180));
-            MovableObject.OnLand += Land;
+            MovableEntity.OnLand += Land;
             currentLandEvent = Land;
             OnBounce?.Invoke(Bounce, command.power, command.angleDegrees);
         }
 
-        MovableObject.OnLand += SecondBounce;
+        MovableEntity.OnLand += SecondBounce;
         currentLandEvent = SecondBounce;
         OnBounce?.Invoke(Bounce, command.power, command.angleDegrees);
     }
@@ -109,17 +109,17 @@ public class KnockbackBehaviour : ForcedBehaviour<KnockbackCommand>
         {
             case > 0 and < 90:
             case > 270 and < 360:
-                MovableObject.rotation = Rotation.Left;
+                MovableEntity.rotation = Rotation.Left;
                 break;
             case > 90 and < 270:
-                MovableObject.rotation = Rotation.Right;
+                MovableEntity.rotation = Rotation.Right;
                 break;
         }
 
-        MovableObject.acceleration.y = -Character.physicalAttributes.gravityAcceleration;
-        MovableObject.velocity.x = Mathf.Cos(Mathf.Deg2Rad * angleDegrees) * power;
-        MovableObject.velocity.y = Mathf.Sin(Mathf.Deg2Rad * angleDegrees) * power;
-        MovableObject.velocity.z = 0;
+        MovableEntity.acceleration.y = -Character.physicalAttributes.gravityAcceleration;
+        MovableEntity.velocity.x = Mathf.Cos(Mathf.Deg2Rad * angleDegrees) * power;
+        MovableEntity.velocity.y = Mathf.Sin(Mathf.Deg2Rad * angleDegrees) * power;
+        MovableEntity.velocity.z = 0;
     }
 
     private IEnumerator RecoverAfterTime()
@@ -132,12 +132,12 @@ public class KnockbackBehaviour : ForcedBehaviour<KnockbackCommand>
     {
         if (Active)
         {
-            MovableObject.OnLand -= currentLandEvent;
+            MovableEntity.OnLand -= currentLandEvent;
             Active = false;
             Bounce = 0;
-            MovableObject.acceleration.y = 0;
-            MovableObject.velocity.y = 0;
-            MovableObject.velocity.x = 0;
+            MovableEntity.acceleration.y = 0;
+            MovableEntity.velocity.y = 0;
+            MovableEntity.velocity.x = 0;
             OnFinish?.Invoke();
         }
 

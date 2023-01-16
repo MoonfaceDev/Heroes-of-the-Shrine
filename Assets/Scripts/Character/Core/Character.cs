@@ -2,20 +2,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-[RequireComponent(typeof(CachedObject))]
-[RequireComponent(typeof(MovableObject))]
+[RequireComponent(typeof(MovableEntity))]
 public class Character : BaseComponent
 {
     public PhysicalAttributes physicalAttributes;
     public Animator animator;
 
-    [HideInInspector] public MovableObject movableObject;
+    [FormerlySerializedAs("movableObject")] [HideInInspector] public MovableEntity movableEntity;
     [HideInInspector] public AttackManager attackManager;
 
     public void Awake()
     {
-        movableObject = GetComponent<MovableObject>();
+        movableEntity = GetComponent<MovableEntity>();
         attackManager = GetComponent<AttackManager>();
     }
     

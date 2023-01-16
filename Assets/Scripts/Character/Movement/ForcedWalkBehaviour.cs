@@ -28,9 +28,9 @@ public class ForcedWalkBehaviour : PlayableBehaviour<ForcedWalkCommand>
         active = true;
 
         GetComponent<AutoWalkBehaviour>().Play(new AutoWalkCommand(command.point));
-        stopListener = InvokeWhen(() => MovableObject.GroundDistance(command.point) < command.wantedDistance, () =>
+        stopListener = InvokeWhen(() => MovableEntity.GroundDistance(command.point) < command.wantedDistance, () =>
         {
-            MovableObject.position = command.point;
+            MovableEntity.position = command.point;
             Stop();
         });
     }
@@ -43,6 +43,6 @@ public class ForcedWalkBehaviour : PlayableBehaviour<ForcedWalkCommand>
         StopBehaviours(typeof(AutoWalkBehaviour));
         EnableBehaviours(typeof(PlayerController), typeof(RunBehaviour));
 
-        MovableObject.velocity = Vector3.zero;
+        MovableEntity.velocity = Vector3.zero;
     }
 }

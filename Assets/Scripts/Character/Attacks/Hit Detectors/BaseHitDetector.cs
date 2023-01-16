@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 /// <summary>
@@ -21,19 +20,19 @@ public abstract class BaseHitDetector
     /// <value>
     /// Additional tags of objects this attack can hit.
     /// </value>
-    public List<string> includedHittableTags;
+    public Tags includedHittableTags;
 
     /// <value>
     /// Tags of objects this attack cannot hit.
     /// </value>
-    public List<string> excludedHittableTags;
+    public Tags excludedHittableTags;
 
     /// <summary>
     /// Starts detecting hits
     /// </summary>
     /// <param name="hitCallable">Function to be called on detected hit</param>
     /// <param name="hittableTags">Tags of object that can get hit</param>
-    public void StartDetector(Action<HittableHitbox> hitCallable, List<string> hittableTags)
+    public void StartDetector(Action<HittableHitbox> hitCallable, Tags hittableTags)
     {
         DoStartDetector((hittable) =>
         {
@@ -49,15 +48,10 @@ public abstract class BaseHitDetector
         });
     }
 
-    private bool IsHittable(IHittable hittable, IEnumerable<string> hittableTags)
+    private bool IsHittable(IHittable hittable, Tags hittableTags)
     {
         return hittableTags.Concat(includedHittableTags).Except(excludedHittableTags)
-            .Any(hittableTag => IsTagIncluded(hittable.Character.tag, hittableTag));
-    }
-
-    private static bool IsTagIncluded(string testedTag, string group)
-    {
-        return testedTag == group || testedTag.StartsWith(group + ".");
+            .Intersect(hittable.Character.movableEntity.tags).Any();
     }
 
     /// <summary>

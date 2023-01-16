@@ -48,12 +48,12 @@ public class SlideBehaviour : BaseMovementBehaviour<SlideCommand>
 
         Slide = true;
 
-        MovableObject.rotation = command.direction;
-        MovableObject.velocity.x = command.direction * slideSpeedMultiplier * GetComponent<WalkBehaviour>().speed;
-        MovableObject.acceleration.x = -command.direction * slideStopAcceleration;
-        MovableObject.velocity.z = 0;
+        MovableEntity.rotation = command.direction;
+        MovableEntity.velocity.x = command.direction * slideSpeedMultiplier * GetComponent<WalkBehaviour>().speed;
+        MovableEntity.acceleration.x = -command.direction * slideStopAcceleration;
+        MovableEntity.velocity.z = 0;
         stopListener = InvokeWhen(
-            () => !Mathf.Approximately(Mathf.Sign(MovableObject.velocity.x), command.direction),
+            () => !Mathf.Approximately(Mathf.Sign(MovableEntity.velocity.x), command.direction),
             Stop
         );
     }
@@ -62,8 +62,8 @@ public class SlideBehaviour : BaseMovementBehaviour<SlideCommand>
     {
         Cancel(stopListener);
         Slide = false;
-        MovableObject.velocity.x = 0;
-        MovableObject.acceleration.x = 0;
+        MovableEntity.velocity.x = 0;
+        MovableEntity.acceleration.x = 0;
         EnableBehaviours(typeof(WalkBehaviour));
     }
 }

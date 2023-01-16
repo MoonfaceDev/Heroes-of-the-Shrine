@@ -67,7 +67,7 @@ public class PossessAttack : BaseAttack
                 alreadySpawned.Add(spawnPoint);
                 var newPossessSource = Instantiate(possessSource.gameObject,
                     GameEntity.ScreenCoordinates(spawnPoint), Quaternion.identity);
-                newPossessSource.GetComponent<MovableObject>().WorldPosition = spawnPoint;
+                newPossessSource.GetComponent<MovableEntity>().WorldPosition = spawnPoint;
                 newPossessSource.GetComponent<PossessSource>().Activate(
                     attackFlow.warningDuration,
                     attackFlow.sourceActiveDuration,
@@ -96,8 +96,8 @@ public class PossessAttack : BaseAttack
             throw new NoSpawnPointException();
         }
 
-        var player = CachedObjectsManager.Instance.GetObject<Character>("Player");
-        var groundPlayerPosition = player.movableObject.GroundWorldPosition;
+        var player = EntityManager.Instance.GetEntity(Tag.Player);
+        var groundPlayerPosition = player.GroundWorldPosition;
         var relativePoint = 2 * spawnRadius * new Vector3(Random.value - 0.5f, 0, Random.value - 0.5f);
         var newPosition = groundPlayerPosition + relativePoint;
         if (!IsValidPosition(alreadySpawned, newPosition))
@@ -111,8 +111,8 @@ public class PossessAttack : BaseAttack
     private bool IsValidPosition(List<Vector3> alreadySpawned, Vector3 newPosition)
     {
         return walkableGrid.IsInside(newPosition)
-               && CachedObjectsManager.Instance.GetObjects<Hitbox>("Barrier").ToArray()
-                   .All(barrier => !barrier.IsInside(newPosition))
+               && EntityManager.Instance.GetEntities(Tag.Barrier).ToArray()
+                   .All(barrier => !barrier.GetComponent<Hitbox>().IsInside(newPosition))
                && alreadySpawned.All(existingPosition =>
                    Vector3.Distance(newPosition, existingPosition) > 2 * minSourcesDistance);
     }

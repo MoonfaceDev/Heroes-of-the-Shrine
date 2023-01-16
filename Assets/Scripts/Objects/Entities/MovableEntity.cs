@@ -5,7 +5,7 @@ using UnityEngine;
 using static MathUtils;
 
 [ExecuteInEditMode]
-public class MovableObject : GameEntity
+public class MovableEntity : GameEntity
 {
     [ShowDebug] public Vector3 velocity = Vector3.zero;
     [ShowDebug] public Vector3 acceleration = Vector3.zero;
@@ -108,11 +108,12 @@ public class MovableObject : GameEntity
 
     private static List<Vector2> GetBarrierIntersections(Vector2 previousGroundPosition, Vector2 groundPosition)
     {
-        var barriers = CachedObjectsManager.Instance.GetObjects<Hitbox>("Barrier").ToArray();
+        var barriers = EntityManager.Instance.GetEntities(Tag.Barrier);
         List<Vector2> intersections = new();
         foreach (var barrier in barriers)
         {
-            var newIntersections = barrier.GetSegmentIntersections(previousGroundPosition, groundPosition);
+            var newIntersections = barrier.GetComponent<Hitbox>()
+                .GetSegmentIntersections(previousGroundPosition, groundPosition);
             intersections.AddRange(newIntersections);
         }
 
@@ -138,7 +139,8 @@ public class MovableObject : GameEntity
 
     private bool IsValidPosition(Vector3 newPosition)
     {
-        if (CachedObjectsManager.Instance.GetObjects<Hitbox>("Barrier").Any(hitbox => hitbox.IsInside(newPosition)))
+        if (EntityManager.Instance.GetEntities(Tag.Barrier)
+            .Any(barrier => barrier.GetComponent<Hitbox>().IsInside(newPosition)))
         {
             return false;
         }

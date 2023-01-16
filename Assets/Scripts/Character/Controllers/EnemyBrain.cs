@@ -7,7 +7,6 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(Animator))]
 public class EnemyBrain : CharacterController
 {
-    public string playerTag;
     public float rageHealthThreshold;
     public float rageDamageMultiplier = 1;
 
@@ -23,8 +22,8 @@ public class EnemyBrain : CharacterController
     /// </value>
     public List<DistanceParameterEntry> distanceAnimatorParameters;
 
-    private GameObject player;
-    private MovableObject playerMovableObject;
+    private GameEntity player;
+    private MovableEntity playerMovableEntity;
     protected Animator stateMachine;
 
     private static readonly int AlarmParameter = Animator.StringToHash("Alarm");
@@ -68,10 +67,10 @@ public class EnemyBrain : CharacterController
 
     public virtual void Start()
     {
-        player = GameObject.FindGameObjectWithTag(playerTag);
+        player = EntityManager.Instance.GetEntity(Tag.Player);
         if (player)
         {
-            playerMovableObject = player.GetComponent<MovableObject>();
+            playerMovableEntity = player.GetComponent<MovableEntity>();
         }
 
         var knockbackBehaviour = GetComponent<KnockbackBehaviour>();
@@ -174,22 +173,22 @@ public class EnemyBrain : CharacterController
             }
         }
 
-        if (playerMovableObject)
+        if (playerMovableEntity)
         {
             stateMachine.SetFloat(PlayerDistanceParameter,
-                Vector2.Distance(ToPlane(MovableObject.WorldPosition), ToPlane(playerMovableObject.WorldPosition)));
+                Vector2.Distance(ToPlane(MovableEntity.WorldPosition), ToPlane(playerMovableEntity.WorldPosition)));
             stateMachine.SetFloat(PlayerDistanceXParameter,
-                Mathf.Abs((MovableObject.WorldPosition - playerMovableObject.WorldPosition).x));
+                Mathf.Abs((MovableEntity.WorldPosition - playerMovableEntity.WorldPosition).x));
             stateMachine.SetFloat(PlayerDistanceYParameter,
-                Mathf.Abs((MovableObject.WorldPosition - playerMovableObject.WorldPosition).y));
+                Mathf.Abs((MovableEntity.WorldPosition - playerMovableEntity.WorldPosition).y));
             stateMachine.SetFloat(PlayerDistanceZParameter,
-                Mathf.Abs((MovableObject.WorldPosition - playerMovableObject.WorldPosition).z));
+                Mathf.Abs((MovableEntity.WorldPosition - playerMovableEntity.WorldPosition).z));
         }
 
         foreach (var entry in distanceAnimatorParameters)
         {
             stateMachine.SetFloat(entry.parameterName,
-                Vector2.Distance(ToPlane(MovableObject.WorldPosition), entry.groundPoint));
+                Vector2.Distance(ToPlane(MovableEntity.WorldPosition), entry.groundPoint));
         }
     }
 

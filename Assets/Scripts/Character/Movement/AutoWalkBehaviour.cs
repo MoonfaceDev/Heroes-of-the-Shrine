@@ -37,11 +37,11 @@ public class AutoWalkBehaviour : BaseMovementBehaviour<AutoWalkCommand>
 
         followListener = Register(() =>
         {
-            var direction = pathfind.Direction(MovableObject.WorldPosition, command.destination,
+            var direction = pathfind.Direction(MovableEntity.WorldPosition, command.destination,
                 command.getExcluded?.Invoke());
             walkBehaviour.Play(new WalkCommand(direction.x, direction.z, false));
-            MovableObject.rotation =
-                Mathf.RoundToInt(Mathf.Sign(command.destination.x - MovableObject.WorldPosition.x));
+            MovableEntity.rotation =
+                Mathf.RoundToInt(Mathf.Sign(command.destination.x - MovableEntity.WorldPosition.x));
         });
     }
 
@@ -50,6 +50,6 @@ public class AutoWalkBehaviour : BaseMovementBehaviour<AutoWalkCommand>
         active = false;
         Unregister(followListener);
         walkBehaviour.Stop();
-        MovableObject.velocity = Vector3.zero;
+        MovableEntity.velocity = Vector3.zero;
     }
 }

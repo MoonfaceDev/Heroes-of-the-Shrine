@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class CameraFollow : BaseComponent
 {
-    public string targetTag;
+    public Tag targetTag;
 
     private CameraMovement cameraMovement;
-    private MovableObject target;
+    private GameEntity target;
     private Vector3 offset;
 
     private void Awake()
@@ -15,7 +15,7 @@ public class CameraFollow : BaseComponent
 
     private void Start()
     {
-        target = GameObject.FindGameObjectWithTag(targetTag).GetComponent<MovableObject>();
+        target = EntityManager.Instance.GetEntity(targetTag);
         if (!target) return;
         offset = transform.position - GameEntity.GroundScreenCoordinates(target.WorldPosition);
         offset.x = 0;

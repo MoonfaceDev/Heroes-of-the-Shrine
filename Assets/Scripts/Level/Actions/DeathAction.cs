@@ -24,7 +24,7 @@ public class DeathAction : BaseComponent
             Destroy(@object);
         }
 
-        var player = GameObject.FindGameObjectWithTag("Player");
+        var player = EntityManager.Instance.GetEntity(Tag.Player);
         var camera = Camera.main;
 
         if (camera)

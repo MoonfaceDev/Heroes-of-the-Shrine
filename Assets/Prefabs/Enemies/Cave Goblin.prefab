@@ -54,15 +54,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5884619157288324023}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5884619158741390438}
+  tags:
+    tags: 
   position: {x: 1.55, y: 0.995, z: 0}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &110950560831635055
@@ -209,7 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90306126b25f448f98b2587e24ff902e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movableObject: {fileID: 5884619158741390438}
+  movableEntity: {fileID: 5884619158741390438}
 --- !u!1 &5884619157950951727
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,15 +265,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5884619157950951727}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5884619158741390438}
+  tags:
+    tags: 
   position: {x: 0.675, y: 0.9, z: 0}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &194388456993999270
@@ -342,15 +344,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5884619158051856729}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5884619158741390438}
+  tags:
+    tags: 
   position: {x: 0.95, y: 0.9, z: 0}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &5400955995747365530
@@ -463,7 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deafd5b62807574da9835b75b8a0254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movableObject: {fileID: 5884619158741390438}
+  movableEntity: {fileID: 5884619158741390438}
   shadowScale: {x: 1.5, y: 0, z: 1}
   figure: {fileID: 5884619157808626363}
   animationDefinitions:
@@ -524,15 +527,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5884619158396451718}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5884619158741390438}
+  tags:
+    tags: 
   position: {x: 2.25, y: 1.05, z: 0}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!1 &5884619158596542725
@@ -589,15 +593,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5884619158596542725}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5884619158741390438}
+  tags:
+    tags: 
   position: {x: 0.875, y: 0.9, z: 0}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &8315404211282100638
@@ -623,7 +628,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5884619158741390439}
   - component: {fileID: 5884619158741390438}
-  - component: {fileID: 6526483692788110630}
   - component: {fileID: 5884619158741390457}
   - component: {fileID: 5884619158741390434}
   - component: {fileID: 5884619158741390456}
@@ -646,7 +650,7 @@ GameObject:
   - component: {fileID: 3373608863436215288}
   m_Layer: 0
   m_Name: Cave Goblin
-  m_TagString: Enemy.Goblin.Cave
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -687,25 +691,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
+  tags:
+    tags: 0200000003000000
   position: {x: 1.84, y: 0, z: -2.91}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
---- !u!114 &6526483692788110630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5884619158741390458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 679915e21248d4340a3599b8048c2ce1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cacheTag: Enemy
-  object: {fileID: 5884619158741390457}
 --- !u!114 &5884619158741390457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -720,7 +711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   physicalAttributes: {fileID: 11400000, guid: 7a04245b53151b344823f01dcf190584, type: 2}
   animator: {fileID: 5884619157808626363}
-  movableObject: {fileID: 0}
+  movableEntity: {fileID: 0}
   attackManager: {fileID: 0}
 --- !u!114 &5884619158741390434
 MonoBehaviour:
@@ -914,7 +905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxComboDelay: 0.5
   hittableTags:
-  - Player
+    tags: 01000000
   lastAttack: {fileID: 0}
   playEvents:
     onPlay:
@@ -1005,8 +996,10 @@ MonoBehaviour:
       data:
         hitbox: {fileID: 5884619158596542722}
         hitParticles: {fileID: 8315404211282100638}
-        includedHittableTags: []
-        excludedHittableTags: []
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
 --- !u!114 &5884619158741390442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1071,8 +1064,10 @@ MonoBehaviour:
       data:
         hitbox: {fileID: 5884619157950951724}
         hitParticles: {fileID: 194388456993999270}
-        includedHittableTags: []
-        excludedHittableTags: []
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
 --- !u!114 &5884619158741390445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1137,8 +1132,10 @@ MonoBehaviour:
       data:
         hitbox: {fileID: 5884619158051856710}
         hitParticles: {fileID: 5400955995747365530}
-        includedHittableTags: []
-        excludedHittableTags: []
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
 --- !u!95 &5884619158741390420
 Animator:
   serializedVersion: 4
@@ -1171,7 +1168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f845d9457f00da341ab2556b6b7cc9b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
   rageHealthThreshold: 35
   rageDamageMultiplier: 1.1
   distanceAnimatorParameters: []
@@ -1236,8 +1232,10 @@ MonoBehaviour:
   periodicHitDetector:
     hitbox: {fileID: 5884619157288324021}
     hitParticles: {fileID: 110950560831635055}
-    includedHittableTags: []
-    excludedHittableTags: []
+    includedHittableTags:
+      tags: 
+    excludedHittableTags:
+      tags: 
     interval: 0.1
     startImmediately: 1
   periodicHitCount: 4
@@ -1289,8 +1287,10 @@ MonoBehaviour:
       data:
         hitbox: {fileID: 5884619158396451716}
         hitParticles: {fileID: 0}
-        includedHittableTags: []
-        excludedHittableTags: []
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
 --- !u!114 &3373608863436215288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1347,15 +1347,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5884619159192989555}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5884619158741390438}
+  tags:
+    tags: 
   position: {x: 0, y: 0.91, z: 0}
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &5884619159192989553

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowPattern : BasePattern
 {
-    public string targetTag;
+    public Tag targetTag;
     public float speedMultiplier;
 
     private const float DistanceFromOtherEnemies = 0.5f;
@@ -15,13 +15,13 @@ public class FollowPattern : BasePattern
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
-        var player = GameObject.FindGameObjectWithTag(targetTag);
+        var player = EntityManager.Instance.GetEntity(targetTag);
         if (!player)
         {
             return;
         }
 
-        var target = player.GetComponent<MovableObject>();
+        var target = player.GetComponent<MovableEntity>();
 
         var followBehaviour = animator.GetComponent<FollowBehaviour>();
 
@@ -31,12 +31,12 @@ public class FollowPattern : BasePattern
         var grid = FindObjectOfType<WalkableGrid>();
         var nodeRadius = grid.nodeRadius;
 
-        var otherEnemies = Array.Empty<Character>();
+        var otherEnemies = Array.Empty<GameEntity>();
 
         otherEnemiesListener = EventManager.Instance.Register(() =>
         {
-            otherEnemies = CachedObjectsManager.Instance.GetObjects<Character>("Enemy")
-                .Where(enemy => enemy != followBehaviour.Character)
+            otherEnemies = EntityManager.Instance.GetEntities(Tag.Enemy)
+                .Where(enemy => enemy != followBehaviour.MovableEntity)
                 .Where(enemy => enemy.GetComponent<HealthSystem>().Alive)
                 .ToArray();
         });
@@ -47,7 +47,7 @@ public class FollowPattern : BasePattern
             {
                 return otherEnemies
                     .SelectMany(enemy => grid.GetCircle(
-                        enemy.movableObject.GroundWorldPosition,
+                        enemy.GroundWorldPosition,
                         DistanceFromOtherEnemies + nodeRadius))
                     .ToArray();
             },
@@ -55,11 +55,11 @@ public class FollowPattern : BasePattern
             {
                 var closeEnemyPositions = otherEnemies
                     .Where(enemy =>
-                        enemy.movableObject.GroundDistance(
-                            grid.NodeFromWorldPoint(followBehaviour.MovableObject.WorldPosition).position
+                        enemy.GroundDistance(
+                            grid.NodeFromWorldPoint(followBehaviour.MovableEntity.WorldPosition).position
                         ) < DistanceFromOtherEnemies + nodeRadius)
                     .Select(enemy =>
-                        enemy.movableObject.WorldPosition - Vector3.up * enemy.movableObject.WorldPosition.y)
+                        enemy.WorldPosition - Vector3.up * enemy.WorldPosition.y)
                     .ToArray();
                 if (closeEnemyPositions.Length == 0)
                 {
@@ -69,7 +69,7 @@ public class FollowPattern : BasePattern
 
                 var center = closeEnemyPositions
                     .Aggregate(Vector3.zero, (acc, next) => acc + next) / closeEnemyPositions.Length;
-                direction = (followBehaviour.MovableObject.WorldPosition - center).normalized;
+                direction = (followBehaviour.MovableEntity.WorldPosition - center).normalized;
                 return true;
             }
         ));

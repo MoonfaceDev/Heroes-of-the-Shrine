@@ -1519,11 +1519,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e11117f84eb0a34fa8b9422658e3d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cacheTags:
-  - Barrier
-  - Player
-  - Enemy
-  - Prop
 --- !u!114 &2554933243903441338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1794,6 +1789,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
+  tags:
+    tags: 
   position: {x: -18, y: 0, z: -5}
   scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5826350637441399169
@@ -2186,7 +2183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f11f133350debd47a606d68f4a4387a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: Player
+  targetTag: 1
 --- !u!114 &5826350637583987561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5854,6 +5851,10 @@ PrefabInstance:
     - target: {fileID: 5102893361279726063, guid: e6b59c7f93ad90f41b501eaabf2e3e0a, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.080000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 5102893361865183973, guid: e6b59c7f93ad90f41b501eaabf2e3e0a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.080000006
       objectReference: {fileID: 0}
     - target: {fileID: 6922206664831023246, guid: e6b59c7f93ad90f41b501eaabf2e3e0a, type: 3}
       propertyPath: onDie.m_PersistentCalls.m_Calls.Array.size

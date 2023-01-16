@@ -52,14 +52,14 @@ public class CutsceneAction : BaseComponent
 
         InvokeWhen(
             () => moveDefinitions.TrueForAll(definition =>
-                definition.target.MovableObject.GroundDistance(definition.position) < WantedDistance),
+                definition.target.MovableEntity.GroundDistance(definition.position) < WantedDistance),
             () =>
             {
                 moveDefinitions.ForEach(definition =>
                 {
                     definition.target.Stop();
                     definition.target.GetComponent<WalkBehaviour>().speed /= definition.speedMultiplier;
-                    definition.target.MovableObject.rotation = (int)definition.lookDirection;
+                    definition.target.MovableEntity.rotation = (int)definition.lookDirection;
                 });
 
                 if (director)

@@ -37,7 +37,7 @@ public class PossessedEffect : BaseEffect<PossessedEffectCommand>
 
         DisableBehaviours(typeof(BaseAttack), typeof(IMovementBehaviour), typeof(IForcedBehaviour));
         StopBehaviours(typeof(BaseAttack), typeof(IMovementBehaviour), typeof(IForcedBehaviour));
-        MovableObject.velocity = Vector3.zero;
+        MovableEntity.velocity = Vector3.zero;
     }
 
     private void OnHit(float damage)

@@ -36,14 +36,14 @@ public class SpawnAttack : BaseAttack
 
     private void SpawnGoblins()
     {
-        var currentEnemyCount = CachedObjectsManager.Instance.GetObjects<Character>("Enemy").Length;
+        var currentEnemyCount = EntityManager.Instance.CountEntities(Tag.Enemy);
         var spawnCount = maxEnemyCount - currentEnemyCount;
         var selectedPoints = GetRandomSpawnPoints(spawnCount);
         for (var i = 0; i < maxEnemyCount - currentEnemyCount; i++)
         {
             var newEnemy = Instantiate(enemyPrefab, GameEntity.ScreenCoordinates(selectedPoints[i]),
                 Quaternion.identity);
-            newEnemy.GetComponent<MovableObject>().WorldPosition = selectedPoints[i];
+            newEnemy.GetComponent<MovableEntity>().WorldPosition = selectedPoints[i];
             newEnemy.GetComponent<EnemyBrain>().Alarm();
         }
     }

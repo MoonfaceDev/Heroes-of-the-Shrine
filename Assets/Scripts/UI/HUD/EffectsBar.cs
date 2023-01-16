@@ -22,12 +22,12 @@ public class EffectsBar : BaseComponent
 
     private VerticalLayoutGroup container;
     private Dictionary<Type, GameObject> bars;
-    private GameObject player;
+    private GameEntity player;
 
     public void Awake()
     {
         container = GetComponent<VerticalLayoutGroup>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = EntityManager.Instance.GetEntity(Tag.Player);
         bars = new Dictionary<Type, GameObject>();
     }
 

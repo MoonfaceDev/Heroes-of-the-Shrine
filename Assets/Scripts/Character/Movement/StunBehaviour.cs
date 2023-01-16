@@ -45,7 +45,7 @@ public class StunBehaviour : ForcedBehaviour<StunCommand>
     protected override void DoPlay(StunCommand command)
     {
         StopBehaviours(typeof(IMovementBehaviour), typeof(IForcedBehaviour), typeof(BaseAttack));
-        MovableObject.velocity = Vector3.zero;
+        MovableEntity.velocity = Vector3.zero;
 
         Stun = true;
         StunFrame = (StunFrame + 1) % stunFrames;

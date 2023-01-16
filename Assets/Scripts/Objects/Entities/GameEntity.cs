@@ -3,13 +3,14 @@
 [ExecuteInEditMode]
 public class GameEntity : BaseComponent
 {
-    private const float ZScale = 0.8f;
-
     public GameEntity parent;
+    public Tags tags;
 
     public Vector3 position = Vector3.zero;
     public Rotation rotation = Rotation.Right;
     public Vector3 scale = Vector3.one;
+
+    private const float ZScale = 0.8f;
 
     public Vector3 WorldPosition
     {
@@ -26,6 +27,18 @@ public class GameEntity : BaseComponent
     protected virtual void Awake()
     {
         UpdateTransform();
+        if (Application.isPlaying)
+        {
+            EntityManager.Instance.AddEntity(tags, this);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (Application.isPlaying)
+        {
+            EntityManager.Instance.RemoveEntity(tags, this);
+        }
     }
 
     protected void UpdateTransform()
@@ -34,7 +47,7 @@ public class GameEntity : BaseComponent
         transform.localRotation = rotation;
         transform.localScale = scale;
     }
-    
+
     public Vector3 TransformToWorld(Vector3 relativePoint)
     {
         return WorldPosition + Vector3.Scale(WorldRotation * relativePoint, WorldScale);

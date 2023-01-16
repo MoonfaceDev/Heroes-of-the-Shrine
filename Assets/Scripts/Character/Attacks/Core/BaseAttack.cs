@@ -134,12 +134,12 @@ public abstract class BaseAttack : PlayableBehaviour<BaseAttackCommand>
     {
         if (Motion != MotionSettings.WalkingEnabled)
         {
-            var velocityBefore = MovableObject.velocity;
+            var velocityBefore = MovableEntity.velocity;
             DisableBehaviours(typeof(WalkBehaviour));
             StopBehaviours(typeof(WalkBehaviour));
             if (Motion != MotionSettings.Static)
             {
-                MovableObject.velocity = velocityBefore;
+                MovableEntity.velocity = velocityBefore;
             }
         }
 

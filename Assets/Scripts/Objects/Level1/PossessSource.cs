@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PossessSource : BaseComponent
 {
@@ -15,7 +14,7 @@ public class PossessSource : BaseComponent
     private static readonly int Active = Animator.StringToHash("Active");
     private static readonly int Hit = Animator.StringToHash("Hit");
 
-    public void Activate(float warningDuration, float activeDuration, List<string> hittableTags, float effectDuration,
+    public void Activate(float warningDuration, float activeDuration, Tags hittableTags, float effectDuration,
         int hitDamage)
     {
         animator.SetBool(Warning, true);
