@@ -1,44 +1,6 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
-- uid: EditorExtensions
-  name: EditorExtensions
-  href: api/EditorExtensions.html
-  commentId: N:EditorExtensions
-  fullName: EditorExtensions
-  nameWithType: EditorExtensions
-- uid: EditorExtensions.InterfaceWithSerializableContentDrawer
-  name: InterfaceWithSerializableContentDrawer
-  href: api/EditorExtensions.InterfaceWithSerializableContentDrawer.html
-  commentId: T:EditorExtensions.InterfaceWithSerializableContentDrawer
-  fullName: EditorExtensions.InterfaceWithSerializableContentDrawer
-  nameWithType: InterfaceWithSerializableContentDrawer
-- uid: EditorExtensions.InterfaceWithSerializableContentDrawer.GetPropertyHeight(SerializedProperty,GUIContent)
-  name: GetPropertyHeight(SerializedProperty, GUIContent)
-  href: api/EditorExtensions.InterfaceWithSerializableContentDrawer.html#EditorExtensions_InterfaceWithSerializableContentDrawer_GetPropertyHeight_SerializedProperty_GUIContent_
-  commentId: M:EditorExtensions.InterfaceWithSerializableContentDrawer.GetPropertyHeight(SerializedProperty,GUIContent)
-  fullName: EditorExtensions.InterfaceWithSerializableContentDrawer.GetPropertyHeight(SerializedProperty, GUIContent)
-  nameWithType: InterfaceWithSerializableContentDrawer.GetPropertyHeight(SerializedProperty, GUIContent)
-- uid: EditorExtensions.InterfaceWithSerializableContentDrawer.GetPropertyHeight*
-  name: GetPropertyHeight
-  href: api/EditorExtensions.InterfaceWithSerializableContentDrawer.html#EditorExtensions_InterfaceWithSerializableContentDrawer_GetPropertyHeight_
-  commentId: Overload:EditorExtensions.InterfaceWithSerializableContentDrawer.GetPropertyHeight
-  isSpec: "True"
-  fullName: EditorExtensions.InterfaceWithSerializableContentDrawer.GetPropertyHeight
-  nameWithType: InterfaceWithSerializableContentDrawer.GetPropertyHeight
-- uid: EditorExtensions.InterfaceWithSerializableContentDrawer.OnGUI(Rect,SerializedProperty,GUIContent)
-  name: OnGUI(Rect, SerializedProperty, GUIContent)
-  href: api/EditorExtensions.InterfaceWithSerializableContentDrawer.html#EditorExtensions_InterfaceWithSerializableContentDrawer_OnGUI_Rect_SerializedProperty_GUIContent_
-  commentId: M:EditorExtensions.InterfaceWithSerializableContentDrawer.OnGUI(Rect,SerializedProperty,GUIContent)
-  fullName: EditorExtensions.InterfaceWithSerializableContentDrawer.OnGUI(Rect, SerializedProperty, GUIContent)
-  nameWithType: InterfaceWithSerializableContentDrawer.OnGUI(Rect, SerializedProperty, GUIContent)
-- uid: EditorExtensions.InterfaceWithSerializableContentDrawer.OnGUI*
-  name: OnGUI
-  href: api/EditorExtensions.InterfaceWithSerializableContentDrawer.html#EditorExtensions_InterfaceWithSerializableContentDrawer_OnGUI_
-  commentId: Overload:EditorExtensions.InterfaceWithSerializableContentDrawer.OnGUI
-  isSpec: "True"
-  fullName: EditorExtensions.InterfaceWithSerializableContentDrawer.OnGUI
-  nameWithType: InterfaceWithSerializableContentDrawer.OnGUI
 - uid: Global
   name: Global
   href: api/Global.html
@@ -4647,6 +4609,38 @@ references:
   commentId: T:Global.IMovementBehaviour
   fullName: IMovementBehaviour
   nameWithType: IMovementBehaviour
+- uid: Global.InterfaceWithSerializableContentDrawer
+  name: InterfaceWithSerializableContentDrawer
+  href: api/Global.InterfaceWithSerializableContentDrawer.html
+  commentId: T:Global.InterfaceWithSerializableContentDrawer
+  fullName: InterfaceWithSerializableContentDrawer
+  nameWithType: InterfaceWithSerializableContentDrawer
+- uid: Global.InterfaceWithSerializableContentDrawer.GetPropertyHeight(SerializedProperty,GUIContent)
+  name: GetPropertyHeight(SerializedProperty, GUIContent)
+  href: api/Global.InterfaceWithSerializableContentDrawer.html#Global_InterfaceWithSerializableContentDrawer_GetPropertyHeight_SerializedProperty_GUIContent_
+  commentId: M:Global.InterfaceWithSerializableContentDrawer.GetPropertyHeight(SerializedProperty,GUIContent)
+  fullName: InterfaceWithSerializableContentDrawer.GetPropertyHeight(SerializedProperty, GUIContent)
+  nameWithType: InterfaceWithSerializableContentDrawer.GetPropertyHeight(SerializedProperty, GUIContent)
+- uid: Global.InterfaceWithSerializableContentDrawer.GetPropertyHeight*
+  name: GetPropertyHeight
+  href: api/Global.InterfaceWithSerializableContentDrawer.html#Global_InterfaceWithSerializableContentDrawer_GetPropertyHeight_
+  commentId: Overload:Global.InterfaceWithSerializableContentDrawer.GetPropertyHeight
+  isSpec: "True"
+  fullName: InterfaceWithSerializableContentDrawer.GetPropertyHeight
+  nameWithType: InterfaceWithSerializableContentDrawer.GetPropertyHeight
+- uid: Global.InterfaceWithSerializableContentDrawer.OnGUI(Rect,SerializedProperty,GUIContent)
+  name: OnGUI(Rect, SerializedProperty, GUIContent)
+  href: api/Global.InterfaceWithSerializableContentDrawer.html#Global_InterfaceWithSerializableContentDrawer_OnGUI_Rect_SerializedProperty_GUIContent_
+  commentId: M:Global.InterfaceWithSerializableContentDrawer.OnGUI(Rect,SerializedProperty,GUIContent)
+  fullName: InterfaceWithSerializableContentDrawer.OnGUI(Rect, SerializedProperty, GUIContent)
+  nameWithType: InterfaceWithSerializableContentDrawer.OnGUI(Rect, SerializedProperty, GUIContent)
+- uid: Global.InterfaceWithSerializableContentDrawer.OnGUI*
+  name: OnGUI
+  href: api/Global.InterfaceWithSerializableContentDrawer.html#Global_InterfaceWithSerializableContentDrawer_OnGUI_
+  commentId: Overload:Global.InterfaceWithSerializableContentDrawer.OnGUI
+  isSpec: "True"
+  fullName: InterfaceWithSerializableContentDrawer.OnGUI
+  nameWithType: InterfaceWithSerializableContentDrawer.OnGUI
 - uid: Global.IPlayableBehaviour
   name: IPlayableBehaviour
   href: api/Global.IPlayableBehaviour.html
