@@ -10,7 +10,7 @@ public class Character : BaseComponent
     public PhysicalAttributes physicalAttributes;
     public Animator animator;
 
-    [FormerlySerializedAs("movableObject")] [HideInInspector] public MovableEntity movableEntity;
+    [HideInInspector] public MovableEntity movableEntity;
     [HideInInspector] public AttackManager attackManager;
 
     public void Awake()

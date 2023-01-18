@@ -150,7 +150,7 @@ public class PlayerController : CharacterController
     {
         if (jumpBehaviour && Input.GetButtonDown(Button.Jump.ToString())) //pressed jump
         {
-            ExecutePlayable(jumpBehaviour, new JumpCommand(), walkPriority);
+            ExecutePlayable(jumpBehaviour, new JumpCommand(), jumpPriority);
         }
     }
 
