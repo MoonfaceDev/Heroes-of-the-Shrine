@@ -129,12 +129,12 @@
   
   
   <a id="Global_WalkCommand__ctor_" data-uid="Global.WalkCommand.#ctor*"></a>
-  <h4 id="Global_WalkCommand__ctor_System_Single_System_Single_System_Boolean_" data-uid="Global.WalkCommand.#ctor(System.Single,System.Single,System.Boolean)">WalkCommand(Single, Single, Boolean)</h4>
+  <h4 id="Global_WalkCommand__ctor_Vector2_System_Boolean_" data-uid="Global.WalkCommand.#ctor(Vector2,System.Boolean)">WalkCommand(Vector2, Boolean)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public WalkCommand(float xAxis, float zAxis, bool fitLookDirection = true)</code></pre>
+    <pre><code class="lang-csharp hljs">public WalkCommand(Vector2 direction, bool fitLookDirection = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -147,13 +147,40 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">xAxis</span></td>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">direction</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">zAxis</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">fitLookDirection</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Global_WalkCommand__ctor_" data-uid="Global.WalkCommand.#ctor*"></a>
+  <h4 id="Global_WalkCommand__ctor_Vector3_System_Boolean_" data-uid="Global.WalkCommand.#ctor(Vector3,System.Boolean)">WalkCommand(Vector3, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WalkCommand(Vector3 direction, bool fitLookDirection = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">direction</span></td>
         <td></td>
       </tr>
       <tr>
@@ -165,6 +192,30 @@
   </table>
   <h3 id="fields">Fields
   </h3>
+  
+  
+  <h4 id="Global_WalkCommand_direction" data-uid="Global.WalkCommand.direction">direction</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly Vector2 direction</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   
   
   <h4 id="Global_WalkCommand_fitLookDirection" data-uid="Global.WalkCommand.fitLookDirection">fitLookDirection</h4>
@@ -185,54 +236,6 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_WalkCommand_xAxis" data-uid="Global.WalkCommand.xAxis">xAxis</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly float xAxis</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_WalkCommand_zAxis" data-uid="Global.WalkCommand.zAxis">zAxis</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly float zAxis</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
         <td></td>
       </tr>
     </tbody>

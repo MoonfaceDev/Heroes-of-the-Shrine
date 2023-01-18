@@ -8646,12 +8646,18 @@ references:
   commentId: T:Global.WalkCommand
   fullName: WalkCommand
   nameWithType: WalkCommand
-- uid: Global.WalkCommand.#ctor(System.Single,System.Single,System.Boolean)
-  name: WalkCommand(Single, Single, Boolean)
-  href: api/Global.WalkCommand.html#Global_WalkCommand__ctor_System_Single_System_Single_System_Boolean_
-  commentId: M:Global.WalkCommand.#ctor(System.Single,System.Single,System.Boolean)
-  fullName: WalkCommand.WalkCommand(System.Single, System.Single, System.Boolean)
-  nameWithType: WalkCommand.WalkCommand(Single, Single, Boolean)
+- uid: Global.WalkCommand.#ctor(Vector2,System.Boolean)
+  name: WalkCommand(Vector2, Boolean)
+  href: api/Global.WalkCommand.html#Global_WalkCommand__ctor_Vector2_System_Boolean_
+  commentId: M:Global.WalkCommand.#ctor(Vector2,System.Boolean)
+  fullName: WalkCommand.WalkCommand(Vector2, System.Boolean)
+  nameWithType: WalkCommand.WalkCommand(Vector2, Boolean)
+- uid: Global.WalkCommand.#ctor(Vector3,System.Boolean)
+  name: WalkCommand(Vector3, Boolean)
+  href: api/Global.WalkCommand.html#Global_WalkCommand__ctor_Vector3_System_Boolean_
+  commentId: M:Global.WalkCommand.#ctor(Vector3,System.Boolean)
+  fullName: WalkCommand.WalkCommand(Vector3, System.Boolean)
+  nameWithType: WalkCommand.WalkCommand(Vector3, Boolean)
 - uid: Global.WalkCommand.#ctor*
   name: WalkCommand
   href: api/Global.WalkCommand.html#Global_WalkCommand__ctor_
@@ -8659,24 +8665,18 @@ references:
   isSpec: "True"
   fullName: WalkCommand.WalkCommand
   nameWithType: WalkCommand.WalkCommand
+- uid: Global.WalkCommand.direction
+  name: direction
+  href: api/Global.WalkCommand.html#Global_WalkCommand_direction
+  commentId: F:Global.WalkCommand.direction
+  fullName: WalkCommand.direction
+  nameWithType: WalkCommand.direction
 - uid: Global.WalkCommand.fitLookDirection
   name: fitLookDirection
   href: api/Global.WalkCommand.html#Global_WalkCommand_fitLookDirection
   commentId: F:Global.WalkCommand.fitLookDirection
   fullName: WalkCommand.fitLookDirection
   nameWithType: WalkCommand.fitLookDirection
-- uid: Global.WalkCommand.xAxis
-  name: xAxis
-  href: api/Global.WalkCommand.html#Global_WalkCommand_xAxis
-  commentId: F:Global.WalkCommand.xAxis
-  fullName: WalkCommand.xAxis
-  nameWithType: WalkCommand.xAxis
-- uid: Global.WalkCommand.zAxis
-  name: zAxis
-  href: api/Global.WalkCommand.html#Global_WalkCommand_zAxis
-  commentId: F:Global.WalkCommand.zAxis
-  fullName: WalkCommand.zAxis
-  nameWithType: WalkCommand.zAxis
 - uid: Global.WalkSoundEffect
   name: WalkSoundEffect
   href: api/Global.WalkSoundEffect.html
