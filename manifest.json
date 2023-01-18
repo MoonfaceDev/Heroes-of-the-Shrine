@@ -36,6 +36,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.AggressionBrainModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.AggressionBrainModule.html",
+          "hash": "KDyk8boY3tHUZuQ05Zy1ltI+XeWgk3ytIuds/59yHI0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.AirAttack.yml",
       "output": {
         ".html": {
@@ -53,6 +65,18 @@
         ".html": {
           "relative_path": "api/Global.AirSpinAttack.html",
           "hash": "N0ky3WG5ULIt8pvjnNE0UkhrgD1I/RG3gXbGWALhmGk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.AlarmBrainModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.AlarmBrainModule.html",
+          "hash": "VqMbvAgtNNmnyW4DHeViDV+OL8ySUSd6gB6mL+FnWEA="
         }
       },
       "is_incremental": false,
@@ -336,18 +360,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.BossBrain.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.BossBrain.html",
-          "hash": "9ov3bW1D0MoC2g6ork1qm0YUf7lZdHivUxejmTz8s2A="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Global.BossHittableHitbox.yml",
       "output": {
         ".html": {
@@ -365,6 +377,42 @@
         ".html": {
           "relative_path": "api/Global.BounceCallback.html",
           "hash": "69HQYqhP2H2q0lVWrudUdaDd4nksVoQBO1tJ9S98Ezg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.BrainCore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.BrainCore.html",
+          "hash": "rKGdI6pAAaMgjtk8xTytXlfg7zXjod9fQ42UJuAWSck="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.BrainModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.BrainModule.html",
+          "hash": "q+PrQCWEtTYQTAXvjXFj0ddLAJhXoopcq+L6O532Jx4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.BrainModuleEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.BrainModuleEditor.html",
+          "hash": "xbCXUyvxiNOF9nKkZ7/7sPCVLw7wZMF+hjrXDOfKA/o="
         }
       },
       "is_incremental": false,
@@ -448,7 +496,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.CharacterBehaviour.html",
-          "hash": "GzisF6usebN6n77tf4aprDu1hxhMOQV4fdf9sBntMZk="
+          "hash": "6WS3bIhVIxY9crNWOoEX7EnLb5sXRkolYcYcL2yc/mE="
         }
       },
       "is_incremental": false,
@@ -460,7 +508,31 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.CharacterController.html",
-          "hash": "vNeVcav86dFbRUrjVAm16aWcg5qpN6+pY5HtiBB12UM="
+          "hash": "nFymq9jkx9AJMt/etdKufx40QObT/5PZjaFjHgALs+Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.ClosestEnemyBrainModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.ClosestEnemyBrainModule.html",
+          "hash": "YLGH+PWAqh7lpdRv+u2duqiuSOwEk+H90NHFCSEuO/I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.ClosestToPlayerBrainModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.ClosestToPlayerBrainModule.html",
+          "hash": "dbbYUT9CAf13UCq3hzOQtqXOb2+KtWyY9nzXG4Hm4yQ="
         }
       },
       "is_incremental": false,
@@ -540,11 +612,47 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.DieBrainModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.DieBrainModule.html",
+          "hash": "9AbbwR2/ixKKQE2tFeTdkbviWm40KV0nFtrOjBAmvoI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.Direction.yml",
       "output": {
         ".html": {
           "relative_path": "api/Global.Direction.html",
           "hash": "RbFmiIyaC9LkDgFOsevWOIZCn10lSw8ahi5j2fWXZZ8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.DistancesBrainModule.DistanceParameterEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.DistancesBrainModule.DistanceParameterEntry.html",
+          "hash": "njSJtji8/CTX+rdtCcxHC9XYGO4U2NY7X/PhvNwo+7k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.DistancesBrainModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.DistancesBrainModule.html",
+          "hash": "V8Ey7E8MuWjXA/zx1VK28zl6uAXKYGT24xRF9T9b3pI="
         }
       },
       "is_incremental": false,
@@ -708,11 +816,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.EnemyBrain.DistanceParameterEntry.yml",
+      "source_relative_path": "api/Global.EnemiesAttackingBrainModule.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Global.EnemyBrain.DistanceParameterEntry.html",
-          "hash": "7nml1myP4NoBvYNgJgMuWyc5dx3/VqtgWSt1bRPs6iM="
+          "relative_path": "api/Global.EnemiesAttackingBrainModule.html",
+          "hash": "F9ffXUsG+SYVSdeGIg23Qz9FnZX3oVJmWwTWwu7jAaI="
         }
       },
       "is_incremental": false,
@@ -720,11 +828,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.EnemyBrain.yml",
+      "source_relative_path": "api/Global.EnemyCountBrainModule.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Global.EnemyBrain.html",
-          "hash": "nxPtFc5UFcM6rlwK8AmE5dDOHkAxiRI4ct0zJwmuWKQ="
+          "relative_path": "api/Global.EnemyCountBrainModule.html",
+          "hash": "sXosz7qBguBVvMywCJYBHSKrIn8CRfPeef4V96A3/DE="
         }
       },
       "is_incremental": false,
@@ -737,18 +845,6 @@
         ".html": {
           "relative_path": "api/Global.EnemyDestroyAction.html",
           "hash": "hvrPXDrap/K9r/3EHlu+4+xQgbJ3zK7831sdd4OCKt4="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.EnemyGroup.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.EnemyGroup.html",
-          "hash": "27mWYzIjntEwxWC7WOKY0pWXgQUNgnQiPhQEMo5qKq4="
         }
       },
       "is_incremental": false,
@@ -773,6 +869,18 @@
         ".html": {
           "relative_path": "api/Global.EnergyBurstAttack.html",
           "hash": "4i1uC6FbbOd/1ZeXeW4Z09wYdcwArvrOFwPl2htmUG4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.EnragedBrainModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.EnragedBrainModule.html",
+          "hash": "gvopfPoR2AoQpCAQbgBUml6lxwDj5QD7oHGJ5cfEcDM="
         }
       },
       "is_incremental": false,
@@ -1008,11 +1116,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.GoblinBrain.yml",
+      "source_relative_path": "api/Global.HealthBar.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Global.GoblinBrain.html",
-          "hash": "d5zixiSUMs74L6pQOWbyJPJy8BqrzuzcRp6S/8AV3io="
+          "relative_path": "api/Global.HealthBar.html",
+          "hash": "6llcIhgbM3QnafeScXe+M1P6jEXcWOYy4QXPjx0x72w="
         }
       },
       "is_incremental": false,
@@ -1020,11 +1128,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.HealthBar.yml",
+      "source_relative_path": "api/Global.HealthBrainModule.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Global.HealthBar.html",
-          "hash": "6llcIhgbM3QnafeScXe+M1P6jEXcWOYy4QXPjx0x72w="
+          "relative_path": "api/Global.HealthBrainModule.html",
+          "hash": "Ka2A79oLoghkZU4OzBxCXxK5vvIq0Py4GX6prlkWUvM="
         }
       },
       "is_incremental": false,
@@ -1277,6 +1385,18 @@
         ".html": {
           "relative_path": "api/Global.KnockbackBehaviour.html",
           "hash": "tBWmbZrOVLhU32oJutAe09sM7OPYmggqJpRCCe4pi08="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.KnockbackBrainModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.KnockbackBrainModule.html",
+          "hash": "gXpZ1sXxrdkX1H9n3GHlqIMz3OpLKOoOVy6a+bvS/tM="
         }
       },
       "is_incremental": false,
@@ -1584,11 +1704,59 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.PlayerAttackBrainModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.PlayerAttackBrainModule.html",
+          "hash": "kkWGwKNqhdhdp7TkpixkZ8xX6V/dQfPzvpx2HDDo/vE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.PlayerController.yml",
       "output": {
         ".html": {
           "relative_path": "api/Global.PlayerController.html",
           "hash": "mry9VY4S8s7vaFMz+EKa0GQbOE7K80WskdcWfqXuRw0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.PlayerDistanceBrainModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.PlayerDistanceBrainModule.html",
+          "hash": "fXwIcQgMDjNkdssYpw4ilfGYvmwy1ZN2LeWCOFYtqZw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.PlayerKnockbackBrainModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.PlayerKnockbackBrainModule.html",
+          "hash": "CnUr7bq82C2EjulGGEM2BnTe25OeZ2Hu+BXWgsDmro0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.PlayerStunBrainModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.PlayerStunBrainModule.html",
+          "hash": "wHXZmuUodZUzuqKx2NgaeH3YAOYVI4gHao7mznX5jRA="
         }
       },
       "is_incremental": false,
@@ -2004,6 +2172,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.StunBrainModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.StunBrainModule.html",
+          "hash": "yPUgiZ8tMFYcfMWklAQ1bGiNKvYq0KQwFiuRSeRjVN0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.StunCallback.yml",
       "output": {
         ".html": {
@@ -2033,6 +2213,18 @@
         ".html": {
           "relative_path": "api/Global.SuperArmorBar.html",
           "hash": "3iE42F17idF7xFRHEjmxiOZUYJnmOjvyoz8zen2jWMY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.SuperArmorBrainModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.SuperArmorBrainModule.html",
+          "hash": "zFXVKqhXD6cdL1MUo0eJmpgTuB2WGtxgnEEc99jXUAQ="
         }
       },
       "is_incremental": false,
@@ -2236,7 +2428,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "vKD0+A4+NfmwnvRlvGGwW3YXWl9hG+AbEj7p7ClxRbs="
+          "hash": "z8BnqFOec17baK82ifmhs83nnFY9w8MZTzWmU7RnAZ0="
         }
       },
       "is_incremental": false,
@@ -2248,7 +2440,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "2H9RLZhm8I4O4DCpZHzxrepPT8Q1PV6bdWp1QsK5DxY="
+          "hash": "GKCje4oiNood0gP+KTb/Dip0UP2qmPZFJdQnxE5XMyA="
         }
       },
       "is_incremental": false,
@@ -2459,7 +2651,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 185,
+          "total_file_count": 201,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

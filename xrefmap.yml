@@ -44,6 +44,38 @@ references:
   isSpec: "True"
   fullName: AbsoluteHitDetector.StopDetector
   nameWithType: AbsoluteHitDetector.StopDetector
+- uid: Global.AggressionBrainModule
+  name: AggressionBrainModule
+  href: api/Global.AggressionBrainModule.html
+  commentId: T:Global.AggressionBrainModule
+  fullName: AggressionBrainModule
+  nameWithType: AggressionBrainModule
+- uid: Global.AggressionBrainModule.Awake
+  name: Awake()
+  href: api/Global.AggressionBrainModule.html#Global_AggressionBrainModule_Awake
+  commentId: M:Global.AggressionBrainModule.Awake
+  fullName: AggressionBrainModule.Awake()
+  nameWithType: AggressionBrainModule.Awake()
+- uid: Global.AggressionBrainModule.Awake*
+  name: Awake
+  href: api/Global.AggressionBrainModule.html#Global_AggressionBrainModule_Awake_
+  commentId: Overload:Global.AggressionBrainModule.Awake
+  isSpec: "True"
+  fullName: AggressionBrainModule.Awake
+  nameWithType: AggressionBrainModule.Awake
+- uid: Global.AggressionBrainModule.GetParameters
+  name: GetParameters()
+  href: api/Global.AggressionBrainModule.html#Global_AggressionBrainModule_GetParameters
+  commentId: M:Global.AggressionBrainModule.GetParameters
+  fullName: AggressionBrainModule.GetParameters()
+  nameWithType: AggressionBrainModule.GetParameters()
+- uid: Global.AggressionBrainModule.GetParameters*
+  name: GetParameters
+  href: api/Global.AggressionBrainModule.html#Global_AggressionBrainModule_GetParameters_
+  commentId: Overload:Global.AggressionBrainModule.GetParameters
+  isSpec: "True"
+  fullName: AggressionBrainModule.GetParameters
+  nameWithType: AggressionBrainModule.GetParameters
 - uid: Global.AirAttack
   name: AirAttack
   href: api/Global.AirAttack.html
@@ -82,6 +114,38 @@ references:
   commentId: T:Global.AirSpinAttack
   fullName: AirSpinAttack
   nameWithType: AirSpinAttack
+- uid: Global.AlarmBrainModule
+  name: AlarmBrainModule
+  href: api/Global.AlarmBrainModule.html
+  commentId: T:Global.AlarmBrainModule
+  fullName: AlarmBrainModule
+  nameWithType: AlarmBrainModule
+- uid: Global.AlarmBrainModule.GetParameters
+  name: GetParameters()
+  href: api/Global.AlarmBrainModule.html#Global_AlarmBrainModule_GetParameters
+  commentId: M:Global.AlarmBrainModule.GetParameters
+  fullName: AlarmBrainModule.GetParameters()
+  nameWithType: AlarmBrainModule.GetParameters()
+- uid: Global.AlarmBrainModule.GetParameters*
+  name: GetParameters
+  href: api/Global.AlarmBrainModule.html#Global_AlarmBrainModule_GetParameters_
+  commentId: Overload:Global.AlarmBrainModule.GetParameters
+  isSpec: "True"
+  fullName: AlarmBrainModule.GetParameters
+  nameWithType: AlarmBrainModule.GetParameters
+- uid: Global.AlarmBrainModule.SetAlarm
+  name: SetAlarm()
+  href: api/Global.AlarmBrainModule.html#Global_AlarmBrainModule_SetAlarm
+  commentId: M:Global.AlarmBrainModule.SetAlarm
+  fullName: AlarmBrainModule.SetAlarm()
+  nameWithType: AlarmBrainModule.SetAlarm()
+- uid: Global.AlarmBrainModule.SetAlarm*
+  name: SetAlarm
+  href: api/Global.AlarmBrainModule.html#Global_AlarmBrainModule_SetAlarm_
+  commentId: Overload:Global.AlarmBrainModule.SetAlarm
+  isSpec: "True"
+  fullName: AlarmBrainModule.SetAlarm
+  nameWithType: AlarmBrainModule.SetAlarm
 - uid: Global.AltAirAttack
   name: AltAirAttack
   href: api/Global.AltAirAttack.html
@@ -1324,38 +1388,6 @@ references:
   commentId: F:Global.BaseTrigger.action
   fullName: BaseTrigger.action
   nameWithType: BaseTrigger.action
-- uid: Global.BossBrain
-  name: BossBrain
-  href: api/Global.BossBrain.html
-  commentId: T:Global.BossBrain
-  fullName: BossBrain
-  nameWithType: BossBrain
-- uid: Global.BossBrain.Awake
-  name: Awake()
-  href: api/Global.BossBrain.html#Global_BossBrain_Awake
-  commentId: M:Global.BossBrain.Awake
-  fullName: BossBrain.Awake()
-  nameWithType: BossBrain.Awake()
-- uid: Global.BossBrain.Awake*
-  name: Awake
-  href: api/Global.BossBrain.html#Global_BossBrain_Awake_
-  commentId: Overload:Global.BossBrain.Awake
-  isSpec: "True"
-  fullName: BossBrain.Awake
-  nameWithType: BossBrain.Awake
-- uid: Global.BossBrain.Start
-  name: Start()
-  href: api/Global.BossBrain.html#Global_BossBrain_Start
-  commentId: M:Global.BossBrain.Start
-  fullName: BossBrain.Start()
-  nameWithType: BossBrain.Start()
-- uid: Global.BossBrain.Start*
-  name: Start
-  href: api/Global.BossBrain.html#Global_BossBrain_Start_
-  commentId: Overload:Global.BossBrain.Start
-  isSpec: "True"
-  fullName: BossBrain.Start
-  nameWithType: BossBrain.Start
 - uid: Global.BossHittableHitbox
   name: BossHittableHitbox
   href: api/Global.BossHittableHitbox.html
@@ -1381,6 +1413,102 @@ references:
   commentId: T:Global.BounceCallback
   fullName: BounceCallback
   nameWithType: BounceCallback
+- uid: Global.BrainCore
+  name: BrainCore
+  href: api/Global.BrainCore.html
+  commentId: T:Global.BrainCore
+  fullName: BrainCore
+  nameWithType: BrainCore
+- uid: Global.BrainCore.Awake
+  name: Awake()
+  href: api/Global.BrainCore.html#Global_BrainCore_Awake
+  commentId: M:Global.BrainCore.Awake
+  fullName: BrainCore.Awake()
+  nameWithType: BrainCore.Awake()
+- uid: Global.BrainCore.Awake*
+  name: Awake
+  href: api/Global.BrainCore.html#Global_BrainCore_Awake_
+  commentId: Overload:Global.BrainCore.Awake
+  isSpec: "True"
+  fullName: BrainCore.Awake
+  nameWithType: BrainCore.Awake
+- uid: Global.BrainCore.StateMachine
+  name: StateMachine
+  href: api/Global.BrainCore.html#Global_BrainCore_StateMachine
+  commentId: P:Global.BrainCore.StateMachine
+  fullName: BrainCore.StateMachine
+  nameWithType: BrainCore.StateMachine
+- uid: Global.BrainCore.StateMachine*
+  name: StateMachine
+  href: api/Global.BrainCore.html#Global_BrainCore_StateMachine_
+  commentId: Overload:Global.BrainCore.StateMachine
+  isSpec: "True"
+  fullName: BrainCore.StateMachine
+  nameWithType: BrainCore.StateMachine
+- uid: Global.BrainModule
+  name: BrainModule
+  href: api/Global.BrainModule.html
+  commentId: T:Global.BrainModule
+  fullName: BrainModule
+  nameWithType: BrainModule
+- uid: Global.BrainModule.Awake
+  name: Awake()
+  href: api/Global.BrainModule.html#Global_BrainModule_Awake
+  commentId: M:Global.BrainModule.Awake
+  fullName: BrainModule.Awake()
+  nameWithType: BrainModule.Awake()
+- uid: Global.BrainModule.Awake*
+  name: Awake
+  href: api/Global.BrainModule.html#Global_BrainModule_Awake_
+  commentId: Overload:Global.BrainModule.Awake
+  isSpec: "True"
+  fullName: BrainModule.Awake
+  nameWithType: BrainModule.Awake
+- uid: Global.BrainModule.GetParameters
+  name: GetParameters()
+  href: api/Global.BrainModule.html#Global_BrainModule_GetParameters
+  commentId: M:Global.BrainModule.GetParameters
+  fullName: BrainModule.GetParameters()
+  nameWithType: BrainModule.GetParameters()
+- uid: Global.BrainModule.GetParameters*
+  name: GetParameters
+  href: api/Global.BrainModule.html#Global_BrainModule_GetParameters_
+  commentId: Overload:Global.BrainModule.GetParameters
+  isSpec: "True"
+  fullName: BrainModule.GetParameters
+  nameWithType: BrainModule.GetParameters
+- uid: Global.BrainModule.StateMachine
+  name: StateMachine
+  href: api/Global.BrainModule.html#Global_BrainModule_StateMachine
+  commentId: P:Global.BrainModule.StateMachine
+  fullName: BrainModule.StateMachine
+  nameWithType: BrainModule.StateMachine
+- uid: Global.BrainModule.StateMachine*
+  name: StateMachine
+  href: api/Global.BrainModule.html#Global_BrainModule_StateMachine_
+  commentId: Overload:Global.BrainModule.StateMachine
+  isSpec: "True"
+  fullName: BrainModule.StateMachine
+  nameWithType: BrainModule.StateMachine
+- uid: Global.BrainModuleEditor
+  name: BrainModuleEditor
+  href: api/Global.BrainModuleEditor.html
+  commentId: T:Global.BrainModuleEditor
+  fullName: BrainModuleEditor
+  nameWithType: BrainModuleEditor
+- uid: Global.BrainModuleEditor.OnInspectorGUI
+  name: OnInspectorGUI()
+  href: api/Global.BrainModuleEditor.html#Global_BrainModuleEditor_OnInspectorGUI
+  commentId: M:Global.BrainModuleEditor.OnInspectorGUI
+  fullName: BrainModuleEditor.OnInspectorGUI()
+  nameWithType: BrainModuleEditor.OnInspectorGUI()
+- uid: Global.BrainModuleEditor.OnInspectorGUI*
+  name: OnInspectorGUI
+  href: api/Global.BrainModuleEditor.html#Global_BrainModuleEditor_OnInspectorGUI_
+  commentId: Overload:Global.BrainModuleEditor.OnInspectorGUI
+  isSpec: "True"
+  fullName: BrainModuleEditor.OnInspectorGUI
+  nameWithType: BrainModuleEditor.OnInspectorGUI
 - uid: Global.BufferedAction
   name: BufferedAction
   href: api/Global.BufferedAction.html
@@ -1865,6 +1993,70 @@ references:
   commentId: T:Global.CharacterController
   fullName: CharacterController
   nameWithType: CharacterController
+- uid: Global.ClosestEnemyBrainModule
+  name: ClosestEnemyBrainModule
+  href: api/Global.ClosestEnemyBrainModule.html
+  commentId: T:Global.ClosestEnemyBrainModule
+  fullName: ClosestEnemyBrainModule
+  nameWithType: ClosestEnemyBrainModule
+- uid: Global.ClosestEnemyBrainModule.GetParameters
+  name: GetParameters()
+  href: api/Global.ClosestEnemyBrainModule.html#Global_ClosestEnemyBrainModule_GetParameters
+  commentId: M:Global.ClosestEnemyBrainModule.GetParameters
+  fullName: ClosestEnemyBrainModule.GetParameters()
+  nameWithType: ClosestEnemyBrainModule.GetParameters()
+- uid: Global.ClosestEnemyBrainModule.GetParameters*
+  name: GetParameters
+  href: api/Global.ClosestEnemyBrainModule.html#Global_ClosestEnemyBrainModule_GetParameters_
+  commentId: Overload:Global.ClosestEnemyBrainModule.GetParameters
+  isSpec: "True"
+  fullName: ClosestEnemyBrainModule.GetParameters
+  nameWithType: ClosestEnemyBrainModule.GetParameters
+- uid: Global.ClosestEnemyBrainModule.Update
+  name: Update()
+  href: api/Global.ClosestEnemyBrainModule.html#Global_ClosestEnemyBrainModule_Update
+  commentId: M:Global.ClosestEnemyBrainModule.Update
+  fullName: ClosestEnemyBrainModule.Update()
+  nameWithType: ClosestEnemyBrainModule.Update()
+- uid: Global.ClosestEnemyBrainModule.Update*
+  name: Update
+  href: api/Global.ClosestEnemyBrainModule.html#Global_ClosestEnemyBrainModule_Update_
+  commentId: Overload:Global.ClosestEnemyBrainModule.Update
+  isSpec: "True"
+  fullName: ClosestEnemyBrainModule.Update
+  nameWithType: ClosestEnemyBrainModule.Update
+- uid: Global.ClosestToPlayerBrainModule
+  name: ClosestToPlayerBrainModule
+  href: api/Global.ClosestToPlayerBrainModule.html
+  commentId: T:Global.ClosestToPlayerBrainModule
+  fullName: ClosestToPlayerBrainModule
+  nameWithType: ClosestToPlayerBrainModule
+- uid: Global.ClosestToPlayerBrainModule.GetParameters
+  name: GetParameters()
+  href: api/Global.ClosestToPlayerBrainModule.html#Global_ClosestToPlayerBrainModule_GetParameters
+  commentId: M:Global.ClosestToPlayerBrainModule.GetParameters
+  fullName: ClosestToPlayerBrainModule.GetParameters()
+  nameWithType: ClosestToPlayerBrainModule.GetParameters()
+- uid: Global.ClosestToPlayerBrainModule.GetParameters*
+  name: GetParameters
+  href: api/Global.ClosestToPlayerBrainModule.html#Global_ClosestToPlayerBrainModule_GetParameters_
+  commentId: Overload:Global.ClosestToPlayerBrainModule.GetParameters
+  isSpec: "True"
+  fullName: ClosestToPlayerBrainModule.GetParameters
+  nameWithType: ClosestToPlayerBrainModule.GetParameters
+- uid: Global.ClosestToPlayerBrainModule.Update
+  name: Update()
+  href: api/Global.ClosestToPlayerBrainModule.html#Global_ClosestToPlayerBrainModule_Update
+  commentId: M:Global.ClosestToPlayerBrainModule.Update
+  fullName: ClosestToPlayerBrainModule.Update()
+  nameWithType: ClosestToPlayerBrainModule.Update()
+- uid: Global.ClosestToPlayerBrainModule.Update*
+  name: Update
+  href: api/Global.ClosestToPlayerBrainModule.html#Global_ClosestToPlayerBrainModule_Update_
+  commentId: Overload:Global.ClosestToPlayerBrainModule.Update
+  isSpec: "True"
+  fullName: ClosestToPlayerBrainModule.Update
+  nameWithType: ClosestToPlayerBrainModule.Update
 - uid: Global.CutsceneAction
   name: CutsceneAction
   href: api/Global.CutsceneAction.html
@@ -2103,6 +2295,38 @@ references:
   isSpec: "True"
   fullName: DieBehaviour.Respawn
   nameWithType: DieBehaviour.Respawn
+- uid: Global.DieBrainModule
+  name: DieBrainModule
+  href: api/Global.DieBrainModule.html
+  commentId: T:Global.DieBrainModule
+  fullName: DieBrainModule
+  nameWithType: DieBrainModule
+- uid: Global.DieBrainModule.GetParameters
+  name: GetParameters()
+  href: api/Global.DieBrainModule.html#Global_DieBrainModule_GetParameters
+  commentId: M:Global.DieBrainModule.GetParameters
+  fullName: DieBrainModule.GetParameters()
+  nameWithType: DieBrainModule.GetParameters()
+- uid: Global.DieBrainModule.GetParameters*
+  name: GetParameters
+  href: api/Global.DieBrainModule.html#Global_DieBrainModule_GetParameters_
+  commentId: Overload:Global.DieBrainModule.GetParameters
+  isSpec: "True"
+  fullName: DieBrainModule.GetParameters
+  nameWithType: DieBrainModule.GetParameters
+- uid: Global.DieBrainModule.Start
+  name: Start()
+  href: api/Global.DieBrainModule.html#Global_DieBrainModule_Start
+  commentId: M:Global.DieBrainModule.Start
+  fullName: DieBrainModule.Start()
+  nameWithType: DieBrainModule.Start()
+- uid: Global.DieBrainModule.Start*
+  name: Start
+  href: api/Global.DieBrainModule.html#Global_DieBrainModule_Start_
+  commentId: Overload:Global.DieBrainModule.Start
+  isSpec: "True"
+  fullName: DieBrainModule.Start
+  nameWithType: DieBrainModule.Start
 - uid: Global.Direction
   name: Direction
   href: api/Global.Direction.html
@@ -2121,6 +2345,62 @@ references:
   commentId: F:Global.Direction.Right
   fullName: Direction.Right
   nameWithType: Direction.Right
+- uid: Global.DistancesBrainModule
+  name: DistancesBrainModule
+  href: api/Global.DistancesBrainModule.html
+  commentId: T:Global.DistancesBrainModule
+  fullName: DistancesBrainModule
+  nameWithType: DistancesBrainModule
+- uid: Global.DistancesBrainModule.distanceAnimatorParameters
+  name: distanceAnimatorParameters
+  href: api/Global.DistancesBrainModule.html#Global_DistancesBrainModule_distanceAnimatorParameters
+  commentId: F:Global.DistancesBrainModule.distanceAnimatorParameters
+  fullName: DistancesBrainModule.distanceAnimatorParameters
+  nameWithType: DistancesBrainModule.distanceAnimatorParameters
+- uid: Global.DistancesBrainModule.DistanceParameterEntry
+  name: DistancesBrainModule.DistanceParameterEntry
+  href: api/Global.DistancesBrainModule.DistanceParameterEntry.html
+  commentId: T:Global.DistancesBrainModule.DistanceParameterEntry
+  fullName: DistancesBrainModule.DistanceParameterEntry
+  nameWithType: DistancesBrainModule.DistanceParameterEntry
+- uid: Global.DistancesBrainModule.DistanceParameterEntry.groundPoint
+  name: groundPoint
+  href: api/Global.DistancesBrainModule.DistanceParameterEntry.html#Global_DistancesBrainModule_DistanceParameterEntry_groundPoint
+  commentId: F:Global.DistancesBrainModule.DistanceParameterEntry.groundPoint
+  fullName: DistancesBrainModule.DistanceParameterEntry.groundPoint
+  nameWithType: DistancesBrainModule.DistanceParameterEntry.groundPoint
+- uid: Global.DistancesBrainModule.DistanceParameterEntry.parameterName
+  name: parameterName
+  href: api/Global.DistancesBrainModule.DistanceParameterEntry.html#Global_DistancesBrainModule_DistanceParameterEntry_parameterName
+  commentId: F:Global.DistancesBrainModule.DistanceParameterEntry.parameterName
+  fullName: DistancesBrainModule.DistanceParameterEntry.parameterName
+  nameWithType: DistancesBrainModule.DistanceParameterEntry.parameterName
+- uid: Global.DistancesBrainModule.GetParameters
+  name: GetParameters()
+  href: api/Global.DistancesBrainModule.html#Global_DistancesBrainModule_GetParameters
+  commentId: M:Global.DistancesBrainModule.GetParameters
+  fullName: DistancesBrainModule.GetParameters()
+  nameWithType: DistancesBrainModule.GetParameters()
+- uid: Global.DistancesBrainModule.GetParameters*
+  name: GetParameters
+  href: api/Global.DistancesBrainModule.html#Global_DistancesBrainModule_GetParameters_
+  commentId: Overload:Global.DistancesBrainModule.GetParameters
+  isSpec: "True"
+  fullName: DistancesBrainModule.GetParameters
+  nameWithType: DistancesBrainModule.GetParameters
+- uid: Global.DistancesBrainModule.Update
+  name: Update()
+  href: api/Global.DistancesBrainModule.html#Global_DistancesBrainModule_Update
+  commentId: M:Global.DistancesBrainModule.Update
+  fullName: DistancesBrainModule.Update()
+  nameWithType: DistancesBrainModule.Update()
+- uid: Global.DistancesBrainModule.Update*
+  name: Update
+  href: api/Global.DistancesBrainModule.html#Global_DistancesBrainModule_Update_
+  commentId: Overload:Global.DistancesBrainModule.Update
+  isSpec: "True"
+  fullName: DistancesBrainModule.Update
+  nameWithType: DistancesBrainModule.Update
 - uid: Global.DodgeBehaviour
   name: DodgeBehaviour
   href: api/Global.DodgeBehaviour.html
@@ -2739,106 +3019,70 @@ references:
   commentId: F:Global.EncounterAction.waveDefinitions
   fullName: EncounterAction.waveDefinitions
   nameWithType: EncounterAction.waveDefinitions
-- uid: Global.EnemyBrain
-  name: EnemyBrain
-  href: api/Global.EnemyBrain.html
-  commentId: T:Global.EnemyBrain
-  fullName: EnemyBrain
-  nameWithType: EnemyBrain
-- uid: Global.EnemyBrain.Alarm
-  name: Alarm()
-  href: api/Global.EnemyBrain.html#Global_EnemyBrain_Alarm
-  commentId: M:Global.EnemyBrain.Alarm
-  fullName: EnemyBrain.Alarm()
-  nameWithType: EnemyBrain.Alarm()
-- uid: Global.EnemyBrain.Alarm*
-  name: Alarm
-  href: api/Global.EnemyBrain.html#Global_EnemyBrain_Alarm_
-  commentId: Overload:Global.EnemyBrain.Alarm
+- uid: Global.EnemiesAttackingBrainModule
+  name: EnemiesAttackingBrainModule
+  href: api/Global.EnemiesAttackingBrainModule.html
+  commentId: T:Global.EnemiesAttackingBrainModule
+  fullName: EnemiesAttackingBrainModule
+  nameWithType: EnemiesAttackingBrainModule
+- uid: Global.EnemiesAttackingBrainModule.GetParameters
+  name: GetParameters()
+  href: api/Global.EnemiesAttackingBrainModule.html#Global_EnemiesAttackingBrainModule_GetParameters
+  commentId: M:Global.EnemiesAttackingBrainModule.GetParameters
+  fullName: EnemiesAttackingBrainModule.GetParameters()
+  nameWithType: EnemiesAttackingBrainModule.GetParameters()
+- uid: Global.EnemiesAttackingBrainModule.GetParameters*
+  name: GetParameters
+  href: api/Global.EnemiesAttackingBrainModule.html#Global_EnemiesAttackingBrainModule_GetParameters_
+  commentId: Overload:Global.EnemiesAttackingBrainModule.GetParameters
   isSpec: "True"
-  fullName: EnemyBrain.Alarm
-  nameWithType: EnemyBrain.Alarm
-- uid: Global.EnemyBrain.Awake
-  name: Awake()
-  href: api/Global.EnemyBrain.html#Global_EnemyBrain_Awake
-  commentId: M:Global.EnemyBrain.Awake
-  fullName: EnemyBrain.Awake()
-  nameWithType: EnemyBrain.Awake()
-- uid: Global.EnemyBrain.Awake*
-  name: Awake
-  href: api/Global.EnemyBrain.html#Global_EnemyBrain_Awake_
-  commentId: Overload:Global.EnemyBrain.Awake
-  isSpec: "True"
-  fullName: EnemyBrain.Awake
-  nameWithType: EnemyBrain.Awake
-- uid: Global.EnemyBrain.distanceAnimatorParameters
-  name: distanceAnimatorParameters
-  href: api/Global.EnemyBrain.html#Global_EnemyBrain_distanceAnimatorParameters
-  commentId: F:Global.EnemyBrain.distanceAnimatorParameters
-  fullName: EnemyBrain.distanceAnimatorParameters
-  nameWithType: EnemyBrain.distanceAnimatorParameters
-- uid: Global.EnemyBrain.DistanceParameterEntry
-  name: EnemyBrain.DistanceParameterEntry
-  href: api/Global.EnemyBrain.DistanceParameterEntry.html
-  commentId: T:Global.EnemyBrain.DistanceParameterEntry
-  fullName: EnemyBrain.DistanceParameterEntry
-  nameWithType: EnemyBrain.DistanceParameterEntry
-- uid: Global.EnemyBrain.DistanceParameterEntry.groundPoint
-  name: groundPoint
-  href: api/Global.EnemyBrain.DistanceParameterEntry.html#Global_EnemyBrain_DistanceParameterEntry_groundPoint
-  commentId: F:Global.EnemyBrain.DistanceParameterEntry.groundPoint
-  fullName: EnemyBrain.DistanceParameterEntry.groundPoint
-  nameWithType: EnemyBrain.DistanceParameterEntry.groundPoint
-- uid: Global.EnemyBrain.DistanceParameterEntry.parameterName
-  name: parameterName
-  href: api/Global.EnemyBrain.DistanceParameterEntry.html#Global_EnemyBrain_DistanceParameterEntry_parameterName
-  commentId: F:Global.EnemyBrain.DistanceParameterEntry.parameterName
-  fullName: EnemyBrain.DistanceParameterEntry.parameterName
-  nameWithType: EnemyBrain.DistanceParameterEntry.parameterName
-- uid: Global.EnemyBrain.rageDamageMultiplier
-  name: rageDamageMultiplier
-  href: api/Global.EnemyBrain.html#Global_EnemyBrain_rageDamageMultiplier
-  commentId: F:Global.EnemyBrain.rageDamageMultiplier
-  fullName: EnemyBrain.rageDamageMultiplier
-  nameWithType: EnemyBrain.rageDamageMultiplier
-- uid: Global.EnemyBrain.rageHealthThreshold
-  name: rageHealthThreshold
-  href: api/Global.EnemyBrain.html#Global_EnemyBrain_rageHealthThreshold
-  commentId: F:Global.EnemyBrain.rageHealthThreshold
-  fullName: EnemyBrain.rageHealthThreshold
-  nameWithType: EnemyBrain.rageHealthThreshold
-- uid: Global.EnemyBrain.Start
-  name: Start()
-  href: api/Global.EnemyBrain.html#Global_EnemyBrain_Start
-  commentId: M:Global.EnemyBrain.Start
-  fullName: EnemyBrain.Start()
-  nameWithType: EnemyBrain.Start()
-- uid: Global.EnemyBrain.Start*
-  name: Start
-  href: api/Global.EnemyBrain.html#Global_EnemyBrain_Start_
-  commentId: Overload:Global.EnemyBrain.Start
-  isSpec: "True"
-  fullName: EnemyBrain.Start
-  nameWithType: EnemyBrain.Start
-- uid: Global.EnemyBrain.stateMachine
-  name: stateMachine
-  href: api/Global.EnemyBrain.html#Global_EnemyBrain_stateMachine
-  commentId: F:Global.EnemyBrain.stateMachine
-  fullName: EnemyBrain.stateMachine
-  nameWithType: EnemyBrain.stateMachine
-- uid: Global.EnemyBrain.Update
+  fullName: EnemiesAttackingBrainModule.GetParameters
+  nameWithType: EnemiesAttackingBrainModule.GetParameters
+- uid: Global.EnemiesAttackingBrainModule.Update
   name: Update()
-  href: api/Global.EnemyBrain.html#Global_EnemyBrain_Update
-  commentId: M:Global.EnemyBrain.Update
-  fullName: EnemyBrain.Update()
-  nameWithType: EnemyBrain.Update()
-- uid: Global.EnemyBrain.Update*
+  href: api/Global.EnemiesAttackingBrainModule.html#Global_EnemiesAttackingBrainModule_Update
+  commentId: M:Global.EnemiesAttackingBrainModule.Update
+  fullName: EnemiesAttackingBrainModule.Update()
+  nameWithType: EnemiesAttackingBrainModule.Update()
+- uid: Global.EnemiesAttackingBrainModule.Update*
   name: Update
-  href: api/Global.EnemyBrain.html#Global_EnemyBrain_Update_
-  commentId: Overload:Global.EnemyBrain.Update
+  href: api/Global.EnemiesAttackingBrainModule.html#Global_EnemiesAttackingBrainModule_Update_
+  commentId: Overload:Global.EnemiesAttackingBrainModule.Update
   isSpec: "True"
-  fullName: EnemyBrain.Update
-  nameWithType: EnemyBrain.Update
+  fullName: EnemiesAttackingBrainModule.Update
+  nameWithType: EnemiesAttackingBrainModule.Update
+- uid: Global.EnemyCountBrainModule
+  name: EnemyCountBrainModule
+  href: api/Global.EnemyCountBrainModule.html
+  commentId: T:Global.EnemyCountBrainModule
+  fullName: EnemyCountBrainModule
+  nameWithType: EnemyCountBrainModule
+- uid: Global.EnemyCountBrainModule.GetParameters
+  name: GetParameters()
+  href: api/Global.EnemyCountBrainModule.html#Global_EnemyCountBrainModule_GetParameters
+  commentId: M:Global.EnemyCountBrainModule.GetParameters
+  fullName: EnemyCountBrainModule.GetParameters()
+  nameWithType: EnemyCountBrainModule.GetParameters()
+- uid: Global.EnemyCountBrainModule.GetParameters*
+  name: GetParameters
+  href: api/Global.EnemyCountBrainModule.html#Global_EnemyCountBrainModule_GetParameters_
+  commentId: Overload:Global.EnemyCountBrainModule.GetParameters
+  isSpec: "True"
+  fullName: EnemyCountBrainModule.GetParameters
+  nameWithType: EnemyCountBrainModule.GetParameters
+- uid: Global.EnemyCountBrainModule.Update
+  name: Update()
+  href: api/Global.EnemyCountBrainModule.html#Global_EnemyCountBrainModule_Update
+  commentId: M:Global.EnemyCountBrainModule.Update
+  fullName: EnemyCountBrainModule.Update()
+  nameWithType: EnemyCountBrainModule.Update()
+- uid: Global.EnemyCountBrainModule.Update*
+  name: Update
+  href: api/Global.EnemyCountBrainModule.html#Global_EnemyCountBrainModule_Update_
+  commentId: Overload:Global.EnemyCountBrainModule.Update
+  isSpec: "True"
+  fullName: EnemyCountBrainModule.Update
+  nameWithType: EnemyCountBrainModule.Update
 - uid: Global.EnemyDestroyAction
   name: EnemyDestroyAction
   href: api/Global.EnemyDestroyAction.html
@@ -2870,38 +3114,6 @@ references:
   commentId: F:Global.EnemyDestroyAction.tags
   fullName: EnemyDestroyAction.tags
   nameWithType: EnemyDestroyAction.tags
-- uid: Global.EnemyGroup
-  name: EnemyGroup
-  href: api/Global.EnemyGroup.html
-  commentId: T:Global.EnemyGroup
-  fullName: EnemyGroup
-  nameWithType: EnemyGroup
-- uid: Global.EnemyGroup.Awake
-  name: Awake()
-  href: api/Global.EnemyGroup.html#Global_EnemyGroup_Awake
-  commentId: M:Global.EnemyGroup.Awake
-  fullName: EnemyGroup.Awake()
-  nameWithType: EnemyGroup.Awake()
-- uid: Global.EnemyGroup.Awake*
-  name: Awake
-  href: api/Global.EnemyGroup.html#Global_EnemyGroup_Awake_
-  commentId: Overload:Global.EnemyGroup.Awake
-  isSpec: "True"
-  fullName: EnemyGroup.Awake
-  nameWithType: EnemyGroup.Awake
-- uid: Global.EnemyGroup.Update
-  name: Update()
-  href: api/Global.EnemyGroup.html#Global_EnemyGroup_Update
-  commentId: M:Global.EnemyGroup.Update
-  fullName: EnemyGroup.Update()
-  nameWithType: EnemyGroup.Update()
-- uid: Global.EnemyGroup.Update*
-  name: Update
-  href: api/Global.EnemyGroup.html#Global_EnemyGroup_Update_
-  commentId: Overload:Global.EnemyGroup.Update
-  isSpec: "True"
-  fullName: EnemyGroup.Update
-  nameWithType: EnemyGroup.Update
 - uid: Global.EnemySpawnDefinition
   name: EnemySpawnDefinition
   href: api/Global.EnemySpawnDefinition.html
@@ -2938,6 +3150,50 @@ references:
   commentId: T:Global.EnergyBurstAttack
   fullName: EnergyBurstAttack
   nameWithType: EnergyBurstAttack
+- uid: Global.EnragedBrainModule
+  name: EnragedBrainModule
+  href: api/Global.EnragedBrainModule.html
+  commentId: T:Global.EnragedBrainModule
+  fullName: EnragedBrainModule
+  nameWithType: EnragedBrainModule
+- uid: Global.EnragedBrainModule.Awake
+  name: Awake()
+  href: api/Global.EnragedBrainModule.html#Global_EnragedBrainModule_Awake
+  commentId: M:Global.EnragedBrainModule.Awake
+  fullName: EnragedBrainModule.Awake()
+  nameWithType: EnragedBrainModule.Awake()
+- uid: Global.EnragedBrainModule.Awake*
+  name: Awake
+  href: api/Global.EnragedBrainModule.html#Global_EnragedBrainModule_Awake_
+  commentId: Overload:Global.EnragedBrainModule.Awake
+  isSpec: "True"
+  fullName: EnragedBrainModule.Awake
+  nameWithType: EnragedBrainModule.Awake
+- uid: Global.EnragedBrainModule.GetParameters
+  name: GetParameters()
+  href: api/Global.EnragedBrainModule.html#Global_EnragedBrainModule_GetParameters
+  commentId: M:Global.EnragedBrainModule.GetParameters
+  fullName: EnragedBrainModule.GetParameters()
+  nameWithType: EnragedBrainModule.GetParameters()
+- uid: Global.EnragedBrainModule.GetParameters*
+  name: GetParameters
+  href: api/Global.EnragedBrainModule.html#Global_EnragedBrainModule_GetParameters_
+  commentId: Overload:Global.EnragedBrainModule.GetParameters
+  isSpec: "True"
+  fullName: EnragedBrainModule.GetParameters
+  nameWithType: EnragedBrainModule.GetParameters
+- uid: Global.EnragedBrainModule.rageDamageMultiplier
+  name: rageDamageMultiplier
+  href: api/Global.EnragedBrainModule.html#Global_EnragedBrainModule_rageDamageMultiplier
+  commentId: F:Global.EnragedBrainModule.rageDamageMultiplier
+  fullName: EnragedBrainModule.rageDamageMultiplier
+  nameWithType: EnragedBrainModule.rageDamageMultiplier
+- uid: Global.EnragedBrainModule.rageHealthThreshold
+  name: rageHealthThreshold
+  href: api/Global.EnragedBrainModule.html#Global_EnragedBrainModule_rageHealthThreshold
+  commentId: F:Global.EnragedBrainModule.rageHealthThreshold
+  fullName: EnragedBrainModule.rageHealthThreshold
+  nameWithType: EnragedBrainModule.rageHealthThreshold
 - uid: Global.EntityManager
   name: EntityManager
   href: api/Global.EntityManager.html
@@ -3939,12 +4195,6 @@ references:
   commentId: T:Global.GetOverrideDirection
   fullName: GetOverrideDirection
   nameWithType: GetOverrideDirection
-- uid: Global.GoblinBrain
-  name: GoblinBrain
-  href: api/Global.GoblinBrain.html
-  commentId: T:Global.GoblinBrain
-  fullName: GoblinBrain
-  nameWithType: GoblinBrain
 - uid: Global.HealthBar
   name: HealthBar
   href: api/Global.HealthBar.html
@@ -3983,6 +4233,51 @@ references:
   isSpec: "True"
   fullName: HealthBar.Update
   nameWithType: HealthBar.Update
+- uid: Global.HealthBrainModule
+  name: HealthBrainModule
+  href: api/Global.HealthBrainModule.html
+  commentId: T:Global.HealthBrainModule
+  fullName: HealthBrainModule
+  nameWithType: HealthBrainModule
+- uid: Global.HealthBrainModule.Awake
+  name: Awake()
+  href: api/Global.HealthBrainModule.html#Global_HealthBrainModule_Awake
+  commentId: M:Global.HealthBrainModule.Awake
+  fullName: HealthBrainModule.Awake()
+  nameWithType: HealthBrainModule.Awake()
+- uid: Global.HealthBrainModule.Awake*
+  name: Awake
+  href: api/Global.HealthBrainModule.html#Global_HealthBrainModule_Awake_
+  commentId: Overload:Global.HealthBrainModule.Awake
+  isSpec: "True"
+  fullName: HealthBrainModule.Awake
+  nameWithType: HealthBrainModule.Awake
+- uid: Global.HealthBrainModule.GetParameters
+  name: GetParameters()
+  href: api/Global.HealthBrainModule.html#Global_HealthBrainModule_GetParameters
+  commentId: M:Global.HealthBrainModule.GetParameters
+  fullName: HealthBrainModule.GetParameters()
+  nameWithType: HealthBrainModule.GetParameters()
+- uid: Global.HealthBrainModule.GetParameters*
+  name: GetParameters
+  href: api/Global.HealthBrainModule.html#Global_HealthBrainModule_GetParameters_
+  commentId: Overload:Global.HealthBrainModule.GetParameters
+  isSpec: "True"
+  fullName: HealthBrainModule.GetParameters
+  nameWithType: HealthBrainModule.GetParameters
+- uid: Global.HealthBrainModule.Update
+  name: Update()
+  href: api/Global.HealthBrainModule.html#Global_HealthBrainModule_Update
+  commentId: M:Global.HealthBrainModule.Update
+  fullName: HealthBrainModule.Update()
+  nameWithType: HealthBrainModule.Update()
+- uid: Global.HealthBrainModule.Update*
+  name: Update
+  href: api/Global.HealthBrainModule.html#Global_HealthBrainModule_Update_
+  commentId: Overload:Global.HealthBrainModule.Update
+  isSpec: "True"
+  fullName: HealthBrainModule.Update
+  nameWithType: HealthBrainModule.Update
 - uid: Global.HealthSystem
   name: HealthSystem
   href: api/Global.HealthSystem.html
@@ -4959,6 +5254,38 @@ references:
   isSpec: "True"
   fullName: KnockbackBehaviour.Recovering
   nameWithType: KnockbackBehaviour.Recovering
+- uid: Global.KnockbackBrainModule
+  name: KnockbackBrainModule
+  href: api/Global.KnockbackBrainModule.html
+  commentId: T:Global.KnockbackBrainModule
+  fullName: KnockbackBrainModule
+  nameWithType: KnockbackBrainModule
+- uid: Global.KnockbackBrainModule.GetParameters
+  name: GetParameters()
+  href: api/Global.KnockbackBrainModule.html#Global_KnockbackBrainModule_GetParameters
+  commentId: M:Global.KnockbackBrainModule.GetParameters
+  fullName: KnockbackBrainModule.GetParameters()
+  nameWithType: KnockbackBrainModule.GetParameters()
+- uid: Global.KnockbackBrainModule.GetParameters*
+  name: GetParameters
+  href: api/Global.KnockbackBrainModule.html#Global_KnockbackBrainModule_GetParameters_
+  commentId: Overload:Global.KnockbackBrainModule.GetParameters
+  isSpec: "True"
+  fullName: KnockbackBrainModule.GetParameters
+  nameWithType: KnockbackBrainModule.GetParameters
+- uid: Global.KnockbackBrainModule.Start
+  name: Start()
+  href: api/Global.KnockbackBrainModule.html#Global_KnockbackBrainModule_Start
+  commentId: M:Global.KnockbackBrainModule.Start
+  fullName: KnockbackBrainModule.Start()
+  nameWithType: KnockbackBrainModule.Start()
+- uid: Global.KnockbackBrainModule.Start*
+  name: Start
+  href: api/Global.KnockbackBrainModule.html#Global_KnockbackBrainModule_Start_
+  commentId: Overload:Global.KnockbackBrainModule.Start
+  isSpec: "True"
+  fullName: KnockbackBrainModule.Start
+  nameWithType: KnockbackBrainModule.Start
 - uid: Global.KnockbackCallback
   name: KnockbackCallback
   href: api/Global.KnockbackCallback.html
@@ -5825,6 +6152,38 @@ references:
   isSpec: "True"
   fullName: PlayableBehaviourEditor.OnInspectorGUI
   nameWithType: PlayableBehaviourEditor.OnInspectorGUI
+- uid: Global.PlayerAttackBrainModule
+  name: PlayerAttackBrainModule
+  href: api/Global.PlayerAttackBrainModule.html
+  commentId: T:Global.PlayerAttackBrainModule
+  fullName: PlayerAttackBrainModule
+  nameWithType: PlayerAttackBrainModule
+- uid: Global.PlayerAttackBrainModule.Awake
+  name: Awake()
+  href: api/Global.PlayerAttackBrainModule.html#Global_PlayerAttackBrainModule_Awake
+  commentId: M:Global.PlayerAttackBrainModule.Awake
+  fullName: PlayerAttackBrainModule.Awake()
+  nameWithType: PlayerAttackBrainModule.Awake()
+- uid: Global.PlayerAttackBrainModule.Awake*
+  name: Awake
+  href: api/Global.PlayerAttackBrainModule.html#Global_PlayerAttackBrainModule_Awake_
+  commentId: Overload:Global.PlayerAttackBrainModule.Awake
+  isSpec: "True"
+  fullName: PlayerAttackBrainModule.Awake
+  nameWithType: PlayerAttackBrainModule.Awake
+- uid: Global.PlayerAttackBrainModule.GetParameters
+  name: GetParameters()
+  href: api/Global.PlayerAttackBrainModule.html#Global_PlayerAttackBrainModule_GetParameters
+  commentId: M:Global.PlayerAttackBrainModule.GetParameters
+  fullName: PlayerAttackBrainModule.GetParameters()
+  nameWithType: PlayerAttackBrainModule.GetParameters()
+- uid: Global.PlayerAttackBrainModule.GetParameters*
+  name: GetParameters
+  href: api/Global.PlayerAttackBrainModule.html#Global_PlayerAttackBrainModule_GetParameters_
+  commentId: Overload:Global.PlayerAttackBrainModule.GetParameters
+  isSpec: "True"
+  fullName: PlayerAttackBrainModule.GetParameters
+  nameWithType: PlayerAttackBrainModule.GetParameters
 - uid: Global.PlayerController
   name: PlayerController
   href: api/Global.PlayerController.html
@@ -5923,6 +6282,115 @@ references:
   commentId: F:Global.PlayerController.walkPriority
   fullName: PlayerController.walkPriority
   nameWithType: PlayerController.walkPriority
+- uid: Global.PlayerDistanceBrainModule
+  name: PlayerDistanceBrainModule
+  href: api/Global.PlayerDistanceBrainModule.html
+  commentId: T:Global.PlayerDistanceBrainModule
+  fullName: PlayerDistanceBrainModule
+  nameWithType: PlayerDistanceBrainModule
+- uid: Global.PlayerDistanceBrainModule.Awake
+  name: Awake()
+  href: api/Global.PlayerDistanceBrainModule.html#Global_PlayerDistanceBrainModule_Awake
+  commentId: M:Global.PlayerDistanceBrainModule.Awake
+  fullName: PlayerDistanceBrainModule.Awake()
+  nameWithType: PlayerDistanceBrainModule.Awake()
+- uid: Global.PlayerDistanceBrainModule.Awake*
+  name: Awake
+  href: api/Global.PlayerDistanceBrainModule.html#Global_PlayerDistanceBrainModule_Awake_
+  commentId: Overload:Global.PlayerDistanceBrainModule.Awake
+  isSpec: "True"
+  fullName: PlayerDistanceBrainModule.Awake
+  nameWithType: PlayerDistanceBrainModule.Awake
+- uid: Global.PlayerDistanceBrainModule.GetParameters
+  name: GetParameters()
+  href: api/Global.PlayerDistanceBrainModule.html#Global_PlayerDistanceBrainModule_GetParameters
+  commentId: M:Global.PlayerDistanceBrainModule.GetParameters
+  fullName: PlayerDistanceBrainModule.GetParameters()
+  nameWithType: PlayerDistanceBrainModule.GetParameters()
+- uid: Global.PlayerDistanceBrainModule.GetParameters*
+  name: GetParameters
+  href: api/Global.PlayerDistanceBrainModule.html#Global_PlayerDistanceBrainModule_GetParameters_
+  commentId: Overload:Global.PlayerDistanceBrainModule.GetParameters
+  isSpec: "True"
+  fullName: PlayerDistanceBrainModule.GetParameters
+  nameWithType: PlayerDistanceBrainModule.GetParameters
+- uid: Global.PlayerDistanceBrainModule.Update
+  name: Update()
+  href: api/Global.PlayerDistanceBrainModule.html#Global_PlayerDistanceBrainModule_Update
+  commentId: M:Global.PlayerDistanceBrainModule.Update
+  fullName: PlayerDistanceBrainModule.Update()
+  nameWithType: PlayerDistanceBrainModule.Update()
+- uid: Global.PlayerDistanceBrainModule.Update*
+  name: Update
+  href: api/Global.PlayerDistanceBrainModule.html#Global_PlayerDistanceBrainModule_Update_
+  commentId: Overload:Global.PlayerDistanceBrainModule.Update
+  isSpec: "True"
+  fullName: PlayerDistanceBrainModule.Update
+  nameWithType: PlayerDistanceBrainModule.Update
+- uid: Global.PlayerKnockbackBrainModule
+  name: PlayerKnockbackBrainModule
+  href: api/Global.PlayerKnockbackBrainModule.html
+  commentId: T:Global.PlayerKnockbackBrainModule
+  fullName: PlayerKnockbackBrainModule
+  nameWithType: PlayerKnockbackBrainModule
+- uid: Global.PlayerKnockbackBrainModule.Awake
+  name: Awake()
+  href: api/Global.PlayerKnockbackBrainModule.html#Global_PlayerKnockbackBrainModule_Awake
+  commentId: M:Global.PlayerKnockbackBrainModule.Awake
+  fullName: PlayerKnockbackBrainModule.Awake()
+  nameWithType: PlayerKnockbackBrainModule.Awake()
+- uid: Global.PlayerKnockbackBrainModule.Awake*
+  name: Awake
+  href: api/Global.PlayerKnockbackBrainModule.html#Global_PlayerKnockbackBrainModule_Awake_
+  commentId: Overload:Global.PlayerKnockbackBrainModule.Awake
+  isSpec: "True"
+  fullName: PlayerKnockbackBrainModule.Awake
+  nameWithType: PlayerKnockbackBrainModule.Awake
+- uid: Global.PlayerKnockbackBrainModule.GetParameters
+  name: GetParameters()
+  href: api/Global.PlayerKnockbackBrainModule.html#Global_PlayerKnockbackBrainModule_GetParameters
+  commentId: M:Global.PlayerKnockbackBrainModule.GetParameters
+  fullName: PlayerKnockbackBrainModule.GetParameters()
+  nameWithType: PlayerKnockbackBrainModule.GetParameters()
+- uid: Global.PlayerKnockbackBrainModule.GetParameters*
+  name: GetParameters
+  href: api/Global.PlayerKnockbackBrainModule.html#Global_PlayerKnockbackBrainModule_GetParameters_
+  commentId: Overload:Global.PlayerKnockbackBrainModule.GetParameters
+  isSpec: "True"
+  fullName: PlayerKnockbackBrainModule.GetParameters
+  nameWithType: PlayerKnockbackBrainModule.GetParameters
+- uid: Global.PlayerStunBrainModule
+  name: PlayerStunBrainModule
+  href: api/Global.PlayerStunBrainModule.html
+  commentId: T:Global.PlayerStunBrainModule
+  fullName: PlayerStunBrainModule
+  nameWithType: PlayerStunBrainModule
+- uid: Global.PlayerStunBrainModule.Awake
+  name: Awake()
+  href: api/Global.PlayerStunBrainModule.html#Global_PlayerStunBrainModule_Awake
+  commentId: M:Global.PlayerStunBrainModule.Awake
+  fullName: PlayerStunBrainModule.Awake()
+  nameWithType: PlayerStunBrainModule.Awake()
+- uid: Global.PlayerStunBrainModule.Awake*
+  name: Awake
+  href: api/Global.PlayerStunBrainModule.html#Global_PlayerStunBrainModule_Awake_
+  commentId: Overload:Global.PlayerStunBrainModule.Awake
+  isSpec: "True"
+  fullName: PlayerStunBrainModule.Awake
+  nameWithType: PlayerStunBrainModule.Awake
+- uid: Global.PlayerStunBrainModule.GetParameters
+  name: GetParameters()
+  href: api/Global.PlayerStunBrainModule.html#Global_PlayerStunBrainModule_GetParameters
+  commentId: M:Global.PlayerStunBrainModule.GetParameters
+  fullName: PlayerStunBrainModule.GetParameters()
+  nameWithType: PlayerStunBrainModule.GetParameters()
+- uid: Global.PlayerStunBrainModule.GetParameters*
+  name: GetParameters
+  href: api/Global.PlayerStunBrainModule.html#Global_PlayerStunBrainModule_GetParameters_
+  commentId: Overload:Global.PlayerStunBrainModule.GetParameters
+  isSpec: "True"
+  fullName: PlayerStunBrainModule.GetParameters
+  nameWithType: PlayerStunBrainModule.GetParameters
 - uid: Global.PlayEvents
   name: PlayEvents
   href: api/Global.PlayEvents.html
@@ -7434,6 +7902,38 @@ references:
   commentId: F:Global.StunBehaviour.stunFrames
   fullName: StunBehaviour.stunFrames
   nameWithType: StunBehaviour.stunFrames
+- uid: Global.StunBrainModule
+  name: StunBrainModule
+  href: api/Global.StunBrainModule.html
+  commentId: T:Global.StunBrainModule
+  fullName: StunBrainModule
+  nameWithType: StunBrainModule
+- uid: Global.StunBrainModule.GetParameters
+  name: GetParameters()
+  href: api/Global.StunBrainModule.html#Global_StunBrainModule_GetParameters
+  commentId: M:Global.StunBrainModule.GetParameters
+  fullName: StunBrainModule.GetParameters()
+  nameWithType: StunBrainModule.GetParameters()
+- uid: Global.StunBrainModule.GetParameters*
+  name: GetParameters
+  href: api/Global.StunBrainModule.html#Global_StunBrainModule_GetParameters_
+  commentId: Overload:Global.StunBrainModule.GetParameters
+  isSpec: "True"
+  fullName: StunBrainModule.GetParameters
+  nameWithType: StunBrainModule.GetParameters
+- uid: Global.StunBrainModule.Start
+  name: Start()
+  href: api/Global.StunBrainModule.html#Global_StunBrainModule_Start
+  commentId: M:Global.StunBrainModule.Start
+  fullName: StunBrainModule.Start()
+  nameWithType: StunBrainModule.Start()
+- uid: Global.StunBrainModule.Start*
+  name: Start
+  href: api/Global.StunBrainModule.html#Global_StunBrainModule_Start_
+  commentId: Overload:Global.StunBrainModule.Start
+  isSpec: "True"
+  fullName: StunBrainModule.Start
+  nameWithType: StunBrainModule.Start
 - uid: Global.StunCallback
   name: StunCallback
   href: api/Global.StunCallback.html
@@ -7503,6 +8003,38 @@ references:
   isSpec: "True"
   fullName: SuperArmorBar.Update
   nameWithType: SuperArmorBar.Update
+- uid: Global.SuperArmorBrainModule
+  name: SuperArmorBrainModule
+  href: api/Global.SuperArmorBrainModule.html
+  commentId: T:Global.SuperArmorBrainModule
+  fullName: SuperArmorBrainModule
+  nameWithType: SuperArmorBrainModule
+- uid: Global.SuperArmorBrainModule.Awake
+  name: Awake()
+  href: api/Global.SuperArmorBrainModule.html#Global_SuperArmorBrainModule_Awake
+  commentId: M:Global.SuperArmorBrainModule.Awake
+  fullName: SuperArmorBrainModule.Awake()
+  nameWithType: SuperArmorBrainModule.Awake()
+- uid: Global.SuperArmorBrainModule.Awake*
+  name: Awake
+  href: api/Global.SuperArmorBrainModule.html#Global_SuperArmorBrainModule_Awake_
+  commentId: Overload:Global.SuperArmorBrainModule.Awake
+  isSpec: "True"
+  fullName: SuperArmorBrainModule.Awake
+  nameWithType: SuperArmorBrainModule.Awake
+- uid: Global.SuperArmorBrainModule.GetParameters
+  name: GetParameters()
+  href: api/Global.SuperArmorBrainModule.html#Global_SuperArmorBrainModule_GetParameters
+  commentId: M:Global.SuperArmorBrainModule.GetParameters
+  fullName: SuperArmorBrainModule.GetParameters()
+  nameWithType: SuperArmorBrainModule.GetParameters()
+- uid: Global.SuperArmorBrainModule.GetParameters*
+  name: GetParameters
+  href: api/Global.SuperArmorBrainModule.html#Global_SuperArmorBrainModule_GetParameters_
+  commentId: Overload:Global.SuperArmorBrainModule.GetParameters
+  isSpec: "True"
+  fullName: SuperArmorBrainModule.GetParameters
+  nameWithType: SuperArmorBrainModule.GetParameters
 - uid: Global.SuperArmorEffect
   name: SuperArmorEffect
   href: api/Global.SuperArmorEffect.html

@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class GoblinBrain
+    <title>Class PlayerAttackBrainModule
    | Heroes of the Shrine </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class GoblinBrain
+    <meta name="title" content="Class PlayerAttackBrainModule
    | Heroes of the Shrine ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,10 +78,10 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Global.GoblinBrain">
+            <article class="content wrap" id="_content" data-uid="Global.PlayerAttackBrainModule">
   
   
-  <h1 id="Global_GoblinBrain" data-uid="Global.GoblinBrain" class="text-break">Class GoblinBrain
+  <h1 id="Global_PlayerAttackBrainModule" data-uid="Global.PlayerAttackBrainModule" class="text-break">Class PlayerAttackBrainModule
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
@@ -90,36 +90,13 @@
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
     <div class="level2"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-    <div class="level3"><a class="xref" href="Global.CharacterController.html">CharacterController</a></div>
-    <div class="level4"><a class="xref" href="Global.EnemyBrain.html">EnemyBrain</a></div>
-    <div class="level5"><span class="xref">GoblinBrain</span></div>
-      <div class="level6"><a class="xref" href="Global.BossBrain.html">BossBrain</a></div>
+    <div class="level3"><a class="xref" href="Global.BrainModule.html">BrainModule</a></div>
+    <div class="level4"><span class="xref">PlayerAttackBrainModule</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Global.EnemyBrain.html#Global_EnemyBrain_rageHealthThreshold">EnemyBrain.rageHealthThreshold</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.EnemyBrain.html#Global_EnemyBrain_rageDamageMultiplier">EnemyBrain.rageDamageMultiplier</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.EnemyBrain.html#Global_EnemyBrain_distanceAnimatorParameters">EnemyBrain.distanceAnimatorParameters</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.EnemyBrain.html#Global_EnemyBrain_stateMachine">EnemyBrain.stateMachine</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.EnemyBrain.html#Global_EnemyBrain_Alarm">EnemyBrain.Alarm()</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.EnemyBrain.html#Global_EnemyBrain_Awake">EnemyBrain.Awake()</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.EnemyBrain.html#Global_EnemyBrain_Start">EnemyBrain.Start()</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.EnemyBrain.html#Global_EnemyBrain_Update">EnemyBrain.Update()</a>
+      <a class="xref" href="Global.BrainModule.html#Global_BrainModule_StateMachine">BrainModule.StateMachine</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
@@ -166,13 +143,57 @@
     <div>
       <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartInterval_Action_System_Single_">BaseComponent.StartInterval(Action, Single)</a>
     </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Update">BaseComponent.Update()</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Global_GoblinBrain_syntax">Syntax</h5>
+  <h5 id="Global_PlayerAttackBrainModule_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class GoblinBrain : EnemyBrain</code></pre>
+    <pre><code class="lang-csharp hljs">public class PlayerAttackBrainModule : BrainModule</code></pre>
   </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Global_PlayerAttackBrainModule_Awake_" data-uid="Global.PlayerAttackBrainModule.Awake*"></a>
+  <h4 id="Global_PlayerAttackBrainModule_Awake" data-uid="Global.PlayerAttackBrainModule.Awake">Awake()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Awake()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.BrainModule.html#Global_BrainModule_Awake">BrainModule.Awake()</a></div>
+  
+  
+  <a id="Global_PlayerAttackBrainModule_GetParameters_" data-uid="Global.PlayerAttackBrainModule.GetParameters*"></a>
+  <h4 id="Global_PlayerAttackBrainModule_GetParameters" data-uid="Global.PlayerAttackBrainModule.GetParameters">GetParameters()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string[] GetParameters()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.BrainModule.html#Global_BrainModule_GetParameters">BrainModule.GetParameters()</a></div>
 </article>
           </div>
           

@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class CharacterController
+    <title>Class DistancesBrainModule
    | Heroes of the Shrine </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class CharacterController
+    <meta name="title" content="Class DistancesBrainModule
    | Heroes of the Shrine ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,10 +78,10 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Global.CharacterController">
+            <article class="content wrap" id="_content" data-uid="Global.DistancesBrainModule">
   
   
-  <h1 id="Global_CharacterController" data-uid="Global.CharacterController" class="text-break">Class CharacterController
+  <h1 id="Global_DistancesBrainModule" data-uid="Global.DistancesBrainModule" class="text-break">Class DistancesBrainModule
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
@@ -90,12 +90,17 @@
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
     <div class="level2"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-    <div class="level3"><span class="xref">CharacterController</span></div>
-      <div class="level4"><a class="xref" href="Global.BrainCore.html">BrainCore</a></div>
-      <div class="level4"><a class="xref" href="Global.PlayerController.html">PlayerController</a></div>
+    <div class="level3"><a class="xref" href="Global.BrainModule.html">BrainModule</a></div>
+    <div class="level4"><span class="xref">DistancesBrainModule</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Global.BrainModule.html#Global_BrainModule_StateMachine">BrainModule.StateMachine</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BrainModule.html#Global_BrainModule_Awake">BrainModule.Awake()</a>
+    </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
     </div>
@@ -110,9 +115,6 @@
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Enabled">CharacterBehaviour.Enabled</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Awake">CharacterBehaviour.Awake()</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_EnableBehaviours_Type___">CharacterBehaviour.EnableBehaviours(Type[])</a>
@@ -144,16 +146,80 @@
     <div>
       <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_StartInterval_Action_System_Single_">BaseComponent.StartInterval(Action, Single)</a>
     </div>
-    <div>
-      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Update">BaseComponent.Update()</a>
-    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Global_CharacterController_syntax">Syntax</h5>
+  <h5 id="Global_DistancesBrainModule_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CharacterController : CharacterBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class DistancesBrainModule : BrainModule</code></pre>
   </div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="Global_DistancesBrainModule_distanceAnimatorParameters" data-uid="Global.DistancesBrainModule.distanceAnimatorParameters">distanceAnimatorParameters</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;DistancesBrainModule.DistanceParameterEntry&gt; distanceAnimatorParameters</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="Global.DistancesBrainModule.DistanceParameterEntry.html">DistancesBrainModule.DistanceParameterEntry</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Global_DistancesBrainModule_GetParameters_" data-uid="Global.DistancesBrainModule.GetParameters*"></a>
+  <h4 id="Global_DistancesBrainModule_GetParameters" data-uid="Global.DistancesBrainModule.GetParameters">GetParameters()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string[] GetParameters()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.BrainModule.html#Global_BrainModule_GetParameters">BrainModule.GetParameters()</a></div>
+  
+  
+  <a id="Global_DistancesBrainModule_Update_" data-uid="Global.DistancesBrainModule.Update*"></a>
+  <h4 id="Global_DistancesBrainModule_Update" data-uid="Global.DistancesBrainModule.Update">Update()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Update()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Update">BaseComponent.Update()</a></div>
 </article>
           </div>
           
