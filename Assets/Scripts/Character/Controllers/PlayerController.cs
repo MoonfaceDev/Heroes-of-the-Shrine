@@ -84,7 +84,7 @@ public class PlayerController : CharacterController
     protected override void Update()
     {
         base.Update();
-        
+
         // reduce duration of possessed effect
         if (possessedEffectTimeReducing.Any(button => Input.GetButtonDown(button.ToString())))
         {
@@ -133,12 +133,12 @@ public class PlayerController : CharacterController
 
     private void ExecuteWalk()
     {
-        var horizontal = Direction(Input.GetAxisRaw("Horizontal"));
-        var vertical = Direction(Input.GetAxisRaw("Vertical"));
+        var horizontal = Input.GetAxisRaw("Horizontal");
+        var vertical = Input.GetAxisRaw("Vertical");
         if (!walkBehaviour) return;
         if (horizontal != 0 || vertical != 0)
         {
-            walkBehaviour.Play(new WalkCommand(horizontal, vertical));
+            walkBehaviour.Play(new WalkCommand(new Vector2(horizontal, vertical)));
         }
         else
         {
@@ -156,19 +156,19 @@ public class PlayerController : CharacterController
 
     private void ExecuteSlide()
     {
-        var horizontal = Direction(Input.GetAxisRaw("Horizontal"));
+        var horizontal = Input.GetAxisRaw("Horizontal");
         if (slideBehaviour && Input.GetButtonDown(Button.Escape.ToString())) //pressed slide
         {
-            ExecutePlayable(slideBehaviour, new SlideCommand(horizontal), slidePriority);
+            ExecutePlayable(slideBehaviour, new SlideCommand(Mathf.RoundToInt(Mathf.Sign(horizontal))), slidePriority);
         }
     }
 
     private void ExecuteDodge()
     {
-        var vertical = Direction(Input.GetAxisRaw("Vertical"));
+        var vertical = Input.GetAxisRaw("Vertical");
         if (dodgeBehaviour && Input.GetButtonDown(Button.Escape.ToString())) //pressed dodge
         {
-            ExecutePlayable(dodgeBehaviour, new DodgeCommand(vertical), dodgePriority);
+            ExecutePlayable(dodgeBehaviour, new DodgeCommand(Mathf.RoundToInt(Mathf.Sign(vertical))), dodgePriority);
         }
     }
 
@@ -179,6 +179,7 @@ public class PlayerController : CharacterController
         {
             return;
         }
+
         if (!TryExecuteAttack(downButtons))
         {
             bufferedActions.Add(new BufferedAction(
@@ -237,20 +238,5 @@ public class PlayerController : CharacterController
 
         behaviour.Play(command);
         return true;
-    }
-
-    private static int Direction(float number)
-    {
-        if (number > Mathf.Epsilon)
-        {
-            return 1;
-        }
-
-        if (number < -Mathf.Epsilon)
-        {
-            return -1;
-        }
-
-        return 0;
     }
 }

@@ -1,7 +1,15 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Enemies brain is designed with modular pieces called brain modules.
+/// BrainCore class managing state machine and all brain modules.
+/// Attach only the required brain modules for your state machine logic.
+/// </summary>
 public class BrainCore : CharacterController
 {
+    /// <value>
+    /// Animator component that contains the state machine logic
+    /// </value>
     public Animator StateMachine { get; private set; }
 
     public override void Awake()

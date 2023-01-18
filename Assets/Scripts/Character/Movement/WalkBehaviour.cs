@@ -2,15 +2,18 @@ using UnityEngine;
 
 public class WalkCommand : ICommand
 {
-    public readonly float xAxis;
-    public readonly float zAxis;
+    public readonly Vector2 direction;
     public readonly bool fitLookDirection;
 
-    public WalkCommand(float xAxis, float zAxis, bool fitLookDirection = true)
+    public WalkCommand(Vector2 direction, bool fitLookDirection = true)
     {
-        this.xAxis = xAxis;
-        this.zAxis = zAxis;
+        this.direction = direction.normalized;
         this.fitLookDirection = fitLookDirection;
+    }
+
+    public WalkCommand(Vector3 direction, bool fitLookDirection = true)
+        : this(MathUtils.ToPlane(direction), fitLookDirection)
+    {
     }
 }
 
@@ -45,7 +48,7 @@ public class WalkBehaviour : BaseMovementBehaviour<WalkCommand>
 
     public override bool CanPlay(WalkCommand command)
     {
-        return base.CanPlay(command) && new Vector2(command.xAxis, command.zAxis) != Vector2.zero;
+        return base.CanPlay(command) && command.direction != Vector2.zero;
     }
 
     protected override void DoPlay(WalkCommand command)
@@ -53,13 +56,13 @@ public class WalkBehaviour : BaseMovementBehaviour<WalkCommand>
         Walk = true;
 
         // move speed
-        MovableEntity.velocity.x = command.xAxis * speed;
-        MovableEntity.velocity.z = command.zAxis * speed;
+        MovableEntity.velocity.x = command.direction.x * speed;
+        MovableEntity.velocity.z = command.direction.y * speed;
 
         // look direction
-        if (command.xAxis != 0 & command.fitLookDirection)
+        if (command.direction.x != 0 & command.fitLookDirection)
         {
-            MovableEntity.rotation = Mathf.RoundToInt(Mathf.Sign(command.xAxis));
+            MovableEntity.rotation = Mathf.RoundToInt(Mathf.Sign(command.direction.x));
         }
     }
 

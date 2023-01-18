@@ -49,7 +49,7 @@ public class EscapeBehaviour : BaseMovementBehaviour<EscapeCommand>
             var distance = MovableEntity.WorldPosition - command.target.WorldPosition;
             distance.y = 0;
             var direction = distance.normalized;
-            walkBehaviour.Play(new WalkCommand(direction.x, direction.z, command.fitLookDirection));
+            walkBehaviour.Play(new WalkCommand(direction, command.fitLookDirection));
             MovableEntity.rotation = -Mathf.RoundToInt(Mathf.Sign(direction.x));
         });
     }

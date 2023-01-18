@@ -56,7 +56,7 @@ public class ArcBehaviour : BaseMovementBehaviour<ArcCommand>
             newPosition.y = walkBehaviour.MovableEntity.WorldPosition.y;
             walkBehaviour.MovableEntity.WorldPosition = newPosition;
             var direction = clockwise * Vector3.Cross(distance, Vector3.up).normalized;
-            walkBehaviour.Play(new WalkCommand(direction.x, direction.z, false));
+            walkBehaviour.Play(new WalkCommand(direction, false));
             if ((command.target.WorldPosition - walkBehaviour.MovableEntity.WorldPosition).x != 0)
             {
                 walkBehaviour.MovableEntity.rotation = Mathf.RoundToInt(

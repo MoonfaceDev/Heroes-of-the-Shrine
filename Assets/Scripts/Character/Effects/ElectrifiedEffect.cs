@@ -23,7 +23,7 @@ public class ElectrifiedEffect : BaseEffect<ElectrifiedEffectCommand>
     private float currentSpeedMultiplier;
     private string stopListener;
 
-    private static readonly Type[] DisabledBehaviours =
+    private static readonly Type[] BehavioursToDisable =
         { typeof(RunBehaviour), typeof(SlideBehaviour), typeof(DodgeBehaviour), typeof(JumpBehaviour) };
 
     public override void Awake()
@@ -44,7 +44,7 @@ public class ElectrifiedEffect : BaseEffect<ElectrifiedEffectCommand>
             walkBehaviour.speed *= currentSpeedMultiplier;
         }
 
-        DisableBehaviours(DisabledBehaviours);
+        DisableBehaviours(BehavioursToDisable);
         particles.Play();
 
         startTime = Time.time;
@@ -61,7 +61,7 @@ public class ElectrifiedEffect : BaseEffect<ElectrifiedEffectCommand>
             walkBehaviour.speed /= currentSpeedMultiplier;
         }
 
-        EnableBehaviours(DisabledBehaviours);
+        EnableBehaviours(BehavioursToDisable);
         particles.Stop(true, stopBehavior: ParticleSystemStopBehavior.StopEmittingAndClear);
 
         currentDuration = 0;

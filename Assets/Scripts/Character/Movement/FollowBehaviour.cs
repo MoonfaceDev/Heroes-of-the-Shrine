@@ -43,7 +43,7 @@ public class FollowBehaviour : BaseMovementBehaviour<FollowCommand>
         followListener = Register(() =>
         {
             var direction = GetDirection(command.target, command.getExcluded?.Invoke(), command.getOverrideDirection);
-            walkBehaviour.Play(new WalkCommand(direction.x, direction.z, false));
+            walkBehaviour.Play(new WalkCommand(direction, false));
             MovableEntity.rotation =
                 Mathf.RoundToInt(Mathf.Sign(command.target.WorldPosition.x - MovableEntity.WorldPosition.x));
         });
