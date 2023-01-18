@@ -151,13 +151,20 @@ GameObject:
   - component: {fileID: 63080259}
   - component: {fileID: 63080257}
   - component: {fileID: 63080260}
-  - component: {fileID: 63080266}
-  - component: {fileID: 63080263}
   - component: {fileID: 63080237}
   - component: {fileID: 63080264}
   - component: {fileID: 63080265}
   - component: {fileID: 63080267}
   - component: {fileID: 63080268}
+  - component: {fileID: 63080271}
+  - component: {fileID: 63080270}
+  - component: {fileID: 63080278}
+  - component: {fileID: 63080277}
+  - component: {fileID: 63080276}
+  - component: {fileID: 63080275}
+  - component: {fileID: 63080274}
+  - component: {fileID: 63080273}
+  - component: {fileID: 63080272}
   m_Layer: 0
   m_Name: CaveGoblinPossesed
   m_TagString: Untagged
@@ -820,18 +827,6 @@ MonoBehaviour:
           tags: 
         excludedHittableTags:
           tags: 
---- !u!114 &63080263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63080233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 595f0ae187581934e9415feea720a763, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &63080264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -862,23 +857,6 @@ MonoBehaviour:
   prefab: {fileID: 1914151399083900665, guid: 2bb48d148375a9f468e626701b74a371, type: 3}
   particlePosition: {x: 0, y: 0.8, z: 0}
   attachToCharacter: 0
---- !u!114 &63080266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63080233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8813735e6ec04e3aa5d2b23ce651ceba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rageHealthThreshold: 150
-  rageDamageMultiplier: 2
-  distanceAnimatorParameters:
-  - parameterName: Center
-    groundPoint: {x: 0, y: -3}
 --- !u!114 &63080267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -933,6 +911,119 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   cooldown: 0
+--- !u!114 &63080270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63080233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f2ac41db7ef4cadb26c87029e19512d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &63080271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63080233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0d22ef835e24bf0a93458ce083bd095, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &63080272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63080233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 535e79150a8345088952eb6446dda4be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceAnimatorParameters:
+  - parameterName: Center
+    groundPoint: {x: 0, y: -3}
+--- !u!114 &63080273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63080233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b573c519d5fe49e9bbfb2a4aea241853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &63080274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63080233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa88959886a4739bff664fa2ef4f236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &63080275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63080233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1994725c2c64433396b2e015e1c85827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &63080276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63080233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10938dc2a0d544269864e7bac15004a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &63080277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63080233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f3f931a600a447daabc789112e40fbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &63080278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63080233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a7f25812f0460eb2dbe11f6e930feb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rageHealthThreshold: 150
+  rageDamageMultiplier: 2
 --- !u!1 &154036043
 GameObject:
   m_ObjectHideFlags: 0
@@ -2364,9 +2455,9 @@ MonoBehaviour:
   restEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 63080266}
-        m_TargetAssemblyTypeName: EnemyBrain, Assembly-CSharp
-        m_MethodName: Alarm
+      - m_Target: {fileID: 63080270}
+        m_TargetAssemblyTypeName: AlarmBrainModule, Assembly-CSharp
+        m_MethodName: SetAlarm
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4341,9 +4432,9 @@ MonoBehaviour:
   postCutsceneEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 63080266}
-        m_TargetAssemblyTypeName: EnemyBrain, Assembly-CSharp
-        m_MethodName: Alarm
+      - m_Target: {fileID: 63080270}
+        m_TargetAssemblyTypeName: AlarmBrainModule, Assembly-CSharp
+        m_MethodName: SetAlarm
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

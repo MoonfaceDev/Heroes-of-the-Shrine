@@ -32,7 +32,7 @@ public class SuperArmorEffect : BaseEffect<SuperArmorEffectCommand>
         GetComponent<HittableBehaviour>().damageMultiplier *= damageMultiplier;
         DisableBehaviours(typeof(StunBehaviour));
         StopBehaviours(typeof(StunBehaviour));
-        EnableBehaviours(typeof(EnemyBrain));
+        EnableBehaviours(typeof(BrainCore));
     }
 
     public void HitArmor(float damage)
@@ -59,7 +59,7 @@ public class SuperArmorEffect : BaseEffect<SuperArmorEffectCommand>
         GetComponent<HittableBehaviour>().damageMultiplier /= damageMultiplier;
         EnableBehaviours(typeof(StunBehaviour));
         StopBehaviours(typeof(IMovementBehaviour), typeof(BaseAttack));
-        DisableBehaviours(typeof(EnemyBrain));
+        DisableBehaviours(typeof(BrainCore));
         MovableEntity.velocity = Vector3.zero;
     }
 

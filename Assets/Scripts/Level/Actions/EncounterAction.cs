@@ -78,7 +78,7 @@ public class EncounterAction : BaseComponent
             }
             else
             {
-                StartTimeout(() => enemy.GetComponent<EnemyBrain>().Alarm(), timeToAlarm);
+                StartTimeout(() => enemy.GetComponent<AlarmBrainModule>().SetAlarm(), timeToAlarm);
             }
         }
 
@@ -86,7 +86,7 @@ public class EncounterAction : BaseComponent
         {
             foreach (var enemy in waveEnemies.Where(enemy => enemy))
             {
-                enemy.GetComponent<EnemyBrain>().Alarm();
+                enemy.GetComponent<AlarmBrainModule>().SetAlarm();
             }
         }, timeToAlarm);
 

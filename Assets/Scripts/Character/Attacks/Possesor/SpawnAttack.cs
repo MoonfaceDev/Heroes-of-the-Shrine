@@ -44,7 +44,7 @@ public class SpawnAttack : BaseAttack
             var newEnemy = Instantiate(enemyPrefab, GameEntity.ScreenCoordinates(selectedPoints[i]),
                 Quaternion.identity);
             newEnemy.GetComponent<MovableEntity>().WorldPosition = selectedPoints[i];
-            newEnemy.GetComponent<EnemyBrain>().Alarm();
+            newEnemy.GetComponent<AlarmBrainModule>().SetAlarm();
         }
     }
 

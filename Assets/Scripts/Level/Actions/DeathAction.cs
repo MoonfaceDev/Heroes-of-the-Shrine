@@ -9,9 +9,9 @@ public class DeathAction : BaseComponent
 
     public void Invoke()
     {
-        foreach (var enemyBrain in FindObjectsOfType<EnemyBrain>())
+        foreach (var enemy in EntityManager.Instance.GetEntities(Tag.Enemy))
         {
-            Destroy(enemyBrain.gameObject);
+            Destroy(enemy.gameObject);
         }
 
         foreach (var encounter in FindObjectsOfType<EncounterAction>())

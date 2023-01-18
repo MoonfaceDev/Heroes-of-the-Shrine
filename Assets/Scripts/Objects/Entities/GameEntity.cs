@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 [ExecuteInEditMode]
+[DisallowMultipleComponent]
 public class GameEntity : BaseComponent
 {
     public GameEntity parent;
