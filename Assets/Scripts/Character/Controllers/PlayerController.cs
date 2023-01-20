@@ -11,42 +11,22 @@ public enum Button
     Defense
 }
 
-public class BufferedAction
-{
-    private readonly Func<bool> execute;
-    private readonly float expirationTime;
-
-    public BufferedAction(Func<bool> execute, int priority, float expirationTime)
-    {
-        this.execute = execute;
-        Priority = priority;
-        this.expirationTime = expirationTime;
-    }
-
-    public int Priority { get; }
-
-    public bool IsExpired()
-    {
-        return Time.time > expirationTime;
-    }
-
-    public bool TryExecute()
-    {
-        return execute();
-    }
-}
-
-[Serializable]
-public class AttackProperty
-{
-    public BaseAttack attack;
-    public Button button;
-}
-
+/// <summary>
+/// Character controller designed for a human player, that plays behaviours based on user input (keyboard, mouse, controller)
+/// </summary>
 public class PlayerController : CharacterController
 {
+    [Serializable]
+    public class AttackProperty
+    {
+        public BaseAttack attack;
+        public Button button;
+    }
+
     public AttackProperty[] attacks;
+
     public RuntimeAnimatorController[] animatorControllers;
+
     [HideInInspector] public int activeSuitIndex;
 
     [Header("Action buffering")] public float bufferingTime;
@@ -67,7 +47,6 @@ public class PlayerController : CharacterController
     private JumpBehaviour jumpBehaviour;
     private SlideBehaviour slideBehaviour;
     private DodgeBehaviour dodgeBehaviour;
-
     private List<BufferedAction> bufferedActions;
 
     public override void Awake()
@@ -85,49 +64,36 @@ public class PlayerController : CharacterController
     {
         base.Update();
 
-        // reduce duration of possessed effect
-        if (possessedEffectTimeReducing.Any(button => Input.GetButtonDown(button.ToString())))
-        {
-            var possessedEffect = GetComponent<PossessedEffect>();
-            if (possessedEffect)
-            {
-                possessedEffect.ReduceDuration(possessedEffectDurationReduction);
-            }
-        }
-
-        // play the buffered action with highest priority
+        ReducePossessedEffectDuration();
         ExecuteBufferedActions();
+        ExecuteSuits();
 
-        //walking
         ExecuteWalk();
-        //jumping
         ExecuteJump();
-        //sliding
         ExecuteSlide();
-        //dodging
         ExecuteDodge();
-        //attacks
         ExecuteAttack();
+    }
 
-        //change suits
-        if (!Input.GetKeyDown(KeyCode.Alpha7)) return;
-        activeSuitIndex = 1 - activeSuitIndex;
-        Animator.runtimeAnimatorController = animatorControllers[activeSuitIndex];
+    private void ReducePossessedEffectDuration()
+    {
+        if (!possessedEffectTimeReducing.Any(button => Input.GetButtonDown(button.ToString()))) return;
+        var possessedEffect = GetComponent<PossessedEffect>();
+        if (possessedEffect)
+        {
+            possessedEffect.ReduceDuration(possessedEffectDurationReduction);
+        }
     }
 
     private void ExecuteBufferedActions()
     {
         // clear expired buffered actions
         bufferedActions = bufferedActions.FindAll(action => !action.IsExpired());
-        if (bufferedActions.Count == 0) return;
         foreach (var action in bufferedActions.OrderByDescending(action => action.Priority))
         {
-            var isSuccess = action.TryExecute();
-            if (isSuccess)
-            {
-                bufferedActions.Clear();
-                return;
-            }
+            if (!action.TryExecute()) continue;
+            bufferedActions.Clear();
+            return;
         }
     }
 
@@ -188,6 +154,13 @@ public class PlayerController : CharacterController
         }
     }
 
+    private void ExecuteSuits()
+    {
+        if (!Input.GetKeyDown(KeyCode.Alpha7)) return;
+        activeSuitIndex = 1 - activeSuitIndex;
+        Animator.runtimeAnimatorController = animatorControllers[activeSuitIndex];
+    }
+
     private static Button[] GetDownButtons()
     {
         return Enum.GetValues(typeof(Button)).Cast<Button>().Where(button => Input.GetButtonDown(button.ToString()))
@@ -238,5 +211,30 @@ public class PlayerController : CharacterController
 
         behaviour.Play(command);
         return true;
+    }
+
+    private class BufferedAction
+    {
+        private readonly Func<bool> execute;
+        private readonly float expirationTime;
+
+        public BufferedAction(Func<bool> execute, int priority, float expirationTime)
+        {
+            this.execute = execute;
+            Priority = priority;
+            this.expirationTime = expirationTime;
+        }
+
+        public int Priority { get; }
+
+        public bool IsExpired()
+        {
+            return Time.time > expirationTime;
+        }
+
+        public bool TryExecute()
+        {
+            return execute();
+        }
     }
 }

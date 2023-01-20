@@ -1,6 +1,9 @@
 using System;
 using UnityEngine;
 
+/// <summary>
+/// Base class for all character behaviours. Contains useful methods and references to other components.
+/// </summary>
 [RequireComponent(typeof(Character))]
 public abstract class CharacterBehaviour : BaseComponent
 {
@@ -10,6 +13,9 @@ public abstract class CharacterBehaviour : BaseComponent
     protected Animator Animator => Character.animator;
     public AttackManager AttackManager => Character.attackManager;
 
+    /// <summary>
+    /// If <c>true</c>, the behaviour can be played
+    /// </summary>
     public bool Enabled
     {
         get => disableCount == 0;

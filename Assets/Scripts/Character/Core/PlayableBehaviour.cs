@@ -52,8 +52,15 @@ public interface ICommand
 public abstract class PlayableBehaviour<T> : CharacterBehaviour, IPlayableBehaviour where T : ICommand
 {
     [SerializeField] private PlayEvents playEvents;
+
+    /// <value>
+    /// Behaviour's play and stop events
+    /// </value>
     public PlayEvents PlayEvents => playEvents;
 
+    /// <value>
+    /// <c>true</c> if behaviour is currently playing
+    /// </value>
     public abstract bool Playing { get; }
 
     /// <returns>True if behaviour can be played. Override to add more conditions</returns>
@@ -83,6 +90,9 @@ public abstract class PlayableBehaviour<T> : CharacterBehaviour, IPlayableBehavi
     /// <param name="command">Arguments of the behaviour, same as those passed to <see cref="Play"/></param>
     protected abstract void DoPlay(T command);
 
+    /// <summary>
+    /// Stops the behaviour. Can be used safely also when <see cref="Playing"/> is <c>false</c>, as it will do nothing.
+    /// </summary>
     public void Stop()
     {
         if (!Playing)
