@@ -62,7 +62,7 @@ public abstract class BaseHitDetector
 
     private static bool ShouldPlayParticles(IHittable hittable)
     {
-        return hittable.Character.GetComponent<HittableBehaviour>().CanGetHit();
+        return hittable.CanGetHit();
     }
 
     /// <summary>
