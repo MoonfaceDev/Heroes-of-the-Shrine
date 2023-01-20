@@ -612,24 +612,6 @@ references:
   commentId: F:Global.AttackPattern.targetTag
   fullName: AttackPattern.targetTag
   nameWithType: AttackPattern.targetTag
-- uid: Global.AttackProperty
-  name: AttackProperty
-  href: api/Global.AttackProperty.html
-  commentId: T:Global.AttackProperty
-  fullName: AttackProperty
-  nameWithType: AttackProperty
-- uid: Global.AttackProperty.attack
-  name: attack
-  href: api/Global.AttackProperty.html#Global_AttackProperty_attack
-  commentId: F:Global.AttackProperty.attack
-  fullName: AttackProperty.attack
-  nameWithType: AttackProperty.attack
-- uid: Global.AttackProperty.button
-  name: button
-  href: api/Global.AttackProperty.html#Global_AttackProperty_button
-  commentId: F:Global.AttackProperty.button
-  fullName: AttackProperty.button
-  nameWithType: AttackProperty.button
 - uid: Global.AudioManager
   name: AudioManager
   href: api/Global.AudioManager.html
@@ -1509,67 +1491,6 @@ references:
   isSpec: "True"
   fullName: BrainModuleEditor.OnInspectorGUI
   nameWithType: BrainModuleEditor.OnInspectorGUI
-- uid: Global.BufferedAction
-  name: BufferedAction
-  href: api/Global.BufferedAction.html
-  commentId: T:Global.BufferedAction
-  fullName: BufferedAction
-  nameWithType: BufferedAction
-- uid: Global.BufferedAction.#ctor(Func{System.Boolean},System.Int32,System.Single)
-  name: BufferedAction(Func<Boolean>, Int32, Single)
-  href: api/Global.BufferedAction.html#Global_BufferedAction__ctor_Func_System_Boolean__System_Int32_System_Single_
-  commentId: M:Global.BufferedAction.#ctor(Func{System.Boolean},System.Int32,System.Single)
-  name.vb: BufferedAction(Func(Of Boolean), Int32, Single)
-  fullName: BufferedAction.BufferedAction(Func<System.Boolean>, System.Int32, System.Single)
-  fullName.vb: BufferedAction.BufferedAction(Func(Of System.Boolean), System.Int32, System.Single)
-  nameWithType: BufferedAction.BufferedAction(Func<Boolean>, Int32, Single)
-  nameWithType.vb: BufferedAction.BufferedAction(Func(Of Boolean), Int32, Single)
-- uid: Global.BufferedAction.#ctor*
-  name: BufferedAction
-  href: api/Global.BufferedAction.html#Global_BufferedAction__ctor_
-  commentId: Overload:Global.BufferedAction.#ctor
-  isSpec: "True"
-  fullName: BufferedAction.BufferedAction
-  nameWithType: BufferedAction.BufferedAction
-- uid: Global.BufferedAction.IsExpired
-  name: IsExpired()
-  href: api/Global.BufferedAction.html#Global_BufferedAction_IsExpired
-  commentId: M:Global.BufferedAction.IsExpired
-  fullName: BufferedAction.IsExpired()
-  nameWithType: BufferedAction.IsExpired()
-- uid: Global.BufferedAction.IsExpired*
-  name: IsExpired
-  href: api/Global.BufferedAction.html#Global_BufferedAction_IsExpired_
-  commentId: Overload:Global.BufferedAction.IsExpired
-  isSpec: "True"
-  fullName: BufferedAction.IsExpired
-  nameWithType: BufferedAction.IsExpired
-- uid: Global.BufferedAction.Priority
-  name: Priority
-  href: api/Global.BufferedAction.html#Global_BufferedAction_Priority
-  commentId: P:Global.BufferedAction.Priority
-  fullName: BufferedAction.Priority
-  nameWithType: BufferedAction.Priority
-- uid: Global.BufferedAction.Priority*
-  name: Priority
-  href: api/Global.BufferedAction.html#Global_BufferedAction_Priority_
-  commentId: Overload:Global.BufferedAction.Priority
-  isSpec: "True"
-  fullName: BufferedAction.Priority
-  nameWithType: BufferedAction.Priority
-- uid: Global.BufferedAction.TryExecute
-  name: TryExecute()
-  href: api/Global.BufferedAction.html#Global_BufferedAction_TryExecute
-  commentId: M:Global.BufferedAction.TryExecute
-  fullName: BufferedAction.TryExecute()
-  nameWithType: BufferedAction.TryExecute()
-- uid: Global.BufferedAction.TryExecute*
-  name: TryExecute
-  href: api/Global.BufferedAction.html#Global_BufferedAction_TryExecute_
-  commentId: Overload:Global.BufferedAction.TryExecute
-  isSpec: "True"
-  fullName: BufferedAction.TryExecute
-  nameWithType: BufferedAction.TryExecute
 - uid: Global.Button
   name: Button
   href: api/Global.Button.html
@@ -4782,19 +4703,6 @@ references:
   commentId: T:Global.IEffect
   fullName: IEffect
   nameWithType: IEffect
-- uid: Global.IEffect.Active
-  name: Active
-  href: api/Global.IEffect.html#Global_IEffect_Active
-  commentId: P:Global.IEffect.Active
-  fullName: IEffect.Active
-  nameWithType: IEffect.Active
-- uid: Global.IEffect.Active*
-  name: Active
-  href: api/Global.IEffect.html#Global_IEffect_Active_
-  commentId: Overload:Global.IEffect.Active
-  isSpec: "True"
-  fullName: IEffect.Active
-  nameWithType: IEffect.Active
 - uid: Global.IEffect.GetProgress
   name: GetProgress()
   href: api/Global.IEffect.html#Global_IEffect_GetProgress
@@ -6133,25 +6041,6 @@ references:
   fullName.vb: PlayableBehaviour(Of T).Stop
   nameWithType: PlayableBehaviour<T>.Stop
   nameWithType.vb: PlayableBehaviour(Of T).Stop
-- uid: Global.PlayableBehaviourEditor
-  name: PlayableBehaviourEditor
-  href: api/Global.PlayableBehaviourEditor.html
-  commentId: T:Global.PlayableBehaviourEditor
-  fullName: PlayableBehaviourEditor
-  nameWithType: PlayableBehaviourEditor
-- uid: Global.PlayableBehaviourEditor.OnInspectorGUI
-  name: OnInspectorGUI()
-  href: api/Global.PlayableBehaviourEditor.html#Global_PlayableBehaviourEditor_OnInspectorGUI
-  commentId: M:Global.PlayableBehaviourEditor.OnInspectorGUI
-  fullName: PlayableBehaviourEditor.OnInspectorGUI()
-  nameWithType: PlayableBehaviourEditor.OnInspectorGUI()
-- uid: Global.PlayableBehaviourEditor.OnInspectorGUI*
-  name: OnInspectorGUI
-  href: api/Global.PlayableBehaviourEditor.html#Global_PlayableBehaviourEditor_OnInspectorGUI_
-  commentId: Overload:Global.PlayableBehaviourEditor.OnInspectorGUI
-  isSpec: "True"
-  fullName: PlayableBehaviourEditor.OnInspectorGUI
-  nameWithType: PlayableBehaviourEditor.OnInspectorGUI
 - uid: Global.PlayerAttackBrainModule
   name: PlayerAttackBrainModule
   href: api/Global.PlayerAttackBrainModule.html
@@ -6208,6 +6097,24 @@ references:
   commentId: F:Global.PlayerController.attackPriority
   fullName: PlayerController.attackPriority
   nameWithType: PlayerController.attackPriority
+- uid: Global.PlayerController.AttackProperty
+  name: PlayerController.AttackProperty
+  href: api/Global.PlayerController.AttackProperty.html
+  commentId: T:Global.PlayerController.AttackProperty
+  fullName: PlayerController.AttackProperty
+  nameWithType: PlayerController.AttackProperty
+- uid: Global.PlayerController.AttackProperty.attack
+  name: attack
+  href: api/Global.PlayerController.AttackProperty.html#Global_PlayerController_AttackProperty_attack
+  commentId: F:Global.PlayerController.AttackProperty.attack
+  fullName: PlayerController.AttackProperty.attack
+  nameWithType: PlayerController.AttackProperty.attack
+- uid: Global.PlayerController.AttackProperty.button
+  name: button
+  href: api/Global.PlayerController.AttackProperty.html#Global_PlayerController_AttackProperty_button
+  commentId: F:Global.PlayerController.AttackProperty.button
+  fullName: PlayerController.AttackProperty.button
+  nameWithType: PlayerController.AttackProperty.button
 - uid: Global.PlayerController.attacks
   name: attacks
   href: api/Global.PlayerController.html#Global_PlayerController_attacks
