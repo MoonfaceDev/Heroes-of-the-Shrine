@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class RunCommand : ICommand
-{
-}
-
 [RequireComponent(typeof(WalkBehaviour))]
-public class RunBehaviour : BaseMovementBehaviour<RunCommand>
+public class RunBehaviour : BaseMovementBehaviour<RunBehaviour.Command>
 {
+    public class Command
+    {
+    }
+
     public float timeToRun;
     public float runSpeedMultiplier;
     public ParticleSystem runParticles;
@@ -50,7 +50,7 @@ public class RunBehaviour : BaseMovementBehaviour<RunCommand>
                 startTimeout ??= StartTimeout(() =>
                 {
                     startTimeout = null;
-                    Play(new RunCommand());
+                    Play(new Command());
                 }, timeToRun);
             }
         });
@@ -70,7 +70,7 @@ public class RunBehaviour : BaseMovementBehaviour<RunCommand>
         }
     }
 
-    protected override void DoPlay(RunCommand command)
+    protected override void DoPlay(Command command)
     {
         Run = true;
         walkBehaviour.speed *= runSpeedMultiplier;

@@ -1,33 +1,34 @@
 using UnityEngine;
 
-public class ForcedWalkCommand : ICommand
-{
-    public readonly Vector3 point;
-    public readonly float wantedDistance;
-
-    public ForcedWalkCommand(Vector3 point, float wantedDistance = 0.1f)
-    {
-        this.point = point;
-        this.wantedDistance = wantedDistance;
-    }
-}
-
 [RequireComponent(typeof(AutoWalkBehaviour))]
-public class ForcedWalkBehaviour : PlayableBehaviour<ForcedWalkCommand>
+public class ForcedWalkBehaviour : PlayableBehaviour<ForcedWalkBehaviour.Command>
 {
+    public class Command
+    {
+        public readonly Vector3 point;
+        public readonly float wantedDistance;
+
+        public Command(Vector3 point, float wantedDistance = 0.1f)
+        {
+            this.point = point;
+            this.wantedDistance = wantedDistance;
+        }
+    }
+
+    
     private bool active;
     private string stopListener;
 
     public override bool Playing => active;
 
-    protected override void DoPlay(ForcedWalkCommand command)
+    protected override void DoPlay(Command command)
     {
         StopBehaviours(typeof(IPlayableBehaviour));
         DisableBehaviours(typeof(CharacterController), typeof(RunBehaviour));
 
         active = true;
 
-        GetComponent<AutoWalkBehaviour>().Play(new AutoWalkCommand(command.point));
+        GetComponent<AutoWalkBehaviour>().Play(new AutoWalkBehaviour.Command(command.point));
         stopListener = InvokeWhen(() => MovableEntity.GroundDistance(command.point) < command.wantedDistance, () =>
         {
             MovableEntity.position = command.point;

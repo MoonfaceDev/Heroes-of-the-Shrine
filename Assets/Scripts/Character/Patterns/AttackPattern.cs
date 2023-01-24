@@ -45,7 +45,7 @@ public class AttackPattern : BasePattern
             yield return new WaitForSeconds(node.startTime - (Time.time - startTime));
             var attack = animator.GetComponent(node.attackType) as BaseAttack;
             if (attack == null) continue;
-            attack.Play(new BaseAttackCommand());
+            attack.Play(new BaseAttack.Command());
         }
     }
 

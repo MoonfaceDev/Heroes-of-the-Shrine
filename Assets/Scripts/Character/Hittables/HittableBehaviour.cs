@@ -61,7 +61,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
         OnKnockback?.Invoke(damage, power, angleDegrees);
         if (knockbackBehaviour)
         {
-            knockbackBehaviour.Play(new KnockbackCommand(power, angleDegrees));
+            knockbackBehaviour.Play(new KnockbackBehaviour.Command(power, angleDegrees));
         }
     }
 
@@ -81,7 +81,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
         OnStun?.Invoke(damage, time);
         if (stunBehaviour)
         {
-            stunBehaviour.Play(new StunCommand(time));
+            stunBehaviour.Play(new StunBehaviour.Command(time));
         }
     }
 

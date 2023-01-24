@@ -1,28 +1,28 @@
 using System.Collections;
 using UnityEngine;
 
-public class FireEffectCommand : ICommand
+public class FireEffect : BaseEffect<FireEffect.Command>
 {
-    public readonly float duration;
-    public readonly float hitInterval;
-    public readonly float damagePerHit;
-
-    public FireEffectCommand(float duration, float hitInterval, float damagePerHit)
+    public class Command
     {
-        this.duration = duration;
-        this.hitInterval = hitInterval;
-        this.damagePerHit = damagePerHit;
-    }
-}
+        public readonly float duration;
+        public readonly float hitInterval;
+        public readonly float damagePerHit;
 
-public class FireEffect : BaseEffect<FireEffectCommand>
-{
+        public Command(float duration, float hitInterval, float damagePerHit)
+        {
+            this.duration = duration;
+            this.hitInterval = hitInterval;
+            this.damagePerHit = damagePerHit;
+        }
+    }
+
     private Coroutine damageCoroutine;
     private float startTime;
     private float currentDuration;
     private string stopListener;
 
-    protected override void DoPlay(FireEffectCommand command)
+    protected override void DoPlay(Command command)
     {
         Active = true;
         damageCoroutine = StartCoroutine(DoDamage(command.hitInterval, command.damagePerHit));

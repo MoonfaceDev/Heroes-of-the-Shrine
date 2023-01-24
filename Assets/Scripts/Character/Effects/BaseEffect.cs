@@ -8,7 +8,7 @@ public interface IEffect : IPlayableBehaviour
 /// Base class for effects that character can receive
 /// </summary>
 /// <typeparam name="T">Type of play command</typeparam>
-public abstract class BaseEffect<T> : PlayableBehaviour<T>, IEffect where T : ICommand
+public abstract class BaseEffect<T> : PlayableBehaviour<T>, IEffect
 {
     /// <value>
     /// Is the effect currently active

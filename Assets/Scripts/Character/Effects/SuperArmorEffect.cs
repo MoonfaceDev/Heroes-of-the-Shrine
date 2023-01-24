@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-public class SuperArmorEffectCommand : ICommand
+public class SuperArmorEffect : BaseEffect<SuperArmorEffect.Command>
 {
-}
-
-public class SuperArmorEffect : BaseEffect<SuperArmorEffectCommand>
-{
+    public class Command
+    {
+    }
+    
     public float armorHealth;
     public float armorCooldown;
     public float damageMultiplier = 1;
@@ -20,10 +20,10 @@ public class SuperArmorEffect : BaseEffect<SuperArmorEffectCommand>
 
     public void Start()
     {
-        Play(new SuperArmorEffectCommand());
+        Play(new Command());
     }
 
-    protected override void DoPlay(SuperArmorEffectCommand command)
+    protected override void DoPlay(Command command)
     {
         Active = true;
 
@@ -45,7 +45,7 @@ public class SuperArmorEffect : BaseEffect<SuperArmorEffectCommand>
             Stop();
             onBreak.Invoke();
             armorCooldownStart = Time.time;
-            reloadTimeout = StartTimeout(() => Play(new SuperArmorEffectCommand()), armorCooldown);
+            reloadTimeout = StartTimeout(() => Play(new Command()), armorCooldown);
         }
     }
 

@@ -4,7 +4,7 @@ public interface IMovementBehaviour : IPlayableBehaviour
 {
 }
 
-public abstract class BaseMovementBehaviour<T> : PlayableBehaviour<T>, IMovementBehaviour where T : ICommand
+public abstract class BaseMovementBehaviour<T> : PlayableBehaviour<T>, IMovementBehaviour
 {
     public float cooldown;
 

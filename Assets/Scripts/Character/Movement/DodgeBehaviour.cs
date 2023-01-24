@@ -1,18 +1,18 @@
 using System;
 using UnityEngine;
 
-public class DodgeCommand : ICommand
+public class DodgeBehaviour : BaseMovementBehaviour<DodgeBehaviour.Command>
 {
-    public readonly int direction;
-
-    public DodgeCommand(int direction)
+    public class Command
     {
-        this.direction = direction;
-    }
-}
+        public readonly int direction;
 
-public class DodgeBehaviour : BaseMovementBehaviour<DodgeCommand>
-{
+        public Command(int direction)
+        {
+            this.direction = direction;
+        }
+    }
+    
     public float dodgeDistance;
     public float anticipateTime;
     public float recoveryTime;
@@ -50,7 +50,7 @@ public class DodgeBehaviour : BaseMovementBehaviour<DodgeCommand>
     private static readonly int RecoveringFromDodgeParameter = Animator.StringToHash("recoveringFromDodge");
     private static readonly int AnticipatingDodgeParameter = Animator.StringToHash("anticipatingDodge");
 
-    public override bool CanPlay(DodgeCommand command)
+    public override bool CanPlay(Command command)
     {
         var attackManager = GetComponent<AttackManager>();
         return base.CanPlay(command)
@@ -59,7 +59,7 @@ public class DodgeBehaviour : BaseMovementBehaviour<DodgeCommand>
                && !(attackManager && !attackManager.IsInterruptible());
     }
 
-    protected override void DoPlay(DodgeCommand command)
+    protected override void DoPlay(Command command)
     {
         DisableBehaviours(typeof(WalkBehaviour));
         StopBehaviours(typeof(WalkBehaviour), typeof(BaseAttack));

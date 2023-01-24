@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class JumpCommand : ICommand
-{
-}
 
-public class JumpBehaviour : BaseMovementBehaviour<JumpCommand>
+public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
 {
+    public class Command
+    {
+    }
+
     public float jumpSpeed;
     public float jumpAnticipateTime;
     public float jumpRecoverTime;
@@ -64,7 +65,7 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpCommand>
         walkBehaviour = GetComponent<WalkBehaviour>();
     }
 
-    public override bool CanPlay(JumpCommand command)
+    public override bool CanPlay(Command command)
     {
         return base.CanPlay(command)
                && !(AttackManager.Anticipating || AttackManager.Active || AttackManager.HardRecovering)
@@ -72,7 +73,7 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpCommand>
                && !Playing;
     }
 
-    protected override void DoPlay(JumpCommand command)
+    protected override void DoPlay(Command command)
     {
         StopBehaviours(typeof(BaseAttack));
         

@@ -39,17 +39,10 @@ public interface IPlayableBehaviour
 }
 
 /// <summary>
-/// Interface for specifying arguments for <see cref="PlayableBehaviour{T}.Play"/>
-/// </summary>
-public interface ICommand
-{
-}
-
-/// <summary>
 /// Abstract variant of <see cref="CharacterBehaviour"/> for behaviours than can be played and stopped
 /// </summary>
 /// <typeparam name="T">Command type that <see cref="Play"/> method accepts</typeparam>
-public abstract class PlayableBehaviour<T> : CharacterBehaviour, IPlayableBehaviour where T : ICommand
+public abstract class PlayableBehaviour<T> : CharacterBehaviour, IPlayableBehaviour
 {
     [SerializeField] private PlayEvents playEvents;
 

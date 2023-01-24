@@ -1,22 +1,22 @@
 using UnityEngine;
 
-public class EscapeCommand : ICommand
-{
-    public readonly MovableEntity target;
-    public readonly float speedMultiplier;
-    public readonly bool fitLookDirection;
-
-    public EscapeCommand(MovableEntity target, float speedMultiplier, bool fitLookDirection = true)
-    {
-        this.target = target;
-        this.speedMultiplier = speedMultiplier;
-        this.fitLookDirection = fitLookDirection;
-    }
-}
-
 [RequireComponent(typeof(WalkBehaviour))]
-public class EscapeBehaviour : BaseMovementBehaviour<EscapeCommand>
+public class EscapeBehaviour : BaseMovementBehaviour<EscapeBehaviour.Command>
 {
+    public class Command
+    {
+        public readonly MovableEntity target;
+        public readonly float speedMultiplier;
+        public readonly bool fitLookDirection;
+
+        public Command(MovableEntity target, float speedMultiplier, bool fitLookDirection = true)
+        {
+            this.target = target;
+            this.speedMultiplier = speedMultiplier;
+            this.fitLookDirection = fitLookDirection;
+        }
+    }
+    
     public bool Active { get; private set; }
 
     public override bool Playing => Active;
@@ -37,7 +37,7 @@ public class EscapeBehaviour : BaseMovementBehaviour<EscapeCommand>
         walkBehaviour.PlayEvents.onStop.AddListener(Stop);
     }
 
-    protected override void DoPlay(EscapeCommand command)
+    protected override void DoPlay(Command command)
     {
         Active = true;
 
@@ -49,7 +49,7 @@ public class EscapeBehaviour : BaseMovementBehaviour<EscapeCommand>
             var distance = MovableEntity.WorldPosition - command.target.WorldPosition;
             distance.y = 0;
             var direction = distance.normalized;
-            walkBehaviour.Play(new WalkCommand(direction, command.fitLookDirection));
+            walkBehaviour.Play(new WalkBehaviour.Command(direction, command.fitLookDirection));
             MovableEntity.rotation = -Mathf.RoundToInt(Mathf.Sign(direction.x));
         });
     }

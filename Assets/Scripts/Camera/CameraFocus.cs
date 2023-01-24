@@ -23,12 +23,6 @@ public class CameraFocus : BaseComponent
         GetComponent<PixelPerfectCamera>().enabled = false;
     }
 
-    public void Stop()
-    {
-        active = false;
-        GetComponent<PixelPerfectCamera>().enabled = true;
-    }
-
     private void LateUpdate()
     {
         if (!active) return;

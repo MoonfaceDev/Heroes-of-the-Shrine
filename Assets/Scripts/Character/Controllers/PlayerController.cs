@@ -104,7 +104,7 @@ public class PlayerController : CharacterController
         if (!walkBehaviour) return;
         if (horizontal != 0 || vertical != 0)
         {
-            walkBehaviour.Play(new WalkCommand(new Vector2(horizontal, vertical)));
+            walkBehaviour.Play(new WalkBehaviour.Command(new Vector2(horizontal, vertical)));
         }
         else
         {
@@ -116,7 +116,7 @@ public class PlayerController : CharacterController
     {
         if (jumpBehaviour && Input.GetButtonDown(Button.Jump.ToString())) //pressed jump
         {
-            ExecutePlayable(jumpBehaviour, new JumpCommand(), jumpPriority);
+            ExecutePlayable(jumpBehaviour, new JumpBehaviour.Command(), jumpPriority);
         }
     }
 
@@ -125,7 +125,8 @@ public class PlayerController : CharacterController
         var horizontal = Input.GetAxisRaw("Horizontal");
         if (slideBehaviour && Input.GetButtonDown(Button.Escape.ToString())) //pressed slide
         {
-            ExecutePlayable(slideBehaviour, new SlideCommand(Mathf.RoundToInt(Mathf.Sign(horizontal))), slidePriority);
+            ExecutePlayable(slideBehaviour, new SlideBehaviour.Command(Mathf.RoundToInt(Mathf.Sign(horizontal))),
+                slidePriority);
         }
     }
 
@@ -134,7 +135,8 @@ public class PlayerController : CharacterController
         var vertical = Input.GetAxisRaw("Vertical");
         if (dodgeBehaviour && Input.GetButtonDown(Button.Escape.ToString())) //pressed dodge
         {
-            ExecutePlayable(dodgeBehaviour, new DodgeCommand(Mathf.RoundToInt(Mathf.Sign(vertical))), dodgePriority);
+            ExecutePlayable(dodgeBehaviour, new DodgeBehaviour.Command(Mathf.RoundToInt(Mathf.Sign(vertical))),
+                dodgePriority);
         }
     }
 
@@ -169,7 +171,7 @@ public class PlayerController : CharacterController
 
     private bool TryExecuteAttack(Button[] downButtons)
     {
-        var command = new BaseAttackCommand();
+        var command = new BaseAttack.Command();
         var nextAttack = GetNextAttack(command, downButtons);
 
         if (nextAttack == null)
@@ -181,7 +183,7 @@ public class PlayerController : CharacterController
         return true;
     }
 
-    private BaseAttack GetNextAttack(BaseAttackCommand command, Button[] downButtons)
+    private BaseAttack GetNextAttack(BaseAttack.Command command, Button[] downButtons)
     {
         return (
             from property in attacks
@@ -190,7 +192,7 @@ public class PlayerController : CharacterController
         ).LastOrDefault();
     }
 
-    private void ExecutePlayable<T>(PlayableBehaviour<T> behaviour, T command, int bufferingPriority) where T : ICommand
+    private void ExecutePlayable<T>(PlayableBehaviour<T> behaviour, T command, int bufferingPriority)
     {
         if (!TryExecutePlayable(behaviour, command))
         {
@@ -202,7 +204,7 @@ public class PlayerController : CharacterController
         }
     }
 
-    private static bool TryExecutePlayable<T>(PlayableBehaviour<T> behaviour, T command) where T : ICommand
+    private static bool TryExecutePlayable<T>(PlayableBehaviour<T> behaviour, T command)
     {
         if (!behaviour.CanPlay(command))
         {

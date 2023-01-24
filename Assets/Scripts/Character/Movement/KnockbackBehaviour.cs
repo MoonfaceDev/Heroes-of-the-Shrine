@@ -4,20 +4,20 @@ using UnityEngine;
 
 public delegate void BounceCallback(int count, float power, float angleDegrees);
 
-public class KnockbackCommand : ICommand
+public class KnockbackBehaviour : ForcedBehaviour<KnockbackBehaviour.Command>
 {
-    public readonly float power;
-    public readonly float angleDegrees;
-
-    public KnockbackCommand(float power, float angleDegrees)
+    public class Command
     {
-        this.power = power;
-        this.angleDegrees = angleDegrees;
-    }
-}
+        public readonly float power;
+        public readonly float angleDegrees;
 
-public class KnockbackBehaviour : ForcedBehaviour<KnockbackCommand>
-{
+        public Command(float power, float angleDegrees)
+        {
+            this.power = power;
+            this.angleDegrees = angleDegrees;
+        }
+    }
+    
     private const float SecondBouncePowerMultiplier = 0.2f;
 
     public float knockbackRecoverTime;
@@ -68,7 +68,7 @@ public class KnockbackBehaviour : ForcedBehaviour<KnockbackCommand>
     private static readonly int RecoveringFromKnockbackParameter = Animator.StringToHash("recoveringFromKnockback");
     private static readonly int BounceParameter = Animator.StringToHash("bounce");
 
-    protected override void DoPlay(KnockbackCommand command)
+    protected override void DoPlay(Command command)
     {
         StopBehaviours(typeof(IMovementBehaviour), typeof(BaseAttack), typeof(StunBehaviour));
 

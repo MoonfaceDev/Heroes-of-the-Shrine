@@ -1,20 +1,20 @@
 using System;
 using UnityEngine;
 
-public class ElectrifiedEffectCommand : ICommand
+public class ElectrifiedEffect : BaseEffect<ElectrifiedEffect.Command>
 {
-    public readonly float duration;
-    public readonly float speedReductionMultiplier;
-
-    public ElectrifiedEffectCommand(float duration, float speedReductionMultiplier)
+    public class Command
     {
-        this.duration = duration;
-        this.speedReductionMultiplier = speedReductionMultiplier;
-    }
-}
+        public readonly float duration;
+        public readonly float speedReductionMultiplier;
 
-public class ElectrifiedEffect : BaseEffect<ElectrifiedEffectCommand>
-{
+        public Command(float duration, float speedReductionMultiplier)
+        {
+            this.duration = duration;
+            this.speedReductionMultiplier = speedReductionMultiplier;
+        }
+    }
+
     public ParticleSystem particles;
 
     private float startTime;
@@ -32,7 +32,7 @@ public class ElectrifiedEffect : BaseEffect<ElectrifiedEffectCommand>
         walkBehaviour = GetComponent<WalkBehaviour>();
     }
 
-    protected override void DoPlay(ElectrifiedEffectCommand command)
+    protected override void DoPlay(Command command)
     {
         StopBehaviours(typeof(RunBehaviour), typeof(SlideBehaviour), typeof(DodgeBehaviour), typeof(ElectrifiedEffect));
 

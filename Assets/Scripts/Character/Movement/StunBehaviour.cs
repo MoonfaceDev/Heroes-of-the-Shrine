@@ -1,17 +1,17 @@
 using UnityEngine;
 
-public class StunCommand : ICommand
+public class StunBehaviour : ForcedBehaviour<StunBehaviour.Command>
 {
-    public readonly float time;
-
-    public StunCommand(float time)
+    public class Command
     {
-        this.time = time;
-    }
-}
+        public readonly float time;
 
-public class StunBehaviour : ForcedBehaviour<StunCommand>
-{
+        public Command(float time)
+        {
+            this.time = time;
+        }
+    }
+    
     public int stunFrames;
 
     public bool Stun
@@ -42,7 +42,7 @@ public class StunBehaviour : ForcedBehaviour<StunCommand>
     private static readonly int StunParameter = Animator.StringToHash("stun");
     private static readonly int StunFrameParameter = Animator.StringToHash("stunFrame");
 
-    protected override void DoPlay(StunCommand command)
+    protected override void DoPlay(Command command)
     {
         StopBehaviours(typeof(IMovementBehaviour), typeof(IForcedBehaviour), typeof(BaseAttack));
         MovableEntity.velocity = Vector3.zero;

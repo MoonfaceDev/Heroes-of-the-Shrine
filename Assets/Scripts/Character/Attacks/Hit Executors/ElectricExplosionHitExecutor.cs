@@ -20,7 +20,7 @@ public class ElectricExplosionHitExecutor : IHitExecutor
         var electrifiedEffect = hittable.Character.GetComponent<ElectrifiedEffect>();
         if (electrifiedEffect)
         {
-            electrifiedEffect.Play(new ElectrifiedEffectCommand(electrifyEffect.duration,
+            electrifiedEffect.Play(new ElectrifiedEffect.Command(electrifyEffect.duration,
                 electrifyEffect.speedMultiplier));
         }
     }

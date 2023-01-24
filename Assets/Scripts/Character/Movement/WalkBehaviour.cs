@@ -1,25 +1,26 @@
 using UnityEngine;
 
-public class WalkCommand : ICommand
-{
-    public readonly Vector2 direction;
-    public readonly bool fitLookDirection;
-
-    public WalkCommand(Vector2 direction, bool fitLookDirection = true)
-    {
-        this.direction = direction.normalized;
-        this.fitLookDirection = fitLookDirection;
-    }
-
-    public WalkCommand(Vector3 direction, bool fitLookDirection = true)
-        : this(MathUtils.ToPlane(direction), fitLookDirection)
-    {
-    }
-}
-
 [RequireComponent(typeof(MovableEntity))]
-public class WalkBehaviour : BaseMovementBehaviour<WalkCommand>
+public class WalkBehaviour : BaseMovementBehaviour<WalkBehaviour.Command>
 {
+    public class Command
+    {
+        public readonly Vector2 direction;
+        public readonly bool fitLookDirection;
+
+        public Command(Vector2 direction, bool fitLookDirection = true)
+        {
+            this.direction = direction.normalized;
+            this.fitLookDirection = fitLookDirection;
+        }
+
+        public Command(Vector3 direction, bool fitLookDirection = true)
+            : this(MathUtils.ToPlane(direction), fitLookDirection)
+        {
+        }
+    }
+
+    
     public float defaultSpeed;
 
     public float speed;
@@ -46,12 +47,12 @@ public class WalkBehaviour : BaseMovementBehaviour<WalkCommand>
         speed = defaultSpeed;
     }
 
-    public override bool CanPlay(WalkCommand command)
+    public override bool CanPlay(Command command)
     {
         return base.CanPlay(command) && command.direction != Vector2.zero;
     }
 
-    protected override void DoPlay(WalkCommand command)
+    protected override void DoPlay(Command command)
     {
         Walk = true;
 

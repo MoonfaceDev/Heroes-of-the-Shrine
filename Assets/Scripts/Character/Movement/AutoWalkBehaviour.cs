@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-public class AutoWalkCommand : ICommand
-{
-    public readonly Vector3 destination;
-    public readonly Func<Node[]> getExcluded;
-
-    public AutoWalkCommand(Vector3 destination, Func<Node[]> getExcluded = null)
-    {
-        this.destination = destination;
-        this.getExcluded = getExcluded;
-    }
-}
-
 [RequireComponent(typeof(Pathfind))]
 [RequireComponent(typeof(WalkBehaviour))]
-public class AutoWalkBehaviour : BaseMovementBehaviour<AutoWalkCommand>
+public class AutoWalkBehaviour : BaseMovementBehaviour<AutoWalkBehaviour.Command>
 {
+    public class Command
+    {
+        public readonly Vector3 destination;
+        public readonly Func<Node[]> getExcluded;
+
+        public Command(Vector3 destination, Func<Node[]> getExcluded = null)
+        {
+            this.destination = destination;
+            this.getExcluded = getExcluded;
+        }
+    }
+
     public override bool Playing => active;
 
     private bool active;
@@ -31,7 +31,7 @@ public class AutoWalkBehaviour : BaseMovementBehaviour<AutoWalkCommand>
         walkBehaviour = GetComponent<WalkBehaviour>();
     }
 
-    protected override void DoPlay(AutoWalkCommand command)
+    protected override void DoPlay(Command command)
     {
         active = true;
 
@@ -39,7 +39,7 @@ public class AutoWalkBehaviour : BaseMovementBehaviour<AutoWalkCommand>
         {
             var direction = pathfind.Direction(MovableEntity.WorldPosition, command.destination,
                 command.getExcluded?.Invoke());
-            walkBehaviour.Play(new WalkCommand(direction, false));
+            walkBehaviour.Play(new WalkBehaviour.Command(direction, false));
             MovableEntity.rotation =
                 Mathf.RoundToInt(Mathf.Sign(command.destination.x - MovableEntity.WorldPosition.x));
         });

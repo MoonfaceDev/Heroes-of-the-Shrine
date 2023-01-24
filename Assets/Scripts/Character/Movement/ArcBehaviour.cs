@@ -1,20 +1,20 @@
 using UnityEngine;
 
-public class ArcCommand : ICommand
-{
-    public readonly MovableEntity target;
-    public readonly float speedMultiplier;
-
-    public ArcCommand(MovableEntity target, float speedMultiplier)
-    {
-        this.target = target;
-        this.speedMultiplier = speedMultiplier;
-    }
-}
-
 [RequireComponent(typeof(WalkBehaviour))]
-public class ArcBehaviour : BaseMovementBehaviour<ArcCommand>
+public class ArcBehaviour : BaseMovementBehaviour<ArcBehaviour.Command>
 {
+    public class Command
+    {
+        public readonly MovableEntity target;
+        public readonly float speedMultiplier;
+
+        public Command(MovableEntity target, float speedMultiplier)
+        {
+            this.target = target;
+            this.speedMultiplier = speedMultiplier;
+        }
+    }
+    
     public bool Active { get; private set; }
 
     public override bool Playing => Active;
@@ -34,7 +34,7 @@ public class ArcBehaviour : BaseMovementBehaviour<ArcCommand>
         walkBehaviour.PlayEvents.onStop.AddListener(Stop);
     }
 
-    protected override void DoPlay(ArcCommand command)
+    protected override void DoPlay(Command command)
     {
         Active = true;
 
@@ -56,7 +56,7 @@ public class ArcBehaviour : BaseMovementBehaviour<ArcCommand>
             newPosition.y = walkBehaviour.MovableEntity.WorldPosition.y;
             walkBehaviour.MovableEntity.WorldPosition = newPosition;
             var direction = clockwise * Vector3.Cross(distance, Vector3.up).normalized;
-            walkBehaviour.Play(new WalkCommand(direction, false));
+            walkBehaviour.Play(new WalkBehaviour.Command(direction, false));
             if ((command.target.WorldPosition - walkBehaviour.MovableEntity.WorldPosition).x != 0)
             {
                 walkBehaviour.MovableEntity.rotation = Mathf.RoundToInt(

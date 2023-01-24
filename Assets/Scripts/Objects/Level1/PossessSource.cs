@@ -42,7 +42,7 @@ public class PossessSource : BaseComponent
                 var possessedEffect = hittable.Character.GetComponent<PossessedEffect>();
                 if (possessedEffect)
                 {
-                    possessedEffect.Play(new PossessedEffectCommand(effectDuration));
+                    possessedEffect.Play(new PossessedEffect.Command(effectDuration));
                 }
             }, hittableTags);
         }, warningDuration);

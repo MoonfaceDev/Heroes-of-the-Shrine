@@ -33,7 +33,7 @@ public class RepositionPattern : BasePattern
                 .ToArray();
         });
 
-        autoWalkBehaviour.Play(new AutoWalkCommand(
+        autoWalkBehaviour.Play(new AutoWalkBehaviour.Command(
             destination,
             () =>
             {

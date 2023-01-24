@@ -1,27 +1,27 @@
 ﻿using UnityEngine;
 
-public class PossessedEffectCommand : ICommand
+public class PossessedEffect : BaseEffect<PossessedEffect.Command>
 {
-    public readonly float maxDuration;
-
-    public PossessedEffectCommand(float maxDuration)
+    public class Command
     {
-        this.maxDuration = maxDuration;
-    }
-}
+        public readonly float maxDuration;
 
-public class PossessedEffect : BaseEffect<PossessedEffectCommand>
-{
+        public Command(float maxDuration)
+        {
+            this.maxDuration = maxDuration;
+        }
+    }
+    
     private float currentDuration;
     private float currentStartTime;
     private string stopListener;
 
-    public override bool CanPlay(PossessedEffectCommand command)
+    public override bool CanPlay(Command command)
     {
         return base.CanPlay(command) && !IsPlaying<PossessedEffect>();
     }
 
-    protected override void DoPlay(PossessedEffectCommand command)
+    protected override void DoPlay(Command command)
     {
         Active = true;
 

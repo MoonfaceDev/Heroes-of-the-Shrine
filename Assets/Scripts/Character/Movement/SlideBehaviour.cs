@@ -1,17 +1,17 @@
 using UnityEngine;
 
-public class SlideCommand : ICommand
+public class SlideBehaviour : BaseMovementBehaviour<SlideBehaviour.Command>
 {
-    public readonly int direction;
-
-    public SlideCommand(int direction)
+    public class Command
     {
-        this.direction = direction;
-    }
-}
+        public readonly int direction;
 
-public class SlideBehaviour : BaseMovementBehaviour<SlideCommand>
-{
+        public Command(int direction)
+        {
+            this.direction = direction;
+        }
+    }
+    
     public float slideSpeedMultiplier;
     public float slideStopAcceleration;
 
@@ -32,7 +32,7 @@ public class SlideBehaviour : BaseMovementBehaviour<SlideCommand>
 
     private static readonly int SlideParameter = Animator.StringToHash("slide");
 
-    public override bool CanPlay(SlideCommand command)
+    public override bool CanPlay(Command command)
     {
         var attackManager = GetComponent<AttackManager>();
         return base.CanPlay(command)
@@ -41,7 +41,7 @@ public class SlideBehaviour : BaseMovementBehaviour<SlideCommand>
                && !(attackManager && !attackManager.IsInterruptible());
     }
 
-    protected override void DoPlay(SlideCommand command)
+    protected override void DoPlay(Command command)
     {
         StopBehaviours(typeof(WalkBehaviour), typeof(BaseAttack));
         DisableBehaviours(typeof(WalkBehaviour));

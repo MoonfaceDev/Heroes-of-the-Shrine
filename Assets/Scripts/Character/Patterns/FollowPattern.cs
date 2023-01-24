@@ -41,7 +41,7 @@ public class FollowPattern : BasePattern
                 .ToArray();
         });
 
-        followBehaviour.Play(new FollowCommand(
+        followBehaviour.Play(new FollowBehaviour.Command(
             target,
             () =>
             {

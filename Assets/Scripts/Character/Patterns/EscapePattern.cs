@@ -21,7 +21,7 @@ public class EscapePattern : BasePattern
             return;
         }
 
-        escapeBehaviour.Play(new EscapeCommand(player.GetComponent<MovableEntity>(), speedMultiplier));
+        escapeBehaviour.Play(new EscapeBehaviour.Command(player.GetComponent<MovableEntity>(), speedMultiplier));
 
         onStop = () => animator.SetTrigger(StuckParameter);
         escapeBehaviour.MovableEntity.OnStuck += onStop;

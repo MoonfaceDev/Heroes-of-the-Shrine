@@ -12,16 +12,16 @@ public enum MotionSettings
     Static, // Character cannot walk, and stop right when attack is played
 }
 
-public class BaseAttackCommand : ICommand
-{
-}
-
 /// <summary>
 /// Base class for all attacks. Most attacks should derive from <see cref="SimpleAttack"/>, which has more members and helper methods.
 /// </summary>
 [RequireComponent(typeof(AttackManager))]
-public abstract class BaseAttack : PlayableBehaviour<BaseAttackCommand>
+public abstract class BaseAttack : PlayableBehaviour<BaseAttack.Command>
 {
+    public class Command
+    {
+    }
+
     /// <value>
     /// General attack events
     /// </value>
@@ -112,7 +112,7 @@ public abstract class BaseAttack : PlayableBehaviour<BaseAttackCommand>
     private bool recovering;
     private Coroutine attackFlowCoroutine;
 
-    public override bool CanPlay(BaseAttackCommand command)
+    public override bool CanPlay(Command command)
     {
         return base.CanPlay(command)
                && !IsPlaying<KnockbackBehaviour>() && !IsPlaying<StunBehaviour>()
@@ -130,7 +130,7 @@ public abstract class BaseAttack : PlayableBehaviour<BaseAttackCommand>
     /// <summary>
     /// Play the attack phases
     /// </summary>
-    protected override void DoPlay(BaseAttackCommand command)
+    protected override void DoPlay(Command command)
     {
         if (Motion != MotionSettings.WalkingEnabled)
         {

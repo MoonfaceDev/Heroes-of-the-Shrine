@@ -12,7 +12,7 @@ public class RandomRayPattern : BasePattern
         walkBehaviour.speed *= speedMultiplier;
 
         var direction = Random.insideUnitCircle.normalized;
-        walkBehaviour.Play(new WalkCommand(direction));
+        walkBehaviour.Play(new WalkBehaviour.Command(direction));
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
