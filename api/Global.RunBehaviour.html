@@ -90,8 +90,8 @@
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
     <div class="level2"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.RunCommand.html">RunCommand</a>&gt;</div>
-    <div class="level4"><a class="xref" href="Global.BaseMovementBehaviour-1.html">BaseMovementBehaviour</a>&lt;<a class="xref" href="Global.RunCommand.html">RunCommand</a>&gt;</div>
+    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.RunBehaviour.Command.html">RunBehaviour.Command</a>&gt;</div>
+    <div class="level4"><a class="xref" href="Global.BaseMovementBehaviour-1.html">BaseMovementBehaviour</a>&lt;<a class="xref" href="Global.RunBehaviour.Command.html">RunBehaviour.Command</a>&gt;</div>
     <div class="level5"><span class="xref">RunBehaviour</span></div>
   </div>
   <div class="implements">
@@ -102,19 +102,19 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_cooldown">BaseMovementBehaviour&lt;RunCommand&gt;.cooldown</a>
+      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_cooldown">BaseMovementBehaviour&lt;RunBehaviour.Command&gt;.cooldown</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_CanPlay__0_">BaseMovementBehaviour&lt;RunCommand&gt;.CanPlay(RunCommand)</a>
+      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_CanPlay__0_">BaseMovementBehaviour&lt;RunBehaviour.Command&gt;.CanPlay(RunBehaviour.Command)</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;RunCommand&gt;.PlayEvents</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;RunBehaviour.Command&gt;.PlayEvents</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;RunCommand&gt;.Play(RunCommand)</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;RunBehaviour.Command&gt;.Play(RunBehaviour.Command)</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;RunCommand&gt;.Stop()</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;RunBehaviour.Command&gt;.Stop()</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
@@ -169,7 +169,7 @@
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_RunBehaviour_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class RunBehaviour : BaseMovementBehaviour&lt;RunCommand&gt;, IMovementBehaviour, IPlayableBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class RunBehaviour : BaseMovementBehaviour&lt;RunBehaviour.Command&gt;, IMovementBehaviour, IPlayableBehaviour</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -273,7 +273,7 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;RunCommand&gt;.Playing</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;RunBehaviour.Command&gt;.Playing</span></div>
   
   
   <a id="Global_RunBehaviour_Run_" data-uid="Global.RunBehaviour.Run*"></a>
@@ -312,16 +312,16 @@
     <pre><code class="lang-csharp hljs">public override void Awake()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">BaseMovementBehaviour&lt;RunCommand&gt;.Awake()</span></div>
+  <div><span class="xref">BaseMovementBehaviour&lt;RunBehaviour.Command&gt;.Awake()</span></div>
   
   
   <a id="Global_RunBehaviour_DoPlay_" data-uid="Global.RunBehaviour.DoPlay*"></a>
-  <h4 id="Global_RunBehaviour_DoPlay_RunCommand_" data-uid="Global.RunBehaviour.DoPlay(RunCommand)">DoPlay(RunCommand)</h4>
+  <h4 id="Global_RunBehaviour_DoPlay_RunBehaviour_Command_" data-uid="Global.RunBehaviour.DoPlay(RunBehaviour.Command)">DoPlay(RunBehaviour.Command)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void DoPlay(RunCommand command)</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void DoPlay(RunBehaviour.Command command)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -334,14 +334,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.RunCommand.html">RunCommand</a></td>
+        <td><a class="xref" href="Global.RunBehaviour.Command.html">RunBehaviour.Command</a></td>
         <td><span class="parametername">command</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;RunCommand&gt;.DoPlay(RunCommand)</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;RunBehaviour.Command&gt;.DoPlay(RunBehaviour.Command)</span></div>
   
   
   <a id="Global_RunBehaviour_DoStop_" data-uid="Global.RunBehaviour.DoStop*"></a>
@@ -353,7 +353,7 @@
     <pre><code class="lang-csharp hljs">protected override void DoStop()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;RunCommand&gt;.DoStop()</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;RunBehaviour.Command&gt;.DoStop()</span></div>
   
   
   <a id="Global_RunBehaviour_Start_" data-uid="Global.RunBehaviour.Start*"></a>

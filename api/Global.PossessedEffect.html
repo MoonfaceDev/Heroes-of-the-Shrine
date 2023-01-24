@@ -90,8 +90,8 @@
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
     <div class="level2"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.PossessedEffectCommand.html">PossessedEffectCommand</a>&gt;</div>
-    <div class="level4"><a class="xref" href="Global.BaseEffect-1.html">BaseEffect</a>&lt;<a class="xref" href="Global.PossessedEffectCommand.html">PossessedEffectCommand</a>&gt;</div>
+    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.PossessedEffect.Command.html">PossessedEffect.Command</a>&gt;</div>
+    <div class="level4"><a class="xref" href="Global.BaseEffect-1.html">BaseEffect</a>&lt;<a class="xref" href="Global.PossessedEffect.Command.html">PossessedEffect.Command</a>&gt;</div>
     <div class="level5"><span class="xref">PossessedEffect</span></div>
   </div>
   <div class="implements">
@@ -102,19 +102,19 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Global.BaseEffect-1.html#Global_BaseEffect_1_Active">BaseEffect&lt;PossessedEffectCommand&gt;.Active</a>
+      <a class="xref" href="Global.BaseEffect-1.html#Global_BaseEffect_1_Active">BaseEffect&lt;PossessedEffect.Command&gt;.Active</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseEffect-1.html#Global_BaseEffect_1_Playing">BaseEffect&lt;PossessedEffectCommand&gt;.Playing</a>
+      <a class="xref" href="Global.BaseEffect-1.html#Global_BaseEffect_1_Playing">BaseEffect&lt;PossessedEffect.Command&gt;.Playing</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;PossessedEffectCommand&gt;.PlayEvents</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;PossessedEffect.Command&gt;.PlayEvents</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;PossessedEffectCommand&gt;.Play(PossessedEffectCommand)</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;PossessedEffect.Command&gt;.Play(PossessedEffect.Command)</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;PossessedEffectCommand&gt;.Stop()</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;PossessedEffect.Command&gt;.Stop()</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
@@ -172,19 +172,19 @@
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_PossessedEffect_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class PossessedEffect : BaseEffect&lt;PossessedEffectCommand&gt;, IEffect, IPlayableBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class PossessedEffect : BaseEffect&lt;PossessedEffect.Command&gt;, IEffect, IPlayableBehaviour</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   
   
   <a id="Global_PossessedEffect_CanPlay_" data-uid="Global.PossessedEffect.CanPlay*"></a>
-  <h4 id="Global_PossessedEffect_CanPlay_PossessedEffectCommand_" data-uid="Global.PossessedEffect.CanPlay(PossessedEffectCommand)">CanPlay(PossessedEffectCommand)</h4>
+  <h4 id="Global_PossessedEffect_CanPlay_PossessedEffect_Command_" data-uid="Global.PossessedEffect.CanPlay(PossessedEffect.Command)">CanPlay(PossessedEffect.Command)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool CanPlay(PossessedEffectCommand command)</code></pre>
+    <pre><code class="lang-csharp hljs">public override bool CanPlay(PossessedEffect.Command command)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -197,7 +197,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.PossessedEffectCommand.html">PossessedEffectCommand</a></td>
+        <td><a class="xref" href="Global.PossessedEffect.Command.html">PossessedEffect.Command</a></td>
         <td><span class="parametername">command</span></td>
         <td></td>
       </tr>
@@ -219,16 +219,16 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;PossessedEffectCommand&gt;.CanPlay(PossessedEffectCommand)</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;PossessedEffect.Command&gt;.CanPlay(PossessedEffect.Command)</span></div>
   
   
   <a id="Global_PossessedEffect_DoPlay_" data-uid="Global.PossessedEffect.DoPlay*"></a>
-  <h4 id="Global_PossessedEffect_DoPlay_PossessedEffectCommand_" data-uid="Global.PossessedEffect.DoPlay(PossessedEffectCommand)">DoPlay(PossessedEffectCommand)</h4>
+  <h4 id="Global_PossessedEffect_DoPlay_PossessedEffect_Command_" data-uid="Global.PossessedEffect.DoPlay(PossessedEffect.Command)">DoPlay(PossessedEffect.Command)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void DoPlay(PossessedEffectCommand command)</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void DoPlay(PossessedEffect.Command command)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -241,14 +241,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.PossessedEffectCommand.html">PossessedEffectCommand</a></td>
+        <td><a class="xref" href="Global.PossessedEffect.Command.html">PossessedEffect.Command</a></td>
         <td><span class="parametername">command</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;PossessedEffectCommand&gt;.DoPlay(PossessedEffectCommand)</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;PossessedEffect.Command&gt;.DoPlay(PossessedEffect.Command)</span></div>
   
   
   <a id="Global_PossessedEffect_DoStop_" data-uid="Global.PossessedEffect.DoStop*"></a>
@@ -260,7 +260,7 @@
     <pre><code class="lang-csharp hljs">protected override void DoStop()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;PossessedEffectCommand&gt;.DoStop()</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;PossessedEffect.Command&gt;.DoStop()</span></div>
   
   
   <a id="Global_PossessedEffect_GetProgress_" data-uid="Global.PossessedEffect.GetProgress*"></a>
@@ -287,7 +287,7 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">BaseEffect&lt;PossessedEffectCommand&gt;.GetProgress()</span></div>
+  <div><span class="xref">BaseEffect&lt;PossessedEffect.Command&gt;.GetProgress()</span></div>
   
   
   <a id="Global_PossessedEffect_ReduceDuration_" data-uid="Global.PossessedEffect.ReduceDuration*"></a>

@@ -90,8 +90,8 @@
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
     <div class="level2"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.KnockbackCommand.html">KnockbackCommand</a>&gt;</div>
-    <div class="level4"><a class="xref" href="Global.ForcedBehaviour-1.html">ForcedBehaviour</a>&lt;<a class="xref" href="Global.KnockbackCommand.html">KnockbackCommand</a>&gt;</div>
+    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.KnockbackBehaviour.Command.html">KnockbackBehaviour.Command</a>&gt;</div>
+    <div class="level4"><a class="xref" href="Global.ForcedBehaviour-1.html">ForcedBehaviour</a>&lt;<a class="xref" href="Global.KnockbackBehaviour.Command.html">KnockbackBehaviour.Command</a>&gt;</div>
     <div class="level5"><span class="xref">KnockbackBehaviour</span></div>
   </div>
   <div class="implements">
@@ -102,16 +102,16 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;KnockbackCommand&gt;.PlayEvents</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;KnockbackBehaviour.Command&gt;.PlayEvents</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_CanPlay__0_">PlayableBehaviour&lt;KnockbackCommand&gt;.CanPlay(KnockbackCommand)</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_CanPlay__0_">PlayableBehaviour&lt;KnockbackBehaviour.Command&gt;.CanPlay(KnockbackBehaviour.Command)</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;KnockbackCommand&gt;.Play(KnockbackCommand)</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;KnockbackBehaviour.Command&gt;.Play(KnockbackBehaviour.Command)</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;KnockbackCommand&gt;.Stop()</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;KnockbackBehaviour.Command&gt;.Stop()</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
@@ -169,7 +169,7 @@
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_KnockbackBehaviour_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class KnockbackBehaviour : ForcedBehaviour&lt;KnockbackCommand&gt;, IForcedBehaviour, IPlayableBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class KnockbackBehaviour : ForcedBehaviour&lt;KnockbackBehaviour.Command&gt;, IForcedBehaviour, IPlayableBehaviour</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -275,7 +275,7 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;KnockbackCommand&gt;.Playing</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;KnockbackBehaviour.Command&gt;.Playing</span></div>
   
   
   <a id="Global_KnockbackBehaviour_Recovering_" data-uid="Global.KnockbackBehaviour.Recovering*"></a>
@@ -306,12 +306,12 @@
   
   
   <a id="Global_KnockbackBehaviour_DoPlay_" data-uid="Global.KnockbackBehaviour.DoPlay*"></a>
-  <h4 id="Global_KnockbackBehaviour_DoPlay_KnockbackCommand_" data-uid="Global.KnockbackBehaviour.DoPlay(KnockbackCommand)">DoPlay(KnockbackCommand)</h4>
+  <h4 id="Global_KnockbackBehaviour_DoPlay_KnockbackBehaviour_Command_" data-uid="Global.KnockbackBehaviour.DoPlay(KnockbackBehaviour.Command)">DoPlay(KnockbackBehaviour.Command)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void DoPlay(KnockbackCommand command)</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void DoPlay(KnockbackBehaviour.Command command)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -324,14 +324,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.KnockbackCommand.html">KnockbackCommand</a></td>
+        <td><a class="xref" href="Global.KnockbackBehaviour.Command.html">KnockbackBehaviour.Command</a></td>
         <td><span class="parametername">command</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;KnockbackCommand&gt;.DoPlay(KnockbackCommand)</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;KnockbackBehaviour.Command&gt;.DoPlay(KnockbackBehaviour.Command)</span></div>
   
   
   <a id="Global_KnockbackBehaviour_DoStop_" data-uid="Global.KnockbackBehaviour.DoStop*"></a>
@@ -343,7 +343,7 @@
     <pre><code class="lang-csharp hljs">protected override void DoStop()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;KnockbackCommand&gt;.DoStop()</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;KnockbackBehaviour.Command&gt;.DoStop()</span></div>
   
   
   <a id="Global_KnockbackBehaviour_GetRelativeDirection_" data-uid="Global.KnockbackBehaviour.GetRelativeDirection*"></a>

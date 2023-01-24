@@ -90,8 +90,8 @@
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
     <div class="level2"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.ArcCommand.html">ArcCommand</a>&gt;</div>
-    <div class="level4"><a class="xref" href="Global.BaseMovementBehaviour-1.html">BaseMovementBehaviour</a>&lt;<a class="xref" href="Global.ArcCommand.html">ArcCommand</a>&gt;</div>
+    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.ArcBehaviour.Command.html">ArcBehaviour.Command</a>&gt;</div>
+    <div class="level4"><a class="xref" href="Global.BaseMovementBehaviour-1.html">BaseMovementBehaviour</a>&lt;<a class="xref" href="Global.ArcBehaviour.Command.html">ArcBehaviour.Command</a>&gt;</div>
     <div class="level5"><span class="xref">ArcBehaviour</span></div>
   </div>
   <div class="implements">
@@ -102,19 +102,19 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_cooldown">BaseMovementBehaviour&lt;ArcCommand&gt;.cooldown</a>
+      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_cooldown">BaseMovementBehaviour&lt;ArcBehaviour.Command&gt;.cooldown</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_CanPlay__0_">BaseMovementBehaviour&lt;ArcCommand&gt;.CanPlay(ArcCommand)</a>
+      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_CanPlay__0_">BaseMovementBehaviour&lt;ArcBehaviour.Command&gt;.CanPlay(ArcBehaviour.Command)</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;ArcCommand&gt;.PlayEvents</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;ArcBehaviour.Command&gt;.PlayEvents</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;ArcCommand&gt;.Play(ArcCommand)</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;ArcBehaviour.Command&gt;.Play(ArcBehaviour.Command)</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;ArcCommand&gt;.Stop()</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;ArcBehaviour.Command&gt;.Stop()</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
@@ -169,7 +169,7 @@
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_ArcBehaviour_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ArcBehaviour : BaseMovementBehaviour&lt;ArcCommand&gt;, IMovementBehaviour, IPlayableBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class ArcBehaviour : BaseMovementBehaviour&lt;ArcBehaviour.Command&gt;, IMovementBehaviour, IPlayableBehaviour</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
@@ -224,7 +224,7 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;ArcCommand&gt;.Playing</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;ArcBehaviour.Command&gt;.Playing</span></div>
   <h3 id="methods">Methods
   </h3>
   
@@ -238,16 +238,16 @@
     <pre><code class="lang-csharp hljs">public override void Awake()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">BaseMovementBehaviour&lt;ArcCommand&gt;.Awake()</span></div>
+  <div><span class="xref">BaseMovementBehaviour&lt;ArcBehaviour.Command&gt;.Awake()</span></div>
   
   
   <a id="Global_ArcBehaviour_DoPlay_" data-uid="Global.ArcBehaviour.DoPlay*"></a>
-  <h4 id="Global_ArcBehaviour_DoPlay_ArcCommand_" data-uid="Global.ArcBehaviour.DoPlay(ArcCommand)">DoPlay(ArcCommand)</h4>
+  <h4 id="Global_ArcBehaviour_DoPlay_ArcBehaviour_Command_" data-uid="Global.ArcBehaviour.DoPlay(ArcBehaviour.Command)">DoPlay(ArcBehaviour.Command)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void DoPlay(ArcCommand command)</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void DoPlay(ArcBehaviour.Command command)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -260,14 +260,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.ArcCommand.html">ArcCommand</a></td>
+        <td><a class="xref" href="Global.ArcBehaviour.Command.html">ArcBehaviour.Command</a></td>
         <td><span class="parametername">command</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;ArcCommand&gt;.DoPlay(ArcCommand)</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;ArcBehaviour.Command&gt;.DoPlay(ArcBehaviour.Command)</span></div>
   
   
   <a id="Global_ArcBehaviour_DoStop_" data-uid="Global.ArcBehaviour.DoStop*"></a>
@@ -279,7 +279,7 @@
     <pre><code class="lang-csharp hljs">protected override void DoStop()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;ArcCommand&gt;.DoStop()</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;ArcBehaviour.Command&gt;.DoStop()</span></div>
   
   
   <a id="Global_ArcBehaviour_Start_" data-uid="Global.ArcBehaviour.Start*"></a>

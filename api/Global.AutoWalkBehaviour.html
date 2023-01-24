@@ -90,8 +90,8 @@
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
     <div class="level2"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.AutoWalkCommand.html">AutoWalkCommand</a>&gt;</div>
-    <div class="level4"><a class="xref" href="Global.BaseMovementBehaviour-1.html">BaseMovementBehaviour</a>&lt;<a class="xref" href="Global.AutoWalkCommand.html">AutoWalkCommand</a>&gt;</div>
+    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.AutoWalkBehaviour.Command.html">AutoWalkBehaviour.Command</a>&gt;</div>
+    <div class="level4"><a class="xref" href="Global.BaseMovementBehaviour-1.html">BaseMovementBehaviour</a>&lt;<a class="xref" href="Global.AutoWalkBehaviour.Command.html">AutoWalkBehaviour.Command</a>&gt;</div>
     <div class="level5"><span class="xref">AutoWalkBehaviour</span></div>
   </div>
   <div class="implements">
@@ -102,19 +102,19 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_cooldown">BaseMovementBehaviour&lt;AutoWalkCommand&gt;.cooldown</a>
+      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_cooldown">BaseMovementBehaviour&lt;AutoWalkBehaviour.Command&gt;.cooldown</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_CanPlay__0_">BaseMovementBehaviour&lt;AutoWalkCommand&gt;.CanPlay(AutoWalkCommand)</a>
+      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_CanPlay__0_">BaseMovementBehaviour&lt;AutoWalkBehaviour.Command&gt;.CanPlay(AutoWalkBehaviour.Command)</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;AutoWalkCommand&gt;.PlayEvents</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;AutoWalkBehaviour.Command&gt;.PlayEvents</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;AutoWalkCommand&gt;.Play(AutoWalkCommand)</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;AutoWalkBehaviour.Command&gt;.Play(AutoWalkBehaviour.Command)</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;AutoWalkCommand&gt;.Stop()</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;AutoWalkBehaviour.Command&gt;.Stop()</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
@@ -169,7 +169,7 @@
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_AutoWalkBehaviour_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AutoWalkBehaviour : BaseMovementBehaviour&lt;AutoWalkCommand&gt;, IMovementBehaviour, IPlayableBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class AutoWalkBehaviour : BaseMovementBehaviour&lt;AutoWalkBehaviour.Command&gt;, IMovementBehaviour, IPlayableBehaviour</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
@@ -199,7 +199,7 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;AutoWalkCommand&gt;.Playing</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;AutoWalkBehaviour.Command&gt;.Playing</span></div>
   <h3 id="methods">Methods
   </h3>
   
@@ -213,16 +213,16 @@
     <pre><code class="lang-csharp hljs">public override void Awake()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">BaseMovementBehaviour&lt;AutoWalkCommand&gt;.Awake()</span></div>
+  <div><span class="xref">BaseMovementBehaviour&lt;AutoWalkBehaviour.Command&gt;.Awake()</span></div>
   
   
   <a id="Global_AutoWalkBehaviour_DoPlay_" data-uid="Global.AutoWalkBehaviour.DoPlay*"></a>
-  <h4 id="Global_AutoWalkBehaviour_DoPlay_AutoWalkCommand_" data-uid="Global.AutoWalkBehaviour.DoPlay(AutoWalkCommand)">DoPlay(AutoWalkCommand)</h4>
+  <h4 id="Global_AutoWalkBehaviour_DoPlay_AutoWalkBehaviour_Command_" data-uid="Global.AutoWalkBehaviour.DoPlay(AutoWalkBehaviour.Command)">DoPlay(AutoWalkBehaviour.Command)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void DoPlay(AutoWalkCommand command)</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void DoPlay(AutoWalkBehaviour.Command command)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -235,14 +235,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.AutoWalkCommand.html">AutoWalkCommand</a></td>
+        <td><a class="xref" href="Global.AutoWalkBehaviour.Command.html">AutoWalkBehaviour.Command</a></td>
         <td><span class="parametername">command</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;AutoWalkCommand&gt;.DoPlay(AutoWalkCommand)</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;AutoWalkBehaviour.Command&gt;.DoPlay(AutoWalkBehaviour.Command)</span></div>
   
   
   <a id="Global_AutoWalkBehaviour_DoStop_" data-uid="Global.AutoWalkBehaviour.DoStop*"></a>
@@ -254,7 +254,7 @@
     <pre><code class="lang-csharp hljs">protected override void DoStop()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;AutoWalkCommand&gt;.DoStop()</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;AutoWalkBehaviour.Command&gt;.DoStop()</span></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Global.IMovementBehaviour.html">IMovementBehaviour</a>

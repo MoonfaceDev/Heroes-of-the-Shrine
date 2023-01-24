@@ -91,7 +91,7 @@
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
     <div class="level2"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.BaseAttackCommand.html">BaseAttackCommand</a>&gt;</div>
+    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.BaseAttack.Command.html">BaseAttack.Command</a>&gt;</div>
     <div class="level4"><span class="xref">BaseAttack</span></div>
       <div class="level5"><a class="xref" href="Global.ElectrifyAttack.html">ElectrifyAttack</a></div>
       <div class="level5"><a class="xref" href="Global.MotionAttack.html">MotionAttack</a></div>
@@ -107,13 +107,13 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;BaseAttackCommand&gt;.PlayEvents</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;BaseAttack.Command&gt;.PlayEvents</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;BaseAttackCommand&gt;.Play(BaseAttackCommand)</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;BaseAttack.Command&gt;.Play(BaseAttack.Command)</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;BaseAttackCommand&gt;.Stop()</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;BaseAttack.Command&gt;.Stop()</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
@@ -171,7 +171,7 @@
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_BaseAttack_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class BaseAttack : PlayableBehaviour&lt;BaseAttackCommand&gt;, IPlayableBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class BaseAttack : PlayableBehaviour&lt;BaseAttack.Command&gt;, IPlayableBehaviour</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -436,7 +436,7 @@ It also sets the animator parameter: <code>{attackName}-anticipating</code>.</p>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;BaseAttackCommand&gt;.Playing</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;BaseAttack.Command&gt;.Playing</span></div>
   
   
   <a id="Global_BaseAttack_Recovering_" data-uid="Global.BaseAttack.Recovering*"></a>
@@ -519,12 +519,12 @@ It also sets the animator parameter: <code>{attackName}-recovering</code>.</p>
   
   
   <a id="Global_BaseAttack_CanPlay_" data-uid="Global.BaseAttack.CanPlay*"></a>
-  <h4 id="Global_BaseAttack_CanPlay_BaseAttackCommand_" data-uid="Global.BaseAttack.CanPlay(BaseAttackCommand)">CanPlay(BaseAttackCommand)</h4>
+  <h4 id="Global_BaseAttack_CanPlay_BaseAttack_Command_" data-uid="Global.BaseAttack.CanPlay(BaseAttack.Command)">CanPlay(BaseAttack.Command)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool CanPlay(BaseAttackCommand command)</code></pre>
+    <pre><code class="lang-csharp hljs">public override bool CanPlay(BaseAttack.Command command)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -537,7 +537,7 @@ It also sets the animator parameter: <code>{attackName}-recovering</code>.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.BaseAttackCommand.html">BaseAttackCommand</a></td>
+        <td><a class="xref" href="Global.BaseAttack.Command.html">BaseAttack.Command</a></td>
         <td><span class="parametername">command</span></td>
         <td></td>
       </tr>
@@ -559,17 +559,17 @@ It also sets the animator parameter: <code>{attackName}-recovering</code>.</p>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;BaseAttackCommand&gt;.CanPlay(BaseAttackCommand)</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;BaseAttack.Command&gt;.CanPlay(BaseAttack.Command)</span></div>
   
   
   <a id="Global_BaseAttack_DoPlay_" data-uid="Global.BaseAttack.DoPlay*"></a>
-  <h4 id="Global_BaseAttack_DoPlay_BaseAttackCommand_" data-uid="Global.BaseAttack.DoPlay(BaseAttackCommand)">DoPlay(BaseAttackCommand)</h4>
+  <h4 id="Global_BaseAttack_DoPlay_BaseAttack_Command_" data-uid="Global.BaseAttack.DoPlay(BaseAttack.Command)">DoPlay(BaseAttack.Command)</h4>
   <div class="markdown level1 summary"><p>Play the attack phases</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void DoPlay(BaseAttackCommand command)</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void DoPlay(BaseAttack.Command command)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -582,14 +582,14 @@ It also sets the animator parameter: <code>{attackName}-recovering</code>.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.BaseAttackCommand.html">BaseAttackCommand</a></td>
+        <td><a class="xref" href="Global.BaseAttack.Command.html">BaseAttack.Command</a></td>
         <td><span class="parametername">command</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;BaseAttackCommand&gt;.DoPlay(BaseAttackCommand)</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;BaseAttack.Command&gt;.DoPlay(BaseAttack.Command)</span></div>
   
   
   <a id="Global_BaseAttack_DoStop_" data-uid="Global.BaseAttack.DoStop*"></a>
@@ -603,7 +603,7 @@ Can be safely called even if attack is not currently playing, as it will do noth
     <pre><code class="lang-csharp hljs">protected override void DoStop()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;BaseAttackCommand&gt;.DoStop()</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;BaseAttack.Command&gt;.DoStop()</span></div>
   
   
   <a id="Global_BaseAttack_RecoveryPhase_" data-uid="Global.BaseAttack.RecoveryPhase*"></a>

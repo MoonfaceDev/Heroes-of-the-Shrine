@@ -90,8 +90,8 @@
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
     <div class="level2"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.FollowCommand.html">FollowCommand</a>&gt;</div>
-    <div class="level4"><a class="xref" href="Global.BaseMovementBehaviour-1.html">BaseMovementBehaviour</a>&lt;<a class="xref" href="Global.FollowCommand.html">FollowCommand</a>&gt;</div>
+    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.FollowBehaviour.Command.html">FollowBehaviour.Command</a>&gt;</div>
+    <div class="level4"><a class="xref" href="Global.BaseMovementBehaviour-1.html">BaseMovementBehaviour</a>&lt;<a class="xref" href="Global.FollowBehaviour.Command.html">FollowBehaviour.Command</a>&gt;</div>
     <div class="level5"><span class="xref">FollowBehaviour</span></div>
   </div>
   <div class="implements">
@@ -102,19 +102,19 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_cooldown">BaseMovementBehaviour&lt;FollowCommand&gt;.cooldown</a>
+      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_cooldown">BaseMovementBehaviour&lt;FollowBehaviour.Command&gt;.cooldown</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_CanPlay__0_">BaseMovementBehaviour&lt;FollowCommand&gt;.CanPlay(FollowCommand)</a>
+      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_CanPlay__0_">BaseMovementBehaviour&lt;FollowBehaviour.Command&gt;.CanPlay(FollowBehaviour.Command)</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;FollowCommand&gt;.PlayEvents</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;FollowBehaviour.Command&gt;.PlayEvents</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;FollowCommand&gt;.Play(FollowCommand)</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;FollowBehaviour.Command&gt;.Play(FollowBehaviour.Command)</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;FollowCommand&gt;.Stop()</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;FollowBehaviour.Command&gt;.Stop()</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
@@ -169,7 +169,7 @@
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_FollowBehaviour_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class FollowBehaviour : BaseMovementBehaviour&lt;FollowCommand&gt;, IMovementBehaviour, IPlayableBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class FollowBehaviour : BaseMovementBehaviour&lt;FollowBehaviour.Command&gt;, IMovementBehaviour, IPlayableBehaviour</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
@@ -199,7 +199,7 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;FollowCommand&gt;.Playing</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;FollowBehaviour.Command&gt;.Playing</span></div>
   <h3 id="methods">Methods
   </h3>
   
@@ -213,16 +213,16 @@
     <pre><code class="lang-csharp hljs">public override void Awake()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">BaseMovementBehaviour&lt;FollowCommand&gt;.Awake()</span></div>
+  <div><span class="xref">BaseMovementBehaviour&lt;FollowBehaviour.Command&gt;.Awake()</span></div>
   
   
   <a id="Global_FollowBehaviour_DoPlay_" data-uid="Global.FollowBehaviour.DoPlay*"></a>
-  <h4 id="Global_FollowBehaviour_DoPlay_FollowCommand_" data-uid="Global.FollowBehaviour.DoPlay(FollowCommand)">DoPlay(FollowCommand)</h4>
+  <h4 id="Global_FollowBehaviour_DoPlay_FollowBehaviour_Command_" data-uid="Global.FollowBehaviour.DoPlay(FollowBehaviour.Command)">DoPlay(FollowBehaviour.Command)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void DoPlay(FollowCommand command)</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void DoPlay(FollowBehaviour.Command command)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -235,14 +235,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.FollowCommand.html">FollowCommand</a></td>
+        <td><a class="xref" href="Global.FollowBehaviour.Command.html">FollowBehaviour.Command</a></td>
         <td><span class="parametername">command</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;FollowCommand&gt;.DoPlay(FollowCommand)</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;FollowBehaviour.Command&gt;.DoPlay(FollowBehaviour.Command)</span></div>
   
   
   <a id="Global_FollowBehaviour_DoStop_" data-uid="Global.FollowBehaviour.DoStop*"></a>
@@ -254,7 +254,7 @@
     <pre><code class="lang-csharp hljs">protected override void DoStop()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;FollowCommand&gt;.DoStop()</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;FollowBehaviour.Command&gt;.DoStop()</span></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Global.IMovementBehaviour.html">IMovementBehaviour</a>

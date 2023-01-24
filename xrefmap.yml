@@ -208,12 +208,43 @@ references:
   isSpec: "True"
   fullName: ArcBehaviour.Awake
   nameWithType: ArcBehaviour.Awake
-- uid: Global.ArcBehaviour.DoPlay(ArcCommand)
-  name: DoPlay(ArcCommand)
-  href: api/Global.ArcBehaviour.html#Global_ArcBehaviour_DoPlay_ArcCommand_
-  commentId: M:Global.ArcBehaviour.DoPlay(ArcCommand)
-  fullName: ArcBehaviour.DoPlay(ArcCommand)
-  nameWithType: ArcBehaviour.DoPlay(ArcCommand)
+- uid: Global.ArcBehaviour.Command
+  name: ArcBehaviour.Command
+  href: api/Global.ArcBehaviour.Command.html
+  commentId: T:Global.ArcBehaviour.Command
+  fullName: ArcBehaviour.Command
+  nameWithType: ArcBehaviour.Command
+- uid: Global.ArcBehaviour.Command.#ctor(MovableEntity,System.Single)
+  name: Command(MovableEntity, Single)
+  href: api/Global.ArcBehaviour.Command.html#Global_ArcBehaviour_Command__ctor_MovableEntity_System_Single_
+  commentId: M:Global.ArcBehaviour.Command.#ctor(MovableEntity,System.Single)
+  fullName: ArcBehaviour.Command.Command(MovableEntity, System.Single)
+  nameWithType: ArcBehaviour.Command.Command(MovableEntity, Single)
+- uid: Global.ArcBehaviour.Command.#ctor*
+  name: Command
+  href: api/Global.ArcBehaviour.Command.html#Global_ArcBehaviour_Command__ctor_
+  commentId: Overload:Global.ArcBehaviour.Command.#ctor
+  isSpec: "True"
+  fullName: ArcBehaviour.Command.Command
+  nameWithType: ArcBehaviour.Command.Command
+- uid: Global.ArcBehaviour.Command.speedMultiplier
+  name: speedMultiplier
+  href: api/Global.ArcBehaviour.Command.html#Global_ArcBehaviour_Command_speedMultiplier
+  commentId: F:Global.ArcBehaviour.Command.speedMultiplier
+  fullName: ArcBehaviour.Command.speedMultiplier
+  nameWithType: ArcBehaviour.Command.speedMultiplier
+- uid: Global.ArcBehaviour.Command.target
+  name: target
+  href: api/Global.ArcBehaviour.Command.html#Global_ArcBehaviour_Command_target
+  commentId: F:Global.ArcBehaviour.Command.target
+  fullName: ArcBehaviour.Command.target
+  nameWithType: ArcBehaviour.Command.target
+- uid: Global.ArcBehaviour.DoPlay(ArcBehaviour.Command)
+  name: DoPlay(ArcBehaviour.Command)
+  href: api/Global.ArcBehaviour.html#Global_ArcBehaviour_DoPlay_ArcBehaviour_Command_
+  commentId: M:Global.ArcBehaviour.DoPlay(ArcBehaviour.Command)
+  fullName: ArcBehaviour.DoPlay(ArcBehaviour.Command)
+  nameWithType: ArcBehaviour.DoPlay(ArcBehaviour.Command)
 - uid: Global.ArcBehaviour.DoPlay*
   name: DoPlay
   href: api/Global.ArcBehaviour.html#Global_ArcBehaviour_DoPlay_
@@ -260,37 +291,6 @@ references:
   isSpec: "True"
   fullName: ArcBehaviour.Start
   nameWithType: ArcBehaviour.Start
-- uid: Global.ArcCommand
-  name: ArcCommand
-  href: api/Global.ArcCommand.html
-  commentId: T:Global.ArcCommand
-  fullName: ArcCommand
-  nameWithType: ArcCommand
-- uid: Global.ArcCommand.#ctor(MovableEntity,System.Single)
-  name: ArcCommand(MovableEntity, Single)
-  href: api/Global.ArcCommand.html#Global_ArcCommand__ctor_MovableEntity_System_Single_
-  commentId: M:Global.ArcCommand.#ctor(MovableEntity,System.Single)
-  fullName: ArcCommand.ArcCommand(MovableEntity, System.Single)
-  nameWithType: ArcCommand.ArcCommand(MovableEntity, Single)
-- uid: Global.ArcCommand.#ctor*
-  name: ArcCommand
-  href: api/Global.ArcCommand.html#Global_ArcCommand__ctor_
-  commentId: Overload:Global.ArcCommand.#ctor
-  isSpec: "True"
-  fullName: ArcCommand.ArcCommand
-  nameWithType: ArcCommand.ArcCommand
-- uid: Global.ArcCommand.speedMultiplier
-  name: speedMultiplier
-  href: api/Global.ArcCommand.html#Global_ArcCommand_speedMultiplier
-  commentId: F:Global.ArcCommand.speedMultiplier
-  fullName: ArcCommand.speedMultiplier
-  nameWithType: ArcCommand.speedMultiplier
-- uid: Global.ArcCommand.target
-  name: target
-  href: api/Global.ArcCommand.html#Global_ArcCommand_target
-  commentId: F:Global.ArcCommand.target
-  fullName: ArcCommand.target
-  nameWithType: ArcCommand.target
 - uid: Global.ArcPattern
   name: ArcPattern
   href: api/Global.ArcPattern.html
@@ -707,12 +707,46 @@ references:
   isSpec: "True"
   fullName: AutoWalkBehaviour.Awake
   nameWithType: AutoWalkBehaviour.Awake
-- uid: Global.AutoWalkBehaviour.DoPlay(AutoWalkCommand)
-  name: DoPlay(AutoWalkCommand)
-  href: api/Global.AutoWalkBehaviour.html#Global_AutoWalkBehaviour_DoPlay_AutoWalkCommand_
-  commentId: M:Global.AutoWalkBehaviour.DoPlay(AutoWalkCommand)
-  fullName: AutoWalkBehaviour.DoPlay(AutoWalkCommand)
-  nameWithType: AutoWalkBehaviour.DoPlay(AutoWalkCommand)
+- uid: Global.AutoWalkBehaviour.Command
+  name: AutoWalkBehaviour.Command
+  href: api/Global.AutoWalkBehaviour.Command.html
+  commentId: T:Global.AutoWalkBehaviour.Command
+  fullName: AutoWalkBehaviour.Command
+  nameWithType: AutoWalkBehaviour.Command
+- uid: Global.AutoWalkBehaviour.Command.#ctor(Vector3,Func{Node[]})
+  name: Command(Vector3, Func<Node[]>)
+  href: api/Global.AutoWalkBehaviour.Command.html#Global_AutoWalkBehaviour_Command__ctor_Vector3_Func_Node____
+  commentId: M:Global.AutoWalkBehaviour.Command.#ctor(Vector3,Func{Node[]})
+  name.vb: Command(Vector3, Func(Of Node()))
+  fullName: AutoWalkBehaviour.Command.Command(Vector3, Func<Node[]>)
+  fullName.vb: AutoWalkBehaviour.Command.Command(Vector3, Func(Of Node()))
+  nameWithType: AutoWalkBehaviour.Command.Command(Vector3, Func<Node[]>)
+  nameWithType.vb: AutoWalkBehaviour.Command.Command(Vector3, Func(Of Node()))
+- uid: Global.AutoWalkBehaviour.Command.#ctor*
+  name: Command
+  href: api/Global.AutoWalkBehaviour.Command.html#Global_AutoWalkBehaviour_Command__ctor_
+  commentId: Overload:Global.AutoWalkBehaviour.Command.#ctor
+  isSpec: "True"
+  fullName: AutoWalkBehaviour.Command.Command
+  nameWithType: AutoWalkBehaviour.Command.Command
+- uid: Global.AutoWalkBehaviour.Command.destination
+  name: destination
+  href: api/Global.AutoWalkBehaviour.Command.html#Global_AutoWalkBehaviour_Command_destination
+  commentId: F:Global.AutoWalkBehaviour.Command.destination
+  fullName: AutoWalkBehaviour.Command.destination
+  nameWithType: AutoWalkBehaviour.Command.destination
+- uid: Global.AutoWalkBehaviour.Command.getExcluded
+  name: getExcluded
+  href: api/Global.AutoWalkBehaviour.Command.html#Global_AutoWalkBehaviour_Command_getExcluded
+  commentId: F:Global.AutoWalkBehaviour.Command.getExcluded
+  fullName: AutoWalkBehaviour.Command.getExcluded
+  nameWithType: AutoWalkBehaviour.Command.getExcluded
+- uid: Global.AutoWalkBehaviour.DoPlay(AutoWalkBehaviour.Command)
+  name: DoPlay(AutoWalkBehaviour.Command)
+  href: api/Global.AutoWalkBehaviour.html#Global_AutoWalkBehaviour_DoPlay_AutoWalkBehaviour_Command_
+  commentId: M:Global.AutoWalkBehaviour.DoPlay(AutoWalkBehaviour.Command)
+  fullName: AutoWalkBehaviour.DoPlay(AutoWalkBehaviour.Command)
+  nameWithType: AutoWalkBehaviour.DoPlay(AutoWalkBehaviour.Command)
 - uid: Global.AutoWalkBehaviour.DoPlay*
   name: DoPlay
   href: api/Global.AutoWalkBehaviour.html#Global_AutoWalkBehaviour_DoPlay_
@@ -746,40 +780,6 @@ references:
   isSpec: "True"
   fullName: AutoWalkBehaviour.Playing
   nameWithType: AutoWalkBehaviour.Playing
-- uid: Global.AutoWalkCommand
-  name: AutoWalkCommand
-  href: api/Global.AutoWalkCommand.html
-  commentId: T:Global.AutoWalkCommand
-  fullName: AutoWalkCommand
-  nameWithType: AutoWalkCommand
-- uid: Global.AutoWalkCommand.#ctor(Vector3,Func{Node[]})
-  name: AutoWalkCommand(Vector3, Func<Node[]>)
-  href: api/Global.AutoWalkCommand.html#Global_AutoWalkCommand__ctor_Vector3_Func_Node____
-  commentId: M:Global.AutoWalkCommand.#ctor(Vector3,Func{Node[]})
-  name.vb: AutoWalkCommand(Vector3, Func(Of Node()))
-  fullName: AutoWalkCommand.AutoWalkCommand(Vector3, Func<Node[]>)
-  fullName.vb: AutoWalkCommand.AutoWalkCommand(Vector3, Func(Of Node()))
-  nameWithType: AutoWalkCommand.AutoWalkCommand(Vector3, Func<Node[]>)
-  nameWithType.vb: AutoWalkCommand.AutoWalkCommand(Vector3, Func(Of Node()))
-- uid: Global.AutoWalkCommand.#ctor*
-  name: AutoWalkCommand
-  href: api/Global.AutoWalkCommand.html#Global_AutoWalkCommand__ctor_
-  commentId: Overload:Global.AutoWalkCommand.#ctor
-  isSpec: "True"
-  fullName: AutoWalkCommand.AutoWalkCommand
-  nameWithType: AutoWalkCommand.AutoWalkCommand
-- uid: Global.AutoWalkCommand.destination
-  name: destination
-  href: api/Global.AutoWalkCommand.html#Global_AutoWalkCommand_destination
-  commentId: F:Global.AutoWalkCommand.destination
-  fullName: AutoWalkCommand.destination
-  nameWithType: AutoWalkCommand.destination
-- uid: Global.AutoWalkCommand.getExcluded
-  name: getExcluded
-  href: api/Global.AutoWalkCommand.html#Global_AutoWalkCommand_getExcluded
-  commentId: F:Global.AutoWalkCommand.getExcluded
-  fullName: AutoWalkCommand.getExcluded
-  nameWithType: AutoWalkCommand.getExcluded
 - uid: Global.BaseAttack
   name: BaseAttack
   href: api/Global.BaseAttack.html
@@ -844,12 +844,12 @@ references:
   commentId: F:Global.BaseAttack.attackEvents
   fullName: BaseAttack.attackEvents
   nameWithType: BaseAttack.attackEvents
-- uid: Global.BaseAttack.CanPlay(BaseAttackCommand)
-  name: CanPlay(BaseAttackCommand)
-  href: api/Global.BaseAttack.html#Global_BaseAttack_CanPlay_BaseAttackCommand_
-  commentId: M:Global.BaseAttack.CanPlay(BaseAttackCommand)
-  fullName: BaseAttack.CanPlay(BaseAttackCommand)
-  nameWithType: BaseAttack.CanPlay(BaseAttackCommand)
+- uid: Global.BaseAttack.CanPlay(BaseAttack.Command)
+  name: CanPlay(BaseAttack.Command)
+  href: api/Global.BaseAttack.html#Global_BaseAttack_CanPlay_BaseAttack_Command_
+  commentId: M:Global.BaseAttack.CanPlay(BaseAttack.Command)
+  fullName: BaseAttack.CanPlay(BaseAttack.Command)
+  nameWithType: BaseAttack.CanPlay(BaseAttack.Command)
 - uid: Global.BaseAttack.CanPlay*
   name: CanPlay
   href: api/Global.BaseAttack.html#Global_BaseAttack_CanPlay_
@@ -857,12 +857,18 @@ references:
   isSpec: "True"
   fullName: BaseAttack.CanPlay
   nameWithType: BaseAttack.CanPlay
-- uid: Global.BaseAttack.DoPlay(BaseAttackCommand)
-  name: DoPlay(BaseAttackCommand)
-  href: api/Global.BaseAttack.html#Global_BaseAttack_DoPlay_BaseAttackCommand_
-  commentId: M:Global.BaseAttack.DoPlay(BaseAttackCommand)
-  fullName: BaseAttack.DoPlay(BaseAttackCommand)
-  nameWithType: BaseAttack.DoPlay(BaseAttackCommand)
+- uid: Global.BaseAttack.Command
+  name: BaseAttack.Command
+  href: api/Global.BaseAttack.Command.html
+  commentId: T:Global.BaseAttack.Command
+  fullName: BaseAttack.Command
+  nameWithType: BaseAttack.Command
+- uid: Global.BaseAttack.DoPlay(BaseAttack.Command)
+  name: DoPlay(BaseAttack.Command)
+  href: api/Global.BaseAttack.html#Global_BaseAttack_DoPlay_BaseAttack_Command_
+  commentId: M:Global.BaseAttack.DoPlay(BaseAttack.Command)
+  fullName: BaseAttack.DoPlay(BaseAttack.Command)
+  nameWithType: BaseAttack.DoPlay(BaseAttack.Command)
 - uid: Global.BaseAttack.DoPlay*
   name: DoPlay
   href: api/Global.BaseAttack.html#Global_BaseAttack_DoPlay_
@@ -972,12 +978,6 @@ references:
   isSpec: "True"
   fullName: BaseAttack.RecoveryPhase
   nameWithType: BaseAttack.RecoveryPhase
-- uid: Global.BaseAttackCommand
-  name: BaseAttackCommand
-  href: api/Global.BaseAttackCommand.html
-  commentId: T:Global.BaseAttackCommand
-  fullName: BaseAttackCommand
-  nameWithType: BaseAttackCommand
 - uid: Global.BaseComponent
   name: BaseComponent
   href: api/Global.BaseComponent.html
@@ -1533,19 +1533,6 @@ references:
   commentId: F:Global.CameraFocus.lerpSpeed
   fullName: CameraFocus.lerpSpeed
   nameWithType: CameraFocus.lerpSpeed
-- uid: Global.CameraFocus.Stop
-  name: Stop()
-  href: api/Global.CameraFocus.html#Global_CameraFocus_Stop
-  commentId: M:Global.CameraFocus.Stop
-  fullName: CameraFocus.Stop()
-  nameWithType: CameraFocus.Stop()
-- uid: Global.CameraFocus.Stop*
-  name: Stop
-  href: api/Global.CameraFocus.html#Global_CameraFocus_Stop_
-  commentId: Overload:Global.CameraFocus.Stop
-  isSpec: "True"
-  fullName: CameraFocus.Stop
-  nameWithType: CameraFocus.Stop
 - uid: Global.CameraFocus.Zoom(Vector2,System.Single)
   name: Zoom(Vector2, Single)
   href: api/Global.CameraFocus.html#Global_CameraFocus_Zoom_Vector2_System_Single_
@@ -2347,12 +2334,12 @@ references:
   isSpec: "True"
   fullName: DodgeBehaviour.Anticipating
   nameWithType: DodgeBehaviour.Anticipating
-- uid: Global.DodgeBehaviour.CanPlay(DodgeCommand)
-  name: CanPlay(DodgeCommand)
-  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_CanPlay_DodgeCommand_
-  commentId: M:Global.DodgeBehaviour.CanPlay(DodgeCommand)
-  fullName: DodgeBehaviour.CanPlay(DodgeCommand)
-  nameWithType: DodgeBehaviour.CanPlay(DodgeCommand)
+- uid: Global.DodgeBehaviour.CanPlay(DodgeBehaviour.Command)
+  name: CanPlay(DodgeBehaviour.Command)
+  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_CanPlay_DodgeBehaviour_Command_
+  commentId: M:Global.DodgeBehaviour.CanPlay(DodgeBehaviour.Command)
+  fullName: DodgeBehaviour.CanPlay(DodgeBehaviour.Command)
+  nameWithType: DodgeBehaviour.CanPlay(DodgeBehaviour.Command)
 - uid: Global.DodgeBehaviour.CanPlay*
   name: CanPlay
   href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_CanPlay_
@@ -2360,18 +2347,43 @@ references:
   isSpec: "True"
   fullName: DodgeBehaviour.CanPlay
   nameWithType: DodgeBehaviour.CanPlay
+- uid: Global.DodgeBehaviour.Command
+  name: DodgeBehaviour.Command
+  href: api/Global.DodgeBehaviour.Command.html
+  commentId: T:Global.DodgeBehaviour.Command
+  fullName: DodgeBehaviour.Command
+  nameWithType: DodgeBehaviour.Command
+- uid: Global.DodgeBehaviour.Command.#ctor(System.Int32)
+  name: Command(Int32)
+  href: api/Global.DodgeBehaviour.Command.html#Global_DodgeBehaviour_Command__ctor_System_Int32_
+  commentId: M:Global.DodgeBehaviour.Command.#ctor(System.Int32)
+  fullName: DodgeBehaviour.Command.Command(System.Int32)
+  nameWithType: DodgeBehaviour.Command.Command(Int32)
+- uid: Global.DodgeBehaviour.Command.#ctor*
+  name: Command
+  href: api/Global.DodgeBehaviour.Command.html#Global_DodgeBehaviour_Command__ctor_
+  commentId: Overload:Global.DodgeBehaviour.Command.#ctor
+  isSpec: "True"
+  fullName: DodgeBehaviour.Command.Command
+  nameWithType: DodgeBehaviour.Command.Command
+- uid: Global.DodgeBehaviour.Command.direction
+  name: direction
+  href: api/Global.DodgeBehaviour.Command.html#Global_DodgeBehaviour_Command_direction
+  commentId: F:Global.DodgeBehaviour.Command.direction
+  fullName: DodgeBehaviour.Command.direction
+  nameWithType: DodgeBehaviour.Command.direction
 - uid: Global.DodgeBehaviour.dodgeDistance
   name: dodgeDistance
   href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_dodgeDistance
   commentId: F:Global.DodgeBehaviour.dodgeDistance
   fullName: DodgeBehaviour.dodgeDistance
   nameWithType: DodgeBehaviour.dodgeDistance
-- uid: Global.DodgeBehaviour.DoPlay(DodgeCommand)
-  name: DoPlay(DodgeCommand)
-  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_DoPlay_DodgeCommand_
-  commentId: M:Global.DodgeBehaviour.DoPlay(DodgeCommand)
-  fullName: DodgeBehaviour.DoPlay(DodgeCommand)
-  nameWithType: DodgeBehaviour.DoPlay(DodgeCommand)
+- uid: Global.DodgeBehaviour.DoPlay(DodgeBehaviour.Command)
+  name: DoPlay(DodgeBehaviour.Command)
+  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_DoPlay_DodgeBehaviour_Command_
+  commentId: M:Global.DodgeBehaviour.DoPlay(DodgeBehaviour.Command)
+  fullName: DodgeBehaviour.DoPlay(DodgeBehaviour.Command)
+  nameWithType: DodgeBehaviour.DoPlay(DodgeBehaviour.Command)
 - uid: Global.DodgeBehaviour.DoPlay*
   name: DoPlay
   href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_DoPlay_
@@ -2436,31 +2448,6 @@ references:
   commentId: F:Global.DodgeBehaviour.recoveryTime
   fullName: DodgeBehaviour.recoveryTime
   nameWithType: DodgeBehaviour.recoveryTime
-- uid: Global.DodgeCommand
-  name: DodgeCommand
-  href: api/Global.DodgeCommand.html
-  commentId: T:Global.DodgeCommand
-  fullName: DodgeCommand
-  nameWithType: DodgeCommand
-- uid: Global.DodgeCommand.#ctor(System.Int32)
-  name: DodgeCommand(Int32)
-  href: api/Global.DodgeCommand.html#Global_DodgeCommand__ctor_System_Int32_
-  commentId: M:Global.DodgeCommand.#ctor(System.Int32)
-  fullName: DodgeCommand.DodgeCommand(System.Int32)
-  nameWithType: DodgeCommand.DodgeCommand(Int32)
-- uid: Global.DodgeCommand.#ctor*
-  name: DodgeCommand
-  href: api/Global.DodgeCommand.html#Global_DodgeCommand__ctor_
-  commentId: Overload:Global.DodgeCommand.#ctor
-  isSpec: "True"
-  fullName: DodgeCommand.DodgeCommand
-  nameWithType: DodgeCommand.DodgeCommand
-- uid: Global.DodgeCommand.direction
-  name: direction
-  href: api/Global.DodgeCommand.html#Global_DodgeCommand_direction
-  commentId: F:Global.DodgeCommand.direction
-  fullName: DodgeCommand.direction
-  nameWithType: DodgeCommand.direction
 - uid: Global.EffectBar
   name: EffectBar
   href: api/Global.EffectBar.html
@@ -2690,12 +2677,43 @@ references:
   isSpec: "True"
   fullName: ElectrifiedEffect.Awake
   nameWithType: ElectrifiedEffect.Awake
-- uid: Global.ElectrifiedEffect.DoPlay(ElectrifiedEffectCommand)
-  name: DoPlay(ElectrifiedEffectCommand)
-  href: api/Global.ElectrifiedEffect.html#Global_ElectrifiedEffect_DoPlay_ElectrifiedEffectCommand_
-  commentId: M:Global.ElectrifiedEffect.DoPlay(ElectrifiedEffectCommand)
-  fullName: ElectrifiedEffect.DoPlay(ElectrifiedEffectCommand)
-  nameWithType: ElectrifiedEffect.DoPlay(ElectrifiedEffectCommand)
+- uid: Global.ElectrifiedEffect.Command
+  name: ElectrifiedEffect.Command
+  href: api/Global.ElectrifiedEffect.Command.html
+  commentId: T:Global.ElectrifiedEffect.Command
+  fullName: ElectrifiedEffect.Command
+  nameWithType: ElectrifiedEffect.Command
+- uid: Global.ElectrifiedEffect.Command.#ctor(System.Single,System.Single)
+  name: Command(Single, Single)
+  href: api/Global.ElectrifiedEffect.Command.html#Global_ElectrifiedEffect_Command__ctor_System_Single_System_Single_
+  commentId: M:Global.ElectrifiedEffect.Command.#ctor(System.Single,System.Single)
+  fullName: ElectrifiedEffect.Command.Command(System.Single, System.Single)
+  nameWithType: ElectrifiedEffect.Command.Command(Single, Single)
+- uid: Global.ElectrifiedEffect.Command.#ctor*
+  name: Command
+  href: api/Global.ElectrifiedEffect.Command.html#Global_ElectrifiedEffect_Command__ctor_
+  commentId: Overload:Global.ElectrifiedEffect.Command.#ctor
+  isSpec: "True"
+  fullName: ElectrifiedEffect.Command.Command
+  nameWithType: ElectrifiedEffect.Command.Command
+- uid: Global.ElectrifiedEffect.Command.duration
+  name: duration
+  href: api/Global.ElectrifiedEffect.Command.html#Global_ElectrifiedEffect_Command_duration
+  commentId: F:Global.ElectrifiedEffect.Command.duration
+  fullName: ElectrifiedEffect.Command.duration
+  nameWithType: ElectrifiedEffect.Command.duration
+- uid: Global.ElectrifiedEffect.Command.speedReductionMultiplier
+  name: speedReductionMultiplier
+  href: api/Global.ElectrifiedEffect.Command.html#Global_ElectrifiedEffect_Command_speedReductionMultiplier
+  commentId: F:Global.ElectrifiedEffect.Command.speedReductionMultiplier
+  fullName: ElectrifiedEffect.Command.speedReductionMultiplier
+  nameWithType: ElectrifiedEffect.Command.speedReductionMultiplier
+- uid: Global.ElectrifiedEffect.DoPlay(ElectrifiedEffect.Command)
+  name: DoPlay(ElectrifiedEffect.Command)
+  href: api/Global.ElectrifiedEffect.html#Global_ElectrifiedEffect_DoPlay_ElectrifiedEffect_Command_
+  commentId: M:Global.ElectrifiedEffect.DoPlay(ElectrifiedEffect.Command)
+  fullName: ElectrifiedEffect.DoPlay(ElectrifiedEffect.Command)
+  nameWithType: ElectrifiedEffect.DoPlay(ElectrifiedEffect.Command)
 - uid: Global.ElectrifiedEffect.DoPlay*
   name: DoPlay
   href: api/Global.ElectrifiedEffect.html#Global_ElectrifiedEffect_DoPlay_
@@ -2735,37 +2753,6 @@ references:
   commentId: F:Global.ElectrifiedEffect.particles
   fullName: ElectrifiedEffect.particles
   nameWithType: ElectrifiedEffect.particles
-- uid: Global.ElectrifiedEffectCommand
-  name: ElectrifiedEffectCommand
-  href: api/Global.ElectrifiedEffectCommand.html
-  commentId: T:Global.ElectrifiedEffectCommand
-  fullName: ElectrifiedEffectCommand
-  nameWithType: ElectrifiedEffectCommand
-- uid: Global.ElectrifiedEffectCommand.#ctor(System.Single,System.Single)
-  name: ElectrifiedEffectCommand(Single, Single)
-  href: api/Global.ElectrifiedEffectCommand.html#Global_ElectrifiedEffectCommand__ctor_System_Single_System_Single_
-  commentId: M:Global.ElectrifiedEffectCommand.#ctor(System.Single,System.Single)
-  fullName: ElectrifiedEffectCommand.ElectrifiedEffectCommand(System.Single, System.Single)
-  nameWithType: ElectrifiedEffectCommand.ElectrifiedEffectCommand(Single, Single)
-- uid: Global.ElectrifiedEffectCommand.#ctor*
-  name: ElectrifiedEffectCommand
-  href: api/Global.ElectrifiedEffectCommand.html#Global_ElectrifiedEffectCommand__ctor_
-  commentId: Overload:Global.ElectrifiedEffectCommand.#ctor
-  isSpec: "True"
-  fullName: ElectrifiedEffectCommand.ElectrifiedEffectCommand
-  nameWithType: ElectrifiedEffectCommand.ElectrifiedEffectCommand
-- uid: Global.ElectrifiedEffectCommand.duration
-  name: duration
-  href: api/Global.ElectrifiedEffectCommand.html#Global_ElectrifiedEffectCommand_duration
-  commentId: F:Global.ElectrifiedEffectCommand.duration
-  fullName: ElectrifiedEffectCommand.duration
-  nameWithType: ElectrifiedEffectCommand.duration
-- uid: Global.ElectrifiedEffectCommand.speedReductionMultiplier
-  name: speedReductionMultiplier
-  href: api/Global.ElectrifiedEffectCommand.html#Global_ElectrifiedEffectCommand_speedReductionMultiplier
-  commentId: F:Global.ElectrifiedEffectCommand.speedReductionMultiplier
-  fullName: ElectrifiedEffectCommand.speedReductionMultiplier
-  nameWithType: ElectrifiedEffectCommand.speedReductionMultiplier
 - uid: Global.ElectrifyAttack
   name: ElectrifyAttack
   href: api/Global.ElectrifyAttack.html
@@ -3231,12 +3218,49 @@ references:
   isSpec: "True"
   fullName: EscapeBehaviour.Awake
   nameWithType: EscapeBehaviour.Awake
-- uid: Global.EscapeBehaviour.DoPlay(EscapeCommand)
-  name: DoPlay(EscapeCommand)
-  href: api/Global.EscapeBehaviour.html#Global_EscapeBehaviour_DoPlay_EscapeCommand_
-  commentId: M:Global.EscapeBehaviour.DoPlay(EscapeCommand)
-  fullName: EscapeBehaviour.DoPlay(EscapeCommand)
-  nameWithType: EscapeBehaviour.DoPlay(EscapeCommand)
+- uid: Global.EscapeBehaviour.Command
+  name: EscapeBehaviour.Command
+  href: api/Global.EscapeBehaviour.Command.html
+  commentId: T:Global.EscapeBehaviour.Command
+  fullName: EscapeBehaviour.Command
+  nameWithType: EscapeBehaviour.Command
+- uid: Global.EscapeBehaviour.Command.#ctor(MovableEntity,System.Single,System.Boolean)
+  name: Command(MovableEntity, Single, Boolean)
+  href: api/Global.EscapeBehaviour.Command.html#Global_EscapeBehaviour_Command__ctor_MovableEntity_System_Single_System_Boolean_
+  commentId: M:Global.EscapeBehaviour.Command.#ctor(MovableEntity,System.Single,System.Boolean)
+  fullName: EscapeBehaviour.Command.Command(MovableEntity, System.Single, System.Boolean)
+  nameWithType: EscapeBehaviour.Command.Command(MovableEntity, Single, Boolean)
+- uid: Global.EscapeBehaviour.Command.#ctor*
+  name: Command
+  href: api/Global.EscapeBehaviour.Command.html#Global_EscapeBehaviour_Command__ctor_
+  commentId: Overload:Global.EscapeBehaviour.Command.#ctor
+  isSpec: "True"
+  fullName: EscapeBehaviour.Command.Command
+  nameWithType: EscapeBehaviour.Command.Command
+- uid: Global.EscapeBehaviour.Command.fitLookDirection
+  name: fitLookDirection
+  href: api/Global.EscapeBehaviour.Command.html#Global_EscapeBehaviour_Command_fitLookDirection
+  commentId: F:Global.EscapeBehaviour.Command.fitLookDirection
+  fullName: EscapeBehaviour.Command.fitLookDirection
+  nameWithType: EscapeBehaviour.Command.fitLookDirection
+- uid: Global.EscapeBehaviour.Command.speedMultiplier
+  name: speedMultiplier
+  href: api/Global.EscapeBehaviour.Command.html#Global_EscapeBehaviour_Command_speedMultiplier
+  commentId: F:Global.EscapeBehaviour.Command.speedMultiplier
+  fullName: EscapeBehaviour.Command.speedMultiplier
+  nameWithType: EscapeBehaviour.Command.speedMultiplier
+- uid: Global.EscapeBehaviour.Command.target
+  name: target
+  href: api/Global.EscapeBehaviour.Command.html#Global_EscapeBehaviour_Command_target
+  commentId: F:Global.EscapeBehaviour.Command.target
+  fullName: EscapeBehaviour.Command.target
+  nameWithType: EscapeBehaviour.Command.target
+- uid: Global.EscapeBehaviour.DoPlay(EscapeBehaviour.Command)
+  name: DoPlay(EscapeBehaviour.Command)
+  href: api/Global.EscapeBehaviour.html#Global_EscapeBehaviour_DoPlay_EscapeBehaviour_Command_
+  commentId: M:Global.EscapeBehaviour.DoPlay(EscapeBehaviour.Command)
+  fullName: EscapeBehaviour.DoPlay(EscapeBehaviour.Command)
+  nameWithType: EscapeBehaviour.DoPlay(EscapeBehaviour.Command)
 - uid: Global.EscapeBehaviour.DoPlay*
   name: DoPlay
   href: api/Global.EscapeBehaviour.html#Global_EscapeBehaviour_DoPlay_
@@ -3283,43 +3307,6 @@ references:
   isSpec: "True"
   fullName: EscapeBehaviour.Start
   nameWithType: EscapeBehaviour.Start
-- uid: Global.EscapeCommand
-  name: EscapeCommand
-  href: api/Global.EscapeCommand.html
-  commentId: T:Global.EscapeCommand
-  fullName: EscapeCommand
-  nameWithType: EscapeCommand
-- uid: Global.EscapeCommand.#ctor(MovableEntity,System.Single,System.Boolean)
-  name: EscapeCommand(MovableEntity, Single, Boolean)
-  href: api/Global.EscapeCommand.html#Global_EscapeCommand__ctor_MovableEntity_System_Single_System_Boolean_
-  commentId: M:Global.EscapeCommand.#ctor(MovableEntity,System.Single,System.Boolean)
-  fullName: EscapeCommand.EscapeCommand(MovableEntity, System.Single, System.Boolean)
-  nameWithType: EscapeCommand.EscapeCommand(MovableEntity, Single, Boolean)
-- uid: Global.EscapeCommand.#ctor*
-  name: EscapeCommand
-  href: api/Global.EscapeCommand.html#Global_EscapeCommand__ctor_
-  commentId: Overload:Global.EscapeCommand.#ctor
-  isSpec: "True"
-  fullName: EscapeCommand.EscapeCommand
-  nameWithType: EscapeCommand.EscapeCommand
-- uid: Global.EscapeCommand.fitLookDirection
-  name: fitLookDirection
-  href: api/Global.EscapeCommand.html#Global_EscapeCommand_fitLookDirection
-  commentId: F:Global.EscapeCommand.fitLookDirection
-  fullName: EscapeCommand.fitLookDirection
-  nameWithType: EscapeCommand.fitLookDirection
-- uid: Global.EscapeCommand.speedMultiplier
-  name: speedMultiplier
-  href: api/Global.EscapeCommand.html#Global_EscapeCommand_speedMultiplier
-  commentId: F:Global.EscapeCommand.speedMultiplier
-  fullName: EscapeCommand.speedMultiplier
-  nameWithType: EscapeCommand.speedMultiplier
-- uid: Global.EscapeCommand.target
-  name: target
-  href: api/Global.EscapeCommand.html#Global_EscapeCommand_target
-  commentId: F:Global.EscapeCommand.target
-  fullName: EscapeCommand.target
-  nameWithType: EscapeCommand.target
 - uid: Global.EscapePattern
   name: EscapePattern
   href: api/Global.EscapePattern.html
@@ -3527,12 +3514,49 @@ references:
   commentId: T:Global.FireEffect
   fullName: FireEffect
   nameWithType: FireEffect
-- uid: Global.FireEffect.DoPlay(FireEffectCommand)
-  name: DoPlay(FireEffectCommand)
-  href: api/Global.FireEffect.html#Global_FireEffect_DoPlay_FireEffectCommand_
-  commentId: M:Global.FireEffect.DoPlay(FireEffectCommand)
-  fullName: FireEffect.DoPlay(FireEffectCommand)
-  nameWithType: FireEffect.DoPlay(FireEffectCommand)
+- uid: Global.FireEffect.Command
+  name: FireEffect.Command
+  href: api/Global.FireEffect.Command.html
+  commentId: T:Global.FireEffect.Command
+  fullName: FireEffect.Command
+  nameWithType: FireEffect.Command
+- uid: Global.FireEffect.Command.#ctor(System.Single,System.Single,System.Single)
+  name: Command(Single, Single, Single)
+  href: api/Global.FireEffect.Command.html#Global_FireEffect_Command__ctor_System_Single_System_Single_System_Single_
+  commentId: M:Global.FireEffect.Command.#ctor(System.Single,System.Single,System.Single)
+  fullName: FireEffect.Command.Command(System.Single, System.Single, System.Single)
+  nameWithType: FireEffect.Command.Command(Single, Single, Single)
+- uid: Global.FireEffect.Command.#ctor*
+  name: Command
+  href: api/Global.FireEffect.Command.html#Global_FireEffect_Command__ctor_
+  commentId: Overload:Global.FireEffect.Command.#ctor
+  isSpec: "True"
+  fullName: FireEffect.Command.Command
+  nameWithType: FireEffect.Command.Command
+- uid: Global.FireEffect.Command.damagePerHit
+  name: damagePerHit
+  href: api/Global.FireEffect.Command.html#Global_FireEffect_Command_damagePerHit
+  commentId: F:Global.FireEffect.Command.damagePerHit
+  fullName: FireEffect.Command.damagePerHit
+  nameWithType: FireEffect.Command.damagePerHit
+- uid: Global.FireEffect.Command.duration
+  name: duration
+  href: api/Global.FireEffect.Command.html#Global_FireEffect_Command_duration
+  commentId: F:Global.FireEffect.Command.duration
+  fullName: FireEffect.Command.duration
+  nameWithType: FireEffect.Command.duration
+- uid: Global.FireEffect.Command.hitInterval
+  name: hitInterval
+  href: api/Global.FireEffect.Command.html#Global_FireEffect_Command_hitInterval
+  commentId: F:Global.FireEffect.Command.hitInterval
+  fullName: FireEffect.Command.hitInterval
+  nameWithType: FireEffect.Command.hitInterval
+- uid: Global.FireEffect.DoPlay(FireEffect.Command)
+  name: DoPlay(FireEffect.Command)
+  href: api/Global.FireEffect.html#Global_FireEffect_DoPlay_FireEffect_Command_
+  commentId: M:Global.FireEffect.DoPlay(FireEffect.Command)
+  fullName: FireEffect.DoPlay(FireEffect.Command)
+  nameWithType: FireEffect.DoPlay(FireEffect.Command)
 - uid: Global.FireEffect.DoPlay*
   name: DoPlay
   href: api/Global.FireEffect.html#Global_FireEffect_DoPlay_
@@ -3566,43 +3590,6 @@ references:
   isSpec: "True"
   fullName: FireEffect.GetProgress
   nameWithType: FireEffect.GetProgress
-- uid: Global.FireEffectCommand
-  name: FireEffectCommand
-  href: api/Global.FireEffectCommand.html
-  commentId: T:Global.FireEffectCommand
-  fullName: FireEffectCommand
-  nameWithType: FireEffectCommand
-- uid: Global.FireEffectCommand.#ctor(System.Single,System.Single,System.Single)
-  name: FireEffectCommand(Single, Single, Single)
-  href: api/Global.FireEffectCommand.html#Global_FireEffectCommand__ctor_System_Single_System_Single_System_Single_
-  commentId: M:Global.FireEffectCommand.#ctor(System.Single,System.Single,System.Single)
-  fullName: FireEffectCommand.FireEffectCommand(System.Single, System.Single, System.Single)
-  nameWithType: FireEffectCommand.FireEffectCommand(Single, Single, Single)
-- uid: Global.FireEffectCommand.#ctor*
-  name: FireEffectCommand
-  href: api/Global.FireEffectCommand.html#Global_FireEffectCommand__ctor_
-  commentId: Overload:Global.FireEffectCommand.#ctor
-  isSpec: "True"
-  fullName: FireEffectCommand.FireEffectCommand
-  nameWithType: FireEffectCommand.FireEffectCommand
-- uid: Global.FireEffectCommand.damagePerHit
-  name: damagePerHit
-  href: api/Global.FireEffectCommand.html#Global_FireEffectCommand_damagePerHit
-  commentId: F:Global.FireEffectCommand.damagePerHit
-  fullName: FireEffectCommand.damagePerHit
-  nameWithType: FireEffectCommand.damagePerHit
-- uid: Global.FireEffectCommand.duration
-  name: duration
-  href: api/Global.FireEffectCommand.html#Global_FireEffectCommand_duration
-  commentId: F:Global.FireEffectCommand.duration
-  fullName: FireEffectCommand.duration
-  nameWithType: FireEffectCommand.duration
-- uid: Global.FireEffectCommand.hitInterval
-  name: hitInterval
-  href: api/Global.FireEffectCommand.html#Global_FireEffectCommand_hitInterval
-  commentId: F:Global.FireEffectCommand.hitInterval
-  fullName: FireEffectCommand.hitInterval
-  nameWithType: FireEffectCommand.hitInterval
 - uid: Global.FollowBehaviour
   name: FollowBehaviour
   href: api/Global.FollowBehaviour.html
@@ -3622,12 +3609,52 @@ references:
   isSpec: "True"
   fullName: FollowBehaviour.Awake
   nameWithType: FollowBehaviour.Awake
-- uid: Global.FollowBehaviour.DoPlay(FollowCommand)
-  name: DoPlay(FollowCommand)
-  href: api/Global.FollowBehaviour.html#Global_FollowBehaviour_DoPlay_FollowCommand_
-  commentId: M:Global.FollowBehaviour.DoPlay(FollowCommand)
-  fullName: FollowBehaviour.DoPlay(FollowCommand)
-  nameWithType: FollowBehaviour.DoPlay(FollowCommand)
+- uid: Global.FollowBehaviour.Command
+  name: FollowBehaviour.Command
+  href: api/Global.FollowBehaviour.Command.html
+  commentId: T:Global.FollowBehaviour.Command
+  fullName: FollowBehaviour.Command
+  nameWithType: FollowBehaviour.Command
+- uid: Global.FollowBehaviour.Command.#ctor(MovableEntity,Func{Node[]},GetOverrideDirection)
+  name: Command(MovableEntity, Func<Node[]>, GetOverrideDirection)
+  href: api/Global.FollowBehaviour.Command.html#Global_FollowBehaviour_Command__ctor_MovableEntity_Func_Node____GetOverrideDirection_
+  commentId: M:Global.FollowBehaviour.Command.#ctor(MovableEntity,Func{Node[]},GetOverrideDirection)
+  name.vb: Command(MovableEntity, Func(Of Node()), GetOverrideDirection)
+  fullName: FollowBehaviour.Command.Command(MovableEntity, Func<Node[]>, GetOverrideDirection)
+  fullName.vb: FollowBehaviour.Command.Command(MovableEntity, Func(Of Node()), GetOverrideDirection)
+  nameWithType: FollowBehaviour.Command.Command(MovableEntity, Func<Node[]>, GetOverrideDirection)
+  nameWithType.vb: FollowBehaviour.Command.Command(MovableEntity, Func(Of Node()), GetOverrideDirection)
+- uid: Global.FollowBehaviour.Command.#ctor*
+  name: Command
+  href: api/Global.FollowBehaviour.Command.html#Global_FollowBehaviour_Command__ctor_
+  commentId: Overload:Global.FollowBehaviour.Command.#ctor
+  isSpec: "True"
+  fullName: FollowBehaviour.Command.Command
+  nameWithType: FollowBehaviour.Command.Command
+- uid: Global.FollowBehaviour.Command.getExcluded
+  name: getExcluded
+  href: api/Global.FollowBehaviour.Command.html#Global_FollowBehaviour_Command_getExcluded
+  commentId: F:Global.FollowBehaviour.Command.getExcluded
+  fullName: FollowBehaviour.Command.getExcluded
+  nameWithType: FollowBehaviour.Command.getExcluded
+- uid: Global.FollowBehaviour.Command.getOverrideDirection
+  name: getOverrideDirection
+  href: api/Global.FollowBehaviour.Command.html#Global_FollowBehaviour_Command_getOverrideDirection
+  commentId: F:Global.FollowBehaviour.Command.getOverrideDirection
+  fullName: FollowBehaviour.Command.getOverrideDirection
+  nameWithType: FollowBehaviour.Command.getOverrideDirection
+- uid: Global.FollowBehaviour.Command.target
+  name: target
+  href: api/Global.FollowBehaviour.Command.html#Global_FollowBehaviour_Command_target
+  commentId: F:Global.FollowBehaviour.Command.target
+  fullName: FollowBehaviour.Command.target
+  nameWithType: FollowBehaviour.Command.target
+- uid: Global.FollowBehaviour.DoPlay(FollowBehaviour.Command)
+  name: DoPlay(FollowBehaviour.Command)
+  href: api/Global.FollowBehaviour.html#Global_FollowBehaviour_DoPlay_FollowBehaviour_Command_
+  commentId: M:Global.FollowBehaviour.DoPlay(FollowBehaviour.Command)
+  fullName: FollowBehaviour.DoPlay(FollowBehaviour.Command)
+  nameWithType: FollowBehaviour.DoPlay(FollowBehaviour.Command)
 - uid: Global.FollowBehaviour.DoPlay*
   name: DoPlay
   href: api/Global.FollowBehaviour.html#Global_FollowBehaviour_DoPlay_
@@ -3661,46 +3688,6 @@ references:
   isSpec: "True"
   fullName: FollowBehaviour.Playing
   nameWithType: FollowBehaviour.Playing
-- uid: Global.FollowCommand
-  name: FollowCommand
-  href: api/Global.FollowCommand.html
-  commentId: T:Global.FollowCommand
-  fullName: FollowCommand
-  nameWithType: FollowCommand
-- uid: Global.FollowCommand.#ctor(MovableEntity,Func{Node[]},GetOverrideDirection)
-  name: FollowCommand(MovableEntity, Func<Node[]>, GetOverrideDirection)
-  href: api/Global.FollowCommand.html#Global_FollowCommand__ctor_MovableEntity_Func_Node____GetOverrideDirection_
-  commentId: M:Global.FollowCommand.#ctor(MovableEntity,Func{Node[]},GetOverrideDirection)
-  name.vb: FollowCommand(MovableEntity, Func(Of Node()), GetOverrideDirection)
-  fullName: FollowCommand.FollowCommand(MovableEntity, Func<Node[]>, GetOverrideDirection)
-  fullName.vb: FollowCommand.FollowCommand(MovableEntity, Func(Of Node()), GetOverrideDirection)
-  nameWithType: FollowCommand.FollowCommand(MovableEntity, Func<Node[]>, GetOverrideDirection)
-  nameWithType.vb: FollowCommand.FollowCommand(MovableEntity, Func(Of Node()), GetOverrideDirection)
-- uid: Global.FollowCommand.#ctor*
-  name: FollowCommand
-  href: api/Global.FollowCommand.html#Global_FollowCommand__ctor_
-  commentId: Overload:Global.FollowCommand.#ctor
-  isSpec: "True"
-  fullName: FollowCommand.FollowCommand
-  nameWithType: FollowCommand.FollowCommand
-- uid: Global.FollowCommand.getExcluded
-  name: getExcluded
-  href: api/Global.FollowCommand.html#Global_FollowCommand_getExcluded
-  commentId: F:Global.FollowCommand.getExcluded
-  fullName: FollowCommand.getExcluded
-  nameWithType: FollowCommand.getExcluded
-- uid: Global.FollowCommand.getOverrideDirection
-  name: getOverrideDirection
-  href: api/Global.FollowCommand.html#Global_FollowCommand_getOverrideDirection
-  commentId: F:Global.FollowCommand.getOverrideDirection
-  fullName: FollowCommand.getOverrideDirection
-  nameWithType: FollowCommand.getOverrideDirection
-- uid: Global.FollowCommand.target
-  name: target
-  href: api/Global.FollowCommand.html#Global_FollowCommand_target
-  commentId: F:Global.FollowCommand.target
-  fullName: FollowCommand.target
-  nameWithType: FollowCommand.target
 - uid: Global.FollowPattern
   name: FollowPattern
   href: api/Global.FollowPattern.html
@@ -3760,12 +3747,43 @@ references:
   commentId: T:Global.ForcedWalkBehaviour
   fullName: ForcedWalkBehaviour
   nameWithType: ForcedWalkBehaviour
-- uid: Global.ForcedWalkBehaviour.DoPlay(ForcedWalkCommand)
-  name: DoPlay(ForcedWalkCommand)
-  href: api/Global.ForcedWalkBehaviour.html#Global_ForcedWalkBehaviour_DoPlay_ForcedWalkCommand_
-  commentId: M:Global.ForcedWalkBehaviour.DoPlay(ForcedWalkCommand)
-  fullName: ForcedWalkBehaviour.DoPlay(ForcedWalkCommand)
-  nameWithType: ForcedWalkBehaviour.DoPlay(ForcedWalkCommand)
+- uid: Global.ForcedWalkBehaviour.Command
+  name: ForcedWalkBehaviour.Command
+  href: api/Global.ForcedWalkBehaviour.Command.html
+  commentId: T:Global.ForcedWalkBehaviour.Command
+  fullName: ForcedWalkBehaviour.Command
+  nameWithType: ForcedWalkBehaviour.Command
+- uid: Global.ForcedWalkBehaviour.Command.#ctor(Vector3,System.Single)
+  name: Command(Vector3, Single)
+  href: api/Global.ForcedWalkBehaviour.Command.html#Global_ForcedWalkBehaviour_Command__ctor_Vector3_System_Single_
+  commentId: M:Global.ForcedWalkBehaviour.Command.#ctor(Vector3,System.Single)
+  fullName: ForcedWalkBehaviour.Command.Command(Vector3, System.Single)
+  nameWithType: ForcedWalkBehaviour.Command.Command(Vector3, Single)
+- uid: Global.ForcedWalkBehaviour.Command.#ctor*
+  name: Command
+  href: api/Global.ForcedWalkBehaviour.Command.html#Global_ForcedWalkBehaviour_Command__ctor_
+  commentId: Overload:Global.ForcedWalkBehaviour.Command.#ctor
+  isSpec: "True"
+  fullName: ForcedWalkBehaviour.Command.Command
+  nameWithType: ForcedWalkBehaviour.Command.Command
+- uid: Global.ForcedWalkBehaviour.Command.point
+  name: point
+  href: api/Global.ForcedWalkBehaviour.Command.html#Global_ForcedWalkBehaviour_Command_point
+  commentId: F:Global.ForcedWalkBehaviour.Command.point
+  fullName: ForcedWalkBehaviour.Command.point
+  nameWithType: ForcedWalkBehaviour.Command.point
+- uid: Global.ForcedWalkBehaviour.Command.wantedDistance
+  name: wantedDistance
+  href: api/Global.ForcedWalkBehaviour.Command.html#Global_ForcedWalkBehaviour_Command_wantedDistance
+  commentId: F:Global.ForcedWalkBehaviour.Command.wantedDistance
+  fullName: ForcedWalkBehaviour.Command.wantedDistance
+  nameWithType: ForcedWalkBehaviour.Command.wantedDistance
+- uid: Global.ForcedWalkBehaviour.DoPlay(ForcedWalkBehaviour.Command)
+  name: DoPlay(ForcedWalkBehaviour.Command)
+  href: api/Global.ForcedWalkBehaviour.html#Global_ForcedWalkBehaviour_DoPlay_ForcedWalkBehaviour_Command_
+  commentId: M:Global.ForcedWalkBehaviour.DoPlay(ForcedWalkBehaviour.Command)
+  fullName: ForcedWalkBehaviour.DoPlay(ForcedWalkBehaviour.Command)
+  nameWithType: ForcedWalkBehaviour.DoPlay(ForcedWalkBehaviour.Command)
 - uid: Global.ForcedWalkBehaviour.DoPlay*
   name: DoPlay
   href: api/Global.ForcedWalkBehaviour.html#Global_ForcedWalkBehaviour_DoPlay_
@@ -3799,37 +3817,6 @@ references:
   isSpec: "True"
   fullName: ForcedWalkBehaviour.Playing
   nameWithType: ForcedWalkBehaviour.Playing
-- uid: Global.ForcedWalkCommand
-  name: ForcedWalkCommand
-  href: api/Global.ForcedWalkCommand.html
-  commentId: T:Global.ForcedWalkCommand
-  fullName: ForcedWalkCommand
-  nameWithType: ForcedWalkCommand
-- uid: Global.ForcedWalkCommand.#ctor(Vector3,System.Single)
-  name: ForcedWalkCommand(Vector3, Single)
-  href: api/Global.ForcedWalkCommand.html#Global_ForcedWalkCommand__ctor_Vector3_System_Single_
-  commentId: M:Global.ForcedWalkCommand.#ctor(Vector3,System.Single)
-  fullName: ForcedWalkCommand.ForcedWalkCommand(Vector3, System.Single)
-  nameWithType: ForcedWalkCommand.ForcedWalkCommand(Vector3, Single)
-- uid: Global.ForcedWalkCommand.#ctor*
-  name: ForcedWalkCommand
-  href: api/Global.ForcedWalkCommand.html#Global_ForcedWalkCommand__ctor_
-  commentId: Overload:Global.ForcedWalkCommand.#ctor
-  isSpec: "True"
-  fullName: ForcedWalkCommand.ForcedWalkCommand
-  nameWithType: ForcedWalkCommand.ForcedWalkCommand
-- uid: Global.ForcedWalkCommand.point
-  name: point
-  href: api/Global.ForcedWalkCommand.html#Global_ForcedWalkCommand_point
-  commentId: F:Global.ForcedWalkCommand.point
-  fullName: ForcedWalkCommand.point
-  nameWithType: ForcedWalkCommand.point
-- uid: Global.ForcedWalkCommand.wantedDistance
-  name: wantedDistance
-  href: api/Global.ForcedWalkCommand.html#Global_ForcedWalkCommand_wantedDistance
-  commentId: F:Global.ForcedWalkCommand.wantedDistance
-  fullName: ForcedWalkCommand.wantedDistance
-  nameWithType: ForcedWalkCommand.wantedDistance
 - uid: Global.FullScreenToggle
   name: FullScreenToggle
   href: api/Global.FullScreenToggle.html
@@ -4685,12 +4672,6 @@ references:
   commentId: F:Global.HitType.Stun
   fullName: HitType.Stun
   nameWithType: HitType.Stun
-- uid: Global.ICommand
-  name: ICommand
-  href: api/Global.ICommand.html
-  commentId: T:Global.ICommand
-  fullName: ICommand
-  nameWithType: ICommand
 - uid: Global.IdlePattern
   name: IdlePattern
   href: api/Global.IdlePattern.html
@@ -4940,12 +4921,12 @@ references:
   isSpec: "True"
   fullName: JumpBehaviour.Awake
   nameWithType: JumpBehaviour.Awake
-- uid: Global.JumpBehaviour.CanPlay(JumpCommand)
-  name: CanPlay(JumpCommand)
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_CanPlay_JumpCommand_
-  commentId: M:Global.JumpBehaviour.CanPlay(JumpCommand)
-  fullName: JumpBehaviour.CanPlay(JumpCommand)
-  nameWithType: JumpBehaviour.CanPlay(JumpCommand)
+- uid: Global.JumpBehaviour.CanPlay(JumpBehaviour.Command)
+  name: CanPlay(JumpBehaviour.Command)
+  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_CanPlay_JumpBehaviour_Command_
+  commentId: M:Global.JumpBehaviour.CanPlay(JumpBehaviour.Command)
+  fullName: JumpBehaviour.CanPlay(JumpBehaviour.Command)
+  nameWithType: JumpBehaviour.CanPlay(JumpBehaviour.Command)
 - uid: Global.JumpBehaviour.CanPlay*
   name: CanPlay
   href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_CanPlay_
@@ -4953,12 +4934,18 @@ references:
   isSpec: "True"
   fullName: JumpBehaviour.CanPlay
   nameWithType: JumpBehaviour.CanPlay
-- uid: Global.JumpBehaviour.DoPlay(JumpCommand)
-  name: DoPlay(JumpCommand)
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_DoPlay_JumpCommand_
-  commentId: M:Global.JumpBehaviour.DoPlay(JumpCommand)
-  fullName: JumpBehaviour.DoPlay(JumpCommand)
-  nameWithType: JumpBehaviour.DoPlay(JumpCommand)
+- uid: Global.JumpBehaviour.Command
+  name: JumpBehaviour.Command
+  href: api/Global.JumpBehaviour.Command.html
+  commentId: T:Global.JumpBehaviour.Command
+  fullName: JumpBehaviour.Command
+  nameWithType: JumpBehaviour.Command
+- uid: Global.JumpBehaviour.DoPlay(JumpBehaviour.Command)
+  name: DoPlay(JumpBehaviour.Command)
+  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_DoPlay_JumpBehaviour_Command_
+  commentId: M:Global.JumpBehaviour.DoPlay(JumpBehaviour.Command)
+  fullName: JumpBehaviour.DoPlay(JumpBehaviour.Command)
+  nameWithType: JumpBehaviour.DoPlay(JumpBehaviour.Command)
 - uid: Global.JumpBehaviour.DoPlay*
   name: DoPlay
   href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_DoPlay_
@@ -5035,12 +5022,6 @@ references:
   isSpec: "True"
   fullName: JumpBehaviour.Recovering
   nameWithType: JumpBehaviour.Recovering
-- uid: Global.JumpCommand
-  name: JumpCommand
-  href: api/Global.JumpCommand.html
-  commentId: T:Global.JumpCommand
-  fullName: JumpCommand
-  nameWithType: JumpCommand
 - uid: Global.KnockbackBehaviour
   name: KnockbackBehaviour
   href: api/Global.KnockbackBehaviour.html
@@ -5073,12 +5054,43 @@ references:
   isSpec: "True"
   fullName: KnockbackBehaviour.Bounce
   nameWithType: KnockbackBehaviour.Bounce
-- uid: Global.KnockbackBehaviour.DoPlay(KnockbackCommand)
-  name: DoPlay(KnockbackCommand)
-  href: api/Global.KnockbackBehaviour.html#Global_KnockbackBehaviour_DoPlay_KnockbackCommand_
-  commentId: M:Global.KnockbackBehaviour.DoPlay(KnockbackCommand)
-  fullName: KnockbackBehaviour.DoPlay(KnockbackCommand)
-  nameWithType: KnockbackBehaviour.DoPlay(KnockbackCommand)
+- uid: Global.KnockbackBehaviour.Command
+  name: KnockbackBehaviour.Command
+  href: api/Global.KnockbackBehaviour.Command.html
+  commentId: T:Global.KnockbackBehaviour.Command
+  fullName: KnockbackBehaviour.Command
+  nameWithType: KnockbackBehaviour.Command
+- uid: Global.KnockbackBehaviour.Command.#ctor(System.Single,System.Single)
+  name: Command(Single, Single)
+  href: api/Global.KnockbackBehaviour.Command.html#Global_KnockbackBehaviour_Command__ctor_System_Single_System_Single_
+  commentId: M:Global.KnockbackBehaviour.Command.#ctor(System.Single,System.Single)
+  fullName: KnockbackBehaviour.Command.Command(System.Single, System.Single)
+  nameWithType: KnockbackBehaviour.Command.Command(Single, Single)
+- uid: Global.KnockbackBehaviour.Command.#ctor*
+  name: Command
+  href: api/Global.KnockbackBehaviour.Command.html#Global_KnockbackBehaviour_Command__ctor_
+  commentId: Overload:Global.KnockbackBehaviour.Command.#ctor
+  isSpec: "True"
+  fullName: KnockbackBehaviour.Command.Command
+  nameWithType: KnockbackBehaviour.Command.Command
+- uid: Global.KnockbackBehaviour.Command.angleDegrees
+  name: angleDegrees
+  href: api/Global.KnockbackBehaviour.Command.html#Global_KnockbackBehaviour_Command_angleDegrees
+  commentId: F:Global.KnockbackBehaviour.Command.angleDegrees
+  fullName: KnockbackBehaviour.Command.angleDegrees
+  nameWithType: KnockbackBehaviour.Command.angleDegrees
+- uid: Global.KnockbackBehaviour.Command.power
+  name: power
+  href: api/Global.KnockbackBehaviour.Command.html#Global_KnockbackBehaviour_Command_power
+  commentId: F:Global.KnockbackBehaviour.Command.power
+  fullName: KnockbackBehaviour.Command.power
+  nameWithType: KnockbackBehaviour.Command.power
+- uid: Global.KnockbackBehaviour.DoPlay(KnockbackBehaviour.Command)
+  name: DoPlay(KnockbackBehaviour.Command)
+  href: api/Global.KnockbackBehaviour.html#Global_KnockbackBehaviour_DoPlay_KnockbackBehaviour_Command_
+  commentId: M:Global.KnockbackBehaviour.DoPlay(KnockbackBehaviour.Command)
+  fullName: KnockbackBehaviour.DoPlay(KnockbackBehaviour.Command)
+  nameWithType: KnockbackBehaviour.DoPlay(KnockbackBehaviour.Command)
 - uid: Global.KnockbackBehaviour.DoPlay*
   name: DoPlay
   href: api/Global.KnockbackBehaviour.html#Global_KnockbackBehaviour_DoPlay_
@@ -5200,37 +5212,6 @@ references:
   commentId: T:Global.KnockbackCallback
   fullName: KnockbackCallback
   nameWithType: KnockbackCallback
-- uid: Global.KnockbackCommand
-  name: KnockbackCommand
-  href: api/Global.KnockbackCommand.html
-  commentId: T:Global.KnockbackCommand
-  fullName: KnockbackCommand
-  nameWithType: KnockbackCommand
-- uid: Global.KnockbackCommand.#ctor(System.Single,System.Single)
-  name: KnockbackCommand(Single, Single)
-  href: api/Global.KnockbackCommand.html#Global_KnockbackCommand__ctor_System_Single_System_Single_
-  commentId: M:Global.KnockbackCommand.#ctor(System.Single,System.Single)
-  fullName: KnockbackCommand.KnockbackCommand(System.Single, System.Single)
-  nameWithType: KnockbackCommand.KnockbackCommand(Single, Single)
-- uid: Global.KnockbackCommand.#ctor*
-  name: KnockbackCommand
-  href: api/Global.KnockbackCommand.html#Global_KnockbackCommand__ctor_
-  commentId: Overload:Global.KnockbackCommand.#ctor
-  isSpec: "True"
-  fullName: KnockbackCommand.KnockbackCommand
-  nameWithType: KnockbackCommand.KnockbackCommand
-- uid: Global.KnockbackCommand.angleDegrees
-  name: angleDegrees
-  href: api/Global.KnockbackCommand.html#Global_KnockbackCommand_angleDegrees
-  commentId: F:Global.KnockbackCommand.angleDegrees
-  fullName: KnockbackCommand.angleDegrees
-  nameWithType: KnockbackCommand.angleDegrees
-- uid: Global.KnockbackCommand.power
-  name: power
-  href: api/Global.KnockbackCommand.html#Global_KnockbackCommand_power
-  commentId: F:Global.KnockbackCommand.power
-  fullName: KnockbackCommand.power
-  nameWithType: KnockbackCommand.power
 - uid: Global.LineTrigger
   name: LineTrigger
   href: api/Global.LineTrigger.html
@@ -6501,12 +6482,12 @@ references:
   commentId: T:Global.PossessedEffect
   fullName: PossessedEffect
   nameWithType: PossessedEffect
-- uid: Global.PossessedEffect.CanPlay(PossessedEffectCommand)
-  name: CanPlay(PossessedEffectCommand)
-  href: api/Global.PossessedEffect.html#Global_PossessedEffect_CanPlay_PossessedEffectCommand_
-  commentId: M:Global.PossessedEffect.CanPlay(PossessedEffectCommand)
-  fullName: PossessedEffect.CanPlay(PossessedEffectCommand)
-  nameWithType: PossessedEffect.CanPlay(PossessedEffectCommand)
+- uid: Global.PossessedEffect.CanPlay(PossessedEffect.Command)
+  name: CanPlay(PossessedEffect.Command)
+  href: api/Global.PossessedEffect.html#Global_PossessedEffect_CanPlay_PossessedEffect_Command_
+  commentId: M:Global.PossessedEffect.CanPlay(PossessedEffect.Command)
+  fullName: PossessedEffect.CanPlay(PossessedEffect.Command)
+  nameWithType: PossessedEffect.CanPlay(PossessedEffect.Command)
 - uid: Global.PossessedEffect.CanPlay*
   name: CanPlay
   href: api/Global.PossessedEffect.html#Global_PossessedEffect_CanPlay_
@@ -6514,12 +6495,37 @@ references:
   isSpec: "True"
   fullName: PossessedEffect.CanPlay
   nameWithType: PossessedEffect.CanPlay
-- uid: Global.PossessedEffect.DoPlay(PossessedEffectCommand)
-  name: DoPlay(PossessedEffectCommand)
-  href: api/Global.PossessedEffect.html#Global_PossessedEffect_DoPlay_PossessedEffectCommand_
-  commentId: M:Global.PossessedEffect.DoPlay(PossessedEffectCommand)
-  fullName: PossessedEffect.DoPlay(PossessedEffectCommand)
-  nameWithType: PossessedEffect.DoPlay(PossessedEffectCommand)
+- uid: Global.PossessedEffect.Command
+  name: PossessedEffect.Command
+  href: api/Global.PossessedEffect.Command.html
+  commentId: T:Global.PossessedEffect.Command
+  fullName: PossessedEffect.Command
+  nameWithType: PossessedEffect.Command
+- uid: Global.PossessedEffect.Command.#ctor(System.Single)
+  name: Command(Single)
+  href: api/Global.PossessedEffect.Command.html#Global_PossessedEffect_Command__ctor_System_Single_
+  commentId: M:Global.PossessedEffect.Command.#ctor(System.Single)
+  fullName: PossessedEffect.Command.Command(System.Single)
+  nameWithType: PossessedEffect.Command.Command(Single)
+- uid: Global.PossessedEffect.Command.#ctor*
+  name: Command
+  href: api/Global.PossessedEffect.Command.html#Global_PossessedEffect_Command__ctor_
+  commentId: Overload:Global.PossessedEffect.Command.#ctor
+  isSpec: "True"
+  fullName: PossessedEffect.Command.Command
+  nameWithType: PossessedEffect.Command.Command
+- uid: Global.PossessedEffect.Command.maxDuration
+  name: maxDuration
+  href: api/Global.PossessedEffect.Command.html#Global_PossessedEffect_Command_maxDuration
+  commentId: F:Global.PossessedEffect.Command.maxDuration
+  fullName: PossessedEffect.Command.maxDuration
+  nameWithType: PossessedEffect.Command.maxDuration
+- uid: Global.PossessedEffect.DoPlay(PossessedEffect.Command)
+  name: DoPlay(PossessedEffect.Command)
+  href: api/Global.PossessedEffect.html#Global_PossessedEffect_DoPlay_PossessedEffect_Command_
+  commentId: M:Global.PossessedEffect.DoPlay(PossessedEffect.Command)
+  fullName: PossessedEffect.DoPlay(PossessedEffect.Command)
+  nameWithType: PossessedEffect.DoPlay(PossessedEffect.Command)
 - uid: Global.PossessedEffect.DoPlay*
   name: DoPlay
   href: api/Global.PossessedEffect.html#Global_PossessedEffect_DoPlay_
@@ -6566,31 +6572,6 @@ references:
   isSpec: "True"
   fullName: PossessedEffect.ReduceDuration
   nameWithType: PossessedEffect.ReduceDuration
-- uid: Global.PossessedEffectCommand
-  name: PossessedEffectCommand
-  href: api/Global.PossessedEffectCommand.html
-  commentId: T:Global.PossessedEffectCommand
-  fullName: PossessedEffectCommand
-  nameWithType: PossessedEffectCommand
-- uid: Global.PossessedEffectCommand.#ctor(System.Single)
-  name: PossessedEffectCommand(Single)
-  href: api/Global.PossessedEffectCommand.html#Global_PossessedEffectCommand__ctor_System_Single_
-  commentId: M:Global.PossessedEffectCommand.#ctor(System.Single)
-  fullName: PossessedEffectCommand.PossessedEffectCommand(System.Single)
-  nameWithType: PossessedEffectCommand.PossessedEffectCommand(Single)
-- uid: Global.PossessedEffectCommand.#ctor*
-  name: PossessedEffectCommand
-  href: api/Global.PossessedEffectCommand.html#Global_PossessedEffectCommand__ctor_
-  commentId: Overload:Global.PossessedEffectCommand.#ctor
-  isSpec: "True"
-  fullName: PossessedEffectCommand.PossessedEffectCommand
-  nameWithType: PossessedEffectCommand.PossessedEffectCommand
-- uid: Global.PossessedEffectCommand.maxDuration
-  name: maxDuration
-  href: api/Global.PossessedEffectCommand.html#Global_PossessedEffectCommand_maxDuration
-  commentId: F:Global.PossessedEffectCommand.maxDuration
-  fullName: PossessedEffectCommand.maxDuration
-  nameWithType: PossessedEffectCommand.maxDuration
 - uid: Global.PossessedHumanBrain
   name: PossessedHumanBrain
   href: api/Global.PossessedHumanBrain.html
@@ -7015,12 +6996,18 @@ references:
   isSpec: "True"
   fullName: RunBehaviour.Awake
   nameWithType: RunBehaviour.Awake
-- uid: Global.RunBehaviour.DoPlay(RunCommand)
-  name: DoPlay(RunCommand)
-  href: api/Global.RunBehaviour.html#Global_RunBehaviour_DoPlay_RunCommand_
-  commentId: M:Global.RunBehaviour.DoPlay(RunCommand)
-  fullName: RunBehaviour.DoPlay(RunCommand)
-  nameWithType: RunBehaviour.DoPlay(RunCommand)
+- uid: Global.RunBehaviour.Command
+  name: RunBehaviour.Command
+  href: api/Global.RunBehaviour.Command.html
+  commentId: T:Global.RunBehaviour.Command
+  fullName: RunBehaviour.Command
+  nameWithType: RunBehaviour.Command
+- uid: Global.RunBehaviour.DoPlay(RunBehaviour.Command)
+  name: DoPlay(RunBehaviour.Command)
+  href: api/Global.RunBehaviour.html#Global_RunBehaviour_DoPlay_RunBehaviour_Command_
+  commentId: M:Global.RunBehaviour.DoPlay(RunBehaviour.Command)
+  fullName: RunBehaviour.DoPlay(RunBehaviour.Command)
+  nameWithType: RunBehaviour.DoPlay(RunBehaviour.Command)
 - uid: Global.RunBehaviour.DoPlay*
   name: DoPlay
   href: api/Global.RunBehaviour.html#Global_RunBehaviour_DoPlay_
@@ -7098,24 +7085,18 @@ references:
   commentId: F:Global.RunBehaviour.timeToRun
   fullName: RunBehaviour.timeToRun
   nameWithType: RunBehaviour.timeToRun
-- uid: Global.RunCommand
-  name: RunCommand
-  href: api/Global.RunCommand.html
-  commentId: T:Global.RunCommand
-  fullName: RunCommand
-  nameWithType: RunCommand
 - uid: Global.RunKick
   name: RunKick
   href: api/Global.RunKick.html
   commentId: T:Global.RunKick
   fullName: RunKick
   nameWithType: RunKick
-- uid: Global.RunKick.CanPlay(BaseAttackCommand)
-  name: CanPlay(BaseAttackCommand)
-  href: api/Global.RunKick.html#Global_RunKick_CanPlay_BaseAttackCommand_
-  commentId: M:Global.RunKick.CanPlay(BaseAttackCommand)
-  fullName: RunKick.CanPlay(BaseAttackCommand)
-  nameWithType: RunKick.CanPlay(BaseAttackCommand)
+- uid: Global.RunKick.CanPlay(BaseAttack.Command)
+  name: CanPlay(BaseAttack.Command)
+  href: api/Global.RunKick.html#Global_RunKick_CanPlay_BaseAttack_Command_
+  commentId: M:Global.RunKick.CanPlay(BaseAttack.Command)
+  fullName: RunKick.CanPlay(BaseAttack.Command)
+  nameWithType: RunKick.CanPlay(BaseAttack.Command)
 - uid: Global.RunKick.CanPlay*
   name: CanPlay
   href: api/Global.RunKick.html#Global_RunKick_CanPlay_
@@ -7363,12 +7344,12 @@ references:
   commentId: T:Global.SlideBehaviour
   fullName: SlideBehaviour
   nameWithType: SlideBehaviour
-- uid: Global.SlideBehaviour.CanPlay(SlideCommand)
-  name: CanPlay(SlideCommand)
-  href: api/Global.SlideBehaviour.html#Global_SlideBehaviour_CanPlay_SlideCommand_
-  commentId: M:Global.SlideBehaviour.CanPlay(SlideCommand)
-  fullName: SlideBehaviour.CanPlay(SlideCommand)
-  nameWithType: SlideBehaviour.CanPlay(SlideCommand)
+- uid: Global.SlideBehaviour.CanPlay(SlideBehaviour.Command)
+  name: CanPlay(SlideBehaviour.Command)
+  href: api/Global.SlideBehaviour.html#Global_SlideBehaviour_CanPlay_SlideBehaviour_Command_
+  commentId: M:Global.SlideBehaviour.CanPlay(SlideBehaviour.Command)
+  fullName: SlideBehaviour.CanPlay(SlideBehaviour.Command)
+  nameWithType: SlideBehaviour.CanPlay(SlideBehaviour.Command)
 - uid: Global.SlideBehaviour.CanPlay*
   name: CanPlay
   href: api/Global.SlideBehaviour.html#Global_SlideBehaviour_CanPlay_
@@ -7376,12 +7357,37 @@ references:
   isSpec: "True"
   fullName: SlideBehaviour.CanPlay
   nameWithType: SlideBehaviour.CanPlay
-- uid: Global.SlideBehaviour.DoPlay(SlideCommand)
-  name: DoPlay(SlideCommand)
-  href: api/Global.SlideBehaviour.html#Global_SlideBehaviour_DoPlay_SlideCommand_
-  commentId: M:Global.SlideBehaviour.DoPlay(SlideCommand)
-  fullName: SlideBehaviour.DoPlay(SlideCommand)
-  nameWithType: SlideBehaviour.DoPlay(SlideCommand)
+- uid: Global.SlideBehaviour.Command
+  name: SlideBehaviour.Command
+  href: api/Global.SlideBehaviour.Command.html
+  commentId: T:Global.SlideBehaviour.Command
+  fullName: SlideBehaviour.Command
+  nameWithType: SlideBehaviour.Command
+- uid: Global.SlideBehaviour.Command.#ctor(System.Int32)
+  name: Command(Int32)
+  href: api/Global.SlideBehaviour.Command.html#Global_SlideBehaviour_Command__ctor_System_Int32_
+  commentId: M:Global.SlideBehaviour.Command.#ctor(System.Int32)
+  fullName: SlideBehaviour.Command.Command(System.Int32)
+  nameWithType: SlideBehaviour.Command.Command(Int32)
+- uid: Global.SlideBehaviour.Command.#ctor*
+  name: Command
+  href: api/Global.SlideBehaviour.Command.html#Global_SlideBehaviour_Command__ctor_
+  commentId: Overload:Global.SlideBehaviour.Command.#ctor
+  isSpec: "True"
+  fullName: SlideBehaviour.Command.Command
+  nameWithType: SlideBehaviour.Command.Command
+- uid: Global.SlideBehaviour.Command.direction
+  name: direction
+  href: api/Global.SlideBehaviour.Command.html#Global_SlideBehaviour_Command_direction
+  commentId: F:Global.SlideBehaviour.Command.direction
+  fullName: SlideBehaviour.Command.direction
+  nameWithType: SlideBehaviour.Command.direction
+- uid: Global.SlideBehaviour.DoPlay(SlideBehaviour.Command)
+  name: DoPlay(SlideBehaviour.Command)
+  href: api/Global.SlideBehaviour.html#Global_SlideBehaviour_DoPlay_SlideBehaviour_Command_
+  commentId: M:Global.SlideBehaviour.DoPlay(SlideBehaviour.Command)
+  fullName: SlideBehaviour.DoPlay(SlideBehaviour.Command)
+  nameWithType: SlideBehaviour.DoPlay(SlideBehaviour.Command)
 - uid: Global.SlideBehaviour.DoPlay*
   name: DoPlay
   href: api/Global.SlideBehaviour.html#Global_SlideBehaviour_DoPlay_
@@ -7440,31 +7446,6 @@ references:
   commentId: F:Global.SlideBehaviour.slideStopAcceleration
   fullName: SlideBehaviour.slideStopAcceleration
   nameWithType: SlideBehaviour.slideStopAcceleration
-- uid: Global.SlideCommand
-  name: SlideCommand
-  href: api/Global.SlideCommand.html
-  commentId: T:Global.SlideCommand
-  fullName: SlideCommand
-  nameWithType: SlideCommand
-- uid: Global.SlideCommand.#ctor(System.Int32)
-  name: SlideCommand(Int32)
-  href: api/Global.SlideCommand.html#Global_SlideCommand__ctor_System_Int32_
-  commentId: M:Global.SlideCommand.#ctor(System.Int32)
-  fullName: SlideCommand.SlideCommand(System.Int32)
-  nameWithType: SlideCommand.SlideCommand(Int32)
-- uid: Global.SlideCommand.#ctor*
-  name: SlideCommand
-  href: api/Global.SlideCommand.html#Global_SlideCommand__ctor_
-  commentId: Overload:Global.SlideCommand.#ctor
-  isSpec: "True"
-  fullName: SlideCommand.SlideCommand
-  nameWithType: SlideCommand.SlideCommand
-- uid: Global.SlideCommand.direction
-  name: direction
-  href: api/Global.SlideCommand.html#Global_SlideCommand_direction
-  commentId: F:Global.SlideCommand.direction
-  fullName: SlideCommand.direction
-  nameWithType: SlideCommand.direction
 - uid: Global.SoundEffect
   name: SoundEffect
   href: api/Global.SoundEffect.html
@@ -7738,12 +7719,37 @@ references:
   commentId: T:Global.StunBehaviour
   fullName: StunBehaviour
   nameWithType: StunBehaviour
-- uid: Global.StunBehaviour.DoPlay(StunCommand)
-  name: DoPlay(StunCommand)
-  href: api/Global.StunBehaviour.html#Global_StunBehaviour_DoPlay_StunCommand_
-  commentId: M:Global.StunBehaviour.DoPlay(StunCommand)
-  fullName: StunBehaviour.DoPlay(StunCommand)
-  nameWithType: StunBehaviour.DoPlay(StunCommand)
+- uid: Global.StunBehaviour.Command
+  name: StunBehaviour.Command
+  href: api/Global.StunBehaviour.Command.html
+  commentId: T:Global.StunBehaviour.Command
+  fullName: StunBehaviour.Command
+  nameWithType: StunBehaviour.Command
+- uid: Global.StunBehaviour.Command.#ctor(System.Single)
+  name: Command(Single)
+  href: api/Global.StunBehaviour.Command.html#Global_StunBehaviour_Command__ctor_System_Single_
+  commentId: M:Global.StunBehaviour.Command.#ctor(System.Single)
+  fullName: StunBehaviour.Command.Command(System.Single)
+  nameWithType: StunBehaviour.Command.Command(Single)
+- uid: Global.StunBehaviour.Command.#ctor*
+  name: Command
+  href: api/Global.StunBehaviour.Command.html#Global_StunBehaviour_Command__ctor_
+  commentId: Overload:Global.StunBehaviour.Command.#ctor
+  isSpec: "True"
+  fullName: StunBehaviour.Command.Command
+  nameWithType: StunBehaviour.Command.Command
+- uid: Global.StunBehaviour.Command.time
+  name: time
+  href: api/Global.StunBehaviour.Command.html#Global_StunBehaviour_Command_time
+  commentId: F:Global.StunBehaviour.Command.time
+  fullName: StunBehaviour.Command.time
+  nameWithType: StunBehaviour.Command.time
+- uid: Global.StunBehaviour.DoPlay(StunBehaviour.Command)
+  name: DoPlay(StunBehaviour.Command)
+  href: api/Global.StunBehaviour.html#Global_StunBehaviour_DoPlay_StunBehaviour_Command_
+  commentId: M:Global.StunBehaviour.DoPlay(StunBehaviour.Command)
+  fullName: StunBehaviour.DoPlay(StunBehaviour.Command)
+  nameWithType: StunBehaviour.DoPlay(StunBehaviour.Command)
 - uid: Global.StunBehaviour.DoPlay*
   name: DoPlay
   href: api/Global.StunBehaviour.html#Global_StunBehaviour_DoPlay_
@@ -7847,31 +7853,6 @@ references:
   commentId: T:Global.StunCallback
   fullName: StunCallback
   nameWithType: StunCallback
-- uid: Global.StunCommand
-  name: StunCommand
-  href: api/Global.StunCommand.html
-  commentId: T:Global.StunCommand
-  fullName: StunCommand
-  nameWithType: StunCommand
-- uid: Global.StunCommand.#ctor(System.Single)
-  name: StunCommand(Single)
-  href: api/Global.StunCommand.html#Global_StunCommand__ctor_System_Single_
-  commentId: M:Global.StunCommand.#ctor(System.Single)
-  fullName: StunCommand.StunCommand(System.Single)
-  nameWithType: StunCommand.StunCommand(Single)
-- uid: Global.StunCommand.#ctor*
-  name: StunCommand
-  href: api/Global.StunCommand.html#Global_StunCommand__ctor_
-  commentId: Overload:Global.StunCommand.#ctor
-  isSpec: "True"
-  fullName: StunCommand.StunCommand
-  nameWithType: StunCommand.StunCommand
-- uid: Global.StunCommand.time
-  name: time
-  href: api/Global.StunCommand.html#Global_StunCommand_time
-  commentId: F:Global.StunCommand.time
-  fullName: StunCommand.time
-  nameWithType: StunCommand.time
 - uid: Global.SuperArmorBar
   name: SuperArmorBar
   href: api/Global.SuperArmorBar.html
@@ -7966,18 +7947,24 @@ references:
   commentId: F:Global.SuperArmorEffect.armorHealth
   fullName: SuperArmorEffect.armorHealth
   nameWithType: SuperArmorEffect.armorHealth
+- uid: Global.SuperArmorEffect.Command
+  name: SuperArmorEffect.Command
+  href: api/Global.SuperArmorEffect.Command.html
+  commentId: T:Global.SuperArmorEffect.Command
+  fullName: SuperArmorEffect.Command
+  nameWithType: SuperArmorEffect.Command
 - uid: Global.SuperArmorEffect.damageMultiplier
   name: damageMultiplier
   href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_damageMultiplier
   commentId: F:Global.SuperArmorEffect.damageMultiplier
   fullName: SuperArmorEffect.damageMultiplier
   nameWithType: SuperArmorEffect.damageMultiplier
-- uid: Global.SuperArmorEffect.DoPlay(SuperArmorEffectCommand)
-  name: DoPlay(SuperArmorEffectCommand)
-  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_DoPlay_SuperArmorEffectCommand_
-  commentId: M:Global.SuperArmorEffect.DoPlay(SuperArmorEffectCommand)
-  fullName: SuperArmorEffect.DoPlay(SuperArmorEffectCommand)
-  nameWithType: SuperArmorEffect.DoPlay(SuperArmorEffectCommand)
+- uid: Global.SuperArmorEffect.DoPlay(SuperArmorEffect.Command)
+  name: DoPlay(SuperArmorEffect.Command)
+  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_DoPlay_SuperArmorEffect_Command_
+  commentId: M:Global.SuperArmorEffect.DoPlay(SuperArmorEffect.Command)
+  fullName: SuperArmorEffect.DoPlay(SuperArmorEffect.Command)
+  nameWithType: SuperArmorEffect.DoPlay(SuperArmorEffect.Command)
 - uid: Global.SuperArmorEffect.DoPlay*
   name: DoPlay
   href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_DoPlay_
@@ -8049,12 +8036,6 @@ references:
   isSpec: "True"
   fullName: SuperArmorEffect.Start
   nameWithType: SuperArmorEffect.Start
-- uid: Global.SuperArmorEffectCommand
-  name: SuperArmorEffectCommand
-  href: api/Global.SuperArmorEffectCommand.html
-  commentId: T:Global.SuperArmorEffectCommand
-  fullName: SuperArmorEffectCommand
-  nameWithType: SuperArmorEffectCommand
 - uid: Global.SuperArmorHittableHitbox
   name: SuperArmorHittableHitbox
   href: api/Global.SuperArmorHittableHitbox.html
@@ -8470,12 +8451,12 @@ references:
   isSpec: "True"
   fullName: WalkBehaviour.Awake
   nameWithType: WalkBehaviour.Awake
-- uid: Global.WalkBehaviour.CanPlay(WalkCommand)
-  name: CanPlay(WalkCommand)
-  href: api/Global.WalkBehaviour.html#Global_WalkBehaviour_CanPlay_WalkCommand_
-  commentId: M:Global.WalkBehaviour.CanPlay(WalkCommand)
-  fullName: WalkBehaviour.CanPlay(WalkCommand)
-  nameWithType: WalkBehaviour.CanPlay(WalkCommand)
+- uid: Global.WalkBehaviour.CanPlay(WalkBehaviour.Command)
+  name: CanPlay(WalkBehaviour.Command)
+  href: api/Global.WalkBehaviour.html#Global_WalkBehaviour_CanPlay_WalkBehaviour_Command_
+  commentId: M:Global.WalkBehaviour.CanPlay(WalkBehaviour.Command)
+  fullName: WalkBehaviour.CanPlay(WalkBehaviour.Command)
+  nameWithType: WalkBehaviour.CanPlay(WalkBehaviour.Command)
 - uid: Global.WalkBehaviour.CanPlay*
   name: CanPlay
   href: api/Global.WalkBehaviour.html#Global_WalkBehaviour_CanPlay_
@@ -8483,18 +8464,55 @@ references:
   isSpec: "True"
   fullName: WalkBehaviour.CanPlay
   nameWithType: WalkBehaviour.CanPlay
+- uid: Global.WalkBehaviour.Command
+  name: WalkBehaviour.Command
+  href: api/Global.WalkBehaviour.Command.html
+  commentId: T:Global.WalkBehaviour.Command
+  fullName: WalkBehaviour.Command
+  nameWithType: WalkBehaviour.Command
+- uid: Global.WalkBehaviour.Command.#ctor(Vector2,System.Boolean)
+  name: Command(Vector2, Boolean)
+  href: api/Global.WalkBehaviour.Command.html#Global_WalkBehaviour_Command__ctor_Vector2_System_Boolean_
+  commentId: M:Global.WalkBehaviour.Command.#ctor(Vector2,System.Boolean)
+  fullName: WalkBehaviour.Command.Command(Vector2, System.Boolean)
+  nameWithType: WalkBehaviour.Command.Command(Vector2, Boolean)
+- uid: Global.WalkBehaviour.Command.#ctor(Vector3,System.Boolean)
+  name: Command(Vector3, Boolean)
+  href: api/Global.WalkBehaviour.Command.html#Global_WalkBehaviour_Command__ctor_Vector3_System_Boolean_
+  commentId: M:Global.WalkBehaviour.Command.#ctor(Vector3,System.Boolean)
+  fullName: WalkBehaviour.Command.Command(Vector3, System.Boolean)
+  nameWithType: WalkBehaviour.Command.Command(Vector3, Boolean)
+- uid: Global.WalkBehaviour.Command.#ctor*
+  name: Command
+  href: api/Global.WalkBehaviour.Command.html#Global_WalkBehaviour_Command__ctor_
+  commentId: Overload:Global.WalkBehaviour.Command.#ctor
+  isSpec: "True"
+  fullName: WalkBehaviour.Command.Command
+  nameWithType: WalkBehaviour.Command.Command
+- uid: Global.WalkBehaviour.Command.direction
+  name: direction
+  href: api/Global.WalkBehaviour.Command.html#Global_WalkBehaviour_Command_direction
+  commentId: F:Global.WalkBehaviour.Command.direction
+  fullName: WalkBehaviour.Command.direction
+  nameWithType: WalkBehaviour.Command.direction
+- uid: Global.WalkBehaviour.Command.fitLookDirection
+  name: fitLookDirection
+  href: api/Global.WalkBehaviour.Command.html#Global_WalkBehaviour_Command_fitLookDirection
+  commentId: F:Global.WalkBehaviour.Command.fitLookDirection
+  fullName: WalkBehaviour.Command.fitLookDirection
+  nameWithType: WalkBehaviour.Command.fitLookDirection
 - uid: Global.WalkBehaviour.defaultSpeed
   name: defaultSpeed
   href: api/Global.WalkBehaviour.html#Global_WalkBehaviour_defaultSpeed
   commentId: F:Global.WalkBehaviour.defaultSpeed
   fullName: WalkBehaviour.defaultSpeed
   nameWithType: WalkBehaviour.defaultSpeed
-- uid: Global.WalkBehaviour.DoPlay(WalkCommand)
-  name: DoPlay(WalkCommand)
-  href: api/Global.WalkBehaviour.html#Global_WalkBehaviour_DoPlay_WalkCommand_
-  commentId: M:Global.WalkBehaviour.DoPlay(WalkCommand)
-  fullName: WalkBehaviour.DoPlay(WalkCommand)
-  nameWithType: WalkBehaviour.DoPlay(WalkCommand)
+- uid: Global.WalkBehaviour.DoPlay(WalkBehaviour.Command)
+  name: DoPlay(WalkBehaviour.Command)
+  href: api/Global.WalkBehaviour.html#Global_WalkBehaviour_DoPlay_WalkBehaviour_Command_
+  commentId: M:Global.WalkBehaviour.DoPlay(WalkBehaviour.Command)
+  fullName: WalkBehaviour.DoPlay(WalkBehaviour.Command)
+  nameWithType: WalkBehaviour.DoPlay(WalkBehaviour.Command)
 - uid: Global.WalkBehaviour.DoPlay*
   name: DoPlay
   href: api/Global.WalkBehaviour.html#Global_WalkBehaviour_DoPlay_
@@ -8547,43 +8565,6 @@ references:
   isSpec: "True"
   fullName: WalkBehaviour.Walk
   nameWithType: WalkBehaviour.Walk
-- uid: Global.WalkCommand
-  name: WalkCommand
-  href: api/Global.WalkCommand.html
-  commentId: T:Global.WalkCommand
-  fullName: WalkCommand
-  nameWithType: WalkCommand
-- uid: Global.WalkCommand.#ctor(Vector2,System.Boolean)
-  name: WalkCommand(Vector2, Boolean)
-  href: api/Global.WalkCommand.html#Global_WalkCommand__ctor_Vector2_System_Boolean_
-  commentId: M:Global.WalkCommand.#ctor(Vector2,System.Boolean)
-  fullName: WalkCommand.WalkCommand(Vector2, System.Boolean)
-  nameWithType: WalkCommand.WalkCommand(Vector2, Boolean)
-- uid: Global.WalkCommand.#ctor(Vector3,System.Boolean)
-  name: WalkCommand(Vector3, Boolean)
-  href: api/Global.WalkCommand.html#Global_WalkCommand__ctor_Vector3_System_Boolean_
-  commentId: M:Global.WalkCommand.#ctor(Vector3,System.Boolean)
-  fullName: WalkCommand.WalkCommand(Vector3, System.Boolean)
-  nameWithType: WalkCommand.WalkCommand(Vector3, Boolean)
-- uid: Global.WalkCommand.#ctor*
-  name: WalkCommand
-  href: api/Global.WalkCommand.html#Global_WalkCommand__ctor_
-  commentId: Overload:Global.WalkCommand.#ctor
-  isSpec: "True"
-  fullName: WalkCommand.WalkCommand
-  nameWithType: WalkCommand.WalkCommand
-- uid: Global.WalkCommand.direction
-  name: direction
-  href: api/Global.WalkCommand.html#Global_WalkCommand_direction
-  commentId: F:Global.WalkCommand.direction
-  fullName: WalkCommand.direction
-  nameWithType: WalkCommand.direction
-- uid: Global.WalkCommand.fitLookDirection
-  name: fitLookDirection
-  href: api/Global.WalkCommand.html#Global_WalkCommand_fitLookDirection
-  commentId: F:Global.WalkCommand.fitLookDirection
-  fullName: WalkCommand.fitLookDirection
-  nameWithType: WalkCommand.fitLookDirection
 - uid: Global.WalkSoundEffect
   name: WalkSoundEffect
   href: api/Global.WalkSoundEffect.html

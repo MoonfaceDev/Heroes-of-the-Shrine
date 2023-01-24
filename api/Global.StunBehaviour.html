@@ -90,8 +90,8 @@
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
     <div class="level2"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.StunCommand.html">StunCommand</a>&gt;</div>
-    <div class="level4"><a class="xref" href="Global.ForcedBehaviour-1.html">ForcedBehaviour</a>&lt;<a class="xref" href="Global.StunCommand.html">StunCommand</a>&gt;</div>
+    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.StunBehaviour.Command.html">StunBehaviour.Command</a>&gt;</div>
+    <div class="level4"><a class="xref" href="Global.ForcedBehaviour-1.html">ForcedBehaviour</a>&lt;<a class="xref" href="Global.StunBehaviour.Command.html">StunBehaviour.Command</a>&gt;</div>
     <div class="level5"><span class="xref">StunBehaviour</span></div>
   </div>
   <div class="implements">
@@ -102,16 +102,16 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;StunCommand&gt;.PlayEvents</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;StunBehaviour.Command&gt;.PlayEvents</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_CanPlay__0_">PlayableBehaviour&lt;StunCommand&gt;.CanPlay(StunCommand)</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_CanPlay__0_">PlayableBehaviour&lt;StunBehaviour.Command&gt;.CanPlay(StunBehaviour.Command)</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;StunCommand&gt;.Play(StunCommand)</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;StunBehaviour.Command&gt;.Play(StunBehaviour.Command)</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;StunCommand&gt;.Stop()</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;StunBehaviour.Command&gt;.Stop()</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
@@ -169,7 +169,7 @@
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_StunBehaviour_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class StunBehaviour : ForcedBehaviour&lt;StunCommand&gt;, IForcedBehaviour, IPlayableBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class StunBehaviour : ForcedBehaviour&lt;StunBehaviour.Command&gt;, IForcedBehaviour, IPlayableBehaviour</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -225,7 +225,7 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;StunCommand&gt;.Playing</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;StunBehaviour.Command&gt;.Playing</span></div>
   
   
   <a id="Global_StunBehaviour_Stun_" data-uid="Global.StunBehaviour.Stun*"></a>
@@ -281,12 +281,12 @@
   
   
   <a id="Global_StunBehaviour_DoPlay_" data-uid="Global.StunBehaviour.DoPlay*"></a>
-  <h4 id="Global_StunBehaviour_DoPlay_StunCommand_" data-uid="Global.StunBehaviour.DoPlay(StunCommand)">DoPlay(StunCommand)</h4>
+  <h4 id="Global_StunBehaviour_DoPlay_StunBehaviour_Command_" data-uid="Global.StunBehaviour.DoPlay(StunBehaviour.Command)">DoPlay(StunBehaviour.Command)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void DoPlay(StunCommand command)</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void DoPlay(StunBehaviour.Command command)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -299,14 +299,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.StunCommand.html">StunCommand</a></td>
+        <td><a class="xref" href="Global.StunBehaviour.Command.html">StunBehaviour.Command</a></td>
         <td><span class="parametername">command</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;StunCommand&gt;.DoPlay(StunCommand)</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;StunBehaviour.Command&gt;.DoPlay(StunBehaviour.Command)</span></div>
   
   
   <a id="Global_StunBehaviour_DoStop_" data-uid="Global.StunBehaviour.DoStop*"></a>
@@ -318,7 +318,7 @@
     <pre><code class="lang-csharp hljs">protected override void DoStop()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;StunCommand&gt;.DoStop()</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;StunBehaviour.Command&gt;.DoStop()</span></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Global.IForcedBehaviour.html">IForcedBehaviour</a>

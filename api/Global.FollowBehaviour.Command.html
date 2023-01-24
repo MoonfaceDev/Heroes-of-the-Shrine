@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class SlideCommand
+    <title>Class FollowBehaviour.Command
    | Heroes of the Shrine </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class SlideCommand
+    <meta name="title" content="Class FollowBehaviour.Command
    | Heroes of the Shrine ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,21 +78,17 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Global.SlideCommand">
+            <article class="content wrap" id="_content" data-uid="Global.FollowBehaviour.Command">
   
   
-  <h1 id="Global_SlideCommand" data-uid="Global.SlideCommand" class="text-break">Class SlideCommand
+  <h1 id="Global_FollowBehaviour_Command" data-uid="Global.FollowBehaviour.Command" class="text-break">Class FollowBehaviour.Command
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">SlideCommand</span></div>
-  </div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="Global.ICommand.html">ICommand</a></div>
+    <div class="level1"><span class="xref">FollowBehaviour.Command</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -120,21 +116,21 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Global_SlideCommand_syntax">Syntax</h5>
+  <h5 id="Global_FollowBehaviour_Command_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SlideCommand : ICommand</code></pre>
+    <pre><code class="lang-csharp hljs">public class Command</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   
   
-  <a id="Global_SlideCommand__ctor_" data-uid="Global.SlideCommand.#ctor*"></a>
-  <h4 id="Global_SlideCommand__ctor_System_Int32_" data-uid="Global.SlideCommand.#ctor(System.Int32)">SlideCommand(Int32)</h4>
+  <a id="Global_FollowBehaviour_Command__ctor_" data-uid="Global.FollowBehaviour.Command.#ctor*"></a>
+  <h4 id="Global_FollowBehaviour_Command__ctor_MovableEntity_Func_Node____GetOverrideDirection_" data-uid="Global.FollowBehaviour.Command.#ctor(MovableEntity,Func{Node[]},GetOverrideDirection)">Command(MovableEntity, Func&lt;Node[]&gt;, GetOverrideDirection)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SlideCommand(int direction)</code></pre>
+    <pre><code class="lang-csharp hljs">public Command(MovableEntity target, Func&lt;Node[]&gt; getExcluded = null, GetOverrideDirection getOverrideDirection = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -147,8 +143,18 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">direction</span></td>
+        <td><a class="xref" href="Global.MovableEntity.html">MovableEntity</a></td>
+        <td><span class="parametername">target</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<a class="xref" href="Global.Node.html">Node</a>[]&gt;</td>
+        <td><span class="parametername">getExcluded</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Global.GetOverrideDirection.html">GetOverrideDirection</a></td>
+        <td><span class="parametername">getOverrideDirection</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -157,12 +163,12 @@
   </h3>
   
   
-  <h4 id="Global_SlideCommand_direction" data-uid="Global.SlideCommand.direction">direction</h4>
+  <h4 id="Global_FollowBehaviour_Command_getExcluded" data-uid="Global.FollowBehaviour.Command.getExcluded">getExcluded</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly int direction</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly Func&lt;Node[]&gt; getExcluded</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -174,15 +180,59 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="xref">Func</span>&lt;<a class="xref" href="Global.Node.html">Node</a>[]&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="Global.ICommand.html">ICommand</a>
+  
+  
+  <h4 id="Global_FollowBehaviour_Command_getOverrideDirection" data-uid="Global.FollowBehaviour.Command.getOverrideDirection">getOverrideDirection</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly GetOverrideDirection getOverrideDirection</code></pre>
   </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.GetOverrideDirection.html">GetOverrideDirection</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Global_FollowBehaviour_Command_target" data-uid="Global.FollowBehaviour.Command.target">target</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly MovableEntity target</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.MovableEntity.html">MovableEntity</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           

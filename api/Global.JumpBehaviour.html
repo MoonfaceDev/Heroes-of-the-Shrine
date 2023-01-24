@@ -90,8 +90,8 @@
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
     <div class="level2"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.JumpCommand.html">JumpCommand</a>&gt;</div>
-    <div class="level4"><a class="xref" href="Global.BaseMovementBehaviour-1.html">BaseMovementBehaviour</a>&lt;<a class="xref" href="Global.JumpCommand.html">JumpCommand</a>&gt;</div>
+    <div class="level3"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.JumpBehaviour.Command.html">JumpBehaviour.Command</a>&gt;</div>
+    <div class="level4"><a class="xref" href="Global.BaseMovementBehaviour-1.html">BaseMovementBehaviour</a>&lt;<a class="xref" href="Global.JumpBehaviour.Command.html">JumpBehaviour.Command</a>&gt;</div>
     <div class="level5"><span class="xref">JumpBehaviour</span></div>
   </div>
   <div class="implements">
@@ -102,16 +102,16 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_cooldown">BaseMovementBehaviour&lt;JumpCommand&gt;.cooldown</a>
+      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_cooldown">BaseMovementBehaviour&lt;JumpBehaviour.Command&gt;.cooldown</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;JumpCommand&gt;.PlayEvents</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;JumpBehaviour.Command&gt;.PlayEvents</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;JumpCommand&gt;.Play(JumpCommand)</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;JumpBehaviour.Command&gt;.Play(JumpBehaviour.Command)</a>
     </div>
     <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;JumpCommand&gt;.Stop()</a>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;JumpBehaviour.Command&gt;.Stop()</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
@@ -166,7 +166,7 @@
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_JumpBehaviour_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class JumpBehaviour : BaseMovementBehaviour&lt;JumpCommand&gt;, IMovementBehaviour, IPlayableBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class JumpBehaviour : BaseMovementBehaviour&lt;JumpBehaviour.Command&gt;, IMovementBehaviour, IPlayableBehaviour</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -368,7 +368,7 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;JumpCommand&gt;.Playing</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;JumpBehaviour.Command&gt;.Playing</span></div>
   
   
   <a id="Global_JumpBehaviour_Recovering_" data-uid="Global.JumpBehaviour.Recovering*"></a>
@@ -407,16 +407,16 @@
     <pre><code class="lang-csharp hljs">public override void Awake()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">BaseMovementBehaviour&lt;JumpCommand&gt;.Awake()</span></div>
+  <div><span class="xref">BaseMovementBehaviour&lt;JumpBehaviour.Command&gt;.Awake()</span></div>
   
   
   <a id="Global_JumpBehaviour_CanPlay_" data-uid="Global.JumpBehaviour.CanPlay*"></a>
-  <h4 id="Global_JumpBehaviour_CanPlay_JumpCommand_" data-uid="Global.JumpBehaviour.CanPlay(JumpCommand)">CanPlay(JumpCommand)</h4>
+  <h4 id="Global_JumpBehaviour_CanPlay_JumpBehaviour_Command_" data-uid="Global.JumpBehaviour.CanPlay(JumpBehaviour.Command)">CanPlay(JumpBehaviour.Command)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool CanPlay(JumpCommand command)</code></pre>
+    <pre><code class="lang-csharp hljs">public override bool CanPlay(JumpBehaviour.Command command)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -429,7 +429,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.JumpCommand.html">JumpCommand</a></td>
+        <td><a class="xref" href="Global.JumpBehaviour.Command.html">JumpBehaviour.Command</a></td>
         <td><span class="parametername">command</span></td>
         <td></td>
       </tr>
@@ -451,16 +451,16 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">BaseMovementBehaviour&lt;JumpCommand&gt;.CanPlay(JumpCommand)</span></div>
+  <div><span class="xref">BaseMovementBehaviour&lt;JumpBehaviour.Command&gt;.CanPlay(JumpBehaviour.Command)</span></div>
   
   
   <a id="Global_JumpBehaviour_DoPlay_" data-uid="Global.JumpBehaviour.DoPlay*"></a>
-  <h4 id="Global_JumpBehaviour_DoPlay_JumpCommand_" data-uid="Global.JumpBehaviour.DoPlay(JumpCommand)">DoPlay(JumpCommand)</h4>
+  <h4 id="Global_JumpBehaviour_DoPlay_JumpBehaviour_Command_" data-uid="Global.JumpBehaviour.DoPlay(JumpBehaviour.Command)">DoPlay(JumpBehaviour.Command)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void DoPlay(JumpCommand command)</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void DoPlay(JumpBehaviour.Command command)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -473,14 +473,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.JumpCommand.html">JumpCommand</a></td>
+        <td><a class="xref" href="Global.JumpBehaviour.Command.html">JumpBehaviour.Command</a></td>
         <td><span class="parametername">command</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;JumpCommand&gt;.DoPlay(JumpCommand)</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;JumpBehaviour.Command&gt;.DoPlay(JumpBehaviour.Command)</span></div>
   
   
   <a id="Global_JumpBehaviour_DoStop_" data-uid="Global.JumpBehaviour.DoStop*"></a>
@@ -492,7 +492,7 @@
     <pre><code class="lang-csharp hljs">protected override void DoStop()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PlayableBehaviour&lt;JumpCommand&gt;.DoStop()</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;JumpBehaviour.Command&gt;.DoStop()</span></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Global.IMovementBehaviour.html">IMovementBehaviour</a>
