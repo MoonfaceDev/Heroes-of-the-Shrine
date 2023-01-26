@@ -1,6 +1,5 @@
+using ExtEvents;
 using UnityEngine;
-using UnityEngine.Events;
-
 
 public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
 {
@@ -12,8 +11,8 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
     public float jumpAnticipateTime;
     public float jumpRecoverTime;
 
-    public UnityEvent onStartActive;
-    public UnityEvent onFinishActive;
+    [SerializeField] public ExtEvent onStartActive;
+    [SerializeField] public ExtEvent onFinishActive;
 
     public bool Anticipating
     {
@@ -76,11 +75,11 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
     protected override void DoPlay(Command command)
     {
         StopBehaviours(typeof(BaseAttack));
-        
+
         if (!IsPlaying<WalkBehaviour>() && MovableEntity.WorldPosition.y == 0) //not moving and grounded
         {
             Anticipating = true;
-            
+
             walkBehaviour.Enabled = false;
             anticipateTimeout = StartTimeout(() =>
             {
@@ -98,10 +97,10 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
     private void StartJump()
     {
         Active = true;
-        
+
         MovableEntity.velocity.y = jumpSpeed;
         MovableEntity.acceleration.y = -Character.physicalAttributes.gravityAcceleration;
-        
+
         MovableEntity.OnLand += Land;
     }
 

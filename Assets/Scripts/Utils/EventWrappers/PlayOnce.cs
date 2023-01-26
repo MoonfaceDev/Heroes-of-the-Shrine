@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using ExtEvents;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,9 +9,9 @@ public class PlayOnce : BaseComponent
 
     public string uniqueId;
 
-    public UnityEvent firstEvent;
+    [SerializeField] public ExtEvent firstEvent;
 
-    public UnityEvent restEvent;
+    [SerializeField] public ExtEvent restEvent;
 
     public bool playOnAwake;
 

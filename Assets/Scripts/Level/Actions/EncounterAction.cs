@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ExtEvents;
 using UnityEngine;
-using UnityEngine.Events;
 
 public enum Direction
 {
@@ -33,7 +33,7 @@ public class EncounterAction : BaseComponent
     public float timeToAlarm;
     public Rect cameraBorder;
     public float spawnSourceDistance = 1;
-    public UnityEvent postEncounterEvent;
+    [SerializeField] public ExtEvent postEncounterEvent;
 
     private bool stopped;
 

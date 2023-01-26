@@ -31,7 +31,7 @@ public class MotionAttack : BaseAttack
 
     public void Start()
     {
-        PlayEvents.onStop.AddListener(FinishActive);
+        PlayEvents.onStop += FinishActive;
     }
 
     private void FinishActive()

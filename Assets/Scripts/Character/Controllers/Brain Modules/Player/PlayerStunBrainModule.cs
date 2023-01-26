@@ -15,8 +15,8 @@ public class PlayerStunBrainModule : BrainModule
         stunBehaviour = player.GetComponent<StunBehaviour>();
         if (!stunBehaviour) return;
 
-        stunBehaviour.PlayEvents.onPlay.AddListener(OnPlayerStunPlay);
-        stunBehaviour.PlayEvents.onStop.AddListener(OnPlayerStunStop);
+        stunBehaviour.PlayEvents.onPlay += OnPlayerStunPlay;
+        stunBehaviour.PlayEvents.onStop += OnPlayerStunStop;
     }
 
     public override string[] GetParameters()
@@ -28,8 +28,8 @@ public class PlayerStunBrainModule : BrainModule
     {
         if (!stunBehaviour) return;
 
-        stunBehaviour.PlayEvents.onPlay.RemoveListener(OnPlayerStunPlay);
-        stunBehaviour.PlayEvents.onStop.RemoveListener(OnPlayerStunStop);
+        stunBehaviour.PlayEvents.onPlay -= OnPlayerStunPlay;
+        stunBehaviour.PlayEvents.onStop -= OnPlayerStunStop;
     }
 
     private void OnPlayerStunPlay() => StateMachine.SetBool(PlayerStun, true);

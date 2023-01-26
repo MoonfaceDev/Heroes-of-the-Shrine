@@ -10,27 +10,27 @@ public class WalkSoundEffect : BaseComponent
         var walkBehaviour = GetComponent<WalkBehaviour>();
         var jumpBehaviour = GetComponent<JumpBehaviour>();
 
-        walkBehaviour.PlayEvents.onPlay.AddListener(() =>
+        walkBehaviour.PlayEvents.onPlay += () =>
         {
             if (jumpBehaviour && jumpBehaviour.Playing) return;
             if (!walkAudioSource.isPlaying)
             {
                 walkAudioSource.Play();
             }
-        });
+        };
 
-        walkBehaviour.PlayEvents.onStop.AddListener(() => walkAudioSource.Stop());
+        walkBehaviour.PlayEvents.onStop += () => walkAudioSource.Stop();
 
         if (jumpBehaviour)
         {
-            jumpBehaviour.PlayEvents.onPlay.AddListener(() => walkAudioSource.Stop());
-            jumpBehaviour.PlayEvents.onStop.AddListener(() =>
+            jumpBehaviour.PlayEvents.onPlay += () => walkAudioSource.Stop();
+            jumpBehaviour.PlayEvents.onStop += () =>
             {
                 if (walkBehaviour.Playing)
                 {
                     walkAudioSource.Play();
                 }
-            });
+            };
         }
 
         Register(() => walkAudioSource.volume = AudioManager.Instance.soundEffectsAudioSource.volume);

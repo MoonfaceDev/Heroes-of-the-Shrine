@@ -37,19 +37,19 @@ public class EffectsBar : BaseComponent
         {
             var effect = player.GetComponent(definition.effectType) as IEffect;
             if (effect == null) continue;
-            effect.PlayEvents.onPlay.AddListener(() =>
+            effect.PlayEvents.onPlay += () =>
             {
                 var bar = Instantiate(effectBarPrefab, container.transform);
                 bar.GetComponent<EffectBar>().effect = effect;
                 bar.transform.Find("Effect Icon").GetComponent<Image>().sprite = definition.icon;
                 bar.GetComponent<Scrollbar>().handleRect.GetComponent<Image>().color = definition.color;
                 bars.Add(definition.effectType, bar);
-            });
-            effect.PlayEvents.onStop.AddListener(() =>
+            };
+            effect.PlayEvents.onStop += () =>
             {
                 Destroy(bars[definition.effectType]);
                 bars.Remove(definition.effectType);
-            });
+            };
         }
     }
 }

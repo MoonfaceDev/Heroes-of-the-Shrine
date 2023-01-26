@@ -9,8 +9,8 @@ public class KnockbackBrainModule : BrainModule
     {
         var knockbackBehaviour = GetComponent<KnockbackBehaviour>();
         if (!knockbackBehaviour) return;
-        knockbackBehaviour.PlayEvents.onPlay.AddListener(() => StateMachine.SetBool(Knockback, true));
-        knockbackBehaviour.PlayEvents.onStop.AddListener(() => StateMachine.SetBool(Knockback, false));
+        knockbackBehaviour.PlayEvents.onPlay += () => StateMachine.SetBool(Knockback, true);
+        knockbackBehaviour.PlayEvents.onStop += () => StateMachine.SetBool(Knockback, false);
     }
 
     public override string[] GetParameters()

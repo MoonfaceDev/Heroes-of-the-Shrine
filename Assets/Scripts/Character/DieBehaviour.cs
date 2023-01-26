@@ -1,5 +1,5 @@
+using ExtEvents;
 using UnityEngine;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(HittableBehaviour))]
 public class DieBehaviour : CharacterBehaviour
@@ -10,7 +10,7 @@ public class DieBehaviour : CharacterBehaviour
     private static readonly int DeadParameter = Animator.StringToHash("dead");
     private static readonly int RespawnParameter = Animator.StringToHash("respawn");
 
-    public UnityEvent onDie;
+    [SerializeField] public ExtEvent onDie;
 
     private void Start()
     {
@@ -44,7 +44,7 @@ public class DieBehaviour : CharacterBehaviour
 
         if (IsPlaying<KnockbackBehaviour>())
         {
-            GetComponent<KnockbackBehaviour>().PlayEvents.onStop.AddListener(KillAfterKnockback);
+            GetComponent<KnockbackBehaviour>().PlayEvents.onStop += KillAfterKnockback;
         }
         else
         {

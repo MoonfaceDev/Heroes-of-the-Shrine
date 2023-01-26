@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ExtEvents;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.Playables;
 
 [Serializable]
@@ -24,7 +24,7 @@ public class CutsceneAction : BaseComponent
 {
     public List<MoveDefinition> moveDefinitions;
     public PlayableDirector director;
-    public UnityEvent postCutsceneEvent;
+    [SerializeField] public ExtEvent postCutsceneEvent;
     public bool playOnAwake;
 
     private const float WantedDistance = 0.1f;

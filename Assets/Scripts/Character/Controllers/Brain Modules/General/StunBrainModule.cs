@@ -9,8 +9,8 @@ public class StunBrainModule : BrainModule
     {
         var stunBehaviour = GetComponent<StunBehaviour>();
         if (!stunBehaviour) return;
-        stunBehaviour.PlayEvents.onPlay.AddListener(() => StateMachine.SetBool(Stun, true));
-        stunBehaviour.PlayEvents.onStop.AddListener(() => StateMachine.SetBool(Stun, false));
+        stunBehaviour.PlayEvents.onPlay += () => StateMachine.SetBool(Stun, true);
+        stunBehaviour.PlayEvents.onStop += () => StateMachine.SetBool(Stun, false);
     }
 
     public override string[] GetParameters()

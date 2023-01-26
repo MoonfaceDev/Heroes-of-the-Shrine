@@ -1,5 +1,6 @@
 ﻿using System;
-using UnityEngine.Events;
+using ExtEvents;
+using UnityEngine;
 
 /// <summary>
 /// Contains start and finish events for all attack phases
@@ -10,30 +11,30 @@ public class AttackEvents
     /// <value>
     /// Attack anticipation has started
     /// </value>
-    public UnityEvent onStartAnticipating;
+    [SerializeField] public ExtEvent onStartAnticipating;
 
     /// <value>
     /// Attack anticipation has finished, also fires if the attack was stopped while in anticipation
     /// </value>
-    public UnityEvent onFinishAnticipating;
+    [SerializeField] public ExtEvent onFinishAnticipating;
 
     /// <value>
     /// Attack active phase has started
     /// </value>
-    public UnityEvent onStartActive;
+    [SerializeField] public ExtEvent onStartActive;
 
     /// <value>
     /// Attack active phase has finished, also fires if the attack was stopped while in active phase
     /// </value>
-    public UnityEvent onFinishActive;
+    [SerializeField] public ExtEvent onFinishActive;
 
     /// <value>
     /// Attack recovery has started
     /// </value>
-    public UnityEvent onStartRecovery;
+    [SerializeField] public ExtEvent onStartRecovery;
 
     /// <value>
     /// Attack recovery has finished, also fires if the attack was stopped while in recovery
     /// </value>
-    public UnityEvent onFinishRecovery;
+    [SerializeField] public ExtEvent onFinishRecovery;
 }

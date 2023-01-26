@@ -17,7 +17,7 @@ public class SuperArmorBrainModule : BrainModule
     {
         if (!superArmorEffect) return;
         UpdateSuperArmorHealth();
-        superArmorEffect.onHit.AddListener(UpdateSuperArmorHealth);
+        superArmorEffect.onHit += UpdateSuperArmorHealth;
     }
 
     private void UpdateSuperArmorHealth()

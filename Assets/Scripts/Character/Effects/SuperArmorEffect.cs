@@ -1,17 +1,17 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
+﻿using ExtEvents;
+using UnityEngine;
 
 public class SuperArmorEffect : BaseEffect<SuperArmorEffect.Command>
 {
     public class Command
     {
     }
-    
+
     public float armorHealth;
     public float armorCooldown;
     public float damageMultiplier = 1;
-    public UnityEvent onHit;
-    public UnityEvent onBreak;
+    [SerializeField] public ExtEvent onHit;
+    [SerializeField] public ExtEvent onBreak;
 
     private string reloadTimeout;
 

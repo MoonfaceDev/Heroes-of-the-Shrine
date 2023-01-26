@@ -16,7 +16,7 @@ public abstract class BaseMovementBehaviour<T> : PlayableBehaviour<T>, IMovement
         if (cooldown > 0)
         {
             cooldownStartTime = Time.time - cooldown;
-            PlayEvents.onPlay.AddListener(() => cooldownStartTime = Time.time);
+            PlayEvents.onPlay += () => cooldownStartTime = Time.time;
         }
     }
 

@@ -1,6 +1,7 @@
-using UnityEngine.Events;
+using ExtEvents;
+using UnityEngine;
 
 public abstract class BaseTrigger : BaseComponent
 {
-    public UnityEvent action;
+    [SerializeField] public ExtEvent action;
 }

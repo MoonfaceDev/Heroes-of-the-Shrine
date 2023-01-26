@@ -9,7 +9,7 @@ public class DieBrainModule : BrainModule
     {
         var dieBehaviour = GetComponent<DieBehaviour>();
         if (!dieBehaviour) return;
-        dieBehaviour.onDie.AddListener(() => StateMachine.SetBool(Dead, true));
+        dieBehaviour.onDie += () => StateMachine.SetBool(Dead, true);
     }
 
     public override string[] GetParameters()

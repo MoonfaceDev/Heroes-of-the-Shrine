@@ -54,28 +54,28 @@ public class AttackManager : CharacterBehaviour
         {
             // Forward events
 
-            attack.PlayEvents.onPlay.AddListener(playEvents.onPlay.Invoke);
-            attack.attackEvents.onStartAnticipating.AddListener(() => attackEvents.onStartAnticipating.Invoke());
-            attack.attackEvents.onFinishAnticipating.AddListener(() => attackEvents.onFinishAnticipating.Invoke());
-            attack.attackEvents.onStartActive.AddListener(() => attackEvents.onStartActive.Invoke());
-            attack.attackEvents.onFinishActive.AddListener(() => attackEvents.onFinishActive.Invoke());
-            attack.attackEvents.onStartRecovery.AddListener(() => attackEvents.onStartRecovery.Invoke());
-            attack.attackEvents.onFinishRecovery.AddListener(() => attackEvents.onFinishRecovery.Invoke());
-            attack.PlayEvents.onStop.AddListener(PlayEvents.onStop.Invoke);
+            attack.PlayEvents.onPlay += playEvents.onPlay.Invoke;
+            attack.attackEvents.onStartAnticipating += () => attackEvents.onStartAnticipating.Invoke();
+            attack.attackEvents.onFinishAnticipating += () => attackEvents.onFinishAnticipating.Invoke();
+            attack.attackEvents.onStartActive += () => attackEvents.onStartActive.Invoke();
+            attack.attackEvents.onFinishActive += () => attackEvents.onFinishActive.Invoke();
+            attack.attackEvents.onStartRecovery += () => attackEvents.onStartRecovery.Invoke();
+            attack.attackEvents.onFinishRecovery += () => attackEvents.onFinishRecovery.Invoke();
+            attack.PlayEvents.onStop += PlayEvents.onStop.Invoke;
 
             // Combo handling
 
-            attack.PlayEvents.onPlay.AddListener(() =>
+            attack.PlayEvents.onPlay += () =>
             {
                 Cancel(forgetComboTimeout);
                 lastAttack = attack;
-            });
+            };
 
-            attack.PlayEvents.onStop.AddListener(() =>
+            attack.PlayEvents.onStop += () =>
             {
                 Cancel(forgetComboTimeout);
                 forgetComboTimeout = StartTimeout(() => lastAttack = null, maxComboDelay);
-            });
+            };
         }
     }
 

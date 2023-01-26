@@ -43,7 +43,7 @@ public class RunBehaviour : BaseMovementBehaviour<RunBehaviour.Command>
     {
         string startTimeout = null;
 
-        walkBehaviour.PlayEvents.onPlay.AddListener(() =>
+        walkBehaviour.PlayEvents.onPlay += () =>
         {
             if (!Run)
             {
@@ -53,20 +53,20 @@ public class RunBehaviour : BaseMovementBehaviour<RunBehaviour.Command>
                     Play(new Command());
                 }, timeToRun);
             }
-        });
+        };
 
-        walkBehaviour.PlayEvents.onStop.AddListener(() =>
+        walkBehaviour.PlayEvents.onStop += () =>
         {
             Cancel(startTimeout);
             startTimeout = null;
-        });
+        };
 
-        walkBehaviour.PlayEvents.onStop.AddListener(Stop);
+        walkBehaviour.PlayEvents.onStop += Stop;
 
         if (jumpBehaviour)
         {
-            jumpBehaviour.onStartActive.AddListener(() => runParticlesMain.gravityModifier = 1f);
-            jumpBehaviour.onFinishActive.AddListener(() => runParticlesMain.gravityModifier = 0);
+            jumpBehaviour.onStartActive += () => runParticlesMain.gravityModifier = 1f;
+            jumpBehaviour.onFinishActive += () => runParticlesMain.gravityModifier = 0;
         }
     }
 

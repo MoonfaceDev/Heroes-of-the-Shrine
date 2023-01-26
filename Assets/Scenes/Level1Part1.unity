@@ -191,8 +191,8 @@ MonoBehaviour:
     height: 8
   spawnSourceDistance: 1
   postEncounterEvent:
-    m_PersistentCalls:
-      m_Calls: []
+    _persistentListeners: []
+    Expanded: 1
 --- !u!114 &101979071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,20 +206,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 101979070}
-        m_TargetAssemblyTypeName: EncounterAction, Assembly-CSharp
-        m_MethodName: Invoke
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    _persistentListeners:
+    - _persistentArguments: []
+      _target: {fileID: 101979070}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: Invoke
+    Expanded: 1
   minimumX: 56
 --- !u!4 &101979072
 Transform:
@@ -618,20 +616,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 828371381}
-        m_TargetAssemblyTypeName: TransitionAction, Assembly-CSharp
-        m_MethodName: Invoke
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    _persistentListeners:
+    - _persistentArguments: []
+      _target: {fileID: 828371381}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: Invoke
+    Expanded: 1
   minimumX: 76
 --- !u!212 &828371383
 SpriteRenderer:
@@ -1007,8 +1003,8 @@ MonoBehaviour:
     lookDirection: 1
   director: {fileID: 1745739316}
   postCutsceneEvent:
-    m_PersistentCalls:
-      m_Calls: []
+    _persistentListeners: []
+    Expanded: 1
   playOnAwake: 0
 --- !u!114 &1745739313
 MonoBehaviour:
@@ -1023,20 +1019,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1745739318}
-        m_TargetAssemblyTypeName: CutscenePlayer, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    _persistentListeners:
+    - _persistentArguments: []
+      _target: {fileID: 1745739318}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: Play
+    Expanded: 1
   minimumX: 0
 --- !u!4 &1745739314
 Transform:
@@ -1139,35 +1133,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uniqueId: Possessor Introduction
   firstEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1745739312}
-        m_TargetAssemblyTypeName: CutsceneAction, Assembly-CSharp
-        m_MethodName: Invoke
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    _persistentListeners:
+    - _persistentArguments: []
+      _target: {fileID: 1745739312}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: Invoke
+    Expanded: 1
   restEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1772566191}
-        m_TargetAssemblyTypeName: EncounterAction, Assembly-CSharp
-        m_MethodName: Invoke
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    _persistentListeners:
+    - _persistentArguments: []
+      _target: {fileID: 1772566191}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: Invoke
+    Expanded: 1
   playOnAwake: 0
 --- !u!1 &1772566190
 GameObject:
@@ -1240,8 +1230,8 @@ MonoBehaviour:
     height: 8
   spawnSourceDistance: 1
   postEncounterEvent:
-    m_PersistentCalls:
-      m_Calls: []
+    _persistentListeners: []
+    Expanded: 1
 --- !u!4 &1772566192
 Transform:
   m_ObjectHideFlags: 0

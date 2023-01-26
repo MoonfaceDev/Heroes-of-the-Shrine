@@ -1,6 +1,6 @@
 using System.Collections;
+using ExtEvents;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class ElectrifyAttack : BaseAttack
 {
@@ -14,18 +14,18 @@ public class ElectrifyAttack : BaseAttack
     public BaseHitDetector explosionHitDetector;
 
     public ElectricExplosionHitExecutor explosionHitExecutor;
-    public UnityEvent onExplosion;
+    [SerializeField] public ExtEvent onExplosion;
 
     private string switchDetectorsListener;
 
     public void Start()
     {
-        PlayEvents.onStop.AddListener(() =>
+        PlayEvents.onStop += () =>
         {
             periodicHitDetector.StopDetector();
             explosionHitDetector.StopDetector();
             Cancel(switchDetectorsListener);
-        });
+        };
     }
 
     protected override IEnumerator AnticipationPhase()

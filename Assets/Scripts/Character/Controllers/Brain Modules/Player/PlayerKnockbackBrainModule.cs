@@ -20,7 +20,7 @@ public class PlayerKnockbackBrainModule : BrainModule
         knockbackBehaviour = player.GetComponent<KnockbackBehaviour>();
         if (!knockbackBehaviour) return;
 
-        knockbackBehaviour.PlayEvents.onPlay.AddListener(OnPlay);
+        knockbackBehaviour.PlayEvents.onPlay += OnPlay;
         knockbackBehaviour.OnFinish += OnStop;
         knockbackBehaviour.OnFinish += OnRecoveringPlay;
         knockbackBehaviour.OnRecover += OnRecoveringStop;
@@ -35,7 +35,7 @@ public class PlayerKnockbackBrainModule : BrainModule
     {
         if (!knockbackBehaviour) return;
 
-        knockbackBehaviour.PlayEvents.onPlay.RemoveListener(OnPlay);
+        knockbackBehaviour.PlayEvents.onPlay -= OnPlay;
         knockbackBehaviour.OnFinish -= OnStop;
         knockbackBehaviour.OnFinish -= OnRecoveringPlay;
         knockbackBehaviour.OnRecover -= OnRecoveringStop;

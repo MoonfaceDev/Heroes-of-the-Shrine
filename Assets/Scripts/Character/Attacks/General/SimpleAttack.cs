@@ -24,7 +24,7 @@ public class SimpleAttack : BaseAttack
 
     public void Start()
     {
-        PlayEvents.onStop.AddListener(hitDetector.StopDetector);
+        PlayEvents.onStop += hitDetector.StopDetector;
     }
 
     protected override IEnumerator AnticipationPhase()

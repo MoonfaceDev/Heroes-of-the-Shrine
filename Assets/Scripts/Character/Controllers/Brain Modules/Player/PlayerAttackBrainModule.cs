@@ -25,28 +25,28 @@ public class PlayerAttackBrainModule : BrainModule
         attackManager = player.GetComponent<AttackManager>();
         if (!attackManager) return;
 
-        attackManager.PlayEvents.onPlay.AddListener(OnPlay);
-        attackManager.attackEvents.onStartAnticipating.AddListener(OnStartAnticipating);
-        attackManager.attackEvents.onFinishAnticipating.AddListener(OnFinishAnticipating);
-        attackManager.attackEvents.onStartActive.AddListener(OnStartActive);
-        attackManager.attackEvents.onFinishActive.AddListener(OnFinishActive);
-        attackManager.attackEvents.onStartRecovery.AddListener(OnStartRecovery);
-        attackManager.attackEvents.onFinishRecovery.AddListener(OnFinishRecovery);
-        attackManager.PlayEvents.onStop.AddListener(OnStop);
+        attackManager.PlayEvents.onPlay += OnPlay;
+        attackManager.attackEvents.onStartAnticipating += OnStartAnticipating;
+        attackManager.attackEvents.onFinishAnticipating += OnFinishAnticipating;
+        attackManager.attackEvents.onStartActive += OnStartActive;
+        attackManager.attackEvents.onFinishActive += OnFinishActive;
+        attackManager.attackEvents.onStartRecovery += OnStartRecovery;
+        attackManager.attackEvents.onFinishRecovery += OnFinishRecovery;
+        attackManager.PlayEvents.onStop += OnStop;
     }
 
     private void OnDestroy()
     {
         if (!attackManager) return;
 
-        attackManager.PlayEvents.onPlay.RemoveListener(OnPlay);
-        attackManager.attackEvents.onStartAnticipating.RemoveListener(OnStartAnticipating);
-        attackManager.attackEvents.onFinishAnticipating.RemoveListener(OnFinishAnticipating);
-        attackManager.attackEvents.onStartActive.RemoveListener(OnStartActive);
-        attackManager.attackEvents.onFinishActive.RemoveListener(OnFinishActive);
-        attackManager.attackEvents.onStartRecovery.RemoveListener(OnStartRecovery);
-        attackManager.attackEvents.onFinishRecovery.RemoveListener(OnFinishRecovery);
-        attackManager.PlayEvents.onStop.RemoveListener(OnStop);
+        attackManager.PlayEvents.onPlay -= OnPlay;
+        attackManager.attackEvents.onStartAnticipating -= OnStartAnticipating;
+        attackManager.attackEvents.onFinishAnticipating -= OnFinishAnticipating;
+        attackManager.attackEvents.onStartActive -= OnStartActive;
+        attackManager.attackEvents.onFinishActive -= OnFinishActive;
+        attackManager.attackEvents.onStartRecovery -= OnStartRecovery;
+        attackManager.attackEvents.onFinishRecovery -= OnFinishRecovery;
+        attackManager.PlayEvents.onStop -= OnStop;
     }
 
     private void OnPlay() => StateMachine.SetBool(PlayerAttacking, true);

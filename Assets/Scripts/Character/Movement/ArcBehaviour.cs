@@ -31,7 +31,7 @@ public class ArcBehaviour : BaseMovementBehaviour<ArcBehaviour.Command>
 
     public void Start()
     {
-        walkBehaviour.PlayEvents.onStop.AddListener(Stop);
+        walkBehaviour.PlayEvents.onStop += Stop;
     }
 
     protected override void DoPlay(Command command)

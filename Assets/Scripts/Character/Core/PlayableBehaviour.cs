@@ -1,6 +1,6 @@
 using System;
+using ExtEvents;
 using UnityEngine;
-using UnityEngine.Events;
 
 /// <summary>
 /// Contains behaviour's play and stop events
@@ -11,12 +11,12 @@ public class PlayEvents
     /// <value>
     /// Behaviour was played
     /// </value>
-    public UnityEvent onPlay;
+    [SerializeField] public ExtEvent onPlay;
 
     /// <value>
     /// Behaviour was stopped
     /// </value>
-    public UnityEvent onStop;
+    [SerializeField] public ExtEvent onStop;
 }
 
 public interface IPlayableBehaviour

@@ -31,7 +31,7 @@ public class SpinningSwordsAttack : BaseAttack
 
     public void Start()
     {
-        PlayEvents.onStop.AddListener(() =>
+        PlayEvents.onStop += () =>
         {
             hitDetector1.StopDetector();
             hitDetector2.StopDetector();
@@ -41,7 +41,7 @@ public class SpinningSwordsAttack : BaseAttack
             }
 
             currentTimeouts.Clear();
-        });
+        };
     }
 
     private void ConfigureHitDetector(BaseHitDetector hitDetector, float startTime, float duration)

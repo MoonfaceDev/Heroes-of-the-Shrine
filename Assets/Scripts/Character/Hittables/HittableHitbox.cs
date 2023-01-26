@@ -1,11 +1,11 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
+﻿using ExtEvents;
+using UnityEngine;
 
 [RequireComponent(typeof(Hitbox))]
 public class HittableHitbox : BaseComponent, IHittable
 {
     public HittableBehaviour hittableBehaviour;
-    public UnityEvent onHit;
+    [SerializeField] public ExtEvent onHit;
 
     [Header("Blink Effect")] public SpriteRenderer figure;
     public Material blinkMaterial;
@@ -19,13 +19,13 @@ public class HittableHitbox : BaseComponent, IHittable
     {
         Hitbox = GetComponent<Hitbox>();
         defaultMaterial = figure.material;
-        onHit.AddListener(() =>
+        onHit += () =>
         {
             if (figure && hittableBehaviour.CanGetHit())
             {
                 Blink();
             }
-        });
+        };
     }
 
     public Character Character => hittableBehaviour.Character;

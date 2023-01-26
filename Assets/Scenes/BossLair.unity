@@ -210,30 +210,30 @@ MonoBehaviour:
   lastAttack: {fileID: 0}
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   attackEvents:
     onStartAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
 --- !u!114 &63080241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,11 +248,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   cooldown: 0
 --- !u!114 &63080242
 MonoBehaviour:
@@ -268,11 +268,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   cooldown: 0
 --- !u!114 &63080243
 MonoBehaviour:
@@ -288,11 +288,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   cooldown: 0
 --- !u!114 &63080244
 MonoBehaviour:
@@ -308,11 +308,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   cooldown: 0
   defaultSpeed: 2
   speed: 0
@@ -330,11 +330,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   stunFrames: 2
 --- !u!114 &63080246
 MonoBehaviour:
@@ -350,11 +350,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   knockbackRecoverTime: 1
 --- !u!114 &63080248
 MonoBehaviour:
@@ -453,68 +453,80 @@ MonoBehaviour:
   destroyOnDeath: 0
   deathAnimationDuration: 0
   onDie:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2047257162}
-        m_TargetAssemblyTypeName: CutsceneAction, Assembly-CSharp
-        m_MethodName: Invoke
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1738993431}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: StopBackground
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2047257164}
-        m_TargetAssemblyTypeName: EnemyDestroyAction, Assembly-CSharp
-        m_MethodName: Invoke
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2047257166}
-        m_TargetAssemblyTypeName: PossessSourcesDestroyAction, Assembly-CSharp
-        m_MethodName: Invoke
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 510981018}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    _persistentListeners:
+    - _persistentArguments: []
+      _target: {fileID: 2047257162}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: Invoke
+    - _persistentArguments: []
+      _target: {fileID: 2047257162}
+      _isStatic: 1
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 2ab4ebc1fba32b541a5a17f75dca25b5
+        _typeNameAndAssembly: AudioManager, Assembly-CSharp
+        _suppressLogs: 0
+      _methodName: StopBackground
+    - _persistentArguments: []
+      _target: {fileID: 2047257164}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 2ab4ebc1fba32b541a5a17f75dca25b5
+        _typeNameAndAssembly: AudioManager, Assembly-CSharp
+        _suppressLogs: 0
+      _methodName: Invoke
+    - _persistentArguments: []
+      _target: {fileID: 2047257166}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 2ab4ebc1fba32b541a5a17f75dca25b5
+        _typeNameAndAssembly: AudioManager, Assembly-CSharp
+        _suppressLogs: 0
+      _methodName: Invoke
+    - _persistentArguments:
+      - _index: 0
+        _isSerialized: 1
+        _targetType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: System.Boolean, mscorlib
+          _suppressLogs: 1
+        _fromType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _serializationData:
+          DataFormat: 2
+          ReferencedUnityObjects: []
+          SerializationNodes:
+          - Name: 
+            Entry: 5
+            Data: false
+          Bytes: 
+        _canBeDynamic: 0
+        _serializedArg: 
+      _target: {fileID: 510981018}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 2ab4ebc1fba32b541a5a17f75dca25b5
+        _typeNameAndAssembly: AudioManager, Assembly-CSharp
+        _suppressLogs: 0
+      _methodName: SetActive
+    Expanded: 1
 --- !u!114 &63080256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,56 +554,96 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   armorHealth: 100
   armorCooldown: 7
   damageMultiplier: 0.75
   onHit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2074727361}
-        m_TargetAssemblyTypeName: SoundEffect, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 7ea0e61697907c546b162a3ecb51a41a, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    _persistentListeners:
+    - _persistentArguments:
+      - _index: 0
+        _isSerialized: 1
+        _targetType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: UnityEngine.AudioClip, UnityEngine.AudioModule
+          _suppressLogs: 1
+        _fromType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _serializationData:
+          DataFormat: 2
+          ReferencedUnityObjects:
+          - {fileID: 8300000, guid: 7ea0e61697907c546b162a3ecb51a41a, type: 3}
+          SerializationNodes:
+          - Name: 
+            Entry: 10
+            Data: 0
+          Bytes: 
+        _canBeDynamic: 0
+        _serializedArg: 
+      _target: {fileID: 0}
+      _isStatic: 1
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 2ab4ebc1fba32b541a5a17f75dca25b5
+        _typeNameAndAssembly: AudioManager, Assembly-CSharp
+        _suppressLogs: 0
+      _methodName: Play
+    Expanded: 1
   onBreak:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 63080265}
-        m_TargetAssemblyTypeName: Particles, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2074727361}
-        m_TargetAssemblyTypeName: SoundEffect, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 4500ac2273555cb428e41c473201be04, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    _persistentListeners:
+    - _persistentArguments: []
+      _target: {fileID: 63080265}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: Play
+    - _persistentArguments:
+      - _index: 0
+        _isSerialized: 1
+        _targetType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: UnityEngine.AudioClip, UnityEngine.AudioModule
+          _suppressLogs: 1
+        _fromType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _serializationData:
+          DataFormat: 2
+          ReferencedUnityObjects:
+          - {fileID: 8300000, guid: 4500ac2273555cb428e41c473201be04, type: 3}
+          SerializationNodes:
+          - Name: 
+            Entry: 10
+            Data: 0
+          Bytes: 
+        _canBeDynamic: 0
+        _serializedArg: 
+      _target: {fileID: 63080265}
+      _isStatic: 1
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 2ab4ebc1fba32b541a5a17f75dca25b5
+        _typeNameAndAssembly: AudioManager, Assembly-CSharp
+        _suppressLogs: 0
+      _methodName: Play
+    Expanded: 1
   armorCooldownStart: 0
 --- !u!114 &63080258
 MonoBehaviour:
@@ -607,30 +659,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   attackEvents:
     onStartAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   previousAttacks: []
   instant: 0
   interruptible: 1
@@ -661,30 +713,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   attackEvents:
     onStartAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   previousAttacks: []
   instant: 0
   interruptible: 1
@@ -713,11 +765,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   particles: {fileID: 0}
 --- !u!114 &63080261
 MonoBehaviour:
@@ -733,30 +785,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   attackEvents:
     onStartAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   previousAttacks: []
   instant: 0
   interruptible: 1
@@ -801,20 +853,18 @@ MonoBehaviour:
       duration: 4
       speedMultiplier: 0.5
   onExplosion:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 63080264}
-        m_TargetAssemblyTypeName: Particles, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    _persistentListeners:
+    - _persistentArguments: []
+      _target: {fileID: 63080264}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: Play
+    Expanded: 1
   references:
     version: 2
     RefIds:
@@ -871,11 +921,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
 --- !u!114 &63080268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -905,11 +955,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   cooldown: 0
 --- !u!114 &63080270
 MonoBehaviour:
@@ -1482,20 +1532,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hittableBehaviour: {fileID: 63080256}
   onHit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2074727361}
-        m_TargetAssemblyTypeName: SoundEffect, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: a4fb2c77fcef3c349b6d7faae02eb82b, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    _persistentListeners:
+    - _persistentArguments:
+      - _index: 0
+        _isSerialized: 1
+        _targetType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: UnityEngine.AudioClip, UnityEngine.AudioModule
+          _suppressLogs: 1
+        _fromType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _serializationData:
+          DataFormat: 2
+          ReferencedUnityObjects:
+          - {fileID: 8300000, guid: a4fb2c77fcef3c349b6d7faae02eb82b, type: 3}
+          SerializationNodes:
+          - Name: 
+            Entry: 10
+            Data: 0
+          Bytes: 
+        _canBeDynamic: 0
+        _serializedArg: 
+      _target: {fileID: 0}
+      _isStatic: 1
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 2ab4ebc1fba32b541a5a17f75dca25b5
+        _typeNameAndAssembly: AudioManager, Assembly-CSharp
+        _suppressLogs: 0
+      _methodName: Play
+    Expanded: 1
   figure: {fileID: 2074727359}
   blinkMaterial: {fileID: 2100000, guid: 139e10840e012fe4993c21c4f729a2c7, type: 2}
   blinkTime: 0.1
@@ -2409,20 +2480,18 @@ MonoBehaviour:
   moveDefinitions: []
   director: {fileID: 578298341}
   postCutsceneEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 615463059}
-        m_TargetAssemblyTypeName: PlayOnce, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    _persistentListeners:
+    - _persistentArguments: []
+      _target: {fileID: 615463059}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: Play
+    Expanded: 1
   playOnAwake: 0
 --- !u!114 &615463059
 MonoBehaviour:
@@ -2438,47 +2507,60 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uniqueId: Boss Entrance
   firstEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1574004473}
-        m_TargetAssemblyTypeName: CutsceneAction, Assembly-CSharp
-        m_MethodName: Invoke
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    _persistentListeners:
+    - _persistentArguments: []
+      _target: {fileID: 1574004473}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: Invoke
+    Expanded: 1
   restEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 63080270}
-        m_TargetAssemblyTypeName: AlarmBrainModule, Assembly-CSharp
-        m_MethodName: SetAlarm
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1738993431}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlayBackground
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 2e068c03b98d03343859d863189dd049, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    _persistentListeners:
+    - _persistentArguments: []
+      _target: {fileID: 63080270}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: SetAlarm
+    - _persistentArguments:
+      - _index: 0
+        _isSerialized: 1
+        _targetType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: UnityEngine.AudioClip, UnityEngine.AudioModule
+          _suppressLogs: 1
+        _fromType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _serializationData:
+          DataFormat: 2
+          ReferencedUnityObjects: []
+          SerializationNodes: []
+          Bytes: 
+        _canBeDynamic: 0
+        _serializedArg: 
+      _target: {fileID: 63080270}
+      _isStatic: 1
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 2ab4ebc1fba32b541a5a17f75dca25b5
+        _typeNameAndAssembly: AudioManager, Assembly-CSharp
+        _suppressLogs: 0
+      _methodName: PlayBackground
+    Expanded: 1
   playOnAwake: 0
 --- !u!114 &615463061
 MonoBehaviour:
@@ -2524,47 +2606,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uniqueId: Player Entrance
   firstEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 615463058}
-        m_TargetAssemblyTypeName: CutsceneAction, Assembly-CSharp
-        m_MethodName: Invoke
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    _persistentListeners:
+    - _persistentArguments: []
+      _target: {fileID: 615463058}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: Invoke
+    Expanded: 1
   restEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 615463058}
-        m_TargetAssemblyTypeName: CutsceneAction, Assembly-CSharp
-        m_MethodName: Invoke
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1216626311}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+    _persistentListeners:
+    - _persistentArguments: []
+      _target: {fileID: 615463058}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: Invoke
+    - _persistentArguments:
+      - _index: 0
+        _isSerialized: 1
+        _targetType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: System.Boolean, mscorlib
+          _suppressLogs: 1
+        _fromType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _serializationData:
+          DataFormat: 2
+          ReferencedUnityObjects: []
+          SerializationNodes:
+          - Name: 
+            Entry: 5
+            Data: true
+          Bytes: 
+        _canBeDynamic: 0
+        _serializedArg: 
+      _target: {fileID: 1216626311}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: SetActive
+    Expanded: 1
   playOnAwake: 1
 --- !u!1 &618980458
 GameObject:
@@ -4430,32 +4528,51 @@ MonoBehaviour:
   moveDefinitions: []
   director: {fileID: 1574004470}
   postCutsceneEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 63080270}
-        m_TargetAssemblyTypeName: AlarmBrainModule, Assembly-CSharp
-        m_MethodName: SetAlarm
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1738993431}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlayBackground
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 2e068c03b98d03343859d863189dd049, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    _persistentListeners:
+    - _persistentArguments: []
+      _target: {fileID: 63080270}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: SetAlarm
+    - _persistentArguments:
+      - _index: 0
+        _isSerialized: 1
+        _targetType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: UnityEngine.AudioClip, UnityEngine.AudioModule
+          _suppressLogs: 1
+        _fromType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _serializationData:
+          DataFormat: 2
+          ReferencedUnityObjects:
+          - {fileID: 8300000, guid: 2e068c03b98d03343859d863189dd049, type: 3}
+          SerializationNodes:
+          - Name: 
+            Entry: 10
+            Data: 0
+          Bytes: 
+        _canBeDynamic: 0
+        _serializedArg: 
+      _target: {fileID: 63080270}
+      _isStatic: 1
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 2ab4ebc1fba32b541a5a17f75dca25b5
+        _typeNameAndAssembly: AudioManager, Assembly-CSharp
+        _suppressLogs: 0
+      _methodName: PlayBackground
+    Expanded: 1
   playOnAwake: 0
 --- !u!114 &1574004474
 MonoBehaviour:
@@ -4859,8 +4976,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hittableBehaviour: {fileID: 63080256}
   onHit:
-    m_PersistentCalls:
-      m_Calls: []
+    _persistentListeners: []
+    Expanded: 1
   figure: {fileID: 2074727359}
   blinkMaterial: {fileID: 2100000, guid: 8513bf6e8870c9b41b3e724cfc5bc64e, type: 2}
   blinkTime: 0.1
@@ -5709,56 +5826,136 @@ MonoBehaviour:
     lookDirection: 1
   director: {fileID: 2047257161}
   postCutsceneEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1664127657}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 922160256}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1506894209}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 63080233}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    _persistentListeners:
+    - _persistentArguments:
+      - _index: 0
+        _isSerialized: 1
+        _targetType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: System.Boolean, mscorlib
+          _suppressLogs: 1
+        _fromType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _serializationData:
+          DataFormat: 2
+          ReferencedUnityObjects: []
+          SerializationNodes:
+          - Name: 
+            Entry: 5
+            Data: false
+          Bytes: 
+        _canBeDynamic: 0
+        _serializedArg: 
+      _target: {fileID: 1664127657}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: set_enabled
+    - _persistentArguments:
+      - _index: 0
+        _isSerialized: 1
+        _targetType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: System.Boolean, mscorlib
+          _suppressLogs: 1
+        _fromType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _serializationData:
+          DataFormat: 2
+          ReferencedUnityObjects: []
+          SerializationNodes:
+          - Name: 
+            Entry: 5
+            Data: true
+          Bytes: 
+        _canBeDynamic: 0
+        _serializedArg: 
+      _target: {fileID: 922160256}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: SetActive
+    - _persistentArguments:
+      - _index: 0
+        _isSerialized: 1
+        _targetType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: System.Boolean, mscorlib
+          _suppressLogs: 1
+        _fromType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _serializationData:
+          DataFormat: 2
+          ReferencedUnityObjects: []
+          SerializationNodes:
+          - Name: 
+            Entry: 5
+            Data: false
+          Bytes: 
+        _canBeDynamic: 0
+        _serializedArg: 
+      _target: {fileID: 1506894209}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: SetActive
+    - _persistentArguments:
+      - _index: 0
+        _isSerialized: 1
+        _targetType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: System.Boolean, mscorlib
+          _suppressLogs: 1
+        _fromType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _serializationData:
+          DataFormat: 2
+          ReferencedUnityObjects: []
+          SerializationNodes:
+          - Name: 
+            Entry: 5
+            Data: false
+          Bytes: 
+        _canBeDynamic: 0
+        _serializedArg: 
+      _target: {fileID: 63080233}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: SetActive
+    Expanded: 1
   playOnAwake: 0
 --- !u!4 &2047257163
 Transform:

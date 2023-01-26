@@ -34,7 +34,7 @@ public class EscapeBehaviour : BaseMovementBehaviour<EscapeBehaviour.Command>
     public void Start()
     {
         MovableEntity.OnStuck += Stop;
-        walkBehaviour.PlayEvents.onStop.AddListener(Stop);
+        walkBehaviour.PlayEvents.onStop += Stop;
     }
 
     protected override void DoPlay(Command command)
