@@ -5,9 +5,8 @@ public class AggressionBrainModule : BrainModule
     private const string AggressionParameter = "aggression";
     private static readonly int Aggression = Animator.StringToHash(AggressionParameter);
 
-    public override void Awake()
+    private void Start()
     {
-        base.Awake();
         foreach (var pattern in StateMachine.GetBehaviours<BasePattern>())
         {
             pattern.OnEnter += () => StateMachine.SetFloat(Aggression, Random.Range(0f, 1f));

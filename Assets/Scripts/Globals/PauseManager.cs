@@ -21,6 +21,7 @@ public class PauseManager : BaseComponent
         {
             paused = value;
             Time.timeScale = paused ? 0 : 1;
+            AudioListener.pause = paused;
         }
         get => paused;
     }

@@ -22,7 +22,6 @@ public class AudioManager : BaseComponent
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()

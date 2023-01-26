@@ -2101,7 +2101,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 77085e8a2c8bcc449b97fa6eb75cc685, type: 2}
     - target: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_SceneBindings.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_SceneBindings.Array.data[0].key
@@ -2114,7 +2114,7 @@ PrefabInstance:
     - target: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_SceneBindings.Array.data[2].key
       value: 
-      objectReference: {fileID: 1712049283222179871, guid: 77085e8a2c8bcc449b97fa6eb75cc685, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_SceneBindings.Array.data[0].value
       value: 
@@ -2126,7 +2126,7 @@ PrefabInstance:
     - target: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_SceneBindings.Array.data[2].value
       value: 
-      objectReference: {fileID: 615463061}
+      objectReference: {fileID: 0}
     - target: {fileID: 4205167683501668961, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: spawnPosition.x
       value: 0
@@ -2546,8 +2546,12 @@ MonoBehaviour:
           _suppressLogs: 0
         _serializationData:
           DataFormat: 2
-          ReferencedUnityObjects: []
-          SerializationNodes: []
+          ReferencedUnityObjects:
+          - {fileID: 8300000, guid: 2e068c03b98d03343859d863189dd049, type: 3}
+          SerializationNodes:
+          - Name: 
+            Entry: 10
+            Data: 0
           Bytes: 
         _canBeDynamic: 0
         _serializedArg: 
@@ -2562,36 +2566,6 @@ MonoBehaviour:
       _methodName: PlayBackground
     Expanded: 1
   playOnAwake: 0
---- !u!114 &615463061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 615463057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 549bf65208ceb3d44b9b19997d0bee93, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1738993431}
-          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-          m_MethodName: StopBackground
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &615463062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6415,7 +6389,7 @@ PrefabInstance:
     - target: {fileID: 3344953106161015587, guid: 4f2197b95c98d99468c5ad33d8249e9f, type: 3}
       propertyPath: backgroundMusic
       value: 
-      objectReference: {fileID: 8300000, guid: 2e068c03b98d03343859d863189dd049, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3344953106161015596, guid: 4f2197b95c98d99468c5ad33d8249e9f, type: 3}
       propertyPath: m_Name
       value: Audio Source
