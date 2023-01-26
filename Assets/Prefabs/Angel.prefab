@@ -783,7 +783,7 @@ Transform:
   - {fileID: 3850747449127629430}
   - {fileID: 3970267090279809017}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360874897665
 MonoBehaviour:
@@ -849,20 +849,41 @@ MonoBehaviour:
   destroyOnDeath: 0
   deathAnimationDuration: 3
   onDie:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1727742673761222668}
-        m_TargetAssemblyTypeName: SoundEffect, Assembly-CSharp
-        m_MethodName: PlayBackground
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: eb62d56ef099fa04ebc013540362ca7b, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    _persistentListeners:
+    - _persistentArguments:
+      - _index: 0
+        _isSerialized: 1
+        _targetType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: UnityEngine.AudioClip, UnityEngine.AudioModule
+          _suppressLogs: 1
+        _fromType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _serializationData:
+          DataFormat: 2
+          ReferencedUnityObjects:
+          - {fileID: 8300000, guid: eb62d56ef099fa04ebc013540362ca7b, type: 3}
+          SerializationNodes:
+          - Name: 
+            Entry: 10
+            Data: 0
+          Bytes: 
+        _canBeDynamic: 0
+        _serializedArg: 
+      _target: {fileID: 0}
+      _isStatic: 1
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 2ab4ebc1fba32b541a5a17f75dca25b5
+        _typeNameAndAssembly: AudioManager, Assembly-CSharp
+        _suppressLogs: 0
+      _methodName: PlayBackground
+    Expanded: 1
 --- !u!114 &5102893360874897666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -890,11 +911,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 0
   cooldown: 0
   defaultSpeed: 6
   speed: 0
@@ -912,35 +933,75 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3541930184749892774}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: set_pitch
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 1.25
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+      _persistentListeners:
+      - _persistentArguments:
+        - _index: 0
+          _isSerialized: 1
+          _targetType:
+            GuidAssignmentFailed: 0
+            GUID: 
+            _typeNameAndAssembly: System.Single, mscorlib
+            _suppressLogs: 1
+          _fromType:
+            GuidAssignmentFailed: 0
+            GUID: 
+            _typeNameAndAssembly: 
+            _suppressLogs: 0
+          _serializationData:
+            DataFormat: 2
+            ReferencedUnityObjects: []
+            SerializationNodes:
+            - Name: 
+              Entry: 4
+              Data: 1.25
+            Bytes: 
+          _canBeDynamic: 0
+          _serializedArg: 
+        _target: {fileID: 3541930184749892774}
+        _isStatic: 0
+        CallState: 2
+        _staticType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _methodName: set_pitch
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3541930184749892774}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: set_pitch
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 1
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+      _persistentListeners:
+      - _persistentArguments:
+        - _index: 0
+          _isSerialized: 1
+          _targetType:
+            GuidAssignmentFailed: 0
+            GUID: 
+            _typeNameAndAssembly: System.Single, mscorlib
+            _suppressLogs: 1
+          _fromType:
+            GuidAssignmentFailed: 0
+            GUID: 
+            _typeNameAndAssembly: 
+            _suppressLogs: 0
+          _serializationData:
+            DataFormat: 2
+            ReferencedUnityObjects: []
+            SerializationNodes:
+            - Name: 
+              Entry: 4
+              Data: 1
+            Bytes: 
+          _canBeDynamic: 0
+          _serializedArg: 
+        _target: {fileID: 3541930184749892774}
+        _isStatic: 0
+        CallState: 2
+        _staticType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _methodName: set_pitch
+      Expanded: 1
   cooldown: 0
   timeToRun: 1
   runSpeedMultiplier: 1.5
@@ -959,21 +1020,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   cooldown: 0
   jumpSpeed: 10
   jumpAnticipateTime: 0.1
   jumpRecoverTime: 0.05
   onStartActive:
-    m_PersistentCalls:
-      m_Calls: []
+    _persistentListeners: []
+    Expanded: 1
   onFinishActive:
-    m_PersistentCalls:
-      m_Calls: []
+    _persistentListeners: []
+    Expanded: 1
 --- !u!114 &5102893360874897679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -988,11 +1049,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   cooldown: 1
   slideSpeedMultiplier: 3
   slideStopAcceleration: 50
@@ -1010,11 +1071,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   cooldown: 1
   dodgeDistance: 1.5
   anticipateTime: 0.05
@@ -1033,11 +1094,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   knockbackRecoverTime: 1
 --- !u!114 &5102893360874897677
 MonoBehaviour:
@@ -1053,11 +1114,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   stunFrames: 2
 --- !u!114 &5081049118965928474
 MonoBehaviour:
@@ -1085,11 +1146,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   cooldown: 0
 --- !u!114 &4937438101241777289
 MonoBehaviour:
@@ -1105,11 +1166,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   cooldown: 0
 --- !u!114 &2899137309724130339
 MonoBehaviour:
@@ -1125,11 +1186,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
 --- !u!114 &5102893360874897692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1144,11 +1205,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   particles: {fileID: 5102893361279726049}
 --- !u!114 &5102893360874897674
 MonoBehaviour:
@@ -1164,11 +1225,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
 --- !u!114 &1638938386684518268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1183,23 +1244,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4916786187361843125}
-          m_TargetAssemblyTypeName: Particles, Assembly-CSharp
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+      _persistentListeners:
+      - _persistentArguments: []
+        _target: {fileID: 2810455707820001631}
+        _isStatic: 0
+        CallState: 2
+        _staticType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _methodName: Play
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
 --- !u!114 &5102893360874897672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1218,30 +1277,30 @@ MonoBehaviour:
   lastAttack: {fileID: 0}
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   attackEvents:
     onStartAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
 --- !u!114 &5102893360874897678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1299,30 +1358,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   attackEvents:
     onStartAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   previousAttacks: []
   instant: 0
   interruptible: 1
@@ -1367,30 +1426,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   attackEvents:
     onStartAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   previousAttacks: []
   instant: 0
   interruptible: 1
@@ -1434,30 +1493,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   attackEvents:
     onStartAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   previousAttacks:
   - {fileID: 5102893360874897686}
   instant: 0
@@ -1502,30 +1561,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   attackEvents:
     onStartAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   previousAttacks:
   - {fileID: 5102893360874897686}
   instant: 0
@@ -1570,30 +1629,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   attackEvents:
     onStartAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   previousAttacks:
   - {fileID: 5102893360874897687}
   instant: 0
@@ -1638,30 +1697,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   attackEvents:
     onStartAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   previousAttacks:
   - {fileID: 5102893360874897687}
   instant: 0
@@ -1721,42 +1780,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   attackEvents:
     onStartAnticipating:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4916786187361843125}
-          m_TargetAssemblyTypeName: AttackParticles, Assembly-CSharp
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+      _persistentListeners:
+      - _persistentArguments: []
+        _target: {fileID: 4916786187361843125}
+        _isStatic: 0
+        CallState: 2
+        _staticType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _methodName: Play
+      Expanded: 1
     onFinishAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   previousAttacks:
   - {fileID: 5102893360874897685}
   instant: 0
@@ -1802,30 +1859,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   attackEvents:
     onStartAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   previousAttacks: []
   instant: 0
   interruptible: 0
@@ -1869,30 +1926,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   attackEvents:
     onStartAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   previousAttacks:
   - {fileID: 5102893360874897681}
   instant: 0
@@ -1937,30 +1994,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   attackEvents:
     onStartAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   previousAttacks:
   - {fileID: 0}
   - {fileID: 5102893360874897681}
@@ -2007,30 +2064,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   attackEvents:
     onStartAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   previousAttacks: []
   instant: 0
   interruptible: 0
@@ -2328,8 +2385,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hittableBehaviour: {fileID: 5102893360874897666}
   onHit:
-    m_PersistentCalls:
-      m_Calls: []
+    _persistentListeners: []
+    Expanded: 1
   figure: {fileID: 5102893361555062420}
   blinkMaterial: {fileID: 2100000, guid: 853f48af9c661484dbf60542fca9903b, type: 2}
   blinkTime: 0.05
@@ -2440,7 +2497,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893361279726048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.080000006, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7502,7 +7559,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893361865183972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.080000006, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
