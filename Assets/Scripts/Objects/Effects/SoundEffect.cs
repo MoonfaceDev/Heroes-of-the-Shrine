@@ -6,9 +6,4 @@ public class SoundEffect : BaseComponent
     {
         AudioManager.Play(clip);
     }
-
-    public void PlayBackground(AudioClip clip)
-    {
-        AudioManager.PlayBackground(clip);
-    }
 }
