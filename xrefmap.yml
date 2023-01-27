@@ -605,12 +605,6 @@ references:
   commentId: T:Global.AudioManager
   fullName: AudioManager
   nameWithType: AudioManager
-- uid: Global.AudioManager.backgroundMusic
-  name: backgroundMusic
-  href: api/Global.AudioManager.html#Global_AudioManager_backgroundMusic
-  commentId: F:Global.AudioManager.backgroundMusic
-  fullName: AudioManager.backgroundMusic
-  nameWithType: AudioManager.backgroundMusic
 - uid: Global.AudioManager.Instance
   name: Instance
   href: api/Global.AudioManager.html#Global_AudioManager_Instance
@@ -624,12 +618,19 @@ references:
   isSpec: "True"
   fullName: AudioManager.Instance
   nameWithType: AudioManager.Instance
-- uid: Global.AudioManager.musicAudioSource
-  name: musicAudioSource
-  href: api/Global.AudioManager.html#Global_AudioManager_musicAudioSource
-  commentId: F:Global.AudioManager.musicAudioSource
-  fullName: AudioManager.musicAudioSource
-  nameWithType: AudioManager.musicAudioSource
+- uid: Global.AudioManager.MusicVolume
+  name: MusicVolume
+  href: api/Global.AudioManager.html#Global_AudioManager_MusicVolume
+  commentId: P:Global.AudioManager.MusicVolume
+  fullName: AudioManager.MusicVolume
+  nameWithType: AudioManager.MusicVolume
+- uid: Global.AudioManager.MusicVolume*
+  name: MusicVolume
+  href: api/Global.AudioManager.html#Global_AudioManager_MusicVolume_
+  commentId: Overload:Global.AudioManager.MusicVolume
+  isSpec: "True"
+  fullName: AudioManager.MusicVolume
+  nameWithType: AudioManager.MusicVolume
 - uid: Global.AudioManager.Play(AudioClip)
   name: Play(AudioClip)
   href: api/Global.AudioManager.html#Global_AudioManager_Play_AudioClip_
@@ -656,12 +657,19 @@ references:
   isSpec: "True"
   fullName: AudioManager.PlayBackground
   nameWithType: AudioManager.PlayBackground
-- uid: Global.AudioManager.soundEffectsAudioSource
-  name: soundEffectsAudioSource
-  href: api/Global.AudioManager.html#Global_AudioManager_soundEffectsAudioSource
-  commentId: F:Global.AudioManager.soundEffectsAudioSource
-  fullName: AudioManager.soundEffectsAudioSource
-  nameWithType: AudioManager.soundEffectsAudioSource
+- uid: Global.AudioManager.SoundVolume
+  name: SoundVolume
+  href: api/Global.AudioManager.html#Global_AudioManager_SoundVolume
+  commentId: P:Global.AudioManager.SoundVolume
+  fullName: AudioManager.SoundVolume
+  nameWithType: AudioManager.SoundVolume
+- uid: Global.AudioManager.SoundVolume*
+  name: SoundVolume
+  href: api/Global.AudioManager.html#Global_AudioManager_SoundVolume_
+  commentId: Overload:Global.AudioManager.SoundVolume
+  isSpec: "True"
+  fullName: AudioManager.SoundVolume
+  nameWithType: AudioManager.SoundVolume
 - uid: Global.AudioManager.StopBackground
   name: StopBackground()
   href: api/Global.AudioManager.html#Global_AudioManager_StopBackground
