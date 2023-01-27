@@ -13,6 +13,8 @@ public class CameraMovement : BaseComponent
 
     public float CameraWidth => CameraHeight * mainCamera.aspect;
 
+    public Vector2 CameraSize => new(CameraWidth, CameraHeight);
+
     private void Awake()
     {
         mainCamera = GetComponent<Camera>();
@@ -38,8 +40,8 @@ public class CameraMovement : BaseComponent
         var position = transform.position;
         var next = Vector3.Lerp(position, targetPosition, lerpSpeed * Time.deltaTime);
 
-        var currentRect = new Rect(position, new Vector2(CameraWidth, CameraHeight));
-        var nextRect = new Rect(next, new Vector2(CameraWidth, CameraHeight));
+        var currentRect = new Rect((Vector2)position - CameraSize / 2, CameraSize);
+        var nextRect = new Rect((Vector2)next - CameraSize / 2, CameraSize);
 
         if ((nextRect.xMin > border.xMin && nextRect.xMax < border.xMax) ||
             (position.x < next.x && currentRect.xMin < border.xMin) ||
