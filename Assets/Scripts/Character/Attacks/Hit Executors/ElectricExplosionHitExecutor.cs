@@ -1,5 +1,4 @@
 ﻿using System;
-using Random = UnityEngine.Random;
 
 [Serializable]
 public class ElectricExplosionHitExecutor : IHitExecutor
