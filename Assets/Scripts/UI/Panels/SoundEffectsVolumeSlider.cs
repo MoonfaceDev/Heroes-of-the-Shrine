@@ -6,8 +6,8 @@ public class SoundEffectsVolumeSlider : BaseComponent
 
     private void Awake()
     {
-        slider.onValueChanged.AddListener(value => AudioManager.Instance.soundEffectsAudioSource.volume = value);
+        slider.onValueChanged.AddListener(value => AudioManager.Instance.SoundVolume = value);
 
-        Register(() => slider.value = AudioManager.Instance.soundEffectsAudioSource.volume);
+        Register(() => slider.value = AudioManager.Instance.SoundVolume);
     }
 }

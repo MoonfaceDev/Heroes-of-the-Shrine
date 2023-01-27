@@ -33,6 +33,6 @@ public class WalkSoundEffect : BaseComponent
             };
         }
 
-        Register(() => walkAudioSource.volume = AudioManager.Instance.soundEffectsAudioSource.volume);
+        Register(() => walkAudioSource.volume = AudioManager.Instance.SoundVolume);
     }
 }

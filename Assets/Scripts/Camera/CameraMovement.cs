@@ -37,16 +37,20 @@ public class CameraMovement : BaseComponent
     {
         var position = transform.position;
         var next = Vector3.Lerp(position, targetPosition, lerpSpeed * Time.deltaTime);
-        if ((next.x - CameraWidth / 2 > border.xMin && next.x + CameraWidth / 2 < border.xMax) ||
-            (position.x < next.x && position.x - CameraWidth / 2 < border.xMin) ||
-            (position.x > next.x && position.x + CameraWidth / 2 > border.xMax))
+
+        var currentRect = new Rect(position, new Vector2(CameraWidth, CameraHeight));
+        var nextRect = new Rect(next, new Vector2(CameraWidth, CameraHeight));
+
+        if ((nextRect.xMin > border.xMin && nextRect.xMax < border.xMax) ||
+            (position.x < next.x && currentRect.xMin < border.xMin) ||
+            (position.x > next.x && currentRect.xMax > border.xMax))
         {
             position += (next.x - position.x) * Vector3.right;
         }
 
-        if ((next.y - CameraHeight / 2 > border.yMin && next.y + CameraHeight / 2 < border.yMax) ||
-            (position.y < next.y && position.y - CameraHeight / 2 < border.yMin) ||
-            (position.y > next.y && position.y + CameraHeight / 2 > border.yMax))
+        if ((nextRect.yMin > border.yMin && nextRect.yMax < border.yMax) ||
+            (position.y < next.y && currentRect.yMin < border.yMin) ||
+            (position.y > next.y && currentRect.yMax > border.yMax))
         {
             position += (next.y - position.y) * Vector3.up;
         }

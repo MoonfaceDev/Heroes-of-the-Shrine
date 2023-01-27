@@ -2,9 +2,31 @@ using UnityEngine;
 
 public class AudioManager : BaseComponent
 {
-    public AudioSource musicAudioSource;
-    public AudioSource soundEffectsAudioSource;
-    public AudioClip backgroundMusic;
+    [SerializeField] private AudioSource musicAudioSource;
+    [SerializeField] private AudioSource soundEffectsAudioSource;
+
+    public float MusicVolume
+    {
+        get => musicAudioSource.volume;
+        set
+        {
+            musicAudioSource.volume = value;
+            PlayerPrefs.SetFloat(MusicVolumeKey, value);
+        }
+    }
+    
+    public float SoundVolume
+    {
+        get => soundEffectsAudioSource.volume;
+        set
+        {
+            soundEffectsAudioSource.volume = value;
+            PlayerPrefs.SetFloat(SoundVolumeKey, value);
+        }
+    }
+
+    private const string MusicVolumeKey = "musicVolume"; 
+    private const string SoundVolumeKey = "soundVolume"; 
 
     public static AudioManager Instance { get; private set; }
 
@@ -13,23 +35,12 @@ public class AudioManager : BaseComponent
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
-            if (backgroundMusic)
-            {
-                PlayBackground(backgroundMusic);
-            }
-
             return;
         }
 
         Instance = this;
-    }
-
-    private void Start()
-    {
-        if (backgroundMusic)
-        {
-            PlayBackground(backgroundMusic);
-        }
+        musicAudioSource.volume = PlayerPrefs.GetFloat(MusicVolumeKey, 1);
+        soundEffectsAudioSource.volume = PlayerPrefs.GetFloat(SoundVolumeKey, 1);
     }
 
     public static void PlayBackground(AudioClip clip)
