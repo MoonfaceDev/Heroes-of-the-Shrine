@@ -7,12 +7,14 @@ using UnityEngine;
 [CustomPropertyDrawer(typeof(Tags))]
 public class TagsDrawer : PropertyDrawer
 {
+    private string name;
     private Tag[] tagOptions;
     private SerializedProperty tags;
     private ReorderableList list;
 
     private void Init(SerializedProperty property)
     {
+        name = property.displayName;
         tagOptions = (Tag[])Enum.GetValues(typeof(Tag));
         tags = property.FindPropertyRelative("tags");
         list = new ReorderableList(property.serializedObject, tags, true, true, true, true);
@@ -21,9 +23,9 @@ public class TagsDrawer : PropertyDrawer
         list.onAddDropdownCallback += OnAddDropdown;
     }
 
-    private static void DrawHeader(Rect rect)
+    private void DrawHeader(Rect rect)
     {
-        EditorGUI.LabelField(rect, new GUIContent("Tags"), EditorStyles.boldLabel);
+        EditorGUI.LabelField(rect, new GUIContent(name), EditorStyles.boldLabel);
     }
 
     private void DrawElement(Rect rect, int index, bool isActive, bool isFocused)
@@ -75,7 +77,7 @@ public class TagsDrawer : PropertyDrawer
 
     private void OnAddClickHandler(object tag)
     {
-        int index = list.serializedProperty.arraySize;
+        var index = list.serializedProperty.arraySize;
         list.serializedProperty.arraySize++;
         list.index = index;
 

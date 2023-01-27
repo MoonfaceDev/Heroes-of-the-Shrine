@@ -7,7 +7,6 @@ public class CameraFocus : BaseComponent
 
     private Camera mainCamera;
     private bool active;
-    private Vector2 currentPosition;
     private float targetSize;
 
     private void Awake()
@@ -15,9 +14,8 @@ public class CameraFocus : BaseComponent
         mainCamera = GetComponent<Camera>();
     }
 
-    public void Zoom(Vector2 position, float factor)
+    public void Zoom(float factor)
     {
-        currentPosition = position;
         targetSize = mainCamera.orthographicSize / factor;
         active = true;
         GetComponent<PixelPerfectCamera>().enabled = false;
@@ -26,10 +24,6 @@ public class CameraFocus : BaseComponent
     private void LateUpdate()
     {
         if (!active) return;
-        var position = transform.position;
-        position = Vector3.Lerp(position, new Vector3(currentPosition.x, currentPosition.y, position.z),
-            lerpSpeed * Time.deltaTime);
-        transform.position = position;
         mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, targetSize, lerpSpeed * Time.deltaTime);
     }
 }

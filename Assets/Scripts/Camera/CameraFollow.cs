@@ -27,4 +27,9 @@ public class CameraFollow : BaseComponent
         var targetPosition = GameEntity.GroundScreenCoordinates(target.WorldPosition) + offset;
         cameraMovement.targetPosition = targetPosition;
     }
+
+    public void AddOffset(Vector3 change)
+    {
+        offset += change;
+    }
 }

@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
+using System.Linq;
 
 public class EntityManager : BaseComponent
 {
@@ -51,9 +51,14 @@ public class EntityManager : BaseComponent
         return indexes[key].Count;
     }
 
-    public GameEntity[] GetEntities(Tag key)
+    public List<GameEntity> GetEntities(Tag key)
     {
-        return indexes[key].ToArray();
+        return indexes[key];
+    }
+
+    public List<GameEntity> GetEntities(params Tag[] keys)
+    {
+        return keys.Aggregate(new List<GameEntity>(), (entities, key) => entities.Concat(GetEntities(key)).ToList());
     }
 
     public GameEntity GetEntity(Tag key)
