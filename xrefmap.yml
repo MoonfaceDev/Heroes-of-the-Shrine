@@ -1520,12 +1520,12 @@ references:
   commentId: F:Global.CameraFocus.lerpSpeed
   fullName: CameraFocus.lerpSpeed
   nameWithType: CameraFocus.lerpSpeed
-- uid: Global.CameraFocus.Zoom(Vector2,System.Single)
-  name: Zoom(Vector2, Single)
-  href: api/Global.CameraFocus.html#Global_CameraFocus_Zoom_Vector2_System_Single_
-  commentId: M:Global.CameraFocus.Zoom(Vector2,System.Single)
-  fullName: CameraFocus.Zoom(Vector2, System.Single)
-  nameWithType: CameraFocus.Zoom(Vector2, Single)
+- uid: Global.CameraFocus.Zoom(System.Single)
+  name: Zoom(Single)
+  href: api/Global.CameraFocus.html#Global_CameraFocus_Zoom_System_Single_
+  commentId: M:Global.CameraFocus.Zoom(System.Single)
+  fullName: CameraFocus.Zoom(System.Single)
+  nameWithType: CameraFocus.Zoom(Single)
 - uid: Global.CameraFocus.Zoom*
   name: Zoom
   href: api/Global.CameraFocus.html#Global_CameraFocus_Zoom_
@@ -1539,6 +1539,19 @@ references:
   commentId: T:Global.CameraFollow
   fullName: CameraFollow
   nameWithType: CameraFollow
+- uid: Global.CameraFollow.AddOffset(Vector3)
+  name: AddOffset(Vector3)
+  href: api/Global.CameraFollow.html#Global_CameraFollow_AddOffset_Vector3_
+  commentId: M:Global.CameraFollow.AddOffset(Vector3)
+  fullName: CameraFollow.AddOffset(Vector3)
+  nameWithType: CameraFollow.AddOffset(Vector3)
+- uid: Global.CameraFollow.AddOffset*
+  name: AddOffset
+  href: api/Global.CameraFollow.html#Global_CameraFollow_AddOffset_
+  commentId: Overload:Global.CameraFollow.AddOffset
+  isSpec: "True"
+  fullName: CameraFollow.AddOffset
+  nameWithType: CameraFollow.AddOffset
 - uid: Global.CameraFollow.targetTag
   name: targetTag
   href: api/Global.CameraFollow.html#Global_CameraFollow_targetTag
@@ -2085,49 +2098,6 @@ references:
   isSpec: "True"
   fullName: DamageTranspiler.TranspileDamage
   nameWithType: DamageTranspiler.TranspileDamage
-- uid: Global.DeathAction
-  name: DeathAction
-  href: api/Global.DeathAction.html
-  commentId: T:Global.DeathAction
-  fullName: DeathAction
-  nameWithType: DeathAction
-- uid: Global.DeathAction.cameraZoomFactor
-  name: cameraZoomFactor
-  href: api/Global.DeathAction.html#Global_DeathAction_cameraZoomFactor
-  commentId: F:Global.DeathAction.cameraZoomFactor
-  fullName: DeathAction.cameraZoomFactor
-  nameWithType: DeathAction.cameraZoomFactor
-- uid: Global.DeathAction.deathPanel
-  name: deathPanel
-  href: api/Global.DeathAction.html#Global_DeathAction_deathPanel
-  commentId: F:Global.DeathAction.deathPanel
-  fullName: DeathAction.deathPanel
-  nameWithType: DeathAction.deathPanel
-- uid: Global.DeathAction.deathPanelTransitionDelay
-  name: deathPanelTransitionDelay
-  href: api/Global.DeathAction.html#Global_DeathAction_deathPanelTransitionDelay
-  commentId: F:Global.DeathAction.deathPanelTransitionDelay
-  fullName: DeathAction.deathPanelTransitionDelay
-  nameWithType: DeathAction.deathPanelTransitionDelay
-- uid: Global.DeathAction.Invoke
-  name: Invoke()
-  href: api/Global.DeathAction.html#Global_DeathAction_Invoke
-  commentId: M:Global.DeathAction.Invoke
-  fullName: DeathAction.Invoke()
-  nameWithType: DeathAction.Invoke()
-- uid: Global.DeathAction.Invoke*
-  name: Invoke
-  href: api/Global.DeathAction.html#Global_DeathAction_Invoke_
-  commentId: Overload:Global.DeathAction.Invoke
-  isSpec: "True"
-  fullName: DeathAction.Invoke
-  nameWithType: DeathAction.Invoke
-- uid: Global.DeathAction.objectsToDestroy
-  name: objectsToDestroy
-  href: api/Global.DeathAction.html#Global_DeathAction_objectsToDestroy
-  commentId: F:Global.DeathAction.objectsToDestroy
-  fullName: DeathAction.objectsToDestroy
-  nameWithType: DeathAction.objectsToDestroy
 - uid: Global.DeathPanel
   name: DeathPanel
   href: api/Global.DeathPanel.html
@@ -2140,6 +2110,62 @@ references:
   commentId: F:Global.DeathPanel.transitions
   fullName: DeathPanel.transitions
   nameWithType: DeathPanel.transitions
+- uid: Global.DelayedEvent
+  name: DelayedEvent
+  href: api/Global.DelayedEvent.html
+  commentId: T:Global.DelayedEvent
+  fullName: DelayedEvent
+  nameWithType: DelayedEvent
+- uid: Global.DelayedEvent.delay
+  name: delay
+  href: api/Global.DelayedEvent.html#Global_DelayedEvent_delay
+  commentId: F:Global.DelayedEvent.delay
+  fullName: DelayedEvent.delay
+  nameWithType: DelayedEvent.delay
+- uid: Global.DelayedEvent.event
+  name: event
+  href: api/Global.DelayedEvent.html#Global_DelayedEvent_event
+  commentId: F:Global.DelayedEvent.event
+  fullName: DelayedEvent.event
+  nameWithType: DelayedEvent.event
+- uid: Global.DelayedEvent.Invoke
+  name: Invoke()
+  href: api/Global.DelayedEvent.html#Global_DelayedEvent_Invoke
+  commentId: M:Global.DelayedEvent.Invoke
+  fullName: DelayedEvent.Invoke()
+  nameWithType: DelayedEvent.Invoke()
+- uid: Global.DelayedEvent.Invoke*
+  name: Invoke
+  href: api/Global.DelayedEvent.html#Global_DelayedEvent_Invoke_
+  commentId: Overload:Global.DelayedEvent.Invoke
+  isSpec: "True"
+  fullName: DelayedEvent.Invoke
+  nameWithType: DelayedEvent.Invoke
+- uid: Global.DestroyAction
+  name: DestroyAction
+  href: api/Global.DestroyAction.html
+  commentId: T:Global.DestroyAction
+  fullName: DestroyAction
+  nameWithType: DestroyAction
+- uid: Global.DestroyAction.Invoke
+  name: Invoke()
+  href: api/Global.DestroyAction.html#Global_DestroyAction_Invoke
+  commentId: M:Global.DestroyAction.Invoke
+  fullName: DestroyAction.Invoke()
+  nameWithType: DestroyAction.Invoke()
+- uid: Global.DestroyAction.Invoke*
+  name: Invoke
+  href: api/Global.DestroyAction.html#Global_DestroyAction_Invoke_
+  commentId: Overload:Global.DestroyAction.Invoke
+  isSpec: "True"
+  fullName: DestroyAction.Invoke
+  nameWithType: DestroyAction.Invoke
+- uid: Global.DestroyAction.objects
+  name: objects
+  href: api/Global.DestroyAction.html#Global_DestroyAction_objects
+  commentId: F:Global.DestroyAction.objects
+  fullName: DestroyAction.objects
+  nameWithType: DestroyAction.objects
 - uid: Global.DieBehaviour
   name: DieBehaviour
   href: api/Global.DieBehaviour.html
@@ -2978,37 +3004,6 @@ references:
   isSpec: "True"
   fullName: EnemyCountBrainModule.Update
   nameWithType: EnemyCountBrainModule.Update
-- uid: Global.EnemyDestroyAction
-  name: EnemyDestroyAction
-  href: api/Global.EnemyDestroyAction.html
-  commentId: T:Global.EnemyDestroyAction
-  fullName: EnemyDestroyAction
-  nameWithType: EnemyDestroyAction
-- uid: Global.EnemyDestroyAction.excludedTags
-  name: excludedTags
-  href: api/Global.EnemyDestroyAction.html#Global_EnemyDestroyAction_excludedTags
-  commentId: F:Global.EnemyDestroyAction.excludedTags
-  fullName: EnemyDestroyAction.excludedTags
-  nameWithType: EnemyDestroyAction.excludedTags
-- uid: Global.EnemyDestroyAction.Invoke
-  name: Invoke()
-  href: api/Global.EnemyDestroyAction.html#Global_EnemyDestroyAction_Invoke
-  commentId: M:Global.EnemyDestroyAction.Invoke
-  fullName: EnemyDestroyAction.Invoke()
-  nameWithType: EnemyDestroyAction.Invoke()
-- uid: Global.EnemyDestroyAction.Invoke*
-  name: Invoke
-  href: api/Global.EnemyDestroyAction.html#Global_EnemyDestroyAction_Invoke_
-  commentId: Overload:Global.EnemyDestroyAction.Invoke
-  isSpec: "True"
-  fullName: EnemyDestroyAction.Invoke
-  nameWithType: EnemyDestroyAction.Invoke
-- uid: Global.EnemyDestroyAction.tags
-  name: tags
-  href: api/Global.EnemyDestroyAction.html#Global_EnemyDestroyAction_tags
-  commentId: F:Global.EnemyDestroyAction.tags
-  fullName: EnemyDestroyAction.tags
-  nameWithType: EnemyDestroyAction.tags
 - uid: Global.EnemySpawnDefinition
   name: EnemySpawnDefinition
   href: api/Global.EnemySpawnDefinition.html
@@ -3127,6 +3122,15 @@ references:
   commentId: M:Global.EntityManager.GetEntities(Tag)
   fullName: EntityManager.GetEntities(Tag)
   nameWithType: EntityManager.GetEntities(Tag)
+- uid: Global.EntityManager.GetEntities(Tag[])
+  name: GetEntities(Tag[])
+  href: api/Global.EntityManager.html#Global_EntityManager_GetEntities_Tag___
+  commentId: M:Global.EntityManager.GetEntities(Tag[])
+  name.vb: GetEntities(Tag())
+  fullName: EntityManager.GetEntities(Tag[])
+  fullName.vb: EntityManager.GetEntities(Tag())
+  nameWithType: EntityManager.GetEntities(Tag[])
+  nameWithType.vb: EntityManager.GetEntities(Tag())
 - uid: Global.EntityManager.GetEntities*
   name: GetEntities
   href: api/Global.EntityManager.html#Global_EntityManager_GetEntities_
@@ -3438,6 +3442,31 @@ references:
   isSpec: "True"
   fullName: EventManager.Unregister
   nameWithType: EventManager.Unregister
+- uid: Global.EventWrapper
+  name: EventWrapper
+  href: api/Global.EventWrapper.html
+  commentId: T:Global.EventWrapper
+  fullName: EventWrapper
+  nameWithType: EventWrapper
+- uid: Global.EventWrapper.event
+  name: event
+  href: api/Global.EventWrapper.html#Global_EventWrapper_event
+  commentId: F:Global.EventWrapper.event
+  fullName: EventWrapper.event
+  nameWithType: EventWrapper.event
+- uid: Global.EventWrapper.Invoke
+  name: Invoke()
+  href: api/Global.EventWrapper.html#Global_EventWrapper_Invoke
+  commentId: M:Global.EventWrapper.Invoke
+  fullName: EventWrapper.Invoke()
+  nameWithType: EventWrapper.Invoke()
+- uid: Global.EventWrapper.Invoke*
+  name: Invoke
+  href: api/Global.EventWrapper.html#Global_EventWrapper_Invoke_
+  commentId: Overload:Global.EventWrapper.Invoke
+  isSpec: "True"
+  fullName: EventWrapper.Invoke
+  nameWithType: EventWrapper.Invoke
 - uid: Global.FadePanel
   name: FadePanel
   href: api/Global.FadePanel.html
@@ -5009,6 +5038,43 @@ references:
   isSpec: "True"
   fullName: JumpBehaviour.Recovering
   nameWithType: JumpBehaviour.Recovering
+- uid: Global.KillEntitiesAction
+  name: KillEntitiesAction
+  href: api/Global.KillEntitiesAction.html
+  commentId: T:Global.KillEntitiesAction
+  fullName: KillEntitiesAction
+  nameWithType: KillEntitiesAction
+- uid: Global.KillEntitiesAction.destroyImmediately
+  name: destroyImmediately
+  href: api/Global.KillEntitiesAction.html#Global_KillEntitiesAction_destroyImmediately
+  commentId: F:Global.KillEntitiesAction.destroyImmediately
+  fullName: KillEntitiesAction.destroyImmediately
+  nameWithType: KillEntitiesAction.destroyImmediately
+- uid: Global.KillEntitiesAction.excludedTags
+  name: excludedTags
+  href: api/Global.KillEntitiesAction.html#Global_KillEntitiesAction_excludedTags
+  commentId: F:Global.KillEntitiesAction.excludedTags
+  fullName: KillEntitiesAction.excludedTags
+  nameWithType: KillEntitiesAction.excludedTags
+- uid: Global.KillEntitiesAction.Invoke
+  name: Invoke()
+  href: api/Global.KillEntitiesAction.html#Global_KillEntitiesAction_Invoke
+  commentId: M:Global.KillEntitiesAction.Invoke
+  fullName: KillEntitiesAction.Invoke()
+  nameWithType: KillEntitiesAction.Invoke()
+- uid: Global.KillEntitiesAction.Invoke*
+  name: Invoke
+  href: api/Global.KillEntitiesAction.html#Global_KillEntitiesAction_Invoke_
+  commentId: Overload:Global.KillEntitiesAction.Invoke
+  isSpec: "True"
+  fullName: KillEntitiesAction.Invoke
+  nameWithType: KillEntitiesAction.Invoke
+- uid: Global.KillEntitiesAction.tags
+  name: tags
+  href: api/Global.KillEntitiesAction.html#Global_KillEntitiesAction_tags
+  commentId: F:Global.KillEntitiesAction.tags
+  fullName: KillEntitiesAction.tags
+  nameWithType: KillEntitiesAction.tags
 - uid: Global.KnockbackBehaviour
   name: KnockbackBehaviour
   href: api/Global.KnockbackBehaviour.html
@@ -7687,6 +7753,25 @@ references:
   commentId: T:Global.StabAttack
   fullName: StabAttack
   nameWithType: StabAttack
+- uid: Global.StopEncountersAction
+  name: StopEncountersAction
+  href: api/Global.StopEncountersAction.html
+  commentId: T:Global.StopEncountersAction
+  fullName: StopEncountersAction
+  nameWithType: StopEncountersAction
+- uid: Global.StopEncountersAction.Invoke
+  name: Invoke()
+  href: api/Global.StopEncountersAction.html#Global_StopEncountersAction_Invoke
+  commentId: M:Global.StopEncountersAction.Invoke
+  fullName: StopEncountersAction.Invoke()
+  nameWithType: StopEncountersAction.Invoke()
+- uid: Global.StopEncountersAction.Invoke*
+  name: Invoke
+  href: api/Global.StopEncountersAction.html#Global_StopEncountersAction_Invoke_
+  commentId: Overload:Global.StopEncountersAction.Invoke
+  isSpec: "True"
+  fullName: StopEncountersAction.Invoke
+  nameWithType: StopEncountersAction.Invoke
 - uid: Global.StunBehaviour
   name: StunBehaviour
   href: api/Global.StunBehaviour.html

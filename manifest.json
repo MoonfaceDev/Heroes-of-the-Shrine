@@ -268,7 +268,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.BaseComponent.html",
-          "hash": "0DwtiQv4dj+p6m37T8RndnLI4FfXYBHh6ZkEDGyKs3w="
+          "hash": "NvfIiQSSQboh0Mw18mSgtC+ADCTwhD315SrXAQKeRb0="
         }
       },
       "is_incremental": false,
@@ -424,7 +424,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.CameraFocus.html",
-          "hash": "7+Pzr5krVSLn//PY6tRzyl7a5NLAjWu5P6D8HT5ldMY="
+          "hash": "I+cCvvZz9d/MZfCBqU00EnappQx8yU+dIbEOYsxuEdE="
         }
       },
       "is_incremental": false,
@@ -436,7 +436,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.CameraFollow.html",
-          "hash": "O8FL/2aTBtXOUBNlYPr3ueB89/UcUp7wIUDOvK+q5fI="
+          "hash": "mywO7sxTZCDSpvWgWdMxFSuZJlcHLmbmSj/xj66WTCI="
         }
       },
       "is_incremental": false,
@@ -552,11 +552,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.DeathAction.yml",
+      "source_relative_path": "api/Global.DeathPanel.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Global.DeathAction.html",
-          "hash": "ZUXWvTgeo7ekQF80J8Jjl7MeTteZgZi7Ou8JkrKw+X0="
+          "relative_path": "api/Global.DeathPanel.html",
+          "hash": "zaODHoTdNCkd+yGVQlKuWSf+SnILAR+2nvylT85tIvc="
         }
       },
       "is_incremental": false,
@@ -564,11 +564,23 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.DeathPanel.yml",
+      "source_relative_path": "api/Global.DelayedEvent.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Global.DeathPanel.html",
-          "hash": "zaODHoTdNCkd+yGVQlKuWSf+SnILAR+2nvylT85tIvc="
+          "relative_path": "api/Global.DelayedEvent.html",
+          "hash": "u+L2/21GP73TzRDj5eiZaKdhfDXUZekahdyMxFQ9rVQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.DestroyAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.DestroyAction.html",
+          "hash": "UIIOaeWjTzvzhSF9XMFrVjjZwZ9H4QSgwfUcUg4NNU4="
         }
       },
       "is_incremental": false,
@@ -816,18 +828,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.EnemyDestroyAction.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.EnemyDestroyAction.html",
-          "hash": "hvrPXDrap/K9r/3EHlu+4+xQgbJ3zK7831sdd4OCKt4="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Global.EnemySpawnDefinition.yml",
       "output": {
         ".html": {
@@ -868,7 +868,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.EntityManager.html",
-          "hash": "HWy3gnBc4fWr17fKlyQlVRNb0yIMUCOyK8rPYWZmesk="
+          "hash": "rI13QwZRD6JiUNnTup9OkylDdobCCMAfkaDZ0aNaLUk="
         }
       },
       "is_incremental": false,
@@ -917,6 +917,18 @@
         ".html": {
           "relative_path": "api/Global.EventManager.html",
           "hash": "gNgu9S0gQjQbXcCbqTGDBFyLzHlfbMzfg9eRRIcKf8k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.EventWrapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.EventWrapper.html",
+          "hash": "83EtBNB3zkQJo1kqO/gzWDH05HT1xyS36iK3kJMJqaY="
         }
       },
       "is_incremental": false,
@@ -1337,6 +1349,18 @@
         ".html": {
           "relative_path": "api/Global.JumpBehaviour.html",
           "hash": "WQSWwG34G9+kIVgElKz/M0RpuSpeOrBuf9eeNjqNeUA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.KillEntitiesAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.KillEntitiesAction.html",
+          "hash": "jK3nNsr/kKeiWz0+yQxmq+2HSVWwOo/tgNGfKoVleeY="
         }
       },
       "is_incremental": false,
@@ -2124,6 +2148,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.StopEncountersAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.StopEncountersAction.html",
+          "hash": "yKtfM4h++ZPjRLu0KRQ11qBGdNw81utBGyarkLHOtoA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.StunBehaviour.Command.yml",
       "output": {
         ".html": {
@@ -2392,7 +2428,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "ABh7DDqOINLXzhBRowcyH735KmqZNMLWD77s4a6QDtw="
+          "hash": "4/Jbs26x3WaKAR6WaSxUPon0s4UUK+NGnfuKT1TOFTQ="
         }
       },
       "is_incremental": false,
@@ -2404,7 +2440,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "R+Rhw0bQ/W09yGIMTjBYgLhzPuDzbcyrMvho+WQzmSo="
+          "hash": "/Rtkp1xp1A0yb2TRWrrdqEBVhDNFKw2OeGDTHVCi3JI="
         }
       },
       "is_incremental": false,
@@ -2615,7 +2651,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 198,
+          "total_file_count": 201,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
