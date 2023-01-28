@@ -13,7 +13,7 @@ public abstract class BrainModule : CharacterBehaviour
     /// </value>
     protected Animator StateMachine => brainCore.StateMachine;
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         brainCore = GetComponent<BrainCore>();

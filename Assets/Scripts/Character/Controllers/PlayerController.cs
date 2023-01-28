@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// Button options
+/// </summary>
 public enum Button
 {
     Jump,
@@ -16,6 +19,9 @@ public enum Button
 /// </summary>
 public class PlayerController : CharacterController
 {
+    /// <summary>
+    /// Pairing between attack and required button
+    /// </summary>
     [Serializable]
     public class AttackProperty
     {
@@ -23,12 +29,14 @@ public class PlayerController : CharacterController
         public Button button;
     }
 
+    /// <value>
+    /// List of attacks that can be played using the controller
+    /// </value>
     public AttackProperty[] attacks;
-
-    public RuntimeAnimatorController[] animatorControllers;
-
-    [HideInInspector] public int activeSuitIndex;
-
+    
+    /// <value>
+    /// Window for input buffering, after that time is passed, that input is forgotten
+    /// </value>
     [Header("Action buffering")] public float bufferingTime;
 
     [Header("Buffered actions priorities")]
@@ -39,7 +47,8 @@ public class PlayerController : CharacterController
     public int dodgePriority;
     public int attackPriority;
 
-    [Header("Special inputs")] public List<Button> possessedEffectTimeReducing;
+    [Header("Special inputs")]
+    public List<Button> possessedEffectTimeReducing;
     public float possessedEffectDurationReduction;
 
 
@@ -49,7 +58,7 @@ public class PlayerController : CharacterController
     private DodgeBehaviour dodgeBehaviour;
     private List<BufferedAction> bufferedActions;
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         walkBehaviour = GetComponent<WalkBehaviour>();
@@ -66,7 +75,6 @@ public class PlayerController : CharacterController
 
         ReducePossessedEffectDuration();
         ExecuteBufferedActions();
-        ExecuteSuits();
 
         ExecuteWalk();
         ExecuteJump();
@@ -154,13 +162,6 @@ public class PlayerController : CharacterController
                 () => TryExecuteAttack(downButtons), attackPriority, Time.time + bufferingTime
             ));
         }
-    }
-
-    private void ExecuteSuits()
-    {
-        if (!Input.GetKeyDown(KeyCode.Alpha7)) return;
-        activeSuitIndex = 1 - activeSuitIndex;
-        Animator.runtimeAnimatorController = animatorControllers[activeSuitIndex];
     }
 
     private static Button[] GetDownButtons()

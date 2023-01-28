@@ -31,7 +31,7 @@ public class RunBehaviour : BaseMovementBehaviour<RunBehaviour.Command>
     private static readonly int RunParameter = Animator.StringToHash("run");
 
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         walkBehaviour = GetComponent<WalkBehaviour>();
@@ -39,7 +39,7 @@ public class RunBehaviour : BaseMovementBehaviour<RunBehaviour.Command>
         runParticlesMain = runParticles.main;
     }
 
-    public void Start()
+    private void Start()
     {
         string startTimeout = null;
 

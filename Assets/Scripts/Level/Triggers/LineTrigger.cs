@@ -22,7 +22,7 @@ public class LineTrigger : BaseTrigger
         }
     }
 
-    void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.magenta;
         Gizmos.DrawRay(new Vector3(minimumX, 0, 0.01f), Vector3.up * 10);

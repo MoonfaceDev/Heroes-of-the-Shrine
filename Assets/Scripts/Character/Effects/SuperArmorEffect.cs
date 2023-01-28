@@ -18,7 +18,7 @@ public class SuperArmorEffect : BaseEffect<SuperArmorEffect.Command>
     [HideInInspector] public float armorCooldownStart;
     [ShowDebug] private float currentArmorHealth;
 
-    public void Start()
+    private void Start()
     {
         Play(new Command());
     }

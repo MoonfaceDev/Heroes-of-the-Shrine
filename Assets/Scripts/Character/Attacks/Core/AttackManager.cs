@@ -41,13 +41,13 @@ public class AttackManager : CharacterBehaviour
 
     private string forgetComboTimeout;
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         DamageTranspiler = new DamageTranspiler();
     }
 
-    public void Start()
+    private void Start()
     {
         var attackComponents = GetComponents<BaseAttack>();
         foreach (var attack in attackComponents)

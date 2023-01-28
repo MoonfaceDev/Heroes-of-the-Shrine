@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// State machine parameters related to <see cref="healthSystem"/>
+/// </summary>
 public class HealthBrainModule : BrainModule
 {
     private HealthSystem healthSystem;
@@ -7,7 +10,7 @@ public class HealthBrainModule : BrainModule
     private const string HealthParameter = "health";
     private static readonly int Health = Animator.StringToHash(HealthParameter);
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         healthSystem = GetComponent<HealthSystem>();

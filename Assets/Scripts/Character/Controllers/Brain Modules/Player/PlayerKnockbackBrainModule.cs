@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// State machine parameters related to player's <see cref="KnockbackBehaviour"/>
+/// </summary>
 public class PlayerKnockbackBrainModule : BrainModule
 {
     private const string PlayerKnockbackParameter = "playerKnockback";
@@ -12,7 +15,7 @@ public class PlayerKnockbackBrainModule : BrainModule
 
     private KnockbackBehaviour knockbackBehaviour;
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
 

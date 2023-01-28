@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// State machine parameters related to distance from the player
+/// </summary>
 public class PlayerDistanceBrainModule : BrainModule
 {
     private GameEntity playerEntity;
@@ -13,7 +16,7 @@ public class PlayerDistanceBrainModule : BrainModule
     private const string PlayerDistanceYParameter = "playerDistanceY";
     private const string PlayerDistanceZParameter = "playerDistanceZ";
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         playerEntity = EntityManager.Instance.GetEntity(Tag.Player);

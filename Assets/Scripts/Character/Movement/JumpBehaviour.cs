@@ -58,7 +58,7 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
     private static readonly int JumpParameter = Animator.StringToHash("jump");
     private static readonly int RecoveringFromJumpParameter = Animator.StringToHash("recoveringFromJump");
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         walkBehaviour = GetComponent<WalkBehaviour>();

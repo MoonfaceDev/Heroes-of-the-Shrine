@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// State machine parameter telling the number of enemies in the scene, including itself
+/// </summary>
 public class EnemyCountBrainModule : BrainModule
 {
     private const string EnemyCountParameter = "enemyCount";

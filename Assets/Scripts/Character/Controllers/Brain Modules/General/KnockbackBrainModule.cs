@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// State machine parameters related to <see cref="KnockbackBehaviour"/>
+/// </summary>
 public class KnockbackBrainModule : BrainModule
 {
     private const string KnockbackParameter = "knockback";
     private static readonly int Knockback = Animator.StringToHash(KnockbackParameter);
 
-    public void Start()
+    private void Start()
     {
         var knockbackBehaviour = GetComponent<KnockbackBehaviour>();
         if (!knockbackBehaviour) return;

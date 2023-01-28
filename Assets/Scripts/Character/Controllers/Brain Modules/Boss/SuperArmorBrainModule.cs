@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// State machine parameters related to <see cref="superArmorEffect"/>
+/// </summary>
 public class SuperArmorBrainModule : BrainModule
 {
     private SuperArmorEffect superArmorEffect;
@@ -7,7 +10,7 @@ public class SuperArmorBrainModule : BrainModule
     private const string SuperArmorHealthParameter = "superArmorHealth";
     private static readonly int SuperArmorHealth = Animator.StringToHash(SuperArmorHealthParameter);
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         superArmorEffect = GetComponent<SuperArmorEffect>();

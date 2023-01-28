@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// State machine parameters related to player's <see cref="AttackManager"/>
+/// </summary>
 public class PlayerAttackBrainModule : BrainModule
 {
     private AttackManager attackManager;
@@ -18,7 +21,7 @@ public class PlayerAttackBrainModule : BrainModule
     private const string PlayerAttackingActiveParameter = "playerAttacking-active";
     private const string PlayerAttackingRecoveringParameter = "playerAttacking-recovering";
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         var player = EntityManager.Instance.GetEntity(Tag.Player);

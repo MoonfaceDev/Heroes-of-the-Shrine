@@ -7,7 +7,7 @@ public class HealthSystem : CharacterBehaviour
 
     public float Fraction => health / startHealth;
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         health = startHealth;

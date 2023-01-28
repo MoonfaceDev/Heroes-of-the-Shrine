@@ -10,7 +10,7 @@ public abstract class BaseMovementBehaviour<T> : PlayableBehaviour<T>, IMovement
 
     private float cooldownStartTime;
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         if (cooldown > 0)

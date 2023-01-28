@@ -23,7 +23,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
     private StunBehaviour stunBehaviour;
     private ForcedWalkBehaviour forcedWalkBehaviour;
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         healthSystem = GetComponent<HealthSystem>();

@@ -1,6 +1,9 @@
 ﻿using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// State machine parameter telling if any enemy is attacking, including itself
+/// </summary>
 public class EnemiesAttackingBrainModule : BrainModule
 {
     private const string EnemiesAttackingParameter = "enemiesAttacking";

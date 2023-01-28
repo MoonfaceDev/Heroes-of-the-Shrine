@@ -24,14 +24,14 @@ public class EffectsBar : BaseComponent
     private Dictionary<Type, GameObject> bars;
     private GameEntity player;
 
-    public void Awake()
+    private void Awake()
     {
         container = GetComponent<VerticalLayoutGroup>();
         player = EntityManager.Instance.GetEntity(Tag.Player);
         bars = new Dictionary<Type, GameObject>();
     }
 
-    public void Start()
+    private void Start()
     {
         foreach (var definition in effects)
         {

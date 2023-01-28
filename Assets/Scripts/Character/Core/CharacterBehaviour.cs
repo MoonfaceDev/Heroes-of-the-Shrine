@@ -39,7 +39,7 @@ public abstract class CharacterBehaviour : BaseComponent
 
     private int disableCount;
 
-    public virtual void Awake()
+    protected virtual void Awake()
     {
         Character = GetComponent<Character>();
     }

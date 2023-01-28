@@ -41,7 +41,7 @@ public class WalkBehaviour : BaseMovementBehaviour<WalkBehaviour.Command>
 
     private static readonly int WalkParameter = Animator.StringToHash("walk");
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         speed = defaultSpeed;

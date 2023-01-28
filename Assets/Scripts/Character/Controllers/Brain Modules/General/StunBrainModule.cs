@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// State machine parameters related to <see cref="StunBehaviour"/>
+/// </summary>
 public class StunBrainModule : BrainModule
 {
     private const string StunParameter = "stun";
     private static readonly int Stun = Animator.StringToHash(StunParameter);
 
-    public void Start()
+    private void Start()
     {
         var stunBehaviour = GetComponent<StunBehaviour>();
         if (!stunBehaviour) return;

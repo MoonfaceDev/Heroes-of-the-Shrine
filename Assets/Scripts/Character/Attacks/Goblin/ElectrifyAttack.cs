@@ -18,7 +18,7 @@ public class ElectrifyAttack : BaseAttack
 
     private string switchDetectorsListener;
 
-    public void Start()
+    private void Start()
     {
         PlayEvents.onStop += () =>
         {

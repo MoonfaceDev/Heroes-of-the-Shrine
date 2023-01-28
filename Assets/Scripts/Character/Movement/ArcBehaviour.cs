@@ -23,13 +23,13 @@ public class ArcBehaviour : BaseMovementBehaviour<ArcBehaviour.Command>
     private float currentSpeedMultiplier;
     private string circleListener;
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         walkBehaviour = GetComponent<WalkBehaviour>();
     }
 
-    public void Start()
+    private void Start()
     {
         walkBehaviour.PlayEvents.onStop += Stop;
     }

@@ -1,9 +1,18 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// State machine parameter that is set when health is below a certain value
+/// </summary>
 public class EnragedBrainModule : BrainModule
 {
+    /// <value>
+    /// Parameter is set when health gets below this value
+    /// </value>
     public float rageHealthThreshold;
+    
+    /// <value>
+    /// Attacks damage multiplier when rage is on
+    /// </value>
     public float rageDamageMultiplier = 1;
 
     private bool rage;
@@ -11,7 +20,7 @@ public class EnragedBrainModule : BrainModule
     private const string RageParameter = "rage";
     private static readonly int Rage = Animator.StringToHash(RageParameter);
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
 

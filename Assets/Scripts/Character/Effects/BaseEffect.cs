@@ -26,6 +26,7 @@ public abstract class BaseEffect<T> : PlayableBehaviour<T>, IEffect
     private bool active;
 
     public override bool Playing => Active;
-
+    
+    /// <returns>Progress of the effect (0-1)</returns>
     public abstract float GetProgress();
 }

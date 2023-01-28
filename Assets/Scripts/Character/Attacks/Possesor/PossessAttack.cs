@@ -32,7 +32,7 @@ public class PossessAttack : BaseAttack
 
     private WalkableGrid walkableGrid;
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         walkableGrid = FindObjectOfType<WalkableGrid>();

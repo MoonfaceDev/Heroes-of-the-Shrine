@@ -26,7 +26,7 @@ public class ElectrifiedEffect : BaseEffect<ElectrifiedEffect.Command>
     private static readonly Type[] BehavioursToDisable =
         { typeof(RunBehaviour), typeof(SlideBehaviour), typeof(DodgeBehaviour), typeof(JumpBehaviour) };
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         walkBehaviour = GetComponent<WalkBehaviour>();

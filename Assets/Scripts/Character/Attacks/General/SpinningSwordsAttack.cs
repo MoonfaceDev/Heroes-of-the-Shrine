@@ -30,7 +30,7 @@ public class SpinningSwordsAttack : BaseAttack
 
     private List<string> currentTimeouts;
 
-    public void Start()
+    private void Start()
     {
         PlayEvents.onStop += () =>
         {

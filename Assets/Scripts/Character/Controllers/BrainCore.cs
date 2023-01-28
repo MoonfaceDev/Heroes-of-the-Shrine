@@ -12,7 +12,7 @@ public class BrainCore : CharacterController
     /// </value>
     public Animator StateMachine { get; private set; }
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         StateMachine = GetComponent<Animator>();

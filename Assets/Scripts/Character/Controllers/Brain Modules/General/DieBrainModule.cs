@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// State machine parameters related to <see cref="DieBehaviour"/>
+/// </summary>
 public class DieBrainModule : BrainModule
 {
     private const string DeadParameter = "dead";
     private static readonly int Dead = Animator.StringToHash(DeadParameter);
 
-    public void Start()
+    private void Start()
     {
         var dieBehaviour = GetComponent<DieBehaviour>();
         if (!dieBehaviour) return;

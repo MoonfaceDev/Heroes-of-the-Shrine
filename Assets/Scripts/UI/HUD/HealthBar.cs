@@ -8,7 +8,7 @@ public class HealthBar : BaseComponent
 
     private Scrollbar scrollbar;
 
-    public void Awake()
+    private void Awake()
     {
         scrollbar = GetComponent<Scrollbar>();
     }

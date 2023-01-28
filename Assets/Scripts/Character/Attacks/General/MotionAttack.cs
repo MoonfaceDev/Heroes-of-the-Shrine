@@ -29,7 +29,7 @@ public class MotionAttack : BaseAttack
 
     protected override MotionSettings Motion => MotionSettings.WalkingDisabled;
 
-    public void Start()
+    private void Start()
     {
         PlayEvents.onStop += FinishActive;
     }

@@ -14,7 +14,7 @@ public class Character : BaseComponent
     [HideInInspector] public MovableEntity movableEntity;
     [HideInInspector] public AttackManager attackManager;
 
-    public void Awake()
+    private void Awake()
     {
         movableEntity = GetComponent<MovableEntity>();
         attackManager = GetComponent<AttackManager>();

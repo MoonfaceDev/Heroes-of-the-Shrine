@@ -1,6 +1,9 @@
 ﻿using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// State machine parameter telling if this is the closest enemy to the player
+/// </summary>
 public class ClosestToPlayerBrainModule : BrainModule
 {
     private const string IsClosestToPlayerParameter = "isClosestToPlayer";

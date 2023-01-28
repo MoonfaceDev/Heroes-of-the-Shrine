@@ -25,13 +25,13 @@ public class EscapeBehaviour : BaseMovementBehaviour<EscapeBehaviour.Command>
     private float currentSpeedMultiplier;
     private string escapeListener;
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         walkBehaviour = GetComponent<WalkBehaviour>();
     }
 
-    public void Start()
+    private void Start()
     {
         MovableEntity.OnStuck += Stop;
         walkBehaviour.PlayEvents.onStop += Stop;

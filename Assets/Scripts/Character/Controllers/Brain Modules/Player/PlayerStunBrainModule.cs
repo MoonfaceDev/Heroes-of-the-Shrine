@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// State machine parameters related to player's <see cref="StunBehaviour"/>
+/// </summary>
 public class PlayerStunBrainModule : BrainModule
 {
     private StunBehaviour stunBehaviour;
@@ -7,7 +10,7 @@ public class PlayerStunBrainModule : BrainModule
     private const string PlayerStunParameter = "playerStun";
     private static readonly int PlayerStun = Animator.StringToHash(PlayerStunParameter);
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
 

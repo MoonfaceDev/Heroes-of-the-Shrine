@@ -29,7 +29,7 @@ public class FollowBehaviour : BaseMovementBehaviour<FollowBehaviour.Command>
     private WalkBehaviour walkBehaviour;
     private string followListener;
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         pathfind = GetComponent<Pathfind>();

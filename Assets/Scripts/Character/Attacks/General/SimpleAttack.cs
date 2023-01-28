@@ -23,7 +23,7 @@ public class SimpleAttack : BaseAttack
 
     public ChainHitExecutor hitExecutor;
 
-    public void Start()
+    private void Start()
     {
         PlayEvents.onStop += hitDetector.StopDetector;
     }

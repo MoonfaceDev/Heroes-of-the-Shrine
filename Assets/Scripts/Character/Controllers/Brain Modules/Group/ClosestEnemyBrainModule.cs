@@ -1,6 +1,9 @@
 ﻿using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// State machine parameter telling the distance from the closest enemy
+/// </summary>
 public class ClosestEnemyBrainModule : BrainModule
 {
     private const string ClosestEnemyDistanceParameter = "closestEnemyDistance";
