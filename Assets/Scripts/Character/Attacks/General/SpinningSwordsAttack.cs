@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class SpinningSwordsAttack : BaseAttack
 {
@@ -25,7 +26,7 @@ public class SpinningSwordsAttack : BaseAttack
     [SerializeInterface] [SerializeReference]
     public BaseHitDetector hitDetector2;
 
-    public SimpleHitExecutor hitExecutor;
+    public ChainHitExecutor hitExecutor;
 
     private List<string> currentTimeouts;
 

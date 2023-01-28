@@ -23,7 +23,7 @@ public class MotionAttack : BaseAttack
     [SerializeInterface] [SerializeReference]
     public BaseHitDetector hitDetector;
 
-    public SimpleHitExecutor hitExecutor;
+    public ChainHitExecutor hitExecutor;
 
     private int originalDirection;
 

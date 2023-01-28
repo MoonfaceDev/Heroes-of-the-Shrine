@@ -828,30 +828,17 @@ MonoBehaviour:
     startImmediately: 1
   periodicHitCount: 2
   periodicHitExecutor:
-    simpleHitExecutor:
-      hitDefinition:
-        damage: 2.5
-        hitType: 0
-        knockbackPower: 7
-        knockbackDirection: 30
-        stunTime: 0.5
-    electrifyRate: 0.1
-    electrifyEffect:
-      duration: 4
-      speedMultiplier: 0.5
+    executors:
+    - rid: 3181427634693996608
+    - rid: 3181427634693996610
+    - rid: 3181427634693996612
   explosionHitDetector:
     rid: 3181427246007058591
   explosionHitExecutor:
-    simpleHitExecutor:
-      hitDefinition:
-        damage: 15
-        hitType: 0
-        knockbackPower: 10
-        knockbackDirection: 35
-        stunTime: 0.5
-    electrifyEffect:
-      duration: 4
-      speedMultiplier: 0.5
+    executors:
+    - rid: 3181427634693996614
+    - rid: 3181427634693996616
+    - rid: 3181427634693996618
   onExplosion:
     _persistentListeners:
     - _persistentArguments: []
@@ -877,6 +864,38 @@ MonoBehaviour:
           tags: 
         excludedHittableTags:
           tags: 
+    - rid: 3181427634693996608
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 2.5
+    - rid: 3181427634693996610
+      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        knockbackPower: 7
+        knockbackDirection: 30
+        stunTime: 0.5
+    - rid: 3181427634693996612
+      type: {class: ProbabilisticElectrifyHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        electrifyHitExecutor:
+          duration: 4
+          speedMultiplier: 0.5
+        probability: 0.1
+    - rid: 3181427634693996614
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 15
+    - rid: 3181427634693996616
+      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        knockbackPower: 10
+        knockbackDirection: 35
+        stunTime: 0.5
+    - rid: 3181427634693996618
+      type: {class: ElectrifyHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        duration: 4
+        speedMultiplier: 0.5
 --- !u!114 &63080264
 MonoBehaviour:
   m_ObjectHideFlags: 0

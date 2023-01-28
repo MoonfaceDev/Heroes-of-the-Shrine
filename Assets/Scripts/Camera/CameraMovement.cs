@@ -9,20 +9,14 @@ public class CameraMovement : BaseComponent
 
     private Camera mainCamera;
 
-    public float CameraHeight => 2f * mainCamera.orthographicSize;
-
-    public float CameraWidth => CameraHeight * mainCamera.aspect;
-
-    public Vector2 CameraSize => new(CameraWidth, CameraHeight);
+    private float CameraHeight => 2f * mainCamera.orthographicSize;
+    private float CameraWidth => CameraHeight * mainCamera.aspect;
+    private Vector2 CameraSize => new(CameraWidth, CameraHeight);
 
     private void Awake()
     {
         mainCamera = GetComponent<Camera>();
-    }
-
-    private void Start()
-    {
-        Lock(worldBorder);
+        border = worldBorder;
     }
 
     public void Lock(Rect newBorder)

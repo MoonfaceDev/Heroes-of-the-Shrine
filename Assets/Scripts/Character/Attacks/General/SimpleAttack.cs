@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// Simple implementation of <see cref="BaseAttack"/>, which has a single hit detector, hit executor, and all attack phases have a fixed duration
@@ -20,7 +21,7 @@ public class SimpleAttack : BaseAttack
     [SerializeInterface] [SerializeReference]
     public BaseHitDetector hitDetector;
 
-    public SimpleHitExecutor hitExecutor;
+    public ChainHitExecutor hitExecutor;
 
     public void Start()
     {

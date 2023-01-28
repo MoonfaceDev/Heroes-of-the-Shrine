@@ -765,8 +765,8 @@ MonoBehaviour:
   destroyOnDeath: 1
   deathAnimationDuration: 3
   onDie:
-    m_PersistentCalls:
-      m_Calls: []
+    _persistentListeners: []
+    Expanded: 1
 --- !u!114 &5884619158741390459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -794,11 +794,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   knockbackRecoverTime: 1
 --- !u!114 &5884619158741390432
 MonoBehaviour:
@@ -814,11 +814,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   stunFrames: 2
 --- !u!114 &5884619158741390437
 MonoBehaviour:
@@ -834,11 +834,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   cooldown: 0
   defaultSpeed: 2
   speed: 0
@@ -856,11 +856,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   cooldown: 0
 --- !u!114 &5884619158741390422
 MonoBehaviour:
@@ -876,11 +876,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   cooldown: 0
 --- !u!114 &-2569303417151520334
 MonoBehaviour:
@@ -896,11 +896,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   cooldown: 0
 --- !u!114 &5884619158741390440
 MonoBehaviour:
@@ -920,30 +920,30 @@ MonoBehaviour:
   lastAttack: {fileID: 0}
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   attackEvents:
     onStartAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
 --- !u!114 &5884619158741390443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -958,30 +958,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   attackEvents:
     onStartAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   previousAttacks: []
   instant: 0
   interruptible: 1
@@ -993,12 +993,9 @@ MonoBehaviour:
   hitDetector:
     rid: 3181427246007058596
   hitExecutor:
-    hitDefinition:
-      damage: 5
-      hitType: 1
-      knockbackPower: 0
-      knockbackDirection: 0
-      stunTime: 0.5
+    executors:
+    - rid: 3181427634693996581
+    - rid: 3181427634693996583
   references:
     version: 2
     RefIds:
@@ -1011,6 +1008,14 @@ MonoBehaviour:
           tags: 
         excludedHittableTags:
           tags: 
+    - rid: 3181427634693996581
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 5
+    - rid: 3181427634693996583
+      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        stunTime: 0.5
 --- !u!114 &5884619158741390442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1025,30 +1030,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   attackEvents:
     onStartAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   previousAttacks:
   - {fileID: 5884619158741390443}
   instant: 0
@@ -1061,12 +1066,9 @@ MonoBehaviour:
   hitDetector:
     rid: 3181427246007058597
   hitExecutor:
-    hitDefinition:
-      damage: 5
-      hitType: 1
-      knockbackPower: 0
-      knockbackDirection: 0
-      stunTime: 0.5
+    executors:
+    - rid: 3181427634693996586
+    - rid: 3181427634693996587
   references:
     version: 2
     RefIds:
@@ -1079,6 +1081,14 @@ MonoBehaviour:
           tags: 
         excludedHittableTags:
           tags: 
+    - rid: 3181427634693996586
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 5
+    - rid: 3181427634693996587
+      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        stunTime: 0.5
 --- !u!114 &5884619158741390445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1093,30 +1103,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   attackEvents:
     onStartAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   previousAttacks:
   - {fileID: 5884619158741390442}
   instant: 0
@@ -1129,12 +1139,9 @@ MonoBehaviour:
   hitDetector:
     rid: 3181427246007058598
   hitExecutor:
-    hitDefinition:
-      damage: 15
-      hitType: 0
-      knockbackPower: 10
-      knockbackDirection: 75
-      stunTime: 0.5
+    executors:
+    - rid: 3181427634693996589
+    - rid: 3181427634693996591
   references:
     version: 2
     RefIds:
@@ -1147,6 +1154,16 @@ MonoBehaviour:
           tags: 
         excludedHittableTags:
           tags: 
+    - rid: 3181427634693996589
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 15
+    - rid: 3181427634693996591
+      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        knockbackPower: 10
+        knockbackDirection: 75
+        stunTime: 0.5
 --- !u!95 &5884619158741390420
 Animator:
   serializedVersion: 4
@@ -1181,30 +1198,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   attackEvents:
     onStartAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishAnticipating:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishActive:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStartRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onFinishRecovery:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   previousAttacks: []
   instant: 0
   interruptible: 1
@@ -1224,45 +1241,20 @@ MonoBehaviour:
     startImmediately: 1
   periodicHitCount: 4
   periodicHitExecutor:
-    simpleHitExecutor:
-      hitDefinition:
-        damage: 2.5
-        hitType: 1
-        knockbackPower: 0
-        knockbackDirection: 0
-        stunTime: 0.5
-    electrifyRate: 0.2
-    electrifyEffect:
-      duration: 3
-      speedMultiplier: 0.5
+    executors:
+    - rid: 3181427634693996623
+    - rid: 3181427634693996626
+    - rid: 3181427634693996628
   explosionHitDetector:
     rid: 3181427246007058595
   explosionHitExecutor:
-    simpleHitExecutor:
-      hitDefinition:
-        damage: 10
-        hitType: 0
-        knockbackPower: 10
-        knockbackDirection: 30
-        stunTime: 0
-    electrifyEffect:
-      duration: 3
-      speedMultiplier: 0.5
+    executors:
+    - rid: 3181427634693996630
+    - rid: 3181427634693996632
+    - rid: 3181427634693996634
   onExplosion:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3373608863436215288}
-        m_TargetAssemblyTypeName: Particles, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    _persistentListeners: []
+    Expanded: 1
   references:
     version: 2
     RefIds:
@@ -1275,6 +1267,36 @@ MonoBehaviour:
           tags: 
         excludedHittableTags:
           tags: 
+    - rid: 3181427634693996623
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 2.5
+    - rid: 3181427634693996626
+      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        stunTime: 0.5
+    - rid: 3181427634693996628
+      type: {class: ProbabilisticElectrifyHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        electrifyHitExecutor:
+          duration: 3
+          speedMultiplier: 0.5
+        probability: 0.2
+    - rid: 3181427634693996630
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 10
+    - rid: 3181427634693996632
+      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        knockbackPower: 10
+        knockbackDirection: 30
+        stunTime: 0
+    - rid: 3181427634693996634
+      type: {class: ElectrifyHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        duration: 3
+        speedMultiplier: 0.5
 --- !u!114 &3373608863436215288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1528,8 +1550,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hittableBehaviour: {fileID: 5884619158741390459}
   onHit:
-    m_PersistentCalls:
-      m_Calls: []
+    _persistentListeners: []
+    Expanded: 1
   figure: {fileID: 5884619157808626360}
   blinkMaterial: {fileID: 2100000, guid: e5a385067cc328d48b2fa6d7d205f7bb, type: 2}
   blinkTime: 0.1

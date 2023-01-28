@@ -8,12 +8,12 @@ public class ElectrifyAttack : BaseAttack
 
     [Header("Periodic hits")] public PeriodicAbsoluteHitDetector periodicHitDetector;
     public int periodicHitCount;
-    public ElectricHitExecutor periodicHitExecutor;
+    public ChainHitExecutor periodicHitExecutor;
 
     [Header("Explosion")] [SerializeInterface] [SerializeReference]
     public BaseHitDetector explosionHitDetector;
 
-    public ElectricExplosionHitExecutor explosionHitExecutor;
+    public ChainHitExecutor explosionHitExecutor;
     [SerializeField] public ExtEvent onExplosion;
 
     private string switchDetectorsListener;

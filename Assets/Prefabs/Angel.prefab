@@ -783,7 +783,7 @@ Transform:
   - {fileID: 3850747449127629430}
   - {fileID: 3970267090279809017}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360874897665
 MonoBehaviour:
@@ -1394,12 +1394,9 @@ MonoBehaviour:
   hitDetector:
     rid: 3181427246007058570
   hitExecutor:
-    hitDefinition:
-      damage: 10
-      hitType: 0
-      knockbackPower: 10
-      knockbackDirection: 10
-      stunTime: 0.5
+    executors:
+    - rid: 3181427634693996644
+    - rid: 3181427634693996646
   references:
     version: 2
     RefIds:
@@ -1412,6 +1409,16 @@ MonoBehaviour:
           tags: 
         excludedHittableTags:
           tags: 
+    - rid: 3181427634693996644
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 10
+    - rid: 3181427634693996646
+      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        knockbackPower: 10
+        knockbackDirection: 10
+        stunTime: 0.5
 --- !u!114 &5102893360874897686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1461,12 +1468,9 @@ MonoBehaviour:
   hitDetector:
     rid: 3181427246007058563
   hitExecutor:
-    hitDefinition:
-      damage: 7
-      hitType: 1
-      knockbackPower: 0
-      knockbackDirection: 0
-      stunTime: 1
+    executors:
+    - rid: 3181427634693996648
+    - rid: 3181427634693996650
   references:
     version: 2
     RefIds:
@@ -1479,6 +1483,14 @@ MonoBehaviour:
           tags: 
         excludedHittableTags:
           tags: 
+    - rid: 3181427634693996648
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 7
+    - rid: 3181427634693996650
+      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        stunTime: 1
 --- !u!114 &5102893360874897683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1529,12 +1541,9 @@ MonoBehaviour:
   hitDetector:
     rid: 3181427246007058572
   hitExecutor:
-    hitDefinition:
-      damage: 15
-      hitType: 1
-      knockbackPower: 0
-      knockbackDirection: 0
-      stunTime: 0.5
+    executors:
+    - rid: 3181427634693996652
+    - rid: 3181427634693996654
   references:
     version: 2
     RefIds:
@@ -1547,6 +1556,14 @@ MonoBehaviour:
           tags: 
         excludedHittableTags:
           tags: 
+    - rid: 3181427634693996652
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 15
+    - rid: 3181427634693996654
+      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        stunTime: 0.5
 --- !u!114 &5102893360874897687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1597,12 +1614,9 @@ MonoBehaviour:
   hitDetector:
     rid: 3181427246007058574
   hitExecutor:
-    hitDefinition:
-      damage: 5
-      hitType: 1
-      knockbackPower: 0
-      knockbackDirection: 0
-      stunTime: 0.5
+    executors:
+    - rid: 3181427634693996656
+    - rid: 3181427634693996658
   references:
     version: 2
     RefIds:
@@ -1615,6 +1629,14 @@ MonoBehaviour:
           tags: 
         excludedHittableTags:
           tags: 
+    - rid: 3181427634693996656
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 5
+    - rid: 3181427634693996658
+      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        stunTime: 0.5
 --- !u!114 &5102893360874897684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1665,12 +1687,9 @@ MonoBehaviour:
   hitDetector:
     rid: 3181427246007058576
   hitExecutor:
-    hitDefinition:
-      damage: 10
-      hitType: 0
-      knockbackPower: 10
-      knockbackDirection: 85
-      stunTime: 0.5
+    executors:
+    - rid: 3181427634693996660
+    - rid: 3181427634693996663
   references:
     version: 2
     RefIds:
@@ -1683,6 +1702,16 @@ MonoBehaviour:
           tags: 
         excludedHittableTags:
           tags: 
+    - rid: 3181427634693996660
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 10
+    - rid: 3181427634693996663
+      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        knockbackPower: 10
+        knockbackDirection: 85
+        stunTime: 0.5
 --- !u!114 &5102893360874897685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1739,12 +1768,9 @@ MonoBehaviour:
   hitDetector2:
     rid: 3181427246007058585
   hitExecutor:
-    hitDefinition:
-      damage: 10
-      hitType: 0
-      knockbackPower: 6
-      knockbackDirection: 95
-      stunTime: 0.5
+    executors:
+    - rid: 3181427634693996665
+    - rid: 3181427634693996667
   references:
     version: 2
     RefIds:
@@ -1766,6 +1792,16 @@ MonoBehaviour:
           tags: 
         excludedHittableTags:
           tags: 
+    - rid: 3181427634693996665
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 10
+    - rid: 3181427634693996667
+      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        knockbackPower: 6
+        knockbackDirection: 95
+        stunTime: 0.5
 --- !u!114 &5102893360874897682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1827,12 +1863,9 @@ MonoBehaviour:
   hitDetector:
     rid: 3181427246007058586
   hitExecutor:
-    hitDefinition:
-      damage: 10
-      hitType: 0
-      knockbackPower: 11
-      knockbackDirection: 60
-      stunTime: 0.5
+    executors:
+    - rid: 3181427634693996669
+    - rid: 3181427634693996671
   references:
     version: 2
     RefIds:
@@ -1845,6 +1878,16 @@ MonoBehaviour:
           tags: 
         excludedHittableTags:
           tags: 
+    - rid: 3181427634693996669
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 10
+    - rid: 3181427634693996671
+      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        knockbackPower: 11
+        knockbackDirection: 60
+        stunTime: 0.5
 --- !u!114 &5102893360874897681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1894,12 +1937,9 @@ MonoBehaviour:
   hitDetector:
     rid: 3181427246007058587
   hitExecutor:
-    hitDefinition:
-      damage: 5
-      hitType: 0
-      knockbackPower: 5
-      knockbackDirection: 30
-      stunTime: 0.5
+    executors:
+    - rid: 3181427634693996673
+    - rid: 3181427634693996675
   references:
     version: 2
     RefIds:
@@ -1912,6 +1952,16 @@ MonoBehaviour:
           tags: 
         excludedHittableTags:
           tags: 
+    - rid: 3181427634693996673
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 5
+    - rid: 3181427634693996675
+      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        knockbackPower: 5
+        knockbackDirection: 30
+        stunTime: 0.5
 --- !u!114 &5102893360874897680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1962,12 +2012,9 @@ MonoBehaviour:
   hitDetector:
     rid: 3181427246007058588
   hitExecutor:
-    hitDefinition:
-      damage: 5
-      hitType: 0
-      knockbackPower: 5
-      knockbackDirection: 30
-      stunTime: 0.5
+    executors:
+    - rid: 3181427634693996677
+    - rid: 3181427634693996679
   references:
     version: 2
     RefIds:
@@ -1980,6 +2027,16 @@ MonoBehaviour:
           tags: 
         excludedHittableTags:
           tags: 
+    - rid: 3181427634693996677
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 5
+    - rid: 3181427634693996679
+      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        knockbackPower: 5
+        knockbackDirection: 30
+        stunTime: 0.5
 --- !u!114 &5102893360874897694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2032,12 +2089,9 @@ MonoBehaviour:
   hitDetector:
     rid: 3181427246007058589
   hitExecutor:
-    hitDefinition:
-      damage: 7
-      hitType: 0
-      knockbackPower: 6
-      knockbackDirection: 110
-      stunTime: 0.5
+    executors:
+    - rid: 3181427634693996681
+    - rid: 3181427634693996683
   references:
     version: 2
     RefIds:
@@ -2050,6 +2104,16 @@ MonoBehaviour:
           tags: 
         excludedHittableTags:
           tags: 
+    - rid: 3181427634693996681
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 7
+    - rid: 3181427634693996683
+      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        knockbackPower: 6
+        knockbackDirection: 110
+        stunTime: 0.5
 --- !u!114 &5102893360874897675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2100,12 +2164,7 @@ MonoBehaviour:
   hitDetector:
     rid: 3181427246007058590
   hitExecutor:
-    hitDefinition:
-      damage: 0
-      hitType: 0
-      knockbackPower: 0
-      knockbackDirection: 0
-      stunTime: 0.5
+    executors: []
   references:
     version: 2
     RefIds:
