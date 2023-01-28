@@ -91,13 +91,17 @@
       <section><p>An hit detector that detects hits only in the frame it is started</p>
 </section>
       <h4><a class="xref" href="Global.AggressionBrainModule.html">AggressionBrainModule</a></h4>
-      <section></section>
+      <section><p>State machine aggression parameter, assigned with a random value (0-1) before each state transition.
+Can be used for randomizing transitions.</p>
+</section>
       <h4><a class="xref" href="Global.AirAttack.html">AirAttack</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.AirSpinAttack.html">AirSpinAttack</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.AlarmBrainModule.html">AlarmBrainModule</a></h4>
-      <section></section>
+      <section><p>State machine trigger parameter that can be used for transition between non-aggressive state to aggressive state.
+Must be called manually.</p>
+</section>
       <h4><a class="xref" href="Global.AltAirAttack.html">AltAirAttack</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.AltNormalAttack.html">AltNormalAttack</a></h4>
@@ -178,9 +182,11 @@ Attach only the required brain modules for your state machine logic.</p>
       <section><p>Base class for any character controller</p>
 </section>
       <h4><a class="xref" href="Global.ClosestEnemyBrainModule.html">ClosestEnemyBrainModule</a></h4>
-      <section></section>
+      <section><p>State machine parameter telling the distance from the closest enemy</p>
+</section>
       <h4><a class="xref" href="Global.ClosestToPlayerBrainModule.html">ClosestToPlayerBrainModule</a></h4>
-      <section></section>
+      <section><p>State machine parameter telling if this is the closest enemy to the player</p>
+</section>
       <h4><a class="xref" href="Global.CutsceneAction.html">CutsceneAction</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.DamageHitExecutor.html">DamageHitExecutor</a></h4>
@@ -198,11 +204,14 @@ Attach only the required brain modules for your state machine logic.</p>
       <h4><a class="xref" href="Global.DieBehaviour.html">DieBehaviour</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.DieBrainModule.html">DieBrainModule</a></h4>
-      <section></section>
+      <section><p>State machine parameters related to <span class="xref">DieBehaviour</span></p>
+</section>
       <h4><a class="xref" href="Global.DistancesBrainModule.html">DistancesBrainModule</a></h4>
-      <section></section>
+      <section><p>State machine parameters based on distances between the enemy, to any defined point in the scene</p>
+</section>
       <h4><a class="xref" href="Global.DistancesBrainModule.DistanceParameterEntry.html">DistancesBrainModule.DistanceParameterEntry</a></h4>
-      <section></section>
+      <section><p>Point to measure distance from and update related parameters</p>
+</section>
       <h4><a class="xref" href="Global.DodgeBehaviour.html">DodgeBehaviour</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.DodgeBehaviour.Command.html">DodgeBehaviour.Command</a></h4>
@@ -225,15 +234,18 @@ Attach only the required brain modules for your state machine logic.</p>
       <h4><a class="xref" href="Global.EncounterAction.html">EncounterAction</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.EnemiesAttackingBrainModule.html">EnemiesAttackingBrainModule</a></h4>
-      <section></section>
+      <section><p>State machine parameter telling if any enemy is attacking, including itself</p>
+</section>
       <h4><a class="xref" href="Global.EnemyCountBrainModule.html">EnemyCountBrainModule</a></h4>
-      <section></section>
+      <section><p>State machine parameter telling the number of enemies in the scene, including itself</p>
+</section>
       <h4><a class="xref" href="Global.EnemySpawnDefinition.html">EnemySpawnDefinition</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.EnergyBurstAttack.html">EnergyBurstAttack</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.EnragedBrainModule.html">EnragedBrainModule</a></h4>
-      <section></section>
+      <section><p>State machine parameter that is set when health is below a certain value</p>
+</section>
       <h4><a class="xref" href="Global.EntityManager.html">EntityManager</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.EscapeBehaviour.html">EscapeBehaviour</a></h4>
@@ -275,7 +287,8 @@ Attach only the required brain modules for your state machine logic.</p>
       <h4><a class="xref" href="Global.HealthBar.html">HealthBar</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.HealthBrainModule.html">HealthBrainModule</a></h4>
-      <section></section>
+      <section><p>State machine parameters related to <span class="xref">HealthBrainModule.healthSystem</span></p>
+</section>
       <h4><a class="xref" href="Global.HealthSystem.html">HealthSystem</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.Hitbox.html">Hitbox</a></h4>
@@ -301,7 +314,8 @@ Attach only the required brain modules for your state machine logic.</p>
       <h4><a class="xref" href="Global.KnockbackBehaviour.Command.html">KnockbackBehaviour.Command</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.KnockbackBrainModule.html">KnockbackBrainModule</a></h4>
-      <section></section>
+      <section><p>State machine parameters related to <span class="xref">KnockbackBehaviour</span></p>
+</section>
       <h4><a class="xref" href="Global.KnockbackHitExecutor.html">KnockbackHitExecutor</a></h4>
       <section><p>Hit executor that applies knockback on an hittable</p>
 </section>
@@ -349,18 +363,23 @@ reaches zero.</p>
       <section><p>Abstract variant of <span class="xref">CharacterBehaviour</span> for behaviours than can be played and stopped</p>
 </section>
       <h4><a class="xref" href="Global.PlayerAttackBrainModule.html">PlayerAttackBrainModule</a></h4>
-      <section></section>
+      <section><p>State machine parameters related to player&apos;s <span class="xref">AttackManager</span></p>
+</section>
       <h4><a class="xref" href="Global.PlayerController.html">PlayerController</a></h4>
       <section><p>Character controller designed for a human player, that plays behaviours based on user input (keyboard, mouse, controller)</p>
 </section>
       <h4><a class="xref" href="Global.PlayerController.AttackProperty.html">PlayerController.AttackProperty</a></h4>
-      <section></section>
+      <section><p>Pairing between attack and required button</p>
+</section>
       <h4><a class="xref" href="Global.PlayerDistanceBrainModule.html">PlayerDistanceBrainModule</a></h4>
-      <section></section>
+      <section><p>State machine parameters related to distance from the player</p>
+</section>
       <h4><a class="xref" href="Global.PlayerKnockbackBrainModule.html">PlayerKnockbackBrainModule</a></h4>
-      <section></section>
+      <section><p>State machine parameters related to player&apos;s <span class="xref">KnockbackBehaviour</span></p>
+</section>
       <h4><a class="xref" href="Global.PlayerStunBrainModule.html">PlayerStunBrainModule</a></h4>
-      <section></section>
+      <section><p>State machine parameters related to player&apos;s <span class="xref">StunBehaviour</span></p>
+</section>
       <h4><a class="xref" href="Global.PlayEvents.html">PlayEvents</a></h4>
       <section><p>Contains behaviour&apos;s play and stop events</p>
 </section>
@@ -442,14 +461,16 @@ reaches zero.</p>
       <h4><a class="xref" href="Global.StunBehaviour.Command.html">StunBehaviour.Command</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.StunBrainModule.html">StunBrainModule</a></h4>
-      <section></section>
+      <section><p>State machine parameters related to <span class="xref">StunBehaviour</span></p>
+</section>
       <h4><a class="xref" href="Global.StunHitExecutor.html">StunHitExecutor</a></h4>
       <section><p>Hit executor that stuns an hittable</p>
 </section>
       <h4><a class="xref" href="Global.SuperArmorBar.html">SuperArmorBar</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.SuperArmorBrainModule.html">SuperArmorBrainModule</a></h4>
-      <section></section>
+      <section><p>State machine parameters related to <span class="xref">SuperArmorBrainModule.superArmorEffect</span></p>
+</section>
       <h4><a class="xref" href="Global.SuperArmorEffect.html">SuperArmorEffect</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.SuperArmorEffect.Command.html">SuperArmorEffect.Command</a></h4>
@@ -499,7 +520,8 @@ reaches zero.</p>
     <h3 id="enums">Enums
   </h3>
       <h4><a class="xref" href="Global.Button.html">Button</a></h4>
-      <section></section>
+      <section><p>Button options</p>
+</section>
       <h4><a class="xref" href="Global.Direction.html">Direction</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.MotionSettings.html">MotionSettings</a></h4>

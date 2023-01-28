@@ -265,19 +265,6 @@ references:
   isSpec: "True"
   fullName: ArcBehaviour.Playing
   nameWithType: ArcBehaviour.Playing
-- uid: Global.ArcBehaviour.Start
-  name: Start()
-  href: api/Global.ArcBehaviour.html#Global_ArcBehaviour_Start
-  commentId: M:Global.ArcBehaviour.Start
-  fullName: ArcBehaviour.Start()
-  nameWithType: ArcBehaviour.Start()
-- uid: Global.ArcBehaviour.Start*
-  name: Start
-  href: api/Global.ArcBehaviour.html#Global_ArcBehaviour_Start_
-  commentId: Overload:Global.ArcBehaviour.Start
-  isSpec: "True"
-  fullName: ArcBehaviour.Start
-  nameWithType: ArcBehaviour.Start
 - uid: Global.ArcPattern
   name: ArcPattern
   href: api/Global.ArcPattern.html
@@ -524,19 +511,6 @@ references:
   isSpec: "True"
   fullName: AttackManager.Recovering
   nameWithType: AttackManager.Recovering
-- uid: Global.AttackManager.Start
-  name: Start()
-  href: api/Global.AttackManager.html#Global_AttackManager_Start
-  commentId: M:Global.AttackManager.Start
-  fullName: AttackManager.Start()
-  nameWithType: AttackManager.Start()
-- uid: Global.AttackManager.Start*
-  name: Start
-  href: api/Global.AttackManager.html#Global_AttackManager_Start_
-  commentId: Overload:Global.AttackManager.Start
-  isSpec: "True"
-  fullName: AttackManager.Start
-  nameWithType: AttackManager.Start
 - uid: Global.AttackNode
   name: AttackNode
   href: api/Global.AttackNode.html
@@ -1665,19 +1639,6 @@ references:
   commentId: F:Global.Character.attackManager
   fullName: Character.attackManager
   nameWithType: Character.attackManager
-- uid: Global.Character.Awake
-  name: Awake()
-  href: api/Global.Character.html#Global_Character_Awake
-  commentId: M:Global.Character.Awake
-  fullName: Character.Awake()
-  nameWithType: Character.Awake()
-- uid: Global.Character.Awake*
-  name: Awake
-  href: api/Global.Character.html#Global_Character_Awake_
-  commentId: Overload:Global.Character.Awake
-  isSpec: "True"
-  fullName: Character.Awake
-  nameWithType: Character.Awake
 - uid: Global.Character.DisableBehaviours(Type[])
   name: DisableBehaviours(Type[])
   href: api/Global.Character.html#Global_Character_DisableBehaviours_Type___
@@ -2267,19 +2228,6 @@ references:
   isSpec: "True"
   fullName: DieBrainModule.GetParameters
   nameWithType: DieBrainModule.GetParameters
-- uid: Global.DieBrainModule.Start
-  name: Start()
-  href: api/Global.DieBrainModule.html#Global_DieBrainModule_Start
-  commentId: M:Global.DieBrainModule.Start
-  fullName: DieBrainModule.Start()
-  nameWithType: DieBrainModule.Start()
-- uid: Global.DieBrainModule.Start*
-  name: Start
-  href: api/Global.DieBrainModule.html#Global_DieBrainModule_Start_
-  commentId: Overload:Global.DieBrainModule.Start
-  isSpec: "True"
-  fullName: DieBrainModule.Start
-  nameWithType: DieBrainModule.Start
 - uid: Global.Direction
   name: Direction
   href: api/Global.Direction.html
@@ -2499,19 +2447,6 @@ references:
   commentId: T:Global.EffectBar
   fullName: EffectBar
   nameWithType: EffectBar
-- uid: Global.EffectBar.Awake
-  name: Awake()
-  href: api/Global.EffectBar.html#Global_EffectBar_Awake
-  commentId: M:Global.EffectBar.Awake
-  fullName: EffectBar.Awake()
-  nameWithType: EffectBar.Awake()
-- uid: Global.EffectBar.Awake*
-  name: Awake
-  href: api/Global.EffectBar.html#Global_EffectBar_Awake_
-  commentId: Overload:Global.EffectBar.Awake
-  isSpec: "True"
-  fullName: EffectBar.Awake
-  nameWithType: EffectBar.Awake
 - uid: Global.EffectBar.effect
   name: effect
   href: api/Global.EffectBar.html#Global_EffectBar_effect
@@ -2561,19 +2496,6 @@ references:
   commentId: T:Global.EffectsBar
   fullName: EffectsBar
   nameWithType: EffectsBar
-- uid: Global.EffectsBar.Awake
-  name: Awake()
-  href: api/Global.EffectsBar.html#Global_EffectsBar_Awake
-  commentId: M:Global.EffectsBar.Awake
-  fullName: EffectsBar.Awake()
-  nameWithType: EffectsBar.Awake()
-- uid: Global.EffectsBar.Awake*
-  name: Awake
-  href: api/Global.EffectsBar.html#Global_EffectsBar_Awake_
-  commentId: Overload:Global.EffectsBar.Awake
-  isSpec: "True"
-  fullName: EffectsBar.Awake
-  nameWithType: EffectsBar.Awake
 - uid: Global.EffectsBar.effectBarPrefab
   name: effectBarPrefab
   href: api/Global.EffectsBar.html#Global_EffectsBar_effectBarPrefab
@@ -2586,19 +2508,6 @@ references:
   commentId: F:Global.EffectsBar.effects
   fullName: EffectsBar.effects
   nameWithType: EffectsBar.effects
-- uid: Global.EffectsBar.Start
-  name: Start()
-  href: api/Global.EffectsBar.html#Global_EffectsBar_Start
-  commentId: M:Global.EffectsBar.Start
-  fullName: EffectsBar.Start()
-  nameWithType: EffectsBar.Start()
-- uid: Global.EffectsBar.Start*
-  name: Start
-  href: api/Global.EffectsBar.html#Global_EffectsBar_Start_
-  commentId: Overload:Global.EffectsBar.Start
-  isSpec: "True"
-  fullName: EffectsBar.Start
-  nameWithType: EffectsBar.Start
 - uid: Global.ElectrifiedEffect
   name: ElectrifiedEffect
   href: api/Global.ElectrifiedEffect.html
@@ -2794,19 +2703,6 @@ references:
   isSpec: "True"
   fullName: ElectrifyAttack.RecoveryPhase
   nameWithType: ElectrifyAttack.RecoveryPhase
-- uid: Global.ElectrifyAttack.Start
-  name: Start()
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_Start
-  commentId: M:Global.ElectrifyAttack.Start
-  fullName: ElectrifyAttack.Start()
-  nameWithType: ElectrifyAttack.Start()
-- uid: Global.ElectrifyAttack.Start*
-  name: Start
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_Start_
-  commentId: Overload:Global.ElectrifyAttack.Start
-  isSpec: "True"
-  fullName: ElectrifyAttack.Start
-  nameWithType: ElectrifyAttack.Start
 - uid: Global.ElectrifyHitExecutor
   name: ElectrifyHitExecutor
   href: api/Global.ElectrifyHitExecutor.html
@@ -3257,19 +3153,6 @@ references:
   isSpec: "True"
   fullName: EscapeBehaviour.Playing
   nameWithType: EscapeBehaviour.Playing
-- uid: Global.EscapeBehaviour.Start
-  name: Start()
-  href: api/Global.EscapeBehaviour.html#Global_EscapeBehaviour_Start
-  commentId: M:Global.EscapeBehaviour.Start
-  fullName: EscapeBehaviour.Start()
-  nameWithType: EscapeBehaviour.Start()
-- uid: Global.EscapeBehaviour.Start*
-  name: Start
-  href: api/Global.EscapeBehaviour.html#Global_EscapeBehaviour_Start_
-  commentId: Overload:Global.EscapeBehaviour.Start
-  isSpec: "True"
-  fullName: EscapeBehaviour.Start
-  nameWithType: EscapeBehaviour.Start
 - uid: Global.EscapePattern
   name: EscapePattern
   href: api/Global.EscapePattern.html
@@ -4097,19 +3980,6 @@ references:
   commentId: T:Global.HealthBar
   fullName: HealthBar
   nameWithType: HealthBar
-- uid: Global.HealthBar.Awake
-  name: Awake()
-  href: api/Global.HealthBar.html#Global_HealthBar_Awake
-  commentId: M:Global.HealthBar.Awake
-  fullName: HealthBar.Awake()
-  nameWithType: HealthBar.Awake()
-- uid: Global.HealthBar.Awake*
-  name: Awake
-  href: api/Global.HealthBar.html#Global_HealthBar_Awake_
-  commentId: Overload:Global.HealthBar.Awake
-  isSpec: "True"
-  fullName: HealthBar.Awake
-  nameWithType: HealthBar.Awake
 - uid: Global.HealthBar.healthSystem
   name: healthSystem
   href: api/Global.HealthBar.html#Global_HealthBar_healthSystem
@@ -5132,19 +5002,6 @@ references:
   isSpec: "True"
   fullName: KnockbackBrainModule.GetParameters
   nameWithType: KnockbackBrainModule.GetParameters
-- uid: Global.KnockbackBrainModule.Start
-  name: Start()
-  href: api/Global.KnockbackBrainModule.html#Global_KnockbackBrainModule_Start
-  commentId: M:Global.KnockbackBrainModule.Start
-  fullName: KnockbackBrainModule.Start()
-  nameWithType: KnockbackBrainModule.Start()
-- uid: Global.KnockbackBrainModule.Start*
-  name: Start
-  href: api/Global.KnockbackBrainModule.html#Global_KnockbackBrainModule_Start_
-  commentId: Overload:Global.KnockbackBrainModule.Start
-  isSpec: "True"
-  fullName: KnockbackBrainModule.Start
-  nameWithType: KnockbackBrainModule.Start
 - uid: Global.KnockbackCallback
   name: KnockbackCallback
   href: api/Global.KnockbackCallback.html
@@ -5421,19 +5278,6 @@ references:
   isSpec: "True"
   fullName: MotionAttack.RecoveryPhase
   nameWithType: MotionAttack.RecoveryPhase
-- uid: Global.MotionAttack.Start
-  name: Start()
-  href: api/Global.MotionAttack.html#Global_MotionAttack_Start
-  commentId: M:Global.MotionAttack.Start
-  fullName: MotionAttack.Start()
-  nameWithType: MotionAttack.Start()
-- uid: Global.MotionAttack.Start*
-  name: Start
-  href: api/Global.MotionAttack.html#Global_MotionAttack_Start_
-  commentId: Overload:Global.MotionAttack.Start
-  isSpec: "True"
-  fullName: MotionAttack.Start
-  nameWithType: MotionAttack.Start
 - uid: Global.MotionSettings
   name: MotionSettings
   href: api/Global.MotionSettings.html
@@ -6036,18 +5880,6 @@ references:
   commentId: T:Global.PlayerController
   fullName: PlayerController
   nameWithType: PlayerController
-- uid: Global.PlayerController.activeSuitIndex
-  name: activeSuitIndex
-  href: api/Global.PlayerController.html#Global_PlayerController_activeSuitIndex
-  commentId: F:Global.PlayerController.activeSuitIndex
-  fullName: PlayerController.activeSuitIndex
-  nameWithType: PlayerController.activeSuitIndex
-- uid: Global.PlayerController.animatorControllers
-  name: animatorControllers
-  href: api/Global.PlayerController.html#Global_PlayerController_animatorControllers
-  commentId: F:Global.PlayerController.animatorControllers
-  fullName: PlayerController.animatorControllers
-  nameWithType: PlayerController.animatorControllers
 - uid: Global.PlayerController.attackPriority
   name: attackPriority
   href: api/Global.PlayerController.html#Global_PlayerController_attackPriority
@@ -7073,19 +6905,6 @@ references:
   commentId: F:Global.RunBehaviour.runSpeedMultiplier
   fullName: RunBehaviour.runSpeedMultiplier
   nameWithType: RunBehaviour.runSpeedMultiplier
-- uid: Global.RunBehaviour.Start
-  name: Start()
-  href: api/Global.RunBehaviour.html#Global_RunBehaviour_Start
-  commentId: M:Global.RunBehaviour.Start
-  fullName: RunBehaviour.Start()
-  nameWithType: RunBehaviour.Start()
-- uid: Global.RunBehaviour.Start*
-  name: Start
-  href: api/Global.RunBehaviour.html#Global_RunBehaviour_Start_
-  commentId: Overload:Global.RunBehaviour.Start
-  isSpec: "True"
-  fullName: RunBehaviour.Start
-  nameWithType: RunBehaviour.Start
 - uid: Global.RunBehaviour.timeToRun
   name: timeToRun
   href: api/Global.RunBehaviour.html#Global_RunBehaviour_timeToRun
@@ -7266,19 +7085,6 @@ references:
   isSpec: "True"
   fullName: SimpleAttack.RecoveryPhase
   nameWithType: SimpleAttack.RecoveryPhase
-- uid: Global.SimpleAttack.Start
-  name: Start()
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_Start
-  commentId: M:Global.SimpleAttack.Start
-  fullName: SimpleAttack.Start()
-  nameWithType: SimpleAttack.Start()
-- uid: Global.SimpleAttack.Start*
-  name: Start
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_Start_
-  commentId: Overload:Global.SimpleAttack.Start
-  isSpec: "True"
-  fullName: SimpleAttack.Start
-  nameWithType: SimpleAttack.Start
 - uid: Global.SingleHitDetector
   name: SingleHitDetector
   href: api/Global.SingleHitDetector.html
@@ -7663,19 +7469,6 @@ references:
   isSpec: "True"
   fullName: SpinningSwordsAttack.RecoveryPhase
   nameWithType: SpinningSwordsAttack.RecoveryPhase
-- uid: Global.SpinningSwordsAttack.Start
-  name: Start()
-  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_Start
-  commentId: M:Global.SpinningSwordsAttack.Start
-  fullName: SpinningSwordsAttack.Start()
-  nameWithType: SpinningSwordsAttack.Start()
-- uid: Global.SpinningSwordsAttack.Start*
-  name: Start
-  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_Start_
-  commentId: Overload:Global.SpinningSwordsAttack.Start
-  isSpec: "True"
-  fullName: SpinningSwordsAttack.Start
-  nameWithType: SpinningSwordsAttack.Start
 - uid: Global.StabAttack
   name: StabAttack
   href: api/Global.StabAttack.html
@@ -7822,19 +7615,6 @@ references:
   isSpec: "True"
   fullName: StunBrainModule.GetParameters
   nameWithType: StunBrainModule.GetParameters
-- uid: Global.StunBrainModule.Start
-  name: Start()
-  href: api/Global.StunBrainModule.html#Global_StunBrainModule_Start
-  commentId: M:Global.StunBrainModule.Start
-  fullName: StunBrainModule.Start()
-  nameWithType: StunBrainModule.Start()
-- uid: Global.StunBrainModule.Start*
-  name: Start
-  href: api/Global.StunBrainModule.html#Global_StunBrainModule_Start_
-  commentId: Overload:Global.StunBrainModule.Start
-  isSpec: "True"
-  fullName: StunBrainModule.Start
-  nameWithType: StunBrainModule.Start
 - uid: Global.StunCallback
   name: StunCallback
   href: api/Global.StunCallback.html
@@ -7872,19 +7652,6 @@ references:
   commentId: T:Global.SuperArmorBar
   fullName: SuperArmorBar
   nameWithType: SuperArmorBar
-- uid: Global.SuperArmorBar.Awake
-  name: Awake()
-  href: api/Global.SuperArmorBar.html#Global_SuperArmorBar_Awake
-  commentId: M:Global.SuperArmorBar.Awake
-  fullName: SuperArmorBar.Awake()
-  nameWithType: SuperArmorBar.Awake()
-- uid: Global.SuperArmorBar.Awake*
-  name: Awake
-  href: api/Global.SuperArmorBar.html#Global_SuperArmorBar_Awake_
-  commentId: Overload:Global.SuperArmorBar.Awake
-  isSpec: "True"
-  fullName: SuperArmorBar.Awake
-  nameWithType: SuperArmorBar.Awake
 - uid: Global.SuperArmorBar.superArmorEffect
   name: superArmorEffect
   href: api/Global.SuperArmorBar.html#Global_SuperArmorBar_superArmorEffect
@@ -8036,19 +7803,6 @@ references:
   commentId: F:Global.SuperArmorEffect.onHit
   fullName: SuperArmorEffect.onHit
   nameWithType: SuperArmorEffect.onHit
-- uid: Global.SuperArmorEffect.Start
-  name: Start()
-  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_Start
-  commentId: M:Global.SuperArmorEffect.Start
-  fullName: SuperArmorEffect.Start()
-  nameWithType: SuperArmorEffect.Start()
-- uid: Global.SuperArmorEffect.Start*
-  name: Start
-  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_Start_
-  commentId: Overload:Global.SuperArmorEffect.Start
-  isSpec: "True"
-  fullName: SuperArmorEffect.Start
-  nameWithType: SuperArmorEffect.Start
 - uid: Global.SuperArmorHittableHitbox
   name: SuperArmorHittableHitbox
   href: api/Global.SuperArmorHittableHitbox.html
