@@ -33,7 +33,7 @@ public class PlayerController : CharacterController
     /// List of attacks that can be played using the controller
     /// </value>
     public AttackProperty[] attacks;
-    
+
     /// <value>
     /// Window for input buffering, after that time is passed, that input is forgotten
     /// </value>
@@ -47,8 +47,7 @@ public class PlayerController : CharacterController
     public int dodgePriority;
     public int attackPriority;
 
-    [Header("Special inputs")]
-    public List<Button> possessedEffectTimeReducing;
+    [Header("Special inputs")] public List<Button> possessedEffectTimeReducing;
     public float possessedEffectDurationReduction;
 
 
@@ -78,8 +77,8 @@ public class PlayerController : CharacterController
 
         ExecuteWalk();
         ExecuteJump();
-        ExecuteSlide();
         ExecuteDodge();
+        ExecuteSlide();
         ExecuteAttack();
     }
 
@@ -133,8 +132,7 @@ public class PlayerController : CharacterController
         var horizontal = Input.GetAxisRaw("Horizontal");
         if (slideBehaviour && Input.GetButtonDown(Button.Escape.ToString())) //pressed slide
         {
-            ExecutePlayable(slideBehaviour, new SlideBehaviour.Command(Mathf.RoundToInt(Mathf.Sign(horizontal))),
-                slidePriority);
+            ExecutePlayable(slideBehaviour, new SlideBehaviour.Command(Math.Sign(horizontal)), slidePriority);
         }
     }
 
@@ -143,8 +141,7 @@ public class PlayerController : CharacterController
         var vertical = Input.GetAxisRaw("Vertical");
         if (dodgeBehaviour && Input.GetButtonDown(Button.Escape.ToString())) //pressed dodge
         {
-            ExecutePlayable(dodgeBehaviour, new DodgeBehaviour.Command(Mathf.RoundToInt(Mathf.Sign(vertical))),
-                dodgePriority);
+            ExecutePlayable(dodgeBehaviour, new DodgeBehaviour.Command(Math.Sign(vertical)), dodgePriority);
         }
     }
 

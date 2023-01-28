@@ -28,14 +28,7 @@ public class DieBehaviour : CharacterBehaviour
     private void Start()
     {
         var healthSystem = GetComponent<HealthSystem>();
-
-        Register(() =>
-        {
-            if (!healthSystem.Alive)
-            {
-                Kill();
-            }
-        });
+        InvokeWhen(() => !healthSystem.Alive, Kill);
     }
 
     private void Kill()
