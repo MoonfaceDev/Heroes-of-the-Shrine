@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 
 /// <summary>
 /// Hit executor that stuns an hittable
@@ -14,6 +13,6 @@ public class StunHitExecutor : IHitExecutor
 
     public void Execute(BaseAttack attack, IHittable hittable)
     {
-        hittable.Stun(0, stunTime);
+        hittable.Stun(stunTime);
     }
 }

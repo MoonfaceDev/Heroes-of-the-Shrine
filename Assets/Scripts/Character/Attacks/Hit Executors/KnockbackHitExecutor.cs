@@ -26,7 +26,7 @@ public class KnockbackHitExecutor : IHitExecutor
     {
         var hitDirection =
             (int)Mathf.Sign(hittable.Character.movableEntity.WorldPosition.x - attack.MovableEntity.WorldPosition.x);
-        hittable.Knockback(0, knockbackPower, KnockbackBehaviour.GetRelativeDirection(knockbackDirection, hitDirection),
+        hittable.Knockback(knockbackPower, KnockbackBehaviour.GetRelativeDirection(knockbackDirection, hitDirection),
             stunTime);
     }
 }

@@ -1,16 +1,40 @@
 ﻿using ExtEvents;
 using UnityEngine;
 
+/// <summary>
+/// Hittable attached to a hitbox, related to a <see cref="hittableBehaviour"/> of a character
+/// </summary>
 [RequireComponent(typeof(Hitbox))]
 public class HittableHitbox : BaseComponent, IHittable
 {
+    /// <value>
+    /// <see cref="hittableBehaviour"/> of the related character
+    /// </value>
     public HittableBehaviour hittableBehaviour;
+    
+    /// <value>
+    /// Invoked when <see cref="Hit"/> is called
+    /// </value>
     [SerializeField] public ExtEvent onHit;
 
+    /// <value>
+    /// <see cref="SpriteRenderer"/> on which blink effect is played
+    /// </value>
     [Header("Blink Effect")] public SpriteRenderer figure;
+    
+    /// <value>
+    /// Material that <see cref="figure"/> changes to during blink effect
+    /// </value>
     public Material blinkMaterial;
+    
+    /// <value>
+    /// Duration of blink effect
+    /// </value>
     public float blinkTime;
 
+    /// <value>
+    /// Related hitbox
+    /// </value>
     public Hitbox Hitbox { get; private set; }
 
     private Material defaultMaterial;
@@ -30,6 +54,9 @@ public class HittableHitbox : BaseComponent, IHittable
 
     public Character Character => hittableBehaviour.Character;
 
+    /// <value>
+    /// Plays blink effect on the character's figure, to emphasize hits
+    /// </value>
     protected void Blink()
     {
         if (!figure || !hittableBehaviour.CanGetHit()) return;
@@ -49,15 +76,13 @@ public class HittableHitbox : BaseComponent, IHittable
         hittableBehaviour.Hit(damage);
     }
 
-    public virtual void Knockback(float damage, float power, float angleDegrees, float stunTime)
+    public virtual void Knockback(float power, float angleDegrees, float stunTime)
     {
-        onHit.Invoke();
-        hittableBehaviour.Knockback(damage, power, angleDegrees, stunTime);
+        hittableBehaviour.Knockback(power, angleDegrees, stunTime);
     }
 
-    public virtual void Stun(float damage, float time)
+    public virtual void Stun(float time)
     {
-        onHit.Invoke();
-        hittableBehaviour.Stun(damage, time);
+        hittableBehaviour.Stun(time);
     }
 }

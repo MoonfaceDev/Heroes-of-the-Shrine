@@ -22,12 +22,10 @@ public class AttackManager : CharacterBehaviour
     /// </summary>
     [HideInInspector] public BaseAttack lastAttack;
 
-    [SerializeField] private PlayEvents playEvents;
-
     /// <value>
     /// Attacks play and stop events. Whenever any attack starts or stops, these events are invoked.
     /// </value>
-    public PlayEvents PlayEvents => playEvents;
+    public PlayEvents playEvents;
 
     /// <value>
     /// General attack events. These events are invoked whenever a matching event is invoked in any attack.
@@ -61,7 +59,7 @@ public class AttackManager : CharacterBehaviour
             attack.attackEvents.onFinishActive += () => attackEvents.onFinishActive.Invoke();
             attack.attackEvents.onStartRecovery += () => attackEvents.onStartRecovery.Invoke();
             attack.attackEvents.onFinishRecovery += () => attackEvents.onFinishRecovery.Invoke();
-            attack.PlayEvents.onStop += PlayEvents.onStop.Invoke;
+            attack.PlayEvents.onStop += playEvents.onStop.Invoke;
 
             // Combo handling
 
@@ -123,6 +121,6 @@ public class AttackManager : CharacterBehaviour
     /// <returns><c>true</c> if attack can be played</returns>
     public bool CanPlayAttack(bool instant)
     {
-        return !((Anticipating || Active || HardRecovering) && !(instant && IsInterruptible()));
+        return !(Anticipating || Active || HardRecovering) || (instant && IsInterruptible());
     }
 }

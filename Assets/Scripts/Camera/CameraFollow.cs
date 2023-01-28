@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Make camera follow an entity
+/// </summary>
 public class CameraFollow : BaseComponent
 {
     /// <value>

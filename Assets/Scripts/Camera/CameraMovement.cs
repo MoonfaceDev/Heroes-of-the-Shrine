@@ -1,14 +1,31 @@
 using UnityEngine;
 
+/// <summary>
+/// Moves the camera smoothly inside a rectangle border
+/// </summary>
 public class CameraMovement : BaseComponent
 {
+    /// <value>
+    /// Full scene border
+    /// </value>
     public Rect worldBorder;
+
+    /// <value>
+    /// Current border, affected by encounters 
+    /// </value>
     [HideInInspector] public Rect border;
+
+    /// <value>
+    /// The wanted position of the camera
+    /// </value>
     [ShowDebug] public Vector3 targetPosition;
+
+    /// <value>
+    /// The speed at which camera is moving. Higher value is quicker (and less smooth).
+    /// </value>
     public float lerpSpeed = 3.0f;
 
     private Camera mainCamera;
-
     private float CameraHeight => 2f * mainCamera.orthographicSize;
     private float CameraWidth => CameraHeight * mainCamera.aspect;
     private Vector2 CameraSize => new(CameraWidth, CameraHeight);
@@ -19,11 +36,18 @@ public class CameraMovement : BaseComponent
         border = worldBorder;
     }
 
+    /// <summary>
+    /// Sets a new camera border
+    /// </summary>
+    /// <param name="newBorder">New camera border</param>
     public void Lock(Rect newBorder)
     {
         border = newBorder;
     }
 
+    /// <summary>
+    /// Changes camera border back to the initial
+    /// </summary>
     public void Unlock()
     {
         Lock(worldBorder);

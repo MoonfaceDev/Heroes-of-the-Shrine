@@ -1,36 +1,47 @@
 using ExtEvents;
 using UnityEngine;
 
-[RequireComponent(typeof(HittableBehaviour))]
+/// <summary>
+/// Behaviours that handles death of character
+/// </summary>
+[RequireComponent(typeof(HealthSystem))]
 public class DieBehaviour : CharacterBehaviour
 {
+    /// <value>
+    /// If <c>true</c>, destroys the character after death animation is over
+    /// </value>
     public bool destroyOnDeath = true;
+
+    /// <value>
+    /// Time before character is destroyed. Used only if <see cref="destroyOnDeath"/> is <c>true</c>.
+    /// </value>
     public float deathAnimationDuration;
 
     private static readonly int DeadParameter = Animator.StringToHash("dead");
     private static readonly int RespawnParameter = Animator.StringToHash("respawn");
 
+    /// <value>
+    /// Invoked when character dies
+    /// </value>
     [SerializeField] public ExtEvent onDie;
 
     private void Start()
     {
-        var hittableBehaviour = GetComponent<HittableBehaviour>();
         var healthSystem = GetComponent<HealthSystem>();
 
-        hittableBehaviour.OnHit += _ =>
+        Register(() =>
         {
             if (!healthSystem.Alive)
             {
                 Kill();
             }
-        };
+        });
     }
 
-    public void Kill()
+    private void Kill()
     {
         DisableBehaviours(typeof(IEffect), typeof(CharacterController));
-        StopBehaviours(typeof(IEffect), typeof(IMovementBehaviour), typeof(BaseAttack),
-            typeof(StunBehaviour));
+        StopBehaviours(typeof(IEffect), typeof(IMovementBehaviour), typeof(BaseAttack), typeof(StunBehaviour));
 
         void KillAfterKnockback()
         {
@@ -52,6 +63,9 @@ public class DieBehaviour : CharacterBehaviour
         }
     }
 
+    /// <summary>
+    /// Starts respawn animation
+    /// </summary>
     public void Respawn()
     {
         Animator.SetBool(RespawnParameter, true);

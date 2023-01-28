@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
 public class KillEntitiesAction : BaseComponent
 {
@@ -20,13 +19,8 @@ public class KillEntitiesAction : BaseComponent
             }
             else
             {
-                var dieBehaviour = entity.GetComponent<DieBehaviour>();
-                if (!dieBehaviour)
-                {
-                    Debug.LogWarning("No death behaviour!");
-                }
-
-                dieBehaviour.Kill();
+                var healthSystem = entity.GetComponent<HealthSystem>();
+                healthSystem.Kill();
             }
         }
     }

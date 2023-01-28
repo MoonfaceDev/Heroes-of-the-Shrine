@@ -28,28 +28,28 @@ public class PlayerAttackBrainModule : BrainModule
         attackManager = player.GetComponent<AttackManager>();
         if (!attackManager) return;
 
-        attackManager.PlayEvents.onPlay += OnPlay;
+        attackManager.playEvents.onPlay += OnPlay;
         attackManager.attackEvents.onStartAnticipating += OnStartAnticipating;
         attackManager.attackEvents.onFinishAnticipating += OnFinishAnticipating;
         attackManager.attackEvents.onStartActive += OnStartActive;
         attackManager.attackEvents.onFinishActive += OnFinishActive;
         attackManager.attackEvents.onStartRecovery += OnStartRecovery;
         attackManager.attackEvents.onFinishRecovery += OnFinishRecovery;
-        attackManager.PlayEvents.onStop += OnStop;
+        attackManager.playEvents.onStop += OnStop;
     }
 
     private void OnDestroy()
     {
         if (!attackManager) return;
 
-        attackManager.PlayEvents.onPlay -= OnPlay;
+        attackManager.playEvents.onPlay -= OnPlay;
         attackManager.attackEvents.onStartAnticipating -= OnStartAnticipating;
         attackManager.attackEvents.onFinishAnticipating -= OnFinishAnticipating;
         attackManager.attackEvents.onStartActive -= OnStartActive;
         attackManager.attackEvents.onFinishActive -= OnFinishActive;
         attackManager.attackEvents.onStartRecovery -= OnStartRecovery;
         attackManager.attackEvents.onFinishRecovery -= OnFinishRecovery;
-        attackManager.PlayEvents.onStop -= OnStop;
+        attackManager.playEvents.onStop -= OnStop;
     }
 
     private void OnPlay() => StateMachine.SetBool(PlayerAttacking, true);
