@@ -125,12 +125,12 @@
   </h3>
   
   
-  <h4 id="Global_CameraFollow_targetTag" data-uid="Global.CameraFollow.targetTag">targetTag</h4>
+  <h4 id="Global_CameraFollow_target" data-uid="Global.CameraFollow.target">target</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Tag targetTag</code></pre>
+    <pre><code class="lang-csharp hljs">public GameEntity target</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -142,8 +142,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.Tag.html">Tag</a></td>
-        <td></td>
+        <td><a class="xref" href="Global.GameEntity.html">GameEntity</a></td>
+        <td><p>Tracked entity</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -153,7 +154,8 @@
   
   <a id="Global_CameraFollow_AddOffset_" data-uid="Global.CameraFollow.AddOffset*"></a>
   <h4 id="Global_CameraFollow_AddOffset_Vector3_" data-uid="Global.CameraFollow.AddOffset(Vector3)">AddOffset(Vector3)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Modify the distance between camera and the tracked object</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -172,7 +174,8 @@
       <tr>
         <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">change</span></td>
-        <td></td>
+        <td><p>Offset vector to add. <see cref="!:Vector3.zero"></see> will leave it the same.</p>
+</td>
       </tr>
     </tbody>
   </table>

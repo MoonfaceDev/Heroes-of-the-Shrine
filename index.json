@@ -172,7 +172,7 @@
   "api/Global.CameraFollow.html": {
     "href": "api/Global.CameraFollow.html",
     "title": "Class CameraFollow | Heroes of the Shrine",
-    "keywords": "Class CameraFollow Inheritance Object BaseComponent CameraFollow Inherited Members BaseComponent.Register(Action) BaseComponent.Unregister(String) BaseComponent.InvokeWhen(Func<Boolean>, Action) BaseComponent.Cancel(String) BaseComponent.StartTimeout(Action, Single) BaseComponent.StartInterval(Action, Single) BaseComponent.Update() Namespace : Global Assembly : cs.temp.dll.dll Syntax public class CameraFollow : BaseComponent Fields targetTag Declaration public Tag targetTag Field Value Type Description Tag Methods AddOffset(Vector3) Declaration public void AddOffset(Vector3 change) Parameters Type Name Description Vector3 change"
+    "keywords": "Class CameraFollow Inheritance Object BaseComponent CameraFollow Inherited Members BaseComponent.Register(Action) BaseComponent.Unregister(String) BaseComponent.InvokeWhen(Func<Boolean>, Action) BaseComponent.Cancel(String) BaseComponent.StartTimeout(Action, Single) BaseComponent.StartInterval(Action, Single) BaseComponent.Update() Namespace : Global Assembly : cs.temp.dll.dll Syntax public class CameraFollow : BaseComponent Fields target Declaration public GameEntity target Field Value Type Description GameEntity Tracked entity Methods AddOffset(Vector3) Modify the distance between camera and the tracked object Declaration public void AddOffset(Vector3 change) Parameters Type Name Description Vector3 change Offset vector to add. will leave it the same."
   },
   "api/Global.CameraMovement.html": {
     "href": "api/Global.CameraMovement.html",
