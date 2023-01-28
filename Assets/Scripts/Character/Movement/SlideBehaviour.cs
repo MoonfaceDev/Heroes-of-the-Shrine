@@ -34,11 +34,10 @@ public class SlideBehaviour : BaseMovementBehaviour<SlideBehaviour.Command>
 
     public override bool CanPlay(Command command)
     {
-        var attackManager = GetComponent<AttackManager>();
         return base.CanPlay(command)
                && !IsPlaying<JumpBehaviour>() && !IsPlaying<SlideBehaviour>() && !IsPlaying<DodgeBehaviour>()
                && command.direction != 0
-               && !(attackManager && !attackManager.IsInterruptible());
+               && AttackManager.CanPlayMove(true);
     }
 
     protected override void DoPlay(Command command)

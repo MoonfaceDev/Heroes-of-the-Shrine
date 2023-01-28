@@ -84,34 +84,14 @@ public class AttackManager : CharacterBehaviour
     }
 
     /// <value>
-    /// Any attack is anticipating
-    /// </value>
-    public bool Anticipating => AnyAttack(attack => attack.Anticipating);
-
-    /// <value>
-    /// Any attack is active
-    /// </value>
-    public bool Active => AnyAttack(attack => attack.Active);
-
-    /// <value>
-    /// Any attack is recovering
-    /// </value>
-    public bool Recovering => AnyAttack(attack => attack.Recovering);
-
-    /// <value>
-    /// Any attack is recovering and its <see cref="BaseAttack.hardRecovery"/> value is <c>true</c>
-    /// </value>
-    public bool HardRecovering => AnyAttack(attack => attack.hardRecovery && attack.Recovering);
-
-    /// <value>
     /// Any attack is playing
     /// </value>
     public bool Playing => AnyAttack(attack => attack.Playing);
 
-    /// <returns><c>true</c> if there aren't any uninterruptible attacks playing</returns>
-    public bool IsInterruptible()
+    private static bool IsPreventing(BaseAttack attack, bool instant)
     {
-        return !AnyAttack(attack => attack.Playing && !attack.interruptible);
+        return (attack.Anticipating || attack.Active || (attack.hardRecovery && attack.Recovering)) &&
+               !(instant && attack.interruptible);
     }
 
     /// <summary>
@@ -119,8 +99,8 @@ public class AttackManager : CharacterBehaviour
     /// </summary>
     /// <param name="instant">Is the checked attack instant</param>
     /// <returns><c>true</c> if attack can be played</returns>
-    public bool CanPlayAttack(bool instant)
+    public bool CanPlayMove(bool instant = false)
     {
-        return !(Anticipating || Active || HardRecovering) || (instant && IsInterruptible());
+        return !AnyAttack(attack => IsPreventing(attack, instant));
     }
 }

@@ -67,7 +67,7 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
     public override bool CanPlay(Command command)
     {
         return base.CanPlay(command)
-               && !(AttackManager.Anticipating || AttackManager.Active || AttackManager.HardRecovering)
+               && AttackManager.CanPlayMove()
                && !IsPlaying<SlideBehaviour>() && !IsPlaying<DodgeBehaviour>()
                && !Playing;
     }

@@ -118,7 +118,7 @@ public abstract class BaseAttack : PlayableBehaviour<BaseAttack.Command>
                && !IsPlaying<KnockbackBehaviour>() && !IsPlaying<StunBehaviour>()
                && !IsPlaying<SlideBehaviour>() && !IsPlaying<DodgeBehaviour>()
                && IsMidair == IsPlaying<JumpBehaviour>()
-               && AttackManager.CanPlayAttack(instant)
+               && AttackManager.CanPlayMove(instant)
                && ComboCondition();
     }
 
