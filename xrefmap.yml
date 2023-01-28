@@ -1578,45 +1578,6 @@ references:
   commentId: F:Global.CameraMovement.border
   fullName: CameraMovement.border
   nameWithType: CameraMovement.border
-- uid: Global.CameraMovement.CameraHeight
-  name: CameraHeight
-  href: api/Global.CameraMovement.html#Global_CameraMovement_CameraHeight
-  commentId: P:Global.CameraMovement.CameraHeight
-  fullName: CameraMovement.CameraHeight
-  nameWithType: CameraMovement.CameraHeight
-- uid: Global.CameraMovement.CameraHeight*
-  name: CameraHeight
-  href: api/Global.CameraMovement.html#Global_CameraMovement_CameraHeight_
-  commentId: Overload:Global.CameraMovement.CameraHeight
-  isSpec: "True"
-  fullName: CameraMovement.CameraHeight
-  nameWithType: CameraMovement.CameraHeight
-- uid: Global.CameraMovement.CameraSize
-  name: CameraSize
-  href: api/Global.CameraMovement.html#Global_CameraMovement_CameraSize
-  commentId: P:Global.CameraMovement.CameraSize
-  fullName: CameraMovement.CameraSize
-  nameWithType: CameraMovement.CameraSize
-- uid: Global.CameraMovement.CameraSize*
-  name: CameraSize
-  href: api/Global.CameraMovement.html#Global_CameraMovement_CameraSize_
-  commentId: Overload:Global.CameraMovement.CameraSize
-  isSpec: "True"
-  fullName: CameraMovement.CameraSize
-  nameWithType: CameraMovement.CameraSize
-- uid: Global.CameraMovement.CameraWidth
-  name: CameraWidth
-  href: api/Global.CameraMovement.html#Global_CameraMovement_CameraWidth
-  commentId: P:Global.CameraMovement.CameraWidth
-  fullName: CameraMovement.CameraWidth
-  nameWithType: CameraMovement.CameraWidth
-- uid: Global.CameraMovement.CameraWidth*
-  name: CameraWidth
-  href: api/Global.CameraMovement.html#Global_CameraMovement_CameraWidth_
-  commentId: Overload:Global.CameraMovement.CameraWidth
-  isSpec: "True"
-  fullName: CameraMovement.CameraWidth
-  nameWithType: CameraMovement.CameraWidth
 - uid: Global.CameraMovement.lerpSpeed
   name: lerpSpeed
   href: api/Global.CameraMovement.html#Global_CameraMovement_lerpSpeed
@@ -1661,6 +1622,31 @@ references:
   commentId: F:Global.CameraMovement.worldBorder
   fullName: CameraMovement.worldBorder
   nameWithType: CameraMovement.worldBorder
+- uid: Global.ChainHitExecutor
+  name: ChainHitExecutor
+  href: api/Global.ChainHitExecutor.html
+  commentId: T:Global.ChainHitExecutor
+  fullName: ChainHitExecutor
+  nameWithType: ChainHitExecutor
+- uid: Global.ChainHitExecutor.Execute(BaseAttack,IHittable)
+  name: Execute(BaseAttack, IHittable)
+  href: api/Global.ChainHitExecutor.html#Global_ChainHitExecutor_Execute_BaseAttack_IHittable_
+  commentId: M:Global.ChainHitExecutor.Execute(BaseAttack,IHittable)
+  fullName: ChainHitExecutor.Execute(BaseAttack, IHittable)
+  nameWithType: ChainHitExecutor.Execute(BaseAttack, IHittable)
+- uid: Global.ChainHitExecutor.Execute*
+  name: Execute
+  href: api/Global.ChainHitExecutor.html#Global_ChainHitExecutor_Execute_
+  commentId: Overload:Global.ChainHitExecutor.Execute
+  isSpec: "True"
+  fullName: ChainHitExecutor.Execute
+  nameWithType: ChainHitExecutor.Execute
+- uid: Global.ChainHitExecutor.executors
+  name: executors
+  href: api/Global.ChainHitExecutor.html#Global_ChainHitExecutor_executors
+  commentId: F:Global.ChainHitExecutor.executors
+  fullName: ChainHitExecutor.executors
+  nameWithType: ChainHitExecutor.executors
 - uid: Global.Character
   name: Character
   href: api/Global.Character.html
@@ -2029,6 +2015,31 @@ references:
   commentId: F:Global.CutsceneAction.postCutsceneEvent
   fullName: CutsceneAction.postCutsceneEvent
   nameWithType: CutsceneAction.postCutsceneEvent
+- uid: Global.DamageHitExecutor
+  name: DamageHitExecutor
+  href: api/Global.DamageHitExecutor.html
+  commentId: T:Global.DamageHitExecutor
+  fullName: DamageHitExecutor
+  nameWithType: DamageHitExecutor
+- uid: Global.DamageHitExecutor.damage
+  name: damage
+  href: api/Global.DamageHitExecutor.html#Global_DamageHitExecutor_damage
+  commentId: F:Global.DamageHitExecutor.damage
+  fullName: DamageHitExecutor.damage
+  nameWithType: DamageHitExecutor.damage
+- uid: Global.DamageHitExecutor.Execute(BaseAttack,IHittable)
+  name: Execute(BaseAttack, IHittable)
+  href: api/Global.DamageHitExecutor.html#Global_DamageHitExecutor_Execute_BaseAttack_IHittable_
+  commentId: M:Global.DamageHitExecutor.Execute(BaseAttack,IHittable)
+  fullName: DamageHitExecutor.Execute(BaseAttack, IHittable)
+  nameWithType: DamageHitExecutor.Execute(BaseAttack, IHittable)
+- uid: Global.DamageHitExecutor.Execute*
+  name: Execute
+  href: api/Global.DamageHitExecutor.html#Global_DamageHitExecutor_Execute_
+  commentId: Overload:Global.DamageHitExecutor.Execute
+  isSpec: "True"
+  fullName: DamageHitExecutor.Execute
+  nameWithType: DamageHitExecutor.Execute
 - uid: Global.DamageTranspiler
   name: DamageTranspiler
   href: api/Global.DamageTranspiler.html
@@ -2588,110 +2599,6 @@ references:
   isSpec: "True"
   fullName: EffectsBar.Start
   nameWithType: EffectsBar.Start
-- uid: Global.ElectricExplosionHitExecutor
-  name: ElectricExplosionHitExecutor
-  href: api/Global.ElectricExplosionHitExecutor.html
-  commentId: T:Global.ElectricExplosionHitExecutor
-  fullName: ElectricExplosionHitExecutor
-  nameWithType: ElectricExplosionHitExecutor
-- uid: Global.ElectricExplosionHitExecutor.electrifyEffect
-  name: electrifyEffect
-  href: api/Global.ElectricExplosionHitExecutor.html#Global_ElectricExplosionHitExecutor_electrifyEffect
-  commentId: F:Global.ElectricExplosionHitExecutor.electrifyEffect
-  fullName: ElectricExplosionHitExecutor.electrifyEffect
-  nameWithType: ElectricExplosionHitExecutor.electrifyEffect
-- uid: Global.ElectricExplosionHitExecutor.ElectrifyEffectDefinition
-  name: ElectricExplosionHitExecutor.ElectrifyEffectDefinition
-  href: api/Global.ElectricExplosionHitExecutor.ElectrifyEffectDefinition.html
-  commentId: T:Global.ElectricExplosionHitExecutor.ElectrifyEffectDefinition
-  fullName: ElectricExplosionHitExecutor.ElectrifyEffectDefinition
-  nameWithType: ElectricExplosionHitExecutor.ElectrifyEffectDefinition
-- uid: Global.ElectricExplosionHitExecutor.ElectrifyEffectDefinition.duration
-  name: duration
-  href: api/Global.ElectricExplosionHitExecutor.ElectrifyEffectDefinition.html#Global_ElectricExplosionHitExecutor_ElectrifyEffectDefinition_duration
-  commentId: F:Global.ElectricExplosionHitExecutor.ElectrifyEffectDefinition.duration
-  fullName: ElectricExplosionHitExecutor.ElectrifyEffectDefinition.duration
-  nameWithType: ElectricExplosionHitExecutor.ElectrifyEffectDefinition.duration
-- uid: Global.ElectricExplosionHitExecutor.ElectrifyEffectDefinition.speedMultiplier
-  name: speedMultiplier
-  href: api/Global.ElectricExplosionHitExecutor.ElectrifyEffectDefinition.html#Global_ElectricExplosionHitExecutor_ElectrifyEffectDefinition_speedMultiplier
-  commentId: F:Global.ElectricExplosionHitExecutor.ElectrifyEffectDefinition.speedMultiplier
-  fullName: ElectricExplosionHitExecutor.ElectrifyEffectDefinition.speedMultiplier
-  nameWithType: ElectricExplosionHitExecutor.ElectrifyEffectDefinition.speedMultiplier
-- uid: Global.ElectricExplosionHitExecutor.Execute(BaseAttack,IHittable)
-  name: Execute(BaseAttack, IHittable)
-  href: api/Global.ElectricExplosionHitExecutor.html#Global_ElectricExplosionHitExecutor_Execute_BaseAttack_IHittable_
-  commentId: M:Global.ElectricExplosionHitExecutor.Execute(BaseAttack,IHittable)
-  fullName: ElectricExplosionHitExecutor.Execute(BaseAttack, IHittable)
-  nameWithType: ElectricExplosionHitExecutor.Execute(BaseAttack, IHittable)
-- uid: Global.ElectricExplosionHitExecutor.Execute*
-  name: Execute
-  href: api/Global.ElectricExplosionHitExecutor.html#Global_ElectricExplosionHitExecutor_Execute_
-  commentId: Overload:Global.ElectricExplosionHitExecutor.Execute
-  isSpec: "True"
-  fullName: ElectricExplosionHitExecutor.Execute
-  nameWithType: ElectricExplosionHitExecutor.Execute
-- uid: Global.ElectricExplosionHitExecutor.simpleHitExecutor
-  name: simpleHitExecutor
-  href: api/Global.ElectricExplosionHitExecutor.html#Global_ElectricExplosionHitExecutor_simpleHitExecutor
-  commentId: F:Global.ElectricExplosionHitExecutor.simpleHitExecutor
-  fullName: ElectricExplosionHitExecutor.simpleHitExecutor
-  nameWithType: ElectricExplosionHitExecutor.simpleHitExecutor
-- uid: Global.ElectricHitExecutor
-  name: ElectricHitExecutor
-  href: api/Global.ElectricHitExecutor.html
-  commentId: T:Global.ElectricHitExecutor
-  fullName: ElectricHitExecutor
-  nameWithType: ElectricHitExecutor
-- uid: Global.ElectricHitExecutor.electrifyEffect
-  name: electrifyEffect
-  href: api/Global.ElectricHitExecutor.html#Global_ElectricHitExecutor_electrifyEffect
-  commentId: F:Global.ElectricHitExecutor.electrifyEffect
-  fullName: ElectricHitExecutor.electrifyEffect
-  nameWithType: ElectricHitExecutor.electrifyEffect
-- uid: Global.ElectricHitExecutor.ElectrifyEffectDefinition
-  name: ElectricHitExecutor.ElectrifyEffectDefinition
-  href: api/Global.ElectricHitExecutor.ElectrifyEffectDefinition.html
-  commentId: T:Global.ElectricHitExecutor.ElectrifyEffectDefinition
-  fullName: ElectricHitExecutor.ElectrifyEffectDefinition
-  nameWithType: ElectricHitExecutor.ElectrifyEffectDefinition
-- uid: Global.ElectricHitExecutor.ElectrifyEffectDefinition.duration
-  name: duration
-  href: api/Global.ElectricHitExecutor.ElectrifyEffectDefinition.html#Global_ElectricHitExecutor_ElectrifyEffectDefinition_duration
-  commentId: F:Global.ElectricHitExecutor.ElectrifyEffectDefinition.duration
-  fullName: ElectricHitExecutor.ElectrifyEffectDefinition.duration
-  nameWithType: ElectricHitExecutor.ElectrifyEffectDefinition.duration
-- uid: Global.ElectricHitExecutor.ElectrifyEffectDefinition.speedMultiplier
-  name: speedMultiplier
-  href: api/Global.ElectricHitExecutor.ElectrifyEffectDefinition.html#Global_ElectricHitExecutor_ElectrifyEffectDefinition_speedMultiplier
-  commentId: F:Global.ElectricHitExecutor.ElectrifyEffectDefinition.speedMultiplier
-  fullName: ElectricHitExecutor.ElectrifyEffectDefinition.speedMultiplier
-  nameWithType: ElectricHitExecutor.ElectrifyEffectDefinition.speedMultiplier
-- uid: Global.ElectricHitExecutor.electrifyRate
-  name: electrifyRate
-  href: api/Global.ElectricHitExecutor.html#Global_ElectricHitExecutor_electrifyRate
-  commentId: F:Global.ElectricHitExecutor.electrifyRate
-  fullName: ElectricHitExecutor.electrifyRate
-  nameWithType: ElectricHitExecutor.electrifyRate
-- uid: Global.ElectricHitExecutor.Execute(BaseAttack,IHittable)
-  name: Execute(BaseAttack, IHittable)
-  href: api/Global.ElectricHitExecutor.html#Global_ElectricHitExecutor_Execute_BaseAttack_IHittable_
-  commentId: M:Global.ElectricHitExecutor.Execute(BaseAttack,IHittable)
-  fullName: ElectricHitExecutor.Execute(BaseAttack, IHittable)
-  nameWithType: ElectricHitExecutor.Execute(BaseAttack, IHittable)
-- uid: Global.ElectricHitExecutor.Execute*
-  name: Execute
-  href: api/Global.ElectricHitExecutor.html#Global_ElectricHitExecutor_Execute_
-  commentId: Overload:Global.ElectricHitExecutor.Execute
-  isSpec: "True"
-  fullName: ElectricHitExecutor.Execute
-  nameWithType: ElectricHitExecutor.Execute
-- uid: Global.ElectricHitExecutor.simpleHitExecutor
-  name: simpleHitExecutor
-  href: api/Global.ElectricHitExecutor.html#Global_ElectricHitExecutor_simpleHitExecutor
-  commentId: F:Global.ElectricHitExecutor.simpleHitExecutor
-  fullName: ElectricHitExecutor.simpleHitExecutor
-  nameWithType: ElectricHitExecutor.simpleHitExecutor
 - uid: Global.ElectrifiedEffect
   name: ElectrifiedEffect
   href: api/Global.ElectrifiedEffect.html
@@ -2900,6 +2807,37 @@ references:
   isSpec: "True"
   fullName: ElectrifyAttack.Start
   nameWithType: ElectrifyAttack.Start
+- uid: Global.ElectrifyHitExecutor
+  name: ElectrifyHitExecutor
+  href: api/Global.ElectrifyHitExecutor.html
+  commentId: T:Global.ElectrifyHitExecutor
+  fullName: ElectrifyHitExecutor
+  nameWithType: ElectrifyHitExecutor
+- uid: Global.ElectrifyHitExecutor.duration
+  name: duration
+  href: api/Global.ElectrifyHitExecutor.html#Global_ElectrifyHitExecutor_duration
+  commentId: F:Global.ElectrifyHitExecutor.duration
+  fullName: ElectrifyHitExecutor.duration
+  nameWithType: ElectrifyHitExecutor.duration
+- uid: Global.ElectrifyHitExecutor.Execute(BaseAttack,IHittable)
+  name: Execute(BaseAttack, IHittable)
+  href: api/Global.ElectrifyHitExecutor.html#Global_ElectrifyHitExecutor_Execute_BaseAttack_IHittable_
+  commentId: M:Global.ElectrifyHitExecutor.Execute(BaseAttack,IHittable)
+  fullName: ElectrifyHitExecutor.Execute(BaseAttack, IHittable)
+  nameWithType: ElectrifyHitExecutor.Execute(BaseAttack, IHittable)
+- uid: Global.ElectrifyHitExecutor.Execute*
+  name: Execute
+  href: api/Global.ElectrifyHitExecutor.html#Global_ElectrifyHitExecutor_Execute_
+  commentId: Overload:Global.ElectrifyHitExecutor.Execute
+  isSpec: "True"
+  fullName: ElectrifyHitExecutor.Execute
+  nameWithType: ElectrifyHitExecutor.Execute
+- uid: Global.ElectrifyHitExecutor.speedMultiplier
+  name: speedMultiplier
+  href: api/Global.ElectrifyHitExecutor.html#Global_ElectrifyHitExecutor_speedMultiplier
+  commentId: F:Global.ElectrifyHitExecutor.speedMultiplier
+  fullName: ElectrifyHitExecutor.speedMultiplier
+  nameWithType: ElectrifyHitExecutor.speedMultiplier
 - uid: Global.EncounterAction
   name: EncounterAction
   href: api/Global.EncounterAction.html
@@ -4376,74 +4314,6 @@ references:
   commentId: T:Global.HitCallback
   fullName: HitCallback
   nameWithType: HitCallback
-- uid: Global.HitDefinition
-  name: HitDefinition
-  href: api/Global.HitDefinition.html
-  commentId: T:Global.HitDefinition
-  fullName: HitDefinition
-  nameWithType: HitDefinition
-- uid: Global.HitDefinition.damage
-  name: damage
-  href: api/Global.HitDefinition.html#Global_HitDefinition_damage
-  commentId: F:Global.HitDefinition.damage
-  fullName: HitDefinition.damage
-  nameWithType: HitDefinition.damage
-- uid: Global.HitDefinition.hitType
-  name: hitType
-  href: api/Global.HitDefinition.html#Global_HitDefinition_hitType
-  commentId: F:Global.HitDefinition.hitType
-  fullName: HitDefinition.hitType
-  nameWithType: HitDefinition.hitType
-- uid: Global.HitDefinition.knockbackDirection
-  name: knockbackDirection
-  href: api/Global.HitDefinition.html#Global_HitDefinition_knockbackDirection
-  commentId: F:Global.HitDefinition.knockbackDirection
-  fullName: HitDefinition.knockbackDirection
-  nameWithType: HitDefinition.knockbackDirection
-- uid: Global.HitDefinition.knockbackPower
-  name: knockbackPower
-  href: api/Global.HitDefinition.html#Global_HitDefinition_knockbackPower
-  commentId: F:Global.HitDefinition.knockbackPower
-  fullName: HitDefinition.knockbackPower
-  nameWithType: HitDefinition.knockbackPower
-- uid: Global.HitDefinition.stunTime
-  name: stunTime
-  href: api/Global.HitDefinition.html#Global_HitDefinition_stunTime
-  commentId: F:Global.HitDefinition.stunTime
-  fullName: HitDefinition.stunTime
-  nameWithType: HitDefinition.stunTime
-- uid: Global.HitDefinitionDrawer
-  name: HitDefinitionDrawer
-  href: api/Global.HitDefinitionDrawer.html
-  commentId: T:Global.HitDefinitionDrawer
-  fullName: HitDefinitionDrawer
-  nameWithType: HitDefinitionDrawer
-- uid: Global.HitDefinitionDrawer.GetPropertyHeight(SerializedProperty,GUIContent)
-  name: GetPropertyHeight(SerializedProperty, GUIContent)
-  href: api/Global.HitDefinitionDrawer.html#Global_HitDefinitionDrawer_GetPropertyHeight_SerializedProperty_GUIContent_
-  commentId: M:Global.HitDefinitionDrawer.GetPropertyHeight(SerializedProperty,GUIContent)
-  fullName: HitDefinitionDrawer.GetPropertyHeight(SerializedProperty, GUIContent)
-  nameWithType: HitDefinitionDrawer.GetPropertyHeight(SerializedProperty, GUIContent)
-- uid: Global.HitDefinitionDrawer.GetPropertyHeight*
-  name: GetPropertyHeight
-  href: api/Global.HitDefinitionDrawer.html#Global_HitDefinitionDrawer_GetPropertyHeight_
-  commentId: Overload:Global.HitDefinitionDrawer.GetPropertyHeight
-  isSpec: "True"
-  fullName: HitDefinitionDrawer.GetPropertyHeight
-  nameWithType: HitDefinitionDrawer.GetPropertyHeight
-- uid: Global.HitDefinitionDrawer.OnGUI(Rect,SerializedProperty,GUIContent)
-  name: OnGUI(Rect, SerializedProperty, GUIContent)
-  href: api/Global.HitDefinitionDrawer.html#Global_HitDefinitionDrawer_OnGUI_Rect_SerializedProperty_GUIContent_
-  commentId: M:Global.HitDefinitionDrawer.OnGUI(Rect,SerializedProperty,GUIContent)
-  fullName: HitDefinitionDrawer.OnGUI(Rect, SerializedProperty, GUIContent)
-  nameWithType: HitDefinitionDrawer.OnGUI(Rect, SerializedProperty, GUIContent)
-- uid: Global.HitDefinitionDrawer.OnGUI*
-  name: OnGUI
-  href: api/Global.HitDefinitionDrawer.html#Global_HitDefinitionDrawer_OnGUI_
-  commentId: Overload:Global.HitDefinitionDrawer.OnGUI
-  isSpec: "True"
-  fullName: HitDefinitionDrawer.OnGUI
-  nameWithType: HitDefinitionDrawer.OnGUI
 - uid: Global.HitParticles
   name: HitParticles
   href: api/Global.HitParticles.html
@@ -4704,24 +4574,6 @@ references:
   isSpec: "True"
   fullName: HittableHitbox.Stun
   nameWithType: HittableHitbox.Stun
-- uid: Global.HitType
-  name: HitType
-  href: api/Global.HitType.html
-  commentId: T:Global.HitType
-  fullName: HitType
-  nameWithType: HitType
-- uid: Global.HitType.Knockback
-  name: Knockback
-  href: api/Global.HitType.html#Global_HitType_Knockback
-  commentId: F:Global.HitType.Knockback
-  fullName: HitType.Knockback
-  nameWithType: HitType.Knockback
-- uid: Global.HitType.Stun
-  name: Stun
-  href: api/Global.HitType.html#Global_HitType_Stun
-  commentId: F:Global.HitType.Stun
-  fullName: HitType.Stun
-  nameWithType: HitType.Stun
 - uid: Global.IdlePattern
   name: IdlePattern
   href: api/Global.IdlePattern.html
@@ -5299,6 +5151,43 @@ references:
   commentId: T:Global.KnockbackCallback
   fullName: KnockbackCallback
   nameWithType: KnockbackCallback
+- uid: Global.KnockbackHitExecutor
+  name: KnockbackHitExecutor
+  href: api/Global.KnockbackHitExecutor.html
+  commentId: T:Global.KnockbackHitExecutor
+  fullName: KnockbackHitExecutor
+  nameWithType: KnockbackHitExecutor
+- uid: Global.KnockbackHitExecutor.Execute(BaseAttack,IHittable)
+  name: Execute(BaseAttack, IHittable)
+  href: api/Global.KnockbackHitExecutor.html#Global_KnockbackHitExecutor_Execute_BaseAttack_IHittable_
+  commentId: M:Global.KnockbackHitExecutor.Execute(BaseAttack,IHittable)
+  fullName: KnockbackHitExecutor.Execute(BaseAttack, IHittable)
+  nameWithType: KnockbackHitExecutor.Execute(BaseAttack, IHittable)
+- uid: Global.KnockbackHitExecutor.Execute*
+  name: Execute
+  href: api/Global.KnockbackHitExecutor.html#Global_KnockbackHitExecutor_Execute_
+  commentId: Overload:Global.KnockbackHitExecutor.Execute
+  isSpec: "True"
+  fullName: KnockbackHitExecutor.Execute
+  nameWithType: KnockbackHitExecutor.Execute
+- uid: Global.KnockbackHitExecutor.knockbackDirection
+  name: knockbackDirection
+  href: api/Global.KnockbackHitExecutor.html#Global_KnockbackHitExecutor_knockbackDirection
+  commentId: F:Global.KnockbackHitExecutor.knockbackDirection
+  fullName: KnockbackHitExecutor.knockbackDirection
+  nameWithType: KnockbackHitExecutor.knockbackDirection
+- uid: Global.KnockbackHitExecutor.knockbackPower
+  name: knockbackPower
+  href: api/Global.KnockbackHitExecutor.html#Global_KnockbackHitExecutor_knockbackPower
+  commentId: F:Global.KnockbackHitExecutor.knockbackPower
+  fullName: KnockbackHitExecutor.knockbackPower
+  nameWithType: KnockbackHitExecutor.knockbackPower
+- uid: Global.KnockbackHitExecutor.stunTime
+  name: stunTime
+  href: api/Global.KnockbackHitExecutor.html#Global_KnockbackHitExecutor_stunTime
+  commentId: F:Global.KnockbackHitExecutor.stunTime
+  fullName: KnockbackHitExecutor.stunTime
+  nameWithType: KnockbackHitExecutor.stunTime
 - uid: Global.LineTrigger
   name: LineTrigger
   href: api/Global.LineTrigger.html
@@ -6787,6 +6676,37 @@ references:
   fullName.vb: PriorityQueue(Of T).Enqueue
   nameWithType: PriorityQueue<T>.Enqueue
   nameWithType.vb: PriorityQueue(Of T).Enqueue
+- uid: Global.ProbabilisticElectrifyHitExecutor
+  name: ProbabilisticElectrifyHitExecutor
+  href: api/Global.ProbabilisticElectrifyHitExecutor.html
+  commentId: T:Global.ProbabilisticElectrifyHitExecutor
+  fullName: ProbabilisticElectrifyHitExecutor
+  nameWithType: ProbabilisticElectrifyHitExecutor
+- uid: Global.ProbabilisticElectrifyHitExecutor.electrifyHitExecutor
+  name: electrifyHitExecutor
+  href: api/Global.ProbabilisticElectrifyHitExecutor.html#Global_ProbabilisticElectrifyHitExecutor_electrifyHitExecutor
+  commentId: F:Global.ProbabilisticElectrifyHitExecutor.electrifyHitExecutor
+  fullName: ProbabilisticElectrifyHitExecutor.electrifyHitExecutor
+  nameWithType: ProbabilisticElectrifyHitExecutor.electrifyHitExecutor
+- uid: Global.ProbabilisticElectrifyHitExecutor.Execute(BaseAttack,IHittable)
+  name: Execute(BaseAttack, IHittable)
+  href: api/Global.ProbabilisticElectrifyHitExecutor.html#Global_ProbabilisticElectrifyHitExecutor_Execute_BaseAttack_IHittable_
+  commentId: M:Global.ProbabilisticElectrifyHitExecutor.Execute(BaseAttack,IHittable)
+  fullName: ProbabilisticElectrifyHitExecutor.Execute(BaseAttack, IHittable)
+  nameWithType: ProbabilisticElectrifyHitExecutor.Execute(BaseAttack, IHittable)
+- uid: Global.ProbabilisticElectrifyHitExecutor.Execute*
+  name: Execute
+  href: api/Global.ProbabilisticElectrifyHitExecutor.html#Global_ProbabilisticElectrifyHitExecutor_Execute_
+  commentId: Overload:Global.ProbabilisticElectrifyHitExecutor.Execute
+  isSpec: "True"
+  fullName: ProbabilisticElectrifyHitExecutor.Execute
+  nameWithType: ProbabilisticElectrifyHitExecutor.Execute
+- uid: Global.ProbabilisticElectrifyHitExecutor.probability
+  name: probability
+  href: api/Global.ProbabilisticElectrifyHitExecutor.html#Global_ProbabilisticElectrifyHitExecutor_probability
+  commentId: F:Global.ProbabilisticElectrifyHitExecutor.probability
+  fullName: ProbabilisticElectrifyHitExecutor.probability
+  nameWithType: ProbabilisticElectrifyHitExecutor.probability
 - uid: Global.RandomRayPattern
   name: RandomRayPattern
   href: api/Global.RandomRayPattern.html
@@ -7359,31 +7279,6 @@ references:
   isSpec: "True"
   fullName: SimpleAttack.Start
   nameWithType: SimpleAttack.Start
-- uid: Global.SimpleHitExecutor
-  name: SimpleHitExecutor
-  href: api/Global.SimpleHitExecutor.html
-  commentId: T:Global.SimpleHitExecutor
-  fullName: SimpleHitExecutor
-  nameWithType: SimpleHitExecutor
-- uid: Global.SimpleHitExecutor.Execute(BaseAttack,IHittable)
-  name: Execute(BaseAttack, IHittable)
-  href: api/Global.SimpleHitExecutor.html#Global_SimpleHitExecutor_Execute_BaseAttack_IHittable_
-  commentId: M:Global.SimpleHitExecutor.Execute(BaseAttack,IHittable)
-  fullName: SimpleHitExecutor.Execute(BaseAttack, IHittable)
-  nameWithType: SimpleHitExecutor.Execute(BaseAttack, IHittable)
-- uid: Global.SimpleHitExecutor.Execute*
-  name: Execute
-  href: api/Global.SimpleHitExecutor.html#Global_SimpleHitExecutor_Execute_
-  commentId: Overload:Global.SimpleHitExecutor.Execute
-  isSpec: "True"
-  fullName: SimpleHitExecutor.Execute
-  nameWithType: SimpleHitExecutor.Execute
-- uid: Global.SimpleHitExecutor.hitDefinition
-  name: hitDefinition
-  href: api/Global.SimpleHitExecutor.html#Global_SimpleHitExecutor_hitDefinition
-  commentId: F:Global.SimpleHitExecutor.hitDefinition
-  fullName: SimpleHitExecutor.hitDefinition
-  nameWithType: SimpleHitExecutor.hitDefinition
 - uid: Global.SingleHitDetector
   name: SingleHitDetector
   href: api/Global.SingleHitDetector.html
@@ -7946,6 +7841,31 @@ references:
   commentId: T:Global.StunCallback
   fullName: StunCallback
   nameWithType: StunCallback
+- uid: Global.StunHitExecutor
+  name: StunHitExecutor
+  href: api/Global.StunHitExecutor.html
+  commentId: T:Global.StunHitExecutor
+  fullName: StunHitExecutor
+  nameWithType: StunHitExecutor
+- uid: Global.StunHitExecutor.Execute(BaseAttack,IHittable)
+  name: Execute(BaseAttack, IHittable)
+  href: api/Global.StunHitExecutor.html#Global_StunHitExecutor_Execute_BaseAttack_IHittable_
+  commentId: M:Global.StunHitExecutor.Execute(BaseAttack,IHittable)
+  fullName: StunHitExecutor.Execute(BaseAttack, IHittable)
+  nameWithType: StunHitExecutor.Execute(BaseAttack, IHittable)
+- uid: Global.StunHitExecutor.Execute*
+  name: Execute
+  href: api/Global.StunHitExecutor.html#Global_StunHitExecutor_Execute_
+  commentId: Overload:Global.StunHitExecutor.Execute
+  isSpec: "True"
+  fullName: StunHitExecutor.Execute
+  nameWithType: StunHitExecutor.Execute
+- uid: Global.StunHitExecutor.stunTime
+  name: stunTime
+  href: api/Global.StunHitExecutor.html#Global_StunHitExecutor_stunTime
+  commentId: F:Global.StunHitExecutor.stunTime
+  fullName: StunHitExecutor.stunTime
+  nameWithType: StunHitExecutor.stunTime
 - uid: Global.SuperArmorBar
   name: SuperArmorBar
   href: api/Global.SuperArmorBar.html

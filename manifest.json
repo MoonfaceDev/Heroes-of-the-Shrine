@@ -448,7 +448,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.CameraMovement.html",
-          "hash": "d+hs6RSziCSWJpitP+AwTlkEXvgsR5PkMvqcz0jWvsI="
+          "hash": "dwbaN/4g/5lPBeYaSpEcpS0Amy/5Vp6SGnAIlbr0piU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.ChainHitExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.ChainHitExecutor.html",
+          "hash": "EnsST5owc8nfsUO1F/+fuVdFn6ZF0HGIMr24rVftjmc="
         }
       },
       "is_incremental": false,
@@ -521,6 +533,18 @@
         ".html": {
           "relative_path": "api/Global.CutsceneAction.html",
           "hash": "aqAUL2ekjbpIwrI/KioXlO/tM+yGAhxu0NaVRpmEd5E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.DamageHitExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.DamageHitExecutor.html",
+          "hash": "LunanZZmSYYTC/noOnUTgKc1Wb8T1NYXiuDJUdUR6z4="
         }
       },
       "is_incremental": false,
@@ -708,54 +732,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.ElectricExplosionHitExecutor.ElectrifyEffectDefinition.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.ElectricExplosionHitExecutor.ElectrifyEffectDefinition.html",
-          "hash": "CcRRIdiPZ87FhupG0BvTGMVTJwv6whc1wi7AFEYKtRI="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.ElectricExplosionHitExecutor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.ElectricExplosionHitExecutor.html",
-          "hash": "tnoGKGLDdrpZqAKer4Kntv0guUQYTtUvP/qB4YELOLw="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.ElectricHitExecutor.ElectrifyEffectDefinition.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.ElectricHitExecutor.ElectrifyEffectDefinition.html",
-          "hash": "BCWxXrjg4HewjfsyAA4rivUv5NSTCVktI0ii1qLXrOc="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.ElectricHitExecutor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.ElectricHitExecutor.html",
-          "hash": "yrO0EI9toTwCaZABQx5M3PCnG0ykLSdqd34AUyp6D5U="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Global.ElectrifiedEffect.Command.yml",
       "output": {
         ".html": {
@@ -784,7 +760,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.ElectrifyAttack.html",
-          "hash": "O3QeRFQPybm7whZeXv3i9xCEqilaOURdsIkfgRfWaNA="
+          "hash": "L2Q9bvakn3qZiKMfUFCbvd+Yu0K0a4oEN7lMg6H5aF4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.ElectrifyHitExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.ElectrifyHitExecutor.html",
+          "hash": "525NkCePo3CNlou54zizZbsQzwzaNZ63zsUWEKziAk8="
         }
       },
       "is_incremental": false,
@@ -1152,47 +1140,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.HitDefinition.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.HitDefinition.html",
-          "hash": "fPhK4roFMGxgBKqF0GszbX4w3juaSez9DXoyqZVCRFw="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.HitDefinitionDrawer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.HitDefinitionDrawer.html",
-          "hash": "AgohRtNgeVgJ+BdFJ1AQEoEO8AY6Ab6tSQOshK48WYY="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Global.HitParticles.yml",
       "output": {
         ".html": {
           "relative_path": "api/Global.HitParticles.html",
           "hash": "kLZITUMLa5/puWztIDscQmHZU8MGRJGYzBH+4yIHdlg="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.HitType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.HitType.html",
-          "hash": "65KdYOo2AgiJ2ryGQ7PkHuCapBR7S1n9Jx24+aA2cew="
         }
       },
       "is_incremental": false,
@@ -1416,6 +1368,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.KnockbackHitExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.KnockbackHitExecutor.html",
+          "hash": "e/0591izynpOwiS0+HYwjPbLzpeaca7jbLyH22LDN6M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.LineTrigger.yml",
       "output": {
         ".html": {
@@ -1468,7 +1432,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.MotionAttack.html",
-          "hash": "BAKCE8kNqGoZ3Xj+WfAQ9mlvwu1TMchVdU8yDm6pAdQ="
+          "hash": "OP5O3ZNpiailTkNc/ZXopGbYH4Ho7uE74NqaG/DoLRA="
         }
       },
       "is_incremental": false,
@@ -1848,6 +1812,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.ProbabilisticElectrifyHitExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.ProbabilisticElectrifyHitExecutor.html",
+          "hash": "8gCZXsPaUkbwOFgrl8ugf5YuS/P82QrvBdmVDXAGWbo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.RandomRayPattern.yml",
       "output": {
         ".html": {
@@ -1996,19 +1972,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.SimpleAttack.html",
-          "hash": "2H/RVyHDHvf/7pKqrEQXghIrOcs4vdPg633mFF6KU+M="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.SimpleHitExecutor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.SimpleHitExecutor.html",
-          "hash": "M7mD4hErFQk9zaykSwpU67N2piusekgJu9/QTRCLWvM="
+          "hash": "NowK1ZxRYxI3Ur3JScPp20Po5lWpXio8e/txsKUIanY="
         }
       },
       "is_incremental": false,
@@ -2128,7 +2092,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.SpinningSwordsAttack.html",
-          "hash": "01weUPfH5RLc4fpAjGlNNXey21xwXmMH5v7GzPBjwvQ="
+          "hash": "sz+tCN7mpFvzFaPTLEhWq/ZDWHyYt4IeaU6q8zyB2gA="
         }
       },
       "is_incremental": false,
@@ -2201,6 +2165,18 @@
         ".html": {
           "relative_path": "api/Global.StunCallback.html",
           "hash": "ifzW11Q1zLrxePPFoQbGXku8O+7jk04vAOu3pgax+Zg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.StunHitExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.StunHitExecutor.html",
+          "hash": "eyuw+R+B0sngYBoqhKO6IehEg3raxqn/yvD1jWthrC4="
         }
       },
       "is_incremental": false,
@@ -2428,7 +2404,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "4/Jbs26x3WaKAR6WaSxUPon0s4UUK+NGnfuKT1TOFTQ="
+          "hash": "Sbmf3xpKEHx9w0rKwXoRrBS5OIVOniVcAlb4hcD4ZsE="
         }
       },
       "is_incremental": false,
@@ -2440,7 +2416,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "/Rtkp1xp1A0yb2TRWrrdqEBVhDNFKw2OeGDTHVCi3JI="
+          "hash": "4LzfzYh1K9+nX3aFWMTCnrWylECaI5TvRxNOmS1lcSA="
         }
       },
       "is_incremental": false,
@@ -2651,7 +2627,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 201,
+          "total_file_count": 199,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

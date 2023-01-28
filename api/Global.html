@@ -165,6 +165,9 @@ Attach only the required brain modules for your state machine logic.</p>
       <section></section>
       <h4><a class="xref" href="Global.CameraMovement.html">CameraMovement</a></h4>
       <section></section>
+      <h4><a class="xref" href="Global.ChainHitExecutor.html">ChainHitExecutor</a></h4>
+      <section><p>Composite hit executor that executes all executors one by one </p>
+</section>
       <h4><a class="xref" href="Global.Character.html">Character</a></h4>
       <section><p>Shared methods and common components references for characters</p>
 </section>
@@ -180,6 +183,9 @@ Attach only the required brain modules for your state machine logic.</p>
       <section></section>
       <h4><a class="xref" href="Global.CutsceneAction.html">CutsceneAction</a></h4>
       <section></section>
+      <h4><a class="xref" href="Global.DamageHitExecutor.html">DamageHitExecutor</a></h4>
+      <section><p>Hit executor that deals damage to an hittable</p>
+</section>
       <h4><a class="xref" href="Global.DamageTranspiler.html">DamageTranspiler</a></h4>
       <section><p>Class responsible for processing damage values for the character dealing damage</p>
 </section>
@@ -207,20 +213,15 @@ Attach only the required brain modules for your state machine logic.</p>
       <section></section>
       <h4><a class="xref" href="Global.EffectsBar.html">EffectsBar</a></h4>
       <section></section>
-      <h4><a class="xref" href="Global.ElectricExplosionHitExecutor.html">ElectricExplosionHitExecutor</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Global.ElectricExplosionHitExecutor.ElectrifyEffectDefinition.html">ElectricExplosionHitExecutor.ElectrifyEffectDefinition</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Global.ElectricHitExecutor.html">ElectricHitExecutor</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Global.ElectricHitExecutor.ElectrifyEffectDefinition.html">ElectricHitExecutor.ElectrifyEffectDefinition</a></h4>
-      <section></section>
       <h4><a class="xref" href="Global.ElectrifiedEffect.html">ElectrifiedEffect</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.ElectrifiedEffect.Command.html">ElectrifiedEffect.Command</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.ElectrifyAttack.html">ElectrifyAttack</a></h4>
       <section></section>
+      <h4><a class="xref" href="Global.ElectrifyHitExecutor.html">ElectrifyHitExecutor</a></h4>
+      <section><p>Hit executor that applies electrify effect to an hittable</p>
+</section>
       <h4><a class="xref" href="Global.EncounterAction.html">EncounterAction</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.EnemiesAttackingBrainModule.html">EnemiesAttackingBrainModule</a></h4>
@@ -279,11 +280,6 @@ Attach only the required brain modules for your state machine logic.</p>
       <section></section>
       <h4><a class="xref" href="Global.Hitbox.html">Hitbox</a></h4>
       <section></section>
-      <h4><a class="xref" href="Global.HitDefinition.html">HitDefinition</a></h4>
-      <section><p>Data structure for defining basic hit effects.</p>
-</section>
-      <h4><a class="xref" href="Global.HitDefinitionDrawer.html">HitDefinitionDrawer</a></h4>
-      <section></section>
       <h4><a class="xref" href="Global.HitParticles.html">HitParticles</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.HittableBehaviour.html">HittableBehaviour</a></h4>
@@ -306,6 +302,9 @@ Attach only the required brain modules for your state machine logic.</p>
       <section></section>
       <h4><a class="xref" href="Global.KnockbackBrainModule.html">KnockbackBrainModule</a></h4>
       <section></section>
+      <h4><a class="xref" href="Global.KnockbackHitExecutor.html">KnockbackHitExecutor</a></h4>
+      <section><p>Hit executor that applies knockback on an hittable</p>
+</section>
       <h4><a class="xref" href="Global.LineTrigger.html">LineTrigger</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.MathUtils.html">MathUtils</a></h4>
@@ -383,6 +382,9 @@ reaches zero.</p>
       <section></section>
       <h4><a class="xref" href="Global.PriorityQueue-1.html">PriorityQueue&lt;T&gt;</a></h4>
       <section></section>
+      <h4><a class="xref" href="Global.ProbabilisticElectrifyHitExecutor.html">ProbabilisticElectrifyHitExecutor</a></h4>
+      <section><p>Hit executor that randomly applies electrify effect on hittables</p>
+</section>
       <h4><a class="xref" href="Global.RandomRayPattern.html">RandomRayPattern</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.ReadonlyAttribute.html">ReadonlyAttribute</a></h4>
@@ -410,9 +412,6 @@ reaches zero.</p>
 </section>
       <h4><a class="xref" href="Global.SimpleAttack.AttackFlow.html">SimpleAttack.AttackFlow</a></h4>
       <section></section>
-      <h4><a class="xref" href="Global.SimpleHitExecutor.html">SimpleHitExecutor</a></h4>
-      <section><p>Simple implementation of <span class="xref">IHitExecutor</span> that deals damage and applies stun or knockback on an hittable</p>
-</section>
       <h4><a class="xref" href="Global.SingleHitDetector.html">SingleHitDetector</a></h4>
       <section><p>An hit detector for which each object can be detected only once</p>
 </section>
@@ -444,6 +443,9 @@ reaches zero.</p>
       <section></section>
       <h4><a class="xref" href="Global.StunBrainModule.html">StunBrainModule</a></h4>
       <section></section>
+      <h4><a class="xref" href="Global.StunHitExecutor.html">StunHitExecutor</a></h4>
+      <section><p>Hit executor that stuns an hittable</p>
+</section>
       <h4><a class="xref" href="Global.SuperArmorBar.html">SuperArmorBar</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.SuperArmorBrainModule.html">SuperArmorBrainModule</a></h4>
@@ -500,9 +502,6 @@ reaches zero.</p>
       <section></section>
       <h4><a class="xref" href="Global.Direction.html">Direction</a></h4>
       <section></section>
-      <h4><a class="xref" href="Global.HitType.html">HitType</a></h4>
-      <section><p>Hit side effect types</p>
-</section>
       <h4><a class="xref" href="Global.MotionSettings.html">MotionSettings</a></h4>
       <section><p>Motion settings when playing attacks</p>
 </section>
