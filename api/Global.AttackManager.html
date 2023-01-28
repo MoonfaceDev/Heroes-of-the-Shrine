@@ -281,58 +281,6 @@
   </h3>
   
   
-  <a id="Global_AttackManager_Active_" data-uid="Global.AttackManager.Active*"></a>
-  <h4 id="Global_AttackManager_Active" data-uid="Global.AttackManager.Active">Active</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Active { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p>Any attack is active</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_AttackManager_Anticipating_" data-uid="Global.AttackManager.Anticipating*"></a>
-  <h4 id="Global_AttackManager_Anticipating" data-uid="Global.AttackManager.Anticipating">Anticipating</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Anticipating { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p>Any attack is anticipating</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
   <a id="Global_AttackManager_DamageTranspiler_" data-uid="Global.AttackManager.DamageTranspiler*"></a>
   <h4 id="Global_AttackManager_DamageTranspiler" data-uid="Global.AttackManager.DamageTranspiler">DamageTranspiler</h4>
   <div class="markdown level1 summary"></div>
@@ -353,32 +301,6 @@
       <tr>
         <td><a class="xref" href="Global.DamageTranspiler.html">DamageTranspiler</a></td>
         <td><p>Damage transpiler</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_AttackManager_HardRecovering_" data-uid="Global.AttackManager.HardRecovering*"></a>
-  <h4 id="Global_AttackManager_HardRecovering" data-uid="Global.AttackManager.HardRecovering">HardRecovering</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool HardRecovering { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p>Any attack is recovering and its <span class="xref">BaseAttack.hardRecovery</span> value is <code>true</code></p>
 </td>
       </tr>
     </tbody>
@@ -409,32 +331,6 @@
       </tr>
     </tbody>
   </table>
-  
-  
-  <a id="Global_AttackManager_Recovering_" data-uid="Global.AttackManager.Recovering*"></a>
-  <h4 id="Global_AttackManager_Recovering" data-uid="Global.AttackManager.Recovering">Recovering</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Recovering { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p>Any attack is recovering</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="methods">Methods
   </h3>
   
@@ -451,14 +347,14 @@
   <div><a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Awake">CharacterBehaviour.Awake()</a></div>
   
   
-  <a id="Global_AttackManager_CanPlayAttack_" data-uid="Global.AttackManager.CanPlayAttack*"></a>
-  <h4 id="Global_AttackManager_CanPlayAttack_System_Boolean_" data-uid="Global.AttackManager.CanPlayAttack(System.Boolean)">CanPlayAttack(Boolean)</h4>
+  <a id="Global_AttackManager_CanPlayMove_" data-uid="Global.AttackManager.CanPlayMove*"></a>
+  <h4 id="Global_AttackManager_CanPlayMove_System_Boolean_" data-uid="Global.AttackManager.CanPlayMove(System.Boolean)">CanPlayMove(Boolean)</h4>
   <div class="markdown level1 summary"><p>Checks if an attack can be played </p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool CanPlayAttack(bool instant)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool CanPlayMove(bool instant = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -490,32 +386,6 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><p><code>true</code> if attack can be played</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_AttackManager_IsInterruptible_" data-uid="Global.AttackManager.IsInterruptible*"></a>
-  <h4 id="Global_AttackManager_IsInterruptible" data-uid="Global.AttackManager.IsInterruptible">IsInterruptible()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsInterruptible()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><code>true</code> if there aren&apos;t any uninterruptible attacks playing</p>
 </td>
       </tr>
     </tbody>

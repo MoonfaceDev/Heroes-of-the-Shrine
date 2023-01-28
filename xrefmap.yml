@@ -357,32 +357,6 @@ references:
   commentId: T:Global.AttackManager
   fullName: AttackManager
   nameWithType: AttackManager
-- uid: Global.AttackManager.Active
-  name: Active
-  href: api/Global.AttackManager.html#Global_AttackManager_Active
-  commentId: P:Global.AttackManager.Active
-  fullName: AttackManager.Active
-  nameWithType: AttackManager.Active
-- uid: Global.AttackManager.Active*
-  name: Active
-  href: api/Global.AttackManager.html#Global_AttackManager_Active_
-  commentId: Overload:Global.AttackManager.Active
-  isSpec: "True"
-  fullName: AttackManager.Active
-  nameWithType: AttackManager.Active
-- uid: Global.AttackManager.Anticipating
-  name: Anticipating
-  href: api/Global.AttackManager.html#Global_AttackManager_Anticipating
-  commentId: P:Global.AttackManager.Anticipating
-  fullName: AttackManager.Anticipating
-  nameWithType: AttackManager.Anticipating
-- uid: Global.AttackManager.Anticipating*
-  name: Anticipating
-  href: api/Global.AttackManager.html#Global_AttackManager_Anticipating_
-  commentId: Overload:Global.AttackManager.Anticipating
-  isSpec: "True"
-  fullName: AttackManager.Anticipating
-  nameWithType: AttackManager.Anticipating
 - uid: Global.AttackManager.attackEvents
   name: attackEvents
   href: api/Global.AttackManager.html#Global_AttackManager_attackEvents
@@ -402,19 +376,19 @@ references:
   isSpec: "True"
   fullName: AttackManager.Awake
   nameWithType: AttackManager.Awake
-- uid: Global.AttackManager.CanPlayAttack(System.Boolean)
-  name: CanPlayAttack(Boolean)
-  href: api/Global.AttackManager.html#Global_AttackManager_CanPlayAttack_System_Boolean_
-  commentId: M:Global.AttackManager.CanPlayAttack(System.Boolean)
-  fullName: AttackManager.CanPlayAttack(System.Boolean)
-  nameWithType: AttackManager.CanPlayAttack(Boolean)
-- uid: Global.AttackManager.CanPlayAttack*
-  name: CanPlayAttack
-  href: api/Global.AttackManager.html#Global_AttackManager_CanPlayAttack_
-  commentId: Overload:Global.AttackManager.CanPlayAttack
+- uid: Global.AttackManager.CanPlayMove(System.Boolean)
+  name: CanPlayMove(Boolean)
+  href: api/Global.AttackManager.html#Global_AttackManager_CanPlayMove_System_Boolean_
+  commentId: M:Global.AttackManager.CanPlayMove(System.Boolean)
+  fullName: AttackManager.CanPlayMove(System.Boolean)
+  nameWithType: AttackManager.CanPlayMove(Boolean)
+- uid: Global.AttackManager.CanPlayMove*
+  name: CanPlayMove
+  href: api/Global.AttackManager.html#Global_AttackManager_CanPlayMove_
+  commentId: Overload:Global.AttackManager.CanPlayMove
   isSpec: "True"
-  fullName: AttackManager.CanPlayAttack
-  nameWithType: AttackManager.CanPlayAttack
+  fullName: AttackManager.CanPlayMove
+  nameWithType: AttackManager.CanPlayMove
 - uid: Global.AttackManager.DamageTranspiler
   name: DamageTranspiler
   href: api/Global.AttackManager.html#Global_AttackManager_DamageTranspiler
@@ -428,38 +402,12 @@ references:
   isSpec: "True"
   fullName: AttackManager.DamageTranspiler
   nameWithType: AttackManager.DamageTranspiler
-- uid: Global.AttackManager.HardRecovering
-  name: HardRecovering
-  href: api/Global.AttackManager.html#Global_AttackManager_HardRecovering
-  commentId: P:Global.AttackManager.HardRecovering
-  fullName: AttackManager.HardRecovering
-  nameWithType: AttackManager.HardRecovering
-- uid: Global.AttackManager.HardRecovering*
-  name: HardRecovering
-  href: api/Global.AttackManager.html#Global_AttackManager_HardRecovering_
-  commentId: Overload:Global.AttackManager.HardRecovering
-  isSpec: "True"
-  fullName: AttackManager.HardRecovering
-  nameWithType: AttackManager.HardRecovering
 - uid: Global.AttackManager.hittableTags
   name: hittableTags
   href: api/Global.AttackManager.html#Global_AttackManager_hittableTags
   commentId: F:Global.AttackManager.hittableTags
   fullName: AttackManager.hittableTags
   nameWithType: AttackManager.hittableTags
-- uid: Global.AttackManager.IsInterruptible
-  name: IsInterruptible()
-  href: api/Global.AttackManager.html#Global_AttackManager_IsInterruptible
-  commentId: M:Global.AttackManager.IsInterruptible
-  fullName: AttackManager.IsInterruptible()
-  nameWithType: AttackManager.IsInterruptible()
-- uid: Global.AttackManager.IsInterruptible*
-  name: IsInterruptible
-  href: api/Global.AttackManager.html#Global_AttackManager_IsInterruptible_
-  commentId: Overload:Global.AttackManager.IsInterruptible
-  isSpec: "True"
-  fullName: AttackManager.IsInterruptible
-  nameWithType: AttackManager.IsInterruptible
 - uid: Global.AttackManager.lastAttack
   name: lastAttack
   href: api/Global.AttackManager.html#Global_AttackManager_lastAttack
@@ -491,19 +439,6 @@ references:
   isSpec: "True"
   fullName: AttackManager.Playing
   nameWithType: AttackManager.Playing
-- uid: Global.AttackManager.Recovering
-  name: Recovering
-  href: api/Global.AttackManager.html#Global_AttackManager_Recovering
-  commentId: P:Global.AttackManager.Recovering
-  fullName: AttackManager.Recovering
-  nameWithType: AttackManager.Recovering
-- uid: Global.AttackManager.Recovering*
-  name: Recovering
-  href: api/Global.AttackManager.html#Global_AttackManager_Recovering_
-  commentId: Overload:Global.AttackManager.Recovering
-  isSpec: "True"
-  fullName: AttackManager.Recovering
-  nameWithType: AttackManager.Recovering
 - uid: Global.AttackNode
   name: AttackNode
   href: api/Global.AttackNode.html
