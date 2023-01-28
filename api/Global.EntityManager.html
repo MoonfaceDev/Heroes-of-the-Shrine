@@ -83,7 +83,8 @@
   
   <h1 id="Global_EntityManager" data-uid="Global.EntityManager" class="text-break">Class EntityManager
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Global store of entities, indexed with tags. Use this instead of expensive methods such as <see cref="!:UnityEngine.GameObject.Find"></see>.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -144,7 +145,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Global.EntityManager.html">EntityManager</a></td>
-        <td></td>
+        <td><p>Instance of the singleton</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -153,12 +155,13 @@
   
   
   <a id="Global_EntityManager_AddEntity_" data-uid="Global.EntityManager.AddEntity*"></a>
-  <h4 id="Global_EntityManager_AddEntity_Tags_GameEntity_" data-uid="Global.EntityManager.AddEntity(Tags,GameEntity)">AddEntity(Tags, GameEntity)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Global_EntityManager_AddEntity_GameEntity_" data-uid="Global.EntityManager.AddEntity(GameEntity)">AddEntity(GameEntity)</h4>
+  <div class="markdown level1 summary"><p>Adds a <span class="xref">GameEntity</span> to the store</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void AddEntity(Tags tags, GameEntity entity)</code></pre>
+    <pre><code class="lang-csharp hljs">public void AddEntity(GameEntity entity)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -171,14 +174,10 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.Tags.html">Tags</a></td>
-        <td><span class="parametername">tags</span></td>
-        <td></td>
-      </tr>
-      <tr>
         <td><a class="xref" href="Global.GameEntity.html">GameEntity</a></td>
         <td><span class="parametername">entity</span></td>
-        <td></td>
+        <td><p>Entity to add</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -186,7 +185,8 @@
   
   <a id="Global_EntityManager_CountEntities_" data-uid="Global.EntityManager.CountEntities*"></a>
   <h4 id="Global_EntityManager_CountEntities_Tag_" data-uid="Global.EntityManager.CountEntities(Tag)">CountEntities(Tag)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Count how many entities have a certain tag</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -205,7 +205,8 @@
       <tr>
         <td><a class="xref" href="Global.Tag.html">Tag</a></td>
         <td><span class="parametername">key</span></td>
-        <td></td>
+        <td><p>Tag to check</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -220,7 +221,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td></td>
+        <td><p>Count of entities have that tag</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -228,11 +230,12 @@
   
   <a id="Global_EntityManager_GetEntities_" data-uid="Global.EntityManager.GetEntities*"></a>
   <h4 id="Global_EntityManager_GetEntities_Tag_" data-uid="Global.EntityManager.GetEntities(Tag)">GetEntities(Tag)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Get all entities that have a certain tag</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;GameEntity&gt; GetEntities(Tag key)</code></pre>
+    <pre><code class="lang-csharp hljs">public HashSet&lt;GameEntity&gt; GetEntities(Tag key)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -247,7 +250,8 @@
       <tr>
         <td><a class="xref" href="Global.Tag.html">Tag</a></td>
         <td><span class="parametername">key</span></td>
-        <td></td>
+        <td><p>Tag to check</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -261,8 +265,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="Global.GameEntity.html">GameEntity</a>&gt;</td>
-        <td></td>
+        <td><span class="xref">HashSet</span>&lt;<a class="xref" href="Global.GameEntity.html">GameEntity</a>&gt;</td>
+        <td><p>All entities having that tag</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -270,11 +275,12 @@
   
   <a id="Global_EntityManager_GetEntities_" data-uid="Global.EntityManager.GetEntities*"></a>
   <h4 id="Global_EntityManager_GetEntities_Tag___" data-uid="Global.EntityManager.GetEntities(Tag[])">GetEntities(Tag[])</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Get all entities that have one of a list of tags</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;GameEntity&gt; GetEntities(params Tag[] keys)</code></pre>
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;GameEntity&gt; GetEntities(params Tag[] keys)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -289,7 +295,8 @@
       <tr>
         <td><a class="xref" href="Global.Tag.html">Tag</a>[]</td>
         <td><span class="parametername">keys</span></td>
-        <td></td>
+        <td><p>List of tags to check</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -303,8 +310,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="Global.GameEntity.html">GameEntity</a>&gt;</td>
-        <td></td>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="Global.GameEntity.html">GameEntity</a>&gt;</td>
+        <td><p>All entities having any of these tags</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -312,7 +320,8 @@
   
   <a id="Global_EntityManager_GetEntity_" data-uid="Global.EntityManager.GetEntity*"></a>
   <h4 id="Global_EntityManager_GetEntity_Tag_" data-uid="Global.EntityManager.GetEntity(Tag)">GetEntity(Tag)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Get one entity that has a certain tag</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -331,7 +340,8 @@
       <tr>
         <td><a class="xref" href="Global.Tag.html">Tag</a></td>
         <td><span class="parametername">key</span></td>
-        <td></td>
+        <td><p>Tag to check</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -346,19 +356,21 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Global.GameEntity.html">GameEntity</a></td>
-        <td></td>
+        <td><p>Single entity having this tag. If there is none, then <code>null</code> is returned</p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
   <a id="Global_EntityManager_RemoveEntity_" data-uid="Global.EntityManager.RemoveEntity*"></a>
-  <h4 id="Global_EntityManager_RemoveEntity_Tags_GameEntity_" data-uid="Global.EntityManager.RemoveEntity(Tags,GameEntity)">RemoveEntity(Tags, GameEntity)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Global_EntityManager_RemoveEntity_GameEntity_" data-uid="Global.EntityManager.RemoveEntity(GameEntity)">RemoveEntity(GameEntity)</h4>
+  <div class="markdown level1 summary"><p>Removes a <span class="xref">GameEntity</span> from the store</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void RemoveEntity(Tags tags, GameEntity entity)</code></pre>
+    <pre><code class="lang-csharp hljs">public void RemoveEntity(GameEntity entity)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -371,14 +383,10 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.Tags.html">Tags</a></td>
-        <td><span class="parametername">tags</span></td>
-        <td></td>
-      </tr>
-      <tr>
         <td><a class="xref" href="Global.GameEntity.html">GameEntity</a></td>
         <td><span class="parametername">entity</span></td>
-        <td></td>
+        <td><p>Entity to remove</p>
+</td>
       </tr>
     </tbody>
   </table>

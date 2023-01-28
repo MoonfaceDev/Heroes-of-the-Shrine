@@ -95,7 +95,8 @@
 Can be used for randomizing transitions.</p>
 </section>
       <h4><a class="xref" href="Global.AirAttack.html">AirAttack</a></h4>
-      <section></section>
+      <section><p>Attack that can be only be played when jumping, and does not prevent walking</p>
+</section>
       <h4><a class="xref" href="Global.AirSpinAttack.html">AirSpinAttack</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.AlarmBrainModule.html">AlarmBrainModule</a></h4>
@@ -136,9 +137,10 @@ Must be called manually.</p>
       <h4><a class="xref" href="Global.BaseAttack.Command.html">BaseAttack.Command</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></h4>
-      <section></section>
+      <section><p>Base class for every component, extending <see cref="!:MonoBehaviour"></see> with more features</p>
+</section>
       <h4><a class="xref" href="Global.BaseEffect-1.html">BaseEffect&lt;T&gt;</a></h4>
-      <section><p>Base class for effects that character can receive</p>
+      <section><p>Base class for effects that character can receive by getting hit</p>
 </section>
       <h4><a class="xref" href="Global.BaseHitDetector.html">BaseHitDetector</a></h4>
       <section><p>Abstract base class for hit detectors, responsible for detecting hits and calling a given function for every hit object</p>
@@ -232,7 +234,9 @@ Attach only the required brain modules for your state machine logic.</p>
       <h4><a class="xref" href="Global.ElectrifiedEffect.Command.html">ElectrifiedEffect.Command</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.ElectrifyAttack.html">ElectrifyAttack</a></h4>
-      <section></section>
+      <section><p>Active phase has two parts - periodic and explosion.
+After the periodic part is checking for hits a certain number of times, the explosion part starts.</p>
+</section>
       <h4><a class="xref" href="Global.ElectrifyHitExecutor.html">ElectrifyHitExecutor</a></h4>
       <section><p>Hit executor that applies electrify effect to an hittable</p>
 </section>
@@ -252,7 +256,8 @@ Attach only the required brain modules for your state machine logic.</p>
       <section><p>State machine parameter that is set when health is below a certain value</p>
 </section>
       <h4><a class="xref" href="Global.EntityManager.html">EntityManager</a></h4>
-      <section></section>
+      <section><p>Global store of entities, indexed with tags. Use this instead of expensive methods such as <see cref="!:UnityEngine.GameObject.Find"></see>.</p>
+</section>
       <h4><a class="xref" href="Global.EscapeBehaviour.html">EscapeBehaviour</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.EscapeBehaviour.Command.html">EscapeBehaviour.Command</a></h4>
@@ -310,7 +315,11 @@ Attach only the required brain modules for your state machine logic.</p>
       <h4><a class="xref" href="Global.IdlePattern.html">IdlePattern</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.InterfaceWithSerializableContentDrawer.html">InterfaceWithSerializableContentDrawer</a></h4>
-      <section></section>
+      <section><p>use <code>[SerializeReference,SerializeInterface]</code> on filed definition to use the drawer, like this:
+<code>[SerializeReference,SerializeInterface] private ICommand command;</code>
+property drawer will automatically find all types that implement your interface
+and will provide UI dropdown, where you can select concrete type that you want to use.</p>
+</section>
       <h4><a class="xref" href="Global.JumpBehaviour.html">JumpBehaviour</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.JumpBehaviour.Command.html">JumpBehaviour.Command</a></h4>
@@ -457,7 +466,8 @@ reaches zero.</p>
       <h4><a class="xref" href="Global.SpawnAttack.AttackFlow.html">SpawnAttack.AttackFlow</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.SpinningSwordsAttack.html">SpinningSwordsAttack</a></h4>
-      <section></section>
+      <section><p>Attack that has two hitboxes, each one has different timing inside the active phase</p>
+</section>
       <h4><a class="xref" href="Global.SpinningSwordsAttack.AttackFlow.html">SpinningSwordsAttack.AttackFlow</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.StabAttack.html">StabAttack</a></h4>
@@ -474,17 +484,17 @@ reaches zero.</p>
       <h4><a class="xref" href="Global.StunHitExecutor.html">StunHitExecutor</a></h4>
       <section><p>Hit executor that stuns an hittable</p>
 </section>
+      <h4><a class="xref" href="Global.SuperArmor.html">SuperArmor</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Global.SuperArmor.Command.html">SuperArmor.Command</a></h4>
+      <section></section>
       <h4><a class="xref" href="Global.SuperArmorBar.html">SuperArmorBar</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.SuperArmorBrainModule.html">SuperArmorBrainModule</a></h4>
-      <section><p>State machine parameters related to <span class="xref">SuperArmorBrainModule.superArmorEffect</span></p>
+      <section><p>State machine parameters related to <span class="xref">SuperArmorBrainModule.superArmor</span></p>
 </section>
-      <h4><a class="xref" href="Global.SuperArmorEffect.html">SuperArmorEffect</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Global.SuperArmorEffect.Command.html">SuperArmorEffect.Command</a></h4>
-      <section></section>
       <h4><a class="xref" href="Global.SuperArmorHittableHitbox.html">SuperArmorHittableHitbox</a></h4>
-      <section><span class="xref">HittableHitbox</span> that cannot receive knockback or stun, and proxies hits to <span class="xref">SuperArmorHittableHitbox.superArmorEffect</span>
+      <section><span class="xref">HittableHitbox</span> that cannot receive knockback or stun, and proxies hits to <span class="xref">SuperArmorHittableHitbox.superArmor</span>
 </section>
       <h4><a class="xref" href="Global.Tags.html">Tags</a></h4>
       <section></section>
@@ -513,7 +523,8 @@ reaches zero.</p>
     <h3 id="interfaces">Interfaces
   </h3>
       <h4><a class="xref" href="Global.IEffect.html">IEffect</a></h4>
-      <section></section>
+      <section><p>Base non-generic interface for an effect</p>
+</section>
       <h4><a class="xref" href="Global.IForcedBehaviour.html">IForcedBehaviour</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.IHitExecutor.html">IHitExecutor</a></h4>

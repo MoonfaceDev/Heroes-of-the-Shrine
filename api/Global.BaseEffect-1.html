@@ -83,7 +83,7 @@
   
   <h1 id="Global_BaseEffect_1" data-uid="Global.BaseEffect`1" class="text-break">Class BaseEffect&lt;T&gt;
   </h1>
-  <div class="markdown level0 summary"><p>Base class for effects that character can receive</p>
+  <div class="markdown level0 summary"><p>Base class for effects that character can receive by getting hit</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -96,7 +96,6 @@
       <div class="level5"><a class="xref" href="Global.ElectrifiedEffect.html">ElectrifiedEffect</a></div>
       <div class="level5"><a class="xref" href="Global.FireEffect.html">FireEffect</a></div>
       <div class="level5"><a class="xref" href="Global.PossessedEffect.html">PossessedEffect</a></div>
-      <div class="level5"><a class="xref" href="Global.SuperArmorEffect.html">SuperArmorEffect</a></div>
   </div>
   <div class="implements">
     <h5>Implements</h5>
@@ -107,9 +106,6 @@
     <h5>Inherited Members</h5>
     <div>
       <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;T&gt;.PlayEvents</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_CanPlay__0_">PlayableBehaviour&lt;T&gt;.CanPlay(T)</a>
     </div>
     <div>
       <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;T&gt;.Play(T)</a>
@@ -127,10 +123,10 @@
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableEntity">CharacterBehaviour.MovableEntity</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Animator">CharacterBehaviour.Animator</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Animator">CharacterBehaviour.Animator</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableEntity">CharacterBehaviour.MovableEntity</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_AttackManager">CharacterBehaviour.AttackManager</a>
@@ -256,6 +252,50 @@
   </h3>
   
   
+  <a id="Global_BaseEffect_1_CanPlay_" data-uid="Global.BaseEffect`1.CanPlay*"></a>
+  <h4 id="Global_BaseEffect_1_CanPlay__0_" data-uid="Global.BaseEffect`1.CanPlay(`0)">CanPlay(T)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool CanPlay(T command)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">PlayableBehaviour&lt;T&gt;.CanPlay(T)</span></div>
+  
+  
   <a id="Global_BaseEffect_1_GetProgress_" data-uid="Global.BaseEffect`1.GetProgress*"></a>
   <h4 id="Global_BaseEffect_1_GetProgress" data-uid="Global.BaseEffect`1.GetProgress">GetProgress()</h4>
   <div class="markdown level1 summary"></div>
@@ -275,7 +315,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><p>Progress of the effect (0-1)</p>
+        <td><p>Progress of the effect from 0 to 1. Can be used by UI elements to display the progress</p>
 </td>
       </tr>
     </tbody>

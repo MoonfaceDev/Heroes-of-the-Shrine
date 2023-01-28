@@ -169,19 +169,6 @@ references:
   commentId: T:Global.ArcBehaviour
   fullName: ArcBehaviour
   nameWithType: ArcBehaviour
-- uid: Global.ArcBehaviour.Active
-  name: Active
-  href: api/Global.ArcBehaviour.html#Global_ArcBehaviour_Active
-  commentId: P:Global.ArcBehaviour.Active
-  fullName: ArcBehaviour.Active
-  nameWithType: ArcBehaviour.Active
-- uid: Global.ArcBehaviour.Active*
-  name: Active
-  href: api/Global.ArcBehaviour.html#Global_ArcBehaviour_Active_
-  commentId: Overload:Global.ArcBehaviour.Active
-  isSpec: "True"
-  fullName: ArcBehaviour.Active
-  nameWithType: ArcBehaviour.Active
 - uid: Global.ArcBehaviour.Awake
   name: Awake()
   href: api/Global.ArcBehaviour.html#Global_ArcBehaviour_Awake
@@ -1001,6 +988,23 @@ references:
   fullName.vb: BaseEffect(Of T).Active
   nameWithType: BaseEffect<T>.Active
   nameWithType.vb: BaseEffect(Of T).Active
+- uid: Global.BaseEffect`1.CanPlay(`0)
+  name: CanPlay(T)
+  href: api/Global.BaseEffect-1.html#Global_BaseEffect_1_CanPlay__0_
+  commentId: M:Global.BaseEffect`1.CanPlay(`0)
+  fullName: BaseEffect<T>.CanPlay(T)
+  fullName.vb: BaseEffect(Of T).CanPlay(T)
+  nameWithType: BaseEffect<T>.CanPlay(T)
+  nameWithType.vb: BaseEffect(Of T).CanPlay(T)
+- uid: Global.BaseEffect`1.CanPlay*
+  name: CanPlay
+  href: api/Global.BaseEffect-1.html#Global_BaseEffect_1_CanPlay_
+  commentId: Overload:Global.BaseEffect`1.CanPlay
+  isSpec: "True"
+  fullName: BaseEffect<T>.CanPlay
+  fullName.vb: BaseEffect(Of T).CanPlay
+  nameWithType: BaseEffect<T>.CanPlay
+  nameWithType.vb: BaseEffect(Of T).CanPlay
 - uid: Global.BaseEffect`1.GetProgress
   name: GetProgress()
   href: api/Global.BaseEffect-1.html#Global_BaseEffect_1_GetProgress
@@ -2442,19 +2446,6 @@ references:
   isSpec: "True"
   fullName: ElectrifiedEffect.Awake
   nameWithType: ElectrifiedEffect.Awake
-- uid: Global.ElectrifiedEffect.CanPlay(ElectrifiedEffect.Command)
-  name: CanPlay(ElectrifiedEffect.Command)
-  href: api/Global.ElectrifiedEffect.html#Global_ElectrifiedEffect_CanPlay_ElectrifiedEffect_Command_
-  commentId: M:Global.ElectrifiedEffect.CanPlay(ElectrifiedEffect.Command)
-  fullName: ElectrifiedEffect.CanPlay(ElectrifiedEffect.Command)
-  nameWithType: ElectrifiedEffect.CanPlay(ElectrifiedEffect.Command)
-- uid: Global.ElectrifiedEffect.CanPlay*
-  name: CanPlay
-  href: api/Global.ElectrifiedEffect.html#Global_ElectrifiedEffect_CanPlay_
-  commentId: Overload:Global.ElectrifiedEffect.CanPlay
-  isSpec: "True"
-  fullName: ElectrifiedEffect.CanPlay
-  nameWithType: ElectrifiedEffect.CanPlay
 - uid: Global.ElectrifiedEffect.Command
   name: ElectrifiedEffect.Command
   href: api/Global.ElectrifiedEffect.Command.html
@@ -2873,12 +2864,12 @@ references:
   commentId: T:Global.EntityManager
   fullName: EntityManager
   nameWithType: EntityManager
-- uid: Global.EntityManager.AddEntity(Tags,GameEntity)
-  name: AddEntity(Tags, GameEntity)
-  href: api/Global.EntityManager.html#Global_EntityManager_AddEntity_Tags_GameEntity_
-  commentId: M:Global.EntityManager.AddEntity(Tags,GameEntity)
-  fullName: EntityManager.AddEntity(Tags, GameEntity)
-  nameWithType: EntityManager.AddEntity(Tags, GameEntity)
+- uid: Global.EntityManager.AddEntity(GameEntity)
+  name: AddEntity(GameEntity)
+  href: api/Global.EntityManager.html#Global_EntityManager_AddEntity_GameEntity_
+  commentId: M:Global.EntityManager.AddEntity(GameEntity)
+  fullName: EntityManager.AddEntity(GameEntity)
+  nameWithType: EntityManager.AddEntity(GameEntity)
 - uid: Global.EntityManager.AddEntity*
   name: AddEntity
   href: api/Global.EntityManager.html#Global_EntityManager_AddEntity_
@@ -2947,12 +2938,12 @@ references:
   isSpec: "True"
   fullName: EntityManager.Instance
   nameWithType: EntityManager.Instance
-- uid: Global.EntityManager.RemoveEntity(Tags,GameEntity)
-  name: RemoveEntity(Tags, GameEntity)
-  href: api/Global.EntityManager.html#Global_EntityManager_RemoveEntity_Tags_GameEntity_
-  commentId: M:Global.EntityManager.RemoveEntity(Tags,GameEntity)
-  fullName: EntityManager.RemoveEntity(Tags, GameEntity)
-  nameWithType: EntityManager.RemoveEntity(Tags, GameEntity)
+- uid: Global.EntityManager.RemoveEntity(GameEntity)
+  name: RemoveEntity(GameEntity)
+  href: api/Global.EntityManager.html#Global_EntityManager_RemoveEntity_GameEntity_
+  commentId: M:Global.EntityManager.RemoveEntity(GameEntity)
+  fullName: EntityManager.RemoveEntity(GameEntity)
+  nameWithType: EntityManager.RemoveEntity(GameEntity)
 - uid: Global.EntityManager.RemoveEntity*
   name: RemoveEntity
   href: api/Global.EntityManager.html#Global_EntityManager_RemoveEntity_
@@ -7544,18 +7535,131 @@ references:
   commentId: F:Global.StunHitExecutor.stunTime
   fullName: StunHitExecutor.stunTime
   nameWithType: StunHitExecutor.stunTime
+- uid: Global.SuperArmor
+  name: SuperArmor
+  href: api/Global.SuperArmor.html
+  commentId: T:Global.SuperArmor
+  fullName: SuperArmor
+  nameWithType: SuperArmor
+- uid: Global.SuperArmor.armorCooldown
+  name: armorCooldown
+  href: api/Global.SuperArmor.html#Global_SuperArmor_armorCooldown
+  commentId: F:Global.SuperArmor.armorCooldown
+  fullName: SuperArmor.armorCooldown
+  nameWithType: SuperArmor.armorCooldown
+- uid: Global.SuperArmor.armorCooldownStart
+  name: armorCooldownStart
+  href: api/Global.SuperArmor.html#Global_SuperArmor_armorCooldownStart
+  commentId: F:Global.SuperArmor.armorCooldownStart
+  fullName: SuperArmor.armorCooldownStart
+  nameWithType: SuperArmor.armorCooldownStart
+- uid: Global.SuperArmor.armorHealth
+  name: armorHealth
+  href: api/Global.SuperArmor.html#Global_SuperArmor_armorHealth
+  commentId: F:Global.SuperArmor.armorHealth
+  fullName: SuperArmor.armorHealth
+  nameWithType: SuperArmor.armorHealth
+- uid: Global.SuperArmor.Command
+  name: SuperArmor.Command
+  href: api/Global.SuperArmor.Command.html
+  commentId: T:Global.SuperArmor.Command
+  fullName: SuperArmor.Command
+  nameWithType: SuperArmor.Command
+- uid: Global.SuperArmor.damageMultiplier
+  name: damageMultiplier
+  href: api/Global.SuperArmor.html#Global_SuperArmor_damageMultiplier
+  commentId: F:Global.SuperArmor.damageMultiplier
+  fullName: SuperArmor.damageMultiplier
+  nameWithType: SuperArmor.damageMultiplier
+- uid: Global.SuperArmor.DoPlay(SuperArmor.Command)
+  name: DoPlay(SuperArmor.Command)
+  href: api/Global.SuperArmor.html#Global_SuperArmor_DoPlay_SuperArmor_Command_
+  commentId: M:Global.SuperArmor.DoPlay(SuperArmor.Command)
+  fullName: SuperArmor.DoPlay(SuperArmor.Command)
+  nameWithType: SuperArmor.DoPlay(SuperArmor.Command)
+- uid: Global.SuperArmor.DoPlay*
+  name: DoPlay
+  href: api/Global.SuperArmor.html#Global_SuperArmor_DoPlay_
+  commentId: Overload:Global.SuperArmor.DoPlay
+  isSpec: "True"
+  fullName: SuperArmor.DoPlay
+  nameWithType: SuperArmor.DoPlay
+- uid: Global.SuperArmor.DoStop
+  name: DoStop()
+  href: api/Global.SuperArmor.html#Global_SuperArmor_DoStop
+  commentId: M:Global.SuperArmor.DoStop
+  fullName: SuperArmor.DoStop()
+  nameWithType: SuperArmor.DoStop()
+- uid: Global.SuperArmor.DoStop*
+  name: DoStop
+  href: api/Global.SuperArmor.html#Global_SuperArmor_DoStop_
+  commentId: Overload:Global.SuperArmor.DoStop
+  isSpec: "True"
+  fullName: SuperArmor.DoStop
+  nameWithType: SuperArmor.DoStop
+- uid: Global.SuperArmor.GetProgress
+  name: GetProgress()
+  href: api/Global.SuperArmor.html#Global_SuperArmor_GetProgress
+  commentId: M:Global.SuperArmor.GetProgress
+  fullName: SuperArmor.GetProgress()
+  nameWithType: SuperArmor.GetProgress()
+- uid: Global.SuperArmor.GetProgress*
+  name: GetProgress
+  href: api/Global.SuperArmor.html#Global_SuperArmor_GetProgress_
+  commentId: Overload:Global.SuperArmor.GetProgress
+  isSpec: "True"
+  fullName: SuperArmor.GetProgress
+  nameWithType: SuperArmor.GetProgress
+- uid: Global.SuperArmor.HitArmor(System.Single)
+  name: HitArmor(Single)
+  href: api/Global.SuperArmor.html#Global_SuperArmor_HitArmor_System_Single_
+  commentId: M:Global.SuperArmor.HitArmor(System.Single)
+  fullName: SuperArmor.HitArmor(System.Single)
+  nameWithType: SuperArmor.HitArmor(Single)
+- uid: Global.SuperArmor.HitArmor*
+  name: HitArmor
+  href: api/Global.SuperArmor.html#Global_SuperArmor_HitArmor_
+  commentId: Overload:Global.SuperArmor.HitArmor
+  isSpec: "True"
+  fullName: SuperArmor.HitArmor
+  nameWithType: SuperArmor.HitArmor
+- uid: Global.SuperArmor.onBreak
+  name: onBreak
+  href: api/Global.SuperArmor.html#Global_SuperArmor_onBreak
+  commentId: F:Global.SuperArmor.onBreak
+  fullName: SuperArmor.onBreak
+  nameWithType: SuperArmor.onBreak
+- uid: Global.SuperArmor.onHit
+  name: onHit
+  href: api/Global.SuperArmor.html#Global_SuperArmor_onHit
+  commentId: F:Global.SuperArmor.onHit
+  fullName: SuperArmor.onHit
+  nameWithType: SuperArmor.onHit
+- uid: Global.SuperArmor.Playing
+  name: Playing
+  href: api/Global.SuperArmor.html#Global_SuperArmor_Playing
+  commentId: P:Global.SuperArmor.Playing
+  fullName: SuperArmor.Playing
+  nameWithType: SuperArmor.Playing
+- uid: Global.SuperArmor.Playing*
+  name: Playing
+  href: api/Global.SuperArmor.html#Global_SuperArmor_Playing_
+  commentId: Overload:Global.SuperArmor.Playing
+  isSpec: "True"
+  fullName: SuperArmor.Playing
+  nameWithType: SuperArmor.Playing
 - uid: Global.SuperArmorBar
   name: SuperArmorBar
   href: api/Global.SuperArmorBar.html
   commentId: T:Global.SuperArmorBar
   fullName: SuperArmorBar
   nameWithType: SuperArmorBar
-- uid: Global.SuperArmorBar.superArmorEffect
-  name: superArmorEffect
-  href: api/Global.SuperArmorBar.html#Global_SuperArmorBar_superArmorEffect
-  commentId: F:Global.SuperArmorBar.superArmorEffect
-  fullName: SuperArmorBar.superArmorEffect
-  nameWithType: SuperArmorBar.superArmorEffect
+- uid: Global.SuperArmorBar.superArmor
+  name: superArmor
+  href: api/Global.SuperArmorBar.html#Global_SuperArmorBar_superArmor
+  commentId: F:Global.SuperArmorBar.superArmor
+  fullName: SuperArmorBar.superArmor
+  nameWithType: SuperArmorBar.superArmor
 - uid: Global.SuperArmorBar.Update
   name: Update()
   href: api/Global.SuperArmorBar.html#Global_SuperArmorBar_Update
@@ -7601,106 +7705,6 @@ references:
   isSpec: "True"
   fullName: SuperArmorBrainModule.GetParameters
   nameWithType: SuperArmorBrainModule.GetParameters
-- uid: Global.SuperArmorEffect
-  name: SuperArmorEffect
-  href: api/Global.SuperArmorEffect.html
-  commentId: T:Global.SuperArmorEffect
-  fullName: SuperArmorEffect
-  nameWithType: SuperArmorEffect
-- uid: Global.SuperArmorEffect.armorCooldown
-  name: armorCooldown
-  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_armorCooldown
-  commentId: F:Global.SuperArmorEffect.armorCooldown
-  fullName: SuperArmorEffect.armorCooldown
-  nameWithType: SuperArmorEffect.armorCooldown
-- uid: Global.SuperArmorEffect.armorCooldownStart
-  name: armorCooldownStart
-  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_armorCooldownStart
-  commentId: F:Global.SuperArmorEffect.armorCooldownStart
-  fullName: SuperArmorEffect.armorCooldownStart
-  nameWithType: SuperArmorEffect.armorCooldownStart
-- uid: Global.SuperArmorEffect.armorHealth
-  name: armorHealth
-  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_armorHealth
-  commentId: F:Global.SuperArmorEffect.armorHealth
-  fullName: SuperArmorEffect.armorHealth
-  nameWithType: SuperArmorEffect.armorHealth
-- uid: Global.SuperArmorEffect.Command
-  name: SuperArmorEffect.Command
-  href: api/Global.SuperArmorEffect.Command.html
-  commentId: T:Global.SuperArmorEffect.Command
-  fullName: SuperArmorEffect.Command
-  nameWithType: SuperArmorEffect.Command
-- uid: Global.SuperArmorEffect.damageMultiplier
-  name: damageMultiplier
-  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_damageMultiplier
-  commentId: F:Global.SuperArmorEffect.damageMultiplier
-  fullName: SuperArmorEffect.damageMultiplier
-  nameWithType: SuperArmorEffect.damageMultiplier
-- uid: Global.SuperArmorEffect.DoPlay(SuperArmorEffect.Command)
-  name: DoPlay(SuperArmorEffect.Command)
-  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_DoPlay_SuperArmorEffect_Command_
-  commentId: M:Global.SuperArmorEffect.DoPlay(SuperArmorEffect.Command)
-  fullName: SuperArmorEffect.DoPlay(SuperArmorEffect.Command)
-  nameWithType: SuperArmorEffect.DoPlay(SuperArmorEffect.Command)
-- uid: Global.SuperArmorEffect.DoPlay*
-  name: DoPlay
-  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_DoPlay_
-  commentId: Overload:Global.SuperArmorEffect.DoPlay
-  isSpec: "True"
-  fullName: SuperArmorEffect.DoPlay
-  nameWithType: SuperArmorEffect.DoPlay
-- uid: Global.SuperArmorEffect.DoStop
-  name: DoStop()
-  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_DoStop
-  commentId: M:Global.SuperArmorEffect.DoStop
-  fullName: SuperArmorEffect.DoStop()
-  nameWithType: SuperArmorEffect.DoStop()
-- uid: Global.SuperArmorEffect.DoStop*
-  name: DoStop
-  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_DoStop_
-  commentId: Overload:Global.SuperArmorEffect.DoStop
-  isSpec: "True"
-  fullName: SuperArmorEffect.DoStop
-  nameWithType: SuperArmorEffect.DoStop
-- uid: Global.SuperArmorEffect.GetProgress
-  name: GetProgress()
-  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_GetProgress
-  commentId: M:Global.SuperArmorEffect.GetProgress
-  fullName: SuperArmorEffect.GetProgress()
-  nameWithType: SuperArmorEffect.GetProgress()
-- uid: Global.SuperArmorEffect.GetProgress*
-  name: GetProgress
-  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_GetProgress_
-  commentId: Overload:Global.SuperArmorEffect.GetProgress
-  isSpec: "True"
-  fullName: SuperArmorEffect.GetProgress
-  nameWithType: SuperArmorEffect.GetProgress
-- uid: Global.SuperArmorEffect.HitArmor(System.Single)
-  name: HitArmor(Single)
-  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_HitArmor_System_Single_
-  commentId: M:Global.SuperArmorEffect.HitArmor(System.Single)
-  fullName: SuperArmorEffect.HitArmor(System.Single)
-  nameWithType: SuperArmorEffect.HitArmor(Single)
-- uid: Global.SuperArmorEffect.HitArmor*
-  name: HitArmor
-  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_HitArmor_
-  commentId: Overload:Global.SuperArmorEffect.HitArmor
-  isSpec: "True"
-  fullName: SuperArmorEffect.HitArmor
-  nameWithType: SuperArmorEffect.HitArmor
-- uid: Global.SuperArmorEffect.onBreak
-  name: onBreak
-  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_onBreak
-  commentId: F:Global.SuperArmorEffect.onBreak
-  fullName: SuperArmorEffect.onBreak
-  nameWithType: SuperArmorEffect.onBreak
-- uid: Global.SuperArmorEffect.onHit
-  name: onHit
-  href: api/Global.SuperArmorEffect.html#Global_SuperArmorEffect_onHit
-  commentId: F:Global.SuperArmorEffect.onHit
-  fullName: SuperArmorEffect.onHit
-  nameWithType: SuperArmorEffect.onHit
 - uid: Global.SuperArmorHittableHitbox
   name: SuperArmorHittableHitbox
   href: api/Global.SuperArmorHittableHitbox.html
