@@ -16,7 +16,7 @@ public class ClosestToPlayerBrainModule : BrainModule
         var player = EntityManager.Instance.GetEntity(Tag.Player);
         var enemies = EntityManager.Instance.GetEntities(Tag.Enemy);
 
-        var closestEnemy = enemies.Aggregate(enemies[0], (prev, next) =>
+        var closestEnemy = enemies.Aggregate((prev, next) =>
         {
             if (!prev) return next;
             if (!next) return prev;
@@ -24,6 +24,7 @@ public class ClosestToPlayerBrainModule : BrainModule
             var prevDistance = player.GroundDistance(prev.WorldPosition);
             return nextDistance < prevDistance ? next : prev;
         });
+        
         StateMachine.SetBool(IsClosestToPlayer, MovableEntity == closestEnemy);
     }
 

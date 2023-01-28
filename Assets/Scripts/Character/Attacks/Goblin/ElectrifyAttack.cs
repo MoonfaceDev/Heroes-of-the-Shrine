@@ -2,6 +2,10 @@ using System.Collections;
 using ExtEvents;
 using UnityEngine;
 
+/// <summary>
+/// Active phase has two parts - periodic and explosion.
+/// After the periodic part is checking for hits a certain number of times, the explosion part starts.
+/// </summary>
 public class ElectrifyAttack : BaseAttack
 {
     public SimpleAttack.AttackFlow attackFlow;

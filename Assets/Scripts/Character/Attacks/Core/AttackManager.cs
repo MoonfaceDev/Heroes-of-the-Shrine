@@ -95,10 +95,10 @@ public class AttackManager : CharacterBehaviour
     }
 
     /// <summary>
-    /// Checks if an attack can be played 
+    /// Checks if a move can be played 
     /// </summary>
-    /// <param name="instant">Is the checked attack instant</param>
-    /// <returns><c>true</c> if attack can be played</returns>
+    /// <param name="instant">Is the checked move instant</param>
+    /// <returns><c>true</c> if move can be played</returns>
     public bool CanPlayMove(bool instant = false)
     {
         return !AnyAttack(attack => IsPreventing(attack, instant));

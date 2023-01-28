@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// State machine parameters related to <see cref="superArmorEffect"/>
+/// State machine parameters related to <see cref="superArmor"/>
 /// </summary>
+[RequireComponent(typeof(SuperArmor))]
 public class SuperArmorBrainModule : BrainModule
 {
-    private SuperArmorEffect superArmorEffect;
+    private SuperArmor superArmor;
 
     private const string SuperArmorHealthParameter = "superArmorHealth";
     private static readonly int SuperArmorHealth = Animator.StringToHash(SuperArmorHealthParameter);
@@ -13,19 +14,18 @@ public class SuperArmorBrainModule : BrainModule
     protected override void Awake()
     {
         base.Awake();
-        superArmorEffect = GetComponent<SuperArmorEffect>();
+        superArmor = GetComponent<SuperArmor>();
     }
 
     private void Start()
     {
-        if (!superArmorEffect) return;
         UpdateSuperArmorHealth();
-        superArmorEffect.onHit += UpdateSuperArmorHealth;
+        superArmor.onHit += UpdateSuperArmorHealth;
     }
 
     private void UpdateSuperArmorHealth()
     {
-        StateMachine.SetFloat(SuperArmorHealth, superArmorEffect.armorHealth);
+        StateMachine.SetFloat(SuperArmorHealth, superArmor.armorHealth);
     }
 
     public override string[] GetParameters()

@@ -30,7 +30,7 @@ public class GameEntity : BaseComponent
         UpdateTransform();
         if (Application.isPlaying)
         {
-            EntityManager.Instance.AddEntity(tags, this);
+            EntityManager.Instance.AddEntity(this);
         }
     }
 
@@ -38,7 +38,7 @@ public class GameEntity : BaseComponent
     {
         if (Application.isPlaying)
         {
-            EntityManager.Instance.RemoveEntity(tags, this);
+            EntityManager.Instance.RemoveEntity(this);
         }
     }
 

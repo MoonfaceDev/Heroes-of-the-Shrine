@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
+/// <summary>
+/// Attack that has two hitboxes, each one has different timing inside the active phase
+/// </summary>
 public class SpinningSwordsAttack : BaseAttack
 {
     [Serializable]

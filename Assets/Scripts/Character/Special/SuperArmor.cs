@@ -1,7 +1,7 @@
 ﻿using ExtEvents;
 using UnityEngine;
 
-public class SuperArmorEffect : BaseEffect<SuperArmorEffect.Command>
+public class SuperArmor : PlayableBehaviour<SuperArmor.Command>
 {
     public class Command
     {
@@ -17,6 +17,19 @@ public class SuperArmorEffect : BaseEffect<SuperArmorEffect.Command>
 
     [HideInInspector] public float armorCooldownStart;
     [ShowDebug] private float currentArmorHealth;
+    private static readonly int SuperArmorHash = Animator.StringToHash("SuperArmor");
+
+    private float CurrentArmorHealth
+    {
+        get => currentArmorHealth;
+        set
+        {
+            currentArmorHealth = value;
+            Animator.SetBool(SuperArmorHash, value > 0);
+        }
+    }
+
+    public override bool Playing => CurrentArmorHealth > 0;
 
     private void Start()
     {
@@ -25,9 +38,7 @@ public class SuperArmorEffect : BaseEffect<SuperArmorEffect.Command>
 
     protected override void DoPlay(Command command)
     {
-        Active = true;
-
-        currentArmorHealth = armorHealth;
+        CurrentArmorHealth = armorHealth;
 
         GetComponent<HittableBehaviour>().damageMultiplier *= damageMultiplier;
         DisableBehaviours(typeof(StunBehaviour));
@@ -37,24 +48,23 @@ public class SuperArmorEffect : BaseEffect<SuperArmorEffect.Command>
 
     public void HitArmor(float damage)
     {
-        if (!Active) return;
+        if (!Playing) return;
         onHit.Invoke();
-        currentArmorHealth = Mathf.Max(currentArmorHealth - damage, 0);
-        if (currentArmorHealth == 0)
+        CurrentArmorHealth = Mathf.Max(CurrentArmorHealth - damage, 0);
+        if (CurrentArmorHealth == 0)
         {
-            Stop();
+            RemoveArmor();
             onBreak.Invoke();
             armorCooldownStart = Time.time;
             reloadTimeout = StartTimeout(() => Play(new Command()), armorCooldown);
         }
     }
 
-    protected override void DoStop()
+    private void RemoveArmor()
     {
         Cancel(reloadTimeout);
-        Active = false;
 
-        currentArmorHealth = 0;
+        CurrentArmorHealth = 0;
 
         GetComponent<HittableBehaviour>().damageMultiplier /= damageMultiplier;
         EnableBehaviours(typeof(StunBehaviour));
@@ -63,8 +73,13 @@ public class SuperArmorEffect : BaseEffect<SuperArmorEffect.Command>
         MovableEntity.velocity = Vector3.zero;
     }
 
-    public override float GetProgress()
+    protected override void DoStop()
     {
-        return currentArmorHealth / armorHealth;
+        RemoveArmor();
+    }
+
+    public float GetProgress()
+    {
+        return CurrentArmorHealth / armorHealth;
     }
 }

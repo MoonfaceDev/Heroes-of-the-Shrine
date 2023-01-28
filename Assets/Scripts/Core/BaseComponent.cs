@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Base class for every component, extending <see cref="MonoBehaviour"/> with more features
+/// </summary>
 public class BaseComponent : MonoBehaviour
 {
     private struct EventListener

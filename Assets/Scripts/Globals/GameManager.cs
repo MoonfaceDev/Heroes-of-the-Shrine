@@ -6,7 +6,6 @@ public class GameManager : BaseComponent
     public FadePanel fadePanel;
     public float fadeDelay;
     public float fadeDuration;
-    private static readonly int RespawnParameter = Animator.StringToHash("respawn");
 
     private void Start()
     {

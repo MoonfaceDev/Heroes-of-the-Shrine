@@ -14,11 +14,10 @@ public class ArcBehaviour : BaseMovementBehaviour<ArcBehaviour.Command>
             this.speedMultiplier = speedMultiplier;
         }
     }
-    
-    public bool Active { get; private set; }
 
-    public override bool Playing => Active;
+    public override bool Playing => active;
 
+    private bool active;
     private WalkBehaviour walkBehaviour;
     private float currentSpeedMultiplier;
     private string circleListener;
@@ -36,7 +35,7 @@ public class ArcBehaviour : BaseMovementBehaviour<ArcBehaviour.Command>
 
     protected override void DoPlay(Command command)
     {
-        Active = true;
+        active = true;
 
         currentSpeedMultiplier = command.speedMultiplier;
         walkBehaviour.speed *= command.speedMultiplier;
@@ -67,7 +66,7 @@ public class ArcBehaviour : BaseMovementBehaviour<ArcBehaviour.Command>
 
     protected override void DoStop()
     {
-        Active = false;
+        active = false;
         Unregister(circleListener);
         walkBehaviour.speed /= currentSpeedMultiplier;
         walkBehaviour.Stop();

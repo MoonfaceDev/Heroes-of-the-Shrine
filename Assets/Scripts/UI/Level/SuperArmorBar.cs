@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Scrollbar))]
 public class SuperArmorBar : BaseComponent
 {
-    public SuperArmorEffect superArmorEffect;
+    [FormerlySerializedAs("superArmorEffect")] public SuperArmor superArmor;
 
     private Scrollbar scrollbar;
 
@@ -17,7 +18,7 @@ public class SuperArmorBar : BaseComponent
     {
         base.Update();
         
-        if (!superArmorEffect)
+        if (!superArmor)
         {
             Destroy(gameObject);
         }
@@ -27,8 +28,8 @@ public class SuperArmorBar : BaseComponent
 
     private float GetValue()
     {
-        return superArmorEffect.GetProgress() != 0
-            ? superArmorEffect.GetProgress()
-            : (Time.time - superArmorEffect.armorCooldownStart) / superArmorEffect.armorCooldown;
+        return superArmor.GetProgress() != 0
+            ? superArmor.GetProgress()
+            : (Time.time - superArmor.armorCooldownStart) / superArmor.armorCooldown;
     }
 }

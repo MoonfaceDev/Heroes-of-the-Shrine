@@ -1,3 +1,8 @@
+using UnityEngine;
+
+/// <summary>
+/// Base non-generic interface for an effect
+/// </summary>
 public interface IEffect : IPlayableBehaviour
 {
     /// <returns>Progress of the effect from 0 to 1. Can be used by UI elements to display the progress</returns>
@@ -5,9 +10,10 @@ public interface IEffect : IPlayableBehaviour
 }
 
 /// <summary>
-/// Base class for effects that character can receive
+/// Base class for effects that character can receive by getting hit
 /// </summary>
 /// <typeparam name="T">Type of play command</typeparam>
+[RequireComponent(typeof(HittableBehaviour))]
 public abstract class BaseEffect<T> : PlayableBehaviour<T>, IEffect
 {
     /// <value>
@@ -25,8 +31,13 @@ public abstract class BaseEffect<T> : PlayableBehaviour<T>, IEffect
 
     private bool active;
 
+    public override bool CanPlay(T command)
+    {
+        return base.CanPlay(command) && GetComponent<HittableBehaviour>().CanGetHit();
+    }
+
     public override bool Playing => Active;
     
-    /// <returns>Progress of the effect (0-1)</returns>
+    /// <returns>Progress of the effect from 0 to 1. Can be used by UI elements to display the progress</returns>
     public abstract float GetProgress();
 }

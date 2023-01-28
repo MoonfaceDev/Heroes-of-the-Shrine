@@ -147,8 +147,19 @@ public abstract class BaseAttack : PlayableBehaviour<BaseAttack.Command>
         attackFlowCoroutine = StartCoroutine(AttackFlowCoroutine());
     }
 
+    /// <summary>
+    /// Anticipation phase coroutine
+    /// </summary>
     protected abstract IEnumerator AnticipationPhase();
+    
+    /// <summary>
+    /// Active phase coroutine
+    /// </summary>
     protected abstract IEnumerator ActivePhase();
+    
+    /// <summary>
+    /// Recovery phase coroutine
+    /// </summary>
     protected abstract IEnumerator RecoveryPhase();
 
     private IEnumerator AttackFlowCoroutine()

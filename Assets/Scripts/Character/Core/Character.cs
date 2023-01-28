@@ -9,9 +9,24 @@ using UnityEngine;
 [RequireComponent(typeof(MovableEntity))]
 public class Character : BaseComponent
 {
+    /// <value>
+    /// Physical attributes
+    /// </value>
     public PhysicalAttributes physicalAttributes;
+    
+    /// <value>
+    /// Animator of the figure (related <see cref="SpriteRenderer"/>)
+    /// </value>
     public Animator animator;
+    
+    /// <value>
+    /// Attached <see cref="MovableEntity"/>
+    /// </value>
     [HideInInspector] public MovableEntity movableEntity;
+    
+    /// <value>
+    /// Attached <see cref="AttackManager"/>, possibly null
+    /// </value>
     [HideInInspector] public AttackManager attackManager;
 
     private void Awake()

@@ -37,7 +37,7 @@ public class SlideBehaviour : BaseMovementBehaviour<SlideBehaviour.Command>
         return base.CanPlay(command)
                && !IsPlaying<JumpBehaviour>() && !IsPlaying<SlideBehaviour>() && !IsPlaying<DodgeBehaviour>()
                && command.direction != 0
-               && AttackManager.CanPlayMove(true);
+               && !(AttackManager && !AttackManager.CanPlayMove(true));
     }
 
     protected override void DoPlay(Command command)

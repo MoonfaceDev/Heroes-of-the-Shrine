@@ -6,19 +6,19 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-/*
- * use [SerializeReference,SerializeInterface] on filed definition to use the drawer, like this:
- * [SerializeReference,SerializeInterface] private ICommand command;
- * property drawer will automatically find all types that implement your interface
- * and will provide UI dropdown, where you can select concrete type that you want to use.
- */
+/// <summary>
+/// use <c>[SerializeReference,SerializeInterface]</c> on filed definition to use the drawer, like this:
+/// <c>[SerializeReference,SerializeInterface] private ICommand command;</c>
+/// property drawer will automatically find all types that implement your interface
+/// and will provide UI dropdown, where you can select concrete type that you want to use.
+/// </summary>
 [CustomPropertyDrawer(typeof(SerializeInterface), true)]
 public class InterfaceWithSerializableContentDrawer : PropertyDrawer
 {
-    /**
-         * extracts object from the property.
-         * don't ask how this works, I've nicked it from some forum post
-         */
+    /// <summary>
+    /// extracts object from the property.
+    /// don't ask how this works, I've nicked it from some forum post
+    /// </summary>
     private static object GetTargetObjectOfProperty(SerializedProperty prop)
     {
         if (prop == null) return null;
@@ -152,7 +152,7 @@ public class InterfaceWithSerializableContentDrawer : PropertyDrawer
         EditorGUI.PropertyField(position, property, GUIContent.none, true);
     }
 
-    private object CreateInstance(SerializedProperty property, int typeIndex, Type[] types)
+    private static object CreateInstance(SerializedProperty property, int typeIndex, IReadOnlyList<Type> types)
     {
         var target = Activator.CreateInstance(types[typeIndex]);
         property.managedReferenceValue = target;

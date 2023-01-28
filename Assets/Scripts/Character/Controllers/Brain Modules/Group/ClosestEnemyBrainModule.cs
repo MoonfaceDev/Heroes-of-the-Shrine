@@ -15,7 +15,7 @@ public class ClosestEnemyBrainModule : BrainModule
 
         var enemies = EntityManager.Instance.GetEntities(Tag.Enemy);
 
-        var closestEnemy = enemies.Aggregate(enemies[0], (prev, next) =>
+        var closestEnemy = enemies.Aggregate((prev, next) =>
         {
             if (!prev) return next;
             if (!next || next == MovableEntity)

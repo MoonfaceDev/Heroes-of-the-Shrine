@@ -1,14 +1,14 @@
 /// <summary>
-/// <see cref="HittableHitbox"/> that cannot receive knockback or stun, and proxies hits to <see cref="superArmorEffect"/>
+/// <see cref="HittableHitbox"/> that cannot receive knockback or stun, and proxies hits to <see cref="superArmor"/>
 /// </summary>
 public class SuperArmorHittableHitbox : HittableHitbox
 {
-    private SuperArmorEffect superArmorEffect;
+    private SuperArmor superArmor;
 
     protected override void Awake()
     {
         base.Awake();
-        superArmorEffect = hittableBehaviour.GetComponent<SuperArmorEffect>();
+        superArmor = Character.GetComponent<SuperArmor>();
     }
 
     public override void Hit(float damage)
@@ -18,7 +18,7 @@ public class SuperArmorHittableHitbox : HittableHitbox
             return;
         }
         Blink();
-        superArmorEffect.HitArmor(damage);
+        superArmor.HitArmor(damage);
     }
 
     public override void Knockback(float power, float angleDegrees, float stunTime)

@@ -32,11 +32,6 @@ public class ElectrifiedEffect : BaseEffect<ElectrifiedEffect.Command>
         walkBehaviour = GetComponent<WalkBehaviour>();
     }
 
-    public override bool CanPlay(Command command)
-    {
-        return base.CanPlay(command) && GetComponent<HittableBehaviour>().CanGetHit();
-    }
-
     protected override void DoPlay(Command command)
     {
         StopBehaviours(typeof(RunBehaviour), typeof(SlideBehaviour), typeof(DodgeBehaviour), typeof(ElectrifiedEffect));

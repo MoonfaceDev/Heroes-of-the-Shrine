@@ -18,7 +18,7 @@ public class PossessedEffect : BaseEffect<PossessedEffect.Command>
 
     public override bool CanPlay(Command command)
     {
-        return base.CanPlay(command) && !IsPlaying<PossessedEffect>() && GetComponent<HittableBehaviour>().CanGetHit();
+        return base.CanPlay(command) && !IsPlaying<PossessedEffect>();
     }
 
     protected override void DoPlay(Command command)

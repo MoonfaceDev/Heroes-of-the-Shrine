@@ -34,11 +34,11 @@ public abstract class BaseHitDetector
     /// <param name="hittableTags">Tags of object that can get hit</param>
     public void StartDetector(Action<HittableHitbox> hitCallable, Tags hittableTags)
     {
-        DoStartDetector((hittable) =>
+        DoStartDetector(hittable =>
         {
-            if (!IsHittable(hittable, hittableTags)) return;
+            if (!(IsHittable(hittable, hittableTags) && hittable.CanGetHit())) return;
 
-            if (hitParticles && ShouldPlayParticles(hittable))
+            if (hitParticles)
             {
                 var point = hittable.Hitbox.GetIntersectionCenter(hitbox);
                 hitParticles.Play(point, hittable);
@@ -59,11 +59,6 @@ public abstract class BaseHitDetector
     /// </summary>
     /// <param name="hitCallable">Function to be called on detected hit</param>
     protected abstract void DoStartDetector(Action<HittableHitbox> hitCallable);
-
-    private static bool ShouldPlayParticles(IHittable hittable)
-    {
-        return hittable.CanGetHit();
-    }
 
     /// <summary>
     /// Abstract method that stops detecting hits. Implementations should stop anything that <see cref="DoStartDetector"/> started.
