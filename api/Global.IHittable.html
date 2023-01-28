@@ -153,7 +153,8 @@
   
   <a id="Global_IHittable_Hit_" data-uid="Global.IHittable.Hit*"></a>
   <h4 id="Global_IHittable_Hit_System_Single_" data-uid="Global.IHittable.Hit(System.Single)">Hit(Single)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Deals damage</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -172,19 +173,21 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
         <td><span class="parametername">damage</span></td>
-        <td></td>
+        <td><p>Amount of damage, including the attacker&apos;s bonuses</p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
   <a id="Global_IHittable_Knockback_" data-uid="Global.IHittable.Knockback*"></a>
-  <h4 id="Global_IHittable_Knockback_System_Single_System_Single_System_Single_System_Single_" data-uid="Global.IHittable.Knockback(System.Single,System.Single,System.Single,System.Single)">Knockback(Single, Single, Single, Single)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Global_IHittable_Knockback_System_Single_System_Single_System_Single_" data-uid="Global.IHittable.Knockback(System.Single,System.Single,System.Single)">Knockback(Single, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Apply knockback</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Knockback(float damage, float power, float angleDegrees, float stunTime = 0F)</code></pre>
+    <pre><code class="lang-csharp hljs">void Knockback(float power, float angleDegrees, float stunTime = 0F)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -198,35 +201,34 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">damage</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
         <td><span class="parametername">power</span></td>
-        <td></td>
+        <td><p>Knockback power, affects launch speed</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
         <td><span class="parametername">angleDegrees</span></td>
-        <td></td>
+        <td><p>Angle in which hittable is launched, in degrees</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
         <td><span class="parametername">stunTime</span></td>
-        <td></td>
+        <td><p>Duration of stun, used for characters resistant to knockback</p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
   <a id="Global_IHittable_Stun_" data-uid="Global.IHittable.Stun*"></a>
-  <h4 id="Global_IHittable_Stun_System_Single_System_Single_" data-uid="Global.IHittable.Stun(System.Single,System.Single)">Stun(Single, Single)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Global_IHittable_Stun_System_Single_" data-uid="Global.IHittable.Stun(System.Single)">Stun(Single)</h4>
+  <div class="markdown level1 summary"><p>Apply stun</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Stun(float damage, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">void Stun(float time)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -240,13 +242,9 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">damage</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
         <td><span class="parametername">time</span></td>
-        <td></td>
+        <td><p>Duration of stun</p>
+</td>
       </tr>
     </tbody>
   </table>

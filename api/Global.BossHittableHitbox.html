@@ -83,7 +83,8 @@
   
   <h1 id="Global_BossHittableHitbox" data-uid="Global.BossHittableHitbox" class="text-break">Class BossHittableHitbox
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p><span class="xref">HittableHitbox</span> that converts knockback to stun</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -132,7 +133,7 @@
       <a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_Hit_System_Single_">HittableHitbox.Hit(Single)</a>
     </div>
     <div>
-      <a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_Stun_System_Single_System_Single_">HittableHitbox.Stun(Single, Single)</a>
+      <a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_Stun_System_Single_">HittableHitbox.Stun(Single)</a>
     </div>
     <div>
       <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Register_Action_">BaseComponent.Register(Action)</a>
@@ -167,12 +168,12 @@
   
   
   <a id="Global_BossHittableHitbox_Knockback_" data-uid="Global.BossHittableHitbox.Knockback*"></a>
-  <h4 id="Global_BossHittableHitbox_Knockback_System_Single_System_Single_System_Single_System_Single_" data-uid="Global.BossHittableHitbox.Knockback(System.Single,System.Single,System.Single,System.Single)">Knockback(Single, Single, Single, Single)</h4>
+  <h4 id="Global_BossHittableHitbox_Knockback_System_Single_System_Single_System_Single_" data-uid="Global.BossHittableHitbox.Knockback(System.Single,System.Single,System.Single)">Knockback(Single, Single, Single)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Knockback(float damage, float power, float angleDegrees, float stunTime)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Knockback(float power, float angleDegrees, float stunTime)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -184,11 +185,6 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">damage</span></td>
-        <td></td>
-      </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
         <td><span class="parametername">power</span></td>
@@ -207,7 +203,7 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_Knockback_System_Single_System_Single_System_Single_System_Single_">HittableHitbox.Knockback(Single, Single, Single, Single)</a></div>
+  <div><a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_Knockback_System_Single_System_Single_System_Single_">HittableHitbox.Knockback(Single, Single, Single)</a></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Global.IHittable.html">IHittable</a>

@@ -83,7 +83,8 @@
   
   <h1 id="Global_HittableBehaviour" data-uid="Global.HittableBehaviour" class="text-break">Class HittableBehaviour
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Behaviours responsible for processing hits from attacks</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -175,7 +176,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td></td>
+        <td><p>Multiplier for any damage that character is getting</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -248,12 +250,12 @@
   
   
   <a id="Global_HittableBehaviour_Knockback_" data-uid="Global.HittableBehaviour.Knockback*"></a>
-  <h4 id="Global_HittableBehaviour_Knockback_System_Single_System_Single_System_Single_System_Single_" data-uid="Global.HittableBehaviour.Knockback(System.Single,System.Single,System.Single,System.Single)">Knockback(Single, Single, Single, Single)</h4>
+  <h4 id="Global_HittableBehaviour_Knockback_System_Single_System_Single_System_Single_" data-uid="Global.HittableBehaviour.Knockback(System.Single,System.Single,System.Single)">Knockback(Single, Single, Single)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Knockback(float damage, float power, float angleDegrees, float stunTime)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Knockback(float power, float angleDegrees, float stunTime)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -265,11 +267,6 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">damage</span></td>
-        <td></td>
-      </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
         <td><span class="parametername">power</span></td>
@@ -290,12 +287,12 @@
   
   
   <a id="Global_HittableBehaviour_Stun_" data-uid="Global.HittableBehaviour.Stun*"></a>
-  <h4 id="Global_HittableBehaviour_Stun_System_Single_System_Single_" data-uid="Global.HittableBehaviour.Stun(System.Single,System.Single)">Stun(Single, Single)</h4>
+  <h4 id="Global_HittableBehaviour_Stun_System_Single_" data-uid="Global.HittableBehaviour.Stun(System.Single)">Stun(Single)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Stun(float damage, float time)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Stun(float time)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -307,11 +304,6 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">damage</span></td>
-        <td></td>
-      </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
         <td><span class="parametername">time</span></td>
@@ -328,7 +320,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event HitCallback OnHit</code></pre>
+    <pre><code class="lang-csharp hljs">public event Action&lt;float&gt; OnHit</code></pre>
   </div>
   <h5 class="eventType">Event Type</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -340,56 +332,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.HitCallback.html">HitCallback</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_HittableBehaviour_OnKnockback" data-uid="Global.HittableBehaviour.OnKnockback">OnKnockback</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event KnockbackCallback OnKnockback</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.KnockbackCallback.html">KnockbackCallback</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_HittableBehaviour_OnStun" data-uid="Global.HittableBehaviour.OnStun">OnStun</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event StunCallback OnStun</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.StunCallback.html">StunCallback</a></td>
-        <td></td>
+        <td><span class="xref">Action</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a>&gt;</td>
+        <td><p>Invoked when <span class="xref">HittableBehaviour.Hit(System.Single)</span> is called</p>
+</td>
       </tr>
     </tbody>
   </table>
