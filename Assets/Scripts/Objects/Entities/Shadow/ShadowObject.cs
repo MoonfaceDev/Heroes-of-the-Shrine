@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [Serializable]
 public class AnimationDefinition
@@ -12,16 +11,15 @@ public class AnimationDefinition
 [ExecuteInEditMode]
 public class ShadowObject : BaseComponent
 {
-    [FormerlySerializedAs("movableObject")] public MovableEntity movableEntity;
+    public MovableEntity movableEntity;
     public Vector3 shadowScale;
     public Animator figure;
     public AnimationDefinition[] animationDefinitions;
 
-    // Update is called once per frame
     protected override void Update()
     {
         base.Update();
-        
+
         var scale = 2 / (1 + Mathf.Exp(0.2f * movableEntity.WorldPosition.y));
         foreach (var definition in animationDefinitions)
         {

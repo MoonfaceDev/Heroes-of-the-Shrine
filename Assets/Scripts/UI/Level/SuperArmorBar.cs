@@ -1,11 +1,10 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Scrollbar))]
 public class SuperArmorBar : BaseComponent
 {
-    [FormerlySerializedAs("superArmorEffect")] public SuperArmor superArmor;
+    public SuperArmor superArmor;
 
     private Scrollbar scrollbar;
 
@@ -17,7 +16,7 @@ public class SuperArmorBar : BaseComponent
     protected override void Update()
     {
         base.Update();
-        
+
         if (!superArmor)
         {
             Destroy(gameObject);

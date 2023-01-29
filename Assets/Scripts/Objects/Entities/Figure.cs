@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
 [ExecuteInEditMode]
 [RequireComponent(typeof(Renderer))]
 public class Figure : BaseComponent
 {
-    [FormerlySerializedAs("movableObject")] public MovableEntity movableEntity;
+    public MovableEntity movableEntity;
 
     private new Renderer renderer;
 

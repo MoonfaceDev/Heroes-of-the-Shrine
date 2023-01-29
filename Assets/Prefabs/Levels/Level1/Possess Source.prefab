@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90306126b25f448f98b2587e24ff902e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movableObject: {fileID: 5916882827402875226}
+  movableEntity: {fileID: 5916882827402875226}
 --- !u!1 &4935747359819157664
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,9 +180,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
+  tags:
+    tags: 
   position: {x: 0, y: 0, z: 0}
+  rotation:
+    value: 1
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &6844794933150260862
@@ -209,8 +212,10 @@ MonoBehaviour:
       data:
         hitbox: {fileID: 1815740459291873946}
         hitParticles: {fileID: 0}
-        includedHittableTags: []
-        excludedHittableTags: []
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
 --- !u!1 &8436393641562852876
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,9 +262,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5916882827402875226}
+  tags:
+    tags: 
   position: {x: 0, y: 0.2, z: 0}
+  rotation:
+    value: 1
   scale: {x: 1, y: 1, z: 1}
-  figureObject: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &1815740459291873946
