@@ -83,7 +83,8 @@
   
   <h1 id="Global_AudioManager" data-uid="Global.AudioManager" class="text-break">Class AudioManager
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Singleton responsible for playing background music and SFX</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -144,7 +145,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Global.AudioManager.html">AudioManager</a></td>
-        <td></td>
+        <td><p>Instance of the singleton</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -169,7 +171,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td></td>
+        <td><p>Volume of background music (0-1)</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -194,7 +197,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td></td>
+        <td><p>Volume of SFX (0-1)</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -204,7 +208,9 @@
   
   <a id="Global_AudioManager_Play_" data-uid="Global.AudioManager.Play*"></a>
   <h4 id="Global_AudioManager_Play_AudioClip_" data-uid="Global.AudioManager.Play(AudioClip)">Play(AudioClip)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Plays a sound effect. Not affecting other sound effects or background music, meaning two clips can be played
+simultaneously</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -223,7 +229,8 @@
       <tr>
         <td><span class="xref">AudioClip</span></td>
         <td><span class="parametername">clip</span></td>
-        <td></td>
+        <td><p>Audio asset to play</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -231,7 +238,8 @@
   
   <a id="Global_AudioManager_PlayBackground_" data-uid="Global.AudioManager.PlayBackground*"></a>
   <h4 id="Global_AudioManager_PlayBackground_AudioClip_" data-uid="Global.AudioManager.PlayBackground(AudioClip)">PlayBackground(AudioClip)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Plays a new background music. If a previous clip was played, it will be replaced</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -250,7 +258,8 @@
       <tr>
         <td><span class="xref">AudioClip</span></td>
         <td><span class="parametername">clip</span></td>
-        <td></td>
+        <td><p>Audio asset to play</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -258,7 +267,8 @@
   
   <a id="Global_AudioManager_StopBackground_" data-uid="Global.AudioManager.StopBackground*"></a>
   <h4 id="Global_AudioManager_StopBackground" data-uid="Global.AudioManager.StopBackground">StopBackground()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Stops background music. If it wasn&apos;t playing, then nothing happens</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">

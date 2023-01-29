@@ -208,7 +208,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.AudioManager.html",
-          "hash": "O8CmZK2aKfihnCrPlHLOu2ESLjo1/iEVlQhDJumNZ50="
+          "hash": "Egrjq6cBrrlXis6AFQsVCcmY1hm1icXDROFaFgugq7A="
         }
       },
       "is_incremental": false,
@@ -528,11 +528,35 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.CutsceneAction.MoveDefinition.Direction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.CutsceneAction.MoveDefinition.Direction.html",
+          "hash": "u5jGX+DAM617+UEn1DW/2XaeWBusvgBAUDTAvqpZkhk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.CutsceneAction.MoveDefinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.CutsceneAction.MoveDefinition.html",
+          "hash": "ghZ6kd2UJZxPRQYUS7aHaNZ5eLP1AzzrEL97Cehf0Ts="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.CutsceneAction.yml",
       "output": {
         ".html": {
           "relative_path": "api/Global.CutsceneAction.html",
-          "hash": "aqAUL2ekjbpIwrI/KioXlO/tM+yGAhxu0NaVRpmEd5E="
+          "hash": "OlBZAcSywXdyRAJ3nb4oKL5knBBgYzuUwojb2fRW53A="
         }
       },
       "is_incremental": false,
@@ -780,11 +804,35 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.EncounterAction.EnemySpawnDefinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.EncounterAction.EnemySpawnDefinition.html",
+          "hash": "ctLVKmM91aUb34bXJsjVuM1pk0u5KZz2Y0OhhT/8RY8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.EncounterAction.WaveDefinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.EncounterAction.WaveDefinition.html",
+          "hash": "aUqXGMdus0Mm3dKlIhad5a5Z7WB+Cv/rFUEpsYRwlcQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.EncounterAction.yml",
       "output": {
         ".html": {
           "relative_path": "api/Global.EncounterAction.html",
-          "hash": "TTyFXUT2fWxYr++GEq1HzE5PnO9uxUfY4Kz1ZlvIEig="
+          "hash": "VInUnPZoAESOtehsKHuJ84sj0/oBOsmKUUoWThDd38Q="
         }
       },
       "is_incremental": false,
@@ -809,18 +857,6 @@
         ".html": {
           "relative_path": "api/Global.EnemyCountBrainModule.html",
           "hash": "6a3j+PoY8ZMI+YIlHLQVsX81mc2o/COWYfjzMOtiVKU="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.EnemySpawnDefinition.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.EnemySpawnDefinition.html",
-          "hash": "z/EK6OQpo+juUQfHBovAFGXpVR1giVt735eUxi4t+Sw="
         }
       },
       "is_incremental": false,
@@ -904,7 +940,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.EventManager.html",
-          "hash": "gNgu9S0gQjQbXcCbqTGDBFyLzHlfbMzfg9eRRIcKf8k="
+          "hash": "RDo66i1FL6kWt/jBNxSvBTXJ7juiy1oz2itU1X7B62U="
         }
       },
       "is_incremental": false,
@@ -1072,7 +1108,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.GameManager.html",
-          "hash": "aBOtlTG8Sv6ya+3Z5NoSqcdJ/SICvMglc+pHK3iQEek="
+          "hash": "PpCbOOFXuilZ03Bj2IH3cZW8fDugzvqCKIHLC4kyVU0="
         }
       },
       "is_incremental": false,
@@ -1384,7 +1420,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.MenuManager.html",
-          "hash": "CGV+E1TD+jsFxNSCKYPbSvuV9lFzkQx2cwUhXPqx53g="
+          "hash": "qKtt0sfiwyg2eAuYksyCmBhDBxPlJ1ov8+pwpkQFGz8="
         }
       },
       "is_incremental": false,
@@ -1445,30 +1481,6 @@
         ".html": {
           "relative_path": "api/Global.MoveCamera.html",
           "hash": "2XSm9KnL5x5tIimhWygnIYT0x306Zi74UsRfHuL9r14="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.MoveDefinition.Direction.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.MoveDefinition.Direction.html",
-          "hash": "OpnzstQxSSeEM4qwrByo2CWRAbiz4GGHn4iKkouX/6Q="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.MoveDefinition.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.MoveDefinition.html",
-          "hash": "LxbHViXfI/2+dIlZPlIBla9dr+PB0R7VeyR0qJG6QaU="
         }
       },
       "is_incremental": false,
@@ -1540,7 +1552,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.PauseManager.html",
-          "hash": "M4YUv1T6vQZqOYJ2bRsbYOYMsmAFn0bDHVsFBy1ESJA="
+          "hash": "5Rr/I1xNPDOiqgh2+IoO6Y47krw92qwVFTAtG/HLFy8="
         }
       },
       "is_incremental": false,
@@ -1552,7 +1564,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.PeriodicAbsoluteHitDetector.html",
-          "hash": "ccXmjCj8VIyDhcjECg8HqD99ikKr1U785wKfS8j38WM="
+          "hash": "Ucn472KGMqBRkgH/SxR9D0DvDK5G2pQwOj7y5jyxXeg="
         }
       },
       "is_incremental": false,
@@ -1564,7 +1576,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.PeriodicRelativeHitDetector.html",
-          "hash": "WHSdHLxUPc70t17QnWAabdlZcM1DsHKvY3b+6aFKmU0="
+          "hash": "bzJhdcuOYbVUvPBdA/kGK+UGmqchZYxOw7oqggOatZM="
         }
       },
       "is_incremental": false,
@@ -1852,7 +1864,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.Rotation.html",
-          "hash": "mXQ3Ci0IdpzL8FZmabB96Jr19cMGOnMqnG7PlDK/ajY="
+          "hash": "cYHJjJTOeWsEq4Z6rKOPSt5gu6xZg/JhqYXtKbUxvP0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.RotationDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.RotationDrawer.html",
+          "hash": "BPRElLdb8KeSZTM/EuwgDb22KDSosD00DE9yxr6TQVU="
         }
       },
       "is_incremental": false,
@@ -2352,23 +2376,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.WaveDefinition.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.WaveDefinition.html",
-          "hash": "NonmPp0QyiEvCxMYByLQsU6KRcWGCZuDgyGzBhUZEQo="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Global.yml",
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "rwiyARjWgmJ1ktFrGCoV/09V/lqkX7i6369/MOwXH6k="
+          "hash": "EMEUgTGhc1MwcyLkK9N+UuJ9JLj6ljmAGUqoiTaH91c="
         }
       },
       "is_incremental": false,
@@ -2380,7 +2392,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "mKucL/cHo3DpDAWlQAx3l00GGaHpav/UBqd9TciH3DI="
+          "hash": "1DaGp3H/XGfNRCUWo4P3u9IVRN4FjocjTSI+GtTmKu4="
         }
       },
       "is_incremental": false,
@@ -2591,7 +2603,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 196,
+          "total_file_count": 197,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

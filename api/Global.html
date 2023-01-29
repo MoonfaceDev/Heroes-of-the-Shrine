@@ -126,7 +126,8 @@ Must be called manually.</p>
       <h4><a class="xref" href="Global.AttackPattern.html">AttackPattern</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.AudioManager.html">AudioManager</a></h4>
-      <section></section>
+      <section><p>Singleton responsible for playing background music and SFX</p>
+</section>
       <h4><a class="xref" href="Global.AutoWalkBehaviour.html">AutoWalkBehaviour</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.AutoWalkBehaviour.Command.html">AutoWalkBehaviour.Command</a></h4>
@@ -194,6 +195,9 @@ Attach only the required brain modules for your state machine logic.</p>
       <section><p>State machine parameter telling if this is the closest enemy to the player</p>
 </section>
       <h4><a class="xref" href="Global.CutsceneAction.html">CutsceneAction</a></h4>
+      <section><p>Moves entities to predefined points and then plays a cutscene timeline</p>
+</section>
+      <h4><a class="xref" href="Global.CutsceneAction.MoveDefinition.html">CutsceneAction.MoveDefinition</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.DamageHitExecutor.html">DamageHitExecutor</a></h4>
       <section><p>Hit executor that deals damage to an hittable</p>
@@ -242,14 +246,16 @@ After the periodic part is checking for hits a certain number of times, the expl
 </section>
       <h4><a class="xref" href="Global.EncounterAction.html">EncounterAction</a></h4>
       <section></section>
+      <h4><a class="xref" href="Global.EncounterAction.EnemySpawnDefinition.html">EncounterAction.EnemySpawnDefinition</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Global.EncounterAction.WaveDefinition.html">EncounterAction.WaveDefinition</a></h4>
+      <section></section>
       <h4><a class="xref" href="Global.EnemiesAttackingBrainModule.html">EnemiesAttackingBrainModule</a></h4>
       <section><p>State machine parameter telling if any enemy is attacking, including itself</p>
 </section>
       <h4><a class="xref" href="Global.EnemyCountBrainModule.html">EnemyCountBrainModule</a></h4>
       <section><p>State machine parameter telling the number of enemies in the scene, including itself</p>
 </section>
-      <h4><a class="xref" href="Global.EnemySpawnDefinition.html">EnemySpawnDefinition</a></h4>
-      <section></section>
       <h4><a class="xref" href="Global.EnergyBurstAttack.html">EnergyBurstAttack</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.EnragedBrainModule.html">EnragedBrainModule</a></h4>
@@ -265,7 +271,9 @@ After the periodic part is checking for hits a certain number of times, the expl
       <h4><a class="xref" href="Global.EscapePattern.html">EscapePattern</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.EventManager.html">EventManager</a></h4>
-      <section></section>
+      <section><p>Global component that registers events, with a similar API to <span class="xref">BaseComponent</span>.
+Should be used only in classes that don&apos;t inherit from <span class="xref">BaseComponent</span>.</p>
+</section>
       <h4><a class="xref" href="Global.EventWrapper.html">EventWrapper</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.FadePanel.html">FadePanel</a></h4>
@@ -293,7 +301,8 @@ After the periodic part is checking for hits a certain number of times, the expl
       <h4><a class="xref" href="Global.GameEntity.html">GameEntity</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.GameManager.html">GameManager</a></h4>
-      <section></section>
+      <section><p>Class including general level operations</p>
+</section>
       <h4><a class="xref" href="Global.HealthBar.html">HealthBar</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.HealthBrainModule.html">HealthBrainModule</a></h4>
@@ -341,7 +350,8 @@ and will provide UI dropdown, where you can select concrete type that you want t
       <h4><a class="xref" href="Global.MathUtils.html">MathUtils</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.MenuManager.html">MenuManager</a></h4>
-      <section></section>
+      <section><p>Class responsible of toggling menus on/off, from pressing ESCAPE and from button clicks</p>
+</section>
       <h4><a class="xref" href="Global.MotionAttack.html">MotionAttack</a></h4>
       <section><p>An attack that has a single hit detector, hit executor, and has an anticipation and recovery phases with fixed
 duration. During the active phase, the character moves in the direction it looked at with a reducing speed, until it
@@ -352,8 +362,6 @@ reaches zero.</p>
       <h4><a class="xref" href="Global.MovableEntity.html">MovableEntity</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.MoveCamera.html">MoveCamera</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Global.MoveDefinition.html">MoveDefinition</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.MusicVolumeSlider.html">MusicVolumeSlider</a></h4>
       <section></section>
@@ -366,7 +374,8 @@ reaches zero.</p>
       <h4><a class="xref" href="Global.Pathfind.html">Pathfind</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.PauseManager.html">PauseManager</a></h4>
-      <section></section>
+      <section><p>Singleton used to pause the game</p>
+</section>
       <h4><a class="xref" href="Global.PeriodicAbsoluteHitDetector.html">PeriodicAbsoluteHitDetector</a></h4>
       <section><p>An hit detector that detects hits periodically, with a given interval</p>
 </section>
@@ -430,6 +439,8 @@ reaches zero.</p>
       <h4><a class="xref" href="Global.RepositionPattern.html">RepositionPattern</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.Rotation.html">Rotation</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Global.RotationDrawer.html">RotationDrawer</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.RunBehaviour.html">RunBehaviour</a></h4>
       <section></section>
@@ -518,8 +529,6 @@ reaches zero.</p>
       <section></section>
       <h4><a class="xref" href="Global.WaveAnnouncer.html">WaveAnnouncer</a></h4>
       <section></section>
-      <h4><a class="xref" href="Global.WaveDefinition.html">WaveDefinition</a></h4>
-      <section></section>
     <h3 id="interfaces">Interfaces
   </h3>
       <h4><a class="xref" href="Global.IEffect.html">IEffect</a></h4>
@@ -542,13 +551,13 @@ reaches zero.</p>
       <h4><a class="xref" href="Global.Button.html">Button</a></h4>
       <section><p>Button options</p>
 </section>
+      <h4><a class="xref" href="Global.CutsceneAction.MoveDefinition.Direction.html">CutsceneAction.MoveDefinition.Direction</a></h4>
+      <section></section>
       <h4><a class="xref" href="Global.Direction.html">Direction</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.MotionSettings.html">MotionSettings</a></h4>
       <section><p>Motion settings when playing attacks</p>
 </section>
-      <h4><a class="xref" href="Global.MoveDefinition.Direction.html">MoveDefinition.Direction</a></h4>
-      <section></section>
       <h4><a class="xref" href="Global.Tag.html">Tag</a></h4>
       <section></section>
     <h3 id="delegates">Delegates

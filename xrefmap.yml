@@ -1890,6 +1890,54 @@ references:
   isSpec: "True"
   fullName: CutsceneAction.Invoke
   nameWithType: CutsceneAction.Invoke
+- uid: Global.CutsceneAction.MoveDefinition
+  name: CutsceneAction.MoveDefinition
+  href: api/Global.CutsceneAction.MoveDefinition.html
+  commentId: T:Global.CutsceneAction.MoveDefinition
+  fullName: CutsceneAction.MoveDefinition
+  nameWithType: CutsceneAction.MoveDefinition
+- uid: Global.CutsceneAction.MoveDefinition.Direction
+  name: CutsceneAction.MoveDefinition.Direction
+  href: api/Global.CutsceneAction.MoveDefinition.Direction.html
+  commentId: T:Global.CutsceneAction.MoveDefinition.Direction
+  fullName: CutsceneAction.MoveDefinition.Direction
+  nameWithType: CutsceneAction.MoveDefinition.Direction
+- uid: Global.CutsceneAction.MoveDefinition.Direction.Left
+  name: Left
+  href: api/Global.CutsceneAction.MoveDefinition.Direction.html#Global_CutsceneAction_MoveDefinition_Direction_Left
+  commentId: F:Global.CutsceneAction.MoveDefinition.Direction.Left
+  fullName: CutsceneAction.MoveDefinition.Direction.Left
+  nameWithType: CutsceneAction.MoveDefinition.Direction.Left
+- uid: Global.CutsceneAction.MoveDefinition.Direction.Right
+  name: Right
+  href: api/Global.CutsceneAction.MoveDefinition.Direction.html#Global_CutsceneAction_MoveDefinition_Direction_Right
+  commentId: F:Global.CutsceneAction.MoveDefinition.Direction.Right
+  fullName: CutsceneAction.MoveDefinition.Direction.Right
+  nameWithType: CutsceneAction.MoveDefinition.Direction.Right
+- uid: Global.CutsceneAction.MoveDefinition.lookDirection
+  name: lookDirection
+  href: api/Global.CutsceneAction.MoveDefinition.html#Global_CutsceneAction_MoveDefinition_lookDirection
+  commentId: F:Global.CutsceneAction.MoveDefinition.lookDirection
+  fullName: CutsceneAction.MoveDefinition.lookDirection
+  nameWithType: CutsceneAction.MoveDefinition.lookDirection
+- uid: Global.CutsceneAction.MoveDefinition.position
+  name: position
+  href: api/Global.CutsceneAction.MoveDefinition.html#Global_CutsceneAction_MoveDefinition_position
+  commentId: F:Global.CutsceneAction.MoveDefinition.position
+  fullName: CutsceneAction.MoveDefinition.position
+  nameWithType: CutsceneAction.MoveDefinition.position
+- uid: Global.CutsceneAction.MoveDefinition.speedMultiplier
+  name: speedMultiplier
+  href: api/Global.CutsceneAction.MoveDefinition.html#Global_CutsceneAction_MoveDefinition_speedMultiplier
+  commentId: F:Global.CutsceneAction.MoveDefinition.speedMultiplier
+  fullName: CutsceneAction.MoveDefinition.speedMultiplier
+  nameWithType: CutsceneAction.MoveDefinition.speedMultiplier
+- uid: Global.CutsceneAction.MoveDefinition.target
+  name: target
+  href: api/Global.CutsceneAction.MoveDefinition.html#Global_CutsceneAction_MoveDefinition_target
+  commentId: F:Global.CutsceneAction.MoveDefinition.target
+  fullName: CutsceneAction.MoveDefinition.target
+  nameWithType: CutsceneAction.MoveDefinition.target
 - uid: Global.CutsceneAction.moveDefinitions
   name: moveDefinitions
   href: api/Global.CutsceneAction.html#Global_CutsceneAction_moveDefinitions
@@ -2652,6 +2700,36 @@ references:
   commentId: F:Global.EncounterAction.cameraBorder
   fullName: EncounterAction.cameraBorder
   nameWithType: EncounterAction.cameraBorder
+- uid: Global.EncounterAction.EnemySpawnDefinition
+  name: EncounterAction.EnemySpawnDefinition
+  href: api/Global.EncounterAction.EnemySpawnDefinition.html
+  commentId: T:Global.EncounterAction.EnemySpawnDefinition
+  fullName: EncounterAction.EnemySpawnDefinition
+  nameWithType: EncounterAction.EnemySpawnDefinition
+- uid: Global.EncounterAction.EnemySpawnDefinition.direction
+  name: direction
+  href: api/Global.EncounterAction.EnemySpawnDefinition.html#Global_EncounterAction_EnemySpawnDefinition_direction
+  commentId: F:Global.EncounterAction.EnemySpawnDefinition.direction
+  fullName: EncounterAction.EnemySpawnDefinition.direction
+  nameWithType: EncounterAction.EnemySpawnDefinition.direction
+- uid: Global.EncounterAction.EnemySpawnDefinition.partOfWave
+  name: partOfWave
+  href: api/Global.EncounterAction.EnemySpawnDefinition.html#Global_EncounterAction_EnemySpawnDefinition_partOfWave
+  commentId: F:Global.EncounterAction.EnemySpawnDefinition.partOfWave
+  fullName: EncounterAction.EnemySpawnDefinition.partOfWave
+  nameWithType: EncounterAction.EnemySpawnDefinition.partOfWave
+- uid: Global.EncounterAction.EnemySpawnDefinition.prefab
+  name: prefab
+  href: api/Global.EncounterAction.EnemySpawnDefinition.html#Global_EncounterAction_EnemySpawnDefinition_prefab
+  commentId: F:Global.EncounterAction.EnemySpawnDefinition.prefab
+  fullName: EncounterAction.EnemySpawnDefinition.prefab
+  nameWithType: EncounterAction.EnemySpawnDefinition.prefab
+- uid: Global.EncounterAction.EnemySpawnDefinition.z
+  name: z
+  href: api/Global.EncounterAction.EnemySpawnDefinition.html#Global_EncounterAction_EnemySpawnDefinition_z
+  commentId: F:Global.EncounterAction.EnemySpawnDefinition.z
+  fullName: EncounterAction.EnemySpawnDefinition.z
+  nameWithType: EncounterAction.EnemySpawnDefinition.z
 - uid: Global.EncounterAction.firstWavePreSpawnedEnemies
   name: firstWavePreSpawnedEnemies
   href: api/Global.EncounterAction.html#Global_EncounterAction_firstWavePreSpawnedEnemies
@@ -2671,6 +2749,12 @@ references:
   isSpec: "True"
   fullName: EncounterAction.Invoke
   nameWithType: EncounterAction.Invoke
+- uid: Global.EncounterAction.onWaveStart
+  name: onWaveStart
+  href: api/Global.EncounterAction.html#Global_EncounterAction_onWaveStart
+  commentId: F:Global.EncounterAction.onWaveStart
+  fullName: EncounterAction.onWaveStart
+  nameWithType: EncounterAction.onWaveStart
 - uid: Global.EncounterAction.postEncounterEvent
   name: postEncounterEvent
   href: api/Global.EncounterAction.html#Global_EncounterAction_postEncounterEvent
@@ -2702,12 +2786,18 @@ references:
   commentId: F:Global.EncounterAction.timeToAlarm
   fullName: EncounterAction.timeToAlarm
   nameWithType: EncounterAction.timeToAlarm
-- uid: Global.EncounterAction.waveAnnouncerPrefab
-  name: waveAnnouncerPrefab
-  href: api/Global.EncounterAction.html#Global_EncounterAction_waveAnnouncerPrefab
-  commentId: F:Global.EncounterAction.waveAnnouncerPrefab
-  fullName: EncounterAction.waveAnnouncerPrefab
-  nameWithType: EncounterAction.waveAnnouncerPrefab
+- uid: Global.EncounterAction.WaveDefinition
+  name: EncounterAction.WaveDefinition
+  href: api/Global.EncounterAction.WaveDefinition.html
+  commentId: T:Global.EncounterAction.WaveDefinition
+  fullName: EncounterAction.WaveDefinition
+  nameWithType: EncounterAction.WaveDefinition
+- uid: Global.EncounterAction.WaveDefinition.spawnDefinitions
+  name: spawnDefinitions
+  href: api/Global.EncounterAction.WaveDefinition.html#Global_EncounterAction_WaveDefinition_spawnDefinitions
+  commentId: F:Global.EncounterAction.WaveDefinition.spawnDefinitions
+  fullName: EncounterAction.WaveDefinition.spawnDefinitions
+  nameWithType: EncounterAction.WaveDefinition.spawnDefinitions
 - uid: Global.EncounterAction.waveDefinitions
   name: waveDefinitions
   href: api/Global.EncounterAction.html#Global_EncounterAction_waveDefinitions
@@ -2778,36 +2868,6 @@ references:
   isSpec: "True"
   fullName: EnemyCountBrainModule.Update
   nameWithType: EnemyCountBrainModule.Update
-- uid: Global.EnemySpawnDefinition
-  name: EnemySpawnDefinition
-  href: api/Global.EnemySpawnDefinition.html
-  commentId: T:Global.EnemySpawnDefinition
-  fullName: EnemySpawnDefinition
-  nameWithType: EnemySpawnDefinition
-- uid: Global.EnemySpawnDefinition.direction
-  name: direction
-  href: api/Global.EnemySpawnDefinition.html#Global_EnemySpawnDefinition_direction
-  commentId: F:Global.EnemySpawnDefinition.direction
-  fullName: EnemySpawnDefinition.direction
-  nameWithType: EnemySpawnDefinition.direction
-- uid: Global.EnemySpawnDefinition.partOfWave
-  name: partOfWave
-  href: api/Global.EnemySpawnDefinition.html#Global_EnemySpawnDefinition_partOfWave
-  commentId: F:Global.EnemySpawnDefinition.partOfWave
-  fullName: EnemySpawnDefinition.partOfWave
-  nameWithType: EnemySpawnDefinition.partOfWave
-- uid: Global.EnemySpawnDefinition.prefab
-  name: prefab
-  href: api/Global.EnemySpawnDefinition.html#Global_EnemySpawnDefinition_prefab
-  commentId: F:Global.EnemySpawnDefinition.prefab
-  fullName: EnemySpawnDefinition.prefab
-  nameWithType: EnemySpawnDefinition.prefab
-- uid: Global.EnemySpawnDefinition.z
-  name: z
-  href: api/Global.EnemySpawnDefinition.html#Global_EnemySpawnDefinition_z
-  commentId: F:Global.EnemySpawnDefinition.z
-  fullName: EnemySpawnDefinition.z
-  nameWithType: EnemySpawnDefinition.z
 - uid: Global.EnergyBurstAttack
   name: EnergyBurstAttack
   href: api/Global.EnergyBurstAttack.html
@@ -5297,54 +5357,6 @@ references:
   commentId: F:Global.MoveCamera.target
   fullName: MoveCamera.target
   nameWithType: MoveCamera.target
-- uid: Global.MoveDefinition
-  name: MoveDefinition
-  href: api/Global.MoveDefinition.html
-  commentId: T:Global.MoveDefinition
-  fullName: MoveDefinition
-  nameWithType: MoveDefinition
-- uid: Global.MoveDefinition.Direction
-  name: MoveDefinition.Direction
-  href: api/Global.MoveDefinition.Direction.html
-  commentId: T:Global.MoveDefinition.Direction
-  fullName: MoveDefinition.Direction
-  nameWithType: MoveDefinition.Direction
-- uid: Global.MoveDefinition.Direction.Left
-  name: Left
-  href: api/Global.MoveDefinition.Direction.html#Global_MoveDefinition_Direction_Left
-  commentId: F:Global.MoveDefinition.Direction.Left
-  fullName: MoveDefinition.Direction.Left
-  nameWithType: MoveDefinition.Direction.Left
-- uid: Global.MoveDefinition.Direction.Right
-  name: Right
-  href: api/Global.MoveDefinition.Direction.html#Global_MoveDefinition_Direction_Right
-  commentId: F:Global.MoveDefinition.Direction.Right
-  fullName: MoveDefinition.Direction.Right
-  nameWithType: MoveDefinition.Direction.Right
-- uid: Global.MoveDefinition.lookDirection
-  name: lookDirection
-  href: api/Global.MoveDefinition.html#Global_MoveDefinition_lookDirection
-  commentId: F:Global.MoveDefinition.lookDirection
-  fullName: MoveDefinition.lookDirection
-  nameWithType: MoveDefinition.lookDirection
-- uid: Global.MoveDefinition.position
-  name: position
-  href: api/Global.MoveDefinition.html#Global_MoveDefinition_position
-  commentId: F:Global.MoveDefinition.position
-  fullName: MoveDefinition.position
-  nameWithType: MoveDefinition.position
-- uid: Global.MoveDefinition.speedMultiplier
-  name: speedMultiplier
-  href: api/Global.MoveDefinition.html#Global_MoveDefinition_speedMultiplier
-  commentId: F:Global.MoveDefinition.speedMultiplier
-  fullName: MoveDefinition.speedMultiplier
-  nameWithType: MoveDefinition.speedMultiplier
-- uid: Global.MoveDefinition.target
-  name: target
-  href: api/Global.MoveDefinition.html#Global_MoveDefinition_target
-  commentId: F:Global.MoveDefinition.target
-  fullName: MoveDefinition.target
-  nameWithType: MoveDefinition.target
 - uid: Global.MusicVolumeSlider
   name: MusicVolumeSlider
   href: api/Global.MusicVolumeSlider.html
@@ -5578,12 +5590,6 @@ references:
   commentId: F:Global.PeriodicRelativeHitDetector.interval
   fullName: PeriodicRelativeHitDetector.interval
   nameWithType: PeriodicRelativeHitDetector.interval
-- uid: Global.PeriodicRelativeHitDetector.startImmediately
-  name: startImmediately
-  href: api/Global.PeriodicRelativeHitDetector.html#Global_PeriodicRelativeHitDetector_startImmediately
-  commentId: F:Global.PeriodicRelativeHitDetector.startImmediately
-  fullName: PeriodicRelativeHitDetector.startImmediately
-  nameWithType: PeriodicRelativeHitDetector.startImmediately
 - uid: Global.PeriodicRelativeHitDetector.StopDetector
   name: StopDetector()
   href: api/Global.PeriodicRelativeHitDetector.html#Global_PeriodicRelativeHitDetector_StopDetector
@@ -6711,6 +6717,44 @@ references:
   commentId: F:Global.Rotation.Right
   fullName: Rotation.Right
   nameWithType: Rotation.Right
+- uid: Global.Rotation.value
+  name: value
+  href: api/Global.Rotation.html#Global_Rotation_value
+  commentId: F:Global.Rotation.value
+  fullName: Rotation.value
+  nameWithType: Rotation.value
+- uid: Global.RotationDrawer
+  name: RotationDrawer
+  href: api/Global.RotationDrawer.html
+  commentId: T:Global.RotationDrawer
+  fullName: RotationDrawer
+  nameWithType: RotationDrawer
+- uid: Global.RotationDrawer.GetPropertyHeight(SerializedProperty,GUIContent)
+  name: GetPropertyHeight(SerializedProperty, GUIContent)
+  href: api/Global.RotationDrawer.html#Global_RotationDrawer_GetPropertyHeight_SerializedProperty_GUIContent_
+  commentId: M:Global.RotationDrawer.GetPropertyHeight(SerializedProperty,GUIContent)
+  fullName: RotationDrawer.GetPropertyHeight(SerializedProperty, GUIContent)
+  nameWithType: RotationDrawer.GetPropertyHeight(SerializedProperty, GUIContent)
+- uid: Global.RotationDrawer.GetPropertyHeight*
+  name: GetPropertyHeight
+  href: api/Global.RotationDrawer.html#Global_RotationDrawer_GetPropertyHeight_
+  commentId: Overload:Global.RotationDrawer.GetPropertyHeight
+  isSpec: "True"
+  fullName: RotationDrawer.GetPropertyHeight
+  nameWithType: RotationDrawer.GetPropertyHeight
+- uid: Global.RotationDrawer.OnGUI(Rect,SerializedProperty,GUIContent)
+  name: OnGUI(Rect, SerializedProperty, GUIContent)
+  href: api/Global.RotationDrawer.html#Global_RotationDrawer_OnGUI_Rect_SerializedProperty_GUIContent_
+  commentId: M:Global.RotationDrawer.OnGUI(Rect,SerializedProperty,GUIContent)
+  fullName: RotationDrawer.OnGUI(Rect, SerializedProperty, GUIContent)
+  nameWithType: RotationDrawer.OnGUI(Rect, SerializedProperty, GUIContent)
+- uid: Global.RotationDrawer.OnGUI*
+  name: OnGUI
+  href: api/Global.RotationDrawer.html#Global_RotationDrawer_OnGUI_
+  commentId: Overload:Global.RotationDrawer.OnGUI
+  isSpec: "True"
+  fullName: RotationDrawer.OnGUI
+  nameWithType: RotationDrawer.OnGUI
 - uid: Global.RunBehaviour
   name: RunBehaviour
   href: api/Global.RunBehaviour.html
@@ -8277,15 +8321,3 @@ references:
   commentId: F:Global.WaveAnnouncer.text
   fullName: WaveAnnouncer.text
   nameWithType: WaveAnnouncer.text
-- uid: Global.WaveDefinition
-  name: WaveDefinition
-  href: api/Global.WaveDefinition.html
-  commentId: T:Global.WaveDefinition
-  fullName: WaveDefinition
-  nameWithType: WaveDefinition
-- uid: Global.WaveDefinition.spawnDefinitions
-  name: spawnDefinitions
-  href: api/Global.WaveDefinition.html#Global_WaveDefinition_spawnDefinitions
-  commentId: F:Global.WaveDefinition.spawnDefinitions
-  fullName: WaveDefinition.spawnDefinitions
-  nameWithType: WaveDefinition.spawnDefinitions
