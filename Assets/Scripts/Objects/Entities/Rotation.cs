@@ -1,11 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
+[Serializable]
 public class Rotation
 {
-    private readonly int value;
+    [SerializeField] public int value;
 
-    public static readonly Rotation Left = new(-1);
-    public static readonly Rotation Right = new(1);
+    public static readonly int Left = -1;
+    public static readonly int Right = 1;
 
     private Rotation(int value)
     {

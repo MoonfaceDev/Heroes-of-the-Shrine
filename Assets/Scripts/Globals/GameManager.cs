@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Class including general level operations
+/// </summary>
 public class GameManager : BaseComponent
 {
     public FadePanel fadePanel;

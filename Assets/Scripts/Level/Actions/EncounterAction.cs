@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using ExtEvents;
 using UnityEngine;
 
@@ -10,35 +9,36 @@ public enum Direction
     Right
 }
 
-[Serializable]
-public class EnemySpawnDefinition
-{
-    public GameObject prefab;
-    public Direction direction;
-    public float z;
-    public bool partOfWave = true;
-}
-
-[Serializable]
-public class WaveDefinition
-{
-    public EnemySpawnDefinition[] spawnDefinitions;
-}
-
 public class EncounterAction : BaseComponent
 {
-    public WaveAnnouncer waveAnnouncerPrefab;
+    [Serializable]
+    public class EnemySpawnDefinition
+    {
+        public GameObject prefab;
+        public Direction direction;
+        public float z;
+        public bool partOfWave = true;
+    }
+    
+    [Serializable]
+    public class WaveDefinition
+    {
+        public EnemySpawnDefinition[] spawnDefinitions;
+    }
+    
     public WaveDefinition[] waveDefinitions;
     public GameObject[] firstWavePreSpawnedEnemies;
     public float timeToAlarm;
     public Rect cameraBorder;
     public float spawnSourceDistance = 1;
+    [SerializeField] public ExtEvent onWaveStart;
     [SerializeField] public ExtEvent postEncounterEvent;
 
     private bool stopped;
 
     public void Invoke()
     {
+        stopped = false;
         var mainCamera = Camera.main;
         if (mainCamera != null)
         {
@@ -51,44 +51,16 @@ public class EncounterAction : BaseComponent
 
     private void StartWave(int index)
     {
-        var wave = waveDefinitions[index];
-
-        if (waveAnnouncerPrefab)
-        {
-            var waveAnnouncer = Instantiate(waveAnnouncerPrefab);
-            waveAnnouncer.Activate(index);
-        }
-
         var waveEnemies = index == 0 ? new List<GameObject>(firstWavePreSpawnedEnemies) : new List<GameObject>();
 
-        foreach (var definition in wave.spawnDefinitions)
+        foreach (var definition in waveDefinitions[index].spawnDefinitions)
         {
-            var direction = GetDirection(definition.direction);
-            var borderEdge = direction == -1 ? cameraBorder.xMin : cameraBorder.xMax;
-            var spawnPoint = new Vector3(borderEdge + direction * spawnSourceDistance, 0, definition.z);
-            var enemy = Instantiate(definition.prefab, GameEntity.ScreenCoordinates(spawnPoint),
-                Quaternion.identity);
-            var movableObject = enemy.GetComponent<MovableEntity>();
-
-            movableObject.WorldPosition = spawnPoint;
-
+            var enemy = SpawnEnemy(definition);
             if (definition.partOfWave)
             {
                 waveEnemies.Add(enemy);
             }
-            else
-            {
-                StartTimeout(() => enemy.GetComponent<AlarmBrainModule>().SetAlarm(), timeToAlarm);
-            }
         }
-
-        StartTimeout(() =>
-        {
-            foreach (var enemy in waveEnemies.Where(enemy => enemy))
-            {
-                enemy.GetComponent<AlarmBrainModule>().SetAlarm();
-            }
-        }, timeToAlarm);
 
         InvokeWhen(() => waveEnemies.TrueForAll(enemy => !enemy), () =>
         {
@@ -98,16 +70,39 @@ public class EncounterAction : BaseComponent
             }
             else
             {
-                var mainCamera = Camera.main;
-                if (mainCamera != null)
-                {
-                    var cameraMovement = mainCamera.GetComponent<CameraMovement>();
-                    cameraMovement.Unlock();
-                }
-
-                postEncounterEvent.Invoke();
+                FinishEncounter();
             }
         });
+
+        onWaveStart.Invoke();
+    }
+
+    private GameObject SpawnEnemy(EnemySpawnDefinition definition)
+    {
+        var direction = GetDirection(definition.direction);
+        var borderEdge = direction == -1 ? cameraBorder.xMin : cameraBorder.xMax;
+        var spawnPoint = new Vector3(borderEdge + direction * spawnSourceDistance, 0, definition.z);
+        var enemy = Instantiate(definition.prefab, GameEntity.ScreenCoordinates(spawnPoint),
+            Quaternion.identity);
+
+        var movableObject = enemy.GetComponent<MovableEntity>();
+        movableObject.WorldPosition = spawnPoint;
+
+        StartTimeout(() => enemy.GetComponent<AlarmBrainModule>().SetAlarm(), timeToAlarm);
+
+        return enemy;
+    }
+
+    private void FinishEncounter()
+    {
+        var mainCamera = Camera.main;
+        if (mainCamera != null)
+        {
+            var cameraMovement = mainCamera.GetComponent<CameraMovement>();
+            cameraMovement.Unlock();
+        }
+
+        postEncounterEvent.Invoke();
     }
 
     public void Stop()

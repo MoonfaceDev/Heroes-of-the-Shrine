@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Class responsible of toggling menus on/off, from pressing ESCAPE and from button clicks
+/// </summary>
 public class MenuManager : BaseComponent
 {
     public GameObject pausePanel;

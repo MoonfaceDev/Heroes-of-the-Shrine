@@ -1,5 +1,9 @@
 using System;
 
+/// <summary>
+/// Global component that registers events, with a similar API to <see cref="BaseComponent"/>.
+/// Should be used only in classes that don't inherit from <see cref="BaseComponent"/>.
+/// </summary>
 public class EventManager : BaseComponent
 {
     public static EventManager Instance { get; private set; }

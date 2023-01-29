@@ -7,9 +7,20 @@ using Object = UnityEngine.Object;
 [Serializable]
 public class PeriodicAbsoluteHitDetector : BaseHitDetector
 {
+    /// <value>
+    /// Interval between detections, in seconds
+    /// </value>
     public float interval;
+    
+    /// <value>
+    /// If true, a detection occurs immediately when <see cref="BaseHitDetector.StartDetector"/> is called. Otherwise,
+    /// the first detection occurs after a <see cref="interval"/>.
+    /// </value>
     public bool startImmediately = true;
 
+    /// <value>
+    /// Invoked when detection occurs
+    /// </value>
     public event Action OnDetect;
 
     private string detectionInterval;

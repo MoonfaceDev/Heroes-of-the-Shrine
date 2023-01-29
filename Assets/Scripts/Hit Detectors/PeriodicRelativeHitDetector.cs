@@ -9,36 +9,28 @@ using Object = UnityEngine.Object;
 [Serializable]
 public class PeriodicRelativeHitDetector : BaseHitDetector
 {
+    /// <value>
+    /// Interval between consecutive hits of a single hittable, in seconds
+    /// </value>
     public float interval;
-    public bool startImmediately = true;
 
     private string detectionListener;
 
     protected override void DoStartDetector(Action<HittableHitbox> hitCallable)
     {
-        var hitTimes = new Dictionary<HittableBehaviour, float>();
+        var hitTimes = new Dictionary<IHittable, float>();
         detectionListener = EventManager.Instance.Register(() => DetectHits(hitCallable, hitTimes));
     }
 
-    private void DetectHits(Action<HittableHitbox> hitCallable, IDictionary<HittableBehaviour, float> hitTimes)
+    private void DetectHits(Action<HittableHitbox> hitCallable, IDictionary<IHittable, float> hitTimes)
     {
         var hittables = Object.FindObjectsOfType<HittableHitbox>();
         foreach (var hittable in hittables)
         {
-            if (hittable.Hitbox.OverlapHitbox(hitbox) && !hitTimes.ContainsKey(hittable.hittableBehaviour))
-            {
-                if (!startImmediately)
-                {
-                    hitTimes[hittable.hittableBehaviour] = Time.time;
-                    continue;
-                }
-
-                if (Time.time - hitTimes[hittable.hittableBehaviour] >= interval)
-                {
-                    hitTimes[hittable.hittableBehaviour] = Time.time;
-                    hitCallable(hittable);
-                }
-            }
+            if (!hittable.Hitbox.OverlapHitbox(hitbox)) continue;
+            if (hitTimes.ContainsKey(hittable) && !(Time.time - hitTimes[hittable] >= interval)) continue;
+            hitTimes[hittable] = Time.time;
+            hitCallable(hittable);
         }
     }
 

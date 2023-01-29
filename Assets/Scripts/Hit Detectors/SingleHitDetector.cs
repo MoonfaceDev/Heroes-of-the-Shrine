@@ -12,17 +12,15 @@ public class SingleHitDetector : BaseHitDetector
 
     protected override void DoStartDetector(Action<HittableHitbox> hitCallable)
     {
-        var alreadyHit = new HashSet<HittableHitbox>();
+        var alreadyHit = new HashSet<IHittable>();
         detectionListener = EventManager.Instance.Register(() =>
         {
             var hittables = Object.FindObjectsOfType<HittableHitbox>();
             foreach (var hittable in hittables)
             {
-                if (!alreadyHit.Contains(hittable) && hittable.Hitbox.OverlapHitbox(hitbox))
-                {
-                    alreadyHit.Add(hittable);
-                    hitCallable(hittable);
-                }
+                if (alreadyHit.Contains(hittable) || !hittable.Hitbox.OverlapHitbox(hitbox)) continue;
+                alreadyHit.Add(hittable);
+                hitCallable(hittable);
             }
         });
     }

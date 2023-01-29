@@ -5,23 +5,26 @@ using ExtEvents;
 using UnityEngine;
 using UnityEngine.Playables;
 
-[Serializable]
-public class MoveDefinition
-{
-    public enum Direction
-    {
-        Left = -1,
-        Right = 1
-    }
-
-    public ForcedWalkBehaviour target;
-    public float speedMultiplier = 1;
-    public Vector3 position;
-    public Direction lookDirection = Direction.Right;
-}
-
+/// <summary>
+/// Moves entities to predefined points and then plays a cutscene timeline
+/// </summary>
 public class CutsceneAction : BaseComponent
 {
+    [Serializable]
+    public class MoveDefinition
+    {
+        public enum Direction
+        {
+            Left = -1,
+            Right = 1
+        }
+
+        public ForcedWalkBehaviour target;
+        public float speedMultiplier = 1;
+        public Vector3 position;
+        public Direction lookDirection = Direction.Right;
+    }
+    
     public List<MoveDefinition> moveDefinitions;
     public PlayableDirector director;
     [SerializeField] public ExtEvent postCutsceneEvent;

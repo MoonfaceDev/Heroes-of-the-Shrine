@@ -1,7 +1,13 @@
 using UnityEngine;
 
+/// <summary>
+/// Singleton used to pause the game
+/// </summary>
 public class PauseManager : BaseComponent
 {
+    /// <value>
+    /// Singleton instance
+    /// </value>
     public static PauseManager Instance { get; private set; }
 
     private void Awake()
@@ -15,6 +21,9 @@ public class PauseManager : BaseComponent
         Instance = this;
     }
 
+    /// <value>
+    /// True if game is paused. Setting the property stops Unity's <see cref="Time"/>, and pauses audio.
+    /// </value>
     public bool Paused
     {
         set
