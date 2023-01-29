@@ -12,7 +12,7 @@ public class RotationDrawer : PropertyDrawer
     {
         var value = property.FindPropertyRelative("value");
         
-        var newValue = EditorGUI.IntPopup(position, "Rotation", value.intValue, names, values);
+        var newValue = EditorGUI.IntPopup(position, property.displayName, value.intValue, names, values);
 
         if (EditorGUI.EndChangeCheck())
         {
