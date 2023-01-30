@@ -149,13 +149,13 @@ public class KnockbackBehaviour : ForcedBehaviour<KnockbackBehaviour.Command>
         }
     }
 
-    public static float GetRelativeDirection(float knockbackDirection, int hitDirection)
+    public static float GetRelativeDirection(float knockbackAngle, Rotation hitDirection)
     {
-        if (hitDirection == 1)
+        if (hitDirection.Equals(Rotation.Right))
         {
-            return knockbackDirection;
+            return knockbackAngle;
         }
 
-        return (180 - knockbackDirection) % 360;
+        return (180 - knockbackAngle) % 360;
     }
 }

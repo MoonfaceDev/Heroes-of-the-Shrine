@@ -9,8 +9,8 @@ public class EncounterAction : BaseComponent
     public class EnemySpawnDefinition
     {
         public GameObject prefab;
-        public float z;
         public Rotation direction = Rotation.Right;
+        public float z;
         public bool partOfWave = true;
     }
 

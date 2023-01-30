@@ -9,13 +9,18 @@ public class Rotation
     public static Rotation Left => new(-1);
     public static Rotation Right => new(1);
 
-    private Rotation(int value)
+    public Rotation(int value)
     {
         this.value = value;
     }
 
     private Rotation() : this(-1)
     {
+    }
+
+    public bool Equals(Rotation other)
+    {
+        return value == other.value;
     }
 
     public static Rotation operator *(Rotation a, Rotation b)

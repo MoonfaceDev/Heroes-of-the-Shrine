@@ -34,7 +34,7 @@ public class SpinningSwordsAttack : BaseAttack
 
     private void Start()
     {
-        PlayEvents.onStop += () =>
+        attackEvents.onFinishActive += () =>
         {
             hitDetector1.StopDetector();
             hitDetector2.StopDetector();

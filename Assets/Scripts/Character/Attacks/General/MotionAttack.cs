@@ -25,7 +25,7 @@ public class MotionAttack : BaseAttack
 
     public ChainHitExecutor hitExecutor;
 
-    private int originalDirection;
+    private Rotation originalDirection;
 
     protected override MotionSettings Motion => MotionSettings.WalkingDisabled;
 
