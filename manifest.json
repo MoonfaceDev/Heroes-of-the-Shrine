@@ -528,23 +528,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.CutsceneAction.MoveDefinition.Direction.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.CutsceneAction.MoveDefinition.Direction.html",
-          "hash": "u5jGX+DAM617+UEn1DW/2XaeWBusvgBAUDTAvqpZkhk="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Global.CutsceneAction.MoveDefinition.yml",
       "output": {
         ".html": {
           "relative_path": "api/Global.CutsceneAction.MoveDefinition.html",
-          "hash": "ghZ6kd2UJZxPRQYUS7aHaNZ5eLP1AzzrEL97Cehf0Ts="
+          "hash": "gM/dmJYuvPk20x5L4H9Vs0XfeL+HMxC62+SUpk/mf0s="
         }
       },
       "is_incremental": false,
@@ -653,18 +641,6 @@
         ".html": {
           "relative_path": "api/Global.DieBrainModule.html",
           "hash": "x9wTsvvEGx8B7YWIOxhpF7PJRtI0Fv2Yekxf3Z+GxPI="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.Direction.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.Direction.html",
-          "hash": "RbFmiIyaC9LkDgFOsevWOIZCn10lSw8ahi5j2fWXZZ8="
         }
       },
       "is_incremental": false,
@@ -808,7 +784,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.EncounterAction.EnemySpawnDefinition.html",
-          "hash": "ctLVKmM91aUb34bXJsjVuM1pk0u5KZz2Y0OhhT/8RY8="
+          "hash": "Xm3nHFXrNEGjtS7KedRlqlLwNJEN09W2meUfh5CTNYA="
         }
       },
       "is_incremental": false,
@@ -1864,7 +1840,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.Rotation.html",
-          "hash": "cYHJjJTOeWsEq4Z6rKOPSt5gu6xZg/JhqYXtKbUxvP0="
+          "hash": "A7lq8bzSxCcMuMzwMY9iCE24OuXpu3WvGCwrScJMbDw="
         }
       },
       "is_incremental": false,
@@ -2380,7 +2356,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "EMEUgTGhc1MwcyLkK9N+UuJ9JLj6ljmAGUqoiTaH91c="
+          "hash": "rqt/f8mxpI2Xh0Bah7zjQquiAnIwaNT2EIaLJUU4h68="
         }
       },
       "is_incremental": false,
@@ -2392,7 +2368,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "1DaGp3H/XGfNRCUWo4P3u9IVRN4FjocjTSI+GtTmKu4="
+          "hash": "kMjrKUUD6nyXbwDNY5RdMRW0gvIS8xkPImS8xoAkbu0="
         }
       },
       "is_incremental": false,
@@ -2603,7 +2579,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 197,
+          "total_file_count": 195,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

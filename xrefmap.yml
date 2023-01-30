@@ -1896,24 +1896,6 @@ references:
   commentId: T:Global.CutsceneAction.MoveDefinition
   fullName: CutsceneAction.MoveDefinition
   nameWithType: CutsceneAction.MoveDefinition
-- uid: Global.CutsceneAction.MoveDefinition.Direction
-  name: CutsceneAction.MoveDefinition.Direction
-  href: api/Global.CutsceneAction.MoveDefinition.Direction.html
-  commentId: T:Global.CutsceneAction.MoveDefinition.Direction
-  fullName: CutsceneAction.MoveDefinition.Direction
-  nameWithType: CutsceneAction.MoveDefinition.Direction
-- uid: Global.CutsceneAction.MoveDefinition.Direction.Left
-  name: Left
-  href: api/Global.CutsceneAction.MoveDefinition.Direction.html#Global_CutsceneAction_MoveDefinition_Direction_Left
-  commentId: F:Global.CutsceneAction.MoveDefinition.Direction.Left
-  fullName: CutsceneAction.MoveDefinition.Direction.Left
-  nameWithType: CutsceneAction.MoveDefinition.Direction.Left
-- uid: Global.CutsceneAction.MoveDefinition.Direction.Right
-  name: Right
-  href: api/Global.CutsceneAction.MoveDefinition.Direction.html#Global_CutsceneAction_MoveDefinition_Direction_Right
-  commentId: F:Global.CutsceneAction.MoveDefinition.Direction.Right
-  fullName: CutsceneAction.MoveDefinition.Direction.Right
-  nameWithType: CutsceneAction.MoveDefinition.Direction.Right
 - uid: Global.CutsceneAction.MoveDefinition.lookDirection
   name: lookDirection
   href: api/Global.CutsceneAction.MoveDefinition.html#Global_CutsceneAction_MoveDefinition_lookDirection
@@ -2195,24 +2177,6 @@ references:
   isSpec: "True"
   fullName: DieBrainModule.GetParameters
   nameWithType: DieBrainModule.GetParameters
-- uid: Global.Direction
-  name: Direction
-  href: api/Global.Direction.html
-  commentId: T:Global.Direction
-  fullName: Direction
-  nameWithType: Direction
-- uid: Global.Direction.Left
-  name: Left
-  href: api/Global.Direction.html#Global_Direction_Left
-  commentId: F:Global.Direction.Left
-  fullName: Direction.Left
-  nameWithType: Direction.Left
-- uid: Global.Direction.Right
-  name: Right
-  href: api/Global.Direction.html#Global_Direction_Right
-  commentId: F:Global.Direction.Right
-  fullName: Direction.Right
-  nameWithType: Direction.Right
 - uid: Global.DistancesBrainModule
   name: DistancesBrainModule
   href: api/Global.DistancesBrainModule.html
@@ -6584,51 +6548,19 @@ references:
   commentId: T:Global.Rotation
   fullName: Rotation
   nameWithType: Rotation
-- uid: Global.Rotation.Equals(System.Object)
-  name: Equals(Object)
-  href: api/Global.Rotation.html#Global_Rotation_Equals_System_Object_
-  commentId: M:Global.Rotation.Equals(System.Object)
-  fullName: Rotation.Equals(System.Object)
-  nameWithType: Rotation.Equals(Object)
-- uid: Global.Rotation.Equals*
-  name: Equals
-  href: api/Global.Rotation.html#Global_Rotation_Equals_
-  commentId: Overload:Global.Rotation.Equals
-  isSpec: "True"
-  fullName: Rotation.Equals
-  nameWithType: Rotation.Equals
-- uid: Global.Rotation.GetHashCode
-  name: GetHashCode()
-  href: api/Global.Rotation.html#Global_Rotation_GetHashCode
-  commentId: M:Global.Rotation.GetHashCode
-  fullName: Rotation.GetHashCode()
-  nameWithType: Rotation.GetHashCode()
-- uid: Global.Rotation.GetHashCode*
-  name: GetHashCode
-  href: api/Global.Rotation.html#Global_Rotation_GetHashCode_
-  commentId: Overload:Global.Rotation.GetHashCode
-  isSpec: "True"
-  fullName: Rotation.GetHashCode
-  nameWithType: Rotation.GetHashCode
 - uid: Global.Rotation.Left
   name: Left
   href: api/Global.Rotation.html#Global_Rotation_Left
-  commentId: F:Global.Rotation.Left
+  commentId: P:Global.Rotation.Left
   fullName: Rotation.Left
   nameWithType: Rotation.Left
-- uid: Global.Rotation.op_Equality(Rotation,Rotation)
-  name: Equality(Rotation, Rotation)
-  href: api/Global.Rotation.html#Global_Rotation_op_Equality_Rotation_Rotation_
-  commentId: M:Global.Rotation.op_Equality(Rotation,Rotation)
-  fullName: Rotation.Equality(Rotation, Rotation)
-  nameWithType: Rotation.Equality(Rotation, Rotation)
-- uid: Global.Rotation.op_Equality*
-  name: Equality
-  href: api/Global.Rotation.html#Global_Rotation_op_Equality_
-  commentId: Overload:Global.Rotation.op_Equality
+- uid: Global.Rotation.Left*
+  name: Left
+  href: api/Global.Rotation.html#Global_Rotation_Left_
+  commentId: Overload:Global.Rotation.Left
   isSpec: "True"
-  fullName: Rotation.Equality
-  nameWithType: Rotation.Equality
+  fullName: Rotation.Left
+  nameWithType: Rotation.Left
 - uid: Global.Rotation.op_Implicit(Rotation)~Quaternion
   name: Implicit(Rotation to Quaternion)
   href: api/Global.Rotation.html#Global_Rotation_op_Implicit_Rotation__Quaternion
@@ -6666,19 +6598,6 @@ references:
   fullName.vb: Rotation.Widening
   nameWithType: Rotation.Implicit
   nameWithType.vb: Rotation.Widening
-- uid: Global.Rotation.op_Inequality(Rotation,Rotation)
-  name: Inequality(Rotation, Rotation)
-  href: api/Global.Rotation.html#Global_Rotation_op_Inequality_Rotation_Rotation_
-  commentId: M:Global.Rotation.op_Inequality(Rotation,Rotation)
-  fullName: Rotation.Inequality(Rotation, Rotation)
-  nameWithType: Rotation.Inequality(Rotation, Rotation)
-- uid: Global.Rotation.op_Inequality*
-  name: Inequality
-  href: api/Global.Rotation.html#Global_Rotation_op_Inequality_
-  commentId: Overload:Global.Rotation.op_Inequality
-  isSpec: "True"
-  fullName: Rotation.Inequality
-  nameWithType: Rotation.Inequality
 - uid: Global.Rotation.op_Multiply(Rotation,Rotation)
   name: Multiply(Rotation, Rotation)
   href: api/Global.Rotation.html#Global_Rotation_op_Multiply_Rotation_Rotation_
@@ -6714,15 +6633,16 @@ references:
 - uid: Global.Rotation.Right
   name: Right
   href: api/Global.Rotation.html#Global_Rotation_Right
-  commentId: F:Global.Rotation.Right
+  commentId: P:Global.Rotation.Right
   fullName: Rotation.Right
   nameWithType: Rotation.Right
-- uid: Global.Rotation.value
-  name: value
-  href: api/Global.Rotation.html#Global_Rotation_value
-  commentId: F:Global.Rotation.value
-  fullName: Rotation.value
-  nameWithType: Rotation.value
+- uid: Global.Rotation.Right*
+  name: Right
+  href: api/Global.Rotation.html#Global_Rotation_Right_
+  commentId: Overload:Global.Rotation.Right
+  isSpec: "True"
+  fullName: Rotation.Right
+  nameWithType: Rotation.Right
 - uid: Global.RotationDrawer
   name: RotationDrawer
   href: api/Global.RotationDrawer.html
