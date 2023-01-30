@@ -13,7 +13,7 @@ public class CameraMovement : BaseComponent
     /// <value>
     /// Current border, affected by encounters 
     /// </value>
-    [HideInInspector] public Rect border;
+    [ShowDebug] public Rect border;
 
     /// <value>
     /// The wanted position of the camera

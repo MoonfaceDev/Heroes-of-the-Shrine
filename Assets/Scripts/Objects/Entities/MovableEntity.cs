@@ -98,7 +98,7 @@ public class MovableEntity : GameEntity
         var intersections = GetBarrierIntersections(previousGroundPosition, groundPosition);
         if (!walkableGrid) return intersections;
         intersections.AddRange(GetWalkableGridIntersections(previousGroundPosition, groundPosition));
-        if (cameraMovement && CompareTag("Player"))
+        if (cameraMovement && tags.Contains(Tag.Player))
         {
             intersections.AddRange(GetCameraBorderIntersections(previousGroundPosition, groundPosition));
         }
@@ -150,8 +150,8 @@ public class MovableEntity : GameEntity
             return false;
         }
 
-        if (walkableGrid && cameraMovement && CompareTag("Player") && (newPosition.x < cameraMovement.border.xMin ||
-                                                                       newPosition.x > cameraMovement.border.xMax))
+        if (walkableGrid && cameraMovement && tags.Contains(Tag.Player) &&
+            (newPosition.x < cameraMovement.border.xMin || newPosition.x > cameraMovement.border.xMax))
         {
             return false;
         }

@@ -5957,11 +5957,13 @@ MonoBehaviour:
   - target: {fileID: 1506894265}
     speedMultiplier: 1
     position: {x: 4.5, y: 0, z: -5}
-    lookDirection: -1
+    lookDirection:
+      value: -1
   - target: {fileID: 63080267}
     speedMultiplier: 1
     position: {x: 0, y: 0, z: -3.5}
-    lookDirection: 1
+    lookDirection:
+      value: 1
   director: {fileID: 2047257161}
   postCutsceneEvent:
     _persistentListeners:

@@ -13,18 +13,12 @@ public class CutsceneAction : BaseComponent
     [Serializable]
     public class MoveDefinition
     {
-        public enum Direction
-        {
-            Left = -1,
-            Right = 1
-        }
-
         public ForcedWalkBehaviour target;
         public float speedMultiplier = 1;
         public Vector3 position;
-        public Direction lookDirection = Direction.Right;
+        public Rotation lookDirection = Rotation.Right;
     }
-    
+
     public List<MoveDefinition> moveDefinitions;
     public PlayableDirector director;
     [SerializeField] public ExtEvent postCutsceneEvent;
@@ -42,52 +36,61 @@ public class CutsceneAction : BaseComponent
 
     public void Invoke()
     {
-        foreach (var controller in FindObjectsOfType<CharacterController>())
+        var controllers = FindObjectsOfType<CharacterController>();
+
+        foreach (var controller in controllers)
         {
             controller.Enabled = false;
         }
 
-        foreach (var definition in moveDefinitions.Where(definition => definition.target))
-        {
-            definition.target.GetComponent<WalkBehaviour>().speed *= definition.speedMultiplier;
-            definition.target.Play(new ForcedWalkBehaviour.Command(definition.position, WantedDistance));
-        }
+        StartAutoWalk();
 
         InvokeWhen(
             () => moveDefinitions.TrueForAll(definition =>
                 definition.target.MovableEntity.GroundDistance(definition.position) < WantedDistance),
             () =>
             {
-                moveDefinitions.ForEach(definition =>
-                {
-                    definition.target.Stop();
-                    definition.target.GetComponent<WalkBehaviour>().speed /= definition.speedMultiplier;
-                    definition.target.MovableEntity.rotation = (int)definition.lookDirection;
-                });
+                FinishAutoWalk();
 
-                if (director)
+                void StoppedCallback(PlayableDirector stoppedDirector)
                 {
-                    director.Play();
-                    director.stopped += OnStop;
+                    director.stopped -= StoppedCallback;
+                    OnCutsceneFinish(controllers);
                 }
-                else
-                {
-                    OnStop(director);
-                }
+
+                director.stopped += StoppedCallback;
+                director.Play();
             }
         );
     }
 
-    private void OnStop(PlayableDirector stoppedDirector)
+    private void StartAutoWalk()
     {
-        if (stoppedDirector)
+        foreach (var definition in moveDefinitions.Where(definition => definition.target))
         {
-            stoppedDirector.stopped -= OnStop;
+            definition.target.GetComponent<WalkBehaviour>().speed *= definition.speedMultiplier;
+            definition.target.Play(new ForcedWalkBehaviour.Command(definition.position, WantedDistance));
         }
+    }
 
-        foreach (var controller in FindObjectsOfType<CharacterController>())
+    private void FinishAutoWalk()
+    {
+        moveDefinitions.ForEach(definition =>
         {
-            controller.Enabled = true;
+            definition.target.Stop();
+            definition.target.GetComponent<WalkBehaviour>().speed /= definition.speedMultiplier;
+            definition.target.MovableEntity.rotation = definition.lookDirection;
+        });
+    }
+
+    private void OnCutsceneFinish(IEnumerable<CharacterController> disabledControllers)
+    {
+        foreach (var controller in disabledControllers)
+        {
+            if (controller)
+            {
+                controller.Enabled = true;
+            }
         }
 
         postCutsceneEvent.Invoke();
@@ -95,11 +98,6 @@ public class CutsceneAction : BaseComponent
 
     private void OnDrawGizmosSelected()
     {
-        if (moveDefinitions == null)
-        {
-            return;
-        }
-
         Gizmos.color = Color.white;
         foreach (var definition in moveDefinitions)
         {

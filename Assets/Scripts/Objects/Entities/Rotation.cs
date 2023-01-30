@@ -4,43 +4,18 @@ using UnityEngine;
 [Serializable]
 public class Rotation
 {
-    [SerializeField] public int value;
+    [SerializeField] private int value;
 
-    public static readonly int Left = -1;
-    public static readonly int Right = 1;
+    public static Rotation Left => new(-1);
+    public static Rotation Right => new(1);
 
     private Rotation(int value)
     {
         this.value = value;
     }
 
-    public static bool operator ==(Rotation a, Rotation b)
+    private Rotation() : this(-1)
     {
-        if (ReferenceEquals(a, b))
-            return true;
-        if (ReferenceEquals(a, null))
-            return false;
-        if (ReferenceEquals(b, null))
-            return false;
-        return a.Equals(b);
-    }
-
-    public static bool operator !=(Rotation a, Rotation b) => !(a == b);
-
-    private bool Equals(Rotation other)
-    {
-        if (ReferenceEquals(other, null))
-            return false;
-        if (ReferenceEquals(this, other))
-            return true;
-        return value.Equals(other.value);
-    }
-
-    public override bool Equals(object obj) => Equals(obj as Rotation);
-
-    public override int GetHashCode()
-    {
-        return value;
     }
 
     public static Rotation operator *(Rotation a, Rotation b)

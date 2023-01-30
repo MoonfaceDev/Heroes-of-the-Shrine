@@ -3,29 +3,23 @@ using System.Collections.Generic;
 using ExtEvents;
 using UnityEngine;
 
-public enum Direction
-{
-    Left,
-    Right
-}
-
 public class EncounterAction : BaseComponent
 {
     [Serializable]
     public class EnemySpawnDefinition
     {
         public GameObject prefab;
-        public Direction direction;
         public float z;
+        public Rotation direction = Rotation.Right;
         public bool partOfWave = true;
     }
-    
+
     [Serializable]
     public class WaveDefinition
     {
         public EnemySpawnDefinition[] spawnDefinitions;
     }
-    
+
     public WaveDefinition[] waveDefinitions;
     public GameObject[] firstWavePreSpawnedEnemies;
     public float timeToAlarm;
@@ -79,9 +73,8 @@ public class EncounterAction : BaseComponent
 
     private GameObject SpawnEnemy(EnemySpawnDefinition definition)
     {
-        var direction = GetDirection(definition.direction);
-        var borderEdge = direction == -1 ? cameraBorder.xMin : cameraBorder.xMax;
-        var spawnPoint = new Vector3(borderEdge + direction * spawnSourceDistance, 0, definition.z);
+        var edge = GetEdge(cameraBorder, definition.direction) + definition.direction * spawnSourceDistance;
+        var spawnPoint = new Vector3(edge, 0, definition.z);
         var enemy = Instantiate(definition.prefab, GameEntity.ScreenCoordinates(spawnPoint),
             Quaternion.identity);
 
@@ -121,32 +114,14 @@ public class EncounterAction : BaseComponent
         {
             foreach (var definition in waveDefinitions[wave].spawnDefinitions)
             {
-                switch (definition.direction)
-                {
-                    case Direction.Left:
-                        Gizmos.DrawWireSphere(
-                            GameEntity.ScreenCoordinates(new Vector3(cameraBorder.xMin, 0, definition.z)),
-                            0.1f * (wave + 1));
-                        break;
-                    case Direction.Right:
-                        Gizmos.DrawWireSphere(
-                            GameEntity.ScreenCoordinates(new Vector3(cameraBorder.xMax, 0, definition.z)),
-                            0.1f * (wave + 1));
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
+                var position = new Vector3(GetEdge(cameraBorder, definition.direction), 0, definition.z);
+                Gizmos.DrawWireSphere(GameEntity.ScreenCoordinates(position), 0.1f * (wave + 1));
             }
         }
     }
 
-    private static int GetDirection(Direction direction)
+    private static float GetEdge(Rect rect, Rotation direction)
     {
-        return direction switch
-        {
-            Direction.Left => -1,
-            Direction.Right => 1,
-            _ => 0
-        };
+        return rect.center.x + direction * rect.size.x / 2;
     }
 }

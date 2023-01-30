@@ -54,7 +54,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5884619157288324023}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
@@ -63,6 +63,8 @@ MonoBehaviour:
   tags:
     tags: 
   position: {x: 1.55, y: 0.995, z: 0}
+  rotation:
+    value: 1
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -265,7 +267,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5884619157950951727}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
@@ -274,6 +276,8 @@ MonoBehaviour:
   tags:
     tags: 
   position: {x: 0.675, y: 0.9, z: 0}
+  rotation:
+    value: 1
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -344,7 +348,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5884619158051856729}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
@@ -353,6 +357,8 @@ MonoBehaviour:
   tags:
     tags: 
   position: {x: 0.95, y: 0.9, z: 0}
+  rotation:
+    value: 1
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -527,7 +533,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5884619158396451718}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
@@ -536,6 +542,8 @@ MonoBehaviour:
   tags:
     tags: 
   position: {x: 2.25, y: 1.05, z: 0}
+  rotation:
+    value: 1
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -593,7 +601,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5884619158596542725}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
@@ -602,6 +610,8 @@ MonoBehaviour:
   tags:
     tags: 
   position: {x: 0.875, y: 0.9, z: 0}
+  rotation:
+    value: 1
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -705,6 +715,8 @@ MonoBehaviour:
   tags:
     tags: 0200000003000000
   position: {x: 1.84, y: 0, z: -2.91}
+  rotation:
+    value: 1
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -766,7 +778,7 @@ MonoBehaviour:
   deathAnimationDuration: 3
   onDie:
     _persistentListeners: []
-    Expanded: 1
+    Expanded: 0
 --- !u!114 &5884619158741390459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1511,7 +1523,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5884619159192989555}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
@@ -1520,6 +1532,8 @@ MonoBehaviour:
   tags:
     tags: 
   position: {x: 0, y: 0.91, z: 0}
+  rotation:
+    value: 1
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}

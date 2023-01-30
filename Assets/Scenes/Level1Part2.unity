@@ -735,53 +735,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17a0bf4445f96143a36e22b59bc6b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveAnnouncerPrefab: {fileID: 0}
   waveDefinitions:
   - spawnDefinitions:
     - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
-      direction: 0
+      direction:
+        value: -1
       z: -1.77
       partOfWave: 1
     - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
-      direction: 0
+      direction:
+        value: -1
       z: -4
       partOfWave: 1
   - spawnDefinitions:
     - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
-      direction: 1
+      direction:
+        value: 1
       z: -1.77
       partOfWave: 1
     - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
-      direction: 1
+      direction:
+        value: 1
       z: -4
       partOfWave: 1
     - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
-      direction: 0
+      direction:
+        value: -1
       z: -3.28
       partOfWave: 1
   - spawnDefinitions:
     - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
-      direction: 0
+      direction:
+        value: -1
       z: -1.77
       partOfWave: 1
     - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
-      direction: 0
+      direction:
+        value: -1
       z: -3.28
       partOfWave: 1
     - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
-      direction: 0
+      direction:
+        value: -1
       z: -2.7
       partOfWave: 1
     - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
-      direction: 1
+      direction:
+        value: 1
       z: -4
       partOfWave: 1
     - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
-      direction: 1
+      direction:
+        value: 1
       z: -2
       partOfWave: 1
     - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
-      direction: 1
+      direction:
+        value: 1
       z: -3
       partOfWave: 1
   firstWavePreSpawnedEnemies:
@@ -794,6 +804,9 @@ MonoBehaviour:
     width: 24.44
     height: 8
   spawnSourceDistance: 1
+  onWaveStart:
+    _persistentListeners: []
+    Expanded: 1
   postEncounterEvent:
     _persistentListeners: []
     Expanded: 1
@@ -1750,20 +1763,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17a0bf4445f96143a36e22b59bc6b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveAnnouncerPrefab: {fileID: 0}
   waveDefinitions:
   - spawnDefinitions:
     - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
-      direction: 1
+      direction:
+        value: 1
       z: -2.6
       partOfWave: 1
   - spawnDefinitions:
     - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
-      direction: 1
+      direction:
+        value: 1
       z: -4.6
       partOfWave: 1
     - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
-      direction: 1
+      direction:
+        value: 1
       z: -1.6
       partOfWave: 1
   firstWavePreSpawnedEnemies:
@@ -1781,6 +1796,9 @@ MonoBehaviour:
     width: 49.2
     height: 8
   spawnSourceDistance: 1
+  onWaveStart:
+    _persistentListeners: []
+    Expanded: 1
   postEncounterEvent:
     _persistentListeners: []
     Expanded: 1

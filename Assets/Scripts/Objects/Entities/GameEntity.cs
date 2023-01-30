@@ -19,7 +19,7 @@ public class GameEntity : BaseComponent
         set => position = parent ? parent.TransformToRelative(value) : value;
     }
 
-    public Rotation WorldRotation => parent ? (parent.WorldRotation * rotation) : rotation;
+    public Rotation WorldRotation => parent ? parent.WorldRotation * rotation : rotation;
 
     public Vector3 WorldScale => parent ? Vector3.Scale(parent.WorldScale, scale) : scale;
 

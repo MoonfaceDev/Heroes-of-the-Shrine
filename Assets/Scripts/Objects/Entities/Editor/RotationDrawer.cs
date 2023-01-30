@@ -14,10 +14,7 @@ public class RotationDrawer : PropertyDrawer
         
         var newValue = EditorGUI.IntPopup(position, property.displayName, value.intValue, names, values);
 
-        if (EditorGUI.EndChangeCheck())
-        {
-            value.intValue = newValue;
-        }
+        value.intValue = newValue;
     }
 
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)

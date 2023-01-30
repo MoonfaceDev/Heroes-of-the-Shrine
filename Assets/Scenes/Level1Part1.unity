@@ -153,33 +153,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17a0bf4445f96143a36e22b59bc6b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveAnnouncerPrefab: {fileID: 0}
   waveDefinitions:
   - spawnDefinitions:
     - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
-      direction: 1
       z: -4.5
+      direction:
+        value: 1
       partOfWave: 1
     - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
-      direction: 1
       z: -1.5
+      direction:
+        value: 1
       partOfWave: 1
     - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
-      direction: 0
       z: -3
+      direction:
+        value: -1
       partOfWave: 1
   - spawnDefinitions:
     - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
-      direction: 1
       z: -4.5
+      direction:
+        value: 1
       partOfWave: 1
     - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
-      direction: 1
       z: -1.5
+      direction:
+        value: 1
       partOfWave: 1
     - prefab: {fileID: 5884619158741390458, guid: 9395006cc957a60499e231078e37255c, type: 3}
-      direction: 1
       z: -3
+      direction:
+        value: 1
       partOfWave: 1
   firstWavePreSpawnedEnemies: []
   timeToAlarm: 0.5
@@ -190,6 +195,9 @@ MonoBehaviour:
     width: 20
     height: 8
   spawnSourceDistance: 1
+  onWaveStart:
+    _persistentListeners: []
+    Expanded: 1
   postEncounterEvent:
     _persistentListeners: []
     Expanded: 1
@@ -937,7 +945,8 @@ MonoBehaviour:
   - target: {fileID: 5826350637269321226}
     speedMultiplier: 1
     position: {x: 3, y: 0, z: -3}
-    lookDirection: 1
+    lookDirection:
+      value: 1
   director: {fileID: 1745739316}
   postCutsceneEvent:
     _persistentListeners: []
@@ -1125,37 +1134,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17a0bf4445f96143a36e22b59bc6b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveAnnouncerPrefab: {fileID: 0}
   waveDefinitions:
   - spawnDefinitions:
     - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
-      direction: 1
       z: -2
+      direction:
+        value: 1
       partOfWave: 1
     - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
-      direction: 1
       z: -3
+      direction:
+        value: 1
       partOfWave: 1
     - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
-      direction: 1
       z: -4
+      direction:
+        value: 1
       partOfWave: 1
   - spawnDefinitions:
     - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
-      direction: 1
       z: -4
+      direction:
+        value: 1
       partOfWave: 1
     - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
-      direction: 1
       z: -2
+      direction:
+        value: 1
       partOfWave: 1
     - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
-      direction: 1
       z: -1.5
+      direction:
+        value: 1
       partOfWave: 1
     - prefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
-      direction: 1
       z: -3
+      direction:
+        value: 1
       partOfWave: 1
   firstWavePreSpawnedEnemies: []
   timeToAlarm: 0.5
@@ -1166,6 +1181,9 @@ MonoBehaviour:
     width: 41.74
     height: 8
   spawnSourceDistance: 1
+  onWaveStart:
+    _persistentListeners: []
+    Expanded: 1
   postEncounterEvent:
     _persistentListeners: []
     Expanded: 1
@@ -1238,6 +1256,8 @@ MonoBehaviour:
   tags:
     tags: 
   position: {x: 29.2, y: 0, z: -3}
+  rotation:
+    value: -1
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -1248,7 +1268,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2542200778651597027}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
   m_LocalPosition: {x: 29.2, y: -2.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1461,7 +1481,7 @@ SpriteRenderer:
   m_SortingOrder: 3000
   m_Sprite: {fileID: -1989270642, guid: 2ead23e9a0ccb7143ba97cd4e3a7ab49, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 3.2, y: 3.2}

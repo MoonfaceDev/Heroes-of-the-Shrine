@@ -41,7 +41,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 441269344925677699}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
   m_Name: 
@@ -50,6 +50,8 @@ MonoBehaviour:
   tags:
     tags: 
   position: {x: 0, y: 1, z: 0}
+  rotation:
+    value: 1
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -80,8 +82,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hittableBehaviour: {fileID: 441269345065587790}
   onHit:
-    m_PersistentCalls:
-      m_Calls: []
+    _persistentListeners: []
+    Expanded: 1
   figure: {fileID: 441269345576187498}
   blinkMaterial: {fileID: 2100000, guid: 7d84333534519724d807cc3eee8ca8ba, type: 2}
   blinkTime: 0.1
@@ -157,6 +159,8 @@ MonoBehaviour:
   tags:
     tags: 06000000
   position: {x: -3.25, y: 2.2, z: 3.45}
+  rotation:
+    value: 1
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -201,11 +205,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
     onStop:
-      m_PersistentCalls:
-        m_Calls: []
+      _persistentListeners: []
+      Expanded: 1
   knockbackRecoverTime: 0
 --- !u!114 &441269345065587780
 MonoBehaviour:
