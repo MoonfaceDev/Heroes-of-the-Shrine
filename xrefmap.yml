@@ -4845,12 +4845,12 @@ references:
   isSpec: "True"
   fullName: KnockbackBehaviour.DoStop
   nameWithType: KnockbackBehaviour.DoStop
-- uid: Global.KnockbackBehaviour.GetRelativeDirection(System.Single,System.Int32)
-  name: GetRelativeDirection(Single, Int32)
-  href: api/Global.KnockbackBehaviour.html#Global_KnockbackBehaviour_GetRelativeDirection_System_Single_System_Int32_
-  commentId: M:Global.KnockbackBehaviour.GetRelativeDirection(System.Single,System.Int32)
-  fullName: KnockbackBehaviour.GetRelativeDirection(System.Single, System.Int32)
-  nameWithType: KnockbackBehaviour.GetRelativeDirection(Single, Int32)
+- uid: Global.KnockbackBehaviour.GetRelativeDirection(System.Single,Rotation)
+  name: GetRelativeDirection(Single, Rotation)
+  href: api/Global.KnockbackBehaviour.html#Global_KnockbackBehaviour_GetRelativeDirection_System_Single_Rotation_
+  commentId: M:Global.KnockbackBehaviour.GetRelativeDirection(System.Single,Rotation)
+  fullName: KnockbackBehaviour.GetRelativeDirection(System.Single, Rotation)
+  nameWithType: KnockbackBehaviour.GetRelativeDirection(Single, Rotation)
 - uid: Global.KnockbackBehaviour.GetRelativeDirection*
   name: GetRelativeDirection
   href: api/Global.KnockbackBehaviour.html#Global_KnockbackBehaviour_GetRelativeDirection_
@@ -6548,6 +6548,32 @@ references:
   commentId: T:Global.Rotation
   fullName: Rotation
   nameWithType: Rotation
+- uid: Global.Rotation.#ctor(System.Int32)
+  name: Rotation(Int32)
+  href: api/Global.Rotation.html#Global_Rotation__ctor_System_Int32_
+  commentId: M:Global.Rotation.#ctor(System.Int32)
+  fullName: Rotation.Rotation(System.Int32)
+  nameWithType: Rotation.Rotation(Int32)
+- uid: Global.Rotation.#ctor*
+  name: Rotation
+  href: api/Global.Rotation.html#Global_Rotation__ctor_
+  commentId: Overload:Global.Rotation.#ctor
+  isSpec: "True"
+  fullName: Rotation.Rotation
+  nameWithType: Rotation.Rotation
+- uid: Global.Rotation.Equals(Rotation)
+  name: Equals(Rotation)
+  href: api/Global.Rotation.html#Global_Rotation_Equals_Rotation_
+  commentId: M:Global.Rotation.Equals(Rotation)
+  fullName: Rotation.Equals(Rotation)
+  nameWithType: Rotation.Equals(Rotation)
+- uid: Global.Rotation.Equals*
+  name: Equals
+  href: api/Global.Rotation.html#Global_Rotation_Equals_
+  commentId: Overload:Global.Rotation.Equals
+  isSpec: "True"
+  fullName: Rotation.Equals
+  nameWithType: Rotation.Equals
 - uid: Global.Rotation.Left
   name: Left
   href: api/Global.Rotation.html#Global_Rotation_Left
