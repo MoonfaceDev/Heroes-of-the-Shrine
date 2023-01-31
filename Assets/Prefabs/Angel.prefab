@@ -795,7 +795,7 @@ Transform:
   - {fileID: 3850747449127629430}
   - {fileID: 3970267090279809017}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360874897665
 MonoBehaviour:
@@ -897,7 +897,7 @@ MonoBehaviour:
         _typeNameAndAssembly: AudioManager, Assembly-CSharp
         _suppressLogs: 0
       _methodName: PlayBackground
-    Expanded: 1
+    Expanded: 0
 --- !u!114 &5102893360874897666
 MonoBehaviour:
   m_ObjectHideFlags: 0
