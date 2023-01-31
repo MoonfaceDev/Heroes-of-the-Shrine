@@ -3813,12 +3813,18 @@ references:
   commentId: T:Global.GameManager
   fullName: GameManager
   nameWithType: GameManager
-- uid: Global.GameManager.PlayAgain(System.String)
-  name: PlayAgain(String)
-  href: api/Global.GameManager.html#Global_GameManager_PlayAgain_System_String_
-  commentId: M:Global.GameManager.PlayAgain(System.String)
-  fullName: GameManager.PlayAgain(System.String)
-  nameWithType: GameManager.PlayAgain(String)
+- uid: Global.GameManager.firstSceneName
+  name: firstSceneName
+  href: api/Global.GameManager.html#Global_GameManager_firstSceneName
+  commentId: F:Global.GameManager.firstSceneName
+  fullName: GameManager.firstSceneName
+  nameWithType: GameManager.firstSceneName
+- uid: Global.GameManager.PlayAgain
+  name: PlayAgain()
+  href: api/Global.GameManager.html#Global_GameManager_PlayAgain
+  commentId: M:Global.GameManager.PlayAgain
+  fullName: GameManager.PlayAgain()
+  nameWithType: GameManager.PlayAgain()
 - uid: Global.GameManager.PlayAgain*
   name: PlayAgain
   href: api/Global.GameManager.html#Global_GameManager_PlayAgain_
