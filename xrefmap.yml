@@ -1896,18 +1896,18 @@ references:
   commentId: T:Global.CutsceneAction.MoveDefinition
   fullName: CutsceneAction.MoveDefinition
   nameWithType: CutsceneAction.MoveDefinition
-- uid: Global.CutsceneAction.MoveDefinition.lookDirection
-  name: lookDirection
-  href: api/Global.CutsceneAction.MoveDefinition.html#Global_CutsceneAction_MoveDefinition_lookDirection
-  commentId: F:Global.CutsceneAction.MoveDefinition.lookDirection
-  fullName: CutsceneAction.MoveDefinition.lookDirection
-  nameWithType: CutsceneAction.MoveDefinition.lookDirection
 - uid: Global.CutsceneAction.MoveDefinition.position
   name: position
   href: api/Global.CutsceneAction.MoveDefinition.html#Global_CutsceneAction_MoveDefinition_position
   commentId: F:Global.CutsceneAction.MoveDefinition.position
   fullName: CutsceneAction.MoveDefinition.position
   nameWithType: CutsceneAction.MoveDefinition.position
+- uid: Global.CutsceneAction.MoveDefinition.rotation
+  name: rotation
+  href: api/Global.CutsceneAction.MoveDefinition.html#Global_CutsceneAction_MoveDefinition_rotation
+  commentId: F:Global.CutsceneAction.MoveDefinition.rotation
+  fullName: CutsceneAction.MoveDefinition.rotation
+  nameWithType: CutsceneAction.MoveDefinition.rotation
 - uid: Global.CutsceneAction.MoveDefinition.speedMultiplier
   name: speedMultiplier
   href: api/Global.CutsceneAction.MoveDefinition.html#Global_CutsceneAction_MoveDefinition_speedMultiplier
@@ -3026,12 +3026,12 @@ references:
   isSpec: "True"
   fullName: EscapeBehaviour.Command.Command
   nameWithType: EscapeBehaviour.Command.Command
-- uid: Global.EscapeBehaviour.Command.fitLookDirection
-  name: fitLookDirection
-  href: api/Global.EscapeBehaviour.Command.html#Global_EscapeBehaviour_Command_fitLookDirection
-  commentId: F:Global.EscapeBehaviour.Command.fitLookDirection
-  fullName: EscapeBehaviour.Command.fitLookDirection
-  nameWithType: EscapeBehaviour.Command.fitLookDirection
+- uid: Global.EscapeBehaviour.Command.fitRotation
+  name: fitRotation
+  href: api/Global.EscapeBehaviour.Command.html#Global_EscapeBehaviour_Command_fitRotation
+  commentId: F:Global.EscapeBehaviour.Command.fitRotation
+  fullName: EscapeBehaviour.Command.fitRotation
+  nameWithType: EscapeBehaviour.Command.fitRotation
 - uid: Global.EscapeBehaviour.Command.speedMultiplier
   name: speedMultiplier
   href: api/Global.EscapeBehaviour.Command.html#Global_EscapeBehaviour_Command_speedMultiplier
@@ -8205,12 +8205,12 @@ references:
   commentId: F:Global.WalkBehaviour.Command.direction
   fullName: WalkBehaviour.Command.direction
   nameWithType: WalkBehaviour.Command.direction
-- uid: Global.WalkBehaviour.Command.fitLookDirection
-  name: fitLookDirection
-  href: api/Global.WalkBehaviour.Command.html#Global_WalkBehaviour_Command_fitLookDirection
-  commentId: F:Global.WalkBehaviour.Command.fitLookDirection
-  fullName: WalkBehaviour.Command.fitLookDirection
-  nameWithType: WalkBehaviour.Command.fitLookDirection
+- uid: Global.WalkBehaviour.Command.fitRotation
+  name: fitRotation
+  href: api/Global.WalkBehaviour.Command.html#Global_WalkBehaviour_Command_fitRotation
+  commentId: F:Global.WalkBehaviour.Command.fitRotation
+  fullName: WalkBehaviour.Command.fitRotation
+  nameWithType: WalkBehaviour.Command.fitRotation
 - uid: Global.WalkBehaviour.defaultSpeed
   name: defaultSpeed
   href: api/Global.WalkBehaviour.html#Global_WalkBehaviour_defaultSpeed
