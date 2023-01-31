@@ -1836,11 +1836,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.Rotation.Value.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.Rotation.Value.html",
+          "hash": "eANVSvXbwx9O+uvFz1YFA44UGzC4+xQG/7iSkQr5k2g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.Rotation.yml",
       "output": {
         ".html": {
           "relative_path": "api/Global.Rotation.html",
-          "hash": "dsU236l+6lBi9t+rVLYOuqaKZ+iUCL1QB6sb5Ya/DJ8="
+          "hash": "xve/le153obPSL5e4uvE8qo0hdWXUGsUj7wwVcLlrMc="
         }
       },
       "is_incremental": false,
@@ -2356,7 +2368,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "rqt/f8mxpI2Xh0Bah7zjQquiAnIwaNT2EIaLJUU4h68="
+          "hash": "/zf4tNt0YuKtrBLhXyyhUdshFbGxligT0uQhOvgJ438="
         }
       },
       "is_incremental": false,
@@ -2368,7 +2380,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "kMjrKUUD6nyXbwDNY5RdMRW0gvIS8xkPImS8xoAkbu0="
+          "hash": "5w3eCL7kr8tSoF827cUjsqUTf0Xb9An+F7ghhWroA4g="
         }
       },
       "is_incremental": false,
@@ -2579,7 +2591,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 195,
+          "total_file_count": 196,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

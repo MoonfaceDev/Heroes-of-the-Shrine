@@ -6548,12 +6548,12 @@ references:
   commentId: T:Global.Rotation
   fullName: Rotation
   nameWithType: Rotation
-- uid: Global.Rotation.#ctor(System.Int32)
-  name: Rotation(Int32)
-  href: api/Global.Rotation.html#Global_Rotation__ctor_System_Int32_
-  commentId: M:Global.Rotation.#ctor(System.Int32)
-  fullName: Rotation.Rotation(System.Int32)
-  nameWithType: Rotation.Rotation(Int32)
+- uid: Global.Rotation.#ctor(Rotation.Value)
+  name: Rotation(Rotation.Value)
+  href: api/Global.Rotation.html#Global_Rotation__ctor_Rotation_Value_
+  commentId: M:Global.Rotation.#ctor(Rotation.Value)
+  fullName: Rotation.Rotation(Rotation.Value)
+  nameWithType: Rotation.Rotation(Rotation.Value)
 - uid: Global.Rotation.#ctor*
   name: Rotation
   href: api/Global.Rotation.html#Global_Rotation__ctor_
@@ -6561,12 +6561,12 @@ references:
   isSpec: "True"
   fullName: Rotation.Rotation
   nameWithType: Rotation.Rotation
-- uid: Global.Rotation.Equals(Rotation)
-  name: Equals(Rotation)
-  href: api/Global.Rotation.html#Global_Rotation_Equals_Rotation_
-  commentId: M:Global.Rotation.Equals(Rotation)
-  fullName: Rotation.Equals(Rotation)
-  nameWithType: Rotation.Equals(Rotation)
+- uid: Global.Rotation.Equals(System.Object)
+  name: Equals(Object)
+  href: api/Global.Rotation.html#Global_Rotation_Equals_System_Object_
+  commentId: M:Global.Rotation.Equals(System.Object)
+  fullName: Rotation.Equals(System.Object)
+  nameWithType: Rotation.Equals(Object)
 - uid: Global.Rotation.Equals*
   name: Equals
   href: api/Global.Rotation.html#Global_Rotation_Equals_
@@ -6574,6 +6574,19 @@ references:
   isSpec: "True"
   fullName: Rotation.Equals
   nameWithType: Rotation.Equals
+- uid: Global.Rotation.GetHashCode
+  name: GetHashCode()
+  href: api/Global.Rotation.html#Global_Rotation_GetHashCode
+  commentId: M:Global.Rotation.GetHashCode
+  fullName: Rotation.GetHashCode()
+  nameWithType: Rotation.GetHashCode()
+- uid: Global.Rotation.GetHashCode*
+  name: GetHashCode
+  href: api/Global.Rotation.html#Global_Rotation_GetHashCode_
+  commentId: Overload:Global.Rotation.GetHashCode
+  isSpec: "True"
+  fullName: Rotation.GetHashCode
+  nameWithType: Rotation.GetHashCode
 - uid: Global.Rotation.Left
   name: Left
   href: api/Global.Rotation.html#Global_Rotation_Left
@@ -6587,6 +6600,19 @@ references:
   isSpec: "True"
   fullName: Rotation.Left
   nameWithType: Rotation.Left
+- uid: Global.Rotation.op_Equality(Rotation,Rotation)
+  name: Equality(Rotation, Rotation)
+  href: api/Global.Rotation.html#Global_Rotation_op_Equality_Rotation_Rotation_
+  commentId: M:Global.Rotation.op_Equality(Rotation,Rotation)
+  fullName: Rotation.Equality(Rotation, Rotation)
+  nameWithType: Rotation.Equality(Rotation, Rotation)
+- uid: Global.Rotation.op_Equality*
+  name: Equality
+  href: api/Global.Rotation.html#Global_Rotation_op_Equality_
+  commentId: Overload:Global.Rotation.op_Equality
+  isSpec: "True"
+  fullName: Rotation.Equality
+  nameWithType: Rotation.Equality
 - uid: Global.Rotation.op_Implicit(Rotation)~Quaternion
   name: Implicit(Rotation to Quaternion)
   href: api/Global.Rotation.html#Global_Rotation_op_Implicit_Rotation__Quaternion
@@ -6624,12 +6650,19 @@ references:
   fullName.vb: Rotation.Widening
   nameWithType: Rotation.Implicit
   nameWithType.vb: Rotation.Widening
-- uid: Global.Rotation.op_Multiply(Rotation,Rotation)
-  name: Multiply(Rotation, Rotation)
-  href: api/Global.Rotation.html#Global_Rotation_op_Multiply_Rotation_Rotation_
-  commentId: M:Global.Rotation.op_Multiply(Rotation,Rotation)
-  fullName: Rotation.Multiply(Rotation, Rotation)
-  nameWithType: Rotation.Multiply(Rotation, Rotation)
+- uid: Global.Rotation.op_Inequality(Rotation,Rotation)
+  name: Inequality(Rotation, Rotation)
+  href: api/Global.Rotation.html#Global_Rotation_op_Inequality_Rotation_Rotation_
+  commentId: M:Global.Rotation.op_Inequality(Rotation,Rotation)
+  fullName: Rotation.Inequality(Rotation, Rotation)
+  nameWithType: Rotation.Inequality(Rotation, Rotation)
+- uid: Global.Rotation.op_Inequality*
+  name: Inequality
+  href: api/Global.Rotation.html#Global_Rotation_op_Inequality_
+  commentId: Overload:Global.Rotation.op_Inequality
+  isSpec: "True"
+  fullName: Rotation.Inequality
+  nameWithType: Rotation.Inequality
 - uid: Global.Rotation.op_Multiply(Rotation,Vector3)
   name: Multiply(Rotation, Vector3)
   href: api/Global.Rotation.html#Global_Rotation_op_Multiply_Rotation_Vector3_
@@ -6669,6 +6702,24 @@ references:
   isSpec: "True"
   fullName: Rotation.Right
   nameWithType: Rotation.Right
+- uid: Global.Rotation.Value
+  name: Rotation.Value
+  href: api/Global.Rotation.Value.html
+  commentId: T:Global.Rotation.Value
+  fullName: Rotation.Value
+  nameWithType: Rotation.Value
+- uid: Global.Rotation.Value.Left
+  name: Left
+  href: api/Global.Rotation.Value.html#Global_Rotation_Value_Left
+  commentId: F:Global.Rotation.Value.Left
+  fullName: Rotation.Value.Left
+  nameWithType: Rotation.Value.Left
+- uid: Global.Rotation.Value.Right
+  name: Right
+  href: api/Global.Rotation.Value.html#Global_Rotation_Value_Right
+  commentId: F:Global.Rotation.Value.Right
+  fullName: Rotation.Value.Right
+  nameWithType: Rotation.Value.Right
 - uid: Global.RotationDrawer
   name: RotationDrawer
   href: api/Global.RotationDrawer.html
