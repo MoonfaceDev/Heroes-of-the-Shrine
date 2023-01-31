@@ -6,16 +6,16 @@ public class WalkBehaviour : BaseMovementBehaviour<WalkBehaviour.Command>
     public class Command
     {
         public readonly Vector2 direction;
-        public readonly bool fitLookDirection;
+        public readonly bool fitRotation;
 
-        public Command(Vector2 direction, bool fitLookDirection = true)
+        public Command(Vector2 direction, bool fitRotation = true)
         {
             this.direction = direction.normalized;
-            this.fitLookDirection = fitLookDirection;
+            this.fitRotation = fitRotation;
         }
 
-        public Command(Vector3 direction, bool fitLookDirection = true)
-            : this(MathUtils.ToPlane(direction), fitLookDirection)
+        public Command(Vector3 direction, bool fitRotation = true)
+            : this(MathUtils.ToPlane(direction), fitRotation)
         {
         }
     }
@@ -61,7 +61,7 @@ public class WalkBehaviour : BaseMovementBehaviour<WalkBehaviour.Command>
         MovableEntity.velocity.z = command.direction.y * speed;
 
         // look direction
-        if (command.direction.x != 0 & command.fitLookDirection)
+        if (command.direction.x != 0 & command.fitRotation)
         {
             MovableEntity.rotation = Mathf.RoundToInt(Mathf.Sign(command.direction.x));
         }

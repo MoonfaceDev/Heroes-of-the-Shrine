@@ -4,6 +4,7 @@ using System.Linq;
 using ExtEvents;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// Moves entities to predefined points and then plays a cutscene timeline
@@ -16,7 +17,7 @@ public class CutsceneAction : BaseComponent
         public ForcedWalkBehaviour target;
         public float speedMultiplier = 1;
         public Vector3 position;
-        public Rotation lookDirection = Rotation.Right;
+        public Rotation rotation = Rotation.Right;
     }
 
     public List<MoveDefinition> moveDefinitions;
@@ -79,7 +80,7 @@ public class CutsceneAction : BaseComponent
         {
             definition.target.Stop();
             definition.target.GetComponent<WalkBehaviour>().speed /= definition.speedMultiplier;
-            definition.target.MovableEntity.rotation = definition.lookDirection;
+            definition.target.MovableEntity.rotation = definition.rotation;
         });
     }
 

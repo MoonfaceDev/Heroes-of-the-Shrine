@@ -7,13 +7,13 @@ public class EscapeBehaviour : BaseMovementBehaviour<EscapeBehaviour.Command>
     {
         public readonly MovableEntity target;
         public readonly float speedMultiplier;
-        public readonly bool fitLookDirection;
+        public readonly bool fitRotation;
 
-        public Command(MovableEntity target, float speedMultiplier, bool fitLookDirection = true)
+        public Command(MovableEntity target, float speedMultiplier, bool fitRotation = true)
         {
             this.target = target;
             this.speedMultiplier = speedMultiplier;
-            this.fitLookDirection = fitLookDirection;
+            this.fitRotation = fitRotation;
         }
     }
     
@@ -49,7 +49,7 @@ public class EscapeBehaviour : BaseMovementBehaviour<EscapeBehaviour.Command>
             var distance = MovableEntity.WorldPosition - command.target.WorldPosition;
             distance.y = 0;
             var direction = distance.normalized;
-            walkBehaviour.Play(new WalkBehaviour.Command(direction, command.fitLookDirection));
+            walkBehaviour.Play(new WalkBehaviour.Command(direction, command.fitRotation));
             MovableEntity.rotation = -Mathf.RoundToInt(Mathf.Sign(direction.x));
         });
     }
