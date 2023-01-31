@@ -2059,6 +2059,36 @@ references:
   commentId: T:Global.DeathPanel
   fullName: DeathPanel
   nameWithType: DeathPanel
+- uid: Global.DeathPanel.Transition
+  name: DeathPanel.Transition
+  href: api/Global.DeathPanel.Transition.html
+  commentId: T:Global.DeathPanel.Transition
+  fullName: DeathPanel.Transition
+  nameWithType: DeathPanel.Transition
+- uid: Global.DeathPanel.Transition.finalColor
+  name: finalColor
+  href: api/Global.DeathPanel.Transition.html#Global_DeathPanel_Transition_finalColor
+  commentId: F:Global.DeathPanel.Transition.finalColor
+  fullName: DeathPanel.Transition.finalColor
+  nameWithType: DeathPanel.Transition.finalColor
+- uid: Global.DeathPanel.Transition.graphic
+  name: graphic
+  href: api/Global.DeathPanel.Transition.html#Global_DeathPanel_Transition_graphic
+  commentId: F:Global.DeathPanel.Transition.graphic
+  fullName: DeathPanel.Transition.graphic
+  nameWithType: DeathPanel.Transition.graphic
+- uid: Global.DeathPanel.Transition.startColor
+  name: startColor
+  href: api/Global.DeathPanel.Transition.html#Global_DeathPanel_Transition_startColor
+  commentId: F:Global.DeathPanel.Transition.startColor
+  fullName: DeathPanel.Transition.startColor
+  nameWithType: DeathPanel.Transition.startColor
+- uid: Global.DeathPanel.Transition.transitionDuration
+  name: transitionDuration
+  href: api/Global.DeathPanel.Transition.html#Global_DeathPanel_Transition_transitionDuration
+  commentId: F:Global.DeathPanel.Transition.transitionDuration
+  fullName: DeathPanel.Transition.transitionDuration
+  nameWithType: DeathPanel.Transition.transitionDuration
 - uid: Global.DeathPanel.transitions
   name: transitions
   href: api/Global.DeathPanel.html#Global_DeathPanel_transitions
@@ -2145,19 +2175,6 @@ references:
   commentId: F:Global.DieBehaviour.onDie
   fullName: DieBehaviour.onDie
   nameWithType: DieBehaviour.onDie
-- uid: Global.DieBehaviour.Respawn
-  name: Respawn()
-  href: api/Global.DieBehaviour.html#Global_DieBehaviour_Respawn
-  commentId: M:Global.DieBehaviour.Respawn
-  fullName: DieBehaviour.Respawn()
-  nameWithType: DieBehaviour.Respawn()
-- uid: Global.DieBehaviour.Respawn*
-  name: Respawn
-  href: api/Global.DieBehaviour.html#Global_DieBehaviour_Respawn_
-  commentId: Overload:Global.DieBehaviour.Respawn
-  isSpec: "True"
-  fullName: DieBehaviour.Respawn
-  nameWithType: DieBehaviour.Respawn
 - uid: Global.DieBrainModule
   name: DieBrainModule
   href: api/Global.DieBrainModule.html
@@ -3252,38 +3269,6 @@ references:
   isSpec: "True"
   fullName: EventWrapper.Invoke
   nameWithType: EventWrapper.Invoke
-- uid: Global.FadePanel
-  name: FadePanel
-  href: api/Global.FadePanel.html
-  commentId: T:Global.FadePanel
-  fullName: FadePanel
-  nameWithType: FadePanel
-- uid: Global.FadePanel.FadeIn(System.Single)
-  name: FadeIn(Single)
-  href: api/Global.FadePanel.html#Global_FadePanel_FadeIn_System_Single_
-  commentId: M:Global.FadePanel.FadeIn(System.Single)
-  fullName: FadePanel.FadeIn(System.Single)
-  nameWithType: FadePanel.FadeIn(Single)
-- uid: Global.FadePanel.FadeIn*
-  name: FadeIn
-  href: api/Global.FadePanel.html#Global_FadePanel_FadeIn_
-  commentId: Overload:Global.FadePanel.FadeIn
-  isSpec: "True"
-  fullName: FadePanel.FadeIn
-  nameWithType: FadePanel.FadeIn
-- uid: Global.FadePanel.FadeOut(System.Single)
-  name: FadeOut(Single)
-  href: api/Global.FadePanel.html#Global_FadePanel_FadeOut_System_Single_
-  commentId: M:Global.FadePanel.FadeOut(System.Single)
-  fullName: FadePanel.FadeOut(System.Single)
-  nameWithType: FadePanel.FadeOut(Single)
-- uid: Global.FadePanel.FadeOut*
-  name: FadeOut
-  href: api/Global.FadePanel.html#Global_FadePanel_FadeOut_
-  commentId: Overload:Global.FadePanel.FadeOut
-  isSpec: "True"
-  fullName: FadePanel.FadeOut
-  nameWithType: FadePanel.FadeOut
 - uid: Global.Figure
   name: Figure
   href: api/Global.Figure.html
@@ -3828,24 +3813,6 @@ references:
   commentId: T:Global.GameManager
   fullName: GameManager
   nameWithType: GameManager
-- uid: Global.GameManager.fadeDelay
-  name: fadeDelay
-  href: api/Global.GameManager.html#Global_GameManager_fadeDelay
-  commentId: F:Global.GameManager.fadeDelay
-  fullName: GameManager.fadeDelay
-  nameWithType: GameManager.fadeDelay
-- uid: Global.GameManager.fadeDuration
-  name: fadeDuration
-  href: api/Global.GameManager.html#Global_GameManager_fadeDuration
-  commentId: F:Global.GameManager.fadeDuration
-  fullName: GameManager.fadeDuration
-  nameWithType: GameManager.fadeDuration
-- uid: Global.GameManager.fadePanel
-  name: fadePanel
-  href: api/Global.GameManager.html#Global_GameManager_fadePanel
-  commentId: F:Global.GameManager.fadePanel
-  fullName: GameManager.fadePanel
-  nameWithType: GameManager.fadePanel
 - uid: Global.GameManager.PlayAgain(System.String)
   name: PlayAgain(String)
   href: api/Global.GameManager.html#Global_GameManager_PlayAgain_System_String_
@@ -3872,19 +3839,6 @@ references:
   isSpec: "True"
   fullName: GameManager.Quit
   nameWithType: GameManager.Quit
-- uid: Global.GameManager.Respawn
-  name: Respawn()
-  href: api/Global.GameManager.html#Global_GameManager_Respawn
-  commentId: M:Global.GameManager.Respawn
-  fullName: GameManager.Respawn()
-  nameWithType: GameManager.Respawn()
-- uid: Global.GameManager.Respawn*
-  name: Respawn
-  href: api/Global.GameManager.html#Global_GameManager_Respawn_
-  commentId: Overload:Global.GameManager.Respawn
-  isSpec: "True"
-  fullName: GameManager.Respawn
-  nameWithType: GameManager.Respawn
 - uid: Global.GameManager.Restart
   name: Restart()
   href: api/Global.GameManager.html#Global_GameManager_Restart
@@ -7954,36 +7908,6 @@ references:
   commentId: F:Global.TextLink.url
   fullName: TextLink.url
   nameWithType: TextLink.url
-- uid: Global.Transition
-  name: Transition
-  href: api/Global.Transition.html
-  commentId: T:Global.Transition
-  fullName: Transition
-  nameWithType: Transition
-- uid: Global.Transition.finalColor
-  name: finalColor
-  href: api/Global.Transition.html#Global_Transition_finalColor
-  commentId: F:Global.Transition.finalColor
-  fullName: Transition.finalColor
-  nameWithType: Transition.finalColor
-- uid: Global.Transition.graphic
-  name: graphic
-  href: api/Global.Transition.html#Global_Transition_graphic
-  commentId: F:Global.Transition.graphic
-  fullName: Transition.graphic
-  nameWithType: Transition.graphic
-- uid: Global.Transition.startColor
-  name: startColor
-  href: api/Global.Transition.html#Global_Transition_startColor
-  commentId: F:Global.Transition.startColor
-  fullName: Transition.startColor
-  nameWithType: Transition.startColor
-- uid: Global.Transition.transitionDuration
-  name: transitionDuration
-  href: api/Global.Transition.html#Global_Transition_transitionDuration
-  commentId: F:Global.Transition.transitionDuration
-  fullName: Transition.transitionDuration
-  nameWithType: Transition.transitionDuration
 - uid: Global.TransitionAction
   name: TransitionAction
   href: api/Global.TransitionAction.html
