@@ -6,15 +6,6 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class GameManager : BaseComponent
 {
-    public FadePanel fadePanel;
-    public float fadeDelay;
-    public float fadeDuration;
-
-    private void Start()
-    {
-        fadePanel.FadeIn(fadeDuration);
-    }
-
     public void Quit()
     {
         Application.Quit();
@@ -28,17 +19,5 @@ public class GameManager : BaseComponent
     public void PlayAgain(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
-    }
-
-    public void Respawn()
-    {
-        var player = EntityManager.Instance.GetEntity(Tag.Player);
-        player.GetComponent<DieBehaviour>().Respawn();
-
-        StartTimeout(() =>
-        {
-            fadePanel.FadeOut(fadeDuration);
-            StartTimeout(Restart, fadeDuration);
-        }, fadeDelay);
     }
 }

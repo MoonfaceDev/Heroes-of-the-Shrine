@@ -18,7 +18,6 @@ public class DieBehaviour : CharacterBehaviour
     public float deathAnimationDuration;
 
     private static readonly int DeadParameter = Animator.StringToHash("dead");
-    private static readonly int RespawnParameter = Animator.StringToHash("respawn");
 
     /// <value>
     /// Invoked when character dies
@@ -54,13 +53,5 @@ public class DieBehaviour : CharacterBehaviour
         {
             KillAfterKnockback();
         }
-    }
-
-    /// <summary>
-    /// Starts respawn animation
-    /// </summary>
-    public void Respawn()
-    {
-        Animator.SetBool(RespawnParameter, true);
     }
 }
