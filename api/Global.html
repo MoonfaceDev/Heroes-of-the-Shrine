@@ -107,8 +107,6 @@ Must be called manually.</p>
       <section></section>
       <h4><a class="xref" href="Global.AltNormalAttack.html">AltNormalAttack</a></h4>
       <section></section>
-      <h4><a class="xref" href="Global.AnimationDefinition.html">AnimationDefinition</a></h4>
-      <section></section>
       <h4><a class="xref" href="Global.ArcBehaviour.html">ArcBehaviour</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.ArcBehaviour.Command.html">ArcBehaviour.Command</a></h4>
@@ -151,8 +149,6 @@ Must be called manually.</p>
       <h4><a class="xref" href="Global.BasePattern.html">BasePattern</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.BasePatternEditor.html">BasePatternEditor</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Global.BaseTrigger.html">BaseTrigger</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.BossHittableHitbox.html">BossHittableHitbox</a></h4>
       <section><p><span class="xref">HittableHitbox</span> that converts knockback to stun</p>
@@ -198,7 +194,8 @@ Attach only the required brain modules for your state machine logic.</p>
       <section><p>Moves entities to predefined points and then plays a cutscene timeline</p>
 </section>
       <h4><a class="xref" href="Global.CutsceneAction.MoveDefinition.html">CutsceneAction.MoveDefinition</a></h4>
-      <section></section>
+      <section><p>Defines how character should move before the cutscene timeline starts</p>
+</section>
       <h4><a class="xref" href="Global.DamageHitExecutor.html">DamageHitExecutor</a></h4>
       <section><p>Hit executor that deals damage to an hittable</p>
 </section>
@@ -206,13 +203,16 @@ Attach only the required brain modules for your state machine logic.</p>
       <section><p>Class responsible for processing damage values for the character dealing damage</p>
 </section>
       <h4><a class="xref" href="Global.DeathPanel.html">DeathPanel</a></h4>
-      <section></section>
+      <section><p>Plays transitions on a panel when it is activated</p>
+</section>
       <h4><a class="xref" href="Global.DeathPanel.Transition.html">DeathPanel.Transition</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.DelayedEvent.html">DelayedEvent</a></h4>
-      <section></section>
+      <section><p>Invokes an event after waiting a given delay</p>
+</section>
       <h4><a class="xref" href="Global.DestroyAction.html">DestroyAction</a></h4>
-      <section></section>
+      <section><p>Destroys multiple <see cref="!:GameObject"></see></p>
+</section>
       <h4><a class="xref" href="Global.DieBehaviour.html">DieBehaviour</a></h4>
       <section><p>Behaviours that handles death of character</p>
 </section>
@@ -230,11 +230,14 @@ Attach only the required brain modules for your state machine logic.</p>
       <h4><a class="xref" href="Global.DodgeBehaviour.Command.html">DodgeBehaviour.Command</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.EffectBar.html">EffectBar</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Global.EffectDefinition.html">EffectDefinition</a></h4>
-      <section></section>
+      <section><p>Single <span class="xref">BaseEffect`1</span> bar</p>
+</section>
       <h4><a class="xref" href="Global.EffectsBar.html">EffectsBar</a></h4>
-      <section></section>
+      <section><p>Spawns <span class="xref">EffectBar</span> objects when player receives effects</p>
+</section>
+      <h4><a class="xref" href="Global.EffectsBar.EffectDefinition.html">EffectsBar.EffectDefinition</a></h4>
+      <section><p>Definition for effect and its display properties</p>
+</section>
       <h4><a class="xref" href="Global.ElectrifiedEffect.html">ElectrifiedEffect</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.ElectrifiedEffect.Command.html">ElectrifiedEffect.Command</a></h4>
@@ -247,11 +250,14 @@ After the periodic part is checking for hits a certain number of times, the expl
       <section><p>Hit executor that applies electrify effect to an hittable</p>
 </section>
       <h4><a class="xref" href="Global.EncounterAction.html">EncounterAction</a></h4>
-      <section></section>
+      <section><p>Class that manages a single encounter in the scene. An encounter can have multiple waves.</p>
+</section>
       <h4><a class="xref" href="Global.EncounterAction.EnemySpawnDefinition.html">EncounterAction.EnemySpawnDefinition</a></h4>
-      <section></section>
+      <section><p>Definition of a single enemy spawning in a wave</p>
+</section>
       <h4><a class="xref" href="Global.EncounterAction.WaveDefinition.html">EncounterAction.WaveDefinition</a></h4>
-      <section></section>
+      <section><p>Definition of a single wave in the encounter</p>
+</section>
       <h4><a class="xref" href="Global.EnemiesAttackingBrainModule.html">EnemiesAttackingBrainModule</a></h4>
       <section><p>State machine parameter telling if any enemy is attacking, including itself</p>
 </section>
@@ -277,9 +283,11 @@ After the periodic part is checking for hits a certain number of times, the expl
 Should be used only in classes that don&apos;t inherit from <span class="xref">BaseComponent</span>.</p>
 </section>
       <h4><a class="xref" href="Global.EventWrapper.html">EventWrapper</a></h4>
-      <section></section>
+      <section><p>Invoke an <see cref="!:ExtEvent"></see>, which has more events than the normal <see cref="!:UnityEngine.Events.UnityEvent&lt;T0>"></see></p>
+</section>
       <h4><a class="xref" href="Global.Figure.html">Figure</a></h4>
-      <section></section>
+      <section><p>Component that updates a character&apos;s sprite according to its <span class="xref">GameEntity</span></p>
+</section>
       <h4><a class="xref" href="Global.FireEffect.html">FireEffect</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.FireEffect.Command.html">FireEffect.Command</a></h4>
@@ -297,14 +305,18 @@ Should be used only in classes that don&apos;t inherit from <span class="xref">B
       <h4><a class="xref" href="Global.ForcedWalkBehaviour.Command.html">ForcedWalkBehaviour.Command</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.FullScreenToggle.html">FullScreenToggle</a></h4>
-      <section></section>
+      <section><p>Toggles full screen for game window. This class syncs between the <see cref="!:Toggle"></see> state and the &quot;full screen state&quot;.</p>
+</section>
       <h4><a class="xref" href="Global.GameEntity.html">GameEntity</a></h4>
-      <section></section>
+      <section><p>The well known and loved <span class="xref">GameEntity</span> is a bridge between Heroes of the Shrine&apos;s coordinates system,
+that has 3 (!) axes, to Unity&apos;s <see cref="!:Transform"></see> that has only 2</p>
+</section>
       <h4><a class="xref" href="Global.GameManager.html">GameManager</a></h4>
       <section><p>Class including general level operations</p>
 </section>
       <h4><a class="xref" href="Global.HealthBar.html">HealthBar</a></h4>
-      <section></section>
+      <section><p>Bar that displays the part of health left in <span class="xref">HealthBar.healthSystem</span></p>
+</section>
       <h4><a class="xref" href="Global.HealthBrainModule.html">HealthBrainModule</a></h4>
       <section><p>State machine parameters related to <span class="xref">HealthBrainModule.healthSystem</span></p>
 </section>
@@ -312,9 +324,11 @@ Should be used only in classes that don&apos;t inherit from <span class="xref">B
       <section><p>Character health system</p>
 </section>
       <h4><a class="xref" href="Global.Hitbox.html">Hitbox</a></h4>
-      <section></section>
+      <section><p>Hitbox for an attack, particle, or an object that can get hit</p>
+</section>
       <h4><a class="xref" href="Global.HitParticles.html">HitParticles</a></h4>
-      <section></section>
+      <section><p>Class for spawning particles when a <span class="xref">IHittable</span> is hit</p>
+</section>
       <h4><a class="xref" href="Global.HittableBehaviour.html">HittableBehaviour</a></h4>
       <section><p>Behaviours responsible for processing hits from attacks</p>
 </section>
@@ -324,7 +338,7 @@ Should be used only in classes that don&apos;t inherit from <span class="xref">B
       <h4><a class="xref" href="Global.IdlePattern.html">IdlePattern</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.InterfaceWithSerializableContentDrawer.html">InterfaceWithSerializableContentDrawer</a></h4>
-      <section><p>use <code>[SerializeReference,SerializeInterface]</code> on filed definition to use the drawer, like this:
+      <section><p>Use <code>[SerializeReference,SerializeInterface]</code> on field definition to use the drawer, like this:
 <code>[SerializeReference,SerializeInterface] private ICommand command;</code>
 property drawer will automatically find all types that implement your interface
 and will provide UI dropdown, where you can select concrete type that you want to use.</p>
@@ -334,7 +348,8 @@ and will provide UI dropdown, where you can select concrete type that you want t
       <h4><a class="xref" href="Global.JumpBehaviour.Command.html">JumpBehaviour.Command</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.KillEntitiesAction.html">KillEntitiesAction</a></h4>
-      <section></section>
+      <section><p>Kills all entities that match specified tags, using their <span class="xref">DieBehaviour</span></p>
+</section>
       <h4><a class="xref" href="Global.KnockbackBehaviour.html">KnockbackBehaviour</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.KnockbackBehaviour.Command.html">KnockbackBehaviour.Command</a></h4>
@@ -360,19 +375,24 @@ reaches zero.</p>
       <h4><a class="xref" href="Global.MotionAttack.AttackFlow.html">MotionAttack.AttackFlow</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.MovableEntity.html">MovableEntity</a></h4>
-      <section></section>
+      <section><p><span class="xref">GameEntity</span> with moving capabilities </p>
+</section>
       <h4><a class="xref" href="Global.MoveCamera.html">MoveCamera</a></h4>
-      <section></section>
+      <section><p>Changes camera&apos;s target position</p>
+</section>
       <h4><a class="xref" href="Global.MusicVolumeSlider.html">MusicVolumeSlider</a></h4>
-      <section></section>
+      <section><p>Class that syncs between the music volume and a slider</p>
+</section>
       <h4><a class="xref" href="Global.Node.html">Node</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.NormalAttack.html">NormalAttack</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.Particles.html">Particles</a></h4>
-      <section></section>
+      <section><p>Spawns particles</p>
+</section>
       <h4><a class="xref" href="Global.Pathfind.html">Pathfind</a></h4>
-      <section></section>
+      <section><p>Pathfinding on a <span class="xref">WalkableGrid</span> using Theta Star algorithm</p>
+</section>
       <h4><a class="xref" href="Global.PauseManager.html">PauseManager</a></h4>
       <section><p>Singleton used to pause the game</p>
 </section>
@@ -410,7 +430,8 @@ reaches zero.</p>
       <section><p>Contains behaviour&apos;s play and stop events</p>
 </section>
       <h4><a class="xref" href="Global.PlayOnce.html">PlayOnce</a></h4>
-      <section></section>
+      <section><p>Splits calls to two events - one for first-time calls and the other for the rest</p>
+</section>
       <h4><a class="xref" href="Global.PossessAttack.html">PossessAttack</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.PossessAttack.AttackFlow.html">PossessAttack.AttackFlow</a></h4>
@@ -420,13 +441,18 @@ reaches zero.</p>
       <h4><a class="xref" href="Global.PossessedEffect.Command.html">PossessedEffect.Command</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.PossessedHumanBrain.html">PossessedHumanBrain</a></h4>
-      <section></section>
+      <section><p>Updates <code>BossPossessActive</code> according to the boss doing <span class="xref">PossessAttack</span></p>
+</section>
       <h4><a class="xref" href="Global.PossessSource.html">PossessSource</a></h4>
-      <section></section>
+      <section><p>Object has two phases: warning and active. If a <span class="xref">IHittable</span> touches it during the active phase, it will
+receive the possessed effect</p>
+</section>
       <h4><a class="xref" href="Global.PossessSourcesDestroyAction.html">PossessSourcesDestroyAction</a></h4>
-      <section></section>
+      <section><p>Destroys all possess sources on the scene</p>
+</section>
       <h4><a class="xref" href="Global.PriorityQueue-1.html">PriorityQueue&lt;T&gt;</a></h4>
-      <section></section>
+      <section><p>Generic priority queue</p>
+</section>
       <h4><a class="xref" href="Global.ProbabilisticElectrifyHitExecutor.html">ProbabilisticElectrifyHitExecutor</a></h4>
       <section><p>Hit executor that randomly applies electrify effect on hittables</p>
 </section>
@@ -439,7 +465,8 @@ reaches zero.</p>
       <h4><a class="xref" href="Global.RepositionPattern.html">RepositionPattern</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.Rotation.html">Rotation</a></h4>
-      <section></section>
+      <section><p>Rotation that has two options - left or right</p>
+</section>
       <h4><a class="xref" href="Global.RotationDrawer.html">RotationDrawer</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.RunBehaviour.html">RunBehaviour</a></h4>
@@ -449,9 +476,14 @@ reaches zero.</p>
       <h4><a class="xref" href="Global.RunKick.html">RunKick</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.SerializeInterface.html">SerializeInterface</a></h4>
-      <section></section>
+      <section><p>Attribute for serialized interface fields. It displays a dropdown for selecting an implementation, and then displays
+the selected implementation fields </p>
+</section>
       <h4><a class="xref" href="Global.ShadowObject.html">ShadowObject</a></h4>
       <section></section>
+      <h4><a class="xref" href="Global.ShadowObject.AnimationDefinition.html">ShadowObject.AnimationDefinition</a></h4>
+      <section><p>Mapping between an animator state name to the right shadow scale</p>
+</section>
       <h4><a class="xref" href="Global.ShowDebugAttribute.html">ShowDebugAttribute</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.SimpleAttack.html">SimpleAttack</a></h4>
@@ -469,9 +501,12 @@ reaches zero.</p>
       <h4><a class="xref" href="Global.SlideBehaviour.Command.html">SlideBehaviour.Command</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.SoundEffect.html">SoundEffect</a></h4>
-      <section></section>
+      <section><p>Helper component that calls <span class="xref">AudioManager.Play(AudioClip)</span>.
+Use it only when you cannot access the global <see cref="!:AudioBehaviour"></see> directly.</p>
+</section>
       <h4><a class="xref" href="Global.SoundEffectsVolumeSlider.html">SoundEffectsVolumeSlider</a></h4>
-      <section></section>
+      <section><p>Class that syncs between the SFX volume and a slider</p>
+</section>
       <h4><a class="xref" href="Global.SpawnAttack.html">SpawnAttack</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.SpawnAttack.AttackFlow.html">SpawnAttack.AttackFlow</a></h4>
@@ -484,7 +519,8 @@ reaches zero.</p>
       <h4><a class="xref" href="Global.StabAttack.html">StabAttack</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.StopEncountersAction.html">StopEncountersAction</a></h4>
-      <section></section>
+      <section><p>Stops all encounters in the scene</p>
+</section>
       <h4><a class="xref" href="Global.StunBehaviour.html">StunBehaviour</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.StunBehaviour.Command.html">StunBehaviour.Command</a></h4>
@@ -500,7 +536,8 @@ reaches zero.</p>
       <h4><a class="xref" href="Global.SuperArmor.Command.html">SuperArmor.Command</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.SuperArmorBar.html">SuperArmorBar</a></h4>
-      <section></section>
+      <section><p>Bar that displays the health left in a super armor when it&apos;s active, and the &quot;refill&quot; progress when it&apos;s broken</p>
+</section>
       <h4><a class="xref" href="Global.SuperArmorBrainModule.html">SuperArmorBrainModule</a></h4>
       <section><p>State machine parameters related to <span class="xref">SuperArmorBrainModule.superArmor</span></p>
 </section>
@@ -508,25 +545,28 @@ reaches zero.</p>
       <section><span class="xref">HittableHitbox</span> that cannot receive knockback or stun, and proxies hits to <span class="xref">SuperArmorHittableHitbox.superArmor</span>
 </section>
       <h4><a class="xref" href="Global.Tags.html">Tags</a></h4>
-      <section></section>
+      <section><p>Tags property that is displayed as list in the inspector</p>
+</section>
       <h4><a class="xref" href="Global.TagsDrawer.html">TagsDrawer</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.TextLink.html">TextLink</a></h4>
-      <section></section>
+      <section><p>Opens a give URL on a web browser</p>
+</section>
       <h4><a class="xref" href="Global.TransitionAction.html">TransitionAction</a></h4>
-      <section></section>
+      <section><p>Loads a scene</p>
+</section>
       <h4><a class="xref" href="Global.Uppercut.html">Uppercut</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.WalkableGrid.html">WalkableGrid</a></h4>
-      <section></section>
+      <section><p>Walkable area for player and enemies, used for pathfinding</p>
+</section>
       <h4><a class="xref" href="Global.WalkBehaviour.html">WalkBehaviour</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.WalkBehaviour.Command.html">WalkBehaviour.Command</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.WalkSoundEffect.html">WalkSoundEffect</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Global.WaveAnnouncer.html">WaveAnnouncer</a></h4>
-      <section></section>
+      <section><p>Plays a sound effect when character is walking</p>
+</section>
     <h3 id="interfaces">Interfaces
   </h3>
       <h4><a class="xref" href="Global.IEffect.html">IEffect</a></h4>
@@ -553,9 +593,11 @@ reaches zero.</p>
       <section><p>Motion settings when playing attacks</p>
 </section>
       <h4><a class="xref" href="Global.Rotation.Value.html">Rotation.Value</a></h4>
-      <section></section>
+      <section><p>Rotation options</p>
+</section>
       <h4><a class="xref" href="Global.Tag.html">Tag</a></h4>
-      <section></section>
+      <section><p>Possible tags options</p>
+</section>
     <h3 id="delegates">Delegates
   </h3>
       <h4><a class="xref" href="Global.BounceCallback.html">BounceCallback</a></h4>

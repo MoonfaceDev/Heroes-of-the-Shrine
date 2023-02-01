@@ -83,7 +83,9 @@
   
   <h1 id="Global_PossessSource" data-uid="Global.PossessSource" class="text-break">Class PossessSource
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Object has two phases: warning and active. If a <span class="xref">IHittable</span> touches it during the active phase, it will
+receive the possessed effect</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -143,7 +145,8 @@
     <tbody>
       <tr>
         <td><span class="xref">Animator</span></td>
-        <td></td>
+        <td><p>Related animator</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -167,7 +170,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td></td>
+        <td><p>Time before the possess source is destroyed after hitting </p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -201,7 +205,8 @@
   
   <a id="Global_PossessSource_Activate_" data-uid="Global.PossessSource.Activate*"></a>
   <h4 id="Global_PossessSource_Activate_System_Single_System_Single_Tags_System_Single_System_Int32_" data-uid="Global.PossessSource.Activate(System.Single,System.Single,Tags,System.Single,System.Int32)">Activate(Single, Single, Tags, Single, Int32)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Starts the source</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -220,27 +225,32 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
         <td><span class="parametername">warningDuration</span></td>
-        <td></td>
+        <td><p>Duration of the warning phase</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
         <td><span class="parametername">activeDuration</span></td>
-        <td></td>
+        <td><p>Duration of the active phase</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Global.Tags.html">Tags</a></td>
         <td><span class="parametername">hittableTags</span></td>
-        <td></td>
+        <td><p>Tags of objects that can get hit. Get it from <span class="xref">AttackManager.hittableTags</span></p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
         <td><span class="parametername">effectDuration</span></td>
-        <td></td>
+        <td><p>Duration of the applied possess effect on hit</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">hitDamage</span></td>
-        <td></td>
+        <td><p>Damage on hit</p>
+</td>
       </tr>
     </tbody>
   </table>

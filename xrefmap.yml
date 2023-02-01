@@ -145,24 +145,6 @@ references:
   commentId: T:Global.AltNormalAttack
   fullName: AltNormalAttack
   nameWithType: AltNormalAttack
-- uid: Global.AnimationDefinition
-  name: AnimationDefinition
-  href: api/Global.AnimationDefinition.html
-  commentId: T:Global.AnimationDefinition
-  fullName: AnimationDefinition
-  nameWithType: AnimationDefinition
-- uid: Global.AnimationDefinition.animationStateName
-  name: animationStateName
-  href: api/Global.AnimationDefinition.html#Global_AnimationDefinition_animationStateName
-  commentId: F:Global.AnimationDefinition.animationStateName
-  fullName: AnimationDefinition.animationStateName
-  nameWithType: AnimationDefinition.animationStateName
-- uid: Global.AnimationDefinition.shadowScale
-  name: shadowScale
-  href: api/Global.AnimationDefinition.html#Global_AnimationDefinition_shadowScale
-  commentId: F:Global.AnimationDefinition.shadowScale
-  fullName: AnimationDefinition.shadowScale
-  nameWithType: AnimationDefinition.shadowScale
 - uid: Global.ArcBehaviour
   name: ArcBehaviour
   href: api/Global.ArcBehaviour.html
@@ -1259,18 +1241,6 @@ references:
   isSpec: "True"
   fullName: BasePatternEditor.OnInspectorGUI
   nameWithType: BasePatternEditor.OnInspectorGUI
-- uid: Global.BaseTrigger
-  name: BaseTrigger
-  href: api/Global.BaseTrigger.html
-  commentId: T:Global.BaseTrigger
-  fullName: BaseTrigger
-  nameWithType: BaseTrigger
-- uid: Global.BaseTrigger.action
-  name: action
-  href: api/Global.BaseTrigger.html#Global_BaseTrigger_action
-  commentId: F:Global.BaseTrigger.action
-  fullName: BaseTrigger.action
-  nameWithType: BaseTrigger.action
 - uid: Global.BossHittableHitbox
   name: BossHittableHitbox
   href: api/Global.BossHittableHitbox.html
@@ -2414,30 +2384,6 @@ references:
   isSpec: "True"
   fullName: EffectBar.Update
   nameWithType: EffectBar.Update
-- uid: Global.EffectDefinition
-  name: EffectDefinition
-  href: api/Global.EffectDefinition.html
-  commentId: T:Global.EffectDefinition
-  fullName: EffectDefinition
-  nameWithType: EffectDefinition
-- uid: Global.EffectDefinition.color
-  name: color
-  href: api/Global.EffectDefinition.html#Global_EffectDefinition_color
-  commentId: F:Global.EffectDefinition.color
-  fullName: EffectDefinition.color
-  nameWithType: EffectDefinition.color
-- uid: Global.EffectDefinition.effectType
-  name: effectType
-  href: api/Global.EffectDefinition.html#Global_EffectDefinition_effectType
-  commentId: F:Global.EffectDefinition.effectType
-  fullName: EffectDefinition.effectType
-  nameWithType: EffectDefinition.effectType
-- uid: Global.EffectDefinition.icon
-  name: icon
-  href: api/Global.EffectDefinition.html#Global_EffectDefinition_icon
-  commentId: F:Global.EffectDefinition.icon
-  fullName: EffectDefinition.icon
-  nameWithType: EffectDefinition.icon
 - uid: Global.EffectsBar
   name: EffectsBar
   href: api/Global.EffectsBar.html
@@ -2450,6 +2396,30 @@ references:
   commentId: F:Global.EffectsBar.effectBarPrefab
   fullName: EffectsBar.effectBarPrefab
   nameWithType: EffectsBar.effectBarPrefab
+- uid: Global.EffectsBar.EffectDefinition
+  name: EffectsBar.EffectDefinition
+  href: api/Global.EffectsBar.EffectDefinition.html
+  commentId: T:Global.EffectsBar.EffectDefinition
+  fullName: EffectsBar.EffectDefinition
+  nameWithType: EffectsBar.EffectDefinition
+- uid: Global.EffectsBar.EffectDefinition.color
+  name: color
+  href: api/Global.EffectsBar.EffectDefinition.html#Global_EffectsBar_EffectDefinition_color
+  commentId: F:Global.EffectsBar.EffectDefinition.color
+  fullName: EffectsBar.EffectDefinition.color
+  nameWithType: EffectsBar.EffectDefinition.color
+- uid: Global.EffectsBar.EffectDefinition.effectType
+  name: effectType
+  href: api/Global.EffectsBar.EffectDefinition.html#Global_EffectsBar_EffectDefinition_effectType
+  commentId: F:Global.EffectsBar.EffectDefinition.effectType
+  fullName: EffectsBar.EffectDefinition.effectType
+  nameWithType: EffectsBar.EffectDefinition.effectType
+- uid: Global.EffectsBar.EffectDefinition.icon
+  name: icon
+  href: api/Global.EffectsBar.EffectDefinition.html#Global_EffectsBar_EffectDefinition_icon
+  commentId: F:Global.EffectsBar.EffectDefinition.icon
+  fullName: EffectsBar.EffectDefinition.icon
+  nameWithType: EffectsBar.EffectDefinition.icon
 - uid: Global.EffectsBar.effects
   name: effects
   href: api/Global.EffectsBar.html#Global_EffectsBar_effects
@@ -4930,6 +4900,12 @@ references:
   commentId: T:Global.LineTrigger
   fullName: LineTrigger
   nameWithType: LineTrigger
+- uid: Global.LineTrigger.action
+  name: action
+  href: api/Global.LineTrigger.html#Global_LineTrigger_action
+  commentId: F:Global.LineTrigger.action
+  fullName: LineTrigger.action
+  nameWithType: LineTrigger.action
 - uid: Global.LineTrigger.minimumX
   name: minimumX
   href: api/Global.LineTrigger.html#Global_LineTrigger_minimumX
@@ -6433,6 +6409,12 @@ references:
   commentId: T:Global.RectTrigger
   fullName: RectTrigger
   nameWithType: RectTrigger
+- uid: Global.RectTrigger.action
+  name: action
+  href: api/Global.RectTrigger.html#Global_RectTrigger_action
+  commentId: F:Global.RectTrigger.action
+  fullName: RectTrigger.action
+  nameWithType: RectTrigger.action
 - uid: Global.RectTrigger.position
   name: position
   href: api/Global.RectTrigger.html#Global_RectTrigger_position
@@ -6508,19 +6490,6 @@ references:
   commentId: T:Global.Rotation
   fullName: Rotation
   nameWithType: Rotation
-- uid: Global.Rotation.#ctor(Rotation.Value)
-  name: Rotation(Rotation.Value)
-  href: api/Global.Rotation.html#Global_Rotation__ctor_Rotation_Value_
-  commentId: M:Global.Rotation.#ctor(Rotation.Value)
-  fullName: Rotation.Rotation(Rotation.Value)
-  nameWithType: Rotation.Rotation(Rotation.Value)
-- uid: Global.Rotation.#ctor*
-  name: Rotation
-  href: api/Global.Rotation.html#Global_Rotation__ctor_
-  commentId: Overload:Global.Rotation.#ctor
-  isSpec: "True"
-  fullName: Rotation.Rotation
-  nameWithType: Rotation.Rotation
 - uid: Global.Rotation.Equals(System.Object)
   name: Equals(Object)
   href: api/Global.Rotation.html#Global_Rotation_Equals_System_Object_
@@ -6838,6 +6807,24 @@ references:
   commentId: T:Global.ShadowObject
   fullName: ShadowObject
   nameWithType: ShadowObject
+- uid: Global.ShadowObject.AnimationDefinition
+  name: ShadowObject.AnimationDefinition
+  href: api/Global.ShadowObject.AnimationDefinition.html
+  commentId: T:Global.ShadowObject.AnimationDefinition
+  fullName: ShadowObject.AnimationDefinition
+  nameWithType: ShadowObject.AnimationDefinition
+- uid: Global.ShadowObject.AnimationDefinition.animationStateName
+  name: animationStateName
+  href: api/Global.ShadowObject.AnimationDefinition.html#Global_ShadowObject_AnimationDefinition_animationStateName
+  commentId: F:Global.ShadowObject.AnimationDefinition.animationStateName
+  fullName: ShadowObject.AnimationDefinition.animationStateName
+  nameWithType: ShadowObject.AnimationDefinition.animationStateName
+- uid: Global.ShadowObject.AnimationDefinition.shadowScale
+  name: shadowScale
+  href: api/Global.ShadowObject.AnimationDefinition.html#Global_ShadowObject_AnimationDefinition_shadowScale
+  commentId: F:Global.ShadowObject.AnimationDefinition.shadowScale
+  fullName: ShadowObject.AnimationDefinition.shadowScale
+  nameWithType: ShadowObject.AnimationDefinition.shadowScale
 - uid: Global.ShadowObject.animationDefinitions
   name: animationDefinitions
   href: api/Global.ShadowObject.html#Global_ShadowObject_animationDefinitions
@@ -8217,34 +8204,3 @@ references:
   commentId: F:Global.WalkSoundEffect.walkAudioSource
   fullName: WalkSoundEffect.walkAudioSource
   nameWithType: WalkSoundEffect.walkAudioSource
-- uid: Global.WaveAnnouncer
-  name: WaveAnnouncer
-  href: api/Global.WaveAnnouncer.html
-  commentId: T:Global.WaveAnnouncer
-  fullName: WaveAnnouncer
-  nameWithType: WaveAnnouncer
-- uid: Global.WaveAnnouncer.Activate(System.Int32)
-  name: Activate(Int32)
-  href: api/Global.WaveAnnouncer.html#Global_WaveAnnouncer_Activate_System_Int32_
-  commentId: M:Global.WaveAnnouncer.Activate(System.Int32)
-  fullName: WaveAnnouncer.Activate(System.Int32)
-  nameWithType: WaveAnnouncer.Activate(Int32)
-- uid: Global.WaveAnnouncer.Activate*
-  name: Activate
-  href: api/Global.WaveAnnouncer.html#Global_WaveAnnouncer_Activate_
-  commentId: Overload:Global.WaveAnnouncer.Activate
-  isSpec: "True"
-  fullName: WaveAnnouncer.Activate
-  nameWithType: WaveAnnouncer.Activate
-- uid: Global.WaveAnnouncer.duration
-  name: duration
-  href: api/Global.WaveAnnouncer.html#Global_WaveAnnouncer_duration
-  commentId: F:Global.WaveAnnouncer.duration
-  fullName: WaveAnnouncer.duration
-  nameWithType: WaveAnnouncer.duration
-- uid: Global.WaveAnnouncer.text
-  name: text
-  href: api/Global.WaveAnnouncer.html#Global_WaveAnnouncer_text
-  commentId: F:Global.WaveAnnouncer.text
-  fullName: WaveAnnouncer.text
-  nameWithType: WaveAnnouncer.text

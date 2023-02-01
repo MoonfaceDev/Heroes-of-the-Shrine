@@ -83,7 +83,9 @@
   
   <h1 id="Global_GameEntity" data-uid="Global.GameEntity" class="text-break">Class GameEntity
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>The well known and loved <span class="xref">GameEntity</span> is a bridge between Heroes of the Shrine&apos;s coordinates system,
+that has 3 (!) axes, to Unity&apos;s <see cref="!:Transform"></see> that has only 2</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -144,7 +146,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Global.GameEntity.html">GameEntity</a></td>
-        <td></td>
+        <td><p>Parent <span class="xref">GameEntity</span>. Leave null if the object has no parents that are <span class="xref">GameEntity</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -168,7 +171,8 @@
     <tbody>
       <tr>
         <td><span class="xref">Vector3</span></td>
-        <td></td>
+        <td><p>Local position of the entity, relative to <span class="xref">GameEntity.parent</span></p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -192,7 +196,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Global.Rotation.html">Rotation</a></td>
-        <td></td>
+        <td><p>Local rotation of the entity, relative to <span class="xref">GameEntity.parent</span></p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -216,7 +221,8 @@
     <tbody>
       <tr>
         <td><span class="xref">Vector3</span></td>
-        <td></td>
+        <td><p>Local scale of the entity, relative to <span class="xref">GameEntity.parent</span></p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -240,7 +246,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Global.Tags.html">Tags</a></td>
-        <td></td>
+        <td><p>Tags of the entity, multiple tags are allowed</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -250,7 +257,8 @@
   
   <a id="Global_GameEntity_GroundWorldPosition_" data-uid="Global.GameEntity.GroundWorldPosition*"></a>
   <h4 id="Global_GameEntity_GroundWorldPosition" data-uid="Global.GameEntity.GroundWorldPosition">GroundWorldPosition</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Absolute position in world coordinates, with <code>y=0</code></p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -292,7 +300,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td></td>
+        <td><p>Sorting order that related <see cref="!:Renderer"></see> objects should have. Based on the Z position. </p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -300,7 +309,8 @@
   
   <a id="Global_GameEntity_WorldPosition_" data-uid="Global.GameEntity.WorldPosition*"></a>
   <h4 id="Global_GameEntity_WorldPosition" data-uid="Global.GameEntity.WorldPosition">WorldPosition</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Absolute position in world coordinates</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -325,7 +335,8 @@
   
   <a id="Global_GameEntity_WorldRotation_" data-uid="Global.GameEntity.WorldRotation*"></a>
   <h4 id="Global_GameEntity_WorldRotation" data-uid="Global.GameEntity.WorldRotation">WorldRotation</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Absolute rotation</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -350,7 +361,8 @@
   
   <a id="Global_GameEntity_WorldScale_" data-uid="Global.GameEntity.WorldScale*"></a>
   <h4 id="Global_GameEntity_WorldScale" data-uid="Global.GameEntity.WorldScale">WorldScale</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Absolute scale</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -387,7 +399,8 @@
   
   <a id="Global_GameEntity_GroundDistance_" data-uid="Global.GameEntity.GroundDistance*"></a>
   <h4 id="Global_GameEntity_GroundDistance_Vector3_" data-uid="Global.GameEntity.GroundDistance(Vector3)">GroundDistance(Vector3)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Distance a point, excluding the Y distance</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -406,7 +419,8 @@
       <tr>
         <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">point</span></td>
-        <td></td>
+        <td><p>World point to measure distance from</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -429,7 +443,8 @@
   
   <a id="Global_GameEntity_GroundScreenCoordinates_" data-uid="Global.GameEntity.GroundScreenCoordinates*"></a>
   <h4 id="Global_GameEntity_GroundScreenCoordinates_Vector3_" data-uid="Global.GameEntity.GroundScreenCoordinates(Vector3)">GroundScreenCoordinates(Vector3)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Converts a game point to the point where is rendered on the screen, without entity elevation (game&apos;s Y position)</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -448,7 +463,8 @@
       <tr>
         <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">v</span></td>
-        <td></td>
+        <td><p>World position of the point, in game coordinates</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -471,7 +487,8 @@
   
   <a id="Global_GameEntity_ScreenCoordinates_" data-uid="Global.GameEntity.ScreenCoordinates*"></a>
   <h4 id="Global_GameEntity_ScreenCoordinates_Vector3_" data-uid="Global.GameEntity.ScreenCoordinates(Vector3)">ScreenCoordinates(Vector3)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Converts a game point to the point where is rendered on the screen, including elevation</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -490,7 +507,8 @@
       <tr>
         <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">v</span></td>
-        <td></td>
+        <td><p>World position of the point, in game coordinates</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -513,7 +531,8 @@
   
   <a id="Global_GameEntity_TransformToRelative_" data-uid="Global.GameEntity.TransformToRelative*"></a>
   <h4 id="Global_GameEntity_TransformToRelative_Vector3_" data-uid="Global.GameEntity.TransformToRelative(Vector3)">TransformToRelative(Vector3)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Transforms an absolute coordinate to a relative one</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -532,7 +551,8 @@
       <tr>
         <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">worldPoint</span></td>
-        <td></td>
+        <td><p>Absolute point</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -555,7 +575,8 @@
   
   <a id="Global_GameEntity_TransformToWorld_" data-uid="Global.GameEntity.TransformToWorld*"></a>
   <h4 id="Global_GameEntity_TransformToWorld_Vector3_" data-uid="Global.GameEntity.TransformToWorld(Vector3)">TransformToWorld(Vector3)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Transforms a relative coordinate to an absolute one</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -574,7 +595,8 @@
       <tr>
         <td><span class="xref">Vector3</span></td>
         <td><span class="parametername">relativePoint</span></td>
-        <td></td>
+        <td><p>Point relative to this entity</p>
+</td>
       </tr>
     </tbody>
   </table>
