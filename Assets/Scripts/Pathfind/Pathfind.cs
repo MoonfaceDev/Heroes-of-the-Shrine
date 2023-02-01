@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Pathfinding on a <see cref="WalkableGrid"/> using Theta Star algorithm
+/// </summary>
 public class Pathfind : BaseComponent
 {
     private WalkableGrid grid;

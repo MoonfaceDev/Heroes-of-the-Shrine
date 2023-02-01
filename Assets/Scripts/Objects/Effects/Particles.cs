@@ -1,12 +1,29 @@
 using UnityEngine;
 
+/// <summary>
+/// Spawns particles
+/// </summary>
 [RequireComponent(typeof(GameEntity))]
 public class Particles : BaseComponent
 {
+    /// <value>
+    /// Prefab of the particles
+    /// </value>
     public ParticleSystem prefab;
+    
+    /// <value>
+    /// Point where particle is spawned, relative to the <see cref="GameEntity"/>
+    /// </value>
     public Vector3 particlePosition;
+    
+    /// <value>
+    /// If <c>true</c>, particles move along with the character after they are spawned
+    /// </value>
     public bool attachToCharacter;
 
+    /// <summary>
+    /// Spawns the particles
+    /// </summary>
     public void Play()
     {
         var entity = GetComponent<GameEntity>();

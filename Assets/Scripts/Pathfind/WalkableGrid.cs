@@ -2,10 +2,20 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// Walkable area for player and enemies, used for pathfinding
+/// </summary>
 [RequireComponent(typeof(GameEntity))]
 public class WalkableGrid : BaseComponent
 {
+    /// <value>
+    /// Size of the grid
+    /// </value>
     public Vector3 gridWorldSize;
+    
+    /// <value>
+    /// Radius of a small square piece of the grid. Smaller values provide better pathfinding results but are more expensive computationally 
+    /// </value>
     public float nodeRadius;
 
     private Node[,] grid;

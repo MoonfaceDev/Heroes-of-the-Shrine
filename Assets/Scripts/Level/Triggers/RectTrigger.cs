@@ -1,9 +1,25 @@
+using ExtEvents;
 using UnityEngine;
 
-public class RectTrigger : BaseTrigger
+/// <value>
+/// Invokes an event when player enters a rectangle for the first time
+/// </value>
+public class RectTrigger : BaseComponent
 {
+    /// <value>
+    /// Position of the left-bottom-near point of the cube 
+    /// </value>
     public Vector3 position;
+    
+    /// <value>
+    /// Size of the cube
+    /// </value>
     public Vector3 size;
+    
+    /// <value>
+    /// Target event
+    /// </value>
+    [SerializeField] public ExtEvent action;
 
     private GameEntity player;
     private bool fired;

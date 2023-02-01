@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Possible tags options
+/// </summary>
 public enum Tag
 {
     Barrier,
@@ -14,6 +17,9 @@ public enum Tag
     Prop,
 }
 
+/// <summary>
+/// Tags property that is displayed as list in the inspector
+/// </summary>
 [Serializable]
 public class Tags : IReadOnlyCollection<Tag>
 {

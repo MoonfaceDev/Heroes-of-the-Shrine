@@ -1,5 +1,6 @@
-using UnityEngine;
-
+/// <summary>
+/// Destroys all possess sources on the scene
+/// </summary>
 public class PossessSourcesDestroyAction : BaseComponent
 {
     public void Invoke()

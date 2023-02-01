@@ -4,13 +4,30 @@ using System.Linq;
 using UnityEngine;
 using static MathUtils;
 
+/// <summary>
+/// <see cref="GameEntity"/> with moving capabilities 
+/// </summary>
 [ExecuteInEditMode]
 public class MovableEntity : GameEntity
 {
+    /// <value>
+    /// Velocity in relative coordinates
+    /// </value>
     [ShowDebug] public Vector3 velocity = Vector3.zero;
+    
+    /// <value>
+    /// Acceleration in relative coordinates
+    /// </value>
     [ShowDebug] public Vector3 acceleration = Vector3.zero;
 
+    /// <value>
+    /// Invoked when entity tried to move into a barrier
+    /// </value>
     public event Action OnStuck;
+    
+    /// <value>
+    /// Invoked when entity landed on the ground (y=0) 
+    /// </value>
     public event Action OnLand;
 
     private WalkableGrid walkableGrid;
@@ -55,6 +72,10 @@ public class MovableEntity : GameEntity
         UpdateTransform();
     }
 
+    /// <summary>
+    /// Move the entity to a new position. If there's a barrier in the way, the entity will stop before hitting hit
+    /// </summary>
+    /// <param name="newPosition">Target position in relative coordinates</param>
     public void UpdatePosition(Vector3 newPosition)
     {
         if (!Application.isPlaying)

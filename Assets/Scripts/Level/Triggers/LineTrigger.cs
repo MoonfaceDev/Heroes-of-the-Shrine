@@ -1,8 +1,20 @@
+using ExtEvents;
 using UnityEngine;
 
-public class LineTrigger : BaseTrigger
+/// <value>
+/// Invokes an event when player crosses a line (X value) for the first time
+/// </value>
+public class LineTrigger : BaseComponent
 {
+    /// <value>
+    /// X value that player has to cross
+    /// </value>
     public float minimumX;
+    
+    /// <value>
+    /// Target event
+    /// </value>
+    [SerializeField] public ExtEvent action;
 
     private GameEntity player;
     private bool fired;
@@ -14,7 +26,6 @@ public class LineTrigger : BaseTrigger
 
     protected override void Update()
     {
-        base.Update();
         if (player && player.WorldPosition.x >= minimumX && !fired)
         {
             fired = true;

@@ -1,9 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Bar that displays the part of health left in <see cref="healthSystem"/>
+/// </summary>
 [RequireComponent(typeof(Scrollbar))]
 public class HealthBar : BaseComponent
 {
+    /// <value>
+    /// Related <see cref="healthSystem"/>
+    /// </value>
     public HealthSystem healthSystem;
 
     private Scrollbar scrollbar;

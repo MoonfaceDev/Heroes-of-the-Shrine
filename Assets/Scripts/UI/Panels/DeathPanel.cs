@@ -2,6 +2,9 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Plays transitions on a panel when it is activated
+/// </summary>
 [RequireComponent(typeof(Image))]
 public class DeathPanel : BaseComponent
 {

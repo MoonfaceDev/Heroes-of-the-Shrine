@@ -1,22 +1,28 @@
 ﻿using System;
 using UnityEngine;
 
+/// <summary>
+/// Rotation that has two options - left or right
+/// </summary>
 [Serializable]
 public class Rotation
 {
+    /// <summary>
+    /// Rotation options
+    /// </summary>
     public enum Value
     {
         Left = -1,
         Right = 1,
     }
-
+    
     [SerializeField] private Value value;
-
+    
     public static Rotation Left => new(Value.Left);
 
     public static Rotation Right => new(Value.Right);
 
-    public Rotation(Value value)
+    private Rotation(Value value)
     {
         this.value = value;
     }
@@ -56,6 +62,9 @@ public class Rotation
         return Vector3.Scale(relativePosition, new Vector3((int)rotation.value, 1, 1));
     }
 
+    /// <summary>
+    /// The opposite rotation
+    /// </summary>
     public static Rotation operator -(Rotation rotation)
     {
         return new Rotation((Value)(-(int)rotation.value));

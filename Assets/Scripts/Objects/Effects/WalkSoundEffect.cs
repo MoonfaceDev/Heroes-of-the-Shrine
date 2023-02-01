@@ -1,8 +1,14 @@
 using UnityEngine;
 
+/// <summary>
+/// Plays a sound effect when character is walking
+/// </summary>
 [RequireComponent(typeof(WalkBehaviour))]
 public class WalkSoundEffect : BaseComponent
 {
+    /// <value>
+    /// <see cref="AudioSource"/> only for this character's walk sound effects
+    /// </value>
     public AudioSource walkAudioSource;
 
     private void Awake()

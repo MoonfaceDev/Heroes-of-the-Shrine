@@ -4,25 +4,58 @@ using System.Linq;
 using ExtEvents;
 using UnityEngine;
 using UnityEngine.Playables;
-using UnityEngine.Serialization;
 
 /// <summary>
 /// Moves entities to predefined points and then plays a cutscene timeline
 /// </summary>
 public class CutsceneAction : BaseComponent
 {
+    /// <summary>
+    /// Defines how character should move before the cutscene timeline starts
+    /// </summary>
     [Serializable]
     public class MoveDefinition
     {
+        /// <value>
+        /// <see cref="ForcedWalkBehaviour"/> of the character
+        /// </value>
         public ForcedWalkBehaviour target;
+        
+        /// <value>
+        /// Speed multiplier while moving
+        /// </value>
         public float speedMultiplier = 1;
+        
+        /// <value>
+        /// Point that character is moving towards
+        /// </value>
         public Vector3 position;
+        
+        /// <value>
+        /// Character rotation when the timeline starts
+        /// </value>
         public Rotation rotation = Rotation.Right;
     }
 
+    /// <value>
+    /// Move definitions of the participating characters. Add any character whom position is essential for the timeline.
+    /// The <see cref="MoveDefinition"/> will make their start position determinist for the cutscene.
+    /// </value>
     public List<MoveDefinition> moveDefinitions;
+    
+    /// <value>
+    /// <seealso cref="PlayableDirector"/> that plays the timeline
+    /// </value>
     public PlayableDirector director;
+    
+    /// <value>
+    /// Invoked after timeline is finished
+    /// </value>
     [SerializeField] public ExtEvent postCutsceneEvent;
+    
+    /// <value>
+    /// If <c>true</c>, plays the cutscene right when scene is loaded
+    /// </value>
     public bool playOnAwake;
 
     private const float WantedDistance = 0.1f;
@@ -35,6 +68,9 @@ public class CutsceneAction : BaseComponent
         }
     }
 
+    /// <summary>
+    /// Moves characters according to <see cref="moveDefinitions"/> and plays the cutscene
+    /// </summary>
     public void Invoke()
     {
         var controllers = FindObjectsOfType<CharacterController>();

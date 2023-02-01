@@ -1,9 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Single <see cref="BaseEffect{T}"/> bar
+/// </summary>
 [RequireComponent(typeof(Scrollbar))]
 public class EffectBar : BaseComponent
 {
+    /// <value>
+    /// Related effect instance on a character
+    /// </value>
     public IEffect effect;
 
     private Scrollbar scrollbar;

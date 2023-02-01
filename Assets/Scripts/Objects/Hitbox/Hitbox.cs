@@ -82,12 +82,21 @@ internal class Box
     }
 }
 
+/// <summary>
+/// Hitbox for an attack, particle, or an object that can get hit
+/// </summary>
 [ExecuteInEditMode]
 [RequireComponent(typeof(GameEntity))]
 public class Hitbox : BaseComponent
 {
+    /// <value>
+    /// Hitbox size
+    /// </value>
     public Vector3 size;
 
+    /// <value>
+    /// Hitbox center point in world coordinates
+    /// </value>
     public Vector3 WorldPosition => entity.WorldPosition;
 
     private GameEntity entity;
@@ -136,21 +145,36 @@ public class Hitbox : BaseComponent
         Gizmos.DrawCube((Vector3)screenCenter + 0.01f * Vector3.forward, (Vector3)screenSize + 0.01f * Vector3.forward);
     }
 
+    /// <summary>
+    /// Checks if a point is inside the hitbox
+    /// </summary>
     public bool IsInside(Vector3 point)
     {
         return box.IsInside(point);
     }
 
+    /// <summary>
+    /// Checks if this hitbox intersects another hitbox  
+    /// </summary>
     public bool OverlapHitbox(Hitbox other)
     {
         return box.OverlapBox(other.box);
     }
 
+    /// <summary>
+    /// Finds intersections with a segment on the ground
+    /// </summary>
+    /// <param name="start">One edge of the segment, in ground coordinates</param>
+    /// <param name="end">Other edge of the segment, in ground coordinates</param>
+    /// <returns>Points where the segment intersects this hitbox, in ground coordinates</returns>
     public IEnumerable<Vector2> GetSegmentIntersections(Vector2 start, Vector2 end)
     {
         return box.GetSegmentIntersections(start, end);
     }
 
+    /// <summary>
+    /// Finds the middle point in the intersection volume between two hitboxes
+    /// </summary>
     public Vector3 GetIntersectionCenter(Hitbox other)
     {
         return box.GetIntersectionCenter(other.box);

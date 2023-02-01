@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Changes camera's target position
+/// </summary>
 public class MoveCamera : BaseComponent
 {
     public CameraMovement cameraMovement;

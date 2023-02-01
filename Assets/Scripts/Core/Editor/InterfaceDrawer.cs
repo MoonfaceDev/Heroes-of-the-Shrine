@@ -7,7 +7,7 @@ using UnityEditor;
 using UnityEngine;
 
 /// <summary>
-/// use <c>[SerializeReference,SerializeInterface]</c> on filed definition to use the drawer, like this:
+/// Use <c>[SerializeReference,SerializeInterface]</c> on field definition to use the drawer, like this:
 /// <c>[SerializeReference,SerializeInterface] private ICommand command;</c>
 /// property drawer will automatically find all types that implement your interface
 /// and will provide UI dropdown, where you can select concrete type that you want to use.

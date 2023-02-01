@@ -4,20 +4,43 @@ using TypeReferences;
 using UnityEngine;
 using UnityEngine.UI;
 
-[Serializable]
-public class EffectDefinition
-{
-    [SerializeField, TypeOptions(SerializableOnly = true)]
-    public TypeReference effectType;
-
-    public Sprite icon;
-    public Color color;
-}
-
+/// <summary>
+/// Spawns <see cref="EffectBar"/> objects when player receives effects
+/// </summary>
 [RequireComponent(typeof(VerticalLayoutGroup))]
 public class EffectsBar : BaseComponent
 {
+    /// <summary>
+    /// Definition for effect and its display properties
+    /// </summary>
+    [Serializable]
+    public class EffectDefinition
+    {
+        /// <value>
+        /// Type of the effect, inheriting from <see cref="BaseEffect{T}"/>
+        /// </value>
+        [SerializeField, TypeOptions(SerializableOnly = true)]
+        public TypeReference effectType;
+
+        /// <value>
+        /// Icon displayed next to the bar
+        /// </value>
+        public Sprite icon;
+        
+        /// <value>
+        /// Bar filling color
+        /// </value>
+        public Color color;
+    }
+    
+    /// <value>
+    /// Prefab of a single effect bar
+    /// </value>
     public GameObject effectBarPrefab;
+    
+    /// <value>
+    /// Effects that are displayed if applied to the character
+    /// </value>
     public EffectDefinition[] effects;
 
     private VerticalLayoutGroup container;

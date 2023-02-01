@@ -1,19 +1,37 @@
 ﻿using System;
 using UnityEngine;
 
-[Serializable]
-public class AnimationDefinition
-{
-    public string animationStateName;
-    public float shadowScale;
-}
-
 [ExecuteInEditMode]
 public class ShadowObject : BaseComponent
 {
-    public MovableEntity movableEntity;
+    /// <summary>
+    /// Mapping between an animator state name to the right shadow scale
+    /// </summary>
+    [Serializable]
+    public class AnimationDefinition
+    {
+        public string animationStateName;
+        public float shadowScale;
+    }
+    
+    /// <value>
+    /// Entity that owns the shadow
+    /// </value>
+    public GameEntity movableEntity;
+    
+    /// <value>
+    /// Initial shadow scale in game coordinates
+    /// </value>
     public Vector3 shadowScale;
+    
+    /// <value>
+    /// Related figure to check the animation state - optional
+    /// </value>
     public Animator figure;
+    
+    /// <value>
+    /// Animation states that override <see cref="shadowScale"/>
+    /// </value>
     public AnimationDefinition[] animationDefinitions;
 
     protected override void Update()

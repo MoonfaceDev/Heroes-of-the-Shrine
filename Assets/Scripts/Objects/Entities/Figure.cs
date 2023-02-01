@@ -1,10 +1,16 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Component that updates a character's sprite according to its <see cref="GameEntity"/>
+/// </summary>
 [ExecuteInEditMode]
 [RequireComponent(typeof(Renderer))]
 public class Figure : BaseComponent
 {
-    public MovableEntity movableEntity;
+    /// <value>
+    /// Character's <see cref="GameEntity"/>
+    /// </value>
+    public GameEntity movableEntity;
 
     private new Renderer renderer;
 
