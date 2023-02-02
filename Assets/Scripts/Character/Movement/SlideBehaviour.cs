@@ -43,7 +43,7 @@ public class SlideBehaviour : BaseMovementBehaviour<SlideBehaviour.Command>
     protected override void DoPlay(Command command)
     {
         StopBehaviours(typeof(WalkBehaviour), typeof(BaseAttack));
-        DisableBehaviours(typeof(WalkBehaviour));
+        BlockBehaviours(typeof(WalkBehaviour));
 
         Slide = true;
 
@@ -63,6 +63,6 @@ public class SlideBehaviour : BaseMovementBehaviour<SlideBehaviour.Command>
         Slide = false;
         MovableEntity.velocity.x = 0;
         MovableEntity.acceleration.x = 0;
-        EnableBehaviours(typeof(WalkBehaviour));
+        UnblockBehaviours(typeof(WalkBehaviour));
     }
 }

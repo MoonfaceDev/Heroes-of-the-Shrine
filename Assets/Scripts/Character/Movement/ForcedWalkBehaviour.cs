@@ -24,7 +24,8 @@ public class ForcedWalkBehaviour : PlayableBehaviour<ForcedWalkBehaviour.Command
     protected override void DoPlay(Command command)
     {
         StopBehaviours(typeof(IPlayableBehaviour));
-        DisableBehaviours(typeof(CharacterController), typeof(RunBehaviour));
+        DisableComponents(typeof(CharacterController));
+        BlockBehaviours(typeof(RunBehaviour));
 
         active = true;
 
@@ -42,7 +43,8 @@ public class ForcedWalkBehaviour : PlayableBehaviour<ForcedWalkBehaviour.Command
 
         Cancel(stopListener);
         StopBehaviours(typeof(AutoWalkBehaviour));
-        EnableBehaviours(typeof(PlayerController), typeof(RunBehaviour));
+        EnableComponents(typeof(CharacterController));
+        UnblockBehaviours(typeof(RunBehaviour));
 
         MovableEntity.velocity = Vector3.zero;
     }

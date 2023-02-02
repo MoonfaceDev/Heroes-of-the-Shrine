@@ -135,7 +135,7 @@ public abstract class BaseAttack : PlayableBehaviour<BaseAttack.Command>
         if (Motion != MotionSettings.WalkingEnabled)
         {
             var velocityBefore = MovableEntity.velocity;
-            DisableBehaviours(typeof(WalkBehaviour));
+            BlockBehaviours(typeof(WalkBehaviour));
             StopBehaviours(typeof(WalkBehaviour));
             if (Motion != MotionSettings.Static)
             {
@@ -185,7 +185,7 @@ public abstract class BaseAttack : PlayableBehaviour<BaseAttack.Command>
 
         if (Motion != MotionSettings.WalkingEnabled)
         {
-            EnableBehaviours(typeof(WalkBehaviour));
+            UnblockBehaviours(typeof(WalkBehaviour));
         }
 
         if (Anticipating)

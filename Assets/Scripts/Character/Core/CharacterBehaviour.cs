@@ -27,54 +27,27 @@ public abstract class CharacterBehaviour : BaseComponent
     /// </value>
     public AttackManager AttackManager => Character.attackManager;
 
-    /// <summary>
-    /// If <c>true</c>, the behaviour can be played.
-    /// Can be set to <c>false</c> multiple times, as it will change back to <c>true</c> only if it was set to <c>true</c> the same number of times.
-    /// </summary>
-    public bool Enabled
-    {
-        get => disableCount == 0;
-        set
-        {
-            if (value)
-            {
-                if (disableCount > 0)
-                {
-                    disableCount--;
-                }
-            }
-            else
-            {
-                disableCount++;
-            }
-
-            enabled = disableCount == 0;
-        }
-    }
-
-    private int disableCount;
-
     protected virtual void Awake()
     {
         Character = GetComponent<Character>();
     }
 
     /// <summary>
-    /// Enables behaviours, meaning they can be played
+    /// Blocks behaviours, meaning they cannot be played. If a behaviour is blocked N times, it will have to be unblocked N times so it can be played.
     /// </summary>
-    /// <param name="behaviours">Behaviours to enable. All of the attached behaviours from each type will be enabled.</param>
-    protected void EnableBehaviours(params Type[] behaviours)
+    /// <param name="behaviours">Behaviours to block. All of the attached behaviours from each type will be blocked.</param>
+    protected void BlockBehaviours(params Type[] behaviours)
     {
-        Character.EnableBehaviours(behaviours);
+        Character.BlockBehaviours(behaviours);
     }
 
     /// <summary>
-    /// Disables behaviours, meaning they cannot be played. If a behaviour is disabled N times, it will have to be enabled N times so it can be played.
+    /// Unblocks behaviours, meaning they can be played
     /// </summary>
-    /// <param name="behaviours">Behaviours to disable. All of the attached behaviours from each type will be enabled.</param>
-    protected void DisableBehaviours(params Type[] behaviours)
+    /// <param name="behaviours">Behaviours to unblock. All of the attached behaviours from each type will be unblocked.</param>
+    protected void UnblockBehaviours(params Type[] behaviours)
     {
-        Character.DisableBehaviours(behaviours);
+        Character.UnblockBehaviours(behaviours);
     }
 
     /// <summary>

@@ -32,7 +32,7 @@ public class DieBehaviour : CharacterBehaviour
 
     private void Kill()
     {
-        DisableBehaviours(typeof(IEffect), typeof(CharacterController));
+        DisableComponents(typeof(CharacterController));
         StopBehaviours(typeof(IEffect), typeof(IMovementBehaviour), typeof(BaseAttack), typeof(StunBehaviour));
 
         void KillAfterKnockback()

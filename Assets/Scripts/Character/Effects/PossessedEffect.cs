@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PossessedEffect : BaseEffect<PossessedEffect.Command>
 {
@@ -15,6 +16,8 @@ public class PossessedEffect : BaseEffect<PossessedEffect.Command>
     private float currentDuration;
     private float currentStartTime;
     private string stopListener;
+    
+    private static readonly Type[] BehavioursToBlock = { typeof(BaseAttack), typeof(IMovementBehaviour), typeof(IForcedBehaviour) };
 
     public override bool CanPlay(Command command)
     {
@@ -35,8 +38,8 @@ public class PossessedEffect : BaseEffect<PossessedEffect.Command>
             hittableBehaviour.OnHit += OnHit;
         }
 
-        DisableBehaviours(typeof(BaseAttack), typeof(IMovementBehaviour), typeof(IForcedBehaviour));
-        StopBehaviours(typeof(BaseAttack), typeof(IMovementBehaviour), typeof(IForcedBehaviour));
+        BlockBehaviours(BehavioursToBlock);
+        StopBehaviours(BehavioursToBlock);
         MovableEntity.velocity = Vector3.zero;
     }
 
@@ -62,7 +65,7 @@ public class PossessedEffect : BaseEffect<PossessedEffect.Command>
 
         currentDuration = 0;
 
-        EnableBehaviours(typeof(BaseAttack), typeof(IMovementBehaviour), typeof(IForcedBehaviour));
+        UnblockBehaviours(BehavioursToBlock);
         Cancel(stopListener);
     }
 

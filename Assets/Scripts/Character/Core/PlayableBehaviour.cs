@@ -31,6 +31,11 @@ public interface IPlayableBehaviour
     /// </value>
     public bool Playing { get; }
 
+    /// <value>
+    /// If <c>true</c>, the behaviour cannot be played.
+    /// </value>
+    public bool Blocked { get; set; }
+
     /// <summary>
     /// Stops the behaviour.
     /// Calling it when behaviour is not playing will not do anything.
@@ -56,10 +61,36 @@ public abstract class PlayableBehaviour<T> : CharacterBehaviour, IPlayableBehavi
     /// </value>
     public abstract bool Playing { get; }
 
+    /// <summary>
+    /// If <c>true</c>, the behaviour cannot be played.
+    /// Can be set to <c>true</c> multiple times, as it will change back to <c>false</c> only if it was set to <c>false</c> the same number of times.
+    /// Should not affect an action that has already started.
+    /// </summary>
+    public bool Blocked
+    {
+        get => blockCount > 0;
+        set
+        {
+            if (value)
+            {
+                blockCount++;
+            }
+            else
+            {
+                if (blockCount > 0)
+                {
+                    blockCount--;
+                }
+            }
+        }
+    }
+
+    private int blockCount;
+
     /// <returns>True if behaviour can be played. Override to add more conditions</returns>
     public virtual bool CanPlay(T command)
     {
-        return Enabled;
+        return !Blocked;
     }
 
     /// <summary>

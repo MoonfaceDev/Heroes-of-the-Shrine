@@ -35,34 +35,34 @@ public class Character : BaseComponent
         attackManager = GetComponent<AttackManager>();
     }
 
-    private void SetBehavioursEnabled(bool enabledValue, IEnumerable<Type> behaviours)
+    private void SetBehavioursBlocked(bool blockedValue, IEnumerable<Type> behaviours)
     {
         foreach (var type in behaviours)
         {
             foreach (var component in GetComponents(type))
             {
-                var behaviour = (CharacterBehaviour)component;
-                behaviour.Enabled = enabledValue;
+                var behaviour = (IPlayableBehaviour)component;
+                behaviour.Blocked = blockedValue;
             }
         }
     }
 
     /// <summary>
-    /// Enables behaviours, meaning they can be played
+    /// Blocks behaviours, meaning they cannot be played. If a behaviour is blocked N times, it will have to be unblocked N times so it can be played.
     /// </summary>
-    /// <param name="behaviours">Behaviours to enable. All of the attached behaviours from each type will be enabled.</param>
-    public void EnableBehaviours(params Type[] behaviours)
+    /// <param name="behaviours">Behaviours to block. All of the attached behaviours from each type will be blocked.</param>
+    public void BlockBehaviours(params Type[] behaviours)
     {
-        SetBehavioursEnabled(true, behaviours);
+        SetBehavioursBlocked(true, behaviours);
     }
 
     /// <summary>
-    /// Disables behaviours, meaning they cannot be played. If a behaviour is disabled N times, it will have to be enabled N times so it can be played.
+    /// Unblocks behaviours, meaning they can be played
     /// </summary>
-    /// <param name="behaviours">Behaviours to disable. All of the attached behaviours from each type will be enabled.</param>
-    public void DisableBehaviours(params Type[] behaviours)
+    /// <param name="behaviours">Behaviours to unblock. All of the attached behaviours from each type will be unblocked.</param>
+    public void UnblockBehaviours(params Type[] behaviours)
     {
-        SetBehavioursEnabled(false, behaviours);
+        SetBehavioursBlocked(false, behaviours);
     }
 
     /// <summary>

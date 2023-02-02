@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 
 public class ElectrifiedEffect : BaseEffect<ElectrifiedEffect.Command>
@@ -23,7 +24,7 @@ public class ElectrifiedEffect : BaseEffect<ElectrifiedEffect.Command>
     private float currentSpeedMultiplier;
     private string stopListener;
 
-    private static readonly Type[] BehavioursToDisable =
+    private static readonly Type[] BehavioursToBlock =
         { typeof(RunBehaviour), typeof(SlideBehaviour), typeof(DodgeBehaviour), typeof(JumpBehaviour) };
 
     protected override void Awake()
@@ -34,7 +35,7 @@ public class ElectrifiedEffect : BaseEffect<ElectrifiedEffect.Command>
 
     protected override void DoPlay(Command command)
     {
-        StopBehaviours(typeof(RunBehaviour), typeof(SlideBehaviour), typeof(DodgeBehaviour), typeof(ElectrifiedEffect));
+        StopBehaviours(BehavioursToBlock.Append(typeof(ElectrifiedEffect)).ToArray());
 
         Active = true;
 
@@ -44,7 +45,7 @@ public class ElectrifiedEffect : BaseEffect<ElectrifiedEffect.Command>
             walkBehaviour.speed *= currentSpeedMultiplier;
         }
 
-        DisableBehaviours(BehavioursToDisable);
+        BlockBehaviours(BehavioursToBlock);
         particles.Play();
 
         startTime = Time.time;
@@ -61,7 +62,7 @@ public class ElectrifiedEffect : BaseEffect<ElectrifiedEffect.Command>
             walkBehaviour.speed /= currentSpeedMultiplier;
         }
 
-        EnableBehaviours(BehavioursToDisable);
+        UnblockBehaviours(BehavioursToBlock);
         particles.Stop(true, stopBehavior: ParticleSystemStopBehavior.StopEmittingAndClear);
 
         currentDuration = 0;

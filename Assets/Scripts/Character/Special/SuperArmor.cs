@@ -41,9 +41,9 @@ public class SuperArmor : PlayableBehaviour<SuperArmor.Command>
         CurrentArmorHealth = armorHealth;
 
         GetComponent<HittableBehaviour>().damageMultiplier *= damageMultiplier;
-        DisableBehaviours(typeof(StunBehaviour));
+        BlockBehaviours(typeof(StunBehaviour));
         StopBehaviours(typeof(StunBehaviour));
-        EnableBehaviours(typeof(BrainCore));
+        EnableComponents(typeof(BrainCore));
     }
 
     public void HitArmor(float damage)
@@ -67,9 +67,9 @@ public class SuperArmor : PlayableBehaviour<SuperArmor.Command>
         CurrentArmorHealth = 0;
 
         GetComponent<HittableBehaviour>().damageMultiplier /= damageMultiplier;
-        EnableBehaviours(typeof(StunBehaviour));
+        UnblockBehaviours(typeof(StunBehaviour));
         StopBehaviours(typeof(IMovementBehaviour), typeof(BaseAttack));
-        DisableBehaviours(typeof(BrainCore));
+        DisableComponents(typeof(BrainCore));
         MovableEntity.velocity = Vector3.zero;
     }
 
