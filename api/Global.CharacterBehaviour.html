@@ -102,6 +102,15 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Enabled">BaseComponent.Enabled</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_EnableComponents_Type___">BaseComponent.EnableComponents(Type[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_DisableComponents_Type___">BaseComponent.DisableComponents(Type[])</a>
+    </div>
+    <div>
       <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Register_Action_">BaseComponent.Register(Action)</a>
     </div>
     <div>
@@ -211,33 +220,6 @@
   </table>
   
   
-  <a id="Global_CharacterBehaviour_Enabled_" data-uid="Global.CharacterBehaviour.Enabled*"></a>
-  <h4 id="Global_CharacterBehaviour_Enabled" data-uid="Global.CharacterBehaviour.Enabled">Enabled</h4>
-  <div class="markdown level1 summary"><p>If <code>true</code>, the behaviour can be played.
-Can be set to <code>false</code> multiple times, as it will change back to <code>true</code> only if it was set to <code>true</code> the same number of times.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Enabled { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
   <a id="Global_CharacterBehaviour_MovableEntity_" data-uid="Global.CharacterBehaviour.MovableEntity*"></a>
   <h4 id="Global_CharacterBehaviour_MovableEntity" data-uid="Global.CharacterBehaviour.MovableEntity">MovableEntity</h4>
   <div class="markdown level1 summary"></div>
@@ -276,14 +258,14 @@ Can be set to <code>false</code> multiple times, as it will change back to <code
   </div>
   
   
-  <a id="Global_CharacterBehaviour_DisableBehaviours_" data-uid="Global.CharacterBehaviour.DisableBehaviours*"></a>
-  <h4 id="Global_CharacterBehaviour_DisableBehaviours_Type___" data-uid="Global.CharacterBehaviour.DisableBehaviours(Type[])">DisableBehaviours(Type[])</h4>
-  <div class="markdown level1 summary"><p>Disables behaviours, meaning they cannot be played. If a behaviour is disabled N times, it will have to be enabled N times so it can be played.</p>
+  <a id="Global_CharacterBehaviour_BlockBehaviours_" data-uid="Global.CharacterBehaviour.BlockBehaviours*"></a>
+  <h4 id="Global_CharacterBehaviour_BlockBehaviours_Type___" data-uid="Global.CharacterBehaviour.BlockBehaviours(Type[])">BlockBehaviours(Type[])</h4>
+  <div class="markdown level1 summary"><p>Blocks behaviours, meaning they cannot be played. If a behaviour is blocked N times, it will have to be unblocked N times so it can be played.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void DisableBehaviours(params Type[] behaviours)</code></pre>
+    <pre><code class="lang-csharp hljs">protected void BlockBehaviours(params Type[] behaviours)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -298,36 +280,7 @@ Can be set to <code>false</code> multiple times, as it will change back to <code
       <tr>
         <td><span class="xref">Type</span>[]</td>
         <td><span class="parametername">behaviours</span></td>
-        <td><p>Behaviours to disable. All of the attached behaviours from each type will be enabled.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_CharacterBehaviour_EnableBehaviours_" data-uid="Global.CharacterBehaviour.EnableBehaviours*"></a>
-  <h4 id="Global_CharacterBehaviour_EnableBehaviours_Type___" data-uid="Global.CharacterBehaviour.EnableBehaviours(Type[])">EnableBehaviours(Type[])</h4>
-  <div class="markdown level1 summary"><p>Enables behaviours, meaning they can be played</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void EnableBehaviours(params Type[] behaviours)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Type</span>[]</td>
-        <td><span class="parametername">behaviours</span></td>
-        <td><p>Behaviours to enable. All of the attached behaviours from each type will be enabled.</p>
+        <td><p>Behaviours to block. All of the attached behaviours from each type will be blocked.</p>
 </td>
       </tr>
     </tbody>
@@ -401,6 +354,35 @@ Can be set to <code>false</code> multiple times, as it will change back to <code
         <td><span class="xref">Type</span>[]</td>
         <td><span class="parametername">behaviours</span></td>
         <td><p>Behaviours to stop. All of the attached behaviours from each type will be stopped.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Global_CharacterBehaviour_UnblockBehaviours_" data-uid="Global.CharacterBehaviour.UnblockBehaviours*"></a>
+  <h4 id="Global_CharacterBehaviour_UnblockBehaviours_Type___" data-uid="Global.CharacterBehaviour.UnblockBehaviours(Type[])">UnblockBehaviours(Type[])</h4>
+  <div class="markdown level1 summary"><p>Unblocks behaviours, meaning they can be played</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void UnblockBehaviours(params Type[] behaviours)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Type</span>[]</td>
+        <td><span class="parametername">behaviours</span></td>
+        <td><p>Behaviours to unblock. All of the attached behaviours from each type will be unblocked.</p>
 </td>
       </tr>
     </tbody>

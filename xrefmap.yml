@@ -863,6 +863,51 @@ references:
   isSpec: "True"
   fullName: BaseComponent.Cancel
   nameWithType: BaseComponent.Cancel
+- uid: Global.BaseComponent.DisableComponents(Type[])
+  name: DisableComponents(Type[])
+  href: api/Global.BaseComponent.html#Global_BaseComponent_DisableComponents_Type___
+  commentId: M:Global.BaseComponent.DisableComponents(Type[])
+  name.vb: DisableComponents(Type())
+  fullName: BaseComponent.DisableComponents(Type[])
+  fullName.vb: BaseComponent.DisableComponents(Type())
+  nameWithType: BaseComponent.DisableComponents(Type[])
+  nameWithType.vb: BaseComponent.DisableComponents(Type())
+- uid: Global.BaseComponent.DisableComponents*
+  name: DisableComponents
+  href: api/Global.BaseComponent.html#Global_BaseComponent_DisableComponents_
+  commentId: Overload:Global.BaseComponent.DisableComponents
+  isSpec: "True"
+  fullName: BaseComponent.DisableComponents
+  nameWithType: BaseComponent.DisableComponents
+- uid: Global.BaseComponent.EnableComponents(Type[])
+  name: EnableComponents(Type[])
+  href: api/Global.BaseComponent.html#Global_BaseComponent_EnableComponents_Type___
+  commentId: M:Global.BaseComponent.EnableComponents(Type[])
+  name.vb: EnableComponents(Type())
+  fullName: BaseComponent.EnableComponents(Type[])
+  fullName.vb: BaseComponent.EnableComponents(Type())
+  nameWithType: BaseComponent.EnableComponents(Type[])
+  nameWithType.vb: BaseComponent.EnableComponents(Type())
+- uid: Global.BaseComponent.EnableComponents*
+  name: EnableComponents
+  href: api/Global.BaseComponent.html#Global_BaseComponent_EnableComponents_
+  commentId: Overload:Global.BaseComponent.EnableComponents
+  isSpec: "True"
+  fullName: BaseComponent.EnableComponents
+  nameWithType: BaseComponent.EnableComponents
+- uid: Global.BaseComponent.Enabled
+  name: Enabled
+  href: api/Global.BaseComponent.html#Global_BaseComponent_Enabled
+  commentId: P:Global.BaseComponent.Enabled
+  fullName: BaseComponent.Enabled
+  nameWithType: BaseComponent.Enabled
+- uid: Global.BaseComponent.Enabled*
+  name: Enabled
+  href: api/Global.BaseComponent.html#Global_BaseComponent_Enabled_
+  commentId: Overload:Global.BaseComponent.Enabled
+  isSpec: "True"
+  fullName: BaseComponent.Enabled
+  nameWithType: BaseComponent.Enabled
 - uid: Global.BaseComponent.InvokeWhen(Func{System.Boolean},Action)
   name: InvokeWhen(Func<Boolean>, Action)
   href: api/Global.BaseComponent.html#Global_BaseComponent_InvokeWhen_Func_System_Boolean__Action_
@@ -1541,38 +1586,22 @@ references:
   commentId: F:Global.Character.attackManager
   fullName: Character.attackManager
   nameWithType: Character.attackManager
-- uid: Global.Character.DisableBehaviours(Type[])
-  name: DisableBehaviours(Type[])
-  href: api/Global.Character.html#Global_Character_DisableBehaviours_Type___
-  commentId: M:Global.Character.DisableBehaviours(Type[])
-  name.vb: DisableBehaviours(Type())
-  fullName: Character.DisableBehaviours(Type[])
-  fullName.vb: Character.DisableBehaviours(Type())
-  nameWithType: Character.DisableBehaviours(Type[])
-  nameWithType.vb: Character.DisableBehaviours(Type())
-- uid: Global.Character.DisableBehaviours*
-  name: DisableBehaviours
-  href: api/Global.Character.html#Global_Character_DisableBehaviours_
-  commentId: Overload:Global.Character.DisableBehaviours
+- uid: Global.Character.BlockBehaviours(Type[])
+  name: BlockBehaviours(Type[])
+  href: api/Global.Character.html#Global_Character_BlockBehaviours_Type___
+  commentId: M:Global.Character.BlockBehaviours(Type[])
+  name.vb: BlockBehaviours(Type())
+  fullName: Character.BlockBehaviours(Type[])
+  fullName.vb: Character.BlockBehaviours(Type())
+  nameWithType: Character.BlockBehaviours(Type[])
+  nameWithType.vb: Character.BlockBehaviours(Type())
+- uid: Global.Character.BlockBehaviours*
+  name: BlockBehaviours
+  href: api/Global.Character.html#Global_Character_BlockBehaviours_
+  commentId: Overload:Global.Character.BlockBehaviours
   isSpec: "True"
-  fullName: Character.DisableBehaviours
-  nameWithType: Character.DisableBehaviours
-- uid: Global.Character.EnableBehaviours(Type[])
-  name: EnableBehaviours(Type[])
-  href: api/Global.Character.html#Global_Character_EnableBehaviours_Type___
-  commentId: M:Global.Character.EnableBehaviours(Type[])
-  name.vb: EnableBehaviours(Type())
-  fullName: Character.EnableBehaviours(Type[])
-  fullName.vb: Character.EnableBehaviours(Type())
-  nameWithType: Character.EnableBehaviours(Type[])
-  nameWithType.vb: Character.EnableBehaviours(Type())
-- uid: Global.Character.EnableBehaviours*
-  name: EnableBehaviours
-  href: api/Global.Character.html#Global_Character_EnableBehaviours_
-  commentId: Overload:Global.Character.EnableBehaviours
-  isSpec: "True"
-  fullName: Character.EnableBehaviours
-  nameWithType: Character.EnableBehaviours
+  fullName: Character.BlockBehaviours
+  nameWithType: Character.BlockBehaviours
 - uid: Global.Character.IsPlaying*
   name: IsPlaying
   href: api/Global.Character.html#Global_Character_IsPlaying_
@@ -1617,6 +1646,22 @@ references:
   isSpec: "True"
   fullName: Character.StopBehaviours
   nameWithType: Character.StopBehaviours
+- uid: Global.Character.UnblockBehaviours(Type[])
+  name: UnblockBehaviours(Type[])
+  href: api/Global.Character.html#Global_Character_UnblockBehaviours_Type___
+  commentId: M:Global.Character.UnblockBehaviours(Type[])
+  name.vb: UnblockBehaviours(Type())
+  fullName: Character.UnblockBehaviours(Type[])
+  fullName.vb: Character.UnblockBehaviours(Type())
+  nameWithType: Character.UnblockBehaviours(Type[])
+  nameWithType.vb: Character.UnblockBehaviours(Type())
+- uid: Global.Character.UnblockBehaviours*
+  name: UnblockBehaviours
+  href: api/Global.Character.html#Global_Character_UnblockBehaviours_
+  commentId: Overload:Global.Character.UnblockBehaviours
+  isSpec: "True"
+  fullName: Character.UnblockBehaviours
+  nameWithType: Character.UnblockBehaviours
 - uid: Global.CharacterBehaviour
   name: CharacterBehaviour
   href: api/Global.CharacterBehaviour.html
@@ -1662,6 +1707,22 @@ references:
   isSpec: "True"
   fullName: CharacterBehaviour.Awake
   nameWithType: CharacterBehaviour.Awake
+- uid: Global.CharacterBehaviour.BlockBehaviours(Type[])
+  name: BlockBehaviours(Type[])
+  href: api/Global.CharacterBehaviour.html#Global_CharacterBehaviour_BlockBehaviours_Type___
+  commentId: M:Global.CharacterBehaviour.BlockBehaviours(Type[])
+  name.vb: BlockBehaviours(Type())
+  fullName: CharacterBehaviour.BlockBehaviours(Type[])
+  fullName.vb: CharacterBehaviour.BlockBehaviours(Type())
+  nameWithType: CharacterBehaviour.BlockBehaviours(Type[])
+  nameWithType.vb: CharacterBehaviour.BlockBehaviours(Type())
+- uid: Global.CharacterBehaviour.BlockBehaviours*
+  name: BlockBehaviours
+  href: api/Global.CharacterBehaviour.html#Global_CharacterBehaviour_BlockBehaviours_
+  commentId: Overload:Global.CharacterBehaviour.BlockBehaviours
+  isSpec: "True"
+  fullName: CharacterBehaviour.BlockBehaviours
+  nameWithType: CharacterBehaviour.BlockBehaviours
 - uid: Global.CharacterBehaviour.Character
   name: Character
   href: api/Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character
@@ -1675,51 +1736,6 @@ references:
   isSpec: "True"
   fullName: CharacterBehaviour.Character
   nameWithType: CharacterBehaviour.Character
-- uid: Global.CharacterBehaviour.DisableBehaviours(Type[])
-  name: DisableBehaviours(Type[])
-  href: api/Global.CharacterBehaviour.html#Global_CharacterBehaviour_DisableBehaviours_Type___
-  commentId: M:Global.CharacterBehaviour.DisableBehaviours(Type[])
-  name.vb: DisableBehaviours(Type())
-  fullName: CharacterBehaviour.DisableBehaviours(Type[])
-  fullName.vb: CharacterBehaviour.DisableBehaviours(Type())
-  nameWithType: CharacterBehaviour.DisableBehaviours(Type[])
-  nameWithType.vb: CharacterBehaviour.DisableBehaviours(Type())
-- uid: Global.CharacterBehaviour.DisableBehaviours*
-  name: DisableBehaviours
-  href: api/Global.CharacterBehaviour.html#Global_CharacterBehaviour_DisableBehaviours_
-  commentId: Overload:Global.CharacterBehaviour.DisableBehaviours
-  isSpec: "True"
-  fullName: CharacterBehaviour.DisableBehaviours
-  nameWithType: CharacterBehaviour.DisableBehaviours
-- uid: Global.CharacterBehaviour.EnableBehaviours(Type[])
-  name: EnableBehaviours(Type[])
-  href: api/Global.CharacterBehaviour.html#Global_CharacterBehaviour_EnableBehaviours_Type___
-  commentId: M:Global.CharacterBehaviour.EnableBehaviours(Type[])
-  name.vb: EnableBehaviours(Type())
-  fullName: CharacterBehaviour.EnableBehaviours(Type[])
-  fullName.vb: CharacterBehaviour.EnableBehaviours(Type())
-  nameWithType: CharacterBehaviour.EnableBehaviours(Type[])
-  nameWithType.vb: CharacterBehaviour.EnableBehaviours(Type())
-- uid: Global.CharacterBehaviour.EnableBehaviours*
-  name: EnableBehaviours
-  href: api/Global.CharacterBehaviour.html#Global_CharacterBehaviour_EnableBehaviours_
-  commentId: Overload:Global.CharacterBehaviour.EnableBehaviours
-  isSpec: "True"
-  fullName: CharacterBehaviour.EnableBehaviours
-  nameWithType: CharacterBehaviour.EnableBehaviours
-- uid: Global.CharacterBehaviour.Enabled
-  name: Enabled
-  href: api/Global.CharacterBehaviour.html#Global_CharacterBehaviour_Enabled
-  commentId: P:Global.CharacterBehaviour.Enabled
-  fullName: CharacterBehaviour.Enabled
-  nameWithType: CharacterBehaviour.Enabled
-- uid: Global.CharacterBehaviour.Enabled*
-  name: Enabled
-  href: api/Global.CharacterBehaviour.html#Global_CharacterBehaviour_Enabled_
-  commentId: Overload:Global.CharacterBehaviour.Enabled
-  isSpec: "True"
-  fullName: CharacterBehaviour.Enabled
-  nameWithType: CharacterBehaviour.Enabled
 - uid: Global.CharacterBehaviour.IsPlaying*
   name: IsPlaying
   href: api/Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying_
@@ -1765,6 +1781,22 @@ references:
   isSpec: "True"
   fullName: CharacterBehaviour.StopBehaviours
   nameWithType: CharacterBehaviour.StopBehaviours
+- uid: Global.CharacterBehaviour.UnblockBehaviours(Type[])
+  name: UnblockBehaviours(Type[])
+  href: api/Global.CharacterBehaviour.html#Global_CharacterBehaviour_UnblockBehaviours_Type___
+  commentId: M:Global.CharacterBehaviour.UnblockBehaviours(Type[])
+  name.vb: UnblockBehaviours(Type())
+  fullName: CharacterBehaviour.UnblockBehaviours(Type[])
+  fullName.vb: CharacterBehaviour.UnblockBehaviours(Type())
+  nameWithType: CharacterBehaviour.UnblockBehaviours(Type[])
+  nameWithType.vb: CharacterBehaviour.UnblockBehaviours(Type())
+- uid: Global.CharacterBehaviour.UnblockBehaviours*
+  name: UnblockBehaviours
+  href: api/Global.CharacterBehaviour.html#Global_CharacterBehaviour_UnblockBehaviours_
+  commentId: Overload:Global.CharacterBehaviour.UnblockBehaviours
+  isSpec: "True"
+  fullName: CharacterBehaviour.UnblockBehaviours
+  nameWithType: CharacterBehaviour.UnblockBehaviours
 - uid: Global.CharacterController
   name: CharacterController
   href: api/Global.CharacterController.html
@@ -4464,6 +4496,19 @@ references:
   commentId: T:Global.IPlayableBehaviour
   fullName: IPlayableBehaviour
   nameWithType: IPlayableBehaviour
+- uid: Global.IPlayableBehaviour.Blocked
+  name: Blocked
+  href: api/Global.IPlayableBehaviour.html#Global_IPlayableBehaviour_Blocked
+  commentId: P:Global.IPlayableBehaviour.Blocked
+  fullName: IPlayableBehaviour.Blocked
+  nameWithType: IPlayableBehaviour.Blocked
+- uid: Global.IPlayableBehaviour.Blocked*
+  name: Blocked
+  href: api/Global.IPlayableBehaviour.html#Global_IPlayableBehaviour_Blocked_
+  commentId: Overload:Global.IPlayableBehaviour.Blocked
+  isSpec: "True"
+  fullName: IPlayableBehaviour.Blocked
+  nameWithType: IPlayableBehaviour.Blocked
 - uid: Global.IPlayableBehaviour.PlayEvents
   name: PlayEvents
   href: api/Global.IPlayableBehaviour.html#Global_IPlayableBehaviour_PlayEvents
@@ -5524,6 +5569,23 @@ references:
   fullName.vb: PlayableBehaviour(Of T)
   nameWithType: PlayableBehaviour<T>
   nameWithType.vb: PlayableBehaviour(Of T)
+- uid: Global.PlayableBehaviour`1.Blocked
+  name: Blocked
+  href: api/Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Blocked
+  commentId: P:Global.PlayableBehaviour`1.Blocked
+  fullName: PlayableBehaviour<T>.Blocked
+  fullName.vb: PlayableBehaviour(Of T).Blocked
+  nameWithType: PlayableBehaviour<T>.Blocked
+  nameWithType.vb: PlayableBehaviour(Of T).Blocked
+- uid: Global.PlayableBehaviour`1.Blocked*
+  name: Blocked
+  href: api/Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Blocked_
+  commentId: Overload:Global.PlayableBehaviour`1.Blocked
+  isSpec: "True"
+  fullName: PlayableBehaviour<T>.Blocked
+  fullName.vb: PlayableBehaviour(Of T).Blocked
+  nameWithType: PlayableBehaviour<T>.Blocked
+  nameWithType.vb: PlayableBehaviour(Of T).Blocked
 - uid: Global.PlayableBehaviour`1.CanPlay(`0)
   name: CanPlay(T)
   href: api/Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_CanPlay__0_

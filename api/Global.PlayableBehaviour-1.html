@@ -118,22 +118,28 @@
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_AttackManager">CharacterBehaviour.AttackManager</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Enabled">CharacterBehaviour.Enabled</a>
-    </div>
-    <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Awake">CharacterBehaviour.Awake()</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_EnableBehaviours_Type___">CharacterBehaviour.EnableBehaviours(Type[])</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_BlockBehaviours_Type___">CharacterBehaviour.BlockBehaviours(Type[])</a>
     </div>
     <div>
-      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_DisableBehaviours_Type___">CharacterBehaviour.DisableBehaviours(Type[])</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_UnblockBehaviours_Type___">CharacterBehaviour.UnblockBehaviours(Type[])</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_StopBehaviours_Type___">CharacterBehaviour.StopBehaviours(Type[])</a>
     </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying__1">CharacterBehaviour.IsPlaying&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Enabled">BaseComponent.Enabled</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_EnableComponents_Type___">BaseComponent.EnableComponents(Type[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_DisableComponents_Type___">BaseComponent.DisableComponents(Type[])</a>
     </div>
     <div>
       <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Register_Action_">BaseComponent.Register(Action)</a>
@@ -181,6 +187,34 @@
   </table>
   <h3 id="properties">Properties
   </h3>
+  
+  
+  <a id="Global_PlayableBehaviour_1_Blocked_" data-uid="Global.PlayableBehaviour`1.Blocked*"></a>
+  <h4 id="Global_PlayableBehaviour_1_Blocked" data-uid="Global.PlayableBehaviour`1.Blocked">Blocked</h4>
+  <div class="markdown level1 summary"><p>If <code>true</code>, the behaviour cannot be played.
+Can be set to <code>true</code> multiple times, as it will change back to <code>false</code> only if it was set to <code>false</code> the same number of times.
+Should not affect an action that has already started.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Blocked { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   
   
   <a id="Global_PlayableBehaviour_1_PlayEvents_" data-uid="Global.PlayableBehaviour`1.PlayEvents*"></a>
