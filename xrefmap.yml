@@ -176,12 +176,12 @@ references:
   commentId: T:Global.ArcBehaviour.Command
   fullName: ArcBehaviour.Command
   nameWithType: ArcBehaviour.Command
-- uid: Global.ArcBehaviour.Command.#ctor(MovableEntity,System.Single)
-  name: Command(MovableEntity, Single)
-  href: api/Global.ArcBehaviour.Command.html#Global_ArcBehaviour_Command__ctor_MovableEntity_System_Single_
-  commentId: M:Global.ArcBehaviour.Command.#ctor(MovableEntity,System.Single)
-  fullName: ArcBehaviour.Command.Command(MovableEntity, System.Single)
-  nameWithType: ArcBehaviour.Command.Command(MovableEntity, Single)
+- uid: Global.ArcBehaviour.Command.#ctor(GameEntity,System.Single)
+  name: Command(GameEntity, Single)
+  href: api/Global.ArcBehaviour.Command.html#Global_ArcBehaviour_Command__ctor_GameEntity_System_Single_
+  commentId: M:Global.ArcBehaviour.Command.#ctor(GameEntity,System.Single)
+  fullName: ArcBehaviour.Command.Command(GameEntity, System.Single)
+  nameWithType: ArcBehaviour.Command.Command(GameEntity, Single)
 - uid: Global.ArcBehaviour.Command.#ctor*
   name: Command
   href: api/Global.ArcBehaviour.Command.html#Global_ArcBehaviour_Command__ctor_
@@ -3163,12 +3163,12 @@ references:
   commentId: T:Global.EscapeBehaviour.Command
   fullName: EscapeBehaviour.Command
   nameWithType: EscapeBehaviour.Command
-- uid: Global.EscapeBehaviour.Command.#ctor(MovableEntity,System.Single,System.Boolean)
-  name: Command(MovableEntity, Single, Boolean)
-  href: api/Global.EscapeBehaviour.Command.html#Global_EscapeBehaviour_Command__ctor_MovableEntity_System_Single_System_Boolean_
-  commentId: M:Global.EscapeBehaviour.Command.#ctor(MovableEntity,System.Single,System.Boolean)
-  fullName: EscapeBehaviour.Command.Command(MovableEntity, System.Single, System.Boolean)
-  nameWithType: EscapeBehaviour.Command.Command(MovableEntity, Single, Boolean)
+- uid: Global.EscapeBehaviour.Command.#ctor(GameEntity,System.Single,System.Boolean)
+  name: Command(GameEntity, Single, Boolean)
+  href: api/Global.EscapeBehaviour.Command.html#Global_EscapeBehaviour_Command__ctor_GameEntity_System_Single_System_Boolean_
+  commentId: M:Global.EscapeBehaviour.Command.#ctor(GameEntity,System.Single,System.Boolean)
+  fullName: EscapeBehaviour.Command.Command(GameEntity, System.Single, System.Boolean)
+  nameWithType: EscapeBehaviour.Command.Command(GameEntity, Single, Boolean)
 - uid: Global.EscapeBehaviour.Command.#ctor*
   name: Command
   href: api/Global.EscapeBehaviour.Command.html#Global_EscapeBehaviour_Command__ctor_
@@ -3534,15 +3534,15 @@ references:
   commentId: T:Global.FollowBehaviour.Command
   fullName: FollowBehaviour.Command
   nameWithType: FollowBehaviour.Command
-- uid: Global.FollowBehaviour.Command.#ctor(MovableEntity,Func{Node[]},GetOverrideDirection)
-  name: Command(MovableEntity, Func<Node[]>, GetOverrideDirection)
-  href: api/Global.FollowBehaviour.Command.html#Global_FollowBehaviour_Command__ctor_MovableEntity_Func_Node____GetOverrideDirection_
-  commentId: M:Global.FollowBehaviour.Command.#ctor(MovableEntity,Func{Node[]},GetOverrideDirection)
-  name.vb: Command(MovableEntity, Func(Of Node()), GetOverrideDirection)
-  fullName: FollowBehaviour.Command.Command(MovableEntity, Func<Node[]>, GetOverrideDirection)
-  fullName.vb: FollowBehaviour.Command.Command(MovableEntity, Func(Of Node()), GetOverrideDirection)
-  nameWithType: FollowBehaviour.Command.Command(MovableEntity, Func<Node[]>, GetOverrideDirection)
-  nameWithType.vb: FollowBehaviour.Command.Command(MovableEntity, Func(Of Node()), GetOverrideDirection)
+- uid: Global.FollowBehaviour.Command.#ctor(GameEntity,Func{Node[]},GetOverrideDirection)
+  name: Command(GameEntity, Func<Node[]>, GetOverrideDirection)
+  href: api/Global.FollowBehaviour.Command.html#Global_FollowBehaviour_Command__ctor_GameEntity_Func_Node____GetOverrideDirection_
+  commentId: M:Global.FollowBehaviour.Command.#ctor(GameEntity,Func{Node[]},GetOverrideDirection)
+  name.vb: Command(GameEntity, Func(Of Node()), GetOverrideDirection)
+  fullName: FollowBehaviour.Command.Command(GameEntity, Func<Node[]>, GetOverrideDirection)
+  fullName.vb: FollowBehaviour.Command.Command(GameEntity, Func(Of Node()), GetOverrideDirection)
+  nameWithType: FollowBehaviour.Command.Command(GameEntity, Func<Node[]>, GetOverrideDirection)
+  nameWithType.vb: FollowBehaviour.Command.Command(GameEntity, Func(Of Node()), GetOverrideDirection)
 - uid: Global.FollowBehaviour.Command.#ctor*
   name: Command
   href: api/Global.FollowBehaviour.Command.html#Global_FollowBehaviour_Command__ctor_
@@ -6784,6 +6784,19 @@ references:
   isSpec: "True"
   fullName: Rotation.Equals
   nameWithType: Rotation.Equals
+- uid: Global.Rotation.Flipped
+  name: Flipped
+  href: api/Global.Rotation.html#Global_Rotation_Flipped
+  commentId: P:Global.Rotation.Flipped
+  fullName: Rotation.Flipped
+  nameWithType: Rotation.Flipped
+- uid: Global.Rotation.Flipped*
+  name: Flipped
+  href: api/Global.Rotation.html#Global_Rotation_Flipped_
+  commentId: Overload:Global.Rotation.Flipped
+  isSpec: "True"
+  fullName: Rotation.Flipped
+  nameWithType: Rotation.Flipped
 - uid: Global.Rotation.GetHashCode
   name: GetHashCode()
   href: api/Global.Rotation.html#Global_Rotation_GetHashCode
@@ -6797,19 +6810,19 @@ references:
   isSpec: "True"
   fullName: Rotation.GetHashCode
   nameWithType: Rotation.GetHashCode
-- uid: Global.Rotation.Left
-  name: Left
-  href: api/Global.Rotation.html#Global_Rotation_Left
-  commentId: P:Global.Rotation.Left
-  fullName: Rotation.Left
-  nameWithType: Rotation.Left
-- uid: Global.Rotation.Left*
-  name: Left
-  href: api/Global.Rotation.html#Global_Rotation_Left_
-  commentId: Overload:Global.Rotation.Left
+- uid: Global.Rotation.Normal
+  name: Normal
+  href: api/Global.Rotation.html#Global_Rotation_Normal
+  commentId: P:Global.Rotation.Normal
+  fullName: Rotation.Normal
+  nameWithType: Rotation.Normal
+- uid: Global.Rotation.Normal*
+  name: Normal
+  href: api/Global.Rotation.html#Global_Rotation_Normal_
+  commentId: Overload:Global.Rotation.Normal
   isSpec: "True"
-  fullName: Rotation.Left
-  nameWithType: Rotation.Left
+  fullName: Rotation.Normal
+  nameWithType: Rotation.Normal
 - uid: Global.Rotation.op_Equality(Rotation,Rotation)
   name: Equality(Rotation, Rotation)
   href: api/Global.Rotation.html#Global_Rotation_op_Equality_Rotation_Rotation_
@@ -6899,37 +6912,6 @@ references:
   isSpec: "True"
   fullName: Rotation.UnaryNegation
   nameWithType: Rotation.UnaryNegation
-- uid: Global.Rotation.Right
-  name: Right
-  href: api/Global.Rotation.html#Global_Rotation_Right
-  commentId: P:Global.Rotation.Right
-  fullName: Rotation.Right
-  nameWithType: Rotation.Right
-- uid: Global.Rotation.Right*
-  name: Right
-  href: api/Global.Rotation.html#Global_Rotation_Right_
-  commentId: Overload:Global.Rotation.Right
-  isSpec: "True"
-  fullName: Rotation.Right
-  nameWithType: Rotation.Right
-- uid: Global.Rotation.Value
-  name: Rotation.Value
-  href: api/Global.Rotation.Value.html
-  commentId: T:Global.Rotation.Value
-  fullName: Rotation.Value
-  nameWithType: Rotation.Value
-- uid: Global.Rotation.Value.Left
-  name: Left
-  href: api/Global.Rotation.Value.html#Global_Rotation_Value_Left
-  commentId: F:Global.Rotation.Value.Left
-  fullName: Rotation.Value.Left
-  nameWithType: Rotation.Value.Left
-- uid: Global.Rotation.Value.Right
-  name: Right
-  href: api/Global.Rotation.Value.html#Global_Rotation_Value_Right
-  commentId: F:Global.Rotation.Value.Right
-  fullName: Rotation.Value.Right
-  nameWithType: Rotation.Value.Right
 - uid: Global.RotationDrawer
   name: RotationDrawer
   href: api/Global.RotationDrawer.html
