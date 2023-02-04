@@ -2053,6 +2053,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 4.8
       objectReference: {fileID: 0}
+    - target: {fileID: 6899004906894412483, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6899004906894412483, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7892979979956269628, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_AssetsPPU
       value: 135
@@ -2652,6 +2660,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   url: https://forms.gle/FNfhdmXA4p8F2Ju88
+--- !u!114 &670847163 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9032417097003691140, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+  m_PrefabInstance: {fileID: 615463054}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d7bf6c9b367e544be42faf142779a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &676580493
 GameObject:
   m_ObjectHideFlags: 0
@@ -4420,17 +4439,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1506894265 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 128337525951331557, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-  m_PrefabInstance: {fileID: 615463054}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506894209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d7bf6c9b367e544be42faf142779a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1522698583
 GameObject:
   m_ObjectHideFlags: 0
@@ -6092,7 +6100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveDefinitions:
-  - target: {fileID: 1506894265}
+  - target: {fileID: 670847163}
     speedMultiplier: 1
     position: {x: 4.5, y: 0, z: -5}
     rotation:

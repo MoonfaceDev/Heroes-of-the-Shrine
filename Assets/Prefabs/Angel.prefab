@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307263992615725128}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.695, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -89,6 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5282987104477988010}
   - component: {fileID: 6377231587991264689}
+  - component: {fileID: 4952256669799359370}
   m_Layer: 0
   m_Name: Alt Air Attack
   m_TagString: Untagged
@@ -189,6 +190,20 @@ MonoBehaviour:
         knockbackPower: 5
         knockbackDirection: 30
         stunTime: 0.5
+--- !u!114 &4952256669799359370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811557649854150555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1f4d36d30747fa9bf47cf7b1843d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: {fileID: 6377231587991264689}
+  energyReward: 5
 --- !u!1 &816143849816312018
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9022226871554883571}
   - component: {fileID: 8621965095738474586}
+  - component: {fileID: 151164371618628084}
   m_Layer: 0
   m_Name: Run Kick
   m_TagString: Untagged
@@ -454,6 +470,20 @@ MonoBehaviour:
         knockbackPower: 10
         knockbackDirection: 10
         stunTime: 0.5
+--- !u!114 &151164371618628084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843105327216157736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9516cedb05e44c7855ea738509b9a69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: {fileID: 8621965095738474586}
+  energyReward: 10
 --- !u!1 &3451646828768321014
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,6 +494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3863231650379329718}
   - component: {fileID: 3226033048567882335}
+  - component: {fileID: 7264214053870421148}
   m_Layer: 0
   m_Name: Spinning Sword Attack
   m_TagString: Untagged
@@ -584,6 +615,20 @@ MonoBehaviour:
         knockbackPower: 6
         knockbackDirection: 95
         stunTime: 0.5
+--- !u!114 &7264214053870421148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3451646828768321014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58239f9d2a9d499081c723ba91509483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: {fileID: 3226033048567882335}
+  energyReward: 15
 --- !u!1 &4003947100742262957
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,6 +899,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3216537126837818626}
   - component: {fileID: 5884357558659466936}
+  - component: {fileID: 2644732355721132754}
   m_Layer: 0
   m_Name: Air Spin Attack
   m_TagString: Untagged
@@ -957,6 +1003,20 @@ MonoBehaviour:
         knockbackPower: 6
         knockbackDirection: 110
         stunTime: 0.5
+--- !u!114 &2644732355721132754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4104483144399516664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1f4d36d30747fa9bf47cf7b1843d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: {fileID: 5884357558659466936}
+  energyReward: 7
 --- !u!1 &4458982307090760047
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,6 +1027,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6011423664596739024}
   - component: {fileID: 3403884892882908741}
+  - component: {fileID: 6404439988506791787}
   m_Layer: 0
   m_Name: Uppercut
   m_TagString: Untagged
@@ -1068,6 +1129,20 @@ MonoBehaviour:
         knockbackPower: 10
         knockbackDirection: 85
         stunTime: 0.5
+--- !u!114 &6404439988506791787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4458982307090760047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1f4d36d30747fa9bf47cf7b1843d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: {fileID: 3403884892882908741}
+  energyReward: 10
 --- !u!1 &4850033890129186866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,7 +1567,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893360398477681}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.055, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1571,7 +1646,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893360422186050}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.025, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1650,7 +1725,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893360536826754}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1729,7 +1804,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893360763890665}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.115, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1808,7 +1883,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893360866760426}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.15, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1873,6 +1948,7 @@ GameObject:
   - component: {fileID: 5102893360874897665}
   - component: {fileID: 5102893360874897664}
   - component: {fileID: 5102893360874897678}
+  - component: {fileID: 526395291188819461}
   m_Layer: 0
   m_Name: Angel
   m_TagString: Untagged
@@ -1979,6 +2055,20 @@ MonoBehaviour:
   attackPriority: 2
   possessedEffectTimeReducing: 00000000010000000200000003000000
   possessedEffectDurationReduction: 0.05
+--- !u!114 &526395291188819461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893360874897723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f7277d8ef84a808885c5fa9daae2ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxEnergy: 100
+  energy: 0
 --- !u!1 &5102893360938488515
 GameObject:
   m_ObjectHideFlags: 0
@@ -2004,7 +2094,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893360938488515}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.565, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2070,7 +2160,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893361029256207}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.975, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2234,7 +2324,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893361076516094}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.81, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7298,7 +7388,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893361817772764}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.356323, y: 1.8834352, z: 3.3651845}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12211,6 +12301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9029514677093264878}
   - component: {fileID: 7559106644093030772}
+  - component: {fileID: 3568453442421848273}
   m_Layer: 0
   m_Name: Air Attack
   m_TagString: Untagged
@@ -12311,6 +12402,20 @@ MonoBehaviour:
         knockbackPower: 5
         knockbackDirection: 30
         stunTime: 0.5
+--- !u!114 &3568453442421848273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5700907412895489081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1f4d36d30747fa9bf47cf7b1843d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: {fileID: 7559106644093030772}
+  energyReward: 5
 --- !u!1 &6771048749396688650
 GameObject:
   m_ObjectHideFlags: 0
@@ -12321,6 +12426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5277052100955548515}
   - component: {fileID: 7157179758743540809}
+  - component: {fileID: 3276173230932025992}
   m_Layer: 0
   m_Name: Stab Attack
   m_TagString: Untagged
@@ -12415,11 +12521,25 @@ MonoBehaviour:
     - rid: 3181427634693996652
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        damage: 15
+        damage: 7
     - rid: 3181427634693996654
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         stunTime: 0.5
+--- !u!114 &3276173230932025992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771048749396688650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1f4d36d30747fa9bf47cf7b1843d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: {fileID: 7157179758743540809}
+  energyReward: 10
 --- !u!1 &6836361419182836862
 GameObject:
   m_ObjectHideFlags: 0
@@ -12430,6 +12550,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3182524056042066909}
   - component: {fileID: 7126820491640019253}
+  - component: {fileID: 6304304669197915168}
   m_Layer: 0
   m_Name: Normal Attack
   m_TagString: Untagged
@@ -12528,6 +12649,20 @@ MonoBehaviour:
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         stunTime: 1
+--- !u!114 &6304304669197915168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836361419182836862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1f4d36d30747fa9bf47cf7b1843d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: {fileID: 7126820491640019253}
+  energyReward: 10
 --- !u!1 &7477602066808393276
 GameObject:
   m_ObjectHideFlags: 0
@@ -12538,6 +12673,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5746246883376850308}
   - component: {fileID: 1534430804526489236}
+  - component: {fileID: 6536522371593992002}
   m_Layer: 0
   m_Name: Alt NormalAttack
   m_TagString: Untagged
@@ -12637,6 +12773,20 @@ MonoBehaviour:
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         stunTime: 0.5
+--- !u!114 &6536522371593992002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7477602066808393276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1f4d36d30747fa9bf47cf7b1843d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: {fileID: 1534430804526489236}
+  energyReward: 10
 --- !u!1 &8326420566752417338
 GameObject:
   m_ObjectHideFlags: 0
@@ -12832,6 +12982,7 @@ GameObject:
   - component: {fileID: 1613201450539292511}
   - component: {fileID: 8296055732026328267}
   - component: {fileID: 7214283041871315255}
+  - component: {fileID: 5128262347601309570}
   m_Layer: 0
   m_Name: Slash Attack
   m_TagString: Untagged
@@ -12959,3 +13110,17 @@ MonoBehaviour:
   prefab: {fileID: 4191199336927616018, guid: f3fda9e187466314e97b96e464322573, type: 3}
   particlePosition: {x: -0.48, y: 1.5, z: -1}
   attachToCharacter: 1
+--- !u!114 &5128262347601309570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8660113274356423321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9516cedb05e44c7855ea738509b9a69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: {fileID: 8296055732026328267}
+  energyReward: 10
