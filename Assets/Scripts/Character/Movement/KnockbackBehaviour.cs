@@ -109,10 +109,10 @@ public class KnockbackBehaviour : ForcedBehaviour<KnockbackBehaviour.Command>
         {
             case > 0 and < 90:
             case > 270 and < 360:
-                MovableEntity.rotation = Rotation.Left;
+                MovableEntity.rotation = Rotation.Flipped;
                 break;
             case > 90 and < 270:
-                MovableEntity.rotation = Rotation.Right;
+                MovableEntity.rotation = Rotation.Normal;
                 break;
         }
 
@@ -151,7 +151,7 @@ public class KnockbackBehaviour : ForcedBehaviour<KnockbackBehaviour.Command>
 
     public static float GetRelativeDirection(float knockbackAngle, Rotation hitDirection)
     {
-        if (hitDirection == Rotation.Right)
+        if (hitDirection == Rotation.Normal)
         {
             return knockbackAngle;
         }

@@ -4,10 +4,10 @@ public class ArcBehaviour : BaseMovementBehaviour<ArcBehaviour.Command>
 {
     public class Command
     {
-        public readonly MovableEntity target;
+        public readonly GameEntity target;
         public readonly float speedMultiplier;
 
-        public Command(MovableEntity target, float speedMultiplier)
+        public Command(GameEntity target, float speedMultiplier)
         {
             this.target = target;
             this.speedMultiplier = speedMultiplier;
@@ -57,7 +57,7 @@ public class ArcBehaviour : BaseMovementBehaviour<ArcBehaviour.Command>
             walkBehaviour.Play(new WalkBehaviour.Command(direction, false));
             if ((command.target.WorldPosition - walkBehaviour.MovableEntity.WorldPosition).x != 0)
             {
-                walkBehaviour.MovableEntity.rotation = Mathf.RoundToInt(
+                walkBehaviour.MovableEntity.WorldRotation = Mathf.RoundToInt(
                     Mathf.Sign((command.target.WorldPosition - walkBehaviour.MovableEntity.WorldPosition).x));
             }
         });

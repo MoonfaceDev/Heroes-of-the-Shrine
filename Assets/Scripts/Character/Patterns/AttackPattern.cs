@@ -30,7 +30,7 @@ public class AttackPattern : BasePattern
         }
 
         var entity = animator.GetEntity();
-        entity.rotation = Mathf.RoundToInt(Mathf.Sign((player.WorldPosition - entity.WorldPosition).x));
+        entity.WorldRotation = Mathf.RoundToInt(Mathf.Sign((player.WorldPosition - entity.WorldPosition).x));
         attackCoroutine = EventManager.Instance.StartCoroutine(AttackCoroutine(animator));
     }
 

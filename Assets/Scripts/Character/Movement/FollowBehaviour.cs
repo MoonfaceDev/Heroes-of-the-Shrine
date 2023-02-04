@@ -8,11 +8,11 @@ public class FollowBehaviour : BaseMovementBehaviour<FollowBehaviour.Command>
 {
     public class Command
     {
-        public readonly MovableEntity target;
+        public readonly GameEntity target;
         public readonly Func<Node[]> getExcluded;
         public readonly GetOverrideDirection getOverrideDirection;
 
-        public Command(MovableEntity target, Func<Node[]> getExcluded = null,
+        public Command(GameEntity target, Func<Node[]> getExcluded = null,
             GetOverrideDirection getOverrideDirection = null)
         {
             this.target = target;
@@ -20,7 +20,7 @@ public class FollowBehaviour : BaseMovementBehaviour<FollowBehaviour.Command>
             this.getOverrideDirection = getOverrideDirection;
         }
     }
-    
+
     public override bool Playing => active;
 
     private bool active;
@@ -43,12 +43,12 @@ public class FollowBehaviour : BaseMovementBehaviour<FollowBehaviour.Command>
         {
             var direction = GetDirection(command.target, command.getExcluded?.Invoke(), command.getOverrideDirection);
             walkBehaviour.Play(new WalkBehaviour.Command(direction, false));
-            MovableEntity.rotation =
+            MovableEntity.WorldRotation =
                 Mathf.RoundToInt(Mathf.Sign(command.target.WorldPosition.x - MovableEntity.WorldPosition.x));
         });
     }
 
-    private Vector3 GetDirection(MovableEntity target, Node[] excluded = null,
+    private Vector3 GetDirection(GameEntity target, Node[] excluded = null,
         GetOverrideDirection getOverrideDirection = null)
     {
         if (getOverrideDirection != null)

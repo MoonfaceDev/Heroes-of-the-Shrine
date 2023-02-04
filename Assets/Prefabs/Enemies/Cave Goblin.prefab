@@ -195,7 +195,7 @@ MonoBehaviour:
     tags: 
   position: {x: 1.55, y: 0.995, z: 0}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5884619157288324021
 MonoBehaviour:
@@ -406,7 +406,7 @@ MonoBehaviour:
     tags: 
   position: {x: 0.675, y: 0.9, z: 0}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5884619157950951724
 MonoBehaviour:
@@ -485,7 +485,7 @@ MonoBehaviour:
     tags: 
   position: {x: 0.95, y: 0.9, z: 0}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5884619158051856710
 MonoBehaviour:
@@ -668,7 +668,7 @@ MonoBehaviour:
     tags: 
   position: {x: 2.25, y: 1.05, z: 0}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5884619158396451716
 MonoBehaviour:
@@ -734,7 +734,7 @@ MonoBehaviour:
     tags: 
   position: {x: 0.875, y: 0.9, z: 0}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5884619158596542722
 MonoBehaviour:
@@ -841,7 +841,7 @@ MonoBehaviour:
     tags: 0200000003000000
   position: {x: 1.84, y: 0, z: -2.91}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -1285,7 +1285,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5884619159192989555}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1310,7 +1310,7 @@ MonoBehaviour:
     tags: 
   position: {x: 0, y: 0.91, z: 0}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5884619159192989553
 MonoBehaviour:

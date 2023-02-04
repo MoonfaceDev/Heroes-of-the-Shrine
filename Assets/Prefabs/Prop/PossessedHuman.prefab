@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 441269344925677699}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
     tags: 
   position: {x: 0, y: 1, z: 0}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
 --- !u!114 &441269344925677758
 MonoBehaviour:
@@ -158,7 +158,7 @@ MonoBehaviour:
     tags: 06000000
   position: {x: -3.25, y: 2.2, z: 3.45}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}

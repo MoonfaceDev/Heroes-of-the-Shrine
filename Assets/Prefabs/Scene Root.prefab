@@ -1791,7 +1791,7 @@ MonoBehaviour:
     tags: 
   position: {x: -18, y: 0, z: -5}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5826350637441399169
 MonoBehaviour:
@@ -6207,15 +6207,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5102893360874897670, guid: e6b59c7f93ad90f41b501eaabf2e3e0a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5102893360874897670, guid: e6b59c7f93ad90f41b501eaabf2e3e0a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5102893360874897670, guid: e6b59c7f93ad90f41b501eaabf2e3e0a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5102893360874897670, guid: e6b59c7f93ad90f41b501eaabf2e3e0a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -23,7 +23,7 @@ public class EncounterAction : BaseComponent
         /// <value>
         /// Side of the camera to spawn in
         /// </value>
-        public Rotation direction = Rotation.Right;
+        public Rotation direction = Rotation.Normal;
 
         /// <value>
         /// Z axis value in which enemy spawns
@@ -74,7 +74,7 @@ public class EncounterAction : BaseComponent
 
     /// <value>
     /// Distance from the camera border side where enemy spawns.
-    /// For example, if <see cref="EnemySpawnDefinition.direction"/> is <see cref="Rotation.Right"/>, then the enemy
+    /// For example, if <see cref="EnemySpawnDefinition.direction"/> is <see cref="Rotation.Normal"/>, then the enemy
     /// will spawn in the right point of <see cref="cameraBorder"/>, plus <see cref="spawnSourceDistance"/> in the x Axis.
     /// </value>
     public float spawnSourceDistance = 1;

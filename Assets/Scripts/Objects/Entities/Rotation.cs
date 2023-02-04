@@ -2,32 +2,22 @@
 using UnityEngine;
 
 /// <summary>
-/// Rotation that has two options - left or right
+/// Rotation that has two options - normal or flipped
 /// </summary>
 [Serializable]
 public class Rotation
 {
-    /// <summary>
-    /// Rotation options
-    /// </summary>
-    public enum Value
-    {
-        Left = -1,
-        Right = 1,
-    }
-    
-    [SerializeField] private Value value;
-    
-    public static Rotation Left => new(Value.Left);
+    [SerializeField] private bool flipped;
 
-    public static Rotation Right => new(Value.Right);
+    public static Rotation Normal => new(false);
+    public static Rotation Flipped => new(true);
 
-    private Rotation(Value value)
+    private Rotation(bool flipped)
     {
-        this.value = value;
+        this.flipped = flipped;
     }
 
-    private Rotation() : this(Value.Left)
+    private Rotation() : this(false)
     {
     }
 
@@ -35,7 +25,7 @@ public class Rotation
     {
         if (ReferenceEquals(a, null) && ReferenceEquals(b, null)) return true;
         if (ReferenceEquals(a, null) || ReferenceEquals(b, null)) return false;
-        return a.value == b.value;
+        return a.flipped == b.flipped;
     }
 
     public static bool operator !=(Rotation a, Rotation b)
@@ -45,21 +35,21 @@ public class Rotation
 
     public override int GetHashCode()
     {
-        // 'value' can only be modified by the inspector, therefore we can use its hash value
-        return value.GetHashCode();
+        // 'flipped' can only be modified by the inspector, therefore we can use its hash value
+        return flipped.GetHashCode();
     }
-    
+
     public override bool Equals(object obj)
     {
         if (ReferenceEquals(null, obj)) return false;
         if (ReferenceEquals(this, obj)) return true;
         if (GetType() != obj.GetType()) return false;
-        return value == ((Rotation) obj).value;
+        return flipped == ((Rotation)obj).flipped;
     }
 
     public static Vector3 operator *(Rotation rotation, Vector3 relativePosition)
     {
-        return Vector3.Scale(relativePosition, new Vector3((int)rotation.value, 1, 1));
+        return Vector3.Scale(relativePosition, new Vector3((int)rotation, 1, 1));
     }
 
     /// <summary>
@@ -67,21 +57,21 @@ public class Rotation
     /// </summary>
     public static Rotation operator -(Rotation rotation)
     {
-        return new Rotation((Value)(-(int)rotation.value));
+        return new Rotation(!rotation.flipped);
     }
 
     public static implicit operator Quaternion(Rotation rotation)
     {
-        return Quaternion.Euler(0, (1 - (int)rotation.value) * 90, 0);
+        return Quaternion.Euler(0, (1 - (int)rotation) * 90, 0);
     }
 
     public static implicit operator int(Rotation rotation)
     {
-        return (int)rotation.value;
+        return rotation.flipped ? -1 : 1;
     }
 
     public static implicit operator Rotation(int value)
     {
-        return new Rotation((Value)value);
+        return new Rotation(value == -1);
     }
 }

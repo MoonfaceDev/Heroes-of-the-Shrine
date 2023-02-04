@@ -38,7 +38,7 @@ public class AutoWalkBehaviour : BaseMovementBehaviour<AutoWalkBehaviour.Command
             var direction = pathfind.Direction(MovableEntity.WorldPosition, command.destination,
                 command.getExcluded?.Invoke());
             walkBehaviour.Play(new WalkBehaviour.Command(direction, false));
-            MovableEntity.rotation =
+            MovableEntity.WorldRotation =
                 Mathf.RoundToInt(Mathf.Sign(command.destination.x - MovableEntity.WorldPosition.x));
         });
     }

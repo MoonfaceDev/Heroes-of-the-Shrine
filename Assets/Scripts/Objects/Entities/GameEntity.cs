@@ -16,7 +16,7 @@ public class GameEntity : BaseComponent
     /// Parent <see cref="GameEntity"/>. Leave null if the object has no parents that are <see cref="GameEntity"/>.
     /// </value>
     public GameEntity parent;
-    
+
     /// <value>
     /// Tags of the entity, multiple tags are allowed
     /// </value>
@@ -26,12 +26,12 @@ public class GameEntity : BaseComponent
     /// Local position of the entity, relative to <see cref="parent"/>
     /// </value>
     public Vector3 position = Vector3.zero;
-    
+
     /// <value>
     /// Local rotation of the entity, relative to <see cref="parent"/>
     /// </value>
-    public Rotation rotation = Rotation.Right;
-    
+    public Rotation rotation = Rotation.Normal;
+
     /// <value>
     /// Local scale of the entity, relative to <see cref="parent"/>
     /// </value>
@@ -51,7 +51,11 @@ public class GameEntity : BaseComponent
     /// <summary>
     /// Absolute rotation
     /// </summary>
-    public Rotation WorldRotation => parent ? parent.WorldRotation * rotation : rotation;
+    public Rotation WorldRotation
+    {
+        get => parent ? parent.WorldRotation * rotation : rotation;
+        set => rotation = parent ? parent.WorldRotation * value : value;
+    }
 
     /// <summary>
     /// Absolute scale
@@ -62,7 +66,7 @@ public class GameEntity : BaseComponent
     /// Absolute position in world coordinates, with <c>y=0</c>
     /// </summary>
     public Vector3 GroundWorldPosition => WorldPosition - WorldPosition.y * Vector3.up;
-    
+
     private Dictionary<Type, HashSet<EntityBehaviour>> indexes;
 
     protected virtual void Awake()
@@ -155,7 +159,7 @@ public class GameEntity : BaseComponent
     protected void UpdateTransform()
     {
         transform.position = GroundScreenCoordinates(WorldPosition);
-        transform.localRotation = rotation;
+        transform.rotation = WorldRotation;
         transform.localScale = scale;
     }
 
@@ -216,7 +220,7 @@ public class GameEntity : BaseComponent
     {
         var @object = Instantiate(prefab, ScreenCoordinates(position), Quaternion.identity);
         var entity = @object.GetComponent<GameEntity>();
-        
+
         entity.WorldPosition = position;
         if (rotation != null)
         {
@@ -233,7 +237,7 @@ public static class UnityEntityExtensions
     {
         return component.GetComponentInParent<GameEntity>();
     }
-    
+
     public static GameEntity GetEntity(this GameObject @object)
     {
         return @object.GetComponentInParent<GameEntity>();

@@ -34,7 +34,7 @@ public class CutsceneAction : BaseComponent
         /// <value>
         /// Character rotation when the timeline starts
         /// </value>
-        public Rotation rotation = Rotation.Right;
+        public Rotation rotation = Rotation.Normal;
     }
 
     /// <value>
@@ -116,7 +116,7 @@ public class CutsceneAction : BaseComponent
         {
             definition.target.Stop();
             definition.target.GetBehaviour<WalkBehaviour>().speed /= definition.speedMultiplier;
-            definition.target.MovableEntity.rotation = definition.rotation;
+            definition.target.MovableEntity.WorldRotation = definition.rotation;
         });
     }
 

@@ -51,7 +51,7 @@ MonoBehaviour:
     tags: 
   position: {x: 0.695, y: 0.685, z: 0}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
 --- !u!114 &4058469792659233068
 MonoBehaviour:
@@ -1054,7 +1054,7 @@ MonoBehaviour:
     tags: 
   position: {x: 0.055, y: 0.6, z: 0}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5102893360398477695
 MonoBehaviour:
@@ -1133,7 +1133,7 @@ MonoBehaviour:
     tags: 
   position: {x: 0.025, y: 0.96, z: 0}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5102893360422186048
 MonoBehaviour:
@@ -1212,7 +1212,7 @@ MonoBehaviour:
     tags: 
   position: {x: 0.7, y: 0.685, z: 0}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5102893360536826755
 MonoBehaviour:
@@ -1291,7 +1291,7 @@ MonoBehaviour:
     tags: 
   position: {x: 1.115, y: 1.11, z: 0}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5102893360763890678
 MonoBehaviour:
@@ -1370,7 +1370,7 @@ MonoBehaviour:
     tags: 
   position: {x: 0.15, y: 0.825, z: 0}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5102893360866760427
 MonoBehaviour:
@@ -1471,7 +1471,7 @@ MonoBehaviour:
     tags: 01000000
   position: {x: 0, y: 0, z: 0}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -2008,7 +2008,7 @@ MonoBehaviour:
     tags: 
   position: {x: 1.565, y: 0.43, z: 0}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5102893360938488512
 MonoBehaviour:
@@ -2074,7 +2074,7 @@ MonoBehaviour:
     tags: 
   position: {x: 0.975, y: 0.5, z: 0}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5102893361029256204
 MonoBehaviour:
@@ -2153,7 +2153,7 @@ MonoBehaviour:
     tags: 
   position: {x: -0.06, y: 1, z: 0}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5102893361031155006
 MonoBehaviour:
@@ -2238,7 +2238,7 @@ MonoBehaviour:
     tags: 
   position: {x: 0.81, y: 0.78, z: 0}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5102893361076516092
 MonoBehaviour:
@@ -2293,7 +2293,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893361279726048}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7100,7 +7100,7 @@ MonoBehaviour:
     tags: 
   position: {x: 0, y: 0, z: -0.1}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -7302,7 +7302,7 @@ MonoBehaviour:
     tags: 
   position: {x: 0.375, y: 0.675, z: 0}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5102893361817772762
 MonoBehaviour:
@@ -7357,7 +7357,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893361865183972}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12163,7 +12163,7 @@ MonoBehaviour:
     tags: 
   position: {x: 0, y: 0, z: 0.1}
   rotation:
-    value: 1
+    flipped: 0
   scale: {x: 1, y: 1, z: 1}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
