@@ -189,6 +189,160 @@ MonoBehaviour:
         knockbackPower: 5
         knockbackDirection: 30
         stunTime: 0.5
+--- !u!1 &816143849816312018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9214118118156865908}
+  - component: {fileID: 9051490553251771939}
+  - component: {fileID: 1018915970268675303}
+  - component: {fileID: 6216410287663508394}
+  - component: {fileID: 7152136554165674260}
+  - component: {fileID: 2433013914377829849}
+  m_Layer: 0
+  m_Name: Hittable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9214118118156865908
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816143849816312018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5102893361031154993}
+  m_Father: {fileID: 5102893360874897670}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9051490553251771939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816143849816312018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af61f8ebac7a76742baddc8a44dddfa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHealth: 200
+  health: 0
+--- !u!114 &1018915970268675303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816143849816312018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03767b56dc6ba3740842c0db368e9321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageMultiplier: 0
+--- !u!114 &6216410287663508394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816143849816312018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82852d2e650fc4048ac887d4fc8710e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  knockbackRecoverTime: 1
+--- !u!114 &7152136554165674260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816143849816312018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87fda33e10ea24448ba9fe6c8dfffc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  stunFrames: 2
+--- !u!114 &2433013914377829849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816143849816312018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f271e06fd2ef53a4c87299bd48bc9f07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyOnDeath: 0
+  deathAnimationDuration: 3
+  onDie:
+    _persistentListeners:
+    - _persistentArguments:
+      - _index: 0
+        _isSerialized: 1
+        _targetType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: UnityEngine.AudioClip, UnityEngine.AudioModule
+          _suppressLogs: 1
+        _fromType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _serializationData:
+          DataFormat: 2
+          ReferencedUnityObjects:
+          - {fileID: 8300000, guid: eb62d56ef099fa04ebc013540362ca7b, type: 3}
+          SerializationNodes:
+          - Name: 
+            Entry: 10
+            Data: 0
+          Bytes: 
+        _canBeDynamic: 0
+        _serializedArg: 
+      _target: {fileID: 0}
+      _isStatic: 1
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 2ab4ebc1fba32b541a5a17f75dca25b5
+        _typeNameAndAssembly: AudioManager, Assembly-CSharp
+        _suppressLogs: 0
+      _methodName: PlayBackground
+    Expanded: 0
 --- !u!1 &1843105327216157736
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,6 +712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3970267090279809017}
   - component: {fileID: 3541930184749892774}
+  - component: {fileID: 9088552302621545271}
   m_Layer: 0
   m_Name: Walk Source
   m_TagString: Untagged
@@ -572,12 +727,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4022763946346589053}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5102893360874897670}
+  m_Father: {fileID: 8561655299317852435}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &3541930184749892774
@@ -676,6 +831,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &9088552302621545271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4022763946346589053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb8e94fc11f20cd43bb78246d3d31861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkAudioSource: {fileID: 3541930184749892774}
 --- !u!1 &4104483144399516664
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,6 +1068,301 @@ MonoBehaviour:
         knockbackPower: 10
         knockbackDirection: 85
         stunTime: 0.5
+--- !u!1 &4850033890129186866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8561655299317852435}
+  - component: {fileID: 5425846849138745960}
+  - component: {fileID: 8854988943348106846}
+  - component: {fileID: 5138342577840215663}
+  - component: {fileID: 7045785900987598505}
+  - component: {fileID: 6745717898281492280}
+  - component: {fileID: 8641964334380858834}
+  - component: {fileID: 8583721213638497076}
+  - component: {fileID: 6790080662486734077}
+  - component: {fileID: 6099469524842556482}
+  m_Layer: 0
+  m_Name: Movement
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8561655299317852435
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4850033890129186866}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3970267090279809017}
+  m_Father: {fileID: 5102893360874897670}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5425846849138745960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4850033890129186866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e321a7af8378f45b972ec08f7089e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 0
+  cooldown: 0
+  defaultSpeed: 6
+  speed: 0
+--- !u!114 &8854988943348106846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4850033890129186866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1146b9a9a2b3d2439f3aea5ac670bdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners:
+      - _persistentArguments:
+        - _index: 0
+          _isSerialized: 1
+          _targetType:
+            GuidAssignmentFailed: 0
+            GUID: 
+            _typeNameAndAssembly: System.Single, mscorlib
+            _suppressLogs: 1
+          _fromType:
+            GuidAssignmentFailed: 0
+            GUID: 
+            _typeNameAndAssembly: 
+            _suppressLogs: 0
+          _serializationData:
+            DataFormat: 2
+            ReferencedUnityObjects: []
+            SerializationNodes:
+            - Name: 
+              Entry: 4
+              Data: 1.25
+            Bytes: 
+          _canBeDynamic: 0
+          _serializedArg: 
+        _target: {fileID: 3541930184749892774}
+        _isStatic: 0
+        CallState: 2
+        _staticType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _methodName: set_pitch
+      Expanded: 1
+    onStop:
+      _persistentListeners:
+      - _persistentArguments:
+        - _index: 0
+          _isSerialized: 1
+          _targetType:
+            GuidAssignmentFailed: 0
+            GUID: 
+            _typeNameAndAssembly: System.Single, mscorlib
+            _suppressLogs: 1
+          _fromType:
+            GuidAssignmentFailed: 0
+            GUID: 
+            _typeNameAndAssembly: 
+            _suppressLogs: 0
+          _serializationData:
+            DataFormat: 2
+            ReferencedUnityObjects: []
+            SerializationNodes:
+            - Name: 
+              Entry: 4
+              Data: 1
+            Bytes: 
+          _canBeDynamic: 0
+          _serializedArg: 
+        _target: {fileID: 3541930184749892774}
+        _isStatic: 0
+        CallState: 2
+        _staticType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _methodName: set_pitch
+      Expanded: 1
+  cooldown: 0
+  timeToRun: 1
+  runSpeedMultiplier: 1.5
+  runParticles: {fileID: 5102893361865183971}
+--- !u!114 &5138342577840215663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4850033890129186866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c7da27b710763c4593ecc0f625595d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  cooldown: 0
+  jumpSpeed: 10
+  jumpAnticipateTime: 0.1
+  jumpRecoverTime: 0.05
+  onStartActive:
+    _persistentListeners: []
+    Expanded: 1
+  onFinishActive:
+    _persistentListeners: []
+    Expanded: 1
+--- !u!114 &7045785900987598505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4850033890129186866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6ec1730c7ed3d49a2b8d7891202c1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  cooldown: 1
+  slideSpeedMultiplier: 3
+  slideStopAcceleration: 50
+--- !u!114 &6745717898281492280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4850033890129186866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4021a5b57a1ec1b4dacf3b967c9f3f9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  cooldown: 1
+  dodgeDistance: 1.5
+  anticipateTime: 0.05
+  recoveryTime: 0.3
+--- !u!114 &8641964334380858834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4850033890129186866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93618b92113552f45aabb79abb27f7d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8583721213638497076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4850033890129186866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed9ec4fc5714304c83d532294f45bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  cooldown: 0
+--- !u!114 &6790080662486734077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4850033890129186866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca77d11292e641d183033adcb404ad67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  cooldown: 0
+--- !u!114 &6099469524842556482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4850033890129186866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d7bf6c9b367e544be42faf142779a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
 --- !u!1 &5102893360079750233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1409,22 +1872,7 @@ GameObject:
   - component: {fileID: 5102893360874897670}
   - component: {fileID: 5102893360874897665}
   - component: {fileID: 5102893360874897664}
-  - component: {fileID: 5102893360874897667}
-  - component: {fileID: 6922206664831023246}
-  - component: {fileID: 5102893360874897666}
-  - component: {fileID: 5102893360874897669}
-  - component: {fileID: 5102893360874897668}
-  - component: {fileID: 5102893360874897671}
-  - component: {fileID: 5102893360874897679}
-  - component: {fileID: 5102893360874897695}
-  - component: {fileID: 5102893360874897676}
-  - component: {fileID: 5102893360874897677}
-  - component: {fileID: 5081049118965928474}
-  - component: {fileID: 4105917478859101225}
-  - component: {fileID: 4937438101241777289}
-  - component: {fileID: 2899137309724130339}
   - component: {fileID: 5102893360874897678}
-  - component: {fileID: 1303490756395571274}
   m_Layer: 0
   m_Name: Angel
   m_TagString: Untagged
@@ -1446,8 +1894,8 @@ Transform:
   m_Children:
   - {fileID: 5102893361555062421}
   - {fileID: 5102893360079750310}
-  - {fileID: 5102893361031154993}
-  - {fileID: 3970267090279809017}
+  - {fileID: 9214118118156865908}
+  - {fileID: 8561655299317852435}
   - {fileID: 32172274780924393}
   - {fileID: 7562827223860804901}
   m_Father: {fileID: 0}
@@ -1490,377 +1938,6 @@ MonoBehaviour:
   animator: {fileID: 5102893361555062418}
   movableEntity: {fileID: 0}
   attackManager: {fileID: 0}
---- !u!114 &5102893360874897667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af61f8ebac7a76742baddc8a44dddfa7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startHealth: 200
-  health: 0
---- !u!114 &6922206664831023246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f271e06fd2ef53a4c87299bd48bc9f07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyOnDeath: 0
-  deathAnimationDuration: 3
-  onDie:
-    _persistentListeners:
-    - _persistentArguments:
-      - _index: 0
-        _isSerialized: 1
-        _targetType:
-          GuidAssignmentFailed: 0
-          GUID: 
-          _typeNameAndAssembly: UnityEngine.AudioClip, UnityEngine.AudioModule
-          _suppressLogs: 1
-        _fromType:
-          GuidAssignmentFailed: 0
-          GUID: 
-          _typeNameAndAssembly: 
-          _suppressLogs: 0
-        _serializationData:
-          DataFormat: 2
-          ReferencedUnityObjects:
-          - {fileID: 8300000, guid: eb62d56ef099fa04ebc013540362ca7b, type: 3}
-          SerializationNodes:
-          - Name: 
-            Entry: 10
-            Data: 0
-          Bytes: 
-        _canBeDynamic: 0
-        _serializedArg: 
-      _target: {fileID: 0}
-      _isStatic: 1
-      CallState: 2
-      _staticType:
-        GuidAssignmentFailed: 0
-        GUID: 2ab4ebc1fba32b541a5a17f75dca25b5
-        _typeNameAndAssembly: AudioManager, Assembly-CSharp
-        _suppressLogs: 0
-      _methodName: PlayBackground
-    Expanded: 0
---- !u!114 &5102893360874897666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03767b56dc6ba3740842c0db368e9321, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageMultiplier: 0
---- !u!114 &5102893360874897669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0e321a7af8378f45b972ec08f7089e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 0
-  cooldown: 0
-  defaultSpeed: 6
-  speed: 0
---- !u!114 &5102893360874897668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1146b9a9a2b3d2439f3aea5ac670bdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners:
-      - _persistentArguments:
-        - _index: 0
-          _isSerialized: 1
-          _targetType:
-            GuidAssignmentFailed: 0
-            GUID: 
-            _typeNameAndAssembly: System.Single, mscorlib
-            _suppressLogs: 1
-          _fromType:
-            GuidAssignmentFailed: 0
-            GUID: 
-            _typeNameAndAssembly: 
-            _suppressLogs: 0
-          _serializationData:
-            DataFormat: 2
-            ReferencedUnityObjects: []
-            SerializationNodes:
-            - Name: 
-              Entry: 4
-              Data: 1.25
-            Bytes: 
-          _canBeDynamic: 0
-          _serializedArg: 
-        _target: {fileID: 3541930184749892774}
-        _isStatic: 0
-        CallState: 2
-        _staticType:
-          GuidAssignmentFailed: 0
-          GUID: 
-          _typeNameAndAssembly: 
-          _suppressLogs: 0
-        _methodName: set_pitch
-      Expanded: 1
-    onStop:
-      _persistentListeners:
-      - _persistentArguments:
-        - _index: 0
-          _isSerialized: 1
-          _targetType:
-            GuidAssignmentFailed: 0
-            GUID: 
-            _typeNameAndAssembly: System.Single, mscorlib
-            _suppressLogs: 1
-          _fromType:
-            GuidAssignmentFailed: 0
-            GUID: 
-            _typeNameAndAssembly: 
-            _suppressLogs: 0
-          _serializationData:
-            DataFormat: 2
-            ReferencedUnityObjects: []
-            SerializationNodes:
-            - Name: 
-              Entry: 4
-              Data: 1
-            Bytes: 
-          _canBeDynamic: 0
-          _serializedArg: 
-        _target: {fileID: 3541930184749892774}
-        _isStatic: 0
-        CallState: 2
-        _staticType:
-          GuidAssignmentFailed: 0
-          GUID: 
-          _typeNameAndAssembly: 
-          _suppressLogs: 0
-        _methodName: set_pitch
-      Expanded: 1
-  cooldown: 0
-  timeToRun: 1
-  runSpeedMultiplier: 1.5
-  runParticles: {fileID: 5102893361865183971}
---- !u!114 &5102893360874897671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c7da27b710763c4593ecc0f625595d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
-  cooldown: 0
-  jumpSpeed: 10
-  jumpAnticipateTime: 0.1
-  jumpRecoverTime: 0.05
-  onStartActive:
-    _persistentListeners: []
-    Expanded: 1
-  onFinishActive:
-    _persistentListeners: []
-    Expanded: 1
---- !u!114 &5102893360874897679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb6ec1730c7ed3d49a2b8d7891202c1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
-  cooldown: 1
-  slideSpeedMultiplier: 3
-  slideStopAcceleration: 50
---- !u!114 &5102893360874897695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4021a5b57a1ec1b4dacf3b967c9f3f9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
-  cooldown: 1
-  dodgeDistance: 1.5
-  anticipateTime: 0.05
-  recoveryTime: 0.3
---- !u!114 &5102893360874897676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82852d2e650fc4048ac887d4fc8710e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
-  knockbackRecoverTime: 1
---- !u!114 &5102893360874897677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b87fda33e10ea24448ba9fe6c8dfffc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
-  stunFrames: 2
---- !u!114 &5081049118965928474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93618b92113552f45aabb79abb27f7d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4105917478859101225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ed9ec4fc5714304c83d532294f45bd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
-  cooldown: 0
---- !u!114 &4937438101241777289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca77d11292e641d183033adcb404ad67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
-  cooldown: 0
---- !u!114 &2899137309724130339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d7bf6c9b367e544be42faf142779a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
 --- !u!114 &5102893360874897678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1902,19 +1979,6 @@ MonoBehaviour:
   attackPriority: 2
   possessedEffectTimeReducing: 00000000010000000200000003000000
   possessedEffectDurationReduction: 0.05
---- !u!114 &1303490756395571274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb8e94fc11f20cd43bb78246d3d31861, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkAudioSource: {fileID: 3541930184749892774}
 --- !u!1 &5102893360938488515
 GameObject:
   m_ObjectHideFlags: 0
@@ -2085,12 +2149,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893361031154992}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.06, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5102893360874897670}
+  m_Father: {fileID: 9214118118156865908}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2684613550222620667
@@ -2137,7 +2201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f61bf6815ea54901837aaba13eb795b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hittableBehaviour: {fileID: 5102893360874897666}
+  hittableBehaviour: {fileID: 1018915970268675303}
   onHit:
     _persistentListeners: []
     Expanded: 1
