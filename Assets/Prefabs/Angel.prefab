@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3850747449127629430}
+  - component: {fileID: 1525012814151335986}
   - component: {fileID: 4058469792659233068}
-  - component: {fileID: 2452591022739808639}
   - component: {fileID: 9085019184276698034}
   m_Layer: 0
   m_Name: StabAttackHitbox
@@ -34,6 +34,25 @@ Transform:
   m_Father: {fileID: 5277052100955548515}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1525012814151335986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307263992615725128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bf802ce25740a5bb67001e6fc77540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
+  position: {x: 0.695, y: 0.685, z: 0}
+  rotation:
+    value: 1
+  scale: {x: 1, y: 1, z: 1}
 --- !u!114 &4058469792659233068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,27 +66,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 1.63, y: 0.61, z: 1}
---- !u!114 &2452591022739808639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 307263992615725128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 5102893360874897665}
-  tags:
-    tags: 
-  position: {x: 0.695, y: 0.685, z: 0}
-  rotation:
-    value: 1
-  scale: {x: 1, y: 1, z: 1}
-  velocity: {x: 0, y: 0, z: 0}
-  acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &9085019184276698034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1014,8 +1012,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5102893360398477694}
+  - component: {fileID: 4220044524321501178}
   - component: {fileID: 5102893360398477695}
-  - component: {fileID: 4204961340021553250}
   - component: {fileID: 234424136118286085}
   m_Layer: 0
   m_Name: SpiningSwordAttackHitbox (1)
@@ -1039,6 +1037,25 @@ Transform:
   m_Father: {fileID: 3863231650379329718}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4220044524321501178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893360398477681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bf802ce25740a5bb67001e6fc77540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
+  position: {x: 0.055, y: 0.6, z: 0}
+  rotation:
+    value: 1
+  scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5102893360398477695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1052,27 +1069,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 3.85, y: 1, z: 1.5}
---- !u!114 &4204961340021553250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360398477681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 5102893360874897665}
-  tags:
-    tags: 
-  position: {x: 0.055, y: 0.6, z: 0}
-  rotation:
-    value: 1
-  scale: {x: 1, y: 1, z: 1}
-  velocity: {x: 0, y: 0, z: 0}
-  acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &234424136118286085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1095,8 +1091,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5102893360422186051}
+  - component: {fileID: 979398896534389299}
   - component: {fileID: 5102893360422186048}
-  - component: {fileID: 2601094941652560139}
   - component: {fileID: 9123332027102438765}
   m_Layer: 0
   m_Name: AirSpinAttackHitbox
@@ -1120,6 +1116,25 @@ Transform:
   m_Father: {fileID: 3216537126837818626}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &979398896534389299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893360422186050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bf802ce25740a5bb67001e6fc77540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
+  position: {x: 0.025, y: 0.96, z: 0}
+  rotation:
+    value: 1
+  scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5102893360422186048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1133,27 +1148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 3.03, y: 1.92, z: 1}
---- !u!114 &2601094941652560139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360422186050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 5102893360874897665}
-  tags:
-    tags: 
-  position: {x: 0.025, y: 0.96, z: 0}
-  rotation:
-    value: 1
-  scale: {x: 1, y: 1, z: 1}
-  velocity: {x: 0, y: 0, z: 0}
-  acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &9123332027102438765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1176,8 +1170,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5102893360536826752}
+  - component: {fileID: 8994851732676646045}
   - component: {fileID: 5102893360536826755}
-  - component: {fileID: 6156904755942689786}
   - component: {fileID: 3603120142536149105}
   m_Layer: 0
   m_Name: NormalAttackHitbox
@@ -1201,6 +1195,25 @@ Transform:
   m_Father: {fileID: 3182524056042066909}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8994851732676646045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893360536826754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bf802ce25740a5bb67001e6fc77540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
+  position: {x: 0.7, y: 0.685, z: 0}
+  rotation:
+    value: 1
+  scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5102893360536826755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1214,27 +1227,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 1.63, y: 0.61, z: 1}
---- !u!114 &6156904755942689786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360536826754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 5102893360874897665}
-  tags:
-    tags: 
-  position: {x: 0.7, y: 0.685, z: 0}
-  rotation:
-    value: 1
-  scale: {x: 1, y: 1, z: 1}
-  velocity: {x: 0, y: 0, z: 0}
-  acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &3603120142536149105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1257,8 +1249,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5102893360763890679}
+  - component: {fileID: 8841424249255884859}
   - component: {fileID: 5102893360763890678}
-  - component: {fileID: 4490768084976023015}
   - component: {fileID: 5133938250452459189}
   m_Layer: 0
   m_Name: UppercutHitbox
@@ -1282,6 +1274,25 @@ Transform:
   m_Father: {fileID: 6011423664596739024}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8841424249255884859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893360763890665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bf802ce25740a5bb67001e6fc77540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
+  position: {x: 1.115, y: 1.11, z: 0}
+  rotation:
+    value: 1
+  scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5102893360763890678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1295,27 +1306,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 1.13, y: 1.88, z: 1}
---- !u!114 &4490768084976023015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360763890665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 5102893360874897665}
-  tags:
-    tags: 
-  position: {x: 1.115, y: 1.11, z: 0}
-  rotation:
-    value: 1
-  scale: {x: 1, y: 1, z: 1}
-  velocity: {x: 0, y: 0, z: 0}
-  acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &5133938250452459189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1338,8 +1328,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5102893360866760424}
+  - component: {fileID: 9182679894394194954}
   - component: {fileID: 5102893360866760427}
-  - component: {fileID: 2748543002303246879}
   - component: {fileID: 2002257862998933130}
   m_Layer: 0
   m_Name: SlashAttackHitbox
@@ -1363,6 +1353,25 @@ Transform:
   m_Father: {fileID: 1613201450539292511}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9182679894394194954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893360866760426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bf802ce25740a5bb67001e6fc77540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
+  position: {x: 0.15, y: 0.825, z: 0}
+  rotation:
+    value: 1
+  scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5102893360866760427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1376,27 +1385,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 3, y: 1.15, z: 1}
---- !u!114 &2748543002303246879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360866760426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 5102893360874897665}
-  tags:
-    tags: 
-  position: {x: 0.15, y: 0.825, z: 0}
-  rotation:
-    value: 1
-  scale: {x: 1, y: 1, z: 1}
-  velocity: {x: 0, y: 0, z: 0}
-  acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &2002257862998933130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1979,8 +1967,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5102893360938488513}
+  - component: {fileID: 8585870990938792817}
   - component: {fileID: 5102893360938488512}
-  - component: {fileID: 8265206534415596788}
   m_Layer: 0
   m_Name: EnergyBurstHitbox
   m_TagString: Untagged
@@ -2003,6 +1991,25 @@ Transform:
   m_Father: {fileID: 3937311290927260544}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8585870990938792817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893360938488515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bf802ce25740a5bb67001e6fc77540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
+  position: {x: 1.565, y: 0.43, z: 0}
+  rotation:
+    value: 1
+  scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5102893360938488512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2016,27 +2023,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 1.47, y: 0.56, z: 2}
---- !u!114 &8265206534415596788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360938488515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 5102893360874897665}
-  tags:
-    tags: 
-  position: {x: 1.565, y: 0.43, z: 0}
-  rotation:
-    value: 1
-  scale: {x: 1, y: 1, z: 1}
-  velocity: {x: 0, y: 0, z: 0}
-  acceleration: {x: 0, y: 0, z: 0}
 --- !u!1 &5102893361029256207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,8 +2032,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5102893361029256205}
+  - component: {fileID: 6981507433473655714}
   - component: {fileID: 5102893361029256204}
-  - component: {fileID: 8408330998147681252}
   - component: {fileID: 2515481451582170628}
   m_Layer: 0
   m_Name: RunKickHitbox
@@ -2071,6 +2057,25 @@ Transform:
   m_Father: {fileID: 9022226871554883571}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6981507433473655714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893361029256207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bf802ce25740a5bb67001e6fc77540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
+  position: {x: 0.975, y: 0.5, z: 0}
+  rotation:
+    value: 1
+  scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5102893361029256204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2084,27 +2089,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 0.65, y: 0.5, z: 1}
---- !u!114 &8408330998147681252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893361029256207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 5102893360874897665}
-  tags:
-    tags: 
-  position: {x: 0.975, y: 0.5, z: 0}
-  rotation:
-    value: 1
-  scale: {x: 1, y: 1, z: 1}
-  velocity: {x: 0, y: 0, z: 0}
-  acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &2515481451582170628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2127,7 +2111,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5102893361031154993}
-  - component: {fileID: 6085540348271789170}
+  - component: {fileID: 2684613550222620667}
   - component: {fileID: 5102893361031155006}
   - component: {fileID: 8844146864852366796}
   m_Layer: 0
@@ -2152,7 +2136,7 @@ Transform:
   m_Father: {fileID: 5102893360874897670}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6085540348271789170
+--- !u!114 &2684613550222620667
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2161,7 +2145,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5102893361031154992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
+  m_Script: {fileID: 11500000, guid: b1bf802ce25740a5bb67001e6fc77540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5102893360874897665}
@@ -2171,8 +2155,6 @@ MonoBehaviour:
   rotation:
     value: 1
   scale: {x: 1, y: 1, z: 1}
-  velocity: {x: 0, y: 0, z: 0}
-  acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893361031155006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2214,8 +2196,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5102893361076516095}
+  - component: {fileID: 2369788678452133969}
   - component: {fileID: 5102893361076516092}
-  - component: {fileID: 1435858954811333285}
   - component: {fileID: 4347562249962238493}
   m_Layer: 0
   m_Name: SpiningSwordAttackHitbox (2)
@@ -2239,6 +2221,25 @@ Transform:
   m_Father: {fileID: 3863231650379329718}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2369788678452133969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893361076516094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bf802ce25740a5bb67001e6fc77540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
+  position: {x: 0.81, y: 0.78, z: 0}
+  rotation:
+    value: 1
+  scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5102893361076516092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2252,27 +2253,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 1.9, y: 1.56, z: 1.5}
---- !u!114 &1435858954811333285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893361076516094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 5102893360874897665}
-  tags:
-    tags: 
-  position: {x: 0.81, y: 0.78, z: 0}
-  rotation:
-    value: 1
-  scale: {x: 1, y: 1, z: 1}
-  velocity: {x: 0, y: 0, z: 0}
-  acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &4347562249962238493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7280,8 +7260,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5102893361817772765}
+  - component: {fileID: 3231622673701972927}
   - component: {fileID: 5102893361817772762}
-  - component: {fileID: 5622713660951101158}
   - component: {fileID: 1596551910517510343}
   m_Layer: 0
   m_Name: AltNormalAttackHitbox
@@ -7305,6 +7285,25 @@ Transform:
   m_Father: {fileID: 5746246883376850308}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3231622673701972927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102893361817772764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bf802ce25740a5bb67001e6fc77540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
+  position: {x: 0.375, y: 0.675, z: 0}
+  rotation:
+    value: 1
+  scale: {x: 1, y: 1, z: 1}
 --- !u!114 &5102893361817772762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7318,27 +7317,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 2.75, y: 0.75, z: 1}
---- !u!114 &5622713660951101158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893361817772764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84898f9791c54a74e886e698b492040a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 5102893360874897665}
-  tags:
-    tags: 
-  position: {x: 0.375, y: 0.675, z: 0}
-  rotation:
-    value: 1
-  scale: {x: 1, y: 1, z: 1}
-  velocity: {x: 0, y: 0, z: 0}
-  acceleration: {x: 0, y: 0, z: 0}
 --- !u!114 &1596551910517510343
 MonoBehaviour:
   m_ObjectHideFlags: 0
