@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class EntityManager
+    <title>Class EntityBehaviour
    | Heroes of the Shrine </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class EntityManager
+    <meta name="title" content="Class EntityBehaviour
    | Heroes of the Shrine ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,19 +78,28 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Global.EntityManager">
+            <article class="content wrap" id="_content" data-uid="Global.EntityBehaviour">
   
   
-  <h1 id="Global_EntityManager" data-uid="Global.EntityManager" class="text-break">Class EntityManager
+  <h1 id="Global_EntityBehaviour" data-uid="Global.EntityBehaviour" class="text-break">Class EntityBehaviour
   </h1>
-  <div class="markdown level0 summary"><p>Global store of entities, indexed with tags. Use this instead of expensive methods such as <see cref="!:UnityEngine.GameObject.Find"></see>.</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
-    <div class="level2"><span class="xref">EntityManager</span></div>
+    <div class="level2"><span class="xref">EntityBehaviour</span></div>
+      <div class="level3"><a class="xref" href="Global.Character.html">Character</a></div>
+      <div class="level3"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
+      <div class="level3"><a class="xref" href="Global.Figure.html">Figure</a></div>
+      <div class="level3"><a class="xref" href="Global.Hitbox.html">Hitbox</a></div>
+      <div class="level3"><a class="xref" href="Global.HitParticles.html">HitParticles</a></div>
+      <div class="level3"><a class="xref" href="Global.HittableHitbox.html">HittableHitbox</a></div>
+      <div class="level3"><a class="xref" href="Global.Particles.html">Particles</a></div>
+      <div class="level3"><a class="xref" href="Global.PossessSource.html">PossessSource</a></div>
+      <div class="level3"><a class="xref" href="Global.ShadowObject.html">ShadowObject</a></div>
+      <div class="level3"><a class="xref" href="Global.WalkableGrid.html">WalkableGrid</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -118,21 +127,23 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Global_EntityManager_syntax">Syntax</h5>
+  <h5 id="Global_EntityBehaviour_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class EntityManager : BaseComponent</code></pre>
+    <pre><code class="lang-csharp hljs">public class EntityBehaviour : BaseComponent</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
   
   
-  <a id="Global_EntityManager_Instance_" data-uid="Global.EntityManager.Instance*"></a>
-  <h4 id="Global_EntityManager_Instance" data-uid="Global.EntityManager.Instance">Instance</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Global_EntityBehaviour_Enabled_" data-uid="Global.EntityBehaviour.Enabled*"></a>
+  <h4 id="Global_EntityBehaviour_Enabled" data-uid="Global.EntityBehaviour.Enabled">Enabled</h4>
+  <div class="markdown level1 summary"><p>If <code>true</code>, the behaviour is updated (<code>Update</code> is called).
+Can be set to <code>false</code> multiple times, as it will change back to <code>true</code> only if it was set to <code>true</code> the same number of times.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static EntityManager Instance { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Enabled { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -144,9 +155,33 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.EntityManager.html">EntityManager</a></td>
-        <td><p>Instance of the singleton</p>
-</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Global_EntityBehaviour_Entity_" data-uid="Global.EntityBehaviour.Entity*"></a>
+  <h4 id="Global_EntityBehaviour_Entity" data-uid="Global.EntityBehaviour.Entity">Entity</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameEntity Entity { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.GameEntity.html">GameEntity</a></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -154,14 +189,14 @@
   </h3>
   
   
-  <a id="Global_EntityManager_AddEntity_" data-uid="Global.EntityManager.AddEntity*"></a>
-  <h4 id="Global_EntityManager_AddEntity_GameEntity_" data-uid="Global.EntityManager.AddEntity(GameEntity)">AddEntity(GameEntity)</h4>
-  <div class="markdown level1 summary"><p>Adds a <span class="xref">GameEntity</span> to the store</p>
+  <a id="Global_EntityBehaviour_DisableBehaviours_" data-uid="Global.EntityBehaviour.DisableBehaviours*"></a>
+  <h4 id="Global_EntityBehaviour_DisableBehaviours_Type___" data-uid="Global.EntityBehaviour.DisableBehaviours(Type[])">DisableBehaviours(Type[])</h4>
+  <div class="markdown level1 summary"><p>Disables behaviours, meaning they are not updated. If a behaviour is disabled N times, it will have to be enabled N times so it enabled again.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void AddEntity(GameEntity entity)</code></pre>
+    <pre><code class="lang-csharp hljs">public void DisableBehaviours(params Type[] behaviours)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -174,23 +209,23 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.GameEntity.html">GameEntity</a></td>
-        <td><span class="parametername">entity</span></td>
-        <td><p>Entity to add</p>
+        <td><span class="xref">Type</span>[]</td>
+        <td><span class="parametername">behaviours</span></td>
+        <td><p>Behaviours to disable. All of the attached behaviours from each type will be enabled.</p>
 </td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="Global_EntityManager_CountEntities_" data-uid="Global.EntityManager.CountEntities*"></a>
-  <h4 id="Global_EntityManager_CountEntities_Tag_" data-uid="Global.EntityManager.CountEntities(Tag)">CountEntities(Tag)</h4>
-  <div class="markdown level1 summary"><p>Count how many entities have a certain tag</p>
+  <a id="Global_EntityBehaviour_EnableBehaviours_" data-uid="Global.EntityBehaviour.EnableBehaviours*"></a>
+  <h4 id="Global_EntityBehaviour_EnableBehaviours_Type___" data-uid="Global.EntityBehaviour.EnableBehaviours(Type[])">EnableBehaviours(Type[])</h4>
+  <div class="markdown level1 summary"><p>Enables behaviours, meaning they are updated</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int CountEntities(Tag key)</code></pre>
+    <pre><code class="lang-csharp hljs">public void EnableBehaviours(params Type[] behaviours)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -203,10 +238,37 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.Tag.html">Tag</a></td>
-        <td><span class="parametername">key</span></td>
-        <td><p>Tag to check</p>
+        <td><span class="xref">Type</span>[]</td>
+        <td><span class="parametername">behaviours</span></td>
+        <td><p>Behaviours to enable. All of the attached behaviours from each type will be enabled.</p>
 </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Global_EntityBehaviour_GetBehaviour_" data-uid="Global.EntityBehaviour.GetBehaviour*"></a>
+  <h4 id="Global_EntityBehaviour_GetBehaviour_Type_" data-uid="Global.EntityBehaviour.GetBehaviour(Type)">GetBehaviour(Type)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EntityBehaviour GetBehaviour(Type type)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Type</span></td>
+        <td><span class="parametername">type</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -220,22 +282,60 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><p>Count of entities have that tag</p>
-</td>
+        <td><a class="xref" href="Global.EntityBehaviour.html">EntityBehaviour</a></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="Global_EntityManager_GetEntities_" data-uid="Global.EntityManager.GetEntities*"></a>
-  <h4 id="Global_EntityManager_GetEntities_Tag_" data-uid="Global.EntityManager.GetEntities(Tag)">GetEntities(Tag)</h4>
-  <div class="markdown level1 summary"><p>Get all entities that have a certain tag</p>
-</div>
+  <a id="Global_EntityBehaviour_GetBehaviour_" data-uid="Global.EntityBehaviour.GetBehaviour*"></a>
+  <h4 id="Global_EntityBehaviour_GetBehaviour__1" data-uid="Global.EntityBehaviour.GetBehaviour``1">GetBehaviour&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerable&lt;GameEntity&gt; GetEntities(Tag key)</code></pre>
+    <pre><code class="lang-csharp hljs">public T GetBehaviour&lt;T&gt;()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Global_EntityBehaviour_GetBehaviours_" data-uid="Global.EntityBehaviour.GetBehaviours*"></a>
+  <h4 id="Global_EntityBehaviour_GetBehaviours_Type_" data-uid="Global.EntityBehaviour.GetBehaviours(Type)">GetBehaviours(Type)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;EntityBehaviour&gt; GetBehaviours(Type type)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -248,10 +348,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.Tag.html">Tag</a></td>
-        <td><span class="parametername">key</span></td>
-        <td><p>Tag to check</p>
-</td>
+        <td><span class="xref">Type</span></td>
+        <td><span class="parametername">type</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -265,41 +364,21 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="Global.GameEntity.html">GameEntity</a>&gt;</td>
-        <td><p>All entities having that tag</p>
-</td>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="Global.EntityBehaviour.html">EntityBehaviour</a>&gt;</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="Global_EntityManager_GetEntities_" data-uid="Global.EntityManager.GetEntities*"></a>
-  <h4 id="Global_EntityManager_GetEntities_Tag___" data-uid="Global.EntityManager.GetEntities(Tag[])">GetEntities(Tag[])</h4>
-  <div class="markdown level1 summary"><p>Get all entities that have one of a list of tags</p>
-</div>
+  <a id="Global_EntityBehaviour_GetBehaviours_" data-uid="Global.EntityBehaviour.GetBehaviours*"></a>
+  <h4 id="Global_EntityBehaviour_GetBehaviours__1" data-uid="Global.EntityBehaviour.GetBehaviours``1">GetBehaviours&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerable&lt;GameEntity&gt; GetEntities(params Tag[] keys)</code></pre>
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;T&gt; GetBehaviours&lt;T&gt;()</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.Tag.html">Tag</a>[]</td>
-        <td><span class="parametername">keys</span></td>
-        <td><p>List of tags to check</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -310,83 +389,23 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="Global.GameEntity.html">GameEntity</a>&gt;</td>
-        <td><p>All entities having any of these tags</p>
-</td>
+        <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-  
-  
-  <a id="Global_EntityManager_GetEntity_" data-uid="Global.EntityManager.GetEntity*"></a>
-  <h4 id="Global_EntityManager_GetEntity_Tag_" data-uid="Global.EntityManager.GetEntity(Tag)">GetEntity(Tag)</h4>
-  <div class="markdown level1 summary"><p>Get one entity that has a certain tag</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public GameEntity GetEntity(Tag key)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
+  <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
-        <th>Type</th>
         <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.Tag.html">Tag</a></td>
-        <td><span class="parametername">key</span></td>
-        <td><p>Tag to check</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.GameEntity.html">GameEntity</a></td>
-        <td><p>Single entity having this tag. If there is none, then <code>null</code> is returned</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_EntityManager_RemoveEntity_" data-uid="Global.EntityManager.RemoveEntity*"></a>
-  <h4 id="Global_EntityManager_RemoveEntity_GameEntity_" data-uid="Global.EntityManager.RemoveEntity(GameEntity)">RemoveEntity(GameEntity)</h4>
-  <div class="markdown level1 summary"><p>Removes a <span class="xref">GameEntity</span> from the store</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void RemoveEntity(GameEntity entity)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.GameEntity.html">GameEntity</a></td>
-        <td><span class="parametername">entity</span></td>
-        <td><p>Entity to remove</p>
-</td>
+        <td><span class="parametername">T</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>

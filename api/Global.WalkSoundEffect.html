@@ -90,18 +90,59 @@
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
-    <div class="level2"><span class="xref">WalkSoundEffect</span></div>
+    <div class="level2"><a class="xref" href="Global.EntityBehaviour.html">EntityBehaviour</a></div>
+    <div class="level3"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
+    <div class="level4"><span class="xref">WalkSoundEffect</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Enabled">BaseComponent.Enabled</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_EnableComponents_Type___">BaseComponent.EnableComponents(Type[])</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Animator">CharacterBehaviour.Animator</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_DisableComponents_Type___">BaseComponent.DisableComponents(Type[])</a>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableEntity">CharacterBehaviour.MovableEntity</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_AttackManager">CharacterBehaviour.AttackManager</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_BlockBehaviours_Type___">CharacterBehaviour.BlockBehaviours(Type[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_UnblockBehaviours_Type___">CharacterBehaviour.UnblockBehaviours(Type[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_StopBehaviours_Type___">CharacterBehaviour.StopBehaviours(Type[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying__1">CharacterBehaviour.IsPlaying&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_Enabled">EntityBehaviour.Enabled</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_Entity">EntityBehaviour.Entity</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_GetBehaviours_Type_">EntityBehaviour.GetBehaviours(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_GetBehaviour_Type_">EntityBehaviour.GetBehaviour(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_GetBehaviours__1">EntityBehaviour.GetBehaviours&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_GetBehaviour__1">EntityBehaviour.GetBehaviour&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_EnableBehaviours_Type___">EntityBehaviour.EnableBehaviours(Type[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_DisableBehaviours_Type___">EntityBehaviour.DisableBehaviours(Type[])</a>
     </div>
     <div>
       <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Register_Action_">BaseComponent.Register(Action)</a>
@@ -129,7 +170,7 @@
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_WalkSoundEffect_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class WalkSoundEffect : BaseComponent</code></pre>
+    <pre><code class="lang-csharp hljs">public class WalkSoundEffect : CharacterBehaviour</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -158,6 +199,20 @@
       </tr>
     </tbody>
   </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Global_WalkSoundEffect_Awake_" data-uid="Global.WalkSoundEffect.Awake*"></a>
+  <h4 id="Global_WalkSoundEffect_Awake" data-uid="Global.WalkSoundEffect.Awake">Awake()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Awake()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Awake">CharacterBehaviour.Awake()</a></div>
 </article>
           </div>
           

@@ -44,6 +44,12 @@ references:
   isSpec: "True"
   fullName: AbsoluteHitDetector.StopDetector
   nameWithType: AbsoluteHitDetector.StopDetector
+- uid: Global.AddIconToHierarchy
+  name: AddIconToHierarchy
+  href: api/Global.AddIconToHierarchy.html
+  commentId: T:Global.AddIconToHierarchy
+  fullName: AddIconToHierarchy
+  nameWithType: AddIconToHierarchy
 - uid: Global.AggressionBrainModule
   name: AggressionBrainModule
   href: api/Global.AggressionBrainModule.html
@@ -863,51 +869,6 @@ references:
   isSpec: "True"
   fullName: BaseComponent.Cancel
   nameWithType: BaseComponent.Cancel
-- uid: Global.BaseComponent.DisableComponents(Type[])
-  name: DisableComponents(Type[])
-  href: api/Global.BaseComponent.html#Global_BaseComponent_DisableComponents_Type___
-  commentId: M:Global.BaseComponent.DisableComponents(Type[])
-  name.vb: DisableComponents(Type())
-  fullName: BaseComponent.DisableComponents(Type[])
-  fullName.vb: BaseComponent.DisableComponents(Type())
-  nameWithType: BaseComponent.DisableComponents(Type[])
-  nameWithType.vb: BaseComponent.DisableComponents(Type())
-- uid: Global.BaseComponent.DisableComponents*
-  name: DisableComponents
-  href: api/Global.BaseComponent.html#Global_BaseComponent_DisableComponents_
-  commentId: Overload:Global.BaseComponent.DisableComponents
-  isSpec: "True"
-  fullName: BaseComponent.DisableComponents
-  nameWithType: BaseComponent.DisableComponents
-- uid: Global.BaseComponent.EnableComponents(Type[])
-  name: EnableComponents(Type[])
-  href: api/Global.BaseComponent.html#Global_BaseComponent_EnableComponents_Type___
-  commentId: M:Global.BaseComponent.EnableComponents(Type[])
-  name.vb: EnableComponents(Type())
-  fullName: BaseComponent.EnableComponents(Type[])
-  fullName.vb: BaseComponent.EnableComponents(Type())
-  nameWithType: BaseComponent.EnableComponents(Type[])
-  nameWithType.vb: BaseComponent.EnableComponents(Type())
-- uid: Global.BaseComponent.EnableComponents*
-  name: EnableComponents
-  href: api/Global.BaseComponent.html#Global_BaseComponent_EnableComponents_
-  commentId: Overload:Global.BaseComponent.EnableComponents
-  isSpec: "True"
-  fullName: BaseComponent.EnableComponents
-  nameWithType: BaseComponent.EnableComponents
-- uid: Global.BaseComponent.Enabled
-  name: Enabled
-  href: api/Global.BaseComponent.html#Global_BaseComponent_Enabled
-  commentId: P:Global.BaseComponent.Enabled
-  fullName: BaseComponent.Enabled
-  nameWithType: BaseComponent.Enabled
-- uid: Global.BaseComponent.Enabled*
-  name: Enabled
-  href: api/Global.BaseComponent.html#Global_BaseComponent_Enabled_
-  commentId: Overload:Global.BaseComponent.Enabled
-  isSpec: "True"
-  fullName: BaseComponent.Enabled
-  nameWithType: BaseComponent.Enabled
 - uid: Global.BaseComponent.InvokeWhen(Func{System.Boolean},Action)
   name: InvokeWhen(Func<Boolean>, Action)
   href: api/Global.BaseComponent.html#Global_BaseComponent_InvokeWhen_Func_System_Boolean__Action_
@@ -1066,6 +1027,31 @@ references:
   fullName.vb: BaseEffect(Of T).Playing
   nameWithType: BaseEffect<T>.Playing
   nameWithType.vb: BaseEffect(Of T).Playing
+- uid: Global.BaseEnergySupplier
+  name: BaseEnergySupplier
+  href: api/Global.BaseEnergySupplier.html
+  commentId: T:Global.BaseEnergySupplier
+  fullName: BaseEnergySupplier
+  nameWithType: BaseEnergySupplier
+- uid: Global.BaseEnergySupplier.Awake
+  name: Awake()
+  href: api/Global.BaseEnergySupplier.html#Global_BaseEnergySupplier_Awake
+  commentId: M:Global.BaseEnergySupplier.Awake
+  fullName: BaseEnergySupplier.Awake()
+  nameWithType: BaseEnergySupplier.Awake()
+- uid: Global.BaseEnergySupplier.Awake*
+  name: Awake
+  href: api/Global.BaseEnergySupplier.html#Global_BaseEnergySupplier_Awake_
+  commentId: Overload:Global.BaseEnergySupplier.Awake
+  isSpec: "True"
+  fullName: BaseEnergySupplier.Awake
+  nameWithType: BaseEnergySupplier.Awake
+- uid: Global.BaseEnergySupplier.energySystem
+  name: energySystem
+  href: api/Global.BaseEnergySupplier.html#Global_BaseEnergySupplier_energySystem
+  commentId: F:Global.BaseEnergySupplier.energySystem
+  fullName: BaseEnergySupplier.energySystem
+  nameWithType: BaseEnergySupplier.energySystem
 - uid: Global.BaseHitDetector
   name: BaseHitDetector
   href: api/Global.BaseHitDetector.html
@@ -1112,6 +1098,12 @@ references:
   commentId: F:Global.BaseHitDetector.includedHittableTags
   fullName: BaseHitDetector.includedHittableTags
   nameWithType: BaseHitDetector.includedHittableTags
+- uid: Global.BaseHitDetector.onHit
+  name: onHit
+  href: api/Global.BaseHitDetector.html#Global_BaseHitDetector_onHit
+  commentId: F:Global.BaseHitDetector.onHit
+  fullName: BaseHitDetector.onHit
+  nameWithType: BaseHitDetector.onHit
 - uid: Global.BaseHitDetector.StartDetector(Action{HittableHitbox},Tags)
   name: StartDetector(Action<HittableHitbox>, Tags)
   href: api/Global.BaseHitDetector.html#Global_BaseHitDetector_StartDetector_Action_HittableHitbox__Tags_
@@ -2857,6 +2849,37 @@ references:
   commentId: T:Global.EnergyBurstAttack
   fullName: EnergyBurstAttack
   nameWithType: EnergyBurstAttack
+- uid: Global.EnergySystem
+  name: EnergySystem
+  href: api/Global.EnergySystem.html
+  commentId: T:Global.EnergySystem
+  fullName: EnergySystem
+  nameWithType: EnergySystem
+- uid: Global.EnergySystem.energy
+  name: energy
+  href: api/Global.EnergySystem.html#Global_EnergySystem_energy
+  commentId: F:Global.EnergySystem.energy
+  fullName: EnergySystem.energy
+  nameWithType: EnergySystem.energy
+- uid: Global.EnergySystem.Fraction
+  name: Fraction
+  href: api/Global.EnergySystem.html#Global_EnergySystem_Fraction
+  commentId: P:Global.EnergySystem.Fraction
+  fullName: EnergySystem.Fraction
+  nameWithType: EnergySystem.Fraction
+- uid: Global.EnergySystem.Fraction*
+  name: Fraction
+  href: api/Global.EnergySystem.html#Global_EnergySystem_Fraction_
+  commentId: Overload:Global.EnergySystem.Fraction
+  isSpec: "True"
+  fullName: EnergySystem.Fraction
+  nameWithType: EnergySystem.Fraction
+- uid: Global.EnergySystem.maxEnergy
+  name: maxEnergy
+  href: api/Global.EnergySystem.html#Global_EnergySystem_maxEnergy
+  commentId: F:Global.EnergySystem.maxEnergy
+  fullName: EnergySystem.maxEnergy
+  nameWithType: EnergySystem.maxEnergy
 - uid: Global.EnragedBrainModule
   name: EnragedBrainModule
   href: api/Global.EnragedBrainModule.html
@@ -2901,6 +2924,114 @@ references:
   commentId: F:Global.EnragedBrainModule.rageHealthThreshold
   fullName: EnragedBrainModule.rageHealthThreshold
   nameWithType: EnragedBrainModule.rageHealthThreshold
+- uid: Global.EntityBehaviour
+  name: EntityBehaviour
+  href: api/Global.EntityBehaviour.html
+  commentId: T:Global.EntityBehaviour
+  fullName: EntityBehaviour
+  nameWithType: EntityBehaviour
+- uid: Global.EntityBehaviour.DisableBehaviours(Type[])
+  name: DisableBehaviours(Type[])
+  href: api/Global.EntityBehaviour.html#Global_EntityBehaviour_DisableBehaviours_Type___
+  commentId: M:Global.EntityBehaviour.DisableBehaviours(Type[])
+  name.vb: DisableBehaviours(Type())
+  fullName: EntityBehaviour.DisableBehaviours(Type[])
+  fullName.vb: EntityBehaviour.DisableBehaviours(Type())
+  nameWithType: EntityBehaviour.DisableBehaviours(Type[])
+  nameWithType.vb: EntityBehaviour.DisableBehaviours(Type())
+- uid: Global.EntityBehaviour.DisableBehaviours*
+  name: DisableBehaviours
+  href: api/Global.EntityBehaviour.html#Global_EntityBehaviour_DisableBehaviours_
+  commentId: Overload:Global.EntityBehaviour.DisableBehaviours
+  isSpec: "True"
+  fullName: EntityBehaviour.DisableBehaviours
+  nameWithType: EntityBehaviour.DisableBehaviours
+- uid: Global.EntityBehaviour.EnableBehaviours(Type[])
+  name: EnableBehaviours(Type[])
+  href: api/Global.EntityBehaviour.html#Global_EntityBehaviour_EnableBehaviours_Type___
+  commentId: M:Global.EntityBehaviour.EnableBehaviours(Type[])
+  name.vb: EnableBehaviours(Type())
+  fullName: EntityBehaviour.EnableBehaviours(Type[])
+  fullName.vb: EntityBehaviour.EnableBehaviours(Type())
+  nameWithType: EntityBehaviour.EnableBehaviours(Type[])
+  nameWithType.vb: EntityBehaviour.EnableBehaviours(Type())
+- uid: Global.EntityBehaviour.EnableBehaviours*
+  name: EnableBehaviours
+  href: api/Global.EntityBehaviour.html#Global_EntityBehaviour_EnableBehaviours_
+  commentId: Overload:Global.EntityBehaviour.EnableBehaviours
+  isSpec: "True"
+  fullName: EntityBehaviour.EnableBehaviours
+  nameWithType: EntityBehaviour.EnableBehaviours
+- uid: Global.EntityBehaviour.Enabled
+  name: Enabled
+  href: api/Global.EntityBehaviour.html#Global_EntityBehaviour_Enabled
+  commentId: P:Global.EntityBehaviour.Enabled
+  fullName: EntityBehaviour.Enabled
+  nameWithType: EntityBehaviour.Enabled
+- uid: Global.EntityBehaviour.Enabled*
+  name: Enabled
+  href: api/Global.EntityBehaviour.html#Global_EntityBehaviour_Enabled_
+  commentId: Overload:Global.EntityBehaviour.Enabled
+  isSpec: "True"
+  fullName: EntityBehaviour.Enabled
+  nameWithType: EntityBehaviour.Enabled
+- uid: Global.EntityBehaviour.Entity
+  name: Entity
+  href: api/Global.EntityBehaviour.html#Global_EntityBehaviour_Entity
+  commentId: P:Global.EntityBehaviour.Entity
+  fullName: EntityBehaviour.Entity
+  nameWithType: EntityBehaviour.Entity
+- uid: Global.EntityBehaviour.Entity*
+  name: Entity
+  href: api/Global.EntityBehaviour.html#Global_EntityBehaviour_Entity_
+  commentId: Overload:Global.EntityBehaviour.Entity
+  isSpec: "True"
+  fullName: EntityBehaviour.Entity
+  nameWithType: EntityBehaviour.Entity
+- uid: Global.EntityBehaviour.GetBehaviour(Type)
+  name: GetBehaviour(Type)
+  href: api/Global.EntityBehaviour.html#Global_EntityBehaviour_GetBehaviour_Type_
+  commentId: M:Global.EntityBehaviour.GetBehaviour(Type)
+  fullName: EntityBehaviour.GetBehaviour(Type)
+  nameWithType: EntityBehaviour.GetBehaviour(Type)
+- uid: Global.EntityBehaviour.GetBehaviour*
+  name: GetBehaviour
+  href: api/Global.EntityBehaviour.html#Global_EntityBehaviour_GetBehaviour_
+  commentId: Overload:Global.EntityBehaviour.GetBehaviour
+  isSpec: "True"
+  fullName: EntityBehaviour.GetBehaviour
+  nameWithType: EntityBehaviour.GetBehaviour
+- uid: Global.EntityBehaviour.GetBehaviour``1
+  name: GetBehaviour<T>()
+  href: api/Global.EntityBehaviour.html#Global_EntityBehaviour_GetBehaviour__1
+  commentId: M:Global.EntityBehaviour.GetBehaviour``1
+  name.vb: GetBehaviour(Of T)()
+  fullName: EntityBehaviour.GetBehaviour<T>()
+  fullName.vb: EntityBehaviour.GetBehaviour(Of T)()
+  nameWithType: EntityBehaviour.GetBehaviour<T>()
+  nameWithType.vb: EntityBehaviour.GetBehaviour(Of T)()
+- uid: Global.EntityBehaviour.GetBehaviours(Type)
+  name: GetBehaviours(Type)
+  href: api/Global.EntityBehaviour.html#Global_EntityBehaviour_GetBehaviours_Type_
+  commentId: M:Global.EntityBehaviour.GetBehaviours(Type)
+  fullName: EntityBehaviour.GetBehaviours(Type)
+  nameWithType: EntityBehaviour.GetBehaviours(Type)
+- uid: Global.EntityBehaviour.GetBehaviours*
+  name: GetBehaviours
+  href: api/Global.EntityBehaviour.html#Global_EntityBehaviour_GetBehaviours_
+  commentId: Overload:Global.EntityBehaviour.GetBehaviours
+  isSpec: "True"
+  fullName: EntityBehaviour.GetBehaviours
+  nameWithType: EntityBehaviour.GetBehaviours
+- uid: Global.EntityBehaviour.GetBehaviours``1
+  name: GetBehaviours<T>()
+  href: api/Global.EntityBehaviour.html#Global_EntityBehaviour_GetBehaviours__1
+  commentId: M:Global.EntityBehaviour.GetBehaviours``1
+  name.vb: GetBehaviours(Of T)()
+  fullName: EntityBehaviour.GetBehaviours<T>()
+  fullName.vb: EntityBehaviour.GetBehaviours(Of T)()
+  nameWithType: EntityBehaviour.GetBehaviours<T>()
+  nameWithType.vb: EntityBehaviour.GetBehaviours(Of T)()
 - uid: Global.EntityManager
   name: EntityManager
   href: api/Global.EntityManager.html
@@ -3636,6 +3767,50 @@ references:
   isSpec: "True"
   fullName: GameEntity.Awake
   nameWithType: GameEntity.Awake
+- uid: Global.GameEntity.GetBehaviour(Type,System.Boolean)
+  name: GetBehaviour(Type, Boolean)
+  href: api/Global.GameEntity.html#Global_GameEntity_GetBehaviour_Type_System_Boolean_
+  commentId: M:Global.GameEntity.GetBehaviour(Type,System.Boolean)
+  fullName: GameEntity.GetBehaviour(Type, System.Boolean)
+  nameWithType: GameEntity.GetBehaviour(Type, Boolean)
+- uid: Global.GameEntity.GetBehaviour*
+  name: GetBehaviour
+  href: api/Global.GameEntity.html#Global_GameEntity_GetBehaviour_
+  commentId: Overload:Global.GameEntity.GetBehaviour
+  isSpec: "True"
+  fullName: GameEntity.GetBehaviour
+  nameWithType: GameEntity.GetBehaviour
+- uid: Global.GameEntity.GetBehaviour``1(System.Boolean)
+  name: GetBehaviour<T>(Boolean)
+  href: api/Global.GameEntity.html#Global_GameEntity_GetBehaviour__1_System_Boolean_
+  commentId: M:Global.GameEntity.GetBehaviour``1(System.Boolean)
+  name.vb: GetBehaviour(Of T)(Boolean)
+  fullName: GameEntity.GetBehaviour<T>(System.Boolean)
+  fullName.vb: GameEntity.GetBehaviour(Of T)(System.Boolean)
+  nameWithType: GameEntity.GetBehaviour<T>(Boolean)
+  nameWithType.vb: GameEntity.GetBehaviour(Of T)(Boolean)
+- uid: Global.GameEntity.GetBehaviours(Type,System.Boolean)
+  name: GetBehaviours(Type, Boolean)
+  href: api/Global.GameEntity.html#Global_GameEntity_GetBehaviours_Type_System_Boolean_
+  commentId: M:Global.GameEntity.GetBehaviours(Type,System.Boolean)
+  fullName: GameEntity.GetBehaviours(Type, System.Boolean)
+  nameWithType: GameEntity.GetBehaviours(Type, Boolean)
+- uid: Global.GameEntity.GetBehaviours*
+  name: GetBehaviours
+  href: api/Global.GameEntity.html#Global_GameEntity_GetBehaviours_
+  commentId: Overload:Global.GameEntity.GetBehaviours
+  isSpec: "True"
+  fullName: GameEntity.GetBehaviours
+  nameWithType: GameEntity.GetBehaviours
+- uid: Global.GameEntity.GetBehaviours``1(System.Boolean)
+  name: GetBehaviours<T>(Boolean)
+  href: api/Global.GameEntity.html#Global_GameEntity_GetBehaviours__1_System_Boolean_
+  commentId: M:Global.GameEntity.GetBehaviours``1(System.Boolean)
+  name.vb: GetBehaviours(Of T)(Boolean)
+  fullName: GameEntity.GetBehaviours<T>(System.Boolean)
+  fullName.vb: GameEntity.GetBehaviours(Of T)(System.Boolean)
+  nameWithType: GameEntity.GetBehaviours<T>(Boolean)
+  nameWithType.vb: GameEntity.GetBehaviours(Of T)(Boolean)
 - uid: Global.GameEntity.GroundDistance(Vector3)
   name: GroundDistance(Vector3)
   href: api/Global.GameEntity.html#Global_GameEntity_GroundDistance_Vector3_
@@ -3675,6 +3850,19 @@ references:
   isSpec: "True"
   fullName: GameEntity.GroundWorldPosition
   nameWithType: GameEntity.GroundWorldPosition
+- uid: Global.GameEntity.Instantiate(GameObject,Vector3,Rotation)
+  name: Instantiate(GameObject, Vector3, Rotation)
+  href: api/Global.GameEntity.html#Global_GameEntity_Instantiate_GameObject_Vector3_Rotation_
+  commentId: M:Global.GameEntity.Instantiate(GameObject,Vector3,Rotation)
+  fullName: GameEntity.Instantiate(GameObject, Vector3, Rotation)
+  nameWithType: GameEntity.Instantiate(GameObject, Vector3, Rotation)
+- uid: Global.GameEntity.Instantiate*
+  name: Instantiate
+  href: api/Global.GameEntity.html#Global_GameEntity_Instantiate_
+  commentId: Overload:Global.GameEntity.Instantiate
+  isSpec: "True"
+  fullName: GameEntity.Instantiate
+  nameWithType: GameEntity.Instantiate
 - uid: Global.GameEntity.parent
   name: parent
   href: api/Global.GameEntity.html#Global_GameEntity_parent
@@ -5178,6 +5366,37 @@ references:
   isSpec: "True"
   fullName: MotionAttack.RecoveryPhase
   nameWithType: MotionAttack.RecoveryPhase
+- uid: Global.MotionAttackEnergySupplier
+  name: MotionAttackEnergySupplier
+  href: api/Global.MotionAttackEnergySupplier.html
+  commentId: T:Global.MotionAttackEnergySupplier
+  fullName: MotionAttackEnergySupplier
+  nameWithType: MotionAttackEnergySupplier
+- uid: Global.MotionAttackEnergySupplier.attack
+  name: attack
+  href: api/Global.MotionAttackEnergySupplier.html#Global_MotionAttackEnergySupplier_attack
+  commentId: F:Global.MotionAttackEnergySupplier.attack
+  fullName: MotionAttackEnergySupplier.attack
+  nameWithType: MotionAttackEnergySupplier.attack
+- uid: Global.MotionAttackEnergySupplier.Awake
+  name: Awake()
+  href: api/Global.MotionAttackEnergySupplier.html#Global_MotionAttackEnergySupplier_Awake
+  commentId: M:Global.MotionAttackEnergySupplier.Awake
+  fullName: MotionAttackEnergySupplier.Awake()
+  nameWithType: MotionAttackEnergySupplier.Awake()
+- uid: Global.MotionAttackEnergySupplier.Awake*
+  name: Awake
+  href: api/Global.MotionAttackEnergySupplier.html#Global_MotionAttackEnergySupplier_Awake_
+  commentId: Overload:Global.MotionAttackEnergySupplier.Awake
+  isSpec: "True"
+  fullName: MotionAttackEnergySupplier.Awake
+  nameWithType: MotionAttackEnergySupplier.Awake
+- uid: Global.MotionAttackEnergySupplier.energyReward
+  name: energyReward
+  href: api/Global.MotionAttackEnergySupplier.html#Global_MotionAttackEnergySupplier_energyReward
+  commentId: F:Global.MotionAttackEnergySupplier.energyReward
+  fullName: MotionAttackEnergySupplier.energyReward
+  nameWithType: MotionAttackEnergySupplier.energyReward
 - uid: Global.MotionSettings
   name: MotionSettings
   href: api/Global.MotionSettings.html
@@ -7030,6 +7249,37 @@ references:
   isSpec: "True"
   fullName: SimpleAttack.RecoveryPhase
   nameWithType: SimpleAttack.RecoveryPhase
+- uid: Global.SimpleAttackEnergySupplier
+  name: SimpleAttackEnergySupplier
+  href: api/Global.SimpleAttackEnergySupplier.html
+  commentId: T:Global.SimpleAttackEnergySupplier
+  fullName: SimpleAttackEnergySupplier
+  nameWithType: SimpleAttackEnergySupplier
+- uid: Global.SimpleAttackEnergySupplier.attack
+  name: attack
+  href: api/Global.SimpleAttackEnergySupplier.html#Global_SimpleAttackEnergySupplier_attack
+  commentId: F:Global.SimpleAttackEnergySupplier.attack
+  fullName: SimpleAttackEnergySupplier.attack
+  nameWithType: SimpleAttackEnergySupplier.attack
+- uid: Global.SimpleAttackEnergySupplier.Awake
+  name: Awake()
+  href: api/Global.SimpleAttackEnergySupplier.html#Global_SimpleAttackEnergySupplier_Awake
+  commentId: M:Global.SimpleAttackEnergySupplier.Awake
+  fullName: SimpleAttackEnergySupplier.Awake()
+  nameWithType: SimpleAttackEnergySupplier.Awake()
+- uid: Global.SimpleAttackEnergySupplier.Awake*
+  name: Awake
+  href: api/Global.SimpleAttackEnergySupplier.html#Global_SimpleAttackEnergySupplier_Awake_
+  commentId: Overload:Global.SimpleAttackEnergySupplier.Awake
+  isSpec: "True"
+  fullName: SimpleAttackEnergySupplier.Awake
+  nameWithType: SimpleAttackEnergySupplier.Awake
+- uid: Global.SimpleAttackEnergySupplier.energyReward
+  name: energyReward
+  href: api/Global.SimpleAttackEnergySupplier.html#Global_SimpleAttackEnergySupplier_energyReward
+  commentId: F:Global.SimpleAttackEnergySupplier.energyReward
+  fullName: SimpleAttackEnergySupplier.energyReward
+  nameWithType: SimpleAttackEnergySupplier.energyReward
 - uid: Global.SingleHitDetector
   name: SingleHitDetector
   href: api/Global.SingleHitDetector.html
@@ -7414,6 +7664,37 @@ references:
   isSpec: "True"
   fullName: SpinningSwordsAttack.RecoveryPhase
   nameWithType: SpinningSwordsAttack.RecoveryPhase
+- uid: Global.SpinningSwordsAttackEnergySupplier
+  name: SpinningSwordsAttackEnergySupplier
+  href: api/Global.SpinningSwordsAttackEnergySupplier.html
+  commentId: T:Global.SpinningSwordsAttackEnergySupplier
+  fullName: SpinningSwordsAttackEnergySupplier
+  nameWithType: SpinningSwordsAttackEnergySupplier
+- uid: Global.SpinningSwordsAttackEnergySupplier.attack
+  name: attack
+  href: api/Global.SpinningSwordsAttackEnergySupplier.html#Global_SpinningSwordsAttackEnergySupplier_attack
+  commentId: F:Global.SpinningSwordsAttackEnergySupplier.attack
+  fullName: SpinningSwordsAttackEnergySupplier.attack
+  nameWithType: SpinningSwordsAttackEnergySupplier.attack
+- uid: Global.SpinningSwordsAttackEnergySupplier.Awake
+  name: Awake()
+  href: api/Global.SpinningSwordsAttackEnergySupplier.html#Global_SpinningSwordsAttackEnergySupplier_Awake
+  commentId: M:Global.SpinningSwordsAttackEnergySupplier.Awake
+  fullName: SpinningSwordsAttackEnergySupplier.Awake()
+  nameWithType: SpinningSwordsAttackEnergySupplier.Awake()
+- uid: Global.SpinningSwordsAttackEnergySupplier.Awake*
+  name: Awake
+  href: api/Global.SpinningSwordsAttackEnergySupplier.html#Global_SpinningSwordsAttackEnergySupplier_Awake_
+  commentId: Overload:Global.SpinningSwordsAttackEnergySupplier.Awake
+  isSpec: "True"
+  fullName: SpinningSwordsAttackEnergySupplier.Awake
+  nameWithType: SpinningSwordsAttackEnergySupplier.Awake
+- uid: Global.SpinningSwordsAttackEnergySupplier.energyReward
+  name: energyReward
+  href: api/Global.SpinningSwordsAttackEnergySupplier.html#Global_SpinningSwordsAttackEnergySupplier_energyReward
+  commentId: F:Global.SpinningSwordsAttackEnergySupplier.energyReward
+  fullName: SpinningSwordsAttackEnergySupplier.energyReward
+  nameWithType: SpinningSwordsAttackEnergySupplier.energyReward
 - uid: Global.StabAttack
   name: StabAttack
   href: api/Global.StabAttack.html
@@ -7988,6 +8269,31 @@ references:
   commentId: F:Global.TransitionAction.sceneName
   fullName: TransitionAction.sceneName
   nameWithType: TransitionAction.sceneName
+- uid: Global.UnityEntityExtensions
+  name: UnityEntityExtensions
+  href: api/Global.UnityEntityExtensions.html
+  commentId: T:Global.UnityEntityExtensions
+  fullName: UnityEntityExtensions
+  nameWithType: UnityEntityExtensions
+- uid: Global.UnityEntityExtensions.GetEntity(Component)
+  name: GetEntity(Component)
+  href: api/Global.UnityEntityExtensions.html#Global_UnityEntityExtensions_GetEntity_Component_
+  commentId: M:Global.UnityEntityExtensions.GetEntity(Component)
+  fullName: UnityEntityExtensions.GetEntity(Component)
+  nameWithType: UnityEntityExtensions.GetEntity(Component)
+- uid: Global.UnityEntityExtensions.GetEntity(GameObject)
+  name: GetEntity(GameObject)
+  href: api/Global.UnityEntityExtensions.html#Global_UnityEntityExtensions_GetEntity_GameObject_
+  commentId: M:Global.UnityEntityExtensions.GetEntity(GameObject)
+  fullName: UnityEntityExtensions.GetEntity(GameObject)
+  nameWithType: UnityEntityExtensions.GetEntity(GameObject)
+- uid: Global.UnityEntityExtensions.GetEntity*
+  name: GetEntity
+  href: api/Global.UnityEntityExtensions.html#Global_UnityEntityExtensions_GetEntity_
+  commentId: Overload:Global.UnityEntityExtensions.GetEntity
+  isSpec: "True"
+  fullName: UnityEntityExtensions.GetEntity
+  nameWithType: UnityEntityExtensions.GetEntity
 - uid: Global.Uppercut
   name: Uppercut
   href: api/Global.Uppercut.html
@@ -8016,12 +8322,6 @@ references:
   isSpec: "True"
   fullName: WalkableGrid.ClosestWalkableNode
   nameWithType: WalkableGrid.ClosestWalkableNode
-- uid: Global.WalkableGrid.entity
-  name: entity
-  href: api/Global.WalkableGrid.html#Global_WalkableGrid_entity
-  commentId: F:Global.WalkableGrid.entity
-  fullName: WalkableGrid.entity
-  nameWithType: WalkableGrid.entity
 - uid: Global.WalkableGrid.GetCircle(Vector3,System.Single)
   name: GetCircle(Vector3, Single)
   href: api/Global.WalkableGrid.html#Global_WalkableGrid_GetCircle_Vector3_System_Single_
@@ -8260,6 +8560,19 @@ references:
   commentId: T:Global.WalkSoundEffect
   fullName: WalkSoundEffect
   nameWithType: WalkSoundEffect
+- uid: Global.WalkSoundEffect.Awake
+  name: Awake()
+  href: api/Global.WalkSoundEffect.html#Global_WalkSoundEffect_Awake
+  commentId: M:Global.WalkSoundEffect.Awake
+  fullName: WalkSoundEffect.Awake()
+  nameWithType: WalkSoundEffect.Awake()
+- uid: Global.WalkSoundEffect.Awake*
+  name: Awake
+  href: api/Global.WalkSoundEffect.html#Global_WalkSoundEffect_Awake_
+  commentId: Overload:Global.WalkSoundEffect.Awake
+  isSpec: "True"
+  fullName: WalkSoundEffect.Awake
+  nameWithType: WalkSoundEffect.Awake
 - uid: Global.WalkSoundEffect.walkAudioSource
   name: walkAudioSource
   href: api/Global.WalkSoundEffect.html#Global_WalkSoundEffect_walkAudioSource

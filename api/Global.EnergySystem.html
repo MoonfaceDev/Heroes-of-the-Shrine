@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class SpawnAttack
+    <title>Class EnergySystem
    | Heroes of the Shrine </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class SpawnAttack
+    <meta name="title" content="Class EnergySystem
    | Heroes of the Shrine ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,12 +78,13 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Global.SpawnAttack">
+            <article class="content wrap" id="_content" data-uid="Global.EnergySystem">
   
   
-  <h1 id="Global_SpawnAttack" data-uid="Global.SpawnAttack" class="text-break">Class SpawnAttack
+  <h1 id="Global_EnergySystem" data-uid="Global.EnergySystem" class="text-break">Class EnergySystem
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Character energy system</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -91,70 +92,10 @@
     <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
     <div class="level2"><a class="xref" href="Global.EntityBehaviour.html">EntityBehaviour</a></div>
     <div class="level3"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-    <div class="level4"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.BaseAttack.Command.html">BaseAttack.Command</a>&gt;</div>
-    <div class="level5"><a class="xref" href="Global.BaseAttack.html">BaseAttack</a></div>
-    <div class="level6"><span class="xref">SpawnAttack</span></div>
-  </div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="Global.IPlayableBehaviour.html">IPlayableBehaviour</a></div>
+    <div class="level4"><span class="xref">EnergySystem</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_attackEvents">BaseAttack.attackEvents</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_previousAttacks">BaseAttack.previousAttacks</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_instant">BaseAttack.instant</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_interruptible">BaseAttack.interruptible</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_hardRecovery">BaseAttack.hardRecovery</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Motion">BaseAttack.Motion</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_IsMidair">BaseAttack.IsMidair</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Anticipating">BaseAttack.Anticipating</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Active">BaseAttack.Active</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Recovering">BaseAttack.Recovering</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Playing">BaseAttack.Playing</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_CanPlay_BaseAttack_Command_">BaseAttack.CanPlay(BaseAttack.Command)</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_DoPlay_BaseAttack_Command_">BaseAttack.DoPlay(BaseAttack.Command)</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_DoStop">BaseAttack.DoStop()</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;BaseAttack.Command&gt;.PlayEvents</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Blocked">PlayableBehaviour&lt;BaseAttack.Command&gt;.Blocked</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;BaseAttack.Command&gt;.Play(BaseAttack.Command)</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;BaseAttack.Command&gt;.Stop()</a>
-    </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
     </div>
@@ -230,20 +171,20 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Global_SpawnAttack_syntax">Syntax</h5>
+  <h5 id="Global_EnergySystem_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SpawnAttack : BaseAttack, IPlayableBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class EnergySystem : CharacterBehaviour</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
   
   
-  <h4 id="Global_SpawnAttack_attackFlow" data-uid="Global.SpawnAttack.attackFlow">attackFlow</h4>
+  <h4 id="Global_EnergySystem_energy" data-uid="Global.EnergySystem.energy">energy</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SpawnAttack.AttackFlow attackFlow</code></pre>
+    <pre><code class="lang-csharp hljs">public float energy</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -255,19 +196,20 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.SpawnAttack.AttackFlow.html">SpawnAttack.AttackFlow</a></td>
-        <td></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><p>Current energy value</p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
-  <h4 id="Global_SpawnAttack_enemyPrefab" data-uid="Global.SpawnAttack.enemyPrefab">enemyPrefab</h4>
+  <h4 id="Global_EnergySystem_maxEnergy" data-uid="Global.EnergySystem.maxEnergy">maxEnergy</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public GameObject enemyPrefab</code></pre>
+    <pre><code class="lang-csharp hljs">public float maxEnergy</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -279,72 +221,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">GameObject</span></td>
-        <td></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><p>Character&apos;s full energy value</p>
+</td>
       </tr>
     </tbody>
   </table>
-  
-  
-  <h4 id="Global_SpawnAttack_maxEnemyCount" data-uid="Global.SpawnAttack.maxEnemyCount">maxEnemyCount</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int maxEnemyCount</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_SpawnAttack_spawnPoints" data-uid="Global.SpawnAttack.spawnPoints">spawnPoints</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vector3[] spawnPoints</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Vector3</span>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
+  <h3 id="properties">Properties
   </h3>
   
   
-  <a id="Global_SpawnAttack_ActivePhase_" data-uid="Global.SpawnAttack.ActivePhase*"></a>
-  <h4 id="Global_SpawnAttack_ActivePhase" data-uid="Global.SpawnAttack.ActivePhase">ActivePhase()</h4>
+  <a id="Global_EnergySystem_Fraction_" data-uid="Global.EnergySystem.Fraction*"></a>
+  <h4 id="Global_EnergySystem_Fraction" data-uid="Global.EnergySystem.Fraction">Fraction</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override IEnumerator ActivePhase()</code></pre>
+    <pre><code class="lang-csharp hljs">public float Fraction { get; }</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -354,71 +249,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IEnumerator</span></td>
-        <td></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><p>Ratio between current energy to full energy</p>
+</td>
       </tr>
     </tbody>
   </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_ActivePhase">BaseAttack.ActivePhase()</a></div>
-  
-  
-  <a id="Global_SpawnAttack_AnticipationPhase_" data-uid="Global.SpawnAttack.AnticipationPhase*"></a>
-  <h4 id="Global_SpawnAttack_AnticipationPhase" data-uid="Global.SpawnAttack.AnticipationPhase">AnticipationPhase()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override IEnumerator AnticipationPhase()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IEnumerator</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_AnticipationPhase">BaseAttack.AnticipationPhase()</a></div>
-  
-  
-  <a id="Global_SpawnAttack_RecoveryPhase_" data-uid="Global.SpawnAttack.RecoveryPhase*"></a>
-  <h4 id="Global_SpawnAttack_RecoveryPhase" data-uid="Global.SpawnAttack.RecoveryPhase">RecoveryPhase()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override IEnumerator RecoveryPhase()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IEnumerator</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_RecoveryPhase">BaseAttack.RecoveryPhase()</a></div>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="Global.IPlayableBehaviour.html">IPlayableBehaviour</a>
-  </div>
 </article>
           </div>
           
