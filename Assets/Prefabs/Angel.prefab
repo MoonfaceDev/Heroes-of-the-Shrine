@@ -1423,7 +1423,6 @@ GameObject:
   - component: {fileID: 4105917478859101225}
   - component: {fileID: 4937438101241777289}
   - component: {fileID: 2899137309724130339}
-  - component: {fileID: 5102893360874897672}
   - component: {fileID: 5102893360874897678}
   - component: {fileID: 1303490756395571274}
   m_Layer: 0
@@ -1860,48 +1859,6 @@ MonoBehaviour:
       _persistentListeners: []
       Expanded: 1
     onStop:
-      _persistentListeners: []
-      Expanded: 1
---- !u!114 &5102893360874897672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab68d069e0e79504ebe8ab7fd318ee7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxComboDelay: 0.05
-  hittableTags:
-    tags: 0200000006000000
-  lastAttack: {fileID: 0}
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
-  attackEvents:
-    onStartAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onStartActive:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishActive:
-      _persistentListeners: []
-      Expanded: 1
-    onStartRecovery:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
 --- !u!114 &5102893360874897678
@@ -12625,6 +12582,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 32172274780924393}
+  - component: {fileID: 5453193634243153871}
   m_Layer: 0
   m_Name: Attacks
   m_TagString: Untagged
@@ -12658,6 +12616,48 @@ Transform:
   m_Father: {fileID: 5102893360874897670}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5453193634243153871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8326420566752417338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab68d069e0e79504ebe8ab7fd318ee7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxComboDelay: 0.05
+  hittableTags:
+    tags: 0200000006000000
+  lastAttack: {fileID: 0}
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  attackEvents:
+    onStartAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onStartActive:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishActive:
+      _persistentListeners: []
+      Expanded: 1
+    onStartRecovery:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishRecovery:
+      _persistentListeners: []
+      Expanded: 1
 --- !u!1 &8644654164908221865
 GameObject:
   m_ObjectHideFlags: 0
