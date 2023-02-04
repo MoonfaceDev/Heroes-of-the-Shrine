@@ -133,7 +133,7 @@ public class MovableEntity : GameEntity
         List<Vector2> intersections = new();
         foreach (var barrier in barriers)
         {
-            var newIntersections = barrier.GetComponent<Hitbox>()
+            var newIntersections = barrier.GetBehaviour<Hitbox>()
                 .GetSegmentIntersections(previousGroundPosition, groundPosition);
             intersections.AddRange(newIntersections);
         }
@@ -143,7 +143,7 @@ public class MovableEntity : GameEntity
 
     private IEnumerable<Vector2> GetWalkableGridIntersections(Vector2 previousGroundPosition, Vector2 groundPosition)
     {
-        var gridPosition = ToPlane(walkableGrid.entity.WorldPosition);
+        var gridPosition = ToPlane(walkableGrid.Entity.WorldPosition);
         var gridSize = ToPlane(walkableGrid.gridWorldSize);
         return LineRectangleIntersections(previousGroundPosition, groundPosition, gridPosition + gridSize / 2,
             gridSize);
@@ -152,7 +152,7 @@ public class MovableEntity : GameEntity
     private IEnumerable<Vector2> GetCameraBorderIntersections(Vector2 previousGroundPosition, Vector2 groundPosition)
     {
         var border = cameraMovement.border;
-        var gridPosition = ToPlane(walkableGrid.entity.WorldPosition);
+        var gridPosition = ToPlane(walkableGrid.Entity.WorldPosition);
         var gridSize = ToPlane(walkableGrid.gridWorldSize);
         return LineRectangleIntersections(previousGroundPosition, groundPosition,
             new Vector2(border.center.x, gridPosition.y + gridSize.y / 2), new Vector2(border.width, gridSize.y));
@@ -161,7 +161,7 @@ public class MovableEntity : GameEntity
     private bool IsValidPosition(Vector3 newPosition)
     {
         if (EntityManager.Instance.GetEntities(Tag.Barrier)
-            .Any(barrier => barrier.GetComponent<Hitbox>().IsInside(newPosition)))
+            .Any(barrier => barrier.GetBehaviour<Hitbox>().IsInside(newPosition)))
         {
             return false;
         }

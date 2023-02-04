@@ -1807,7 +1807,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridWorldSize: {x: 30, y: 0, z: 3.6}
   nodeRadius: 0.25
-  entity: {fileID: 0}
 --- !u!1 &5826350637460925669
 GameObject:
   m_ObjectHideFlags: 0
@@ -6598,7 +6597,8 @@ PrefabInstance:
       propertyPath: onDie._persistentListeners.Array.data[6]._persistentArguments.Array.data[0]._serializationData.SerializationNodes.Array.data[0].Entry
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2448570304071363111, guid: e6b59c7f93ad90f41b501eaabf2e3e0a, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e6b59c7f93ad90f41b501eaabf2e3e0a, type: 3}
 --- !u!4 &8011096904622113216 stripped

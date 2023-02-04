@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using ExtEvents;
 using UnityEngine;
 
@@ -82,7 +83,7 @@ public class EncounterAction : BaseComponent
     /// Invoked when any wave starts
     /// </value>
     [SerializeField] public ExtEvent onWaveStart;
-    
+
     /// <value>
     /// Invoked when last wave finishes
     /// </value>
@@ -108,7 +109,9 @@ public class EncounterAction : BaseComponent
 
     private void StartWave(int index)
     {
-        var waveEnemies = index == 0 ? new List<GameObject>(firstWavePreSpawnedEnemies) : new List<GameObject>();
+        var waveEnemies = index == 0
+            ? new List<GameEntity>(firstWavePreSpawnedEnemies.Select(enemy => enemy.GetEntity()))
+            : new List<GameEntity>();
 
         foreach (var definition in waveDefinitions[index].spawnDefinitions)
         {
@@ -134,17 +137,13 @@ public class EncounterAction : BaseComponent
         onWaveStart.Invoke();
     }
 
-    private GameObject SpawnEnemy(EnemySpawnDefinition definition)
+    private GameEntity SpawnEnemy(EnemySpawnDefinition definition)
     {
         var edge = GetEdge(cameraBorder, definition.direction) + definition.direction * spawnSourceDistance;
         var spawnPoint = new Vector3(edge, 0, definition.z);
-        var enemy = Instantiate(definition.prefab, GameEntity.ScreenCoordinates(spawnPoint),
-            Quaternion.identity);
 
-        var movableObject = enemy.GetComponent<MovableEntity>();
-        movableObject.WorldPosition = spawnPoint;
-
-        StartTimeout(() => enemy.GetComponent<AlarmBrainModule>().SetAlarm(), timeToAlarm);
+        var enemy = GameEntity.Instantiate(definition.prefab, spawnPoint);
+        StartTimeout(() => enemy.GetBehaviour<AlarmBrainModule>().SetAlarm(), timeToAlarm);
 
         return enemy;
     }

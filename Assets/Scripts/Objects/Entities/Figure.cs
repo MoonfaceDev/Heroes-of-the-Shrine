@@ -5,7 +5,7 @@
 /// </summary>
 [ExecuteInEditMode]
 [RequireComponent(typeof(Renderer))]
-public class Figure : BaseComponent
+public class Figure : EntityBehaviour
 {
     /// <value>
     /// Character's <see cref="GameEntity"/>

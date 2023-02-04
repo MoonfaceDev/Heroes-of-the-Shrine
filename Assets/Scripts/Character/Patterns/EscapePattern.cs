@@ -14,14 +14,14 @@ public class EscapePattern : BasePattern
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
-        var escapeBehaviour = animator.GetComponent<EscapeBehaviour>();
+        var escapeBehaviour = animator.GetEntity().GetBehaviour<EscapeBehaviour>();
         var player = EntityManager.Instance.GetEntity(targetTag);
         if (!player)
         {
             return;
         }
 
-        escapeBehaviour.Play(new EscapeBehaviour.Command(player.GetComponent<MovableEntity>(), speedMultiplier));
+        escapeBehaviour.Play(new EscapeBehaviour.Command((MovableEntity)player.GetEntity(), speedMultiplier));
 
         onStop = () => animator.SetTrigger(StuckParameter);
         escapeBehaviour.MovableEntity.OnStuck += onStop;
@@ -31,7 +31,7 @@ public class EscapePattern : BasePattern
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
 
-        var escapeBehaviour = animator.GetComponent<EscapeBehaviour>();
+        var escapeBehaviour = animator.GetEntity().GetBehaviour<EscapeBehaviour>();
 
         escapeBehaviour.MovableEntity.OnStuck -= onStop;
         escapeBehaviour.Stop();

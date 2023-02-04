@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 /// Pathfinding on a <see cref="WalkableGrid"/> using Theta Star algorithm
 /// </summary>
-public class Pathfind : BaseComponent
+public class Pathfind : CharacterBehaviour
 {
     private WalkableGrid grid;
     private List<Node> gizmosPath;

@@ -10,7 +10,7 @@ public class KnockbackBrainModule : BrainModule
 
     private void Start()
     {
-        var knockbackBehaviour = GetComponent<KnockbackBehaviour>();
+        var knockbackBehaviour = GetBehaviour<KnockbackBehaviour>();
         if (!knockbackBehaviour) return;
         knockbackBehaviour.PlayEvents.onPlay += () => StateMachine.SetBool(Knockback, true);
         knockbackBehaviour.PlayEvents.onStop += () => StateMachine.SetBool(Knockback, false);

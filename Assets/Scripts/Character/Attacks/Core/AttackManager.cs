@@ -47,7 +47,7 @@ public class AttackManager : CharacterBehaviour
 
     private void Start()
     {
-        var attackComponents = GetComponents<BaseAttack>();
+        var attackComponents = GetBehaviours<BaseAttack>();
         foreach (var attack in attackComponents)
         {
             // Forward events
@@ -79,7 +79,7 @@ public class AttackManager : CharacterBehaviour
 
     private bool AnyAttack(Func<BaseAttack, bool> callback)
     {
-        var attackComponents = GetComponents<BaseAttack>();
+        var attackComponents = GetBehaviours<BaseAttack>();
         return attackComponents.Any(callback);
     }
 

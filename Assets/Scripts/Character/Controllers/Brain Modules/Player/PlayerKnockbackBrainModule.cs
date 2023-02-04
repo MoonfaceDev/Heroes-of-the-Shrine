@@ -20,7 +20,7 @@ public class PlayerKnockbackBrainModule : BrainModule
         base.Awake();
 
         var player = EntityManager.Instance.GetEntity(Tag.Player);
-        knockbackBehaviour = player.GetComponent<KnockbackBehaviour>();
+        knockbackBehaviour = player.GetBehaviour<KnockbackBehaviour>();
         if (!knockbackBehaviour) return;
 
         knockbackBehaviour.PlayEvents.onPlay += OnPlay;

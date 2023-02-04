@@ -3,7 +3,6 @@
 /// <summary>
 /// Modular piece of enemy brain. This is a base abstract class for any brain module
 /// </summary>
-[RequireComponent(typeof(BrainCore))]
 public abstract class BrainModule : CharacterBehaviour
 {
     private BrainCore brainCore;
@@ -16,7 +15,7 @@ public abstract class BrainModule : CharacterBehaviour
     protected override void Awake()
     {
         base.Awake();
-        brainCore = GetComponent<BrainCore>();
+        brainCore = GetBehaviour<BrainCore>();
     }
 
     /// <summary>

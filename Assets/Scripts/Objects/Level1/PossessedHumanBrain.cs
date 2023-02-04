@@ -14,7 +14,7 @@ public class PossessedHumanBrain : BaseComponent
 
     private void Start()
     {
-        var possessAttack = EntityManager.Instance.GetEntity(Tag.Boss).GetComponent<PossessAttack>();
+        var possessAttack = EntityManager.Instance.GetEntity(Tag.Boss).GetBehaviour<PossessAttack>();
         possessAttack.attackEvents.onStartActive += () => animator.SetBool(BossPossessActive, true);
         possessAttack.attackEvents.onFinishActive += () => animator.SetBool(BossPossessActive, false);
     }

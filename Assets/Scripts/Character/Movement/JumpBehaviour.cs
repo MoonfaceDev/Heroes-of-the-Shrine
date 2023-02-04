@@ -61,7 +61,7 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
     protected override void Awake()
     {
         base.Awake();
-        walkBehaviour = GetComponent<WalkBehaviour>();
+        walkBehaviour = GetBehaviour<WalkBehaviour>();
     }
 
     public override bool CanPlay(Command command)

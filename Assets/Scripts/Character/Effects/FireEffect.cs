@@ -48,7 +48,7 @@ public class FireEffect : BaseEffect<FireEffect.Command>
 
     private IEnumerator DoDamage(float hitInterval, float damagePerHit)
     {
-        var hittableBehaviour = GetComponent<HittableBehaviour>();
+        var hittableBehaviour = GetBehaviour<HittableBehaviour>();
         while (true)
         {
             yield return new WaitForSeconds(hitInterval);

@@ -4,7 +4,7 @@
 /// Object has two phases: warning and active. If a <see cref="IHittable"/> touches it during the active phase, it will
 /// receive the possessed effect
 /// </summary>
-public class PossessSource : BaseComponent
+public class PossessSource : EntityBehaviour
 {
     [SerializeInterface] [SerializeReference]
     public BaseHitDetector hitDetector;
@@ -58,7 +58,7 @@ public class PossessSource : BaseComponent
 
                 if (!hittable.CanGetHit()) return;
                 hittable.Hit(hitDamage);
-                var possessedEffect = hittable.Character.GetComponent<PossessedEffect>();
+                var possessedEffect = hittable.Character.GetBehaviour<PossessedEffect>();
                 if (possessedEffect)
                 {
                     possessedEffect.Play(new PossessedEffect.Command(effectDuration));

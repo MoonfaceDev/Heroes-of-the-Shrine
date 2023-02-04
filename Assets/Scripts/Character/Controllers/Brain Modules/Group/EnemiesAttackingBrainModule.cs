@@ -18,7 +18,7 @@ public class EnemiesAttackingBrainModule : BrainModule
         var enemiesAttacking = enemies.Any(enemy =>
         {
             if (!enemy) return false;
-            var enemyAttackManager = enemy.GetComponent<AttackManager>();
+            var enemyAttackManager = enemy.GetBehaviour<AttackManager>();
             return enemyAttackManager.Playing;
         });
         StateMachine.SetBool(EnemiesAttacking, enemiesAttacking);

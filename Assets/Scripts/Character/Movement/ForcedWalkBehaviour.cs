@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(AutoWalkBehaviour))]
 public class ForcedWalkBehaviour : PlayableBehaviour<ForcedWalkBehaviour.Command>
 {
     public class Command
@@ -24,12 +23,12 @@ public class ForcedWalkBehaviour : PlayableBehaviour<ForcedWalkBehaviour.Command
     protected override void DoPlay(Command command)
     {
         StopBehaviours(typeof(IPlayableBehaviour));
-        DisableComponents(typeof(CharacterController));
+        DisableBehaviours(typeof(CharacterController));
         BlockBehaviours(typeof(RunBehaviour));
 
         active = true;
 
-        GetComponent<AutoWalkBehaviour>().Play(new AutoWalkBehaviour.Command(command.point));
+        GetBehaviour<AutoWalkBehaviour>().Play(new AutoWalkBehaviour.Command(command.point));
         stopListener = InvokeWhen(() => MovableEntity.GroundDistance(command.point) < command.wantedDistance, () =>
         {
             MovableEntity.position = command.point;
@@ -43,7 +42,7 @@ public class ForcedWalkBehaviour : PlayableBehaviour<ForcedWalkBehaviour.Command
 
         Cancel(stopListener);
         StopBehaviours(typeof(AutoWalkBehaviour));
-        EnableComponents(typeof(CharacterController));
+        EnableBehaviours(typeof(CharacterController));
         UnblockBehaviours(typeof(RunBehaviour));
 
         MovableEntity.velocity = Vector3.zero;

@@ -13,7 +13,7 @@ public class HealthBrainModule : BrainModule
     protected override void Awake()
     {
         base.Awake();
-        healthSystem = GetComponent<HealthSystem>();
+        healthSystem = GetBehaviour<HealthSystem>();
     }
 
     public override string[] GetParameters()

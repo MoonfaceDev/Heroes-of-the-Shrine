@@ -58,7 +58,7 @@ public class EffectsBar : BaseComponent
     {
         foreach (var definition in effects)
         {
-            var effect = player.GetComponent(definition.effectType) as IEffect;
+            var effect = player.GetBehaviour(definition.effectType) as IEffect;
             if (effect == null) continue;
             effect.PlayEvents.onPlay += () =>
             {

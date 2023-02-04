@@ -15,9 +15,9 @@ public class RepositionPattern : BasePattern
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
-        var autoWalkBehaviour = animator.GetComponent<AutoWalkBehaviour>();
-
-        var walkBehaviour = animator.GetComponent<WalkBehaviour>();
+        var autoWalkBehaviour = animator.GetEntity().GetBehaviour<AutoWalkBehaviour>();
+        
+        var walkBehaviour = animator.GetEntity().GetBehaviour<WalkBehaviour>();
         walkBehaviour.speed *= speedMultiplier;
 
         var grid = FindObjectOfType<WalkableGrid>();
@@ -29,7 +29,7 @@ public class RepositionPattern : BasePattern
         {
             otherEnemies = EntityManager.Instance.GetEntities(Tag.Enemy)
                 .Where(enemy => enemy != autoWalkBehaviour.MovableEntity)
-                .Where(enemy => enemy.GetComponent<HealthSystem>().Alive)
+                .Where(enemy => enemy.GetBehaviour<HealthSystem>().Alive)
                 .ToArray();
         });
 
@@ -49,11 +49,11 @@ public class RepositionPattern : BasePattern
         base.OnStateExit(animator, stateInfo, layerIndex);
 
         EventManager.Instance.Unregister(otherEnemiesListener);
-
-        var autoWalkBehaviour = animator.GetComponent<AutoWalkBehaviour>();
+        
+        var autoWalkBehaviour = animator.GetEntity().GetBehaviour<AutoWalkBehaviour>();
         autoWalkBehaviour.Stop();
 
-        var walkBehaviour = animator.GetComponent<WalkBehaviour>();
+        var walkBehaviour = animator.GetEntity().GetBehaviour<WalkBehaviour>();
         walkBehaviour.speed /= speedMultiplier;
     }
 

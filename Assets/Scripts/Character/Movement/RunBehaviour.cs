@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(WalkBehaviour))]
 public class RunBehaviour : BaseMovementBehaviour<RunBehaviour.Command>
 {
     public class Command
@@ -34,8 +33,8 @@ public class RunBehaviour : BaseMovementBehaviour<RunBehaviour.Command>
     protected override void Awake()
     {
         base.Awake();
-        walkBehaviour = GetComponent<WalkBehaviour>();
-        jumpBehaviour = GetComponent<JumpBehaviour>();
+        walkBehaviour = GetBehaviour<WalkBehaviour>();
+        jumpBehaviour = GetBehaviour<JumpBehaviour>();
         runParticlesMain = runParticles.main;
     }
 

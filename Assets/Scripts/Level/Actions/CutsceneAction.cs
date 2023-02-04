@@ -105,7 +105,7 @@ public class CutsceneAction : BaseComponent
     {
         foreach (var definition in moveDefinitions.Where(definition => definition.target))
         {
-            definition.target.GetComponent<WalkBehaviour>().speed *= definition.speedMultiplier;
+            definition.target.GetBehaviour<WalkBehaviour>().speed *= definition.speedMultiplier;
             definition.target.Play(new ForcedWalkBehaviour.Command(definition.position, WantedDistance));
         }
     }
@@ -115,7 +115,7 @@ public class CutsceneAction : BaseComponent
         moveDefinitions.ForEach(definition =>
         {
             definition.target.Stop();
-            definition.target.GetComponent<WalkBehaviour>().speed /= definition.speedMultiplier;
+            definition.target.GetBehaviour<WalkBehaviour>().speed /= definition.speedMultiplier;
             definition.target.MovableEntity.rotation = definition.rotation;
         });
     }

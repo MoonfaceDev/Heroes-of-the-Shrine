@@ -32,7 +32,7 @@ public class PossessedEffect : BaseEffect<PossessedEffect.Command>
         currentDuration = command.maxDuration;
         stopListener = InvokeWhen(() => Time.time - currentStartTime > currentDuration, Stop);
 
-        var hittableBehaviour = GetComponent<HittableBehaviour>();
+        var hittableBehaviour = GetBehaviour<HittableBehaviour>();
         if (hittableBehaviour)
         {
             hittableBehaviour.OnHit += OnHit;
@@ -57,7 +57,7 @@ public class PossessedEffect : BaseEffect<PossessedEffect.Command>
     {
         Active = false;
 
-        var hittableBehaviour = GetComponent<HittableBehaviour>();
+        var hittableBehaviour = GetBehaviour<HittableBehaviour>();
         if (hittableBehaviour)
         {
             hittableBehaviour.OnHit -= OnHit;

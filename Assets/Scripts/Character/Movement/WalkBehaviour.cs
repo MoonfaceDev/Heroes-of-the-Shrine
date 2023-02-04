@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(MovableEntity))]
 public class WalkBehaviour : BaseMovementBehaviour<WalkBehaviour.Command>
 {
     public class Command

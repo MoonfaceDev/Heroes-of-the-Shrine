@@ -1,8 +1,6 @@
 ﻿using System;
 using UnityEngine;
 
-[RequireComponent(typeof(Pathfind))]
-[RequireComponent(typeof(WalkBehaviour))]
 public class AutoWalkBehaviour : BaseMovementBehaviour<AutoWalkBehaviour.Command>
 {
     public class Command
@@ -27,8 +25,8 @@ public class AutoWalkBehaviour : BaseMovementBehaviour<AutoWalkBehaviour.Command
     protected override void Awake()
     {
         base.Awake();
-        pathfind = GetComponent<Pathfind>();
-        walkBehaviour = GetComponent<WalkBehaviour>();
+        pathfind = GetBehaviour<Pathfind>();
+        walkBehaviour = GetBehaviour<WalkBehaviour>();
     }
 
     protected override void DoPlay(Command command)

@@ -101,8 +101,8 @@ public class InterfaceWithSerializableContentDrawer : PropertyDrawer
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
         return
-            2 * EditorGUIUtility.singleLineHeight
-            + 3 * EditorGUIUtility.standardVerticalSpacing
+            EditorGUIUtility.singleLineHeight
+            + 2 * EditorGUIUtility.standardVerticalSpacing
             + EditorGUI.GetPropertyHeight(property, true);
     }
 

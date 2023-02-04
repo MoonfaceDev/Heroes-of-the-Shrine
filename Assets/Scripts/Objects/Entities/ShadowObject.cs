@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [ExecuteInEditMode]
-public class ShadowObject : BaseComponent
+public class ShadowObject : EntityBehaviour
 {
     /// <summary>
     /// Mapping between an animator state name to the right shadow scale

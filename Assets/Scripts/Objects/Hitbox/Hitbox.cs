@@ -87,7 +87,7 @@ internal class Box
 /// </summary>
 [ExecuteInEditMode]
 [RequireComponent(typeof(GameEntity))]
-public class Hitbox : BaseComponent
+public class Hitbox : EntityBehaviour
 {
     /// <value>
     /// Hitbox size
@@ -97,20 +97,18 @@ public class Hitbox : BaseComponent
     /// <value>
     /// Hitbox center point in world coordinates
     /// </value>
-    public Vector3 WorldPosition => entity.WorldPosition;
+    public Vector3 WorldPosition => Entity.WorldPosition;
 
-    private GameEntity entity;
     private Box box;
 
     private void Awake()
     {
-        entity = GetComponent<GameEntity>();
         box = new Box(() => WorldPosition, size);
     }
 
     private void OnDrawGizmosSelected()
     {
-        if (!entity) return;
+        if (!Entity) return;
         Color lineColor = new(1.0f, 0.5f, 0.0f);
         Color fillColor = new(1.0f, 0.5f, 0.0f, 0.3f);
         DrawHitbox(lineColor, fillColor);

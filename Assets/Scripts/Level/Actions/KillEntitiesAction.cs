@@ -36,7 +36,7 @@ public class KillEntitiesAction : BaseComponent
             }
             else
             {
-                var healthSystem = entity.GetComponent<HealthSystem>();
+                var healthSystem = entity.GetBehaviour<HealthSystem>();
                 healthSystem.Kill();
             }
         }

@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5884619157288324023}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.55, y: 0, z: 0}
+  m_LocalPosition: {x: 1.5499998, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7368109035975547894, guid: faab43d0b7c5cfa448b93f624f98e583, type: 3}
+  prefab: {fileID: 1664870427821783217, guid: faab43d0b7c5cfa448b93f624f98e583, type: 3}
 --- !u!1 &5884619157808626362
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +240,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5884619157950951727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.675, y: 0, z: 0}
+  m_LocalPosition: {x: 0.6750001, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 9064382892142360621, guid: 4d8c5fbcca0950e4291a8586725017e8, type: 3}
+  prefab: {fileID: 6199151119940022902, guid: 4d8c5fbcca0950e4291a8586725017e8, type: 3}
 --- !u!1 &5884619158051856729
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5884619158051856729}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.95, y: 0, z: 0}
+  m_LocalPosition: {x: 0.9499999, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 9064382892142360621, guid: feb02b7ab9f75274f8294c0f6dfb6adb, type: 3}
+  prefab: {fileID: 6199151119940022902, guid: feb02b7ab9f75274f8294c0f6dfb6adb, type: 3}
 --- !u!1 &5884619158362908890
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,7 +574,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5884619158596542725}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.875, y: 0, z: 0}
+  m_LocalPosition: {x: 0.8750001, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -627,7 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 9064382892142360621, guid: 4d8c5fbcca0950e4291a8586725017e8, type: 3}
+  prefab: {fileID: 6199151119940022902, guid: 4d8c5fbcca0950e4291a8586725017e8, type: 3}
 --- !u!1 &5884619158741390458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,6 +1020,9 @@ MonoBehaviour:
           tags: 
         excludedHittableTags:
           tags: 
+        onHit:
+          _persistentListeners: []
+          Expanded: 1
     - rid: 3181427634693996581
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -1093,6 +1096,9 @@ MonoBehaviour:
           tags: 
         excludedHittableTags:
           tags: 
+        onHit:
+          _persistentListeners: []
+          Expanded: 1
     - rid: 3181427634693996586
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -1166,6 +1172,9 @@ MonoBehaviour:
           tags: 
         excludedHittableTags:
           tags: 
+        onHit:
+          _persistentListeners: []
+          Expanded: 1
     - rid: 3181427634693996589
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -1249,6 +1258,9 @@ MonoBehaviour:
       tags: 
     excludedHittableTags:
       tags: 
+    onHit:
+      _persistentListeners: []
+      Expanded: 1
     interval: 0.1
     startImmediately: 1
   periodicHitCount: 4
@@ -1279,6 +1291,9 @@ MonoBehaviour:
           tags: 
         excludedHittableTags:
           tags: 
+        onHit:
+          _persistentListeners: []
+          Expanded: 1
     - rid: 3181427634693996623
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:

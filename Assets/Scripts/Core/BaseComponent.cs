@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 /// <summary>
@@ -21,62 +20,6 @@ public class BaseComponent : MonoBehaviour
     }
 
     private readonly Dictionary<string, EventListener> eventListeners = new();
-
-    /// <summary>
-    /// If <c>true</c>, the component is updated (<see cref="Update"/> is called).
-    /// Can be set to <c>false</c> multiple times, as it will change back to <c>true</c> only if it was set to <c>true</c> the same number of times.
-    /// </summary>
-    public bool Enabled
-    {
-        get => disableCount == 0;
-        set
-        {
-            if (value)
-            {
-                if (disableCount > 0)
-                {
-                    disableCount--;
-                }
-            }
-            else
-            {
-                disableCount++;
-            }
-
-            enabled = disableCount == 0;
-        }
-    }
-
-    private int disableCount;
-
-    private void SetEnabled(bool enabledValue, IEnumerable<Type> components)
-    {
-        foreach (var type in components)
-        {
-            foreach (var component in GetComponents(type).Cast<BaseComponent>())
-            {
-                component.Enabled = enabledValue;
-            }
-        }
-    }
-
-    /// <summary>
-    /// Enables components, meaning they are updated
-    /// </summary>
-    /// <param name="components">Components to enable. All of the attached components from each type will be enabled.</param>
-    public void EnableComponents(params Type[] components)
-    {
-        SetEnabled(true, components);
-    }
-
-    /// <summary>
-    /// Disables components, meaning they are not updated. If a component is disabled N times, it will have to be enabled N times so it enabled again.
-    /// </summary>
-    /// <param name="components">Components to disable. All of the attached components from each type will be enabled.</param>
-    public void DisableComponents(params Type[] components)
-    {
-        SetEnabled(false, components);
-    }
 
     /// <summary>
     /// Executes a callable every frame

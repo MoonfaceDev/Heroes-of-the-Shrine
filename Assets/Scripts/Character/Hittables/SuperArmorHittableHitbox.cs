@@ -8,7 +8,7 @@ public class SuperArmorHittableHitbox : HittableHitbox
     protected override void Awake()
     {
         base.Awake();
-        superArmor = Character.GetComponent<SuperArmor>();
+        superArmor = Character.GetBehaviour<SuperArmor>();
     }
 
     public override void Hit(float damage)

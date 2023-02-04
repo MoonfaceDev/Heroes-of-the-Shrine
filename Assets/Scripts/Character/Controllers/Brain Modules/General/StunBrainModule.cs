@@ -10,7 +10,7 @@ public class StunBrainModule : BrainModule
 
     private void Start()
     {
-        var stunBehaviour = GetComponent<StunBehaviour>();
+        var stunBehaviour = GetBehaviour<StunBehaviour>();
         if (!stunBehaviour) return;
         stunBehaviour.PlayEvents.onPlay += () => StateMachine.SetBool(Stun, true);
         stunBehaviour.PlayEvents.onStop += () => StateMachine.SetBool(Stun, false);

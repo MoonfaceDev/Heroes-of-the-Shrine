@@ -8,7 +8,7 @@ public class RandomRayPattern : BasePattern
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
-        var walkBehaviour = animator.GetComponent<WalkBehaviour>();
+        var walkBehaviour = animator.GetEntity().GetBehaviour<WalkBehaviour>();
         walkBehaviour.speed *= speedMultiplier;
 
         var direction = Random.insideUnitCircle.normalized;
@@ -19,7 +19,7 @@ public class RandomRayPattern : BasePattern
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
 
-        var walkBehaviour = animator.GetComponent<WalkBehaviour>();
+        var walkBehaviour = animator.GetEntity().GetBehaviour<WalkBehaviour>();
         walkBehaviour.speed /= speedMultiplier;
         walkBehaviour.Stop();
     }

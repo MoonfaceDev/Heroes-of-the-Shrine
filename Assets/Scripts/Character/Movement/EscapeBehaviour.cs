@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(WalkBehaviour))]
 public class EscapeBehaviour : BaseMovementBehaviour<EscapeBehaviour.Command>
 {
     public class Command
@@ -28,7 +27,7 @@ public class EscapeBehaviour : BaseMovementBehaviour<EscapeBehaviour.Command>
     protected override void Awake()
     {
         base.Awake();
-        walkBehaviour = GetComponent<WalkBehaviour>();
+        walkBehaviour = GetBehaviour<WalkBehaviour>();
     }
 
     private void Start()

@@ -48,7 +48,7 @@ public class SlideBehaviour : BaseMovementBehaviour<SlideBehaviour.Command>
         Slide = true;
 
         MovableEntity.rotation = command.direction;
-        MovableEntity.velocity.x = command.direction * slideSpeedMultiplier * GetComponent<WalkBehaviour>().speed;
+        MovableEntity.velocity.x = command.direction * slideSpeedMultiplier * GetBehaviour<WalkBehaviour>().speed;
         MovableEntity.acceleration.x = -command.direction * slideStopAcceleration;
         MovableEntity.velocity.z = 0;
         stopListener = InvokeWhen(

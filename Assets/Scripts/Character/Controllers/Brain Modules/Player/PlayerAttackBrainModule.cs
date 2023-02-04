@@ -25,7 +25,7 @@ public class PlayerAttackBrainModule : BrainModule
     {
         base.Awake();
         var player = EntityManager.Instance.GetEntity(Tag.Player);
-        attackManager = player.GetComponent<AttackManager>();
+        attackManager = player.GetBehaviour<AttackManager>();
         if (!attackManager) return;
 
         attackManager.playEvents.onPlay += OnPlay;

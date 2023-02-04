@@ -30,7 +30,7 @@ public class ElectrifiedEffect : BaseEffect<ElectrifiedEffect.Command>
     protected override void Awake()
     {
         base.Awake();
-        walkBehaviour = GetComponent<WalkBehaviour>();
+        walkBehaviour = GetBehaviour<WalkBehaviour>();
     }
 
     protected override void DoPlay(Command command)

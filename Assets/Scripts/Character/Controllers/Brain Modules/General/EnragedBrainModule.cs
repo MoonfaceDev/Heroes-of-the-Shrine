@@ -33,7 +33,7 @@ public class EnragedBrainModule : BrainModule
 
     private void Start()
     {
-        var attackManager = GetComponent<AttackManager>();
+        var attackManager = GetBehaviour<AttackManager>();
         if (attackManager)
         {
             attackManager.DamageTranspiler.AttachDamageMultiplier((_, _) => rage ? rageDamageMultiplier : 1);
@@ -42,7 +42,7 @@ public class EnragedBrainModule : BrainModule
 
     private bool ShouldGetEnraged()
     {
-        var healthSystem = GetComponent<HealthSystem>();
+        var healthSystem = GetBehaviour<HealthSystem>();
         return healthSystem && healthSystem.health <= rageHealthThreshold;
     }
 

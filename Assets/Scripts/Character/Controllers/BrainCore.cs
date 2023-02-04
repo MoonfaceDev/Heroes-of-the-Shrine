@@ -5,6 +5,7 @@
 /// BrainCore class managing state machine and all brain modules.
 /// Attach only the required brain modules for your state machine logic.
 /// </summary>
+[RequireComponent(typeof(Animator))]
 public class BrainCore : CharacterController
 {
     /// <value>

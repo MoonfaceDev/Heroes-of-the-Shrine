@@ -31,7 +31,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5102893360874897670}
+  m_Father: {fileID: 5277052100955548515}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4058469792659233068
@@ -80,7 +80,476 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6160012718991474138, guid: 4beee89b5f87b224189fe289925793fb, type: 3}
+  prefab: {fileID: 824917772533207107, guid: 4beee89b5f87b224189fe289925793fb, type: 3}
+--- !u!1 &811557649854150555
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5282987104477988010}
+  - component: {fileID: 6377231587991264689}
+  m_Layer: 0
+  m_Name: Alt Air Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5282987104477988010
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811557649854150555}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 32172274780924393}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6377231587991264689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811557649854150555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d011c6d5c9cce11439fc487160458d20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  attackEvents:
+    onStartAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onStartActive:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishActive:
+      _persistentListeners: []
+      Expanded: 1
+    onStartRecovery:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishRecovery:
+      _persistentListeners: []
+      Expanded: 1
+  previousAttacks:
+  - {fileID: 7559106644093030772}
+  instant: 0
+  interruptible: 0
+  hardRecovery: 0
+  attackFlow:
+    anticipationDuration: 0.01
+    activeDuration: 0.14
+    recoveryDuration: 0.3
+  hitDetector:
+    rid: 168482633143812260
+  hitExecutor:
+    executors:
+    - rid: 168482633143812262
+    - rid: 168482633143812264
+  references:
+    version: 2
+    RefIds:
+    - rid: 168482633143812260
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 5102893361817772762}
+        hitParticles: {fileID: 1596551910517510343}
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
+        onHit:
+          _persistentListeners: []
+          Expanded: 1
+    - rid: 168482633143812262
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 5
+    - rid: 168482633143812264
+      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        knockbackPower: 5
+        knockbackDirection: 30
+        stunTime: 0.5
+--- !u!1 &1843105327216157736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9022226871554883571}
+  - component: {fileID: 8621965095738474586}
+  m_Layer: 0
+  m_Name: Run Kick
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9022226871554883571
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843105327216157736}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5102893361029256205}
+  m_Father: {fileID: 32172274780924393}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8621965095738474586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843105327216157736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89faf720898d4f341980bbc5ad9c92c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  attackEvents:
+    onStartAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onStartActive:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishActive:
+      _persistentListeners: []
+      Expanded: 1
+    onStartRecovery:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishRecovery:
+      _persistentListeners: []
+      Expanded: 1
+  previousAttacks: []
+  instant: 0
+  interruptible: 1
+  hardRecovery: 1
+  attackFlow:
+    anticipationDuration: 0.1
+    velocity: 10
+    acceleration: 10
+    recoveryDuration: 0.15
+  hitDetector:
+    rid: 3181427246007058570
+  hitExecutor:
+    executors:
+    - rid: 3181427634693996644
+    - rid: 3181427634693996646
+  references:
+    version: 2
+    RefIds:
+    - rid: 3181427246007058570
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 5102893361029256204}
+        hitParticles: {fileID: 2515481451582170628}
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
+        onHit:
+          _persistentListeners: []
+          Expanded: 1
+    - rid: 3181427634693996644
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 10
+    - rid: 3181427634693996646
+      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        knockbackPower: 10
+        knockbackDirection: 10
+        stunTime: 0.5
+--- !u!1 &3451646828768321014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3863231650379329718}
+  - component: {fileID: 3226033048567882335}
+  m_Layer: 0
+  m_Name: Spinning Sword Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3863231650379329718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3451646828768321014}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5102893360398477694}
+  - {fileID: 5102893361076516095}
+  m_Father: {fileID: 32172274780924393}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3226033048567882335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3451646828768321014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81118c65449267140834718ab26499e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  attackEvents:
+    onStartAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onStartActive:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishActive:
+      _persistentListeners: []
+      Expanded: 1
+    onStartRecovery:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishRecovery:
+      _persistentListeners: []
+      Expanded: 1
+  previousAttacks:
+  - {fileID: 1534430804526489236}
+  instant: 0
+  interruptible: 1
+  hardRecovery: 0
+  attackFlow:
+    anticipationDuration: 0.3
+    activeDuration: 0.8
+    detector1StartTime: 0
+    detector1Duration: 0.4
+    detector2StartTime: 0.5
+    detector2Duration: 0.3
+    recoveryDuration: 0.3
+  hitDetector1:
+    rid: 3181427246007058579
+  hitDetector2:
+    rid: 3181427246007058585
+  hitExecutor:
+    executors:
+    - rid: 3181427634693996665
+    - rid: 3181427634693996667
+  references:
+    version: 2
+    RefIds:
+    - rid: 3181427246007058579
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 5102893360398477695}
+        hitParticles: {fileID: 234424136118286085}
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
+        onHit:
+          _persistentListeners: []
+          Expanded: 1
+    - rid: 3181427246007058585
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 5102893361076516092}
+        hitParticles: {fileID: 4347562249962238493}
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
+        onHit:
+          _persistentListeners: []
+          Expanded: 1
+    - rid: 3181427634693996665
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 10
+    - rid: 3181427634693996667
+      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        knockbackPower: 6
+        knockbackDirection: 95
+        stunTime: 0.5
+--- !u!1 &4003947100742262957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7562827223860804901}
+  - component: {fileID: 3345026406701589236}
+  - component: {fileID: 332246992666039201}
+  - component: {fileID: 4241076928635418868}
+  - component: {fileID: 2507661959881557641}
+  m_Layer: 0
+  m_Name: Effects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7562827223860804901
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4003947100742262957}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5102893360874897670}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3345026406701589236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4003947100742262957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cfe8175de16ba346a6957969e6a94ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  particles: {fileID: 5102893361279726049}
+--- !u!114 &332246992666039201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4003947100742262957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ba493242bffda44bd80bb0d4062f98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+--- !u!114 &4241076928635418868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4003947100742262957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11f5303dff324830818deddd46b8e2ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners:
+      - _persistentArguments: []
+        _target: {fileID: 2507661959881557641}
+        _isStatic: 0
+        CallState: 2
+        _staticType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _methodName: Play
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+--- !u!114 &2507661959881557641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4003947100742262957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d961789b6aee674bb3eb9ce45793ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1664870427821783217, guid: fd96fc8c50b008042bee8d068f1e8051, type: 3}
+  particlePosition: {x: 0, y: 1.35, z: 0}
+  attachToCharacter: 0
 --- !u!1 &4022763946346589053
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,6 +678,230 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &4104483144399516664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3216537126837818626}
+  - component: {fileID: 5884357558659466936}
+  m_Layer: 0
+  m_Name: Air Spin Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3216537126837818626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4104483144399516664}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5102893360422186051}
+  m_Father: {fileID: 32172274780924393}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5884357558659466936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4104483144399516664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea921905e8155a14c9c413f58b72a537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  attackEvents:
+    onStartAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onStartActive:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishActive:
+      _persistentListeners: []
+      Expanded: 1
+    onStartRecovery:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishRecovery:
+      _persistentListeners: []
+      Expanded: 1
+  previousAttacks:
+  - {fileID: 0}
+  - {fileID: 7559106644093030772}
+  - {fileID: 6377231587991264689}
+  instant: 0
+  interruptible: 0
+  hardRecovery: 0
+  attackFlow:
+    anticipationDuration: 0.075
+    activeDuration: 0.225
+    recoveryDuration: 0.1
+  hitDetector:
+    rid: 3181427246007058589
+  hitExecutor:
+    executors:
+    - rid: 3181427634693996681
+    - rid: 3181427634693996683
+  references:
+    version: 2
+    RefIds:
+    - rid: 3181427246007058589
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 5102893360422186048}
+        hitParticles: {fileID: 9123332027102438765}
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
+        onHit:
+          _persistentListeners: []
+          Expanded: 1
+    - rid: 3181427634693996681
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 7
+    - rid: 3181427634693996683
+      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        knockbackPower: 6
+        knockbackDirection: 110
+        stunTime: 0.5
+--- !u!1 &4458982307090760047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6011423664596739024}
+  - component: {fileID: 3403884892882908741}
+  m_Layer: 0
+  m_Name: Uppercut
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6011423664596739024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4458982307090760047}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5102893360763890679}
+  m_Father: {fileID: 32172274780924393}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3403884892882908741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4458982307090760047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 120971cb774917b4593fc4bac3084f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  attackEvents:
+    onStartAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onStartActive:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishActive:
+      _persistentListeners: []
+      Expanded: 1
+    onStartRecovery:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishRecovery:
+      _persistentListeners: []
+      Expanded: 1
+  previousAttacks:
+  - {fileID: 1534430804526489236}
+  instant: 0
+  interruptible: 1
+  hardRecovery: 1
+  attackFlow:
+    anticipationDuration: 0.05
+    activeDuration: 0.15
+    recoveryDuration: 0.2
+  hitDetector:
+    rid: 3181427246007058576
+  hitExecutor:
+    executors:
+    - rid: 3181427634693996660
+    - rid: 3181427634693996663
+  references:
+    version: 2
+    RefIds:
+    - rid: 3181427246007058576
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 5102893360763890678}
+        hitParticles: {fileID: 5133938250452459189}
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
+        onHit:
+          _persistentListeners: []
+          Expanded: 1
+    - rid: 3181427634693996660
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 10
+    - rid: 3181427634693996663
+      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        knockbackPower: 10
+        knockbackDirection: 85
+        stunTime: 0.5
 --- !u!1 &5102893360079750233
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +1036,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5102893360874897670}
+  m_Father: {fileID: 3863231650379329718}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360398477695
@@ -392,7 +1085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1914151399083900665, guid: 97424818f1eb2994fa6429d2ec6974de, type: 3}
+  prefab: {fileID: 4436134962950998836, guid: 97424818f1eb2994fa6429d2ec6974de, type: 3}
 --- !u!1 &5102893360422186050
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +1117,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5102893360874897670}
+  m_Father: {fileID: 3216537126837818626}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360422186048
@@ -473,7 +1166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2661468372341986182, guid: b27efde971e356747b9bdce37c18c7be, type: 3}
+  prefab: {fileID: 2979184207129778206, guid: b27efde971e356747b9bdce37c18c7be, type: 3}
 --- !u!1 &5102893360536826754
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +1198,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5102893360874897670}
+  m_Father: {fileID: 3182524056042066909}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360536826755
@@ -554,7 +1247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7368109035975547894, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
+  prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
 --- !u!1 &5102893360763890665
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +1279,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5102893360874897670}
+  m_Father: {fileID: 6011423664596739024}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360763890678
@@ -635,7 +1328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8245450162260640053, guid: e9a1faa674d113a428519eb042e2e097, type: 3}
+  prefab: {fileID: 3996015374920888246, guid: e9a1faa674d113a428519eb042e2e097, type: 3}
 --- !u!1 &5102893360866760426
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,7 +1360,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5102893360874897670}
+  m_Father: {fileID: 1613201450539292511}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360866760427
@@ -716,7 +1409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7368109035975547894, guid: dd46b3ae7d054024c87a55ea5268a893, type: 3}
+  prefab: {fileID: 1664870427821783217, guid: dd46b3ae7d054024c87a55ea5268a893, type: 3}
 --- !u!1 &5102893360874897723
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,24 +1435,8 @@ GameObject:
   - component: {fileID: 4105917478859101225}
   - component: {fileID: 4937438101241777289}
   - component: {fileID: 2899137309724130339}
-  - component: {fileID: 5102893360874897692}
-  - component: {fileID: 5102893360874897674}
-  - component: {fileID: 1638938386684518268}
   - component: {fileID: 5102893360874897672}
   - component: {fileID: 5102893360874897678}
-  - component: {fileID: 5102893360874897673}
-  - component: {fileID: 5102893360874897686}
-  - component: {fileID: 5102893360874897683}
-  - component: {fileID: 5102893360874897687}
-  - component: {fileID: 5102893360874897684}
-  - component: {fileID: 5102893360874897685}
-  - component: {fileID: 5102893360874897682}
-  - component: {fileID: 5102893360874897681}
-  - component: {fileID: 5102893360874897680}
-  - component: {fileID: 5102893360874897694}
-  - component: {fileID: 5102893360874897675}
-  - component: {fileID: 4916786187361843125}
-  - component: {fileID: 2810455707820001631}
   - component: {fileID: 1303490756395571274}
   m_Layer: 0
   m_Name: Angel
@@ -783,17 +1460,9 @@ Transform:
   - {fileID: 5102893361555062421}
   - {fileID: 5102893360079750310}
   - {fileID: 5102893361031154993}
-  - {fileID: 5102893360938488513}
-  - {fileID: 5102893361029256205}
-  - {fileID: 5102893360536826752}
-  - {fileID: 5102893361817772765}
-  - {fileID: 5102893360763890679}
-  - {fileID: 5102893360398477694}
-  - {fileID: 5102893361076516095}
-  - {fileID: 5102893360422186051}
-  - {fileID: 5102893360866760424}
-  - {fileID: 3850747449127629430}
   - {fileID: 3970267090279809017}
+  - {fileID: 32172274780924393}
+  - {fileID: 7562827223860804901}
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1205,74 +1874,6 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
---- !u!114 &5102893360874897692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cfe8175de16ba346a6957969e6a94ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
-  particles: {fileID: 5102893361279726049}
---- !u!114 &5102893360874897674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6ba493242bffda44bd80bb0d4062f98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
---- !u!114 &1638938386684518268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11f5303dff324830818deddd46b8e2ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners:
-      - _persistentArguments: []
-        _target: {fileID: 2810455707820001631}
-        _isStatic: 0
-        CallState: 2
-        _staticType:
-          GuidAssignmentFailed: 0
-          GUID: 
-          _typeNameAndAssembly: 
-          _suppressLogs: 0
-        _methodName: Play
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
 --- !u!114 &5102893360874897672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1328,25 +1929,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attacks:
-  - attack: {fileID: 5102893360874897686}
+  - attack: {fileID: 7126820491640019253}
     button: 2
-  - attack: {fileID: 5102893360874897673}
+  - attack: {fileID: 8621965095738474586}
     button: 2
-  - attack: {fileID: 5102893360874897687}
+  - attack: {fileID: 1534430804526489236}
     button: 2
-  - attack: {fileID: 5102893360874897683}
+  - attack: {fileID: 7157179758743540809}
     button: 3
-  - attack: {fileID: 5102893360874897684}
+  - attack: {fileID: 3403884892882908741}
     button: 2
-  - attack: {fileID: 5102893360874897685}
+  - attack: {fileID: 3226033048567882335}
     button: 3
-  - attack: {fileID: 5102893360874897682}
+  - attack: {fileID: 8296055732026328267}
     button: 2
-  - attack: {fileID: 5102893360874897681}
+  - attack: {fileID: 7559106644093030772}
     button: 2
-  - attack: {fileID: 5102893360874897680}
+  - attack: {fileID: 6377231587991264689}
     button: 2
-  - attack: {fileID: 5102893360874897694}
+  - attack: {fileID: 5884357558659466936}
     button: 3
   bufferingTime: 0.2
   walkPriority: 0
@@ -1356,869 +1957,6 @@ MonoBehaviour:
   attackPriority: 2
   possessedEffectTimeReducing: 00000000010000000200000003000000
   possessedEffectDurationReduction: 0.05
---- !u!114 &5102893360874897673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89faf720898d4f341980bbc5ad9c92c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
-  attackEvents:
-    onStartAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onStartActive:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishActive:
-      _persistentListeners: []
-      Expanded: 1
-    onStartRecovery:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishRecovery:
-      _persistentListeners: []
-      Expanded: 1
-  previousAttacks: []
-  instant: 0
-  interruptible: 1
-  hardRecovery: 1
-  attackFlow:
-    anticipationDuration: 0.1
-    velocity: 10
-    acceleration: 10
-    recoveryDuration: 0.15
-  hitDetector:
-    rid: 3181427246007058570
-  hitExecutor:
-    executors:
-    - rid: 3181427634693996644
-    - rid: 3181427634693996646
-  references:
-    version: 2
-    RefIds:
-    - rid: 3181427246007058570
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        hitbox: {fileID: 5102893361029256204}
-        hitParticles: {fileID: 2515481451582170628}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-    - rid: 3181427634693996644
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 10
-    - rid: 3181427634693996646
-      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        knockbackPower: 10
-        knockbackDirection: 10
-        stunTime: 0.5
---- !u!114 &5102893360874897686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15028a98acbfc2140a1a48233734334d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
-  attackEvents:
-    onStartAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onStartActive:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishActive:
-      _persistentListeners: []
-      Expanded: 1
-    onStartRecovery:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishRecovery:
-      _persistentListeners: []
-      Expanded: 1
-  previousAttacks: []
-  instant: 0
-  interruptible: 1
-  hardRecovery: 0
-  attackFlow:
-    anticipationDuration: 0.2
-    activeDuration: 0.15
-    recoveryDuration: 0.2
-  hitDetector:
-    rid: 3181427246007058563
-  hitExecutor:
-    executors:
-    - rid: 3181427634693996648
-    - rid: 3181427634693996650
-  references:
-    version: 2
-    RefIds:
-    - rid: 3181427246007058563
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        hitbox: {fileID: 5102893360536826755}
-        hitParticles: {fileID: 3603120142536149105}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-    - rid: 3181427634693996648
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 7
-    - rid: 3181427634693996650
-      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        stunTime: 1
---- !u!114 &5102893360874897683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff8981c0a36794540a98151813755dc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
-  attackEvents:
-    onStartAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onStartActive:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishActive:
-      _persistentListeners: []
-      Expanded: 1
-    onStartRecovery:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishRecovery:
-      _persistentListeners: []
-      Expanded: 1
-  previousAttacks:
-  - {fileID: 5102893360874897686}
-  instant: 0
-  interruptible: 1
-  hardRecovery: 0
-  attackFlow:
-    anticipationDuration: 0.05
-    activeDuration: 0.14
-    recoveryDuration: 0.01
-  hitDetector:
-    rid: 3181427246007058572
-  hitExecutor:
-    executors:
-    - rid: 3181427634693996652
-    - rid: 3181427634693996654
-  references:
-    version: 2
-    RefIds:
-    - rid: 3181427246007058572
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        hitbox: {fileID: 4058469792659233068}
-        hitParticles: {fileID: 9085019184276698034}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-    - rid: 3181427634693996652
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 15
-    - rid: 3181427634693996654
-      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        stunTime: 0.5
---- !u!114 &5102893360874897687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 456a183db1e8752488fe8e192957fb8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
-  attackEvents:
-    onStartAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onStartActive:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishActive:
-      _persistentListeners: []
-      Expanded: 1
-    onStartRecovery:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishRecovery:
-      _persistentListeners: []
-      Expanded: 1
-  previousAttacks:
-  - {fileID: 5102893360874897686}
-  instant: 0
-  interruptible: 1
-  hardRecovery: 0
-  attackFlow:
-    anticipationDuration: 0.01
-    activeDuration: 0.14
-    recoveryDuration: 0.3
-  hitDetector:
-    rid: 3181427246007058574
-  hitExecutor:
-    executors:
-    - rid: 3181427634693996656
-    - rid: 3181427634693996658
-  references:
-    version: 2
-    RefIds:
-    - rid: 3181427246007058574
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        hitbox: {fileID: 5102893361817772762}
-        hitParticles: {fileID: 1596551910517510343}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-    - rid: 3181427634693996656
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 5
-    - rid: 3181427634693996658
-      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        stunTime: 0.5
---- !u!114 &5102893360874897684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 120971cb774917b4593fc4bac3084f1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
-  attackEvents:
-    onStartAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onStartActive:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishActive:
-      _persistentListeners: []
-      Expanded: 1
-    onStartRecovery:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishRecovery:
-      _persistentListeners: []
-      Expanded: 1
-  previousAttacks:
-  - {fileID: 5102893360874897687}
-  instant: 0
-  interruptible: 1
-  hardRecovery: 1
-  attackFlow:
-    anticipationDuration: 0.05
-    activeDuration: 0.15
-    recoveryDuration: 0.2
-  hitDetector:
-    rid: 3181427246007058576
-  hitExecutor:
-    executors:
-    - rid: 3181427634693996660
-    - rid: 3181427634693996663
-  references:
-    version: 2
-    RefIds:
-    - rid: 3181427246007058576
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        hitbox: {fileID: 5102893360763890678}
-        hitParticles: {fileID: 5133938250452459189}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-    - rid: 3181427634693996660
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 10
-    - rid: 3181427634693996663
-      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        knockbackPower: 10
-        knockbackDirection: 85
-        stunTime: 0.5
---- !u!114 &5102893360874897685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81118c65449267140834718ab26499e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
-  attackEvents:
-    onStartAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onStartActive:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishActive:
-      _persistentListeners: []
-      Expanded: 1
-    onStartRecovery:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishRecovery:
-      _persistentListeners: []
-      Expanded: 1
-  previousAttacks:
-  - {fileID: 5102893360874897687}
-  instant: 0
-  interruptible: 1
-  hardRecovery: 0
-  attackFlow:
-    anticipationDuration: 0.3
-    activeDuration: 0.8
-    detector1StartTime: 0
-    detector1Duration: 0.4
-    detector2StartTime: 0.5
-    detector2Duration: 0.3
-    recoveryDuration: 0.3
-  hitDetector1:
-    rid: 3181427246007058579
-  hitDetector2:
-    rid: 3181427246007058585
-  hitExecutor:
-    executors:
-    - rid: 3181427634693996665
-    - rid: 3181427634693996667
-  references:
-    version: 2
-    RefIds:
-    - rid: 3181427246007058579
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        hitbox: {fileID: 5102893360398477695}
-        hitParticles: {fileID: 234424136118286085}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-    - rid: 3181427246007058585
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        hitbox: {fileID: 5102893361076516092}
-        hitParticles: {fileID: 4347562249962238493}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-    - rid: 3181427634693996665
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 10
-    - rid: 3181427634693996667
-      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        knockbackPower: 6
-        knockbackDirection: 95
-        stunTime: 0.5
---- !u!114 &5102893360874897682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d19372dd6d0ab24db38e954cf9e4d87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
-  attackEvents:
-    onStartAnticipating:
-      _persistentListeners:
-      - _persistentArguments: []
-        _target: {fileID: 4916786187361843125}
-        _isStatic: 0
-        CallState: 2
-        _staticType:
-          GuidAssignmentFailed: 0
-          GUID: 
-          _typeNameAndAssembly: 
-          _suppressLogs: 0
-        _methodName: Play
-      Expanded: 1
-    onFinishAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onStartActive:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishActive:
-      _persistentListeners: []
-      Expanded: 1
-    onStartRecovery:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishRecovery:
-      _persistentListeners: []
-      Expanded: 1
-  previousAttacks:
-  - {fileID: 5102893360874897685}
-  instant: 0
-  interruptible: 0
-  hardRecovery: 1
-  attackFlow:
-    anticipationDuration: 0.05
-    velocity: 50
-    acceleration: 250
-    recoveryDuration: 0.2
-  hitDetector:
-    rid: 3181427246007058586
-  hitExecutor:
-    executors:
-    - rid: 3181427634693996669
-    - rid: 3181427634693996671
-  references:
-    version: 2
-    RefIds:
-    - rid: 3181427246007058586
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        hitbox: {fileID: 5102893360866760427}
-        hitParticles: {fileID: 2002257862998933130}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-    - rid: 3181427634693996669
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 10
-    - rid: 3181427634693996671
-      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        knockbackPower: 11
-        knockbackDirection: 60
-        stunTime: 0.5
---- !u!114 &5102893360874897681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2b302d29d571f744a696a43a533cefb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
-  attackEvents:
-    onStartAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onStartActive:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishActive:
-      _persistentListeners: []
-      Expanded: 1
-    onStartRecovery:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishRecovery:
-      _persistentListeners: []
-      Expanded: 1
-  previousAttacks: []
-  instant: 0
-  interruptible: 0
-  hardRecovery: 0
-  attackFlow:
-    anticipationDuration: 0.1
-    activeDuration: 0.1
-    recoveryDuration: 0.3
-  hitDetector:
-    rid: 3181427246007058587
-  hitExecutor:
-    executors:
-    - rid: 3181427634693996673
-    - rid: 3181427634693996675
-  references:
-    version: 2
-    RefIds:
-    - rid: 3181427246007058587
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        hitbox: {fileID: 5102893360536826755}
-        hitParticles: {fileID: 3603120142536149105}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-    - rid: 3181427634693996673
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 5
-    - rid: 3181427634693996675
-      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        knockbackPower: 5
-        knockbackDirection: 30
-        stunTime: 0.5
---- !u!114 &5102893360874897680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d011c6d5c9cce11439fc487160458d20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
-  attackEvents:
-    onStartAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onStartActive:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishActive:
-      _persistentListeners: []
-      Expanded: 1
-    onStartRecovery:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishRecovery:
-      _persistentListeners: []
-      Expanded: 1
-  previousAttacks:
-  - {fileID: 5102893360874897681}
-  instant: 0
-  interruptible: 0
-  hardRecovery: 0
-  attackFlow:
-    anticipationDuration: 0.01
-    activeDuration: 0.14
-    recoveryDuration: 0.3
-  hitDetector:
-    rid: 3181427246007058588
-  hitExecutor:
-    executors:
-    - rid: 3181427634693996677
-    - rid: 3181427634693996679
-  references:
-    version: 2
-    RefIds:
-    - rid: 3181427246007058588
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        hitbox: {fileID: 5102893361817772762}
-        hitParticles: {fileID: 1596551910517510343}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-    - rid: 3181427634693996677
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 5
-    - rid: 3181427634693996679
-      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        knockbackPower: 5
-        knockbackDirection: 30
-        stunTime: 0.5
---- !u!114 &5102893360874897694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea921905e8155a14c9c413f58b72a537, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
-  attackEvents:
-    onStartAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onStartActive:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishActive:
-      _persistentListeners: []
-      Expanded: 1
-    onStartRecovery:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishRecovery:
-      _persistentListeners: []
-      Expanded: 1
-  previousAttacks:
-  - {fileID: 0}
-  - {fileID: 5102893360874897681}
-  - {fileID: 5102893360874897680}
-  instant: 0
-  interruptible: 0
-  hardRecovery: 0
-  attackFlow:
-    anticipationDuration: 0.075
-    activeDuration: 0.225
-    recoveryDuration: 0.1
-  hitDetector:
-    rid: 3181427246007058589
-  hitExecutor:
-    executors:
-    - rid: 3181427634693996681
-    - rid: 3181427634693996683
-  references:
-    version: 2
-    RefIds:
-    - rid: 3181427246007058589
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        hitbox: {fileID: 5102893360422186048}
-        hitParticles: {fileID: 9123332027102438765}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-    - rid: 3181427634693996681
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 7
-    - rid: 3181427634693996683
-      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        knockbackPower: 6
-        knockbackDirection: 110
-        stunTime: 0.5
---- !u!114 &5102893360874897675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afab7b434bf82e940a658e3c4b4805cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
-  attackEvents:
-    onStartAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onStartActive:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishActive:
-      _persistentListeners: []
-      Expanded: 1
-    onStartRecovery:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishRecovery:
-      _persistentListeners: []
-      Expanded: 1
-  previousAttacks: []
-  instant: 0
-  interruptible: 0
-  hardRecovery: 0
-  attackFlow:
-    anticipationDuration: 0
-    velocity: 0
-    acceleration: 0
-    recoveryDuration: 0
-  hitDetector:
-    rid: 3181427246007058590
-  hitExecutor:
-    executors: []
-  references:
-    version: 2
-    RefIds:
-    - rid: 3181427246007058590
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        hitbox: {fileID: 5102893360938488512}
-        hitParticles: {fileID: 0}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
---- !u!114 &4916786187361843125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d961789b6aee674bb3eb9ce45793ff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 7161048684058357246, guid: f3fda9e187466314e97b96e464322573, type: 3}
-  particlePosition: {x: -0.48, y: 1.5, z: -1}
-  attachToCharacter: 1
---- !u!114 &2810455707820001631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360874897723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d961789b6aee674bb3eb9ce45793ff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 7368109035975547894, guid: fd96fc8c50b008042bee8d068f1e8051, type: 3}
-  particlePosition: {x: 0, y: 1.35, z: 0}
-  attachToCharacter: 0
 --- !u!114 &1303490756395571274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2262,7 +2000,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5102893360874897670}
+  m_Father: {fileID: 3937311290927260544}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360938488512
@@ -2330,7 +2068,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5102893360874897670}
+  m_Father: {fileID: 9022226871554883571}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893361029256204
@@ -2379,7 +2117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3843020969008119030, guid: baca1c3b16caaf246824b26b93c8130a, type: 3}
+  prefab: {fileID: 2064102966546675340, guid: baca1c3b16caaf246824b26b93c8130a, type: 3}
 --- !u!1 &5102893361031154992
 GameObject:
   m_ObjectHideFlags: 0
@@ -2498,7 +2236,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5102893360874897670}
+  m_Father: {fileID: 3863231650379329718}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893361076516092
@@ -2547,7 +2285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6176859053047132887, guid: 4149b67738ee91743826106b7544e3e7, type: 3}
+  prefab: {fileID: 4011335710652351277, guid: 4149b67738ee91743826106b7544e3e7, type: 3}
 --- !u!1 &5102893361279726048
 GameObject:
   m_ObjectHideFlags: 0
@@ -7560,11 +7298,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102893361817772764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.375, y: 0, z: 0}
+  m_LocalPosition: {x: -3.356323, y: 1.8834352, z: 3.3651845}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5102893360874897670}
+  m_Father: {fileID: 5746246883376850308}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893361817772762
@@ -7613,7 +7351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7368109035975547894, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
+  prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
 --- !u!1 &5102893361865183972
 GameObject:
   m_ObjectHideFlags: 0
@@ -12464,3 +12202,718 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movableEntity: {fileID: 5510860288221320503}
+--- !u!1 &5700907412895489081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9029514677093264878}
+  - component: {fileID: 7559106644093030772}
+  m_Layer: 0
+  m_Name: Air Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9029514677093264878
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5700907412895489081}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 32172274780924393}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7559106644093030772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5700907412895489081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b302d29d571f744a696a43a533cefb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  attackEvents:
+    onStartAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onStartActive:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishActive:
+      _persistentListeners: []
+      Expanded: 1
+    onStartRecovery:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishRecovery:
+      _persistentListeners: []
+      Expanded: 1
+  previousAttacks:
+  - {fileID: 0}
+  instant: 0
+  interruptible: 0
+  hardRecovery: 0
+  attackFlow:
+    anticipationDuration: 0.1
+    activeDuration: 0.1
+    recoveryDuration: 0.3
+  hitDetector:
+    rid: 3181427246007058587
+  hitExecutor:
+    executors:
+    - rid: 3181427634693996673
+    - rid: 3181427634693996675
+  references:
+    version: 2
+    RefIds:
+    - rid: 3181427246007058587
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 5102893360536826755}
+        hitParticles: {fileID: 3603120142536149105}
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
+        onHit:
+          _persistentListeners: []
+          Expanded: 1
+    - rid: 3181427634693996673
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 5
+    - rid: 3181427634693996675
+      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        knockbackPower: 5
+        knockbackDirection: 30
+        stunTime: 0.5
+--- !u!1 &6771048749396688650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5277052100955548515}
+  - component: {fileID: 7157179758743540809}
+  m_Layer: 0
+  m_Name: Stab Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5277052100955548515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771048749396688650}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3850747449127629430}
+  m_Father: {fileID: 32172274780924393}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7157179758743540809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771048749396688650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff8981c0a36794540a98151813755dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  attackEvents:
+    onStartAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onStartActive:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishActive:
+      _persistentListeners: []
+      Expanded: 1
+    onStartRecovery:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishRecovery:
+      _persistentListeners: []
+      Expanded: 1
+  previousAttacks:
+  - {fileID: 7126820491640019253}
+  instant: 0
+  interruptible: 1
+  hardRecovery: 0
+  attackFlow:
+    anticipationDuration: 0.05
+    activeDuration: 0.14
+    recoveryDuration: 0.01
+  hitDetector:
+    rid: 3181427246007058572
+  hitExecutor:
+    executors:
+    - rid: 3181427634693996652
+    - rid: 3181427634693996654
+  references:
+    version: 2
+    RefIds:
+    - rid: 3181427246007058572
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 4058469792659233068}
+        hitParticles: {fileID: 9085019184276698034}
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
+        onHit:
+          _persistentListeners: []
+          Expanded: 1
+    - rid: 3181427634693996652
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 15
+    - rid: 3181427634693996654
+      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        stunTime: 0.5
+--- !u!1 &6836361419182836862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3182524056042066909}
+  - component: {fileID: 7126820491640019253}
+  m_Layer: 0
+  m_Name: Normal Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3182524056042066909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836361419182836862}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5102893360536826752}
+  m_Father: {fileID: 32172274780924393}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7126820491640019253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836361419182836862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15028a98acbfc2140a1a48233734334d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  attackEvents:
+    onStartAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onStartActive:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishActive:
+      _persistentListeners: []
+      Expanded: 1
+    onStartRecovery:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishRecovery:
+      _persistentListeners: []
+      Expanded: 1
+  previousAttacks: []
+  instant: 0
+  interruptible: 1
+  hardRecovery: 0
+  attackFlow:
+    anticipationDuration: 0.2
+    activeDuration: 0.15
+    recoveryDuration: 0.2
+  hitDetector:
+    rid: 3181427246007058563
+  hitExecutor:
+    executors:
+    - rid: 3181427634693996648
+    - rid: 3181427634693996650
+  references:
+    version: 2
+    RefIds:
+    - rid: 3181427246007058563
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 5102893360536826755}
+        hitParticles: {fileID: 3603120142536149105}
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
+        onHit:
+          _persistentListeners: []
+          Expanded: 1
+    - rid: 3181427634693996648
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 7
+    - rid: 3181427634693996650
+      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        stunTime: 1
+--- !u!1 &7477602066808393276
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5746246883376850308}
+  - component: {fileID: 1534430804526489236}
+  m_Layer: 0
+  m_Name: Alt NormalAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5746246883376850308
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7477602066808393276}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.731323, y: -1.8834352, z: -3.3651845}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5102893361817772765}
+  m_Father: {fileID: 32172274780924393}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1534430804526489236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7477602066808393276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456a183db1e8752488fe8e192957fb8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  attackEvents:
+    onStartAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onStartActive:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishActive:
+      _persistentListeners: []
+      Expanded: 1
+    onStartRecovery:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishRecovery:
+      _persistentListeners: []
+      Expanded: 1
+  previousAttacks:
+  - {fileID: 7126820491640019253}
+  instant: 0
+  interruptible: 1
+  hardRecovery: 0
+  attackFlow:
+    anticipationDuration: 0.01
+    activeDuration: 0.14
+    recoveryDuration: 0.3
+  hitDetector:
+    rid: 3181427246007058574
+  hitExecutor:
+    executors:
+    - rid: 3181427634693996656
+    - rid: 3181427634693996658
+  references:
+    version: 2
+    RefIds:
+    - rid: 3181427246007058574
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 5102893361817772762}
+        hitParticles: {fileID: 1596551910517510343}
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
+        onHit:
+          _persistentListeners: []
+          Expanded: 1
+    - rid: 3181427634693996656
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 5
+    - rid: 3181427634693996658
+      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        stunTime: 0.5
+--- !u!1 &8326420566752417338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 32172274780924393}
+  m_Layer: 0
+  m_Name: Attacks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &32172274780924393
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8326420566752417338}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3182524056042066909}
+  - {fileID: 5746246883376850308}
+  - {fileID: 6011423664596739024}
+  - {fileID: 5277052100955548515}
+  - {fileID: 3863231650379329718}
+  - {fileID: 1613201450539292511}
+  - {fileID: 9022226871554883571}
+  - {fileID: 9029514677093264878}
+  - {fileID: 5282987104477988010}
+  - {fileID: 3216537126837818626}
+  - {fileID: 3937311290927260544}
+  m_Father: {fileID: 5102893360874897670}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8644654164908221865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3937311290927260544}
+  - component: {fileID: 1114709986711045581}
+  m_Layer: 0
+  m_Name: Energy Burst
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3937311290927260544
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8644654164908221865}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5102893360938488513}
+  m_Father: {fileID: 32172274780924393}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1114709986711045581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8644654164908221865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afab7b434bf82e940a658e3c4b4805cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  attackEvents:
+    onStartAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onStartActive:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishActive:
+      _persistentListeners: []
+      Expanded: 1
+    onStartRecovery:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishRecovery:
+      _persistentListeners: []
+      Expanded: 1
+  previousAttacks: []
+  instant: 0
+  interruptible: 1
+  hardRecovery: 0
+  attackFlow:
+    anticipationDuration: 0
+    velocity: 0
+    acceleration: 0
+    recoveryDuration: 0
+  hitDetector:
+    rid: 168482633143812213
+  hitExecutor:
+    executors: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 168482633143812213
+      type: {class: AbsoluteHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 0}
+        hitParticles: {fileID: 0}
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
+        onHit:
+          _persistentListeners: []
+          Expanded: 1
+--- !u!1 &8660113274356423321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1613201450539292511}
+  - component: {fileID: 8296055732026328267}
+  - component: {fileID: 7214283041871315255}
+  m_Layer: 0
+  m_Name: Slash Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1613201450539292511
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8660113274356423321}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5102893360866760424}
+  m_Father: {fileID: 32172274780924393}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8296055732026328267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8660113274356423321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d19372dd6d0ab24db38e954cf9e4d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  attackEvents:
+    onStartAnticipating:
+      _persistentListeners:
+      - _persistentArguments: []
+        _target: {fileID: 7214283041871315255}
+        _isStatic: 0
+        CallState: 2
+        _staticType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _methodName: Play
+      Expanded: 1
+    onFinishAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onStartActive:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishActive:
+      _persistentListeners: []
+      Expanded: 1
+    onStartRecovery:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishRecovery:
+      _persistentListeners: []
+      Expanded: 1
+  previousAttacks:
+  - {fileID: 3226033048567882335}
+  instant: 0
+  interruptible: 0
+  hardRecovery: 1
+  attackFlow:
+    anticipationDuration: 0.05
+    velocity: 50
+    acceleration: 250
+    recoveryDuration: 0.2
+  hitDetector:
+    rid: 3181427246007058586
+  hitExecutor:
+    executors:
+    - rid: 3181427634693996669
+    - rid: 3181427634693996671
+  references:
+    version: 2
+    RefIds:
+    - rid: 3181427246007058586
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        hitbox: {fileID: 5102893360866760427}
+        hitParticles: {fileID: 2002257862998933130}
+        includedHittableTags:
+          tags: 
+        excludedHittableTags:
+          tags: 
+        onHit:
+          _persistentListeners: []
+          Expanded: 1
+    - rid: 3181427634693996669
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 10
+    - rid: 3181427634693996671
+      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        knockbackPower: 11
+        knockbackDirection: 60
+        stunTime: 0.5
+--- !u!114 &7214283041871315255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8660113274356423321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d961789b6aee674bb3eb9ce45793ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4191199336927616018, guid: f3fda9e187466314e97b96e464322573, type: 3}
+  particlePosition: {x: -0.48, y: 1.5, z: -1}
+  attachToCharacter: 1

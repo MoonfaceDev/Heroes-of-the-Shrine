@@ -23,7 +23,7 @@ public class PossessAttack : BaseAttack
 
     public AttackFlow attackFlow;
 
-    public PossessSource possessSource;
+    public GameObject possessSource;
     public int sourcesCount;
     public float spawnRadius;
     public float minSourcesDistance;
@@ -65,10 +65,8 @@ public class PossessAttack : BaseAttack
             {
                 var spawnPoint = GetSpawnPoint(alreadySpawned);
                 alreadySpawned.Add(spawnPoint);
-                var newPossessSource = Instantiate(possessSource.gameObject,
-                    GameEntity.ScreenCoordinates(spawnPoint), Quaternion.identity);
-                newPossessSource.GetComponent<MovableEntity>().WorldPosition = spawnPoint;
-                newPossessSource.GetComponent<PossessSource>().Activate(
+                var newPossessSource = GameEntity.Instantiate(possessSource, spawnPoint);
+                newPossessSource.GetBehaviour<PossessSource>().Activate(
                     attackFlow.warningDuration,
                     attackFlow.sourceActiveDuration,
                     AttackManager.hittableTags,
@@ -112,7 +110,7 @@ public class PossessAttack : BaseAttack
     {
         return walkableGrid.IsInside(newPosition)
                && EntityManager.Instance.GetEntities(Tag.Barrier).ToArray()
-                   .All(barrier => !barrier.GetComponent<Hitbox>().IsInside(newPosition))
+                   .All(barrier => !barrier.GetBehaviour<Hitbox>().IsInside(newPosition))
                && alreadySpawned.All(existingPosition =>
                    Vector3.Distance(newPosition, existingPosition) > 2 * minSourcesDistance);
     }

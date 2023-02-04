@@ -1,6 +1,3 @@
-using UnityEngine;
-
-[RequireComponent(typeof(RunBehaviour))]
 public class RunKick : MotionAttack
 {
     public override bool CanPlay(Command command)

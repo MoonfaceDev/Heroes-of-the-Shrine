@@ -6,24 +6,25 @@ using UnityEngine;
 /// <summary>
 /// Shared methods and common components references for characters
 /// </summary>
+[DisallowMultipleComponent]
 [RequireComponent(typeof(MovableEntity))]
-public class Character : BaseComponent
+public class Character : EntityBehaviour
 {
     /// <value>
     /// Physical attributes
     /// </value>
     public PhysicalAttributes physicalAttributes;
-    
+
     /// <value>
     /// Animator of the figure (related <see cref="SpriteRenderer"/>)
     /// </value>
     public Animator animator;
-    
+
     /// <value>
     /// Attached <see cref="MovableEntity"/>
     /// </value>
     [HideInInspector] public MovableEntity movableEntity;
-    
+
     /// <value>
     /// Attached <see cref="AttackManager"/>, possibly null
     /// </value>
@@ -31,15 +32,15 @@ public class Character : BaseComponent
 
     private void Awake()
     {
-        movableEntity = GetComponent<MovableEntity>();
-        attackManager = GetComponent<AttackManager>();
+        movableEntity = (MovableEntity)Entity;
+        attackManager = GetBehaviour<AttackManager>();
     }
 
-    private void SetBehavioursBlocked(bool blockedValue, IEnumerable<Type> behaviours)
+    private void SetBehavioursBlocked(bool blockedValue, IEnumerable<Type> types)
     {
-        foreach (var type in behaviours)
+        foreach (var type in types)
         {
-            foreach (var component in GetComponents(type))
+            foreach (var component in GetBehaviours(type))
             {
                 var behaviour = (IPlayableBehaviour)component;
                 behaviour.Blocked = blockedValue;
@@ -50,30 +51,30 @@ public class Character : BaseComponent
     /// <summary>
     /// Blocks behaviours, meaning they cannot be played. If a behaviour is blocked N times, it will have to be unblocked N times so it can be played.
     /// </summary>
-    /// <param name="behaviours">Behaviours to block. All of the attached behaviours from each type will be blocked.</param>
-    public void BlockBehaviours(params Type[] behaviours)
+    /// <param name="types">Behaviours to block. All of the attached behaviours from each type will be blocked.</param>
+    public void BlockBehaviours(params Type[] types)
     {
-        SetBehavioursBlocked(true, behaviours);
+        SetBehavioursBlocked(true, types);
     }
 
     /// <summary>
     /// Unblocks behaviours, meaning they can be played
     /// </summary>
-    /// <param name="behaviours">Behaviours to unblock. All of the attached behaviours from each type will be unblocked.</param>
-    public void UnblockBehaviours(params Type[] behaviours)
+    /// <param name="types">Behaviours to unblock. All of the attached behaviours from each type will be unblocked.</param>
+    public void UnblockBehaviours(params Type[] types)
     {
-        SetBehavioursBlocked(false, behaviours);
+        SetBehavioursBlocked(false, types);
     }
 
     /// <summary>
     /// Stops behaviours if they where playing
     /// </summary>
-    /// <param name="behaviours">Behaviours to stop. All of the attached behaviours from each type will be stopped.</param>
-    public void StopBehaviours(params Type[] behaviours)
+    /// <param name="types">Behaviours to stop. All of the attached behaviours from each type will be stopped.</param>
+    public void StopBehaviours(params Type[] types)
     {
-        foreach (var type in behaviours)
+        foreach (var type in types)
         {
-            foreach (var component in GetComponents(type))
+            foreach (var component in GetBehaviours(type))
             {
                 var behaviour = (IPlayableBehaviour)component;
                 behaviour.Stop();
@@ -88,7 +89,7 @@ public class Character : BaseComponent
     /// <returns><c>true</c> if any is playing</returns>
     public bool IsPlaying<T>() where T : IPlayableBehaviour
     {
-        var behaviours = GetComponents<T>();
+        var behaviours = GetBehaviours<T>();
         return behaviours.Any(behaviour => behaviour.Playing);
     }
 }

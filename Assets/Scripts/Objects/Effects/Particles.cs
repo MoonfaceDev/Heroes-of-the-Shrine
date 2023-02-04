@@ -3,13 +3,12 @@ using UnityEngine;
 /// <summary>
 /// Spawns particles
 /// </summary>
-[RequireComponent(typeof(GameEntity))]
-public class Particles : BaseComponent
+public class Particles : EntityBehaviour
 {
     /// <value>
     /// Prefab of the particles
     /// </value>
-    public ParticleSystem prefab;
+    public GameObject prefab;
     
     /// <value>
     /// Point where particle is spawned, relative to the <see cref="GameEntity"/>
@@ -26,23 +25,21 @@ public class Particles : BaseComponent
     /// </summary>
     public void Play()
     {
-        var entity = GetComponent<GameEntity>();
-        var clone = attachToCharacter ? Instantiate(prefab, entity.transform) : Instantiate(prefab);
-        clone.transform.position = GameEntity.ScreenCoordinates(entity.TransformToWorld(particlePosition));
+        var clone = attachToCharacter ? Instantiate(prefab, Entity.transform) : Instantiate(prefab);
+        clone.transform.position = GameEntity.ScreenCoordinates(Entity.TransformToWorld(particlePosition));
 
         if (!attachToCharacter)
         {
-            clone.transform.rotation = entity.WorldRotation;
+            clone.transform.rotation = Entity.WorldRotation;
         }
 
-        clone.GetComponent<Renderer>().sortingOrder = entity.SortingOrder + 1;
+        clone.GetComponent<Renderer>().sortingOrder = Entity.SortingOrder + 1;
         clone.GetComponent<ParticleSystem>().Play();
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.white;
-        var entity = GetComponent<GameEntity>();
-        Gizmos.DrawWireSphere(GameEntity.ScreenCoordinates(entity.TransformToWorld(particlePosition)), 0.1f);
+        Gizmos.DrawWireSphere(GameEntity.ScreenCoordinates(Entity.TransformToWorld(particlePosition)), 0.1f);
     }
 }

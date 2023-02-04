@@ -21,11 +21,11 @@ public class FollowPattern : BasePattern
             return;
         }
 
-        var target = player.GetComponent<MovableEntity>();
+        var target = player.GetEntity();
 
-        var followBehaviour = animator.GetComponent<FollowBehaviour>();
+        var followBehaviour = animator.GetEntity().GetBehaviour<FollowBehaviour>();
 
-        var walkBehaviour = animator.GetComponent<WalkBehaviour>();
+        var walkBehaviour = animator.GetEntity().GetBehaviour<WalkBehaviour>();
         walkBehaviour.speed *= speedMultiplier;
 
         var grid = FindObjectOfType<WalkableGrid>();
@@ -37,12 +37,12 @@ public class FollowPattern : BasePattern
         {
             otherEnemies = EntityManager.Instance.GetEntities(Tag.Enemy)
                 .Where(enemy => enemy != followBehaviour.MovableEntity)
-                .Where(enemy => enemy.GetComponent<HealthSystem>().Alive)
+                .Where(enemy => enemy.GetBehaviour<HealthSystem>().Alive)
                 .ToArray();
         });
 
         followBehaviour.Play(new FollowBehaviour.Command(
-            target,
+            (MovableEntity)target,
             () =>
             {
                 return otherEnemies
@@ -81,10 +81,10 @@ public class FollowPattern : BasePattern
 
         EventManager.Instance.Unregister(otherEnemiesListener);
 
-        var followBehaviour = animator.GetComponent<FollowBehaviour>();
+        var followBehaviour = animator.GetEntity().GetBehaviour<FollowBehaviour>();
         followBehaviour.Stop();
 
-        var walkBehaviour = animator.GetComponent<WalkBehaviour>();
+        var walkBehaviour = animator.GetEntity().GetBehaviour<WalkBehaviour>();
         walkBehaviour.speed /= speedMultiplier;
     }
 

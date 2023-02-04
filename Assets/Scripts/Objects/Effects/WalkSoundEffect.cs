@@ -3,18 +3,18 @@ using UnityEngine;
 /// <summary>
 /// Plays a sound effect when character is walking
 /// </summary>
-[RequireComponent(typeof(WalkBehaviour))]
-public class WalkSoundEffect : BaseComponent
+public class WalkSoundEffect : CharacterBehaviour
 {
     /// <value>
     /// <see cref="AudioSource"/> only for this character's walk sound effects
     /// </value>
     public AudioSource walkAudioSource;
 
-    private void Awake()
+    protected override void Awake()
     {
-        var walkBehaviour = GetComponent<WalkBehaviour>();
-        var jumpBehaviour = GetComponent<JumpBehaviour>();
+        base.Awake();
+        var walkBehaviour = GetBehaviour<WalkBehaviour>();
+        var jumpBehaviour = GetBehaviour<JumpBehaviour>();
 
         walkBehaviour.PlayEvents.onPlay += () =>
         {

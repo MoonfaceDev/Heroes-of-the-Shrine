@@ -15,7 +15,7 @@ public class PlayerStunBrainModule : BrainModule
         base.Awake();
 
         var player = EntityManager.Instance.GetEntity(Tag.Player);
-        stunBehaviour = player.GetComponent<StunBehaviour>();
+        stunBehaviour = player.GetBehaviour<StunBehaviour>();
         if (!stunBehaviour) return;
 
         stunBehaviour.PlayEvents.onPlay += OnPlayerStunPlay;

@@ -60,10 +60,10 @@ public class PlayerController : CharacterController
     protected override void Awake()
     {
         base.Awake();
-        walkBehaviour = GetComponent<WalkBehaviour>();
-        jumpBehaviour = GetComponent<JumpBehaviour>();
-        slideBehaviour = GetComponent<SlideBehaviour>();
-        dodgeBehaviour = GetComponent<DodgeBehaviour>();
+        walkBehaviour = GetBehaviour<WalkBehaviour>();
+        jumpBehaviour = GetBehaviour<JumpBehaviour>();
+        slideBehaviour = GetBehaviour<SlideBehaviour>();
+        dodgeBehaviour = GetBehaviour<DodgeBehaviour>();
 
         bufferedActions = new List<BufferedAction>();
     }
@@ -85,7 +85,7 @@ public class PlayerController : CharacterController
     private void ReducePossessedEffectDuration()
     {
         if (!possessedEffectTimeReducing.Any(button => Input.GetButtonDown(button.ToString()))) return;
-        var possessedEffect = GetComponent<PossessedEffect>();
+        var possessedEffect = GetBehaviour<PossessedEffect>();
         if (possessedEffect)
         {
             possessedEffect.ReduceDuration(possessedEffectDurationReduction);

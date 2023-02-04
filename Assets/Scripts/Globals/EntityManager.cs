@@ -75,7 +75,7 @@ public class EntityManager : BaseComponent
     /// </summary>
     /// <param name="key">Tag to check</param>
     /// <returns>All entities having that tag</returns>
-    public HashSet<GameEntity> GetEntities(Tag key)
+    public IEnumerable<GameEntity> GetEntities(Tag key)
     {
         return indexes[key];
     }

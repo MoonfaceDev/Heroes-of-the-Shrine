@@ -5,7 +5,7 @@ using UnityEngine;
 /// Hittable attached to a hitbox, related to a <see cref="hittableBehaviour"/> of a character
 /// </summary>
 [RequireComponent(typeof(Hitbox))]
-public class HittableHitbox : BaseComponent, IHittable
+public class HittableHitbox : EntityBehaviour, IHittable
 {
     /// <value>
     /// <see cref="hittableBehaviour"/> of the related character
@@ -41,7 +41,7 @@ public class HittableHitbox : BaseComponent, IHittable
 
     protected virtual void Awake()
     {
-        Hitbox = GetComponent<Hitbox>();
+        Hitbox = GetBehaviour<Hitbox>();
         defaultMaterial = figure.material;
         onHit += () =>
         {

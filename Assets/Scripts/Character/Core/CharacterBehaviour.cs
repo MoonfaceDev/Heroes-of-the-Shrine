@@ -4,8 +4,7 @@ using UnityEngine;
 /// <summary>
 /// Base class for all character behaviours. Contains useful methods and references to other components.
 /// </summary>
-[RequireComponent(typeof(Character))]
-public abstract class CharacterBehaviour : BaseComponent
+public abstract class CharacterBehaviour : EntityBehaviour
 {
     /// <value>
     /// Character reference
@@ -29,7 +28,7 @@ public abstract class CharacterBehaviour : BaseComponent
 
     protected virtual void Awake()
     {
-        Character = GetComponent<Character>();
+        Character = GetBehaviour<Character>();
     }
 
     /// <summary>

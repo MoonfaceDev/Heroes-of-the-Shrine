@@ -18,7 +18,7 @@ public class ElectrifyHitExecutor : IHitExecutor
     
     public void Execute(BaseAttack attack, IHittable hittable)
     {
-        var electrifiedEffect = hittable.Character.GetComponent<ElectrifiedEffect>();
+        var electrifiedEffect = hittable.Character.GetBehaviour<ElectrifiedEffect>();
         if (electrifiedEffect)
         {
             electrifiedEffect.Play(new ElectrifiedEffect.Command(duration, speedMultiplier));

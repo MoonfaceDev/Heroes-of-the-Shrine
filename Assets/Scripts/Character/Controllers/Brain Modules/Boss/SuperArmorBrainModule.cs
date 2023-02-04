@@ -3,7 +3,6 @@
 /// <summary>
 /// State machine parameters related to <see cref="superArmor"/>
 /// </summary>
-[RequireComponent(typeof(SuperArmor))]
 public class SuperArmorBrainModule : BrainModule
 {
     private SuperArmor superArmor;
@@ -14,7 +13,7 @@ public class SuperArmorBrainModule : BrainModule
     protected override void Awake()
     {
         base.Awake();
-        superArmor = GetComponent<SuperArmor>();
+        superArmor = GetBehaviour<SuperArmor>();
     }
 
     private void Start()

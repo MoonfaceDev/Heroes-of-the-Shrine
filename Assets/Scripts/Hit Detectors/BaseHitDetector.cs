@@ -1,5 +1,7 @@
 using System;
 using System.Linq;
+using ExtEvents;
+using UnityEngine;
 
 /// <summary>
 /// Abstract base class for hit detectors, responsible for detecting hits and calling a given function for every hit object
@@ -27,6 +29,8 @@ public abstract class BaseHitDetector
     /// </value>
     public Tags excludedHittableTags;
 
+    [SerializeField] public ExtEvent onHit; 
+
     /// <summary>
     /// Starts detecting hits
     /// </summary>
@@ -45,6 +49,7 @@ public abstract class BaseHitDetector
             }
 
             hitCallable(hittable);
+            onHit.Invoke();
         });
     }
 

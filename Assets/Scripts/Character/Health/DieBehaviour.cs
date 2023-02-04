@@ -4,7 +4,6 @@ using UnityEngine;
 /// <summary>
 /// Behaviours that handles death of character
 /// </summary>
-[RequireComponent(typeof(HealthSystem))]
 public class DieBehaviour : CharacterBehaviour
 {
     /// <value>
@@ -26,13 +25,13 @@ public class DieBehaviour : CharacterBehaviour
 
     private void Start()
     {
-        var healthSystem = GetComponent<HealthSystem>();
+        var healthSystem = GetBehaviour<HealthSystem>();
         InvokeWhen(() => !healthSystem.Alive, Kill);
     }
 
     private void Kill()
     {
-        DisableComponents(typeof(CharacterController));
+        DisableBehaviours(typeof(CharacterController));
         StopBehaviours(typeof(IEffect), typeof(IMovementBehaviour), typeof(BaseAttack), typeof(StunBehaviour));
 
         void KillAfterKnockback()
@@ -47,7 +46,7 @@ public class DieBehaviour : CharacterBehaviour
 
         if (IsPlaying<KnockbackBehaviour>())
         {
-            GetComponent<KnockbackBehaviour>().PlayEvents.onStop += KillAfterKnockback;
+            GetBehaviour<KnockbackBehaviour>().PlayEvents.onStop += KillAfterKnockback;
         }
         else
         {

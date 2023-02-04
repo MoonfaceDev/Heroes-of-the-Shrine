@@ -13,7 +13,6 @@ public interface IEffect : IPlayableBehaviour
 /// Base class for effects that character can receive by getting hit
 /// </summary>
 /// <typeparam name="T">Type of play command</typeparam>
-[RequireComponent(typeof(HittableBehaviour))]
 public abstract class BaseEffect<T> : PlayableBehaviour<T>, IEffect
 {
     /// <value>
@@ -33,7 +32,7 @@ public abstract class BaseEffect<T> : PlayableBehaviour<T>, IEffect
 
     public override bool CanPlay(T command)
     {
-        return base.CanPlay(command) && GetComponent<HittableBehaviour>().CanGetHit();
+        return base.CanPlay(command) && GetBehaviour<HittableBehaviour>().CanGetHit();
     }
 
     public override bool Playing => Active;

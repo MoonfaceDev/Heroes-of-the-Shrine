@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(WalkBehaviour))]
 public class ArcBehaviour : BaseMovementBehaviour<ArcBehaviour.Command>
 {
     public class Command
@@ -25,7 +24,7 @@ public class ArcBehaviour : BaseMovementBehaviour<ArcBehaviour.Command>
     protected override void Awake()
     {
         base.Awake();
-        walkBehaviour = GetComponent<WalkBehaviour>();
+        walkBehaviour = GetBehaviour<WalkBehaviour>();
     }
 
     private void Start()

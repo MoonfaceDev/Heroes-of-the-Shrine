@@ -3,13 +3,12 @@ using UnityEngine;
 /// <summary>
 /// Class for spawning particles when a <see cref="IHittable"/> is hit
 /// </summary>
-[RequireComponent(typeof(GameEntity))]
-public class HitParticles : BaseComponent
+public class HitParticles : EntityBehaviour
 {
     /// <value>
     /// Prefab of the particles
     /// </value>
-    public ParticleSystem prefab;
+    public GameObject prefab;
 
     /// <summary>
     /// Spawns the particles in the given position, and sets its sorting layer to be higher than both the hitting and
@@ -19,12 +18,11 @@ public class HitParticles : BaseComponent
     /// <param name="hittable">The object hit by the attack</param>
     public void Play(Vector3 hitPoint, IHittable hittable)
     {
-        var entity = GetComponent<GameEntity>();
         var clone = Instantiate(prefab);
         clone.transform.position = GameEntity.ScreenCoordinates(hitPoint);
-        clone.transform.rotation = entity.WorldRotation;
+        clone.transform.rotation = Entity.WorldRotation;
         clone.GetComponent<Renderer>().sortingOrder = Mathf.Max(
-            entity.parent.SortingOrder,
+            Entity.parent.SortingOrder,
             hittable.Character.movableEntity.SortingOrder
         ) + 1;
         clone.GetComponent<ParticleSystem>().Play();

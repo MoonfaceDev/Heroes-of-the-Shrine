@@ -13,14 +13,14 @@ public class ArcPattern : BasePattern
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
-        var arcBehaviour = animator.GetComponent<ArcBehaviour>();
+        var arcBehaviour = animator.GetEntity().GetBehaviour<ArcBehaviour>();
         var player = EntityManager.Instance.GetEntity(targetTag);
         if (!player)
         {
             return;
         }
 
-        arcBehaviour.Play(new ArcBehaviour.Command(player.GetComponent<MovableEntity>(), speedMultiplier));
+        arcBehaviour.Play(new ArcBehaviour.Command((MovableEntity)player.GetEntity(), speedMultiplier));
 
         onStop = () => animator.SetTrigger(StuckParameter);
         arcBehaviour.MovableEntity.OnStuck += onStop;
@@ -30,7 +30,7 @@ public class ArcPattern : BasePattern
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
 
-        var arcBehaviour = animator.GetComponent<ArcBehaviour>();
+        var arcBehaviour = animator.GetEntity().GetBehaviour<ArcBehaviour>();
 
         arcBehaviour.MovableEntity.OnStuck -= onStop;
         arcBehaviour.Stop();

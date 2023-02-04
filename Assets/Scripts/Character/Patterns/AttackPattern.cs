@@ -29,10 +29,8 @@ public class AttackPattern : BasePattern
             return;
         }
 
-        var movableObject = animator.GetComponent<MovableEntity>();
-        movableObject.rotation =
-            Mathf.RoundToInt(Mathf.Sign((player.GetComponent<MovableEntity>().WorldPosition -
-                                         movableObject.WorldPosition).x));
+        var entity = animator.GetEntity();
+        entity.rotation = Mathf.RoundToInt(Mathf.Sign((player.WorldPosition - entity.WorldPosition).x));
         attackCoroutine = EventManager.Instance.StartCoroutine(AttackCoroutine(animator));
     }
 
@@ -43,7 +41,7 @@ public class AttackPattern : BasePattern
         foreach (var node in attacks)
         {
             yield return new WaitForSeconds(node.startTime - (Time.time - startTime));
-            var attack = animator.GetComponent(node.attackType) as BaseAttack;
+            var attack = animator.GetEntity().GetBehaviour(node.attackType, exactType: true) as BaseAttack;
             if (attack == null) continue;
             attack.Play(new BaseAttack.Command());
         }

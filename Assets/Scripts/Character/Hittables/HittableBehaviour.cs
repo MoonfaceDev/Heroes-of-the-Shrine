@@ -28,9 +28,9 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
     protected override void Awake()
     {
         base.Awake();
-        healthSystem = GetComponent<HealthSystem>();
-        knockbackBehaviour = GetComponent<KnockbackBehaviour>();
-        stunBehaviour = GetComponent<StunBehaviour>();
+        healthSystem = GetBehaviour<HealthSystem>();
+        knockbackBehaviour = GetBehaviour<KnockbackBehaviour>();
+        stunBehaviour = GetBehaviour<StunBehaviour>();
         damageMultiplier = 1;
     }
 

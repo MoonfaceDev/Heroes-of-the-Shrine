@@ -10,7 +10,7 @@ public class DieBrainModule : BrainModule
 
     private void Start()
     {
-        var dieBehaviour = GetComponent<DieBehaviour>();
+        var dieBehaviour = GetBehaviour<DieBehaviour>();
         if (!dieBehaviour) return;
         dieBehaviour.onDie += () => StateMachine.SetBool(Dead, true);
     }

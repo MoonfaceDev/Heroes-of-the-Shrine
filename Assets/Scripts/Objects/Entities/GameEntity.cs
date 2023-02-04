@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEditor;
+using UnityEngine;
 
 /// <summary>
 /// The well known and loved <see cref="GameEntity"/> is a bridge between Heroes of the Shrine's coordinates system,
@@ -58,9 +62,14 @@ public class GameEntity : BaseComponent
     /// Absolute position in world coordinates, with <c>y=0</c>
     /// </summary>
     public Vector3 GroundWorldPosition => WorldPosition - WorldPosition.y * Vector3.up;
+    
+    private Dictionary<Type, HashSet<EntityBehaviour>> indexes;
 
     protected virtual void Awake()
     {
+        indexes = new Dictionary<Type, HashSet<EntityBehaviour>>();
+        RegisterBehaviours();
+
         UpdateTransform();
         if (Application.isPlaying)
         {
@@ -74,6 +83,73 @@ public class GameEntity : BaseComponent
         {
             EntityManager.Instance.RemoveEntity(this);
         }
+    }
+
+    private void RegisterBehaviours()
+    {
+        RegisterTransform(transform);
+    }
+
+    private void RegisterTransform(Transform currentObject)
+    {
+        foreach (var behaviour in currentObject.GetComponents<EntityBehaviour>())
+        {
+            RegisterBehaviour(behaviour);
+        }
+
+        foreach (Transform child in currentObject)
+        {
+            if (child.GetComponent<GameEntity>() == null)
+            {
+                RegisterTransform(child);
+            }
+        }
+    }
+
+    private void RegisterBehaviour(EntityBehaviour behaviour)
+    {
+        var currentType = behaviour.GetType();
+        while (currentType != null)
+        {
+            AddToIndex(currentType, behaviour);
+            currentType = currentType.BaseType;
+        }
+
+        foreach (var type in behaviour.GetType().GetInterfaces())
+        {
+            AddToIndex(type, behaviour);
+        }
+    }
+
+    public IEnumerable<EntityBehaviour> GetBehaviours(Type type, bool exactType = false)
+    {
+        var behaviourSet = indexes.ContainsKey(type) ? indexes[type] : new HashSet<EntityBehaviour>();
+        return exactType ? behaviourSet.Where(behaviour => behaviour.GetType() == type) : behaviourSet;
+    }
+
+    public EntityBehaviour GetBehaviour(Type type, bool exactType = false)
+    {
+        return GetBehaviours(type, exactType).SingleOrDefault();
+    }
+
+    public IEnumerable<T> GetBehaviours<T>(bool exactType = false)
+    {
+        return GetBehaviours(typeof(T), exactType).Select(behaviour => (T)(object)behaviour);
+    }
+
+    public T GetBehaviour<T>(bool exactType = false)
+    {
+        return GetBehaviours<T>(exactType).SingleOrDefault();
+    }
+
+    private void AddToIndex(Type type, EntityBehaviour behaviour)
+    {
+        if (!indexes.ContainsKey(type))
+        {
+            indexes[type] = new HashSet<EntityBehaviour>();
+        }
+
+        indexes[type].Add(behaviour);
     }
 
     protected void UpdateTransform()
@@ -134,5 +210,69 @@ public class GameEntity : BaseComponent
     public static Vector3 ScreenCoordinates(Vector3 v)
     {
         return new Vector3(v.x, v.y + v.z * ZScale, 0);
+    }
+
+    public static GameEntity Instantiate(GameObject prefab, Vector3 position, Rotation rotation = null)
+    {
+        var @object = Instantiate(prefab, ScreenCoordinates(position), Quaternion.identity);
+        var entity = @object.GetComponent<GameEntity>();
+        
+        entity.WorldPosition = position;
+        if (rotation != null)
+        {
+            entity.rotation = rotation;
+        }
+
+        return entity;
+    }
+}
+
+public static class UnityEntityExtensions
+{
+    public static GameEntity GetEntity(this Component component)
+    {
+        return component.GetComponentInParent<GameEntity>();
+    }
+    
+    public static GameEntity GetEntity(this GameObject @object)
+    {
+        return @object.GetComponentInParent<GameEntity>();
+    }
+}
+
+[InitializeOnLoad]
+public class AddIconToHierarchy
+{
+    static AddIconToHierarchy()
+    {
+        EditorApplication.hierarchyWindowItemOnGUI += HierarchyWindowItemOnGUI;
+    }
+
+    private static void HierarchyWindowItemOnGUI(int instanceID, Rect selectionRect)
+    {
+        var obj = EditorUtility.InstanceIDToObject(instanceID) as GameObject;
+        if (obj == null)
+        {
+            return;
+        }
+
+        if (obj.GetComponent<GameEntity>() == null)
+        {
+            return;
+        }
+
+        var icon = AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/Sprites/Editor/GameEntity.png");
+        if (icon == null)
+        {
+            return;
+        }
+
+        var iconRect = new Rect(selectionRect);
+        const float size = 8;
+        iconRect.x = 40 - size / 2;
+        iconRect.y = selectionRect.center.y - size / 2;
+        iconRect.width = size;
+        iconRect.height = size;
+        GUI.DrawTexture(iconRect, icon);
     }
 }
