@@ -1,10 +1,8 @@
 using System;
-using UnityEngine;
 
 /// <summary>
 /// Behaviours responsible for processing hits from attacks
 /// </summary>
-[RequireComponent(typeof(HealthSystem))]
 public class HittableBehaviour : CharacterBehaviour, IHittable
 {
     /// <value>
