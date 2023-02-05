@@ -99,6 +99,7 @@ After the periodic part is checking for hits a certain number of times, the expl
   </div>
   <div class="implements">
     <h5>Implements</h5>
+    <div><a class="xref" href="Global.IControlledBehaviour.html">IControlledBehaviour</a></div>
     <div><a class="xref" href="Global.IPlayableBehaviour.html">IPlayableBehaviour</a></div>
   </div>
   <div class="inheritedMembers">
@@ -234,7 +235,7 @@ After the periodic part is checking for hits a certain number of times, the expl
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_ElectrifyAttack_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ElectrifyAttack : BaseAttack, IPlayableBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class ElectrifyAttack : BaseAttack, IControlledBehaviour, IPlayableBehaviour</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -490,6 +491,9 @@ After the periodic part is checking for hits a certain number of times, the expl
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_RecoveryPhase">BaseAttack.RecoveryPhase()</a></div>
   <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Global.IControlledBehaviour.html">IControlledBehaviour</a>
+  </div>
   <div>
       <a class="xref" href="Global.IPlayableBehaviour.html">IPlayableBehaviour</a>
   </div>

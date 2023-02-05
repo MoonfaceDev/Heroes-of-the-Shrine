@@ -1423,6 +1423,12 @@ references:
   commentId: F:Global.Button.Escape
   fullName: Button.Escape
   nameWithType: Button.Escape
+- uid: Global.Button.Heal
+  name: Heal
+  href: api/Global.Button.html#Global_Button_Heal
+  commentId: F:Global.Button.Heal
+  fullName: Button.Heal
+  nameWithType: Button.Heal
 - uid: Global.Button.Jump
   name: Jump
   href: api/Global.Button.html#Global_Button_Jump
@@ -2880,12 +2886,19 @@ references:
   commentId: T:Global.EnergySystem
   fullName: EnergySystem
   nameWithType: EnergySystem
-- uid: Global.EnergySystem.energy
-  name: energy
-  href: api/Global.EnergySystem.html#Global_EnergySystem_energy
-  commentId: F:Global.EnergySystem.energy
-  fullName: EnergySystem.energy
-  nameWithType: EnergySystem.energy
+- uid: Global.EnergySystem.Energy
+  name: Energy
+  href: api/Global.EnergySystem.html#Global_EnergySystem_Energy
+  commentId: P:Global.EnergySystem.Energy
+  fullName: EnergySystem.Energy
+  nameWithType: EnergySystem.Energy
+- uid: Global.EnergySystem.Energy*
+  name: Energy
+  href: api/Global.EnergySystem.html#Global_EnergySystem_Energy_
+  commentId: Overload:Global.EnergySystem.Energy
+  isSpec: "True"
+  fullName: EnergySystem.Energy
+  nameWithType: EnergySystem.Energy
 - uid: Global.EnergySystem.Fraction
   name: Fraction
   href: api/Global.EnergySystem.html#Global_EnergySystem_Fraction
@@ -3676,15 +3689,6 @@ references:
   commentId: F:Global.FollowPattern.targetTag
   fullName: FollowPattern.targetTag
   nameWithType: FollowPattern.targetTag
-- uid: Global.ForcedBehaviour`1
-  name: ForcedBehaviour<T>
-  href: api/Global.ForcedBehaviour-1.html
-  commentId: T:Global.ForcedBehaviour`1
-  name.vb: ForcedBehaviour(Of T)
-  fullName: ForcedBehaviour<T>
-  fullName.vb: ForcedBehaviour(Of T)
-  nameWithType: ForcedBehaviour<T>
-  nameWithType.vb: ForcedBehaviour(Of T)
 - uid: Global.ForcedWalkBehaviour
   name: ForcedWalkBehaviour
   href: api/Global.ForcedWalkBehaviour.html
@@ -4079,6 +4083,107 @@ references:
   commentId: T:Global.GetOverrideDirection
   fullName: GetOverrideDirection
   nameWithType: GetOverrideDirection
+- uid: Global.HealBehaviour
+  name: HealBehaviour
+  href: api/Global.HealBehaviour.html
+  commentId: T:Global.HealBehaviour
+  fullName: HealBehaviour
+  nameWithType: HealBehaviour
+- uid: Global.HealBehaviour.CanPlay(HealBehaviour.Command)
+  name: CanPlay(HealBehaviour.Command)
+  href: api/Global.HealBehaviour.html#Global_HealBehaviour_CanPlay_HealBehaviour_Command_
+  commentId: M:Global.HealBehaviour.CanPlay(HealBehaviour.Command)
+  fullName: HealBehaviour.CanPlay(HealBehaviour.Command)
+  nameWithType: HealBehaviour.CanPlay(HealBehaviour.Command)
+- uid: Global.HealBehaviour.CanPlay*
+  name: CanPlay
+  href: api/Global.HealBehaviour.html#Global_HealBehaviour_CanPlay_
+  commentId: Overload:Global.HealBehaviour.CanPlay
+  isSpec: "True"
+  fullName: HealBehaviour.CanPlay
+  nameWithType: HealBehaviour.CanPlay
+- uid: Global.HealBehaviour.Command
+  name: HealBehaviour.Command
+  href: api/Global.HealBehaviour.Command.html
+  commentId: T:Global.HealBehaviour.Command
+  fullName: HealBehaviour.Command
+  nameWithType: HealBehaviour.Command
+- uid: Global.HealBehaviour.DoPlay(HealBehaviour.Command)
+  name: DoPlay(HealBehaviour.Command)
+  href: api/Global.HealBehaviour.html#Global_HealBehaviour_DoPlay_HealBehaviour_Command_
+  commentId: M:Global.HealBehaviour.DoPlay(HealBehaviour.Command)
+  fullName: HealBehaviour.DoPlay(HealBehaviour.Command)
+  nameWithType: HealBehaviour.DoPlay(HealBehaviour.Command)
+- uid: Global.HealBehaviour.DoPlay*
+  name: DoPlay
+  href: api/Global.HealBehaviour.html#Global_HealBehaviour_DoPlay_
+  commentId: Overload:Global.HealBehaviour.DoPlay
+  isSpec: "True"
+  fullName: HealBehaviour.DoPlay
+  nameWithType: HealBehaviour.DoPlay
+- uid: Global.HealBehaviour.DoStop
+  name: DoStop()
+  href: api/Global.HealBehaviour.html#Global_HealBehaviour_DoStop
+  commentId: M:Global.HealBehaviour.DoStop
+  fullName: HealBehaviour.DoStop()
+  nameWithType: HealBehaviour.DoStop()
+- uid: Global.HealBehaviour.DoStop*
+  name: DoStop
+  href: api/Global.HealBehaviour.html#Global_HealBehaviour_DoStop_
+  commentId: Overload:Global.HealBehaviour.DoStop
+  isSpec: "True"
+  fullName: HealBehaviour.DoStop
+  nameWithType: HealBehaviour.DoStop
+- uid: Global.HealBehaviour.Loading
+  name: Loading
+  href: api/Global.HealBehaviour.html#Global_HealBehaviour_Loading
+  commentId: P:Global.HealBehaviour.Loading
+  fullName: HealBehaviour.Loading
+  nameWithType: HealBehaviour.Loading
+- uid: Global.HealBehaviour.Loading*
+  name: Loading
+  href: api/Global.HealBehaviour.html#Global_HealBehaviour_Loading_
+  commentId: Overload:Global.HealBehaviour.Loading
+  isSpec: "True"
+  fullName: HealBehaviour.Loading
+  nameWithType: HealBehaviour.Loading
+- uid: Global.HealBehaviour.maxHealBonus
+  name: maxHealBonus
+  href: api/Global.HealBehaviour.html#Global_HealBehaviour_maxHealBonus
+  commentId: F:Global.HealBehaviour.maxHealBonus
+  fullName: HealBehaviour.maxHealBonus
+  nameWithType: HealBehaviour.maxHealBonus
+- uid: Global.HealBehaviour.maxLoadTime
+  name: maxLoadTime
+  href: api/Global.HealBehaviour.html#Global_HealBehaviour_maxLoadTime
+  commentId: F:Global.HealBehaviour.maxLoadTime
+  fullName: HealBehaviour.maxLoadTime
+  nameWithType: HealBehaviour.maxLoadTime
+- uid: Global.HealBehaviour.Playing
+  name: Playing
+  href: api/Global.HealBehaviour.html#Global_HealBehaviour_Playing
+  commentId: P:Global.HealBehaviour.Playing
+  fullName: HealBehaviour.Playing
+  nameWithType: HealBehaviour.Playing
+- uid: Global.HealBehaviour.Playing*
+  name: Playing
+  href: api/Global.HealBehaviour.html#Global_HealBehaviour_Playing_
+  commentId: Overload:Global.HealBehaviour.Playing
+  isSpec: "True"
+  fullName: HealBehaviour.Playing
+  nameWithType: HealBehaviour.Playing
+- uid: Global.HealBehaviour.totalEnergyReduction
+  name: totalEnergyReduction
+  href: api/Global.HealBehaviour.html#Global_HealBehaviour_totalEnergyReduction
+  commentId: F:Global.HealBehaviour.totalEnergyReduction
+  fullName: HealBehaviour.totalEnergyReduction
+  nameWithType: HealBehaviour.totalEnergyReduction
+- uid: Global.HealBehaviour.totalHealthIncrement
+  name: totalHealthIncrement
+  href: api/Global.HealBehaviour.html#Global_HealBehaviour_totalHealthIncrement
+  commentId: F:Global.HealBehaviour.totalHealthIncrement
+  fullName: HealBehaviour.totalHealthIncrement
+  nameWithType: HealBehaviour.totalHealthIncrement
 - uid: Global.HealthBar
   name: HealthBar
   href: api/Global.HealthBar.html
@@ -4194,12 +4299,19 @@ references:
   isSpec: "True"
   fullName: HealthSystem.Fraction
   nameWithType: HealthSystem.Fraction
-- uid: Global.HealthSystem.health
-  name: health
-  href: api/Global.HealthSystem.html#Global_HealthSystem_health
-  commentId: F:Global.HealthSystem.health
-  fullName: HealthSystem.health
-  nameWithType: HealthSystem.health
+- uid: Global.HealthSystem.Health
+  name: Health
+  href: api/Global.HealthSystem.html#Global_HealthSystem_Health
+  commentId: P:Global.HealthSystem.Health
+  fullName: HealthSystem.Health
+  nameWithType: HealthSystem.Health
+- uid: Global.HealthSystem.Health*
+  name: Health
+  href: api/Global.HealthSystem.html#Global_HealthSystem_Health_
+  commentId: Overload:Global.HealthSystem.Health
+  isSpec: "True"
+  fullName: HealthSystem.Health
+  nameWithType: HealthSystem.Health
 - uid: Global.HealthSystem.Kill
   name: Kill()
   href: api/Global.HealthSystem.html#Global_HealthSystem_Kill
@@ -4544,6 +4656,12 @@ references:
   isSpec: "True"
   fullName: HittableHitbox.Stun
   nameWithType: HittableHitbox.Stun
+- uid: Global.IControlledBehaviour
+  name: IControlledBehaviour
+  href: api/Global.IControlledBehaviour.html
+  commentId: T:Global.IControlledBehaviour
+  fullName: IControlledBehaviour
+  nameWithType: IControlledBehaviour
 - uid: Global.IdlePattern
   name: IdlePattern
   href: api/Global.IdlePattern.html
@@ -6079,12 +6197,6 @@ references:
   isSpec: "True"
   fullName: PlayerController.Update
   nameWithType: PlayerController.Update
-- uid: Global.PlayerController.walkPriority
-  name: walkPriority
-  href: api/Global.PlayerController.html#Global_PlayerController_walkPriority
-  commentId: F:Global.PlayerController.walkPriority
-  fullName: PlayerController.walkPriority
-  nameWithType: PlayerController.walkPriority
 - uid: Global.PlayerDistanceBrainModule
   name: PlayerDistanceBrainModule
   href: api/Global.PlayerDistanceBrainModule.html
