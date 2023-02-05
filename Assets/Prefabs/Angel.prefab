@@ -377,10 +377,13 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  maxLoadTime: 2
+  maxLoadTime: 1.8
   totalEnergyReduction: 25
   totalHealthIncrement: 30
   maxHealBonus: 20
+  onMaxHeal:
+    _persistentListeners: []
+    Expanded: 1
 --- !u!1 &1843105327216157736
 GameObject:
   m_ObjectHideFlags: 0

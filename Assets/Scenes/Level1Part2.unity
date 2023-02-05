@@ -1115,6 +1115,10 @@ PrefabInstance:
       propertyPath: worldBorder.width
       value: 112
       objectReference: {fileID: 0}
+    - target: {fileID: 5826350637779532336, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 48
+      objectReference: {fileID: 0}
     - target: {fileID: 5826350637955933940, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_Name
       value: Scene Root
@@ -1175,6 +1179,10 @@ PrefabInstance:
       propertyPath: objectsToDestroy.Array.data[1]
       value: 
       objectReference: {fileID: 2083560094}
+    - target: {fileID: 6899004906894412483, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8011096903894591928, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.055000305
