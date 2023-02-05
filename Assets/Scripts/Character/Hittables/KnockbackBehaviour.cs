@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public delegate void BounceCallback(int count, float power, float angleDegrees);
@@ -64,8 +65,7 @@ public class KnockbackBehaviour : PlayableBehaviour<KnockbackBehaviour.Command>,
     private Action currentLandEvent;
     private Coroutine recoverCoroutine;
 
-    private static readonly Type[] BlockedBehaviours =
-        { typeof(IControlledBehaviour), typeof(StunBehaviour) };
+    private static readonly Type[] BlockedBehaviours = { typeof(IControlledBehaviour), typeof(StunBehaviour) };
 
     private static readonly int KnockbackParameter = Animator.StringToHash("knockback");
     private static readonly int RecoveringFromKnockbackParameter = Animator.StringToHash("recoveringFromKnockback");
@@ -73,7 +73,7 @@ public class KnockbackBehaviour : PlayableBehaviour<KnockbackBehaviour.Command>,
 
     protected override void DoPlay(Command command)
     {
-        StopBehaviours(BlockedBehaviours);
+        StopBehaviours(BlockedBehaviours.Append(typeof(KnockbackBehaviour)).ToArray());
         BlockBehaviours(BlockedBehaviours);
 
         Active = true;
@@ -135,7 +135,7 @@ public class KnockbackBehaviour : PlayableBehaviour<KnockbackBehaviour.Command>,
     protected override void DoStop()
     {
         UnblockBehaviours(BlockedBehaviours);
-        
+
         if (Active)
         {
             MovableEntity.OnLand -= currentLandEvent;

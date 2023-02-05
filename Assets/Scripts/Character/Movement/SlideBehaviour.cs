@@ -35,15 +35,15 @@ public class SlideBehaviour : BaseMovementBehaviour<SlideBehaviour.Command>
     public override bool CanPlay(Command command)
     {
         return base.CanPlay(command)
-               && !IsPlaying<JumpBehaviour>() && !IsPlaying<SlideBehaviour>() && !IsPlaying<DodgeBehaviour>()
+               && !IsPlaying<JumpBehaviour>()
                && command.direction != 0
                && !(AttackManager && !AttackManager.CanPlayMove(true));
     }
 
     protected override void DoPlay(Command command)
     {
-        StopBehaviours(typeof(WalkBehaviour), typeof(BaseAttack), typeof(HealBehaviour));
-        BlockBehaviours(typeof(WalkBehaviour));
+        StopBehaviours(typeof(IControlledBehaviour));
+        BlockBehaviours(typeof(IControlledBehaviour));
 
         Slide = true;
 
@@ -63,6 +63,6 @@ public class SlideBehaviour : BaseMovementBehaviour<SlideBehaviour.Command>
         Slide = false;
         MovableEntity.velocity.x = 0;
         MovableEntity.acceleration.x = 0;
-        UnblockBehaviours(typeof(WalkBehaviour));
+        UnblockBehaviours(typeof(IControlledBehaviour));
     }
 }

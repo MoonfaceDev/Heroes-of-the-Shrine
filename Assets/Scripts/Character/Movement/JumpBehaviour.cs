@@ -68,7 +68,6 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
     {
         return base.CanPlay(command)
                && !(AttackManager && !AttackManager.CanPlayMove())
-               && !IsPlaying<SlideBehaviour>() && !IsPlaying<DodgeBehaviour>()
                && !Playing;
     }
 

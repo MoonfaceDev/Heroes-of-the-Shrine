@@ -53,15 +53,15 @@ public class DodgeBehaviour : BaseMovementBehaviour<DodgeBehaviour.Command>
     public override bool CanPlay(Command command)
     {
         return base.CanPlay(command)
-               && !IsPlaying<JumpBehaviour>() && !IsPlaying<SlideBehaviour>() && !IsPlaying<DodgeBehaviour>()
+               && !IsPlaying<JumpBehaviour>()
                && command.direction != 0
                && !(AttackManager && !AttackManager.CanPlayMove(true));
     }
 
     protected override void DoPlay(Command command)
     {
-        StopBehaviours(typeof(WalkBehaviour), typeof(BaseAttack), typeof(HealBehaviour));
-        BlockBehaviours(typeof(WalkBehaviour));
+        StopBehaviours(typeof(IControlledBehaviour));
+        BlockBehaviours(typeof(IControlledBehaviour));
 
         Anticipating = true;
 
@@ -77,7 +77,7 @@ public class DodgeBehaviour : BaseMovementBehaviour<DodgeBehaviour.Command>
 
     protected override void DoStop()
     {
-        UnblockBehaviours(typeof(WalkBehaviour));
+        UnblockBehaviours(typeof(IControlledBehaviour));
 
         if (Anticipating)
         {

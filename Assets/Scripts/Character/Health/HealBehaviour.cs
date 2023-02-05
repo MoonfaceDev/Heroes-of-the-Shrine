@@ -55,7 +55,7 @@ public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IControll
         var healthSystem = GetBehaviour<HealthSystem>();
         return base.CanPlay(command)
                && !(AttackManager && !AttackManager.CanPlayMove())
-               && !IsPlaying<SlideBehaviour>() && !IsPlaying<DodgeBehaviour>() && !IsPlaying<JumpBehaviour>()
+               && !IsPlaying<JumpBehaviour>()
                && healthSystem.Fraction < 1;
     }
 

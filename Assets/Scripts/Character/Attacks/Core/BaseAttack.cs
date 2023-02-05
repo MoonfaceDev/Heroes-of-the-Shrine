@@ -114,8 +114,6 @@ public abstract class BaseAttack : PlayableBehaviour<BaseAttack.Command>, IContr
     public override bool CanPlay(Command command)
     {
         return base.CanPlay(command)
-               && !IsPlaying<KnockbackBehaviour>() && !IsPlaying<StunBehaviour>()
-               && !IsPlaying<SlideBehaviour>() && !IsPlaying<DodgeBehaviour>()
                && IsMidair == IsPlaying<JumpBehaviour>()
                && AttackManager.CanPlayMove(instant)
                && ComboCondition();

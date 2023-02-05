@@ -113,6 +113,12 @@ public class EncounterAction : BaseComponent
             ? new List<GameEntity>(firstWavePreSpawnedEnemies.Select(enemy => enemy.GetEntity()))
             : new List<GameEntity>();
 
+        // Alarm pre spawned
+        foreach (var enemy in waveEnemies)
+        {
+            StartTimeout(() => enemy.GetBehaviour<AlarmBrainModule>().SetAlarm(), timeToAlarm);
+        }
+
         foreach (var definition in waveDefinitions[index].spawnDefinitions)
         {
             var enemy = SpawnEnemy(definition);
