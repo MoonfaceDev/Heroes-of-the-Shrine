@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public interface IMovementBehaviour : IPlayableBehaviour
+public interface IMovementBehaviour : IControlledBehaviour
 {
 }
 
@@ -23,7 +23,6 @@ public abstract class BaseMovementBehaviour<T> : PlayableBehaviour<T>, IMovement
     public override bool CanPlay(T command)
     {
         return base.CanPlay(command)
-               && !IsPlaying<IForcedBehaviour>()
                && (cooldown <= 0 || Time.time - cooldownStartTime > cooldown);
     }
 }

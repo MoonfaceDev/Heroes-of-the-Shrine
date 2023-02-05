@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 6216410287663508394}
   - component: {fileID: 7152136554165674260}
   - component: {fileID: 2433013914377829849}
+  - component: {fileID: 5861824059800275600}
   m_Layer: 0
   m_Name: Hittable
   m_TagString: Untagged
@@ -254,7 +255,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 200
-  health: 0
 --- !u!114 &1018915970268675303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,6 +358,29 @@ MonoBehaviour:
         _suppressLogs: 0
       _methodName: PlayBackground
     Expanded: 0
+--- !u!114 &5861824059800275600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816143849816312018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82aae094b6164f9c97d0e4f83e009445, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  maxLoadTime: 2
+  totalEnergyReduction: 25
+  totalHealthIncrement: 30
+  maxHealBonus: 20
 --- !u!1 &1843105327216157736
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,7 +2071,6 @@ MonoBehaviour:
   - attack: {fileID: 5884357558659466936}
     button: 3
   bufferingTime: 0.2
-  walkPriority: 0
   jumpPriority: 1
   slidePriority: 3
   dodgePriority: 4
@@ -2068,7 +2090,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxEnergy: 100
-  energy: 0
 --- !u!1 &5102893360938488515
 GameObject:
   m_ObjectHideFlags: 0

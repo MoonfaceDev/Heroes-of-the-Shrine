@@ -11,7 +11,8 @@ public enum Button
     Jump,
     Escape,
     Attack,
-    Defense
+    Defense,
+    Heal
 }
 
 /// <summary>
@@ -40,9 +41,8 @@ public class PlayerController : CharacterController
     [Header("Action buffering")] public float bufferingTime;
 
     [Header("Buffered actions priorities")]
-    public int walkPriority;
-
     public int jumpPriority;
+
     public int slidePriority;
     public int dodgePriority;
     public int attackPriority;
@@ -55,6 +55,8 @@ public class PlayerController : CharacterController
     private JumpBehaviour jumpBehaviour;
     private SlideBehaviour slideBehaviour;
     private DodgeBehaviour dodgeBehaviour;
+    private HealBehaviour healBehaviour;
+    
     private List<BufferedAction> bufferedActions;
 
     protected override void Awake()
@@ -64,6 +66,7 @@ public class PlayerController : CharacterController
         jumpBehaviour = GetBehaviour<JumpBehaviour>();
         slideBehaviour = GetBehaviour<SlideBehaviour>();
         dodgeBehaviour = GetBehaviour<DodgeBehaviour>();
+        healBehaviour = GetBehaviour<HealBehaviour>();
 
         bufferedActions = new List<BufferedAction>();
     }
@@ -79,6 +82,7 @@ public class PlayerController : CharacterController
         ExecuteJump();
         ExecuteDodge();
         ExecuteSlide();
+        ExecuteHeal();
         ExecuteAttack();
     }
 
@@ -142,6 +146,20 @@ public class PlayerController : CharacterController
         if (dodgeBehaviour && Input.GetButtonDown(Button.Escape.ToString())) //pressed dodge
         {
             ExecutePlayable(dodgeBehaviour, new DodgeBehaviour.Command(Math.Sign(vertical)), dodgePriority);
+        }
+    }
+
+    private void ExecuteHeal()
+    {
+        if (!healBehaviour) return;
+        if (Input.GetButtonDown(Button.Heal.ToString()))
+        {
+            healBehaviour.Play(new HealBehaviour.Command());
+        }
+
+        if (Input.GetButtonUp(Button.Heal.ToString()))
+        {
+            healBehaviour.Stop();
         }
     }
 

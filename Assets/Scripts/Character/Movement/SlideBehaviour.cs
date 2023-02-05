@@ -42,7 +42,7 @@ public class SlideBehaviour : BaseMovementBehaviour<SlideBehaviour.Command>
 
     protected override void DoPlay(Command command)
     {
-        StopBehaviours(typeof(WalkBehaviour), typeof(BaseAttack));
+        StopBehaviours(typeof(WalkBehaviour), typeof(BaseAttack), typeof(HealBehaviour));
         BlockBehaviours(typeof(WalkBehaviour));
 
         Slide = true;

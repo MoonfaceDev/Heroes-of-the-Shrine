@@ -15,7 +15,7 @@ public enum MotionSettings
 /// <summary>
 /// Base class for all attacks. Most attacks should derive from <see cref="SimpleAttack"/>, which has more members and helper methods.
 /// </summary>
-public abstract class BaseAttack : PlayableBehaviour<BaseAttack.Command>
+public abstract class BaseAttack : PlayableBehaviour<BaseAttack.Command>, IControlledBehaviour
 {
     public class Command
     {

@@ -16,7 +16,7 @@
         {
             if (alreadyAwarded) return;
             alreadyAwarded = true;
-            energySystem.energy += energyReward;
+            energySystem.Energy += energyReward;
         };
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public delegate void BounceCallback(int count, float power, float angleDegrees);
 
-public class KnockbackBehaviour : ForcedBehaviour<KnockbackBehaviour.Command>
+public class KnockbackBehaviour : PlayableBehaviour<KnockbackBehaviour.Command>, IForcedBehaviour
 {
     public class Command
     {
@@ -17,7 +17,7 @@ public class KnockbackBehaviour : ForcedBehaviour<KnockbackBehaviour.Command>
             this.angleDegrees = angleDegrees;
         }
     }
-    
+
     private const float SecondBouncePowerMultiplier = 0.2f;
 
     public float knockbackRecoverTime;
@@ -64,13 +64,17 @@ public class KnockbackBehaviour : ForcedBehaviour<KnockbackBehaviour.Command>
     private Action currentLandEvent;
     private Coroutine recoverCoroutine;
 
+    private static readonly Type[] BlockedBehaviours =
+        { typeof(IControlledBehaviour), typeof(StunBehaviour) };
+
     private static readonly int KnockbackParameter = Animator.StringToHash("knockback");
     private static readonly int RecoveringFromKnockbackParameter = Animator.StringToHash("recoveringFromKnockback");
     private static readonly int BounceParameter = Animator.StringToHash("bounce");
 
     protected override void DoPlay(Command command)
     {
-        StopBehaviours(typeof(IMovementBehaviour), typeof(BaseAttack), typeof(StunBehaviour));
+        StopBehaviours(BlockedBehaviours);
+        BlockBehaviours(BlockedBehaviours);
 
         Active = true;
         Bounce = 1;
@@ -130,6 +134,8 @@ public class KnockbackBehaviour : ForcedBehaviour<KnockbackBehaviour.Command>
 
     protected override void DoStop()
     {
+        UnblockBehaviours(BlockedBehaviours);
+        
         if (Active)
         {
             MovableEntity.OnLand -= currentLandEvent;

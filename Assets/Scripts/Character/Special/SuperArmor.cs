@@ -68,7 +68,7 @@ public class SuperArmor : PlayableBehaviour<SuperArmor.Command>
 
         GetBehaviour<HittableBehaviour>().damageMultiplier /= damageMultiplier;
         UnblockBehaviours(typeof(StunBehaviour));
-        StopBehaviours(typeof(IMovementBehaviour), typeof(BaseAttack));
+        StopBehaviours(typeof(IControlledBehaviour));
         DisableBehaviours(typeof(BrainCore));
         MovableEntity.velocity = Vector3.zero;
     }

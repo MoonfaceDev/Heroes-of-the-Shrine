@@ -43,7 +43,7 @@ public class EnragedBrainModule : BrainModule
     private bool ShouldGetEnraged()
     {
         var healthSystem = GetBehaviour<HealthSystem>();
-        return healthSystem && healthSystem.health <= rageHealthThreshold;
+        return healthSystem && healthSystem.Health <= rageHealthThreshold;
     }
 
     public override string[] GetParameters()

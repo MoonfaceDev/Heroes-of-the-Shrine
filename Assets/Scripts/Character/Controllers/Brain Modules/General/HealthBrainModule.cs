@@ -25,6 +25,6 @@ public class HealthBrainModule : BrainModule
     {
         base.Update();
         if (!healthSystem) return;
-        StateMachine.SetFloat(Health, healthSystem.health);
+        StateMachine.SetFloat(Health, healthSystem.Health);
     }
 }

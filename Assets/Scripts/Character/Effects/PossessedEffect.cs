@@ -17,7 +17,7 @@ public class PossessedEffect : BaseEffect<PossessedEffect.Command>
     private float currentStartTime;
     private string stopListener;
     
-    private static readonly Type[] BehavioursToBlock = { typeof(BaseAttack), typeof(IMovementBehaviour), typeof(IForcedBehaviour) };
+    private static readonly Type[] BehavioursToBlock = { typeof(IControlledBehaviour), typeof(IForcedBehaviour) };
 
     public override bool CanPlay(Command command)
     {

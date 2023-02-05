@@ -1,6 +1,8 @@
+using System;
+using System.Linq;
 using UnityEngine;
 
-public class StunBehaviour : ForcedBehaviour<StunBehaviour.Command>
+public class StunBehaviour : PlayableBehaviour<StunBehaviour.Command>, IForcedBehaviour
 {
     public class Command
     {
@@ -41,10 +43,14 @@ public class StunBehaviour : ForcedBehaviour<StunBehaviour.Command>
     private string stopTimeout;
     private static readonly int StunParameter = Animator.StringToHash("stun");
     private static readonly int StunFrameParameter = Animator.StringToHash("stunFrame");
+    
+    private static readonly Type[] BlockedBehaviours = { typeof(IControlledBehaviour) };
 
     protected override void DoPlay(Command command)
     {
-        StopBehaviours(typeof(IMovementBehaviour), typeof(IForcedBehaviour), typeof(BaseAttack));
+        StopBehaviours(BlockedBehaviours.Append(typeof(IForcedBehaviour)).ToArray());
+        BlockBehaviours(BlockedBehaviours);
+        
         MovableEntity.velocity = Vector3.zero;
 
         Stun = true;
@@ -56,5 +62,6 @@ public class StunBehaviour : ForcedBehaviour<StunBehaviour.Command>
     {
         Stun = false;
         Cancel(stopTimeout);
+        UnblockBehaviours(BlockedBehaviours);
     }
 }

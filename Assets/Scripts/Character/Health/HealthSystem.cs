@@ -9,21 +9,27 @@ public class HealthSystem : CharacterBehaviour
     /// Character's full health value
     /// </value>
     public float startHealth;
-    
+
     /// <value>
     /// Current health value
     /// </value>
-    [HideInInspector] public float health;
+    public float Health
+    {
+        get => health;
+        set => health = Mathf.Clamp(value, 0, startHealth);
+    }
 
     /// <value>
     /// Ratio between current health to full health
     /// </value>
-    public float Fraction => health / startHealth;
+    public float Fraction => Health / startHealth;
+
+    private float health;
 
     protected override void Awake()
     {
         base.Awake();
-        health = startHealth;
+        Health = startHealth;
     }
 
     /// <summary>
@@ -31,11 +37,11 @@ public class HealthSystem : CharacterBehaviour
     /// </summary>
     public void Kill()
     {
-        health = 0;
+        Health = 0;
     }
 
     /// <value>
     /// Is character alive
     /// </value>
-    public bool Alive => health > 0;
+    public bool Alive => Health > 0;
 }

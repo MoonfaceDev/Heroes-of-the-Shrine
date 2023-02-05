@@ -52,7 +52,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
         }
 
         var processedDamage = ProcessDamage(damage);
-        healthSystem.health = Math.Max(healthSystem.health - processedDamage, 0);
+        healthSystem.Health -= processedDamage;
         OnHit?.Invoke(processedDamage);
     }
 

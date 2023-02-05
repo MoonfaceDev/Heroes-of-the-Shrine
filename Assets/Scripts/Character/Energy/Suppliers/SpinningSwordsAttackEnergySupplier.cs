@@ -21,14 +21,14 @@
         {
             if (alreadyAwarded1) return;
             alreadyAwarded1 = true;
-            energySystem.energy += energyReward;
+            energySystem.Energy += energyReward;
         };
         
         attack.hitDetector2.onHit += () =>
         {
             if (alreadyAwarded2) return;
             alreadyAwarded2 = true;
-            energySystem.energy += energyReward;
+            energySystem.Energy += energyReward;
         };
     }
 }

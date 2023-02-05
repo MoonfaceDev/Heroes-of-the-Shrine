@@ -60,8 +60,8 @@ public class DodgeBehaviour : BaseMovementBehaviour<DodgeBehaviour.Command>
 
     protected override void DoPlay(Command command)
     {
+        StopBehaviours(typeof(WalkBehaviour), typeof(BaseAttack), typeof(HealBehaviour));
         BlockBehaviours(typeof(WalkBehaviour));
-        StopBehaviours(typeof(WalkBehaviour), typeof(BaseAttack));
 
         Anticipating = true;
 

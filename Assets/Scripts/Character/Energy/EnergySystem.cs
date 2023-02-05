@@ -9,14 +9,20 @@ public class EnergySystem : CharacterBehaviour
     /// Character's full energy value
     /// </value>
     public float maxEnergy;
-    
+
     /// <value>
     /// Current energy value
     /// </value>
-    [HideInInspector] public float energy;
+    public float Energy
+    {
+        get => energy;
+        set => energy = Mathf.Clamp(value, 0, maxEnergy);
+    }
 
     /// <value>
     /// Ratio between current energy to full energy
     /// </value>
-    public float Fraction => energy / maxEnergy;
+    public float Fraction => Energy / maxEnergy;
+
+    private float energy;
 }
