@@ -40,7 +40,7 @@ public class DieBehaviour : CharacterBehaviour
             onDie.Invoke();
             if (destroyOnDeath)
             {
-                Destroy(gameObject, deathAnimationDuration);
+                Destroy(Entity.gameObject, deathAnimationDuration);
             }
         }
 
