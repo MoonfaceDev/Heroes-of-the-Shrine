@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ExtEvents;
+using UnityEngine;
 
 /// <summary>
 /// Behaviour that heals the character
@@ -41,6 +42,8 @@ public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IControll
     /// </value>
     public float maxHealBonus;
 
+    [SerializeField] public ExtEvent onMaxHeal;
+
     private bool loading;
     private float healStartTime;
     private string healListener;
@@ -73,6 +76,7 @@ public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IControll
             if (Time.time - healStartTime > maxLoadTime)
             {
                 healthSystem.Health += maxHealBonus;
+                onMaxHeal.Invoke();
                 Stop();
                 return;
             }
