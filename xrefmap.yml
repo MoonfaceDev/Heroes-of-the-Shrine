@@ -4356,19 +4356,6 @@ references:
   isSpec: "True"
   fullName: Hitbox.GetIntersectionCenter
   nameWithType: Hitbox.GetIntersectionCenter
-- uid: Global.Hitbox.GetSegmentIntersections(Vector2,Vector2)
-  name: GetSegmentIntersections(Vector2, Vector2)
-  href: api/Global.Hitbox.html#Global_Hitbox_GetSegmentIntersections_Vector2_Vector2_
-  commentId: M:Global.Hitbox.GetSegmentIntersections(Vector2,Vector2)
-  fullName: Hitbox.GetSegmentIntersections(Vector2, Vector2)
-  nameWithType: Hitbox.GetSegmentIntersections(Vector2, Vector2)
-- uid: Global.Hitbox.GetSegmentIntersections*
-  name: GetSegmentIntersections
-  href: api/Global.Hitbox.html#Global_Hitbox_GetSegmentIntersections_
-  commentId: Overload:Global.Hitbox.GetSegmentIntersections
-  isSpec: "True"
-  fullName: Hitbox.GetSegmentIntersections
-  nameWithType: Hitbox.GetSegmentIntersections
 - uid: Global.Hitbox.IsInside(Vector3)
   name: IsInside(Vector3)
   href: api/Global.Hitbox.html#Global_Hitbox_IsInside_Vector3_
@@ -5633,6 +5620,19 @@ references:
   isSpec: "True"
   fullName: MovableEntity.UpdatePosition
   nameWithType: MovableEntity.UpdatePosition
+- uid: Global.MovableEntity.UpdateWorldPosition(Vector3)
+  name: UpdateWorldPosition(Vector3)
+  href: api/Global.MovableEntity.html#Global_MovableEntity_UpdateWorldPosition_Vector3_
+  commentId: M:Global.MovableEntity.UpdateWorldPosition(Vector3)
+  fullName: MovableEntity.UpdateWorldPosition(Vector3)
+  nameWithType: MovableEntity.UpdateWorldPosition(Vector3)
+- uid: Global.MovableEntity.UpdateWorldPosition*
+  name: UpdateWorldPosition
+  href: api/Global.MovableEntity.html#Global_MovableEntity_UpdateWorldPosition_
+  commentId: Overload:Global.MovableEntity.UpdateWorldPosition
+  isSpec: "True"
+  fullName: MovableEntity.UpdateWorldPosition
+  nameWithType: MovableEntity.UpdateWorldPosition
 - uid: Global.MovableEntity.velocity
   name: velocity
   href: api/Global.MovableEntity.html#Global_MovableEntity_velocity
