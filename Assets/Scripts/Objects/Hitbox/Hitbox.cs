@@ -1,7 +1,5 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
-using static MathUtils;
 
 internal class Box
 {
@@ -33,11 +31,6 @@ internal class Box
         return (point.x >= GetLeft() && point.x <= GetRight())
                && (point.y >= GetBottom() && point.y <= GetTop())
                && (point.z >= GetFar() && point.z <= GetNear());
-    }
-
-    public IEnumerable<Vector2> GetSegmentIntersections(Vector2 start, Vector2 end)
-    {
-        return LineRectangleIntersections(start, end, ToPlane(Position), ToPlane(size));
     }
 
     public Vector3 GetIntersectionCenter(Box other)
@@ -157,17 +150,6 @@ public class Hitbox : EntityBehaviour
     public bool OverlapHitbox(Hitbox other)
     {
         return box.OverlapBox(other.box);
-    }
-
-    /// <summary>
-    /// Finds intersections with a segment on the ground
-    /// </summary>
-    /// <param name="start">One edge of the segment, in ground coordinates</param>
-    /// <param name="end">Other edge of the segment, in ground coordinates</param>
-    /// <returns>Points where the segment intersects this hitbox, in ground coordinates</returns>
-    public IEnumerable<Vector2> GetSegmentIntersections(Vector2 start, Vector2 end)
-    {
-        return box.GetSegmentIntersections(start, end);
     }
 
     /// <summary>

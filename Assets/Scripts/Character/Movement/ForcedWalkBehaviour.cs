@@ -31,7 +31,7 @@ public class ForcedWalkBehaviour : PlayableBehaviour<ForcedWalkBehaviour.Command
         GetBehaviour<AutoWalkBehaviour>().Play(new AutoWalkBehaviour.Command(command.point));
         stopListener = InvokeWhen(() => MovableEntity.GroundDistance(command.point) < command.wantedDistance, () =>
         {
-            MovableEntity.position = command.point;
+            MovableEntity.UpdateWorldPosition(command.point);
             Stop();
         });
     }

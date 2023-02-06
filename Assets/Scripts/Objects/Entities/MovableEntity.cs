@@ -42,6 +42,7 @@ public class MovableEntity : GameEntity
 
         OnLand += () =>
         {
+            position.y = 0;
             velocity.y = 0;
             acceleration.y = 0;
         };
@@ -62,6 +63,11 @@ public class MovableEntity : GameEntity
 
         // Update scene
         UpdateTransform();
+    }
+
+    public void UpdateWorldPosition(Vector3 newPosition)
+    {
+        UpdatePosition(parent ? parent.TransformToRelative(newPosition) : newPosition);
     }
 
     /// <summary>
@@ -88,12 +94,6 @@ public class MovableEntity : GameEntity
             AddOffset(step.y * Vector3.up);
             AddOffset(step.z * Vector3.forward);
         }
-
-        if (position.y < 0)
-        {
-            position.y = 0;
-            OnLand?.Invoke();
-        }
     }
 
     private void AddOffset(Vector3 offset)
@@ -111,6 +111,12 @@ public class MovableEntity : GameEntity
 
     private bool IsValidPosition(Vector3 newPosition)
     {
+        if (newPosition.y < 0)
+        {
+            OnLand?.Invoke();
+            return false;
+        }
+        
         if (EntityManager.Instance.GetEntities(Tag.Barrier)
             .Any(barrier => barrier.GetBehaviour<Hitbox>().IsInside(newPosition)))
         {

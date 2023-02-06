@@ -1957,7 +1957,7 @@ MonoBehaviour:
   restEvent:
     _persistentListeners:
     - _persistentArguments: []
-      _target: {fileID: 0}
+      _target: {fileID: 1955764041}
       _isStatic: 0
       CallState: 2
       _staticType:
@@ -2563,7 +2563,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 700
-  health: 0
 --- !u!1 &676580493
 GameObject:
   m_ObjectHideFlags: 0
@@ -2951,7 +2950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 5.5, y: 2, z: 1.25}
+  size: {x: 5.5, y: 6, z: 1.25}
 --- !u!114 &739543967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2967,7 +2966,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   tags:
     tags: 00000000
-  position: {x: -13.5, y: 1, z: -3.25}
+  position: {x: -13.5, y: 3, z: -3.25}
   rotation:
     flipped: 0
   scale: {x: 1, y: 1, z: 1}
@@ -6670,7 +6669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 5.5, y: 2, z: 1.25}
+  size: {x: 5.5, y: 6, z: 1.25}
 --- !u!114 &2106453635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6686,7 +6685,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   tags:
     tags: 00000000
-  position: {x: 13.5, y: 1, z: -3.25}
+  position: {x: 13.5, y: 3, z: -3.25}
   rotation:
     flipped: 0
   scale: {x: 1, y: 1, z: 1}

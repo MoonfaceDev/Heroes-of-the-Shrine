@@ -45,7 +45,7 @@ public class GameEntity : BaseComponent
     public Vector3 WorldPosition
     {
         get => parent ? parent.TransformToWorld(position) : position;
-        set => position = parent ? parent.TransformToRelative(value) : value;
+        private set => position = parent ? parent.TransformToRelative(value) : value;
     }
 
     /// <summary>

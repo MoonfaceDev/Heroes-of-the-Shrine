@@ -52,7 +52,7 @@ public class ArcBehaviour : BaseMovementBehaviour<ArcBehaviour.Command>
             distance *= radius / distance.magnitude;
             var newPosition = playerPosition + distance;
             newPosition.y = walkBehaviour.MovableEntity.WorldPosition.y;
-            walkBehaviour.MovableEntity.WorldPosition = newPosition;
+            walkBehaviour.MovableEntity.UpdateWorldPosition(newPosition);
             var direction = clockwise * Vector3.Cross(distance, Vector3.up).normalized;
             walkBehaviour.Play(new WalkBehaviour.Command(direction, false));
             if ((command.target.WorldPosition - walkBehaviour.MovableEntity.WorldPosition).x != 0)
