@@ -600,13 +600,37 @@ MonoBehaviour:
     rid: 3181427246007058579
   hitDetector2:
     rid: 3181427246007058585
-  hitExecutor:
+  hitExecutor1:
     executors:
-    - rid: 3181427634693996665
-    - rid: 3181427634693996667
+    - rid: 168482722489303110
+    - rid: 168482722489303112
+  hitExecutor2:
+    executors:
+    - rid: 168482722489303114
+    - rid: 168482722489303116
   references:
     version: 2
     RefIds:
+    - rid: 168482722489303110
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 10
+    - rid: 168482722489303112
+      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        knockbackPower: 6
+        knockbackDirection: 95
+        stunTime: 0.5
+    - rid: 168482722489303114
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 10
+    - rid: 168482722489303116
+      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        knockbackPower: 6
+        knockbackDirection: 95
+        stunTime: 0.5
     - rid: 3181427246007058579
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -631,16 +655,6 @@ MonoBehaviour:
         onHit:
           _persistentListeners: []
           Expanded: 1
-    - rid: 3181427634693996665
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 10
-    - rid: 3181427634693996667
-      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        knockbackPower: 6
-        knockbackDirection: 95
-        stunTime: 0.5
 --- !u!114 &7264214053870421148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -654,7 +668,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: {fileID: 3226033048567882335}
-  energyReward: 15
+  energyReward1: 15
+  energyReward2: 15
 --- !u!1 &4003947100742262957
 GameObject:
   m_ObjectHideFlags: 0

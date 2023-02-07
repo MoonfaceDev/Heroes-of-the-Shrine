@@ -1,7 +1,8 @@
 ﻿public class SpinningSwordsAttackEnergySupplier : BaseEnergySupplier
 {
     public SpinningSwordsAttack attack;
-    public float energyReward;
+    public float energyReward1;
+    public float energyReward2;
 
     // Every time attack is played, it can reward energy only once
     private bool alreadyAwarded1;
@@ -21,14 +22,14 @@
         {
             if (alreadyAwarded1) return;
             alreadyAwarded1 = true;
-            energySystem.Energy += energyReward;
+            energySystem.Energy += energyReward1;
         };
         
         attack.hitDetector2.onHit += () =>
         {
             if (alreadyAwarded2) return;
             alreadyAwarded2 = true;
-            energySystem.Energy += energyReward;
+            energySystem.Energy += energyReward2;
         };
     }
 }

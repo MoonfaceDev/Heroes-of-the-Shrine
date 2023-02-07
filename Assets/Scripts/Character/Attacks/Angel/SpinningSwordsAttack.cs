@@ -28,7 +28,9 @@ public class SpinningSwordsAttack : BaseAttack
     [SerializeInterface] [SerializeReference]
     public BaseHitDetector hitDetector2;
 
-    public ChainHitExecutor hitExecutor;
+    public ChainHitExecutor hitExecutor1;
+
+    public ChainHitExecutor hitExecutor2;
 
     private List<string> currentTimeouts;
 
@@ -47,7 +49,8 @@ public class SpinningSwordsAttack : BaseAttack
         };
     }
 
-    private void ConfigureHitDetector(BaseHitDetector hitDetector, float startTime, float duration)
+    private void ConfigureHitDetector(BaseHitDetector hitDetector, IHitExecutor hitExecutor, float startTime,
+        float duration)
     {
         currentTimeouts.Add(StartTimeout(() =>
         {
@@ -64,8 +67,8 @@ public class SpinningSwordsAttack : BaseAttack
     protected override IEnumerator ActivePhase()
     {
         currentTimeouts = new List<string>();
-        ConfigureHitDetector(hitDetector1, attackFlow.detector1StartTime, attackFlow.detector1Duration);
-        ConfigureHitDetector(hitDetector2, attackFlow.detector2StartTime, attackFlow.detector2Duration);
+        ConfigureHitDetector(hitDetector1, hitExecutor1, attackFlow.detector1StartTime, attackFlow.detector1Duration);
+        ConfigureHitDetector(hitDetector2, hitExecutor2, attackFlow.detector2StartTime, attackFlow.detector2Duration);
         yield return new WaitForSeconds(attackFlow.activeDuration);
     }
 
