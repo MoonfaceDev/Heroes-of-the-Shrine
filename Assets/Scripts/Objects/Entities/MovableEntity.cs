@@ -88,32 +88,46 @@ public class MovableEntity : GameEntity
         var steps = distance / MaxStepSize + 1;
         var step = distance / steps * direction;
 
+        var stuck = false;
+
         for (var i = 0; i < steps; i++)
         {
-            AddOffset(step.x * Vector3.right);
-            AddOffset(step.y * Vector3.up);
-            AddOffset(step.z * Vector3.forward);
+            var xValid = AddOffset(step.x * Vector3.right);
+            var yValid = AddOffset(step.y * Vector3.up);
+            var zValid = AddOffset(step.z * Vector3.forward);
+            
+            if (!xValid || !yValid || !zValid)
+            {
+                stuck = true;
+            }
         }
-    }
 
-    private void AddOffset(Vector3 offset)
-    {
-        var newPosition = position + offset;
-        if (IsValidPosition(newPosition))
-        {
-            position = newPosition;
-        }
-        else
+        if (stuck)
         {
             OnStuck?.Invoke();
         }
+
+        if (IsLanded(newPosition))
+        {
+            OnLand?.Invoke();
+        }
+    }
+
+    private bool AddOffset(Vector3 offset)
+    {
+        var newPosition = position + offset;
+        if (!IsValidPosition(newPosition))
+        {
+            return false;
+        }
+        position = newPosition;
+        return true;
     }
 
     private bool IsValidPosition(Vector3 newPosition)
     {
-        if (newPosition.y < 0)
+        if (IsLanded(newPosition))
         {
-            OnLand?.Invoke();
             return false;
         }
         
@@ -135,5 +149,10 @@ public class MovableEntity : GameEntity
         }
 
         return true;
+    }
+
+    private static bool IsLanded(Vector3 newPosition)
+    {
+        return newPosition.y < 0;
     }
 }

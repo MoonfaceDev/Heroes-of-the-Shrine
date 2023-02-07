@@ -3,8 +3,6 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 
-public delegate void BounceCallback(int count, float power, float angleDegrees);
-
 public class KnockbackBehaviour : PlayableBehaviour<KnockbackBehaviour.Command>, IForcedBehaviour
 {
     public class Command
@@ -23,7 +21,6 @@ public class KnockbackBehaviour : PlayableBehaviour<KnockbackBehaviour.Command>,
 
     public float knockbackRecoverTime;
 
-    public event BounceCallback OnBounce;
     public event Action OnFinish;
     public event Action OnRecover;
 
@@ -99,12 +96,10 @@ public class KnockbackBehaviour : PlayableBehaviour<KnockbackBehaviour.Command>,
             SetMovement(command.power * SecondBouncePowerMultiplier, 180 - Mathf.Abs(command.angleDegrees % 360 - 180));
             MovableEntity.OnLand += Land;
             currentLandEvent = Land;
-            OnBounce?.Invoke(Bounce, command.power, command.angleDegrees);
         }
 
         MovableEntity.OnLand += SecondBounce;
         currentLandEvent = SecondBounce;
-        OnBounce?.Invoke(Bounce, command.power, command.angleDegrees);
     }
 
     private void SetMovement(float power, float angleDegrees)
