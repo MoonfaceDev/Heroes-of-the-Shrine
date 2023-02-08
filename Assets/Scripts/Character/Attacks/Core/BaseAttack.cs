@@ -122,7 +122,7 @@ public abstract class BaseAttack : PlayableBehaviour<BaseAttack.Command>, IContr
     private bool AirCondition()
     {
         var jumpBehaviour = GetBehaviour<JumpBehaviour>();
-        return jumpBehaviour && jumpBehaviour.Active && MovableEntity.velocity.y < jumpBehaviour.attacksMaxVelocity;
+        return jumpBehaviour && jumpBehaviour.Active;
     }
 
     private bool ComboCondition()

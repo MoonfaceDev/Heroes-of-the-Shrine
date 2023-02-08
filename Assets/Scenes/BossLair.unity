@@ -1411,6 +1411,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4691461327194657202, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: attackFlow.activeDuration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691461327194657202, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: attackFlow.anticipationDuration
       value: 0.01
       objectReference: {fileID: 0}

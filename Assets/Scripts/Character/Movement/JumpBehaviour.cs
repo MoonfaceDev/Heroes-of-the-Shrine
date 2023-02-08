@@ -10,7 +10,6 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
     public float jumpSpeed;
     public float jumpAnticipateTime;
     public float jumpRecoverTime;
-    public float attacksMaxVelocity;
 
     [SerializeField] public ExtEvent onStartActive;
     [SerializeField] public ExtEvent onFinishActive;
