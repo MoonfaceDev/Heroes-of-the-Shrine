@@ -113,12 +113,16 @@ public abstract class BaseAttack : PlayableBehaviour<BaseAttack.Command>, IContr
 
     public override bool CanPlay(Command command)
     {
-        var jumpBehaviour = GetBehaviour<JumpBehaviour>();
-        
         return base.CanPlay(command)
-               && IsMidair == (jumpBehaviour && jumpBehaviour.Active)
+               && ((!IsMidair && !IsPlaying<JumpBehaviour>()) || (IsMidair && AirCondition()))
                && AttackManager.CanPlayMove(instant)
                && ComboCondition();
+    }
+
+    private bool AirCondition()
+    {
+        var jumpBehaviour = GetBehaviour<JumpBehaviour>();
+        return jumpBehaviour && jumpBehaviour.Active && MovableEntity.velocity.y < jumpBehaviour.attacksMaxVelocity;
     }
 
     private bool ComboCondition()
@@ -131,6 +135,7 @@ public abstract class BaseAttack : PlayableBehaviour<BaseAttack.Command>, IContr
     /// </summary>
     protected override void DoPlay(Command command)
     {
+        print(GetType().Name);
         if (Motion != MotionSettings.WalkingEnabled)
         {
             var velocityBefore = MovableEntity.velocity;

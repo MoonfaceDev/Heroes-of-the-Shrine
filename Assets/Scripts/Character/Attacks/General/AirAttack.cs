@@ -8,10 +8,11 @@ public class AirAttack : SimpleAttack
     protected override MotionSettings Motion => MotionSettings.WalkingEnabled;
     protected override bool IsMidair => true;
 
-    protected override void DoPlay(Command command)
+    protected override IEnumerator ActivePhase()
     {
-        base.DoPlay(command);
+        MovableEntity.velocity.y = 0;
+        MovableEntity.acceleration.y = 0;
+        yield return base.ActivePhase();
+        MovableEntity.acceleration.y = -0.5f * Character.physicalAttributes.gravityAcceleration;
     }
-    
-    
 }
