@@ -100,6 +100,9 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
         MovableEntity.velocity.y = jumpSpeed;
         MovableEntity.acceleration.y = -Character.physicalAttributes.gravityAcceleration;
 
+        InvokeWhen(() => MovableEntity.velocity.y < 0,
+            () => MovableEntity.acceleration.y = -2 * Character.physicalAttributes.gravityAcceleration);
+
         MovableEntity.OnLand += Land;
     }
 
