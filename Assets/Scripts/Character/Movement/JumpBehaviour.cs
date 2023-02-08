@@ -10,6 +10,7 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
     public float jumpSpeed;
     public float jumpAnticipateTime;
     public float jumpRecoverTime;
+    public float numnum = 2;
 
     [SerializeField] public ExtEvent onStartActive;
     [SerializeField] public ExtEvent onFinishActive;
@@ -101,7 +102,7 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
         MovableEntity.acceleration.y = -Character.physicalAttributes.gravityAcceleration;
 
         InvokeWhen(() => MovableEntity.velocity.y < 0,
-            () => MovableEntity.acceleration.y = -2 * Character.physicalAttributes.gravityAcceleration);
+            () => MovableEntity.acceleration.y = -numnum * Character.physicalAttributes.gravityAcceleration);
 
         MovableEntity.OnLand += Land;
     }
