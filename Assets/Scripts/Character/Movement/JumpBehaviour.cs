@@ -80,7 +80,8 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
 
     protected override void DoPlay(Command command)
     {
-        StopBehaviours(typeof(BaseAttack));
+        StopBehaviours(typeof(BaseAttack), typeof(RunBehaviour));
+        BlockBehaviours(typeof(RunBehaviour));
 
         if (!IsPlaying<WalkBehaviour>() && MovableEntity.WorldPosition.y == 0) //not moving and grounded
         {
@@ -146,6 +147,8 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
 
     protected override void DoStop()
     {
+        UnblockBehaviours(typeof(RunBehaviour));
+        
         if (Anticipating)
         {
             Cancel(anticipateTimeout);

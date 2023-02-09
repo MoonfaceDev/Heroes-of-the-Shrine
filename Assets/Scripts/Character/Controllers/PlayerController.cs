@@ -12,6 +12,7 @@ public enum Button
     Escape,
     Attack,
     Defense,
+    Run,
     Heal
 }
 
@@ -52,6 +53,7 @@ public class PlayerController : CharacterController
 
 
     private WalkBehaviour walkBehaviour;
+    private RunBehaviour runBehaviour;
     private JumpBehaviour jumpBehaviour;
     private SlideBehaviour slideBehaviour;
     private DodgeBehaviour dodgeBehaviour;
@@ -63,6 +65,7 @@ public class PlayerController : CharacterController
     {
         base.Awake();
         walkBehaviour = GetBehaviour<WalkBehaviour>();
+        runBehaviour = GetBehaviour<RunBehaviour>();
         jumpBehaviour = GetBehaviour<JumpBehaviour>();
         slideBehaviour = GetBehaviour<SlideBehaviour>();
         dodgeBehaviour = GetBehaviour<DodgeBehaviour>();
@@ -79,6 +82,7 @@ public class PlayerController : CharacterController
         ExecuteBufferedActions();
 
         ExecuteWalk();
+        ExecuteRun();
         ExecuteJump();
         ExecuteDodge();
         ExecuteSlide();
@@ -120,6 +124,22 @@ public class PlayerController : CharacterController
         else
         {
             walkBehaviour.Stop();
+        }
+    }
+    
+    private void ExecuteRun()
+    {
+        if (!runBehaviour) return;
+        if (Input.GetButton(Button.Run.ToString()))
+        {
+            if (!runBehaviour.Playing)
+            {
+                runBehaviour.Play(new RunBehaviour.Command());
+            }
+        }
+        else
+        {
+            runBehaviour.Stop();
         }
     }
 

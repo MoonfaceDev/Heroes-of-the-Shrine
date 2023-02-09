@@ -6,7 +6,6 @@ public class RunBehaviour : BaseMovementBehaviour<RunBehaviour.Command>
     {
     }
 
-    public float timeToRun;
     public float runSpeedMultiplier;
     public ParticleSystem runParticles;
 
@@ -29,7 +28,6 @@ public class RunBehaviour : BaseMovementBehaviour<RunBehaviour.Command>
 
     private static readonly int RunParameter = Animator.StringToHash("run");
 
-
     protected override void Awake()
     {
         base.Awake();
@@ -40,28 +38,6 @@ public class RunBehaviour : BaseMovementBehaviour<RunBehaviour.Command>
 
     private void Start()
     {
-        string startTimeout = null;
-
-        walkBehaviour.PlayEvents.onPlay += () =>
-        {
-            if (!Run)
-            {
-                startTimeout ??= StartTimeout(() =>
-                {
-                    startTimeout = null;
-                    Play(new Command());
-                }, timeToRun);
-            }
-        };
-
-        walkBehaviour.PlayEvents.onStop += () =>
-        {
-            Cancel(startTimeout);
-            startTimeout = null;
-        };
-
-        walkBehaviour.PlayEvents.onStop += Stop;
-
         if (jumpBehaviour)
         {
             jumpBehaviour.onStartActive += () => runParticlesMain.gravityModifier = 1f;
