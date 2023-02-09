@@ -113,12 +113,16 @@ public abstract class BaseAttack : PlayableBehaviour<BaseAttack.Command>, IContr
 
     public override bool CanPlay(Command command)
     {
-        var jumpBehaviour = GetBehaviour<JumpBehaviour>();
-        
         return base.CanPlay(command)
-               && IsMidair == (jumpBehaviour && jumpBehaviour.Active)
+               && ((!IsMidair && !IsPlaying<JumpBehaviour>()) || (IsMidair && AirCondition()))
                && AttackManager.CanPlayMove(instant)
                && ComboCondition();
+    }
+
+    private bool AirCondition()
+    {
+        var jumpBehaviour = GetBehaviour<JumpBehaviour>();
+        return jumpBehaviour && jumpBehaviour.Active;
     }
 
     private bool ComboCondition()
