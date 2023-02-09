@@ -119,9 +119,6 @@
       <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_AnticipationPhase">SimpleAttack.AnticipationPhase()</a>
     </div>
     <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_ActivePhase">SimpleAttack.ActivePhase()</a>
-    </div>
-    <div>
       <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_RecoveryPhase">SimpleAttack.RecoveryPhase()</a>
     </div>
     <div>
@@ -150,9 +147,6 @@
     </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Playing">BaseAttack.Playing</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_CanPlay_BaseAttack_Command_">BaseAttack.CanPlay(BaseAttack.Command)</a>
     </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_DoPlay_BaseAttack_Command_">BaseAttack.DoPlay(BaseAttack.Command)</a>
@@ -251,6 +245,32 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class AirAttack : SimpleAttack, IControlledBehaviour, IPlayableBehaviour</code></pre>
   </div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="Global_AirAttack_minHeight" data-uid="Global.AirAttack.minHeight">minHeight</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float minHeight</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="properties">Properties
   </h3>
   
@@ -307,6 +327,79 @@
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Motion">BaseAttack.Motion</a></div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Global_AirAttack_ActivePhase_" data-uid="Global.AirAttack.ActivePhase*"></a>
+  <h4 id="Global_AirAttack_ActivePhase" data-uid="Global.AirAttack.ActivePhase">ActivePhase()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerator ActivePhase()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_ActivePhase">SimpleAttack.ActivePhase()</a></div>
+  
+  
+  <a id="Global_AirAttack_CanPlay_" data-uid="Global.AirAttack.CanPlay*"></a>
+  <h4 id="Global_AirAttack_CanPlay_BaseAttack_Command_" data-uid="Global.AirAttack.CanPlay(BaseAttack.Command)">CanPlay(BaseAttack.Command)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool CanPlay(BaseAttack.Command command)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.BaseAttack.Command.html">BaseAttack.Command</a></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_CanPlay_BaseAttack_Command_">BaseAttack.CanPlay(BaseAttack.Command)</a></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Global.IControlledBehaviour.html">IControlledBehaviour</a>

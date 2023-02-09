@@ -75,6 +75,32 @@ references:
   commentId: T:Global.AirAttack
   fullName: AirAttack
   nameWithType: AirAttack
+- uid: Global.AirAttack.ActivePhase
+  name: ActivePhase()
+  href: api/Global.AirAttack.html#Global_AirAttack_ActivePhase
+  commentId: M:Global.AirAttack.ActivePhase
+  fullName: AirAttack.ActivePhase()
+  nameWithType: AirAttack.ActivePhase()
+- uid: Global.AirAttack.ActivePhase*
+  name: ActivePhase
+  href: api/Global.AirAttack.html#Global_AirAttack_ActivePhase_
+  commentId: Overload:Global.AirAttack.ActivePhase
+  isSpec: "True"
+  fullName: AirAttack.ActivePhase
+  nameWithType: AirAttack.ActivePhase
+- uid: Global.AirAttack.CanPlay(BaseAttack.Command)
+  name: CanPlay(BaseAttack.Command)
+  href: api/Global.AirAttack.html#Global_AirAttack_CanPlay_BaseAttack_Command_
+  commentId: M:Global.AirAttack.CanPlay(BaseAttack.Command)
+  fullName: AirAttack.CanPlay(BaseAttack.Command)
+  nameWithType: AirAttack.CanPlay(BaseAttack.Command)
+- uid: Global.AirAttack.CanPlay*
+  name: CanPlay
+  href: api/Global.AirAttack.html#Global_AirAttack_CanPlay_
+  commentId: Overload:Global.AirAttack.CanPlay
+  isSpec: "True"
+  fullName: AirAttack.CanPlay
+  nameWithType: AirAttack.CanPlay
 - uid: Global.AirAttack.IsMidair
   name: IsMidair
   href: api/Global.AirAttack.html#Global_AirAttack_IsMidair
@@ -88,6 +114,12 @@ references:
   isSpec: "True"
   fullName: AirAttack.IsMidair
   nameWithType: AirAttack.IsMidair
+- uid: Global.AirAttack.minHeight
+  name: minHeight
+  href: api/Global.AirAttack.html#Global_AirAttack_minHeight
+  commentId: F:Global.AirAttack.minHeight
+  fullName: AirAttack.minHeight
+  nameWithType: AirAttack.minHeight
 - uid: Global.AirAttack.Motion
   name: Motion
   href: api/Global.AirAttack.html#Global_AirAttack_Motion
@@ -4924,6 +4956,12 @@ references:
   isSpec: "True"
   fullName: JumpBehaviour.CanPlay
   nameWithType: JumpBehaviour.CanPlay
+- uid: Global.JumpBehaviour.climbAcceleration
+  name: climbAcceleration
+  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_climbAcceleration
+  commentId: F:Global.JumpBehaviour.climbAcceleration
+  fullName: JumpBehaviour.climbAcceleration
+  nameWithType: JumpBehaviour.climbAcceleration
 - uid: Global.JumpBehaviour.Command
   name: JumpBehaviour.Command
   href: api/Global.JumpBehaviour.Command.html
@@ -4956,6 +4994,19 @@ references:
   isSpec: "True"
   fullName: JumpBehaviour.DoStop
   nameWithType: JumpBehaviour.DoStop
+- uid: Global.JumpBehaviour.Freeze
+  name: Freeze()
+  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_Freeze
+  commentId: M:Global.JumpBehaviour.Freeze
+  fullName: JumpBehaviour.Freeze()
+  nameWithType: JumpBehaviour.Freeze()
+- uid: Global.JumpBehaviour.Freeze*
+  name: Freeze
+  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_Freeze_
+  commentId: Overload:Global.JumpBehaviour.Freeze
+  isSpec: "True"
+  fullName: JumpBehaviour.Freeze
+  nameWithType: JumpBehaviour.Freeze
 - uid: Global.JumpBehaviour.jumpAnticipateTime
   name: jumpAnticipateTime
   href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_jumpAnticipateTime
@@ -4986,6 +5037,18 @@ references:
   commentId: F:Global.JumpBehaviour.onStartActive
   fullName: JumpBehaviour.onStartActive
   nameWithType: JumpBehaviour.onStartActive
+- uid: Global.JumpBehaviour.peakAcceleration
+  name: peakAcceleration
+  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_peakAcceleration
+  commentId: F:Global.JumpBehaviour.peakAcceleration
+  fullName: JumpBehaviour.peakAcceleration
+  nameWithType: JumpBehaviour.peakAcceleration
+- uid: Global.JumpBehaviour.peakDuration
+  name: peakDuration
+  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_peakDuration
+  commentId: F:Global.JumpBehaviour.peakDuration
+  fullName: JumpBehaviour.peakDuration
+  nameWithType: JumpBehaviour.peakDuration
 - uid: Global.JumpBehaviour.Playing
   name: Playing
   href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_Playing
@@ -5012,6 +5075,19 @@ references:
   isSpec: "True"
   fullName: JumpBehaviour.Recovering
   nameWithType: JumpBehaviour.Recovering
+- uid: Global.JumpBehaviour.Unfreeze
+  name: Unfreeze()
+  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_Unfreeze
+  commentId: M:Global.JumpBehaviour.Unfreeze
+  fullName: JumpBehaviour.Unfreeze()
+  nameWithType: JumpBehaviour.Unfreeze()
+- uid: Global.JumpBehaviour.Unfreeze*
+  name: Unfreeze
+  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_Unfreeze_
+  commentId: Overload:Global.JumpBehaviour.Unfreeze
+  isSpec: "True"
+  fullName: JumpBehaviour.Unfreeze
+  nameWithType: JumpBehaviour.Unfreeze
 - uid: Global.KillEntitiesAction
   name: KillEntitiesAction
   href: api/Global.KillEntitiesAction.html
