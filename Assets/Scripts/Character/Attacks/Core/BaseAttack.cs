@@ -135,7 +135,6 @@ public abstract class BaseAttack : PlayableBehaviour<BaseAttack.Command>, IContr
     /// </summary>
     protected override void DoPlay(Command command)
     {
-        print(GetType().Name);
         if (Motion != MotionSettings.WalkingEnabled)
         {
             var velocityBefore = MovableEntity.velocity;

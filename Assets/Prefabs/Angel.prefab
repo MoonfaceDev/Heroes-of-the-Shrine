@@ -165,6 +165,7 @@ MonoBehaviour:
     executors:
     - rid: 168482633143812262
     - rid: 168482633143812264
+  minHeight: 1.5
   references:
     version: 2
     RefIds:
@@ -1019,6 +1020,7 @@ MonoBehaviour:
     executors:
     - rid: 3181427634693996681
     - rid: 3181427634693996683
+  minHeight: 1.5
   references:
     version: 2
     RefIds:
@@ -1240,7 +1242,7 @@ MonoBehaviour:
   playEvents:
     onPlay:
       _persistentListeners: []
-      Expanded: 1
+      Expanded: 0
     onStop:
       _persistentListeners: []
       Expanded: 0
@@ -1354,9 +1356,12 @@ MonoBehaviour:
       _persistentListeners: []
       Expanded: 1
   cooldown: 0
-  jumpSpeed: 10
+  jumpSpeed: 20
   jumpAnticipateTime: 0.1
   jumpRecoverTime: 0.05
+  climbAcceleration: 100
+  peakDuration: 0.2
+  peakAcceleration: 5
   onStartActive:
     _persistentListeners: []
     Expanded: 1
@@ -12407,8 +12412,8 @@ MonoBehaviour:
   interruptible: 0
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.1
-    activeDuration: 0.1
+    anticipationDuration: 0.01
+    activeDuration: 0.2
     recoveryDuration: 0.3
   hitDetector:
     rid: 3181427246007058587
@@ -12416,6 +12421,7 @@ MonoBehaviour:
     executors:
     - rid: 3181427634693996673
     - rid: 3181427634693996675
+  minHeight: 1.5
   references:
     version: 2
     RefIds:

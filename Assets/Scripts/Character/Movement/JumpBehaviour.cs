@@ -10,6 +10,9 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
     public float jumpSpeed;
     public float jumpAnticipateTime;
     public float jumpRecoverTime;
+    public float climbAcceleration;
+    public float peakDuration;
+    public float peakAcceleration;
 
     [SerializeField] public ExtEvent onStartActive;
     [SerializeField] public ExtEvent onFinishActive;
@@ -50,8 +53,12 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
     private bool active;
     private bool recovering;
     private bool anticipating;
+    
     private string anticipateTimeout;
     private string recoverTimeout;
+    private string stopClimbListener;
+    private string stopPeakListener;
+    
     private WalkBehaviour walkBehaviour;
 
     private static readonly int AnticipatingJumpParameter = Animator.StringToHash("anticipatingJump");
@@ -98,12 +105,32 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
         Active = true;
 
         MovableEntity.velocity.y = jumpSpeed;
-        MovableEntity.acceleration.y = -Character.physicalAttributes.gravityAcceleration;
+        MovableEntity.acceleration.y = -climbAcceleration;
 
-        InvokeWhen(() => MovableEntity.velocity.y < 1f, () => MovableEntity.acceleration.y = -5);
-        InvokeWhen(() => MovableEntity.velocity.y < -1f, () => MovableEntity.acceleration.y = -0.5f * Character.physicalAttributes.gravityAcceleration);
+        stopClimbListener = InvokeWhen(() => MovableEntity.velocity.y < 0, () =>
+        {
+            MovableEntity.acceleration.y = -peakAcceleration;
+            var peakStartTime = Time.time;
+            stopPeakListener = InvokeWhen(
+                () => Time.time - peakStartTime > peakDuration,
+                () => MovableEntity.acceleration.y = -Character.physicalAttributes.gravityAcceleration
+            );
+        });
 
         MovableEntity.OnLand += Land;
+    }
+
+    public void Freeze()
+    {
+        Cancel(stopClimbListener);
+        Cancel(stopPeakListener);
+        MovableEntity.velocity.y = 0;
+        MovableEntity.acceleration.y = 0;
+    }
+
+    public void Unfreeze()
+    {
+        MovableEntity.acceleration.y = -Character.physicalAttributes.gravityAcceleration;
     }
 
     private void Land()
@@ -128,6 +155,8 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
 
         if (Active)
         {
+            Cancel(stopClimbListener);
+            Cancel(stopPeakListener);
             MovableEntity.velocity.y = 0;
             MovableEntity.OnLand -= Land;
             Active = false;

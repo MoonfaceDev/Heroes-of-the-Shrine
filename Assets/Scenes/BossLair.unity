@@ -1410,14 +1410,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4691461327194657202, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: attackFlow.activeDuration
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4691461327194657202, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: attackFlow.anticipationDuration
-      value: 0.01
-      objectReference: {fileID: 0}
     - target: {fileID: 5826350637341048340, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1633,10 +1625,6 @@ PrefabInstance:
     - target: {fileID: 7892979979956269628, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_AssetsPPU
       value: 135
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976775511750743721, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
-      propertyPath: jumpSpeed
-      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7976775511750743721, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: attacksMaxVelocity

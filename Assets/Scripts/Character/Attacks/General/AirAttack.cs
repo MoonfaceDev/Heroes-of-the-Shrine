@@ -6,7 +6,7 @@ using System.Collections;
 public class AirAttack : SimpleAttack
 {
     public float minHeight;
-    
+
     protected override MotionSettings Motion => MotionSettings.WalkingEnabled;
     protected override bool IsMidair => true;
 
@@ -17,9 +17,10 @@ public class AirAttack : SimpleAttack
 
     protected override IEnumerator ActivePhase()
     {
-        MovableEntity.velocity.y = 0;
-        MovableEntity.acceleration.y = 0;
+        var jumpBehaviour = GetBehaviour<JumpBehaviour>();
+
+        jumpBehaviour.Freeze();
         yield return base.ActivePhase();
-        MovableEntity.acceleration.y = -0.5f * Character.physicalAttributes.gravityAcceleration;
+        jumpBehaviour.Unfreeze();
     }
 }
