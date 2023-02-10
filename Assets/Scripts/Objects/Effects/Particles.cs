@@ -29,16 +29,29 @@ public class Particles : EntityBehaviour
     /// </summary>
     public void Play()
     {
-        clone = attachToCharacter ? Instantiate(prefab, Entity.transform) : Instantiate(prefab);
-        clone.transform.position = GameEntity.ScreenCoordinates(Entity.TransformToWorld(particlePosition));
-
-        if (!attachToCharacter)
+        if (attachToCharacter)
         {
-            clone.transform.rotation = Entity.WorldRotation;
+            SpawnAttached();
         }
-
-        clone.GetComponent<Renderer>().sortingOrder = Entity.SortingOrder + 1;
+        else
+        {
+            SpawnNonAttached();
+        }
         clone.GetComponent<ParticleSystem>().Play();
+    }
+
+    private void SpawnAttached()
+    {
+        var entity = GameEntity.Instantiate(prefab, Entity, particlePosition);
+        clone = entity.gameObject;
+    }
+
+    private void SpawnNonAttached()
+    {
+        clone = Instantiate(prefab);
+        clone.transform.position = GameEntity.ScreenCoordinates(Entity.TransformToWorld(particlePosition));
+        clone.transform.rotation = Entity.WorldRotation;
+        clone.GetComponent<Renderer>().sortingOrder = Entity.SortingOrder + 1;
     }
 
     public void Stop()

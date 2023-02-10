@@ -156,6 +156,12 @@ public class GameEntity : BaseComponent
         indexes[type].Add(behaviour);
     }
 
+    protected override void Update()
+    {
+        base.Update();
+        UpdateTransform();
+    }
+
     protected void UpdateTransform()
     {
         transform.position = GroundScreenCoordinates(WorldPosition);
