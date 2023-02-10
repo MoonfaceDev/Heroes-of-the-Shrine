@@ -23,7 +23,7 @@ public class Figure : EntityBehaviour
     {
         base.Update();
         if (!Application.isPlaying && !movableEntity) return;
-        transform.localPosition = GameEntity.ScreenCoordinates(movableEntity.WorldPosition.y * Vector3.up);
+        transform.localPosition = new Vector3(transform.localPosition.x, GameEntity.ScreenCoordinates(movableEntity.WorldPosition.y * Vector3.up).y, transform.localPosition.z);
         UpdateSortingOrder();
     }
 

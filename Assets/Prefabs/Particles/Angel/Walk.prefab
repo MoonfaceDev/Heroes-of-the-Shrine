@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7779149446551483750}
   - component: {fileID: 7161048684058357246}
   - component: {fileID: 8806297469270932197}
+  - component: {fileID: 7594549316333945870}
   m_Layer: 0
   m_Name: Walk
   m_TagString: Untagged
@@ -994,7 +995,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 40
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4834,3 +4835,16 @@ MonoBehaviour:
   rotation:
     flipped: 0
   scale: {x: 1, y: 1, z: 1}
+--- !u!114 &7594549316333945870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4191199336927616018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90306126b25f448f98b2587e24ff902e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movableEntity: {fileID: 8806297469270932197}
