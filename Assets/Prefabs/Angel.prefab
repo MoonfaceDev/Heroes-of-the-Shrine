@@ -165,7 +165,7 @@ MonoBehaviour:
     executors:
     - rid: 168482633143812262
     - rid: 168482633143812264
-  minHeight: 1.5
+  minHeight: 0
   references:
     version: 2
     RefIds:
@@ -1202,6 +1202,9 @@ GameObject:
   - component: {fileID: 8583721213638497076}
   - component: {fileID: 6790080662486734077}
   - component: {fileID: 6099469524842556482}
+  - component: {fileID: 2175755674317142815}
+  - component: {fileID: 1185927326113677061}
+  - component: {fileID: 7186248231885458681}
   m_Layer: 0
   m_Name: Movement
   m_TagString: Untagged
@@ -1239,11 +1242,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      _persistentListeners: []
-      Expanded: 0
+      _persistentListeners:
+      - _persistentArguments: []
+        _target: {fileID: 7186248231885458681}
+        _isStatic: 0
+        CallState: 2
+        _staticType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _methodName: Play
+      Expanded: 1
     onStop:
       _persistentListeners: []
-      Expanded: 0
+      Expanded: 1
   cooldown: 0
   defaultSpeed: 6
   speed: 0
@@ -1360,7 +1373,27 @@ MonoBehaviour:
   peakDuration: 0.2
   peakAcceleration: 5
   onStartActive:
-    _persistentListeners: []
+    _persistentListeners:
+    - _persistentArguments: []
+      _target: {fileID: 2175755674317142815}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: Play
+    - _persistentArguments: []
+      _target: {fileID: 1185927326113677061}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: Play
     Expanded: 1
   onFinishActive:
     _persistentListeners: []
@@ -1481,6 +1514,51 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+--- !u!114 &2175755674317142815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4850033890129186866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d961789b6aee674bb3eb9ce45793ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4191199336927616018, guid: d050585893d1cd34dabf261cf27420b1, type: 3}
+  particlePosition: {x: 0, y: 0, z: 0}
+  attachToCharacter: 0
+--- !u!114 &1185927326113677061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4850033890129186866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d961789b6aee674bb3eb9ce45793ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4191199336927616018, guid: 1046bd7495ccd5f479215914443f1003, type: 3}
+  particlePosition: {x: 0, y: 1.2, z: 0}
+  attachToCharacter: 0
+--- !u!114 &7186248231885458681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4850033890129186866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d961789b6aee674bb3eb9ce45793ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4191199336927616018, guid: bb2ae392211230645a3fbada16f8fb15, type: 3}
+  particlePosition: {x: -0.4, y: 0.2, z: 0}
+  attachToCharacter: 1
 --- !u!1 &5102893360079750233
 GameObject:
   m_ObjectHideFlags: 0
@@ -7347,7 +7425,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2006798501, guid: 0cb6cc035f8dc854baa89121323d03fb, type: 3}
+  m_Sprite: {fileID: -1738506296, guid: 9c3fa839077a4b441af60523acaec38f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
