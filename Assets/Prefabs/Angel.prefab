@@ -184,12 +184,12 @@ MonoBehaviour:
     - rid: 168482633143812262
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        damage: 5
+        damage: 1.2
     - rid: 168482633143812264
       type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        knockbackPower: 5
-        knockbackDirection: 45
+        knockbackPower: 10
+        knockbackDirection: 85
         stunTime: 0.5
 --- !u!114 &4952256669799359370
 MonoBehaviour:
@@ -471,7 +471,7 @@ MonoBehaviour:
   hitExecutor:
     executors:
     - rid: 3181427634693996644
-    - rid: 3181427634693996646
+    - rid: 3596403818980179981
   references:
     version: 2
     RefIds:
@@ -490,12 +490,10 @@ MonoBehaviour:
     - rid: 3181427634693996644
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        damage: 10
-    - rid: 3181427634693996646
-      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
+        damage: 1.2
+    - rid: 3596403818980179981
+      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        knockbackPower: 10
-        knockbackDirection: 10
         stunTime: 0.5
 --- !u!114 &151164371618628084
 MonoBehaviour:
@@ -615,22 +613,22 @@ MonoBehaviour:
     - rid: 168482722489303110
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        damage: 10
+        damage: 1.25
     - rid: 168482722489303112
       type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        knockbackPower: 6
+        knockbackPower: 10
         knockbackDirection: 95
         stunTime: 0.5
     - rid: 168482722489303114
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        damage: 10
+        damage: 1.3
     - rid: 168482722489303116
       type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        knockbackPower: 6
-        knockbackDirection: 95
+        knockbackPower: 10
+        knockbackDirection: 90
         stunTime: 0.5
     - rid: 3181427246007058579
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
@@ -1011,9 +1009,9 @@ MonoBehaviour:
   interruptible: 0
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.02
-    activeDuration: 0.225
-    recoveryDuration: 0.1
+    anticipationDuration: 0.1
+    activeDuration: 0.2
+    recoveryDuration: 0.3
   hitDetector:
     rid: 3181427246007058589
   hitExecutor:
@@ -1039,12 +1037,12 @@ MonoBehaviour:
     - rid: 3181427634693996681
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        damage: 7
+        damage: 1
     - rid: 3181427634693996683
       type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        knockbackPower: 5
-        knockbackDirection: 110
+        knockbackPower: 13
+        knockbackDirection: 97
         stunTime: 0.5
 --- !u!114 &2644732355721132754
 MonoBehaviour:
@@ -1165,11 +1163,11 @@ MonoBehaviour:
     - rid: 3181427634693996660
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        damage: 10
+        damage: 1.5
     - rid: 3181427634693996663
       type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        knockbackPower: 10
+        knockbackPower: 15
         knockbackDirection: 85
         stunTime: 0.5
 --- !u!114 &6404439988506791787
@@ -1356,8 +1354,8 @@ MonoBehaviour:
       Expanded: 1
   cooldown: 0
   jumpSpeed: 20
-  jumpAnticipateTime: 0.1
-  jumpRecoverTime: 0.05
+  jumpAnticipateTime: 0
+  jumpRecoverTime: 0
   climbAcceleration: 100
   peakDuration: 0.2
   peakAcceleration: 5
@@ -12412,7 +12410,7 @@ MonoBehaviour:
   hardRecovery: 0
   attackFlow:
     anticipationDuration: 0.01
-    activeDuration: 0.2
+    activeDuration: 0.15
     recoveryDuration: 0.3
   hitDetector:
     rid: 3181427246007058587
@@ -12439,12 +12437,12 @@ MonoBehaviour:
     - rid: 3181427634693996673
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        damage: 5
+        damage: 1.2
     - rid: 3181427634693996675
       type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        knockbackPower: 5
-        knockbackDirection: 45
+        knockbackPower: 12
+        knockbackDirection: 80
         stunTime: 0.5
 --- !u!114 &3568453442421848273
 MonoBehaviour:
@@ -12565,7 +12563,7 @@ MonoBehaviour:
     - rid: 3181427634693996652
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        damage: 7
+        damage: 1.1
     - rid: 3181427634693996654
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -12688,7 +12686,7 @@ MonoBehaviour:
     - rid: 3181427634693996648
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        damage: 7
+        damage: 1.25
     - rid: 3181427634693996650
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -12812,7 +12810,7 @@ MonoBehaviour:
     - rid: 3181427634693996656
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        damage: 5
+        damage: 1
     - rid: 3181427634693996658
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -13132,12 +13130,12 @@ MonoBehaviour:
     - rid: 3181427634693996669
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        damage: 10
+        damage: 1.5
     - rid: 3181427634693996671
       type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        knockbackPower: 11
-        knockbackDirection: 60
+        knockbackPower: 17
+        knockbackDirection: 70
         stunTime: 0.5
 --- !u!114 &7214283041871315255
 MonoBehaviour:
