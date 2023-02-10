@@ -20,12 +20,14 @@ public class Particles : EntityBehaviour
     /// </value>
     public bool attachToCharacter;
 
+    private GameObject clone;
+
     /// <summary>
     /// Spawns the particles
     /// </summary>
     public void Play()
     {
-        var clone = attachToCharacter ? Instantiate(prefab, Entity.transform) : Instantiate(prefab);
+        clone = attachToCharacter ? Instantiate(prefab, Entity.transform) : Instantiate(prefab);
         clone.transform.position = GameEntity.ScreenCoordinates(Entity.TransformToWorld(particlePosition));
 
         if (!attachToCharacter)
@@ -35,6 +37,11 @@ public class Particles : EntityBehaviour
 
         clone.GetComponent<Renderer>().sortingOrder = Entity.SortingOrder + 1;
         clone.GetComponent<ParticleSystem>().Play();
+    }
+
+    public void Stop()
+    {
+        Destroy(clone);
     }
 
     private void OnDrawGizmosSelected()

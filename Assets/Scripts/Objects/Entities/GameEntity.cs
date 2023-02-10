@@ -221,7 +221,33 @@ public class GameEntity : BaseComponent
         var @object = Instantiate(prefab, ScreenCoordinates(position), Quaternion.identity);
         var entity = @object.GetComponent<GameEntity>();
 
-        entity.WorldPosition = position;
+        if (entity == null)
+        {
+            Debug.LogError("Prefab has no GameEntity component!");
+        }
+
+        entity.position = position;
+        if (rotation != null)
+        {
+            entity.rotation = rotation;
+        }
+
+        return entity;
+    }
+    
+    public static GameEntity Instantiate(GameObject prefab, GameEntity parent, Vector3 position, Rotation rotation = null)
+    {
+        var @object = Instantiate(prefab, parent.transform);
+        var entity = @object.GetComponent<GameEntity>();
+
+        if (entity == null)
+        {
+            Debug.LogError("Prefab has no GameEntity component!");
+        }
+
+        entity.parent = parent;
+        
+        entity.position = position;
         if (rotation != null)
         {
             entity.rotation = rotation;
