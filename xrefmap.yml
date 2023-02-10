@@ -5871,6 +5871,19 @@ references:
   isSpec: "True"
   fullName: Particles.Play
   nameWithType: Particles.Play
+- uid: Global.Particles.Playing
+  name: Playing
+  href: api/Global.Particles.html#Global_Particles_Playing
+  commentId: P:Global.Particles.Playing
+  fullName: Particles.Playing
+  nameWithType: Particles.Playing
+- uid: Global.Particles.Playing*
+  name: Playing
+  href: api/Global.Particles.html#Global_Particles_Playing_
+  commentId: Overload:Global.Particles.Playing
+  isSpec: "True"
+  fullName: Particles.Playing
+  nameWithType: Particles.Playing
 - uid: Global.Particles.prefab
   name: prefab
   href: api/Global.Particles.html#Global_Particles_prefab
@@ -8808,6 +8821,31 @@ references:
   isSpec: "True"
   fullName: WalkBehaviour.Walk
   nameWithType: WalkBehaviour.Walk
+- uid: Global.WalkParticles
+  name: WalkParticles
+  href: api/Global.WalkParticles.html
+  commentId: T:Global.WalkParticles
+  fullName: WalkParticles
+  nameWithType: WalkParticles
+- uid: Global.WalkParticles.Awake
+  name: Awake()
+  href: api/Global.WalkParticles.html#Global_WalkParticles_Awake
+  commentId: M:Global.WalkParticles.Awake
+  fullName: WalkParticles.Awake()
+  nameWithType: WalkParticles.Awake()
+- uid: Global.WalkParticles.Awake*
+  name: Awake
+  href: api/Global.WalkParticles.html#Global_WalkParticles_Awake_
+  commentId: Overload:Global.WalkParticles.Awake
+  isSpec: "True"
+  fullName: WalkParticles.Awake
+  nameWithType: WalkParticles.Awake
+- uid: Global.WalkParticles.particles
+  name: particles
+  href: api/Global.WalkParticles.html#Global_WalkParticles_particles
+  commentId: F:Global.WalkParticles.particles
+  fullName: WalkParticles.particles
+  nameWithType: WalkParticles.particles
 - uid: Global.WalkSoundEffect
   name: WalkSoundEffect
   href: api/Global.WalkSoundEffect.html

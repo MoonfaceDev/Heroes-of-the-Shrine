@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class Particles
+    <title>Class WalkParticles
    | Heroes of the Shrine </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class Particles
+    <meta name="title" content="Class WalkParticles
    | Heroes of the Shrine ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,23 +78,47 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Global.Particles">
+            <article class="content wrap" id="_content" data-uid="Global.WalkParticles">
   
   
-  <h1 id="Global_Particles" data-uid="Global.Particles" class="text-break">Class Particles
+  <h1 id="Global_WalkParticles" data-uid="Global.WalkParticles" class="text-break">Class WalkParticles
   </h1>
-  <div class="markdown level0 summary"><p>Spawns particles</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
     <div class="level2"><a class="xref" href="Global.EntityBehaviour.html">EntityBehaviour</a></div>
-    <div class="level3"><span class="xref">Particles</span></div>
+    <div class="level3"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
+    <div class="level4"><span class="xref">WalkParticles</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Animator">CharacterBehaviour.Animator</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_MovableEntity">CharacterBehaviour.MovableEntity</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_AttackManager">CharacterBehaviour.AttackManager</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_BlockBehaviours_Type___">CharacterBehaviour.BlockBehaviours(Type[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_UnblockBehaviours_Type___">CharacterBehaviour.UnblockBehaviours(Type[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_StopBehaviours_Type___">CharacterBehaviour.StopBehaviours(Type[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_IsPlaying__1">CharacterBehaviour.IsPlaying&lt;T&gt;()</a>
+    </div>
     <div>
       <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_Enabled">EntityBehaviour.Enabled</a>
     </div>
@@ -143,20 +167,20 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Global_Particles_syntax">Syntax</h5>
+  <h5 id="Global_WalkParticles_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Particles : EntityBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class WalkParticles : CharacterBehaviour</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
   
   
-  <h4 id="Global_Particles_attachToCharacter" data-uid="Global.Particles.attachToCharacter">attachToCharacter</h4>
+  <h4 id="Global_WalkParticles_particles" data-uid="Global.WalkParticles.particles">particles</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool attachToCharacter</code></pre>
+    <pre><code class="lang-csharp hljs">public Particles particles</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -168,85 +192,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p>If <code>true</code>, particles move along with the character after they are spawned</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_Particles_particlePosition" data-uid="Global.Particles.particlePosition">particlePosition</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vector3 particlePosition</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Vector3</span></td>
-        <td><p>Point where particle is spawned, relative to the <span class="xref">GameEntity</span></p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_Particles_prefab" data-uid="Global.Particles.prefab">prefab</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public GameObject prefab</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">GameObject</span></td>
-        <td><p>Prefab of the particles</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-  </h3>
-  
-  
-  <a id="Global_Particles_Playing_" data-uid="Global.Particles.Playing*"></a>
-  <h4 id="Global_Particles_Playing" data-uid="Global.Particles.Playing">Playing</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Playing { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><a class="xref" href="Global.Particles.html">Particles</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -255,25 +201,16 @@
   </h3>
   
   
-  <a id="Global_Particles_Play_" data-uid="Global.Particles.Play*"></a>
-  <h4 id="Global_Particles_Play" data-uid="Global.Particles.Play">Play()</h4>
-  <div class="markdown level1 summary"><p>Spawns the particles</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Play()</code></pre>
-  </div>
-  
-  
-  <a id="Global_Particles_Stop_" data-uid="Global.Particles.Stop*"></a>
-  <h4 id="Global_Particles_Stop" data-uid="Global.Particles.Stop">Stop()</h4>
+  <a id="Global_WalkParticles_Awake_" data-uid="Global.WalkParticles.Awake*"></a>
+  <h4 id="Global_WalkParticles_Awake" data-uid="Global.WalkParticles.Awake">Awake()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Stop()</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void Awake()</code></pre>
   </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Awake">CharacterBehaviour.Awake()</a></div>
 </article>
           </div>
           

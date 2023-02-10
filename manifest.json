@@ -472,7 +472,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.CharacterBehaviour.html",
-          "hash": "uxR9bxe5Z6Tz0FwnDMlQpLZO/7+yWZku1LkWat9BmiE="
+          "hash": "h/Kzz7XKi/QQ9AePD1lcn+LLAVHnnbGpiUglVILKRTE="
         }
       },
       "is_incremental": false,
@@ -1600,7 +1600,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.Particles.html",
-          "hash": "yoR/qUmwiRZQSa13qC8pWkV4rkVv1NmXXAJwiacD3UY="
+          "hash": "BwG5n4IxLloaUsyd2IfNRA59GOXfN5e2aDDc9d/jJRw="
         }
       },
       "is_incremental": false,
@@ -2436,6 +2436,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.WalkParticles.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.WalkParticles.html",
+          "hash": "f2z81l7JkaoCQn1vqSIJRiEbO/qCHpIU1Lfl0T0EZ8c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.WalkSoundEffect.yml",
       "output": {
         ".html": {
@@ -2464,7 +2476,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "Y96qz26G1l/NJD8OKvfI787LkwVOG5a7tgs1eq5HKtA="
+          "hash": "yK60ynbxZvJkpMKi7SWmgbbnfq5zrGwsy7w1rje/wp8="
         }
       },
       "is_incremental": false,
@@ -2476,7 +2488,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "k2JB2bQx17F4FrKd8NXgmtTP+EKyr5gCm6hRkDOL3n0="
+          "hash": "4Ep5Qota37IISRsgKbGMZOs7MsmIaaFZuEP1j//3T10="
         }
       },
       "is_incremental": false,
@@ -2687,7 +2699,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 204,
+          "total_file_count": 205,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
