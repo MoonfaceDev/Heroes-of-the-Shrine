@@ -3850,6 +3850,12 @@ references:
   isSpec: "True"
   fullName: GameEntity.GroundWorldPosition
   nameWithType: GameEntity.GroundWorldPosition
+- uid: Global.GameEntity.Instantiate(GameObject,GameEntity,Vector3,Rotation)
+  name: Instantiate(GameObject, GameEntity, Vector3, Rotation)
+  href: api/Global.GameEntity.html#Global_GameEntity_Instantiate_GameObject_GameEntity_Vector3_Rotation_
+  commentId: M:Global.GameEntity.Instantiate(GameObject,GameEntity,Vector3,Rotation)
+  fullName: GameEntity.Instantiate(GameObject, GameEntity, Vector3, Rotation)
+  nameWithType: GameEntity.Instantiate(GameObject, GameEntity, Vector3, Rotation)
 - uid: Global.GameEntity.Instantiate(GameObject,Vector3,Rotation)
   name: Instantiate(GameObject, Vector3, Rotation)
   href: api/Global.GameEntity.html#Global_GameEntity_Instantiate_GameObject_Vector3_Rotation_
@@ -5871,6 +5877,19 @@ references:
   commentId: F:Global.Particles.prefab
   fullName: Particles.prefab
   nameWithType: Particles.prefab
+- uid: Global.Particles.Stop
+  name: Stop()
+  href: api/Global.Particles.html#Global_Particles_Stop
+  commentId: M:Global.Particles.Stop
+  fullName: Particles.Stop()
+  nameWithType: Particles.Stop()
+- uid: Global.Particles.Stop*
+  name: Stop
+  href: api/Global.Particles.html#Global_Particles_Stop_
+  commentId: Overload:Global.Particles.Stop
+  isSpec: "True"
+  fullName: Particles.Stop
+  nameWithType: Particles.Stop
 - uid: Global.Pathfind
   name: Pathfind
   href: api/Global.Pathfind.html
