@@ -24,9 +24,16 @@ public class KnockbackHitExecutor : IHitExecutor
 
     public void Execute(BaseAttack attack, IHittable hittable)
     {
+        var processedKnockbackPower =
+            attack.AttackManager.knockbackPowerTranspiler.Transpile(attack, hittable, knockbackPower);
+
         var hitDirection =
             (int)Mathf.Sign(hittable.Character.movableEntity.WorldPosition.x - attack.MovableEntity.WorldPosition.x);
-        hittable.Knockback(knockbackPower, KnockbackBehaviour.GetRelativeDirection(knockbackDirection, hitDirection),
-            stunTime);
+
+        hittable.Knockback(
+            processedKnockbackPower,
+            KnockbackBehaviour.GetRelativeDirection(knockbackDirection, hitDirection),
+            stunTime
+        );
     }
 }

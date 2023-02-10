@@ -189,7 +189,7 @@ MonoBehaviour:
       type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         knockbackPower: 5
-        knockbackDirection: 30
+        knockbackDirection: 45
         stunTime: 0.5
 --- !u!114 &4952256669799359370
 MonoBehaviour:
@@ -1011,7 +1011,7 @@ MonoBehaviour:
   interruptible: 0
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.075
+    anticipationDuration: 0.02
     activeDuration: 0.225
     recoveryDuration: 0.1
   hitDetector:
@@ -1043,7 +1043,7 @@ MonoBehaviour:
     - rid: 3181427634693996683
       type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        knockbackPower: 6
+        knockbackPower: 5
         knockbackDirection: 110
         stunTime: 0.5
 --- !u!114 &2644732355721132754
@@ -12444,7 +12444,7 @@ MonoBehaviour:
       type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         knockbackPower: 5
-        knockbackDirection: 30
+        knockbackDirection: 45
         stunTime: 0.5
 --- !u!114 &3568453442421848273
 MonoBehaviour:

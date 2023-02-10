@@ -70,7 +70,8 @@ public class KnockbackBehaviour : PlayableBehaviour<KnockbackBehaviour.Command>,
 
     protected override void DoPlay(Command command)
     {
-        StopBehaviours(BlockedBehaviours.Append(typeof(KnockbackBehaviour)).ToArray());
+        Stop();
+        StopBehaviours(BlockedBehaviours);
         BlockBehaviours(BlockedBehaviours);
 
         Active = true;
