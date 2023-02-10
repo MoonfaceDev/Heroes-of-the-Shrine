@@ -22,6 +22,8 @@ public class Particles : EntityBehaviour
 
     private GameObject clone;
 
+    public bool Playing => clone != null;
+
     /// <summary>
     /// Spawns the particles
     /// </summary>
