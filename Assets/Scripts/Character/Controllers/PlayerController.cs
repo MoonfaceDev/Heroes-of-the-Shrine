@@ -223,7 +223,7 @@ public class PlayerController : CharacterController
     {
         return (
             from property in attacks
-            where property.attack.CanPlay(command) && downButtons.Any(button => button == property.button)
+            where downButtons.Any(button => button == property.button) && property.attack.CanPlay(command)
             select property.attack
         ).LastOrDefault();
     }

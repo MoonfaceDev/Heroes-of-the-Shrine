@@ -45,6 +45,11 @@ public class RunBehaviour : BaseMovementBehaviour<RunBehaviour.Command>
         }
     }
 
+    public override bool CanPlay(Command command)
+    {
+        return base.CanPlay(command) && !walkBehaviour.Blocked;
+    }
+
     protected override void DoPlay(Command command)
     {
         Run = true;

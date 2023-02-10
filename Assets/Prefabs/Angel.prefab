@@ -1354,8 +1354,8 @@ MonoBehaviour:
       Expanded: 1
   cooldown: 0
   jumpSpeed: 20
-  jumpAnticipateTime: 0
-  jumpRecoverTime: 0
+  jumpAnticipateTime: 0.05
+  jumpRecoverTime: 0.05
   climbAcceleration: 100
   peakDuration: 0.2
   peakAcceleration: 5
