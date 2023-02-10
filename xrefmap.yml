@@ -396,25 +396,24 @@ references:
   isSpec: "True"
   fullName: AttackManager.CanPlayMove
   nameWithType: AttackManager.CanPlayMove
-- uid: Global.AttackManager.DamageTranspiler
-  name: DamageTranspiler
-  href: api/Global.AttackManager.html#Global_AttackManager_DamageTranspiler
-  commentId: P:Global.AttackManager.DamageTranspiler
-  fullName: AttackManager.DamageTranspiler
-  nameWithType: AttackManager.DamageTranspiler
-- uid: Global.AttackManager.DamageTranspiler*
-  name: DamageTranspiler
-  href: api/Global.AttackManager.html#Global_AttackManager_DamageTranspiler_
-  commentId: Overload:Global.AttackManager.DamageTranspiler
-  isSpec: "True"
-  fullName: AttackManager.DamageTranspiler
-  nameWithType: AttackManager.DamageTranspiler
+- uid: Global.AttackManager.damageTranspiler
+  name: damageTranspiler
+  href: api/Global.AttackManager.html#Global_AttackManager_damageTranspiler
+  commentId: F:Global.AttackManager.damageTranspiler
+  fullName: AttackManager.damageTranspiler
+  nameWithType: AttackManager.damageTranspiler
 - uid: Global.AttackManager.hittableTags
   name: hittableTags
   href: api/Global.AttackManager.html#Global_AttackManager_hittableTags
   commentId: F:Global.AttackManager.hittableTags
   fullName: AttackManager.hittableTags
   nameWithType: AttackManager.hittableTags
+- uid: Global.AttackManager.knockbackPowerTranspiler
+  name: knockbackPowerTranspiler
+  href: api/Global.AttackManager.html#Global_AttackManager_knockbackPowerTranspiler
+  commentId: F:Global.AttackManager.knockbackPowerTranspiler
+  fullName: AttackManager.knockbackPowerTranspiler
+  nameWithType: AttackManager.knockbackPowerTranspiler
 - uid: Global.AttackManager.lastAttack
   name: lastAttack
   href: api/Global.AttackManager.html#Global_AttackManager_lastAttack
@@ -1654,12 +1653,12 @@ references:
   commentId: F:Global.Character.movableEntity
   fullName: Character.movableEntity
   nameWithType: Character.movableEntity
-- uid: Global.Character.physicalAttributes
-  name: physicalAttributes
-  href: api/Global.Character.html#Global_Character_physicalAttributes
-  commentId: F:Global.Character.physicalAttributes
-  fullName: Character.physicalAttributes
-  nameWithType: Character.physicalAttributes
+- uid: Global.Character.stats
+  name: stats
+  href: api/Global.Character.html#Global_Character_stats
+  commentId: F:Global.Character.stats
+  fullName: Character.stats
+  nameWithType: Character.stats
 - uid: Global.Character.StopBehaviours(Type[])
   name: StopBehaviours(Type[])
   href: api/Global.Character.html#Global_Character_StopBehaviours_Type___
@@ -1833,6 +1832,30 @@ references:
   commentId: T:Global.CharacterController
   fullName: CharacterController
   nameWithType: CharacterController
+- uid: Global.CharacterStats
+  name: CharacterStats
+  href: api/Global.CharacterStats.html
+  commentId: T:Global.CharacterStats
+  fullName: CharacterStats
+  nameWithType: CharacterStats
+- uid: Global.CharacterStats.damageMultiplier
+  name: damageMultiplier
+  href: api/Global.CharacterStats.html#Global_CharacterStats_damageMultiplier
+  commentId: F:Global.CharacterStats.damageMultiplier
+  fullName: CharacterStats.damageMultiplier
+  nameWithType: CharacterStats.damageMultiplier
+- uid: Global.CharacterStats.gravityAcceleration
+  name: gravityAcceleration
+  href: api/Global.CharacterStats.html#Global_CharacterStats_gravityAcceleration
+  commentId: F:Global.CharacterStats.gravityAcceleration
+  fullName: CharacterStats.gravityAcceleration
+  nameWithType: CharacterStats.gravityAcceleration
+- uid: Global.CharacterStats.knockbackPowerMultiplier
+  name: knockbackPowerMultiplier
+  href: api/Global.CharacterStats.html#Global_CharacterStats_knockbackPowerMultiplier
+  commentId: F:Global.CharacterStats.knockbackPowerMultiplier
+  fullName: CharacterStats.knockbackPowerMultiplier
+  nameWithType: CharacterStats.knockbackPowerMultiplier
 - uid: Global.ClosestEnemyBrainModule
   name: ClosestEnemyBrainModule
   href: api/Global.ClosestEnemyBrainModule.html
@@ -2001,90 +2024,6 @@ references:
   commentId: T:Global.DamageTranspiler
   fullName: DamageTranspiler
   nameWithType: DamageTranspiler
-- uid: Global.DamageTranspiler.#ctor
-  name: DamageTranspiler()
-  href: api/Global.DamageTranspiler.html#Global_DamageTranspiler__ctor
-  commentId: M:Global.DamageTranspiler.#ctor
-  fullName: DamageTranspiler.DamageTranspiler()
-  nameWithType: DamageTranspiler.DamageTranspiler()
-- uid: Global.DamageTranspiler.#ctor*
-  name: DamageTranspiler
-  href: api/Global.DamageTranspiler.html#Global_DamageTranspiler__ctor_
-  commentId: Overload:Global.DamageTranspiler.#ctor
-  isSpec: "True"
-  fullName: DamageTranspiler.DamageTranspiler
-  nameWithType: DamageTranspiler.DamageTranspiler
-- uid: Global.DamageTranspiler.AttachDamageBonus(DamageTranspiler.DamageBonus)
-  name: AttachDamageBonus(DamageTranspiler.DamageBonus)
-  href: api/Global.DamageTranspiler.html#Global_DamageTranspiler_AttachDamageBonus_DamageTranspiler_DamageBonus_
-  commentId: M:Global.DamageTranspiler.AttachDamageBonus(DamageTranspiler.DamageBonus)
-  fullName: DamageTranspiler.AttachDamageBonus(DamageTranspiler.DamageBonus)
-  nameWithType: DamageTranspiler.AttachDamageBonus(DamageTranspiler.DamageBonus)
-- uid: Global.DamageTranspiler.AttachDamageBonus*
-  name: AttachDamageBonus
-  href: api/Global.DamageTranspiler.html#Global_DamageTranspiler_AttachDamageBonus_
-  commentId: Overload:Global.DamageTranspiler.AttachDamageBonus
-  isSpec: "True"
-  fullName: DamageTranspiler.AttachDamageBonus
-  nameWithType: DamageTranspiler.AttachDamageBonus
-- uid: Global.DamageTranspiler.AttachDamageMultiplier(DamageTranspiler.DamageBonus)
-  name: AttachDamageMultiplier(DamageTranspiler.DamageBonus)
-  href: api/Global.DamageTranspiler.html#Global_DamageTranspiler_AttachDamageMultiplier_DamageTranspiler_DamageBonus_
-  commentId: M:Global.DamageTranspiler.AttachDamageMultiplier(DamageTranspiler.DamageBonus)
-  fullName: DamageTranspiler.AttachDamageMultiplier(DamageTranspiler.DamageBonus)
-  nameWithType: DamageTranspiler.AttachDamageMultiplier(DamageTranspiler.DamageBonus)
-- uid: Global.DamageTranspiler.AttachDamageMultiplier*
-  name: AttachDamageMultiplier
-  href: api/Global.DamageTranspiler.html#Global_DamageTranspiler_AttachDamageMultiplier_
-  commentId: Overload:Global.DamageTranspiler.AttachDamageMultiplier
-  isSpec: "True"
-  fullName: DamageTranspiler.AttachDamageMultiplier
-  nameWithType: DamageTranspiler.AttachDamageMultiplier
-- uid: Global.DamageTranspiler.DamageBonus
-  name: DamageTranspiler.DamageBonus
-  href: api/Global.DamageTranspiler.DamageBonus.html
-  commentId: T:Global.DamageTranspiler.DamageBonus
-  fullName: DamageTranspiler.DamageBonus
-  nameWithType: DamageTranspiler.DamageBonus
-- uid: Global.DamageTranspiler.DetachDamageBonus(DamageTranspiler.DamageBonus)
-  name: DetachDamageBonus(DamageTranspiler.DamageBonus)
-  href: api/Global.DamageTranspiler.html#Global_DamageTranspiler_DetachDamageBonus_DamageTranspiler_DamageBonus_
-  commentId: M:Global.DamageTranspiler.DetachDamageBonus(DamageTranspiler.DamageBonus)
-  fullName: DamageTranspiler.DetachDamageBonus(DamageTranspiler.DamageBonus)
-  nameWithType: DamageTranspiler.DetachDamageBonus(DamageTranspiler.DamageBonus)
-- uid: Global.DamageTranspiler.DetachDamageBonus*
-  name: DetachDamageBonus
-  href: api/Global.DamageTranspiler.html#Global_DamageTranspiler_DetachDamageBonus_
-  commentId: Overload:Global.DamageTranspiler.DetachDamageBonus
-  isSpec: "True"
-  fullName: DamageTranspiler.DetachDamageBonus
-  nameWithType: DamageTranspiler.DetachDamageBonus
-- uid: Global.DamageTranspiler.DetachDamageMultiplier(DamageTranspiler.DamageBonus)
-  name: DetachDamageMultiplier(DamageTranspiler.DamageBonus)
-  href: api/Global.DamageTranspiler.html#Global_DamageTranspiler_DetachDamageMultiplier_DamageTranspiler_DamageBonus_
-  commentId: M:Global.DamageTranspiler.DetachDamageMultiplier(DamageTranspiler.DamageBonus)
-  fullName: DamageTranspiler.DetachDamageMultiplier(DamageTranspiler.DamageBonus)
-  nameWithType: DamageTranspiler.DetachDamageMultiplier(DamageTranspiler.DamageBonus)
-- uid: Global.DamageTranspiler.DetachDamageMultiplier*
-  name: DetachDamageMultiplier
-  href: api/Global.DamageTranspiler.html#Global_DamageTranspiler_DetachDamageMultiplier_
-  commentId: Overload:Global.DamageTranspiler.DetachDamageMultiplier
-  isSpec: "True"
-  fullName: DamageTranspiler.DetachDamageMultiplier
-  nameWithType: DamageTranspiler.DetachDamageMultiplier
-- uid: Global.DamageTranspiler.TranspileDamage(BaseAttack,IHittable,System.Single)
-  name: TranspileDamage(BaseAttack, IHittable, Single)
-  href: api/Global.DamageTranspiler.html#Global_DamageTranspiler_TranspileDamage_BaseAttack_IHittable_System_Single_
-  commentId: M:Global.DamageTranspiler.TranspileDamage(BaseAttack,IHittable,System.Single)
-  fullName: DamageTranspiler.TranspileDamage(BaseAttack, IHittable, System.Single)
-  nameWithType: DamageTranspiler.TranspileDamage(BaseAttack, IHittable, Single)
-- uid: Global.DamageTranspiler.TranspileDamage*
-  name: TranspileDamage
-  href: api/Global.DamageTranspiler.html#Global_DamageTranspiler_TranspileDamage_
-  commentId: Overload:Global.DamageTranspiler.TranspileDamage
-  isSpec: "True"
-  fullName: DamageTranspiler.TranspileDamage
-  nameWithType: DamageTranspiler.TranspileDamage
 - uid: Global.DeathPanel
   name: DeathPanel
   href: api/Global.DeathPanel.html
@@ -4681,6 +4620,94 @@ references:
   isSpec: "True"
   fullName: HittableHitbox.Stun
   nameWithType: HittableHitbox.Stun
+- uid: Global.HitValueTranspiler`1
+  name: HitValueTranspiler<T>
+  href: api/Global.HitValueTranspiler-1.html
+  commentId: T:Global.HitValueTranspiler`1
+  name.vb: HitValueTranspiler(Of T)
+  fullName: HitValueTranspiler<T>
+  fullName.vb: HitValueTranspiler(Of T)
+  nameWithType: HitValueTranspiler<T>
+  nameWithType.vb: HitValueTranspiler(Of T)
+- uid: Global.HitValueTranspiler`1.#ctor
+  name: HitValueTranspiler()
+  href: api/Global.HitValueTranspiler-1.html#Global_HitValueTranspiler_1__ctor
+  commentId: M:Global.HitValueTranspiler`1.#ctor
+  fullName: HitValueTranspiler<T>.HitValueTranspiler()
+  fullName.vb: HitValueTranspiler(Of T).HitValueTranspiler()
+  nameWithType: HitValueTranspiler<T>.HitValueTranspiler()
+  nameWithType.vb: HitValueTranspiler(Of T).HitValueTranspiler()
+- uid: Global.HitValueTranspiler`1.#ctor*
+  name: HitValueTranspiler
+  href: api/Global.HitValueTranspiler-1.html#Global_HitValueTranspiler_1__ctor_
+  commentId: Overload:Global.HitValueTranspiler`1.#ctor
+  isSpec: "True"
+  fullName: HitValueTranspiler<T>.HitValueTranspiler
+  fullName.vb: HitValueTranspiler(Of T).HitValueTranspiler
+  nameWithType: HitValueTranspiler<T>.HitValueTranspiler
+  nameWithType.vb: HitValueTranspiler(Of T).HitValueTranspiler
+- uid: Global.HitValueTranspiler`1.Add(HitValueTranspiler{`0}.TranspileCallable)
+  name: Add(HitValueTranspiler<T>.TranspileCallable)
+  href: api/Global.HitValueTranspiler-1.html#Global_HitValueTranspiler_1_Add_HitValueTranspiler__0__TranspileCallable_
+  commentId: M:Global.HitValueTranspiler`1.Add(HitValueTranspiler{`0}.TranspileCallable)
+  name.vb: Add(HitValueTranspiler(Of T).TranspileCallable)
+  fullName: HitValueTranspiler<T>.Add(HitValueTranspiler<T>.TranspileCallable)
+  fullName.vb: HitValueTranspiler(Of T).Add(HitValueTranspiler(Of T).TranspileCallable)
+  nameWithType: HitValueTranspiler<T>.Add(HitValueTranspiler<T>.TranspileCallable)
+  nameWithType.vb: HitValueTranspiler(Of T).Add(HitValueTranspiler(Of T).TranspileCallable)
+- uid: Global.HitValueTranspiler`1.Add*
+  name: Add
+  href: api/Global.HitValueTranspiler-1.html#Global_HitValueTranspiler_1_Add_
+  commentId: Overload:Global.HitValueTranspiler`1.Add
+  isSpec: "True"
+  fullName: HitValueTranspiler<T>.Add
+  fullName.vb: HitValueTranspiler(Of T).Add
+  nameWithType: HitValueTranspiler<T>.Add
+  nameWithType.vb: HitValueTranspiler(Of T).Add
+- uid: Global.HitValueTranspiler`1.Remove(HitValueTranspiler{`0}.TranspileCallable)
+  name: Remove(HitValueTranspiler<T>.TranspileCallable)
+  href: api/Global.HitValueTranspiler-1.html#Global_HitValueTranspiler_1_Remove_HitValueTranspiler__0__TranspileCallable_
+  commentId: M:Global.HitValueTranspiler`1.Remove(HitValueTranspiler{`0}.TranspileCallable)
+  name.vb: Remove(HitValueTranspiler(Of T).TranspileCallable)
+  fullName: HitValueTranspiler<T>.Remove(HitValueTranspiler<T>.TranspileCallable)
+  fullName.vb: HitValueTranspiler(Of T).Remove(HitValueTranspiler(Of T).TranspileCallable)
+  nameWithType: HitValueTranspiler<T>.Remove(HitValueTranspiler<T>.TranspileCallable)
+  nameWithType.vb: HitValueTranspiler(Of T).Remove(HitValueTranspiler(Of T).TranspileCallable)
+- uid: Global.HitValueTranspiler`1.Remove*
+  name: Remove
+  href: api/Global.HitValueTranspiler-1.html#Global_HitValueTranspiler_1_Remove_
+  commentId: Overload:Global.HitValueTranspiler`1.Remove
+  isSpec: "True"
+  fullName: HitValueTranspiler<T>.Remove
+  fullName.vb: HitValueTranspiler(Of T).Remove
+  nameWithType: HitValueTranspiler<T>.Remove
+  nameWithType.vb: HitValueTranspiler(Of T).Remove
+- uid: Global.HitValueTranspiler`1.Transpile(BaseAttack,IHittable,`0)
+  name: Transpile(BaseAttack, IHittable, T)
+  href: api/Global.HitValueTranspiler-1.html#Global_HitValueTranspiler_1_Transpile_BaseAttack_IHittable__0_
+  commentId: M:Global.HitValueTranspiler`1.Transpile(BaseAttack,IHittable,`0)
+  fullName: HitValueTranspiler<T>.Transpile(BaseAttack, IHittable, T)
+  fullName.vb: HitValueTranspiler(Of T).Transpile(BaseAttack, IHittable, T)
+  nameWithType: HitValueTranspiler<T>.Transpile(BaseAttack, IHittable, T)
+  nameWithType.vb: HitValueTranspiler(Of T).Transpile(BaseAttack, IHittable, T)
+- uid: Global.HitValueTranspiler`1.Transpile*
+  name: Transpile
+  href: api/Global.HitValueTranspiler-1.html#Global_HitValueTranspiler_1_Transpile_
+  commentId: Overload:Global.HitValueTranspiler`1.Transpile
+  isSpec: "True"
+  fullName: HitValueTranspiler<T>.Transpile
+  fullName.vb: HitValueTranspiler(Of T).Transpile
+  nameWithType: HitValueTranspiler<T>.Transpile
+  nameWithType.vb: HitValueTranspiler(Of T).Transpile
+- uid: Global.HitValueTranspiler`1.TranspileCallable
+  name: HitValueTranspiler<T>.TranspileCallable
+  href: api/Global.HitValueTranspiler-1.TranspileCallable.html
+  commentId: T:Global.HitValueTranspiler`1.TranspileCallable
+  name.vb: HitValueTranspiler(Of T).TranspileCallable
+  fullName: HitValueTranspiler<T>.TranspileCallable
+  fullName.vb: HitValueTranspiler(Of T).TranspileCallable
+  nameWithType: HitValueTranspiler<T>.TranspileCallable
+  nameWithType.vb: HitValueTranspiler(Of T).TranspileCallable
 - uid: Global.IControlledBehaviour
   name: IControlledBehaviour
   href: api/Global.IControlledBehaviour.html
@@ -5333,6 +5360,12 @@ references:
   commentId: F:Global.KnockbackHitExecutor.stunTime
   fullName: KnockbackHitExecutor.stunTime
   nameWithType: KnockbackHitExecutor.stunTime
+- uid: Global.KnockbackPowerTranspiler
+  name: KnockbackPowerTranspiler
+  href: api/Global.KnockbackPowerTranspiler.html
+  commentId: T:Global.KnockbackPowerTranspiler
+  fullName: KnockbackPowerTranspiler
+  nameWithType: KnockbackPowerTranspiler
 - uid: Global.LineTrigger
   name: LineTrigger
   href: api/Global.LineTrigger.html
@@ -5986,18 +6019,6 @@ references:
   isSpec: "True"
   fullName: PeriodicRelativeHitDetector.StopDetector
   nameWithType: PeriodicRelativeHitDetector.StopDetector
-- uid: Global.PhysicalAttributes
-  name: PhysicalAttributes
-  href: api/Global.PhysicalAttributes.html
-  commentId: T:Global.PhysicalAttributes
-  fullName: PhysicalAttributes
-  nameWithType: PhysicalAttributes
-- uid: Global.PhysicalAttributes.gravityAcceleration
-  name: gravityAcceleration
-  href: api/Global.PhysicalAttributes.html#Global_PhysicalAttributes_gravityAcceleration
-  commentId: F:Global.PhysicalAttributes.gravityAcceleration
-  fullName: PhysicalAttributes.gravityAcceleration
-  nameWithType: PhysicalAttributes.gravityAcceleration
 - uid: Global.PlayableBehaviour`1
   name: PlayableBehaviour<T>
   href: api/Global.PlayableBehaviour-1.html
