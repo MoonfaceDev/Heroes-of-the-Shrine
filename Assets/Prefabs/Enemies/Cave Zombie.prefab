@@ -126,7 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 25
-  health: 0
 --- !u!114 &1337210996092918673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -589,7 +588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cff09d03fe3d7d4cbf83f5b86378d97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  physicalAttributes: {fileID: 11400000, guid: 7a04245b53151b344823f01dcf190584, type: 2}
+  stats: {fileID: 11400000, guid: 5537891163885784ba65f10152f4cc74, type: 2}
   animator: {fileID: 3354150098403288960}
   movableEntity: {fileID: 0}
   attackManager: {fileID: 0}

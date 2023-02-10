@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 964169329cbaa95428f0c666702aa78c, type: 3}
-  m_Name: Character Physical Attributes
+  m_Script: {fileID: 11500000, guid: 79782780e31447e4bca2c626ea472823, type: 3}
+  m_Name: Human
   m_EditorClassIdentifier: 
   gravityAcceleration: 50
+  damageMultiplier: 1
+  knockbackPowerMultiplier: 1
+  stunTimeMultiplier: 1

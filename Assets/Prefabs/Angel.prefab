@@ -1333,7 +1333,6 @@ MonoBehaviour:
         _methodName: set_pitch
       Expanded: 1
   cooldown: 0
-  timeToRun: 1
   runSpeedMultiplier: 1.5
   runParticles: {fileID: 5102893361865183971}
 --- !u!114 &5138342577840215663
@@ -2056,7 +2055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cff09d03fe3d7d4cbf83f5b86378d97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  physicalAttributes: {fileID: 11400000, guid: 7a04245b53151b344823f01dcf190584, type: 2}
+  stats: {fileID: 11400000, guid: f0dd1cbac5660c1469a150b9876636ab, type: 2}
   animator: {fileID: 5102893361555062418}
   movableEntity: {fileID: 0}
   attackManager: {fileID: 0}

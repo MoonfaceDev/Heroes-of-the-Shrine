@@ -13,7 +13,7 @@ public class Character : EntityBehaviour
     /// <value>
     /// Physical attributes
     /// </value>
-    public PhysicalAttributes physicalAttributes;
+    public CharacterStats stats;
 
     /// <value>
     /// Animator of the figure (related <see cref="SpriteRenderer"/>)

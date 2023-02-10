@@ -115,7 +115,7 @@ public class KnockbackBehaviour : PlayableBehaviour<KnockbackBehaviour.Command>,
                 break;
         }
 
-        MovableEntity.acceleration.y = -Character.physicalAttributes.gravityAcceleration;
+        MovableEntity.acceleration.y = -Character.stats.gravityAcceleration;
         MovableEntity.velocity.x = Mathf.Cos(Mathf.Deg2Rad * angleDegrees) * power;
         MovableEntity.velocity.y = Mathf.Sin(Mathf.Deg2Rad * angleDegrees) * power;
         MovableEntity.velocity.z = 0;

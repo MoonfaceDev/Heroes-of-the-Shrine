@@ -33,16 +33,26 @@ public class AttackManager : CharacterBehaviour
     public AttackEvents attackEvents;
 
     /// <value>
-    /// Damage transpiler
+    /// Hit damage transpiler
     /// </value>
-    public DamageTranspiler DamageTranspiler { get; private set; }
+    public DamageTranspiler damageTranspiler;
+
+    /// <value>
+    /// Hit knockback power transpiler
+    /// </value>
+    public KnockbackPowerTranspiler knockbackPowerTranspiler;
 
     private string forgetComboTimeout;
 
     protected override void Awake()
     {
         base.Awake();
-        DamageTranspiler = new DamageTranspiler();
+
+        damageTranspiler = new DamageTranspiler();
+        damageTranspiler.Add((_, _, value) => Character.stats.damageMultiplier * value);
+
+        knockbackPowerTranspiler = new KnockbackPowerTranspiler();
+        knockbackPowerTranspiler.Add((_, _, value) => Character.stats.knockbackPowerMultiplier * value);
     }
 
     private void Start()

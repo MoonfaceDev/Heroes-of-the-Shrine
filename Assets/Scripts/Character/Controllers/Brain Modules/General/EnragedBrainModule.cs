@@ -34,10 +34,13 @@ public class EnragedBrainModule : BrainModule
     private void Start()
     {
         var attackManager = GetBehaviour<AttackManager>();
-        if (attackManager)
+        InvokeWhen(() => rage, () =>
         {
-            attackManager.DamageTranspiler.AttachDamageMultiplier((_, _) => rage ? rageDamageMultiplier : 1);
-        }
+            if (attackManager)
+            {
+                attackManager.damageTranspiler.Add((_, _, damage) => rageDamageMultiplier * damage);
+            }
+        });
     }
 
     private bool ShouldGetEnraged()

@@ -13,7 +13,7 @@ public class DamageHitExecutor : IHitExecutor
 
     public void Execute(BaseAttack attack, IHittable hittable)
     {
-        var processedDamage = attack.AttackManager.DamageTranspiler.TranspileDamage(attack, hittable, damage);
+        var processedDamage = attack.AttackManager.damageTranspiler.Transpile(attack, hittable, damage);
         hittable.Hit(processedDamage);
     }
 }

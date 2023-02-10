@@ -114,7 +114,7 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
             var peakStartTime = Time.time;
             stopPeakListener = InvokeWhen(
                 () => Time.time - peakStartTime > peakDuration,
-                () => MovableEntity.acceleration.y = -Character.physicalAttributes.gravityAcceleration
+                () => MovableEntity.acceleration.y = -Character.stats.gravityAcceleration
             );
         });
 
@@ -131,7 +131,7 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
 
     public void Unfreeze()
     {
-        MovableEntity.acceleration.y = -Character.physicalAttributes.gravityAcceleration;
+        MovableEntity.acceleration.y = -Character.stats.gravityAcceleration;
     }
 
     private void Land()
