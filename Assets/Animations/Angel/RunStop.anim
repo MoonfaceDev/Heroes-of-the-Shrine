@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dodge
+  m_Name: RunStop
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -20,12 +20,14 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 109585557, guid: 3311fae4f1ff2834ab30e18e00fb5750, type: 3}
+      value: {fileID: 1284034608, guid: 3311fae4f1ff2834ab30e18e00fb5750, type: 3}
+    - time: 0.1
+      value: {fileID: 2119065799, guid: 3311fae4f1ff2834ab30e18e00fb5750, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 60
+  m_SampleRate: 100
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -41,13 +43,14 @@ AnimationClip:
       isPPtrCurve: 1
       isIntCurve: 0
     pptrCurveMapping:
-    - {fileID: 109585557, guid: 3311fae4f1ff2834ab30e18e00fb5750, type: 3}
+    - {fileID: 1284034608, guid: 3311fae4f1ff2834ab30e18e00fb5750, type: 3}
+    - {fileID: 2119065799, guid: 3311fae4f1ff2834ab30e18e00fb5750, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.016666668
+    m_StopTime: 0.11
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -66,11 +69,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0
-    functionName: Play
-    data: 
-    objectReferenceParameter: {fileID: 8300000, guid: bacc3db9cf08558448f4e4a4873c2662, type: 3}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []
