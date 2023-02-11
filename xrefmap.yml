@@ -316,60 +316,12 @@ references:
   commentId: F:Global.ArcPattern.targetTag
   fullName: ArcPattern.targetTag
   nameWithType: ArcPattern.targetTag
-- uid: Global.AttackEvents
-  name: AttackEvents
-  href: api/Global.AttackEvents.html
-  commentId: T:Global.AttackEvents
-  fullName: AttackEvents
-  nameWithType: AttackEvents
-- uid: Global.AttackEvents.onFinishActive
-  name: onFinishActive
-  href: api/Global.AttackEvents.html#Global_AttackEvents_onFinishActive
-  commentId: F:Global.AttackEvents.onFinishActive
-  fullName: AttackEvents.onFinishActive
-  nameWithType: AttackEvents.onFinishActive
-- uid: Global.AttackEvents.onFinishAnticipating
-  name: onFinishAnticipating
-  href: api/Global.AttackEvents.html#Global_AttackEvents_onFinishAnticipating
-  commentId: F:Global.AttackEvents.onFinishAnticipating
-  fullName: AttackEvents.onFinishAnticipating
-  nameWithType: AttackEvents.onFinishAnticipating
-- uid: Global.AttackEvents.onFinishRecovery
-  name: onFinishRecovery
-  href: api/Global.AttackEvents.html#Global_AttackEvents_onFinishRecovery
-  commentId: F:Global.AttackEvents.onFinishRecovery
-  fullName: AttackEvents.onFinishRecovery
-  nameWithType: AttackEvents.onFinishRecovery
-- uid: Global.AttackEvents.onStartActive
-  name: onStartActive
-  href: api/Global.AttackEvents.html#Global_AttackEvents_onStartActive
-  commentId: F:Global.AttackEvents.onStartActive
-  fullName: AttackEvents.onStartActive
-  nameWithType: AttackEvents.onStartActive
-- uid: Global.AttackEvents.onStartAnticipating
-  name: onStartAnticipating
-  href: api/Global.AttackEvents.html#Global_AttackEvents_onStartAnticipating
-  commentId: F:Global.AttackEvents.onStartAnticipating
-  fullName: AttackEvents.onStartAnticipating
-  nameWithType: AttackEvents.onStartAnticipating
-- uid: Global.AttackEvents.onStartRecovery
-  name: onStartRecovery
-  href: api/Global.AttackEvents.html#Global_AttackEvents_onStartRecovery
-  commentId: F:Global.AttackEvents.onStartRecovery
-  fullName: AttackEvents.onStartRecovery
-  nameWithType: AttackEvents.onStartRecovery
 - uid: Global.AttackManager
   name: AttackManager
   href: api/Global.AttackManager.html
   commentId: T:Global.AttackManager
   fullName: AttackManager
   nameWithType: AttackManager
-- uid: Global.AttackManager.attackEvents
-  name: attackEvents
-  href: api/Global.AttackManager.html#Global_AttackManager_attackEvents
-  commentId: F:Global.AttackManager.attackEvents
-  fullName: AttackManager.attackEvents
-  nameWithType: AttackManager.attackEvents
 - uid: Global.AttackManager.Awake
   name: Awake()
   href: api/Global.AttackManager.html#Global_AttackManager_Awake
@@ -426,6 +378,12 @@ references:
   commentId: F:Global.AttackManager.maxComboDelay
   fullName: AttackManager.maxComboDelay
   nameWithType: AttackManager.maxComboDelay
+- uid: Global.AttackManager.phaseEvents
+  name: phaseEvents
+  href: api/Global.AttackManager.html#Global_AttackManager_phaseEvents
+  commentId: F:Global.AttackManager.phaseEvents
+  fullName: AttackManager.phaseEvents
+  nameWithType: AttackManager.phaseEvents
 - uid: Global.AttackManager.playEvents
   name: playEvents
   href: api/Global.AttackManager.html#Global_AttackManager_playEvents
@@ -689,64 +647,6 @@ references:
   commentId: T:Global.BaseAttack
   fullName: BaseAttack
   nameWithType: BaseAttack
-- uid: Global.BaseAttack.Active
-  name: Active
-  href: api/Global.BaseAttack.html#Global_BaseAttack_Active
-  commentId: P:Global.BaseAttack.Active
-  fullName: BaseAttack.Active
-  nameWithType: BaseAttack.Active
-- uid: Global.BaseAttack.Active*
-  name: Active
-  href: api/Global.BaseAttack.html#Global_BaseAttack_Active_
-  commentId: Overload:Global.BaseAttack.Active
-  isSpec: "True"
-  fullName: BaseAttack.Active
-  nameWithType: BaseAttack.Active
-- uid: Global.BaseAttack.ActivePhase
-  name: ActivePhase()
-  href: api/Global.BaseAttack.html#Global_BaseAttack_ActivePhase
-  commentId: M:Global.BaseAttack.ActivePhase
-  fullName: BaseAttack.ActivePhase()
-  nameWithType: BaseAttack.ActivePhase()
-- uid: Global.BaseAttack.ActivePhase*
-  name: ActivePhase
-  href: api/Global.BaseAttack.html#Global_BaseAttack_ActivePhase_
-  commentId: Overload:Global.BaseAttack.ActivePhase
-  isSpec: "True"
-  fullName: BaseAttack.ActivePhase
-  nameWithType: BaseAttack.ActivePhase
-- uid: Global.BaseAttack.Anticipating
-  name: Anticipating
-  href: api/Global.BaseAttack.html#Global_BaseAttack_Anticipating
-  commentId: P:Global.BaseAttack.Anticipating
-  fullName: BaseAttack.Anticipating
-  nameWithType: BaseAttack.Anticipating
-- uid: Global.BaseAttack.Anticipating*
-  name: Anticipating
-  href: api/Global.BaseAttack.html#Global_BaseAttack_Anticipating_
-  commentId: Overload:Global.BaseAttack.Anticipating
-  isSpec: "True"
-  fullName: BaseAttack.Anticipating
-  nameWithType: BaseAttack.Anticipating
-- uid: Global.BaseAttack.AnticipationPhase
-  name: AnticipationPhase()
-  href: api/Global.BaseAttack.html#Global_BaseAttack_AnticipationPhase
-  commentId: M:Global.BaseAttack.AnticipationPhase
-  fullName: BaseAttack.AnticipationPhase()
-  nameWithType: BaseAttack.AnticipationPhase()
-- uid: Global.BaseAttack.AnticipationPhase*
-  name: AnticipationPhase
-  href: api/Global.BaseAttack.html#Global_BaseAttack_AnticipationPhase_
-  commentId: Overload:Global.BaseAttack.AnticipationPhase
-  isSpec: "True"
-  fullName: BaseAttack.AnticipationPhase
-  nameWithType: BaseAttack.AnticipationPhase
-- uid: Global.BaseAttack.attackEvents
-  name: attackEvents
-  href: api/Global.BaseAttack.html#Global_BaseAttack_attackEvents
-  commentId: F:Global.BaseAttack.attackEvents
-  fullName: BaseAttack.attackEvents
-  nameWithType: BaseAttack.attackEvents
 - uid: Global.BaseAttack.CanPlay(BaseAttack.Command)
   name: CanPlay(BaseAttack.Command)
   href: api/Global.BaseAttack.html#Global_BaseAttack_CanPlay_BaseAttack_Command_
@@ -792,24 +692,6 @@ references:
   isSpec: "True"
   fullName: BaseAttack.DoStop
   nameWithType: BaseAttack.DoStop
-- uid: Global.BaseAttack.hardRecovery
-  name: hardRecovery
-  href: api/Global.BaseAttack.html#Global_BaseAttack_hardRecovery
-  commentId: F:Global.BaseAttack.hardRecovery
-  fullName: BaseAttack.hardRecovery
-  nameWithType: BaseAttack.hardRecovery
-- uid: Global.BaseAttack.instant
-  name: instant
-  href: api/Global.BaseAttack.html#Global_BaseAttack_instant
-  commentId: F:Global.BaseAttack.instant
-  fullName: BaseAttack.instant
-  nameWithType: BaseAttack.instant
-- uid: Global.BaseAttack.interruptible
-  name: interruptible
-  href: api/Global.BaseAttack.html#Global_BaseAttack_interruptible
-  commentId: F:Global.BaseAttack.interruptible
-  fullName: BaseAttack.interruptible
-  nameWithType: BaseAttack.interruptible
 - uid: Global.BaseAttack.IsMidair
   name: IsMidair
   href: api/Global.BaseAttack.html#Global_BaseAttack_IsMidair
@@ -836,51 +718,12 @@ references:
   isSpec: "True"
   fullName: BaseAttack.Motion
   nameWithType: BaseAttack.Motion
-- uid: Global.BaseAttack.Playing
-  name: Playing
-  href: api/Global.BaseAttack.html#Global_BaseAttack_Playing
-  commentId: P:Global.BaseAttack.Playing
-  fullName: BaseAttack.Playing
-  nameWithType: BaseAttack.Playing
-- uid: Global.BaseAttack.Playing*
-  name: Playing
-  href: api/Global.BaseAttack.html#Global_BaseAttack_Playing_
-  commentId: Overload:Global.BaseAttack.Playing
-  isSpec: "True"
-  fullName: BaseAttack.Playing
-  nameWithType: BaseAttack.Playing
 - uid: Global.BaseAttack.previousAttacks
   name: previousAttacks
   href: api/Global.BaseAttack.html#Global_BaseAttack_previousAttacks
   commentId: F:Global.BaseAttack.previousAttacks
   fullName: BaseAttack.previousAttacks
   nameWithType: BaseAttack.previousAttacks
-- uid: Global.BaseAttack.Recovering
-  name: Recovering
-  href: api/Global.BaseAttack.html#Global_BaseAttack_Recovering
-  commentId: P:Global.BaseAttack.Recovering
-  fullName: BaseAttack.Recovering
-  nameWithType: BaseAttack.Recovering
-- uid: Global.BaseAttack.Recovering*
-  name: Recovering
-  href: api/Global.BaseAttack.html#Global_BaseAttack_Recovering_
-  commentId: Overload:Global.BaseAttack.Recovering
-  isSpec: "True"
-  fullName: BaseAttack.Recovering
-  nameWithType: BaseAttack.Recovering
-- uid: Global.BaseAttack.RecoveryPhase
-  name: RecoveryPhase()
-  href: api/Global.BaseAttack.html#Global_BaseAttack_RecoveryPhase
-  commentId: M:Global.BaseAttack.RecoveryPhase
-  fullName: BaseAttack.RecoveryPhase()
-  nameWithType: BaseAttack.RecoveryPhase()
-- uid: Global.BaseAttack.RecoveryPhase*
-  name: RecoveryPhase
-  href: api/Global.BaseAttack.html#Global_BaseAttack_RecoveryPhase_
-  commentId: Overload:Global.BaseAttack.RecoveryPhase
-  isSpec: "True"
-  fullName: BaseAttack.RecoveryPhase
-  nameWithType: BaseAttack.RecoveryPhase
 - uid: Global.BaseComponent
   name: BaseComponent
   href: api/Global.BaseComponent.html
@@ -6064,6 +5907,242 @@ references:
   isSpec: "True"
   fullName: PeriodicRelativeHitDetector.StopDetector
   nameWithType: PeriodicRelativeHitDetector.StopDetector
+- uid: Global.PhasedBehaviour`1
+  name: PhasedBehaviour<T>
+  href: api/Global.PhasedBehaviour-1.html
+  commentId: T:Global.PhasedBehaviour`1
+  name.vb: PhasedBehaviour(Of T)
+  fullName: PhasedBehaviour<T>
+  fullName.vb: PhasedBehaviour(Of T)
+  nameWithType: PhasedBehaviour<T>
+  nameWithType.vb: PhasedBehaviour(Of T)
+- uid: Global.PhasedBehaviour`1.Active
+  name: Active
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_Active
+  commentId: P:Global.PhasedBehaviour`1.Active
+  fullName: PhasedBehaviour<T>.Active
+  fullName.vb: PhasedBehaviour(Of T).Active
+  nameWithType: PhasedBehaviour<T>.Active
+  nameWithType.vb: PhasedBehaviour(Of T).Active
+- uid: Global.PhasedBehaviour`1.Active*
+  name: Active
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_Active_
+  commentId: Overload:Global.PhasedBehaviour`1.Active
+  isSpec: "True"
+  fullName: PhasedBehaviour<T>.Active
+  fullName.vb: PhasedBehaviour(Of T).Active
+  nameWithType: PhasedBehaviour<T>.Active
+  nameWithType.vb: PhasedBehaviour(Of T).Active
+- uid: Global.PhasedBehaviour`1.ActivePhase
+  name: ActivePhase()
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_ActivePhase
+  commentId: M:Global.PhasedBehaviour`1.ActivePhase
+  fullName: PhasedBehaviour<T>.ActivePhase()
+  fullName.vb: PhasedBehaviour(Of T).ActivePhase()
+  nameWithType: PhasedBehaviour<T>.ActivePhase()
+  nameWithType.vb: PhasedBehaviour(Of T).ActivePhase()
+- uid: Global.PhasedBehaviour`1.ActivePhase*
+  name: ActivePhase
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_ActivePhase_
+  commentId: Overload:Global.PhasedBehaviour`1.ActivePhase
+  isSpec: "True"
+  fullName: PhasedBehaviour<T>.ActivePhase
+  fullName.vb: PhasedBehaviour(Of T).ActivePhase
+  nameWithType: PhasedBehaviour<T>.ActivePhase
+  nameWithType.vb: PhasedBehaviour(Of T).ActivePhase
+- uid: Global.PhasedBehaviour`1.Anticipating
+  name: Anticipating
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_Anticipating
+  commentId: P:Global.PhasedBehaviour`1.Anticipating
+  fullName: PhasedBehaviour<T>.Anticipating
+  fullName.vb: PhasedBehaviour(Of T).Anticipating
+  nameWithType: PhasedBehaviour<T>.Anticipating
+  nameWithType.vb: PhasedBehaviour(Of T).Anticipating
+- uid: Global.PhasedBehaviour`1.Anticipating*
+  name: Anticipating
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_Anticipating_
+  commentId: Overload:Global.PhasedBehaviour`1.Anticipating
+  isSpec: "True"
+  fullName: PhasedBehaviour<T>.Anticipating
+  fullName.vb: PhasedBehaviour(Of T).Anticipating
+  nameWithType: PhasedBehaviour<T>.Anticipating
+  nameWithType.vb: PhasedBehaviour(Of T).Anticipating
+- uid: Global.PhasedBehaviour`1.AnticipationPhase
+  name: AnticipationPhase()
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_AnticipationPhase
+  commentId: M:Global.PhasedBehaviour`1.AnticipationPhase
+  fullName: PhasedBehaviour<T>.AnticipationPhase()
+  fullName.vb: PhasedBehaviour(Of T).AnticipationPhase()
+  nameWithType: PhasedBehaviour<T>.AnticipationPhase()
+  nameWithType.vb: PhasedBehaviour(Of T).AnticipationPhase()
+- uid: Global.PhasedBehaviour`1.AnticipationPhase*
+  name: AnticipationPhase
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_AnticipationPhase_
+  commentId: Overload:Global.PhasedBehaviour`1.AnticipationPhase
+  isSpec: "True"
+  fullName: PhasedBehaviour<T>.AnticipationPhase
+  fullName.vb: PhasedBehaviour(Of T).AnticipationPhase
+  nameWithType: PhasedBehaviour<T>.AnticipationPhase
+  nameWithType.vb: PhasedBehaviour(Of T).AnticipationPhase
+- uid: Global.PhasedBehaviour`1.DoPlay(`0)
+  name: DoPlay(T)
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_DoPlay__0_
+  commentId: M:Global.PhasedBehaviour`1.DoPlay(`0)
+  fullName: PhasedBehaviour<T>.DoPlay(T)
+  fullName.vb: PhasedBehaviour(Of T).DoPlay(T)
+  nameWithType: PhasedBehaviour<T>.DoPlay(T)
+  nameWithType.vb: PhasedBehaviour(Of T).DoPlay(T)
+- uid: Global.PhasedBehaviour`1.DoPlay*
+  name: DoPlay
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_DoPlay_
+  commentId: Overload:Global.PhasedBehaviour`1.DoPlay
+  isSpec: "True"
+  fullName: PhasedBehaviour<T>.DoPlay
+  fullName.vb: PhasedBehaviour(Of T).DoPlay
+  nameWithType: PhasedBehaviour<T>.DoPlay
+  nameWithType.vb: PhasedBehaviour(Of T).DoPlay
+- uid: Global.PhasedBehaviour`1.DoStop
+  name: DoStop()
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_DoStop
+  commentId: M:Global.PhasedBehaviour`1.DoStop
+  fullName: PhasedBehaviour<T>.DoStop()
+  fullName.vb: PhasedBehaviour(Of T).DoStop()
+  nameWithType: PhasedBehaviour<T>.DoStop()
+  nameWithType.vb: PhasedBehaviour(Of T).DoStop()
+- uid: Global.PhasedBehaviour`1.DoStop*
+  name: DoStop
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_DoStop_
+  commentId: Overload:Global.PhasedBehaviour`1.DoStop
+  isSpec: "True"
+  fullName: PhasedBehaviour<T>.DoStop
+  fullName.vb: PhasedBehaviour(Of T).DoStop
+  nameWithType: PhasedBehaviour<T>.DoStop
+  nameWithType.vb: PhasedBehaviour(Of T).DoStop
+- uid: Global.PhasedBehaviour`1.hardRecovery
+  name: hardRecovery
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_hardRecovery
+  commentId: F:Global.PhasedBehaviour`1.hardRecovery
+  fullName: PhasedBehaviour<T>.hardRecovery
+  fullName.vb: PhasedBehaviour(Of T).hardRecovery
+  nameWithType: PhasedBehaviour<T>.hardRecovery
+  nameWithType.vb: PhasedBehaviour(Of T).hardRecovery
+- uid: Global.PhasedBehaviour`1.instant
+  name: instant
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_instant
+  commentId: F:Global.PhasedBehaviour`1.instant
+  fullName: PhasedBehaviour<T>.instant
+  fullName.vb: PhasedBehaviour(Of T).instant
+  nameWithType: PhasedBehaviour<T>.instant
+  nameWithType.vb: PhasedBehaviour(Of T).instant
+- uid: Global.PhasedBehaviour`1.interruptible
+  name: interruptible
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_interruptible
+  commentId: F:Global.PhasedBehaviour`1.interruptible
+  fullName: PhasedBehaviour<T>.interruptible
+  fullName.vb: PhasedBehaviour(Of T).interruptible
+  nameWithType: PhasedBehaviour<T>.interruptible
+  nameWithType.vb: PhasedBehaviour(Of T).interruptible
+- uid: Global.PhasedBehaviour`1.phaseEvents
+  name: phaseEvents
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_phaseEvents
+  commentId: F:Global.PhasedBehaviour`1.phaseEvents
+  fullName: PhasedBehaviour<T>.phaseEvents
+  fullName.vb: PhasedBehaviour(Of T).phaseEvents
+  nameWithType: PhasedBehaviour<T>.phaseEvents
+  nameWithType.vb: PhasedBehaviour(Of T).phaseEvents
+- uid: Global.PhasedBehaviour`1.Playing
+  name: Playing
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_Playing
+  commentId: P:Global.PhasedBehaviour`1.Playing
+  fullName: PhasedBehaviour<T>.Playing
+  fullName.vb: PhasedBehaviour(Of T).Playing
+  nameWithType: PhasedBehaviour<T>.Playing
+  nameWithType.vb: PhasedBehaviour(Of T).Playing
+- uid: Global.PhasedBehaviour`1.Playing*
+  name: Playing
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_Playing_
+  commentId: Overload:Global.PhasedBehaviour`1.Playing
+  isSpec: "True"
+  fullName: PhasedBehaviour<T>.Playing
+  fullName.vb: PhasedBehaviour(Of T).Playing
+  nameWithType: PhasedBehaviour<T>.Playing
+  nameWithType.vb: PhasedBehaviour(Of T).Playing
+- uid: Global.PhasedBehaviour`1.Recovering
+  name: Recovering
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_Recovering
+  commentId: P:Global.PhasedBehaviour`1.Recovering
+  fullName: PhasedBehaviour<T>.Recovering
+  fullName.vb: PhasedBehaviour(Of T).Recovering
+  nameWithType: PhasedBehaviour<T>.Recovering
+  nameWithType.vb: PhasedBehaviour(Of T).Recovering
+- uid: Global.PhasedBehaviour`1.Recovering*
+  name: Recovering
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_Recovering_
+  commentId: Overload:Global.PhasedBehaviour`1.Recovering
+  isSpec: "True"
+  fullName: PhasedBehaviour<T>.Recovering
+  fullName.vb: PhasedBehaviour(Of T).Recovering
+  nameWithType: PhasedBehaviour<T>.Recovering
+  nameWithType.vb: PhasedBehaviour(Of T).Recovering
+- uid: Global.PhasedBehaviour`1.RecoveryPhase
+  name: RecoveryPhase()
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_RecoveryPhase
+  commentId: M:Global.PhasedBehaviour`1.RecoveryPhase
+  fullName: PhasedBehaviour<T>.RecoveryPhase()
+  fullName.vb: PhasedBehaviour(Of T).RecoveryPhase()
+  nameWithType: PhasedBehaviour<T>.RecoveryPhase()
+  nameWithType.vb: PhasedBehaviour(Of T).RecoveryPhase()
+- uid: Global.PhasedBehaviour`1.RecoveryPhase*
+  name: RecoveryPhase
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_RecoveryPhase_
+  commentId: Overload:Global.PhasedBehaviour`1.RecoveryPhase
+  isSpec: "True"
+  fullName: PhasedBehaviour<T>.RecoveryPhase
+  fullName.vb: PhasedBehaviour(Of T).RecoveryPhase
+  nameWithType: PhasedBehaviour<T>.RecoveryPhase
+  nameWithType.vb: PhasedBehaviour(Of T).RecoveryPhase
+- uid: Global.PhaseEvents
+  name: PhaseEvents
+  href: api/Global.PhaseEvents.html
+  commentId: T:Global.PhaseEvents
+  fullName: PhaseEvents
+  nameWithType: PhaseEvents
+- uid: Global.PhaseEvents.onFinishActive
+  name: onFinishActive
+  href: api/Global.PhaseEvents.html#Global_PhaseEvents_onFinishActive
+  commentId: F:Global.PhaseEvents.onFinishActive
+  fullName: PhaseEvents.onFinishActive
+  nameWithType: PhaseEvents.onFinishActive
+- uid: Global.PhaseEvents.onFinishAnticipating
+  name: onFinishAnticipating
+  href: api/Global.PhaseEvents.html#Global_PhaseEvents_onFinishAnticipating
+  commentId: F:Global.PhaseEvents.onFinishAnticipating
+  fullName: PhaseEvents.onFinishAnticipating
+  nameWithType: PhaseEvents.onFinishAnticipating
+- uid: Global.PhaseEvents.onFinishRecovery
+  name: onFinishRecovery
+  href: api/Global.PhaseEvents.html#Global_PhaseEvents_onFinishRecovery
+  commentId: F:Global.PhaseEvents.onFinishRecovery
+  fullName: PhaseEvents.onFinishRecovery
+  nameWithType: PhaseEvents.onFinishRecovery
+- uid: Global.PhaseEvents.onStartActive
+  name: onStartActive
+  href: api/Global.PhaseEvents.html#Global_PhaseEvents_onStartActive
+  commentId: F:Global.PhaseEvents.onStartActive
+  fullName: PhaseEvents.onStartActive
+  nameWithType: PhaseEvents.onStartActive
+- uid: Global.PhaseEvents.onStartAnticipating
+  name: onStartAnticipating
+  href: api/Global.PhaseEvents.html#Global_PhaseEvents_onStartAnticipating
+  commentId: F:Global.PhaseEvents.onStartAnticipating
+  fullName: PhaseEvents.onStartAnticipating
+  nameWithType: PhaseEvents.onStartAnticipating
+- uid: Global.PhaseEvents.onStartRecovery
+  name: onStartRecovery
+  href: api/Global.PhaseEvents.html#Global_PhaseEvents_onStartRecovery
+  commentId: F:Global.PhaseEvents.onStartRecovery
+  fullName: PhaseEvents.onStartRecovery
+  nameWithType: PhaseEvents.onStartRecovery
 - uid: Global.PlayableBehaviour`1
   name: PlayableBehaviour<T>
   href: api/Global.PlayableBehaviour-1.html
