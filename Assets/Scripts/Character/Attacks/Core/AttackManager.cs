@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// Behaviour that runs operation on all attacks
@@ -30,7 +31,7 @@ public class AttackManager : CharacterBehaviour
     /// <value>
     /// General attack events. These events are invoked whenever a matching event is invoked in any attack.
     /// </value>
-    public AttackEvents attackEvents;
+    [FormerlySerializedAs("attackEvents")] public PhaseEvents phaseEvents;
 
     /// <value>
     /// Hit damage transpiler
@@ -63,12 +64,12 @@ public class AttackManager : CharacterBehaviour
             // Forward events
 
             attack.PlayEvents.onPlay += playEvents.onPlay.Invoke;
-            attack.attackEvents.onStartAnticipating += () => attackEvents.onStartAnticipating.Invoke();
-            attack.attackEvents.onFinishAnticipating += () => attackEvents.onFinishAnticipating.Invoke();
-            attack.attackEvents.onStartActive += () => attackEvents.onStartActive.Invoke();
-            attack.attackEvents.onFinishActive += () => attackEvents.onFinishActive.Invoke();
-            attack.attackEvents.onStartRecovery += () => attackEvents.onStartRecovery.Invoke();
-            attack.attackEvents.onFinishRecovery += () => attackEvents.onFinishRecovery.Invoke();
+            attack.phaseEvents.onStartAnticipating += () => phaseEvents.onStartAnticipating.Invoke();
+            attack.phaseEvents.onFinishAnticipating += () => phaseEvents.onFinishAnticipating.Invoke();
+            attack.phaseEvents.onStartActive += () => phaseEvents.onStartActive.Invoke();
+            attack.phaseEvents.onFinishActive += () => phaseEvents.onFinishActive.Invoke();
+            attack.phaseEvents.onStartRecovery += () => phaseEvents.onStartRecovery.Invoke();
+            attack.phaseEvents.onFinishRecovery += () => phaseEvents.onFinishRecovery.Invoke();
             attack.PlayEvents.onStop += playEvents.onStop.Invoke;
 
             // Combo handling

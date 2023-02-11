@@ -29,12 +29,12 @@ public class PlayerAttackBrainModule : BrainModule
         if (!attackManager) return;
 
         attackManager.playEvents.onPlay += OnPlay;
-        attackManager.attackEvents.onStartAnticipating += OnStartAnticipating;
-        attackManager.attackEvents.onFinishAnticipating += OnFinishAnticipating;
-        attackManager.attackEvents.onStartActive += OnStartActive;
-        attackManager.attackEvents.onFinishActive += OnFinishActive;
-        attackManager.attackEvents.onStartRecovery += OnStartRecovery;
-        attackManager.attackEvents.onFinishRecovery += OnFinishRecovery;
+        attackManager.phaseEvents.onStartAnticipating += OnStartAnticipating;
+        attackManager.phaseEvents.onFinishAnticipating += OnFinishAnticipating;
+        attackManager.phaseEvents.onStartActive += OnStartActive;
+        attackManager.phaseEvents.onFinishActive += OnFinishActive;
+        attackManager.phaseEvents.onStartRecovery += OnStartRecovery;
+        attackManager.phaseEvents.onFinishRecovery += OnFinishRecovery;
         attackManager.playEvents.onStop += OnStop;
     }
 
@@ -43,12 +43,12 @@ public class PlayerAttackBrainModule : BrainModule
         if (!attackManager) return;
 
         attackManager.playEvents.onPlay -= OnPlay;
-        attackManager.attackEvents.onStartAnticipating -= OnStartAnticipating;
-        attackManager.attackEvents.onFinishAnticipating -= OnFinishAnticipating;
-        attackManager.attackEvents.onStartActive -= OnStartActive;
-        attackManager.attackEvents.onFinishActive -= OnFinishActive;
-        attackManager.attackEvents.onStartRecovery -= OnStartRecovery;
-        attackManager.attackEvents.onFinishRecovery -= OnFinishRecovery;
+        attackManager.phaseEvents.onStartAnticipating -= OnStartAnticipating;
+        attackManager.phaseEvents.onFinishAnticipating -= OnFinishAnticipating;
+        attackManager.phaseEvents.onStartActive -= OnStartActive;
+        attackManager.phaseEvents.onFinishActive -= OnFinishActive;
+        attackManager.phaseEvents.onStartRecovery -= OnStartRecovery;
+        attackManager.phaseEvents.onFinishRecovery -= OnFinishRecovery;
         attackManager.playEvents.onStop -= OnStop;
     }
 

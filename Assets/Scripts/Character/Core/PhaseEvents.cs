@@ -3,38 +3,38 @@ using ExtEvents;
 using UnityEngine;
 
 /// <summary>
-/// Contains start and finish events for all attack phases
+/// Contains start and finish events for all phases
 /// </summary>
 [Serializable]
-public class AttackEvents
+public class PhaseEvents
 {
     /// <value>
-    /// Attack anticipation has started
+    /// Anticipation has started
     /// </value>
     [SerializeField] public ExtEvent onStartAnticipating;
 
     /// <value>
-    /// Attack anticipation has finished, also fires if the attack was stopped while in anticipation
+    /// Anticipation has finished, also fires if behaviour was stopped while in anticipation
     /// </value>
     [SerializeField] public ExtEvent onFinishAnticipating;
 
     /// <value>
-    /// Attack active phase has started
+    /// Active phase has started
     /// </value>
     [SerializeField] public ExtEvent onStartActive;
 
     /// <value>
-    /// Attack active phase has finished, also fires if the attack was stopped while in active phase
+    /// Active phase has finished, also fires if behaviour was stopped while in active phase
     /// </value>
     [SerializeField] public ExtEvent onFinishActive;
 
     /// <value>
-    /// Attack recovery has started
+    /// Recovery has started
     /// </value>
     [SerializeField] public ExtEvent onStartRecovery;
 
     /// <value>
-    /// Attack recovery has finished, also fires if the attack was stopped while in recovery
+    /// Recovery has finished, also fires if behaviour was stopped while in recovery
     /// </value>
     [SerializeField] public ExtEvent onFinishRecovery;
 }
