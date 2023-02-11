@@ -1205,7 +1205,9 @@ GameObject:
   - component: {fileID: 2175755674317142815}
   - component: {fileID: 1185927326113677061}
   - component: {fileID: 7186248231885458681}
+  - component: {fileID: 8666450490011947807}
   - component: {fileID: 5023682546387059060}
+  - component: {fileID: 772667945044163051}
   m_Layer: 0
   m_Name: Movement
   m_TagString: Untagged
@@ -1548,7 +1550,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 4191199336927616018, guid: bb2ae392211230645a3fbada16f8fb15, type: 3}
-  particlePosition: {x: -0.4, y: 0.2, z: -0.01}
+  particlePosition: {x: -0.5, y: 0.1, z: -0.01}
+  attachToCharacter: 1
+--- !u!114 &8666450490011947807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4850033890129186866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d961789b6aee674bb3eb9ce45793ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4191199336927616018, guid: bb2ae392211230645a3fbada16f8fb15, type: 3}
+  particlePosition: {x: 0, y: 0.1, z: 0.01}
   attachToCharacter: 1
 --- !u!114 &5023682546387059060
 MonoBehaviour:
@@ -1563,6 +1580,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 7186248231885458681}
+--- !u!114 &772667945044163051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4850033890129186866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20daa8064fcc4fa3980c8436ee7cc6dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles: {fileID: 8666450490011947807}
 --- !u!1 &5102893360079750233
 GameObject:
   m_ObjectHideFlags: 0
