@@ -2088,25 +2088,38 @@ references:
   commentId: T:Global.DodgeBehaviour
   fullName: DodgeBehaviour
   nameWithType: DodgeBehaviour
+- uid: Global.DodgeBehaviour.ActivePhase
+  name: ActivePhase()
+  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_ActivePhase
+  commentId: M:Global.DodgeBehaviour.ActivePhase
+  fullName: DodgeBehaviour.ActivePhase()
+  nameWithType: DodgeBehaviour.ActivePhase()
+- uid: Global.DodgeBehaviour.ActivePhase*
+  name: ActivePhase
+  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_ActivePhase_
+  commentId: Overload:Global.DodgeBehaviour.ActivePhase
+  isSpec: "True"
+  fullName: DodgeBehaviour.ActivePhase
+  nameWithType: DodgeBehaviour.ActivePhase
 - uid: Global.DodgeBehaviour.anticipateTime
   name: anticipateTime
   href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_anticipateTime
   commentId: F:Global.DodgeBehaviour.anticipateTime
   fullName: DodgeBehaviour.anticipateTime
   nameWithType: DodgeBehaviour.anticipateTime
-- uid: Global.DodgeBehaviour.Anticipating
-  name: Anticipating
-  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_Anticipating
-  commentId: P:Global.DodgeBehaviour.Anticipating
-  fullName: DodgeBehaviour.Anticipating
-  nameWithType: DodgeBehaviour.Anticipating
-- uid: Global.DodgeBehaviour.Anticipating*
-  name: Anticipating
-  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_Anticipating_
-  commentId: Overload:Global.DodgeBehaviour.Anticipating
+- uid: Global.DodgeBehaviour.AnticipationPhase
+  name: AnticipationPhase()
+  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_AnticipationPhase
+  commentId: M:Global.DodgeBehaviour.AnticipationPhase
+  fullName: DodgeBehaviour.AnticipationPhase()
+  nameWithType: DodgeBehaviour.AnticipationPhase()
+- uid: Global.DodgeBehaviour.AnticipationPhase*
+  name: AnticipationPhase
+  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_AnticipationPhase_
+  commentId: Overload:Global.DodgeBehaviour.AnticipationPhase
   isSpec: "True"
-  fullName: DodgeBehaviour.Anticipating
-  nameWithType: DodgeBehaviour.Anticipating
+  fullName: DodgeBehaviour.AnticipationPhase
+  nameWithType: DodgeBehaviour.AnticipationPhase
 - uid: Global.DodgeBehaviour.CanPlay(DodgeBehaviour.Command)
   name: CanPlay(DodgeBehaviour.Command)
   href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_CanPlay_DodgeBehaviour_Command_
@@ -2151,12 +2164,12 @@ references:
   commentId: F:Global.DodgeBehaviour.cooldown
   fullName: DodgeBehaviour.cooldown
   nameWithType: DodgeBehaviour.cooldown
-- uid: Global.DodgeBehaviour.dodgeDistance
-  name: dodgeDistance
-  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_dodgeDistance
-  commentId: F:Global.DodgeBehaviour.dodgeDistance
-  fullName: DodgeBehaviour.dodgeDistance
-  nameWithType: DodgeBehaviour.dodgeDistance
+- uid: Global.DodgeBehaviour.distance
+  name: distance
+  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_distance
+  commentId: F:Global.DodgeBehaviour.distance
+  fullName: DodgeBehaviour.distance
+  nameWithType: DodgeBehaviour.distance
 - uid: Global.DodgeBehaviour.DoPlay(DodgeBehaviour.Command)
   name: DoPlay(DodgeBehaviour.Command)
   href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_DoPlay_DodgeBehaviour_Command_
@@ -2183,44 +2196,19 @@ references:
   isSpec: "True"
   fullName: DodgeBehaviour.DoStop
   nameWithType: DodgeBehaviour.DoStop
-- uid: Global.DodgeBehaviour.OnDodge
-  name: OnDodge
-  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_OnDodge
-  commentId: E:Global.DodgeBehaviour.OnDodge
-  fullName: DodgeBehaviour.OnDodge
-  nameWithType: DodgeBehaviour.OnDodge
-- uid: Global.DodgeBehaviour.OnRecover
-  name: OnRecover
-  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_OnRecover
-  commentId: E:Global.DodgeBehaviour.OnRecover
-  fullName: DodgeBehaviour.OnRecover
-  nameWithType: DodgeBehaviour.OnRecover
-- uid: Global.DodgeBehaviour.Playing
-  name: Playing
-  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_Playing
-  commentId: P:Global.DodgeBehaviour.Playing
-  fullName: DodgeBehaviour.Playing
-  nameWithType: DodgeBehaviour.Playing
-- uid: Global.DodgeBehaviour.Playing*
-  name: Playing
-  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_Playing_
-  commentId: Overload:Global.DodgeBehaviour.Playing
+- uid: Global.DodgeBehaviour.RecoveryPhase
+  name: RecoveryPhase()
+  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_RecoveryPhase
+  commentId: M:Global.DodgeBehaviour.RecoveryPhase
+  fullName: DodgeBehaviour.RecoveryPhase()
+  nameWithType: DodgeBehaviour.RecoveryPhase()
+- uid: Global.DodgeBehaviour.RecoveryPhase*
+  name: RecoveryPhase
+  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_RecoveryPhase_
+  commentId: Overload:Global.DodgeBehaviour.RecoveryPhase
   isSpec: "True"
-  fullName: DodgeBehaviour.Playing
-  nameWithType: DodgeBehaviour.Playing
-- uid: Global.DodgeBehaviour.Recovering
-  name: Recovering
-  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_Recovering
-  commentId: P:Global.DodgeBehaviour.Recovering
-  fullName: DodgeBehaviour.Recovering
-  nameWithType: DodgeBehaviour.Recovering
-- uid: Global.DodgeBehaviour.Recovering*
-  name: Recovering
-  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_Recovering_
-  commentId: Overload:Global.DodgeBehaviour.Recovering
-  isSpec: "True"
-  fullName: DodgeBehaviour.Recovering
-  nameWithType: DodgeBehaviour.Recovering
+  fullName: DodgeBehaviour.RecoveryPhase
+  nameWithType: DodgeBehaviour.RecoveryPhase
 - uid: Global.DodgeBehaviour.recoveryTime
   name: recoveryTime
   href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_recoveryTime
@@ -4823,45 +4811,38 @@ references:
   commentId: T:Global.JumpBehaviour
   fullName: JumpBehaviour
   nameWithType: JumpBehaviour
-- uid: Global.JumpBehaviour.Active
-  name: Active
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_Active
-  commentId: P:Global.JumpBehaviour.Active
-  fullName: JumpBehaviour.Active
-  nameWithType: JumpBehaviour.Active
-- uid: Global.JumpBehaviour.Active*
-  name: Active
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_Active_
-  commentId: Overload:Global.JumpBehaviour.Active
+- uid: Global.JumpBehaviour.ActivePhase
+  name: ActivePhase()
+  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_ActivePhase
+  commentId: M:Global.JumpBehaviour.ActivePhase
+  fullName: JumpBehaviour.ActivePhase()
+  nameWithType: JumpBehaviour.ActivePhase()
+- uid: Global.JumpBehaviour.ActivePhase*
+  name: ActivePhase
+  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_ActivePhase_
+  commentId: Overload:Global.JumpBehaviour.ActivePhase
   isSpec: "True"
-  fullName: JumpBehaviour.Active
-  nameWithType: JumpBehaviour.Active
-- uid: Global.JumpBehaviour.Anticipating
-  name: Anticipating
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_Anticipating
-  commentId: P:Global.JumpBehaviour.Anticipating
-  fullName: JumpBehaviour.Anticipating
-  nameWithType: JumpBehaviour.Anticipating
-- uid: Global.JumpBehaviour.Anticipating*
-  name: Anticipating
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_Anticipating_
-  commentId: Overload:Global.JumpBehaviour.Anticipating
+  fullName: JumpBehaviour.ActivePhase
+  nameWithType: JumpBehaviour.ActivePhase
+- uid: Global.JumpBehaviour.anticipateTime
+  name: anticipateTime
+  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_anticipateTime
+  commentId: F:Global.JumpBehaviour.anticipateTime
+  fullName: JumpBehaviour.anticipateTime
+  nameWithType: JumpBehaviour.anticipateTime
+- uid: Global.JumpBehaviour.AnticipationPhase
+  name: AnticipationPhase()
+  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_AnticipationPhase
+  commentId: M:Global.JumpBehaviour.AnticipationPhase
+  fullName: JumpBehaviour.AnticipationPhase()
+  nameWithType: JumpBehaviour.AnticipationPhase()
+- uid: Global.JumpBehaviour.AnticipationPhase*
+  name: AnticipationPhase
+  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_AnticipationPhase_
+  commentId: Overload:Global.JumpBehaviour.AnticipationPhase
   isSpec: "True"
-  fullName: JumpBehaviour.Anticipating
-  nameWithType: JumpBehaviour.Anticipating
-- uid: Global.JumpBehaviour.Awake
-  name: Awake()
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_Awake
-  commentId: M:Global.JumpBehaviour.Awake
-  fullName: JumpBehaviour.Awake()
-  nameWithType: JumpBehaviour.Awake()
-- uid: Global.JumpBehaviour.Awake*
-  name: Awake
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_Awake_
-  commentId: Overload:Global.JumpBehaviour.Awake
-  isSpec: "True"
-  fullName: JumpBehaviour.Awake
-  nameWithType: JumpBehaviour.Awake
+  fullName: JumpBehaviour.AnticipationPhase
+  nameWithType: JumpBehaviour.AnticipationPhase
 - uid: Global.JumpBehaviour.CanPlay(JumpBehaviour.Command)
   name: CanPlay(JumpBehaviour.Command)
   href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_CanPlay_JumpBehaviour_Command_
@@ -4926,36 +4907,6 @@ references:
   isSpec: "True"
   fullName: JumpBehaviour.Freeze
   nameWithType: JumpBehaviour.Freeze
-- uid: Global.JumpBehaviour.jumpAnticipateTime
-  name: jumpAnticipateTime
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_jumpAnticipateTime
-  commentId: F:Global.JumpBehaviour.jumpAnticipateTime
-  fullName: JumpBehaviour.jumpAnticipateTime
-  nameWithType: JumpBehaviour.jumpAnticipateTime
-- uid: Global.JumpBehaviour.jumpRecoverTime
-  name: jumpRecoverTime
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_jumpRecoverTime
-  commentId: F:Global.JumpBehaviour.jumpRecoverTime
-  fullName: JumpBehaviour.jumpRecoverTime
-  nameWithType: JumpBehaviour.jumpRecoverTime
-- uid: Global.JumpBehaviour.jumpSpeed
-  name: jumpSpeed
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_jumpSpeed
-  commentId: F:Global.JumpBehaviour.jumpSpeed
-  fullName: JumpBehaviour.jumpSpeed
-  nameWithType: JumpBehaviour.jumpSpeed
-- uid: Global.JumpBehaviour.onFinishActive
-  name: onFinishActive
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_onFinishActive
-  commentId: F:Global.JumpBehaviour.onFinishActive
-  fullName: JumpBehaviour.onFinishActive
-  nameWithType: JumpBehaviour.onFinishActive
-- uid: Global.JumpBehaviour.onStartActive
-  name: onStartActive
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_onStartActive
-  commentId: F:Global.JumpBehaviour.onStartActive
-  fullName: JumpBehaviour.onStartActive
-  nameWithType: JumpBehaviour.onStartActive
 - uid: Global.JumpBehaviour.peakAcceleration
   name: peakAcceleration
   href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_peakAcceleration
@@ -4968,32 +4919,31 @@ references:
   commentId: F:Global.JumpBehaviour.peakDuration
   fullName: JumpBehaviour.peakDuration
   nameWithType: JumpBehaviour.peakDuration
-- uid: Global.JumpBehaviour.Playing
-  name: Playing
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_Playing
-  commentId: P:Global.JumpBehaviour.Playing
-  fullName: JumpBehaviour.Playing
-  nameWithType: JumpBehaviour.Playing
-- uid: Global.JumpBehaviour.Playing*
-  name: Playing
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_Playing_
-  commentId: Overload:Global.JumpBehaviour.Playing
+- uid: Global.JumpBehaviour.recoverTime
+  name: recoverTime
+  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_recoverTime
+  commentId: F:Global.JumpBehaviour.recoverTime
+  fullName: JumpBehaviour.recoverTime
+  nameWithType: JumpBehaviour.recoverTime
+- uid: Global.JumpBehaviour.RecoveryPhase
+  name: RecoveryPhase()
+  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_RecoveryPhase
+  commentId: M:Global.JumpBehaviour.RecoveryPhase
+  fullName: JumpBehaviour.RecoveryPhase()
+  nameWithType: JumpBehaviour.RecoveryPhase()
+- uid: Global.JumpBehaviour.RecoveryPhase*
+  name: RecoveryPhase
+  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_RecoveryPhase_
+  commentId: Overload:Global.JumpBehaviour.RecoveryPhase
   isSpec: "True"
-  fullName: JumpBehaviour.Playing
-  nameWithType: JumpBehaviour.Playing
-- uid: Global.JumpBehaviour.Recovering
-  name: Recovering
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_Recovering
-  commentId: P:Global.JumpBehaviour.Recovering
-  fullName: JumpBehaviour.Recovering
-  nameWithType: JumpBehaviour.Recovering
-- uid: Global.JumpBehaviour.Recovering*
-  name: Recovering
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_Recovering_
-  commentId: Overload:Global.JumpBehaviour.Recovering
-  isSpec: "True"
-  fullName: JumpBehaviour.Recovering
-  nameWithType: JumpBehaviour.Recovering
+  fullName: JumpBehaviour.RecoveryPhase
+  nameWithType: JumpBehaviour.RecoveryPhase
+- uid: Global.JumpBehaviour.speed
+  name: speed
+  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_speed
+  commentId: F:Global.JumpBehaviour.speed
+  fullName: JumpBehaviour.speed
+  nameWithType: JumpBehaviour.speed
 - uid: Global.JumpBehaviour.Unfreeze
   name: Unfreeze()
   href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_Unfreeze
