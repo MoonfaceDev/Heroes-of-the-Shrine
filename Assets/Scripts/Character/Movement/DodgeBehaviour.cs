@@ -1,7 +1,8 @@
-using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class DodgeBehaviour : PlayableBehaviour<DodgeBehaviour.Command>, IMovementBehaviour
+public class DodgeBehaviour : PhasedBehaviour<DodgeBehaviour.Command>, IMovementBehaviour
 {
     public class Command
     {
@@ -12,45 +13,14 @@ public class DodgeBehaviour : PlayableBehaviour<DodgeBehaviour.Command>, IMoveme
             this.direction = direction;
         }
     }
-    
-    public float dodgeDistance;
+
+    [FormerlySerializedAs("dodgeDistance")] public float distance;
     public float anticipateTime;
     public float recoveryTime;
 
     public Cooldown cooldown;
 
-    public event Action OnDodge;
-    public event Action OnRecover;
-
-    public bool Recovering
-    {
-        get => recovering;
-        private set
-        {
-            recovering = value;
-            Animator.SetBool(RecoveringFromDodgeParameter, recovering);
-        }
-    }
-
-    public bool Anticipating
-    {
-        get => anticipating;
-        private set
-        {
-            anticipating = value;
-            Animator.SetBool(AnticipatingDodgeParameter, anticipating);
-        }
-    }
-
-    public override bool Playing => Anticipating || Recovering;
-
-    private bool anticipating;
-    private bool recovering;
-    private string anticipateTimeout;
-    private string recoverTimeout;
-
-    private static readonly int RecoveringFromDodgeParameter = Animator.StringToHash("recoveringFromDodge");
-    private static readonly int AnticipatingDodgeParameter = Animator.StringToHash("anticipatingDodge");
+    private int currentDirection;
 
     public override bool CanPlay(Command command)
     {
@@ -63,37 +33,33 @@ public class DodgeBehaviour : PlayableBehaviour<DodgeBehaviour.Command>, IMoveme
     protected override void DoPlay(Command command)
     {
         cooldown.Reset();
-        
+
         StopBehaviours(typeof(IControlledBehaviour));
         BlockBehaviours(typeof(IControlledBehaviour));
 
-        Anticipating = true;
+        currentDirection = command.direction;
+        base.DoPlay(command);
+    }
 
-        anticipateTimeout = StartTimeout(() =>
-        {
-            Anticipating = false;
-            MovableEntity.UpdatePosition(MovableEntity.position + command.direction * dodgeDistance * Vector3.forward);
-            OnDodge?.Invoke();
-            Recovering = true;
-            recoverTimeout = StartTimeout(Stop, recoveryTime);
-        }, anticipateTime);
+    protected override IEnumerator AnticipationPhase()
+    {
+        yield return new WaitForSeconds(anticipateTime);
+    }
+
+    protected override IEnumerator ActivePhase()
+    {
+        MovableEntity.UpdatePosition(MovableEntity.position + currentDirection * distance * Vector3.forward);
+        yield break;
+    }
+
+    protected override IEnumerator RecoveryPhase()
+    {
+        yield return new WaitForSeconds(recoveryTime);
     }
 
     protected override void DoStop()
     {
+        base.DoStop();
         UnblockBehaviours(typeof(IControlledBehaviour));
-
-        if (Anticipating)
-        {
-            Cancel(anticipateTimeout);
-            Anticipating = false;
-        }
-
-        if (Recovering)
-        {
-            Cancel(recoverTimeout);
-            Recovering = false;
-            OnRecover?.Invoke();
-        }
     }
 }

@@ -40,8 +40,8 @@ public class RunBehaviour : PlayableBehaviour<RunBehaviour.Command>, IMovementBe
     {
         if (jumpBehaviour)
         {
-            jumpBehaviour.onStartActive += () => runParticlesMain.gravityModifier = 1f;
-            jumpBehaviour.onFinishActive += () => runParticlesMain.gravityModifier = 0;
+            jumpBehaviour.phaseEvents.onStartActive += () => runParticlesMain.gravityModifier = 1f;
+            jumpBehaviour.phaseEvents.onFinishActive += () => runParticlesMain.gravityModifier = 0;
         }
     }
 

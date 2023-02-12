@@ -1356,38 +1356,51 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  jumpSpeed: 20
-  jumpAnticipateTime: 0.05
-  jumpRecoverTime: 0.05
+  phaseEvents:
+    onStartAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onStartActive:
+      _persistentListeners:
+      - _persistentArguments: []
+        _target: {fileID: 2175755674317142815}
+        _isStatic: 0
+        CallState: 2
+        _staticType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _methodName: Play
+      - _persistentArguments: []
+        _target: {fileID: 1185927326113677061}
+        _isStatic: 0
+        CallState: 2
+        _staticType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _methodName: Play
+      Expanded: 1
+    onFinishActive:
+      _persistentListeners: []
+      Expanded: 1
+    onStartRecovery:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishRecovery:
+      _persistentListeners: []
+      Expanded: 1
+  speed: 20
+  anticipateTime: 0.05
+  recoverTime: 0.05
   climbAcceleration: 100
   peakDuration: 0.2
   peakAcceleration: 5
-  onStartActive:
-    _persistentListeners:
-    - _persistentArguments: []
-      _target: {fileID: 2175755674317142815}
-      _isStatic: 0
-      CallState: 2
-      _staticType:
-        GuidAssignmentFailed: 0
-        GUID: 
-        _typeNameAndAssembly: 
-        _suppressLogs: 0
-      _methodName: Play
-    - _persistentArguments: []
-      _target: {fileID: 1185927326113677061}
-      _isStatic: 0
-      CallState: 2
-      _staticType:
-        GuidAssignmentFailed: 0
-        GUID: 
-        _typeNameAndAssembly: 
-        _suppressLogs: 0
-      _methodName: Play
-    Expanded: 1
-  onFinishActive:
-    _persistentListeners: []
-    Expanded: 1
 --- !u!114 &7045785900987598505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1430,7 +1443,26 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  dodgeDistance: 1.5
+  phaseEvents:
+    onStartAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onStartActive:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishActive:
+      _persistentListeners: []
+      Expanded: 1
+    onStartRecovery:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishRecovery:
+      _persistentListeners: []
+      Expanded: 1
+  distance: 1.5
   anticipateTime: 0.05
   recoveryTime: 0.3
   cooldown:

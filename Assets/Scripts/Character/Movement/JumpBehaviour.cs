@@ -1,75 +1,28 @@
-using ExtEvents;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class JumpBehaviour : PlayableBehaviour<JumpBehaviour.Command>, IMovementBehaviour
+public class JumpBehaviour : PhasedBehaviour<JumpBehaviour.Command>, IMovementBehaviour
 {
     public class Command
     {
     }
 
-    public float jumpSpeed;
-    public float jumpAnticipateTime;
-    public float jumpRecoverTime;
+    [FormerlySerializedAs("jumpSpeed")] public float speed;
+
+    [FormerlySerializedAs("jumpAnticipateTime")]
+    public float anticipateTime;
+
+    [FormerlySerializedAs("jumpRecoverTime")]
+    public float recoverTime;
+
     public float climbAcceleration;
     public float peakDuration;
     public float peakAcceleration;
 
-    [SerializeField] public ExtEvent onStartActive;
-    [SerializeField] public ExtEvent onFinishActive;
-
-    public bool Anticipating
-    {
-        get => anticipating;
-        private set
-        {
-            anticipating = value;
-            Animator.SetBool(AnticipatingJumpParameter, anticipating);
-        }
-    }
-
-    public bool Active
-    {
-        get => active;
-        private set
-        {
-            active = value;
-            Animator.SetBool(JumpParameter, active);
-            (value ? onStartActive : onFinishActive).Invoke();
-        }
-    }
-
-    public bool Recovering
-    {
-        get => recovering;
-        private set
-        {
-            recovering = value;
-            Animator.SetBool(RecoveringFromJumpParameter, recovering);
-        }
-    }
-
-    public override bool Playing => Anticipating || Active || Recovering;
-
-    private bool active;
-    private bool recovering;
-    private bool anticipating;
-    
-    private string anticipateTimeout;
-    private string recoverTimeout;
+    private bool landed;
     private string stopClimbListener;
     private string stopPeakListener;
-    
-    private WalkBehaviour walkBehaviour;
-
-    private static readonly int AnticipatingJumpParameter = Animator.StringToHash("anticipatingJump");
-    private static readonly int JumpParameter = Animator.StringToHash("jump");
-    private static readonly int RecoveringFromJumpParameter = Animator.StringToHash("recoveringFromJump");
-
-    protected override void Awake()
-    {
-        base.Awake();
-        walkBehaviour = GetBehaviour<WalkBehaviour>();
-    }
 
     public override bool CanPlay(Command command)
     {
@@ -80,32 +33,32 @@ public class JumpBehaviour : PlayableBehaviour<JumpBehaviour.Command>, IMovement
 
     protected override void DoPlay(Command command)
     {
+        landed = false;
         StopBehaviours(typeof(BaseAttack));
         BlockBehaviours(typeof(RunBehaviour));
 
-        if (!IsPlaying<WalkBehaviour>() && MovableEntity.WorldPosition.y == 0) //not moving and grounded
-        {
-            Anticipating = true;
+        base.DoPlay(command);
+    }
 
-            walkBehaviour.Enabled = false;
-            anticipateTimeout = StartTimeout(() =>
-            {
-                walkBehaviour.Enabled = true;
-                Anticipating = false;
-                StartJump();
-            }, jumpAnticipateTime);
-        }
-        else //moving or mid-air
-        {
-            StartJump();
-        }
+    protected override IEnumerator AnticipationPhase()
+    {
+        yield return new WaitForSeconds(anticipateTime);
+    }
+
+    protected override IEnumerator ActivePhase()
+    {
+        StartJump();
+        yield return new WaitUntil(() => landed);
+    }
+
+    protected override IEnumerator RecoveryPhase()
+    {
+        yield return new WaitForSeconds(recoverTime);
     }
 
     private void StartJump()
     {
-        Active = true;
-
-        MovableEntity.velocity.y = jumpSpeed;
+        MovableEntity.velocity.y = speed;
         MovableEntity.acceleration.y = -climbAcceleration;
 
         stopClimbListener = InvokeWhen(() => MovableEntity.velocity.y < 0, () =>
@@ -137,24 +90,12 @@ public class JumpBehaviour : PlayableBehaviour<JumpBehaviour.Command>, IMovement
     private void Land()
     {
         MovableEntity.OnLand -= Land;
-
-        Active = false;
-        Recovering = true;
-
-        walkBehaviour.Enabled = false;
-        recoverTimeout = StartTimeout(Stop, jumpRecoverTime);
+        landed = true;
     }
 
     protected override void DoStop()
     {
         UnblockBehaviours(typeof(RunBehaviour));
-        
-        if (Anticipating)
-        {
-            Cancel(anticipateTimeout);
-            walkBehaviour.Enabled = true;
-            Anticipating = false;
-        }
 
         if (Active)
         {
@@ -162,14 +103,8 @@ public class JumpBehaviour : PlayableBehaviour<JumpBehaviour.Command>, IMovement
             Cancel(stopPeakListener);
             MovableEntity.velocity.y = 0;
             MovableEntity.OnLand -= Land;
-            Active = false;
         }
 
-        if (Recovering)
-        {
-            Cancel(recoverTimeout);
-            walkBehaviour.Enabled = true;
-            Recovering = false;
-        }
+        base.DoStop();
     }
 }
