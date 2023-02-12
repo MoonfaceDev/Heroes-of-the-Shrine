@@ -1,7 +1,7 @@
 using ExtEvents;
 using UnityEngine;
 
-public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
+public class JumpBehaviour : PlayableBehaviour<JumpBehaviour.Command>, IMovementBehaviour
 {
     public class Command
     {
@@ -74,7 +74,7 @@ public class JumpBehaviour : BaseMovementBehaviour<JumpBehaviour.Command>
     public override bool CanPlay(Command command)
     {
         return base.CanPlay(command)
-               && !(AttackManager && !AttackManager.CanPlayMove())
+               && !(AttackManager && !AttackManager.CanPlayAttack())
                && !Playing;
     }
 

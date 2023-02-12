@@ -52,10 +52,10 @@ public abstract class CharacterBehaviour : EntityBehaviour
     /// <summary>
     /// Stops behaviours if they where playing
     /// </summary>
-    /// <param name="behaviours">Behaviours to stop. All of the attached behaviours from each type will be stopped.</param>
-    protected void StopBehaviours(params Type[] behaviours)
+    /// <param name="types">Types of behaviours to stop. All of the attached behaviours from each type will be stopped.</param>
+    protected void StopBehaviours(params Type[] types)
     {
-        Character.StopBehaviours(behaviours);
+        Character.StopBehaviours(types);
     }
 
     /// <summary>

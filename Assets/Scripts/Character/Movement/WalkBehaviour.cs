@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WalkBehaviour : BaseMovementBehaviour<WalkBehaviour.Command>
+public class WalkBehaviour : PlayableBehaviour<WalkBehaviour.Command>, IMovementBehaviour
 {
     public class Command
     {

@@ -8,22 +8,7 @@ public abstract class PhasedBehaviour<T> : PlayableBehaviour<T>, IControlledBeha
     /// General phase events
     /// </value>
     [FormerlySerializedAs("attackEvents")] public PhaseEvents phaseEvents;
-    
-    /// <value>
-    /// If true, the behaviour can be played while another interruptible behaviour is playing.
-    /// </value>
-    public bool instant;
 
-    /// <value>
-    /// If true, an instant behaviour can replace it while this behaviour is playing.
-    /// </value>
-    public bool interruptible = true;
-
-    /// <value>
-    /// If <c>true</c>, The behaviour cannot be interrupted while <see cref="Recovering"/> is true.
-    /// </value>
-    public bool hardRecovery;
-    
     /// <value>
     /// Behaviour is anticipating.
     /// It also sets the animator parameter: <c>{MyPhasedBehaviour}-anticipating</c>.

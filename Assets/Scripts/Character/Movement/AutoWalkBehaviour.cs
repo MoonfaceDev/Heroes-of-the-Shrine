@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class AutoWalkBehaviour : BaseMovementBehaviour<AutoWalkBehaviour.Command>
+public class AutoWalkBehaviour : PlayableBehaviour<AutoWalkBehaviour.Command>, IMovementBehaviour
 {
     public class Command
     {

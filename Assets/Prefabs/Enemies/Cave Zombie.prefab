@@ -57,7 +57,7 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  attackEvents:
+  phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
       Expanded: 1
@@ -854,7 +854,7 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  attackEvents:
+  phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
       Expanded: 1
@@ -1134,7 +1134,7 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  attackEvents:
+  phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
       Expanded: 1

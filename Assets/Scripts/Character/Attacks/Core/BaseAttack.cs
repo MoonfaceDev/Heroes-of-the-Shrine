@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+using ExtEvents.OdinSerializer.Utilities;
 
 /// <summary>
 /// Motion settings when playing attacks
@@ -27,6 +29,21 @@ public abstract class BaseAttack : PhasedBehaviour<BaseAttack.Command>
     public List<BaseAttack> previousAttacks;
 
     /// <value>
+    /// If true, the behaviour can be played while another interruptible behaviour is playing.
+    /// </value>
+    public bool instant;
+
+    /// <value>
+    /// If true, an instant behaviour can replace it while this behaviour is playing.
+    /// </value>
+    public bool interruptible = true;
+
+    /// <value>
+    /// If <c>true</c>, The behaviour cannot be interrupted while <see cref="PhasedBehaviour{T}.Recovering"/> is true.
+    /// </value>
+    public bool hardRecovery;
+
+    /// <value>
     /// Motion setting
     /// </value>
     protected virtual MotionSettings Motion => MotionSettings.Static;
@@ -36,11 +53,27 @@ public abstract class BaseAttack : PhasedBehaviour<BaseAttack.Command>
     /// </value>
     protected virtual bool IsMidair => false;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        if (!interruptible)
+        {
+            IPlayableBehaviour[] nonBlocked = { GetBehaviour<WalkBehaviour>() };
+            var blockedBehaviours = GetBehaviours<IControlledBehaviour>().Except(nonBlocked).ToArray();
+            var blockedAttacks = blockedBehaviours.Where(behaviour => behaviour is BaseAttack);
+
+            PlayEvents.onPlay += () => blockedBehaviours.ForEach(behaviour => behaviour.Blocked = true);
+            phaseEvents.onFinishActive += () => blockedAttacks.ForEach(behaviour => behaviour.Blocked = false);
+            PlayEvents.onStop += () =>
+                blockedBehaviours.Except(blockedAttacks).ForEach(behaviour => behaviour.Blocked = false);
+        }
+    }
+
     public override bool CanPlay(Command command)
     {
         return base.CanPlay(command)
                && ((!IsMidair && !IsPlaying<JumpBehaviour>()) || (IsMidair && AirCondition()))
-               && AttackManager.CanPlayMove(instant)
+               && (AttackManager.CanPlayAttack() || instant)
                && ComboCondition();
     }
 

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class DodgeBehaviour : BaseMovementBehaviour<DodgeBehaviour.Command>
+public class DodgeBehaviour : PlayableBehaviour<DodgeBehaviour.Command>, IMovementBehaviour
 {
     public class Command
     {
@@ -16,6 +16,8 @@ public class DodgeBehaviour : BaseMovementBehaviour<DodgeBehaviour.Command>
     public float dodgeDistance;
     public float anticipateTime;
     public float recoveryTime;
+
+    public Cooldown cooldown;
 
     public event Action OnDodge;
     public event Action OnRecover;
@@ -53,13 +55,15 @@ public class DodgeBehaviour : BaseMovementBehaviour<DodgeBehaviour.Command>
     public override bool CanPlay(Command command)
     {
         return base.CanPlay(command)
+               && cooldown.CanPlay()
                && !IsPlaying<JumpBehaviour>()
-               && command.direction != 0
-               && !(AttackManager && !AttackManager.CanPlayMove(true));
+               && command.direction != 0;
     }
 
     protected override void DoPlay(Command command)
     {
+        cooldown.Reset();
+        
         StopBehaviours(typeof(IControlledBehaviour));
         BlockBehaviours(typeof(IControlledBehaviour));
 

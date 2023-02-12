@@ -69,7 +69,7 @@ public class Character : EntityBehaviour
     /// <summary>
     /// Stops behaviours if they where playing
     /// </summary>
-    /// <param name="types">Behaviours to stop. All of the attached behaviours from each type will be stopped.</param>
+    /// <param name="types">Types of behaviours to stop. All of the attached behaviours from each type will be stopped.</param>
     public void StopBehaviours(params Type[] types)
     {
         foreach (var type in types)

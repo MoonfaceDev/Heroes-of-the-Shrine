@@ -99,19 +99,18 @@ public class AttackManager : CharacterBehaviour
     /// </value>
     public bool Playing => AnyAttack(attack => attack.Playing);
 
-    private static bool IsPreventing(BaseAttack attack, bool instant)
+    private static bool IsPreventing(BaseAttack attack)
     {
-        return (attack.Anticipating || attack.Active || (attack.hardRecovery && attack.Recovering)) &&
-               !(instant && attack.interruptible);
+        return attack.Anticipating || attack.Active || (attack.hardRecovery && attack.Recovering);
     }
 
     /// <summary>
-    /// Checks if a move can be played 
+    /// Checks if any attack is playing. If attack is recovering, and it doesn't have a <c>hardRecovery</c>, it will not
+    /// prevent an attack
     /// </summary>
-    /// <param name="instant">Is the checked move instant</param>
-    /// <returns><c>true</c> if move can be played</returns>
-    public bool CanPlayMove(bool instant = false)
+    /// <returns><c>true</c> if attack can be played</returns>
+    public bool CanPlayAttack()
     {
-        return !AnyAttack(attack => IsPreventing(attack, instant));
+        return !AnyAttack(IsPreventing);
     }
 }

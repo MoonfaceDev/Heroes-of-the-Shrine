@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ArcBehaviour : BaseMovementBehaviour<ArcBehaviour.Command>
+public class ArcBehaviour : PlayableBehaviour<ArcBehaviour.Command>, IMovementBehaviour
 {
     public class Command
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SlideBehaviour : BaseMovementBehaviour<SlideBehaviour.Command>
+public class SlideBehaviour : PlayableBehaviour<SlideBehaviour.Command>, IMovementBehaviour
 {
     public class Command
     {
@@ -14,6 +14,8 @@ public class SlideBehaviour : BaseMovementBehaviour<SlideBehaviour.Command>
     
     public float slideSpeedMultiplier;
     public float slideStopAcceleration;
+
+    public Cooldown cooldown;
 
     public bool Slide
     {
@@ -35,13 +37,15 @@ public class SlideBehaviour : BaseMovementBehaviour<SlideBehaviour.Command>
     public override bool CanPlay(Command command)
     {
         return base.CanPlay(command)
+               && cooldown.CanPlay()
                && !IsPlaying<JumpBehaviour>()
-               && command.direction != 0
-               && !(AttackManager && !AttackManager.CanPlayMove(true));
+               && command.direction != 0;
     }
 
     protected override void DoPlay(Command command)
     {
+        cooldown.Reset();
+        
         StopBehaviours(typeof(IControlledBehaviour));
         BlockBehaviours(typeof(IControlledBehaviour));
 

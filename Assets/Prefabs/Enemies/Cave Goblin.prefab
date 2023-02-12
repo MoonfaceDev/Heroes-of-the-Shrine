@@ -282,7 +282,7 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  attackEvents:
+  phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
       Expanded: 1
@@ -473,7 +473,7 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  attackEvents:
+  phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
       Expanded: 1
@@ -1361,7 +1361,7 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  attackEvents:
+  phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
       Expanded: 1
@@ -1484,7 +1484,6 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  cooldown: 0
   defaultSpeed: 2
   speed: 0
 --- !u!114 &6069112728048179307
@@ -1506,7 +1505,6 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  cooldown: 0
 --- !u!114 &760397293939021285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1526,7 +1524,6 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  cooldown: 0
 --- !u!114 &5633086732231064320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1546,7 +1543,6 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  cooldown: 0
 --- !u!1 &7287950774449700956
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,7 +1595,7 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  attackEvents:
+  phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
       Expanded: 1
@@ -1712,7 +1708,7 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  attackEvents:
+  phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
       Expanded: 1

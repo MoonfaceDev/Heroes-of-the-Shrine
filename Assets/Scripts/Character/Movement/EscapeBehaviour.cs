@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EscapeBehaviour : BaseMovementBehaviour<EscapeBehaviour.Command>
+public class EscapeBehaviour : PlayableBehaviour<EscapeBehaviour.Command>, IMovementBehaviour
 {
     public class Command
     {

@@ -1069,7 +1069,7 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  attackEvents:
+  phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
       Expanded: 1
@@ -1540,7 +1540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826350637779532336, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 48.000015
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 5826350637955933940, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_Name
@@ -3535,7 +3535,7 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  attackEvents:
+  phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
       Expanded: 1
@@ -4057,7 +4057,7 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  attackEvents:
+  phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
       Expanded: 1
@@ -5977,7 +5977,6 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  cooldown: 0
 --- !u!114 &2014592113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5997,7 +5996,6 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  cooldown: 0
 --- !u!114 &2014592114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6017,7 +6015,6 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  cooldown: 0
 --- !u!114 &2014592115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6037,7 +6034,6 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  cooldown: 0
 --- !u!114 &2014592116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6069,7 +6065,6 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  cooldown: 0
   defaultSpeed: 2
   speed: 0
 --- !u!114 &2014592118
@@ -6755,7 +6750,7 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  attackEvents:
+  phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
       Expanded: 1

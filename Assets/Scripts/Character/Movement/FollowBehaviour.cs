@@ -4,7 +4,7 @@ using UnityEngine;
 public delegate bool GetOverrideDirection(out Vector3 direction);
 
 [RequireComponent(typeof(Pathfind))]
-public class FollowBehaviour : BaseMovementBehaviour<FollowBehaviour.Command>
+public class FollowBehaviour : PlayableBehaviour<FollowBehaviour.Command>, IMovementBehaviour
 {
     public class Command
     {
