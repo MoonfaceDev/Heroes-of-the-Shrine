@@ -92,8 +92,7 @@
     <div class="level2"><a class="xref" href="Global.EntityBehaviour.html">EntityBehaviour</a></div>
     <div class="level3"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
     <div class="level4"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.ArcBehaviour.Command.html">ArcBehaviour.Command</a>&gt;</div>
-    <div class="level5"><a class="xref" href="Global.BaseMovementBehaviour-1.html">BaseMovementBehaviour</a>&lt;<a class="xref" href="Global.ArcBehaviour.Command.html">ArcBehaviour.Command</a>&gt;</div>
-    <div class="level6"><span class="xref">ArcBehaviour</span></div>
+    <div class="level5"><span class="xref">ArcBehaviour</span></div>
   </div>
   <div class="implements">
     <h5>Implements</h5>
@@ -104,16 +103,13 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_cooldown">BaseMovementBehaviour&lt;ArcBehaviour.Command&gt;.cooldown</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_CanPlay__0_">BaseMovementBehaviour&lt;ArcBehaviour.Command&gt;.CanPlay(ArcBehaviour.Command)</a>
-    </div>
-    <div>
       <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;ArcBehaviour.Command&gt;.PlayEvents</a>
     </div>
     <div>
       <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Blocked">PlayableBehaviour&lt;ArcBehaviour.Command&gt;.Blocked</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_CanPlay__0_">PlayableBehaviour&lt;ArcBehaviour.Command&gt;.CanPlay(ArcBehaviour.Command)</a>
     </div>
     <div>
       <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;ArcBehaviour.Command&gt;.Play(ArcBehaviour.Command)</a>
@@ -195,7 +191,7 @@
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_ArcBehaviour_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ArcBehaviour : BaseMovementBehaviour&lt;ArcBehaviour.Command&gt;, IMovementBehaviour, IControlledBehaviour, IPlayableBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class ArcBehaviour : PlayableBehaviour&lt;ArcBehaviour.Command&gt;, IMovementBehaviour, IControlledBehaviour, IPlayableBehaviour</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
@@ -239,7 +235,7 @@
     <pre><code class="lang-csharp hljs">protected override void Awake()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">BaseMovementBehaviour&lt;ArcBehaviour.Command&gt;.Awake()</span></div>
+  <div><a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Awake">CharacterBehaviour.Awake()</a></div>
   
   
   <a id="Global_ArcBehaviour_DoPlay_" data-uid="Global.ArcBehaviour.DoPlay*"></a>

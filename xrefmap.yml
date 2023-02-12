@@ -335,19 +335,19 @@ references:
   isSpec: "True"
   fullName: AttackManager.Awake
   nameWithType: AttackManager.Awake
-- uid: Global.AttackManager.CanPlayMove(System.Boolean)
-  name: CanPlayMove(Boolean)
-  href: api/Global.AttackManager.html#Global_AttackManager_CanPlayMove_System_Boolean_
-  commentId: M:Global.AttackManager.CanPlayMove(System.Boolean)
-  fullName: AttackManager.CanPlayMove(System.Boolean)
-  nameWithType: AttackManager.CanPlayMove(Boolean)
-- uid: Global.AttackManager.CanPlayMove*
-  name: CanPlayMove
-  href: api/Global.AttackManager.html#Global_AttackManager_CanPlayMove_
-  commentId: Overload:Global.AttackManager.CanPlayMove
+- uid: Global.AttackManager.CanPlayAttack
+  name: CanPlayAttack()
+  href: api/Global.AttackManager.html#Global_AttackManager_CanPlayAttack
+  commentId: M:Global.AttackManager.CanPlayAttack
+  fullName: AttackManager.CanPlayAttack()
+  nameWithType: AttackManager.CanPlayAttack()
+- uid: Global.AttackManager.CanPlayAttack*
+  name: CanPlayAttack
+  href: api/Global.AttackManager.html#Global_AttackManager_CanPlayAttack_
+  commentId: Overload:Global.AttackManager.CanPlayAttack
   isSpec: "True"
-  fullName: AttackManager.CanPlayMove
-  nameWithType: AttackManager.CanPlayMove
+  fullName: AttackManager.CanPlayAttack
+  nameWithType: AttackManager.CanPlayAttack
 - uid: Global.AttackManager.damageTranspiler
   name: damageTranspiler
   href: api/Global.AttackManager.html#Global_AttackManager_damageTranspiler
@@ -647,6 +647,19 @@ references:
   commentId: T:Global.BaseAttack
   fullName: BaseAttack
   nameWithType: BaseAttack
+- uid: Global.BaseAttack.Awake
+  name: Awake()
+  href: api/Global.BaseAttack.html#Global_BaseAttack_Awake
+  commentId: M:Global.BaseAttack.Awake
+  fullName: BaseAttack.Awake()
+  nameWithType: BaseAttack.Awake()
+- uid: Global.BaseAttack.Awake*
+  name: Awake
+  href: api/Global.BaseAttack.html#Global_BaseAttack_Awake_
+  commentId: Overload:Global.BaseAttack.Awake
+  isSpec: "True"
+  fullName: BaseAttack.Awake
+  nameWithType: BaseAttack.Awake
 - uid: Global.BaseAttack.CanPlay(BaseAttack.Command)
   name: CanPlay(BaseAttack.Command)
   href: api/Global.BaseAttack.html#Global_BaseAttack_CanPlay_BaseAttack_Command_
@@ -692,6 +705,24 @@ references:
   isSpec: "True"
   fullName: BaseAttack.DoStop
   nameWithType: BaseAttack.DoStop
+- uid: Global.BaseAttack.hardRecovery
+  name: hardRecovery
+  href: api/Global.BaseAttack.html#Global_BaseAttack_hardRecovery
+  commentId: F:Global.BaseAttack.hardRecovery
+  fullName: BaseAttack.hardRecovery
+  nameWithType: BaseAttack.hardRecovery
+- uid: Global.BaseAttack.instant
+  name: instant
+  href: api/Global.BaseAttack.html#Global_BaseAttack_instant
+  commentId: F:Global.BaseAttack.instant
+  fullName: BaseAttack.instant
+  nameWithType: BaseAttack.instant
+- uid: Global.BaseAttack.interruptible
+  name: interruptible
+  href: api/Global.BaseAttack.html#Global_BaseAttack_interruptible
+  commentId: F:Global.BaseAttack.interruptible
+  fullName: BaseAttack.interruptible
+  nameWithType: BaseAttack.interruptible
 - uid: Global.BaseAttack.IsMidair
   name: IsMidair
   href: api/Global.BaseAttack.html#Global_BaseAttack_IsMidair
@@ -1007,57 +1038,6 @@ references:
   isSpec: "True"
   fullName: BaseHitDetector.StopDetector
   nameWithType: BaseHitDetector.StopDetector
-- uid: Global.BaseMovementBehaviour`1
-  name: BaseMovementBehaviour<T>
-  href: api/Global.BaseMovementBehaviour-1.html
-  commentId: T:Global.BaseMovementBehaviour`1
-  name.vb: BaseMovementBehaviour(Of T)
-  fullName: BaseMovementBehaviour<T>
-  fullName.vb: BaseMovementBehaviour(Of T)
-  nameWithType: BaseMovementBehaviour<T>
-  nameWithType.vb: BaseMovementBehaviour(Of T)
-- uid: Global.BaseMovementBehaviour`1.Awake
-  name: Awake()
-  href: api/Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_Awake
-  commentId: M:Global.BaseMovementBehaviour`1.Awake
-  fullName: BaseMovementBehaviour<T>.Awake()
-  fullName.vb: BaseMovementBehaviour(Of T).Awake()
-  nameWithType: BaseMovementBehaviour<T>.Awake()
-  nameWithType.vb: BaseMovementBehaviour(Of T).Awake()
-- uid: Global.BaseMovementBehaviour`1.Awake*
-  name: Awake
-  href: api/Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_Awake_
-  commentId: Overload:Global.BaseMovementBehaviour`1.Awake
-  isSpec: "True"
-  fullName: BaseMovementBehaviour<T>.Awake
-  fullName.vb: BaseMovementBehaviour(Of T).Awake
-  nameWithType: BaseMovementBehaviour<T>.Awake
-  nameWithType.vb: BaseMovementBehaviour(Of T).Awake
-- uid: Global.BaseMovementBehaviour`1.CanPlay(`0)
-  name: CanPlay(T)
-  href: api/Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_CanPlay__0_
-  commentId: M:Global.BaseMovementBehaviour`1.CanPlay(`0)
-  fullName: BaseMovementBehaviour<T>.CanPlay(T)
-  fullName.vb: BaseMovementBehaviour(Of T).CanPlay(T)
-  nameWithType: BaseMovementBehaviour<T>.CanPlay(T)
-  nameWithType.vb: BaseMovementBehaviour(Of T).CanPlay(T)
-- uid: Global.BaseMovementBehaviour`1.CanPlay*
-  name: CanPlay
-  href: api/Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_CanPlay_
-  commentId: Overload:Global.BaseMovementBehaviour`1.CanPlay
-  isSpec: "True"
-  fullName: BaseMovementBehaviour<T>.CanPlay
-  fullName.vb: BaseMovementBehaviour(Of T).CanPlay
-  nameWithType: BaseMovementBehaviour<T>.CanPlay
-  nameWithType.vb: BaseMovementBehaviour(Of T).CanPlay
-- uid: Global.BaseMovementBehaviour`1.cooldown
-  name: cooldown
-  href: api/Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_cooldown
-  commentId: F:Global.BaseMovementBehaviour`1.cooldown
-  fullName: BaseMovementBehaviour<T>.cooldown
-  fullName.vb: BaseMovementBehaviour(Of T).cooldown
-  nameWithType: BaseMovementBehaviour<T>.cooldown
-  nameWithType.vb: BaseMovementBehaviour(Of T).cooldown
 - uid: Global.BasePattern
   name: BasePattern
   href: api/Global.BasePattern.html
@@ -1763,6 +1743,44 @@ references:
   isSpec: "True"
   fullName: ClosestToPlayerBrainModule.Update
   nameWithType: ClosestToPlayerBrainModule.Update
+- uid: Global.Cooldown
+  name: Cooldown
+  href: api/Global.Cooldown.html
+  commentId: T:Global.Cooldown
+  fullName: Cooldown
+  nameWithType: Cooldown
+- uid: Global.Cooldown.CanPlay
+  name: CanPlay()
+  href: api/Global.Cooldown.html#Global_Cooldown_CanPlay
+  commentId: M:Global.Cooldown.CanPlay
+  fullName: Cooldown.CanPlay()
+  nameWithType: Cooldown.CanPlay()
+- uid: Global.Cooldown.CanPlay*
+  name: CanPlay
+  href: api/Global.Cooldown.html#Global_Cooldown_CanPlay_
+  commentId: Overload:Global.Cooldown.CanPlay
+  isSpec: "True"
+  fullName: Cooldown.CanPlay
+  nameWithType: Cooldown.CanPlay
+- uid: Global.Cooldown.duration
+  name: duration
+  href: api/Global.Cooldown.html#Global_Cooldown_duration
+  commentId: F:Global.Cooldown.duration
+  fullName: Cooldown.duration
+  nameWithType: Cooldown.duration
+- uid: Global.Cooldown.Reset
+  name: Reset()
+  href: api/Global.Cooldown.html#Global_Cooldown_Reset
+  commentId: M:Global.Cooldown.Reset
+  fullName: Cooldown.Reset()
+  nameWithType: Cooldown.Reset()
+- uid: Global.Cooldown.Reset*
+  name: Reset
+  href: api/Global.Cooldown.html#Global_Cooldown_Reset_
+  commentId: Overload:Global.Cooldown.Reset
+  isSpec: "True"
+  fullName: Cooldown.Reset
+  nameWithType: Cooldown.Reset
 - uid: Global.CutsceneAction
   name: CutsceneAction
   href: api/Global.CutsceneAction.html
@@ -2127,6 +2145,12 @@ references:
   commentId: F:Global.DodgeBehaviour.Command.direction
   fullName: DodgeBehaviour.Command.direction
   nameWithType: DodgeBehaviour.Command.direction
+- uid: Global.DodgeBehaviour.cooldown
+  name: cooldown
+  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_cooldown
+  commentId: F:Global.DodgeBehaviour.cooldown
+  fullName: DodgeBehaviour.cooldown
+  nameWithType: DodgeBehaviour.cooldown
 - uid: Global.DodgeBehaviour.dodgeDistance
   name: dodgeDistance
   href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_dodgeDistance
@@ -6018,30 +6042,6 @@ references:
   fullName.vb: PhasedBehaviour(Of T).DoStop
   nameWithType: PhasedBehaviour<T>.DoStop
   nameWithType.vb: PhasedBehaviour(Of T).DoStop
-- uid: Global.PhasedBehaviour`1.hardRecovery
-  name: hardRecovery
-  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_hardRecovery
-  commentId: F:Global.PhasedBehaviour`1.hardRecovery
-  fullName: PhasedBehaviour<T>.hardRecovery
-  fullName.vb: PhasedBehaviour(Of T).hardRecovery
-  nameWithType: PhasedBehaviour<T>.hardRecovery
-  nameWithType.vb: PhasedBehaviour(Of T).hardRecovery
-- uid: Global.PhasedBehaviour`1.instant
-  name: instant
-  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_instant
-  commentId: F:Global.PhasedBehaviour`1.instant
-  fullName: PhasedBehaviour<T>.instant
-  fullName.vb: PhasedBehaviour(Of T).instant
-  nameWithType: PhasedBehaviour<T>.instant
-  nameWithType.vb: PhasedBehaviour(Of T).instant
-- uid: Global.PhasedBehaviour`1.interruptible
-  name: interruptible
-  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_interruptible
-  commentId: F:Global.PhasedBehaviour`1.interruptible
-  fullName: PhasedBehaviour<T>.interruptible
-  fullName.vb: PhasedBehaviour(Of T).interruptible
-  nameWithType: PhasedBehaviour<T>.interruptible
-  nameWithType.vb: PhasedBehaviour(Of T).interruptible
 - uid: Global.PhasedBehaviour`1.phaseEvents
   name: phaseEvents
   href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_phaseEvents
@@ -7712,6 +7712,12 @@ references:
   commentId: F:Global.SlideBehaviour.Command.direction
   fullName: SlideBehaviour.Command.direction
   nameWithType: SlideBehaviour.Command.direction
+- uid: Global.SlideBehaviour.cooldown
+  name: cooldown
+  href: api/Global.SlideBehaviour.html#Global_SlideBehaviour_cooldown
+  commentId: F:Global.SlideBehaviour.cooldown
+  fullName: SlideBehaviour.cooldown
+  nameWithType: SlideBehaviour.cooldown
 - uid: Global.SlideBehaviour.DoPlay(SlideBehaviour.Command)
   name: DoPlay(SlideBehaviour.Command)
   href: api/Global.SlideBehaviour.html#Global_SlideBehaviour_DoPlay_SlideBehaviour_Command_

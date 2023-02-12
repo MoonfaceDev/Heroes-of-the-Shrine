@@ -92,8 +92,7 @@
     <div class="level2"><a class="xref" href="Global.EntityBehaviour.html">EntityBehaviour</a></div>
     <div class="level3"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
     <div class="level4"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.JumpBehaviour.Command.html">JumpBehaviour.Command</a>&gt;</div>
-    <div class="level5"><a class="xref" href="Global.BaseMovementBehaviour-1.html">BaseMovementBehaviour</a>&lt;<a class="xref" href="Global.JumpBehaviour.Command.html">JumpBehaviour.Command</a>&gt;</div>
-    <div class="level6"><span class="xref">JumpBehaviour</span></div>
+    <div class="level5"><span class="xref">JumpBehaviour</span></div>
   </div>
   <div class="implements">
     <h5>Implements</h5>
@@ -103,9 +102,6 @@
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="Global.BaseMovementBehaviour-1.html#Global_BaseMovementBehaviour_1_cooldown">BaseMovementBehaviour&lt;JumpBehaviour.Command&gt;.cooldown</a>
-    </div>
     <div>
       <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;JumpBehaviour.Command&gt;.PlayEvents</a>
     </div>
@@ -192,7 +188,7 @@
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_JumpBehaviour_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class JumpBehaviour : BaseMovementBehaviour&lt;JumpBehaviour.Command&gt;, IMovementBehaviour, IControlledBehaviour, IPlayableBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class JumpBehaviour : PlayableBehaviour&lt;JumpBehaviour.Command&gt;, IMovementBehaviour, IControlledBehaviour, IPlayableBehaviour</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -505,7 +501,7 @@
     <pre><code class="lang-csharp hljs">protected override void Awake()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">BaseMovementBehaviour&lt;JumpBehaviour.Command&gt;.Awake()</span></div>
+  <div><a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Awake">CharacterBehaviour.Awake()</a></div>
   
   
   <a id="Global_JumpBehaviour_CanPlay_" data-uid="Global.JumpBehaviour.CanPlay*"></a>
@@ -549,7 +545,7 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">BaseMovementBehaviour&lt;JumpBehaviour.Command&gt;.CanPlay(JumpBehaviour.Command)</span></div>
+  <div><span class="xref">PlayableBehaviour&lt;JumpBehaviour.Command&gt;.CanPlay(JumpBehaviour.Command)</span></div>
   
   
   <a id="Global_JumpBehaviour_DoPlay_" data-uid="Global.JumpBehaviour.DoPlay*"></a>

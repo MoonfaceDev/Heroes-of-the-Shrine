@@ -64,7 +64,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.AirAttack.html",
-          "hash": "Cynw3JKNNhbEChNJG7SOrJB8SCeSjBhPV5xJ3ndWoBw="
+          "hash": "s5Oh+pwzMQRutN8fUdHBFk8ci7zAR60nGAANhTo+oFw="
         }
       },
       "is_incremental": false,
@@ -76,7 +76,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.AirSpinAttack.html",
-          "hash": "JYpqHwfFEK7N1XkGK6Et5dL4TcFH033h7NrjTYOVEiU="
+          "hash": "iQyI245/5DJhzfiK7EYES2A5FH9+p1fbDRLFF4sYW/I="
         }
       },
       "is_incremental": false,
@@ -100,7 +100,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.AltAirAttack.html",
-          "hash": "uKeN/JANliRWZF/N4VttLjMXr52hPDLTGadX04LSJbc="
+          "hash": "rkZenJlC/Q+/djpGpPCzOQQIsiKtctRabyJ8fpSXU1s="
         }
       },
       "is_incremental": false,
@@ -112,7 +112,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.AltNormalAttack.html",
-          "hash": "VIefEgUGrWdh9uYEQeI5KBBSJOfuN+1h//tJQ2DAF1c="
+          "hash": "dF/44YBfNabSC6CChb+hnUzmsgbFhWcvYpIvuTnv4x0="
         }
       },
       "is_incremental": false,
@@ -136,7 +136,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.ArcBehaviour.html",
-          "hash": "WEX5xlCNLgKHVONY3jtVTf3C/O74wIH7kAl1IB/GFgQ="
+          "hash": "24kNM/0gHw/I+qjrLNTIWzwkeEQV2BYDuIWxNCSJazU="
         }
       },
       "is_incremental": false,
@@ -160,7 +160,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.AttackManager.html",
-          "hash": "c6g9hpvnGDR40srRXvBmKk7j1yIXezCvWgnDntLLfAs="
+          "hash": "TNQXrzwObpeTTajXNmxuLCVt6wvkXKQTDzcECuDUKWQ="
         }
       },
       "is_incremental": false,
@@ -220,7 +220,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.AutoWalkBehaviour.html",
-          "hash": "frZNOHiHF61E5SwN2IiAoY3P6n3Ajdka6rvOqmWdt+Y="
+          "hash": "2BMTVwqk1wdkc4rZlCZhJE86BSmWTjdniSK/A4oqU4Y="
         }
       },
       "is_incremental": false,
@@ -244,7 +244,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.BaseAttack.html",
-          "hash": "FGhbNhqQHUPRcYyR+Ilki591mLHt76CyVhEk3QtNWFc="
+          "hash": "b+B8KG4D4MjDtGiqEXUAyLrxmisVU8qh4jjqKFVYWF4="
         }
       },
       "is_incremental": false,
@@ -293,18 +293,6 @@
         ".html": {
           "relative_path": "api/Global.BaseHitDetector.html",
           "hash": "TrP55l4jUwCXYlDHPBZt4UMPzsU2fT1hd1CRS5rfy3Y="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.BaseMovementBehaviour-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.BaseMovementBehaviour-1.html",
-          "hash": "pwd+jzWK4fHhEZjlLVFUfchL/tn8hUPDiFDxOroTA9M="
         }
       },
       "is_incremental": false,
@@ -448,7 +436,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.Character.html",
-          "hash": "oxWc2B/IAiKeGs+pCL66JFheziKBcre/FO6dkSDwiOA="
+          "hash": "DPirVQajBQ5zJHJBdvzD/OxjiZ9E7BdoJEnpmkHWb3o="
         }
       },
       "is_incremental": false,
@@ -460,7 +448,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.CharacterBehaviour.html",
-          "hash": "h/Kzz7XKi/QQ9AePD1lcn+LLAVHnnbGpiUglVILKRTE="
+          "hash": "gweA5hcvz6KBbnzHZQkdLzOL6e/LwByISgkCJHaZR1M="
         }
       },
       "is_incremental": false,
@@ -509,6 +497,18 @@
         ".html": {
           "relative_path": "api/Global.ClosestToPlayerBrainModule.html",
           "hash": "WQz6NPQXDCkiznMpfJRNJzku9p+nTJELwvKsu8nfeDg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.Cooldown.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.Cooldown.html",
+          "hash": "2bvfrlJywL6zmruU7zlPw4Dlv5VQRHxzQ1YERl056S0="
         }
       },
       "is_incremental": false,
@@ -676,7 +676,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.DodgeBehaviour.html",
-          "hash": "Ezh5BizDEZkG70cGf/DefAzNIR7I9ZBYxPyW1ue17IE="
+          "hash": "93FMPDs58zMrmuipwLNADqTAzYOP2rHFT1mXp41xG/M="
         }
       },
       "is_incremental": false,
@@ -748,7 +748,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.ElectrifyAttack.html",
-          "hash": "qjJ1FexWcfl5tT9mZ4wUZBt8NHMm+AYLlZ+ucdHQa9E="
+          "hash": "ZSUgh5cVdX6fSotZibprZ05TgZuMZGIGDrymwgEqgOE="
         }
       },
       "is_incremental": false,
@@ -844,7 +844,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.EnergyBurstAttack.html",
-          "hash": "/A931wY2aSVhSVZs/pqOqK3awTSrj7hwsrubN5/F5RQ="
+          "hash": "qpvesS4hJuV7nTBrJOC37cPrS75itymfc532Jh8dW5k="
         }
       },
       "is_incremental": false,
@@ -916,7 +916,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.EscapeBehaviour.html",
-          "hash": "qQZjL0jFuf9Wjk2v1tABhoM8NbJake23f2tNB9WFimU="
+          "hash": "wA9vD0Dfe2nDnL78RRKuyHtteDfLbEBcluUGH6uvihM="
         }
       },
       "is_incremental": false,
@@ -1012,7 +1012,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.FollowBehaviour.html",
-          "hash": "12nHrHle/yKh0WmieRJLXhG/SyuegsKogc6b1eb27Mg="
+          "hash": "YN5jc5M3jE1P5QSqLLYqcSDz7kcVqKTnaBbiHSD8ZUU="
         }
       },
       "is_incremental": false,
@@ -1360,7 +1360,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.JumpBehaviour.html",
-          "hash": "kGHleRbXNt+SpmEEvSTDgT8LuOknn7fORfnYeX4SamM="
+          "hash": "r1LGjOVD1LbXdIwk9IVwoE+almYEkwoMqlf+uGKQLAQ="
         }
       },
       "is_incremental": false,
@@ -1492,7 +1492,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.MotionAttack.html",
-          "hash": "bdmpFeAHpIPuD7+ZDrMfRRVWSnJTVEu57bsFw8IrZ9M="
+          "hash": "7An2DPngoqEVoIy+8YEJcDcoudHpbpWid4Dh+PcytSc="
         }
       },
       "is_incremental": false,
@@ -1576,7 +1576,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.NormalAttack.html",
-          "hash": "h7GFeXmqSmXkxvx1nxCZU/2efT+ULxox1RIIZ8Cvr1U="
+          "hash": "qfw0OUNIGD7gweTJfMvAU8urxOvkmthlUTBpPOa7W58="
         }
       },
       "is_incremental": false,
@@ -1660,7 +1660,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.PhasedBehaviour-1.html",
-          "hash": "otzd5hXgjaVDAdceyfxkA5CmvEYF3MwsZ/HtCfDJzio="
+          "hash": "6elkKAUAetBPPy53FdTJgGWq9isxTDiGJWdqRQUykOw="
         }
       },
       "is_incremental": false,
@@ -1696,7 +1696,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.PlayableBehaviour-1.html",
-          "hash": "6lWrhbAWnhUHol+mzDxF5BIQQZfCIy/8rK/yxALfKnY="
+          "hash": "KQgEJ/TiDrrlD5jxXg0IdYeknQJ+hdBe+qICU0QYnxA="
         }
       },
       "is_incremental": false,
@@ -1792,7 +1792,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.PossessAttack.html",
-          "hash": "hb8uOvI/9AMXOHMrTTH12ABvUCTaWxQjCji4tZHzu/Y="
+          "hash": "d1Gf6mhyCHMjhRpmelZJs/uu417+YYEGqsd7t1TTeew="
         }
       },
       "is_incremental": false,
@@ -1972,7 +1972,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.RunBehaviour.html",
-          "hash": "wInHf4D+KHpSNDFC/CiUAX5mA4q5P5LGJE1ijqC0Lh8="
+          "hash": "qPtvx1dhfVK61o317IhNVyJUfBZ9toK66cvq43FL6Sc="
         }
       },
       "is_incremental": false,
@@ -1984,7 +1984,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.RunKick.html",
-          "hash": "FXY+ogijugEHiKeM/rTjj7/c7eKFPQiC7VIjHxPORWY="
+          "hash": "D7Hm+J9tDXEJ5X1WlHmVp51B3T0Z+glHJcrDuj9mWKY="
         }
       },
       "is_incremental": false,
@@ -2056,7 +2056,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.SimpleAttack.html",
-          "hash": "spEnjl4sdUBwNahbE4ws64rndtsWaCOxUHiK+nwOaVc="
+          "hash": "gxA2EbFwP/Zwvh1TISvVK4B/pduQOP0nZGc9yA2llwk="
         }
       },
       "is_incremental": false,
@@ -2092,7 +2092,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.SlashAttack.html",
-          "hash": "B6vox3E1yrE6SDNfXYv9wBrdSxPS00btn2fYgPA8zSs="
+          "hash": "TzsQeLAWGD6INuZcGT3GBziHyQrVHqo36gFcFrw7gzk="
         }
       },
       "is_incremental": false,
@@ -2116,7 +2116,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.SlideBehaviour.html",
-          "hash": "ORb2W2N9OiFkwmqBdJOJvg2D6vh85KNsOHZtSnPf6UE="
+          "hash": "zldCQxzyQmcyOGWkGn+vW0RauksIorgtu1M/axfi138="
         }
       },
       "is_incremental": false,
@@ -2164,7 +2164,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.SpawnAttack.html",
-          "hash": "dFtkaLpkXxFYFhI6BG9oOBWKXxzkTQJMIcsfGmla68s="
+          "hash": "pJ+um6ndBqYKjW9U0Vai35O6otxwNNAI8p1LSwkkvSQ="
         }
       },
       "is_incremental": false,
@@ -2188,7 +2188,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.SpinningSwordsAttack.html",
-          "hash": "Nc4nx4gb1/SM8xcILJHWWvcwkJgudzkz7N2P2A5X9lA="
+          "hash": "oZ7EsQbiIVpjyY2JjQQ6Cfrq/VfU97YagH6MOBp0rKo="
         }
       },
       "is_incremental": false,
@@ -2212,7 +2212,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.StabAttack.html",
-          "hash": "lOLWPUF+coMfYyP9YnAc72kguCQ7pnbIf+VWo7jeXxI="
+          "hash": "3iHnlPzZTYZUidLWLkp5WNVcW+NIPM77rtnm3FLOcaE="
         }
       },
       "is_incremental": false,
@@ -2416,7 +2416,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.Uppercut.html",
-          "hash": "pYh+Fenh2ApwVGOp7U/1dHaXjQnMXeeZdXRtP9QL+Ns="
+          "hash": "OKinN8kRBUyBncmTIql6ZR47SOfYWpTu2btdQ6TB7tE="
         }
       },
       "is_incremental": false,
@@ -2440,7 +2440,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.WalkBehaviour.html",
-          "hash": "FB4BKPfdzwT77SKOJhNuPiTkQR0VJYJkNm33acxSHnA="
+          "hash": "pLjYKbkRO6aAla/+fYjX3Y02NsHmQkIxg5PykRGMAFE="
         }
       },
       "is_incremental": false,
@@ -2488,7 +2488,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "ScQiw/80o5rwZ5YzWSpimjhBdhy7xafF3iV/Yx+2nK4="
+          "hash": "iX/Di2hIuyu+byu+vGQa82VEQvu0KZ/ZI749LhGi1o8="
         }
       },
       "is_incremental": false,
@@ -2500,7 +2500,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "jE44zo8OyOFuHHuYTds6GcgmydlxuLskt1lGOCigbKQ="
+          "hash": "dzEYv6d5EXZCTU3nlOmGui121WO438LaybriCDD77t4="
         }
       },
       "is_incremental": false,

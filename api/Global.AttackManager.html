@@ -393,33 +393,16 @@
   <div><a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Awake">CharacterBehaviour.Awake()</a></div>
   
   
-  <a id="Global_AttackManager_CanPlayMove_" data-uid="Global.AttackManager.CanPlayMove*"></a>
-  <h4 id="Global_AttackManager_CanPlayMove_System_Boolean_" data-uid="Global.AttackManager.CanPlayMove(System.Boolean)">CanPlayMove(Boolean)</h4>
-  <div class="markdown level1 summary"><p>Checks if a move can be played </p>
+  <a id="Global_AttackManager_CanPlayAttack_" data-uid="Global.AttackManager.CanPlayAttack*"></a>
+  <h4 id="Global_AttackManager_CanPlayAttack" data-uid="Global.AttackManager.CanPlayAttack">CanPlayAttack()</h4>
+  <div class="markdown level1 summary"><p>Checks if any attack is playing. If attack is recovering, and it doesn&apos;t have a <code>hardRecovery</code>, it will not
+prevent an attack</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool CanPlayMove(bool instant = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool CanPlayAttack()</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><span class="parametername">instant</span></td>
-        <td><p>Is the checked move instant</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -431,7 +414,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><code>true</code> if move can be played</p>
+        <td><p><code>true</code> if attack can be played</p>
 </td>
       </tr>
     </tbody>
