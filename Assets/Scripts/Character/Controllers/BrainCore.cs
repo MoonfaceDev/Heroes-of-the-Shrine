@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 /// <summary>
 /// Enemies brain is designed with modular pieces called brain modules.
@@ -21,11 +22,11 @@ public class BrainCore : CharacterController
 
     private void OnEnable()
     {
-        StateMachine.enabled = true;
+        EnableBehaviours(typeof(BrainModule));
     }
 
     private void OnDisable()
     {
-        StateMachine.enabled = false;
+        DisableBehaviours(typeof(BrainModule));
     }
 }

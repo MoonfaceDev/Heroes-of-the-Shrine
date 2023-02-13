@@ -31,17 +31,17 @@ public class AttackPattern : BasePattern
 
         var entity = animator.GetEntity();
         entity.WorldRotation = Mathf.RoundToInt(Mathf.Sign((player.WorldPosition - entity.WorldPosition).x));
-        attackCoroutine = EventManager.Instance.StartCoroutine(AttackCoroutine(animator));
+        attackCoroutine = EventManager.Instance.StartCoroutine(AttackCoroutine(entity));
     }
 
-    private IEnumerator AttackCoroutine(Animator animator)
+    private IEnumerator AttackCoroutine(GameEntity entity)
     {
         var startTime = Time.time;
 
         foreach (var node in attacks)
         {
             yield return new WaitForSeconds(node.startTime - (Time.time - startTime));
-            var attack = animator.GetEntity().GetBehaviour(node.attackType, exactType: true) as BaseAttack;
+            var attack = entity.GetBehaviour(node.attackType, exactType: true) as BaseAttack;
             if (attack == null) continue;
             attack.Play(new BaseAttack.Command());
         }

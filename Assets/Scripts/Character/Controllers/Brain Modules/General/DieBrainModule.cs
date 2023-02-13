@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 /// <summary>
 /// State machine parameters related to <see cref="DieBehaviour"/>
@@ -12,7 +13,21 @@ public class DieBrainModule : BrainModule
     {
         var dieBehaviour = GetBehaviour<DieBehaviour>();
         if (!dieBehaviour) return;
-        dieBehaviour.onDie += () => StateMachine.SetBool(Dead, true);
+        dieBehaviour.onDie += () =>
+        {
+            if (!HasParameter())
+            {
+                Debug.LogError("Parameter \"Dead\" not found! It should be used to exit any other state when " +
+                               "character dies");
+            }
+
+            StateMachine.SetBool(Dead, true);
+        };
+    }
+
+    private bool HasParameter()
+    {
+        return StateMachine.parameters.Any(param => param.name == DeadParameter);
     }
 
     public override string[] GetParameters()
