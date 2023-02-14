@@ -14,9 +14,19 @@ public class ChainHitExecutor : IHitExecutor
     
     public void Execute(BaseAttack attack, IHittable hittable)
     {
+        if (TryBlock(attack, hittable))
+        {
+            return;
+        }
         foreach (var executor in executors)
         {
             executor.Execute(attack, hittable);
         }
+    }
+
+    private bool TryBlock(BaseAttack attack, IHittable hittable)
+    {
+        var focusBlock = hittable.Character.GetBehaviour<FocusBlock>();
+        return focusBlock && focusBlock.TryBlock(attack);
     }
 }

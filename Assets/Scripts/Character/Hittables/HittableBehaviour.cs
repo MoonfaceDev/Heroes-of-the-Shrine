@@ -1,4 +1,5 @@
-using System;
+using ExtEvents;
+using UnityEngine;
 
 /// <summary>
 /// Behaviours responsible for processing hits from attacks
@@ -16,7 +17,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
     /// <value>
     /// Invoked when <see cref="Hit"/> is called
     /// </value>
-    public event Action<float> OnHit;
+    [SerializeField] public ExtEvent onHit;
 
     private HealthSystem healthSystem;
     private KnockbackBehaviour knockbackBehaviour;
@@ -53,7 +54,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
 
         var processedDamage = ProcessDamage(damage);
         healthSystem.Health -= processedDamage;
-        OnHit?.Invoke(processedDamage);
+        onHit.Invoke();
     }
 
     public void Knockback(float power, float angleDegrees, float stunTime)

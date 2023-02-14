@@ -35,7 +35,8 @@ public class ElectrifiedEffect : BaseEffect<ElectrifiedEffect.Command>
 
     protected override void DoPlay(Command command)
     {
-        StopBehaviours(BehavioursToBlock.Append(typeof(ElectrifiedEffect)).ToArray());
+        StopBehaviours(BehavioursToBlock);
+        StopBehaviours(typeof(ElectrifiedEffect));
 
         Active = true;
 

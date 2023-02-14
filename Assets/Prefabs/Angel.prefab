@@ -79,6 +79,86 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 824917772533207107, guid: 4beee89b5f87b224189fe289925793fb, type: 3}
+--- !u!1 &415412319477531489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3725194561385273773}
+  - component: {fileID: 3002657329488910521}
+  m_Layer: 0
+  m_Name: Blocks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3725194561385273773
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415412319477531489}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5102893360874897670}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3002657329488910521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415412319477531489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e3548ea00642cb97b671a2de14c28d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  phaseEvents:
+    onStartAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onStartActive:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishActive:
+      _persistentListeners: []
+      Expanded: 1
+    onStartRecovery:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishRecovery:
+      _persistentListeners: []
+      Expanded: 1
+  blockableAttacks:
+  - attackType:
+      GuidAssignmentFailed: 0
+      GUID: 81e86d033fb4f164abb77561de174642
+      _typeNameAndAssembly: ElectrifyAttack, Assembly-CSharp
+      _suppressLogs: 0
+    energyReward: 200
+  anticipateTime: 0.1
+  activeTime: 1
+  recoveryTime: 0.1
 --- !u!1 &811557649854150555
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +349,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageMultiplier: 0
+  onHit:
+    _persistentListeners: []
+    Expanded: 1
 --- !u!114 &6216410287663508394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2158,6 +2241,7 @@ Transform:
   - {fileID: 8561655299317852435}
   - {fileID: 32172274780924393}
   - {fileID: 7562827223860804901}
+  - {fileID: 3725194561385273773}
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

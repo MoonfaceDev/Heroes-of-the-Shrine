@@ -35,7 +35,7 @@ public class PossessedEffect : BaseEffect<PossessedEffect.Command>
         var hittableBehaviour = GetBehaviour<HittableBehaviour>();
         if (hittableBehaviour)
         {
-            hittableBehaviour.OnHit += OnHit;
+            hittableBehaviour.onHit += OnHit;
         }
 
         BlockBehaviours(BehavioursToBlock);
@@ -43,7 +43,7 @@ public class PossessedEffect : BaseEffect<PossessedEffect.Command>
         MovableEntity.velocity = Vector3.zero;
     }
 
-    private void OnHit(float damage)
+    private void OnHit()
     {
         Stop();
     }
@@ -60,7 +60,7 @@ public class PossessedEffect : BaseEffect<PossessedEffect.Command>
         var hittableBehaviour = GetBehaviour<HittableBehaviour>();
         if (hittableBehaviour)
         {
-            hittableBehaviour.OnHit -= OnHit;
+            hittableBehaviour.onHit -= OnHit;
         }
 
         currentDuration = 0;

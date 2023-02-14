@@ -50,6 +50,12 @@ public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IControll
 
     private static readonly int HealingParameter = Animator.StringToHash("healing");
 
+    protected override void Awake()
+    {
+        base.Awake();
+        GetBehaviour<HittableBehaviour>().onHit += Stop;
+    }
+
     public override bool CanPlay(Command command)
     {
         var healthSystem = GetBehaviour<HealthSystem>();

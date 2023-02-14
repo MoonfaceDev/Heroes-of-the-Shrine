@@ -58,6 +58,7 @@ public class PlayerController : CharacterController
     private SlideBehaviour slideBehaviour;
     private DodgeBehaviour dodgeBehaviour;
     private HealBehaviour healBehaviour;
+    private FocusBlock focusBlock;
     
     private List<BufferedAction> bufferedActions;
 
@@ -70,6 +71,7 @@ public class PlayerController : CharacterController
         slideBehaviour = GetBehaviour<SlideBehaviour>();
         dodgeBehaviour = GetBehaviour<DodgeBehaviour>();
         healBehaviour = GetBehaviour<HealBehaviour>();
+        focusBlock = GetBehaviour<FocusBlock>();
 
         bufferedActions = new List<BufferedAction>();
     }
@@ -88,6 +90,7 @@ public class PlayerController : CharacterController
         ExecuteSlide();
         ExecuteHeal();
         ExecuteAttack();
+        ExecuteBlock();
     }
 
     private void ReducePossessedEffectDuration()
@@ -180,6 +183,15 @@ public class PlayerController : CharacterController
         if (Input.GetButtonUp(Button.Heal.ToString()))
         {
             healBehaviour.Stop();
+        }
+    }
+    
+    private void ExecuteBlock()
+    {
+        if (!focusBlock) return;
+        if (Input.GetButtonDown(Button.Defense.ToString()))
+        {
+            focusBlock.Play(new FocusBlock.Command());
         }
     }
 
