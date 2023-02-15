@@ -996,6 +996,42 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.FocusBlock.BlockDefinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.FocusBlock.BlockDefinition.html",
+          "hash": "7C9hzFOSnixJ+ONTtHmcEBasp+mKrDh9OlNDV7k7z5o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.FocusBlock.Command.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.FocusBlock.Command.html",
+          "hash": "jNRwarE8t+6zrxCK0FzhBRy2qUQDQHCEeoDnsUgM1pA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.FocusBlock.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.FocusBlock.html",
+          "hash": "naKdq8qtyohWyg/gFc+noasWadW27raP7uXeyaDeixE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.FollowBehaviour.Command.yml",
       "output": {
         ".html": {
@@ -1120,7 +1156,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.HealBehaviour.html",
-          "hash": "WTzrhEs4x3DBOYeNT1dl4SJlqsh5Dh4cS2VKsfmW97M="
+          "hash": "LW84N2uqiR7UQCaLEtdtPKAbPfFaKf4hEu2eR2XgEKE="
         }
       },
       "is_incremental": false,
@@ -1216,7 +1252,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.HittableBehaviour.html",
-          "hash": "HKOmQYFtESK/HF6iJYg95h5mAk+NJHpT92BGOPQouBY="
+          "hash": "f7cl8nrZQ1zSLrRGs++NbUzj8Vuqi1xb4U75Jwn/KMY="
         }
       },
       "is_incremental": false,
@@ -1660,7 +1696,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.PhasedBehaviour-1.html",
-          "hash": "ovi88yGk/tr9MmYSBTDeDEpj9M83QoRqkW4O99z4aYI="
+          "hash": "dxpMYeKpNkIJOBjguExurbOyoj+ieG809h1KxKz2EB8="
         }
       },
       "is_incremental": false,
@@ -2488,7 +2524,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "iX/Di2hIuyu+byu+vGQa82VEQvu0KZ/ZI749LhGi1o8="
+          "hash": "Gy/Z4u6bm+d6jQn6HvT8auO48XIHoSrFvMms//Gbxyw="
         }
       },
       "is_incremental": false,
@@ -2500,7 +2536,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "dzEYv6d5EXZCTU3nlOmGui121WO438LaybriCDD77t4="
+          "hash": "7bTRzhJl2sgO7zr074ZVVAJh/IkobjYD+zI9/O9EF5A="
         }
       },
       "is_incremental": false,
@@ -2711,7 +2747,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 206,
+          "total_file_count": 209,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
