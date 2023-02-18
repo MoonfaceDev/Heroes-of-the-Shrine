@@ -43,6 +43,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
 
         if (focusBlock && focusBlock.TryBlock(hit))
         {
+            hit.source.Stop();
             return;
         }
 
