@@ -7,14 +7,8 @@ public class FireEffect : BaseEffect<FireEffect.Command>
     {
         public readonly float duration;
         public readonly float hitInterval;
-        public readonly float damagePerHit;
-
-        public Command(float duration, float hitInterval, float damagePerHit)
-        {
-            this.duration = duration;
-            this.hitInterval = hitInterval;
-            this.damagePerHit = damagePerHit;
-        }
+        public readonly ChainHitExecutor hitExecutor;
+        public readonly BaseAttack relatedAttack;
     }
 
     private Coroutine damageCoroutine;
@@ -25,7 +19,7 @@ public class FireEffect : BaseEffect<FireEffect.Command>
     protected override void DoPlay(Command command)
     {
         Active = true;
-        damageCoroutine = StartCoroutine(DoDamage(command.hitInterval, command.damagePerHit));
+        damageCoroutine = StartCoroutine(ExecuteHits(command.hitInterval, command.hitExecutor, command.relatedAttack));
         startTime = Time.time;
         currentDuration = command.duration;
         stopListener = InvokeWhen(() => Time.time - startTime > command.duration, Stop);
@@ -46,13 +40,13 @@ public class FireEffect : BaseEffect<FireEffect.Command>
         return currentDuration != 0 ? (Time.time - startTime) / currentDuration : 0;
     }
 
-    private IEnumerator DoDamage(float hitInterval, float damagePerHit)
+    private IEnumerator ExecuteHits(float hitInterval, ChainHitExecutor hitExecutor, BaseAttack relatedAttack)
     {
         var hittableBehaviour = GetBehaviour<HittableBehaviour>();
         while (true)
         {
             yield return new WaitForSeconds(hitInterval);
-            hittableBehaviour.Hit(damagePerHit);
+            hitExecutor.Execute(new Hit { source = relatedAttack, victim = hittableBehaviour });
         }
     }
 }

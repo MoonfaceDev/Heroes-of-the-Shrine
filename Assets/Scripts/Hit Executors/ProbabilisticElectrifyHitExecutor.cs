@@ -17,9 +17,9 @@ public class ProbabilisticElectrifyHitExecutor : IHitExecutor
     /// </value>
     public float probability;
     
-    public void Execute(BaseAttack attack, IHittable hittable)
+    public void Execute(Hit hit)
     {
         if (!(Random.Range(0f, 1f) < probability)) return;
-        electrifyHitExecutor.Execute(attack, hittable);
+        hit.victim.Hit(electrifyHitExecutor, hit);
     }
 }

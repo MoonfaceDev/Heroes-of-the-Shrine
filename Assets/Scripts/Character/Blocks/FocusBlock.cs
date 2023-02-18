@@ -65,14 +65,14 @@ public class FocusBlock : PhasedBehaviour<FocusBlock.Command>
         yield return new WaitForSeconds(recoveryTime);
     }
 
-    public bool TryBlock(BaseAttack attack)
+    public bool TryBlock(Hit hit)
     {
         if (!Active)
         {
             return false;
         }
         
-        var blockDefinition = GetBlockDefinition(attack);
+        var blockDefinition = GetBlockDefinition(hit.source);
         if (blockDefinition == null)
         {
             return false;

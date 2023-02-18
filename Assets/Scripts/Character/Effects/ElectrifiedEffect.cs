@@ -1,19 +1,12 @@
 using System;
-using System.Linq;
 using UnityEngine;
 
 public class ElectrifiedEffect : BaseEffect<ElectrifiedEffect.Command>
 {
     public class Command
     {
-        public readonly float duration;
-        public readonly float speedReductionMultiplier;
-
-        public Command(float duration, float speedReductionMultiplier)
-        {
-            this.duration = duration;
-            this.speedReductionMultiplier = speedReductionMultiplier;
-        }
+        public float duration;
+        public float speedReductionMultiplier;
     }
 
     public ParticleSystem particles;

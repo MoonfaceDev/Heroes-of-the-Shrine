@@ -11,7 +11,7 @@ public class HittableHitbox : EntityBehaviour, IHittable
     /// <see cref="hittableBehaviour"/> of the related character
     /// </value>
     public HittableBehaviour hittableBehaviour;
-    
+
     /// <value>
     /// Invoked when <see cref="Hit"/> is called
     /// </value>
@@ -21,12 +21,12 @@ public class HittableHitbox : EntityBehaviour, IHittable
     /// <see cref="SpriteRenderer"/> on which blink effect is played
     /// </value>
     [Header("Blink Effect")] public SpriteRenderer figure;
-    
+
     /// <value>
     /// Material that <see cref="figure"/> changes to during blink effect
     /// </value>
     public Material blinkMaterial;
-    
+
     /// <value>
     /// Duration of blink effect
     /// </value>
@@ -37,30 +37,26 @@ public class HittableHitbox : EntityBehaviour, IHittable
     /// </value>
     public Hitbox Hitbox { get; private set; }
 
+    public Character Character => hittableBehaviour.Character;
+
+    public ExtEvent HitEvent => onHit;
+
     private Material defaultMaterial;
 
     protected virtual void Awake()
     {
         Hitbox = GetBehaviour<Hitbox>();
         defaultMaterial = figure.material;
-        onHit += () =>
-        {
-            if (figure && hittableBehaviour.CanGetHit())
-            {
-                Blink();
-            }
-        };
+        onHit += hittableBehaviour.onHit.Invoke;
+        onHit += Blink;
     }
-
-    public Character Character => hittableBehaviour.Character;
 
     /// <value>
     /// Plays blink effect on the character's figure, to emphasize hits
     /// </value>
-    protected void Blink()
+    private void Blink()
     {
-        if (!figure || !hittableBehaviour.CanGetHit()) return;
-
+        if (!figure) return;
         figure.material = blinkMaterial;
         StartTimeout(() => figure.material = defaultMaterial, blinkTime);
     }
@@ -70,19 +66,8 @@ public class HittableHitbox : EntityBehaviour, IHittable
         return hittableBehaviour.CanGetHit();
     }
 
-    public virtual void Hit(float damage)
+    public virtual bool Hit(IHitExecutor executor, Hit hit)
     {
-        onHit.Invoke();
-        hittableBehaviour.Hit(damage);
-    }
-
-    public virtual void Knockback(float power, float angleDegrees, float stunTime)
-    {
-        hittableBehaviour.Knockback(power, angleDegrees, stunTime);
-    }
-
-    public virtual void Stun(float time)
-    {
-        hittableBehaviour.Stun(time);
+        return hittableBehaviour.Hit(executor, hit);
     }
 }

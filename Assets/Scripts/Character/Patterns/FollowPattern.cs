@@ -41,9 +41,10 @@ public class FollowPattern : BasePattern
                 .ToArray();
         });
 
-        followBehaviour.Play(new FollowBehaviour.Command(
-            (MovableEntity)target,
-            () =>
+        followBehaviour.Play(new FollowBehaviour.Command
+        {
+            target = (MovableEntity)target,
+            getExcluded = () =>
             {
                 return otherEnemies
                     .SelectMany(enemy => grid.GetCircle(
@@ -51,7 +52,7 @@ public class FollowPattern : BasePattern
                         DistanceFromOtherEnemies + nodeRadius))
                     .ToArray();
             },
-            (out Vector3 direction) =>
+            getOverrideDirection = (out Vector3 direction) =>
             {
                 var closeEnemyPositions = otherEnemies
                     .Where(enemy =>
@@ -72,7 +73,7 @@ public class FollowPattern : BasePattern
                 direction = (followBehaviour.MovableEntity.WorldPosition - center).normalized;
                 return true;
             }
-        ));
+        });
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

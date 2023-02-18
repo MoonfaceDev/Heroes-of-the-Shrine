@@ -52,7 +52,10 @@ public class MotionAttack : BaseAttack
         MovableEntity.velocity.x = originalDirection * attackFlow.velocity;
         MovableEntity.velocity.z = 0;
         MovableEntity.acceleration.x = -originalDirection * attackFlow.acceleration;
-        hitDetector.StartDetector(hittable => hitExecutor.Execute(this, hittable), AttackManager.hittableTags);
+        hitDetector.StartDetector(
+            hittable => hitExecutor.Execute(new Hit { source = this, victim = hittable }),
+            AttackManager.hittableTags
+        );
         yield return new WaitUntil(() =>
             Mathf.Approximately(MovableEntity.velocity.x, 0) ||
             !Mathf.Approximately(Mathf.Sign(MovableEntity.velocity.x), originalDirection)

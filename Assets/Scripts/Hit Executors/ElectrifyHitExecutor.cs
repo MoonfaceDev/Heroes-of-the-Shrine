@@ -16,12 +16,12 @@ public class ElectrifyHitExecutor : IHitExecutor
     /// </value>
     public float speedMultiplier;
     
-    public void Execute(BaseAttack attack, IHittable hittable)
+    public void Execute(Hit hit)
     {
-        var electrifiedEffect = hittable.Character.GetBehaviour<ElectrifiedEffect>();
+        var electrifiedEffect = hit.victim.Character.GetBehaviour<ElectrifiedEffect>();
         if (electrifiedEffect)
         {
-            electrifiedEffect.Play(new ElectrifiedEffect.Command(duration, speedMultiplier));
+            electrifiedEffect.Play(new ElectrifiedEffect.Command {duration=duration, speedReductionMultiplier=speedMultiplier});
         }
     }
 }

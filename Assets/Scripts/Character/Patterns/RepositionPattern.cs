@@ -16,7 +16,7 @@ public class RepositionPattern : BasePattern
         base.OnStateEnter(animator, stateInfo, layerIndex);
 
         var autoWalkBehaviour = animator.GetEntity().GetBehaviour<AutoWalkBehaviour>();
-        
+
         var walkBehaviour = animator.GetEntity().GetBehaviour<WalkBehaviour>();
         walkBehaviour.speed *= speedMultiplier;
 
@@ -33,15 +33,16 @@ public class RepositionPattern : BasePattern
                 .ToArray();
         });
 
-        autoWalkBehaviour.Play(new AutoWalkBehaviour.Command(
-            destination,
-            () =>
+        autoWalkBehaviour.Play(new AutoWalkBehaviour.Command
+        {
+            destination = destination,
+            getExcluded = () =>
             {
                 return otherEnemies.SelectMany(enemy =>
                         grid.GetCircle(enemy.GroundWorldPosition, DistanceFromOtherEnemies + nodeRadius))
                     .ToArray();
             }
-        ));
+        });
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -49,7 +50,7 @@ public class RepositionPattern : BasePattern
         base.OnStateExit(animator, stateInfo, layerIndex);
 
         EventManager.Instance.Unregister(otherEnemiesListener);
-        
+
         var autoWalkBehaviour = animator.GetEntity().GetBehaviour<AutoWalkBehaviour>();
         autoWalkBehaviour.Stop();
 

@@ -20,17 +20,17 @@ public class CutsceneAction : BaseComponent
         /// <see cref="ForcedWalkBehaviour"/> of the character
         /// </value>
         public ForcedWalkBehaviour target;
-        
+
         /// <value>
         /// Speed multiplier while moving
         /// </value>
         public float speedMultiplier = 1;
-        
+
         /// <value>
         /// Point that character is moving towards
         /// </value>
         public Vector3 position;
-        
+
         /// <value>
         /// Character rotation when the timeline starts
         /// </value>
@@ -42,17 +42,17 @@ public class CutsceneAction : BaseComponent
     /// The <see cref="MoveDefinition"/> will make their start position determinist for the cutscene.
     /// </value>
     public List<MoveDefinition> moveDefinitions;
-    
+
     /// <value>
     /// <seealso cref="PlayableDirector"/> that plays the timeline
     /// </value>
     public PlayableDirector director;
-    
+
     /// <value>
     /// Invoked after timeline is finished
     /// </value>
     [SerializeField] public ExtEvent postCutsceneEvent;
-    
+
     /// <value>
     /// If <c>true</c>, plays the cutscene right when scene is loaded
     /// </value>
@@ -106,7 +106,9 @@ public class CutsceneAction : BaseComponent
         foreach (var definition in moveDefinitions.Where(definition => definition.target))
         {
             definition.target.GetBehaviour<WalkBehaviour>().speed *= definition.speedMultiplier;
-            definition.target.Play(new ForcedWalkBehaviour.Command(definition.position, WantedDistance));
+            definition.target.Play(
+                new ForcedWalkBehaviour.Command { point = definition.position, wantedDistance = WantedDistance }
+            );
         }
     }
 

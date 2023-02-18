@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 /// <summary>
 /// Object has two phases: warning and active. If a <see cref="IHittable"/> touches it during the active phase, it will
@@ -13,7 +14,7 @@ public class PossessSource : EntityBehaviour
     /// Related animator
     /// </value>
     public Animator animator;
-    
+
     /// <value>
     /// Time before the possess source is destroyed after hitting 
     /// </value>
@@ -31,10 +32,10 @@ public class PossessSource : EntityBehaviour
     /// <param name="warningDuration">Duration of the warning phase</param>
     /// <param name="activeDuration">Duration of the active phase</param>
     /// <param name="hittableTags">Tags of objects that can get hit. Get it from <see cref="AttackManager.hittableTags"/></param>
-    /// <param name="effectDuration">Duration of the applied possess effect on hit</param>
-    /// <param name="hitDamage">Damage on hit</param>
-    public void Activate(float warningDuration, float activeDuration, Tags hittableTags, float effectDuration,
-        int hitDamage)
+    /// <param name="hitExecutor">Executed on hit</param>
+    /// <param name="relatedAttack">Attack that created the possess source</param>
+    public void Activate(float warningDuration, float activeDuration, Tags hittableTags, ChainHitExecutor hitExecutor,
+        BaseAttack relatedAttack)
     {
         animator.SetBool(Warning, true);
         StartTimeout(() =>
@@ -56,13 +57,7 @@ public class PossessSource : EntityBehaviour
                 Destroy(gameObject, hitAnimationDuration);
                 Cancel(destroyTimeout);
 
-                if (!hittable.CanGetHit()) return;
-                hittable.Hit(hitDamage);
-                var possessedEffect = hittable.Character.GetBehaviour<PossessedEffect>();
-                if (possessedEffect)
-                {
-                    possessedEffect.Play(new PossessedEffect.Command(effectDuration));
-                }
+                hitExecutor.Execute(new Hit { source = relatedAttack, victim = hittable });
             }, hittableTags);
         }, warningDuration);
     }

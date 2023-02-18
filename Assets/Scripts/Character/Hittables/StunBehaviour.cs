@@ -6,12 +6,7 @@ public class StunBehaviour : PlayableBehaviour<StunBehaviour.Command>, IForcedBe
 {
     public class Command
     {
-        public readonly float time;
-
-        public Command(float time)
-        {
-            this.time = time;
-        }
+        public float time;
     }
     
     public int stunFrames;

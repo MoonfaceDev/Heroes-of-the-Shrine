@@ -42,15 +42,17 @@ public class ElectrifyAttack : BaseAttack
         float detectCount = 0;
         periodicHitDetector.OnDetect += () => detectCount++;
 
-        periodicHitDetector.StartDetector(hittable => periodicHitExecutor.Execute(this, hittable),
-            AttackManager.hittableTags);
+        periodicHitDetector.StartDetector(
+            hittable => periodicHitExecutor.Execute(new Hit { source = this, victim = hittable }),
+            AttackManager.hittableTags
+        );
 
         switchDetectorsListener = InvokeWhen(() => detectCount >= periodicHitCount, () =>
         {
             periodicHitDetector.StopDetector();
             explosionHitDetector.StartDetector(hittable =>
                 {
-                    explosionHitExecutor.Execute(this, hittable);
+                    explosionHitExecutor.Execute(new Hit { source = this, victim = hittable });
                     onExplosion.Invoke();
                 },
                 AttackManager.hittableTags);

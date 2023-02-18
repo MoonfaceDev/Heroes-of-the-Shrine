@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 /// <summary>
 /// Simple implementation of <see cref="BaseAttack"/>, which has a single hit detector, hit executor, and all attack phases have a fixed duration
@@ -35,7 +34,10 @@ public class SimpleAttack : BaseAttack
 
     protected override IEnumerator ActivePhase()
     {
-        hitDetector.StartDetector(hittable => hitExecutor.Execute(this, hittable), AttackManager.hittableTags);
+        hitDetector.StartDetector(
+            hittable => hitExecutor.Execute(new Hit { source = this, victim = hittable }),
+            AttackManager.hittableTags
+        );
         yield return new WaitForSeconds(attackFlow.activeDuration);
         hitDetector.StopDetector();
     }

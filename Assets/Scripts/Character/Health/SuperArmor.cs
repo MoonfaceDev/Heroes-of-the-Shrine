@@ -19,10 +19,10 @@ public class SuperArmor : PlayableBehaviour<SuperArmor.Command>
     [ShowDebug] private float currentArmorHealth;
     private static readonly int SuperArmorHash = Animator.StringToHash("SuperArmor");
 
-    private float CurrentArmorHealth
+    public float CurrentArmorHealth
     {
         get => currentArmorHealth;
-        set
+        private set
         {
             currentArmorHealth = value;
             Animator.SetBool(SuperArmorHash, value > 0);
@@ -40,7 +40,7 @@ public class SuperArmor : PlayableBehaviour<SuperArmor.Command>
     {
         CurrentArmorHealth = armorHealth;
 
-        GetBehaviour<HittableBehaviour>().damageMultiplier *= damageMultiplier;
+        GetBehaviour<HealthSystem>().damageMultiplier *= damageMultiplier;
         BlockBehaviours(typeof(StunBehaviour));
         StopBehaviours(typeof(StunBehaviour));
         EnableBehaviours(typeof(BrainCore));
@@ -49,8 +49,8 @@ public class SuperArmor : PlayableBehaviour<SuperArmor.Command>
     public void HitArmor(float damage)
     {
         if (!Playing) return;
-        onHit.Invoke();
         CurrentArmorHealth = Mathf.Max(CurrentArmorHealth - damage, 0);
+        onHit.Invoke();
         if (CurrentArmorHealth == 0)
         {
             RemoveArmor();
@@ -66,7 +66,7 @@ public class SuperArmor : PlayableBehaviour<SuperArmor.Command>
 
         CurrentArmorHealth = 0;
 
-        GetBehaviour<HittableBehaviour>().damageMultiplier /= damageMultiplier;
+        GetBehaviour<HealthSystem>().damageMultiplier /= damageMultiplier;
         UnblockBehaviours(typeof(StunBehaviour));
         StopBehaviours(typeof(IControlledBehaviour));
         DisableBehaviours(typeof(BrainCore));

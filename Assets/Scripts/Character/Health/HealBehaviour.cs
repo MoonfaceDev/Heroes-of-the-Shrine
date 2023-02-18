@@ -80,13 +80,13 @@ public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IControll
         {
             if (Time.time - healStartTime > maxLoadTime)
             {
-                healthSystem.Health += maxHealBonus;
+                healthSystem.Heal(maxHealBonus);
                 onMaxHeal.Invoke();
                 Stop();
                 return;
             }
             energySystem.Energy -= Time.deltaTime * totalEnergyReduction / maxLoadTime;
-            healthSystem.Health += Time.deltaTime * totalHealthIncrement / maxLoadTime;
+            healthSystem.Heal(Time.deltaTime * totalHealthIncrement / maxLoadTime);
             if (Mathf.Approximately(energySystem.Fraction, 0) || Mathf.Approximately(healthSystem.Fraction, 1))
             {
                 Stop();

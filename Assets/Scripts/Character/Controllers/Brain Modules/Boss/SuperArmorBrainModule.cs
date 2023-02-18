@@ -19,12 +19,13 @@ public class SuperArmorBrainModule : BrainModule
     private void Start()
     {
         UpdateSuperArmorHealth();
+        superArmor.PlayEvents.onPlay += UpdateSuperArmorHealth;
         superArmor.onHit += UpdateSuperArmorHealth;
     }
 
     private void UpdateSuperArmorHealth()
     {
-        StateMachine.SetFloat(SuperArmorHealth, superArmor.armorHealth);
+        StateMachine.SetFloat(SuperArmorHealth, superArmor.CurrentArmorHealth);
     }
 
     public override string[] GetParameters()

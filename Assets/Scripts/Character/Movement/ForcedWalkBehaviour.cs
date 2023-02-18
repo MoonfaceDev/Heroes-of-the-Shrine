@@ -4,17 +4,11 @@ public class ForcedWalkBehaviour : PlayableBehaviour<ForcedWalkBehaviour.Command
 {
     public class Command
     {
-        public readonly Vector3 point;
-        public readonly float wantedDistance;
-
-        public Command(Vector3 point, float wantedDistance = 0.1f)
-        {
-            this.point = point;
-            this.wantedDistance = wantedDistance;
-        }
+        public Vector3 point;
+        public float wantedDistance = 0.1f;
     }
 
-    
+
     private bool active;
     private string stopListener;
 
@@ -28,7 +22,7 @@ public class ForcedWalkBehaviour : PlayableBehaviour<ForcedWalkBehaviour.Command
 
         active = true;
 
-        GetBehaviour<AutoWalkBehaviour>().Play(new AutoWalkBehaviour.Command(command.point));
+        GetBehaviour<AutoWalkBehaviour>().Play(new AutoWalkBehaviour.Command { destination = command.point });
         stopListener = InvokeWhen(() => MovableEntity.GroundDistance(command.point) < command.wantedDistance, () =>
         {
             MovableEntity.UpdateWorldPosition(command.point);

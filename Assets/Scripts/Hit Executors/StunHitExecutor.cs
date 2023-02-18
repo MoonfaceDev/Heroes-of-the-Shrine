@@ -11,8 +11,25 @@ public class StunHitExecutor : IHitExecutor
     /// </value>
     public float stunTime = 0.5f;
 
-    public void Execute(BaseAttack attack, IHittable hittable)
+    private const float StunLaunchPower = 1;
+    private const float StunLaunchAngle = 90; // degrees
+
+    public void Execute(Hit hit)
     {
-        hittable.Stun(stunTime);
+        var knockbackBehaviour = hit.victim.Character.GetBehaviour<KnockbackBehaviour>();
+        var stunBehaviour = hit.victim.Character.GetBehaviour<StunBehaviour>();
+
+        if (knockbackBehaviour && hit.victim.Character.Entity.WorldPosition.y > 0)
+        {
+            knockbackBehaviour.Play(new KnockbackBehaviour.Command
+                { power = StunLaunchPower, angleDegrees = StunLaunchAngle }
+            );
+            return;
+        }
+
+        if (stunBehaviour)
+        {
+            stunBehaviour.Play(new StunBehaviour.Command { time = stunTime });
+        }
     }
 }

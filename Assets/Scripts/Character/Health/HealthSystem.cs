@@ -1,3 +1,4 @@
+using ExtEvents;
 using UnityEngine;
 
 /// <summary>
@@ -16,8 +17,18 @@ public class HealthSystem : CharacterBehaviour
     public float Health
     {
         get => health;
-        set => health = Mathf.Clamp(value, 0, startHealth);
+        private set => health = Mathf.Clamp(value, 0, startHealth);
     }
+    
+    /// <value>
+    /// Multiplier for any damage that character is getting
+    /// </value>
+    [ShowDebug] public float damageMultiplier = 1;
+
+    /// <value>
+    /// Invoked when <see cref="Hit"/> is called
+    /// </value>
+    [SerializeField] public ExtEvent onHit;
 
     /// <value>
     /// Ratio between current health to full health
@@ -30,6 +41,24 @@ public class HealthSystem : CharacterBehaviour
     {
         base.Awake();
         Health = startHealth;
+        damageMultiplier = 1;
+    }
+    
+    private float ProcessDamage(float damage)
+    {
+        return damage * damageMultiplier;
+    }
+
+    public void Hit(float damage)
+    {
+        var processedDamage = ProcessDamage(damage);
+        Health -= processedDamage;
+        onHit.Invoke();
+    }
+
+    public void Heal(float amount)
+    {
+        Health += amount;
     }
 
     /// <summary>

@@ -2549,7 +2549,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03767b56dc6ba3740842c0db368e9321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageMultiplier: 0
+  onHit:
+    _persistentListeners: []
+    Expanded: 1
 --- !u!114 &674887086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2563,6 +2565,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 700
+  damageMultiplier: 1
+  onHitRaw:
+    _persistentListeners: []
+    Expanded: 1
+  onHit:
+    _persistentListeners: []
+    Expanded: 1
 --- !u!1 &676580493
 GameObject:
   m_ObjectHideFlags: 0
@@ -4090,8 +4099,21 @@ MonoBehaviour:
   sourcesCount: 6
   spawnRadius: 6
   minSourcesDistance: 1.5
-  effectDuration: 5
-  sourceDamage: 10
+  hitExecutor:
+    executors:
+    - rid: 168482808540430533
+    - rid: 168482808540430535
+  references:
+    version: 2
+    RefIds:
+    - rid: 168482808540430533
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 10
+    - rid: 168482808540430535
+      type: {class: PossessHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        duration: 5
 --- !u!1 &1372187416
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,14 +6,8 @@ public class KnockbackBehaviour : PlayableBehaviour<KnockbackBehaviour.Command>,
 {
     public class Command
     {
-        public readonly float power;
-        public readonly float angleDegrees;
-
-        public Command(float power, float angleDegrees)
-        {
-            this.power = power;
-            this.angleDegrees = angleDegrees;
-        }
+        public float power;
+        public float angleDegrees;
     }
 
     private const float SecondBouncePowerMultiplier = 0.2f;

@@ -4,16 +4,9 @@ public class EscapeBehaviour : PlayableBehaviour<EscapeBehaviour.Command>, IMove
 {
     public class Command
     {
-        public readonly GameEntity target;
-        public readonly float speedMultiplier;
-        public readonly bool fitRotation;
-
-        public Command(GameEntity target, float speedMultiplier, bool fitRotation = true)
-        {
-            this.target = target;
-            this.speedMultiplier = speedMultiplier;
-            this.fitRotation = fitRotation;
-        }
+        public GameEntity target;
+        public float speedMultiplier;
+        public bool fitRotation = true;
     }
     
     public bool Active { get; private set; }

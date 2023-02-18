@@ -7,30 +7,22 @@ using UnityEngine;
 public class HittableBehaviour : CharacterBehaviour, IHittable
 {
     /// <value>
-    /// Multiplier for any damage that character is getting
-    /// </value>
-    [ShowDebug] public float damageMultiplier;
-
-    private const float StunLaunchPower = 1;
-    private const float StunLaunchAngel = 90; // degrees
-
-    /// <value>
     /// Invoked when <see cref="Hit"/> is called
     /// </value>
     [SerializeField] public ExtEvent onHit;
 
+    public ExtEvent HitEvent => onHit;
+
     private HealthSystem healthSystem;
     private KnockbackBehaviour knockbackBehaviour;
-    private StunBehaviour stunBehaviour;
     private ForcedWalkBehaviour forcedWalkBehaviour;
+    private FocusBlock focusBlock;
 
     protected override void Awake()
     {
         base.Awake();
         healthSystem = GetBehaviour<HealthSystem>();
         knockbackBehaviour = GetBehaviour<KnockbackBehaviour>();
-        stunBehaviour = GetBehaviour<StunBehaviour>();
-        damageMultiplier = 1;
     }
 
     public bool CanGetHit()
@@ -40,52 +32,20 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
                && !(forcedWalkBehaviour && forcedWalkBehaviour.Playing);
     }
 
-    private float ProcessDamage(float damage)
-    {
-        return damage * damageMultiplier;
-    }
-
-    public void Hit(float damage)
+    public bool Hit(IHitExecutor executor, Hit hit)
     {
         if (!CanGetHit())
         {
-            return;
+            return false;
         }
 
-        var processedDamage = ProcessDamage(damage);
-        healthSystem.Health -= processedDamage;
-        onHit.Invoke();
-    }
-
-    public void Knockback(float power, float angleDegrees, float stunTime)
-    {
-        if (!CanGetHit())
+        if (focusBlock && focusBlock.TryBlock(hit))
         {
-            return;
+            return false;
         }
 
-        if (knockbackBehaviour)
-        {
-            knockbackBehaviour.Play(new KnockbackBehaviour.Command(power, angleDegrees));
-        }
-    }
+        executor.Execute(hit);
 
-    public void Stun(float time)
-    {
-        if (!CanGetHit())
-        {
-            return;
-        }
-
-        if (MovableEntity.WorldPosition.y > 0)
-        {
-            Knockback(StunLaunchPower, StunLaunchAngel, time);
-            return;
-        }
-
-        if (stunBehaviour)
-        {
-            stunBehaviour.Play(new StunBehaviour.Command(time));
-        }
+        return true;
     }
 }

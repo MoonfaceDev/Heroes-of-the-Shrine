@@ -4,14 +4,8 @@ public class ArcBehaviour : PlayableBehaviour<ArcBehaviour.Command>, IMovementBe
 {
     public class Command
     {
-        public readonly GameEntity target;
-        public readonly float speedMultiplier;
-
-        public Command(GameEntity target, float speedMultiplier)
-        {
-            this.target = target;
-            this.speedMultiplier = speedMultiplier;
-        }
+        public GameEntity target;
+        public float speedMultiplier;
     }
 
     public override bool Playing => active;

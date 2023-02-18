@@ -49,12 +49,15 @@ public class SpinningSwordsAttack : BaseAttack
         };
     }
 
-    private void ConfigureHitDetector(BaseHitDetector hitDetector, IHitExecutor hitExecutor, float startTime,
+    private void ConfigureHitDetector(BaseHitDetector hitDetector, ChainHitExecutor hitExecutor, float startTime,
         float duration)
     {
         currentTimeouts.Add(StartTimeout(() =>
         {
-            hitDetector.StartDetector(hittable => hitExecutor.Execute(this, hittable), AttackManager.hittableTags);
+            hitDetector.StartDetector(
+                hittable => hitExecutor.Execute(new Hit { source = this, victim = hittable }),
+                AttackManager.hittableTags
+            );
             currentTimeouts.Add(StartTimeout(hitDetector.StopDetector, duration));
         }, startTime));
     }

@@ -6,12 +6,7 @@ public class DodgeBehaviour : PhasedBehaviour<DodgeBehaviour.Command>, IMovement
 {
     public class Command
     {
-        public readonly int direction;
-
-        public Command(int direction)
-        {
-            this.direction = direction;
-        }
+        public int direction;
     }
 
     [FormerlySerializedAs("dodgeDistance")] public float distance;

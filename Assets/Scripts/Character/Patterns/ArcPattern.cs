@@ -20,7 +20,9 @@ public class ArcPattern : BasePattern
             return;
         }
 
-        arcBehaviour.Play(new ArcBehaviour.Command((MovableEntity)player.GetEntity(), speedMultiplier));
+        arcBehaviour.Play(new ArcBehaviour.Command
+            { target = (MovableEntity)player.GetEntity(), speedMultiplier = speedMultiplier }
+        );
 
         onStop = () => animator.SetTrigger(StuckParameter);
         arcBehaviour.MovableEntity.OnStuck += onStop;

@@ -3,8 +3,12 @@
 /// </summary>
 public class BossHittableHitbox : HittableHitbox
 {
-    public override void Knockback(float power, float angleDegrees, float stunTime)
+    public override bool Hit(IHitExecutor executor, Hit hit)
     {
-        base.Stun(stunTime);
+        if (executor is KnockbackHitExecutor)
+        {
+            return false;
+        }
+        return base.Hit(executor, hit);
     }
 }

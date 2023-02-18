@@ -30,11 +30,6 @@ public abstract class BaseEffect<T> : PlayableBehaviour<T>, IEffect
 
     private bool active;
 
-    public override bool CanPlay(T command)
-    {
-        return base.CanPlay(command) && GetBehaviour<HittableBehaviour>().CanGetHit();
-    }
-
     public override bool Playing => Active;
     
     /// <returns>Progress of the effect from 0 to 1. Can be used by UI elements to display the progress</returns>

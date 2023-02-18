@@ -5,28 +5,19 @@ using UnityEngine;
 /// Composite hit executor that executes all executors one by one 
 /// </summary>
 [Serializable]
-public class ChainHitExecutor : IHitExecutor
+public class ChainHitExecutor
 {
     /// <value>
     /// List of executors to call
     /// </value>
     [SerializeInterface] [SerializeReference] public IHitExecutor[] executors;
     
-    public void Execute(BaseAttack attack, IHittable hittable)
+    public void Execute(Hit hit)
     {
-        if (TryBlock(attack, hittable))
-        {
-            return;
-        }
+        hit.victim.HitEvent.Invoke();
         foreach (var executor in executors)
         {
-            executor.Execute(attack, hittable);
+            hit.victim.Hit(executor, hit);
         }
-    }
-
-    private bool TryBlock(BaseAttack attack, IHittable hittable)
-    {
-        var focusBlock = hittable.Character.GetBehaviour<FocusBlock>();
-        return focusBlock && focusBlock.TryBlock(attack);
     }
 }

@@ -4,12 +4,7 @@ public class SlideBehaviour : PlayableBehaviour<SlideBehaviour.Command>, IMoveme
 {
     public class Command
     {
-        public readonly int direction;
-
-        public Command(int direction)
-        {
-            this.direction = direction;
-        }
+        public int direction;
     }
     
     public float slideSpeedMultiplier;

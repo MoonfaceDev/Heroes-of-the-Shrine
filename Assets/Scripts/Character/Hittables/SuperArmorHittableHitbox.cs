@@ -4,28 +4,27 @@
 public class SuperArmorHittableHitbox : HittableHitbox
 {
     private SuperArmor superArmor;
+    private HealthSystem healthSystem;
 
     protected override void Awake()
     {
         base.Awake();
         superArmor = Character.GetBehaviour<SuperArmor>();
+        healthSystem = Character.GetBehaviour<HealthSystem>();
     }
 
-    public override void Hit(float damage)
+    public override bool Hit(IHitExecutor executor, Hit hit)
     {
-        if (!CanGetHit())
+        switch (executor)
         {
-            return;
+            case KnockbackHitExecutor or StunHitExecutor:
+                return false;
+            case DamageHitExecutor hitExecutor:
+                var processedDamage = hit.source.AttackManager.damageTranspiler.Transpile(hit.source, hit.victim, hitExecutor.damage);
+                superArmor.HitArmor(processedDamage / healthSystem.damageMultiplier);
+                return true;
         }
-        Blink();
-        superArmor.HitArmor(damage);
-    }
 
-    public override void Knockback(float power, float angleDegrees, float stunTime)
-    {
-    }
-
-    public override void Stun(float time)
-    {
+        return base.Hit(executor, hit);
     }
 }

@@ -8,17 +8,9 @@ public class FollowBehaviour : PlayableBehaviour<FollowBehaviour.Command>, IMove
 {
     public class Command
     {
-        public readonly GameEntity target;
-        public readonly Func<Node[]> getExcluded;
-        public readonly GetOverrideDirection getOverrideDirection;
-
-        public Command(GameEntity target, Func<Node[]> getExcluded = null,
-            GetOverrideDirection getOverrideDirection = null)
-        {
-            this.target = target;
-            this.getExcluded = getExcluded;
-            this.getOverrideDirection = getOverrideDirection;
-        }
+        public GameEntity target;
+        public Func<Node[]> getExcluded = null;
+        public GetOverrideDirection getOverrideDirection = null;
     }
 
     public override bool Playing => active;

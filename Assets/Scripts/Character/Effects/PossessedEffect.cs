@@ -5,12 +5,7 @@ public class PossessedEffect : BaseEffect<PossessedEffect.Command>
 {
     public class Command
     {
-        public readonly float maxDuration;
-
-        public Command(float maxDuration)
-        {
-            this.maxDuration = maxDuration;
-        }
+        public float maxDuration;
     }
     
     private float currentDuration;

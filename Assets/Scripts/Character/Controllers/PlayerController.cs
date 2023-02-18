@@ -59,7 +59,7 @@ public class PlayerController : CharacterController
     private DodgeBehaviour dodgeBehaviour;
     private HealBehaviour healBehaviour;
     private FocusBlock focusBlock;
-    
+
     private List<BufferedAction> bufferedActions;
 
     protected override void Awake()
@@ -129,7 +129,7 @@ public class PlayerController : CharacterController
             walkBehaviour.Stop();
         }
     }
-    
+
     private void ExecuteRun()
     {
         if (!runBehaviour) return;
@@ -159,7 +159,8 @@ public class PlayerController : CharacterController
         var horizontal = Input.GetAxisRaw("Horizontal");
         if (slideBehaviour && Input.GetButtonDown(Button.Escape.ToString())) //pressed slide
         {
-            ExecutePlayable(slideBehaviour, new SlideBehaviour.Command(Math.Sign(horizontal)), slidePriority);
+            ExecutePlayable(slideBehaviour, new SlideBehaviour.Command { direction = Math.Sign(horizontal) },
+                slidePriority);
         }
     }
 
@@ -168,7 +169,8 @@ public class PlayerController : CharacterController
         var vertical = Input.GetAxisRaw("Vertical");
         if (dodgeBehaviour && Input.GetButtonDown(Button.Escape.ToString())) //pressed dodge
         {
-            ExecutePlayable(dodgeBehaviour, new DodgeBehaviour.Command(Math.Sign(vertical)), dodgePriority);
+            ExecutePlayable(dodgeBehaviour, new DodgeBehaviour.Command { direction = Math.Sign(vertical) },
+                dodgePriority);
         }
     }
 
@@ -185,7 +187,7 @@ public class PlayerController : CharacterController
             healBehaviour.Stop();
         }
     }
-    
+
     private void ExecuteBlock()
     {
         if (!focusBlock) return;

@@ -27,8 +27,7 @@ public class PossessAttack : BaseAttack
     public int sourcesCount;
     public float spawnRadius;
     public float minSourcesDistance;
-    public float effectDuration;
-    public int sourceDamage;
+    public ChainHitExecutor hitExecutor;
 
     private WalkableGrid walkableGrid;
 
@@ -70,8 +69,8 @@ public class PossessAttack : BaseAttack
                     attackFlow.warningDuration,
                     attackFlow.sourceActiveDuration,
                     AttackManager.hittableTags,
-                    effectDuration,
-                    sourceDamage
+                    hitExecutor,
+                    this
                 );
             }
             catch (NoSpawnPointException)

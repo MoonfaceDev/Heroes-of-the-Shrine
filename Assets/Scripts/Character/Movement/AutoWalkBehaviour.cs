@@ -5,14 +5,8 @@ public class AutoWalkBehaviour : PlayableBehaviour<AutoWalkBehaviour.Command>, I
 {
     public class Command
     {
-        public readonly Vector3 destination;
-        public readonly Func<Node[]> getExcluded;
-
-        public Command(Vector3 destination, Func<Node[]> getExcluded = null)
-        {
-            this.destination = destination;
-            this.getExcluded = getExcluded;
-        }
+        public Vector3 destination;
+        public Func<Node[]> getExcluded = null;
     }
 
     public override bool Playing => active;

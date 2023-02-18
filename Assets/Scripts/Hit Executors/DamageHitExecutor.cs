@@ -11,9 +11,9 @@ public class DamageHitExecutor : IHitExecutor
     /// </value>
     public float damage;
 
-    public void Execute(BaseAttack attack, IHittable hittable)
+    public void Execute(Hit hit)
     {
-        var processedDamage = attack.AttackManager.damageTranspiler.Transpile(attack, hittable, damage);
-        hittable.Hit(processedDamage);
+        var processedDamage = hit.source.AttackManager.damageTranspiler.Transpile(hit.source, hit.victim, damage);
+        hit.victim.Character.GetBehaviour<HealthSystem>().Hit(processedDamage);
     }
 }

@@ -159,6 +159,9 @@ MonoBehaviour:
   anticipateTime: 0.1
   activeTime: 1
   recoveryTime: 0.1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
 --- !u!1 &811557649854150555
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +339,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 200
+  damageMultiplier: 1
+  onHit:
+    _persistentListeners: []
+    Expanded: 1
 --- !u!114 &1018915970268675303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,7 +355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03767b56dc6ba3740842c0db368e9321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageMultiplier: 0
   onHit:
     _persistentListeners: []
     Expanded: 1
