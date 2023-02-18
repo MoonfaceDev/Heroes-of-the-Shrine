@@ -13,7 +13,7 @@ public class HittableHitbox : EntityBehaviour, IHittable
     public HittableBehaviour hittableBehaviour;
 
     /// <value>
-    /// Invoked when <see cref="Hit"/> is called
+    /// Invoked when <see cref="ProcessHit"/> is called
     /// </value>
     [SerializeField] public ExtEvent onHit;
 
@@ -66,8 +66,13 @@ public class HittableHitbox : EntityBehaviour, IHittable
         return hittableBehaviour.CanGetHit();
     }
 
-    public virtual bool Hit(IHitExecutor executor, Hit hit)
+    public virtual void Hit(ChainHitExecutor executor, Hit hit)
     {
-        return hittableBehaviour.Hit(executor, hit);
+        hittableBehaviour.Hit(executor, hit);
+    }
+
+    public virtual void ProcessHit(IHitExecutor executor, Hit hit)
+    {
+        hittableBehaviour.ProcessHit(executor, hit);
     }
 }

@@ -54,10 +54,7 @@ public class SpinningSwordsAttack : BaseAttack
     {
         currentTimeouts.Add(StartTimeout(() =>
         {
-            hitDetector.StartDetector(
-                hittable => hitExecutor.Execute(new Hit { source = this, victim = hittable }),
-                AttackManager.hittableTags
-            );
+            StartHitDetector(hitDetector, hitExecutor);
             currentTimeouts.Add(StartTimeout(hitDetector.StopDetector, duration));
         }, startTime));
     }

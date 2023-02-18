@@ -34,11 +34,10 @@ public class SimpleAttack : BaseAttack
 
     protected override IEnumerator ActivePhase()
     {
-        hitDetector.StartDetector(
-            hittable => hitExecutor.Execute(new Hit { source = this, victim = hittable }),
-            AttackManager.hittableTags
-        );
+        StartHitDetector(hitDetector, hitExecutor);
+
         yield return new WaitForSeconds(attackFlow.activeDuration);
+
         hitDetector.StopDetector();
     }
 

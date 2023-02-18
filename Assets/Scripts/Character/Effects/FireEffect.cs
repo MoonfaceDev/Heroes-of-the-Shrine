@@ -46,7 +46,7 @@ public class FireEffect : BaseEffect<FireEffect.Command>
         while (true)
         {
             yield return new WaitForSeconds(hitInterval);
-            hitExecutor.Execute(new Hit { source = relatedAttack, victim = hittableBehaviour });
+            hittableBehaviour.Hit(hitExecutor, new Hit { source = relatedAttack, victim = hittableBehaviour });
         }
     }
 }

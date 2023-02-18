@@ -11,7 +11,7 @@ public interface IHittable
     public Character Character { get; }
 
     /// <value>
-    /// Invoked when <see cref="Hit"/> is called
+    /// Invoked when <see cref="ProcessHit"/> is called
     /// </value>
     public ExtEvent HitEvent { get; }
 
@@ -21,5 +21,7 @@ public interface IHittable
     /// <returns><c>true</c> if it can take hits</returns>
     public bool CanGetHit();
 
-    public bool Hit(IHitExecutor executor, Hit hit);
+    public void Hit(ChainHitExecutor executor, Hit hit);
+
+    public void ProcessHit(IHitExecutor executor, Hit hit);
 }

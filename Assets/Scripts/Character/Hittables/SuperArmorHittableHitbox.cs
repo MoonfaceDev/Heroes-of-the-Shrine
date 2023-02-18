@@ -13,18 +13,18 @@ public class SuperArmorHittableHitbox : HittableHitbox
         healthSystem = Character.GetBehaviour<HealthSystem>();
     }
 
-    public override bool Hit(IHitExecutor executor, Hit hit)
+    public override void ProcessHit(IHitExecutor executor, Hit hit)
     {
         switch (executor)
         {
             case KnockbackHitExecutor or StunHitExecutor:
-                return false;
+                return;
             case DamageHitExecutor hitExecutor:
                 var processedDamage = hit.source.AttackManager.damageTranspiler.Transpile(hit.source, hit.victim, hitExecutor.damage);
                 superArmor.HitArmor(processedDamage / healthSystem.damageMultiplier);
-                return true;
+                return;
         }
 
-        return base.Hit(executor, hit);
+        base.ProcessHit(executor, hit);
     }
 }

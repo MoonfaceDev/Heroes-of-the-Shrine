@@ -3,12 +3,12 @@
 /// </summary>
 public class BossHittableHitbox : HittableHitbox
 {
-    public override bool Hit(IHitExecutor executor, Hit hit)
+    public override void ProcessHit(IHitExecutor executor, Hit hit)
     {
         if (executor is KnockbackHitExecutor)
         {
-            return false;
+            return;
         }
-        return base.Hit(executor, hit);
+        base.ProcessHit(executor, hit);
     }
 }

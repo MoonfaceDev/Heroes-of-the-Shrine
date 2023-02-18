@@ -67,23 +67,24 @@ public class FocusBlock : PhasedBehaviour<FocusBlock.Command>
 
     public bool TryBlock(Hit hit)
     {
-        if (!Active)
-        {
-            return false;
-        }
-        
-        var blockDefinition = GetBlockDefinition(hit.source);
-        if (blockDefinition == null)
+        if (!CanBlock(hit))
         {
             return false;
         }
 
-        SuccessfulBlock(blockDefinition);
+        SuccessfulBlock(hit);
         return true;
     }
 
-    private void SuccessfulBlock(BlockDefinition blockDefinition)
+    private bool CanBlock(Hit hit)
     {
+        var blockDefinition = GetBlockDefinition(hit.source);
+        return Active && blockDefinition != null && Entity.WorldRotation == -hit.direction;
+    }
+
+    private void SuccessfulBlock(Hit hit)
+    {
+        var blockDefinition = GetBlockDefinition(hit.source);
         energySystem.Energy += blockDefinition.energyReward;
         Animator.SetTrigger($"{GetType().Name}-block");
         onBlock.Invoke();

@@ -9,6 +9,11 @@
     /// Hittable that got hit
     /// </value>
     public IHittable victim;
+
+    /// <value>
+    /// Direction the hit is pointed towards
+    /// </value>
+    public int direction = 0;
 }
 
 /// <summary>

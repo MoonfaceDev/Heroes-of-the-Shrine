@@ -30,6 +30,8 @@ public class ElectrifyAttack : BaseAttack
             explosionHitDetector.StopDetector();
             Cancel(switchDetectorsListener);
         };
+
+        explosionHitDetector.onHit += onExplosion.Invoke;
     }
 
     protected override IEnumerator AnticipationPhase()
@@ -42,20 +44,12 @@ public class ElectrifyAttack : BaseAttack
         float detectCount = 0;
         periodicHitDetector.OnDetect += () => detectCount++;
 
-        periodicHitDetector.StartDetector(
-            hittable => periodicHitExecutor.Execute(new Hit { source = this, victim = hittable }),
-            AttackManager.hittableTags
-        );
+        StartHitDetector(periodicHitDetector, periodicHitExecutor);
 
         switchDetectorsListener = InvokeWhen(() => detectCount >= periodicHitCount, () =>
         {
             periodicHitDetector.StopDetector();
-            explosionHitDetector.StartDetector(hittable =>
-                {
-                    explosionHitExecutor.Execute(new Hit { source = this, victim = hittable });
-                    onExplosion.Invoke();
-                },
-                AttackManager.hittableTags);
+            StartHitDetector(explosionHitDetector, explosionHitExecutor);
             detectCount = 0;
         });
 

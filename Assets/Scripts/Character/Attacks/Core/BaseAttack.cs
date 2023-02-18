@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using ExtEvents.OdinSerializer.Utilities;
@@ -112,5 +113,12 @@ public abstract class BaseAttack : PhasedBehaviour<BaseAttack.Command>
         {
             UnblockBehaviours(typeof(WalkBehaviour));
         }
+    }
+
+    protected void StartHitDetector(BaseHitDetector hitDetector, ChainHitExecutor hitExecutor)
+    {
+        hitDetector.StartDetector(hittable => hittable.Hit(hitExecutor,
+            new Hit { source = this, victim = hittable, direction = Entity.WorldRotation }
+        ), AttackManager.hittableTags);
     }
 }

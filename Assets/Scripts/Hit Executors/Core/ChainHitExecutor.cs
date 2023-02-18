@@ -14,10 +14,9 @@ public class ChainHitExecutor
     
     public void Execute(Hit hit)
     {
-        hit.victim.HitEvent.Invoke();
         foreach (var executor in executors)
         {
-            hit.victim.Hit(executor, hit);
+            hit.victim.ProcessHit(executor, hit);
         }
     }
 }

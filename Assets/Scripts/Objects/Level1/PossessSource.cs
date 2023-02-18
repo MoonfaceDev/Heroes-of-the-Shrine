@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Object has two phases: warning and active. If a <see cref="IHittable"/> touches it during the active phase, it will
@@ -19,8 +18,6 @@ public class PossessSource : EntityBehaviour
     /// Time before the possess source is destroyed after hitting 
     /// </value>
     public float hitAnimationDuration;
-
-    private string destroyTimeout;
 
     private static readonly int Warning = Animator.StringToHash("Warning");
     private static readonly int Active = Animator.StringToHash("Active");
@@ -43,7 +40,7 @@ public class PossessSource : EntityBehaviour
             animator.SetBool(Warning, false);
             animator.SetBool(Active, true);
 
-            destroyTimeout = StartTimeout(() =>
+            var destroyTimeout = StartTimeout(() =>
             {
                 hitDetector.StopDetector();
                 animator.SetBool(Active, false);
@@ -57,7 +54,7 @@ public class PossessSource : EntityBehaviour
                 Destroy(gameObject, hitAnimationDuration);
                 Cancel(destroyTimeout);
 
-                hitExecutor.Execute(new Hit { source = relatedAttack, victim = hittable });
+                hittable.Hit(hitExecutor, new Hit { source = relatedAttack, victim = hittable });
             }, hittableTags);
         }, warningDuration);
     }
