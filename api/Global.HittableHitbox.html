@@ -275,7 +275,7 @@
     <tbody>
       <tr>
         <td><span class="xref">ExtEvent</span></td>
-        <td><p>Invoked when <span class="xref">HittableHitbox.Hit(System.Single)</span> is called</p>
+        <td><p>Invoked when <span class="xref">HittableHitbox.Hit(IHitExecutor,Hit)</span> is called</p>
 </td>
       </tr>
     </tbody>
@@ -333,6 +333,31 @@
       </tr>
     </tbody>
   </table>
+  
+  
+  <a id="Global_HittableHitbox_HitEvent_" data-uid="Global.HittableHitbox.HitEvent*"></a>
+  <h4 id="Global_HittableHitbox_HitEvent" data-uid="Global.HittableHitbox.HitEvent">HitEvent</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExtEvent HitEvent { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ExtEvent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
   
@@ -344,16 +369,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual void Awake()</code></pre>
-  </div>
-  
-  
-  <a id="Global_HittableHitbox_Blink_" data-uid="Global.HittableHitbox.Blink*"></a>
-  <h4 id="Global_HittableHitbox_Blink" data-uid="Global.HittableHitbox.Blink">Blink()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void Blink()</code></pre>
   </div>
   
   
@@ -383,12 +398,12 @@
   
   
   <a id="Global_HittableHitbox_Hit_" data-uid="Global.HittableHitbox.Hit*"></a>
-  <h4 id="Global_HittableHitbox_Hit_System_Single_" data-uid="Global.HittableHitbox.Hit(System.Single)">Hit(Single)</h4>
+  <h4 id="Global_HittableHitbox_Hit_IHitExecutor_Hit_" data-uid="Global.HittableHitbox.Hit(IHitExecutor,Hit)">Hit(IHitExecutor, Hit)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Hit(float damage)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual bool Hit(IHitExecutor executor, Hit hit)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -401,72 +416,28 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">damage</span></td>
+        <td><a class="xref" href="Global.IHitExecutor.html">IHitExecutor</a></td>
+        <td><span class="parametername">executor</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Global.Hit.html">Hit</a></td>
+        <td><span class="parametername">hit</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  
-  
-  <a id="Global_HittableHitbox_Knockback_" data-uid="Global.HittableHitbox.Knockback*"></a>
-  <h4 id="Global_HittableHitbox_Knockback_System_Single_System_Single_System_Single_" data-uid="Global.HittableHitbox.Knockback(System.Single,System.Single,System.Single)">Knockback(Single, Single, Single)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Knockback(float power, float angleDegrees, float stunTime)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
+  <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">power</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">angleDegrees</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">stunTime</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_HittableHitbox_Stun_" data-uid="Global.HittableHitbox.Stun*"></a>
-  <h4 id="Global_HittableHitbox_Stun_System_Single_" data-uid="Global.HittableHitbox.Stun(System.Single)">Stun(Single)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Stun(float time)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">time</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td></td>
       </tr>
     </tbody>

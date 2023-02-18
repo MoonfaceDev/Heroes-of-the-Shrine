@@ -208,19 +208,6 @@ references:
   commentId: T:Global.ArcBehaviour.Command
   fullName: ArcBehaviour.Command
   nameWithType: ArcBehaviour.Command
-- uid: Global.ArcBehaviour.Command.#ctor(GameEntity,System.Single)
-  name: Command(GameEntity, Single)
-  href: api/Global.ArcBehaviour.Command.html#Global_ArcBehaviour_Command__ctor_GameEntity_System_Single_
-  commentId: M:Global.ArcBehaviour.Command.#ctor(GameEntity,System.Single)
-  fullName: ArcBehaviour.Command.Command(GameEntity, System.Single)
-  nameWithType: ArcBehaviour.Command.Command(GameEntity, Single)
-- uid: Global.ArcBehaviour.Command.#ctor*
-  name: Command
-  href: api/Global.ArcBehaviour.Command.html#Global_ArcBehaviour_Command__ctor_
-  commentId: Overload:Global.ArcBehaviour.Command.#ctor
-  isSpec: "True"
-  fullName: ArcBehaviour.Command.Command
-  nameWithType: ArcBehaviour.Command.Command
 - uid: Global.ArcBehaviour.Command.speedMultiplier
   name: speedMultiplier
   href: api/Global.ArcBehaviour.Command.html#Global_ArcBehaviour_Command_speedMultiplier
@@ -574,22 +561,6 @@ references:
   commentId: T:Global.AutoWalkBehaviour.Command
   fullName: AutoWalkBehaviour.Command
   nameWithType: AutoWalkBehaviour.Command
-- uid: Global.AutoWalkBehaviour.Command.#ctor(Vector3,Func{Node[]})
-  name: Command(Vector3, Func<Node[]>)
-  href: api/Global.AutoWalkBehaviour.Command.html#Global_AutoWalkBehaviour_Command__ctor_Vector3_Func_Node____
-  commentId: M:Global.AutoWalkBehaviour.Command.#ctor(Vector3,Func{Node[]})
-  name.vb: Command(Vector3, Func(Of Node()))
-  fullName: AutoWalkBehaviour.Command.Command(Vector3, Func<Node[]>)
-  fullName.vb: AutoWalkBehaviour.Command.Command(Vector3, Func(Of Node()))
-  nameWithType: AutoWalkBehaviour.Command.Command(Vector3, Func<Node[]>)
-  nameWithType.vb: AutoWalkBehaviour.Command.Command(Vector3, Func(Of Node()))
-- uid: Global.AutoWalkBehaviour.Command.#ctor*
-  name: Command
-  href: api/Global.AutoWalkBehaviour.Command.html#Global_AutoWalkBehaviour_Command__ctor_
-  commentId: Overload:Global.AutoWalkBehaviour.Command.#ctor
-  isSpec: "True"
-  fullName: AutoWalkBehaviour.Command.Command
-  nameWithType: AutoWalkBehaviour.Command.Command
 - uid: Global.AutoWalkBehaviour.Command.destination
   name: destination
   href: api/Global.AutoWalkBehaviour.Command.html#Global_AutoWalkBehaviour_Command_destination
@@ -881,23 +852,6 @@ references:
   fullName.vb: BaseEffect(Of T).Active
   nameWithType: BaseEffect<T>.Active
   nameWithType.vb: BaseEffect(Of T).Active
-- uid: Global.BaseEffect`1.CanPlay(`0)
-  name: CanPlay(T)
-  href: api/Global.BaseEffect-1.html#Global_BaseEffect_1_CanPlay__0_
-  commentId: M:Global.BaseEffect`1.CanPlay(`0)
-  fullName: BaseEffect<T>.CanPlay(T)
-  fullName.vb: BaseEffect(Of T).CanPlay(T)
-  nameWithType: BaseEffect<T>.CanPlay(T)
-  nameWithType.vb: BaseEffect(Of T).CanPlay(T)
-- uid: Global.BaseEffect`1.CanPlay*
-  name: CanPlay
-  href: api/Global.BaseEffect-1.html#Global_BaseEffect_1_CanPlay_
-  commentId: Overload:Global.BaseEffect`1.CanPlay
-  isSpec: "True"
-  fullName: BaseEffect<T>.CanPlay
-  fullName.vb: BaseEffect(Of T).CanPlay
-  nameWithType: BaseEffect<T>.CanPlay
-  nameWithType.vb: BaseEffect(Of T).CanPlay
 - uid: Global.BaseEffect`1.GetProgress
   name: GetProgress()
   href: api/Global.BaseEffect-1.html#Global_BaseEffect_1_GetProgress
@@ -1138,19 +1092,19 @@ references:
   commentId: T:Global.BossHittableHitbox
   fullName: BossHittableHitbox
   nameWithType: BossHittableHitbox
-- uid: Global.BossHittableHitbox.Knockback(System.Single,System.Single,System.Single)
-  name: Knockback(Single, Single, Single)
-  href: api/Global.BossHittableHitbox.html#Global_BossHittableHitbox_Knockback_System_Single_System_Single_System_Single_
-  commentId: M:Global.BossHittableHitbox.Knockback(System.Single,System.Single,System.Single)
-  fullName: BossHittableHitbox.Knockback(System.Single, System.Single, System.Single)
-  nameWithType: BossHittableHitbox.Knockback(Single, Single, Single)
-- uid: Global.BossHittableHitbox.Knockback*
-  name: Knockback
-  href: api/Global.BossHittableHitbox.html#Global_BossHittableHitbox_Knockback_
-  commentId: Overload:Global.BossHittableHitbox.Knockback
+- uid: Global.BossHittableHitbox.Hit(IHitExecutor,Hit)
+  name: Hit(IHitExecutor, Hit)
+  href: api/Global.BossHittableHitbox.html#Global_BossHittableHitbox_Hit_IHitExecutor_Hit_
+  commentId: M:Global.BossHittableHitbox.Hit(IHitExecutor,Hit)
+  fullName: BossHittableHitbox.Hit(IHitExecutor, Hit)
+  nameWithType: BossHittableHitbox.Hit(IHitExecutor, Hit)
+- uid: Global.BossHittableHitbox.Hit*
+  name: Hit
+  href: api/Global.BossHittableHitbox.html#Global_BossHittableHitbox_Hit_
+  commentId: Overload:Global.BossHittableHitbox.Hit
   isSpec: "True"
-  fullName: BossHittableHitbox.Knockback
-  nameWithType: BossHittableHitbox.Knockback
+  fullName: BossHittableHitbox.Hit
+  nameWithType: BossHittableHitbox.Hit
 - uid: Global.BrainCore
   name: BrainCore
   href: api/Global.BrainCore.html
@@ -1401,12 +1355,12 @@ references:
   commentId: T:Global.ChainHitExecutor
   fullName: ChainHitExecutor
   nameWithType: ChainHitExecutor
-- uid: Global.ChainHitExecutor.Execute(BaseAttack,IHittable)
-  name: Execute(BaseAttack, IHittable)
-  href: api/Global.ChainHitExecutor.html#Global_ChainHitExecutor_Execute_BaseAttack_IHittable_
-  commentId: M:Global.ChainHitExecutor.Execute(BaseAttack,IHittable)
-  fullName: ChainHitExecutor.Execute(BaseAttack, IHittable)
-  nameWithType: ChainHitExecutor.Execute(BaseAttack, IHittable)
+- uid: Global.ChainHitExecutor.Execute(Hit)
+  name: Execute(Hit)
+  href: api/Global.ChainHitExecutor.html#Global_ChainHitExecutor_Execute_Hit_
+  commentId: M:Global.ChainHitExecutor.Execute(Hit)
+  fullName: ChainHitExecutor.Execute(Hit)
+  nameWithType: ChainHitExecutor.Execute(Hit)
 - uid: Global.ChainHitExecutor.Execute*
   name: Execute
   href: api/Global.ChainHitExecutor.html#Global_ChainHitExecutor_Execute_
@@ -1866,12 +1820,12 @@ references:
   commentId: F:Global.DamageHitExecutor.damage
   fullName: DamageHitExecutor.damage
   nameWithType: DamageHitExecutor.damage
-- uid: Global.DamageHitExecutor.Execute(BaseAttack,IHittable)
-  name: Execute(BaseAttack, IHittable)
-  href: api/Global.DamageHitExecutor.html#Global_DamageHitExecutor_Execute_BaseAttack_IHittable_
-  commentId: M:Global.DamageHitExecutor.Execute(BaseAttack,IHittable)
-  fullName: DamageHitExecutor.Execute(BaseAttack, IHittable)
-  nameWithType: DamageHitExecutor.Execute(BaseAttack, IHittable)
+- uid: Global.DamageHitExecutor.Execute(Hit)
+  name: Execute(Hit)
+  href: api/Global.DamageHitExecutor.html#Global_DamageHitExecutor_Execute_Hit_
+  commentId: M:Global.DamageHitExecutor.Execute(Hit)
+  fullName: DamageHitExecutor.Execute(Hit)
+  nameWithType: DamageHitExecutor.Execute(Hit)
 - uid: Global.DamageHitExecutor.Execute*
   name: Execute
   href: api/Global.DamageHitExecutor.html#Global_DamageHitExecutor_Execute_
@@ -2139,19 +2093,6 @@ references:
   commentId: T:Global.DodgeBehaviour.Command
   fullName: DodgeBehaviour.Command
   nameWithType: DodgeBehaviour.Command
-- uid: Global.DodgeBehaviour.Command.#ctor(System.Int32)
-  name: Command(Int32)
-  href: api/Global.DodgeBehaviour.Command.html#Global_DodgeBehaviour_Command__ctor_System_Int32_
-  commentId: M:Global.DodgeBehaviour.Command.#ctor(System.Int32)
-  fullName: DodgeBehaviour.Command.Command(System.Int32)
-  nameWithType: DodgeBehaviour.Command.Command(Int32)
-- uid: Global.DodgeBehaviour.Command.#ctor*
-  name: Command
-  href: api/Global.DodgeBehaviour.Command.html#Global_DodgeBehaviour_Command__ctor_
-  commentId: Overload:Global.DodgeBehaviour.Command.#ctor
-  isSpec: "True"
-  fullName: DodgeBehaviour.Command.Command
-  nameWithType: DodgeBehaviour.Command.Command
 - uid: Global.DodgeBehaviour.Command.direction
   name: direction
   href: api/Global.DodgeBehaviour.Command.html#Global_DodgeBehaviour_Command_direction
@@ -2307,19 +2248,6 @@ references:
   commentId: T:Global.ElectrifiedEffect.Command
   fullName: ElectrifiedEffect.Command
   nameWithType: ElectrifiedEffect.Command
-- uid: Global.ElectrifiedEffect.Command.#ctor(System.Single,System.Single)
-  name: Command(Single, Single)
-  href: api/Global.ElectrifiedEffect.Command.html#Global_ElectrifiedEffect_Command__ctor_System_Single_System_Single_
-  commentId: M:Global.ElectrifiedEffect.Command.#ctor(System.Single,System.Single)
-  fullName: ElectrifiedEffect.Command.Command(System.Single, System.Single)
-  nameWithType: ElectrifiedEffect.Command.Command(Single, Single)
-- uid: Global.ElectrifiedEffect.Command.#ctor*
-  name: Command
-  href: api/Global.ElectrifiedEffect.Command.html#Global_ElectrifiedEffect_Command__ctor_
-  commentId: Overload:Global.ElectrifiedEffect.Command.#ctor
-  isSpec: "True"
-  fullName: ElectrifiedEffect.Command.Command
-  nameWithType: ElectrifiedEffect.Command.Command
 - uid: Global.ElectrifiedEffect.Command.duration
   name: duration
   href: api/Global.ElectrifiedEffect.Command.html#Global_ElectrifiedEffect_Command_duration
@@ -2476,12 +2404,12 @@ references:
   commentId: F:Global.ElectrifyHitExecutor.duration
   fullName: ElectrifyHitExecutor.duration
   nameWithType: ElectrifyHitExecutor.duration
-- uid: Global.ElectrifyHitExecutor.Execute(BaseAttack,IHittable)
-  name: Execute(BaseAttack, IHittable)
-  href: api/Global.ElectrifyHitExecutor.html#Global_ElectrifyHitExecutor_Execute_BaseAttack_IHittable_
-  commentId: M:Global.ElectrifyHitExecutor.Execute(BaseAttack,IHittable)
-  fullName: ElectrifyHitExecutor.Execute(BaseAttack, IHittable)
-  nameWithType: ElectrifyHitExecutor.Execute(BaseAttack, IHittable)
+- uid: Global.ElectrifyHitExecutor.Execute(Hit)
+  name: Execute(Hit)
+  href: api/Global.ElectrifyHitExecutor.html#Global_ElectrifyHitExecutor_Execute_Hit_
+  commentId: M:Global.ElectrifyHitExecutor.Execute(Hit)
+  fullName: ElectrifyHitExecutor.Execute(Hit)
+  nameWithType: ElectrifyHitExecutor.Execute(Hit)
 - uid: Global.ElectrifyHitExecutor.Execute*
   name: Execute
   href: api/Global.ElectrifyHitExecutor.html#Global_ElectrifyHitExecutor_Execute_
@@ -3027,19 +2955,6 @@ references:
   commentId: T:Global.EscapeBehaviour.Command
   fullName: EscapeBehaviour.Command
   nameWithType: EscapeBehaviour.Command
-- uid: Global.EscapeBehaviour.Command.#ctor(GameEntity,System.Single,System.Boolean)
-  name: Command(GameEntity, Single, Boolean)
-  href: api/Global.EscapeBehaviour.Command.html#Global_EscapeBehaviour_Command__ctor_GameEntity_System_Single_System_Boolean_
-  commentId: M:Global.EscapeBehaviour.Command.#ctor(GameEntity,System.Single,System.Boolean)
-  fullName: EscapeBehaviour.Command.Command(GameEntity, System.Single, System.Boolean)
-  nameWithType: EscapeBehaviour.Command.Command(GameEntity, Single, Boolean)
-- uid: Global.EscapeBehaviour.Command.#ctor*
-  name: Command
-  href: api/Global.EscapeBehaviour.Command.html#Global_EscapeBehaviour_Command__ctor_
-  commentId: Overload:Global.EscapeBehaviour.Command.#ctor
-  isSpec: "True"
-  fullName: EscapeBehaviour.Command.Command
-  nameWithType: EscapeBehaviour.Command.Command
 - uid: Global.EscapeBehaviour.Command.fitRotation
   name: fitRotation
   href: api/Global.EscapeBehaviour.Command.html#Global_EscapeBehaviour_Command_fitRotation
@@ -3303,37 +3218,30 @@ references:
   commentId: T:Global.FireEffect.Command
   fullName: FireEffect.Command
   nameWithType: FireEffect.Command
-- uid: Global.FireEffect.Command.#ctor(System.Single,System.Single,System.Single)
-  name: Command(Single, Single, Single)
-  href: api/Global.FireEffect.Command.html#Global_FireEffect_Command__ctor_System_Single_System_Single_System_Single_
-  commentId: M:Global.FireEffect.Command.#ctor(System.Single,System.Single,System.Single)
-  fullName: FireEffect.Command.Command(System.Single, System.Single, System.Single)
-  nameWithType: FireEffect.Command.Command(Single, Single, Single)
-- uid: Global.FireEffect.Command.#ctor*
-  name: Command
-  href: api/Global.FireEffect.Command.html#Global_FireEffect_Command__ctor_
-  commentId: Overload:Global.FireEffect.Command.#ctor
-  isSpec: "True"
-  fullName: FireEffect.Command.Command
-  nameWithType: FireEffect.Command.Command
-- uid: Global.FireEffect.Command.damagePerHit
-  name: damagePerHit
-  href: api/Global.FireEffect.Command.html#Global_FireEffect_Command_damagePerHit
-  commentId: F:Global.FireEffect.Command.damagePerHit
-  fullName: FireEffect.Command.damagePerHit
-  nameWithType: FireEffect.Command.damagePerHit
 - uid: Global.FireEffect.Command.duration
   name: duration
   href: api/Global.FireEffect.Command.html#Global_FireEffect_Command_duration
   commentId: F:Global.FireEffect.Command.duration
   fullName: FireEffect.Command.duration
   nameWithType: FireEffect.Command.duration
+- uid: Global.FireEffect.Command.hitExecutor
+  name: hitExecutor
+  href: api/Global.FireEffect.Command.html#Global_FireEffect_Command_hitExecutor
+  commentId: F:Global.FireEffect.Command.hitExecutor
+  fullName: FireEffect.Command.hitExecutor
+  nameWithType: FireEffect.Command.hitExecutor
 - uid: Global.FireEffect.Command.hitInterval
   name: hitInterval
   href: api/Global.FireEffect.Command.html#Global_FireEffect_Command_hitInterval
   commentId: F:Global.FireEffect.Command.hitInterval
   fullName: FireEffect.Command.hitInterval
   nameWithType: FireEffect.Command.hitInterval
+- uid: Global.FireEffect.Command.relatedAttack
+  name: relatedAttack
+  href: api/Global.FireEffect.Command.html#Global_FireEffect_Command_relatedAttack
+  commentId: F:Global.FireEffect.Command.relatedAttack
+  fullName: FireEffect.Command.relatedAttack
+  nameWithType: FireEffect.Command.relatedAttack
 - uid: Global.FireEffect.DoPlay(FireEffect.Command)
   name: DoPlay(FireEffect.Command)
   href: api/Global.FireEffect.html#Global_FireEffect_DoPlay_FireEffect_Command_
@@ -3524,12 +3432,12 @@ references:
   commentId: F:Global.FocusBlock.recoveryTime
   fullName: FocusBlock.recoveryTime
   nameWithType: FocusBlock.recoveryTime
-- uid: Global.FocusBlock.TryBlock(BaseAttack)
-  name: TryBlock(BaseAttack)
-  href: api/Global.FocusBlock.html#Global_FocusBlock_TryBlock_BaseAttack_
-  commentId: M:Global.FocusBlock.TryBlock(BaseAttack)
-  fullName: FocusBlock.TryBlock(BaseAttack)
-  nameWithType: FocusBlock.TryBlock(BaseAttack)
+- uid: Global.FocusBlock.TryBlock(Hit)
+  name: TryBlock(Hit)
+  href: api/Global.FocusBlock.html#Global_FocusBlock_TryBlock_Hit_
+  commentId: M:Global.FocusBlock.TryBlock(Hit)
+  fullName: FocusBlock.TryBlock(Hit)
+  nameWithType: FocusBlock.TryBlock(Hit)
 - uid: Global.FocusBlock.TryBlock*
   name: TryBlock
   href: api/Global.FocusBlock.html#Global_FocusBlock_TryBlock_
@@ -3562,22 +3470,6 @@ references:
   commentId: T:Global.FollowBehaviour.Command
   fullName: FollowBehaviour.Command
   nameWithType: FollowBehaviour.Command
-- uid: Global.FollowBehaviour.Command.#ctor(GameEntity,Func{Node[]},GetOverrideDirection)
-  name: Command(GameEntity, Func<Node[]>, GetOverrideDirection)
-  href: api/Global.FollowBehaviour.Command.html#Global_FollowBehaviour_Command__ctor_GameEntity_Func_Node____GetOverrideDirection_
-  commentId: M:Global.FollowBehaviour.Command.#ctor(GameEntity,Func{Node[]},GetOverrideDirection)
-  name.vb: Command(GameEntity, Func(Of Node()), GetOverrideDirection)
-  fullName: FollowBehaviour.Command.Command(GameEntity, Func<Node[]>, GetOverrideDirection)
-  fullName.vb: FollowBehaviour.Command.Command(GameEntity, Func(Of Node()), GetOverrideDirection)
-  nameWithType: FollowBehaviour.Command.Command(GameEntity, Func<Node[]>, GetOverrideDirection)
-  nameWithType.vb: FollowBehaviour.Command.Command(GameEntity, Func(Of Node()), GetOverrideDirection)
-- uid: Global.FollowBehaviour.Command.#ctor*
-  name: Command
-  href: api/Global.FollowBehaviour.Command.html#Global_FollowBehaviour_Command__ctor_
-  commentId: Overload:Global.FollowBehaviour.Command.#ctor
-  isSpec: "True"
-  fullName: FollowBehaviour.Command.Command
-  nameWithType: FollowBehaviour.Command.Command
 - uid: Global.FollowBehaviour.Command.getExcluded
   name: getExcluded
   href: api/Global.FollowBehaviour.Command.html#Global_FollowBehaviour_Command_getExcluded
@@ -3691,19 +3583,6 @@ references:
   commentId: T:Global.ForcedWalkBehaviour.Command
   fullName: ForcedWalkBehaviour.Command
   nameWithType: ForcedWalkBehaviour.Command
-- uid: Global.ForcedWalkBehaviour.Command.#ctor(Vector3,System.Single)
-  name: Command(Vector3, Single)
-  href: api/Global.ForcedWalkBehaviour.Command.html#Global_ForcedWalkBehaviour_Command__ctor_Vector3_System_Single_
-  commentId: M:Global.ForcedWalkBehaviour.Command.#ctor(Vector3,System.Single)
-  fullName: ForcedWalkBehaviour.Command.Command(Vector3, System.Single)
-  nameWithType: ForcedWalkBehaviour.Command.Command(Vector3, Single)
-- uid: Global.ForcedWalkBehaviour.Command.#ctor*
-  name: Command
-  href: api/Global.ForcedWalkBehaviour.Command.html#Global_ForcedWalkBehaviour_Command__ctor_
-  commentId: Overload:Global.ForcedWalkBehaviour.Command.#ctor
-  isSpec: "True"
-  fullName: ForcedWalkBehaviour.Command.Command
-  nameWithType: ForcedWalkBehaviour.Command.Command
 - uid: Global.ForcedWalkBehaviour.Command.point
   name: point
   href: api/Global.ForcedWalkBehaviour.Command.html#Global_ForcedWalkBehaviour_Command_point
@@ -4314,6 +4193,12 @@ references:
   isSpec: "True"
   fullName: HealthSystem.Awake
   nameWithType: HealthSystem.Awake
+- uid: Global.HealthSystem.damageMultiplier
+  name: damageMultiplier
+  href: api/Global.HealthSystem.html#Global_HealthSystem_damageMultiplier
+  commentId: F:Global.HealthSystem.damageMultiplier
+  fullName: HealthSystem.damageMultiplier
+  nameWithType: HealthSystem.damageMultiplier
 - uid: Global.HealthSystem.Fraction
   name: Fraction
   href: api/Global.HealthSystem.html#Global_HealthSystem_Fraction
@@ -4327,6 +4212,19 @@ references:
   isSpec: "True"
   fullName: HealthSystem.Fraction
   nameWithType: HealthSystem.Fraction
+- uid: Global.HealthSystem.Heal(System.Single)
+  name: Heal(Single)
+  href: api/Global.HealthSystem.html#Global_HealthSystem_Heal_System_Single_
+  commentId: M:Global.HealthSystem.Heal(System.Single)
+  fullName: HealthSystem.Heal(System.Single)
+  nameWithType: HealthSystem.Heal(Single)
+- uid: Global.HealthSystem.Heal*
+  name: Heal
+  href: api/Global.HealthSystem.html#Global_HealthSystem_Heal_
+  commentId: Overload:Global.HealthSystem.Heal
+  isSpec: "True"
+  fullName: HealthSystem.Heal
+  nameWithType: HealthSystem.Heal
 - uid: Global.HealthSystem.Health
   name: Health
   href: api/Global.HealthSystem.html#Global_HealthSystem_Health
@@ -4340,6 +4238,19 @@ references:
   isSpec: "True"
   fullName: HealthSystem.Health
   nameWithType: HealthSystem.Health
+- uid: Global.HealthSystem.Hit(System.Single)
+  name: Hit(Single)
+  href: api/Global.HealthSystem.html#Global_HealthSystem_Hit_System_Single_
+  commentId: M:Global.HealthSystem.Hit(System.Single)
+  fullName: HealthSystem.Hit(System.Single)
+  nameWithType: HealthSystem.Hit(Single)
+- uid: Global.HealthSystem.Hit*
+  name: Hit
+  href: api/Global.HealthSystem.html#Global_HealthSystem_Hit_
+  commentId: Overload:Global.HealthSystem.Hit
+  isSpec: "True"
+  fullName: HealthSystem.Hit
+  nameWithType: HealthSystem.Hit
 - uid: Global.HealthSystem.Kill
   name: Kill()
   href: api/Global.HealthSystem.html#Global_HealthSystem_Kill
@@ -4353,12 +4264,36 @@ references:
   isSpec: "True"
   fullName: HealthSystem.Kill
   nameWithType: HealthSystem.Kill
+- uid: Global.HealthSystem.onHit
+  name: onHit
+  href: api/Global.HealthSystem.html#Global_HealthSystem_onHit
+  commentId: F:Global.HealthSystem.onHit
+  fullName: HealthSystem.onHit
+  nameWithType: HealthSystem.onHit
 - uid: Global.HealthSystem.startHealth
   name: startHealth
   href: api/Global.HealthSystem.html#Global_HealthSystem_startHealth
   commentId: F:Global.HealthSystem.startHealth
   fullName: HealthSystem.startHealth
   nameWithType: HealthSystem.startHealth
+- uid: Global.Hit
+  name: Hit
+  href: api/Global.Hit.html
+  commentId: T:Global.Hit
+  fullName: Hit
+  nameWithType: Hit
+- uid: Global.Hit.source
+  name: source
+  href: api/Global.Hit.html#Global_Hit_source
+  commentId: F:Global.Hit.source
+  fullName: Hit.source
+  nameWithType: Hit.source
+- uid: Global.Hit.victim
+  name: victim
+  href: api/Global.Hit.html#Global_Hit_victim
+  commentId: F:Global.Hit.victim
+  fullName: Hit.victim
+  nameWithType: Hit.victim
 - uid: Global.Hitbox
   name: Hitbox
   href: api/Global.Hitbox.html
@@ -4480,18 +4415,12 @@ references:
   isSpec: "True"
   fullName: HittableBehaviour.CanGetHit
   nameWithType: HittableBehaviour.CanGetHit
-- uid: Global.HittableBehaviour.damageMultiplier
-  name: damageMultiplier
-  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_damageMultiplier
-  commentId: F:Global.HittableBehaviour.damageMultiplier
-  fullName: HittableBehaviour.damageMultiplier
-  nameWithType: HittableBehaviour.damageMultiplier
-- uid: Global.HittableBehaviour.Hit(System.Single)
-  name: Hit(Single)
-  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_Hit_System_Single_
-  commentId: M:Global.HittableBehaviour.Hit(System.Single)
-  fullName: HittableBehaviour.Hit(System.Single)
-  nameWithType: HittableBehaviour.Hit(Single)
+- uid: Global.HittableBehaviour.Hit(IHitExecutor,Hit)
+  name: Hit(IHitExecutor, Hit)
+  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_Hit_IHitExecutor_Hit_
+  commentId: M:Global.HittableBehaviour.Hit(IHitExecutor,Hit)
+  fullName: HittableBehaviour.Hit(IHitExecutor, Hit)
+  nameWithType: HittableBehaviour.Hit(IHitExecutor, Hit)
 - uid: Global.HittableBehaviour.Hit*
   name: Hit
   href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_Hit_
@@ -4499,38 +4428,25 @@ references:
   isSpec: "True"
   fullName: HittableBehaviour.Hit
   nameWithType: HittableBehaviour.Hit
-- uid: Global.HittableBehaviour.Knockback(System.Single,System.Single,System.Single)
-  name: Knockback(Single, Single, Single)
-  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_Knockback_System_Single_System_Single_System_Single_
-  commentId: M:Global.HittableBehaviour.Knockback(System.Single,System.Single,System.Single)
-  fullName: HittableBehaviour.Knockback(System.Single, System.Single, System.Single)
-  nameWithType: HittableBehaviour.Knockback(Single, Single, Single)
-- uid: Global.HittableBehaviour.Knockback*
-  name: Knockback
-  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_Knockback_
-  commentId: Overload:Global.HittableBehaviour.Knockback
+- uid: Global.HittableBehaviour.HitEvent
+  name: HitEvent
+  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_HitEvent
+  commentId: P:Global.HittableBehaviour.HitEvent
+  fullName: HittableBehaviour.HitEvent
+  nameWithType: HittableBehaviour.HitEvent
+- uid: Global.HittableBehaviour.HitEvent*
+  name: HitEvent
+  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_HitEvent_
+  commentId: Overload:Global.HittableBehaviour.HitEvent
   isSpec: "True"
-  fullName: HittableBehaviour.Knockback
-  nameWithType: HittableBehaviour.Knockback
+  fullName: HittableBehaviour.HitEvent
+  nameWithType: HittableBehaviour.HitEvent
 - uid: Global.HittableBehaviour.onHit
   name: onHit
   href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_onHit
   commentId: F:Global.HittableBehaviour.onHit
   fullName: HittableBehaviour.onHit
   nameWithType: HittableBehaviour.onHit
-- uid: Global.HittableBehaviour.Stun(System.Single)
-  name: Stun(Single)
-  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_Stun_System_Single_
-  commentId: M:Global.HittableBehaviour.Stun(System.Single)
-  fullName: HittableBehaviour.Stun(System.Single)
-  nameWithType: HittableBehaviour.Stun(Single)
-- uid: Global.HittableBehaviour.Stun*
-  name: Stun
-  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_Stun_
-  commentId: Overload:Global.HittableBehaviour.Stun
-  isSpec: "True"
-  fullName: HittableBehaviour.Stun
-  nameWithType: HittableBehaviour.Stun
 - uid: Global.HittableHitbox
   name: HittableHitbox
   href: api/Global.HittableHitbox.html
@@ -4550,19 +4466,6 @@ references:
   isSpec: "True"
   fullName: HittableHitbox.Awake
   nameWithType: HittableHitbox.Awake
-- uid: Global.HittableHitbox.Blink
-  name: Blink()
-  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Blink
-  commentId: M:Global.HittableHitbox.Blink
-  fullName: HittableHitbox.Blink()
-  nameWithType: HittableHitbox.Blink()
-- uid: Global.HittableHitbox.Blink*
-  name: Blink
-  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Blink_
-  commentId: Overload:Global.HittableHitbox.Blink
-  isSpec: "True"
-  fullName: HittableHitbox.Blink
-  nameWithType: HittableHitbox.Blink
 - uid: Global.HittableHitbox.blinkMaterial
   name: blinkMaterial
   href: api/Global.HittableHitbox.html#Global_HittableHitbox_blinkMaterial
@@ -4607,12 +4510,12 @@ references:
   commentId: F:Global.HittableHitbox.figure
   fullName: HittableHitbox.figure
   nameWithType: HittableHitbox.figure
-- uid: Global.HittableHitbox.Hit(System.Single)
-  name: Hit(Single)
-  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Hit_System_Single_
-  commentId: M:Global.HittableHitbox.Hit(System.Single)
-  fullName: HittableHitbox.Hit(System.Single)
-  nameWithType: HittableHitbox.Hit(Single)
+- uid: Global.HittableHitbox.Hit(IHitExecutor,Hit)
+  name: Hit(IHitExecutor, Hit)
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Hit_IHitExecutor_Hit_
+  commentId: M:Global.HittableHitbox.Hit(IHitExecutor,Hit)
+  fullName: HittableHitbox.Hit(IHitExecutor, Hit)
+  nameWithType: HittableHitbox.Hit(IHitExecutor, Hit)
 - uid: Global.HittableHitbox.Hit*
   name: Hit
   href: api/Global.HittableHitbox.html#Global_HittableHitbox_Hit_
@@ -4633,44 +4536,31 @@ references:
   isSpec: "True"
   fullName: HittableHitbox.Hitbox
   nameWithType: HittableHitbox.Hitbox
+- uid: Global.HittableHitbox.HitEvent
+  name: HitEvent
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_HitEvent
+  commentId: P:Global.HittableHitbox.HitEvent
+  fullName: HittableHitbox.HitEvent
+  nameWithType: HittableHitbox.HitEvent
+- uid: Global.HittableHitbox.HitEvent*
+  name: HitEvent
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_HitEvent_
+  commentId: Overload:Global.HittableHitbox.HitEvent
+  isSpec: "True"
+  fullName: HittableHitbox.HitEvent
+  nameWithType: HittableHitbox.HitEvent
 - uid: Global.HittableHitbox.hittableBehaviour
   name: hittableBehaviour
   href: api/Global.HittableHitbox.html#Global_HittableHitbox_hittableBehaviour
   commentId: F:Global.HittableHitbox.hittableBehaviour
   fullName: HittableHitbox.hittableBehaviour
   nameWithType: HittableHitbox.hittableBehaviour
-- uid: Global.HittableHitbox.Knockback(System.Single,System.Single,System.Single)
-  name: Knockback(Single, Single, Single)
-  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Knockback_System_Single_System_Single_System_Single_
-  commentId: M:Global.HittableHitbox.Knockback(System.Single,System.Single,System.Single)
-  fullName: HittableHitbox.Knockback(System.Single, System.Single, System.Single)
-  nameWithType: HittableHitbox.Knockback(Single, Single, Single)
-- uid: Global.HittableHitbox.Knockback*
-  name: Knockback
-  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Knockback_
-  commentId: Overload:Global.HittableHitbox.Knockback
-  isSpec: "True"
-  fullName: HittableHitbox.Knockback
-  nameWithType: HittableHitbox.Knockback
 - uid: Global.HittableHitbox.onHit
   name: onHit
   href: api/Global.HittableHitbox.html#Global_HittableHitbox_onHit
   commentId: F:Global.HittableHitbox.onHit
   fullName: HittableHitbox.onHit
   nameWithType: HittableHitbox.onHit
-- uid: Global.HittableHitbox.Stun(System.Single)
-  name: Stun(Single)
-  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Stun_System_Single_
-  commentId: M:Global.HittableHitbox.Stun(System.Single)
-  fullName: HittableHitbox.Stun(System.Single)
-  nameWithType: HittableHitbox.Stun(Single)
-- uid: Global.HittableHitbox.Stun*
-  name: Stun
-  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Stun_
-  commentId: Overload:Global.HittableHitbox.Stun
-  isSpec: "True"
-  fullName: HittableHitbox.Stun
-  nameWithType: HittableHitbox.Stun
 - uid: Global.HitValueTranspiler`1
   name: HitValueTranspiler<T>
   href: api/Global.HitValueTranspiler-1.html
@@ -4802,12 +4692,12 @@ references:
   commentId: T:Global.IHitExecutor
   fullName: IHitExecutor
   nameWithType: IHitExecutor
-- uid: Global.IHitExecutor.Execute(BaseAttack,IHittable)
-  name: Execute(BaseAttack, IHittable)
-  href: api/Global.IHitExecutor.html#Global_IHitExecutor_Execute_BaseAttack_IHittable_
-  commentId: M:Global.IHitExecutor.Execute(BaseAttack,IHittable)
-  fullName: IHitExecutor.Execute(BaseAttack, IHittable)
-  nameWithType: IHitExecutor.Execute(BaseAttack, IHittable)
+- uid: Global.IHitExecutor.Execute(Hit)
+  name: Execute(Hit)
+  href: api/Global.IHitExecutor.html#Global_IHitExecutor_Execute_Hit_
+  commentId: M:Global.IHitExecutor.Execute(Hit)
+  fullName: IHitExecutor.Execute(Hit)
+  nameWithType: IHitExecutor.Execute(Hit)
 - uid: Global.IHitExecutor.Execute*
   name: Execute
   href: api/Global.IHitExecutor.html#Global_IHitExecutor_Execute_
@@ -4847,12 +4737,12 @@ references:
   isSpec: "True"
   fullName: IHittable.Character
   nameWithType: IHittable.Character
-- uid: Global.IHittable.Hit(System.Single)
-  name: Hit(Single)
-  href: api/Global.IHittable.html#Global_IHittable_Hit_System_Single_
-  commentId: M:Global.IHittable.Hit(System.Single)
-  fullName: IHittable.Hit(System.Single)
-  nameWithType: IHittable.Hit(Single)
+- uid: Global.IHittable.Hit(IHitExecutor,Hit)
+  name: Hit(IHitExecutor, Hit)
+  href: api/Global.IHittable.html#Global_IHittable_Hit_IHitExecutor_Hit_
+  commentId: M:Global.IHittable.Hit(IHitExecutor,Hit)
+  fullName: IHittable.Hit(IHitExecutor, Hit)
+  nameWithType: IHittable.Hit(IHitExecutor, Hit)
 - uid: Global.IHittable.Hit*
   name: Hit
   href: api/Global.IHittable.html#Global_IHittable_Hit_
@@ -4860,32 +4750,19 @@ references:
   isSpec: "True"
   fullName: IHittable.Hit
   nameWithType: IHittable.Hit
-- uid: Global.IHittable.Knockback(System.Single,System.Single,System.Single)
-  name: Knockback(Single, Single, Single)
-  href: api/Global.IHittable.html#Global_IHittable_Knockback_System_Single_System_Single_System_Single_
-  commentId: M:Global.IHittable.Knockback(System.Single,System.Single,System.Single)
-  fullName: IHittable.Knockback(System.Single, System.Single, System.Single)
-  nameWithType: IHittable.Knockback(Single, Single, Single)
-- uid: Global.IHittable.Knockback*
-  name: Knockback
-  href: api/Global.IHittable.html#Global_IHittable_Knockback_
-  commentId: Overload:Global.IHittable.Knockback
+- uid: Global.IHittable.HitEvent
+  name: HitEvent
+  href: api/Global.IHittable.html#Global_IHittable_HitEvent
+  commentId: P:Global.IHittable.HitEvent
+  fullName: IHittable.HitEvent
+  nameWithType: IHittable.HitEvent
+- uid: Global.IHittable.HitEvent*
+  name: HitEvent
+  href: api/Global.IHittable.html#Global_IHittable_HitEvent_
+  commentId: Overload:Global.IHittable.HitEvent
   isSpec: "True"
-  fullName: IHittable.Knockback
-  nameWithType: IHittable.Knockback
-- uid: Global.IHittable.Stun(System.Single)
-  name: Stun(Single)
-  href: api/Global.IHittable.html#Global_IHittable_Stun_System_Single_
-  commentId: M:Global.IHittable.Stun(System.Single)
-  fullName: IHittable.Stun(System.Single)
-  nameWithType: IHittable.Stun(Single)
-- uid: Global.IHittable.Stun*
-  name: Stun
-  href: api/Global.IHittable.html#Global_IHittable_Stun_
-  commentId: Overload:Global.IHittable.Stun
-  isSpec: "True"
-  fullName: IHittable.Stun
-  nameWithType: IHittable.Stun
+  fullName: IHittable.HitEvent
+  nameWithType: IHittable.HitEvent
 - uid: Global.IMovementBehaviour
   name: IMovementBehaviour
   href: api/Global.IMovementBehaviour.html
@@ -5209,19 +5086,6 @@ references:
   commentId: T:Global.KnockbackBehaviour.Command
   fullName: KnockbackBehaviour.Command
   nameWithType: KnockbackBehaviour.Command
-- uid: Global.KnockbackBehaviour.Command.#ctor(System.Single,System.Single)
-  name: Command(Single, Single)
-  href: api/Global.KnockbackBehaviour.Command.html#Global_KnockbackBehaviour_Command__ctor_System_Single_System_Single_
-  commentId: M:Global.KnockbackBehaviour.Command.#ctor(System.Single,System.Single)
-  fullName: KnockbackBehaviour.Command.Command(System.Single, System.Single)
-  nameWithType: KnockbackBehaviour.Command.Command(Single, Single)
-- uid: Global.KnockbackBehaviour.Command.#ctor*
-  name: Command
-  href: api/Global.KnockbackBehaviour.Command.html#Global_KnockbackBehaviour_Command__ctor_
-  commentId: Overload:Global.KnockbackBehaviour.Command.#ctor
-  isSpec: "True"
-  fullName: KnockbackBehaviour.Command.Command
-  nameWithType: KnockbackBehaviour.Command.Command
 - uid: Global.KnockbackBehaviour.Command.angleDegrees
   name: angleDegrees
   href: api/Global.KnockbackBehaviour.Command.html#Global_KnockbackBehaviour_Command_angleDegrees
@@ -5342,12 +5206,12 @@ references:
   commentId: T:Global.KnockbackHitExecutor
   fullName: KnockbackHitExecutor
   nameWithType: KnockbackHitExecutor
-- uid: Global.KnockbackHitExecutor.Execute(BaseAttack,IHittable)
-  name: Execute(BaseAttack, IHittable)
-  href: api/Global.KnockbackHitExecutor.html#Global_KnockbackHitExecutor_Execute_BaseAttack_IHittable_
-  commentId: M:Global.KnockbackHitExecutor.Execute(BaseAttack,IHittable)
-  fullName: KnockbackHitExecutor.Execute(BaseAttack, IHittable)
-  nameWithType: KnockbackHitExecutor.Execute(BaseAttack, IHittable)
+- uid: Global.KnockbackHitExecutor.Execute(Hit)
+  name: Execute(Hit)
+  href: api/Global.KnockbackHitExecutor.html#Global_KnockbackHitExecutor_Execute_Hit_
+  commentId: M:Global.KnockbackHitExecutor.Execute(Hit)
+  fullName: KnockbackHitExecutor.Execute(Hit)
+  nameWithType: KnockbackHitExecutor.Execute(Hit)
 - uid: Global.KnockbackHitExecutor.Execute*
   name: Execute
   href: api/Global.KnockbackHitExecutor.html#Global_KnockbackHitExecutor_Execute_
@@ -6802,12 +6666,12 @@ references:
   isSpec: "True"
   fullName: PossessAttack.Awake
   nameWithType: PossessAttack.Awake
-- uid: Global.PossessAttack.effectDuration
-  name: effectDuration
-  href: api/Global.PossessAttack.html#Global_PossessAttack_effectDuration
-  commentId: F:Global.PossessAttack.effectDuration
-  fullName: PossessAttack.effectDuration
-  nameWithType: PossessAttack.effectDuration
+- uid: Global.PossessAttack.hitExecutor
+  name: hitExecutor
+  href: api/Global.PossessAttack.html#Global_PossessAttack_hitExecutor
+  commentId: F:Global.PossessAttack.hitExecutor
+  fullName: PossessAttack.hitExecutor
+  nameWithType: PossessAttack.hitExecutor
 - uid: Global.PossessAttack.minSourcesDistance
   name: minSourcesDistance
   href: api/Global.PossessAttack.html#Global_PossessAttack_minSourcesDistance
@@ -6833,12 +6697,6 @@ references:
   isSpec: "True"
   fullName: PossessAttack.RecoveryPhase
   nameWithType: PossessAttack.RecoveryPhase
-- uid: Global.PossessAttack.sourceDamage
-  name: sourceDamage
-  href: api/Global.PossessAttack.html#Global_PossessAttack_sourceDamage
-  commentId: F:Global.PossessAttack.sourceDamage
-  fullName: PossessAttack.sourceDamage
-  nameWithType: PossessAttack.sourceDamage
 - uid: Global.PossessAttack.sourcesCount
   name: sourcesCount
   href: api/Global.PossessAttack.html#Global_PossessAttack_sourcesCount
@@ -6876,19 +6734,6 @@ references:
   commentId: T:Global.PossessedEffect.Command
   fullName: PossessedEffect.Command
   nameWithType: PossessedEffect.Command
-- uid: Global.PossessedEffect.Command.#ctor(System.Single)
-  name: Command(Single)
-  href: api/Global.PossessedEffect.Command.html#Global_PossessedEffect_Command__ctor_System_Single_
-  commentId: M:Global.PossessedEffect.Command.#ctor(System.Single)
-  fullName: PossessedEffect.Command.Command(System.Single)
-  nameWithType: PossessedEffect.Command.Command(Single)
-- uid: Global.PossessedEffect.Command.#ctor*
-  name: Command
-  href: api/Global.PossessedEffect.Command.html#Global_PossessedEffect_Command__ctor_
-  commentId: Overload:Global.PossessedEffect.Command.#ctor
-  isSpec: "True"
-  fullName: PossessedEffect.Command.Command
-  nameWithType: PossessedEffect.Command.Command
 - uid: Global.PossessedEffect.Command.maxDuration
   name: maxDuration
   href: api/Global.PossessedEffect.Command.html#Global_PossessedEffect_Command_maxDuration
@@ -6959,18 +6804,43 @@ references:
   commentId: F:Global.PossessedHumanBrain.animator
   fullName: PossessedHumanBrain.animator
   nameWithType: PossessedHumanBrain.animator
+- uid: Global.PossessHitExecutor
+  name: PossessHitExecutor
+  href: api/Global.PossessHitExecutor.html
+  commentId: T:Global.PossessHitExecutor
+  fullName: PossessHitExecutor
+  nameWithType: PossessHitExecutor
+- uid: Global.PossessHitExecutor.duration
+  name: duration
+  href: api/Global.PossessHitExecutor.html#Global_PossessHitExecutor_duration
+  commentId: F:Global.PossessHitExecutor.duration
+  fullName: PossessHitExecutor.duration
+  nameWithType: PossessHitExecutor.duration
+- uid: Global.PossessHitExecutor.Execute(Hit)
+  name: Execute(Hit)
+  href: api/Global.PossessHitExecutor.html#Global_PossessHitExecutor_Execute_Hit_
+  commentId: M:Global.PossessHitExecutor.Execute(Hit)
+  fullName: PossessHitExecutor.Execute(Hit)
+  nameWithType: PossessHitExecutor.Execute(Hit)
+- uid: Global.PossessHitExecutor.Execute*
+  name: Execute
+  href: api/Global.PossessHitExecutor.html#Global_PossessHitExecutor_Execute_
+  commentId: Overload:Global.PossessHitExecutor.Execute
+  isSpec: "True"
+  fullName: PossessHitExecutor.Execute
+  nameWithType: PossessHitExecutor.Execute
 - uid: Global.PossessSource
   name: PossessSource
   href: api/Global.PossessSource.html
   commentId: T:Global.PossessSource
   fullName: PossessSource
   nameWithType: PossessSource
-- uid: Global.PossessSource.Activate(System.Single,System.Single,Tags,System.Single,System.Int32)
-  name: Activate(Single, Single, Tags, Single, Int32)
-  href: api/Global.PossessSource.html#Global_PossessSource_Activate_System_Single_System_Single_Tags_System_Single_System_Int32_
-  commentId: M:Global.PossessSource.Activate(System.Single,System.Single,Tags,System.Single,System.Int32)
-  fullName: PossessSource.Activate(System.Single, System.Single, Tags, System.Single, System.Int32)
-  nameWithType: PossessSource.Activate(Single, Single, Tags, Single, Int32)
+- uid: Global.PossessSource.Activate(System.Single,System.Single,Tags,ChainHitExecutor,BaseAttack)
+  name: Activate(Single, Single, Tags, ChainHitExecutor, BaseAttack)
+  href: api/Global.PossessSource.html#Global_PossessSource_Activate_System_Single_System_Single_Tags_ChainHitExecutor_BaseAttack_
+  commentId: M:Global.PossessSource.Activate(System.Single,System.Single,Tags,ChainHitExecutor,BaseAttack)
+  fullName: PossessSource.Activate(System.Single, System.Single, Tags, ChainHitExecutor, BaseAttack)
+  nameWithType: PossessSource.Activate(Single, Single, Tags, ChainHitExecutor, BaseAttack)
 - uid: Global.PossessSource.Activate*
   name: Activate
   href: api/Global.PossessSource.html#Global_PossessSource_Activate_
@@ -7087,12 +6957,12 @@ references:
   commentId: F:Global.ProbabilisticElectrifyHitExecutor.electrifyHitExecutor
   fullName: ProbabilisticElectrifyHitExecutor.electrifyHitExecutor
   nameWithType: ProbabilisticElectrifyHitExecutor.electrifyHitExecutor
-- uid: Global.ProbabilisticElectrifyHitExecutor.Execute(BaseAttack,IHittable)
-  name: Execute(BaseAttack, IHittable)
-  href: api/Global.ProbabilisticElectrifyHitExecutor.html#Global_ProbabilisticElectrifyHitExecutor_Execute_BaseAttack_IHittable_
-  commentId: M:Global.ProbabilisticElectrifyHitExecutor.Execute(BaseAttack,IHittable)
-  fullName: ProbabilisticElectrifyHitExecutor.Execute(BaseAttack, IHittable)
-  nameWithType: ProbabilisticElectrifyHitExecutor.Execute(BaseAttack, IHittable)
+- uid: Global.ProbabilisticElectrifyHitExecutor.Execute(Hit)
+  name: Execute(Hit)
+  href: api/Global.ProbabilisticElectrifyHitExecutor.html#Global_ProbabilisticElectrifyHitExecutor_Execute_Hit_
+  commentId: M:Global.ProbabilisticElectrifyHitExecutor.Execute(Hit)
+  fullName: ProbabilisticElectrifyHitExecutor.Execute(Hit)
+  nameWithType: ProbabilisticElectrifyHitExecutor.Execute(Hit)
 - uid: Global.ProbabilisticElectrifyHitExecutor.Execute*
   name: Execute
   href: api/Global.ProbabilisticElectrifyHitExecutor.html#Global_ProbabilisticElectrifyHitExecutor_Execute_
@@ -7820,19 +7690,6 @@ references:
   commentId: T:Global.SlideBehaviour.Command
   fullName: SlideBehaviour.Command
   nameWithType: SlideBehaviour.Command
-- uid: Global.SlideBehaviour.Command.#ctor(System.Int32)
-  name: Command(Int32)
-  href: api/Global.SlideBehaviour.Command.html#Global_SlideBehaviour_Command__ctor_System_Int32_
-  commentId: M:Global.SlideBehaviour.Command.#ctor(System.Int32)
-  fullName: SlideBehaviour.Command.Command(System.Int32)
-  nameWithType: SlideBehaviour.Command.Command(Int32)
-- uid: Global.SlideBehaviour.Command.#ctor*
-  name: Command
-  href: api/Global.SlideBehaviour.Command.html#Global_SlideBehaviour_Command__ctor_
-  commentId: Overload:Global.SlideBehaviour.Command.#ctor
-  isSpec: "True"
-  fullName: SlideBehaviour.Command.Command
-  nameWithType: SlideBehaviour.Command.Command
 - uid: Global.SlideBehaviour.Command.direction
   name: direction
   href: api/Global.SlideBehaviour.Command.html#Global_SlideBehaviour_Command_direction
@@ -8224,19 +8081,6 @@ references:
   commentId: T:Global.StunBehaviour.Command
   fullName: StunBehaviour.Command
   nameWithType: StunBehaviour.Command
-- uid: Global.StunBehaviour.Command.#ctor(System.Single)
-  name: Command(Single)
-  href: api/Global.StunBehaviour.Command.html#Global_StunBehaviour_Command__ctor_System_Single_
-  commentId: M:Global.StunBehaviour.Command.#ctor(System.Single)
-  fullName: StunBehaviour.Command.Command(System.Single)
-  nameWithType: StunBehaviour.Command.Command(Single)
-- uid: Global.StunBehaviour.Command.#ctor*
-  name: Command
-  href: api/Global.StunBehaviour.Command.html#Global_StunBehaviour_Command__ctor_
-  commentId: Overload:Global.StunBehaviour.Command.#ctor
-  isSpec: "True"
-  fullName: StunBehaviour.Command.Command
-  nameWithType: StunBehaviour.Command.Command
 - uid: Global.StunBehaviour.Command.time
   name: time
   href: api/Global.StunBehaviour.Command.html#Global_StunBehaviour_Command_time
@@ -8339,12 +8183,12 @@ references:
   commentId: T:Global.StunHitExecutor
   fullName: StunHitExecutor
   nameWithType: StunHitExecutor
-- uid: Global.StunHitExecutor.Execute(BaseAttack,IHittable)
-  name: Execute(BaseAttack, IHittable)
-  href: api/Global.StunHitExecutor.html#Global_StunHitExecutor_Execute_BaseAttack_IHittable_
-  commentId: M:Global.StunHitExecutor.Execute(BaseAttack,IHittable)
-  fullName: StunHitExecutor.Execute(BaseAttack, IHittable)
-  nameWithType: StunHitExecutor.Execute(BaseAttack, IHittable)
+- uid: Global.StunHitExecutor.Execute(Hit)
+  name: Execute(Hit)
+  href: api/Global.StunHitExecutor.html#Global_StunHitExecutor_Execute_Hit_
+  commentId: M:Global.StunHitExecutor.Execute(Hit)
+  fullName: StunHitExecutor.Execute(Hit)
+  nameWithType: StunHitExecutor.Execute(Hit)
 - uid: Global.StunHitExecutor.Execute*
   name: Execute
   href: api/Global.StunHitExecutor.html#Global_StunHitExecutor_Execute_
@@ -8388,6 +8232,19 @@ references:
   commentId: T:Global.SuperArmor.Command
   fullName: SuperArmor.Command
   nameWithType: SuperArmor.Command
+- uid: Global.SuperArmor.CurrentArmorHealth
+  name: CurrentArmorHealth
+  href: api/Global.SuperArmor.html#Global_SuperArmor_CurrentArmorHealth
+  commentId: P:Global.SuperArmor.CurrentArmorHealth
+  fullName: SuperArmor.CurrentArmorHealth
+  nameWithType: SuperArmor.CurrentArmorHealth
+- uid: Global.SuperArmor.CurrentArmorHealth*
+  name: CurrentArmorHealth
+  href: api/Global.SuperArmor.html#Global_SuperArmor_CurrentArmorHealth_
+  commentId: Overload:Global.SuperArmor.CurrentArmorHealth
+  isSpec: "True"
+  fullName: SuperArmor.CurrentArmorHealth
+  nameWithType: SuperArmor.CurrentArmorHealth
 - uid: Global.SuperArmor.damageMultiplier
   name: damageMultiplier
   href: api/Global.SuperArmor.html#Global_SuperArmor_damageMultiplier
@@ -8547,12 +8404,12 @@ references:
   isSpec: "True"
   fullName: SuperArmorHittableHitbox.Awake
   nameWithType: SuperArmorHittableHitbox.Awake
-- uid: Global.SuperArmorHittableHitbox.Hit(System.Single)
-  name: Hit(Single)
-  href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_Hit_System_Single_
-  commentId: M:Global.SuperArmorHittableHitbox.Hit(System.Single)
-  fullName: SuperArmorHittableHitbox.Hit(System.Single)
-  nameWithType: SuperArmorHittableHitbox.Hit(Single)
+- uid: Global.SuperArmorHittableHitbox.Hit(IHitExecutor,Hit)
+  name: Hit(IHitExecutor, Hit)
+  href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_Hit_IHitExecutor_Hit_
+  commentId: M:Global.SuperArmorHittableHitbox.Hit(IHitExecutor,Hit)
+  fullName: SuperArmorHittableHitbox.Hit(IHitExecutor, Hit)
+  nameWithType: SuperArmorHittableHitbox.Hit(IHitExecutor, Hit)
 - uid: Global.SuperArmorHittableHitbox.Hit*
   name: Hit
   href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_Hit_
@@ -8560,32 +8417,6 @@ references:
   isSpec: "True"
   fullName: SuperArmorHittableHitbox.Hit
   nameWithType: SuperArmorHittableHitbox.Hit
-- uid: Global.SuperArmorHittableHitbox.Knockback(System.Single,System.Single,System.Single)
-  name: Knockback(Single, Single, Single)
-  href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_Knockback_System_Single_System_Single_System_Single_
-  commentId: M:Global.SuperArmorHittableHitbox.Knockback(System.Single,System.Single,System.Single)
-  fullName: SuperArmorHittableHitbox.Knockback(System.Single, System.Single, System.Single)
-  nameWithType: SuperArmorHittableHitbox.Knockback(Single, Single, Single)
-- uid: Global.SuperArmorHittableHitbox.Knockback*
-  name: Knockback
-  href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_Knockback_
-  commentId: Overload:Global.SuperArmorHittableHitbox.Knockback
-  isSpec: "True"
-  fullName: SuperArmorHittableHitbox.Knockback
-  nameWithType: SuperArmorHittableHitbox.Knockback
-- uid: Global.SuperArmorHittableHitbox.Stun(System.Single)
-  name: Stun(Single)
-  href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_Stun_System_Single_
-  commentId: M:Global.SuperArmorHittableHitbox.Stun(System.Single)
-  fullName: SuperArmorHittableHitbox.Stun(System.Single)
-  nameWithType: SuperArmorHittableHitbox.Stun(Single)
-- uid: Global.SuperArmorHittableHitbox.Stun*
-  name: Stun
-  href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_Stun_
-  commentId: Overload:Global.SuperArmorHittableHitbox.Stun
-  isSpec: "True"
-  fullName: SuperArmorHittableHitbox.Stun
-  nameWithType: SuperArmorHittableHitbox.Stun
 - uid: Global.Tag
   name: Tag
   href: api/Global.Tag.html

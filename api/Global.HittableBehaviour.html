@@ -180,31 +180,6 @@
   </h3>
   
   
-  <h4 id="Global_HittableBehaviour_damageMultiplier" data-uid="Global.HittableBehaviour.damageMultiplier">damageMultiplier</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float damageMultiplier</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><p>Multiplier for any damage that character is getting</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
   <h4 id="Global_HittableBehaviour_onHit" data-uid="Global.HittableBehaviour.onHit">onHit</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
@@ -223,8 +198,35 @@
     <tbody>
       <tr>
         <td><span class="xref">ExtEvent</span></td>
-        <td><p>Invoked when <span class="xref">HittableBehaviour.Hit(System.Single)</span> is called</p>
+        <td><p>Invoked when <span class="xref">HittableBehaviour.Hit(IHitExecutor,Hit)</span> is called</p>
 </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Global_HittableBehaviour_HitEvent_" data-uid="Global.HittableBehaviour.HitEvent*"></a>
+  <h4 id="Global_HittableBehaviour_HitEvent" data-uid="Global.HittableBehaviour.HitEvent">HitEvent</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExtEvent HitEvent { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ExtEvent</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -270,12 +272,12 @@
   
   
   <a id="Global_HittableBehaviour_Hit_" data-uid="Global.HittableBehaviour.Hit*"></a>
-  <h4 id="Global_HittableBehaviour_Hit_System_Single_" data-uid="Global.HittableBehaviour.Hit(System.Single)">Hit(Single)</h4>
+  <h4 id="Global_HittableBehaviour_Hit_IHitExecutor_Hit_" data-uid="Global.HittableBehaviour.Hit(IHitExecutor,Hit)">Hit(IHitExecutor, Hit)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Hit(float damage)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Hit(IHitExecutor executor, Hit hit)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -288,72 +290,28 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">damage</span></td>
+        <td><a class="xref" href="Global.IHitExecutor.html">IHitExecutor</a></td>
+        <td><span class="parametername">executor</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Global.Hit.html">Hit</a></td>
+        <td><span class="parametername">hit</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  
-  
-  <a id="Global_HittableBehaviour_Knockback_" data-uid="Global.HittableBehaviour.Knockback*"></a>
-  <h4 id="Global_HittableBehaviour_Knockback_System_Single_System_Single_System_Single_" data-uid="Global.HittableBehaviour.Knockback(System.Single,System.Single,System.Single)">Knockback(Single, Single, Single)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Knockback(float power, float angleDegrees, float stunTime)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
+  <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">power</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">angleDegrees</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">stunTime</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_HittableBehaviour_Stun_" data-uid="Global.HittableBehaviour.Stun*"></a>
-  <h4 id="Global_HittableBehaviour_Stun_System_Single_" data-uid="Global.HittableBehaviour.Stun(System.Single)">Stun(Single)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Stun(float time)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">time</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td></td>
       </tr>
     </tbody>

@@ -229,13 +229,13 @@ receive the possessed effect</p>
   
   
   <a id="Global_PossessSource_Activate_" data-uid="Global.PossessSource.Activate*"></a>
-  <h4 id="Global_PossessSource_Activate_System_Single_System_Single_Tags_System_Single_System_Int32_" data-uid="Global.PossessSource.Activate(System.Single,System.Single,Tags,System.Single,System.Int32)">Activate(Single, Single, Tags, Single, Int32)</h4>
+  <h4 id="Global_PossessSource_Activate_System_Single_System_Single_Tags_ChainHitExecutor_BaseAttack_" data-uid="Global.PossessSource.Activate(System.Single,System.Single,Tags,ChainHitExecutor,BaseAttack)">Activate(Single, Single, Tags, ChainHitExecutor, BaseAttack)</h4>
   <div class="markdown level1 summary"><p>Starts the source</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Activate(float warningDuration, float activeDuration, Tags hittableTags, float effectDuration, int hitDamage)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Activate(float warningDuration, float activeDuration, Tags hittableTags, ChainHitExecutor hitExecutor, BaseAttack relatedAttack)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -266,15 +266,15 @@ receive the possessed effect</p>
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">effectDuration</span></td>
-        <td><p>Duration of the applied possess effect on hit</p>
+        <td><a class="xref" href="Global.ChainHitExecutor.html">ChainHitExecutor</a></td>
+        <td><span class="parametername">hitExecutor</span></td>
+        <td><p>Executed on hit</p>
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">hitDamage</span></td>
-        <td><p>Damage on hit</p>
+        <td><a class="xref" href="Global.BaseAttack.html">BaseAttack</a></td>
+        <td><span class="parametername">relatedAttack</span></td>
+        <td><p>Attack that created the possess source</p>
 </td>
       </tr>
     </tbody>

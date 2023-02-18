@@ -122,7 +122,7 @@
       <a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_Character">HittableHitbox.Character</a>
     </div>
     <div>
-      <a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_Blink">HittableHitbox.Blink()</a>
+      <a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_HitEvent">HittableHitbox.HitEvent</a>
     </div>
     <div>
       <a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_CanGetHit">HittableHitbox.CanGetHit()</a>
@@ -196,12 +196,12 @@
   
   
   <a id="Global_SuperArmorHittableHitbox_Hit_" data-uid="Global.SuperArmorHittableHitbox.Hit*"></a>
-  <h4 id="Global_SuperArmorHittableHitbox_Hit_System_Single_" data-uid="Global.SuperArmorHittableHitbox.Hit(System.Single)">Hit(Single)</h4>
+  <h4 id="Global_SuperArmorHittableHitbox_Hit_IHitExecutor_Hit_" data-uid="Global.SuperArmorHittableHitbox.Hit(IHitExecutor,Hit)">Hit(IHitExecutor, Hit)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Hit(float damage)</code></pre>
+    <pre><code class="lang-csharp hljs">public override bool Hit(IHitExecutor executor, Hit hit)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -214,82 +214,34 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">damage</span></td>
+        <td><a class="xref" href="Global.IHitExecutor.html">IHitExecutor</a></td>
+        <td><span class="parametername">executor</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Global.Hit.html">Hit</a></td>
+        <td><span class="parametername">hit</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_Hit_System_Single_">HittableHitbox.Hit(Single)</a></div>
-  
-  
-  <a id="Global_SuperArmorHittableHitbox_Knockback_" data-uid="Global.SuperArmorHittableHitbox.Knockback*"></a>
-  <h4 id="Global_SuperArmorHittableHitbox_Knockback_System_Single_System_Single_System_Single_" data-uid="Global.SuperArmorHittableHitbox.Knockback(System.Single,System.Single,System.Single)">Knockback(Single, Single, Single)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Knockback(float power, float angleDegrees, float stunTime)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
+  <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">power</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">angleDegrees</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">stunTime</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_Knockback_System_Single_System_Single_System_Single_">HittableHitbox.Knockback(Single, Single, Single)</a></div>
-  
-  
-  <a id="Global_SuperArmorHittableHitbox_Stun_" data-uid="Global.SuperArmorHittableHitbox.Stun*"></a>
-  <h4 id="Global_SuperArmorHittableHitbox_Stun_System_Single_" data-uid="Global.SuperArmorHittableHitbox.Stun(System.Single)">Stun(Single)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Stun(float time)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">time</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_Stun_System_Single_">HittableHitbox.Stun(Single)</a></div>
+  <div><a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_Hit_IHitExecutor_Hit_">HittableHitbox.Hit(IHitExecutor, Hit)</a></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Global.IHittable.html">IHittable</a>
