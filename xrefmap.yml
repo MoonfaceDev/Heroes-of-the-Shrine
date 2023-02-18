@@ -726,6 +726,19 @@ references:
   commentId: F:Global.BaseAttack.previousAttacks
   fullName: BaseAttack.previousAttacks
   nameWithType: BaseAttack.previousAttacks
+- uid: Global.BaseAttack.StartHitDetector(BaseHitDetector,ChainHitExecutor)
+  name: StartHitDetector(BaseHitDetector, ChainHitExecutor)
+  href: api/Global.BaseAttack.html#Global_BaseAttack_StartHitDetector_BaseHitDetector_ChainHitExecutor_
+  commentId: M:Global.BaseAttack.StartHitDetector(BaseHitDetector,ChainHitExecutor)
+  fullName: BaseAttack.StartHitDetector(BaseHitDetector, ChainHitExecutor)
+  nameWithType: BaseAttack.StartHitDetector(BaseHitDetector, ChainHitExecutor)
+- uid: Global.BaseAttack.StartHitDetector*
+  name: StartHitDetector
+  href: api/Global.BaseAttack.html#Global_BaseAttack_StartHitDetector_
+  commentId: Overload:Global.BaseAttack.StartHitDetector
+  isSpec: "True"
+  fullName: BaseAttack.StartHitDetector
+  nameWithType: BaseAttack.StartHitDetector
 - uid: Global.BaseComponent
   name: BaseComponent
   href: api/Global.BaseComponent.html
@@ -1092,19 +1105,19 @@ references:
   commentId: T:Global.BossHittableHitbox
   fullName: BossHittableHitbox
   nameWithType: BossHittableHitbox
-- uid: Global.BossHittableHitbox.Hit(IHitExecutor,Hit)
-  name: Hit(IHitExecutor, Hit)
-  href: api/Global.BossHittableHitbox.html#Global_BossHittableHitbox_Hit_IHitExecutor_Hit_
-  commentId: M:Global.BossHittableHitbox.Hit(IHitExecutor,Hit)
-  fullName: BossHittableHitbox.Hit(IHitExecutor, Hit)
-  nameWithType: BossHittableHitbox.Hit(IHitExecutor, Hit)
-- uid: Global.BossHittableHitbox.Hit*
-  name: Hit
-  href: api/Global.BossHittableHitbox.html#Global_BossHittableHitbox_Hit_
-  commentId: Overload:Global.BossHittableHitbox.Hit
+- uid: Global.BossHittableHitbox.ProcessHit(IHitExecutor,Hit)
+  name: ProcessHit(IHitExecutor, Hit)
+  href: api/Global.BossHittableHitbox.html#Global_BossHittableHitbox_ProcessHit_IHitExecutor_Hit_
+  commentId: M:Global.BossHittableHitbox.ProcessHit(IHitExecutor,Hit)
+  fullName: BossHittableHitbox.ProcessHit(IHitExecutor, Hit)
+  nameWithType: BossHittableHitbox.ProcessHit(IHitExecutor, Hit)
+- uid: Global.BossHittableHitbox.ProcessHit*
+  name: ProcessHit
+  href: api/Global.BossHittableHitbox.html#Global_BossHittableHitbox_ProcessHit_
+  commentId: Overload:Global.BossHittableHitbox.ProcessHit
   isSpec: "True"
-  fullName: BossHittableHitbox.Hit
-  nameWithType: BossHittableHitbox.Hit
+  fullName: BossHittableHitbox.ProcessHit
+  nameWithType: BossHittableHitbox.ProcessHit
 - uid: Global.BrainCore
   name: BrainCore
   href: api/Global.BrainCore.html
@@ -4282,6 +4295,12 @@ references:
   commentId: T:Global.Hit
   fullName: Hit
   nameWithType: Hit
+- uid: Global.Hit.direction
+  name: direction
+  href: api/Global.Hit.html#Global_Hit_direction
+  commentId: F:Global.Hit.direction
+  fullName: Hit.direction
+  nameWithType: Hit.direction
 - uid: Global.Hit.source
   name: source
   href: api/Global.Hit.html#Global_Hit_source
@@ -4415,12 +4434,12 @@ references:
   isSpec: "True"
   fullName: HittableBehaviour.CanGetHit
   nameWithType: HittableBehaviour.CanGetHit
-- uid: Global.HittableBehaviour.Hit(IHitExecutor,Hit)
-  name: Hit(IHitExecutor, Hit)
-  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_Hit_IHitExecutor_Hit_
-  commentId: M:Global.HittableBehaviour.Hit(IHitExecutor,Hit)
-  fullName: HittableBehaviour.Hit(IHitExecutor, Hit)
-  nameWithType: HittableBehaviour.Hit(IHitExecutor, Hit)
+- uid: Global.HittableBehaviour.Hit(ChainHitExecutor,Hit)
+  name: Hit(ChainHitExecutor, Hit)
+  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_Hit_ChainHitExecutor_Hit_
+  commentId: M:Global.HittableBehaviour.Hit(ChainHitExecutor,Hit)
+  fullName: HittableBehaviour.Hit(ChainHitExecutor, Hit)
+  nameWithType: HittableBehaviour.Hit(ChainHitExecutor, Hit)
 - uid: Global.HittableBehaviour.Hit*
   name: Hit
   href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_Hit_
@@ -4447,6 +4466,19 @@ references:
   commentId: F:Global.HittableBehaviour.onHit
   fullName: HittableBehaviour.onHit
   nameWithType: HittableBehaviour.onHit
+- uid: Global.HittableBehaviour.ProcessHit(IHitExecutor,Hit)
+  name: ProcessHit(IHitExecutor, Hit)
+  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_ProcessHit_IHitExecutor_Hit_
+  commentId: M:Global.HittableBehaviour.ProcessHit(IHitExecutor,Hit)
+  fullName: HittableBehaviour.ProcessHit(IHitExecutor, Hit)
+  nameWithType: HittableBehaviour.ProcessHit(IHitExecutor, Hit)
+- uid: Global.HittableBehaviour.ProcessHit*
+  name: ProcessHit
+  href: api/Global.HittableBehaviour.html#Global_HittableBehaviour_ProcessHit_
+  commentId: Overload:Global.HittableBehaviour.ProcessHit
+  isSpec: "True"
+  fullName: HittableBehaviour.ProcessHit
+  nameWithType: HittableBehaviour.ProcessHit
 - uid: Global.HittableHitbox
   name: HittableHitbox
   href: api/Global.HittableHitbox.html
@@ -4510,12 +4542,12 @@ references:
   commentId: F:Global.HittableHitbox.figure
   fullName: HittableHitbox.figure
   nameWithType: HittableHitbox.figure
-- uid: Global.HittableHitbox.Hit(IHitExecutor,Hit)
-  name: Hit(IHitExecutor, Hit)
-  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Hit_IHitExecutor_Hit_
-  commentId: M:Global.HittableHitbox.Hit(IHitExecutor,Hit)
-  fullName: HittableHitbox.Hit(IHitExecutor, Hit)
-  nameWithType: HittableHitbox.Hit(IHitExecutor, Hit)
+- uid: Global.HittableHitbox.Hit(ChainHitExecutor,Hit)
+  name: Hit(ChainHitExecutor, Hit)
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_Hit_ChainHitExecutor_Hit_
+  commentId: M:Global.HittableHitbox.Hit(ChainHitExecutor,Hit)
+  fullName: HittableHitbox.Hit(ChainHitExecutor, Hit)
+  nameWithType: HittableHitbox.Hit(ChainHitExecutor, Hit)
 - uid: Global.HittableHitbox.Hit*
   name: Hit
   href: api/Global.HittableHitbox.html#Global_HittableHitbox_Hit_
@@ -4561,6 +4593,19 @@ references:
   commentId: F:Global.HittableHitbox.onHit
   fullName: HittableHitbox.onHit
   nameWithType: HittableHitbox.onHit
+- uid: Global.HittableHitbox.ProcessHit(IHitExecutor,Hit)
+  name: ProcessHit(IHitExecutor, Hit)
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_ProcessHit_IHitExecutor_Hit_
+  commentId: M:Global.HittableHitbox.ProcessHit(IHitExecutor,Hit)
+  fullName: HittableHitbox.ProcessHit(IHitExecutor, Hit)
+  nameWithType: HittableHitbox.ProcessHit(IHitExecutor, Hit)
+- uid: Global.HittableHitbox.ProcessHit*
+  name: ProcessHit
+  href: api/Global.HittableHitbox.html#Global_HittableHitbox_ProcessHit_
+  commentId: Overload:Global.HittableHitbox.ProcessHit
+  isSpec: "True"
+  fullName: HittableHitbox.ProcessHit
+  nameWithType: HittableHitbox.ProcessHit
 - uid: Global.HitValueTranspiler`1
   name: HitValueTranspiler<T>
   href: api/Global.HitValueTranspiler-1.html
@@ -4737,12 +4782,12 @@ references:
   isSpec: "True"
   fullName: IHittable.Character
   nameWithType: IHittable.Character
-- uid: Global.IHittable.Hit(IHitExecutor,Hit)
-  name: Hit(IHitExecutor, Hit)
-  href: api/Global.IHittable.html#Global_IHittable_Hit_IHitExecutor_Hit_
-  commentId: M:Global.IHittable.Hit(IHitExecutor,Hit)
-  fullName: IHittable.Hit(IHitExecutor, Hit)
-  nameWithType: IHittable.Hit(IHitExecutor, Hit)
+- uid: Global.IHittable.Hit(ChainHitExecutor,Hit)
+  name: Hit(ChainHitExecutor, Hit)
+  href: api/Global.IHittable.html#Global_IHittable_Hit_ChainHitExecutor_Hit_
+  commentId: M:Global.IHittable.Hit(ChainHitExecutor,Hit)
+  fullName: IHittable.Hit(ChainHitExecutor, Hit)
+  nameWithType: IHittable.Hit(ChainHitExecutor, Hit)
 - uid: Global.IHittable.Hit*
   name: Hit
   href: api/Global.IHittable.html#Global_IHittable_Hit_
@@ -4763,6 +4808,19 @@ references:
   isSpec: "True"
   fullName: IHittable.HitEvent
   nameWithType: IHittable.HitEvent
+- uid: Global.IHittable.ProcessHit(IHitExecutor,Hit)
+  name: ProcessHit(IHitExecutor, Hit)
+  href: api/Global.IHittable.html#Global_IHittable_ProcessHit_IHitExecutor_Hit_
+  commentId: M:Global.IHittable.ProcessHit(IHitExecutor,Hit)
+  fullName: IHittable.ProcessHit(IHitExecutor, Hit)
+  nameWithType: IHittable.ProcessHit(IHitExecutor, Hit)
+- uid: Global.IHittable.ProcessHit*
+  name: ProcessHit
+  href: api/Global.IHittable.html#Global_IHittable_ProcessHit_
+  commentId: Overload:Global.IHittable.ProcessHit
+  isSpec: "True"
+  fullName: IHittable.ProcessHit
+  nameWithType: IHittable.ProcessHit
 - uid: Global.IMovementBehaviour
   name: IMovementBehaviour
   href: api/Global.IMovementBehaviour.html
@@ -8404,19 +8462,19 @@ references:
   isSpec: "True"
   fullName: SuperArmorHittableHitbox.Awake
   nameWithType: SuperArmorHittableHitbox.Awake
-- uid: Global.SuperArmorHittableHitbox.Hit(IHitExecutor,Hit)
-  name: Hit(IHitExecutor, Hit)
-  href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_Hit_IHitExecutor_Hit_
-  commentId: M:Global.SuperArmorHittableHitbox.Hit(IHitExecutor,Hit)
-  fullName: SuperArmorHittableHitbox.Hit(IHitExecutor, Hit)
-  nameWithType: SuperArmorHittableHitbox.Hit(IHitExecutor, Hit)
-- uid: Global.SuperArmorHittableHitbox.Hit*
-  name: Hit
-  href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_Hit_
-  commentId: Overload:Global.SuperArmorHittableHitbox.Hit
+- uid: Global.SuperArmorHittableHitbox.ProcessHit(IHitExecutor,Hit)
+  name: ProcessHit(IHitExecutor, Hit)
+  href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_ProcessHit_IHitExecutor_Hit_
+  commentId: M:Global.SuperArmorHittableHitbox.ProcessHit(IHitExecutor,Hit)
+  fullName: SuperArmorHittableHitbox.ProcessHit(IHitExecutor, Hit)
+  nameWithType: SuperArmorHittableHitbox.ProcessHit(IHitExecutor, Hit)
+- uid: Global.SuperArmorHittableHitbox.ProcessHit*
+  name: ProcessHit
+  href: api/Global.SuperArmorHittableHitbox.html#Global_SuperArmorHittableHitbox_ProcessHit_
+  commentId: Overload:Global.SuperArmorHittableHitbox.ProcessHit
   isSpec: "True"
-  fullName: SuperArmorHittableHitbox.Hit
-  nameWithType: SuperArmorHittableHitbox.Hit
+  fullName: SuperArmorHittableHitbox.ProcessHit
+  nameWithType: SuperArmorHittableHitbox.ProcessHit
 - uid: Global.Tag
   name: Tag
   href: api/Global.Tag.html

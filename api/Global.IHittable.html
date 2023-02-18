@@ -141,7 +141,7 @@
     <tbody>
       <tr>
         <td><span class="xref">ExtEvent</span></td>
-        <td><p>Invoked when <span class="xref">IHittable.Hit(IHitExecutor,Hit)</span> is called</p>
+        <td><p>Invoked when <span class="xref">IHittable.ProcessHit(IHitExecutor,Hit)</span> is called</p>
 </td>
       </tr>
     </tbody>
@@ -178,12 +178,44 @@
   
   
   <a id="Global_IHittable_Hit_" data-uid="Global.IHittable.Hit*"></a>
-  <h4 id="Global_IHittable_Hit_IHitExecutor_Hit_" data-uid="Global.IHittable.Hit(IHitExecutor,Hit)">Hit(IHitExecutor, Hit)</h4>
+  <h4 id="Global_IHittable_Hit_ChainHitExecutor_Hit_" data-uid="Global.IHittable.Hit(ChainHitExecutor,Hit)">Hit(ChainHitExecutor, Hit)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool Hit(IHitExecutor executor, Hit hit)</code></pre>
+    <pre><code class="lang-csharp hljs">void Hit(ChainHitExecutor executor, Hit hit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.ChainHitExecutor.html">ChainHitExecutor</a></td>
+        <td><span class="parametername">executor</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Global.Hit.html">Hit</a></td>
+        <td><span class="parametername">hit</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Global_IHittable_ProcessHit_" data-uid="Global.IHittable.ProcessHit*"></a>
+  <h4 id="Global_IHittable_ProcessHit_IHitExecutor_Hit_" data-uid="Global.IHittable.ProcessHit(IHitExecutor,Hit)">ProcessHit(IHitExecutor, Hit)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ProcessHit(IHitExecutor executor, Hit hit)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -203,21 +235,6 @@
       <tr>
         <td><a class="xref" href="Global.Hit.html">Hit</a></td>
         <td><span class="parametername">hit</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td></td>
       </tr>
     </tbody>

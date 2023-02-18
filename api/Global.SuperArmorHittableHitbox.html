@@ -128,6 +128,9 @@
       <a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_CanGetHit">HittableHitbox.CanGetHit()</a>
     </div>
     <div>
+      <a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_Hit_ChainHitExecutor_Hit_">HittableHitbox.Hit(ChainHitExecutor, Hit)</a>
+    </div>
+    <div>
       <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_Enabled">EntityBehaviour.Enabled</a>
     </div>
     <div>
@@ -195,13 +198,13 @@
   <div><a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_Awake">HittableHitbox.Awake()</a></div>
   
   
-  <a id="Global_SuperArmorHittableHitbox_Hit_" data-uid="Global.SuperArmorHittableHitbox.Hit*"></a>
-  <h4 id="Global_SuperArmorHittableHitbox_Hit_IHitExecutor_Hit_" data-uid="Global.SuperArmorHittableHitbox.Hit(IHitExecutor,Hit)">Hit(IHitExecutor, Hit)</h4>
+  <a id="Global_SuperArmorHittableHitbox_ProcessHit_" data-uid="Global.SuperArmorHittableHitbox.ProcessHit*"></a>
+  <h4 id="Global_SuperArmorHittableHitbox_ProcessHit_IHitExecutor_Hit_" data-uid="Global.SuperArmorHittableHitbox.ProcessHit(IHitExecutor,Hit)">ProcessHit(IHitExecutor, Hit)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool Hit(IHitExecutor executor, Hit hit)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void ProcessHit(IHitExecutor executor, Hit hit)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -225,23 +228,8 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_Hit_IHitExecutor_Hit_">HittableHitbox.Hit(IHitExecutor, Hit)</a></div>
+  <div><a class="xref" href="Global.HittableHitbox.html#Global_HittableHitbox_ProcessHit_IHitExecutor_Hit_">HittableHitbox.ProcessHit(IHitExecutor, Hit)</a></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Global.IHittable.html">IHittable</a>
