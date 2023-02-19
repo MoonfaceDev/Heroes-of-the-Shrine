@@ -18,6 +18,7 @@ public enum MotionSettings
 /// </summary>
 public abstract class BaseAttack : PhasedBehaviour<BaseAttack.Command>
 {
+    [Serializable]
     public class Command
     {
     }

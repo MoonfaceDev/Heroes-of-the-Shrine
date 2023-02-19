@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using ExtEvents;
 using UnityEngine;
 
@@ -16,7 +17,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
     private HealthSystem healthSystem;
     private KnockbackBehaviour knockbackBehaviour;
     private ForcedWalkBehaviour forcedWalkBehaviour;
-    private FocusBlock focusBlock;
+    private IEnumerable<IBlockBehaviour> blockBehaviours;
 
     protected override void Awake()
     {
@@ -24,7 +25,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
         healthSystem = GetBehaviour<HealthSystem>();
         knockbackBehaviour = GetBehaviour<KnockbackBehaviour>();
         forcedWalkBehaviour = GetBehaviour<ForcedWalkBehaviour>();
-        focusBlock = GetBehaviour<FocusBlock>();
+        blockBehaviours = GetBehaviours<IBlockBehaviour>();
     }
 
     public bool CanGetHit()
@@ -41,10 +42,13 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
             return;
         }
 
-        if (focusBlock && focusBlock.TryBlock(hit))
+        foreach (var blockBehaviour in blockBehaviours)
         {
-            hit.source.Stop();
-            return;
+            if (blockBehaviour.TryBlock(hit))
+            {
+                hit.source.Stop();
+                return;
+            }
         }
 
         hit.victim.HitEvent.Invoke();

@@ -4,8 +4,9 @@ using System.Linq;
 using ExtEvents;
 using TypeReferences;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class FocusBlock : PhasedBehaviour<FocusBlock.Command>, IBlockBehaviour
+public class WideBlock : PhasedBehaviour<WideBlock.Command>, IBlockBehaviour
 {
     public class Command
     {
@@ -21,15 +22,42 @@ public class FocusBlock : PhasedBehaviour<FocusBlock.Command>, IBlockBehaviour
     public BlockDefinition[] blockableAttacks;
     public float anticipateTime;
     public float activeTime;
+    public float damageMultiplier;
+    public float blockWindowStartTime;
+    public float blockWindowDuration;
     public float recoveryTime;
     [SerializeField] public ExtEvent onBlock;
 
+    private HealthSystem healthSystem;
     private EnergySystem energySystem;
+    private string blockWindowStartTimeout;
+    private string blockWindowStopTimeout;
+    private bool blockWindow;
 
     protected override void Awake()
     {
         base.Awake();
+
+        healthSystem = GetBehaviour<HealthSystem>();
         energySystem = GetBehaviour<EnergySystem>();
+
+        phaseEvents.onStartActive += () =>
+        {
+            healthSystem.damageMultiplier *= damageMultiplier;
+            BlockBehaviours(typeof(IForcedBehaviour));
+        };
+        
+        phaseEvents.onFinishActive += () =>
+        {
+            healthSystem.damageMultiplier /= damageMultiplier;
+            UnblockBehaviours(typeof(KnockbackBehaviour));
+        };
+
+        PlayEvents.onStop += () =>
+        {
+            Cancel(blockWindowStartTimeout);
+            Cancel(blockWindowStopTimeout);
+        };
     }
 
     public override bool CanPlay(Command command)
@@ -57,6 +85,11 @@ public class FocusBlock : PhasedBehaviour<FocusBlock.Command>, IBlockBehaviour
 
     protected override IEnumerator ActivePhase()
     {
+        blockWindowStartTimeout = StartTimeout(() => blockWindow = true, blockWindowStartTime);
+        blockWindowStopTimeout = StartTimeout(
+            () => blockWindow = false,
+            blockWindowStartTime + blockWindowDuration
+        );
         yield return new WaitForSeconds(activeTime);
     }
 
@@ -79,7 +112,7 @@ public class FocusBlock : PhasedBehaviour<FocusBlock.Command>, IBlockBehaviour
     private bool CanBlock(Hit hit)
     {
         var blockDefinition = GetBlockDefinition(hit.source);
-        return Active && blockDefinition != null && Entity.WorldRotation == -hit.direction;
+        return blockWindow && blockDefinition != null;
     }
 
     private void SuccessfulBlock(Hit hit)
