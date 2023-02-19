@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using ExtEvents;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -21,7 +23,7 @@ public class AttackManager : CharacterBehaviour
     /// <summary>
     /// Last attack dealt
     /// </summary>
-    [HideInInspector] public BaseAttack lastAttack;
+    public BaseAttack LastAttack => comboAttacks.LastOrDefault();
 
     /// <value>
     /// Attacks play and stop events. Whenever any attack starts or stops, these events are invoked.
@@ -43,7 +45,24 @@ public class AttackManager : CharacterBehaviour
     /// </value>
     public KnockbackPowerTranspiler knockbackPowerTranspiler;
 
+    /// <value>
+    /// Combo was cut in the middle
+    /// </value>
+    [SerializeField] public ExtEvent onComboCut;
+
+    /// <value>
+    /// Attack was blocked
+    /// </value>
+    [SerializeField] public ExtEvent<Hit> onBlock;
+
+    /// <value>
+    /// Entire combo was blocked
+    /// </value>
+    [SerializeField] public ExtEvent onComboBlock;
+
     private string forgetComboTimeout;
+    private List<BaseAttack> comboAttacks;
+    private List<BaseAttack> comboBlocks;
 
     protected override void Awake()
     {
@@ -54,15 +73,22 @@ public class AttackManager : CharacterBehaviour
 
         knockbackPowerTranspiler = new KnockbackPowerTranspiler();
         knockbackPowerTranspiler.Add((_, _, value) => Character.stats.knockbackPowerMultiplier * value);
+
+        comboAttacks = new List<BaseAttack>();
+        comboBlocks = new List<BaseAttack>();
     }
 
     private void Start()
     {
-        var attackComponents = GetBehaviours<BaseAttack>();
-        foreach (var attack in attackComponents)
-        {
-            // Forward events
+        InitializeEventForwarding();
+        InitializeCombos();
+        InitializeBlocksCombo();
+    }
 
+    private void InitializeEventForwarding()
+    {
+        foreach (var attack in GetBehaviours<BaseAttack>())
+        {
             attack.PlayEvents.onPlay += playEvents.onPlay.Invoke;
             attack.phaseEvents.onStartAnticipating += () => phaseEvents.onStartAnticipating.Invoke();
             attack.phaseEvents.onFinishAnticipating += () => phaseEvents.onFinishAnticipating.Invoke();
@@ -71,21 +97,54 @@ public class AttackManager : CharacterBehaviour
             attack.phaseEvents.onStartRecovery += () => phaseEvents.onStartRecovery.Invoke();
             attack.phaseEvents.onFinishRecovery += () => phaseEvents.onFinishRecovery.Invoke();
             attack.PlayEvents.onStop += playEvents.onStop.Invoke;
+        }
+    }
 
-            // Combo handling
-
+    private void InitializeCombos()
+    {
+        foreach (var attack in GetBehaviours<BaseAttack>())
+        {
             attack.PlayEvents.onPlay += () =>
             {
+                if (!attack.previousAttacks.Contains(comboAttacks.LastOrDefault()))
+                {
+                    comboAttacks.Clear();
+                }
+                
                 Cancel(forgetComboTimeout);
-                lastAttack = attack;
+                comboAttacks.Add(attack);
             };
 
             attack.PlayEvents.onStop += () =>
             {
                 Cancel(forgetComboTimeout);
-                forgetComboTimeout = StartTimeout(() => lastAttack = null, maxComboDelay);
+                forgetComboTimeout = StartTimeout(() =>
+                {
+                    comboAttacks.Clear();
+                    onComboCut.Invoke();
+                }, maxComboDelay);
             };
         }
+    }
+
+    private void InitializeBlocksCombo()
+    {
+        onBlock += hit =>
+        {
+            var attack = hit.source;
+            comboBlocks.Add(attack);
+
+            if (!IsFinalAttack(attack)) return;
+
+            if (comboBlocks.Count == comboAttacks.Count)
+            {
+                onComboBlock.Invoke();
+            }
+
+            comboBlocks.Clear();
+        };
+
+        onComboCut += comboBlocks.Clear;
     }
 
     private bool AnyAttack(Func<BaseAttack, bool> callback)
@@ -102,6 +161,11 @@ public class AttackManager : CharacterBehaviour
     private static bool IsPreventing(BaseAttack attack)
     {
         return attack.Anticipating || attack.Active || (attack.hardRecovery && attack.Recovering);
+    }
+
+    private bool IsFinalAttack(BaseAttack attack)
+    {
+        return !AnyAttack(other => other.previousAttacks.Contains(attack));
     }
 
     /// <summary>

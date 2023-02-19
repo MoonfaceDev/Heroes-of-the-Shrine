@@ -22,7 +22,7 @@ public class WideBlock : PhasedBehaviour<WideBlock.Command>, IBlockBehaviour
     public BlockDefinition[] blockableAttacks;
     public float anticipateTime;
     public float activeTime;
-    public float damageMultiplier;
+    public float damageMultiplier = 1;
     public float blockWindowStartTime;
     public float blockWindowDuration;
     public float recoveryTime;

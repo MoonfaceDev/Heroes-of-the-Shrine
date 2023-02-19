@@ -13144,103 +13144,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: {fileID: 1534430804526489236}
   energyReward: 10
---- !u!1 &7635281017976049422
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2153828905765334605}
-  - component: {fileID: 5986613688613002513}
-  m_Layer: 0
-  m_Name: Alt Counter Attack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2153828905765334605
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7635281017976049422}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 32172274780924393}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5986613688613002513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7635281017976049422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14e6294e9a974b6aaebbbcb81a67a5f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
-  phaseEvents:
-    onStartAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishAnticipating:
-      _persistentListeners: []
-      Expanded: 1
-    onStartActive:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishActive:
-      _persistentListeners: []
-      Expanded: 1
-    onStartRecovery:
-      _persistentListeners: []
-      Expanded: 1
-    onFinishRecovery:
-      _persistentListeners: []
-      Expanded: 1
-  previousAttacks: []
-  instant: 0
-  interruptible: 1
-  hardRecovery: 0
-  attackFlow:
-    anticipationDuration: 0
-    activeDuration: 0
-    recoveryDuration: 0
-  hitDetector:
-    rid: 168482808540430647
-  hitExecutor:
-    executors: []
-  references:
-    version: 2
-    RefIds:
-    - rid: 168482808540430647
-      type: {class: AbsoluteHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        hitbox: {fileID: 0}
-        hitParticles: {fileID: 0}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-        onHit:
-          _persistentListeners: []
-          Expanded: 1
 --- !u!1 &8326420566752417338
 GameObject:
   m_ObjectHideFlags: 0
@@ -13282,7 +13185,6 @@ Transform:
   - {fileID: 3216537126837818626}
   - {fileID: 3937311290927260544}
   - {fileID: 3891540237183761913}
-  - {fileID: 2153828905765334605}
   m_Father: {fileID: 5102893360874897670}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13301,7 +13203,6 @@ MonoBehaviour:
   maxComboDelay: 0.05
   hittableTags:
     tags: 0200000006000000
-  lastAttack: {fileID: 0}
   playEvents:
     onPlay:
       _persistentListeners: []
@@ -13328,6 +13229,80 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onComboCut:
+    _persistentListeners: []
+    Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
+  onComboBlock:
+    _persistentListeners: []
+    Expanded: 1
+--- !u!1 &8569227036497802345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2962741731568598863}
+  - component: {fileID: 4519747569582337368}
+  - component: {fileID: 6910350036342276064}
+  m_Layer: 0
+  m_Name: Hitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2962741731568598863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8569227036497802345}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalScale: {x: 2.14, y: 1.9, z: 1.7}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3891540237183761913}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4519747569582337368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8569227036497802345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bf802ce25740a5bb67001e6fc77540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
+  position: {x: 0.5, y: 1, z: 0}
+  rotation:
+    flipped: 0
+  scale: {x: 2.14, y: 1.9, z: 1.7}
+--- !u!114 &6910350036342276064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8569227036497802345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 0, y: 0, z: 0}
 --- !u!1 &8644654164908221865
 GameObject:
   m_ObjectHideFlags: 0
@@ -13608,7 +13583,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2962741731568598863}
   m_Father: {fileID: 32172274780924393}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13659,16 +13635,17 @@ MonoBehaviour:
     activeDuration: 0
     recoveryDuration: 0
   hitDetector:
-    rid: 168482808540430646
+    rid: 168482808540430691
   hitExecutor:
-    executors: []
+    executors:
+    - rid: 168482808540430692
   references:
     version: 2
     RefIds:
-    - rid: 168482808540430646
-      type: {class: AbsoluteHitDetector, ns: , asm: Assembly-CSharp}
+    - rid: 168482808540430691
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
-        hitbox: {fileID: 0}
+        hitbox: {fileID: 6910350036342276064}
         hitParticles: {fileID: 0}
         includedHittableTags:
           tags: 
@@ -13677,3 +13654,7 @@ MonoBehaviour:
         onHit:
           _persistentListeners: []
           Expanded: 1
+    - rid: 168482808540430692
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 0

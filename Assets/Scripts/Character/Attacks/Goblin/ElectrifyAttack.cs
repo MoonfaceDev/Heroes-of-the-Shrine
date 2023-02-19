@@ -44,14 +44,14 @@ public class ElectrifyAttack : BaseAttack
         float detectCount = 0;
         periodicHitDetector.OnDetect += () => detectCount++;
 
-        StartHitDetector(periodicHitDetector, periodicHitExecutor);
-
         switchDetectorsListener = InvokeWhen(() => detectCount >= periodicHitCount, () =>
         {
             periodicHitDetector.StopDetector();
             StartHitDetector(explosionHitDetector, explosionHitExecutor);
             detectCount = 0;
         });
+        
+        StartHitDetector(periodicHitDetector, periodicHitExecutor);
 
         yield return new WaitForSeconds(attackFlow.activeDuration);
 
