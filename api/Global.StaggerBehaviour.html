@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class AttackManager
+    <title>Class StaggerBehaviour
    | Heroes of the Shrine </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class AttackManager
+    <meta name="title" content="Class StaggerBehaviour
    | Heroes of the Shrine ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,13 +78,12 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Global.AttackManager">
+            <article class="content wrap" id="_content" data-uid="Global.StaggerBehaviour">
   
   
-  <h1 id="Global_AttackManager" data-uid="Global.AttackManager" class="text-break">Class AttackManager
+  <h1 id="Global_StaggerBehaviour" data-uid="Global.StaggerBehaviour" class="text-break">Class StaggerBehaviour
   </h1>
-  <div class="markdown level0 summary"><p>Behaviour that runs operation on all attacks</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -92,10 +91,30 @@
     <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
     <div class="level2"><a class="xref" href="Global.EntityBehaviour.html">EntityBehaviour</a></div>
     <div class="level3"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-    <div class="level4"><span class="xref">AttackManager</span></div>
+    <div class="level4"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.StaggerBehaviour.Command.html">StaggerBehaviour.Command</a>&gt;</div>
+    <div class="level5"><span class="xref">StaggerBehaviour</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Global.IPlayableBehaviour.html">IPlayableBehaviour</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;StaggerBehaviour.Command&gt;.PlayEvents</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Blocked">PlayableBehaviour&lt;StaggerBehaviour.Command&gt;.Blocked</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_CanPlay__0_">PlayableBehaviour&lt;StaggerBehaviour.Command&gt;.CanPlay(StaggerBehaviour.Command)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Play__0_">PlayableBehaviour&lt;StaggerBehaviour.Command&gt;.Play(StaggerBehaviour.Command)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_Stop">PlayableBehaviour&lt;StaggerBehaviour.Command&gt;.Stop()</a>
+    </div>
     <div>
       <a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Character">CharacterBehaviour.Character</a>
     </div>
@@ -168,95 +187,20 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Global_AttackManager_syntax">Syntax</h5>
+  <h5 id="Global_StaggerBehaviour_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AttackManager : CharacterBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class StaggerBehaviour : PlayableBehaviour&lt;StaggerBehaviour.Command&gt;, IPlayableBehaviour</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
   
   
-  <h4 id="Global_AttackManager_damageTranspiler" data-uid="Global.AttackManager.damageTranspiler">damageTranspiler</h4>
+  <h4 id="Global_StaggerBehaviour_staggerDuration" data-uid="Global.StaggerBehaviour.staggerDuration">staggerDuration</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DamageTranspiler damageTranspiler</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.DamageTranspiler.html">DamageTranspiler</a></td>
-        <td><p>Hit damage transpiler</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_AttackManager_hittableTags" data-uid="Global.AttackManager.hittableTags">hittableTags</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Tags hittableTags</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.Tags.html">Tags</a></td>
-        <td><p>Tags of objects that can get hit by character&apos;s attacks</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_AttackManager_knockbackPowerTranspiler" data-uid="Global.AttackManager.knockbackPowerTranspiler">knockbackPowerTranspiler</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KnockbackPowerTranspiler knockbackPowerTranspiler</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.KnockbackPowerTranspiler.html">KnockbackPowerTranspiler</a></td>
-        <td><p>Hit knockback power transpiler</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_AttackManager_maxComboDelay" data-uid="Global.AttackManager.maxComboDelay">maxComboDelay</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float maxComboDelay</code></pre>
+    <pre><code class="lang-csharp hljs">public float staggerDuration</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -269,133 +213,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><p>Time after attack finished, that it is removed from combo history</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_AttackManager_onBlock" data-uid="Global.AttackManager.onBlock">onBlock</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ExtEvent&lt;Hit&gt; onBlock</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">ExtEvent</span>&lt;<a class="xref" href="Global.Hit.html">Hit</a>&gt;</td>
-        <td><p>Attack was blocked</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_AttackManager_onComboBlock" data-uid="Global.AttackManager.onComboBlock">onComboBlock</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ExtEvent onComboBlock</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">ExtEvent</span></td>
-        <td><p>Entire combo was blocked</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_AttackManager_onComboCut" data-uid="Global.AttackManager.onComboCut">onComboCut</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ExtEvent onComboCut</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">ExtEvent</span></td>
-        <td><p>Combo was cut in the middle</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_AttackManager_phaseEvents" data-uid="Global.AttackManager.phaseEvents">phaseEvents</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public PhaseEvents phaseEvents</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.PhaseEvents.html">PhaseEvents</a></td>
-        <td><p>General attack events. These events are invoked whenever a matching event is invoked in any attack.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_AttackManager_playEvents" data-uid="Global.AttackManager.playEvents">playEvents</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public PlayEvents playEvents</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.PlayEvents.html">PlayEvents</a></td>
-        <td><p>Attacks play and stop events. Whenever any attack starts or stops, these events are invoked.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -403,39 +221,13 @@
   </h3>
   
   
-  <a id="Global_AttackManager_LastAttack_" data-uid="Global.AttackManager.LastAttack*"></a>
-  <h4 id="Global_AttackManager_LastAttack" data-uid="Global.AttackManager.LastAttack">LastAttack</h4>
-  <div class="markdown level1 summary"><p>Last attack dealt</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public BaseAttack LastAttack { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.BaseAttack.html">BaseAttack</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_AttackManager_Playing_" data-uid="Global.AttackManager.Playing*"></a>
-  <h4 id="Global_AttackManager_Playing" data-uid="Global.AttackManager.Playing">Playing</h4>
+  <a id="Global_StaggerBehaviour_Playing_" data-uid="Global.StaggerBehaviour.Playing*"></a>
+  <h4 id="Global_StaggerBehaviour_Playing" data-uid="Global.StaggerBehaviour.Playing">Playing</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Playing { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public override bool Playing { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -448,17 +240,18 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p>Any attack is playing</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">PlayableBehaviour&lt;StaggerBehaviour.Command&gt;.Playing</span></div>
   <h3 id="methods">Methods
   </h3>
   
   
-  <a id="Global_AttackManager_Awake_" data-uid="Global.AttackManager.Awake*"></a>
-  <h4 id="Global_AttackManager_Awake" data-uid="Global.AttackManager.Awake">Awake()</h4>
+  <a id="Global_StaggerBehaviour_Awake_" data-uid="Global.StaggerBehaviour.Awake*"></a>
+  <h4 id="Global_StaggerBehaviour_Awake" data-uid="Global.StaggerBehaviour.Awake">Awake()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -469,32 +262,49 @@
   <div><a class="xref" href="Global.CharacterBehaviour.html#Global_CharacterBehaviour_Awake">CharacterBehaviour.Awake()</a></div>
   
   
-  <a id="Global_AttackManager_CanPlayAttack_" data-uid="Global.AttackManager.CanPlayAttack*"></a>
-  <h4 id="Global_AttackManager_CanPlayAttack" data-uid="Global.AttackManager.CanPlayAttack">CanPlayAttack()</h4>
-  <div class="markdown level1 summary"><p>Checks if any attack is playing. If attack is recovering, and it doesn&apos;t have a <code>hardRecovery</code>, it will not
-prevent an attack</p>
-</div>
+  <a id="Global_StaggerBehaviour_DoPlay_" data-uid="Global.StaggerBehaviour.DoPlay*"></a>
+  <h4 id="Global_StaggerBehaviour_DoPlay_StaggerBehaviour_Command_" data-uid="Global.StaggerBehaviour.DoPlay(StaggerBehaviour.Command)">DoPlay(StaggerBehaviour.Command)</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool CanPlayAttack()</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void DoPlay(StaggerBehaviour.Command command)</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
+        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><code>true</code> if attack can be played</p>
-</td>
+        <td><a class="xref" href="Global.StaggerBehaviour.Command.html">StaggerBehaviour.Command</a></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">PlayableBehaviour&lt;StaggerBehaviour.Command&gt;.DoPlay(StaggerBehaviour.Command)</span></div>
+  
+  
+  <a id="Global_StaggerBehaviour_DoStop_" data-uid="Global.StaggerBehaviour.DoStop*"></a>
+  <h4 id="Global_StaggerBehaviour_DoStop" data-uid="Global.StaggerBehaviour.DoStop">DoStop()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void DoStop()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">PlayableBehaviour&lt;StaggerBehaviour.Command&gt;.DoStop()</span></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Global.IPlayableBehaviour.html">IPlayableBehaviour</a>
+  </div>
 </article>
           </div>
           

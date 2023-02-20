@@ -172,7 +172,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.AttackManager.html",
-          "hash": "TNQXrzwObpeTTajXNmxuLCVt6wvkXKQTDzcECuDUKWQ="
+          "hash": "yRCJ4qHCSW6spabpdS6e8cL5DMJsGD4pDbUjoUm9wVo="
         }
       },
       "is_incremental": false,
@@ -1780,7 +1780,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.PlayableBehaviour-1.html",
-          "hash": "fFnU0HN7CP3vxAAP2uRgPuktEPs1MpmvUxeztQ54DAI="
+          "hash": "k9fTb/OzPDM8D/EIznfnUmfYE2QRZD+m+clePwc0GmM="
         }
       },
       "is_incremental": false,
@@ -2316,6 +2316,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.StaggerBehaviour.Command.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.StaggerBehaviour.Command.html",
+          "hash": "L7QPjyDDjnFX6eYkvVAq2gBHtheSZrAbcb0SheiL3H8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.StaggerBehaviour.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.StaggerBehaviour.html",
+          "hash": "kSBBfrmK02ApiPc7iSZhcHSImxS7pwVvGooJk7PsFCU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.StopEncountersAction.yml",
       "output": {
         ".html": {
@@ -2620,7 +2644,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "djYke5EL0YQB2MBvO04jKzt7Qw5sOSnuk/eCVrkSlBQ="
+          "hash": "aSNgOItuqujtbOTIFnXrJJbrSHixu/04SpUE/vHPZC0="
         }
       },
       "is_incremental": false,
@@ -2632,7 +2656,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "26jDYJ8w2Y7A3jusbr/cnV/726tuNDw84cD/fO3H3kk="
+          "hash": "e0boTqoJ3iwnbawqG4EAmCHy+Cw62A5iRKXPTjUmDXY="
         }
       },
       "is_incremental": false,
@@ -2843,7 +2867,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 217,
+          "total_file_count": 219,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

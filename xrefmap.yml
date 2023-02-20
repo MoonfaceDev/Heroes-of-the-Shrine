@@ -359,18 +359,43 @@ references:
   commentId: F:Global.AttackManager.knockbackPowerTranspiler
   fullName: AttackManager.knockbackPowerTranspiler
   nameWithType: AttackManager.knockbackPowerTranspiler
-- uid: Global.AttackManager.lastAttack
-  name: lastAttack
-  href: api/Global.AttackManager.html#Global_AttackManager_lastAttack
-  commentId: F:Global.AttackManager.lastAttack
-  fullName: AttackManager.lastAttack
-  nameWithType: AttackManager.lastAttack
+- uid: Global.AttackManager.LastAttack
+  name: LastAttack
+  href: api/Global.AttackManager.html#Global_AttackManager_LastAttack
+  commentId: P:Global.AttackManager.LastAttack
+  fullName: AttackManager.LastAttack
+  nameWithType: AttackManager.LastAttack
+- uid: Global.AttackManager.LastAttack*
+  name: LastAttack
+  href: api/Global.AttackManager.html#Global_AttackManager_LastAttack_
+  commentId: Overload:Global.AttackManager.LastAttack
+  isSpec: "True"
+  fullName: AttackManager.LastAttack
+  nameWithType: AttackManager.LastAttack
 - uid: Global.AttackManager.maxComboDelay
   name: maxComboDelay
   href: api/Global.AttackManager.html#Global_AttackManager_maxComboDelay
   commentId: F:Global.AttackManager.maxComboDelay
   fullName: AttackManager.maxComboDelay
   nameWithType: AttackManager.maxComboDelay
+- uid: Global.AttackManager.onBlock
+  name: onBlock
+  href: api/Global.AttackManager.html#Global_AttackManager_onBlock
+  commentId: F:Global.AttackManager.onBlock
+  fullName: AttackManager.onBlock
+  nameWithType: AttackManager.onBlock
+- uid: Global.AttackManager.onComboBlock
+  name: onComboBlock
+  href: api/Global.AttackManager.html#Global_AttackManager_onComboBlock
+  commentId: F:Global.AttackManager.onComboBlock
+  fullName: AttackManager.onComboBlock
+  nameWithType: AttackManager.onComboBlock
+- uid: Global.AttackManager.onComboCut
+  name: onComboCut
+  href: api/Global.AttackManager.html#Global_AttackManager_onComboCut
+  commentId: F:Global.AttackManager.onComboCut
+  fullName: AttackManager.onComboCut
+  nameWithType: AttackManager.onComboCut
 - uid: Global.AttackManager.phaseEvents
   name: phaseEvents
   href: api/Global.AttackManager.html#Global_AttackManager_phaseEvents
@@ -8139,6 +8164,76 @@ references:
   commentId: T:Global.StabAttack
   fullName: StabAttack
   nameWithType: StabAttack
+- uid: Global.StaggerBehaviour
+  name: StaggerBehaviour
+  href: api/Global.StaggerBehaviour.html
+  commentId: T:Global.StaggerBehaviour
+  fullName: StaggerBehaviour
+  nameWithType: StaggerBehaviour
+- uid: Global.StaggerBehaviour.Awake
+  name: Awake()
+  href: api/Global.StaggerBehaviour.html#Global_StaggerBehaviour_Awake
+  commentId: M:Global.StaggerBehaviour.Awake
+  fullName: StaggerBehaviour.Awake()
+  nameWithType: StaggerBehaviour.Awake()
+- uid: Global.StaggerBehaviour.Awake*
+  name: Awake
+  href: api/Global.StaggerBehaviour.html#Global_StaggerBehaviour_Awake_
+  commentId: Overload:Global.StaggerBehaviour.Awake
+  isSpec: "True"
+  fullName: StaggerBehaviour.Awake
+  nameWithType: StaggerBehaviour.Awake
+- uid: Global.StaggerBehaviour.Command
+  name: StaggerBehaviour.Command
+  href: api/Global.StaggerBehaviour.Command.html
+  commentId: T:Global.StaggerBehaviour.Command
+  fullName: StaggerBehaviour.Command
+  nameWithType: StaggerBehaviour.Command
+- uid: Global.StaggerBehaviour.DoPlay(StaggerBehaviour.Command)
+  name: DoPlay(StaggerBehaviour.Command)
+  href: api/Global.StaggerBehaviour.html#Global_StaggerBehaviour_DoPlay_StaggerBehaviour_Command_
+  commentId: M:Global.StaggerBehaviour.DoPlay(StaggerBehaviour.Command)
+  fullName: StaggerBehaviour.DoPlay(StaggerBehaviour.Command)
+  nameWithType: StaggerBehaviour.DoPlay(StaggerBehaviour.Command)
+- uid: Global.StaggerBehaviour.DoPlay*
+  name: DoPlay
+  href: api/Global.StaggerBehaviour.html#Global_StaggerBehaviour_DoPlay_
+  commentId: Overload:Global.StaggerBehaviour.DoPlay
+  isSpec: "True"
+  fullName: StaggerBehaviour.DoPlay
+  nameWithType: StaggerBehaviour.DoPlay
+- uid: Global.StaggerBehaviour.DoStop
+  name: DoStop()
+  href: api/Global.StaggerBehaviour.html#Global_StaggerBehaviour_DoStop
+  commentId: M:Global.StaggerBehaviour.DoStop
+  fullName: StaggerBehaviour.DoStop()
+  nameWithType: StaggerBehaviour.DoStop()
+- uid: Global.StaggerBehaviour.DoStop*
+  name: DoStop
+  href: api/Global.StaggerBehaviour.html#Global_StaggerBehaviour_DoStop_
+  commentId: Overload:Global.StaggerBehaviour.DoStop
+  isSpec: "True"
+  fullName: StaggerBehaviour.DoStop
+  nameWithType: StaggerBehaviour.DoStop
+- uid: Global.StaggerBehaviour.Playing
+  name: Playing
+  href: api/Global.StaggerBehaviour.html#Global_StaggerBehaviour_Playing
+  commentId: P:Global.StaggerBehaviour.Playing
+  fullName: StaggerBehaviour.Playing
+  nameWithType: StaggerBehaviour.Playing
+- uid: Global.StaggerBehaviour.Playing*
+  name: Playing
+  href: api/Global.StaggerBehaviour.html#Global_StaggerBehaviour_Playing_
+  commentId: Overload:Global.StaggerBehaviour.Playing
+  isSpec: "True"
+  fullName: StaggerBehaviour.Playing
+  nameWithType: StaggerBehaviour.Playing
+- uid: Global.StaggerBehaviour.staggerDuration
+  name: staggerDuration
+  href: api/Global.StaggerBehaviour.html#Global_StaggerBehaviour_staggerDuration
+  commentId: F:Global.StaggerBehaviour.staggerDuration
+  fullName: StaggerBehaviour.staggerDuration
+  nameWithType: StaggerBehaviour.staggerDuration
 - uid: Global.StopEncountersAction
   name: StopEncountersAction
   href: api/Global.StopEncountersAction.html
