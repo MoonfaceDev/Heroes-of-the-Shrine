@@ -1061,7 +1061,6 @@ MonoBehaviour:
   maxComboDelay: 0.5
   hittableTags:
     tags: 01000000
-  lastAttack: {fileID: 0}
   playEvents:
     onPlay:
       _persistentListeners: []
@@ -1088,6 +1087,15 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onComboCut:
+    _persistentListeners: []
+    Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
+  onComboBlock:
+    _persistentListeners: []
+    Expanded: 1
 --- !u!1 &510981018 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5826350637849315246, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
@@ -2566,9 +2574,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHealth: 700
   damageMultiplier: 1
-  onHitRaw:
-    _persistentListeners: []
-    Expanded: 1
   onHit:
     _persistentListeners: []
     Expanded: 1

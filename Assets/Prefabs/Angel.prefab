@@ -157,9 +157,27 @@ MonoBehaviour:
       _typeNameAndAssembly: ElectrifyAttack, Assembly-CSharp
       _suppressLogs: 0
     energyReward: 200
+  - attackType:
+      GuidAssignmentFailed: 0
+      GUID: 15028a98acbfc2140a1a48233734334d
+      _typeNameAndAssembly: NormalAttack, Assembly-CSharp
+      _suppressLogs: 0
+    energyReward: 200
+  - attackType:
+      GuidAssignmentFailed: 0
+      GUID: 456a183db1e8752488fe8e192957fb8e
+      _typeNameAndAssembly: AltNormalAttack, Assembly-CSharp
+      _suppressLogs: 0
+    energyReward: 200
+  - attackType:
+      GuidAssignmentFailed: 0
+      GUID: 120971cb774917b4593fc4bac3084f1d
+      _typeNameAndAssembly: Uppercut, Assembly-CSharp
+      _suppressLogs: 0
+    energyReward: 200
   anticipateTime: 0.1
-  activeTime: 1
-  recoveryTime: 0.1
+  activeTime: 0.3
+  recoveryTime: 0.4
   onBlock:
     _persistentListeners: []
     Expanded: 1
