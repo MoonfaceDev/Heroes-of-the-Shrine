@@ -194,7 +194,9 @@ public class PlayerController : CharacterController
     private void ExecuteFocusBlock()
     {
         if (!focusBlock) return;
-        if (Input.GetButtonDown(Button.Defense.ToString()))
+        var horizontal = Input.GetAxisRaw("Horizontal");
+        var vertical = Input.GetAxisRaw("Vertical");
+        if (Input.GetButtonDown(Button.Defense.ToString()) && horizontal == 0 && vertical == 0)
         {
             focusBlock.Play(new FocusBlock.Command());
         }
@@ -203,7 +205,9 @@ public class PlayerController : CharacterController
     private void ExecuteWideBlock()
     {
         if (!wideBlock) return;
-        if (Input.GetButtonDown(Button.Escape.ToString()))
+        var horizontal = Input.GetAxisRaw("Horizontal");
+        var vertical = Input.GetAxisRaw("Vertical");
+        if (Input.GetButtonDown(Button.Escape.ToString()) && horizontal == 0 && vertical == 0)
         {
             wideBlock.Play(new WideBlock.Command());
         }
