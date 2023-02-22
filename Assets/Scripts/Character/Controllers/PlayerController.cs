@@ -194,9 +194,7 @@ public class PlayerController : CharacterController
     private void ExecuteFocusBlock()
     {
         if (!focusBlock) return;
-        var horizontal = Input.GetAxisRaw("Horizontal");
-        var vertical = Input.GetAxisRaw("Vertical");
-        if (Input.GetButtonDown(Button.Defense.ToString()) && horizontal == 0 && vertical == 0)
+        if (Input.GetButtonDown(Button.Defense.ToString()))
         {
             focusBlock.Play(new FocusBlock.Command());
         }
