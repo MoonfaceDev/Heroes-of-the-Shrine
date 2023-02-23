@@ -287,7 +287,7 @@ MonoBehaviour:
       GUID: 456a183db1e8752488fe8e192957fb8e
       _typeNameAndAssembly: AltNormalAttack, Assembly-CSharp
       _suppressLogs: 0
-    startTime: 0.5
+    startTime: 0.6
 --- !u!1101 &-4269124237621420016
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasRandomExitTime: 1
   minTime: 0
-  maxTime: 1.5
+  maxTime: 0.5
 --- !u!1101 &-2318549659064055407
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -979,9 +979,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: enemiesAttacking
-    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: playerRecoveringFromKnockback
     m_EventTreshold: 0

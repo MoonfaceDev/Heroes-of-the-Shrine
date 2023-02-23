@@ -49,7 +49,6 @@ MonoBehaviour:
   maxComboDelay: 0.5
   hittableTags:
     tags: 01000000
-  lastAttack: {fileID: 0}
   playEvents:
     onPlay:
       _persistentListeners: []
@@ -76,6 +75,15 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onComboCut:
+    _persistentListeners: []
+    Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
+  onComboBlock:
+    _persistentListeners: []
+    Expanded: 1
 --- !u!1 &1746454353308981404
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,6 +134,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 25
+  damageMultiplier: 1
+  onHit:
+    _persistentListeners: []
+    Expanded: 1
 --- !u!114 &1337210996092918673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03767b56dc6ba3740842c0db368e9321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageMultiplier: 0
+  onHit:
+    _persistentListeners: []
+    Expanded: 1
 --- !u!114 &385062023555424097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,7 +277,6 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  cooldown: 0
   defaultSpeed: 2
   speed: 0
 --- !u!114 &5047121793800780340
@@ -285,7 +298,6 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  cooldown: 0
 --- !u!114 &8391976150254434838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,7 +317,6 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  cooldown: 0
 --- !u!114 &6801913379350562456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,7 +336,6 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  cooldown: 0
 --- !u!1 &3354150097388216845
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,7 +563,7 @@ Transform:
   - {fileID: 2892770573818050589}
   - {fileID: 1450406953775042156}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3354150098320785788
 MonoBehaviour:
@@ -879,8 +889,8 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.2
-    activeDuration: 0.2
+    anticipationDuration: 0.4
+    activeDuration: 0.1
     recoveryDuration: 0.1
   hitDetector:
     rid: 3181427246007058601
@@ -1044,8 +1054,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a7f25812f0460eb2dbe11f6e930feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rageHealthThreshold: 30
-  rageDamageMultiplier: 0.5
+  rageHealthThreshold: 15
+  rageDamageMultiplier: 1.5
 --- !u!114 &8979152175872769787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1158,8 +1168,8 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.2
-    activeDuration: 0.2
+    anticipationDuration: 0.4
+    activeDuration: 0.1
     recoveryDuration: 0.1
   hitDetector:
     rid: 3181427246007058599

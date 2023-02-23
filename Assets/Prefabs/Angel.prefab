@@ -153,31 +153,25 @@ MonoBehaviour:
   blockableAttacks:
   - attackType:
       GuidAssignmentFailed: 0
-      GUID: 81e86d033fb4f164abb77561de174642
-      _typeNameAndAssembly: ElectrifyAttack, Assembly-CSharp
-      _suppressLogs: 0
-    energyReward: 200
-  - attackType:
-      GuidAssignmentFailed: 0
       GUID: 15028a98acbfc2140a1a48233734334d
       _typeNameAndAssembly: NormalAttack, Assembly-CSharp
       _suppressLogs: 0
-    energyReward: 200
+    energyReward: 20
   - attackType:
       GuidAssignmentFailed: 0
       GUID: 456a183db1e8752488fe8e192957fb8e
       _typeNameAndAssembly: AltNormalAttack, Assembly-CSharp
       _suppressLogs: 0
-    energyReward: 200
+    energyReward: 30
   - attackType:
       GuidAssignmentFailed: 0
       GUID: 120971cb774917b4593fc4bac3084f1d
       _typeNameAndAssembly: Uppercut, Assembly-CSharp
       _suppressLogs: 0
-    energyReward: 200
-  anticipateTime: 0.1
-  activeTime: 0.3
-  recoveryTime: 0.2
+    energyReward: 40
+  anticipateTime: 0.05
+  activeTime: 0.4
+  recoveryTime: 0.15
   onBlock:
     _persistentListeners: []
     Expanded: 1
@@ -1755,7 +1749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 4191199336927616018, guid: 1046bd7495ccd5f479215914443f1003, type: 3}
-  particlePosition: {x: 0, y: 1.2, z: 0}
+  particlePosition: {x: 0, y: 1.4, z: 0}
   attachToCharacter: 0
 --- !u!114 &7186248231885458681
 MonoBehaviour:

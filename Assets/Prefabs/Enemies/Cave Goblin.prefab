@@ -274,7 +274,6 @@ MonoBehaviour:
   maxComboDelay: 0.5
   hittableTags:
     tags: 01000000
-  lastAttack: {fileID: 0}
   playEvents:
     onPlay:
       _persistentListeners: []
@@ -301,6 +300,15 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onComboCut:
+    _persistentListeners: []
+    Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
+  onComboBlock:
+    _persistentListeners: []
+    Expanded: 1
 --- !u!1 &1511944698011505188
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,6 +359,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 70
+  damageMultiplier: 1
+  onHit:
+    _persistentListeners: []
+    Expanded: 1
 --- !u!114 &2538186117219505477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,7 +392,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03767b56dc6ba3740842c0db368e9321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageMultiplier: 0
+  onHit:
+    _persistentListeners: []
+    Expanded: 1
 --- !u!114 &2666749982078604135
 MonoBehaviour:
   m_ObjectHideFlags: 0
