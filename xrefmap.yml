@@ -3457,12 +3457,50 @@ references:
   isSpec: "True"
   fullName: FocusBlock.DoStop
   nameWithType: FocusBlock.DoStop
-- uid: Global.FocusBlock.onBlock
-  name: onBlock
-  href: api/Global.FocusBlock.html#Global_FocusBlock_onBlock
-  commentId: F:Global.FocusBlock.onBlock
-  fullName: FocusBlock.onBlock
-  nameWithType: FocusBlock.onBlock
+- uid: Global.FocusBlock.Invincible
+  name: Invincible
+  href: api/Global.FocusBlock.html#Global_FocusBlock_Invincible
+  commentId: P:Global.FocusBlock.Invincible
+  fullName: FocusBlock.Invincible
+  nameWithType: FocusBlock.Invincible
+- uid: Global.FocusBlock.Invincible*
+  name: Invincible
+  href: api/Global.FocusBlock.html#Global_FocusBlock_Invincible_
+  commentId: Overload:Global.FocusBlock.Invincible
+  isSpec: "True"
+  fullName: FocusBlock.Invincible
+  nameWithType: FocusBlock.Invincible
+- uid: Global.FocusBlock.invincibleTime
+  name: invincibleTime
+  href: api/Global.FocusBlock.html#Global_FocusBlock_invincibleTime
+  commentId: F:Global.FocusBlock.invincibleTime
+  fullName: FocusBlock.invincibleTime
+  nameWithType: FocusBlock.invincibleTime
+- uid: Global.FocusBlock.onFinishInvincible
+  name: onFinishInvincible
+  href: api/Global.FocusBlock.html#Global_FocusBlock_onFinishInvincible
+  commentId: F:Global.FocusBlock.onFinishInvincible
+  fullName: FocusBlock.onFinishInvincible
+  nameWithType: FocusBlock.onFinishInvincible
+- uid: Global.FocusBlock.onStartInvincible
+  name: onStartInvincible
+  href: api/Global.FocusBlock.html#Global_FocusBlock_onStartInvincible
+  commentId: F:Global.FocusBlock.onStartInvincible
+  fullName: FocusBlock.onStartInvincible
+  nameWithType: FocusBlock.onStartInvincible
+- uid: Global.FocusBlock.Playing
+  name: Playing
+  href: api/Global.FocusBlock.html#Global_FocusBlock_Playing
+  commentId: P:Global.FocusBlock.Playing
+  fullName: FocusBlock.Playing
+  nameWithType: FocusBlock.Playing
+- uid: Global.FocusBlock.Playing*
+  name: Playing
+  href: api/Global.FocusBlock.html#Global_FocusBlock_Playing_
+  commentId: Overload:Global.FocusBlock.Playing
+  isSpec: "True"
+  fullName: FocusBlock.Playing
+  nameWithType: FocusBlock.Playing
 - uid: Global.FocusBlock.RecoveryPhase
   name: RecoveryPhase()
   href: api/Global.FocusBlock.html#Global_FocusBlock_RecoveryPhase
