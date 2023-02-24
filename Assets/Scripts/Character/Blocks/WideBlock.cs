@@ -119,7 +119,6 @@ public class WideBlock : PhasedBehaviour<WideBlock.Command>, IBlockBehaviour
     {
         var blockDefinition = GetBlockDefinition(hit.source);
         energySystem.Energy += blockDefinition.energyReward;
-        Animator.SetTrigger($"{GetType().Name}-block");
         onBlock.Invoke();
         Stop();
     }
