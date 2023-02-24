@@ -563,7 +563,7 @@ Transform:
   - {fileID: 2892770573818050589}
   - {fileID: 1450406953775042156}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3354150098320785788
 MonoBehaviour:
@@ -940,6 +940,7 @@ GameObject:
   - component: {fileID: 8979152175872769787}
   - component: {fileID: 6305227799502464920}
   - component: {fileID: 7824171717021101398}
+  - component: {fileID: 4459569232530700525}
   m_Layer: 0
   m_Name: Brain
   m_TagString: Untagged
@@ -1090,6 +1091,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f3f931a600a447daabc789112e40fbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4459569232530700525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4514881586986215127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7bf246e8da44fda0cedfdf09060d83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8944572015312568708
