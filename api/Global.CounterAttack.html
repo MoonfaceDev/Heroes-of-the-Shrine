@@ -94,9 +94,8 @@
     <div class="level4"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.BaseAttack.Command.html">BaseAttack.Command</a>&gt;</div>
     <div class="level5"><a class="xref" href="Global.PhasedBehaviour-1.html">PhasedBehaviour</a>&lt;<a class="xref" href="Global.BaseAttack.Command.html">BaseAttack.Command</a>&gt;</div>
     <div class="level6"><a class="xref" href="Global.BaseAttack.html">BaseAttack</a></div>
-    <div class="level7"><a class="xref" href="Global.SimpleAttack.html">SimpleAttack</a></div>
-    <div class="level8"><a class="xref" href="Global.NormalAttack.html">NormalAttack</a></div>
-    <div class="level9"><span class="xref">CounterAttack</span></div>
+    <div class="level7"><a class="xref" href="Global.MotionAttack.html">MotionAttack</a></div>
+    <div class="level8"><span class="xref">CounterAttack</span></div>
   </div>
   <div class="implements">
     <h5>Implements</h5>
@@ -106,22 +105,25 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_attackFlow">SimpleAttack.attackFlow</a>
+      <a class="xref" href="Global.MotionAttack.html#Global_MotionAttack_attackFlow">MotionAttack.attackFlow</a>
     </div>
     <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_hitDetector">SimpleAttack.hitDetector</a>
+      <a class="xref" href="Global.MotionAttack.html#Global_MotionAttack_hitDetector">MotionAttack.hitDetector</a>
     </div>
     <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_hitExecutor">SimpleAttack.hitExecutor</a>
+      <a class="xref" href="Global.MotionAttack.html#Global_MotionAttack_hitExecutor">MotionAttack.hitExecutor</a>
     </div>
     <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_AnticipationPhase">SimpleAttack.AnticipationPhase()</a>
+      <a class="xref" href="Global.MotionAttack.html#Global_MotionAttack_Motion">MotionAttack.Motion</a>
     </div>
     <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_ActivePhase">SimpleAttack.ActivePhase()</a>
+      <a class="xref" href="Global.MotionAttack.html#Global_MotionAttack_AnticipationPhase">MotionAttack.AnticipationPhase()</a>
     </div>
     <div>
-      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_RecoveryPhase">SimpleAttack.RecoveryPhase()</a>
+      <a class="xref" href="Global.MotionAttack.html#Global_MotionAttack_ActivePhase">MotionAttack.ActivePhase()</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.MotionAttack.html#Global_MotionAttack_RecoveryPhase">MotionAttack.RecoveryPhase()</a>
     </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_previousAttacks">BaseAttack.previousAttacks</a>
@@ -134,9 +136,6 @@
     </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_hardRecovery">BaseAttack.hardRecovery</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Motion">BaseAttack.Motion</a>
     </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_IsMidair">BaseAttack.IsMidair</a>
@@ -257,7 +256,7 @@
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_CounterAttack_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CounterAttack : NormalAttack, IControlledBehaviour, IPlayableBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class CounterAttack : MotionAttack, IControlledBehaviour, IPlayableBehaviour</code></pre>
   </div>
   <h3 id="implements">Implements</h3>
   <div>
