@@ -171,8 +171,12 @@ MonoBehaviour:
     energyReward: 40
   anticipateTime: 0.05
   activeTime: 0.4
+  invincibleTime: 2
   recoveryTime: 0.15
-  onBlock:
+  onStartInvincible:
+    _persistentListeners: []
+    Expanded: 1
+  onFinishInvincible:
     _persistentListeners: []
     Expanded: 1
 --- !u!114 &3772543975932882218

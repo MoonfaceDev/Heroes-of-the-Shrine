@@ -4,6 +4,7 @@ using System.Linq;
 using ExtEvents;
 using TypeReferences;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class FocusBlock : PhasedBehaviour<FocusBlock.Command>, IBlockBehaviour
 {
@@ -18,19 +19,39 @@ public class FocusBlock : PhasedBehaviour<FocusBlock.Command>, IBlockBehaviour
         public float energyReward;
     }
 
+    /// <value>
+    /// Invincible to hits.
+    /// It also sets the animator parameter: <c>FocusBlock-invincible</c>.
+    /// </value>
+    public bool Invincible
+    {
+        get => invincible;
+        private set
+        {
+            invincible = value;
+            Animator.SetBool($"{typeof(FocusBlock)}-invincible", value);
+            (value ? onStartInvincible : onFinishInvincible).Invoke();
+        }
+    }
+
     public BlockDefinition[] blockableAttacks;
     public float anticipateTime;
     public float activeTime;
+    public float invincibleTime;
     public float recoveryTime;
-    [SerializeField] public ExtEvent onBlock;
+    [SerializeField] public ExtEvent onStartInvincible;
+    [SerializeField] public ExtEvent onFinishInvincible;
 
     private EnergySystem energySystem;
+    private bool invincible;
 
     protected override void Awake()
     {
         base.Awake();
         energySystem = GetBehaviour<EnergySystem>();
     }
+
+    public override bool Playing => base.Playing || Invincible;
 
     public override bool CanPlay(Command command)
     {
@@ -79,16 +100,30 @@ public class FocusBlock : PhasedBehaviour<FocusBlock.Command>, IBlockBehaviour
     private bool CanBlock(Hit hit)
     {
         var blockDefinition = GetBlockDefinition(hit.source);
-        return Active && blockDefinition != null && Entity.WorldRotation == -hit.direction;
+        return (Active || Invincible) && blockDefinition != null && Entity.WorldRotation == -hit.direction;
     }
 
     private void SuccessfulBlock(Hit hit)
     {
+        Stop();
         var blockDefinition = GetBlockDefinition(hit.source);
         energySystem.Energy += blockDefinition.energyReward;
-        Animator.SetTrigger($"{GetType().Name}-block");
-        onBlock.Invoke();
-        Stop();
+        if (!Invincible)
+        {
+            TurnInvincible();
+        }
+    }
+
+    private void TurnInvincible()
+    {
+        Invincible = true;
+        BlockBehaviours(typeof(IMovementBehaviour), typeof(HealBehaviour));
+
+        StartTimeout(() =>
+        {
+            Invincible = false;
+            UnblockBehaviours(typeof(IMovementBehaviour), typeof(HealBehaviour));
+        }, invincibleTime);
     }
 
     private BlockDefinition GetBlockDefinition(BaseAttack attack)
