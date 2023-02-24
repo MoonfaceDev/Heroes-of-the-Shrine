@@ -4,7 +4,6 @@ using System.Linq;
 using ExtEvents;
 using TypeReferences;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class FocusBlock : PhasedBehaviour<FocusBlock.Command>, IBlockBehaviour
 {
@@ -55,7 +54,7 @@ public class FocusBlock : PhasedBehaviour<FocusBlock.Command>, IBlockBehaviour
 
     public override bool CanPlay(Command command)
     {
-        return base.CanPlay(command) && !IsPlaying<JumpBehaviour>();
+        return base.CanPlay(command) && !IsPlaying<JumpBehaviour>() && AttackManager.CanPlayAttack();
     }
 
     protected override void DoPlay(Command command)
