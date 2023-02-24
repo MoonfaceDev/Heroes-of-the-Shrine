@@ -225,10 +225,10 @@ MonoBehaviour:
       _suppressLogs: 0
     energyReward: 200
   anticipateTime: 0.1
-  activeTime: 1
-  damageMultiplier: 0.5
-  blockWindowStartTime: 0.4
-  blockWindowDuration: 0.2
+  activeTime: 0.4
+  damageMultiplier: 0.15
+  blockWindowStartTime: 0.15
+  blockWindowDuration: 0.1
   recoveryTime: 0.1
   onBlock:
     _persistentListeners:
