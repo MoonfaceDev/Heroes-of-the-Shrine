@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 9193565440509866178}
   - component: {fileID: 385062023555424097}
   - component: {fileID: 4181551778279057814}
+  - component: {fileID: 1073487866432463722}
   m_Layer: 0
   m_Name: Hittable
   m_TagString: Untagged
@@ -151,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyOnDeath: 1
-  deathAnimationDuration: 3
+  deathAnimationDuration: 2
   onDie:
     _persistentListeners: []
     Expanded: 1
@@ -210,6 +211,26 @@ MonoBehaviour:
       _persistentListeners: []
       Expanded: 1
   stunFrames: 2
+--- !u!114 &1073487866432463722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746454353308981404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb23784c4c94ab4af62e7a69f557190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  staggerDuration: 2
 --- !u!1 &2324436577124362316
 GameObject:
   m_ObjectHideFlags: 0

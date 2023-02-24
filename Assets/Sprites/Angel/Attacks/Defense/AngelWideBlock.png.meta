@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6c59a358421d3e44faabcebc873bcab6
+guid: 99352d934dc04dc42bb42d04c1104974
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,180 +106,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CaveGoblinZombiePossesedAll_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 64
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f3e73d9e7680b23459d197dd0f573e28
-      internalID: 1049669229
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CaveGoblinZombiePossesedAll_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 128
-        width: 64
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a0a592b7773327b47877785fe8eaefbe
-      internalID: -1743024528
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CaveGoblinZombiePossesedAll_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 128
-        width: 64
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 23f78f5bcdc809147a88fee6c7958266
-      internalID: -1211232679
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CaveGoblinZombiePossesedAll_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 128
-        width: 64
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2868a73ff89ad4343bb2a15ade52036e
-      internalID: 1040062551
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CaveGoblinZombiePossesedAll_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 64
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4dd67c6ab956d7f4e8edabee7c4154f4
-      internalID: -1322991746
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CaveGoblinZombiePossesedAll_5
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 96
-        width: 64
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 493eba7ecb8b7bc4f94b88ce5add2218
-      internalID: -455927362
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CaveGoblinZombiePossesedAll_6
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 96
-        width: 64
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4e3d9d370a11468409cf4928b355a3b1
-      internalID: 1292624031
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CaveGoblinZombiePossesedAll_7
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 96
-        width: 64
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a0158c0263d83f9409e4ebafab85a905
-      internalID: -287915618
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CaveGoblinZombiePossesedAll_8
+      name: AngelWideBlock_0
       rect:
         serializedVersion: 2
         x: 0
         y: 64
-        width: 64
+        width: 32
         height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -288,19 +120,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78ddf064bff831241865abadf841a929
-      internalID: -762017758
+      spriteID: b76e2d64b321c374b85193036a70100d
+      internalID: 62380821
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaveGoblinZombiePossesedAll_9
+      name: AngelWideBlock_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22f1ef6006c80eb4fa3adc4305ab970b
+      internalID: 908854601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngelWideBlock_2
       rect:
         serializedVersion: 2
         x: 64
         y: 64
-        width: 64
+        width: 32
         height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -309,19 +162,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8867e3615b22e364d90df884d461f15b
-      internalID: 131241497
+      spriteID: 4b8c9827f5fa1024ea8f6737bb213cab
+      internalID: -15496474
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaveGoblinZombiePossesedAll_10
+      name: AngelWideBlock_3
       rect:
         serializedVersion: 2
-        x: 128
+        x: 96
         y: 64
-        width: 64
+        width: 32
         height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -330,40 +183,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ae512a7ced8adb439746d0ee703377d
-      internalID: 1817817664
+      spriteID: 3845d2106c9426445918cf31fbd65eca
+      internalID: 1673315495
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaveGoblinZombiePossesedAll_11
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 64
-        width: 64
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5fc07e25a7633234d912931774c1d2d6
-      internalID: 1518559405
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CaveGoblinZombiePossesedAll_12
+      name: AngelWideBlock_4
       rect:
         serializedVersion: 2
         x: 0
         y: 32
-        width: 64
+        width: 32
         height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -372,19 +204,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b742f50defbad774089fac2d48d96433
-      internalID: 569408237
+      spriteID: c6aaf32674cf5fe41b1bc4ec508d0b3b
+      internalID: -1195540365
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaveGoblinZombiePossesedAll_13
+      name: AngelWideBlock_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dda1508bbffca924e9a420bc6d4ad14b
+      internalID: 1338817058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngelWideBlock_6
       rect:
         serializedVersion: 2
         x: 64
         y: 32
-        width: 64
+        width: 32
         height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -393,19 +246,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05b93859003cf784aaa812690c1f33a1
-      internalID: 1360871154
+      spriteID: e85b7da4be6165f4d8627137ed70786c
+      internalID: 2055684218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaveGoblinZombiePossesedAll_14
+      name: AngelWideBlock_7
       rect:
         serializedVersion: 2
-        x: 128
+        x: 96
         y: 32
-        width: 64
+        width: 32
         height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -414,40 +267,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c968a27fcc882ec4e8d3400d244c921e
-      internalID: 163303444
+      spriteID: eac76bb7950c00b44a6777461581b6b7
+      internalID: -137626646
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaveGoblinZombiePossesedAll_15
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 32
-        width: 64
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d7ae73e8e3b930479344246c29a5250
-      internalID: -119551230
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CaveGoblinZombiePossesedAll_16
+      name: AngelWideBlock_8
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
+        width: 32
         height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -456,19 +288,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa70dafe5ac514240b374c1fab350ee7
-      internalID: -1096019172
+      spriteID: 956c6bfcc460d7649b4c56c68c5e3f28
+      internalID: 881432020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaveGoblinZombiePossesedAll_17
+      name: AngelWideBlock_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11ecb6bb31209df4cb1504e2c1c4fd3a
+      internalID: 478168542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngelWideBlock_10
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 64
+        width: 32
         height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -477,40 +330,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 722a235988f36be489879604a58cb3b6
-      internalID: 865141721
+      spriteID: 83b2c72285a74cf4eaf74e8caba01dcd
+      internalID: -676175892
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CaveGoblinZombiePossesedAll_18
+      name: AngelWideBlock_11
       rect:
         serializedVersion: 2
-        x: 128
+        x: 96
         y: 0
-        width: 64
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 82d69bbdd0b3f1f4381763c7f0e9fd3c
-      internalID: 1086045781
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CaveGoblinZombiePossesedAll_19
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
+        width: 32
         height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -519,8 +351,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b9936ff7e2c0d4459b7a569a87a8b7f
-      internalID: 1603745452
+      spriteID: 39abed8884114f34c91a4fafefa4e1ce
+      internalID: -143727971
       vertices: []
       indices: 
       edges: []
@@ -536,26 +368,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CaveGoblinZombiePossesedAll_2: -1211232679
-      CaveGoblinZombiePossesedAll_13: 1360871154
-      CaveGoblinZombiePossesedAll_12: 569408237
-      CaveGoblinZombiePossesedAll_3: 1040062551
-      CaveGoblinZombiePossesedAll_16: -1096019172
-      CaveGoblinZombiePossesedAll_14: 163303444
-      CaveGoblinZombiePossesedAll_8: -762017758
-      CaveGoblinZombiePossesedAll_9: 131241497
-      CaveGoblinZombiePossesedAll_1: -1743024528
-      CaveGoblinZombiePossesedAll_17: 865141721
-      CaveGoblinZombiePossesedAll_7: -287915618
-      CaveGoblinZombiePossesedAll_0: 1049669229
-      CaveGoblinZombiePossesedAll_10: 1817817664
-      CaveGoblinZombiePossesedAll_4: -1322991746
-      CaveGoblinZombiePossesedAll_15: -119551230
-      CaveGoblinZombiePossesedAll_19: 1603745452
-      CaveGoblinZombiePossesedAll_5: -455927362
-      CaveGoblinZombiePossesedAll_6: 1292624031
-      CaveGoblinZombiePossesedAll_18: 1086045781
-      CaveGoblinZombiePossesedAll_11: 1518559405
+      AngelWideBlock_3: 1673315495
+      AngelWideBlock_9: 478168542
+      AngelWideBlock_10: -676175892
+      AngelWideBlock_4: -1195540365
+      AngelWideBlock_5: 1338817058
+      AngelWideBlock_8: 881432020
+      AngelWideBlock_11: -143727971
+      AngelWideBlock_1: 908854601
+      AngelWideBlock_6: 2055684218
+      AngelWideBlock_2: -15496474
+      AngelWideBlock_0: 62380821
+      AngelWideBlock_7: -137626646
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
