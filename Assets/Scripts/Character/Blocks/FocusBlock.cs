@@ -34,7 +34,7 @@ public class FocusBlock : PhasedBehaviour<FocusBlock.Command>, IBlockBehaviour
 
     public override bool CanPlay(Command command)
     {
-        return base.CanPlay(command) && !IsPlaying<JumpBehaviour>() && AttackManager.CanPlayAttack();
+        return base.CanPlay(command) && !IsPlaying<JumpBehaviour>();
     }
 
     protected override void DoPlay(Command command)
