@@ -96,6 +96,11 @@ public class FocusBlock : PhasedBehaviour<FocusBlock.Command>, IBlockBehaviour
         return true;
     }
 
+    private BlockDefinition GetBlockDefinition(BaseAttack attack)
+    {
+        return blockableAttacks.SingleOrDefault(blockableAttack => attack.GetType() == blockableAttack.attackType.Type);
+    }
+
     private bool CanBlock(Hit hit)
     {
         var blockDefinition = GetBlockDefinition(hit.source);
@@ -123,10 +128,5 @@ public class FocusBlock : PhasedBehaviour<FocusBlock.Command>, IBlockBehaviour
             Invincible = false;
             UnblockBehaviours(typeof(IMovementBehaviour), typeof(HealBehaviour));
         }, invincibleTime);
-    }
-
-    private BlockDefinition GetBlockDefinition(BaseAttack attack)
-    {
-        return blockableAttacks.SingleOrDefault(blockableAttack => attack.GetType() == blockableAttack.attackType.Type);
     }
 }

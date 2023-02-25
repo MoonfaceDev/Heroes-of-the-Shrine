@@ -17,6 +17,21 @@ public class WideBlock : PhasedBehaviour<WideBlock.Command>, IBlockBehaviour
         [Inherits(typeof(BaseAttack))] public TypeReference attackType;
         public float energyReward;
     }
+    
+    /// <value>
+    /// Invincible to hits.
+    /// It also sets the animator parameter: <c>WideBlock-invincible</c>.
+    /// </value>
+    public bool Invincible
+    {
+        get => invincible;
+        private set
+        {
+            invincible = value;
+            Animator.SetBool($"{typeof(WideBlock)}-invincible", value);
+            (value ? onStartInvincible : onFinishInvincible).Invoke();
+        }
+    }
 
     public BlockDefinition[] blockableAttacks;
     public float anticipateTime;
@@ -24,14 +39,17 @@ public class WideBlock : PhasedBehaviour<WideBlock.Command>, IBlockBehaviour
     public float damageMultiplier = 1;
     public float blockWindowStartTime;
     public float blockWindowDuration;
+    public float invincibleTime;
     public float recoveryTime;
-    [SerializeField] public ExtEvent onBlock;
+    [SerializeField] public ExtEvent onStartInvincible;
+    [SerializeField] public ExtEvent onFinishInvincible;
 
     private HealthSystem healthSystem;
     private EnergySystem energySystem;
     private string blockWindowStartTimeout;
     private string blockWindowStopTimeout;
     private bool blockWindow;
+    private bool invincible;
 
     protected override void Awake()
     {
@@ -58,6 +76,7 @@ public class WideBlock : PhasedBehaviour<WideBlock.Command>, IBlockBehaviour
             Cancel(blockWindowStopTimeout);
         };
     }
+    public override bool Playing => base.Playing || Invincible;
 
     public override bool CanPlay(Command command)
     {
@@ -109,22 +128,37 @@ public class WideBlock : PhasedBehaviour<WideBlock.Command>, IBlockBehaviour
         return true;
     }
 
+    private BlockDefinition GetBlockDefinition(BaseAttack attack)
+    {
+        return blockableAttacks.SingleOrDefault(blockableAttack => attack.GetType() == blockableAttack.attackType.Type);
+    }
+
     private bool CanBlock(Hit hit)
     {
         var blockDefinition = GetBlockDefinition(hit.source);
-        return blockWindow && blockDefinition != null;
+        return (blockWindow || Invincible) && blockDefinition != null;
     }
 
     private void SuccessfulBlock(Hit hit)
     {
+        Stop();
         var blockDefinition = GetBlockDefinition(hit.source);
         energySystem.Energy += blockDefinition.energyReward;
-        Stop();
-        onBlock.Invoke();
+        if (!Invincible)
+        {
+            TurnInvincible();
+        }
     }
 
-    private BlockDefinition GetBlockDefinition(BaseAttack attack)
+    private void TurnInvincible()
     {
-        return blockableAttacks.SingleOrDefault(blockableAttack => attack.GetType() == blockableAttack.attackType.Type);
+        Invincible = true;
+        BlockBehaviours(typeof(IMovementBehaviour), typeof(HealBehaviour));
+
+        StartTimeout(() =>
+        {
+            Invincible = false;
+            UnblockBehaviours(typeof(IMovementBehaviour), typeof(HealBehaviour));
+        }, invincibleTime);
     }
 }
