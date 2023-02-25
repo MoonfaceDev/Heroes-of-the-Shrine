@@ -43,7 +43,7 @@ public class StunBehaviour : PlayableBehaviour<StunBehaviour.Command>, IForcedBe
 
     protected override void DoPlay(Command command)
     {
-        StopBehaviours(BlockedBehaviours.Append(typeof(IForcedBehaviour)).ToArray());
+        StopBehaviours(typeof(IControlledBehaviour), typeof(IForcedBehaviour));
         BlockBehaviours(BlockedBehaviours);
         
         MovableEntity.velocity = Vector3.zero;

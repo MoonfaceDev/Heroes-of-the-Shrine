@@ -33,8 +33,8 @@ public class PossessedEffect : BaseEffect<PossessedEffect.Command>
             hittableBehaviour.onHit += OnHit;
         }
 
-        BlockBehaviours(BehavioursToBlock);
         StopBehaviours(BehavioursToBlock);
+        BlockBehaviours(BehavioursToBlock);
         MovableEntity.velocity = Vector3.zero;
     }
 
