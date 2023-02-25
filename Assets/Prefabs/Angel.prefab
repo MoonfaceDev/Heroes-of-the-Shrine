@@ -13643,6 +13643,7 @@ MonoBehaviour:
   hitExecutor:
     executors:
     - rid: 168482808540430692
+    - rid: 3596404159038357510
   references:
     version: 2
     RefIds:
@@ -13662,3 +13663,7 @@ MonoBehaviour:
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         damage: 1.5
+    - rid: 3596404159038357510
+      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        stunTime: 0.5
