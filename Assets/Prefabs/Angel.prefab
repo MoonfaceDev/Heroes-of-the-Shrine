@@ -220,15 +220,27 @@ MonoBehaviour:
   blockableAttacks:
   - attackType:
       GuidAssignmentFailed: 0
-      GUID: 81e86d033fb4f164abb77561de174642
-      _typeNameAndAssembly: ElectrifyAttack, Assembly-CSharp
+      GUID: 15028a98acbfc2140a1a48233734334d
+      _typeNameAndAssembly: NormalAttack, Assembly-CSharp
       _suppressLogs: 0
-    energyReward: 200
+    energyReward: 0
+  - attackType:
+      GuidAssignmentFailed: 0
+      GUID: 456a183db1e8752488fe8e192957fb8e
+      _typeNameAndAssembly: AltNormalAttack, Assembly-CSharp
+      _suppressLogs: 0
+    energyReward: 0
+  - attackType:
+      GuidAssignmentFailed: 0
+      GUID: 120971cb774917b4593fc4bac3084f1d
+      _typeNameAndAssembly: Uppercut, Assembly-CSharp
+      _suppressLogs: 0
+    energyReward: 0
   anticipateTime: 0.1
   activeTime: 0.4
   damageMultiplier: 0.15
-  blockWindowStartTime: 0.15
-  blockWindowDuration: 0.1
+  blockWindowStartTime: 0.05
+  blockWindowDuration: 0.3
   recoveryTime: 0.1
   onBlock:
     _persistentListeners:
@@ -7678,7 +7690,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1738506296, guid: 9c3fa839077a4b441af60523acaec38f, type: 3}
+  m_Sprite: {fileID: 622748444, guid: 79dba530113cc95429319539febe092e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13266,7 +13278,7 @@ GameObject:
   - component: {fileID: 4519747569582337368}
   - component: {fileID: 6910350036342276064}
   m_Layer: 0
-  m_Name: Hitbox
+  m_Name: CounterAttackHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13302,7 +13314,7 @@ MonoBehaviour:
   parent: {fileID: 5102893360874897665}
   tags:
     tags: 
-  position: {x: 0.5, y: 1, z: 0}
+  position: {x: 0.5, y: 0.5, z: 0}
   rotation:
     flipped: 0
   scale: {x: 2.14, y: 1.9, z: 1.7}
@@ -13318,7 +13330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 0, y: 0, z: 0}
+  size: {x: 3.15, y: 0.75, z: 1.5}
 --- !u!1 &8644654164908221865
 GameObject:
   m_ObjectHideFlags: 0
@@ -13647,9 +13659,10 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0
-    activeDuration: 0
-    recoveryDuration: 0
+    anticipationDuration: 0.2
+    velocity: 20
+    acceleration: 40
+    recoveryDuration: 0.1
   hitDetector:
     rid: 168482808540430691
   hitExecutor:
@@ -13673,4 +13686,4 @@ MonoBehaviour:
     - rid: 168482808540430692
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        damage: 0
+        damage: 1.5
