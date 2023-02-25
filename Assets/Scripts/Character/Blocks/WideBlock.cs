@@ -74,6 +74,7 @@ public class WideBlock : PhasedBehaviour<WideBlock.Command>, IBlockBehaviour
     protected override void DoStop()
     {
         base.DoStop();
+        blockWindow = false;
         UnblockBehaviours(typeof(IControlledBehaviour));
     }
 
@@ -118,8 +119,8 @@ public class WideBlock : PhasedBehaviour<WideBlock.Command>, IBlockBehaviour
     {
         var blockDefinition = GetBlockDefinition(hit.source);
         energySystem.Energy += blockDefinition.energyReward;
-        onBlock.Invoke();
         Stop();
+        onBlock.Invoke();
     }
 
     private BlockDefinition GetBlockDefinition(BaseAttack attack)
