@@ -4,7 +4,6 @@ using System.Linq;
 using ExtEvents;
 using TypeReferences;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class WideBlock : PhasedBehaviour<WideBlock.Command>, IBlockBehaviour
 {
@@ -46,7 +45,7 @@ public class WideBlock : PhasedBehaviour<WideBlock.Command>, IBlockBehaviour
             healthSystem.damageMultiplier *= damageMultiplier;
             BlockBehaviours(typeof(IForcedBehaviour));
         };
-        
+
         phaseEvents.onFinishActive += () =>
         {
             healthSystem.damageMultiplier /= damageMultiplier;

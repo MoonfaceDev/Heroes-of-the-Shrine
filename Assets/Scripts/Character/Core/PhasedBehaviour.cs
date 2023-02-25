@@ -109,19 +109,16 @@ public abstract class PhasedBehaviour<T> : PlayableBehaviour<T>, IControlledBeha
         if (Anticipating)
         {
             Anticipating = false;
-            phaseEvents.onFinishAnticipating.Invoke();
         }
 
         if (Active)
         {
             Active = false;
-            phaseEvents.onFinishActive.Invoke();
         }
 
         if (Recovering)
         {
             Recovering = false;
-            phaseEvents.onFinishRecovery.Invoke();
         }
     }
 }
