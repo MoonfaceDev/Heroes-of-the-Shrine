@@ -67,7 +67,7 @@ public class WideBlock : PhasedBehaviour<WideBlock.Command>, IBlockBehaviour
         phaseEvents.onFinishActive += () =>
         {
             healthSystem.damageMultiplier /= damageMultiplier;
-            UnblockBehaviours(typeof(KnockbackBehaviour));
+            UnblockBehaviours(typeof(IForcedBehaviour));
         };
 
         PlayEvents.onStop += () =>
