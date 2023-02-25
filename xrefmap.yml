@@ -9306,12 +9306,50 @@ references:
   isSpec: "True"
   fullName: WideBlock.DoStop
   nameWithType: WideBlock.DoStop
-- uid: Global.WideBlock.onBlock
-  name: onBlock
-  href: api/Global.WideBlock.html#Global_WideBlock_onBlock
-  commentId: F:Global.WideBlock.onBlock
-  fullName: WideBlock.onBlock
-  nameWithType: WideBlock.onBlock
+- uid: Global.WideBlock.Invincible
+  name: Invincible
+  href: api/Global.WideBlock.html#Global_WideBlock_Invincible
+  commentId: P:Global.WideBlock.Invincible
+  fullName: WideBlock.Invincible
+  nameWithType: WideBlock.Invincible
+- uid: Global.WideBlock.Invincible*
+  name: Invincible
+  href: api/Global.WideBlock.html#Global_WideBlock_Invincible_
+  commentId: Overload:Global.WideBlock.Invincible
+  isSpec: "True"
+  fullName: WideBlock.Invincible
+  nameWithType: WideBlock.Invincible
+- uid: Global.WideBlock.invincibleTime
+  name: invincibleTime
+  href: api/Global.WideBlock.html#Global_WideBlock_invincibleTime
+  commentId: F:Global.WideBlock.invincibleTime
+  fullName: WideBlock.invincibleTime
+  nameWithType: WideBlock.invincibleTime
+- uid: Global.WideBlock.onFinishInvincible
+  name: onFinishInvincible
+  href: api/Global.WideBlock.html#Global_WideBlock_onFinishInvincible
+  commentId: F:Global.WideBlock.onFinishInvincible
+  fullName: WideBlock.onFinishInvincible
+  nameWithType: WideBlock.onFinishInvincible
+- uid: Global.WideBlock.onStartInvincible
+  name: onStartInvincible
+  href: api/Global.WideBlock.html#Global_WideBlock_onStartInvincible
+  commentId: F:Global.WideBlock.onStartInvincible
+  fullName: WideBlock.onStartInvincible
+  nameWithType: WideBlock.onStartInvincible
+- uid: Global.WideBlock.Playing
+  name: Playing
+  href: api/Global.WideBlock.html#Global_WideBlock_Playing
+  commentId: P:Global.WideBlock.Playing
+  fullName: WideBlock.Playing
+  nameWithType: WideBlock.Playing
+- uid: Global.WideBlock.Playing*
+  name: Playing
+  href: api/Global.WideBlock.html#Global_WideBlock_Playing_
+  commentId: Overload:Global.WideBlock.Playing
+  isSpec: "True"
+  fullName: WideBlock.Playing
+  nameWithType: WideBlock.Playing
 - uid: Global.WideBlock.RecoveryPhase
   name: RecoveryPhase()
   href: api/Global.WideBlock.html#Global_WideBlock_RecoveryPhase

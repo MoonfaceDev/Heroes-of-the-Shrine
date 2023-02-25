@@ -116,9 +116,6 @@
       <a class="xref" href="Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_Recovering">PhasedBehaviour&lt;WideBlock.Command&gt;.Recovering</a>
     </div>
     <div>
-      <a class="xref" href="Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_Playing">PhasedBehaviour&lt;WideBlock.Command&gt;.Playing</a>
-    </div>
-    <div>
       <a class="xref" href="Global.PlayableBehaviour-1.html#Global_PlayableBehaviour_1_PlayEvents">PlayableBehaviour&lt;WideBlock.Command&gt;.PlayEvents</a>
     </div>
     <div>
@@ -354,12 +351,60 @@
   </table>
   
   
-  <h4 id="Global_WideBlock_onBlock" data-uid="Global.WideBlock.onBlock">onBlock</h4>
+  <h4 id="Global_WideBlock_invincibleTime" data-uid="Global.WideBlock.invincibleTime">invincibleTime</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ExtEvent onBlock</code></pre>
+    <pre><code class="lang-csharp hljs">public float invincibleTime</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Global_WideBlock_onFinishInvincible" data-uid="Global.WideBlock.onFinishInvincible">onFinishInvincible</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExtEvent onFinishInvincible</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ExtEvent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Global_WideBlock_onStartInvincible" data-uid="Global.WideBlock.onStartInvincible">onStartInvincible</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExtEvent onStartInvincible</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -400,6 +445,62 @@
       </tr>
     </tbody>
   </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Global_WideBlock_Invincible_" data-uid="Global.WideBlock.Invincible*"></a>
+  <h4 id="Global_WideBlock_Invincible" data-uid="Global.WideBlock.Invincible">Invincible</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Invincible { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>Invincible to hits.
+It also sets the animator parameter: <code>WideBlock-invincible</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Global_WideBlock_Playing_" data-uid="Global.WideBlock.Playing*"></a>
+  <h4 id="Global_WideBlock_Playing" data-uid="Global.WideBlock.Playing">Playing</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Playing { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">PhasedBehaviour&lt;WideBlock.Command&gt;.Playing</span></div>
   <h3 id="methods">Methods
   </h3>
   
