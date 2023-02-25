@@ -1,3 +1,3 @@
-public class CounterAttack : NormalAttack
+public class CounterAttack : MotionAttack
 {
 }
