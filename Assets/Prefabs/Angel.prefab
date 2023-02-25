@@ -239,40 +239,15 @@ MonoBehaviour:
   anticipateTime: 0.1
   activeTime: 0.4
   damageMultiplier: 0.15
-  blockWindowStartTime: 0.05
-  blockWindowDuration: 0.3
+  blockWindowStartTime: 0.1
+  blockWindowDuration: 0.2
+  invincibleTime: 0.2
   recoveryTime: 0.1
-  onBlock:
-    _persistentListeners:
-    - _persistentArguments:
-      - _index: 0
-        _isSerialized: 1
-        _targetType:
-          GuidAssignmentFailed: 0
-          GUID: 
-          _typeNameAndAssembly: BaseAttack+Command, Assembly-CSharp
-          _suppressLogs: 1
-        _fromType:
-          GuidAssignmentFailed: 0
-          GUID: 
-          _typeNameAndAssembly: 
-          _suppressLogs: 0
-        _serializationData:
-          DataFormat: 2
-          ReferencedUnityObjects: []
-          SerializationNodes: []
-          Bytes: 
-        _canBeDynamic: 0
-        _serializedArg: 
-      _target: {fileID: 2573627595519022764}
-      _isStatic: 0
-      CallState: 2
-      _staticType:
-        GuidAssignmentFailed: 0
-        GUID: 
-        _typeNameAndAssembly: 
-        _suppressLogs: 0
-      _methodName: Play
+  onStartInvincible:
+    _persistentListeners: []
+    Expanded: 1
+  onFinishInvincible:
+    _persistentListeners: []
     Expanded: 1
 --- !u!1 &811557649854150555
 GameObject:
@@ -13659,9 +13634,9 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.2
-    velocity: 20
-    acceleration: 40
+    anticipationDuration: 0.05
+    velocity: 15
+    acceleration: 30
     recoveryDuration: 0.1
   hitDetector:
     rid: 168482808540430691
