@@ -2088,6 +2088,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.RunSwipe.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.RunSwipe.html",
+          "hash": "91aN1+ZJ++srGgydYcRq/jyJO/nThaR/LCgSdJ6IESc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.SerializeInterface.yml",
       "output": {
         ".html": {
@@ -2152,7 +2164,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.SimpleAttack.html",
-          "hash": "8mnSM/Z+QpUKTZBOEXakAqGqD0L6oe2RUfXUP3WYNG4="
+          "hash": "ZTX3erytbo/Ux3afl74o47aQLPOSbPuWYpjXGKIRQNE="
         }
       },
       "is_incremental": false,
@@ -2644,7 +2656,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "aSNgOItuqujtbOTIFnXrJJbrSHixu/04SpUE/vHPZC0="
+          "hash": "ZQzVi+AEb2Xv0Q61QGNpZH6bud5cCoEceFs43AVDLCg="
         }
       },
       "is_incremental": false,
@@ -2656,7 +2668,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "e0boTqoJ3iwnbawqG4EAmCHy+Cw62A5iRKXPTjUmDXY="
+          "hash": "A/M6+cy8Nch1Tb1kOrS1ow8kOjuYTtJ9sPeHv053iKY="
         }
       },
       "is_incremental": false,
@@ -2867,7 +2879,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 219,
+          "total_file_count": 220,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

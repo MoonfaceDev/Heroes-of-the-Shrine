@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class SimpleAttack
+    <title>Class RunSwipe
    | Heroes of the Shrine </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class SimpleAttack
+    <meta name="title" content="Class RunSwipe
    | Heroes of the Shrine ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,13 +78,12 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Global.SimpleAttack">
+            <article class="content wrap" id="_content" data-uid="Global.RunSwipe">
   
   
-  <h1 id="Global_SimpleAttack" data-uid="Global.SimpleAttack" class="text-break">Class SimpleAttack
+  <h1 id="Global_RunSwipe" data-uid="Global.RunSwipe" class="text-break">Class RunSwipe
   </h1>
-  <div class="markdown level0 summary"><p>Simple implementation of <span class="xref">BaseAttack</span>, which has a single hit detector, hit executor, and all attack phases have a fixed duration</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -95,10 +94,8 @@
     <div class="level4"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.BaseAttack.Command.html">BaseAttack.Command</a>&gt;</div>
     <div class="level5"><a class="xref" href="Global.PhasedBehaviour-1.html">PhasedBehaviour</a>&lt;<a class="xref" href="Global.BaseAttack.Command.html">BaseAttack.Command</a>&gt;</div>
     <div class="level6"><a class="xref" href="Global.BaseAttack.html">BaseAttack</a></div>
-    <div class="level7"><span class="xref">SimpleAttack</span></div>
-      <div class="level8"><a class="xref" href="Global.AirAttack.html">AirAttack</a></div>
-      <div class="level8"><a class="xref" href="Global.NormalAttack.html">NormalAttack</a></div>
-      <div class="level8"><a class="xref" href="Global.RunSwipe.html">RunSwipe</a></div>
+    <div class="level7"><a class="xref" href="Global.SimpleAttack.html">SimpleAttack</a></div>
+    <div class="level8"><span class="xref">RunSwipe</span></div>
   </div>
   <div class="implements">
     <h5>Implements</h5>
@@ -107,6 +104,24 @@
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_attackFlow">SimpleAttack.attackFlow</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_hitDetector">SimpleAttack.hitDetector</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_hitExecutor">SimpleAttack.hitExecutor</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_AnticipationPhase">SimpleAttack.AnticipationPhase()</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_ActivePhase">SimpleAttack.ActivePhase()</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.SimpleAttack.html#Global_SimpleAttack_RecoveryPhase">SimpleAttack.RecoveryPhase()</a>
+    </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_previousAttacks">BaseAttack.previousAttacks</a>
     </div>
@@ -120,16 +135,10 @@
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_hardRecovery">BaseAttack.hardRecovery</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Motion">BaseAttack.Motion</a>
-    </div>
-    <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_IsMidair">BaseAttack.IsMidair</a>
     </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Awake">BaseAttack.Awake()</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_CanPlay_BaseAttack_Command_">BaseAttack.CanPlay(BaseAttack.Command)</a>
     </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_DoPlay_BaseAttack_Command_">BaseAttack.DoPlay(BaseAttack.Command)</a>
@@ -239,22 +248,23 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Global_SimpleAttack_syntax">Syntax</h5>
+  <h5 id="Global_RunSwipe_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SimpleAttack : BaseAttack, IControlledBehaviour, IPlayableBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class RunSwipe : SimpleAttack, IControlledBehaviour, IPlayableBehaviour</code></pre>
   </div>
-  <h3 id="fields">Fields
+  <h3 id="properties">Properties
   </h3>
   
   
-  <h4 id="Global_SimpleAttack_attackFlow" data-uid="Global.SimpleAttack.attackFlow">attackFlow</h4>
+  <a id="Global_RunSwipe_Motion_" data-uid="Global.RunSwipe.Motion*"></a>
+  <h4 id="Global_RunSwipe_Motion" data-uid="Global.RunSwipe.Motion">Motion</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SimpleAttack.AttackFlow attackFlow</code></pre>
+    <pre><code class="lang-csharp hljs">protected override MotionSettings Motion { get; }</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -264,71 +274,42 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.SimpleAttack.AttackFlow.html">SimpleAttack.AttackFlow</a></td>
+        <td><a class="xref" href="Global.MotionSettings.html">MotionSettings</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  
-  
-  <h4 id="Global_SimpleAttack_hitDetector" data-uid="Global.SimpleAttack.hitDetector">hitDetector</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public BaseHitDetector hitDetector</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.BaseHitDetector.html">BaseHitDetector</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_SimpleAttack_hitExecutor" data-uid="Global.SimpleAttack.hitExecutor">hitExecutor</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ChainHitExecutor hitExecutor</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.ChainHitExecutor.html">ChainHitExecutor</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Motion">BaseAttack.Motion</a></div>
   <h3 id="methods">Methods
   </h3>
   
   
-  <a id="Global_SimpleAttack_ActivePhase_" data-uid="Global.SimpleAttack.ActivePhase*"></a>
-  <h4 id="Global_SimpleAttack_ActivePhase" data-uid="Global.SimpleAttack.ActivePhase">ActivePhase()</h4>
+  <a id="Global_RunSwipe_CanPlay_" data-uid="Global.RunSwipe.CanPlay*"></a>
+  <h4 id="Global_RunSwipe_CanPlay_BaseAttack_Command_" data-uid="Global.RunSwipe.CanPlay(BaseAttack.Command)">CanPlay(BaseAttack.Command)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override IEnumerator ActivePhase()</code></pre>
+    <pre><code class="lang-csharp hljs">public override bool CanPlay(BaseAttack.Command command)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.BaseAttack.Command.html">BaseAttack.Command</a></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -339,67 +320,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IEnumerator</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PhasedBehaviour&lt;BaseAttack.Command&gt;.ActivePhase()</span></div>
-  
-  
-  <a id="Global_SimpleAttack_AnticipationPhase_" data-uid="Global.SimpleAttack.AnticipationPhase*"></a>
-  <h4 id="Global_SimpleAttack_AnticipationPhase" data-uid="Global.SimpleAttack.AnticipationPhase">AnticipationPhase()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override IEnumerator AnticipationPhase()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IEnumerator</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PhasedBehaviour&lt;BaseAttack.Command&gt;.AnticipationPhase()</span></div>
-  
-  
-  <a id="Global_SimpleAttack_RecoveryPhase_" data-uid="Global.SimpleAttack.RecoveryPhase*"></a>
-  <h4 id="Global_SimpleAttack_RecoveryPhase" data-uid="Global.SimpleAttack.RecoveryPhase">RecoveryPhase()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override IEnumerator RecoveryPhase()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IEnumerator</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PhasedBehaviour&lt;BaseAttack.Command&gt;.RecoveryPhase()</span></div>
+  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_CanPlay_BaseAttack_Command_">BaseAttack.CanPlay(BaseAttack.Command)</a></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Global.IControlledBehaviour.html">IControlledBehaviour</a>
