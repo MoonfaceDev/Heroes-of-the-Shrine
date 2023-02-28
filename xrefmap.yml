@@ -7591,6 +7591,19 @@ references:
   commentId: T:Global.RunSwipe
   fullName: RunSwipe
   nameWithType: RunSwipe
+- uid: Global.RunSwipe.Awake
+  name: Awake()
+  href: api/Global.RunSwipe.html#Global_RunSwipe_Awake
+  commentId: M:Global.RunSwipe.Awake
+  fullName: RunSwipe.Awake()
+  nameWithType: RunSwipe.Awake()
+- uid: Global.RunSwipe.Awake*
+  name: Awake
+  href: api/Global.RunSwipe.html#Global_RunSwipe_Awake_
+  commentId: Overload:Global.RunSwipe.Awake
+  isSpec: "True"
+  fullName: RunSwipe.Awake
+  nameWithType: RunSwipe.Awake
 - uid: Global.RunSwipe.CanPlay(BaseAttack.Command)
   name: CanPlay(BaseAttack.Command)
   href: api/Global.RunSwipe.html#Global_RunSwipe_CanPlay_BaseAttack_Command_
@@ -7604,19 +7617,32 @@ references:
   isSpec: "True"
   fullName: RunSwipe.CanPlay
   nameWithType: RunSwipe.CanPlay
-- uid: Global.RunSwipe.Motion
-  name: Motion
-  href: api/Global.RunSwipe.html#Global_RunSwipe_Motion
-  commentId: P:Global.RunSwipe.Motion
-  fullName: RunSwipe.Motion
-  nameWithType: RunSwipe.Motion
-- uid: Global.RunSwipe.Motion*
-  name: Motion
-  href: api/Global.RunSwipe.html#Global_RunSwipe_Motion_
-  commentId: Overload:Global.RunSwipe.Motion
+- uid: Global.RunSwipe.DoPlay(BaseAttack.Command)
+  name: DoPlay(BaseAttack.Command)
+  href: api/Global.RunSwipe.html#Global_RunSwipe_DoPlay_BaseAttack_Command_
+  commentId: M:Global.RunSwipe.DoPlay(BaseAttack.Command)
+  fullName: RunSwipe.DoPlay(BaseAttack.Command)
+  nameWithType: RunSwipe.DoPlay(BaseAttack.Command)
+- uid: Global.RunSwipe.DoPlay*
+  name: DoPlay
+  href: api/Global.RunSwipe.html#Global_RunSwipe_DoPlay_
+  commentId: Overload:Global.RunSwipe.DoPlay
   isSpec: "True"
-  fullName: RunSwipe.Motion
-  nameWithType: RunSwipe.Motion
+  fullName: RunSwipe.DoPlay
+  nameWithType: RunSwipe.DoPlay
+- uid: Global.RunSwipe.DoStop
+  name: DoStop()
+  href: api/Global.RunSwipe.html#Global_RunSwipe_DoStop
+  commentId: M:Global.RunSwipe.DoStop
+  fullName: RunSwipe.DoStop()
+  nameWithType: RunSwipe.DoStop()
+- uid: Global.RunSwipe.DoStop*
+  name: DoStop
+  href: api/Global.RunSwipe.html#Global_RunSwipe_DoStop_
+  commentId: Overload:Global.RunSwipe.DoStop
+  isSpec: "True"
+  fullName: RunSwipe.DoStop
+  nameWithType: RunSwipe.DoStop
 - uid: Global.SerializeInterface
   name: SerializeInterface
   href: api/Global.SerializeInterface.html

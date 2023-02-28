@@ -135,16 +135,10 @@
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_hardRecovery">BaseAttack.hardRecovery</a>
     </div>
     <div>
+      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Motion">BaseAttack.Motion</a>
+    </div>
+    <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_IsMidair">BaseAttack.IsMidair</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Awake">BaseAttack.Awake()</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_DoPlay_BaseAttack_Command_">BaseAttack.DoPlay(BaseAttack.Command)</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_DoStop">BaseAttack.DoStop()</a>
     </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_StartHitDetector_BaseHitDetector_ChainHitExecutor_">BaseAttack.StartHitDetector(BaseHitDetector, ChainHitExecutor)</a>
@@ -252,37 +246,20 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class RunSwipe : SimpleAttack, IControlledBehaviour, IPlayableBehaviour</code></pre>
   </div>
-  <h3 id="properties">Properties
+  <h3 id="methods">Methods
   </h3>
   
   
-  <a id="Global_RunSwipe_Motion_" data-uid="Global.RunSwipe.Motion*"></a>
-  <h4 id="Global_RunSwipe_Motion" data-uid="Global.RunSwipe.Motion">Motion</h4>
+  <a id="Global_RunSwipe_Awake_" data-uid="Global.RunSwipe.Awake*"></a>
+  <h4 id="Global_RunSwipe_Awake" data-uid="Global.RunSwipe.Awake">Awake()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override MotionSettings Motion { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected override void Awake()</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.MotionSettings.html">MotionSettings</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Motion">BaseAttack.Motion</a></div>
-  <h3 id="methods">Methods
-  </h3>
+  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Awake">BaseAttack.Awake()</a></div>
   
   
   <a id="Global_RunSwipe_CanPlay_" data-uid="Global.RunSwipe.CanPlay*"></a>
@@ -327,6 +304,47 @@
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_CanPlay_BaseAttack_Command_">BaseAttack.CanPlay(BaseAttack.Command)</a></div>
+  
+  
+  <a id="Global_RunSwipe_DoPlay_" data-uid="Global.RunSwipe.DoPlay*"></a>
+  <h4 id="Global_RunSwipe_DoPlay_BaseAttack_Command_" data-uid="Global.RunSwipe.DoPlay(BaseAttack.Command)">DoPlay(BaseAttack.Command)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void DoPlay(BaseAttack.Command command)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.BaseAttack.Command.html">BaseAttack.Command</a></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_DoPlay_BaseAttack_Command_">BaseAttack.DoPlay(BaseAttack.Command)</a></div>
+  
+  
+  <a id="Global_RunSwipe_DoStop_" data-uid="Global.RunSwipe.DoStop*"></a>
+  <h4 id="Global_RunSwipe_DoStop" data-uid="Global.RunSwipe.DoStop">DoStop()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void DoStop()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_DoStop">BaseAttack.DoStop()</a></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Global.IControlledBehaviour.html">IControlledBehaviour</a>
