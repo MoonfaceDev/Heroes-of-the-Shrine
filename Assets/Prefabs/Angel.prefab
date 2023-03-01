@@ -933,6 +933,7 @@ GameObject:
   m_Component:
   - component: {fileID: 684304037861327321}
   - component: {fileID: 9018447154371316026}
+  - component: {fileID: 4964698500038053929}
   m_Layer: 0
   m_Name: Run Swipe
   m_TagString: Untagged
@@ -1031,6 +1032,20 @@ MonoBehaviour:
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         stunTime: 0.5
+--- !u!114 &4964698500038053929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3088508065261769856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1f4d36d30747fa9bf47cf7b1843d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: {fileID: 9018447154371316026}
+  energyReward: 10
 --- !u!1 &3145721457660321993
 GameObject:
   m_ObjectHideFlags: 0
