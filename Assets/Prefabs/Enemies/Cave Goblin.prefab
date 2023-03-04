@@ -512,8 +512,8 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.1
-    activeDuration: 0.15
+    anticipationDuration: 0.3
+    activeDuration: 0.1
     recoveryDuration: 0.1
   hitDetector:
     rid: 3181427246007058597
@@ -1399,9 +1399,9 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.1
+    anticipationDuration: 0.3
     activeDuration: 0.1
-    recoveryDuration: 0.05
+    recoveryDuration: 0.1
   hitDetector:
     rid: 3181427246007058596
   hitExecutor:
@@ -1634,7 +1634,7 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.05
+    anticipationDuration: 0.3
     activeDuration: 0.15
     recoveryDuration: 0.05
   hitDetector:

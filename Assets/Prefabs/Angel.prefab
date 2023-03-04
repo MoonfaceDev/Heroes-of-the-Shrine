@@ -1000,9 +1000,9 @@ MonoBehaviour:
   interruptible: 0
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.45
+    anticipationDuration: 0.25
     activeDuration: 0.25
-    recoveryDuration: 0.3
+    recoveryDuration: 0.2
   hitDetector:
     rid: 3596404208624992257
   hitExecutor:
@@ -2776,7 +2776,7 @@ Transform:
   - {fileID: 7562827223860804901}
   - {fileID: 3725194561385273773}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360874897665
 MonoBehaviour:
@@ -8261,7 +8261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5102893361865183973
 Transform:
   m_ObjectHideFlags: 0
@@ -13419,7 +13419,7 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.2
+    anticipationDuration: 0.3
     activeDuration: 0.15
     recoveryDuration: 0.2
   hitDetector:
