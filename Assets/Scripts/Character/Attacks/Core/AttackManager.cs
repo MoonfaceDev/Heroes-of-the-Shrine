@@ -158,14 +158,14 @@ public class AttackManager : CharacterBehaviour
     /// </value>
     public bool Playing => AnyAttack(attack => attack.Playing);
 
-    private static bool IsPreventing(BaseAttack attack)
-    {
-        return attack.Anticipating || attack.Active || (attack.hardRecovery && attack.Recovering);
-    }
-
     private bool IsFinalAttack(BaseAttack attack)
     {
         return !AnyAttack(other => other.previousAttacks.Contains(attack));
+    }
+
+    private static bool IsPreventing(BaseAttack attack)
+    {
+        return attack.Anticipating || attack.Active || (attack.hardRecovery && attack.Recovering);
     }
 
     /// <summary>
