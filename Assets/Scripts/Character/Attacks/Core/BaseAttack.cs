@@ -63,11 +63,24 @@ public abstract class BaseAttack : PhasedBehaviour<BaseAttack.Command>
             IPlayableBehaviour[] nonBlocked = { GetBehaviour<WalkBehaviour>() };
             var blockedBehaviours = GetBehaviours<IControlledBehaviour>().Except(nonBlocked).ToArray();
             var blockedAttacks = blockedBehaviours.Where(behaviour => behaviour is BaseAttack);
+            var shouldUnblockAttacks = true;
 
-            PlayEvents.onPlay += () => blockedBehaviours.ForEach(behaviour => behaviour.Blocked = true);
-            phaseEvents.onFinishActive += () => blockedAttacks.ForEach(behaviour => behaviour.Blocked = false);
+            PlayEvents.onPlay += () =>
+            {
+                blockedBehaviours.ForEach(behaviour => behaviour.Blocked = true);
+                shouldUnblockAttacks = true;
+            };
+            phaseEvents.onFinishActive += () =>
+            {
+                blockedAttacks.ForEach(behaviour => behaviour.Blocked = false);
+                shouldUnblockAttacks = false;
+            };
             PlayEvents.onStop += () =>
-                blockedBehaviours.Except(blockedAttacks).ForEach(behaviour => behaviour.Blocked = false);
+            {
+                blockedBehaviours
+                    .Except(shouldUnblockAttacks ? new IPlayableBehaviour[] { } : blockedAttacks)
+                    .ForEach(behaviour => behaviour.Blocked = false);
+            };
         }
     }
 
