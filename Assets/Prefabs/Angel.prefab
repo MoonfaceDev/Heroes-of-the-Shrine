@@ -1634,7 +1634,7 @@ MonoBehaviour:
     executors:
     - rid: 3181427634693996681
     - rid: 3181427634693996683
-  minHeight: 1.5
+  minHeight: 0.5
   references:
     version: 2
     RefIds:
@@ -2776,7 +2776,7 @@ Transform:
   - {fileID: 7562827223860804901}
   - {fileID: 3725194561385273773}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360874897665
 MonoBehaviour:
@@ -2855,7 +2855,7 @@ MonoBehaviour:
   slidePriority: 3
   dodgePriority: 4
   attackPriority: 2
-  possessedEffectTimeReducing: 00000000010000000200000003000000
+  possessedEffectTimeReducing: 000000000100000002000000030000000500000004000000
   possessedEffectDurationReduction: 0.05
 --- !u!114 &526395291188819461
 MonoBehaviour:
@@ -13178,7 +13178,7 @@ MonoBehaviour:
     executors:
     - rid: 3181427634693996673
     - rid: 3181427634693996675
-  minHeight: 1.5
+  minHeight: 0.5
   references:
     version: 2
     RefIds:
