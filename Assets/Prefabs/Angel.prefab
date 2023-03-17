@@ -1753,8 +1753,8 @@ MonoBehaviour:
   hardRecovery: 1
   attackFlow:
     anticipationDuration: 0.05
-    activeDuration: 0.15
-    recoveryDuration: 0.2
+    activeDuration: 0.1
+    recoveryDuration: 0.25
   hitDetector:
     rid: 3181427246007058576
   hitExecutor:
@@ -2012,7 +2012,7 @@ MonoBehaviour:
       _persistentListeners: []
       Expanded: 1
   speed: 20
-  anticipateTime: 0.05
+  anticipateTime: 0
   recoverTime: 0.05
   climbAcceleration: 100
   peakDuration: 0.2
@@ -2776,7 +2776,7 @@ Transform:
   - {fileID: 7562827223860804901}
   - {fileID: 3725194561385273773}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360874897665
 MonoBehaviour:
@@ -13420,8 +13420,8 @@ MonoBehaviour:
   hardRecovery: 0
   attackFlow:
     anticipationDuration: 0.3
-    activeDuration: 0.15
-    recoveryDuration: 0.2
+    activeDuration: 0.1
+    recoveryDuration: 0.25
   hitDetector:
     rid: 3181427246007058563
   hitExecutor:
