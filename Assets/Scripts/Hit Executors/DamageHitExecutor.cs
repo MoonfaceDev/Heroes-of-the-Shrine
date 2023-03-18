@@ -13,7 +13,9 @@ public class DamageHitExecutor : IHitExecutor
 
     public void Execute(Hit hit)
     {
-        var processedDamage = hit.source.AttackManager.damageTranspiler.Transpile(hit.source, hit.victim, damage);
+        var processedDamage = hit.source != null
+            ? hit.source.AttackManager.damageTranspiler.Transpile(hit.source, hit.victim, damage)
+            : damage;
         hit.victim.Character.GetBehaviour<HealthSystem>().Hit(processedDamage);
     }
 }

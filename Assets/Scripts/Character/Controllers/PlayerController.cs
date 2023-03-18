@@ -13,7 +13,9 @@ public enum Button
     Attack,
     Defense,
     Run,
-    Heal
+    Heal,
+    Spike,
+    Thread,
 }
 
 /// <summary>
@@ -60,6 +62,7 @@ public class PlayerController : CharacterController
     private HealBehaviour healBehaviour;
     private FocusBlock focusBlock;
     private WideBlock wideBlock;
+    private SpikeBallAttack spikeBallAttack;
 
     private List<BufferedAction> bufferedActions;
 
@@ -74,6 +77,7 @@ public class PlayerController : CharacterController
         healBehaviour = GetBehaviour<HealBehaviour>();
         focusBlock = GetBehaviour<FocusBlock>();
         wideBlock = GetBehaviour<WideBlock>();
+        spikeBallAttack = GetBehaviour<SpikeBallAttack>();
 
         bufferedActions = new List<BufferedAction>();
     }
@@ -94,6 +98,7 @@ public class PlayerController : CharacterController
         ExecuteAttack();
         ExecuteFocusBlock();
         ExecuteWideBlock();
+        ExecuteSpike();
     }
 
     private void ReducePossessedEffectDuration()
@@ -208,6 +213,20 @@ public class PlayerController : CharacterController
         if (Input.GetButtonDown(Button.Escape.ToString()) && horizontal == 0 && vertical == 0)
         {
             wideBlock.Play(new WideBlock.Command());
+        }
+    }
+
+    private void ExecuteSpike()
+    {
+        if (!spikeBallAttack) return;
+        if (Input.GetButtonDown(Button.Spike.ToString()))
+        {
+            spikeBallAttack.Play(new BaseAttack.Command());
+        }
+
+        if (Input.GetButtonUp(Button.Spike.ToString()))
+        {
+            spikeBallAttack.ReleaseBall();
         }
     }
 
