@@ -24,8 +24,9 @@ public class KnockbackHitExecutor : IHitExecutor
 
     public void Execute(Hit hit)
     {
-        var processedKnockbackPower =
-            hit.source.AttackManager.knockbackPowerTranspiler.Transpile(hit.source, hit.victim, knockbackPower);
+        var processedKnockbackPower = hit.source != null 
+            ? hit.source.AttackManager.knockbackPowerTranspiler.Transpile(hit.source, hit.victim, knockbackPower)
+            : knockbackPower;
 
         var hitDirection =
             (int)Mathf.Sign(hit.victim.Character.Entity.WorldPosition.x - hit.source.Entity.WorldPosition.x);
