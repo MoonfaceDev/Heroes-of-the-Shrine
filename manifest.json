@@ -256,7 +256,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.BaseAttack.html",
-          "hash": "t5W41mZEMtsTqNLxbn7Bls73ZqVi3HhVnP3p4/1hCC4="
+          "hash": "w0wQbA5n1puPq+ox+yauFeoQmUBrikS/B1m9XQMaxNs="
         }
       },
       "is_incremental": false,
@@ -388,7 +388,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.Button.html",
-          "hash": "VKz/cfvY/96NAo3bylmhrLTQTgp082Ce64J6XT0AvpA="
+          "hash": "jm/ZbpJCGCZVOg+mRQvEJxWmH77O9Pn7e1YQVFtCLAA="
         }
       },
       "is_incremental": false,
@@ -904,7 +904,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.EntityBehaviour.html",
-          "hash": "qB/B77oib0g3E2oUOrXzbPLe2D4z1UqN8h1J/0G/xvI="
+          "hash": "2I0swR/rEGkLYdLie+aJwEEjAlsN39nqOQfZxRsByEE="
         }
       },
       "is_incremental": false,
@@ -2280,6 +2280,42 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.SpikeBall.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.SpikeBall.html",
+          "hash": "hqgoSVjnAYE/8kpLCD+nWp6qlOS9JrXEu/kj/JSzpkY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.SpikeBallAttack.AttackFlow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.SpikeBallAttack.AttackFlow.html",
+          "hash": "8QvPjxuVzBIJM860hKwKvLwUkIEVb5nyobmn8mwVssQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.SpikeBallAttack.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.SpikeBallAttack.html",
+          "hash": "MfFyqXUZnfgOIXu27+WQPZspexAm92RXAabK6d7Qxo0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.SpinningSwordsAttack.AttackFlow.yml",
       "output": {
         ".html": {
@@ -2656,7 +2692,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "ZQzVi+AEb2Xv0Q61QGNpZH6bud5cCoEceFs43AVDLCg="
+          "hash": "XWGU/L5eMThfdIEHm0XjMiFZWok5sRLqh2Aqx3diqbs="
         }
       },
       "is_incremental": false,
@@ -2668,7 +2704,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "A/M6+cy8Nch1Tb1kOrS1ow8kOjuYTtJ9sPeHv053iKY="
+          "hash": "ovyJAZZYnlGN3Z0TVLhd47yd9Ur3ms+TGNQE8BAF4vU="
         }
       },
       "is_incremental": false,
@@ -2879,7 +2915,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 220,
+          "total_file_count": 223,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

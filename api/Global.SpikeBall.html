@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class EntityBehaviour
+    <title>Class SpikeBall
    | Heroes of the Shrine </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class EntityBehaviour
+    <meta name="title" content="Class SpikeBall
    | Heroes of the Shrine ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,10 +78,10 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Global.EntityBehaviour">
+            <article class="content wrap" id="_content" data-uid="Global.SpikeBall">
   
   
-  <h1 id="Global_EntityBehaviour" data-uid="Global.EntityBehaviour" class="text-break">Class EntityBehaviour
+  <h1 id="Global_SpikeBall" data-uid="Global.SpikeBall" class="text-break">Class SpikeBall
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
@@ -89,21 +89,35 @@
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
-    <div class="level2"><span class="xref">EntityBehaviour</span></div>
-      <div class="level3"><a class="xref" href="Global.Character.html">Character</a></div>
-      <div class="level3"><a class="xref" href="Global.CharacterBehaviour.html">CharacterBehaviour</a></div>
-      <div class="level3"><a class="xref" href="Global.Figure.html">Figure</a></div>
-      <div class="level3"><a class="xref" href="Global.Hitbox.html">Hitbox</a></div>
-      <div class="level3"><a class="xref" href="Global.HitParticles.html">HitParticles</a></div>
-      <div class="level3"><a class="xref" href="Global.HittableHitbox.html">HittableHitbox</a></div>
-      <div class="level3"><a class="xref" href="Global.Particles.html">Particles</a></div>
-      <div class="level3"><a class="xref" href="Global.PossessSource.html">PossessSource</a></div>
-      <div class="level3"><a class="xref" href="Global.ShadowObject.html">ShadowObject</a></div>
-      <div class="level3"><a class="xref" href="Global.SpikeBall.html">SpikeBall</a></div>
-      <div class="level3"><a class="xref" href="Global.WalkableGrid.html">WalkableGrid</a></div>
+    <div class="level2"><a class="xref" href="Global.EntityBehaviour.html">EntityBehaviour</a></div>
+    <div class="level3"><span class="xref">SpikeBall</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_Enabled">EntityBehaviour.Enabled</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_Entity">EntityBehaviour.Entity</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_GetBehaviours_Type_">EntityBehaviour.GetBehaviours(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_GetBehaviour_Type_">EntityBehaviour.GetBehaviour(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_GetBehaviours__1">EntityBehaviour.GetBehaviours&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_GetBehaviour__1">EntityBehaviour.GetBehaviour&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_EnableBehaviours_Type___">EntityBehaviour.EnableBehaviours(Type[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_DisableBehaviours_Type___">EntityBehaviour.DisableBehaviours(Type[])</a>
+    </div>
     <div>
       <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_Register_Action_">BaseComponent.Register(Action)</a>
     </div>
@@ -128,25 +142,22 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Global_EntityBehaviour_syntax">Syntax</h5>
+  <h5 id="Global_SpikeBall_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class EntityBehaviour : BaseComponent</code></pre>
+    <pre><code class="lang-csharp hljs">public class SpikeBall : EntityBehaviour</code></pre>
   </div>
-  <h3 id="properties">Properties
+  <h3 id="fields">Fields
   </h3>
   
   
-  <a id="Global_EntityBehaviour_Enabled_" data-uid="Global.EntityBehaviour.Enabled*"></a>
-  <h4 id="Global_EntityBehaviour_Enabled" data-uid="Global.EntityBehaviour.Enabled">Enabled</h4>
-  <div class="markdown level1 summary"><p>If <code>true</code>, the behaviour is updated (<code>Update</code> is called).
-Can be set to <code>false</code> multiple times, as it will change back to <code>true</code> only if it was set to <code>true</code> the same number of times.</p>
-</div>
+  <h4 id="Global_SpikeBall_animator" data-uid="Global.SpikeBall.animator">animator</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Enabled { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Animator animator</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -156,22 +167,21 @@ Can be set to <code>false</code> multiple times, as it will change back to <code
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="xref">Animator</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="Global_EntityBehaviour_Entity_" data-uid="Global.EntityBehaviour.Entity*"></a>
-  <h4 id="Global_EntityBehaviour_Entity" data-uid="Global.EntityBehaviour.Entity">Entity</h4>
+  <h4 id="Global_SpikeBall_explodeAnimationDuration" data-uid="Global.SpikeBall.explodeAnimationDuration">explodeAnimationDuration</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public GameEntity Entity { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public float explodeAnimationDuration</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -181,7 +191,127 @@ Can be set to <code>false</code> multiple times, as it will change back to <code
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.GameEntity.html">GameEntity</a></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Global_SpikeBall_explosionHitDetector" data-uid="Global.SpikeBall.explosionHitDetector">explosionHitDetector</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AbsoluteHitDetector explosionHitDetector</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.AbsoluteHitDetector.html">AbsoluteHitDetector</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Global_SpikeBall_explosionHitExecutor" data-uid="Global.SpikeBall.explosionHitExecutor">explosionHitExecutor</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ChainHitExecutor explosionHitExecutor</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.ChainHitExecutor.html">ChainHitExecutor</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Global_SpikeBall_explosionSourceHitExecutor" data-uid="Global.SpikeBall.explosionSourceHitExecutor">explosionSourceHitExecutor</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ChainHitExecutor explosionSourceHitExecutor</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.ChainHitExecutor.html">ChainHitExecutor</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Global_SpikeBall_latchHitDetector" data-uid="Global.SpikeBall.latchHitDetector">latchHitDetector</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SingleHitDetector latchHitDetector</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.SingleHitDetector.html">SingleHitDetector</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Global_SpikeBall_latchHitExecutor" data-uid="Global.SpikeBall.latchHitExecutor">latchHitExecutor</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ChainHitExecutor latchHitExecutor</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.ChainHitExecutor.html">ChainHitExecutor</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -190,14 +320,23 @@ Can be set to <code>false</code> multiple times, as it will change back to <code
   </h3>
   
   
-  <a id="Global_EntityBehaviour_DisableBehaviours_" data-uid="Global.EntityBehaviour.DisableBehaviours*"></a>
-  <h4 id="Global_EntityBehaviour_DisableBehaviours_Type___" data-uid="Global.EntityBehaviour.DisableBehaviours(Type[])">DisableBehaviours(Type[])</h4>
-  <div class="markdown level1 summary"><p>Disables behaviours, meaning they are not updated. If a behaviour is disabled N times, it will have to be enabled N times so it enabled again.</p>
-</div>
+  <a id="Global_SpikeBall_Explode_" data-uid="Global.SpikeBall.Explode*"></a>
+  <h4 id="Global_SpikeBall_Explode" data-uid="Global.SpikeBall.Explode">Explode()</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void DisableBehaviours(params Type[] behaviours)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Explode()</code></pre>
+  </div>
+  
+  
+  <a id="Global_SpikeBall_Fire_" data-uid="Global.SpikeBall.Fire*"></a>
+  <h4 id="Global_SpikeBall_Fire_Vector3_BaseAttack_" data-uid="Global.SpikeBall.Fire(Vector3,BaseAttack)">Fire(Vector3, BaseAttack)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Fire(Vector3 velocity, BaseAttack source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -210,202 +349,13 @@ Can be set to <code>false</code> multiple times, as it will change back to <code
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Type</span>[]</td>
-        <td><span class="parametername">behaviours</span></td>
-        <td><p>Behaviours to disable. All of the attached behaviours from each type will be enabled.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_EntityBehaviour_EnableBehaviours_" data-uid="Global.EntityBehaviour.EnableBehaviours*"></a>
-  <h4 id="Global_EntityBehaviour_EnableBehaviours_Type___" data-uid="Global.EntityBehaviour.EnableBehaviours(Type[])">EnableBehaviours(Type[])</h4>
-  <div class="markdown level1 summary"><p>Enables behaviours, meaning they are updated</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void EnableBehaviours(params Type[] behaviours)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Type</span>[]</td>
-        <td><span class="parametername">behaviours</span></td>
-        <td><p>Behaviours to enable. All of the attached behaviours from each type will be enabled.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_EntityBehaviour_GetBehaviour_" data-uid="Global.EntityBehaviour.GetBehaviour*"></a>
-  <h4 id="Global_EntityBehaviour_GetBehaviour_Type_" data-uid="Global.EntityBehaviour.GetBehaviour(Type)">GetBehaviour(Type)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public EntityBehaviour GetBehaviour(Type type)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Type</span></td>
-        <td><span class="parametername">type</span></td>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">velocity</span></td>
         <td></td>
       </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
       <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.EntityBehaviour.html">EntityBehaviour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_EntityBehaviour_GetBehaviour_" data-uid="Global.EntityBehaviour.GetBehaviour*"></a>
-  <h4 id="Global_EntityBehaviour_GetBehaviour__1" data-uid="Global.EntityBehaviour.GetBehaviour``1">GetBehaviour&lt;T&gt;()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public T GetBehaviour&lt;T&gt;()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_EntityBehaviour_GetBehaviours_" data-uid="Global.EntityBehaviour.GetBehaviours*"></a>
-  <h4 id="Global_EntityBehaviour_GetBehaviours_Type_" data-uid="Global.EntityBehaviour.GetBehaviours(Type)">GetBehaviours(Type)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerable&lt;EntityBehaviour&gt; GetBehaviours(Type type)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Type</span></td>
-        <td><span class="parametername">type</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="Global.EntityBehaviour.html">EntityBehaviour</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_EntityBehaviour_GetBehaviours_" data-uid="Global.EntityBehaviour.GetBehaviours*"></a>
-  <h4 id="Global_EntityBehaviour_GetBehaviours__1" data-uid="Global.EntityBehaviour.GetBehaviours``1">GetBehaviours&lt;T&gt;()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerable&lt;T&gt; GetBehaviours&lt;T&gt;()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
+        <td><a class="xref" href="Global.BaseAttack.html">BaseAttack</a></td>
+        <td><span class="parametername">source</span></td>
         <td></td>
       </tr>
     </tbody>
