@@ -13541,11 +13541,11 @@ MonoBehaviour:
   hardRecovery: 0
   attackFlow:
     anticipationDuration: 0.5
-    activeTimeout: 20
+    activeTimeout: 3
     recoveryDuration: 0.5
   ballPrefab: {fileID: 7195235196650147203, guid: 6855b38c7105f134ba6e8744a09a9039, type: 3}
   ballSpawnPoint: {x: 0.7, y: 0.8, z: 0}
-  ballSpeed: 5
+  ballSpeed: 4
 --- !u!1 &7477602066808393276
 GameObject:
   m_ObjectHideFlags: 0
