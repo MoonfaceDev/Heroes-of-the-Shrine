@@ -2832,14 +2832,14 @@ MonoBehaviour:
     button: 2
   - attack: {fileID: 9018447154371316026}
     button: 2
-  - attack: {fileID: 1534430804526489236}
-    button: 2
   - attack: {fileID: 7157179758743540809}
     button: 3
-  - attack: {fileID: 3403884892882908741}
+  - attack: {fileID: 1534430804526489236}
     button: 2
   - attack: {fileID: 3226033048567882335}
     button: 3
+  - attack: {fileID: 3403884892882908741}
+    button: 2
   - attack: {fileID: 8296055732026328267}
     button: 2
   - attack: {fileID: 7559106644093030772}
@@ -13297,8 +13297,8 @@ MonoBehaviour:
   hardRecovery: 0
   attackFlow:
     anticipationDuration: 0.05
-    activeDuration: 0.14
-    recoveryDuration: 0.01
+    activeDuration: 0.1
+    recoveryDuration: 0.05
   hitDetector:
     rid: 3181427246007058572
   hitExecutor:
@@ -13624,8 +13624,8 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.01
-    activeDuration: 0.14
+    anticipationDuration: 0.05
+    activeDuration: 0.1
     recoveryDuration: 0.3
   hitDetector:
     rid: 3181427246007058574
