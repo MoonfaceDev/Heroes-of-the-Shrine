@@ -230,7 +230,8 @@ MonoBehaviour:
     executors:
     - rid: 13203342144831515
     - rid: 1742320274296799258
-  explodeAnimationDuration: 0.5
+  explosionStartDelay: 0.2
+  explodeAnimationDuration: 0.3
   references:
     version: 2
     RefIds:
