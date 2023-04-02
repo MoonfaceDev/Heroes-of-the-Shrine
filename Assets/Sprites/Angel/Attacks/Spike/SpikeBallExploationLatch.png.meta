@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ac88288eb1de9ad4f8ea743f79c10d7e
+guid: 60580c5b9c4ff7d499c39629bf0bfef3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -46,8 +46,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
   spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -106,169 +106,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SpikeBallExploation_0
+      name: SpikeBallExploationLatch_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 32
         width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4495ef7922fd3434f90128670a099aae
-      internalID: -1240693267
+      spriteID: 1f30caf8469011f418df50cdfa1c2f5a
+      internalID: -1936280677
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikeBallExploation_1
+      name: SpikeBallExploationLatch_1
       rect:
         serializedVersion: 2
         x: 64
-        y: 64
+        y: 32
         width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f86a874e84919d543a916c17a79cd07e
-      internalID: 1734325574
+      spriteID: 05b6ef8ecb90d4143ab4d02ccc0b5841
+      internalID: 1483473887
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikeBallExploation_2
+      name: SpikeBallExploationLatch_2
       rect:
         serializedVersion: 2
         x: 128
-        y: 64
+        y: 32
         width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d11581c3d5c5aac48a39ab9d95904c8b
-      internalID: 1292139413
+      spriteID: ca0f7a8db578e464fbcf8700fb5c219c
+      internalID: 1098724875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikeBallExploation_3
+      name: SpikeBallExploationLatch_3
       rect:
         serializedVersion: 2
         x: 192
-        y: 64
+        y: 32
         width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7c93412ec8a30040bd63662d17e7122
-      internalID: 579434047
+      spriteID: c95256bdc2735484c909e55a76387713
+      internalID: -325934133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikeBallExploation_4
+      name: SpikeBallExploationLatch_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62f1acff83b774a4b8adbee1ab4246e9
-      internalID: -1372283285
+      spriteID: 877ef0e0ba8e2684c946d0cda7bc9716
+      internalID: 1504557173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikeBallExploation_5
+      name: SpikeBallExploationLatch_5
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5eb7714f2941ead45befab4c6706296a
-      internalID: 217750988
+      spriteID: 72cbb36e07788144c9545e8d56c5766f
+      internalID: 1935498386
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikeBallExploation_6
+      name: SpikeBallExploationLatch_6
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc45a83c9b4fb8c439ef47234d82017b
-      internalID: 706833139
+      spriteID: e2e0c9d3833c50441b410fde36b31bd2
+      internalID: 502598424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikeBallExploation_7
+      name: SpikeBallExploationLatch_7
       rect:
         serializedVersion: 2
         x: 192
         y: 0
         width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58f1f9fbd08319048aa39f2900ff1627
-      internalID: 355503332
+      spriteID: a822119ee6666c840b5804de0d4ab17d
+      internalID: -1769408372
       vertices: []
       indices: 
       edges: []
@@ -284,14 +284,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SpikeBallExploation_3: 579434047
-      SpikeBallExploation_5: 217750988
-      SpikeBallExploation_1: 1734325574
-      SpikeBallExploation_2: 1292139413
-      SpikeBallExploation_7: 355503332
-      SpikeBallExploation_4: -1372283285
-      SpikeBallExploation_0: -1240693267
-      SpikeBallExploation_6: 706833139
+      SpikeBallExploationLatch_0: -1936280677
+      SpikeBallExploationLatch_1: 1483473887
+      SpikeBallExploationLatch_6: 502598424
+      SpikeBallExploationLatch_5: 1935498386
+      SpikeBallExploationLatch_3: -325934133
+      SpikeBallExploationLatch_4: 1504557173
+      SpikeBallExploationLatch_2: 1098724875
+      SpikeBallExploationLatch_7: -1769408372
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

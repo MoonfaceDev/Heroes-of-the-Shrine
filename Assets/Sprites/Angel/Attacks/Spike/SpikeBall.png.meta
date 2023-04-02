@@ -109,12 +109,12 @@ TextureImporter:
       name: SpikeBall_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 12
+        x: 12
+        y: 36
         width: 12
         height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -130,12 +130,12 @@ TextureImporter:
       name: SpikeBall_1
       rect:
         serializedVersion: 2
-        x: 12
-        y: 12
+        x: 36
+        y: 36
         width: 12
         height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -151,12 +151,12 @@ TextureImporter:
       name: SpikeBall_2
       rect:
         serializedVersion: 2
-        x: 24
-        y: 12
+        x: 0
+        y: 24
         width: 12
         height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -172,12 +172,12 @@ TextureImporter:
       name: SpikeBall_3
       rect:
         serializedVersion: 2
-        x: 36
-        y: 12
+        x: 24
+        y: 24
         width: 12
         height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -193,12 +193,12 @@ TextureImporter:
       name: SpikeBall_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 12
+        y: 12
         width: 12
         height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -214,12 +214,12 @@ TextureImporter:
       name: SpikeBall_5
       rect:
         serializedVersion: 2
-        x: 12
-        y: 0
+        x: 36
+        y: 12
         width: 12
         height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -235,12 +235,12 @@ TextureImporter:
       name: SpikeBall_6
       rect:
         serializedVersion: 2
-        x: 24
+        x: 0
         y: 0
         width: 12
         height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -256,19 +256,19 @@ TextureImporter:
       name: SpikeBall_7
       rect:
         serializedVersion: 2
-        x: 36
+        x: 24
         y: 0
         width: 12
         height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab104884ec7c860409a0732c4a4351ee
-      internalID: -1843602744
+      spriteID: f69dee71d7d533046990d379f8ce3254
+      internalID: -989832033
       vertices: []
       indices: 
       edges: []
@@ -290,7 +290,7 @@ TextureImporter:
       SpikeBall_1: -182282174
       SpikeBall_6: 1654822835
       SpikeBall_4: 761838710
-      SpikeBall_7: -1843602744
+      SpikeBall_7: -989832033
       SpikeBall_2: -354459788
   spritePackingTag: 
   pSDRemoveMatte: 0

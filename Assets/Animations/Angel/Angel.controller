@@ -3716,12 +3716,6 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: SpikeBallAttack-anticipating
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: SpikeBallAttack-active
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
     m_ConditionEvent: SpikeBallAttack-recovering
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
