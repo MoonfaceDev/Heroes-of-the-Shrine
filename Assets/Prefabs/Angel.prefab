@@ -8107,7 +8107,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1738506296, guid: 9c3fa839077a4b441af60523acaec38f, type: 3}
+  m_Sprite: {fileID: 1660216599, guid: 90d3cc8f7353fa5419a738aa6f99c994, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13540,11 +13540,12 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.5
+    anticipationDuration: 0.6
     activeTimeout: 3
+    minActiveTime: 0.5
     recoveryDuration: 0.5
   ballPrefab: {fileID: 7195235196650147203, guid: 6855b38c7105f134ba6e8744a09a9039, type: 3}
-  ballSpawnPoint: {x: 0.7, y: 0.8, z: 0}
+  ballSpawnPoint: {x: 0.7, y: 0.95, z: 0}
   ballSpeed: 4
 --- !u!1 &7477602066808393276
 GameObject:
