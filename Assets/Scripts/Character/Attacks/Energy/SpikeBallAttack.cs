@@ -9,9 +9,10 @@ public class SpikeBallAttack : BaseAttack
     {
         public float anticipationDuration;
         public float activeTimeout;
+        public float minActiveTime;
         public float recoveryDuration;
     }
-    
+
     public AttackFlow attackFlow;
     public GameObject ballPrefab;
     public Vector3 ballSpawnPoint;
@@ -20,7 +21,7 @@ public class SpikeBallAttack : BaseAttack
     private SpikeBall ballInstance;
     private float activeStartTime;
     private bool released;
-    
+
     protected override IEnumerator AnticipationPhase()
     {
         yield return new WaitForSeconds(attackFlow.anticipationDuration);
@@ -33,7 +34,8 @@ public class SpikeBallAttack : BaseAttack
         var ballEntity = GameEntity.Instantiate(ballPrefab, Entity.TransformToWorld(ballSpawnPoint));
         ballInstance = ballEntity.GetBehaviour<SpikeBall>();
         ballInstance.Fire(ballSpeed * Entity.WorldRotation * Vector3.right, this);
-        yield return new WaitUntil(() => released || Time.time - attackFlow.activeTimeout > activeStartTime);
+        yield return new WaitUntil(() => (released && Time.time - activeStartTime > attackFlow.minActiveTime) ||
+                                         Time.time - activeStartTime > attackFlow.activeTimeout);
         ballInstance.Explode();
     }
 
@@ -46,7 +48,7 @@ public class SpikeBallAttack : BaseAttack
     {
         released = true;
     }
-    
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.magenta;
