@@ -8,6 +8,7 @@ public class SpikeBall : EntityBehaviour
     [Header("Explosion")] public AbsoluteHitDetector explosionHitDetector;
     public ChainHitExecutor explosionSourceHitExecutor;
     public ChainHitExecutor explosionHitExecutor;
+    public float explosionStartDelay;
     public float explodeAnimationDuration;
 
     private MovableEntity MovableEntity => (MovableEntity)Entity;
@@ -22,7 +23,7 @@ public class SpikeBall : EntityBehaviour
             latchHitDetector.StopDetector();
             var targetY = Entity.WorldPosition.y;
             Entity.parent = hittable.Character.Entity;
-            Entity.position = Entity.TransformToRelative(Entity.parent.WorldPosition + targetY * Vector3.up); 
+            Entity.position = Entity.TransformToRelative(Entity.parent.WorldPosition + targetY * Vector3.up);
             hittable.Hit(latchHitExecutor,
                 new Hit { source = source, victim = hittable, direction = Mathf.RoundToInt(Mathf.Sign(velocity.x)) }
             );
@@ -38,7 +39,7 @@ public class SpikeBall : EntityBehaviour
         animator.SetTrigger($"{GetType().Name}-explode");
         Destroy(gameObject, explodeAnimationDuration);
 
-        explosionHitDetector.StartDetector(hittable =>
+        StartTimeout(() => explosionHitDetector.StartDetector(hittable =>
         {
             if (hittable.Character.Entity == Entity.parent)
             {
@@ -56,6 +57,6 @@ public class SpikeBall : EntityBehaviour
                     }
                 );
             }
-        }, sourceAttack.AttackManager.hittableTags);
+        }, sourceAttack.AttackManager.hittableTags), explosionStartDelay);
     }
 }
