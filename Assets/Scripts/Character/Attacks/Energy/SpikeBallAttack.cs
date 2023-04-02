@@ -24,13 +24,13 @@ public class SpikeBallAttack : BaseAttack
 
     protected override IEnumerator AnticipationPhase()
     {
+        released = false;
         yield return new WaitForSeconds(attackFlow.anticipationDuration);
     }
 
     protected override IEnumerator ActivePhase()
     {
         activeStartTime = Time.time;
-        released = false;
         var ballEntity = GameEntity.Instantiate(ballPrefab, Entity.TransformToWorld(ballSpawnPoint));
         ballInstance = ballEntity.GetBehaviour<SpikeBall>();
         ballInstance.Fire(ballSpeed * Entity.WorldRotation * Vector3.right, this);
