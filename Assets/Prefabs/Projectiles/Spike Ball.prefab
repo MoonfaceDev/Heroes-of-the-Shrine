@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 745191492974542311}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.05, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48,7 +48,7 @@ MonoBehaviour:
   parent: {fileID: 3469655496789052739}
   tags:
     tags: 
-  position: {x: 0, y: 0, z: 0}
+  position: {x: -0.05, y: 0.05, z: 0}
   rotation:
     flipped: 0
   scale: {x: 1, y: 1, z: 1}
@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 2, y: 2, z: 0}
+  size: {x: 5.6, y: 5.6, z: 4}
 --- !u!1 &6469512281503957580
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +229,7 @@ MonoBehaviour:
   explosionHitExecutor:
     executors:
     - rid: 13203342144831515
+    - rid: 1742320274296799258
   explodeAnimationDuration: 0.5
   references:
     version: 2
@@ -240,13 +241,17 @@ MonoBehaviour:
     - rid: 13203342144831513
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        stunTime: 10
+        stunTime: 1
     - rid: 13203342144831515
       type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         knockbackPower: 10
         knockbackDirection: 30
         stunTime: 0.5
+    - rid: 1742320274296799258
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 25
 --- !u!1 &8015725547446733794
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +327,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1033286763, guid: 1399a78d6d69c0f448129d5ffacc7844, type: 3}
+  m_Sprite: {fileID: 217750988, guid: ac88288eb1de9ad4f8ea743f79c10d7e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
