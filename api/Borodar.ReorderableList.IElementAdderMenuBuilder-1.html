@@ -1,0 +1,369 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IElementAdderMenuBuilder&lt;TContext&gt;
+   | Heroes of the Shrine </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IElementAdderMenuBuilder&lt;TContext&gt;
+   | Heroes of the Shrine ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Borodar.ReorderableList.IElementAdderMenuBuilder`1">
+  
+  
+  <h1 id="Borodar_ReorderableList_IElementAdderMenuBuilder_1" data-uid="Borodar.ReorderableList.IElementAdderMenuBuilder`1" class="text-break">Interface IElementAdderMenuBuilder&lt;TContext&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Interface for building an <a class="xref" href="Borodar.ReorderableList.IElementAdderMenu.html">IElementAdderMenu</a>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Borodar.ReorderableList.html">Borodar.ReorderableList</a></h6>
+  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h5 id="Borodar_ReorderableList_IElementAdderMenuBuilder_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IElementAdderMenuBuilder&lt;TContext&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TContext</span></td>
+        <td><p>Type of the context object that elements can be added to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Borodar_ReorderableList_IElementAdderMenuBuilder_1_AddCustomCommand_" data-uid="Borodar.ReorderableList.IElementAdderMenuBuilder`1.AddCustomCommand*"></a>
+  <h4 id="Borodar_ReorderableList_IElementAdderMenuBuilder_1_AddCustomCommand_Borodar_ReorderableList_IElementAdderMenuCommand__0__" data-uid="Borodar.ReorderableList.IElementAdderMenuBuilder`1.AddCustomCommand(Borodar.ReorderableList.IElementAdderMenuCommand{`0})">AddCustomCommand(IElementAdderMenuCommand&lt;TContext&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds a custom command to the menu.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void AddCustomCommand(IElementAdderMenuCommand&lt;TContext&gt; command)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Borodar.ReorderableList.IElementAdderMenuCommand-1.html">IElementAdderMenuCommand</a>&lt;TContext&gt;</td>
+        <td><span class="parametername">command</span></td>
+        <td><p>The custom command.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>If <code data-dev-comment-type="paramref" class="paramref">command</code> is <code>null</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Borodar_ReorderableList_IElementAdderMenuBuilder_1_AddTypeFilter_" data-uid="Borodar.ReorderableList.IElementAdderMenuBuilder`1.AddTypeFilter*"></a>
+  <h4 id="Borodar_ReorderableList_IElementAdderMenuBuilder_1_AddTypeFilter_Func_Type_System_Boolean__" data-uid="Borodar.ReorderableList.IElementAdderMenuBuilder`1.AddTypeFilter(Func{Type,System.Boolean})">AddTypeFilter(Func&lt;Type, Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds a filter function which determines whether types can be included or
+whether they need to be excluded.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void AddTypeFilter(Func&lt;Type, bool&gt; typeFilter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Type</span>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a>&gt;</td>
+        <td><span class="parametername">typeFilter</span></td>
+        <td><p>Filter function.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Borodar_ReorderableList_IElementAdderMenuBuilder_1_AddTypeFilter_Func_Type_System_Boolean___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If a filter function returns a value of <code>false</code> then that type
+will not be included in the menu interface.</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>If <code data-dev-comment-type="paramref" class="paramref">typeFilter</code> is <code>null</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Borodar_ReorderableList_IElementAdderMenuBuilder_1_GetMenu_" data-uid="Borodar.ReorderableList.IElementAdderMenuBuilder`1.GetMenu*"></a>
+  <h4 id="Borodar_ReorderableList_IElementAdderMenuBuilder_1_GetMenu" data-uid="Borodar.ReorderableList.IElementAdderMenuBuilder`1.GetMenu">GetMenu()</h4>
+  <div class="markdown level1 summary"><p>Builds and returns a new <a class="xref" href="Borodar.ReorderableList.IElementAdderMenu.html">IElementAdderMenu</a> instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IElementAdderMenu GetMenu()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Borodar.ReorderableList.IElementAdderMenu.html">IElementAdderMenu</a></td>
+        <td><p>A new <a class="xref" href="Borodar.ReorderableList.IElementAdderMenu.html">IElementAdderMenu</a> instance each time the method is invoked.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Borodar_ReorderableList_IElementAdderMenuBuilder_1_SetContractType_" data-uid="Borodar.ReorderableList.IElementAdderMenuBuilder`1.SetContractType*"></a>
+  <h4 id="Borodar_ReorderableList_IElementAdderMenuBuilder_1_SetContractType_Type_" data-uid="Borodar.ReorderableList.IElementAdderMenuBuilder`1.SetContractType(Type)">SetContractType(Type)</h4>
+  <div class="markdown level1 summary"><p>Sets contract type of the elements that can be included in the <a class="xref" href="Borodar.ReorderableList.IElementAdderMenu.html">IElementAdderMenu</a>.
+Only non-abstract class types that are assignable from the <code data-dev-comment-type="paramref" class="paramref">contractType</code>
+will be included in the built menu.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetContractType(Type contractType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Type</span></td>
+        <td><span class="parametername">contractType</span></td>
+        <td><p>Contract type of addable elements.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Borodar_ReorderableList_IElementAdderMenuBuilder_1_SetElementAdder_" data-uid="Borodar.ReorderableList.IElementAdderMenuBuilder`1.SetElementAdder*"></a>
+  <h4 id="Borodar_ReorderableList_IElementAdderMenuBuilder_1_SetElementAdder_Borodar_ReorderableList_IElementAdder__0__" data-uid="Borodar.ReorderableList.IElementAdderMenuBuilder`1.SetElementAdder(Borodar.ReorderableList.IElementAdder{`0})">SetElementAdder(IElementAdder&lt;TContext&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set the <a class="xref" href="Borodar.ReorderableList.IElementAdder-1.html">IElementAdder&lt;TContext&gt;</a> implementation which is used
+when adding new elements to the context object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetElementAdder(IElementAdder&lt;TContext&gt; elementAdder)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Borodar.ReorderableList.IElementAdder-1.html">IElementAdder</a>&lt;TContext&gt;</td>
+        <td><span class="parametername">elementAdder</span></td>
+        <td><p>Element adder.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Borodar_ReorderableList_IElementAdderMenuBuilder_1_SetElementAdder_Borodar_ReorderableList_IElementAdder__0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Specify a value of <code>null</code> for <code data-dev-comment-type="paramref" class="paramref">elementAdder</code> to
+prevent the selection of any types.</p>
+</div>
+  
+  
+  <a id="Borodar_ReorderableList_IElementAdderMenuBuilder_1_SetTypeDisplayNameFormatter_" data-uid="Borodar.ReorderableList.IElementAdderMenuBuilder`1.SetTypeDisplayNameFormatter*"></a>
+  <h4 id="Borodar_ReorderableList_IElementAdderMenuBuilder_1_SetTypeDisplayNameFormatter_Func_Type_System_String__" data-uid="Borodar.ReorderableList.IElementAdderMenuBuilder`1.SetTypeDisplayNameFormatter(Func{Type,System.String})">SetTypeDisplayNameFormatter(Func&lt;Type, String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set the function that formats the display of type names in the user interface.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetTypeDisplayNameFormatter(Func&lt;Type, string&gt; formatter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Type</span>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td><span class="parametername">formatter</span></td>
+        <td><p>Function that formats display name of type; or <code>null</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Borodar_ReorderableList_IElementAdderMenuBuilder_1_SetTypeDisplayNameFormatter_Func_Type_System_String___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Specify a value of <code>null</code> for <code data-dev-comment-type="paramref" class="paramref">formatter</code> to
+assume the default formatting function.</p>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Heroes of the Shrine - Manual
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

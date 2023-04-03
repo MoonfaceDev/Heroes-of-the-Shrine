@@ -24,6 +24,882 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.AssetInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.AssetInfo.html",
+          "hash": "og9+ZVWrWNFHGAb4dbxs+K3eahJhfgvHgYyH/xRU3J8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.DraggablePopupWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.DraggablePopupWindow.html",
+          "hash": "2Yq0dmkGY61cafJhmg3cLO3QwAg0phcFY1UDcpbKd48="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.FolderColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.FolderColor.html",
+          "hash": "fnDRcYmrCn8M6ocUxHVc7k2ZLmGUcrtCy1BsfHgv0L8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.FolderColorName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.FolderColorName.html",
+          "hash": "2x6X/OlVUKZ9CXUJr2ZVumpL7vBe82TxsoJHAtRMvTg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.FolderColorsStorage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.FolderColorsStorage.html",
+          "hash": "aqEdOQoKh5XDddLxXI1qDQ1v+OKMA5gJxgaIT2RhXJ0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.FolderColorsStorageEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.FolderColorsStorageEditor.html",
+          "hash": "j5DP1NOjuow95p7Mf/TT+fUCYWNu8M7BXG6yrZT/9+Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.FolderIconPair.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.FolderIconPair.html",
+          "hash": "jQ+ew+YWzq7napjygKdgpKqjgzIEJvuKCxXxU1IXIbo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.FolderPlatform.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.FolderPlatform.html",
+          "hash": "0QW+1wpbmhEIORT5k5YZUd07mJTdQjdiT7g5nMxumBk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.FolderPlatformDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.FolderPlatformDrawer.html",
+          "hash": "ty09GnzRQ/NpaVP+QoV5pJ9E4w1NTvWR9l+aFWPjkM8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.FolderPlatformName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.FolderPlatformName.html",
+          "hash": "XM4M6iRoXNtE5ZyHW1R+wF+blsKLEpQdnnMzIc9PiV8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.FolderPlatformsStorage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.FolderPlatformsStorage.html",
+          "hash": "+BrZQyv4iEgrcq5uHlFCI4rvEyo4W/1TtFdJ7iH1yXM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.FolderPlatformsStorageEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.FolderPlatformsStorageEditor.html",
+          "hash": "iric8Ttfc5mb1t5GXRIYyia0EjKUrT/e2rJoATlz8Z0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.FolderTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.FolderTag.html",
+          "hash": "cx63CrcZtEUskPdpbuUq9maS4i8dsU5Pil6cE9CdD8k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.FolderTagName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.FolderTagName.html",
+          "hash": "6jBMuEihV+IVOIDKLuX1OF8dSFuGk7XEIzR0h4r85no="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.FolderTagsStorage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.FolderTagsStorage.html",
+          "hash": "R21uIC/nmirWNhdisUJJQ9RU4LMV5ssROOGRyuF3nDs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.FolderTagsStorageEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.FolderTagsStorageEditor.html",
+          "hash": "7xuG1wWrpEbvGaUyiFLI5gs5Y8+DY6EYDyL0uOp5jbA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.FolderType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.FolderType.html",
+          "hash": "jRi9qdAQ6GbFsd6oNNrQEc2HLP4kSSdYOSNmDOuFVoY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.FolderTypeName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.FolderTypeName.html",
+          "hash": "iGyG0I+hScAFTci7heWaRmTQ8/PJjT0iAlKdNM5NUOg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.FolderTypesStorage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.FolderTypesStorage.html",
+          "hash": "Rz5hmE91kN2AiO1bLhT+s+FkiKVwUG9dSvYdmrFEG/M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.FolderTypesStorageEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.FolderTypesStorageEditor.html",
+          "hash": "mc+3HkTKPsgXBReSftv19pGCwo0ksG131OIBZPl6FEU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.RainbowFoldersBrowserIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.RainbowFoldersBrowserIcons.html",
+          "hash": "AQCGkvS5/E/v/xnRw/NlZcm5sbQlvrzU5VYcTSzEbcM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.RainbowFoldersContextMenu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.RainbowFoldersContextMenu.html",
+          "hash": "y5pM2ReIAEOkjJYkiVskjXAMhh+ELY5zoaIIwUXUJxU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.RainbowFoldersEditorUtility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.RainbowFoldersEditorUtility.html",
+          "hash": "yL26JRiIfPSbImqyQ/QPZrbF4FjLFEvuvdXf+TIZae0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.RainbowFoldersPopup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.RainbowFoldersPopup.html",
+          "hash": "D8c5TXTrg8wPcuvWhZ7nllbBA293wfWWFtu/BjIHhyY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem-1.html",
+          "hash": "FSdsBdmWdUuRCwMqbjoezFUBQGHD6JOfayURQyDHLBQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsString.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsString.html",
+          "hash": "R4/rvvbmVWbtM7XoTw2vJxY5mQFvqdcvRyIYMzwtWy0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.html",
+          "hash": "LhbccAnL+njAhWyPtedmak6jimDYkcRkGCMAETkWMc4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.RainbowFoldersPresetsMenu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.RainbowFoldersPresetsMenu.html",
+          "hash": "k2N7XDwYr1eYa3cPNtsyZn7/CiZ5gltNSEZyL7rZTPg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.RainbowFoldersWelcome.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.RainbowFoldersWelcome.html",
+          "hash": "AFiDtkmvRiXUy2D0v5j24o0dvqlGxhZNXuOrIJL8Vok="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.Settings.FolderColorDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.Settings.FolderColorDrawer.html",
+          "hash": "yv7niglQAUrCERGR5vFYSGFSdNyOfRaSjgtzFr9zM3I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.Settings.FolderTagDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.Settings.FolderTagDrawer.html",
+          "hash": "fCEIM7alk9kRZMZu0G13AzO0jQPrfegrerJ/50a9KWo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.Settings.FolderTypeDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.Settings.FolderTypeDrawer.html",
+          "hash": "+hQtDOg6FhoNgXoLctZxkkh3LkDlkSugk8XgpRnuEoA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.Settings.RainbowFolder.KeyType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.Settings.RainbowFolder.KeyType.html",
+          "hash": "4g6NOfmdmobedKizWBWcB3he+1JEKVLk9+zx+N8RS+4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.Settings.RainbowFolder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.Settings.RainbowFolder.html",
+          "hash": "Q3T7bqEKw2w7JG8NY2tcyC9W/KByBDtcU4fbHaufco8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.Settings.RainbowFolderDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.Settings.RainbowFolderDrawer.html",
+          "hash": "aea4CAgowc348BrjG1b+fjC5WJtOKgAV3qLm/HI33mg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.Settings.RainbowFoldersSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.Settings.RainbowFoldersSettings.html",
+          "hash": "m5bVX2B3HGzleup5GS6smoa1FxvaLWDX0qqV2kDaYr0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.Settings.RainbowFoldersSettingsEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.Settings.RainbowFoldersSettingsEditor.html",
+          "hash": "rxgZrPTPeD9ETm21ige1AxecGRVgIQ08SwMXRwYYF3k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.Settings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.Settings.html",
+          "hash": "qjzDndWVyYSErlHlRnN6UO/IEmOkNv/VYSc+YbMoKac="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.RainbowFolders.Editor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.RainbowFolders.Editor.html",
+          "hash": "6MmVSPR7i5O57/+UMlVuPs6Ckvy1nMHCsX5uDAB5xhA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.AddMenuClickedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.AddMenuClickedEventArgs.html",
+          "hash": "PcJFjvFGY0xtBtEmcmorwFgHTTTUvXKd7xSZA87uyO0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.AddMenuClickedEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.AddMenuClickedEventHandler.html",
+          "hash": "VAlEN5eWcdkBSYAhzP4JKx7UbFbHpQ8adEe5A8Q53E8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.ElementAdderMenuBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.ElementAdderMenuBuilder.html",
+          "hash": "5pHTUbL1zAzbi3pbJ+07SdQEkOPP8dk4RvucU4R5Q2k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.ElementAdderMenuCommandAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.ElementAdderMenuCommandAttribute.html",
+          "hash": "ZcuxY/9ll5a6ysH+rffOpbZ2Byw8OnrujEXLC4MgpRg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.ElementAdderMeta.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.ElementAdderMeta.html",
+          "hash": "6PGJMGnDB3uO6Awj41cj2QZ28U4FT0yqmHSRM1B08tA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.GenericListAdaptor-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.GenericListAdaptor-1.html",
+          "hash": "1+musC3+4qC3ZsAifa8kDvw5gtQ803t3pdPlYJg57eA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.IElementAdder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.IElementAdder-1.html",
+          "hash": "+43u4zRq9FkxCGyESDuRacr7gJkggfmUB/c8G2NxW8A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.IElementAdderMenu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.IElementAdderMenu.html",
+          "hash": "cWGyG29oXiaSFTpjl0E0D1/jNSVGzmkgpThifi4EXCA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.IElementAdderMenuBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.IElementAdderMenuBuilder-1.html",
+          "hash": "9TW4tfT1kSywybjz5k3wAGvVQfMaGMWXmaAWnxI0XkE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.IElementAdderMenuCommand-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.IElementAdderMenuCommand-1.html",
+          "hash": "DMM1tEFgjbmu4kxXKpfKTkRqGPZnUh86pHOA6fx/AvQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.IReorderableListAdaptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.IReorderableListAdaptor.html",
+          "hash": "UgA9yo+7RXm8GdjPXTjGAdlQBMZCiRlU9W+55yHXd2E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.IReorderableListDropTarget.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.IReorderableListDropTarget.html",
+          "hash": "YjiPjr4SJPtOqfTkFPF9R7LBq9nWAnc/8Jc0PtIhZag="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.Internal.GUIHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.Internal.GUIHelper.html",
+          "hash": "/fxWpWB4r/SFn/iulJAOpnAe+XFguHLkud+H50Y8cHc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.Internal.ReorderableListResources.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.Internal.ReorderableListResources.html",
+          "hash": "/DnSNVDS8V1uJFjkxlqXS3gxnB1eUQFiPkEAvCMIU28="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.Internal.ReorderableListTexture.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.Internal.ReorderableListTexture.html",
+          "hash": "3h2BYUP3CKNd5eSLpnV4yc+HRb9Fr4zp9hoHqmMP7sU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.Internal.SerializedPropertyUtility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.Internal.SerializedPropertyUtility.html",
+          "hash": "0BoWwrHGMaQXTt560+Ew3Uger+iexz3h2jlQDFvyorY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.Internal.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.Internal.html",
+          "hash": "48mumqjpynVN59njmd+WAunH01QWviKKca3Qdnx5y+g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.ItemInsertedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.ItemInsertedEventArgs.html",
+          "hash": "85E0xJZWLbCspQLsfJS4ezjDzSiYM+fnWnMGGAVYrUk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.ItemInsertedEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.ItemInsertedEventHandler.html",
+          "hash": "q/NvW0ihrgZ5QDlc1u7rkY9KCIgurroOuue2EFk6CcA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.ItemMovedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.ItemMovedEventArgs.html",
+          "hash": "Cc190/U9mI51vaQByQiqhkwqfOHCVOVzlehmEpAAFKE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.ItemMovedEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.ItemMovedEventHandler.html",
+          "hash": "eGrKDXWDbL22FCj+vSYUw4aBMMGW6yWvHvXJlKImCnE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.ItemMovingEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.ItemMovingEventArgs.html",
+          "hash": "LwRZiSXA3KBCj7mBW7eIbU7DWt9fQX2SpzjNSQCIBu0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.ItemMovingEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.ItemMovingEventHandler.html",
+          "hash": "w5yqL4Fyne2nzaEbsXQcRTQefOH3EU439Gv57m9LgB4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.ItemRemovingEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.ItemRemovingEventArgs.html",
+          "hash": "Aqs+++6u8yuR3qaapDo7Mrckh/jtFiGt8KBfi59hBRQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.ItemRemovingEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.ItemRemovingEventHandler.html",
+          "hash": "XbuSmJVE7LnLPuJ30EPrR2tpVEfPlxtJ43mQcVTVoK8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.ReorderableListControl.DrawEmpty.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.ReorderableListControl.DrawEmpty.html",
+          "hash": "czLN0MR1VmszQOCvu0c7GtO9OxLrlhrwgDwBTpMPTO8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.ReorderableListControl.DrawEmptyAbsolute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.ReorderableListControl.DrawEmptyAbsolute.html",
+          "hash": "3yoINfNx/uIDFHCSIdHcL8jkR8r+bSUthLHhiOUgGkU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.ReorderableListControl.ItemDrawer-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.ReorderableListControl.ItemDrawer-1.html",
+          "hash": "4hcjFXCZaDfUG3H5CEedL28PdmM+EA55uOBOz0o1Ajc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.ReorderableListControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.ReorderableListControl.html",
+          "hash": "6jYLXNIATqaGBkBV2FOvG56vL3rbh2STbo1hXLAzTEY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.ReorderableListFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.ReorderableListFlags.html",
+          "hash": "F1G9F1fjJOp42RyCRmoIlGp2DzZ08td4eJttZPmTFic="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.ReorderableListGUI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.ReorderableListGUI.html",
+          "hash": "ErpfghIGld+GHCQ+VDfxVADEM3AxVz2av+MFp8c9hgM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.ReorderableListStyles.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.ReorderableListStyles.html",
+          "hash": "GRombGlATIGEvtcEYt/kVGkADy8DGINrv9WC7C4cQu4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.SerializedPropertyAdaptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.SerializedPropertyAdaptor.html",
+          "hash": "NivoK5fiv0WLSxwAg1OOWSeXWRpJ7ggmaJSHvY0yzmg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Borodar.ReorderableList.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Borodar.ReorderableList.html",
+          "hash": "UP49Z8ZPbjnnnm3Oxo9y7sWyc2Xv7Uo2OKhYmTT0B28="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.AbsoluteHitDetector.yml",
       "output": {
         ".html": {
@@ -64,7 +940,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.AirAttack.html",
-          "hash": "WobCrUs5hzlp813/ZlmbSLAv0wkYb039OsQE6uFvMMM="
+          "hash": "1X8w7cqkbkKBLnOIxYg7/Soes2GvGIhDVDque65ossk="
         }
       },
       "is_incremental": false,
@@ -196,7 +1072,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.AttackPattern.html",
-          "hash": "OBKckr01TPC/wiE9L28YT8s3rFrX7QkYyaMgHwQoo8U="
+          "hash": "ZIDtBS7YYnCKK0guYHdTfFpyw5EzxzxJUP5ZN/VFJk0="
         }
       },
       "is_incremental": false,
@@ -256,7 +1132,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.BaseAttack.html",
-          "hash": "w0wQbA5n1puPq+ox+yauFeoQmUBrikS/B1m9XQMaxNs="
+          "hash": "EcX+VA1Lu5UANMZr21dYv/QkdhiZNvBcxEd+5LsjxWE="
         }
       },
       "is_incremental": false,
@@ -556,7 +1432,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.CutsceneAction.html",
-          "hash": "VTZg94Hij1a3U119i7pE6y/2e+2dZMxdhCBT0I78gfA="
+          "hash": "jUtw0V0jK16jfFLmOkLAw9FXKUJq86PvqVcz7Hh5ois="
         }
       },
       "is_incremental": false,
@@ -676,7 +1552,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.DistancesBrainModule.html",
-          "hash": "O8qernbz3jl3duwd8aUTpK0Qb498HWsK7PwdSaDLT64="
+          "hash": "VxYsCDo7U899ECxUUiv29vyRqW4T22s5rcpmO/onBDw="
         }
       },
       "is_incremental": false,
@@ -700,7 +1576,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.DodgeBehaviour.html",
-          "hash": "An4xaKDZIPya9oD5tvV3pXQbcbSQ5B/rCXw2PTRgnW8="
+          "hash": "8C2tQH+wGVC3Up9hkH6jNElnSQBCfr6uL7LnJ7TFCm8="
         }
       },
       "is_incremental": false,
@@ -772,7 +1648,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.ElectrifyAttack.html",
-          "hash": "9AHYQyPDBdBiN7ximxQwDbe2KJxTwKH2JhqrGgPHL2Y="
+          "hash": "vA+9RNKn1xO/MxjPJ5kk8Yi24q7Rny8IthCUU6alLNw="
         }
       },
       "is_incremental": false,
@@ -904,7 +1780,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.EntityBehaviour.html",
-          "hash": "2I0swR/rEGkLYdLie+aJwEEjAlsN39nqOQfZxRsByEE="
+          "hash": "9F6cP3lLiqIpHPnsckwE7RqRh/4CdoTFYxhmATrBd8U="
         }
       },
       "is_incremental": false,
@@ -916,7 +1792,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.EntityManager.html",
-          "hash": "KQjyCItdM+aNRvllz46XDf7AflB/QhjfrqxMsfK2d7g="
+          "hash": "r6wZXAMW2ttI49PcJA5IBMUyKK9bQhgLKzqLDUYqkEo="
         }
       },
       "is_incremental": false,
@@ -1048,7 +1924,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.FocusBlock.html",
-          "hash": "U6gFTsjG/50UCQxIq+rPv8n+sbk3m2jdKMBafZDxvlg="
+          "hash": "QEDfhgdiXleBObjb6/vn93KJWCiACJcmAzVlWbBAzk0="
         }
       },
       "is_incremental": false,
@@ -1132,7 +2008,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.GameEntity.html",
-          "hash": "ySlThMzsMgC2cZaCPTNkzNo+62GcEfaQPnVuFTwyA6U="
+          "hash": "LltVQwItxL04jWMu2KYqJvFeiYVi9thtvTgjgacxK5E="
         }
       },
       "is_incremental": false,
@@ -1444,7 +2320,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.JumpBehaviour.html",
-          "hash": "xdAWlFV89acFVsLsIG9KQYR/bwEQ8pCIvl1HST1abIk="
+          "hash": "qMk1u9gnYWEy6aG8/AjYXtcEl9ceWX4ItZSBeKuMhSE="
         }
       },
       "is_incremental": false,
@@ -1540,7 +2416,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.MathUtils.html",
-          "hash": "Cqc4HPyfbpVR2db+iLe323DRJXm7O8f30xa6iHcM5do="
+          "hash": "XQ8L68Me7LSFswGK9r3oa2SPoGUBJ5UcLuhwgeXKc+E="
         }
       },
       "is_incremental": false,
@@ -1576,7 +2452,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.MotionAttack.html",
-          "hash": "z179gqxTqsMFomQ5HAeR2kmb7ZaLwWPd/CgI8edeZOA="
+          "hash": "jZ+xdiFGmP4WFJlL2QLNiFtIA6ei3Tka1m0DHhbA5bk="
         }
       },
       "is_incremental": false,
@@ -1744,7 +2620,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.PhasedBehaviour-1.html",
-          "hash": "dSP4T+fAxU7TrVw098+e1XLgbDeJ2DXqTCaaAuk3dtY="
+          "hash": "Bvr5m5ntKSMJvw/i+8V5jvJoOn07ooWy0xRacY+2MVM="
         }
       },
       "is_incremental": false,
@@ -1816,7 +2692,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.PlayerController.html",
-          "hash": "H5TXo/bfCrtdy6rCfjohL0A9UAecjMzAhWgEBdwVLUo="
+          "hash": "hitoLYqZf+UD3VZXYfGdQdVEi+4mGAIzAGP3HNT9zxE="
         }
       },
       "is_incremental": false,
@@ -1876,7 +2752,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.PossessAttack.html",
-          "hash": "TpOiXFayjuQgdiuhlY6J4fqcKlHuDtenm061oBj/eCw="
+          "hash": "zkP1HlgaMzo395bQZ6m+zkq7giSQIzfNN0J1yaGfuv4="
         }
       },
       "is_incremental": false,
@@ -2164,7 +3040,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.SimpleAttack.html",
-          "hash": "ZTX3erytbo/Ux3afl74o47aQLPOSbPuWYpjXGKIRQNE="
+          "hash": "ESKeXzMlqLpQMbAsWBpIDBU233ytqbaJpNITGdPdiuM="
         }
       },
       "is_incremental": false,
@@ -2272,7 +3148,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.SpawnAttack.html",
-          "hash": "dbJZsYS0xKQCbvz/31Tsv8tY5PJb0qJxinwTw49yjQw="
+          "hash": "DAQkxQjLEw2/IPTI06JIm4wh+oKwFifKHJuomBieSd4="
         }
       },
       "is_incremental": false,
@@ -2308,7 +3184,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.SpikeBallAttack.html",
-          "hash": "MfFyqXUZnfgOIXu27+WQPZspexAm92RXAabK6d7Qxo0="
+          "hash": "lzO5mEDStGsyR+73qNECfxS90YY2o8jR34988Oc9K30="
         }
       },
       "is_incremental": false,
@@ -2332,7 +3208,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.SpinningSwordsAttack.html",
-          "hash": "+cDZpyXoDHaLMuoosk5/ScqYQ+5MPiXtqwiSgWiMdPU="
+          "hash": "p1CZY3KOd0/2V3UrVF7QW6Mi7Ae1k7dT+2WoxC6htEw="
         }
       },
       "is_incremental": false,
@@ -2524,7 +3400,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.Tags.html",
-          "hash": "aii1iYcrunGKd1aZWgSYvS1iUVuIwpEW/9xTSoo36g4="
+          "hash": "DfTYAzNo8e1VeIC30ZE5HRWGy0nUHwatQ7eTtmu+Xoo="
         }
       },
       "is_incremental": false,
@@ -2644,7 +3520,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.WalkableGrid.html",
-          "hash": "vW2zQ456uZLopYukeuj3tpCPaNQTjUfp4UrLJu2R1gQ="
+          "hash": "cnSL2vir6ehjSjAzwGaYAqoh19pSUCRZZMhxAT09ZF8="
         }
       },
       "is_incremental": false,
@@ -2680,7 +3556,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.WideBlock.html",
-          "hash": "5D1lhU3nQVv+EdN11OkQiHaYvMZ0AFDFOQsh395jvVU="
+          "hash": "j7hMXYLUdF2vOP2giahx2zhvzfIPdqvTesI6R8SuhNA="
         }
       },
       "is_incremental": false,
@@ -2704,7 +3580,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "ovyJAZZYnlGN3Z0TVLhd47yd9Ur3ms+TGNQE8BAF4vU="
+          "hash": "+eGJdxHebJWDsQWTpTaC1bqrPoYIDdj/orJZuxywpMc="
         }
       },
       "is_incremental": false,
@@ -2888,7 +3764,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "aw4O/vdahecjNU3xM7gfcgCqWqV4Un204gfpc/K1n7w="
+          "hash": "7bP/5yUPr/3DUgXhV4NGB+JGczTHiAcQ3A+1eU/5gYA="
         }
       },
       "is_incremental": false,
@@ -2915,7 +3791,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 223,
+          "total_file_count": 296,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

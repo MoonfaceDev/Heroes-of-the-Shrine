@@ -1,0 +1,765 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class GenericListAdaptor&lt;T&gt;
+   | Heroes of the Shrine </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class GenericListAdaptor&lt;T&gt;
+   | Heroes of the Shrine ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Borodar.ReorderableList.GenericListAdaptor`1">
+  
+  
+  <h1 id="Borodar_ReorderableList_GenericListAdaptor_1" data-uid="Borodar.ReorderableList.GenericListAdaptor`1" class="text-break">Class GenericListAdaptor&lt;T&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Reorderable list adaptor for generic list.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">GenericListAdaptor&lt;T&gt;</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Borodar.ReorderableList.IReorderableListAdaptor.html">IReorderableListAdaptor</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">Object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">Object.MemberwiseClone()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Borodar.ReorderableList.html">Borodar.ReorderableList</a></h6>
+  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h5 id="Borodar_ReorderableList_GenericListAdaptor_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class GenericListAdaptor&lt;T&gt; : IReorderableListAdaptor</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Type of list element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Borodar_ReorderableList_GenericListAdaptor_1_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This adaptor can be subclassed to add special logic to item height calculation.
+You may want to implement a custom adaptor class where specialised functionality
+is needed.</p>
+<p>List elements which implement the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icloneable">ICloneable</a> interface are
+cloned using that interface upon duplication; otherwise the item value or reference is
+simply copied.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="Borodar_ReorderableList_GenericListAdaptor_1__ctor_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.#ctor*"></a>
+  <h4 id="Borodar_ReorderableList_GenericListAdaptor_1__ctor_System_Collections_Generic_IList__0__Borodar_ReorderableList_ReorderableListControl_ItemDrawer__0__System_Single_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.#ctor(System.Collections.Generic.IList{`0},Borodar.ReorderableList.ReorderableListControl.ItemDrawer{`0},System.Single)">GenericListAdaptor(IList&lt;T&gt;, ReorderableListControl.ItemDrawer&lt;T&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of <a class="xref" href="Borodar.ReorderableList.GenericListAdaptor-1.html">GenericListAdaptor&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GenericListAdaptor(IList&lt;T&gt; list, ReorderableListControl.ItemDrawer&lt;T&gt; itemDrawer, float itemHeight)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;T&gt;</td>
+        <td><span class="parametername">list</span></td>
+        <td><p>The list which can be reordered.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Borodar.ReorderableList.ReorderableListControl.ItemDrawer-1.html">ReorderableListControl.ItemDrawer</a>&lt;T&gt;</td>
+        <td><span class="parametername">itemDrawer</span></td>
+        <td><p>Callback to draw list item.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">itemHeight</span></td>
+        <td><p>Height of list item in pixels.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="Borodar_ReorderableList_GenericListAdaptor_1_FixedItemHeight" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.FixedItemHeight">FixedItemHeight</h4>
+  <div class="markdown level1 summary"><p>Fixed height of each list item.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float FixedItemHeight</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Borodar_ReorderableList_GenericListAdaptor_1_Count_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.Count*"></a>
+  <h4 id="Borodar_ReorderableList_GenericListAdaptor_1_Count" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.Count">Count</h4>
+  <div class="markdown level1 summary"><p>Gets count of elements in list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Count { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Borodar_ReorderableList_GenericListAdaptor_1_Item_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.Item*"></a>
+  <h4 id="Borodar_ReorderableList_GenericListAdaptor_1_Item_System_Int32_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.Item(System.Int32)">Item[Int32]</h4>
+  <div class="markdown level1 summary"><p>Gets element from list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T this[int index] { get; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Zero-based index of element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>The element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Borodar_ReorderableList_GenericListAdaptor_1_List_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.List*"></a>
+  <h4 id="Borodar_ReorderableList_GenericListAdaptor_1_List" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.List">List</h4>
+  <div class="markdown level1 summary"><p>Gets the underlying list data structure.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IList&lt;T&gt; List { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Borodar_ReorderableList_GenericListAdaptor_1_Add_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.Add*"></a>
+  <h4 id="Borodar_ReorderableList_GenericListAdaptor_1_Add" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.Add">Add()</h4>
+  <div class="markdown level1 summary"><p>Add new element at end of list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Add()</code></pre>
+  </div>
+  
+  
+  <a id="Borodar_ReorderableList_GenericListAdaptor_1_BeginGUI_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.BeginGUI*"></a>
+  <h4 id="Borodar_ReorderableList_GenericListAdaptor_1_BeginGUI" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.BeginGUI">BeginGUI()</h4>
+  <div class="markdown level1 summary"><p>Occurs before any list items are drawn.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void BeginGUI()</code></pre>
+  </div>
+  <h5 id="Borodar_ReorderableList_GenericListAdaptor_1_BeginGUI_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method is only used to handle GUI repaint events.</p>
+</div>
+  
+  
+  <a id="Borodar_ReorderableList_GenericListAdaptor_1_CanDrag_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.CanDrag*"></a>
+  <h4 id="Borodar_ReorderableList_GenericListAdaptor_1_CanDrag_System_Int32_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.CanDrag(System.Int32)">CanDrag(Int32)</h4>
+  <div class="markdown level1 summary"><p>Determines whether an item can be reordered by dragging mouse.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool CanDrag(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Zero-based index for list element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>A value of <code>true</code> if item can be dragged; otherwise <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Borodar_ReorderableList_GenericListAdaptor_1_CanDrag_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This should be a light-weight method since it will be used to determine
+whether grab handle should be included for each item in a reorderable list.</p>
+<p>Please note that returning a value of <code>false</code> does not prevent movement
+on list item since other draggable items can be moved around it.</p>
+</div>
+  
+  
+  <a id="Borodar_ReorderableList_GenericListAdaptor_1_CanRemove_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.CanRemove*"></a>
+  <h4 id="Borodar_ReorderableList_GenericListAdaptor_1_CanRemove_System_Int32_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.CanRemove(System.Int32)">CanRemove(Int32)</h4>
+  <div class="markdown level1 summary"><p>Determines whether an item can be removed from list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool CanRemove(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Zero-based index for list element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>A value of <code>true</code> if item can be removed; otherwise <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Borodar_ReorderableList_GenericListAdaptor_1_CanRemove_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This should be a light-weight method since it will be used to determine
+whether remove button should be included for each item in list.</p>
+<p>This is redundant when <a class="xref" href="Borodar.ReorderableList.ReorderableListFlags.html#Borodar_ReorderableList_ReorderableListFlags_HideRemoveButtons">HideRemoveButtons</a>
+is specified.</p>
+</div>
+  
+  
+  <a id="Borodar_ReorderableList_GenericListAdaptor_1_Clear_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.Clear*"></a>
+  <h4 id="Borodar_ReorderableList_GenericListAdaptor_1_Clear" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.Clear">Clear()</h4>
+  <div class="markdown level1 summary"><p>Clear all elements from list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Clear()</code></pre>
+  </div>
+  
+  
+  <a id="Borodar_ReorderableList_GenericListAdaptor_1_DrawItem_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.DrawItem*"></a>
+  <h4 id="Borodar_ReorderableList_GenericListAdaptor_1_DrawItem_Rect_System_Int32_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.DrawItem(Rect,System.Int32)">DrawItem(Rect, Int32)</h4>
+  <div class="markdown level1 summary"><p>Draws main interface for a list item.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void DrawItem(Rect position, int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rect</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>Position in GUI.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Zero-based index of array element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Borodar_ReorderableList_GenericListAdaptor_1_DrawItem_Rect_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method is used to handle all GUI events.</p>
+</div>
+  
+  
+  <a id="Borodar_ReorderableList_GenericListAdaptor_1_DrawItemBackground_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.DrawItemBackground*"></a>
+  <h4 id="Borodar_ReorderableList_GenericListAdaptor_1_DrawItemBackground_Rect_System_Int32_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.DrawItemBackground(Rect,System.Int32)">DrawItemBackground(Rect, Int32)</h4>
+  <div class="markdown level1 summary"><p>Draws background of a list item.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void DrawItemBackground(Rect position, int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rect</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>Total position of list element in GUI.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Zero-based index of array element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Borodar_ReorderableList_GenericListAdaptor_1_DrawItemBackground_Rect_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method is only used to handle GUI repaint events.</p>
+<p>Background of list item spans a slightly larger area than the main
+interface that is drawn by <a class="xref" href="Borodar.ReorderableList.IReorderableListAdaptor.html#Borodar_ReorderableList_IReorderableListAdaptor_DrawItem_Rect_System_Int32_">DrawItem(Rect, Int32)</a> since it is
+drawn behind the grab handle.</p>
+</div>
+  
+  
+  <a id="Borodar_ReorderableList_GenericListAdaptor_1_Duplicate_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.Duplicate*"></a>
+  <h4 id="Borodar_ReorderableList_GenericListAdaptor_1_Duplicate_System_Int32_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.Duplicate(System.Int32)">Duplicate(Int32)</h4>
+  <div class="markdown level1 summary"><p>Duplicate existing element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Duplicate(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Zero-based index of list element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Borodar_ReorderableList_GenericListAdaptor_1_Duplicate_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Consider using the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icloneable">ICloneable</a> interface to
+duplicate list elements where appropriate.</p>
+</div>
+  
+  
+  <a id="Borodar_ReorderableList_GenericListAdaptor_1_EndGUI_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.EndGUI*"></a>
+  <h4 id="Borodar_ReorderableList_GenericListAdaptor_1_EndGUI" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.EndGUI">EndGUI()</h4>
+  <div class="markdown level1 summary"><p>Occurs after all list items have been drawn.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void EndGUI()</code></pre>
+  </div>
+  <h5 id="Borodar_ReorderableList_GenericListAdaptor_1_EndGUI_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method is only used to handle GUI repaint events.</p>
+</div>
+  
+  
+  <a id="Borodar_ReorderableList_GenericListAdaptor_1_GetItemHeight_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.GetItemHeight*"></a>
+  <h4 id="Borodar_ReorderableList_GenericListAdaptor_1_GetItemHeight_System_Int32_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.GetItemHeight(System.Int32)">GetItemHeight(Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets height of list item in pixels.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual float GetItemHeight(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Zero-based index of array element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><p>Measurement in pixels.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Borodar_ReorderableList_GenericListAdaptor_1_Insert_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.Insert*"></a>
+  <h4 id="Borodar_ReorderableList_GenericListAdaptor_1_Insert_System_Int32_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.Insert(System.Int32)">Insert(Int32)</h4>
+  <div class="markdown level1 summary"><p>Insert new element at specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Insert(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Zero-based index for list element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Borodar_ReorderableList_GenericListAdaptor_1_Move_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.Move*"></a>
+  <h4 id="Borodar_ReorderableList_GenericListAdaptor_1_Move_System_Int32_System_Int32_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.Move(System.Int32,System.Int32)">Move(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Move element from source index to destination index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Move(int sourceIndex, int destIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">sourceIndex</span></td>
+        <td><p>Zero-based index of source element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">destIndex</span></td>
+        <td><p>Zero-based index of destination element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Borodar_ReorderableList_GenericListAdaptor_1_Remove_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.Remove*"></a>
+  <h4 id="Borodar_ReorderableList_GenericListAdaptor_1_Remove_System_Int32_" data-uid="Borodar.ReorderableList.GenericListAdaptor`1.Remove(System.Int32)">Remove(Int32)</h4>
+  <div class="markdown level1 summary"><p>Remove element at specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Remove(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Zero-based index of list element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Borodar.ReorderableList.IReorderableListAdaptor.html">IReorderableListAdaptor</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Heroes of the Shrine - Manual
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
