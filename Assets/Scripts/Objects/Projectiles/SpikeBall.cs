@@ -23,7 +23,9 @@ public class SpikeBall : EntityBehaviour
             latchHitDetector.StopDetector();
             var hitWorldPosition = Entity.WorldPosition;
             Entity.parent = hittable.Character.Entity;
-            Entity.position = Vector3.zero + hitWorldPosition.y * Vector3.up + hitWorldPosition.z * Vector3.forward;
+            Entity.position = Vector3.zero
+                              + hitWorldPosition.y * Vector3.up
+                              + (hitWorldPosition.z - Entity.parent.WorldPosition.z) * Vector3.forward;
             hittable.Hit(latchHitExecutor,
                 new Hit { source = source, victim = hittable, direction = Mathf.RoundToInt(Mathf.Sign(velocity.x)) }
             );
