@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4465921271854474308}
   - component: {fileID: 4601130295557360905}
   - component: {fileID: 8804218209873540540}
+  - component: {fileID: 1232502136665176753}
   m_Layer: 0
   m_Name: Explosion Hitbox
   m_TagString: Untagged
@@ -65,6 +66,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 5.6, y: 5.6, z: 4}
+--- !u!114 &1232502136665176753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745191492974542311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 824917772533207107, guid: 4beee89b5f87b224189fe289925793fb, type: 3}
 --- !u!1 &2226068787915808697
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,6 +195,8 @@ GameObject:
   - component: {fileID: 6997846983589548088}
   - component: {fileID: 6494657209594293636}
   - component: {fileID: 8328300429585350118}
+  - component: {fileID: 40503689538136934}
+  - component: {fileID: 1160154024548990936}
   m_Layer: 0
   m_Name: Latch Hitbox
   m_TagString: Untagged
@@ -235,6 +251,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 0.5, y: 0.5, z: 0}
+--- !u!114 &40503689538136934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6469512281503957580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 824917772533207107, guid: 2ab9493f6f3f8964ebce60115abec721, type: 3}
+--- !u!114 &1160154024548990936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6469512281503957580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d961789b6aee674bb3eb9ce45793ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 824917772533207107, guid: edf14a74d28352e4f82e5515031d45ad, type: 3}
+  particlePosition: {x: -0.2, y: 0, z: 0}
+  attachToCharacter: 1
 --- !u!1 &7195235196650147203
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +352,7 @@ MonoBehaviour:
   animator: {fileID: 6376055490187947775}
   latchHitDetector:
     hitbox: {fileID: 8328300429585350118}
-    hitParticles: {fileID: 0}
+    hitParticles: {fileID: 40503689538136934}
     includedHittableTags:
       tags: 
     excludedHittableTags:
@@ -321,7 +365,7 @@ MonoBehaviour:
     - rid: 13203342144831511
   explosionHitDetector:
     hitbox: {fileID: 8804218209873540540}
-    hitParticles: {fileID: 0}
+    hitParticles: {fileID: 1232502136665176753}
     includedHittableTags:
       tags: 
     excludedHittableTags:
@@ -332,6 +376,7 @@ MonoBehaviour:
   explosionSourceHitExecutor:
     executors:
     - rid: 13203342144831513
+    - rid: 1742320293013880857
   explosionHitExecutor:
     executors:
     - rid: 13203342144831515
@@ -358,7 +403,11 @@ MonoBehaviour:
     - rid: 1742320274296799258
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        damage: 25
+        damage: 5
+    - rid: 1742320293013880857
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 1
 --- !u!1 &8015725547446733794
 GameObject:
   m_ObjectHideFlags: 0
