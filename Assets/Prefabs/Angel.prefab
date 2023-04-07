@@ -294,7 +294,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5282987104477988010}
   - component: {fileID: 6377231587991264689}
-  - component: {fileID: 4952256669799359370}
   m_Layer: 0
   m_Name: Alt Air Attack
   m_TagString: Untagged
@@ -370,6 +369,7 @@ MonoBehaviour:
     executors:
     - rid: 168482633143812262
     - rid: 168482633143812264
+    - rid: 1742320387755081787
   minHeight: 0
   references:
     version: 2
@@ -396,20 +396,10 @@ MonoBehaviour:
         knockbackPower: 10
         knockbackDirection: 85
         stunTime: 0.5
---- !u!114 &4952256669799359370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811557649854150555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac1f4d36d30747fa9bf47cf7b1843d11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: {fileID: 6377231587991264689}
-  energyReward: 5
+    - rid: 1742320387755081787
+      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        energyReward: 5
 --- !u!1 &816143849816312018
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,7 +675,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9022226871554883571}
   - component: {fileID: 8621965095738474586}
-  - component: {fileID: 151164371618628084}
   m_Layer: 0
   m_Name: Run Kick
   m_TagString: Untagged
@@ -762,9 +751,14 @@ MonoBehaviour:
     executors:
     - rid: 3181427634693996644
     - rid: 3596403818980179981
+    - rid: 1742320387755081783
   references:
     version: 2
     RefIds:
+    - rid: 1742320387755081783
+      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        energyReward: 10
     - rid: 3181427246007058570
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -785,20 +779,6 @@ MonoBehaviour:
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         stunTime: 0.5
---- !u!114 &151164371618628084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1843105327216157736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9516cedb05e44c7855ea738509b9a69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: {fileID: 8621965095738474586}
-  energyReward: 10
 --- !u!1 &2575456005377218911
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,7 +789,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2957365998039289448}
   - component: {fileID: 5212638785196874420}
-  - component: {fileID: 8130722455488075236}
   m_Layer: 0
   m_Name: Alt Counter Attack
   m_TagString: Untagged
@@ -886,9 +865,14 @@ MonoBehaviour:
     executors:
     - rid: 3596404163551166476
     - rid: 3596404163551166478
+    - rid: 1742320387755081793
   references:
     version: 2
     RefIds:
+    - rid: 1742320387755081793
+      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        energyReward: 10
     - rid: 3596404163551166476
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -909,20 +893,6 @@ MonoBehaviour:
         onHit:
           _persistentListeners: []
           Expanded: 1
---- !u!114 &8130722455488075236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2575456005377218911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac1f4d36d30747fa9bf47cf7b1843d11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: {fileID: 5212638785196874420}
-  energyReward: 10
 --- !u!1 &2807217823386648436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,10 +987,12 @@ MonoBehaviour:
     executors:
     - rid: 1742320387755081742
     - rid: 1742320387755081744
+    - rid: 1742320387755081770
   hitExecutor2:
     executors:
     - rid: 1742320387755081745
     - rid: 1742320387755081747
+    - rid: 1742320387755081768
   references:
     version: 2
     RefIds:
@@ -1064,6 +1036,14 @@ MonoBehaviour:
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         stunTime: 0.5
+    - rid: 1742320387755081768
+      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        energyReward: 5
+    - rid: 1742320387755081770
+      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        energyReward: 5
 --- !u!1 &3088508065261769856
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,7 +1054,6 @@ GameObject:
   m_Component:
   - component: {fileID: 684304037861327321}
   - component: {fileID: 9018447154371316026}
-  - component: {fileID: 4964698500038053929}
   m_Layer: 0
   m_Name: Run Swipe
   m_TagString: Untagged
@@ -1150,9 +1129,14 @@ MonoBehaviour:
     executors:
     - rid: 3596404208624992258
     - rid: 3596404208624992260
+    - rid: 1742320387755081795
   references:
     version: 2
     RefIds:
+    - rid: 1742320387755081795
+      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        energyReward: 10
     - rid: 3596404208624992257
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -1173,20 +1157,6 @@ MonoBehaviour:
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         stunTime: 0.5
---- !u!114 &4964698500038053929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3088508065261769856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac1f4d36d30747fa9bf47cf7b1843d11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: {fileID: 9018447154371316026}
-  energyReward: 10
 --- !u!1 &3145721457660321993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1276,7 +1246,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3863231650379329718}
   - component: {fileID: 3226033048567882335}
-  - component: {fileID: 7264214053870421148}
   m_Layer: 0
   m_Name: Spinning Sword Attack
   m_TagString: Untagged
@@ -1360,10 +1329,12 @@ MonoBehaviour:
     executors:
     - rid: 168482722489303110
     - rid: 168482722489303112
+    - rid: 1742320387755081777
   hitExecutor2:
     executors:
     - rid: 168482722489303114
     - rid: 168482722489303116
+    - rid: 1742320387755081779
   references:
     version: 2
     RefIds:
@@ -1387,6 +1358,14 @@ MonoBehaviour:
         knockbackPower: 10
         knockbackDirection: 90
         stunTime: 0.5
+    - rid: 1742320387755081777
+      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        energyReward: 10
+    - rid: 1742320387755081779
+      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        energyReward: 10
     - rid: 3181427246007058579
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -1411,21 +1390,6 @@ MonoBehaviour:
         onHit:
           _persistentListeners: []
           Expanded: 1
---- !u!114 &7264214053870421148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3451646828768321014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58239f9d2a9d499081c723ba91509483, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: {fileID: 3226033048567882335}
-  energyReward1: 15
-  energyReward2: 15
 --- !u!1 &4003947100742262957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,7 +1660,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3216537126837818626}
   - component: {fileID: 5884357558659466936}
-  - component: {fileID: 2644732355721132754}
   m_Layer: 0
   m_Name: Air Spin Attack
   m_TagString: Untagged
@@ -1775,10 +1738,15 @@ MonoBehaviour:
     executors:
     - rid: 3181427634693996681
     - rid: 3181427634693996683
+    - rid: 1742320387755081789
   minHeight: 0.5
   references:
     version: 2
     RefIds:
+    - rid: 1742320387755081789
+      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        energyReward: 7
     - rid: 3181427246007058589
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -1801,20 +1769,6 @@ MonoBehaviour:
         knockbackPower: 13
         knockbackDirection: 97
         stunTime: 0.5
---- !u!114 &2644732355721132754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4104483144399516664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac1f4d36d30747fa9bf47cf7b1843d11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: {fileID: 5884357558659466936}
-  energyReward: 7
 --- !u!1 &4202954029015473843
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,7 +1858,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6011423664596739024}
   - component: {fileID: 3403884892882908741}
-  - component: {fileID: 6404439988506791787}
   m_Layer: 0
   m_Name: Uppercut
   m_TagString: Untagged
@@ -1981,9 +1934,14 @@ MonoBehaviour:
     executors:
     - rid: 3181427634693996660
     - rid: 3181427634693996663
+    - rid: 1742320387755081773
   references:
     version: 2
     RefIds:
+    - rid: 1742320387755081773
+      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        energyReward: 10
     - rid: 3181427246007058576
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -2006,20 +1964,6 @@ MonoBehaviour:
         knockbackPower: 15
         knockbackDirection: 85
         stunTime: 0.5
---- !u!114 &6404439988506791787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4458982307090760047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac1f4d36d30747fa9bf47cf7b1843d11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: {fileID: 3403884892882908741}
-  energyReward: 10
 --- !u!1 &4850033890129186866
 GameObject:
   m_ObjectHideFlags: 0
@@ -13403,7 +13347,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9029514677093264878}
   - component: {fileID: 7559106644093030772}
-  - component: {fileID: 3568453442421848273}
   m_Layer: 0
   m_Name: Air Attack
   m_TagString: Untagged
@@ -13479,10 +13422,15 @@ MonoBehaviour:
     executors:
     - rid: 3181427634693996673
     - rid: 3181427634693996675
+    - rid: 1742320387755081785
   minHeight: 0.5
   references:
     version: 2
     RefIds:
+    - rid: 1742320387755081785
+      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        energyReward: 5
     - rid: 3181427246007058587
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -13505,20 +13453,6 @@ MonoBehaviour:
         knockbackPower: 12
         knockbackDirection: 80
         stunTime: 0.5
---- !u!114 &3568453442421848273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5700907412895489081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac1f4d36d30747fa9bf47cf7b1843d11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: {fileID: 7559106644093030772}
-  energyReward: 5
 --- !u!1 &6771048749396688650
 GameObject:
   m_ObjectHideFlags: 0
@@ -13529,7 +13463,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5277052100955548515}
   - component: {fileID: 7157179758743540809}
-  - component: {fileID: 3276173230932025992}
   m_Layer: 0
   m_Name: Stab Attack
   m_TagString: Untagged
@@ -13606,9 +13539,14 @@ MonoBehaviour:
     executors:
     - rid: 3181427634693996652
     - rid: 3181427634693996654
+    - rid: 1742320387755081775
   references:
     version: 2
     RefIds:
+    - rid: 1742320387755081775
+      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        energyReward: 10
     - rid: 3181427246007058572
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -13629,20 +13567,6 @@ MonoBehaviour:
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         stunTime: 0.5
---- !u!114 &3276173230932025992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6771048749396688650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac1f4d36d30747fa9bf47cf7b1843d11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: {fileID: 7157179758743540809}
-  energyReward: 10
 --- !u!1 &6836361419182836862
 GameObject:
   m_ObjectHideFlags: 0
@@ -13653,7 +13577,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3182524056042066909}
   - component: {fileID: 7126820491640019253}
-  - component: {fileID: 6304304669197915168}
   m_Layer: 0
   m_Name: Normal Attack
   m_TagString: Untagged
@@ -13729,9 +13652,14 @@ MonoBehaviour:
     executors:
     - rid: 3181427634693996648
     - rid: 3181427634693996650
+    - rid: 1742320387755081764
   references:
     version: 2
     RefIds:
+    - rid: 1742320387755081764
+      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        energyReward: 10
     - rid: 3181427246007058563
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -13752,20 +13680,6 @@ MonoBehaviour:
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         stunTime: 1
---- !u!114 &6304304669197915168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6836361419182836862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac1f4d36d30747fa9bf47cf7b1843d11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: {fileID: 7126820491640019253}
-  energyReward: 10
 --- !u!1 &7431997943483031100
 GameObject:
   m_ObjectHideFlags: 0
@@ -13858,7 +13772,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5746246883376850308}
   - component: {fileID: 1534430804526489236}
-  - component: {fileID: 6536522371593992002}
   m_Layer: 0
   m_Name: Alt NormalAttack
   m_TagString: Untagged
@@ -13935,9 +13848,14 @@ MonoBehaviour:
     executors:
     - rid: 3181427634693996656
     - rid: 3181427634693996658
+    - rid: 1742320387755081766
   references:
     version: 2
     RefIds:
+    - rid: 1742320387755081766
+      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        energyReward: 10
     - rid: 3181427246007058574
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -13958,20 +13876,6 @@ MonoBehaviour:
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         stunTime: 0.5
---- !u!114 &6536522371593992002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7477602066808393276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac1f4d36d30747fa9bf47cf7b1843d11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: {fileID: 1534430804526489236}
-  energyReward: 10
 --- !u!1 &8326420566752417338
 GameObject:
   m_ObjectHideFlags: 0
@@ -14259,7 +14163,6 @@ GameObject:
   - component: {fileID: 1613201450539292511}
   - component: {fileID: 8296055732026328267}
   - component: {fileID: 7214283041871315255}
-  - component: {fileID: 5128262347601309570}
   m_Layer: 0
   m_Name: Slash Attack
   m_TagString: Untagged
@@ -14347,9 +14250,14 @@ MonoBehaviour:
     executors:
     - rid: 3181427634693996669
     - rid: 3181427634693996671
+    - rid: 1742320387755081781
   references:
     version: 2
     RefIds:
+    - rid: 1742320387755081781
+      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        energyReward: 10
     - rid: 3181427246007058586
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -14387,20 +14295,6 @@ MonoBehaviour:
   prefab: {fileID: 4191199336927616018, guid: f3fda9e187466314e97b96e464322573, type: 3}
   particlePosition: {x: -0.48, y: 0.5, z: 0}
   attachToCharacter: 1
---- !u!114 &5128262347601309570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8660113274356423321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9516cedb05e44c7855ea738509b9a69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: {fileID: 8296055732026328267}
-  energyReward: 10
 --- !u!1 &8971607559020826414
 GameObject:
   m_ObjectHideFlags: 0
@@ -14411,7 +14305,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3891540237183761913}
   - component: {fileID: 2573627595519022764}
-  - component: {fileID: 3511831607915216996}
   m_Layer: 0
   m_Name: Counter Attack
   m_TagString: Untagged
@@ -14488,6 +14381,7 @@ MonoBehaviour:
     executors:
     - rid: 168482808540430692
     - rid: 3596404159038357510
+    - rid: 1742320387755081791
   references:
     version: 2
     RefIds:
@@ -14507,21 +14401,11 @@ MonoBehaviour:
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         damage: 1.5
+    - rid: 1742320387755081791
+      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        energyReward: 10
     - rid: 3596404159038357510
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         stunTime: 0.5
---- !u!114 &3511831607915216996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8971607559020826414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9516cedb05e44c7855ea738509b9a69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: {fileID: 2573627595519022764}
-  energyReward: 10
