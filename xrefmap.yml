@@ -6149,31 +6149,6 @@ references:
   fullName.vb: BaseEffect(Of T).Playing
   nameWithType: BaseEffect<T>.Playing
   nameWithType.vb: BaseEffect(Of T).Playing
-- uid: Global.BaseEnergySupplier
-  name: BaseEnergySupplier
-  href: api/Global.BaseEnergySupplier.html
-  commentId: T:Global.BaseEnergySupplier
-  fullName: BaseEnergySupplier
-  nameWithType: BaseEnergySupplier
-- uid: Global.BaseEnergySupplier.Awake
-  name: Awake()
-  href: api/Global.BaseEnergySupplier.html#Global_BaseEnergySupplier_Awake
-  commentId: M:Global.BaseEnergySupplier.Awake
-  fullName: BaseEnergySupplier.Awake()
-  nameWithType: BaseEnergySupplier.Awake()
-- uid: Global.BaseEnergySupplier.Awake*
-  name: Awake
-  href: api/Global.BaseEnergySupplier.html#Global_BaseEnergySupplier_Awake_
-  commentId: Overload:Global.BaseEnergySupplier.Awake
-  isSpec: "True"
-  fullName: BaseEnergySupplier.Awake
-  nameWithType: BaseEnergySupplier.Awake
-- uid: Global.BaseEnergySupplier.energySystem
-  name: energySystem
-  href: api/Global.BaseEnergySupplier.html#Global_BaseEnergySupplier_energySystem
-  commentId: F:Global.BaseEnergySupplier.energySystem
-  fullName: BaseEnergySupplier.energySystem
-  nameWithType: BaseEnergySupplier.energySystem
 - uid: Global.BaseHitDetector
   name: BaseHitDetector
   href: api/Global.BaseHitDetector.html
@@ -11019,37 +10994,6 @@ references:
   isSpec: "True"
   fullName: MotionAttack.RecoveryPhase
   nameWithType: MotionAttack.RecoveryPhase
-- uid: Global.MotionAttackEnergySupplier
-  name: MotionAttackEnergySupplier
-  href: api/Global.MotionAttackEnergySupplier.html
-  commentId: T:Global.MotionAttackEnergySupplier
-  fullName: MotionAttackEnergySupplier
-  nameWithType: MotionAttackEnergySupplier
-- uid: Global.MotionAttackEnergySupplier.attack
-  name: attack
-  href: api/Global.MotionAttackEnergySupplier.html#Global_MotionAttackEnergySupplier_attack
-  commentId: F:Global.MotionAttackEnergySupplier.attack
-  fullName: MotionAttackEnergySupplier.attack
-  nameWithType: MotionAttackEnergySupplier.attack
-- uid: Global.MotionAttackEnergySupplier.Awake
-  name: Awake()
-  href: api/Global.MotionAttackEnergySupplier.html#Global_MotionAttackEnergySupplier_Awake
-  commentId: M:Global.MotionAttackEnergySupplier.Awake
-  fullName: MotionAttackEnergySupplier.Awake()
-  nameWithType: MotionAttackEnergySupplier.Awake()
-- uid: Global.MotionAttackEnergySupplier.Awake*
-  name: Awake
-  href: api/Global.MotionAttackEnergySupplier.html#Global_MotionAttackEnergySupplier_Awake_
-  commentId: Overload:Global.MotionAttackEnergySupplier.Awake
-  isSpec: "True"
-  fullName: MotionAttackEnergySupplier.Awake
-  nameWithType: MotionAttackEnergySupplier.Awake
-- uid: Global.MotionAttackEnergySupplier.energyReward
-  name: energyReward
-  href: api/Global.MotionAttackEnergySupplier.html#Global_MotionAttackEnergySupplier_energyReward
-  commentId: F:Global.MotionAttackEnergySupplier.energyReward
-  fullName: MotionAttackEnergySupplier.energyReward
-  nameWithType: MotionAttackEnergySupplier.energyReward
 - uid: Global.MotionSettings
   name: MotionSettings
   href: api/Global.MotionSettings.html
@@ -13188,37 +13132,6 @@ references:
   isSpec: "True"
   fullName: SimpleAttack.RecoveryPhase
   nameWithType: SimpleAttack.RecoveryPhase
-- uid: Global.SimpleAttackEnergySupplier
-  name: SimpleAttackEnergySupplier
-  href: api/Global.SimpleAttackEnergySupplier.html
-  commentId: T:Global.SimpleAttackEnergySupplier
-  fullName: SimpleAttackEnergySupplier
-  nameWithType: SimpleAttackEnergySupplier
-- uid: Global.SimpleAttackEnergySupplier.attack
-  name: attack
-  href: api/Global.SimpleAttackEnergySupplier.html#Global_SimpleAttackEnergySupplier_attack
-  commentId: F:Global.SimpleAttackEnergySupplier.attack
-  fullName: SimpleAttackEnergySupplier.attack
-  nameWithType: SimpleAttackEnergySupplier.attack
-- uid: Global.SimpleAttackEnergySupplier.Awake
-  name: Awake()
-  href: api/Global.SimpleAttackEnergySupplier.html#Global_SimpleAttackEnergySupplier_Awake
-  commentId: M:Global.SimpleAttackEnergySupplier.Awake
-  fullName: SimpleAttackEnergySupplier.Awake()
-  nameWithType: SimpleAttackEnergySupplier.Awake()
-- uid: Global.SimpleAttackEnergySupplier.Awake*
-  name: Awake
-  href: api/Global.SimpleAttackEnergySupplier.html#Global_SimpleAttackEnergySupplier_Awake_
-  commentId: Overload:Global.SimpleAttackEnergySupplier.Awake
-  isSpec: "True"
-  fullName: SimpleAttackEnergySupplier.Awake
-  nameWithType: SimpleAttackEnergySupplier.Awake
-- uid: Global.SimpleAttackEnergySupplier.energyReward
-  name: energyReward
-  href: api/Global.SimpleAttackEnergySupplier.html#Global_SimpleAttackEnergySupplier_energyReward
-  commentId: F:Global.SimpleAttackEnergySupplier.energyReward
-  fullName: SimpleAttackEnergySupplier.energyReward
-  nameWithType: SimpleAttackEnergySupplier.energyReward
 - uid: Global.SingleHitDetector
   name: SingleHitDetector
   href: api/Global.SingleHitDetector.html
@@ -13800,43 +13713,6 @@ references:
   isSpec: "True"
   fullName: SpinningSwordsAttack.RecoveryPhase
   nameWithType: SpinningSwordsAttack.RecoveryPhase
-- uid: Global.SpinningSwordsAttackEnergySupplier
-  name: SpinningSwordsAttackEnergySupplier
-  href: api/Global.SpinningSwordsAttackEnergySupplier.html
-  commentId: T:Global.SpinningSwordsAttackEnergySupplier
-  fullName: SpinningSwordsAttackEnergySupplier
-  nameWithType: SpinningSwordsAttackEnergySupplier
-- uid: Global.SpinningSwordsAttackEnergySupplier.attack
-  name: attack
-  href: api/Global.SpinningSwordsAttackEnergySupplier.html#Global_SpinningSwordsAttackEnergySupplier_attack
-  commentId: F:Global.SpinningSwordsAttackEnergySupplier.attack
-  fullName: SpinningSwordsAttackEnergySupplier.attack
-  nameWithType: SpinningSwordsAttackEnergySupplier.attack
-- uid: Global.SpinningSwordsAttackEnergySupplier.Awake
-  name: Awake()
-  href: api/Global.SpinningSwordsAttackEnergySupplier.html#Global_SpinningSwordsAttackEnergySupplier_Awake
-  commentId: M:Global.SpinningSwordsAttackEnergySupplier.Awake
-  fullName: SpinningSwordsAttackEnergySupplier.Awake()
-  nameWithType: SpinningSwordsAttackEnergySupplier.Awake()
-- uid: Global.SpinningSwordsAttackEnergySupplier.Awake*
-  name: Awake
-  href: api/Global.SpinningSwordsAttackEnergySupplier.html#Global_SpinningSwordsAttackEnergySupplier_Awake_
-  commentId: Overload:Global.SpinningSwordsAttackEnergySupplier.Awake
-  isSpec: "True"
-  fullName: SpinningSwordsAttackEnergySupplier.Awake
-  nameWithType: SpinningSwordsAttackEnergySupplier.Awake
-- uid: Global.SpinningSwordsAttackEnergySupplier.energyReward1
-  name: energyReward1
-  href: api/Global.SpinningSwordsAttackEnergySupplier.html#Global_SpinningSwordsAttackEnergySupplier_energyReward1
-  commentId: F:Global.SpinningSwordsAttackEnergySupplier.energyReward1
-  fullName: SpinningSwordsAttackEnergySupplier.energyReward1
-  nameWithType: SpinningSwordsAttackEnergySupplier.energyReward1
-- uid: Global.SpinningSwordsAttackEnergySupplier.energyReward2
-  name: energyReward2
-  href: api/Global.SpinningSwordsAttackEnergySupplier.html#Global_SpinningSwordsAttackEnergySupplier_energyReward2
-  commentId: F:Global.SpinningSwordsAttackEnergySupplier.energyReward2
-  fullName: SpinningSwordsAttackEnergySupplier.energyReward2
-  nameWithType: SpinningSwordsAttackEnergySupplier.energyReward2
 - uid: Global.StabAttack
   name: StabAttack
   href: api/Global.StabAttack.html
