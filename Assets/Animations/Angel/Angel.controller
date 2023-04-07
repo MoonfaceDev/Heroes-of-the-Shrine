@@ -2418,7 +2418,7 @@ AnimatorStateTransition:
     m_ConditionEvent: AltCounterAttack-active
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: AltCounterAttack-Recovering
+    m_ConditionEvent: AltCounterAttack-recovering
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -9020417965952502097}
@@ -2983,7 +2983,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: AltCounterAttack-Recovering
+  - m_Name: AltCounterAttack-recovering
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
