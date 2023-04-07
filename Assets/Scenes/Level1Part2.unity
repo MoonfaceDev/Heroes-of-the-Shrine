@@ -1031,6 +1031,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 2413086483419108523, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.6800003
+      objectReference: {fileID: 0}
     - target: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_PlayableAsset
       value: 
@@ -1086,6 +1090,10 @@ PrefabInstance:
     - target: {fileID: 4205167683501668961, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: spawnPosition.x
       value: -11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5733673920314189975, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.6999998
       objectReference: {fileID: 0}
     - target: {fileID: 5826350637341048340, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_AnchorMax.x
