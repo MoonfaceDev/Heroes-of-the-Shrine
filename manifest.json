@@ -1752,6 +1752,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.EnergyRewardHitExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.EnergyRewardHitExecutor.html",
+          "hash": "AHxF2V3iCF3l8LS3M+wPi26LYdeCcgmjik4quI/mJsI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.EnergySystem.yml",
       "output": {
         ".html": {
@@ -3592,7 +3604,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "aADwGtOqaDIMV/evQKpy52gnpNdD2rCIe2S4Pkmw5bk="
+          "hash": "ls7XZVuAZX7OXlTPXIHDuRCCFrQQlUnyN82Wr70s4Uw="
         }
       },
       "is_incremental": false,
@@ -3604,7 +3616,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "wiO/fFoCdv/C/xkXNyep++q+4BK51YjYYY/an9w/X2Y="
+          "hash": "Qyxi+6Yubt8eh7Ji8cubM9U5t6bkm9C01ZvRCV5gc7k="
         }
       },
       "is_incremental": false,
@@ -3815,7 +3827,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 298,
+          "total_file_count": 299,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
