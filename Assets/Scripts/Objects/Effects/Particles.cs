@@ -9,12 +9,12 @@ public class Particles : EntityBehaviour
     /// Prefab of the particles
     /// </value>
     public GameObject prefab;
-    
+
     /// <value>
     /// Point where particle is spawned, relative to the <see cref="GameEntity"/>
     /// </value>
     public Vector3 particlePosition;
-    
+
     /// <value>
     /// If <c>true</c>, particles move along with the character after they are spawned
     /// </value>
@@ -37,6 +37,7 @@ public class Particles : EntityBehaviour
         {
             SpawnNonAttached();
         }
+
         clone.GetComponent<ParticleSystem>().Play();
     }
 
