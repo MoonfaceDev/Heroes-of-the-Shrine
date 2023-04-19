@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7048668957725276048}
   - component: {fileID: 7448586802100349989}
   - component: {fileID: 6160012718991474138}
+  - component: {fileID: 947136510957373611}
+  - component: {fileID: 3674919934553680484}
   m_Layer: 0
   m_Name: SpikeBallSpin
   m_TagString: Untagged
@@ -4814,3 +4816,35 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &947136510957373611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824917772533207107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bf802ce25740a5bb67001e6fc77540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 0}
+  tags:
+    tags: 
+  position: {x: 0, y: 0, z: 0}
+  rotation:
+    flipped: 0
+  scale: {x: 1, y: 1, z: 1}
+--- !u!114 &3674919934553680484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824917772533207107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90306126b25f448f98b2587e24ff902e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movableEntity: {fileID: 947136510957373611}
