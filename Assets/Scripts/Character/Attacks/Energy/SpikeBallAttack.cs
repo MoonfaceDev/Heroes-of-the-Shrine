@@ -22,6 +22,12 @@ public class SpikeBallAttack : BaseAttack
     private float activeStartTime;
     private bool released;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        phaseEvents.onFinishActive += () => ballInstance.Explode();
+    }
+
     protected override IEnumerator AnticipationPhase()
     {
         released = false;
@@ -36,7 +42,6 @@ public class SpikeBallAttack : BaseAttack
         ballInstance.Fire(ballSpeed * Entity.WorldRotation * Vector3.right, this);
         yield return new WaitUntil(() => (released && Time.time - activeStartTime > attackFlow.minActiveTime) ||
                                          Time.time - activeStartTime > attackFlow.activeTimeout);
-        ballInstance.Explode();
     }
 
     protected override IEnumerator RecoveryPhase()
