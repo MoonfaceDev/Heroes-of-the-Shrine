@@ -2580,6 +2580,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.ParticlesEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.ParticlesEditor.html",
+          "hash": "zYxAq1BXbthdHJEHWsywM8x9UBpML6XT7MklFv/SIgw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.Pathfind.yml",
       "output": {
         ".html": {
@@ -3568,7 +3580,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "ZGux5eqQLFsaWYr0KLC03/nL2DhOAYQDSu9RrmP9MPE="
+          "hash": "TIGGvNxNBUFMsrwr9p5reMeTxWTGPyEIr/vl3Iz4V38="
         }
       },
       "is_incremental": false,
@@ -3580,7 +3592,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "phWZuMsN7rHH4d+sryX/tDYnXEbuNYb7jlh5vMoW7oI="
+          "hash": "cOBINcoBsJmuD3gND7w5qeXiVqICPN/UPX5SInxeUPg="
         }
       },
       "is_incremental": false,
@@ -3791,7 +3803,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 296,
+          "total_file_count": 297,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
