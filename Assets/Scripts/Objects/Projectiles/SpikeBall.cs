@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ExtEvents;
+using UnityEngine;
 
 public class SpikeBall : EntityBehaviour
 {
@@ -6,11 +7,13 @@ public class SpikeBall : EntityBehaviour
     [Header("Latch")] public SingleHitDetector latchHitDetector;
     public ChainHitExecutor latchHitExecutor;
     public float latchZ;
+    public ExtEvent onLatch;
     [Header("Explosion")] public AbsoluteHitDetector explosionHitDetector;
     public ChainHitExecutor explosionSourceHitExecutor;
     public ChainHitExecutor explosionHitExecutor;
     public float explosionStartDelay;
     public float explodeAnimationDuration;
+    public ExtEvent onExplode;
 
     private MovableEntity MovableEntity => (MovableEntity)Entity;
     private BaseAttack sourceAttack;
@@ -30,6 +33,7 @@ public class SpikeBall : EntityBehaviour
             );
             MovableEntity.velocity = Vector3.zero;
             animator.SetTrigger($"{GetType().Name}-latch");
+            onLatch.Invoke();
         }, source.AttackManager.hittableTags);
     }
 
@@ -39,6 +43,7 @@ public class SpikeBall : EntityBehaviour
         latchHitDetector.StopDetector();
         animator.SetTrigger($"{GetType().Name}-explode");
         Destroy(gameObject, explodeAnimationDuration);
+        onExplode.Invoke();
 
         StartTimeout(() => explosionHitDetector.StartDetector(hittable =>
         {
