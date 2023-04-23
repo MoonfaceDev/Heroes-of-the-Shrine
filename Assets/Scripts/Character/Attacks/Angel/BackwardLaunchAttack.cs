@@ -10,6 +10,8 @@ public class BackwardLaunchAttack : BaseAttack
     {
         public float anticipationDuration;
         public float activeDuration;
+        public float detectorStartTime;
+        public float detectorDuration;
         public float recoveryDuration;
     }
 
@@ -21,15 +23,31 @@ public class BackwardLaunchAttack : BaseAttack
 
     public ChainHitExecutor hitExecutor;
 
+    private List<string> currentTimeouts;
+
     private void Start()
     {
-        PlayEvents.onStop += FinishActive;
+        PlayEvents.onStop += () =>
+        {
+            hitDetector.StopDetector();
+            MovableEntity.velocity.x = 0;
+
+            foreach (var timeout in currentTimeouts)
+            {
+                Cancel(timeout);
+            }
+
+            currentTimeouts.Clear();
+        };
     }
 
-    private void FinishActive()
+    private void ConfigureHitDetector()
     {
-        hitDetector.StopDetector();
-        MovableEntity.velocity.x = 0;
+        currentTimeouts.Add(StartTimeout(() =>
+        {
+            StartHitDetector(hitDetector, hitExecutor);
+            currentTimeouts.Add(StartTimeout(hitDetector.StopDetector, attackFlow.detectorDuration));
+        }, attackFlow.detectorStartTime));
     }
 
 
@@ -41,7 +59,8 @@ public class BackwardLaunchAttack : BaseAttack
     protected override IEnumerator ActivePhase()
     {
         MovableEntity.velocity.x = -speed * Entity.rotation;
-        StartHitDetector(hitDetector, hitExecutor);
+        currentTimeouts = new List<string>();
+        ConfigureHitDetector();
         yield return new WaitForSeconds(attackFlow.activeDuration);
     }
 
