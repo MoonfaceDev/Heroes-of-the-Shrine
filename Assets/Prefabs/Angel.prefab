@@ -2043,9 +2043,11 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.2
-    activeDuration: 0.1
-    recoveryDuration: 0.4
+    anticipationDuration: 0.1
+    activeDuration: 0.45
+    detectorStartTime: 0.1
+    detectorDuration: 0.1
+    recoveryDuration: 0.15
   speed: 1.5
   hitDetector:
     rid: 1742320750102052865
