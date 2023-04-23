@@ -2080,7 +2080,7 @@ MonoBehaviour:
     - rid: 1742320750102052871
       type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        knockbackPower: 12
+        knockbackPower: 16
         knockbackDirection: 85
         stunTime: 0.5
 --- !u!1 &4850033890129186866
@@ -3059,7 +3059,7 @@ Transform:
   - {fileID: 7562827223860804901}
   - {fileID: 3725194561385273773}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360874897665
 MonoBehaviour:
