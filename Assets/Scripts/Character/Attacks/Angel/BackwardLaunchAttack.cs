@@ -27,7 +27,7 @@ public class BackwardLaunchAttack : BaseAttack
 
     private void Start()
     {
-        PlayEvents.onStop += () =>
+        phaseEvents.onFinishActive += () =>
         {
             hitDetector.StopDetector();
             MovableEntity.velocity.x = 0;
