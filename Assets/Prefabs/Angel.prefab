@@ -1310,7 +1310,6 @@ MonoBehaviour:
       Expanded: 1
   previousAttacks:
   - {fileID: 1534430804526489236}
-  - {fileID: 1216366090443007232}
   instant: 0
   interruptible: 1
   hardRecovery: 0
@@ -2047,7 +2046,7 @@ MonoBehaviour:
     activeDuration: 0.45
     detectorStartTime: 0.1
     detectorDuration: 0.1
-    recoveryDuration: 0.15
+    recoveryDuration: 0.2
   speed: 1.5
   hitDetector:
     rid: 1742320750102052865
