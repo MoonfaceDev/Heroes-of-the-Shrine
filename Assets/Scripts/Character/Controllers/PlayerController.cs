@@ -189,11 +189,6 @@ public class PlayerController : CharacterController
         {
             healBehaviour.Play(new HealBehaviour.Command());
         }
-
-        if (Input.GetButtonUp(Button.Heal.ToString()))
-        {
-            healBehaviour.Stop();
-        }
     }
 
     private void ExecuteFocusBlock()
