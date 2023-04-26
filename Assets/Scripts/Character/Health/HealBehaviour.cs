@@ -22,12 +22,14 @@ public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IControll
     }
 
     public Cooldown cooldown;
+    public float duration;
     public float energyToHealthRatio;
     public float fullEnergyHealthReward;
 
     private bool active;
     private HealthSystem healthSystem;
     private EnergySystem energySystem;
+    private string stopTimeout;
 
     private static readonly int HealingParameter = Animator.StringToHash("healing");
 
@@ -51,6 +53,7 @@ public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IControll
         cooldown.Reset();
         Active = true;
         energySystem.onEnergyGrow += OnEnergyGrow;
+        stopTimeout = StartTimeout(Stop, duration);
     }
 
     private void OnEnergyGrow(float energyAddition)
@@ -65,6 +68,7 @@ public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IControll
 
     protected override void DoStop()
     {
+        Cancel(stopTimeout);
         Active = false;
         energySystem.onEnergyGrow -= OnEnergyGrow;
     }
