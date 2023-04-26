@@ -579,13 +579,11 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  maxLoadTime: 1.2
-  totalEnergyReduction: 50
-  totalHealthIncrement: 10
-  maxHealBonus: 30
-  onMaxHeal:
-    _persistentListeners: []
-    Expanded: 1
+  cooldown:
+    duration: 5
+  duration: 10
+  energyToHealthRatio: 0.5
+  fullEnergyHealthReward: 50
 --- !u!1 &1092191859823760132
 GameObject:
   m_ObjectHideFlags: 0
@@ -3158,6 +3156,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxEnergy: 100
+  onEnergyGrow:
+    _persistentListeners: []
+    Expanded: 1
 --- !u!1 &5102893360938488515
 GameObject:
   m_ObjectHideFlags: 0
