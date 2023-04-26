@@ -194,12 +194,12 @@
   </h3>
   
   
-  <h4 id="Global_HealBehaviour_maxHealBonus" data-uid="Global.HealBehaviour.maxHealBonus">maxHealBonus</h4>
+  <h4 id="Global_HealBehaviour_cooldown" data-uid="Global.HealBehaviour.cooldown">cooldown</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float maxHealBonus</code></pre>
+    <pre><code class="lang-csharp hljs">public Cooldown cooldown</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -211,69 +211,19 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><p>Health increased additionally if fully loaded</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_HealBehaviour_maxLoadTime" data-uid="Global.HealBehaviour.maxLoadTime">maxLoadTime</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float maxLoadTime</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><p>After heal is loaded for this long, it will stop loading </p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_HealBehaviour_onMaxHeal" data-uid="Global.HealBehaviour.onMaxHeal">onMaxHeal</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ExtEvent onMaxHeal</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">ExtEvent</span></td>
+        <td><a class="xref" href="Global.Cooldown.html">Cooldown</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <h4 id="Global_HealBehaviour_totalEnergyReduction" data-uid="Global.HealBehaviour.totalEnergyReduction">totalEnergyReduction</h4>
+  <h4 id="Global_HealBehaviour_energyToHealthRatio" data-uid="Global.HealBehaviour.energyToHealthRatio">energyToHealthRatio</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float totalEnergyReduction</code></pre>
+    <pre><code class="lang-csharp hljs">public float energyToHealthRatio</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -286,19 +236,18 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><p>Energy decreased for a maximum healing effect. Energy is decreased in a constant rate. </p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <h4 id="Global_HealBehaviour_totalHealthIncrement" data-uid="Global.HealBehaviour.totalHealthIncrement">totalHealthIncrement</h4>
+  <h4 id="Global_HealBehaviour_fullEnergyHealthReward" data-uid="Global.HealBehaviour.fullEnergyHealthReward">fullEnergyHealthReward</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float totalHealthIncrement</code></pre>
+    <pre><code class="lang-csharp hljs">public float fullEnergyHealthReward</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -311,8 +260,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><p>Health increased for a maximum healing effect (not including <span class="xref">HealBehaviour.maxHealBonus</span>). Health is increased in a constant rate. </p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -320,13 +268,13 @@
   </h3>
   
   
-  <a id="Global_HealBehaviour_Loading_" data-uid="Global.HealBehaviour.Loading*"></a>
-  <h4 id="Global_HealBehaviour_Loading" data-uid="Global.HealBehaviour.Loading">Loading</h4>
+  <a id="Global_HealBehaviour_Active_" data-uid="Global.HealBehaviour.Active*"></a>
+  <h4 id="Global_HealBehaviour_Active" data-uid="Global.HealBehaviour.Active">Active</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Loading { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Active { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">

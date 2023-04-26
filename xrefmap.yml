@@ -8026,6 +8026,19 @@ references:
   commentId: T:Global.EnergySystem
   fullName: EnergySystem
   nameWithType: EnergySystem
+- uid: Global.EnergySystem.AddEnergy(System.Single)
+  name: AddEnergy(Single)
+  href: api/Global.EnergySystem.html#Global_EnergySystem_AddEnergy_System_Single_
+  commentId: M:Global.EnergySystem.AddEnergy(System.Single)
+  fullName: EnergySystem.AddEnergy(System.Single)
+  nameWithType: EnergySystem.AddEnergy(Single)
+- uid: Global.EnergySystem.AddEnergy*
+  name: AddEnergy
+  href: api/Global.EnergySystem.html#Global_EnergySystem_AddEnergy_
+  commentId: Overload:Global.EnergySystem.AddEnergy
+  isSpec: "True"
+  fullName: EnergySystem.AddEnergy
+  nameWithType: EnergySystem.AddEnergy
 - uid: Global.EnergySystem.Energy
   name: Energy
   href: api/Global.EnergySystem.html#Global_EnergySystem_Energy
@@ -8052,12 +8065,31 @@ references:
   isSpec: "True"
   fullName: EnergySystem.Fraction
   nameWithType: EnergySystem.Fraction
+- uid: Global.EnergySystem.Full
+  name: Full
+  href: api/Global.EnergySystem.html#Global_EnergySystem_Full
+  commentId: P:Global.EnergySystem.Full
+  fullName: EnergySystem.Full
+  nameWithType: EnergySystem.Full
+- uid: Global.EnergySystem.Full*
+  name: Full
+  href: api/Global.EnergySystem.html#Global_EnergySystem_Full_
+  commentId: Overload:Global.EnergySystem.Full
+  isSpec: "True"
+  fullName: EnergySystem.Full
+  nameWithType: EnergySystem.Full
 - uid: Global.EnergySystem.maxEnergy
   name: maxEnergy
   href: api/Global.EnergySystem.html#Global_EnergySystem_maxEnergy
   commentId: F:Global.EnergySystem.maxEnergy
   fullName: EnergySystem.maxEnergy
   nameWithType: EnergySystem.maxEnergy
+- uid: Global.EnergySystem.onEnergyGrow
+  name: onEnergyGrow
+  href: api/Global.EnergySystem.html#Global_EnergySystem_onEnergyGrow
+  commentId: F:Global.EnergySystem.onEnergyGrow
+  fullName: EnergySystem.onEnergyGrow
+  nameWithType: EnergySystem.onEnergyGrow
 - uid: Global.EnragedBrainModule
   name: EnragedBrainModule
   href: api/Global.EnragedBrainModule.html
@@ -9530,6 +9562,19 @@ references:
   commentId: T:Global.HealBehaviour
   fullName: HealBehaviour
   nameWithType: HealBehaviour
+- uid: Global.HealBehaviour.Active
+  name: Active
+  href: api/Global.HealBehaviour.html#Global_HealBehaviour_Active
+  commentId: P:Global.HealBehaviour.Active
+  fullName: HealBehaviour.Active
+  nameWithType: HealBehaviour.Active
+- uid: Global.HealBehaviour.Active*
+  name: Active
+  href: api/Global.HealBehaviour.html#Global_HealBehaviour_Active_
+  commentId: Overload:Global.HealBehaviour.Active
+  isSpec: "True"
+  fullName: HealBehaviour.Active
+  nameWithType: HealBehaviour.Active
 - uid: Global.HealBehaviour.Awake
   name: Awake()
   href: api/Global.HealBehaviour.html#Global_HealBehaviour_Awake
@@ -9562,6 +9607,12 @@ references:
   commentId: T:Global.HealBehaviour.Command
   fullName: HealBehaviour.Command
   nameWithType: HealBehaviour.Command
+- uid: Global.HealBehaviour.cooldown
+  name: cooldown
+  href: api/Global.HealBehaviour.html#Global_HealBehaviour_cooldown
+  commentId: F:Global.HealBehaviour.cooldown
+  fullName: HealBehaviour.cooldown
+  nameWithType: HealBehaviour.cooldown
 - uid: Global.HealBehaviour.DoPlay(HealBehaviour.Command)
   name: DoPlay(HealBehaviour.Command)
   href: api/Global.HealBehaviour.html#Global_HealBehaviour_DoPlay_HealBehaviour_Command_
@@ -9588,37 +9639,18 @@ references:
   isSpec: "True"
   fullName: HealBehaviour.DoStop
   nameWithType: HealBehaviour.DoStop
-- uid: Global.HealBehaviour.Loading
-  name: Loading
-  href: api/Global.HealBehaviour.html#Global_HealBehaviour_Loading
-  commentId: P:Global.HealBehaviour.Loading
-  fullName: HealBehaviour.Loading
-  nameWithType: HealBehaviour.Loading
-- uid: Global.HealBehaviour.Loading*
-  name: Loading
-  href: api/Global.HealBehaviour.html#Global_HealBehaviour_Loading_
-  commentId: Overload:Global.HealBehaviour.Loading
-  isSpec: "True"
-  fullName: HealBehaviour.Loading
-  nameWithType: HealBehaviour.Loading
-- uid: Global.HealBehaviour.maxHealBonus
-  name: maxHealBonus
-  href: api/Global.HealBehaviour.html#Global_HealBehaviour_maxHealBonus
-  commentId: F:Global.HealBehaviour.maxHealBonus
-  fullName: HealBehaviour.maxHealBonus
-  nameWithType: HealBehaviour.maxHealBonus
-- uid: Global.HealBehaviour.maxLoadTime
-  name: maxLoadTime
-  href: api/Global.HealBehaviour.html#Global_HealBehaviour_maxLoadTime
-  commentId: F:Global.HealBehaviour.maxLoadTime
-  fullName: HealBehaviour.maxLoadTime
-  nameWithType: HealBehaviour.maxLoadTime
-- uid: Global.HealBehaviour.onMaxHeal
-  name: onMaxHeal
-  href: api/Global.HealBehaviour.html#Global_HealBehaviour_onMaxHeal
-  commentId: F:Global.HealBehaviour.onMaxHeal
-  fullName: HealBehaviour.onMaxHeal
-  nameWithType: HealBehaviour.onMaxHeal
+- uid: Global.HealBehaviour.energyToHealthRatio
+  name: energyToHealthRatio
+  href: api/Global.HealBehaviour.html#Global_HealBehaviour_energyToHealthRatio
+  commentId: F:Global.HealBehaviour.energyToHealthRatio
+  fullName: HealBehaviour.energyToHealthRatio
+  nameWithType: HealBehaviour.energyToHealthRatio
+- uid: Global.HealBehaviour.fullEnergyHealthReward
+  name: fullEnergyHealthReward
+  href: api/Global.HealBehaviour.html#Global_HealBehaviour_fullEnergyHealthReward
+  commentId: F:Global.HealBehaviour.fullEnergyHealthReward
+  fullName: HealBehaviour.fullEnergyHealthReward
+  nameWithType: HealBehaviour.fullEnergyHealthReward
 - uid: Global.HealBehaviour.Playing
   name: Playing
   href: api/Global.HealBehaviour.html#Global_HealBehaviour_Playing
@@ -9632,18 +9664,6 @@ references:
   isSpec: "True"
   fullName: HealBehaviour.Playing
   nameWithType: HealBehaviour.Playing
-- uid: Global.HealBehaviour.totalEnergyReduction
-  name: totalEnergyReduction
-  href: api/Global.HealBehaviour.html#Global_HealBehaviour_totalEnergyReduction
-  commentId: F:Global.HealBehaviour.totalEnergyReduction
-  fullName: HealBehaviour.totalEnergyReduction
-  nameWithType: HealBehaviour.totalEnergyReduction
-- uid: Global.HealBehaviour.totalHealthIncrement
-  name: totalHealthIncrement
-  href: api/Global.HealBehaviour.html#Global_HealBehaviour_totalHealthIncrement
-  commentId: F:Global.HealBehaviour.totalHealthIncrement
-  fullName: HealBehaviour.totalHealthIncrement
-  nameWithType: HealBehaviour.totalHealthIncrement
 - uid: Global.HealthBar
   name: HealthBar
   href: api/Global.HealthBar.html
