@@ -31,4 +31,9 @@ public class EnergySystem : CharacterBehaviour
         Energy += energyAddition;
         onEnergyGrow.Invoke(energyAddition);
     }
+
+    public void ResetEnergy()
+    {
+        Energy = 0;
+    }
 }

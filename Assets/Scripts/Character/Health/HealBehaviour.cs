@@ -52,6 +52,7 @@ public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IControll
     {
         cooldown.Reset();
         Active = true;
+        energySystem.ResetEnergy();
         energySystem.onEnergyGrow += OnEnergyGrow;
         stopTimeout = StartTimeout(Stop, duration);
     }
