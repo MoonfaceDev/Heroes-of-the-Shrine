@@ -41,9 +41,7 @@ public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IControll
 
     public override bool CanPlay(Command command)
     {
-        var energySystem = GetBehaviour<EnergySystem>();
         return base.CanPlay(command)
-               && !IsPlaying<JumpBehaviour>()
                && energySystem.Full
                && cooldown.CanPlay();
     }
@@ -51,12 +49,7 @@ public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IControll
     protected override void DoPlay(Command command)
     {
         cooldown.Reset();
-
-        StopBehaviours(typeof(IControlledBehaviour));
-        BlockBehaviours(typeof(IControlledBehaviour));
-
         Active = true;
-
         energySystem.onEnergyGrow += OnEnergyGrow;
     }
 
@@ -74,6 +67,5 @@ public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IControll
     {
         Active = false;
         energySystem.onEnergyGrow -= OnEnergyGrow;
-        UnblockBehaviours(typeof(IControlledBehaviour));
     }
 }
