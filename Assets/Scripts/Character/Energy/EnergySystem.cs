@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ExtEvents;
+using UnityEngine;
 
 /// <summary>
 /// Character energy system
@@ -10,19 +11,24 @@ public class EnergySystem : CharacterBehaviour
     /// </value>
     public float maxEnergy;
 
+    public ExtEvent<float> onEnergyGrow;
+
     /// <value>
     /// Current energy value
     /// </value>
-    public float Energy
-    {
-        get => energy;
-        set => energy = Mathf.Clamp(value, 0, maxEnergy);
-    }
+    public float Energy { get; private set; }
 
     /// <value>
     /// Ratio between current energy to full energy
     /// </value>
     public float Fraction => Energy / maxEnergy;
 
-    private float energy;
+    public bool Full => Mathf.Approximately(Fraction, 1);
+
+    public void AddEnergy(float energyAddition)
+    {
+        energyAddition = Mathf.Clamp(energyAddition, 0, maxEnergy - Energy);
+        Energy += energyAddition;
+        onEnergyGrow.Invoke(energyAddition);
+    }
 }

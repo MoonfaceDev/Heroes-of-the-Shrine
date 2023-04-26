@@ -143,7 +143,7 @@ public class WideBlock : PhasedBehaviour<WideBlock.Command>, IBlockBehaviour
     {
         Stop();
         var blockDefinition = GetBlockDefinition(hit.source);
-        energySystem.Energy += blockDefinition.energyReward;
+        energySystem.AddEnergy(blockDefinition.energyReward);
         if (!Invincible)
         {
             TurnInvincible();
