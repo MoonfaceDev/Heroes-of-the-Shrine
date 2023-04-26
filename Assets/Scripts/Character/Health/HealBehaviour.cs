@@ -3,7 +3,7 @@
 /// <summary>
 /// Behaviour that heals the character
 /// </summary>
-public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IControlledBehaviour
+public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IPlayableBehaviour
 {
     public class Command
     {
@@ -45,12 +45,12 @@ public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IControll
     {
         return base.CanPlay(command)
                && energySystem.Full
+               && !Playing
                && cooldown.CanPlay();
     }
 
     protected override void DoPlay(Command command)
     {
-        cooldown.Reset();
         Active = true;
         energySystem.ResetEnergy();
         energySystem.onEnergyGrow += OnEnergyGrow;
@@ -71,6 +71,7 @@ public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IControll
     {
         Cancel(stopTimeout);
         Active = false;
+        cooldown.Reset();
         energySystem.onEnergyGrow -= OnEnergyGrow;
     }
 }
