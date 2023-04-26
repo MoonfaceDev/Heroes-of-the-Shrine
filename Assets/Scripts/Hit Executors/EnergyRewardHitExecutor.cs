@@ -7,6 +7,6 @@ public class EnergyRewardHitExecutor : IHitExecutor
 
     public void Execute(Hit hit)
     {
-        hit.source.GetBehaviour<EnergySystem>().Energy += energyReward;
+        hit.source.GetBehaviour<EnergySystem>().AddEnergy(energyReward);
     }
 }

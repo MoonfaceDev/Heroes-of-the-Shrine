@@ -1,5 +1,4 @@
-﻿using ExtEvents;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Behaviour that heals the character
@@ -10,94 +9,71 @@ public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IControll
     {
     }
 
-    public override bool Playing => Loading;
+    public override bool Playing => Active;
 
-    public bool Loading
+    public bool Active
     {
-        get => loading;
+        get => active;
         private set
         {
-            loading = value;
+            active = value;
             Animator.SetBool(HealingParameter, value);
         }
     }
 
-    /// <value>
-    /// After heal is loaded for this long, it will stop loading 
-    /// </value>
-    public float maxLoadTime;
+    public Cooldown cooldown;
+    public float energyToHealthRatio;
+    public float fullEnergyHealthReward;
 
-    /// <value>
-    /// Energy decreased for a maximum healing effect. Energy is decreased in a constant rate. 
-    /// </value>
-    public float totalEnergyReduction;
-
-    /// <value>
-    /// Health increased for a maximum healing effect (not including <see cref="maxHealBonus"/>). Health is increased in a constant rate. 
-    /// </value>
-    public float totalHealthIncrement;
-
-    /// <value>
-    /// Health increased additionally if fully loaded
-    /// </value>
-    public float maxHealBonus;
-
-    [SerializeField] public ExtEvent onMaxHeal;
-
-    private bool loading;
-    private float healStartTime;
-    private string healListener;
+    private bool active;
+    private HealthSystem healthSystem;
+    private EnergySystem energySystem;
 
     private static readonly int HealingParameter = Animator.StringToHash("healing");
 
     protected override void Awake()
     {
         base.Awake();
+        healthSystem = GetBehaviour<HealthSystem>();
+        energySystem = GetBehaviour<EnergySystem>();
         GetBehaviour<HittableBehaviour>().onHit += Stop;
     }
 
     public override bool CanPlay(Command command)
     {
-        var healthSystem = GetBehaviour<HealthSystem>();
+        var energySystem = GetBehaviour<EnergySystem>();
         return base.CanPlay(command)
                && !IsPlaying<JumpBehaviour>()
-               && healthSystem.Fraction < 1;
+               && energySystem.Full
+               && cooldown.CanPlay();
     }
 
     protected override void DoPlay(Command command)
     {
+        cooldown.Reset();
+
         StopBehaviours(typeof(IControlledBehaviour));
         BlockBehaviours(typeof(IControlledBehaviour));
 
-        Loading = true;
+        Active = true;
 
-        var energySystem = GetBehaviour<EnergySystem>();
-        var healthSystem = GetBehaviour<HealthSystem>();
+        energySystem.onEnergyGrow += OnEnergyGrow;
+    }
 
-        healStartTime = Time.time;
-
-        healListener = Register(() =>
+    private void OnEnergyGrow(float energyAddition)
+    {
+        healthSystem.Heal(energyAddition * energyToHealthRatio);
+        if (energySystem.Full)
         {
-            if (Time.time - healStartTime > maxLoadTime)
-            {
-                healthSystem.Heal(maxHealBonus);
-                onMaxHeal.Invoke();
-                Stop();
-                return;
-            }
-            energySystem.Energy -= Time.deltaTime * totalEnergyReduction / maxLoadTime;
-            healthSystem.Heal(Time.deltaTime * totalHealthIncrement / maxLoadTime);
-            if (Mathf.Approximately(energySystem.Fraction, 0) || Mathf.Approximately(healthSystem.Fraction, 1))
-            {
-                Stop();
-            }
-        });
+            healthSystem.Heal(fullEnergyHealthReward);
+            Stop();
+        }
     }
 
     protected override void DoStop()
     {
-        Loading = false;
-        Unregister(healListener);
+        Active = false;
+        energySystem.onEnergyGrow -= OnEnergyGrow;
         UnblockBehaviours(typeof(IControlledBehaviour));
     }
 }
