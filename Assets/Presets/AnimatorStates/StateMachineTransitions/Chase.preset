@@ -14,7 +14,7 @@ Preset:
   m_Properties:
   - target: {fileID: 0}
     propertyPath: m_Conditions.Array.size
-    value: 4
+    value: 3
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_Conditions.Array.data[0].m_ConditionMode
@@ -26,7 +26,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_Conditions.Array.data[0].m_EventTreshold
-    value: 10
+    value: 5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_Conditions.Array.data[1].m_ConditionMode
@@ -34,7 +34,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_Conditions.Array.data[1].m_ConditionEvent
-    value: playerAttacking
+    value: enemiesAttacking
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_Conditions.Array.data[1].m_EventTreshold
@@ -46,22 +46,10 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_Conditions.Array.data[2].m_ConditionEvent
-    value: enemiesAttacking
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Conditions.Array.data[2].m_EventTreshold
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Conditions.Array.data[3].m_ConditionMode
-    value: 2
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_Conditions.Array.data[3].m_ConditionEvent
     value: playerRecoveringFromKnockback
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: m_Conditions.Array.data[3].m_EventTreshold
+    propertyPath: m_Conditions.Array.data[2].m_EventTreshold
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
