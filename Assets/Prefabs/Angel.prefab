@@ -623,7 +623,7 @@ MonoBehaviour:
         _methodName: Play
       Expanded: 1
   cooldown:
-    duration: 5
+    duration: 30
   duration: 10
   energyToHealthRatio: 0.5
   fullEnergyHealthReward: 50
@@ -3243,7 +3243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82f7277d8ef84a808885c5fa9daae2ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxEnergy: 100
+  maxEnergy: 200
   onEnergyGrow:
     _persistentListeners: []
     Expanded: 1
