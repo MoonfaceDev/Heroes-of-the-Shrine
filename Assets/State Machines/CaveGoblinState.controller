@@ -733,13 +733,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: playerDistance
-    m_EventTreshold: 5
-  - m_ConditionMode: 2
-    m_ConditionEvent: enemiesAttacking
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: playerRecoveringFromKnockback
-    m_EventTreshold: 0
+    m_EventTreshold: 4.5
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3451182139077028073}
   m_Solo: 0
@@ -2385,7 +2379,7 @@ AnimatorStateMachine:
     m_Position: {x: 1460, y: 90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -9069317597996007808}
-    m_Position: {x: 800, y: -50, z: 0}
+    m_Position: {x: 810, y: -60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3451182139077028073}
     m_Position: {x: 810, y: 80, z: 0}
