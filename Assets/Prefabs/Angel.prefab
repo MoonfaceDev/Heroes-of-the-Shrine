@@ -415,6 +415,9 @@ GameObject:
   - component: {fileID: 7152136554165674260}
   - component: {fileID: 2433013914377829849}
   - component: {fileID: 5861824059800275600}
+  - component: {fileID: 8153556929109585592}
+  - component: {fileID: 2869827361778149917}
+  - component: {fileID: 3499038260059916922}
   m_Layer: 0
   m_Name: Hittable
   m_TagString: Untagged
@@ -574,16 +577,101 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playEvents:
     onPlay:
-      _persistentListeners: []
+      _persistentListeners:
+      - _persistentArguments: []
+        _target: {fileID: 8153556929109585592}
+        _isStatic: 0
+        CallState: 2
+        _staticType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _methodName: Play
+      - _persistentArguments: []
+        _target: {fileID: 2869827361778149917}
+        _isStatic: 0
+        CallState: 2
+        _staticType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _methodName: Play
       Expanded: 1
     onStop:
-      _persistentListeners: []
+      _persistentListeners:
+      - _persistentArguments: []
+        _target: {fileID: 8153556929109585592}
+        _isStatic: 0
+        CallState: 2
+        _staticType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _methodName: Stop
+      - _persistentArguments: []
+        _target: {fileID: 3499038260059916922}
+        _isStatic: 0
+        CallState: 2
+        _staticType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _methodName: Play
       Expanded: 1
   cooldown:
     duration: 5
   duration: 10
   energyToHealthRatio: 0.5
   fullEnergyHealthReward: 50
+--- !u!114 &8153556929109585592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816143849816312018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d961789b6aee674bb3eb9ce45793ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4191199336927616018, guid: 12b50b0abddf3254cb239211b0a1f959, type: 3}
+  particlePosition: {x: 0.1, y: 1.1, z: 0.1}
+  attachToCharacter: 1
+--- !u!114 &2869827361778149917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816143849816312018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d961789b6aee674bb3eb9ce45793ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4191199336927616018, guid: 74a4589e7f40a734888b2d0a40110a6c, type: 3}
+  particlePosition: {x: 0, y: 0.8, z: 0.1}
+  attachToCharacter: 1
+--- !u!114 &3499038260059916922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816143849816312018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d961789b6aee674bb3eb9ce45793ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4191199336927616018, guid: 62f2dc038352ec045bcf877bdeb0f31b, type: 3}
+  particlePosition: {x: 0, y: 0.8, z: 0.1}
+  attachToCharacter: 1
 --- !u!1 &1092191859823760132
 GameObject:
   m_ObjectHideFlags: 0

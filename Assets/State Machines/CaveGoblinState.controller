@@ -1956,9 +1956,6 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: enemiesAttacking
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
     m_ConditionEvent: playerRecoveringFromKnockback
     m_EventTreshold: 0
   - m_ConditionMode: 2
@@ -2403,14 +2400,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 4
-    m_ConditionEvent: playerDistance
-    m_EventTreshold: 5
-  - m_ConditionMode: 2
-    m_ConditionEvent: enemiesAttacking
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: playerRecoveringFromKnockback
+  - m_ConditionMode: 1
+    m_ConditionEvent: stuck
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3451182139077028073}
@@ -2504,16 +2495,7 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 4
-    m_ConditionEvent: playerDistance
-    m_EventTreshold: 5
-  - m_ConditionMode: 2
-    m_ConditionEvent: enemiesAttacking
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: playerRecoveringFromKnockback
-    m_EventTreshold: 0
+  m_Conditions: []
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3451182139077028073}
   m_Solo: 0
@@ -2523,7 +2505,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 0.75
-  m_HasExitTime: 0
+  m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -2999,9 +2981,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: enemiesAttacking
-    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: playerRecoveringFromKnockback
     m_EventTreshold: 0
