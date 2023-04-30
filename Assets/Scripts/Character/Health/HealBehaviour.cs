@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-/// <summary>
+﻿/// <summary>
 /// Behaviour that heals the character
 /// </summary>
 public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IPlayableBehaviour
@@ -11,34 +9,22 @@ public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IPlayable
 
     public override bool Playing => Active;
 
-    public bool Active
-    {
-        get => active;
-        private set
-        {
-            active = value;
-            Animator.SetBool(HealingParameter, value);
-        }
-    }
+    private bool Active { get; set; }
 
     public Cooldown cooldown;
-    public float duration;
+    public float activeDuration;
     public float energyToHealthRatio;
     public float fullEnergyHealthReward;
 
-    private bool active;
     private HealthSystem healthSystem;
     private EnergySystem energySystem;
     private string stopTimeout;
-
-    private static readonly int HealingParameter = Animator.StringToHash("healing");
 
     protected override void Awake()
     {
         base.Awake();
         healthSystem = GetBehaviour<HealthSystem>();
         energySystem = GetBehaviour<EnergySystem>();
-        GetBehaviour<HittableBehaviour>().onHit += Stop;
     }
 
     public override bool CanPlay(Command command)
@@ -54,7 +40,7 @@ public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IPlayable
         Active = true;
         energySystem.ResetEnergy();
         energySystem.onEnergyGrow += OnEnergyGrow;
-        stopTimeout = StartTimeout(Stop, duration);
+        stopTimeout = StartTimeout(Stop, activeDuration);
     }
 
     private void OnEnergyGrow(float energyAddition)
