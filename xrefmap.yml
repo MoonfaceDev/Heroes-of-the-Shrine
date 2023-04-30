@@ -9575,19 +9575,12 @@ references:
   commentId: T:Global.HealBehaviour
   fullName: HealBehaviour
   nameWithType: HealBehaviour
-- uid: Global.HealBehaviour.Active
-  name: Active
-  href: api/Global.HealBehaviour.html#Global_HealBehaviour_Active
-  commentId: P:Global.HealBehaviour.Active
-  fullName: HealBehaviour.Active
-  nameWithType: HealBehaviour.Active
-- uid: Global.HealBehaviour.Active*
-  name: Active
-  href: api/Global.HealBehaviour.html#Global_HealBehaviour_Active_
-  commentId: Overload:Global.HealBehaviour.Active
-  isSpec: "True"
-  fullName: HealBehaviour.Active
-  nameWithType: HealBehaviour.Active
+- uid: Global.HealBehaviour.activeDuration
+  name: activeDuration
+  href: api/Global.HealBehaviour.html#Global_HealBehaviour_activeDuration
+  commentId: F:Global.HealBehaviour.activeDuration
+  fullName: HealBehaviour.activeDuration
+  nameWithType: HealBehaviour.activeDuration
 - uid: Global.HealBehaviour.Awake
   name: Awake()
   href: api/Global.HealBehaviour.html#Global_HealBehaviour_Awake
@@ -9652,12 +9645,6 @@ references:
   isSpec: "True"
   fullName: HealBehaviour.DoStop
   nameWithType: HealBehaviour.DoStop
-- uid: Global.HealBehaviour.duration
-  name: duration
-  href: api/Global.HealBehaviour.html#Global_HealBehaviour_duration
-  commentId: F:Global.HealBehaviour.duration
-  fullName: HealBehaviour.duration
-  nameWithType: HealBehaviour.duration
 - uid: Global.HealBehaviour.energyToHealthRatio
   name: energyToHealthRatio
   href: api/Global.HealBehaviour.html#Global_HealBehaviour_energyToHealthRatio
