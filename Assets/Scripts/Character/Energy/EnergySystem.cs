@@ -25,11 +25,17 @@ public class EnergySystem : CharacterBehaviour
 
     public bool Full => Mathf.Approximately(Fraction, 1);
 
-    public void AddEnergy(float energyAddition)
+    public void AddEnergy(float amount)
     {
-        energyAddition = Mathf.Clamp(energyAddition, 0, maxEnergy - Energy);
-        Energy += energyAddition;
-        onEnergyGrow.Invoke(energyAddition);
+        amount = Mathf.Clamp(amount, 0, maxEnergy - Energy);
+        Energy += amount;
+        onEnergyGrow.Invoke(amount);
+    }
+
+    public void TakeEnergy(float amount)
+    {
+        amount = Mathf.Clamp(amount, 0, Energy);
+        Energy -= amount;
     }
 
     public void ResetEnergy()
