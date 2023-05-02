@@ -203,9 +203,7 @@ public class PlayerController : CharacterController
     private void ExecuteWideBlock()
     {
         if (!wideBlock) return;
-        var horizontal = Input.GetAxisRaw("Horizontal");
-        var vertical = Input.GetAxisRaw("Vertical");
-        if (Input.GetButtonDown(Button.Escape.ToString()) && horizontal == 0 && vertical == 0)
+        if (Input.GetButtonDown(Button.Escape.ToString()))
         {
             wideBlock.Play(new WideBlock.Command());
         }
