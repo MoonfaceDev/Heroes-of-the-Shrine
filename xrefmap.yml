@@ -11967,36 +11967,82 @@ references:
   isSpec: "True"
   fullName: PlayerAttackBrainModule.GetParameters
   nameWithType: PlayerAttackBrainModule.GetParameters
+- uid: Global.PlayerAttackExecutor
+  name: PlayerAttackExecutor
+  href: api/Global.PlayerAttackExecutor.html
+  commentId: T:Global.PlayerAttackExecutor
+  fullName: PlayerAttackExecutor
+  nameWithType: PlayerAttackExecutor
+- uid: Global.PlayerAttackExecutor.AttackProperty
+  name: PlayerAttackExecutor.AttackProperty
+  href: api/Global.PlayerAttackExecutor.AttackProperty.html
+  commentId: T:Global.PlayerAttackExecutor.AttackProperty
+  fullName: PlayerAttackExecutor.AttackProperty
+  nameWithType: PlayerAttackExecutor.AttackProperty
+- uid: Global.PlayerAttackExecutor.AttackProperty.attack
+  name: attack
+  href: api/Global.PlayerAttackExecutor.AttackProperty.html#Global_PlayerAttackExecutor_AttackProperty_attack
+  commentId: F:Global.PlayerAttackExecutor.AttackProperty.attack
+  fullName: PlayerAttackExecutor.AttackProperty.attack
+  nameWithType: PlayerAttackExecutor.AttackProperty.attack
+- uid: Global.PlayerAttackExecutor.AttackProperty.button
+  name: button
+  href: api/Global.PlayerAttackExecutor.AttackProperty.html#Global_PlayerAttackExecutor_AttackProperty_button
+  commentId: F:Global.PlayerAttackExecutor.AttackProperty.button
+  fullName: PlayerAttackExecutor.AttackProperty.button
+  nameWithType: PlayerAttackExecutor.AttackProperty.button
+- uid: Global.PlayerAttackExecutor.AttackProperty.energyCost
+  name: energyCost
+  href: api/Global.PlayerAttackExecutor.AttackProperty.html#Global_PlayerAttackExecutor_AttackProperty_energyCost
+  commentId: F:Global.PlayerAttackExecutor.AttackProperty.energyCost
+  fullName: PlayerAttackExecutor.AttackProperty.energyCost
+  nameWithType: PlayerAttackExecutor.AttackProperty.energyCost
+- uid: Global.PlayerAttackExecutor.attacks
+  name: attacks
+  href: api/Global.PlayerAttackExecutor.html#Global_PlayerAttackExecutor_attacks
+  commentId: F:Global.PlayerAttackExecutor.attacks
+  fullName: PlayerAttackExecutor.attacks
+  nameWithType: PlayerAttackExecutor.attacks
+- uid: Global.PlayerAttackExecutor.energySystem
+  name: energySystem
+  href: api/Global.PlayerAttackExecutor.html#Global_PlayerAttackExecutor_energySystem
+  commentId: F:Global.PlayerAttackExecutor.energySystem
+  fullName: PlayerAttackExecutor.energySystem
+  nameWithType: PlayerAttackExecutor.energySystem
+- uid: Global.PlayerAttackExecutor.Play(Button[])
+  name: Play(Button[])
+  href: api/Global.PlayerAttackExecutor.html#Global_PlayerAttackExecutor_Play_Button___
+  commentId: M:Global.PlayerAttackExecutor.Play(Button[])
+  name.vb: Play(Button())
+  fullName: PlayerAttackExecutor.Play(Button[])
+  fullName.vb: PlayerAttackExecutor.Play(Button())
+  nameWithType: PlayerAttackExecutor.Play(Button[])
+  nameWithType.vb: PlayerAttackExecutor.Play(Button())
+- uid: Global.PlayerAttackExecutor.Play*
+  name: Play
+  href: api/Global.PlayerAttackExecutor.html#Global_PlayerAttackExecutor_Play_
+  commentId: Overload:Global.PlayerAttackExecutor.Play
+  isSpec: "True"
+  fullName: PlayerAttackExecutor.Play
+  nameWithType: PlayerAttackExecutor.Play
 - uid: Global.PlayerController
   name: PlayerController
   href: api/Global.PlayerController.html
   commentId: T:Global.PlayerController
   fullName: PlayerController
   nameWithType: PlayerController
+- uid: Global.PlayerController.attackExecutor
+  name: attackExecutor
+  href: api/Global.PlayerController.html#Global_PlayerController_attackExecutor
+  commentId: F:Global.PlayerController.attackExecutor
+  fullName: PlayerController.attackExecutor
+  nameWithType: PlayerController.attackExecutor
 - uid: Global.PlayerController.attackPriority
   name: attackPriority
   href: api/Global.PlayerController.html#Global_PlayerController_attackPriority
   commentId: F:Global.PlayerController.attackPriority
   fullName: PlayerController.attackPriority
   nameWithType: PlayerController.attackPriority
-- uid: Global.PlayerController.AttackProperty
-  name: PlayerController.AttackProperty
-  href: api/Global.PlayerController.AttackProperty.html
-  commentId: T:Global.PlayerController.AttackProperty
-  fullName: PlayerController.AttackProperty
-  nameWithType: PlayerController.AttackProperty
-- uid: Global.PlayerController.AttackProperty.attack
-  name: attack
-  href: api/Global.PlayerController.AttackProperty.html#Global_PlayerController_AttackProperty_attack
-  commentId: F:Global.PlayerController.AttackProperty.attack
-  fullName: PlayerController.AttackProperty.attack
-  nameWithType: PlayerController.AttackProperty.attack
-- uid: Global.PlayerController.AttackProperty.button
-  name: button
-  href: api/Global.PlayerController.AttackProperty.html#Global_PlayerController_AttackProperty_button
-  commentId: F:Global.PlayerController.AttackProperty.button
-  fullName: PlayerController.AttackProperty.button
-  nameWithType: PlayerController.AttackProperty.button
 - uid: Global.PlayerController.attacks
   name: attacks
   href: api/Global.PlayerController.html#Global_PlayerController_attacks

@@ -2736,11 +2736,23 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.PlayerController.AttackProperty.yml",
+      "source_relative_path": "api/Global.PlayerAttackExecutor.AttackProperty.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Global.PlayerController.AttackProperty.html",
-          "hash": "TQc6QcAKse4NP6v4Jv0nY2mtCFbCQyGvdL6BC0lsIWU="
+          "relative_path": "api/Global.PlayerAttackExecutor.AttackProperty.html",
+          "hash": "cb8rBgCyVYwxrpYSUi/n7/a8pswIhkKl7m3uI1bhapE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.PlayerAttackExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.PlayerAttackExecutor.html",
+          "hash": "0LpspqyV8WrCQfaceRCQ9H6Gwiq2baJjPWl55eE/pnI="
         }
       },
       "is_incremental": false,
@@ -2752,7 +2764,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.PlayerController.html",
-          "hash": "hitoLYqZf+UD3VZXYfGdQdVEi+4mGAIzAGP3HNT9zxE="
+          "hash": "6a/Nj6P8wk7GngMjs7O2/vbnPEx0nZTOKtNRQqAq+xU="
         }
       },
       "is_incremental": false,
@@ -3604,7 +3616,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "TJsbM9kt98HAQxNVfm9QKXVceNz7JglpugWUv6CFDfM="
+          "hash": "YdxkqTd4wQwHnPwKts5Jahwv5SimmVTouUNc+QgzBl8="
         }
       },
       "is_incremental": false,
@@ -3616,7 +3628,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "x/W/Fp/xMx1QZagU2SP213Y+ip3AKLhdOwAuIKDrhWQ="
+          "hash": "Cte/0VX3mfTLyxswl6R0eUFkzeJVXemfI0vEDefL6zo="
         }
       },
       "is_incremental": false,
@@ -3827,7 +3839,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 299,
+          "total_file_count": 300,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
