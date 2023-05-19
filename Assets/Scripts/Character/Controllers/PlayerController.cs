@@ -23,20 +23,8 @@ public enum Button
 /// </summary>
 public class PlayerController : CharacterController
 {
-    /// <summary>
-    /// Pairing between attack and required button
-    /// </summary>
-    [Serializable]
-    public class AttackProperty
-    {
-        public BaseAttack attack;
-        public Button button;
-    }
-
-    /// <value>
-    /// List of attacks that can be played using the controller
-    /// </value>
-    public AttackProperty[] attacks;
+    public PlayerAttackExecutor.AttackProperty[] attacks;
+    public PlayerAttackExecutor attackExecutor;
 
     /// <value>
     /// Window for input buffering, after that time is passed, that input is forgotten
@@ -231,10 +219,10 @@ public class PlayerController : CharacterController
             return;
         }
 
-        if (!TryExecuteAttack(downButtons))
+        if (!attackExecutor.Play(downButtons))
         {
             bufferedActions.Add(new BufferedAction(
-                () => TryExecuteAttack(downButtons), attackPriority, Time.time + bufferingTime
+                () => attackExecutor.Play(downButtons), attackPriority, Time.time + bufferingTime
             ));
         }
     }
@@ -243,29 +231,6 @@ public class PlayerController : CharacterController
     {
         return Enum.GetValues(typeof(Button)).Cast<Button>().Where(button => Input.GetButtonDown(button.ToString()))
             .ToArray();
-    }
-
-    private bool TryExecuteAttack(Button[] downButtons)
-    {
-        var command = new BaseAttack.Command();
-        var nextAttack = GetNextAttack(command, downButtons);
-
-        if (nextAttack == null)
-        {
-            return false;
-        }
-
-        nextAttack.Play(command);
-        return true;
-    }
-
-    private BaseAttack GetNextAttack(BaseAttack.Command command, Button[] downButtons)
-    {
-        return (
-            from property in attacks
-            where downButtons.Any(button => button == property.button) && property.attack.CanPlay(command)
-            select property.attack
-        ).LastOrDefault();
     }
 
     private void ExecutePlayable<T>(PlayableBehaviour<T> behaviour, T command, int bufferingPriority)
