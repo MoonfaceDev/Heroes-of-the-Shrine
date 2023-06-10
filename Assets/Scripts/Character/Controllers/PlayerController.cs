@@ -23,7 +23,6 @@ public enum Button
 /// </summary>
 public class PlayerController : CharacterController
 {
-    public PlayerAttackExecutor.AttackProperty[] attacks;
     public PlayerAttackExecutor attackExecutor;
 
     /// <value>
