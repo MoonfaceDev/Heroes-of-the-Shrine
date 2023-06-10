@@ -3200,30 +3200,85 @@ MonoBehaviour:
   attacks:
   - attack: {fileID: 7126820491640019253}
     button: 2
+    energyCost: 0
   - attack: {fileID: 9018447154371316026}
     button: 2
+    energyCost: 0
   - attack: {fileID: 7157179758743540809}
     button: 3
+    energyCost: 0
   - attack: {fileID: 1534430804526489236}
     button: 2
+    energyCost: 0
   - attack: {fileID: 3226033048567882335}
     button: 3
+    energyCost: 0
   - attack: {fileID: 3403884892882908741}
     button: 2
+    energyCost: 0
   - attack: {fileID: 8296055732026328267}
     button: 2
+    energyCost: 0
   - attack: {fileID: 7559106644093030772}
     button: 2
+    energyCost: 0
   - attack: {fileID: 6377231587991264689}
     button: 2
+    energyCost: 0
   - attack: {fileID: 5884357558659466936}
     button: 3
+    energyCost: 0
   - attack: {fileID: 5212638785196874420}
     button: 2
+    energyCost: 0
   - attack: {fileID: 1216366090443007232}
     button: 2
+    energyCost: 0
   - attack: {fileID: 7388694263344988399}
     button: 3
+    energyCost: 0
+  attackExecutor:
+    energySystem: {fileID: 526395291188819461}
+    attacks:
+    - attack: {fileID: 7126820491640019253}
+      button: 2
+      energyCost: 0
+    - attack: {fileID: 9018447154371316026}
+      button: 2
+      energyCost: 0
+    - attack: {fileID: 7157179758743540809}
+      button: 3
+      energyCost: 0
+    - attack: {fileID: 1534430804526489236}
+      button: 2
+      energyCost: 0
+    - attack: {fileID: 3226033048567882335}
+      button: 3
+      energyCost: 0
+    - attack: {fileID: 3403884892882908741}
+      button: 2
+      energyCost: 0
+    - attack: {fileID: 8296055732026328267}
+      button: 2
+      energyCost: 0
+    - attack: {fileID: 7559106644093030772}
+      button: 2
+      energyCost: 0
+    - attack: {fileID: 6377231587991264689}
+      button: 2
+      energyCost: 0
+    - attack: {fileID: 5884357558659466936}
+      button: 3
+      energyCost: 0
+    - attack: {fileID: 5212638785196874420}
+      button: 2
+      energyCost: 0
+    - attack: {fileID: 1216366090443007232}
+      button: 2
+      energyCost: 0
+    - attack: {fileID: 7388694263344988399}
+      button: 3
+      energyCost: 0
   bufferingTime: 0.3
   jumpPriority: 1
   slidePriority: 3
