@@ -104,7 +104,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415412319477531489}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -131,6 +131,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.05
+  recoveryDuration: 0.15
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -198,6 +200,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.1
+  recoveryDuration: 0.1
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -335,6 +339,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.01
+  recoveryDuration: 0.3
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -803,6 +809,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.1
+  recoveryDuration: 0.15
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -917,6 +925,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.1
+  recoveryDuration: 0.1
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -1032,6 +1042,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.1
+  recoveryDuration: 0.2
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -1182,6 +1194,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.25
+  recoveryDuration: 0.2
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -1375,6 +1389,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.3
+  recoveryDuration: 0.3
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -1788,6 +1804,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.1
+  recoveryDuration: 0.3
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -1986,6 +2004,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.05
+  recoveryDuration: 0.25
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -2102,6 +2122,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.1
+  recoveryDuration: 0.2
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -2342,6 +2364,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0
+  recoveryDuration: 0.05
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -2429,6 +2453,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.05
+  recoveryDuration: 0.3
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -3143,8 +3169,8 @@ Transform:
   - {fileID: 9214118118156865908}
   - {fileID: 8561655299317852435}
   - {fileID: 32172274780924393}
-  - {fileID: 7562827223860804901}
   - {fileID: 3725194561385273773}
+  - {fileID: 7562827223860804901}
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3197,46 +3223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bed8f32acb6e664ab18e38ef59e7abf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attacks:
-  - attack: {fileID: 7126820491640019253}
-    button: 2
-    energyCost: 0
-  - attack: {fileID: 9018447154371316026}
-    button: 2
-    energyCost: 0
-  - attack: {fileID: 7157179758743540809}
-    button: 3
-    energyCost: 0
-  - attack: {fileID: 1534430804526489236}
-    button: 2
-    energyCost: 0
-  - attack: {fileID: 3226033048567882335}
-    button: 3
-    energyCost: 0
-  - attack: {fileID: 3403884892882908741}
-    button: 2
-    energyCost: 0
-  - attack: {fileID: 8296055732026328267}
-    button: 2
-    energyCost: 0
-  - attack: {fileID: 7559106644093030772}
-    button: 2
-    energyCost: 0
-  - attack: {fileID: 6377231587991264689}
-    button: 2
-    energyCost: 0
-  - attack: {fileID: 5884357558659466936}
-    button: 3
-    energyCost: 0
-  - attack: {fileID: 5212638785196874420}
-    button: 2
-    energyCost: 0
-  - attack: {fileID: 1216366090443007232}
-    button: 2
-    energyCost: 0
-  - attack: {fileID: 7388694263344988399}
-    button: 3
-    energyCost: 0
   attackExecutor:
     energySystem: {fileID: 526395291188819461}
     attacks:
@@ -13654,6 +13640,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.01
+  recoveryDuration: 0.3
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -13771,6 +13759,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.05
+  recoveryDuration: 0.05
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -13885,6 +13875,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.3
+  recoveryDuration: 0.25
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -14029,6 +14021,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.45
+  recoveryDuration: 0.5
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -14112,6 +14106,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.05
+  recoveryDuration: 0.3
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -14404,6 +14400,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0
+  recoveryDuration: 0
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -14504,6 +14502,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.05
+  recoveryDuration: 0.2
   phaseEvents:
     onStartAnticipating:
       _persistentListeners:
@@ -14646,6 +14646,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0
+  recoveryDuration: 0.3
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
