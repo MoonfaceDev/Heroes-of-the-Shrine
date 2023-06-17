@@ -5899,12 +5899,6 @@ references:
   commentId: F:Global.BackwardLaunchAttack.AttackFlow.activeDuration
   fullName: BackwardLaunchAttack.AttackFlow.activeDuration
   nameWithType: BackwardLaunchAttack.AttackFlow.activeDuration
-- uid: Global.BackwardLaunchAttack.AttackFlow.anticipationDuration
-  name: anticipationDuration
-  href: api/Global.BackwardLaunchAttack.AttackFlow.html#Global_BackwardLaunchAttack_AttackFlow_anticipationDuration
-  commentId: F:Global.BackwardLaunchAttack.AttackFlow.anticipationDuration
-  fullName: BackwardLaunchAttack.AttackFlow.anticipationDuration
-  nameWithType: BackwardLaunchAttack.AttackFlow.anticipationDuration
 - uid: Global.BackwardLaunchAttack.AttackFlow.detectorDuration
   name: detectorDuration
   href: api/Global.BackwardLaunchAttack.AttackFlow.html#Global_BackwardLaunchAttack_AttackFlow_detectorDuration
@@ -5917,12 +5911,6 @@ references:
   commentId: F:Global.BackwardLaunchAttack.AttackFlow.detectorStartTime
   fullName: BackwardLaunchAttack.AttackFlow.detectorStartTime
   nameWithType: BackwardLaunchAttack.AttackFlow.detectorStartTime
-- uid: Global.BackwardLaunchAttack.AttackFlow.recoveryDuration
-  name: recoveryDuration
-  href: api/Global.BackwardLaunchAttack.AttackFlow.html#Global_BackwardLaunchAttack_AttackFlow_recoveryDuration
-  commentId: F:Global.BackwardLaunchAttack.AttackFlow.recoveryDuration
-  fullName: BackwardLaunchAttack.AttackFlow.recoveryDuration
-  nameWithType: BackwardLaunchAttack.AttackFlow.recoveryDuration
 - uid: Global.BackwardLaunchAttack.hitDetector
   name: hitDetector
   href: api/Global.BackwardLaunchAttack.html#Global_BackwardLaunchAttack_hitDetector
@@ -7448,12 +7436,6 @@ references:
   isSpec: "True"
   fullName: DodgeBehaviour.ActivePhase
   nameWithType: DodgeBehaviour.ActivePhase
-- uid: Global.DodgeBehaviour.anticipateTime
-  name: anticipateTime
-  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_anticipateTime
-  commentId: F:Global.DodgeBehaviour.anticipateTime
-  fullName: DodgeBehaviour.anticipateTime
-  nameWithType: DodgeBehaviour.anticipateTime
 - uid: Global.DodgeBehaviour.CanPlay(DodgeBehaviour.Command)
   name: CanPlay(DodgeBehaviour.Command)
   href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_CanPlay_DodgeBehaviour_Command_
@@ -7517,12 +7499,6 @@ references:
   isSpec: "True"
   fullName: DodgeBehaviour.DoStop
   nameWithType: DodgeBehaviour.DoStop
-- uid: Global.DodgeBehaviour.recoveryTime
-  name: recoveryTime
-  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_recoveryTime
-  commentId: F:Global.DodgeBehaviour.recoveryTime
-  fullName: DodgeBehaviour.recoveryTime
-  nameWithType: DodgeBehaviour.recoveryTime
 - uid: Global.EffectBar
   name: EffectBar
   href: api/Global.EffectBar.html
@@ -7678,6 +7654,12 @@ references:
   commentId: T:Global.ElectrifyAttack
   fullName: ElectrifyAttack
   nameWithType: ElectrifyAttack
+- uid: Global.ElectrifyAttack.activeDuration
+  name: activeDuration
+  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_activeDuration
+  commentId: F:Global.ElectrifyAttack.activeDuration
+  fullName: ElectrifyAttack.activeDuration
+  nameWithType: ElectrifyAttack.activeDuration
 - uid: Global.ElectrifyAttack.ActivePhase
   name: ActivePhase()
   href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_ActivePhase
@@ -7691,12 +7673,6 @@ references:
   isSpec: "True"
   fullName: ElectrifyAttack.ActivePhase
   nameWithType: ElectrifyAttack.ActivePhase
-- uid: Global.ElectrifyAttack.attackFlow
-  name: attackFlow
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_attackFlow
-  commentId: F:Global.ElectrifyAttack.attackFlow
-  fullName: ElectrifyAttack.attackFlow
-  nameWithType: ElectrifyAttack.attackFlow
 - uid: Global.ElectrifyAttack.explosionHitDetector
   name: explosionHitDetector
   href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_explosionHitDetector
@@ -8730,12 +8706,6 @@ references:
   commentId: F:Global.FocusBlock.activeTime
   fullName: FocusBlock.activeTime
   nameWithType: FocusBlock.activeTime
-- uid: Global.FocusBlock.anticipateTime
-  name: anticipateTime
-  href: api/Global.FocusBlock.html#Global_FocusBlock_anticipateTime
-  commentId: F:Global.FocusBlock.anticipateTime
-  fullName: FocusBlock.anticipateTime
-  nameWithType: FocusBlock.anticipateTime
 - uid: Global.FocusBlock.Awake
   name: Awake()
   href: api/Global.FocusBlock.html#Global_FocusBlock_Awake
@@ -8862,12 +8832,6 @@ references:
   isSpec: "True"
   fullName: FocusBlock.Playing
   nameWithType: FocusBlock.Playing
-- uid: Global.FocusBlock.recoveryTime
-  name: recoveryTime
-  href: api/Global.FocusBlock.html#Global_FocusBlock_recoveryTime
-  commentId: F:Global.FocusBlock.recoveryTime
-  fullName: FocusBlock.recoveryTime
-  nameWithType: FocusBlock.recoveryTime
 - uid: Global.FocusBlock.TryBlock(Hit)
   name: TryBlock(Hit)
   href: api/Global.FocusBlock.html#Global_FocusBlock_TryBlock_Hit_
@@ -9107,12 +9071,6 @@ references:
   commentId: F:Global.ForwardPushAttack.AttackFlow.activeDuration
   fullName: ForwardPushAttack.AttackFlow.activeDuration
   nameWithType: ForwardPushAttack.AttackFlow.activeDuration
-- uid: Global.ForwardPushAttack.AttackFlow.anticipationDuration
-  name: anticipationDuration
-  href: api/Global.ForwardPushAttack.AttackFlow.html#Global_ForwardPushAttack_AttackFlow_anticipationDuration
-  commentId: F:Global.ForwardPushAttack.AttackFlow.anticipationDuration
-  fullName: ForwardPushAttack.AttackFlow.anticipationDuration
-  nameWithType: ForwardPushAttack.AttackFlow.anticipationDuration
 - uid: Global.ForwardPushAttack.AttackFlow.detector1Duration
   name: detector1Duration
   href: api/Global.ForwardPushAttack.AttackFlow.html#Global_ForwardPushAttack_AttackFlow_detector1Duration
@@ -9137,12 +9095,6 @@ references:
   commentId: F:Global.ForwardPushAttack.AttackFlow.detector2StartTime
   fullName: ForwardPushAttack.AttackFlow.detector2StartTime
   nameWithType: ForwardPushAttack.AttackFlow.detector2StartTime
-- uid: Global.ForwardPushAttack.AttackFlow.recoveryDuration
-  name: recoveryDuration
-  href: api/Global.ForwardPushAttack.AttackFlow.html#Global_ForwardPushAttack_AttackFlow_recoveryDuration
-  commentId: F:Global.ForwardPushAttack.AttackFlow.recoveryDuration
-  fullName: ForwardPushAttack.AttackFlow.recoveryDuration
-  nameWithType: ForwardPushAttack.AttackFlow.recoveryDuration
 - uid: Global.ForwardPushAttack.hitDetector1
   name: hitDetector1
   href: api/Global.ForwardPushAttack.html#Global_ForwardPushAttack_hitDetector1
@@ -10474,12 +10426,6 @@ references:
   isSpec: "True"
   fullName: JumpBehaviour.ActivePhase
   nameWithType: JumpBehaviour.ActivePhase
-- uid: Global.JumpBehaviour.anticipateTime
-  name: anticipateTime
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_anticipateTime
-  commentId: F:Global.JumpBehaviour.anticipateTime
-  fullName: JumpBehaviour.anticipateTime
-  nameWithType: JumpBehaviour.anticipateTime
 - uid: Global.JumpBehaviour.CanPlay(JumpBehaviour.Command)
   name: CanPlay(JumpBehaviour.Command)
   href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_CanPlay_JumpBehaviour_Command_
@@ -10556,12 +10502,6 @@ references:
   commentId: F:Global.JumpBehaviour.peakDuration
   fullName: JumpBehaviour.peakDuration
   nameWithType: JumpBehaviour.peakDuration
-- uid: Global.JumpBehaviour.recoverTime
-  name: recoverTime
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_recoverTime
-  commentId: F:Global.JumpBehaviour.recoverTime
-  fullName: JumpBehaviour.recoverTime
-  nameWithType: JumpBehaviour.recoverTime
 - uid: Global.JumpBehaviour.speed
   name: speed
   href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_speed
@@ -10952,6 +10892,12 @@ references:
   commentId: T:Global.MotionAttack
   fullName: MotionAttack
   nameWithType: MotionAttack
+- uid: Global.MotionAttack.acceleration
+  name: acceleration
+  href: api/Global.MotionAttack.html#Global_MotionAttack_acceleration
+  commentId: F:Global.MotionAttack.acceleration
+  fullName: MotionAttack.acceleration
+  nameWithType: MotionAttack.acceleration
 - uid: Global.MotionAttack.ActivePhase
   name: ActivePhase()
   href: api/Global.MotionAttack.html#Global_MotionAttack_ActivePhase
@@ -10965,42 +10911,6 @@ references:
   isSpec: "True"
   fullName: MotionAttack.ActivePhase
   nameWithType: MotionAttack.ActivePhase
-- uid: Global.MotionAttack.attackFlow
-  name: attackFlow
-  href: api/Global.MotionAttack.html#Global_MotionAttack_attackFlow
-  commentId: F:Global.MotionAttack.attackFlow
-  fullName: MotionAttack.attackFlow
-  nameWithType: MotionAttack.attackFlow
-- uid: Global.MotionAttack.AttackFlow
-  name: MotionAttack.AttackFlow
-  href: api/Global.MotionAttack.AttackFlow.html
-  commentId: T:Global.MotionAttack.AttackFlow
-  fullName: MotionAttack.AttackFlow
-  nameWithType: MotionAttack.AttackFlow
-- uid: Global.MotionAttack.AttackFlow.acceleration
-  name: acceleration
-  href: api/Global.MotionAttack.AttackFlow.html#Global_MotionAttack_AttackFlow_acceleration
-  commentId: F:Global.MotionAttack.AttackFlow.acceleration
-  fullName: MotionAttack.AttackFlow.acceleration
-  nameWithType: MotionAttack.AttackFlow.acceleration
-- uid: Global.MotionAttack.AttackFlow.anticipationDuration
-  name: anticipationDuration
-  href: api/Global.MotionAttack.AttackFlow.html#Global_MotionAttack_AttackFlow_anticipationDuration
-  commentId: F:Global.MotionAttack.AttackFlow.anticipationDuration
-  fullName: MotionAttack.AttackFlow.anticipationDuration
-  nameWithType: MotionAttack.AttackFlow.anticipationDuration
-- uid: Global.MotionAttack.AttackFlow.recoveryDuration
-  name: recoveryDuration
-  href: api/Global.MotionAttack.AttackFlow.html#Global_MotionAttack_AttackFlow_recoveryDuration
-  commentId: F:Global.MotionAttack.AttackFlow.recoveryDuration
-  fullName: MotionAttack.AttackFlow.recoveryDuration
-  nameWithType: MotionAttack.AttackFlow.recoveryDuration
-- uid: Global.MotionAttack.AttackFlow.velocity
-  name: velocity
-  href: api/Global.MotionAttack.AttackFlow.html#Global_MotionAttack_AttackFlow_velocity
-  commentId: F:Global.MotionAttack.AttackFlow.velocity
-  fullName: MotionAttack.AttackFlow.velocity
-  nameWithType: MotionAttack.AttackFlow.velocity
 - uid: Global.MotionAttack.hitDetector
   name: hitDetector
   href: api/Global.MotionAttack.html#Global_MotionAttack_hitDetector
@@ -11026,6 +10936,12 @@ references:
   isSpec: "True"
   fullName: MotionAttack.Motion
   nameWithType: MotionAttack.Motion
+- uid: Global.MotionAttack.velocity
+  name: velocity
+  href: api/Global.MotionAttack.html#Global_MotionAttack_velocity
+  commentId: F:Global.MotionAttack.velocity
+  fullName: MotionAttack.velocity
+  nameWithType: MotionAttack.velocity
 - uid: Global.MotionSettings
   name: MotionSettings
   href: api/Global.MotionSettings.html
@@ -12164,18 +12080,6 @@ references:
   commentId: T:Global.PossessAttack.AttackFlow
   fullName: PossessAttack.AttackFlow
   nameWithType: PossessAttack.AttackFlow
-- uid: Global.PossessAttack.AttackFlow.anticipationDuration
-  name: anticipationDuration
-  href: api/Global.PossessAttack.AttackFlow.html#Global_PossessAttack_AttackFlow_anticipationDuration
-  commentId: F:Global.PossessAttack.AttackFlow.anticipationDuration
-  fullName: PossessAttack.AttackFlow.anticipationDuration
-  nameWithType: PossessAttack.AttackFlow.anticipationDuration
-- uid: Global.PossessAttack.AttackFlow.recoveryDuration
-  name: recoveryDuration
-  href: api/Global.PossessAttack.AttackFlow.html#Global_PossessAttack_AttackFlow_recoveryDuration
-  commentId: F:Global.PossessAttack.AttackFlow.recoveryDuration
-  fullName: PossessAttack.AttackFlow.recoveryDuration
-  nameWithType: PossessAttack.AttackFlow.recoveryDuration
 - uid: Global.PossessAttack.AttackFlow.sourceActiveDuration
   name: sourceActiveDuration
   href: api/Global.PossessAttack.AttackFlow.html#Global_PossessAttack_AttackFlow_sourceActiveDuration
@@ -13098,6 +13002,12 @@ references:
   commentId: T:Global.SimpleAttack
   fullName: SimpleAttack
   nameWithType: SimpleAttack
+- uid: Global.SimpleAttack.activeDuration
+  name: activeDuration
+  href: api/Global.SimpleAttack.html#Global_SimpleAttack_activeDuration
+  commentId: F:Global.SimpleAttack.activeDuration
+  fullName: SimpleAttack.activeDuration
+  nameWithType: SimpleAttack.activeDuration
 - uid: Global.SimpleAttack.ActivePhase
   name: ActivePhase()
   href: api/Global.SimpleAttack.html#Global_SimpleAttack_ActivePhase
@@ -13111,36 +13021,6 @@ references:
   isSpec: "True"
   fullName: SimpleAttack.ActivePhase
   nameWithType: SimpleAttack.ActivePhase
-- uid: Global.SimpleAttack.attackFlow
-  name: attackFlow
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_attackFlow
-  commentId: F:Global.SimpleAttack.attackFlow
-  fullName: SimpleAttack.attackFlow
-  nameWithType: SimpleAttack.attackFlow
-- uid: Global.SimpleAttack.AttackFlow
-  name: SimpleAttack.AttackFlow
-  href: api/Global.SimpleAttack.AttackFlow.html
-  commentId: T:Global.SimpleAttack.AttackFlow
-  fullName: SimpleAttack.AttackFlow
-  nameWithType: SimpleAttack.AttackFlow
-- uid: Global.SimpleAttack.AttackFlow.activeDuration
-  name: activeDuration
-  href: api/Global.SimpleAttack.AttackFlow.html#Global_SimpleAttack_AttackFlow_activeDuration
-  commentId: F:Global.SimpleAttack.AttackFlow.activeDuration
-  fullName: SimpleAttack.AttackFlow.activeDuration
-  nameWithType: SimpleAttack.AttackFlow.activeDuration
-- uid: Global.SimpleAttack.AttackFlow.anticipationDuration
-  name: anticipationDuration
-  href: api/Global.SimpleAttack.AttackFlow.html#Global_SimpleAttack_AttackFlow_anticipationDuration
-  commentId: F:Global.SimpleAttack.AttackFlow.anticipationDuration
-  fullName: SimpleAttack.AttackFlow.anticipationDuration
-  nameWithType: SimpleAttack.AttackFlow.anticipationDuration
-- uid: Global.SimpleAttack.AttackFlow.recoveryDuration
-  name: recoveryDuration
-  href: api/Global.SimpleAttack.AttackFlow.html#Global_SimpleAttack_AttackFlow_recoveryDuration
-  commentId: F:Global.SimpleAttack.AttackFlow.recoveryDuration
-  fullName: SimpleAttack.AttackFlow.recoveryDuration
-  nameWithType: SimpleAttack.AttackFlow.recoveryDuration
 - uid: Global.SimpleAttack.hitDetector
   name: hitDetector
   href: api/Global.SimpleAttack.html#Global_SimpleAttack_hitDetector
@@ -13345,30 +13225,6 @@ references:
   isSpec: "True"
   fullName: SpawnAttack.ActivePhase
   nameWithType: SpawnAttack.ActivePhase
-- uid: Global.SpawnAttack.attackFlow
-  name: attackFlow
-  href: api/Global.SpawnAttack.html#Global_SpawnAttack_attackFlow
-  commentId: F:Global.SpawnAttack.attackFlow
-  fullName: SpawnAttack.attackFlow
-  nameWithType: SpawnAttack.attackFlow
-- uid: Global.SpawnAttack.AttackFlow
-  name: SpawnAttack.AttackFlow
-  href: api/Global.SpawnAttack.AttackFlow.html
-  commentId: T:Global.SpawnAttack.AttackFlow
-  fullName: SpawnAttack.AttackFlow
-  nameWithType: SpawnAttack.AttackFlow
-- uid: Global.SpawnAttack.AttackFlow.anticipationDuration
-  name: anticipationDuration
-  href: api/Global.SpawnAttack.AttackFlow.html#Global_SpawnAttack_AttackFlow_anticipationDuration
-  commentId: F:Global.SpawnAttack.AttackFlow.anticipationDuration
-  fullName: SpawnAttack.AttackFlow.anticipationDuration
-  nameWithType: SpawnAttack.AttackFlow.anticipationDuration
-- uid: Global.SpawnAttack.AttackFlow.recoveryDuration
-  name: recoveryDuration
-  href: api/Global.SpawnAttack.AttackFlow.html#Global_SpawnAttack_AttackFlow_recoveryDuration
-  commentId: F:Global.SpawnAttack.AttackFlow.recoveryDuration
-  fullName: SpawnAttack.AttackFlow.recoveryDuration
-  nameWithType: SpawnAttack.AttackFlow.recoveryDuration
 - uid: Global.SpawnAttack.enemyPrefab
   name: enemyPrefab
   href: api/Global.SpawnAttack.html#Global_SpawnAttack_enemyPrefab
@@ -13522,24 +13378,12 @@ references:
   commentId: F:Global.SpikeBallAttack.AttackFlow.activeTimeout
   fullName: SpikeBallAttack.AttackFlow.activeTimeout
   nameWithType: SpikeBallAttack.AttackFlow.activeTimeout
-- uid: Global.SpikeBallAttack.AttackFlow.anticipationDuration
-  name: anticipationDuration
-  href: api/Global.SpikeBallAttack.AttackFlow.html#Global_SpikeBallAttack_AttackFlow_anticipationDuration
-  commentId: F:Global.SpikeBallAttack.AttackFlow.anticipationDuration
-  fullName: SpikeBallAttack.AttackFlow.anticipationDuration
-  nameWithType: SpikeBallAttack.AttackFlow.anticipationDuration
 - uid: Global.SpikeBallAttack.AttackFlow.minActiveTime
   name: minActiveTime
   href: api/Global.SpikeBallAttack.AttackFlow.html#Global_SpikeBallAttack_AttackFlow_minActiveTime
   commentId: F:Global.SpikeBallAttack.AttackFlow.minActiveTime
   fullName: SpikeBallAttack.AttackFlow.minActiveTime
   nameWithType: SpikeBallAttack.AttackFlow.minActiveTime
-- uid: Global.SpikeBallAttack.AttackFlow.recoveryDuration
-  name: recoveryDuration
-  href: api/Global.SpikeBallAttack.AttackFlow.html#Global_SpikeBallAttack_AttackFlow_recoveryDuration
-  commentId: F:Global.SpikeBallAttack.AttackFlow.recoveryDuration
-  fullName: SpikeBallAttack.AttackFlow.recoveryDuration
-  nameWithType: SpikeBallAttack.AttackFlow.recoveryDuration
 - uid: Global.SpikeBallAttack.Awake
   name: Awake()
   href: api/Global.SpikeBallAttack.html#Global_SpikeBallAttack_Awake
@@ -13634,12 +13478,6 @@ references:
   commentId: F:Global.SpinningSwordsAttack.AttackFlow.activeDuration
   fullName: SpinningSwordsAttack.AttackFlow.activeDuration
   nameWithType: SpinningSwordsAttack.AttackFlow.activeDuration
-- uid: Global.SpinningSwordsAttack.AttackFlow.anticipationDuration
-  name: anticipationDuration
-  href: api/Global.SpinningSwordsAttack.AttackFlow.html#Global_SpinningSwordsAttack_AttackFlow_anticipationDuration
-  commentId: F:Global.SpinningSwordsAttack.AttackFlow.anticipationDuration
-  fullName: SpinningSwordsAttack.AttackFlow.anticipationDuration
-  nameWithType: SpinningSwordsAttack.AttackFlow.anticipationDuration
 - uid: Global.SpinningSwordsAttack.AttackFlow.detector1Duration
   name: detector1Duration
   href: api/Global.SpinningSwordsAttack.AttackFlow.html#Global_SpinningSwordsAttack_AttackFlow_detector1Duration
@@ -13664,12 +13502,6 @@ references:
   commentId: F:Global.SpinningSwordsAttack.AttackFlow.detector2StartTime
   fullName: SpinningSwordsAttack.AttackFlow.detector2StartTime
   nameWithType: SpinningSwordsAttack.AttackFlow.detector2StartTime
-- uid: Global.SpinningSwordsAttack.AttackFlow.recoveryDuration
-  name: recoveryDuration
-  href: api/Global.SpinningSwordsAttack.AttackFlow.html#Global_SpinningSwordsAttack_AttackFlow_recoveryDuration
-  commentId: F:Global.SpinningSwordsAttack.AttackFlow.recoveryDuration
-  fullName: SpinningSwordsAttack.AttackFlow.recoveryDuration
-  nameWithType: SpinningSwordsAttack.AttackFlow.recoveryDuration
 - uid: Global.SpinningSwordsAttack.hitDetector1
   name: hitDetector1
   href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_hitDetector1
@@ -14672,12 +14504,6 @@ references:
   commentId: F:Global.WideBlock.activeTime
   fullName: WideBlock.activeTime
   nameWithType: WideBlock.activeTime
-- uid: Global.WideBlock.anticipateTime
-  name: anticipateTime
-  href: api/Global.WideBlock.html#Global_WideBlock_anticipateTime
-  commentId: F:Global.WideBlock.anticipateTime
-  fullName: WideBlock.anticipateTime
-  nameWithType: WideBlock.anticipateTime
 - uid: Global.WideBlock.Awake
   name: Awake()
   href: api/Global.WideBlock.html#Global_WideBlock_Awake
@@ -14822,12 +14648,6 @@ references:
   isSpec: "True"
   fullName: WideBlock.Playing
   nameWithType: WideBlock.Playing
-- uid: Global.WideBlock.recoveryTime
-  name: recoveryTime
-  href: api/Global.WideBlock.html#Global_WideBlock_recoveryTime
-  commentId: F:Global.WideBlock.recoveryTime
-  fullName: WideBlock.recoveryTime
-  nameWithType: WideBlock.recoveryTime
 - uid: Global.WideBlock.TryBlock(Hit)
   name: TryBlock(Hit)
   href: api/Global.WideBlock.html#Global_WideBlock_TryBlock_Hit_
