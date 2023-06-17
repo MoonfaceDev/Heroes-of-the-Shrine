@@ -5881,19 +5881,6 @@ references:
   isSpec: "True"
   fullName: BackwardLaunchAttack.ActivePhase
   nameWithType: BackwardLaunchAttack.ActivePhase
-- uid: Global.BackwardLaunchAttack.AnticipationPhase
-  name: AnticipationPhase()
-  href: api/Global.BackwardLaunchAttack.html#Global_BackwardLaunchAttack_AnticipationPhase
-  commentId: M:Global.BackwardLaunchAttack.AnticipationPhase
-  fullName: BackwardLaunchAttack.AnticipationPhase()
-  nameWithType: BackwardLaunchAttack.AnticipationPhase()
-- uid: Global.BackwardLaunchAttack.AnticipationPhase*
-  name: AnticipationPhase
-  href: api/Global.BackwardLaunchAttack.html#Global_BackwardLaunchAttack_AnticipationPhase_
-  commentId: Overload:Global.BackwardLaunchAttack.AnticipationPhase
-  isSpec: "True"
-  fullName: BackwardLaunchAttack.AnticipationPhase
-  nameWithType: BackwardLaunchAttack.AnticipationPhase
 - uid: Global.BackwardLaunchAttack.attackFlow
   name: attackFlow
   href: api/Global.BackwardLaunchAttack.html#Global_BackwardLaunchAttack_attackFlow
@@ -5948,19 +5935,6 @@ references:
   commentId: F:Global.BackwardLaunchAttack.hitExecutor
   fullName: BackwardLaunchAttack.hitExecutor
   nameWithType: BackwardLaunchAttack.hitExecutor
-- uid: Global.BackwardLaunchAttack.RecoveryPhase
-  name: RecoveryPhase()
-  href: api/Global.BackwardLaunchAttack.html#Global_BackwardLaunchAttack_RecoveryPhase
-  commentId: M:Global.BackwardLaunchAttack.RecoveryPhase
-  fullName: BackwardLaunchAttack.RecoveryPhase()
-  nameWithType: BackwardLaunchAttack.RecoveryPhase()
-- uid: Global.BackwardLaunchAttack.RecoveryPhase*
-  name: RecoveryPhase
-  href: api/Global.BackwardLaunchAttack.html#Global_BackwardLaunchAttack_RecoveryPhase_
-  commentId: Overload:Global.BackwardLaunchAttack.RecoveryPhase
-  isSpec: "True"
-  fullName: BackwardLaunchAttack.RecoveryPhase
-  nameWithType: BackwardLaunchAttack.RecoveryPhase
 - uid: Global.BackwardLaunchAttack.speed
   name: speed
   href: api/Global.BackwardLaunchAttack.html#Global_BackwardLaunchAttack_speed
@@ -6094,6 +6068,64 @@ references:
   isSpec: "True"
   fullName: BaseAttack.StartHitDetector
   nameWithType: BaseAttack.StartHitDetector
+- uid: Global.BaseChargeAttack
+  name: BaseChargeAttack
+  href: api/Global.BaseChargeAttack.html
+  commentId: T:Global.BaseChargeAttack
+  fullName: BaseChargeAttack
+  nameWithType: BaseChargeAttack
+- uid: Global.BaseChargeAttack.ActivePhase
+  name: ActivePhase()
+  href: api/Global.BaseChargeAttack.html#Global_BaseChargeAttack_ActivePhase
+  commentId: M:Global.BaseChargeAttack.ActivePhase
+  fullName: BaseChargeAttack.ActivePhase()
+  nameWithType: BaseChargeAttack.ActivePhase()
+- uid: Global.BaseChargeAttack.ActivePhase*
+  name: ActivePhase
+  href: api/Global.BaseChargeAttack.html#Global_BaseChargeAttack_ActivePhase_
+  commentId: Overload:Global.BaseChargeAttack.ActivePhase
+  isSpec: "True"
+  fullName: BaseChargeAttack.ActivePhase
+  nameWithType: BaseChargeAttack.ActivePhase
+- uid: Global.BaseChargeAttack.CanRelease
+  name: CanRelease()
+  href: api/Global.BaseChargeAttack.html#Global_BaseChargeAttack_CanRelease
+  commentId: M:Global.BaseChargeAttack.CanRelease
+  fullName: BaseChargeAttack.CanRelease()
+  nameWithType: BaseChargeAttack.CanRelease()
+- uid: Global.BaseChargeAttack.CanRelease*
+  name: CanRelease
+  href: api/Global.BaseChargeAttack.html#Global_BaseChargeAttack_CanRelease_
+  commentId: Overload:Global.BaseChargeAttack.CanRelease
+  isSpec: "True"
+  fullName: BaseChargeAttack.CanRelease
+  nameWithType: BaseChargeAttack.CanRelease
+- uid: Global.BaseChargeAttack.MustRelease
+  name: MustRelease()
+  href: api/Global.BaseChargeAttack.html#Global_BaseChargeAttack_MustRelease
+  commentId: M:Global.BaseChargeAttack.MustRelease
+  fullName: BaseChargeAttack.MustRelease()
+  nameWithType: BaseChargeAttack.MustRelease()
+- uid: Global.BaseChargeAttack.MustRelease*
+  name: MustRelease
+  href: api/Global.BaseChargeAttack.html#Global_BaseChargeAttack_MustRelease_
+  commentId: Overload:Global.BaseChargeAttack.MustRelease
+  isSpec: "True"
+  fullName: BaseChargeAttack.MustRelease
+  nameWithType: BaseChargeAttack.MustRelease
+- uid: Global.BaseChargeAttack.Release
+  name: Release()
+  href: api/Global.BaseChargeAttack.html#Global_BaseChargeAttack_Release
+  commentId: M:Global.BaseChargeAttack.Release
+  fullName: BaseChargeAttack.Release()
+  nameWithType: BaseChargeAttack.Release()
+- uid: Global.BaseChargeAttack.Release*
+  name: Release
+  href: api/Global.BaseChargeAttack.html#Global_BaseChargeAttack_Release_
+  commentId: Overload:Global.BaseChargeAttack.Release
+  isSpec: "True"
+  fullName: BaseChargeAttack.Release
+  nameWithType: BaseChargeAttack.Release
 - uid: Global.BaseComponent
   name: BaseComponent
   href: api/Global.BaseComponent.html
@@ -7422,19 +7454,6 @@ references:
   commentId: F:Global.DodgeBehaviour.anticipateTime
   fullName: DodgeBehaviour.anticipateTime
   nameWithType: DodgeBehaviour.anticipateTime
-- uid: Global.DodgeBehaviour.AnticipationPhase
-  name: AnticipationPhase()
-  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_AnticipationPhase
-  commentId: M:Global.DodgeBehaviour.AnticipationPhase
-  fullName: DodgeBehaviour.AnticipationPhase()
-  nameWithType: DodgeBehaviour.AnticipationPhase()
-- uid: Global.DodgeBehaviour.AnticipationPhase*
-  name: AnticipationPhase
-  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_AnticipationPhase_
-  commentId: Overload:Global.DodgeBehaviour.AnticipationPhase
-  isSpec: "True"
-  fullName: DodgeBehaviour.AnticipationPhase
-  nameWithType: DodgeBehaviour.AnticipationPhase
 - uid: Global.DodgeBehaviour.CanPlay(DodgeBehaviour.Command)
   name: CanPlay(DodgeBehaviour.Command)
   href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_CanPlay_DodgeBehaviour_Command_
@@ -7498,19 +7517,6 @@ references:
   isSpec: "True"
   fullName: DodgeBehaviour.DoStop
   nameWithType: DodgeBehaviour.DoStop
-- uid: Global.DodgeBehaviour.RecoveryPhase
-  name: RecoveryPhase()
-  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_RecoveryPhase
-  commentId: M:Global.DodgeBehaviour.RecoveryPhase
-  fullName: DodgeBehaviour.RecoveryPhase()
-  nameWithType: DodgeBehaviour.RecoveryPhase()
-- uid: Global.DodgeBehaviour.RecoveryPhase*
-  name: RecoveryPhase
-  href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_RecoveryPhase_
-  commentId: Overload:Global.DodgeBehaviour.RecoveryPhase
-  isSpec: "True"
-  fullName: DodgeBehaviour.RecoveryPhase
-  nameWithType: DodgeBehaviour.RecoveryPhase
 - uid: Global.DodgeBehaviour.recoveryTime
   name: recoveryTime
   href: api/Global.DodgeBehaviour.html#Global_DodgeBehaviour_recoveryTime
@@ -7685,19 +7691,6 @@ references:
   isSpec: "True"
   fullName: ElectrifyAttack.ActivePhase
   nameWithType: ElectrifyAttack.ActivePhase
-- uid: Global.ElectrifyAttack.AnticipationPhase
-  name: AnticipationPhase()
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_AnticipationPhase
-  commentId: M:Global.ElectrifyAttack.AnticipationPhase
-  fullName: ElectrifyAttack.AnticipationPhase()
-  nameWithType: ElectrifyAttack.AnticipationPhase()
-- uid: Global.ElectrifyAttack.AnticipationPhase*
-  name: AnticipationPhase
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_AnticipationPhase_
-  commentId: Overload:Global.ElectrifyAttack.AnticipationPhase
-  isSpec: "True"
-  fullName: ElectrifyAttack.AnticipationPhase
-  nameWithType: ElectrifyAttack.AnticipationPhase
 - uid: Global.ElectrifyAttack.attackFlow
   name: attackFlow
   href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_attackFlow
@@ -7740,19 +7733,6 @@ references:
   commentId: F:Global.ElectrifyAttack.periodicHitExecutor
   fullName: ElectrifyAttack.periodicHitExecutor
   nameWithType: ElectrifyAttack.periodicHitExecutor
-- uid: Global.ElectrifyAttack.RecoveryPhase
-  name: RecoveryPhase()
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_RecoveryPhase
-  commentId: M:Global.ElectrifyAttack.RecoveryPhase
-  fullName: ElectrifyAttack.RecoveryPhase()
-  nameWithType: ElectrifyAttack.RecoveryPhase()
-- uid: Global.ElectrifyAttack.RecoveryPhase*
-  name: RecoveryPhase
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_RecoveryPhase_
-  commentId: Overload:Global.ElectrifyAttack.RecoveryPhase
-  isSpec: "True"
-  fullName: ElectrifyAttack.RecoveryPhase
-  nameWithType: ElectrifyAttack.RecoveryPhase
 - uid: Global.ElectrifyHitExecutor
   name: ElectrifyHitExecutor
   href: api/Global.ElectrifyHitExecutor.html
@@ -8756,19 +8736,6 @@ references:
   commentId: F:Global.FocusBlock.anticipateTime
   fullName: FocusBlock.anticipateTime
   nameWithType: FocusBlock.anticipateTime
-- uid: Global.FocusBlock.AnticipationPhase
-  name: AnticipationPhase()
-  href: api/Global.FocusBlock.html#Global_FocusBlock_AnticipationPhase
-  commentId: M:Global.FocusBlock.AnticipationPhase
-  fullName: FocusBlock.AnticipationPhase()
-  nameWithType: FocusBlock.AnticipationPhase()
-- uid: Global.FocusBlock.AnticipationPhase*
-  name: AnticipationPhase
-  href: api/Global.FocusBlock.html#Global_FocusBlock_AnticipationPhase_
-  commentId: Overload:Global.FocusBlock.AnticipationPhase
-  isSpec: "True"
-  fullName: FocusBlock.AnticipationPhase
-  nameWithType: FocusBlock.AnticipationPhase
 - uid: Global.FocusBlock.Awake
   name: Awake()
   href: api/Global.FocusBlock.html#Global_FocusBlock_Awake
@@ -8895,19 +8862,6 @@ references:
   isSpec: "True"
   fullName: FocusBlock.Playing
   nameWithType: FocusBlock.Playing
-- uid: Global.FocusBlock.RecoveryPhase
-  name: RecoveryPhase()
-  href: api/Global.FocusBlock.html#Global_FocusBlock_RecoveryPhase
-  commentId: M:Global.FocusBlock.RecoveryPhase
-  fullName: FocusBlock.RecoveryPhase()
-  nameWithType: FocusBlock.RecoveryPhase()
-- uid: Global.FocusBlock.RecoveryPhase*
-  name: RecoveryPhase
-  href: api/Global.FocusBlock.html#Global_FocusBlock_RecoveryPhase_
-  commentId: Overload:Global.FocusBlock.RecoveryPhase
-  isSpec: "True"
-  fullName: FocusBlock.RecoveryPhase
-  nameWithType: FocusBlock.RecoveryPhase
 - uid: Global.FocusBlock.recoveryTime
   name: recoveryTime
   href: api/Global.FocusBlock.html#Global_FocusBlock_recoveryTime
@@ -9135,19 +9089,6 @@ references:
   isSpec: "True"
   fullName: ForwardPushAttack.ActivePhase
   nameWithType: ForwardPushAttack.ActivePhase
-- uid: Global.ForwardPushAttack.AnticipationPhase
-  name: AnticipationPhase()
-  href: api/Global.ForwardPushAttack.html#Global_ForwardPushAttack_AnticipationPhase
-  commentId: M:Global.ForwardPushAttack.AnticipationPhase
-  fullName: ForwardPushAttack.AnticipationPhase()
-  nameWithType: ForwardPushAttack.AnticipationPhase()
-- uid: Global.ForwardPushAttack.AnticipationPhase*
-  name: AnticipationPhase
-  href: api/Global.ForwardPushAttack.html#Global_ForwardPushAttack_AnticipationPhase_
-  commentId: Overload:Global.ForwardPushAttack.AnticipationPhase
-  isSpec: "True"
-  fullName: ForwardPushAttack.AnticipationPhase
-  nameWithType: ForwardPushAttack.AnticipationPhase
 - uid: Global.ForwardPushAttack.attackFlow
   name: attackFlow
   href: api/Global.ForwardPushAttack.html#Global_ForwardPushAttack_attackFlow
@@ -9226,19 +9167,6 @@ references:
   commentId: F:Global.ForwardPushAttack.hitExecutor2
   fullName: ForwardPushAttack.hitExecutor2
   nameWithType: ForwardPushAttack.hitExecutor2
-- uid: Global.ForwardPushAttack.RecoveryPhase
-  name: RecoveryPhase()
-  href: api/Global.ForwardPushAttack.html#Global_ForwardPushAttack_RecoveryPhase
-  commentId: M:Global.ForwardPushAttack.RecoveryPhase
-  fullName: ForwardPushAttack.RecoveryPhase()
-  nameWithType: ForwardPushAttack.RecoveryPhase()
-- uid: Global.ForwardPushAttack.RecoveryPhase*
-  name: RecoveryPhase
-  href: api/Global.ForwardPushAttack.html#Global_ForwardPushAttack_RecoveryPhase_
-  commentId: Overload:Global.ForwardPushAttack.RecoveryPhase
-  isSpec: "True"
-  fullName: ForwardPushAttack.RecoveryPhase
-  nameWithType: ForwardPushAttack.RecoveryPhase
 - uid: Global.ForwardPushAttack.speed
   name: speed
   href: api/Global.ForwardPushAttack.html#Global_ForwardPushAttack_speed
@@ -10552,19 +10480,6 @@ references:
   commentId: F:Global.JumpBehaviour.anticipateTime
   fullName: JumpBehaviour.anticipateTime
   nameWithType: JumpBehaviour.anticipateTime
-- uid: Global.JumpBehaviour.AnticipationPhase
-  name: AnticipationPhase()
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_AnticipationPhase
-  commentId: M:Global.JumpBehaviour.AnticipationPhase
-  fullName: JumpBehaviour.AnticipationPhase()
-  nameWithType: JumpBehaviour.AnticipationPhase()
-- uid: Global.JumpBehaviour.AnticipationPhase*
-  name: AnticipationPhase
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_AnticipationPhase_
-  commentId: Overload:Global.JumpBehaviour.AnticipationPhase
-  isSpec: "True"
-  fullName: JumpBehaviour.AnticipationPhase
-  nameWithType: JumpBehaviour.AnticipationPhase
 - uid: Global.JumpBehaviour.CanPlay(JumpBehaviour.Command)
   name: CanPlay(JumpBehaviour.Command)
   href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_CanPlay_JumpBehaviour_Command_
@@ -10647,19 +10562,6 @@ references:
   commentId: F:Global.JumpBehaviour.recoverTime
   fullName: JumpBehaviour.recoverTime
   nameWithType: JumpBehaviour.recoverTime
-- uid: Global.JumpBehaviour.RecoveryPhase
-  name: RecoveryPhase()
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_RecoveryPhase
-  commentId: M:Global.JumpBehaviour.RecoveryPhase
-  fullName: JumpBehaviour.RecoveryPhase()
-  nameWithType: JumpBehaviour.RecoveryPhase()
-- uid: Global.JumpBehaviour.RecoveryPhase*
-  name: RecoveryPhase
-  href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_RecoveryPhase_
-  commentId: Overload:Global.JumpBehaviour.RecoveryPhase
-  isSpec: "True"
-  fullName: JumpBehaviour.RecoveryPhase
-  nameWithType: JumpBehaviour.RecoveryPhase
 - uid: Global.JumpBehaviour.speed
   name: speed
   href: api/Global.JumpBehaviour.html#Global_JumpBehaviour_speed
@@ -11063,19 +10965,6 @@ references:
   isSpec: "True"
   fullName: MotionAttack.ActivePhase
   nameWithType: MotionAttack.ActivePhase
-- uid: Global.MotionAttack.AnticipationPhase
-  name: AnticipationPhase()
-  href: api/Global.MotionAttack.html#Global_MotionAttack_AnticipationPhase
-  commentId: M:Global.MotionAttack.AnticipationPhase
-  fullName: MotionAttack.AnticipationPhase()
-  nameWithType: MotionAttack.AnticipationPhase()
-- uid: Global.MotionAttack.AnticipationPhase*
-  name: AnticipationPhase
-  href: api/Global.MotionAttack.html#Global_MotionAttack_AnticipationPhase_
-  commentId: Overload:Global.MotionAttack.AnticipationPhase
-  isSpec: "True"
-  fullName: MotionAttack.AnticipationPhase
-  nameWithType: MotionAttack.AnticipationPhase
 - uid: Global.MotionAttack.attackFlow
   name: attackFlow
   href: api/Global.MotionAttack.html#Global_MotionAttack_attackFlow
@@ -11137,19 +11026,6 @@ references:
   isSpec: "True"
   fullName: MotionAttack.Motion
   nameWithType: MotionAttack.Motion
-- uid: Global.MotionAttack.RecoveryPhase
-  name: RecoveryPhase()
-  href: api/Global.MotionAttack.html#Global_MotionAttack_RecoveryPhase
-  commentId: M:Global.MotionAttack.RecoveryPhase
-  fullName: MotionAttack.RecoveryPhase()
-  nameWithType: MotionAttack.RecoveryPhase()
-- uid: Global.MotionAttack.RecoveryPhase*
-  name: RecoveryPhase
-  href: api/Global.MotionAttack.html#Global_MotionAttack_RecoveryPhase_
-  commentId: Overload:Global.MotionAttack.RecoveryPhase
-  isSpec: "True"
-  fullName: MotionAttack.RecoveryPhase
-  nameWithType: MotionAttack.RecoveryPhase
 - uid: Global.MotionSettings
   name: MotionSettings
   href: api/Global.MotionSettings.html
@@ -11638,23 +11514,14 @@ references:
   fullName.vb: PhasedBehaviour(Of T).Anticipating
   nameWithType: PhasedBehaviour<T>.Anticipating
   nameWithType.vb: PhasedBehaviour(Of T).Anticipating
-- uid: Global.PhasedBehaviour`1.AnticipationPhase
-  name: AnticipationPhase()
-  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_AnticipationPhase
-  commentId: M:Global.PhasedBehaviour`1.AnticipationPhase
-  fullName: PhasedBehaviour<T>.AnticipationPhase()
-  fullName.vb: PhasedBehaviour(Of T).AnticipationPhase()
-  nameWithType: PhasedBehaviour<T>.AnticipationPhase()
-  nameWithType.vb: PhasedBehaviour(Of T).AnticipationPhase()
-- uid: Global.PhasedBehaviour`1.AnticipationPhase*
-  name: AnticipationPhase
-  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_AnticipationPhase_
-  commentId: Overload:Global.PhasedBehaviour`1.AnticipationPhase
-  isSpec: "True"
-  fullName: PhasedBehaviour<T>.AnticipationPhase
-  fullName.vb: PhasedBehaviour(Of T).AnticipationPhase
-  nameWithType: PhasedBehaviour<T>.AnticipationPhase
-  nameWithType.vb: PhasedBehaviour(Of T).AnticipationPhase
+- uid: Global.PhasedBehaviour`1.anticipationDuration
+  name: anticipationDuration
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_anticipationDuration
+  commentId: F:Global.PhasedBehaviour`1.anticipationDuration
+  fullName: PhasedBehaviour<T>.anticipationDuration
+  fullName.vb: PhasedBehaviour(Of T).anticipationDuration
+  nameWithType: PhasedBehaviour<T>.anticipationDuration
+  nameWithType.vb: PhasedBehaviour(Of T).anticipationDuration
 - uid: Global.PhasedBehaviour`1.DoPlay(`0)
   name: DoPlay(T)
   href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_DoPlay__0_
@@ -11731,23 +11598,14 @@ references:
   fullName.vb: PhasedBehaviour(Of T).Recovering
   nameWithType: PhasedBehaviour<T>.Recovering
   nameWithType.vb: PhasedBehaviour(Of T).Recovering
-- uid: Global.PhasedBehaviour`1.RecoveryPhase
-  name: RecoveryPhase()
-  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_RecoveryPhase
-  commentId: M:Global.PhasedBehaviour`1.RecoveryPhase
-  fullName: PhasedBehaviour<T>.RecoveryPhase()
-  fullName.vb: PhasedBehaviour(Of T).RecoveryPhase()
-  nameWithType: PhasedBehaviour<T>.RecoveryPhase()
-  nameWithType.vb: PhasedBehaviour(Of T).RecoveryPhase()
-- uid: Global.PhasedBehaviour`1.RecoveryPhase*
-  name: RecoveryPhase
-  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_RecoveryPhase_
-  commentId: Overload:Global.PhasedBehaviour`1.RecoveryPhase
-  isSpec: "True"
-  fullName: PhasedBehaviour<T>.RecoveryPhase
-  fullName.vb: PhasedBehaviour(Of T).RecoveryPhase
-  nameWithType: PhasedBehaviour<T>.RecoveryPhase
-  nameWithType.vb: PhasedBehaviour(Of T).RecoveryPhase
+- uid: Global.PhasedBehaviour`1.recoveryDuration
+  name: recoveryDuration
+  href: api/Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_recoveryDuration
+  commentId: F:Global.PhasedBehaviour`1.recoveryDuration
+  fullName: PhasedBehaviour<T>.recoveryDuration
+  fullName.vb: PhasedBehaviour(Of T).recoveryDuration
+  nameWithType: PhasedBehaviour<T>.recoveryDuration
+  nameWithType.vb: PhasedBehaviour(Of T).recoveryDuration
 - uid: Global.PhaseEvents
   name: PhaseEvents
   href: api/Global.PhaseEvents.html
@@ -12294,19 +12152,6 @@ references:
   isSpec: "True"
   fullName: PossessAttack.ActivePhase
   nameWithType: PossessAttack.ActivePhase
-- uid: Global.PossessAttack.AnticipationPhase
-  name: AnticipationPhase()
-  href: api/Global.PossessAttack.html#Global_PossessAttack_AnticipationPhase
-  commentId: M:Global.PossessAttack.AnticipationPhase
-  fullName: PossessAttack.AnticipationPhase()
-  nameWithType: PossessAttack.AnticipationPhase()
-- uid: Global.PossessAttack.AnticipationPhase*
-  name: AnticipationPhase
-  href: api/Global.PossessAttack.html#Global_PossessAttack_AnticipationPhase_
-  commentId: Overload:Global.PossessAttack.AnticipationPhase
-  isSpec: "True"
-  fullName: PossessAttack.AnticipationPhase
-  nameWithType: PossessAttack.AnticipationPhase
 - uid: Global.PossessAttack.attackFlow
   name: attackFlow
   href: api/Global.PossessAttack.html#Global_PossessAttack_attackFlow
@@ -12380,19 +12225,6 @@ references:
   commentId: F:Global.PossessAttack.possessSource
   fullName: PossessAttack.possessSource
   nameWithType: PossessAttack.possessSource
-- uid: Global.PossessAttack.RecoveryPhase
-  name: RecoveryPhase()
-  href: api/Global.PossessAttack.html#Global_PossessAttack_RecoveryPhase
-  commentId: M:Global.PossessAttack.RecoveryPhase
-  fullName: PossessAttack.RecoveryPhase()
-  nameWithType: PossessAttack.RecoveryPhase()
-- uid: Global.PossessAttack.RecoveryPhase*
-  name: RecoveryPhase
-  href: api/Global.PossessAttack.html#Global_PossessAttack_RecoveryPhase_
-  commentId: Overload:Global.PossessAttack.RecoveryPhase
-  isSpec: "True"
-  fullName: PossessAttack.RecoveryPhase
-  nameWithType: PossessAttack.RecoveryPhase
 - uid: Global.PossessAttack.sourcesCount
   name: sourcesCount
   href: api/Global.PossessAttack.html#Global_PossessAttack_sourcesCount
@@ -13279,19 +13111,6 @@ references:
   isSpec: "True"
   fullName: SimpleAttack.ActivePhase
   nameWithType: SimpleAttack.ActivePhase
-- uid: Global.SimpleAttack.AnticipationPhase
-  name: AnticipationPhase()
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_AnticipationPhase
-  commentId: M:Global.SimpleAttack.AnticipationPhase
-  fullName: SimpleAttack.AnticipationPhase()
-  nameWithType: SimpleAttack.AnticipationPhase()
-- uid: Global.SimpleAttack.AnticipationPhase*
-  name: AnticipationPhase
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_AnticipationPhase_
-  commentId: Overload:Global.SimpleAttack.AnticipationPhase
-  isSpec: "True"
-  fullName: SimpleAttack.AnticipationPhase
-  nameWithType: SimpleAttack.AnticipationPhase
 - uid: Global.SimpleAttack.attackFlow
   name: attackFlow
   href: api/Global.SimpleAttack.html#Global_SimpleAttack_attackFlow
@@ -13334,19 +13153,6 @@ references:
   commentId: F:Global.SimpleAttack.hitExecutor
   fullName: SimpleAttack.hitExecutor
   nameWithType: SimpleAttack.hitExecutor
-- uid: Global.SimpleAttack.RecoveryPhase
-  name: RecoveryPhase()
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_RecoveryPhase
-  commentId: M:Global.SimpleAttack.RecoveryPhase
-  fullName: SimpleAttack.RecoveryPhase()
-  nameWithType: SimpleAttack.RecoveryPhase()
-- uid: Global.SimpleAttack.RecoveryPhase*
-  name: RecoveryPhase
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_RecoveryPhase_
-  commentId: Overload:Global.SimpleAttack.RecoveryPhase
-  isSpec: "True"
-  fullName: SimpleAttack.RecoveryPhase
-  nameWithType: SimpleAttack.RecoveryPhase
 - uid: Global.SingleHitDetector
   name: SingleHitDetector
   href: api/Global.SingleHitDetector.html
@@ -13539,19 +13345,6 @@ references:
   isSpec: "True"
   fullName: SpawnAttack.ActivePhase
   nameWithType: SpawnAttack.ActivePhase
-- uid: Global.SpawnAttack.AnticipationPhase
-  name: AnticipationPhase()
-  href: api/Global.SpawnAttack.html#Global_SpawnAttack_AnticipationPhase
-  commentId: M:Global.SpawnAttack.AnticipationPhase
-  fullName: SpawnAttack.AnticipationPhase()
-  nameWithType: SpawnAttack.AnticipationPhase()
-- uid: Global.SpawnAttack.AnticipationPhase*
-  name: AnticipationPhase
-  href: api/Global.SpawnAttack.html#Global_SpawnAttack_AnticipationPhase_
-  commentId: Overload:Global.SpawnAttack.AnticipationPhase
-  isSpec: "True"
-  fullName: SpawnAttack.AnticipationPhase
-  nameWithType: SpawnAttack.AnticipationPhase
 - uid: Global.SpawnAttack.attackFlow
   name: attackFlow
   href: api/Global.SpawnAttack.html#Global_SpawnAttack_attackFlow
@@ -13588,19 +13381,6 @@ references:
   commentId: F:Global.SpawnAttack.maxEnemyCount
   fullName: SpawnAttack.maxEnemyCount
   nameWithType: SpawnAttack.maxEnemyCount
-- uid: Global.SpawnAttack.RecoveryPhase
-  name: RecoveryPhase()
-  href: api/Global.SpawnAttack.html#Global_SpawnAttack_RecoveryPhase
-  commentId: M:Global.SpawnAttack.RecoveryPhase
-  fullName: SpawnAttack.RecoveryPhase()
-  nameWithType: SpawnAttack.RecoveryPhase()
-- uid: Global.SpawnAttack.RecoveryPhase*
-  name: RecoveryPhase
-  href: api/Global.SpawnAttack.html#Global_SpawnAttack_RecoveryPhase_
-  commentId: Overload:Global.SpawnAttack.RecoveryPhase
-  isSpec: "True"
-  fullName: SpawnAttack.RecoveryPhase
-  nameWithType: SpawnAttack.RecoveryPhase
 - uid: Global.SpawnAttack.spawnPoints
   name: spawnPoints
   href: api/Global.SpawnAttack.html#Global_SpawnAttack_spawnPoints
@@ -13724,19 +13504,6 @@ references:
   isSpec: "True"
   fullName: SpikeBallAttack.ActivePhase
   nameWithType: SpikeBallAttack.ActivePhase
-- uid: Global.SpikeBallAttack.AnticipationPhase
-  name: AnticipationPhase()
-  href: api/Global.SpikeBallAttack.html#Global_SpikeBallAttack_AnticipationPhase
-  commentId: M:Global.SpikeBallAttack.AnticipationPhase
-  fullName: SpikeBallAttack.AnticipationPhase()
-  nameWithType: SpikeBallAttack.AnticipationPhase()
-- uid: Global.SpikeBallAttack.AnticipationPhase*
-  name: AnticipationPhase
-  href: api/Global.SpikeBallAttack.html#Global_SpikeBallAttack_AnticipationPhase_
-  commentId: Overload:Global.SpikeBallAttack.AnticipationPhase
-  isSpec: "True"
-  fullName: SpikeBallAttack.AnticipationPhase
-  nameWithType: SpikeBallAttack.AnticipationPhase
 - uid: Global.SpikeBallAttack.attackFlow
   name: attackFlow
   href: api/Global.SpikeBallAttack.html#Global_SpikeBallAttack_attackFlow
@@ -13804,32 +13571,32 @@ references:
   commentId: F:Global.SpikeBallAttack.ballSpeed
   fullName: SpikeBallAttack.ballSpeed
   nameWithType: SpikeBallAttack.ballSpeed
-- uid: Global.SpikeBallAttack.RecoveryPhase
-  name: RecoveryPhase()
-  href: api/Global.SpikeBallAttack.html#Global_SpikeBallAttack_RecoveryPhase
-  commentId: M:Global.SpikeBallAttack.RecoveryPhase
-  fullName: SpikeBallAttack.RecoveryPhase()
-  nameWithType: SpikeBallAttack.RecoveryPhase()
-- uid: Global.SpikeBallAttack.RecoveryPhase*
-  name: RecoveryPhase
-  href: api/Global.SpikeBallAttack.html#Global_SpikeBallAttack_RecoveryPhase_
-  commentId: Overload:Global.SpikeBallAttack.RecoveryPhase
+- uid: Global.SpikeBallAttack.CanRelease
+  name: CanRelease()
+  href: api/Global.SpikeBallAttack.html#Global_SpikeBallAttack_CanRelease
+  commentId: M:Global.SpikeBallAttack.CanRelease
+  fullName: SpikeBallAttack.CanRelease()
+  nameWithType: SpikeBallAttack.CanRelease()
+- uid: Global.SpikeBallAttack.CanRelease*
+  name: CanRelease
+  href: api/Global.SpikeBallAttack.html#Global_SpikeBallAttack_CanRelease_
+  commentId: Overload:Global.SpikeBallAttack.CanRelease
   isSpec: "True"
-  fullName: SpikeBallAttack.RecoveryPhase
-  nameWithType: SpikeBallAttack.RecoveryPhase
-- uid: Global.SpikeBallAttack.ReleaseBall
-  name: ReleaseBall()
-  href: api/Global.SpikeBallAttack.html#Global_SpikeBallAttack_ReleaseBall
-  commentId: M:Global.SpikeBallAttack.ReleaseBall
-  fullName: SpikeBallAttack.ReleaseBall()
-  nameWithType: SpikeBallAttack.ReleaseBall()
-- uid: Global.SpikeBallAttack.ReleaseBall*
-  name: ReleaseBall
-  href: api/Global.SpikeBallAttack.html#Global_SpikeBallAttack_ReleaseBall_
-  commentId: Overload:Global.SpikeBallAttack.ReleaseBall
+  fullName: SpikeBallAttack.CanRelease
+  nameWithType: SpikeBallAttack.CanRelease
+- uid: Global.SpikeBallAttack.MustRelease
+  name: MustRelease()
+  href: api/Global.SpikeBallAttack.html#Global_SpikeBallAttack_MustRelease
+  commentId: M:Global.SpikeBallAttack.MustRelease
+  fullName: SpikeBallAttack.MustRelease()
+  nameWithType: SpikeBallAttack.MustRelease()
+- uid: Global.SpikeBallAttack.MustRelease*
+  name: MustRelease
+  href: api/Global.SpikeBallAttack.html#Global_SpikeBallAttack_MustRelease_
+  commentId: Overload:Global.SpikeBallAttack.MustRelease
   isSpec: "True"
-  fullName: SpikeBallAttack.ReleaseBall
-  nameWithType: SpikeBallAttack.ReleaseBall
+  fullName: SpikeBallAttack.MustRelease
+  nameWithType: SpikeBallAttack.MustRelease
 - uid: Global.SpinningSwordsAttack
   name: SpinningSwordsAttack
   href: api/Global.SpinningSwordsAttack.html
@@ -13849,19 +13616,6 @@ references:
   isSpec: "True"
   fullName: SpinningSwordsAttack.ActivePhase
   nameWithType: SpinningSwordsAttack.ActivePhase
-- uid: Global.SpinningSwordsAttack.AnticipationPhase
-  name: AnticipationPhase()
-  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_AnticipationPhase
-  commentId: M:Global.SpinningSwordsAttack.AnticipationPhase
-  fullName: SpinningSwordsAttack.AnticipationPhase()
-  nameWithType: SpinningSwordsAttack.AnticipationPhase()
-- uid: Global.SpinningSwordsAttack.AnticipationPhase*
-  name: AnticipationPhase
-  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_AnticipationPhase_
-  commentId: Overload:Global.SpinningSwordsAttack.AnticipationPhase
-  isSpec: "True"
-  fullName: SpinningSwordsAttack.AnticipationPhase
-  nameWithType: SpinningSwordsAttack.AnticipationPhase
 - uid: Global.SpinningSwordsAttack.attackFlow
   name: attackFlow
   href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_attackFlow
@@ -13940,19 +13694,6 @@ references:
   commentId: F:Global.SpinningSwordsAttack.hitExecutor2
   fullName: SpinningSwordsAttack.hitExecutor2
   nameWithType: SpinningSwordsAttack.hitExecutor2
-- uid: Global.SpinningSwordsAttack.RecoveryPhase
-  name: RecoveryPhase()
-  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_RecoveryPhase
-  commentId: M:Global.SpinningSwordsAttack.RecoveryPhase
-  fullName: SpinningSwordsAttack.RecoveryPhase()
-  nameWithType: SpinningSwordsAttack.RecoveryPhase()
-- uid: Global.SpinningSwordsAttack.RecoveryPhase*
-  name: RecoveryPhase
-  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_RecoveryPhase_
-  commentId: Overload:Global.SpinningSwordsAttack.RecoveryPhase
-  isSpec: "True"
-  fullName: SpinningSwordsAttack.RecoveryPhase
-  nameWithType: SpinningSwordsAttack.RecoveryPhase
 - uid: Global.StabAttack
   name: StabAttack
   href: api/Global.StabAttack.html
@@ -14937,19 +14678,6 @@ references:
   commentId: F:Global.WideBlock.anticipateTime
   fullName: WideBlock.anticipateTime
   nameWithType: WideBlock.anticipateTime
-- uid: Global.WideBlock.AnticipationPhase
-  name: AnticipationPhase()
-  href: api/Global.WideBlock.html#Global_WideBlock_AnticipationPhase
-  commentId: M:Global.WideBlock.AnticipationPhase
-  fullName: WideBlock.AnticipationPhase()
-  nameWithType: WideBlock.AnticipationPhase()
-- uid: Global.WideBlock.AnticipationPhase*
-  name: AnticipationPhase
-  href: api/Global.WideBlock.html#Global_WideBlock_AnticipationPhase_
-  commentId: Overload:Global.WideBlock.AnticipationPhase
-  isSpec: "True"
-  fullName: WideBlock.AnticipationPhase
-  nameWithType: WideBlock.AnticipationPhase
 - uid: Global.WideBlock.Awake
   name: Awake()
   href: api/Global.WideBlock.html#Global_WideBlock_Awake
@@ -15094,19 +14822,6 @@ references:
   isSpec: "True"
   fullName: WideBlock.Playing
   nameWithType: WideBlock.Playing
-- uid: Global.WideBlock.RecoveryPhase
-  name: RecoveryPhase()
-  href: api/Global.WideBlock.html#Global_WideBlock_RecoveryPhase
-  commentId: M:Global.WideBlock.RecoveryPhase
-  fullName: WideBlock.RecoveryPhase()
-  nameWithType: WideBlock.RecoveryPhase()
-- uid: Global.WideBlock.RecoveryPhase*
-  name: RecoveryPhase
-  href: api/Global.WideBlock.html#Global_WideBlock_RecoveryPhase_
-  commentId: Overload:Global.WideBlock.RecoveryPhase
-  isSpec: "True"
-  fullName: WideBlock.RecoveryPhase
-  nameWithType: WideBlock.RecoveryPhase
 - uid: Global.WideBlock.recoveryTime
   name: recoveryTime
   href: api/Global.WideBlock.html#Global_WideBlock_recoveryTime
