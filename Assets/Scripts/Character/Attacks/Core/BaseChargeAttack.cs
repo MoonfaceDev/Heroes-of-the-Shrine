@@ -4,6 +4,12 @@ using UnityEngine;
 public abstract class BaseChargeAttack : BaseAttack
 {
     private bool released;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        phaseEvents.onFinishActive += () => released = false;
+    }
     
     protected override IEnumerator ActivePhase()
     {
