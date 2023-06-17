@@ -46,4 +46,16 @@ public class PlayerAttackExecutor
         nextAttack.attack.Play(command);
         return true;
     }
+
+    public void Release(Button[] upButtons)
+    {
+        foreach (var property in attacks)
+        {
+            var attack = property.attack;
+            if (attack is BaseChargeAttack chargeAttack && upButtons.Any(button => button == property.button))
+            {
+                chargeAttack.Release();
+            }
+        }
+    }
 }

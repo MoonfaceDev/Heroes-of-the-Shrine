@@ -49,7 +49,6 @@ public class PlayerController : CharacterController
     private HealBehaviour healBehaviour;
     private FocusBlock focusBlock;
     private WideBlock wideBlock;
-    private SpikeBallAttack spikeBallAttack;
 
     private List<BufferedAction> bufferedActions;
 
@@ -64,7 +63,6 @@ public class PlayerController : CharacterController
         healBehaviour = GetBehaviour<HealBehaviour>();
         focusBlock = GetBehaviour<FocusBlock>();
         wideBlock = GetBehaviour<WideBlock>();
-        spikeBallAttack = GetBehaviour<SpikeBallAttack>();
 
         bufferedActions = new List<BufferedAction>();
     }
@@ -85,7 +83,6 @@ public class PlayerController : CharacterController
         ExecuteAttack();
         ExecuteFocusBlock();
         ExecuteWideBlock();
-        ExecuteSpike();
     }
 
     private void ReducePossessedEffectDuration()
@@ -196,29 +193,16 @@ public class PlayerController : CharacterController
         }
     }
 
-    private void ExecuteSpike()
-    {
-        if (!spikeBallAttack) return;
-        if (Input.GetButtonDown(Button.Spike.ToString()))
-        {
-            spikeBallAttack.Play(new BaseAttack.Command());
-        }
-
-        if (Input.GetButtonUp(Button.Spike.ToString()))
-        {
-            spikeBallAttack.Release();
-        }
-    }
-
     private void ExecuteAttack()
     {
-        var downButtons = GetDownButtons();
-        if (downButtons.Length == 0)
+        var upButtons = GetUpButtons();
+        if (upButtons.Length > 0)
         {
-            return;
+            attackExecutor.Release(upButtons);
         }
 
-        if (!attackExecutor.Play(downButtons))
+        var downButtons = GetDownButtons();
+        if (downButtons.Length > 0 && !attackExecutor.Play(downButtons))
         {
             bufferedActions.Add(new BufferedAction(
                 () => attackExecutor.Play(downButtons), attackPriority, Time.time + bufferingTime
@@ -226,10 +210,19 @@ public class PlayerController : CharacterController
         }
     }
 
+    private static IEnumerable<Button> GetButtons()
+    {
+        return Enum.GetValues(typeof(Button)).Cast<Button>();
+    }
+
     private static Button[] GetDownButtons()
     {
-        return Enum.GetValues(typeof(Button)).Cast<Button>().Where(button => Input.GetButtonDown(button.ToString()))
-            .ToArray();
+        return GetButtons().Where(button => Input.GetButtonDown(button.ToString())).ToArray();
+    }
+    
+    private static Button[] GetUpButtons()
+    {
+        return GetButtons().Where(button => Input.GetButtonUp(button.ToString())).ToArray();
     }
 
     private void ExecutePlayable<T>(PlayableBehaviour<T> behaviour, T command, int bufferingPriority)
