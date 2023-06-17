@@ -24,9 +24,7 @@ public class MotionAttack : BaseAttack
     public BaseHitDetector hitDetector;
 
     public ChainHitExecutor hitExecutor;
-
-    private Rotation originalDirection;
-
+    
     protected override MotionSettings Motion => MotionSettings.WalkingDisabled;
 
     private void Start()
@@ -41,14 +39,9 @@ public class MotionAttack : BaseAttack
         MovableEntity.acceleration.x = 0;
     }
 
-    protected override IEnumerator AnticipationPhase()
-    {
-        originalDirection = MovableEntity.rotation;
-        yield return new WaitForSeconds(attackFlow.anticipationDuration);
-    }
-
     protected override IEnumerator ActivePhase()
     {
+        var originalDirection = MovableEntity.rotation;
         MovableEntity.velocity.x = originalDirection * attackFlow.velocity;
         MovableEntity.velocity.z = 0;
         MovableEntity.acceleration.x = -originalDirection * attackFlow.acceleration;
@@ -61,10 +54,5 @@ public class MotionAttack : BaseAttack
         );
 
         FinishActive();
-    }
-
-    protected override IEnumerator RecoveryPhase()
-    {
-        yield return new WaitForSeconds(attackFlow.recoveryDuration);
     }
 }

@@ -34,11 +34,6 @@ public class ElectrifyAttack : BaseAttack
         explosionHitDetector.onHit += onExplosion.Invoke;
     }
 
-    protected override IEnumerator AnticipationPhase()
-    {
-        yield return new WaitForSeconds(attackFlow.anticipationDuration);
-    }
-
     protected override IEnumerator ActivePhase()
     {
         float detectCount = 0;
@@ -56,10 +51,5 @@ public class ElectrifyAttack : BaseAttack
         yield return new WaitForSeconds(attackFlow.activeDuration);
 
         explosionHitDetector.StopDetector();
-    }
-
-    protected override IEnumerator RecoveryPhase()
-    {
-        yield return new WaitForSeconds(attackFlow.recoveryDuration);
     }
 }

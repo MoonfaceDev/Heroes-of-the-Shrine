@@ -27,11 +27,6 @@ public class SimpleAttack : BaseAttack
         PlayEvents.onStop += hitDetector.StopDetector;
     }
 
-    protected override IEnumerator AnticipationPhase()
-    {
-        yield return new WaitForSeconds(attackFlow.anticipationDuration);
-    }
-
     protected override IEnumerator ActivePhase()
     {
         StartHitDetector(hitDetector, hitExecutor);
@@ -39,10 +34,5 @@ public class SimpleAttack : BaseAttack
         yield return new WaitForSeconds(attackFlow.activeDuration);
 
         hitDetector.StopDetector();
-    }
-
-    protected override IEnumerator RecoveryPhase()
-    {
-        yield return new WaitForSeconds(attackFlow.recoveryDuration);
     }
 }

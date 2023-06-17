@@ -18,20 +18,10 @@ public class SpawnAttack : BaseAttack
     public GameObject enemyPrefab;
     public Vector3[] spawnPoints;
 
-    protected override IEnumerator AnticipationPhase()
-    {
-        yield return new WaitForSeconds(attackFlow.anticipationDuration);
-    }
-
     protected override IEnumerator ActivePhase()
     {
         SpawnGoblins();
         yield return new WaitForSeconds(0);
-    }
-
-    protected override IEnumerator RecoveryPhase()
-    {
-        yield return new WaitForSeconds(attackFlow.recoveryDuration);
     }
 
     private void SpawnGoblins()

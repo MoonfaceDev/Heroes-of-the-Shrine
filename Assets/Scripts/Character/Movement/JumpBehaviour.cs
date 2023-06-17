@@ -40,20 +40,10 @@ public class JumpBehaviour : PhasedBehaviour<JumpBehaviour.Command>, IMovementBe
         base.DoPlay(command);
     }
 
-    protected override IEnumerator AnticipationPhase()
-    {
-        yield return new WaitForSeconds(anticipateTime);
-    }
-
     protected override IEnumerator ActivePhase()
     {
         StartJump();
         yield return new WaitUntil(() => landed);
-    }
-
-    protected override IEnumerator RecoveryPhase()
-    {
-        yield return new WaitForSeconds(recoverTime);
     }
 
     private void StartJump()

@@ -36,20 +36,10 @@ public class DodgeBehaviour : PhasedBehaviour<DodgeBehaviour.Command>, IMovement
         base.DoPlay(command);
     }
 
-    protected override IEnumerator AnticipationPhase()
-    {
-        yield return new WaitForSeconds(anticipateTime);
-    }
-
     protected override IEnumerator ActivePhase()
     {
         MovableEntity.UpdatePosition(MovableEntity.position + currentDirection * distance * Vector3.forward);
         yield break;
-    }
-
-    protected override IEnumerator RecoveryPhase()
-    {
-        yield return new WaitForSeconds(recoveryTime);
     }
 
     protected override void DoStop()

@@ -70,21 +70,11 @@ public class FocusBlock : PhasedBehaviour<FocusBlock.Command>, IBlockBehaviour
         UnblockBehaviours(typeof(IControlledBehaviour));
     }
 
-    protected override IEnumerator AnticipationPhase()
-    {
-        yield return new WaitForSeconds(anticipateTime);
-    }
-
     protected override IEnumerator ActivePhase()
     {
         yield return new WaitForSeconds(activeTime);
     }
-
-    protected override IEnumerator RecoveryPhase()
-    {
-        yield return new WaitForSeconds(recoveryTime);
-    }
-
+    
     public bool TryBlock(Hit hit)
     {
         if (!CanBlock(hit))

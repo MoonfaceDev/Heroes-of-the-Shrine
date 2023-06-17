@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class SpikeBallAttack : BaseAttack
+public class SpikeBallAttack : BaseChargeAttack
 {
     [Serializable]
     public class AttackFlow
@@ -20,18 +20,11 @@ public class SpikeBallAttack : BaseAttack
 
     private SpikeBall ballInstance;
     private float activeStartTime;
-    private bool released;
 
     protected override void Awake()
     {
         base.Awake();
         phaseEvents.onFinishActive += () => ballInstance.Explode();
-    }
-
-    protected override IEnumerator AnticipationPhase()
-    {
-        released = false;
-        yield return new WaitForSeconds(attackFlow.anticipationDuration);
     }
 
     protected override IEnumerator ActivePhase()
@@ -40,18 +33,17 @@ public class SpikeBallAttack : BaseAttack
         var ballEntity = GameEntity.Instantiate(ballPrefab, Entity.TransformToWorld(ballSpawnPoint));
         ballInstance = ballEntity.GetBehaviour<SpikeBall>();
         ballInstance.Fire(ballSpeed * Entity.WorldRotation * Vector3.right, this);
-        yield return new WaitUntil(() => (released && Time.time - activeStartTime > attackFlow.minActiveTime) ||
-                                         Time.time - activeStartTime > attackFlow.activeTimeout);
+        yield return base.ActivePhase();
     }
 
-    protected override IEnumerator RecoveryPhase()
+    protected override bool CanRelease()
     {
-        yield return new WaitForSeconds(attackFlow.recoveryDuration);
+        return Time.time - activeStartTime > attackFlow.minActiveTime;
     }
 
-    public void ReleaseBall()
+    protected override bool MustRelease()
     {
-        released = true;
+        return Time.time - activeStartTime > attackFlow.activeTimeout;
     }
 
     private void OnDrawGizmosSelected()

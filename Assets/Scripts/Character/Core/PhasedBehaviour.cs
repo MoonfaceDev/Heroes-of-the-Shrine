@@ -4,6 +4,9 @@ using UnityEngine.Serialization;
 
 public abstract class PhasedBehaviour<T> : PlayableBehaviour<T>, IControlledBehaviour
 {
+    public float anticipationDuration;
+    public float recoveryDuration;
+    
     /// <value>
     /// General phase events
     /// </value>
@@ -63,30 +66,20 @@ public abstract class PhasedBehaviour<T> : PlayableBehaviour<T>, IControlledBeha
     private Coroutine flowCoroutine;
     
     /// <summary>
-    /// Anticipation phase coroutine
-    /// </summary>
-    protected abstract IEnumerator AnticipationPhase();
-    
-    /// <summary>
     /// Active phase coroutine
     /// </summary>
     protected abstract IEnumerator ActivePhase();
-    
-    /// <summary>
-    /// Recovery phase coroutine
-    /// </summary>
-    protected abstract IEnumerator RecoveryPhase();
 
     private IEnumerator FlowCoroutine()
     {
         Anticipating = true;
-        yield return AnticipationPhase();
+        yield return new WaitForSeconds(anticipationDuration);
         Anticipating = false;
         Active = true;
         yield return ActivePhase();
         Active = false;
         Recovering = true;
-        yield return RecoveryPhase();
+        yield return new WaitForSeconds(recoveryDuration);
         Stop();
     }
     

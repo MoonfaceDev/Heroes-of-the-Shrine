@@ -50,22 +50,11 @@ public class BackwardLaunchAttack : BaseAttack
         }, attackFlow.detectorStartTime));
     }
 
-
-    protected override IEnumerator AnticipationPhase()
-    {
-        yield return new WaitForSeconds(attackFlow.anticipationDuration);
-    }
-
     protected override IEnumerator ActivePhase()
     {
         MovableEntity.velocity.x = -speed * Entity.rotation;
         currentTimeouts = new List<string>();
         ConfigureHitDetector();
         yield return new WaitForSeconds(attackFlow.activeDuration);
-    }
-
-    protected override IEnumerator RecoveryPhase()
-    {
-        yield return new WaitForSeconds(attackFlow.recoveryDuration);
     }
 }

@@ -206,7 +206,7 @@ public class PlayerController : CharacterController
 
         if (Input.GetButtonUp(Button.Spike.ToString()))
         {
-            spikeBallAttack.ReleaseBall();
+            spikeBallAttack.Release();
         }
     }
 

@@ -59,11 +59,6 @@ public class ForwardPushAttack : BaseAttack
         }, startTime));
     }
 
-    protected override IEnumerator AnticipationPhase()
-    {
-        yield return new WaitForSeconds(attackFlow.anticipationDuration);
-    }
-
     protected override IEnumerator ActivePhase()
     {
         MovableEntity.velocity.x = speed * Entity.rotation;
@@ -71,10 +66,5 @@ public class ForwardPushAttack : BaseAttack
         ConfigureHitDetector(hitDetector1, hitExecutor1, attackFlow.detector1StartTime, attackFlow.detector1Duration);
         ConfigureHitDetector(hitDetector2, hitExecutor2, attackFlow.detector2StartTime, attackFlow.detector2Duration);
         yield return new WaitForSeconds(attackFlow.activeDuration);
-    }
-
-    protected override IEnumerator RecoveryPhase()
-    {
-        yield return new WaitForSeconds(attackFlow.recoveryDuration);
     }
 }

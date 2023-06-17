@@ -37,21 +37,11 @@ public class PossessAttack : BaseAttack
         walkableGrid = FindObjectOfType<WalkableGrid>();
     }
 
-    protected override IEnumerator AnticipationPhase()
-    {
-        yield return new WaitForSeconds(attackFlow.anticipationDuration);
-    }
-
     protected override IEnumerator ActivePhase()
     {
         StartWave(0);
         yield return new WaitForSeconds((attackFlow.warningDuration + attackFlow.sourceActiveDuration) *
                                         attackFlow.waveCount);
-    }
-
-    protected override IEnumerator RecoveryPhase()
-    {
-        yield return new WaitForSeconds(attackFlow.recoveryDuration);
     }
 
     private void StartWave(int waveIndex)
