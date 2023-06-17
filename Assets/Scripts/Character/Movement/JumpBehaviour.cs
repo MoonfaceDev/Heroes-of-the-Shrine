@@ -8,13 +8,7 @@ public class JumpBehaviour : PhasedBehaviour<JumpBehaviour.Command>, IMovementBe
     {
     }
 
-    [FormerlySerializedAs("jumpSpeed")] public float speed;
-
-    [FormerlySerializedAs("jumpAnticipateTime")]
-    public float anticipateTime;
-
-    [FormerlySerializedAs("jumpRecoverTime")]
-    public float recoverTime;
+    public float speed;
 
     public float climbAcceleration;
     public float peakDuration;

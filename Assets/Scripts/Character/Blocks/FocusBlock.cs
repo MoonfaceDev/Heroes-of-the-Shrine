@@ -34,10 +34,8 @@ public class FocusBlock : PhasedBehaviour<FocusBlock.Command>, IBlockBehaviour
     }
 
     public BlockDefinition[] blockableAttacks;
-    public float anticipateTime;
     public float activeTime;
     public float invincibleTime;
-    public float recoveryTime;
     [SerializeField] public ExtEvent onStartInvincible;
     [SerializeField] public ExtEvent onFinishInvincible;
 

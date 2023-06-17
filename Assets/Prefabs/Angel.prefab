@@ -171,10 +171,8 @@ MonoBehaviour:
       _typeNameAndAssembly: Uppercut, Assembly-CSharp
       _suppressLogs: 0
     energyReward: 40
-  anticipateTime: 0.05
   activeTime: 0.4
   invincibleTime: 0.4
-  recoveryTime: 0.15
   onStartInvincible:
     _persistentListeners: []
     Expanded: 1
@@ -246,13 +244,11 @@ MonoBehaviour:
       _typeNameAndAssembly: ElectrifyAttack, Assembly-CSharp
       _suppressLogs: 0
     energyReward: 0
-  anticipateTime: 0.1
   activeTime: 0.4
   damageMultiplier: 0.15
   blockWindowStartTime: 0.075
   blockWindowDuration: 0.2
   invincibleTime: 0.1
-  recoveryTime: 0.1
   onStartInvincible:
     _persistentListeners: []
     Expanded: 0
@@ -366,9 +362,8 @@ MonoBehaviour:
   interruptible: 0
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.01
     activeDuration: 0.14
-    recoveryDuration: 0.3
+  activeDuration: 0.14
   hitDetector:
     rid: 168482633143812260
   hitExecutor:
@@ -835,10 +830,10 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 1
   attackFlow:
-    anticipationDuration: 0.1
     velocity: 10
     acceleration: 10
-    recoveryDuration: 0.15
+  velocity: 10
+  acceleration: 10
   hitDetector:
     rid: 3181427246007058570
   hitExecutor:
@@ -952,9 +947,8 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.1
     activeDuration: 0.2
-    recoveryDuration: 0.1
+  activeDuration: 0.2
   hitDetector:
     rid: 3596404163551166479
   hitExecutor:
@@ -1069,13 +1063,11 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.1
     activeDuration: 0.45
     detector1StartTime: 0.05
     detector1Duration: 0.1
     detector2StartTime: 0.35
     detector2Duration: 0.1
-    recoveryDuration: 0.2
   speed: 1.5
   hitDetector1:
     rid: 1742320387755081741
@@ -1220,9 +1212,8 @@ MonoBehaviour:
   interruptible: 0
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.25
     activeDuration: 0.25
-    recoveryDuration: 0.2
+  activeDuration: 0.25
   hitDetector:
     rid: 3596404208624992257
   hitExecutor:
@@ -1416,13 +1407,11 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.3
     activeDuration: 0.8
     detector1StartTime: 0
     detector1Duration: 0.4
     detector2StartTime: 0.5
     detector2Duration: 0.3
-    recoveryDuration: 0.3
   hitDetector1:
     rid: 3181427246007058579
   hitDetector2:
@@ -1833,9 +1822,8 @@ MonoBehaviour:
   interruptible: 0
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.1
     activeDuration: 0.2
-    recoveryDuration: 0.3
+  activeDuration: 0.2
   hitDetector:
     rid: 3181427246007058589
   hitExecutor:
@@ -2031,9 +2019,8 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 1
   attackFlow:
-    anticipationDuration: 0.05
     activeDuration: 0.1
-    recoveryDuration: 0.25
+  activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058576
   hitExecutor:
@@ -2150,11 +2137,9 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.1
     activeDuration: 0.45
     detectorStartTime: 0.1
     detectorDuration: 0.1
-    recoveryDuration: 0.2
   speed: 1.5
   hitDetector:
     rid: 1742320750102052865
@@ -2406,8 +2391,6 @@ MonoBehaviour:
       _persistentListeners: []
       Expanded: 1
   speed: 20
-  anticipateTime: 0
-  recoverTime: 0.05
   climbAcceleration: 100
   peakDuration: 0.2
   peakAcceleration: 5
@@ -2475,8 +2458,6 @@ MonoBehaviour:
       _persistentListeners: []
       Expanded: 1
   distance: 1.5
-  anticipateTime: 0.05
-  recoveryTime: 0.3
   cooldown:
     duration: 1
 --- !u!114 &8641964334380858834
@@ -13667,9 +13648,8 @@ MonoBehaviour:
   interruptible: 0
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.01
     activeDuration: 0.15
-    recoveryDuration: 0.3
+  activeDuration: 0.15
   hitDetector:
     rid: 3181427246007058587
   hitExecutor:
@@ -13786,9 +13766,8 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.05
     activeDuration: 0.1
-    recoveryDuration: 0.05
+  activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058572
   hitExecutor:
@@ -13901,9 +13880,8 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.3
     activeDuration: 0.1
-    recoveryDuration: 0.25
+  activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058563
   hitExecutor:
@@ -14047,10 +14025,8 @@ MonoBehaviour:
   interruptible: 0
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.45
     activeTimeout: 3
     minActiveTime: 0.25
-    recoveryDuration: 0.5
   ballPrefab: {fileID: 7195235196650147203, guid: 6855b38c7105f134ba6e8744a09a9039, type: 3}
   ballSpawnPoint: {x: 0.7, y: 0.95, z: 0}
   ballSpeed: 6.5
@@ -14133,9 +14109,8 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.05
     activeDuration: 0.1
-    recoveryDuration: 0.3
+  activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058574
   hitExecutor:
@@ -14426,10 +14401,10 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0
     velocity: 0
     acceleration: 0
-    recoveryDuration: 0
+  velocity: 0
+  acceleration: 0
   hitDetector:
     rid: 168482633143812213
   hitExecutor:
@@ -14539,10 +14514,10 @@ MonoBehaviour:
   interruptible: 0
   hardRecovery: 1
   attackFlow:
-    anticipationDuration: 0.05
     velocity: 50
     acceleration: 250
-    recoveryDuration: 0.2
+  velocity: 50
+  acceleration: 250
   hitDetector:
     rid: 3181427246007058586
   hitExecutor:
@@ -14672,10 +14647,10 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0
     velocity: 20.76923
     acceleration: 69.23077
-    recoveryDuration: 0.3
+  velocity: 20.76923
+  acceleration: 69.23077
   hitDetector:
     rid: 168482808540430691
   hitExecutor:

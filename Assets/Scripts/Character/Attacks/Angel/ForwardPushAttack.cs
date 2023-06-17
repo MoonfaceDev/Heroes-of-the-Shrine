@@ -8,13 +8,11 @@ public class ForwardPushAttack : BaseAttack
     [Serializable]
     public class AttackFlow
     {
-        public float anticipationDuration;
         public float activeDuration;
         public float detector1StartTime;
         public float detector1Duration;
         public float detector2StartTime;
         public float detector2Duration;
-        public float recoveryDuration;
     }
 
     public AttackFlow attackFlow;

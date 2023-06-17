@@ -10,8 +10,6 @@ public class DodgeBehaviour : PhasedBehaviour<DodgeBehaviour.Command>, IMovement
     }
 
     [FormerlySerializedAs("dodgeDistance")] public float distance;
-    public float anticipateTime;
-    public float recoveryTime;
 
     public Cooldown cooldown;
 

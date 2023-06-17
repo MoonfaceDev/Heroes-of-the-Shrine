@@ -1,19 +1,10 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class SpawnAttack : BaseAttack
 {
-    [Serializable]
-    public class AttackFlow
-    {
-        public float anticipationDuration;
-        public float recoveryDuration;
-    }
-
-    public AttackFlow attackFlow;
     public int maxEnemyCount;
     public GameObject enemyPrefab;
     public Vector3[] spawnPoints;

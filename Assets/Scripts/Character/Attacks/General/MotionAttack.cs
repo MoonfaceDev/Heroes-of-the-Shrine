@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 /// <summary>
@@ -9,22 +8,14 @@ using UnityEngine;
 /// </summary>
 public class MotionAttack : BaseAttack
 {
-    [Serializable]
-    public class AttackFlow
-    {
-        public float anticipationDuration;
-        public float velocity;
-        public float acceleration;
-        public float recoveryDuration;
-    }
-
-    public AttackFlow attackFlow;
+    public float velocity;
+    public float acceleration;
 
     [SerializeInterface] [SerializeReference]
     public BaseHitDetector hitDetector;
 
     public ChainHitExecutor hitExecutor;
-    
+
     protected override MotionSettings Motion => MotionSettings.WalkingDisabled;
 
     private void Start()
@@ -42,9 +33,9 @@ public class MotionAttack : BaseAttack
     protected override IEnumerator ActivePhase()
     {
         var originalDirection = MovableEntity.rotation;
-        MovableEntity.velocity.x = originalDirection * attackFlow.velocity;
+        MovableEntity.velocity.x = originalDirection * velocity;
         MovableEntity.velocity.z = 0;
-        MovableEntity.acceleration.x = -originalDirection * attackFlow.acceleration;
+        MovableEntity.acceleration.x = -originalDirection * acceleration;
 
         StartHitDetector(hitDetector, hitExecutor);
 

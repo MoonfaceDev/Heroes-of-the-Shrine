@@ -7,10 +7,8 @@ public class SpikeBallAttack : BaseChargeAttack
     [Serializable]
     public class AttackFlow
     {
-        public float anticipationDuration;
         public float activeTimeout;
         public float minActiveTime;
-        public float recoveryDuration;
     }
 
     public AttackFlow attackFlow;

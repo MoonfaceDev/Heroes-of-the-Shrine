@@ -911,6 +911,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.4
+  recoveryDuration: 0.1
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -936,9 +938,8 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.4
     activeDuration: 0.1
-    recoveryDuration: 0.1
+  activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058601
   hitExecutor:
@@ -1204,6 +1205,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.4
+  recoveryDuration: 0.1
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -1228,9 +1231,8 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.4
     activeDuration: 0.1
-    recoveryDuration: 0.1
+  activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058599
   hitExecutor:

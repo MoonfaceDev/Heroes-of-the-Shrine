@@ -14,11 +14,9 @@ public class PossessAttack : BaseAttack
     [Serializable]
     public class AttackFlow
     {
-        public float anticipationDuration;
         public float warningDuration;
         public float sourceActiveDuration;
         public int waveCount = 1;
-        public float recoveryDuration;
     }
 
     public AttackFlow attackFlow;

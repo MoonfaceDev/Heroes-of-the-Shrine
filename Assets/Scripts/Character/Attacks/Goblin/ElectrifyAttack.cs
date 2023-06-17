@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class ElectrifyAttack : BaseAttack
 {
-    public SimpleAttack.AttackFlow attackFlow;
+    public float activeDuration;
 
     [Header("Periodic hits")] public PeriodicAbsoluteHitDetector periodicHitDetector;
     public int periodicHitCount;
@@ -48,7 +48,7 @@ public class ElectrifyAttack : BaseAttack
         
         StartHitDetector(periodicHitDetector, periodicHitExecutor);
 
-        yield return new WaitForSeconds(attackFlow.activeDuration);
+        yield return new WaitForSeconds(activeDuration);
 
         explosionHitDetector.StopDetector();
     }

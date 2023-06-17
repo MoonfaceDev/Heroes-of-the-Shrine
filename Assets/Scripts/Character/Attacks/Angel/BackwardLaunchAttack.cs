@@ -8,11 +8,9 @@ public class BackwardLaunchAttack : BaseAttack
     [Serializable]
     public class AttackFlow
     {
-        public float anticipationDuration;
         public float activeDuration;
         public float detectorStartTime;
         public float detectorDuration;
-        public float recoveryDuration;
     }
 
     public AttackFlow attackFlow;

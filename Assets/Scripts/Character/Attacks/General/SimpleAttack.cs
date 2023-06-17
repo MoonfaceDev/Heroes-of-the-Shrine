@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -7,15 +6,7 @@ using UnityEngine;
 /// </summary>
 public class SimpleAttack : BaseAttack
 {
-    [Serializable]
-    public class AttackFlow
-    {
-        public float anticipationDuration;
-        public float activeDuration;
-        public float recoveryDuration;
-    }
-
-    public AttackFlow attackFlow;
+    public float activeDuration;
 
     [SerializeInterface] [SerializeReference]
     public BaseHitDetector hitDetector;
@@ -31,7 +22,7 @@ public class SimpleAttack : BaseAttack
     {
         StartHitDetector(hitDetector, hitExecutor);
 
-        yield return new WaitForSeconds(attackFlow.activeDuration);
+        yield return new WaitForSeconds(activeDuration);
 
         hitDetector.StopDetector();
     }

@@ -534,6 +534,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.3
+  recoveryDuration: 0.1
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -559,9 +561,8 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.3
     activeDuration: 0.1
-    recoveryDuration: 0.1
+  activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058597
   hitExecutor:
@@ -1422,6 +1423,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.3
+  recoveryDuration: 0.1
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -1446,9 +1449,8 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.3
     activeDuration: 0.1
-    recoveryDuration: 0.1
+  activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058596
   hitExecutor:
@@ -1656,6 +1658,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.3
+  recoveryDuration: 0.05
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -1681,9 +1685,8 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.3
     activeDuration: 0.15
-    recoveryDuration: 0.05
+  activeDuration: 0.15
   hitDetector:
     rid: 3181427246007058598
   hitExecutor:
@@ -1769,6 +1772,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.45
+  recoveryDuration: 0.15
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -1793,9 +1798,8 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 0.45
     activeDuration: 0.5
-    recoveryDuration: 0.15
+  activeDuration: 0.5
   periodicHitDetector:
     hitbox: {fileID: 5884619157288324021}
     hitParticles: {fileID: 110950560831635055}

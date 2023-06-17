@@ -3549,6 +3549,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.4
+  recoveryDuration: 0.85
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -3573,9 +3575,8 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 1
   attackFlow:
-    anticipationDuration: 0.4
     activeDuration: 0.5
-    recoveryDuration: 0.85
+  activeDuration: 0.5
   periodicHitDetector:
     hitbox: {fileID: 1340466848}
     hitParticles: {fileID: 1340466850}
@@ -4071,6 +4072,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 1.65
+  recoveryDuration: 0
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -4095,11 +4098,9 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   attackFlow:
-    anticipationDuration: 1.65
     warningDuration: 0.75
     sourceActiveDuration: 1.5
     waveCount: 1
-    recoveryDuration: 0
   possessSource: {fileID: 4935747359819157664, guid: c619b10d9f747194c92416ed8fe7005a, type: 3}
   sourcesCount: 6
   spawnRadius: 6
@@ -6777,6 +6778,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
+  anticipationDuration: 0.5
+  recoveryDuration: 1
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -6800,9 +6803,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 1
-  attackFlow:
-    anticipationDuration: 0.5
-    recoveryDuration: 1
   maxEnemyCount: 5
   enemyPrefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
   spawnPoints:
