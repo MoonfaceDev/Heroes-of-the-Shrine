@@ -361,8 +361,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 0
   hardRecovery: 0
-  attackFlow:
-    activeDuration: 0.14
   activeDuration: 0.14
   hitDetector:
     rid: 168482633143812260
@@ -829,9 +827,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 1
-  attackFlow:
-    velocity: 10
-    acceleration: 10
   velocity: 10
   acceleration: 10
   hitDetector:
@@ -946,8 +941,6 @@ MonoBehaviour:
   instant: 1
   interruptible: 1
   hardRecovery: 0
-  attackFlow:
-    activeDuration: 0.2
   activeDuration: 0.2
   hitDetector:
     rid: 3596404163551166479
@@ -1211,8 +1204,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 0
   hardRecovery: 0
-  attackFlow:
-    activeDuration: 0.25
   activeDuration: 0.25
   hitDetector:
     rid: 3596404208624992257
@@ -1821,8 +1812,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 0
   hardRecovery: 0
-  attackFlow:
-    activeDuration: 0.2
   activeDuration: 0.2
   hitDetector:
     rid: 3181427246007058589
@@ -2018,8 +2007,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 1
-  attackFlow:
-    activeDuration: 0.1
   activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058576
@@ -3207,6 +3194,9 @@ MonoBehaviour:
   attackExecutor:
     energySystem: {fileID: 526395291188819461}
     attacks:
+    - attack: {fileID: 6321588968546015689}
+      button: 6
+      energyCost: 50
     - attack: {fileID: 7126820491640019253}
       button: 2
       energyCost: 0
@@ -13647,8 +13637,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 0
   hardRecovery: 0
-  attackFlow:
-    activeDuration: 0.15
   activeDuration: 0.15
   hitDetector:
     rid: 3181427246007058587
@@ -13765,8 +13753,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  attackFlow:
-    activeDuration: 0.1
   activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058572
@@ -13879,8 +13865,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  attackFlow:
-    activeDuration: 0.1
   activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058563
@@ -14108,8 +14092,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  attackFlow:
-    activeDuration: 0.1
   activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058574
@@ -14400,9 +14382,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  attackFlow:
-    velocity: 0
-    acceleration: 0
   velocity: 0
   acceleration: 0
   hitDetector:
@@ -14513,9 +14492,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 0
   hardRecovery: 1
-  attackFlow:
-    velocity: 50
-    acceleration: 250
   velocity: 50
   acceleration: 250
   hitDetector:
@@ -14646,9 +14622,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  attackFlow:
-    velocity: 20.76923
-    acceleration: 69.23077
   velocity: 20.76923
   acceleration: 69.23077
   hitDetector:
