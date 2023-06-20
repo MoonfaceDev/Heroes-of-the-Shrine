@@ -4,6 +4,7 @@ using UnityEngine;
 public class SpikeBall : EntityBehaviour
 {
     public Animator animator;
+    public ExtEvent onFire;
     [Header("Latch")] public SingleHitDetector latchHitDetector;
     public ChainHitExecutor latchHitExecutor;
     public float latchZ;
@@ -28,6 +29,7 @@ public class SpikeBall : EntityBehaviour
             var hitWorldPosition = Entity.WorldPosition;
             Latch(hittable, Mathf.Sign(velocity.x), hitWorldPosition.y, source);
         }, source.AttackManager.hittableTags);
+        onFire.Invoke();
     }
 
     public void Latch(IHittable hittable, float hitDirection, float elevation, BaseAttack source)

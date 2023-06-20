@@ -275,7 +275,6 @@ GameObject:
   - component: {fileID: 3469655496789052739}
   - component: {fileID: 3699514266189229965}
   - component: {fileID: 4477243764141101045}
-  - component: {fileID: 8812359579060865057}
   m_Layer: 0
   m_Name: Spike Ball
   m_TagString: Untagged
@@ -336,6 +335,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 6376055490187947775}
+  onFire:
+    _persistentListeners:
+    - _persistentArguments: []
+      _target: {fileID: 4477243764141101045}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: Play
+    Expanded: 1
   latchHitDetector:
     hitbox: {fileID: 8328300429585350118}
     hitParticles: {fileID: 40503689538136934}
@@ -436,31 +448,6 @@ MonoBehaviour:
   prefab: {fileID: 824917772533207107, guid: edf14a74d28352e4f82e5515031d45ad, type: 3}
   particlePosition: {x: -0.2, y: 0, z: 0}
   attachToCharacter: 1
---- !u!114 &8812359579060865057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7195235196650147203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc646fa41e4b404d9d74c10567e07f59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  event:
-    _persistentListeners:
-    - _persistentArguments: []
-      _target: {fileID: 4477243764141101045}
-      _isStatic: 0
-      CallState: 2
-      _staticType:
-        GuidAssignmentFailed: 0
-        GUID: 
-        _typeNameAndAssembly: 
-        _suppressLogs: 0
-      _methodName: Play
-    Expanded: 1
 --- !u!1 &8015725547446733794
 GameObject:
   m_ObjectHideFlags: 0
