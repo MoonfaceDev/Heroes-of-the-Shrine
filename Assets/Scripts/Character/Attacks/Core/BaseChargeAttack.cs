@@ -22,6 +22,9 @@ public abstract class BaseChargeAttack : BaseAttack
 
     public void Release()
     {
-        released = true;
+        if (Active)
+        {
+            released = true;
+        }
     }
 }
