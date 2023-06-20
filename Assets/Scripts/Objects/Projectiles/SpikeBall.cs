@@ -26,15 +26,26 @@ public class SpikeBall : EntityBehaviour
         {
             latchHitDetector.StopDetector();
             var hitWorldPosition = Entity.WorldPosition;
-            Entity.parent = hittable.Character.Entity;
-            Entity.position = Vector3.zero + hitWorldPosition.y * Vector3.up + latchZ * Vector3.forward;
-            hittable.Hit(latchHitExecutor,
-                new Hit { source = source, victim = hittable, direction = Mathf.RoundToInt(Mathf.Sign(velocity.x)) }
-            );
-            MovableEntity.velocity = Vector3.zero;
-            animator.SetTrigger($"{GetType().Name}-latch");
-            onLatch.Invoke();
+            Latch(hittable, Mathf.Sign(velocity.x), hitWorldPosition.y, source);
         }, source.AttackManager.hittableTags);
+    }
+
+    public void Latch(IHittable hittable, float hitDirection, float elevation, BaseAttack source)
+    {
+        sourceAttack = source;
+        Entity.parent = hittable.Character.Entity;
+        Entity.position = Vector3.zero + elevation * Vector3.up + latchZ * Vector3.forward;
+        hittable.Hit(latchHitExecutor,
+            new Hit { source = source, victim = hittable, direction = Mathf.RoundToInt(hitDirection) }
+        );
+        MovableEntity.velocity = Vector3.zero;
+        animator.SetTrigger($"{GetType().Name}-latch");
+        onLatch.Invoke();
+    }
+
+    public void ExplodeAfter(float delay)
+    {
+        StartTimeout(Explode, delay);
     }
 
     public void Explode()
