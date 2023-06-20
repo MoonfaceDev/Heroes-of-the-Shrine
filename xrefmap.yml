@@ -7933,6 +7933,43 @@ references:
   isSpec: "True"
   fullName: EnemyCountBrainModule.Update
   nameWithType: EnemyCountBrainModule.Update
+- uid: Global.EnergyBallExecutor
+  name: EnergyBallExecutor
+  href: api/Global.EnergyBallExecutor.html
+  commentId: T:Global.EnergyBallExecutor
+  fullName: EnergyBallExecutor
+  nameWithType: EnergyBallExecutor
+- uid: Global.EnergyBallExecutor.ballExplodeDelay
+  name: ballExplodeDelay
+  href: api/Global.EnergyBallExecutor.html#Global_EnergyBallExecutor_ballExplodeDelay
+  commentId: F:Global.EnergyBallExecutor.ballExplodeDelay
+  fullName: EnergyBallExecutor.ballExplodeDelay
+  nameWithType: EnergyBallExecutor.ballExplodeDelay
+- uid: Global.EnergyBallExecutor.ballPrefab
+  name: ballPrefab
+  href: api/Global.EnergyBallExecutor.html#Global_EnergyBallExecutor_ballPrefab
+  commentId: F:Global.EnergyBallExecutor.ballPrefab
+  fullName: EnergyBallExecutor.ballPrefab
+  nameWithType: EnergyBallExecutor.ballPrefab
+- uid: Global.EnergyBallExecutor.ballSpawnElevation
+  name: ballSpawnElevation
+  href: api/Global.EnergyBallExecutor.html#Global_EnergyBallExecutor_ballSpawnElevation
+  commentId: F:Global.EnergyBallExecutor.ballSpawnElevation
+  fullName: EnergyBallExecutor.ballSpawnElevation
+  nameWithType: EnergyBallExecutor.ballSpawnElevation
+- uid: Global.EnergyBallExecutor.Execute(Hit)
+  name: Execute(Hit)
+  href: api/Global.EnergyBallExecutor.html#Global_EnergyBallExecutor_Execute_Hit_
+  commentId: M:Global.EnergyBallExecutor.Execute(Hit)
+  fullName: EnergyBallExecutor.Execute(Hit)
+  nameWithType: EnergyBallExecutor.Execute(Hit)
+- uid: Global.EnergyBallExecutor.Execute*
+  name: Execute
+  href: api/Global.EnergyBallExecutor.html#Global_EnergyBallExecutor_Execute_
+  commentId: Overload:Global.EnergyBallExecutor.Execute
+  isSpec: "True"
+  fullName: EnergyBallExecutor.Execute
+  nameWithType: EnergyBallExecutor.Execute
 - uid: Global.EnergyBar
   name: EnergyBar
   href: api/Global.EnergyBar.html
@@ -13297,6 +13334,19 @@ references:
   isSpec: "True"
   fullName: SpikeBall.Explode
   nameWithType: SpikeBall.Explode
+- uid: Global.SpikeBall.ExplodeAfter(System.Single)
+  name: ExplodeAfter(Single)
+  href: api/Global.SpikeBall.html#Global_SpikeBall_ExplodeAfter_System_Single_
+  commentId: M:Global.SpikeBall.ExplodeAfter(System.Single)
+  fullName: SpikeBall.ExplodeAfter(System.Single)
+  nameWithType: SpikeBall.ExplodeAfter(Single)
+- uid: Global.SpikeBall.ExplodeAfter*
+  name: ExplodeAfter
+  href: api/Global.SpikeBall.html#Global_SpikeBall_ExplodeAfter_
+  commentId: Overload:Global.SpikeBall.ExplodeAfter
+  isSpec: "True"
+  fullName: SpikeBall.ExplodeAfter
+  nameWithType: SpikeBall.ExplodeAfter
 - uid: Global.SpikeBall.explodeAnimationDuration
   name: explodeAnimationDuration
   href: api/Global.SpikeBall.html#Global_SpikeBall_explodeAnimationDuration
@@ -13340,6 +13390,19 @@ references:
   isSpec: "True"
   fullName: SpikeBall.Fire
   nameWithType: SpikeBall.Fire
+- uid: Global.SpikeBall.Latch(IHittable,System.Single,System.Single,BaseAttack)
+  name: Latch(IHittable, Single, Single, BaseAttack)
+  href: api/Global.SpikeBall.html#Global_SpikeBall_Latch_IHittable_System_Single_System_Single_BaseAttack_
+  commentId: M:Global.SpikeBall.Latch(IHittable,System.Single,System.Single,BaseAttack)
+  fullName: SpikeBall.Latch(IHittable, System.Single, System.Single, BaseAttack)
+  nameWithType: SpikeBall.Latch(IHittable, Single, Single, BaseAttack)
+- uid: Global.SpikeBall.Latch*
+  name: Latch
+  href: api/Global.SpikeBall.html#Global_SpikeBall_Latch_
+  commentId: Overload:Global.SpikeBall.Latch
+  isSpec: "True"
+  fullName: SpikeBall.Latch
+  nameWithType: SpikeBall.Latch
 - uid: Global.SpikeBall.latchHitDetector
   name: latchHitDetector
   href: api/Global.SpikeBall.html#Global_SpikeBall_latchHitDetector
@@ -13470,6 +13533,12 @@ references:
   isSpec: "True"
   fullName: SpikeBallAttack.MustRelease
   nameWithType: SpikeBallAttack.MustRelease
+- uid: Global.SpikeDashAttack
+  name: SpikeDashAttack
+  href: api/Global.SpikeDashAttack.html
+  commentId: T:Global.SpikeDashAttack
+  fullName: SpikeDashAttack
+  nameWithType: SpikeDashAttack
 - uid: Global.SpinningSwordsAttack
   name: SpinningSwordsAttack
   href: api/Global.SpinningSwordsAttack.html

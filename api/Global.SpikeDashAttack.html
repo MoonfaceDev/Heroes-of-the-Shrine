@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class MotionAttack
+    <title>Class SpikeDashAttack
    | Heroes of the Shrine </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class MotionAttack
+    <meta name="title" content="Class SpikeDashAttack
    | Heroes of the Shrine ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,15 +78,12 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Global.MotionAttack">
+            <article class="content wrap" id="_content" data-uid="Global.SpikeDashAttack">
   
   
-  <h1 id="Global_MotionAttack" data-uid="Global.MotionAttack" class="text-break">Class MotionAttack
+  <h1 id="Global_SpikeDashAttack" data-uid="Global.SpikeDashAttack" class="text-break">Class SpikeDashAttack
   </h1>
-  <div class="markdown level0 summary"><p>An attack that has a single hit detector, hit executor, and has an anticipation and recovery phases with fixed
-duration. During the active phase, the character moves in the direction it looked at with a reducing speed, until it
-reaches zero.</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -97,12 +94,8 @@ reaches zero.</p>
     <div class="level4"><a class="xref" href="Global.PlayableBehaviour-1.html">PlayableBehaviour</a>&lt;<a class="xref" href="Global.BaseAttack.Command.html">BaseAttack.Command</a>&gt;</div>
     <div class="level5"><a class="xref" href="Global.PhasedBehaviour-1.html">PhasedBehaviour</a>&lt;<a class="xref" href="Global.BaseAttack.Command.html">BaseAttack.Command</a>&gt;</div>
     <div class="level6"><a class="xref" href="Global.BaseAttack.html">BaseAttack</a></div>
-    <div class="level7"><span class="xref">MotionAttack</span></div>
-      <div class="level8"><a class="xref" href="Global.CounterAttack.html">CounterAttack</a></div>
-      <div class="level8"><a class="xref" href="Global.EnergyBurstAttack.html">EnergyBurstAttack</a></div>
-      <div class="level8"><a class="xref" href="Global.RunKick.html">RunKick</a></div>
-      <div class="level8"><a class="xref" href="Global.SlashAttack.html">SlashAttack</a></div>
-      <div class="level8"><a class="xref" href="Global.SpikeDashAttack.html">SpikeDashAttack</a></div>
+    <div class="level7"><a class="xref" href="Global.MotionAttack.html">MotionAttack</a></div>
+    <div class="level8"><span class="xref">SpikeDashAttack</span></div>
   </div>
   <div class="implements">
     <h5>Implements</h5>
@@ -111,6 +104,24 @@ reaches zero.</p>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Global.MotionAttack.html#Global_MotionAttack_velocity">MotionAttack.velocity</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.MotionAttack.html#Global_MotionAttack_acceleration">MotionAttack.acceleration</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.MotionAttack.html#Global_MotionAttack_hitDetector">MotionAttack.hitDetector</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.MotionAttack.html#Global_MotionAttack_hitExecutor">MotionAttack.hitExecutor</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.MotionAttack.html#Global_MotionAttack_Motion">MotionAttack.Motion</a>
+    </div>
+    <div>
+      <a class="xref" href="Global.MotionAttack.html#Global_MotionAttack_ActivePhase">MotionAttack.ActivePhase()</a>
+    </div>
     <div>
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_previousAttacks">BaseAttack.previousAttacks</a>
     </div>
@@ -246,166 +257,10 @@ reaches zero.</p>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Global_MotionAttack_syntax">Syntax</h5>
+  <h5 id="Global_SpikeDashAttack_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class MotionAttack : BaseAttack, IControlledBehaviour, IPlayableBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class SpikeDashAttack : MotionAttack, IControlledBehaviour, IPlayableBehaviour</code></pre>
   </div>
-  <h3 id="fields">Fields
-  </h3>
-  
-  
-  <h4 id="Global_MotionAttack_acceleration" data-uid="Global.MotionAttack.acceleration">acceleration</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float acceleration</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_MotionAttack_hitDetector" data-uid="Global.MotionAttack.hitDetector">hitDetector</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public BaseHitDetector hitDetector</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.BaseHitDetector.html">BaseHitDetector</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_MotionAttack_hitExecutor" data-uid="Global.MotionAttack.hitExecutor">hitExecutor</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ChainHitExecutor hitExecutor</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.ChainHitExecutor.html">ChainHitExecutor</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_MotionAttack_velocity" data-uid="Global.MotionAttack.velocity">velocity</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float velocity</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-  </h3>
-  
-  
-  <a id="Global_MotionAttack_Motion_" data-uid="Global.MotionAttack.Motion*"></a>
-  <h4 id="Global_MotionAttack_Motion" data-uid="Global.MotionAttack.Motion">Motion</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override MotionSettings Motion { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.MotionSettings.html">MotionSettings</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Motion">BaseAttack.Motion</a></div>
-  <h3 id="methods">Methods
-  </h3>
-  
-  
-  <a id="Global_MotionAttack_ActivePhase_" data-uid="Global.MotionAttack.ActivePhase*"></a>
-  <h4 id="Global_MotionAttack_ActivePhase" data-uid="Global.MotionAttack.ActivePhase">ActivePhase()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override IEnumerator ActivePhase()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.IEnumerator</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">PhasedBehaviour&lt;BaseAttack.Command&gt;.ActivePhase()</span></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Global.IControlledBehaviour.html">IControlledBehaviour</a>
