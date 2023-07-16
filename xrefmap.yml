@@ -5597,24 +5597,6 @@ references:
   commentId: F:Global.AttackManager.maxComboDelay
   fullName: AttackManager.maxComboDelay
   nameWithType: AttackManager.maxComboDelay
-- uid: Global.AttackManager.onBlock
-  name: onBlock
-  href: api/Global.AttackManager.html#Global_AttackManager_onBlock
-  commentId: F:Global.AttackManager.onBlock
-  fullName: AttackManager.onBlock
-  nameWithType: AttackManager.onBlock
-- uid: Global.AttackManager.onComboBlock
-  name: onComboBlock
-  href: api/Global.AttackManager.html#Global_AttackManager_onComboBlock
-  commentId: F:Global.AttackManager.onComboBlock
-  fullName: AttackManager.onComboBlock
-  nameWithType: AttackManager.onComboBlock
-- uid: Global.AttackManager.onComboCut
-  name: onComboCut
-  href: api/Global.AttackManager.html#Global_AttackManager_onComboCut
-  commentId: F:Global.AttackManager.onComboCut
-  fullName: AttackManager.onComboCut
-  nameWithType: AttackManager.onComboCut
 - uid: Global.AttackManager.phaseEvents
   name: phaseEvents
   href: api/Global.AttackManager.html#Global_AttackManager_phaseEvents
@@ -5948,6 +5930,19 @@ references:
   isSpec: "True"
   fullName: BaseAttack.Awake
   nameWithType: BaseAttack.Awake
+- uid: Global.BaseAttack.Block
+  name: Block()
+  href: api/Global.BaseAttack.html#Global_BaseAttack_Block
+  commentId: M:Global.BaseAttack.Block
+  fullName: BaseAttack.Block()
+  nameWithType: BaseAttack.Block()
+- uid: Global.BaseAttack.Block*
+  name: Block
+  href: api/Global.BaseAttack.html#Global_BaseAttack_Block_
+  commentId: Overload:Global.BaseAttack.Block
+  isSpec: "True"
+  fullName: BaseAttack.Block
+  nameWithType: BaseAttack.Block
 - uid: Global.BaseAttack.CanPlay(BaseAttack.Command)
   name: CanPlay(BaseAttack.Command)
   href: api/Global.BaseAttack.html#Global_BaseAttack_CanPlay_BaseAttack_Command_
@@ -6037,6 +6032,12 @@ references:
   isSpec: "True"
   fullName: BaseAttack.Motion
   nameWithType: BaseAttack.Motion
+- uid: Global.BaseAttack.onBlock
+  name: onBlock
+  href: api/Global.BaseAttack.html#Global_BaseAttack_onBlock
+  commentId: F:Global.BaseAttack.onBlock
+  fullName: BaseAttack.onBlock
+  nameWithType: BaseAttack.onBlock
 - uid: Global.BaseAttack.previousAttacks
   name: previousAttacks
   href: api/Global.BaseAttack.html#Global_BaseAttack_previousAttacks
@@ -13655,12 +13656,54 @@ references:
   isSpec: "True"
   fullName: StaggerBehaviour.Awake
   nameWithType: StaggerBehaviour.Awake
+- uid: Global.StaggerBehaviour.BalanceReductionEntry
+  name: StaggerBehaviour.BalanceReductionEntry
+  href: api/Global.StaggerBehaviour.BalanceReductionEntry.html
+  commentId: T:Global.StaggerBehaviour.BalanceReductionEntry
+  fullName: StaggerBehaviour.BalanceReductionEntry
+  nameWithType: StaggerBehaviour.BalanceReductionEntry
+- uid: Global.StaggerBehaviour.BalanceReductionEntry.attack
+  name: attack
+  href: api/Global.StaggerBehaviour.BalanceReductionEntry.html#Global_StaggerBehaviour_BalanceReductionEntry_attack
+  commentId: F:Global.StaggerBehaviour.BalanceReductionEntry.attack
+  fullName: StaggerBehaviour.BalanceReductionEntry.attack
+  nameWithType: StaggerBehaviour.BalanceReductionEntry.attack
+- uid: Global.StaggerBehaviour.BalanceReductionEntry.balanceReduction
+  name: balanceReduction
+  href: api/Global.StaggerBehaviour.BalanceReductionEntry.html#Global_StaggerBehaviour_BalanceReductionEntry_balanceReduction
+  commentId: F:Global.StaggerBehaviour.BalanceReductionEntry.balanceReduction
+  fullName: StaggerBehaviour.BalanceReductionEntry.balanceReduction
+  nameWithType: StaggerBehaviour.BalanceReductionEntry.balanceReduction
+- uid: Global.StaggerBehaviour.balanceReductionSettings
+  name: balanceReductionSettings
+  href: api/Global.StaggerBehaviour.html#Global_StaggerBehaviour_balanceReductionSettings
+  commentId: F:Global.StaggerBehaviour.balanceReductionSettings
+  fullName: StaggerBehaviour.balanceReductionSettings
+  nameWithType: StaggerBehaviour.balanceReductionSettings
+- uid: Global.StaggerBehaviour.balanceRegenerationRate
+  name: balanceRegenerationRate
+  href: api/Global.StaggerBehaviour.html#Global_StaggerBehaviour_balanceRegenerationRate
+  commentId: F:Global.StaggerBehaviour.balanceRegenerationRate
+  fullName: StaggerBehaviour.balanceRegenerationRate
+  nameWithType: StaggerBehaviour.balanceRegenerationRate
+- uid: Global.StaggerBehaviour.balanceShockDuration
+  name: balanceShockDuration
+  href: api/Global.StaggerBehaviour.html#Global_StaggerBehaviour_balanceShockDuration
+  commentId: F:Global.StaggerBehaviour.balanceShockDuration
+  fullName: StaggerBehaviour.balanceShockDuration
+  nameWithType: StaggerBehaviour.balanceShockDuration
 - uid: Global.StaggerBehaviour.Command
   name: StaggerBehaviour.Command
   href: api/Global.StaggerBehaviour.Command.html
   commentId: T:Global.StaggerBehaviour.Command
   fullName: StaggerBehaviour.Command
   nameWithType: StaggerBehaviour.Command
+- uid: Global.StaggerBehaviour.defaultBalance
+  name: defaultBalance
+  href: api/Global.StaggerBehaviour.html#Global_StaggerBehaviour_defaultBalance
+  commentId: F:Global.StaggerBehaviour.defaultBalance
+  fullName: StaggerBehaviour.defaultBalance
+  nameWithType: StaggerBehaviour.defaultBalance
 - uid: Global.StaggerBehaviour.DoPlay(StaggerBehaviour.Command)
   name: DoPlay(StaggerBehaviour.Command)
   href: api/Global.StaggerBehaviour.html#Global_StaggerBehaviour_DoPlay_StaggerBehaviour_Command_
