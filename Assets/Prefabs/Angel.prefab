@@ -824,7 +824,7 @@ MonoBehaviour:
       _persistentListeners: []
       Expanded: 1
   previousAttacks: []
-  instant: 0
+  instant: 1
   interruptible: 0
   hardRecovery: 1
   velocity: 50
@@ -834,6 +834,7 @@ MonoBehaviour:
   hitExecutor:
     executors:
     - rid: 2084589854795759623
+    - rid: 5904501057880588292
   references:
     version: 2
     RefIds:
@@ -855,6 +856,10 @@ MonoBehaviour:
         ballPrefab: {fileID: 7195235196650147203, guid: 6855b38c7105f134ba6e8744a09a9039, type: 3}
         ballSpawnElevation: 1
         ballExplodeDelay: 3
+    - rid: 5904501057880588292
+      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        stunTime: 0.5
 --- !u!1 &1843105327216157736
 GameObject:
   m_ObjectHideFlags: 0
