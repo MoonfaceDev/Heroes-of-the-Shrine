@@ -75,15 +75,6 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
-  onComboCut:
-    _persistentListeners: []
-    Expanded: 1
-  onBlock:
-    _persistentListeners: []
-    Expanded: 1
-  onComboBlock:
-    _persistentListeners: []
-    Expanded: 1
 --- !u!1 &1746454353308981404
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +233,14 @@ MonoBehaviour:
       _persistentListeners: []
       Expanded: 1
   staggerDuration: 2
+  defaultBalance: 1
+  balanceShockDuration: 2
+  balanceRegenerationRate: 0.1
+  balanceReductionSettings:
+  - attack: {fileID: 4173549638542951918}
+    balanceReduction: 0.5
+  - attack: {fileID: 1474414908039903471}
+    balanceReduction: 0.5
 --- !u!114 &5921271640668695249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -932,13 +931,14 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks:
   - {fileID: 4173549638542951918}
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  attackFlow:
-    activeDuration: 0.1
   activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058601
@@ -1226,12 +1226,13 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks: []
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  attackFlow:
-    activeDuration: 0.1
   activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058599

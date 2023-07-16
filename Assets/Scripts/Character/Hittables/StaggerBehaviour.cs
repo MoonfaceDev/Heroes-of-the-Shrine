@@ -1,10 +1,29 @@
-﻿public class StaggerBehaviour : PlayableBehaviour<StaggerBehaviour.Command>
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class StaggerBehaviour : PlayableBehaviour<StaggerBehaviour.Command>
 {
     public class Command
     {
     }
 
+    [Serializable]
+    public record BalanceReductionEntry
+    {
+        public BaseAttack attack;
+        public float balanceReduction;
+    }
+
     public float staggerDuration;
+    public float defaultBalance = 1;
+    public float balanceShockDuration;
+    public float balanceRegenerationRate;
+    public List<BalanceReductionEntry> balanceReductionSettings;
+
+    private float balance;
+    private string shockTimeout;
+    private bool shocked;
 
     private bool Active
     {
@@ -25,12 +44,44 @@
     {
         base.Awake();
         stunBehaviour = GetBehaviour<StunBehaviour>();
+        balance = defaultBalance;
+        
+        Register(() =>
+        {
+            if (!shocked)
+            {
+                var addition = Time.deltaTime * balanceRegenerationRate;
+                balance = Mathf.Min(balance + addition, defaultBalance);
+            }
+        });
+
+        foreach (var entry in balanceReductionSettings)
+        {
+            entry.attack.onBlock += () => ReduceBalance(entry.balanceReduction);
+        }
     }
 
     private void Start()
     {
-        AttackManager.onComboBlock += () => Play(new Command());
         stunBehaviour.PlayEvents.onStop += Stop;
+    }
+
+    private void ReduceBalance(float reduction)
+    {
+        Cancel(shockTimeout);
+        
+        balance = Mathf.Max(balance - reduction, 0);
+        
+        if (balance == 0)
+        {
+            balance = defaultBalance;
+            Play(new Command());
+        }
+        else
+        {
+            shocked = true;
+            shockTimeout = StartTimeout(() => shocked = false, balanceShockDuration);
+        }
     }
 
     protected override void DoPlay(Command command)

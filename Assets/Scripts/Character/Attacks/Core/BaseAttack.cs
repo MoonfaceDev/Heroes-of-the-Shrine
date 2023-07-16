@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ExtEvents;
 using ExtEvents.OdinSerializer.Utilities;
+using UnityEngine;
 
 /// <summary>
 /// Motion settings when playing attacks
@@ -22,6 +24,8 @@ public abstract class BaseAttack : PhasedBehaviour<BaseAttack.Command>
     public class Command
     {
     }
+
+    [SerializeField] public ExtEvent onBlock;
 
     /// <value>
     /// This attack can be played only if the previous attack is one of the <c>previousAttacks</c>.
@@ -127,6 +131,12 @@ public abstract class BaseAttack : PhasedBehaviour<BaseAttack.Command>
         {
             UnblockBehaviours(typeof(WalkBehaviour));
         }
+    }
+
+    public void Block()
+    {
+        Stop();
+        onBlock.Invoke();
     }
 
     protected void StartHitDetector(BaseHitDetector hitDetector, ChainHitExecutor hitExecutor)

@@ -300,15 +300,6 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
-  onComboCut:
-    _persistentListeners: []
-    Expanded: 1
-  onBlock:
-    _persistentListeners: []
-    Expanded: 1
-  onComboBlock:
-    _persistentListeners: []
-    Expanded: 1
 --- !u!1 &1511944698011505188
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +458,18 @@ MonoBehaviour:
       _persistentListeners: []
       Expanded: 1
   staggerDuration: 2
+  defaultBalance: 1
+  balanceShockDuration: 1.5
+  balanceRegenerationRate: 0.1
+  balanceReductionSettings:
+  - attack: {fileID: 8677902016000719218}
+    balanceReduction: 0.34
+  - attack: {fileID: 9150510433013758275}
+    balanceReduction: 0.34
+  - attack: {fileID: 7102027178127086266}
+    balanceReduction: 0.34
+  - attack: {fileID: 7786222826122484027}
+    balanceReduction: 1
 --- !u!114 &5798352654863112303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,13 +558,14 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks:
   - {fileID: 8677902016000719218}
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  attackFlow:
-    activeDuration: 0.1
   activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058597
@@ -1444,12 +1448,13 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks: []
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  attackFlow:
-    activeDuration: 0.1
   activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058596
@@ -1679,13 +1684,14 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks:
   - {fileID: 9150510433013758275}
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  attackFlow:
-    activeDuration: 0.15
   activeDuration: 0.15
   hitDetector:
     rid: 3181427246007058598
@@ -1793,12 +1799,13 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks: []
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  attackFlow:
-    activeDuration: 0.5
   activeDuration: 0.5
   periodicHitDetector:
     hitbox: {fileID: 5884619157288324021}

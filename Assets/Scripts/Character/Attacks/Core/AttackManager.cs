@@ -1,8 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using ExtEvents;
-using UnityEngine;
 using UnityEngine.Serialization;
 
 /// <summary>
@@ -23,7 +20,7 @@ public class AttackManager : CharacterBehaviour
     /// <summary>
     /// Last attack dealt
     /// </summary>
-    public BaseAttack LastAttack => comboAttacks.LastOrDefault();
+    public BaseAttack LastAttack { get; private set; }
 
     /// <value>
     /// Attacks play and stop events. Whenever any attack starts or stops, these events are invoked.
@@ -45,24 +42,7 @@ public class AttackManager : CharacterBehaviour
     /// </value>
     public KnockbackPowerTranspiler knockbackPowerTranspiler;
 
-    /// <value>
-    /// Combo was cut in the middle
-    /// </value>
-    [SerializeField] public ExtEvent onComboCut;
-
-    /// <value>
-    /// Attack was blocked
-    /// </value>
-    [SerializeField] public ExtEvent<Hit> onBlock;
-
-    /// <value>
-    /// Entire combo was blocked
-    /// </value>
-    [SerializeField] public ExtEvent onComboBlock;
-
     private string forgetComboTimeout;
-    private List<BaseAttack> comboAttacks;
-    private List<BaseAttack> comboBlocks;
 
     protected override void Awake()
     {
@@ -73,16 +53,29 @@ public class AttackManager : CharacterBehaviour
 
         knockbackPowerTranspiler = new KnockbackPowerTranspiler();
         knockbackPowerTranspiler.Add((_, _, value) => Character.stats.knockbackPowerMultiplier * value);
-
-        comboAttacks = new List<BaseAttack>();
-        comboBlocks = new List<BaseAttack>();
     }
 
     private void Start()
     {
         InitializeEventForwarding();
-        InitializeCombos();
-        InitializeBlocksCombo();
+        TrackLastAttack();
+    }
+
+    private void TrackLastAttack()
+    {
+        foreach (var attack in GetBehaviours<BaseAttack>())
+        {
+            attack.PlayEvents.onPlay += () =>
+            {
+                Cancel(forgetComboTimeout);
+                LastAttack = attack;
+            };
+
+            attack.PlayEvents.onStop += () =>
+            {
+                forgetComboTimeout = StartTimeout(() => LastAttack = null, maxComboDelay);
+            };
+        }
     }
 
     private void InitializeEventForwarding()
@@ -100,53 +93,6 @@ public class AttackManager : CharacterBehaviour
         }
     }
 
-    private void InitializeCombos()
-    {
-        foreach (var attack in GetBehaviours<BaseAttack>())
-        {
-            attack.PlayEvents.onPlay += () =>
-            {
-                if (!attack.previousAttacks.Contains(comboAttacks.LastOrDefault()))
-                {
-                    comboAttacks.Clear();
-                }
-                
-                Cancel(forgetComboTimeout);
-                comboAttacks.Add(attack);
-            };
-
-            attack.PlayEvents.onStop += () =>
-            {
-                Cancel(forgetComboTimeout);
-                forgetComboTimeout = StartTimeout(() =>
-                {
-                    comboAttacks.Clear();
-                    onComboCut.Invoke();
-                }, maxComboDelay);
-            };
-        }
-    }
-
-    private void InitializeBlocksCombo()
-    {
-        onBlock += hit =>
-        {
-            var attack = hit.source;
-            comboBlocks.Add(attack);
-
-            if (!IsFinalAttack(attack)) return;
-
-            if (comboBlocks.Count == comboAttacks.Count)
-            {
-                onComboBlock.Invoke();
-            }
-
-            comboBlocks.Clear();
-        };
-
-        onComboCut += comboBlocks.Clear;
-    }
-
     private bool AnyAttack(Func<BaseAttack, bool> callback)
     {
         var attackComponents = GetBehaviours<BaseAttack>();
@@ -157,11 +103,6 @@ public class AttackManager : CharacterBehaviour
     /// Any attack is playing
     /// </value>
     public bool Playing => AnyAttack(attack => attack.Playing);
-
-    private bool IsFinalAttack(BaseAttack attack)
-    {
-        return !AnyAttack(other => other.previousAttacks.Contains(attack));
-    }
 
     private static bool IsPreventing(BaseAttack attack)
     {

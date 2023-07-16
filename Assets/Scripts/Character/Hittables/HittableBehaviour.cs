@@ -46,8 +46,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
         {
             if (blockBehaviour.TryBlock(hit))
             {
-                hit.source.Stop();
-                hit.source.AttackManager.onBlock.Invoke(hit);
+                hit.source.Block();
                 return;
             }
         }
