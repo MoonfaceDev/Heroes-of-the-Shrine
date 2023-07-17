@@ -356,6 +356,9 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks:
   - {fileID: 7559106644093030772}
   instant: 0
@@ -803,7 +806,7 @@ MonoBehaviour:
       _persistentListeners: []
       Expanded: 1
   anticipationDuration: 0.1
-  recoveryDuration: 0.1
+  recoveryDuration: 0.4
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -823,12 +826,16 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
-  previousAttacks: []
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
+  previousAttacks:
+  - {fileID: 7126820491640019253}
   instant: 1
-  interruptible: 0
-  hardRecovery: 1
-  velocity: 50
-  acceleration: 250
+  interruptible: 1
+  hardRecovery: 0
+  velocity: 60
+  acceleration: 300
   hitDetector:
     rid: 2084589854795759621
   hitExecutor:
@@ -842,7 +849,7 @@ MonoBehaviour:
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
         hitbox: {fileID: 2267100158213249188}
-        hitParticles: {fileID: 0}
+        hitParticles: {fileID: 7387041220814322907}
         includedHittableTags:
           tags: 
         excludedHittableTags:
@@ -855,7 +862,7 @@ MonoBehaviour:
       data:
         ballPrefab: {fileID: 7195235196650147203, guid: 6855b38c7105f134ba6e8744a09a9039, type: 3}
         ballSpawnElevation: 1
-        ballExplodeDelay: 3
+        ballExplodeDelay: 0.32
     - rid: 5904501057880588292
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -933,6 +940,9 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks: []
   instant: 0
   interruptible: 1
@@ -1046,6 +1056,9 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks:
   - {fileID: 2573627595519022764}
   instant: 1
@@ -1160,6 +1173,9 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks:
   - {fileID: 1534430804526489236}
   instant: 0
@@ -1310,6 +1326,9 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks: []
   instant: 0
   interruptible: 0
@@ -1502,6 +1521,9 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks:
   - {fileID: 1534430804526489236}
   instant: 0
@@ -1915,6 +1937,9 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks:
   - {fileID: 0}
   - {fileID: 7559106644093030772}
@@ -2112,6 +2137,9 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks:
   - {fileID: 1216366090443007232}
   instant: 0
@@ -2227,6 +2255,9 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks:
   - {fileID: 1216366090443007232}
   - {fileID: 7157179758743540809}
@@ -3304,6 +3335,9 @@ MonoBehaviour:
   attackExecutor:
     energySystem: {fileID: 526395291188819461}
     attacks:
+    - attack: {fileID: 6178378093881211796}
+      button: 6
+      energyCost: 50
     - attack: {fileID: 6321588968546015689}
       button: 6
       energyCost: 50
@@ -3345,9 +3379,6 @@ MonoBehaviour:
       energyCost: 0
     - attack: {fileID: 7388694263344988399}
       button: 3
-      energyCost: 0
-    - attack: {fileID: 6178378093881211796}
-      button: 7
       energyCost: 0
   bufferingTime: 0.3
   jumpPriority: 1
@@ -8609,7 +8640,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2099669342, guid: 4ab8b821a41cf0a4faaf9e940729ada2, type: 3}
+  m_Sprite: {fileID: -707507964, guid: 90ca4752855333c498d2cb4351bd1eac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13607,7 +13638,7 @@ GameObject:
   - component: {fileID: 2267100158213249188}
   - component: {fileID: 7387041220814322907}
   m_Layer: 0
-  m_Name: NormalAttackHitbox
+  m_Name: SpikeDashAttackHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13621,7 +13652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5374606295249558086}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7, y: 0, z: 0}
+  m_LocalPosition: {x: 0.07, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13643,7 +13674,7 @@ MonoBehaviour:
   parent: {fileID: 5102893360874897665}
   tags:
     tags: 
-  position: {x: 0.7, y: 0.685, z: 0}
+  position: {x: 0.07, y: 0.93, z: 0}
   rotation:
     flipped: 0
   scale: {x: 1, y: 1, z: 1}
@@ -13659,7 +13690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 1.63, y: 0.61, z: 1}
+  size: {x: 2.5, y: 1.8, z: 0.75}
 --- !u!114 &7387041220814322907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13824,6 +13855,9 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks:
   - {fileID: 0}
   instant: 0
@@ -13940,6 +13974,9 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks:
   - {fileID: 7126820491640019253}
   instant: 0
@@ -14053,6 +14090,9 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks: []
   instant: 0
   interruptible: 1
@@ -14196,9 +14236,12 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks: []
   instant: 0
-  interruptible: 0
+  interruptible: 1
   hardRecovery: 0
   attackFlow:
     activeTimeout: 3
@@ -14279,6 +14322,9 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks:
   - {fileID: 7126820491640019253}
   instant: 0
@@ -14562,6 +14608,9 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks: []
   instant: 0
   interruptible: 1
@@ -14671,6 +14720,9 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks:
   - {fileID: 3226033048567882335}
   instant: 0
@@ -14802,6 +14854,9 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks: []
   instant: 0
   interruptible: 1
