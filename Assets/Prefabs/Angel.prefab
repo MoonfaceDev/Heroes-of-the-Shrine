@@ -763,6 +763,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6514018834009219180}
   - component: {fileID: 6178378093881211796}
+  - component: {fileID: 3577510693266853273}
   m_Layer: 0
   m_Name: Spike Dash Attack
   m_TagString: Untagged
@@ -815,7 +816,17 @@ MonoBehaviour:
       _persistentListeners: []
       Expanded: 1
     onStartActive:
-      _persistentListeners: []
+      _persistentListeners:
+      - _persistentArguments: []
+        _target: {fileID: 3577510693266853273}
+        _isStatic: 0
+        CallState: 2
+        _staticType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _methodName: Play
       Expanded: 1
     onFinishActive:
       _persistentListeners: []
@@ -867,6 +878,21 @@ MonoBehaviour:
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         stunTime: 0.5
+--- !u!114 &3577510693266853273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766462669751727550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d961789b6aee674bb3eb9ce45793ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4191199336927616018, guid: 187c65764ff37d742bd9e8495690ce1f, type: 3}
+  particlePosition: {x: -0.12, y: 0.5, z: 0}
+  attachToCharacter: 1
 --- !u!1 &1843105327216157736
 GameObject:
   m_ObjectHideFlags: 0
@@ -2144,7 +2170,7 @@ MonoBehaviour:
   - {fileID: 1216366090443007232}
   instant: 0
   interruptible: 1
-  hardRecovery: 1
+  hardRecovery: 0
   activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058576
