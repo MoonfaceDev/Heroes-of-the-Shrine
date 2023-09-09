@@ -28,7 +28,7 @@ public class ElectrifyAttack : BaseAttack
         {
             periodicHitDetector.StopDetector();
             explosionHitDetector.StopDetector();
-            Cancel(switchDetectorsListener);
+            eventManager.Cancel(switchDetectorsListener);
         };
 
         explosionHitDetector.onHit += onExplosion.Invoke;
@@ -39,7 +39,7 @@ public class ElectrifyAttack : BaseAttack
         float detectCount = 0;
         periodicHitDetector.OnDetect += () => detectCount++;
 
-        switchDetectorsListener = InvokeWhen(() => detectCount >= periodicHitCount, () =>
+        switchDetectorsListener = eventManager.InvokeWhen(() => detectCount >= periodicHitCount, () =>
         {
             periodicHitDetector.StopDetector();
             StartHitDetector(explosionHitDetector, explosionHitExecutor);

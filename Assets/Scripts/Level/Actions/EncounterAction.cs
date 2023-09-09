@@ -116,7 +116,7 @@ public class EncounterAction : BaseComponent
         // Alarm pre spawned
         foreach (var enemy in waveEnemies)
         {
-            StartTimeout(() => enemy.GetBehaviour<AlarmBrainModule>().SetAlarm(), timeToAlarm);
+            eventManager.StartTimeout(() => enemy.GetBehaviour<AlarmBrainModule>().SetAlarm(), timeToAlarm);
         }
 
         foreach (var definition in waveDefinitions[index].spawnDefinitions)
@@ -128,7 +128,7 @@ public class EncounterAction : BaseComponent
             }
         }
 
-        InvokeWhen(() => waveEnemies.TrueForAll(enemy => !enemy), () =>
+        eventManager.InvokeWhen(() => waveEnemies.TrueForAll(enemy => !enemy), () =>
         {
             if (!stopped && index + 1 < waveDefinitions.Length)
             {
@@ -149,7 +149,7 @@ public class EncounterAction : BaseComponent
         var spawnPoint = new Vector3(edge, 0, definition.z);
 
         var enemy = GameEntity.Instantiate(definition.prefab, spawnPoint);
-        StartTimeout(() => enemy.GetBehaviour<AlarmBrainModule>().SetAlarm(), timeToAlarm);
+        eventManager.StartTimeout(() => enemy.GetBehaviour<AlarmBrainModule>().SetAlarm(), timeToAlarm);
 
         return enemy;
     }

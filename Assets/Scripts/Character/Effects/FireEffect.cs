@@ -22,7 +22,7 @@ public class FireEffect : BaseEffect<FireEffect.Command>
         damageCoroutine = StartCoroutine(ExecuteHits(command.hitInterval, command.hitExecutor, command.relatedAttack));
         startTime = Time.time;
         currentDuration = command.duration;
-        stopListener = InvokeWhen(() => Time.time - startTime > command.duration, Stop);
+        stopListener = eventManager.InvokeWhen(() => Time.time - startTime > command.duration, Stop);
     }
 
     protected override void DoStop()
@@ -32,7 +32,7 @@ public class FireEffect : BaseEffect<FireEffect.Command>
         StopCoroutine(damageCoroutine);
 
         currentDuration = 0;
-        Cancel(stopListener);
+        eventManager.Cancel(stopListener);
     }
 
     public override float GetProgress()

@@ -27,7 +27,7 @@ public class PeriodicAbsoluteHitDetector : BaseHitDetector
 
     protected override void DoStartDetector(Action<HittableHitbox> hitCallable)
     {
-        detectionInterval = EventManager.Instance.StartInterval(() => DetectHits(hitCallable), interval);
+        detectionInterval = GlobalEventManager.Instance.StartInterval(() => DetectHits(hitCallable), interval);
         if (startImmediately)
         {
             DetectHits(hitCallable);
@@ -49,6 +49,6 @@ public class PeriodicAbsoluteHitDetector : BaseHitDetector
 
     public override void StopDetector()
     {
-        EventManager.Instance.Unregister(detectionInterval);
+        GlobalEventManager.Instance.Unregister(detectionInterval);
     }
 }

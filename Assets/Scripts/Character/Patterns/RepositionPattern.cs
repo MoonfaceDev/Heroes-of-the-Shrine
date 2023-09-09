@@ -25,7 +25,7 @@ public class RepositionPattern : BasePattern
 
         var otherEnemies = Array.Empty<GameEntity>();
 
-        otherEnemiesListener = EventManager.Instance.Register(() =>
+        otherEnemiesListener = GlobalEventManager.Instance.Register(() =>
         {
             otherEnemies = EntityManager.Instance.GetEntities(Tag.Enemy)
                 .Where(enemy => enemy != autoWalkBehaviour.MovableEntity)
@@ -49,7 +49,7 @@ public class RepositionPattern : BasePattern
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
 
-        EventManager.Instance.Unregister(otherEnemiesListener);
+        GlobalEventManager.Instance.Unregister(otherEnemiesListener);
 
         var autoWalkBehaviour = animator.GetEntity().GetBehaviour<AutoWalkBehaviour>();
         autoWalkBehaviour.Stop();
@@ -60,6 +60,6 @@ public class RepositionPattern : BasePattern
 
     private void OnDestroy()
     {
-        EventManager.Instance.Unregister(otherEnemiesListener);
+        GlobalEventManager.Instance.Unregister(otherEnemiesListener);
     }
 }

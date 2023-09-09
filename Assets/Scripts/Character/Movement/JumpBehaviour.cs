@@ -45,11 +45,11 @@ public class JumpBehaviour : PhasedBehaviour<JumpBehaviour.Command>, IMovementBe
         MovableEntity.velocity.y = speed;
         MovableEntity.acceleration.y = -climbAcceleration;
 
-        stopClimbListener = InvokeWhen(() => MovableEntity.velocity.y < 0, () =>
+        stopClimbListener = eventManager.InvokeWhen(() => MovableEntity.velocity.y < 0, () =>
         {
             MovableEntity.acceleration.y = -peakAcceleration;
             var peakStartTime = Time.time;
-            stopPeakListener = InvokeWhen(
+            stopPeakListener = eventManager.InvokeWhen(
                 () => Time.time - peakStartTime > peakDuration,
                 () => MovableEntity.acceleration.y = -Character.stats.gravityAcceleration
             );
@@ -60,8 +60,8 @@ public class JumpBehaviour : PhasedBehaviour<JumpBehaviour.Command>, IMovementBe
 
     public void Freeze()
     {
-        Cancel(stopClimbListener);
-        Cancel(stopPeakListener);
+        eventManager.Cancel(stopClimbListener);
+        eventManager.Cancel(stopPeakListener);
         MovableEntity.velocity.y = 0;
         MovableEntity.acceleration.y = 0;
     }
@@ -83,8 +83,8 @@ public class JumpBehaviour : PhasedBehaviour<JumpBehaviour.Command>, IMovementBe
 
         if (Active)
         {
-            Cancel(stopClimbListener);
-            Cancel(stopPeakListener);
+            eventManager.Cancel(stopClimbListener);
+            eventManager.Cancel(stopPeakListener);
             MovableEntity.velocity.y = 0;
             MovableEntity.OnLand -= Land;
         }

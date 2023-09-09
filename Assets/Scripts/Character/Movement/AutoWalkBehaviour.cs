@@ -27,7 +27,7 @@ public class AutoWalkBehaviour : PlayableBehaviour<AutoWalkBehaviour.Command>, I
     {
         active = true;
 
-        followListener = Register(() =>
+        followListener = eventManager.Register(() =>
         {
             var direction = pathfind.Direction(MovableEntity.WorldPosition, command.destination,
                 command.getExcluded?.Invoke());
@@ -40,7 +40,7 @@ public class AutoWalkBehaviour : PlayableBehaviour<AutoWalkBehaviour.Command>, I
     protected override void DoStop()
     {
         active = false;
-        Unregister(followListener);
+        eventManager.Unregister(followListener);
         walkBehaviour.Stop();
         MovableEntity.velocity = Vector3.zero;
     }

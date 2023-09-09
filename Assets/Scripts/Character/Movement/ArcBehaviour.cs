@@ -39,7 +39,7 @@ public class ArcBehaviour : PlayableBehaviour<ArcBehaviour.Command>, IMovementBe
         var radius = initialDistance.magnitude;
         var clockwise = Mathf.Sign(Random.Range(-1f, 1f));
 
-        circleListener = Register(() =>
+        circleListener = eventManager.Register(() =>
         {
             var distance = walkBehaviour.MovableEntity.WorldPosition - playerPosition;
             distance.y = 0;
@@ -60,7 +60,7 @@ public class ArcBehaviour : PlayableBehaviour<ArcBehaviour.Command>, IMovementBe
     protected override void DoStop()
     {
         active = false;
-        Unregister(circleListener);
+        eventManager.Unregister(circleListener);
         walkBehaviour.speed /= currentSpeedMultiplier;
         walkBehaviour.Stop();
         MovableEntity.velocity = Vector3.zero;

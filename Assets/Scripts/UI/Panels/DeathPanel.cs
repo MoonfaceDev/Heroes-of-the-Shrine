@@ -22,7 +22,7 @@ public class DeathPanel : BaseComponent
     private void Start()
     {
         var startTime = Time.time;
-        Register(() =>
+        eventManager.Register(() =>
         {
             foreach (var transition in transitions)
             {

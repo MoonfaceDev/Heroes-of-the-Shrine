@@ -44,7 +44,7 @@ public class ElectrifiedEffect : BaseEffect<ElectrifiedEffect.Command>
 
         startTime = Time.time;
         currentDuration = command.duration;
-        stopListener = InvokeWhen(() => Time.time - startTime > command.duration, Stop);
+        stopListener = eventManager.InvokeWhen(() => Time.time - startTime > command.duration, Stop);
     }
 
     protected override void DoStop()
@@ -60,7 +60,7 @@ public class ElectrifiedEffect : BaseEffect<ElectrifiedEffect.Command>
         particles.Stop(true, stopBehavior: ParticleSystemStopBehavior.StopEmittingAndClear);
 
         currentDuration = 0;
-        Cancel(stopListener);
+        eventManager.Cancel(stopListener);
     }
 
     public override float GetProgress()

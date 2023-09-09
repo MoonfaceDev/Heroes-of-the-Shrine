@@ -14,6 +14,6 @@ public class SoundEffectsVolumeSlider : BaseComponent
     {
         slider.onValueChanged.AddListener(value => AudioManager.Instance.SoundVolume = value);
 
-        Register(() => slider.value = AudioManager.Instance.SoundVolume);
+        eventManager.Register(() => slider.value = AudioManager.Instance.SoundVolume);
     }
 }

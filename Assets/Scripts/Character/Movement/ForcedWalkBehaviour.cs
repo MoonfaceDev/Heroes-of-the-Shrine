@@ -23,7 +23,7 @@ public class ForcedWalkBehaviour : PlayableBehaviour<ForcedWalkBehaviour.Command
         active = true;
 
         GetBehaviour<AutoWalkBehaviour>().Play(new AutoWalkBehaviour.Command { destination = command.point });
-        stopListener = InvokeWhen(() => MovableEntity.GroundDistance(command.point) < command.wantedDistance, () =>
+        stopListener = eventManager.InvokeWhen(() => MovableEntity.GroundDistance(command.point) < command.wantedDistance, () =>
         {
             MovableEntity.UpdateWorldPosition(command.point);
             Stop();
@@ -34,7 +34,7 @@ public class ForcedWalkBehaviour : PlayableBehaviour<ForcedWalkBehaviour.Command
     {
         active = false;
 
-        Cancel(stopListener);
+        eventManager.Cancel(stopListener);
         StopBehaviours(typeof(AutoWalkBehaviour));
         EnableBehaviours(typeof(CharacterController));
         UnblockBehaviours(typeof(RunBehaviour));

@@ -70,8 +70,8 @@ public class WideBlock : PhasedBehaviour<WideBlock.Command>, IBlockBehaviour
 
         PlayEvents.onStop += () =>
         {
-            Cancel(blockWindowStartTimeout);
-            Cancel(blockWindowStopTimeout);
+            eventManager.Cancel(blockWindowStartTimeout);
+            eventManager.Cancel(blockWindowStopTimeout);
         };
     }
     public override bool Playing => base.Playing || Invincible;
@@ -97,8 +97,8 @@ public class WideBlock : PhasedBehaviour<WideBlock.Command>, IBlockBehaviour
 
     protected override IEnumerator ActivePhase()
     {
-        blockWindowStartTimeout = StartTimeout(() => blockWindow = true, blockWindowStartTime);
-        blockWindowStopTimeout = StartTimeout(
+        blockWindowStartTimeout = eventManager.StartTimeout(() => blockWindow = true, blockWindowStartTime);
+        blockWindowStopTimeout = eventManager.StartTimeout(
             () => blockWindow = false,
             blockWindowStartTime + blockWindowDuration
         );
@@ -143,7 +143,7 @@ public class WideBlock : PhasedBehaviour<WideBlock.Command>, IBlockBehaviour
         Invincible = true;
         BlockBehaviours(typeof(IMovementBehaviour), typeof(HealBehaviour));
 
-        StartTimeout(() =>
+        eventManager.StartTimeout(() =>
         {
             Invincible = false;
             UnblockBehaviours(typeof(IMovementBehaviour), typeof(HealBehaviour));

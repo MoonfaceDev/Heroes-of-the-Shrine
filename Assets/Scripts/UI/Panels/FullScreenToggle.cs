@@ -15,6 +15,6 @@ public class FullScreenToggle : BaseComponent
     {
         button.onValueChanged.AddListener(value => Screen.fullScreen = value);
 
-        Register(() => button.isOn = Screen.fullScreen);
+        eventManager.Register(() => button.isOn = Screen.fullScreen);
     }
 }

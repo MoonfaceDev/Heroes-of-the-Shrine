@@ -111,7 +111,7 @@ public class FocusBlock : PhasedBehaviour<FocusBlock.Command>, IBlockBehaviour
         Invincible = true;
         BlockBehaviours(typeof(IMovementBehaviour), typeof(HealBehaviour));
 
-        StartTimeout(() =>
+        eventManager.StartTimeout(() =>
         {
             Invincible = false;
             UnblockBehaviours(typeof(IMovementBehaviour), typeof(HealBehaviour));

@@ -82,7 +82,7 @@ public class CutsceneAction : BaseComponent
 
         StartAutoWalk();
 
-        InvokeWhen(
+        eventManager.InvokeWhen(
             () => moveDefinitions.TrueForAll(definition =>
                 definition.target.MovableEntity.GroundDistance(definition.position) < WantedDistance),
             () =>

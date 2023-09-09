@@ -13,7 +13,7 @@ public class SingleHitDetector : BaseHitDetector
     protected override void DoStartDetector(Action<HittableHitbox> hitCallable)
     {
         var alreadyHit = new HashSet<IHittable>();
-        detectionListener = EventManager.Instance.Register(() =>
+        detectionListener = GlobalEventManager.Instance.Register(() =>
         {
             var hittables = Object.FindObjectsOfType<HittableHitbox>();
             foreach (var hittable in hittables)
@@ -27,6 +27,6 @@ public class SingleHitDetector : BaseHitDetector
 
     public override void StopDetector()
     {
-        EventManager.Instance.Unregister(detectionListener);
+        GlobalEventManager.Instance.Unregister(detectionListener);
     }
 }

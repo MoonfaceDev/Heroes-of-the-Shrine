@@ -33,7 +33,7 @@ public class FollowPattern : BasePattern
 
         var otherEnemies = Array.Empty<GameEntity>();
 
-        otherEnemiesListener = EventManager.Instance.Register(() =>
+        otherEnemiesListener = GlobalEventManager.Instance.Register(() =>
         {
             otherEnemies = EntityManager.Instance.GetEntities(Tag.Enemy)
                 .Where(enemy => enemy != followBehaviour.MovableEntity)
@@ -80,7 +80,7 @@ public class FollowPattern : BasePattern
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
 
-        EventManager.Instance.Unregister(otherEnemiesListener);
+        GlobalEventManager.Instance.Unregister(otherEnemiesListener);
 
         var followBehaviour = animator.GetEntity().GetBehaviour<FollowBehaviour>();
         followBehaviour.Stop();
@@ -91,6 +91,6 @@ public class FollowPattern : BasePattern
 
     private void OnDestroy()
     {
-        EventManager.Instance.Unregister(otherEnemiesListener);
+        GlobalEventManager.Instance.Unregister(otherEnemiesListener);
     }
 }

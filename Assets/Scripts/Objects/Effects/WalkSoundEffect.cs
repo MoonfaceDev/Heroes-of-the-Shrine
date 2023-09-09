@@ -39,6 +39,6 @@ public class WalkSoundEffect : CharacterBehaviour
             };
         }
 
-        Register(() => walkAudioSource.volume = AudioManager.Instance.SoundVolume);
+        eventManager.Register(() => walkAudioSource.volume = AudioManager.Instance.SoundVolume);
     }
 }

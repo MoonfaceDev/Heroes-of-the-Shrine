@@ -14,6 +14,6 @@ public class MusicVolumeSlider : BaseComponent
     {
         slider.onValueChanged.AddListener(value => AudioManager.Instance.MusicVolume = value);
 
-        Register(() => slider.value = AudioManager.Instance.MusicVolume);
+        eventManager.Register(() => slider.value = AudioManager.Instance.MusicVolume);
     }
 }

@@ -67,13 +67,13 @@ public class AttackManager : CharacterBehaviour
         {
             attack.PlayEvents.onPlay += () =>
             {
-                Cancel(forgetComboTimeout);
+                eventManager.Cancel(forgetComboTimeout);
                 LastAttack = attack;
             };
 
             attack.PlayEvents.onStop += () =>
             {
-                forgetComboTimeout = StartTimeout(() => LastAttack = null, maxComboDelay);
+                forgetComboTimeout = eventManager.StartTimeout(() => LastAttack = null, maxComboDelay);
             };
         }
     }

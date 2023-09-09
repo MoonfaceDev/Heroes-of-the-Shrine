@@ -40,7 +40,7 @@ public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IPlayable
         Active = true;
         energySystem.ResetEnergy();
         energySystem.onEnergyGrow += OnEnergyGrow;
-        stopTimeout = StartTimeout(Stop, activeDuration);
+        stopTimeout = eventManager.StartTimeout(Stop, activeDuration);
     }
 
     private void OnEnergyGrow(float energyAddition)
@@ -55,7 +55,7 @@ public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IPlayable
 
     protected override void DoStop()
     {
-        Cancel(stopTimeout);
+        eventManager.Cancel(stopTimeout);
         Active = false;
         cooldown.Reset();
         energySystem.onEnergyGrow -= OnEnergyGrow;

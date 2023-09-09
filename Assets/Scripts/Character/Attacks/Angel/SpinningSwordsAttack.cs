@@ -40,7 +40,7 @@ public class SpinningSwordsAttack : BaseAttack
             hitDetector2.StopDetector();
             foreach (var timeout in currentTimeouts)
             {
-                Cancel(timeout);
+                eventManager.Cancel(timeout);
             }
 
             currentTimeouts.Clear();
@@ -50,10 +50,10 @@ public class SpinningSwordsAttack : BaseAttack
     private void ConfigureHitDetector(BaseHitDetector hitDetector, ChainHitExecutor hitExecutor, float startTime,
         float duration)
     {
-        currentTimeouts.Add(StartTimeout(() =>
+        currentTimeouts.Add(eventManager.StartTimeout(() =>
         {
             StartHitDetector(hitDetector, hitExecutor);
-            currentTimeouts.Add(StartTimeout(hitDetector.StopDetector, duration));
+            currentTimeouts.Add(eventManager.StartTimeout(hitDetector.StopDetector, duration));
         }, startTime));
     }
 

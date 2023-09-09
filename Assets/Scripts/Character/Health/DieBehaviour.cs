@@ -26,7 +26,7 @@ public class DieBehaviour : CharacterBehaviour
     private void Start()
     {
         var healthSystem = GetBehaviour<HealthSystem>();
-        InvokeWhen(() => !healthSystem.Alive, Kill);
+        eventManager.InvokeWhen(() => !healthSystem.Alive, Kill);
     }
 
     private void Kill()

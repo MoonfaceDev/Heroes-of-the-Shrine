@@ -59,7 +59,7 @@ public class HittableHitbox : EntityBehaviour, IHittable
     {
         if (!figure) return;
         figure.material = blinkMaterial;
-        StartTimeout(() => figure.material = defaultMaterial, blinkTime);
+        eventManager.StartTimeout(() => figure.material = defaultMaterial, blinkTime);
     }
 
     public bool CanGetHit()

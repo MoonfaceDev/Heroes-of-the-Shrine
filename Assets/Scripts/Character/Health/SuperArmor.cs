@@ -56,13 +56,13 @@ public class SuperArmor : PlayableBehaviour<SuperArmor.Command>
             RemoveArmor();
             onBreak.Invoke();
             armorCooldownStart = Time.time;
-            reloadTimeout = StartTimeout(() => Play(new Command()), armorCooldown);
+            reloadTimeout = eventManager.StartTimeout(() => Play(new Command()), armorCooldown);
         }
     }
 
     private void RemoveArmor()
     {
-        Cancel(reloadTimeout);
+        eventManager.Cancel(reloadTimeout);
 
         CurrentArmorHealth = 0;
 

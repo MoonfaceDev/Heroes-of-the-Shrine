@@ -47,7 +47,7 @@ public class SpikeBall : EntityBehaviour
 
     public void ExplodeAfter(float delay)
     {
-        StartTimeout(Explode, delay);
+        eventManager.StartTimeout(Explode, delay);
     }
 
     public void Explode()
@@ -58,7 +58,7 @@ public class SpikeBall : EntityBehaviour
         Destroy(gameObject, explodeAnimationDuration);
         onExplode.Invoke();
 
-        StartTimeout(() => explosionHitDetector.StartDetector(hittable =>
+        eventManager.StartTimeout(() => explosionHitDetector.StartDetector(hittable =>
         {
             if (hittable.Character.Entity == Entity.parent)
             {

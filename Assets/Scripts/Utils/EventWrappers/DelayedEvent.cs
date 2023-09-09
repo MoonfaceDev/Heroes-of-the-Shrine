@@ -21,6 +21,6 @@ public class DelayedEvent : BaseComponent
     /// </summary>
     public void Invoke()
     {
-        StartTimeout(@event.Invoke, delay);
+        eventManager.StartTimeout(@event.Invoke, delay);
     }
 }

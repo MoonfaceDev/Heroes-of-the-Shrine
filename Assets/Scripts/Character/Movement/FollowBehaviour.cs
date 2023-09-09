@@ -31,7 +31,7 @@ public class FollowBehaviour : PlayableBehaviour<FollowBehaviour.Command>, IMove
     {
         active = true;
 
-        followListener = Register(() =>
+        followListener = eventManager.Register(() =>
         {
             var direction = GetDirection(command.target, command.getExcluded?.Invoke(), command.getOverrideDirection);
             walkBehaviour.Play(new WalkBehaviour.Command(direction, false));
@@ -58,7 +58,7 @@ public class FollowBehaviour : PlayableBehaviour<FollowBehaviour.Command>, IMove
     protected override void DoStop()
     {
         active = false;
-        Unregister(followListener);
+        eventManager.Unregister(followListener);
         walkBehaviour.Stop();
     }
 }

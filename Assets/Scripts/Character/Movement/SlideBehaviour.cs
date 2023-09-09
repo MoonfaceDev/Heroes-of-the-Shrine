@@ -50,7 +50,7 @@ public class SlideBehaviour : PlayableBehaviour<SlideBehaviour.Command>, IMoveme
         MovableEntity.velocity.x = command.direction * slideSpeedMultiplier * GetBehaviour<WalkBehaviour>().speed;
         MovableEntity.acceleration.x = -command.direction * slideStopAcceleration;
         MovableEntity.velocity.z = 0;
-        stopListener = InvokeWhen(
+        stopListener = eventManager.InvokeWhen(
             () => !Mathf.Approximately(Mathf.Sign(MovableEntity.velocity.x), command.direction),
             Stop
         );
@@ -58,7 +58,7 @@ public class SlideBehaviour : PlayableBehaviour<SlideBehaviour.Command>, IMoveme
 
     protected override void DoStop()
     {
-        Cancel(stopListener);
+        eventManager.Cancel(stopListener);
         Slide = false;
         MovableEntity.velocity.x = 0;
         MovableEntity.acceleration.x = 0;

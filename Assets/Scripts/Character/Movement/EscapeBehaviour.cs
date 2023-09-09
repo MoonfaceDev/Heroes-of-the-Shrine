@@ -36,7 +36,7 @@ public class EscapeBehaviour : PlayableBehaviour<EscapeBehaviour.Command>, IMove
         currentSpeedMultiplier = command.speedMultiplier;
         walkBehaviour.speed *= currentSpeedMultiplier;
 
-        escapeListener = Register(() =>
+        escapeListener = eventManager.Register(() =>
         {
             var distance = MovableEntity.WorldPosition - command.target.WorldPosition;
             distance.y = 0;
@@ -49,7 +49,7 @@ public class EscapeBehaviour : PlayableBehaviour<EscapeBehaviour.Command>, IMove
     protected override void DoStop()
     {
         Active = false;
-        Unregister(escapeListener);
+        eventManager.Unregister(escapeListener);
         walkBehaviour.speed /= currentSpeedMultiplier;
         walkBehaviour.Stop();
         MovableEntity.velocity = Vector3.zero;

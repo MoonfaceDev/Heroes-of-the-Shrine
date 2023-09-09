@@ -50,13 +50,13 @@ public class StunBehaviour : PlayableBehaviour<StunBehaviour.Command>, IForcedBe
 
         Stun = true;
         StunFrame = (StunFrame + 1) % stunFrames;
-        stopTimeout = StartTimeout(Stop, command.time);
+        stopTimeout = eventManager.StartTimeout(Stop, command.time);
     }
 
     protected override void DoStop()
     {
         Stun = false;
-        Cancel(stopTimeout);
+        eventManager.Cancel(stopTimeout);
         UnblockBehaviours(BlockedBehaviours);
     }
 }

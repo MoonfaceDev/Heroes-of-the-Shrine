@@ -70,7 +70,7 @@ public class PossessAttack : BaseAttack
 
         if (waveIndex + 1 < attackFlow.waveCount)
         {
-            StartTimeout(() => StartWave(waveIndex + 1), attackFlow.warningDuration + attackFlow.sourceActiveDuration);
+            eventManager.StartTimeout(() => StartWave(waveIndex + 1), attackFlow.warningDuration + attackFlow.sourceActiveDuration);
         }
     }
 

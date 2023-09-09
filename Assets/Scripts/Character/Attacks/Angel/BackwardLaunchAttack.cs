@@ -32,7 +32,7 @@ public class BackwardLaunchAttack : BaseAttack
 
             foreach (var timeout in currentTimeouts)
             {
-                Cancel(timeout);
+                eventManager.Cancel(timeout);
             }
 
             currentTimeouts.Clear();
@@ -41,10 +41,10 @@ public class BackwardLaunchAttack : BaseAttack
 
     private void ConfigureHitDetector()
     {
-        currentTimeouts.Add(StartTimeout(() =>
+        currentTimeouts.Add(eventManager.StartTimeout(() =>
         {
             StartHitDetector(hitDetector, hitExecutor);
-            currentTimeouts.Add(StartTimeout(hitDetector.StopDetector, attackFlow.detectorDuration));
+            currentTimeouts.Add(eventManager.StartTimeout(hitDetector.StopDetector, attackFlow.detectorDuration));
         }, attackFlow.detectorStartTime));
     }
 

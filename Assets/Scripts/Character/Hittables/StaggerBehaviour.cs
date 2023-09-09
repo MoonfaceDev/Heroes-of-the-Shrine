@@ -46,7 +46,7 @@ public class StaggerBehaviour : PlayableBehaviour<StaggerBehaviour.Command>
         stunBehaviour = GetBehaviour<StunBehaviour>();
         balance = defaultBalance;
         
-        Register(() =>
+        eventManager.Register(() =>
         {
             if (!shocked)
             {
@@ -68,7 +68,7 @@ public class StaggerBehaviour : PlayableBehaviour<StaggerBehaviour.Command>
 
     private void ReduceBalance(float reduction)
     {
-        Cancel(shockTimeout);
+        eventManager.Cancel(shockTimeout);
         
         balance = Mathf.Max(balance - reduction, 0);
         
@@ -80,7 +80,7 @@ public class StaggerBehaviour : PlayableBehaviour<StaggerBehaviour.Command>
         else
         {
             shocked = true;
-            shockTimeout = StartTimeout(() => shocked = false, balanceShockDuration);
+            shockTimeout = eventManager.StartTimeout(() => shocked = false, balanceShockDuration);
         }
     }
 

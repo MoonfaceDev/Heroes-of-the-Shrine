@@ -35,12 +35,12 @@ public class PossessSource : EntityBehaviour
         BaseAttack relatedAttack)
     {
         animator.SetBool(Warning, true);
-        StartTimeout(() =>
+        eventManager.StartTimeout(() =>
         {
             animator.SetBool(Warning, false);
             animator.SetBool(Active, true);
 
-            var destroyTimeout = StartTimeout(() =>
+            var destroyTimeout = eventManager.StartTimeout(() =>
             {
                 hitDetector.StopDetector();
                 animator.SetBool(Active, false);
@@ -52,7 +52,7 @@ public class PossessSource : EntityBehaviour
                 hitDetector.StopDetector();
                 animator.SetBool(Hit, true);
                 Destroy(gameObject, hitAnimationDuration);
-                Cancel(destroyTimeout);
+                eventManager.Cancel(destroyTimeout);
 
                 hittable.Hit(hitExecutor, new Hit { source = relatedAttack, victim = hittable });
             }, hittableTags);

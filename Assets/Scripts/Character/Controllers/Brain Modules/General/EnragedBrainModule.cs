@@ -24,7 +24,7 @@ public class EnragedBrainModule : BrainModule
     {
         base.Awake();
 
-        InvokeWhen(ShouldGetEnraged, () =>
+        eventManager.InvokeWhen(ShouldGetEnraged, () =>
         {
             rage = true;
             StateMachine.SetBool(Rage, true);
@@ -34,7 +34,7 @@ public class EnragedBrainModule : BrainModule
     private void Start()
     {
         var attackManager = GetBehaviour<AttackManager>();
-        InvokeWhen(() => rage, () =>
+        eventManager.InvokeWhen(() => rage, () =>
         {
             if (attackManager)
             {

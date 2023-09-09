@@ -19,7 +19,7 @@ public class PeriodicRelativeHitDetector : BaseHitDetector
     protected override void DoStartDetector(Action<HittableHitbox> hitCallable)
     {
         var hitTimes = new Dictionary<IHittable, float>();
-        detectionListener = EventManager.Instance.Register(() => DetectHits(hitCallable, hitTimes));
+        detectionListener = GlobalEventManager.Instance.Register(() => DetectHits(hitCallable, hitTimes));
     }
 
     private void DetectHits(Action<HittableHitbox> hitCallable, IDictionary<IHittable, float> hitTimes)
@@ -36,6 +36,6 @@ public class PeriodicRelativeHitDetector : BaseHitDetector
 
     public override void StopDetector()
     {
-        EventManager.Instance.Unregister(detectionListener);
+        GlobalEventManager.Instance.Unregister(detectionListener);
     }
 }

@@ -25,7 +25,7 @@ public class PossessedEffect : BaseEffect<PossessedEffect.Command>
 
         currentStartTime = Time.time;
         currentDuration = command.maxDuration;
-        stopListener = InvokeWhen(() => Time.time - currentStartTime > currentDuration, Stop);
+        stopListener = eventManager.InvokeWhen(() => Time.time - currentStartTime > currentDuration, Stop);
 
         var hittableBehaviour = GetBehaviour<HittableBehaviour>();
         if (hittableBehaviour)
@@ -61,7 +61,7 @@ public class PossessedEffect : BaseEffect<PossessedEffect.Command>
         currentDuration = 0;
 
         UnblockBehaviours(BehavioursToBlock);
-        Cancel(stopListener);
+        eventManager.Cancel(stopListener);
     }
 
     public override float GetProgress()
