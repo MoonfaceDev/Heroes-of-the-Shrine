@@ -1634,19 +1634,6 @@ references:
   commentId: T:Borodar.RainbowFolders.Editor.RainbowFoldersPreferences
   fullName: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences
   nameWithType: RainbowFoldersPreferences
-- uid: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPreferences
-  name: EditorPreferences()
-  href: api/Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.html#Borodar_RainbowFolders_Editor_RainbowFoldersPreferences_EditorPreferences
-  commentId: M:Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPreferences
-  fullName: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPreferences()
-  nameWithType: RainbowFoldersPreferences.EditorPreferences()
-- uid: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPreferences*
-  name: EditorPreferences
-  href: api/Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.html#Borodar_RainbowFolders_Editor_RainbowFoldersPreferences_EditorPreferences_
-  commentId: Overload:Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPreferences
-  isSpec: "True"
-  fullName: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPreferences
-  nameWithType: RainbowFoldersPreferences.EditorPreferences
 - uid: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem`1
   name: RainbowFoldersPreferences.EditorPrefsItem<T>
   href: api/Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem-1.html
@@ -1673,14 +1660,14 @@ references:
   fullName.vb: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem(Of T).EditorPrefsItem
   nameWithType: RainbowFoldersPreferences.EditorPrefsItem<T>.EditorPrefsItem
   nameWithType.vb: RainbowFoldersPreferences.EditorPrefsItem(Of T).EditorPrefsItem
-- uid: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem`1.DefaultValue
-  name: DefaultValue
-  href: api/Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem-1.html#Borodar_RainbowFolders_Editor_RainbowFoldersPreferences_EditorPrefsItem_1_DefaultValue
-  commentId: F:Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem`1.DefaultValue
-  fullName: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem<T>.DefaultValue
-  fullName.vb: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem(Of T).DefaultValue
-  nameWithType: RainbowFoldersPreferences.EditorPrefsItem<T>.DefaultValue
-  nameWithType.vb: RainbowFoldersPreferences.EditorPrefsItem(Of T).DefaultValue
+- uid: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem`1.defaultValue
+  name: defaultValue
+  href: api/Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem-1.html#Borodar_RainbowFolders_Editor_RainbowFoldersPreferences_EditorPrefsItem_1_defaultValue
+  commentId: F:Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem`1.defaultValue
+  fullName: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem<T>.defaultValue
+  fullName.vb: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem(Of T).defaultValue
+  nameWithType: RainbowFoldersPreferences.EditorPrefsItem<T>.defaultValue
+  nameWithType.vb: RainbowFoldersPreferences.EditorPrefsItem(Of T).defaultValue
 - uid: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem`1.Draw
   name: Draw()
   href: api/Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem-1.html#Borodar_RainbowFolders_Editor_RainbowFoldersPreferences_EditorPrefsItem_1_Draw
@@ -1698,22 +1685,22 @@ references:
   fullName.vb: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem(Of T).Draw
   nameWithType: RainbowFoldersPreferences.EditorPrefsItem<T>.Draw
   nameWithType.vb: RainbowFoldersPreferences.EditorPrefsItem(Of T).Draw
-- uid: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem`1.Key
-  name: Key
-  href: api/Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem-1.html#Borodar_RainbowFolders_Editor_RainbowFoldersPreferences_EditorPrefsItem_1_Key
-  commentId: F:Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem`1.Key
-  fullName: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem<T>.Key
-  fullName.vb: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem(Of T).Key
-  nameWithType: RainbowFoldersPreferences.EditorPrefsItem<T>.Key
-  nameWithType.vb: RainbowFoldersPreferences.EditorPrefsItem(Of T).Key
-- uid: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem`1.Label
-  name: Label
-  href: api/Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem-1.html#Borodar_RainbowFolders_Editor_RainbowFoldersPreferences_EditorPrefsItem_1_Label
-  commentId: F:Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem`1.Label
-  fullName: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem<T>.Label
-  fullName.vb: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem(Of T).Label
-  nameWithType: RainbowFoldersPreferences.EditorPrefsItem<T>.Label
-  nameWithType.vb: RainbowFoldersPreferences.EditorPrefsItem(Of T).Label
+- uid: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem`1.key
+  name: key
+  href: api/Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem-1.html#Borodar_RainbowFolders_Editor_RainbowFoldersPreferences_EditorPrefsItem_1_key
+  commentId: F:Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem`1.key
+  fullName: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem<T>.key
+  fullName.vb: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem(Of T).key
+  nameWithType: RainbowFoldersPreferences.EditorPrefsItem<T>.key
+  nameWithType.vb: RainbowFoldersPreferences.EditorPrefsItem(Of T).key
+- uid: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem`1.label
+  name: label
+  href: api/Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem-1.html#Borodar_RainbowFolders_Editor_RainbowFoldersPreferences_EditorPrefsItem_1_label
+  commentId: F:Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem`1.label
+  fullName: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem<T>.label
+  fullName.vb: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem(Of T).label
+  nameWithType: RainbowFoldersPreferences.EditorPrefsItem<T>.label
+  nameWithType.vb: RainbowFoldersPreferences.EditorPrefsItem(Of T).label
 - uid: Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem`1.op_Implicit(Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem{`0})~`0
   name: Implicit(RainbowFoldersPreferences.EditorPrefsItem<T> to T)
   href: api/Borodar.RainbowFolders.Editor.RainbowFoldersPreferences.EditorPrefsItem-1.html#Borodar_RainbowFolders_Editor_RainbowFoldersPreferences_EditorPrefsItem_1_op_Implicit_Borodar_RainbowFolders_Editor_RainbowFoldersPreferences_EditorPrefsItem__0____0
@@ -6781,6 +6768,19 @@ references:
   commentId: F:Global.Character.attackManager
   fullName: Character.attackManager
   nameWithType: Character.attackManager
+- uid: Global.Character.Awake
+  name: Awake()
+  href: api/Global.Character.html#Global_Character_Awake
+  commentId: M:Global.Character.Awake
+  fullName: Character.Awake()
+  nameWithType: Character.Awake()
+- uid: Global.Character.Awake*
+  name: Awake
+  href: api/Global.Character.html#Global_Character_Awake_
+  commentId: Overload:Global.Character.Awake
+  isSpec: "True"
+  fullName: Character.Awake
+  nameWithType: Character.Awake
 - uid: Global.Character.BlockBehaviours(Type[])
   name: BlockBehaviours(Type[])
   href: api/Global.Character.html#Global_Character_BlockBehaviours_Type___
@@ -8173,6 +8173,19 @@ references:
   commentId: T:Global.EntityBehaviour
   fullName: EntityBehaviour
   nameWithType: EntityBehaviour
+- uid: Global.EntityBehaviour.Awake
+  name: Awake()
+  href: api/Global.EntityBehaviour.html#Global_EntityBehaviour_Awake
+  commentId: M:Global.EntityBehaviour.Awake
+  fullName: EntityBehaviour.Awake()
+  nameWithType: EntityBehaviour.Awake()
+- uid: Global.EntityBehaviour.Awake*
+  name: Awake
+  href: api/Global.EntityBehaviour.html#Global_EntityBehaviour_Awake_
+  commentId: Overload:Global.EntityBehaviour.Awake
+  isSpec: "True"
+  fullName: EntityBehaviour.Awake
+  nameWithType: EntityBehaviour.Awake
 - uid: Global.EntityBehaviour.DisableBehaviours(Type[])
   name: DisableBehaviours(Type[])
   href: api/Global.EntityBehaviour.html#Global_EntityBehaviour_DisableBehaviours_Type___
@@ -8638,6 +8651,19 @@ references:
   commentId: T:Global.Figure
   fullName: Figure
   nameWithType: Figure
+- uid: Global.Figure.Awake
+  name: Awake()
+  href: api/Global.Figure.html#Global_Figure_Awake
+  commentId: M:Global.Figure.Awake
+  fullName: Figure.Awake()
+  nameWithType: Figure.Awake()
+- uid: Global.Figure.Awake*
+  name: Awake
+  href: api/Global.Figure.html#Global_Figure_Awake_
+  commentId: Overload:Global.Figure.Awake
+  isSpec: "True"
+  fullName: Figure.Awake
+  nameWithType: Figure.Awake
 - uid: Global.Figure.movableEntity
   name: movableEntity
   href: api/Global.Figure.html#Global_Figure_movableEntity
@@ -9829,6 +9855,19 @@ references:
   commentId: T:Global.Hitbox
   fullName: Hitbox
   nameWithType: Hitbox
+- uid: Global.Hitbox.Awake
+  name: Awake()
+  href: api/Global.Hitbox.html#Global_Hitbox_Awake
+  commentId: M:Global.Hitbox.Awake
+  fullName: Hitbox.Awake()
+  nameWithType: Hitbox.Awake()
+- uid: Global.Hitbox.Awake*
+  name: Awake
+  href: api/Global.Hitbox.html#Global_Hitbox_Awake_
+  commentId: Overload:Global.Hitbox.Awake
+  isSpec: "True"
+  fullName: Hitbox.Awake
+  nameWithType: Hitbox.Awake
 - uid: Global.Hitbox.GetIntersectionCenter(Hitbox)
   name: GetIntersectionCenter(Hitbox)
   href: api/Global.Hitbox.html#Global_Hitbox_GetIntersectionCenter_Hitbox_
@@ -10368,6 +10407,12 @@ references:
   commentId: F:Global.InitEvent.event
   fullName: InitEvent.event
   nameWithType: InitEvent.event
+- uid: Global.InjectBehaviourAttribute
+  name: InjectBehaviourAttribute
+  href: api/Global.InjectBehaviourAttribute.html
+  commentId: T:Global.InjectBehaviourAttribute
+  fullName: InjectBehaviourAttribute
+  nameWithType: InjectBehaviourAttribute
 - uid: Global.InterfaceWithSerializableContentDrawer
   name: InterfaceWithSerializableContentDrawer
   href: api/Global.InterfaceWithSerializableContentDrawer.html
