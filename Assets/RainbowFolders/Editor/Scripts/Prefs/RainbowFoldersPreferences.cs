@@ -20,24 +20,37 @@ namespace Borodar.RainbowFolders.Editor
 {
     public class RainbowFoldersPreferences
     {
-        private const string HOME_FOLDER_PREF_KEY = "Borodar.RainbowFolders.HomeFolder.";
-        private const string HOME_FOLDER_DEFAULT = "Assets/RainbowFolders";
-        private const string HOME_FOLDER_HINT = "Change this setting to the new location of the \"Rainbow Folders\" if you move the folder around in your project.";
+        private const string HomeFolderPrefKey = "Borodar.RainbowFolders.HomeFolder.";
+        private const string HomeFolderDefault = "Assets/RainbowFolders";
+        private const string HomeFolderHint = "Change this setting to the new location of the \"Rainbow Folders\" if you move the folder around in your project.";
 
-        public static EditorPrefsString HomeFolder = new EditorPrefsString(HOME_FOLDER_PREF_KEY + ProjectName, "Folder Location", HOME_FOLDER_DEFAULT);
+        public static readonly EditorPrefsString HomeFolder = new(HomeFolderPrefKey + ProjectName, "Folder Location", HomeFolderDefault);
 
         //---------------------------------------------------------------------
         // Messages
         //---------------------------------------------------------------------
 
-        [PreferenceItem("Rainbow Folders")]
-        public static void EditorPreferences()
+        private class EditorPreferencesSettingsProvider : SettingsProvider
         {
-            EditorGUILayout.HelpBox(HOME_FOLDER_HINT, MessageType.Info);
-            EditorGUILayout.Separator();
-            HomeFolder.Draw();
-            GUILayout.FlexibleSpace();
-            EditorGUILayout.LabelField("Version " + AssetInfo.VERSION, EditorStyles.centeredGreyMiniLabel);
+            public EditorPreferencesSettingsProvider(string path, SettingsScope scopes = SettingsScope.Project) : base(path, scopes)
+            {
+                
+            }
+
+            public override void OnGUI(string searchContext)
+            {
+                EditorGUILayout.HelpBox(HomeFolderHint, MessageType.Info);
+                EditorGUILayout.Separator();
+                HomeFolder.Draw();
+                GUILayout.FlexibleSpace();
+                EditorGUILayout.LabelField("Version " + AssetInfo.VERSION, EditorStyles.centeredGreyMiniLabel);
+            }
+        }
+
+        [SettingsProvider]
+        private static SettingsProvider EditorPreferences()
+        {
+            return new EditorPreferencesSettingsProvider("Rainbow Folders");
         }
 
         //---------------------------------------------------------------------
@@ -49,7 +62,7 @@ namespace Borodar.RainbowFolders.Editor
             get
             {
                 var s = Application.dataPath.Split('/');
-                var p = s[s.Length - 2];
+                var p = s[^2];
                 return p;
             }
         }
@@ -60,20 +73,20 @@ namespace Borodar.RainbowFolders.Editor
 
         public abstract class EditorPrefsItem<T>
         {
-            public string Key;
-            public string Label;
-            public T DefaultValue;
+            protected readonly string key;
+            protected readonly string label;
+            protected readonly T defaultValue;
 
             protected EditorPrefsItem(string key, string label, T defaultValue)
             {
                 if (string.IsNullOrEmpty(key))
                 {
-                    throw new ArgumentNullException("key");
+                    throw new ArgumentNullException(nameof(key));
                 }
 
-                Key = key;
-                Label = label;
-                DefaultValue = defaultValue;
+                this.key = key;
+                this.label = label;
+                this.defaultValue = defaultValue;
             }
 
             public abstract T Value { get; set; }
@@ -94,14 +107,14 @@ namespace Borodar.RainbowFolders.Editor
 
             public override string Value
             {
-                get { return EditorPrefs.GetString(Key, DefaultValue); }
-                set { EditorPrefs.SetString(Key, value); }
+                get => EditorPrefs.GetString(key, defaultValue); 
+                set => EditorPrefs.SetString(key, value);
             }
 
             public override void Draw()
             {
                 EditorGUIUtility.labelWidth = 100f;
-                Value = EditorGUILayout.TextField(Label, Value);
+                Value = EditorGUILayout.TextField(label, Value);
             }
         }
     }

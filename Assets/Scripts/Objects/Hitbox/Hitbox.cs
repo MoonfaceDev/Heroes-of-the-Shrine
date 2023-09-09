@@ -94,8 +94,9 @@ public class Hitbox : EntityBehaviour
 
     private Box box;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         box = new Box(() => WorldPosition, size);
     }
 

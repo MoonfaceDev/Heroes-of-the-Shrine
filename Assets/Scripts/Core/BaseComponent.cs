@@ -7,19 +7,7 @@ using UnityEngine;
 /// </summary>
 public class BaseComponent : MonoBehaviour
 {
-    private struct EventListener
-    {
-        public readonly Action action;
-        public readonly Func<bool> condition;
-
-        public EventListener(Action action, Func<bool> condition = null)
-        {
-            this.action = action;
-            this.condition = condition;
-        }
-    }
-
-    private readonly Dictionary<string, EventListener> eventListeners = new();
+    private readonly Dictionary<string, Action> eventListeners = new();
 
     /// <summary>
     /// Executes a callable every frame
@@ -29,7 +17,7 @@ public class BaseComponent : MonoBehaviour
     protected string Register(Action action)
     {
         var id = Guid.NewGuid().ToString();
-        eventListeners.Add(id, new EventListener(action));
+        eventListeners.Add(id, action);
         return id;
     }
 
@@ -54,7 +42,12 @@ public class BaseComponent : MonoBehaviour
     protected string InvokeWhen(Func<bool> condition, Action action)
     {
         var id = Guid.NewGuid().ToString();
-        eventListeners.Add(id, new EventListener(action, condition));
+        eventListeners.Add(id, () =>
+        {
+            if (!condition()) return;
+            Cancel(id);
+            action();
+        });
         return id;
     }
 
@@ -101,25 +94,11 @@ public class BaseComponent : MonoBehaviour
 
     protected virtual void Update()
     {
-        var lockedEventListeners = new Dictionary<string, EventListener>(eventListeners);
+        var lockedEventListeners = new Dictionary<string, Action>(eventListeners);
         foreach (var id in lockedEventListeners.Keys)
         {
-            ExecuteEvent(id);
-        }
-    }
-
-    private void ExecuteEvent(string id)
-    {
-        if (!eventListeners.ContainsKey(id)) return; // Event was already detached
-        var eventListener = eventListeners[id];
-        if (eventListener.condition == null)
-        {
-            eventListener.action();
-        }
-        else if (eventListener.condition())
-        {
-            eventListener.action();
-            Cancel(id);
+            if (!eventListeners.ContainsKey(id)) return; // Event was already detached
+            eventListeners[id]();
         }
     }
 }

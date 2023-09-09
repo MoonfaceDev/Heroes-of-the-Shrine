@@ -30,8 +30,9 @@ public class Character : EntityBehaviour
     /// </value>
     [HideInInspector] public AttackManager attackManager;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         movableEntity = (MovableEntity)Entity;
         attackManager = GetBehaviour<AttackManager>();
     }

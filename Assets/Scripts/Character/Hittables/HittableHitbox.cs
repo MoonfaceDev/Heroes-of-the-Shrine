@@ -43,8 +43,9 @@ public class HittableHitbox : EntityBehaviour, IHittable
 
     private Material defaultMaterial;
 
-    protected virtual void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         Hitbox = GetBehaviour<Hitbox>();
         defaultMaterial = figure.material;
         onHit += hittableBehaviour.onHit.Invoke;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 public class EntityBehaviour : BaseComponent
 {
@@ -44,6 +45,21 @@ public class EntityBehaviour : BaseComponent
     }
 
     private GameEntity entity;
+
+    protected virtual void Awake()
+    {
+        var fields = GetType().GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly |
+                                         BindingFlags.Instance);
+        foreach (var field in fields)
+        {
+            if (field.GetCustomAttribute<InjectBehaviourAttribute>(false) == null)
+            {
+                continue;
+            }
+
+            field.SetValue(this, GetBehaviour(field.GetType()));
+        }
+    }
 
     public IEnumerable<EntityBehaviour> GetBehaviours(Type type)
     {

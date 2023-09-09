@@ -14,8 +14,9 @@ public class Figure : EntityBehaviour
 
     private new Renderer renderer;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         renderer = GetComponent<Renderer>();
     }
 

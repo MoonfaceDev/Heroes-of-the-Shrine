@@ -26,8 +26,9 @@ public abstract class CharacterBehaviour : EntityBehaviour
     /// </value>
     public AttackManager AttackManager => Character.attackManager;
 
-    protected virtual void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         Character = GetBehaviour<Character>();
     }
 
