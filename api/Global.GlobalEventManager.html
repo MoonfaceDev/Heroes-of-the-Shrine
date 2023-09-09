@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class Hitbox
+    <title>Class GlobalEventManager
    | Heroes of the Shrine </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class Hitbox
+    <meta name="title" content="Class GlobalEventManager
    | Heroes of the Shrine ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,47 +78,23 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Global.Hitbox">
+            <article class="content wrap" id="_content" data-uid="Global.GlobalEventManager">
   
   
-  <h1 id="Global_Hitbox" data-uid="Global.Hitbox" class="text-break">Class Hitbox
+  <h1 id="Global_GlobalEventManager" data-uid="Global.GlobalEventManager" class="text-break">Class GlobalEventManager
   </h1>
-  <div class="markdown level0 summary"><p>Hitbox for an attack, particle, or an object that can get hit</p>
+  <div class="markdown level0 summary"><p>Global component that registers events, with a similar API to <span class="xref">BaseComponent</span>.
+Should be used only in classes that don&apos;t inherit from <span class="xref">BaseComponent</span>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Global.BaseComponent.html">BaseComponent</a></div>
-    <div class="level2"><a class="xref" href="Global.EntityBehaviour.html">EntityBehaviour</a></div>
-    <div class="level3"><span class="xref">Hitbox</span></div>
+    <div class="level2"><span class="xref">GlobalEventManager</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_Enabled">EntityBehaviour.Enabled</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_Entity">EntityBehaviour.Entity</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_GetBehaviours_Type_">EntityBehaviour.GetBehaviours(Type)</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_GetBehaviour_Type_">EntityBehaviour.GetBehaviour(Type)</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_GetBehaviours__1">EntityBehaviour.GetBehaviours&lt;T&gt;()</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_GetBehaviour__1">EntityBehaviour.GetBehaviour&lt;T&gt;()</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_EnableBehaviours_Type___">EntityBehaviour.EnableBehaviours(Type[])</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_DisableBehaviours_Type___">EntityBehaviour.DisableBehaviours(Type[])</a>
-    </div>
     <div>
       <a class="xref" href="Global.BaseComponent.html#Global_BaseComponent_eventManager">BaseComponent.eventManager</a>
     </div>
@@ -128,48 +104,21 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Global_Hitbox_syntax">Syntax</h5>
+  <h5 id="Global_GlobalEventManager_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Hitbox : EntityBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class GlobalEventManager : BaseComponent</code></pre>
   </div>
-  <h3 id="fields">Fields
-  </h3>
-  
-  
-  <h4 id="Global_Hitbox_size" data-uid="Global.Hitbox.size">size</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vector3 size</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Vector3</span></td>
-        <td><p>Hitbox size</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="properties">Properties
   </h3>
   
   
-  <a id="Global_Hitbox_WorldPosition_" data-uid="Global.Hitbox.WorldPosition*"></a>
-  <h4 id="Global_Hitbox_WorldPosition" data-uid="Global.Hitbox.WorldPosition">WorldPosition</h4>
+  <a id="Global_GlobalEventManager_Instance_" data-uid="Global.GlobalEventManager.Instance*"></a>
+  <h4 id="Global_GlobalEventManager_Instance" data-uid="Global.GlobalEventManager.Instance">Instance</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vector3 WorldPosition { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static GlobalEventManager Instance { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -181,9 +130,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Vector3</span></td>
-        <td><p>Hitbox center point in world coordinates</p>
-</td>
+        <td><a class="xref" href="Global.GlobalEventManager.html">GlobalEventManager</a></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -191,26 +139,14 @@
   </h3>
   
   
-  <a id="Global_Hitbox_Awake_" data-uid="Global.Hitbox.Awake*"></a>
-  <h4 id="Global_Hitbox_Awake" data-uid="Global.Hitbox.Awake">Awake()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void Awake()</code></pre>
-  </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.EntityBehaviour.html#Global_EntityBehaviour_Awake">EntityBehaviour.Awake()</a></div>
-  
-  
-  <a id="Global_Hitbox_GetIntersectionCenter_" data-uid="Global.Hitbox.GetIntersectionCenter*"></a>
-  <h4 id="Global_Hitbox_GetIntersectionCenter_Hitbox_" data-uid="Global.Hitbox.GetIntersectionCenter(Hitbox)">GetIntersectionCenter(Hitbox)</h4>
-  <div class="markdown level1 summary"><p>Finds the middle point in the intersection volume between two hitboxes</p>
+  <a id="Global_GlobalEventManager_Cancel_" data-uid="Global.GlobalEventManager.Cancel*"></a>
+  <h4 id="Global_GlobalEventManager_Cancel_System_String_" data-uid="Global.GlobalEventManager.Cancel(System.String)">Cancel(String)</h4>
+  <div class="markdown level1 summary"><p>Cancels a callable with given id. Nothing happens if <see cref="!:id"></see> is not an existing callable</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vector3 GetIntersectionCenter(Hitbox other)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Cancel(string id)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -223,9 +159,45 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.Hitbox.html">Hitbox</a></td>
-        <td><span class="parametername">other</span></td>
-        <td></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>ID of the callable to cancel</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Global_GlobalEventManager_InvokeWhen_" data-uid="Global.GlobalEventManager.InvokeWhen*"></a>
+  <h4 id="Global_GlobalEventManager_InvokeWhen_Func_System_Boolean__Action_" data-uid="Global.GlobalEventManager.InvokeWhen(Func{System.Boolean},Action)">InvokeWhen(Func&lt;Boolean&gt;, Action)</h4>
+  <div class="markdown level1 summary"><p>Executes a callable when a condition is met</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string InvokeWhen(Func&lt;bool&gt; condition, Action action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a>&gt;</td>
+        <td><span class="parametername">condition</span></td>
+        <td><p>Condition to check every frame</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Action</span></td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Callable to execute</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -239,21 +211,22 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Vector3</span></td>
-        <td></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>ID of the registered callable</p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="Global_Hitbox_IsInside_" data-uid="Global.Hitbox.IsInside*"></a>
-  <h4 id="Global_Hitbox_IsInside_Vector3_" data-uid="Global.Hitbox.IsInside(Vector3)">IsInside(Vector3)</h4>
-  <div class="markdown level1 summary"><p>Checks if a point is inside the hitbox</p>
+  <a id="Global_GlobalEventManager_Register_" data-uid="Global.GlobalEventManager.Register*"></a>
+  <h4 id="Global_GlobalEventManager_Register_Action_" data-uid="Global.GlobalEventManager.Register(Action)">Register(Action)</h4>
+  <div class="markdown level1 summary"><p>Executes a callable every frame</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsInside(Vector3 point)</code></pre>
+    <pre><code class="lang-csharp hljs">public string Register(Action action)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -266,9 +239,10 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Vector3</span></td>
-        <td><span class="parametername">point</span></td>
-        <td></td>
+        <td><span class="xref">Action</span></td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Callable to execute</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -282,21 +256,22 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>ID of the registered callable</p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="Global_Hitbox_OverlapHitbox_" data-uid="Global.Hitbox.OverlapHitbox*"></a>
-  <h4 id="Global_Hitbox_OverlapHitbox_Hitbox_" data-uid="Global.Hitbox.OverlapHitbox(Hitbox)">OverlapHitbox(Hitbox)</h4>
-  <div class="markdown level1 summary"><p>Checks if this hitbox intersects another hitbox  </p>
+  <a id="Global_GlobalEventManager_StartInterval_" data-uid="Global.GlobalEventManager.StartInterval*"></a>
+  <h4 id="Global_GlobalEventManager_StartInterval_Action_System_Single_" data-uid="Global.GlobalEventManager.StartInterval(Action,System.Single)">StartInterval(Action, Single)</h4>
+  <div class="markdown level1 summary"><p>Executes a callable repeatedly with a time delay between each call</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool OverlapHitbox(Hitbox other)</code></pre>
+    <pre><code class="lang-csharp hljs">public string StartInterval(Action action, float interval)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -309,9 +284,16 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.Hitbox.html">Hitbox</a></td>
-        <td><span class="parametername">other</span></td>
-        <td></td>
+        <td><span class="xref">Action</span></td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Callable to execute</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">interval</span></td>
+        <td><p>Time to wait between executions, in seconds</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -325,8 +307,89 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>ID of the registered callable</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Global_GlobalEventManager_StartTimeout_" data-uid="Global.GlobalEventManager.StartTimeout*"></a>
+  <h4 id="Global_GlobalEventManager_StartTimeout_Action_System_Single_" data-uid="Global.GlobalEventManager.StartTimeout(Action,System.Single)">StartTimeout(Action, Single)</h4>
+  <div class="markdown level1 summary"><p>Executes a callable after a certain delay</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string StartTimeout(Action action, float timeout)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Action</span></td>
+        <td><span class="parametername">action</span></td>
+        <td><p>Callable to execute</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">timeout</span></td>
+        <td><p>Time to wait before execution, in seconds</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>ID of the registered callable</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Global_GlobalEventManager_Unregister_" data-uid="Global.GlobalEventManager.Unregister*"></a>
+  <h4 id="Global_GlobalEventManager_Unregister_System_String_" data-uid="Global.GlobalEventManager.Unregister(System.String)">Unregister(String)</h4>
+  <div class="markdown level1 summary"><p>Unregisters a callable with given id. Nothing happens if <see cref="!:id"></see> is not an existing callable</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Unregister(string id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>ID of the callable to unregister</p>
+</td>
       </tr>
     </tbody>
   </table>

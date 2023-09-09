@@ -6121,87 +6121,12 @@ references:
   commentId: T:Global.BaseComponent
   fullName: BaseComponent
   nameWithType: BaseComponent
-- uid: Global.BaseComponent.Cancel(System.String)
-  name: Cancel(String)
-  href: api/Global.BaseComponent.html#Global_BaseComponent_Cancel_System_String_
-  commentId: M:Global.BaseComponent.Cancel(System.String)
-  fullName: BaseComponent.Cancel(System.String)
-  nameWithType: BaseComponent.Cancel(String)
-- uid: Global.BaseComponent.Cancel*
-  name: Cancel
-  href: api/Global.BaseComponent.html#Global_BaseComponent_Cancel_
-  commentId: Overload:Global.BaseComponent.Cancel
-  isSpec: "True"
-  fullName: BaseComponent.Cancel
-  nameWithType: BaseComponent.Cancel
-- uid: Global.BaseComponent.InvokeWhen(Func{System.Boolean},Action)
-  name: InvokeWhen(Func<Boolean>, Action)
-  href: api/Global.BaseComponent.html#Global_BaseComponent_InvokeWhen_Func_System_Boolean__Action_
-  commentId: M:Global.BaseComponent.InvokeWhen(Func{System.Boolean},Action)
-  name.vb: InvokeWhen(Func(Of Boolean), Action)
-  fullName: BaseComponent.InvokeWhen(Func<System.Boolean>, Action)
-  fullName.vb: BaseComponent.InvokeWhen(Func(Of System.Boolean), Action)
-  nameWithType: BaseComponent.InvokeWhen(Func<Boolean>, Action)
-  nameWithType.vb: BaseComponent.InvokeWhen(Func(Of Boolean), Action)
-- uid: Global.BaseComponent.InvokeWhen*
-  name: InvokeWhen
-  href: api/Global.BaseComponent.html#Global_BaseComponent_InvokeWhen_
-  commentId: Overload:Global.BaseComponent.InvokeWhen
-  isSpec: "True"
-  fullName: BaseComponent.InvokeWhen
-  nameWithType: BaseComponent.InvokeWhen
-- uid: Global.BaseComponent.Register(Action)
-  name: Register(Action)
-  href: api/Global.BaseComponent.html#Global_BaseComponent_Register_Action_
-  commentId: M:Global.BaseComponent.Register(Action)
-  fullName: BaseComponent.Register(Action)
-  nameWithType: BaseComponent.Register(Action)
-- uid: Global.BaseComponent.Register*
-  name: Register
-  href: api/Global.BaseComponent.html#Global_BaseComponent_Register_
-  commentId: Overload:Global.BaseComponent.Register
-  isSpec: "True"
-  fullName: BaseComponent.Register
-  nameWithType: BaseComponent.Register
-- uid: Global.BaseComponent.StartInterval(Action,System.Single)
-  name: StartInterval(Action, Single)
-  href: api/Global.BaseComponent.html#Global_BaseComponent_StartInterval_Action_System_Single_
-  commentId: M:Global.BaseComponent.StartInterval(Action,System.Single)
-  fullName: BaseComponent.StartInterval(Action, System.Single)
-  nameWithType: BaseComponent.StartInterval(Action, Single)
-- uid: Global.BaseComponent.StartInterval*
-  name: StartInterval
-  href: api/Global.BaseComponent.html#Global_BaseComponent_StartInterval_
-  commentId: Overload:Global.BaseComponent.StartInterval
-  isSpec: "True"
-  fullName: BaseComponent.StartInterval
-  nameWithType: BaseComponent.StartInterval
-- uid: Global.BaseComponent.StartTimeout(Action,System.Single)
-  name: StartTimeout(Action, Single)
-  href: api/Global.BaseComponent.html#Global_BaseComponent_StartTimeout_Action_System_Single_
-  commentId: M:Global.BaseComponent.StartTimeout(Action,System.Single)
-  fullName: BaseComponent.StartTimeout(Action, System.Single)
-  nameWithType: BaseComponent.StartTimeout(Action, Single)
-- uid: Global.BaseComponent.StartTimeout*
-  name: StartTimeout
-  href: api/Global.BaseComponent.html#Global_BaseComponent_StartTimeout_
-  commentId: Overload:Global.BaseComponent.StartTimeout
-  isSpec: "True"
-  fullName: BaseComponent.StartTimeout
-  nameWithType: BaseComponent.StartTimeout
-- uid: Global.BaseComponent.Unregister(System.String)
-  name: Unregister(String)
-  href: api/Global.BaseComponent.html#Global_BaseComponent_Unregister_System_String_
-  commentId: M:Global.BaseComponent.Unregister(System.String)
-  fullName: BaseComponent.Unregister(System.String)
-  nameWithType: BaseComponent.Unregister(String)
-- uid: Global.BaseComponent.Unregister*
-  name: Unregister
-  href: api/Global.BaseComponent.html#Global_BaseComponent_Unregister_
-  commentId: Overload:Global.BaseComponent.Unregister
-  isSpec: "True"
-  fullName: BaseComponent.Unregister
-  nameWithType: BaseComponent.Unregister
+- uid: Global.BaseComponent.eventManager
+  name: eventManager
+  href: api/Global.BaseComponent.html#Global_BaseComponent_eventManager
+  commentId: F:Global.BaseComponent.eventManager
+  fullName: BaseComponent.eventManager
+  nameWithType: BaseComponent.eventManager
 - uid: Global.BaseComponent.Update
   name: Update()
   href: api/Global.BaseComponent.html#Global_BaseComponent_Update
@@ -8539,19 +8464,6 @@ references:
   isSpec: "True"
   fullName: EventManager.Cancel
   nameWithType: EventManager.Cancel
-- uid: Global.EventManager.Instance
-  name: Instance
-  href: api/Global.EventManager.html#Global_EventManager_Instance
-  commentId: P:Global.EventManager.Instance
-  fullName: EventManager.Instance
-  nameWithType: EventManager.Instance
-- uid: Global.EventManager.Instance*
-  name: Instance
-  href: api/Global.EventManager.html#Global_EventManager_Instance_
-  commentId: Overload:Global.EventManager.Instance
-  isSpec: "True"
-  fullName: EventManager.Instance
-  nameWithType: EventManager.Instance
 - uid: Global.EventManager.InvokeWhen(Func{System.Boolean},Action)
   name: InvokeWhen(Func<Boolean>, Action)
   href: api/Global.EventManager.html#Global_EventManager_InvokeWhen_Func_System_Boolean__Action_
@@ -8607,6 +8519,19 @@ references:
   isSpec: "True"
   fullName: EventManager.StartTimeout
   nameWithType: EventManager.StartTimeout
+- uid: Global.EventManager.Tick
+  name: Tick()
+  href: api/Global.EventManager.html#Global_EventManager_Tick
+  commentId: M:Global.EventManager.Tick
+  fullName: EventManager.Tick()
+  nameWithType: EventManager.Tick()
+- uid: Global.EventManager.Tick*
+  name: Tick
+  href: api/Global.EventManager.html#Global_EventManager_Tick_
+  commentId: Overload:Global.EventManager.Tick
+  isSpec: "True"
+  fullName: EventManager.Tick
+  nameWithType: EventManager.Tick
 - uid: Global.EventManager.Unregister(System.String)
   name: Unregister(String)
   href: api/Global.EventManager.html#Global_EventManager_Unregister_System_String_
@@ -9539,6 +9464,106 @@ references:
   commentId: T:Global.GetOverrideDirection
   fullName: GetOverrideDirection
   nameWithType: GetOverrideDirection
+- uid: Global.GlobalEventManager
+  name: GlobalEventManager
+  href: api/Global.GlobalEventManager.html
+  commentId: T:Global.GlobalEventManager
+  fullName: GlobalEventManager
+  nameWithType: GlobalEventManager
+- uid: Global.GlobalEventManager.Cancel(System.String)
+  name: Cancel(String)
+  href: api/Global.GlobalEventManager.html#Global_GlobalEventManager_Cancel_System_String_
+  commentId: M:Global.GlobalEventManager.Cancel(System.String)
+  fullName: GlobalEventManager.Cancel(System.String)
+  nameWithType: GlobalEventManager.Cancel(String)
+- uid: Global.GlobalEventManager.Cancel*
+  name: Cancel
+  href: api/Global.GlobalEventManager.html#Global_GlobalEventManager_Cancel_
+  commentId: Overload:Global.GlobalEventManager.Cancel
+  isSpec: "True"
+  fullName: GlobalEventManager.Cancel
+  nameWithType: GlobalEventManager.Cancel
+- uid: Global.GlobalEventManager.Instance
+  name: Instance
+  href: api/Global.GlobalEventManager.html#Global_GlobalEventManager_Instance
+  commentId: P:Global.GlobalEventManager.Instance
+  fullName: GlobalEventManager.Instance
+  nameWithType: GlobalEventManager.Instance
+- uid: Global.GlobalEventManager.Instance*
+  name: Instance
+  href: api/Global.GlobalEventManager.html#Global_GlobalEventManager_Instance_
+  commentId: Overload:Global.GlobalEventManager.Instance
+  isSpec: "True"
+  fullName: GlobalEventManager.Instance
+  nameWithType: GlobalEventManager.Instance
+- uid: Global.GlobalEventManager.InvokeWhen(Func{System.Boolean},Action)
+  name: InvokeWhen(Func<Boolean>, Action)
+  href: api/Global.GlobalEventManager.html#Global_GlobalEventManager_InvokeWhen_Func_System_Boolean__Action_
+  commentId: M:Global.GlobalEventManager.InvokeWhen(Func{System.Boolean},Action)
+  name.vb: InvokeWhen(Func(Of Boolean), Action)
+  fullName: GlobalEventManager.InvokeWhen(Func<System.Boolean>, Action)
+  fullName.vb: GlobalEventManager.InvokeWhen(Func(Of System.Boolean), Action)
+  nameWithType: GlobalEventManager.InvokeWhen(Func<Boolean>, Action)
+  nameWithType.vb: GlobalEventManager.InvokeWhen(Func(Of Boolean), Action)
+- uid: Global.GlobalEventManager.InvokeWhen*
+  name: InvokeWhen
+  href: api/Global.GlobalEventManager.html#Global_GlobalEventManager_InvokeWhen_
+  commentId: Overload:Global.GlobalEventManager.InvokeWhen
+  isSpec: "True"
+  fullName: GlobalEventManager.InvokeWhen
+  nameWithType: GlobalEventManager.InvokeWhen
+- uid: Global.GlobalEventManager.Register(Action)
+  name: Register(Action)
+  href: api/Global.GlobalEventManager.html#Global_GlobalEventManager_Register_Action_
+  commentId: M:Global.GlobalEventManager.Register(Action)
+  fullName: GlobalEventManager.Register(Action)
+  nameWithType: GlobalEventManager.Register(Action)
+- uid: Global.GlobalEventManager.Register*
+  name: Register
+  href: api/Global.GlobalEventManager.html#Global_GlobalEventManager_Register_
+  commentId: Overload:Global.GlobalEventManager.Register
+  isSpec: "True"
+  fullName: GlobalEventManager.Register
+  nameWithType: GlobalEventManager.Register
+- uid: Global.GlobalEventManager.StartInterval(Action,System.Single)
+  name: StartInterval(Action, Single)
+  href: api/Global.GlobalEventManager.html#Global_GlobalEventManager_StartInterval_Action_System_Single_
+  commentId: M:Global.GlobalEventManager.StartInterval(Action,System.Single)
+  fullName: GlobalEventManager.StartInterval(Action, System.Single)
+  nameWithType: GlobalEventManager.StartInterval(Action, Single)
+- uid: Global.GlobalEventManager.StartInterval*
+  name: StartInterval
+  href: api/Global.GlobalEventManager.html#Global_GlobalEventManager_StartInterval_
+  commentId: Overload:Global.GlobalEventManager.StartInterval
+  isSpec: "True"
+  fullName: GlobalEventManager.StartInterval
+  nameWithType: GlobalEventManager.StartInterval
+- uid: Global.GlobalEventManager.StartTimeout(Action,System.Single)
+  name: StartTimeout(Action, Single)
+  href: api/Global.GlobalEventManager.html#Global_GlobalEventManager_StartTimeout_Action_System_Single_
+  commentId: M:Global.GlobalEventManager.StartTimeout(Action,System.Single)
+  fullName: GlobalEventManager.StartTimeout(Action, System.Single)
+  nameWithType: GlobalEventManager.StartTimeout(Action, Single)
+- uid: Global.GlobalEventManager.StartTimeout*
+  name: StartTimeout
+  href: api/Global.GlobalEventManager.html#Global_GlobalEventManager_StartTimeout_
+  commentId: Overload:Global.GlobalEventManager.StartTimeout
+  isSpec: "True"
+  fullName: GlobalEventManager.StartTimeout
+  nameWithType: GlobalEventManager.StartTimeout
+- uid: Global.GlobalEventManager.Unregister(System.String)
+  name: Unregister(String)
+  href: api/Global.GlobalEventManager.html#Global_GlobalEventManager_Unregister_System_String_
+  commentId: M:Global.GlobalEventManager.Unregister(System.String)
+  fullName: GlobalEventManager.Unregister(System.String)
+  nameWithType: GlobalEventManager.Unregister(String)
+- uid: Global.GlobalEventManager.Unregister*
+  name: Unregister
+  href: api/Global.GlobalEventManager.html#Global_GlobalEventManager_Unregister_
+  commentId: Overload:Global.GlobalEventManager.Unregister
+  isSpec: "True"
+  fullName: GlobalEventManager.Unregister
+  nameWithType: GlobalEventManager.Unregister
 - uid: Global.HealBehaviour
   name: HealBehaviour
   href: api/Global.HealBehaviour.html

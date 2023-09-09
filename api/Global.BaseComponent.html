@@ -104,11 +104,11 @@
       <div class="level2"><a class="xref" href="Global.EnergyBar.html">EnergyBar</a></div>
       <div class="level2"><a class="xref" href="Global.EntityBehaviour.html">EntityBehaviour</a></div>
       <div class="level2"><a class="xref" href="Global.EntityManager.html">EntityManager</a></div>
-      <div class="level2"><a class="xref" href="Global.EventManager.html">EventManager</a></div>
       <div class="level2"><a class="xref" href="Global.EventWrapper.html">EventWrapper</a></div>
       <div class="level2"><a class="xref" href="Global.FullScreenToggle.html">FullScreenToggle</a></div>
       <div class="level2"><a class="xref" href="Global.GameEntity.html">GameEntity</a></div>
       <div class="level2"><a class="xref" href="Global.GameManager.html">GameManager</a></div>
+      <div class="level2"><a class="xref" href="Global.GlobalEventManager.html">GlobalEventManager</a></div>
       <div class="level2"><a class="xref" href="Global.HealthBar.html">HealthBar</a></div>
       <div class="level2"><a class="xref" href="Global.InitEvent.html">InitEvent</a></div>
       <div class="level2"><a class="xref" href="Global.KillEntitiesAction.html">KillEntitiesAction</a></div>
@@ -134,73 +134,18 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class BaseComponent : MonoBehaviour</code></pre>
   </div>
-  <h3 id="methods">Methods
+  <h3 id="fields">Fields
   </h3>
   
   
-  <a id="Global_BaseComponent_Cancel_" data-uid="Global.BaseComponent.Cancel*"></a>
-  <h4 id="Global_BaseComponent_Cancel_System_String_" data-uid="Global.BaseComponent.Cancel(System.String)">Cancel(String)</h4>
-  <div class="markdown level1 summary"><p>Cancels a callable with given id. Nothing happens if <see cref="!:id"></see> is not an existing callable</p>
-</div>
+  <h4 id="Global_BaseComponent_eventManager" data-uid="Global.BaseComponent.eventManager">eventManager</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void Cancel(string id)</code></pre>
+    <pre><code class="lang-csharp hljs">protected readonly EventManager eventManager</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">id</span></td>
-        <td><p>ID of the callable to cancel</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_BaseComponent_InvokeWhen_" data-uid="Global.BaseComponent.InvokeWhen*"></a>
-  <h4 id="Global_BaseComponent_InvokeWhen_Func_System_Boolean__Action_" data-uid="Global.BaseComponent.InvokeWhen(Func{System.Boolean},Action)">InvokeWhen(Func&lt;Boolean&gt;, Action)</h4>
-  <div class="markdown level1 summary"><p>Executes a callable when a condition is met</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected string InvokeWhen(Func&lt;bool&gt; condition, Action action)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Func</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a>&gt;</td>
-        <td><span class="parametername">condition</span></td>
-        <td><p>Condition to check every frame</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Action</span></td>
-        <td><span class="parametername">action</span></td>
-        <td><p>Callable to execute</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
+  <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -210,188 +155,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><p>ID of the registered callable</p>
-</td>
+        <td><a class="xref" href="Global.EventManager.html">EventManager</a></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-  
-  
-  <a id="Global_BaseComponent_Register_" data-uid="Global.BaseComponent.Register*"></a>
-  <h4 id="Global_BaseComponent_Register_Action_" data-uid="Global.BaseComponent.Register(Action)">Register(Action)</h4>
-  <div class="markdown level1 summary"><p>Executes a callable every frame</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected string Register(Action action)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Action</span></td>
-        <td><span class="parametername">action</span></td>
-        <td><p>Callable to execute</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><p>ID of the registered callable</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_BaseComponent_StartInterval_" data-uid="Global.BaseComponent.StartInterval*"></a>
-  <h4 id="Global_BaseComponent_StartInterval_Action_System_Single_" data-uid="Global.BaseComponent.StartInterval(Action,System.Single)">StartInterval(Action, Single)</h4>
-  <div class="markdown level1 summary"><p>Executes a callable repeatedly with a time delay between each call</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected string StartInterval(Action action, float interval)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Action</span></td>
-        <td><span class="parametername">action</span></td>
-        <td><p>Callable to execute</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">interval</span></td>
-        <td><p>Time to wait between executions, in seconds</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><p>ID of the registered callable</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_BaseComponent_StartTimeout_" data-uid="Global.BaseComponent.StartTimeout*"></a>
-  <h4 id="Global_BaseComponent_StartTimeout_Action_System_Single_" data-uid="Global.BaseComponent.StartTimeout(Action,System.Single)">StartTimeout(Action, Single)</h4>
-  <div class="markdown level1 summary"><p>Executes a callable after a certain delay</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected string StartTimeout(Action action, float timeout)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Action</span></td>
-        <td><span class="parametername">action</span></td>
-        <td><p>Callable to execute</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><span class="parametername">timeout</span></td>
-        <td><p>Time to wait before execution, in seconds</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><p>ID of the registered callable</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Global_BaseComponent_Unregister_" data-uid="Global.BaseComponent.Unregister*"></a>
-  <h4 id="Global_BaseComponent_Unregister_System_String_" data-uid="Global.BaseComponent.Unregister(System.String)">Unregister(String)</h4>
-  <div class="markdown level1 summary"><p>Unregisters a callable with given id. Nothing happens if <see cref="!:id"></see> is not an existing callable</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void Unregister(string id)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">id</span></td>
-        <td><p>ID of the callable to unregister</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+  <h3 id="methods">Methods
+  </h3>
   
   
   <a id="Global_BaseComponent_Update_" data-uid="Global.BaseComponent.Update*"></a>
