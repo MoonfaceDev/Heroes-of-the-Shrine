@@ -141,8 +141,10 @@ public abstract class BaseAttack : PhasedBehaviour<BaseAttack.Command>
 
     protected void StartHitDetector(BaseHitDetector hitDetector, ChainHitExecutor hitExecutor)
     {
-        hitDetector.StartDetector(hittable => hittable.Hit(hitExecutor,
-            new Hit { source = this, victim = hittable, direction = Entity.WorldRotation }
-        ), AttackManager.hittableTags);
+        hitDetector.StartDetector(collision =>
+        {
+            if (!AttackManager.CanHit(collision.Other)) return;
+            collision.Other.Hit(hitExecutor, new Hit(collision, this, Entity.WorldRotation));
+        });
     }
 }

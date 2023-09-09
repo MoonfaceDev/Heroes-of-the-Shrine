@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Object = UnityEngine.Object;
+using System.Linq;
 
 /// <summary>
 /// An hit detector for which each object can be detected only once
@@ -8,19 +8,21 @@ using Object = UnityEngine.Object;
 [Serializable]
 public class SingleHitDetector : BaseHitDetector
 {
+    public SceneCollisionDetector collisionDetector;
+
     private string detectionListener;
 
-    protected override void DoStartDetector(Action<HittableHitbox> hitCallable)
+    public override void StartDetector(Action<Collision> listener)
     {
         var alreadyHit = new HashSet<IHittable>();
         detectionListener = GlobalEventManager.Instance.Register(() =>
         {
-            var hittables = Object.FindObjectsOfType<HittableHitbox>();
-            foreach (var hittable in hittables)
+            var collisions = collisionDetector.Detect();
+            var newCollisions = collisions.Where(collision => !alreadyHit.Contains(collision.Other));
+            foreach (var collision in newCollisions)
             {
-                if (alreadyHit.Contains(hittable) || !hittable.Hitbox.OverlapHitbox(hitbox)) continue;
-                alreadyHit.Add(hittable);
-                hitCallable(hittable);
+                alreadyHit.Add(collision.Other);
+                listener(collision);
             }
         });
     }

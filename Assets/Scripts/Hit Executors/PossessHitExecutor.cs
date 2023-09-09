@@ -13,7 +13,7 @@ public class PossessHitExecutor : IHitExecutor
 
     public void Execute(Hit hit)
     {
-        var possessedEffect = hit.victim.Character.GetBehaviour<PossessedEffect>();
+        var possessedEffect = hit.Victim.RelatedEntity.GetBehaviour<PossessedEffect>();
         if (possessedEffect)
         {
             possessedEffect.Play(new PossessedEffect.Command { maxDuration = duration });

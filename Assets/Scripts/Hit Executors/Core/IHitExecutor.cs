@@ -1,19 +1,21 @@
-﻿public class Hit
+﻿using UnityEngine;
+
+namespace System.Runtime.CompilerServices
 {
-    /// <value>
-    /// Related attack that made hit
-    /// </value>
-    public BaseAttack source;
+    public class IsExternalInit
+    {
+    }
+}
 
-    /// <value>
-    /// Hittable that got hit
-    /// </value>
-    public IHittable victim;
 
-    /// <value>
-    /// Direction the hit is pointed towards
-    /// </value>
-    public int direction = 0;
+public record Hit(IHittable Victim, Vector3 Point, BaseAttack Source = null, Rotation Direction = null)
+{
+    public Rotation Direction { get; init; } = Direction ?? Rotation.Normal;
+
+    public Hit(Collision collision, BaseAttack source = null, Rotation direction = null) : this(collision.Other,
+        collision.Point, source, direction)
+    {
+    }
 }
 
 /// <summary>

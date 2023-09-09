@@ -16,10 +16,10 @@ public class StunHitExecutor : IHitExecutor
 
     public void Execute(Hit hit)
     {
-        var knockbackBehaviour = hit.victim.Character.GetBehaviour<KnockbackBehaviour>();
-        var stunBehaviour = hit.victim.Character.GetBehaviour<StunBehaviour>();
+        var knockbackBehaviour = hit.Victim.RelatedEntity.GetBehaviour<KnockbackBehaviour>();
+        var stunBehaviour = hit.Victim.RelatedEntity.GetBehaviour<StunBehaviour>();
 
-        if (knockbackBehaviour && hit.victim.Character.Entity.WorldPosition.y > 0)
+        if (knockbackBehaviour && hit.Victim.RelatedEntity.WorldPosition.y > 0)
         {
             knockbackBehaviour.Play(new KnockbackBehaviour.Command
                 { power = StunLaunchPower, angleDegrees = StunLaunchAngle }

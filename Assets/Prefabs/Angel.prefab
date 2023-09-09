@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3850747449127629430}
   - component: {fileID: 1525012814151335986}
   - component: {fileID: 4058469792659233068}
-  - component: {fileID: 9085019184276698034}
   m_Layer: 0
   m_Name: StabAttackHitbox
   m_TagString: Untagged
@@ -66,19 +65,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 1.63, y: 0.61, z: 1}
---- !u!114 &9085019184276698034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 307263992615725128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 824917772533207107, guid: 4beee89b5f87b224189fe289925793fb, type: 3}
 --- !u!1 &415412319477531489
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,6 +350,10 @@ MonoBehaviour:
   instant: 0
   interruptible: 0
   hardRecovery: 0
+  includedHittableTags:
+    tags: 
+  excludedHittableTags:
+    tags: 
   activeDuration: 0.14
   hitDetector:
     rid: 168482633143812260
@@ -372,6 +362,7 @@ MonoBehaviour:
     - rid: 168482633143812262
     - rid: 168482633143812264
     - rid: 1742320387755081787
+    - rid: 5450716960379109431
   minHeight: 0
   references:
     version: 2
@@ -380,14 +371,8 @@ MonoBehaviour:
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
         hitbox: {fileID: 5102893361817772762}
-        hitParticles: {fileID: 1596551910517510343}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-        onHit:
-          _persistentListeners: []
-          Expanded: 1
+        collisionDetector:
+          hitbox: {fileID: 5102893361817772762}
     - rid: 168482633143812262
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -402,6 +387,10 @@ MonoBehaviour:
       type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         energyReward: 5
+    - rid: 5450716960379109431
+      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
 --- !u!1 &816143849816312018
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,7 +674,6 @@ GameObject:
   - component: {fileID: 66622298502374902}
   - component: {fileID: 7658927923755893344}
   - component: {fileID: 5352139521565845282}
-  - component: {fileID: 2232766300560091619}
   m_Layer: 0
   m_Name: AltCounterAttackHitbox
   m_TagString: Untagged
@@ -740,19 +728,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 2.85, y: 1.2, z: 1.5}
---- !u!114 &2232766300560091619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1092191859823760132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
 --- !u!1 &1766462669751727550
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,6 +820,10 @@ MonoBehaviour:
   instant: 1
   interruptible: 1
   hardRecovery: 0
+  includedHittableTags:
+    tags: 
+  excludedHittableTags:
+    tags: 
   velocity: 60
   acceleration: 300
   hitDetector:
@@ -853,6 +832,7 @@ MonoBehaviour:
     executors:
     - rid: 2084589854795759623
     - rid: 5904501057880588292
+    - rid: 5450716960379109441
   references:
     version: 2
     RefIds:
@@ -860,20 +840,18 @@ MonoBehaviour:
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
         hitbox: {fileID: 2267100158213249188}
-        hitParticles: {fileID: 7387041220814322907}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-        onHit:
-          _persistentListeners: []
-          Expanded: 1
+        collisionDetector:
+          hitbox: {fileID: 2267100158213249188}
     - rid: 2084589854795759623
       type: {class: EnergyBallExecutor, ns: , asm: Assembly-CSharp}
       data:
         ballPrefab: {fileID: 7195235196650147203, guid: 6855b38c7105f134ba6e8744a09a9039, type: 3}
         ballSpawnElevation: 1
         ballExplodeDelay: 0.32
+    - rid: 5450716960379109441
+      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
     - rid: 5904501057880588292
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -973,6 +951,10 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 1
+  includedHittableTags:
+    tags: 
+  excludedHittableTags:
+    tags: 
   velocity: 10
   acceleration: 10
   hitDetector:
@@ -982,6 +964,7 @@ MonoBehaviour:
     - rid: 3181427634693996644
     - rid: 3596403818980179981
     - rid: 1742320387755081783
+    - rid: 5450716960379109427
   references:
     version: 2
     RefIds:
@@ -993,14 +976,8 @@ MonoBehaviour:
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
         hitbox: {fileID: 5102893361029256204}
-        hitParticles: {fileID: 2515481451582170628}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-        onHit:
-          _persistentListeners: []
-          Expanded: 1
+        collisionDetector:
+          hitbox: {fileID: 5102893361029256204}
     - rid: 3181427634693996644
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -1009,6 +986,10 @@ MonoBehaviour:
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         stunTime: 0.5
+    - rid: 5450716960379109427
+      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 2064102966546675340, guid: baca1c3b16caaf246824b26b93c8130a, type: 3}
 --- !u!1 &2575456005377218911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,6 +1071,10 @@ MonoBehaviour:
   instant: 1
   interruptible: 1
   hardRecovery: 0
+  includedHittableTags:
+    tags: 
+  excludedHittableTags:
+    tags: 
   activeDuration: 0.2
   hitDetector:
     rid: 3596404163551166479
@@ -1098,6 +1083,7 @@ MonoBehaviour:
     - rid: 3596404163551166476
     - rid: 3596404163551166478
     - rid: 1742320387755081793
+    - rid: 5450716960379109437
   references:
     version: 2
     RefIds:
@@ -1117,14 +1103,12 @@ MonoBehaviour:
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
         hitbox: {fileID: 5352139521565845282}
-        hitParticles: {fileID: 2232766300560091619}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-        onHit:
-          _persistentListeners: []
-          Expanded: 1
+        collisionDetector:
+          hitbox: {fileID: 5352139521565845282}
+    - rid: 5450716960379109437
+      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
 --- !u!1 &2807217823386648436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,6 +1191,10 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
+  includedHittableTags:
+    tags: 
+  excludedHittableTags:
+    tags: 
   attackFlow:
     activeDuration: 0.45
     detector1StartTime: 0.05
@@ -1223,11 +1211,13 @@ MonoBehaviour:
     - rid: 1742320387755081742
     - rid: 1742320387755081744
     - rid: 1742320387755081770
+    - rid: 5450716960379109410
   hitExecutor2:
     executors:
     - rid: 1742320387755081745
     - rid: 1742320387755081747
     - rid: 1742320387755081768
+    - rid: 5450716960379109412
   references:
     version: 2
     RefIds:
@@ -1235,26 +1225,14 @@ MonoBehaviour:
       type: {class: AbsoluteHitDetector, ns: , asm: Assembly-CSharp}
       data:
         hitbox: {fileID: 4199430159229373187}
-        hitParticles: {fileID: 3583035239237986662}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-        onHit:
-          _persistentListeners: []
-          Expanded: 1
+        collisionDetector:
+          hitbox: {fileID: 4199430159229373187}
     - rid: 1742320387755081741
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
         hitbox: {fileID: 7565641741475773786}
-        hitParticles: {fileID: 2591298709682593087}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-        onHit:
-          _persistentListeners: []
-          Expanded: 1
+        collisionDetector:
+          hitbox: {fileID: 7565641741475773786}
     - rid: 1742320387755081742
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -1279,6 +1257,14 @@ MonoBehaviour:
       type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         energyReward: 5
+    - rid: 5450716960379109410
+      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
+    - rid: 5450716960379109412
+      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
 --- !u!1 &3088508065261769856
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,6 +1345,10 @@ MonoBehaviour:
   instant: 0
   interruptible: 0
   hardRecovery: 0
+  includedHittableTags:
+    tags: 
+  excludedHittableTags:
+    tags: 
   activeDuration: 0.25
   hitDetector:
     rid: 3596404208624992257
@@ -1367,6 +1357,7 @@ MonoBehaviour:
     - rid: 3596404208624992258
     - rid: 3596404208624992260
     - rid: 1742320387755081795
+    - rid: 5450716960379109439
   references:
     version: 2
     RefIds:
@@ -1378,14 +1369,8 @@ MonoBehaviour:
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
         hitbox: {fileID: 2932138046401966748}
-        hitParticles: {fileID: 1671270814223705293}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-        onHit:
-          _persistentListeners: []
-          Expanded: 1
+        collisionDetector:
+          hitbox: {fileID: 2932138046401966748}
     - rid: 3596404208624992258
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -1394,6 +1379,10 @@ MonoBehaviour:
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         stunTime: 0.5
+    - rid: 5450716960379109439
+      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
 --- !u!1 &3145721457660321993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,7 +1394,6 @@ GameObject:
   - component: {fileID: 6843462833293267054}
   - component: {fileID: 6448549044610946686}
   - component: {fileID: 2932138046401966748}
-  - component: {fileID: 1671270814223705293}
   m_Layer: 0
   m_Name: RunSwipeHitbox
   m_TagString: Untagged
@@ -1460,19 +1448,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 2.5, y: 1, z: 1}
---- !u!114 &1671270814223705293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3145721457660321993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
 --- !u!1 &3451646828768321014
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,6 +1530,10 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
+  includedHittableTags:
+    tags: 
+  excludedHittableTags:
+    tags: 
   attackFlow:
     activeDuration: 0.8
     detector1StartTime: 0
@@ -1570,11 +1549,13 @@ MonoBehaviour:
     - rid: 168482722489303110
     - rid: 168482722489303112
     - rid: 1742320387755081777
+    - rid: 5450716960379109421
   hitExecutor2:
     executors:
     - rid: 168482722489303114
     - rid: 168482722489303116
     - rid: 1742320387755081779
+    - rid: 5450716960379109423
   references:
     version: 2
     RefIds:
@@ -1610,26 +1591,22 @@ MonoBehaviour:
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
         hitbox: {fileID: 5102893360398477695}
-        hitParticles: {fileID: 234424136118286085}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-        onHit:
-          _persistentListeners: []
-          Expanded: 1
+        collisionDetector:
+          hitbox: {fileID: 5102893360398477695}
     - rid: 3181427246007058585
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
         hitbox: {fileID: 5102893361076516092}
-        hitParticles: {fileID: 4347562249962238493}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-        onHit:
-          _persistentListeners: []
-          Expanded: 1
+        collisionDetector:
+          hitbox: {fileID: 5102893361076516092}
+    - rid: 5450716960379109421
+      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 4436134962950998836, guid: 97424818f1eb2994fa6429d2ec6974de, type: 3}
+    - rid: 5450716960379109423
+      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 4011335710652351277, guid: 4149b67738ee91743826106b7544e3e7, type: 3}
 --- !u!1 &4003947100742262957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,7 +1617,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7562827223860804901}
   - component: {fileID: 3345026406701589236}
-  - component: {fileID: 332246992666039201}
   - component: {fileID: 4241076928635418868}
   - component: {fileID: 2507661959881557641}
   m_Layer: 0
@@ -1685,25 +1661,6 @@ MonoBehaviour:
       _persistentListeners: []
       Expanded: 1
   particles: {fileID: 5102893361279726049}
---- !u!114 &332246992666039201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4003947100742262957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6ba493242bffda44bd80bb0d4062f98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playEvents:
-    onPlay:
-      _persistentListeners: []
-      Expanded: 1
-    onStop:
-      _persistentListeners: []
-      Expanded: 1
 --- !u!114 &4241076928635418868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1973,6 +1930,10 @@ MonoBehaviour:
   instant: 0
   interruptible: 0
   hardRecovery: 0
+  includedHittableTags:
+    tags: 
+  excludedHittableTags:
+    tags: 
   activeDuration: 0.2
   hitDetector:
     rid: 3181427246007058589
@@ -1981,6 +1942,7 @@ MonoBehaviour:
     - rid: 3181427634693996681
     - rid: 3181427634693996683
     - rid: 1742320387755081789
+    - rid: 5450716960379109433
   minHeight: 0.5
   references:
     version: 2
@@ -1993,14 +1955,8 @@ MonoBehaviour:
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
         hitbox: {fileID: 5102893360422186048}
-        hitParticles: {fileID: 9123332027102438765}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-        onHit:
-          _persistentListeners: []
-          Expanded: 1
+        collisionDetector:
+          hitbox: {fileID: 5102893360422186048}
     - rid: 3181427634693996681
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -2011,6 +1967,10 @@ MonoBehaviour:
         knockbackPower: 13
         knockbackDirection: 97
         stunTime: 0.5
+    - rid: 5450716960379109433
+      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 2979184207129778206, guid: b27efde971e356747b9bdce37c18c7be, type: 3}
 --- !u!1 &4202954029015473843
 GameObject:
   m_ObjectHideFlags: 0
@@ -2022,7 +1982,6 @@ GameObject:
   - component: {fileID: 7380878913991469137}
   - component: {fileID: 7166401638516392073}
   - component: {fileID: 4199430159229373187}
-  - component: {fileID: 3583035239237986662}
   m_Layer: 0
   m_Name: ForwardPushAttackHitbox2
   m_TagString: Untagged
@@ -2077,19 +2036,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 2.5, y: 0.7, z: 1.1}
---- !u!114 &3583035239237986662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4202954029015473843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
 --- !u!1 &4458982307090760047
 GameObject:
   m_ObjectHideFlags: 0
@@ -2171,6 +2117,10 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
+  includedHittableTags:
+    tags: 
+  excludedHittableTags:
+    tags: 
   activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058576
@@ -2179,6 +2129,7 @@ MonoBehaviour:
     - rid: 3181427634693996660
     - rid: 3181427634693996663
     - rid: 1742320387755081773
+    - rid: 5450716960379109416
   references:
     version: 2
     RefIds:
@@ -2190,14 +2141,8 @@ MonoBehaviour:
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
         hitbox: {fileID: 5102893360763890678}
-        hitParticles: {fileID: 5133938250452459189}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-        onHit:
-          _persistentListeners: []
-          Expanded: 1
+        collisionDetector:
+          hitbox: {fileID: 5102893360763890678}
     - rid: 3181427634693996660
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -2208,6 +2153,10 @@ MonoBehaviour:
         knockbackPower: 15
         knockbackDirection: 85
         stunTime: 0.5
+    - rid: 5450716960379109416
+      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 3996015374920888246, guid: e9a1faa674d113a428519eb042e2e097, type: 3}
 --- !u!1 &4723934991757508343
 GameObject:
   m_ObjectHideFlags: 0
@@ -2290,6 +2239,10 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
+  includedHittableTags:
+    tags: 
+  excludedHittableTags:
+    tags: 
   attackFlow:
     activeDuration: 0.45
     detectorStartTime: 0.1
@@ -2302,6 +2255,7 @@ MonoBehaviour:
     - rid: 1742320750102052871
     - rid: 1742320750102052867
     - rid: 1742320750102052870
+    - rid: 5450716960379109414
   references:
     version: 2
     RefIds:
@@ -2309,14 +2263,8 @@ MonoBehaviour:
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
         hitbox: {fileID: 5000059083912108390}
-        hitParticles: {fileID: 8488057629190899137}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-        onHit:
-          _persistentListeners: []
-          Expanded: 1
+        collisionDetector:
+          hitbox: {fileID: 5000059083912108390}
     - rid: 1742320750102052867
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -2331,6 +2279,10 @@ MonoBehaviour:
         knockbackPower: 16
         knockbackDirection: 85
         stunTime: 0.5
+    - rid: 5450716960379109414
+      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
 --- !u!1 &4850033890129186866
 GameObject:
   m_ObjectHideFlags: 0
@@ -2883,7 +2835,6 @@ GameObject:
   - component: {fileID: 5102893360398477694}
   - component: {fileID: 4220044524321501178}
   - component: {fileID: 5102893360398477695}
-  - component: {fileID: 234424136118286085}
   m_Layer: 0
   m_Name: SpiningSwordAttackHitbox1
   m_TagString: Untagged
@@ -2938,19 +2889,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 3.85, y: 1, z: 1.5}
---- !u!114 &234424136118286085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360398477681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 4436134962950998836, guid: 97424818f1eb2994fa6429d2ec6974de, type: 3}
 --- !u!1 &5102893360422186050
 GameObject:
   m_ObjectHideFlags: 0
@@ -2962,7 +2900,6 @@ GameObject:
   - component: {fileID: 5102893360422186051}
   - component: {fileID: 979398896534389299}
   - component: {fileID: 5102893360422186048}
-  - component: {fileID: 9123332027102438765}
   m_Layer: 0
   m_Name: AirSpinAttackHitbox
   m_TagString: Untagged
@@ -3017,19 +2954,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 3.03, y: 1.2, z: 1}
---- !u!114 &9123332027102438765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360422186050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 2979184207129778206, guid: b27efde971e356747b9bdce37c18c7be, type: 3}
 --- !u!1 &5102893360536826754
 GameObject:
   m_ObjectHideFlags: 0
@@ -3041,7 +2965,6 @@ GameObject:
   - component: {fileID: 5102893360536826752}
   - component: {fileID: 8994851732676646045}
   - component: {fileID: 5102893360536826755}
-  - component: {fileID: 3603120142536149105}
   m_Layer: 0
   m_Name: NormalAttackHitbox
   m_TagString: Untagged
@@ -3096,19 +3019,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 1.63, y: 0.61, z: 1}
---- !u!114 &3603120142536149105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360536826754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
 --- !u!1 &5102893360763890665
 GameObject:
   m_ObjectHideFlags: 0
@@ -3120,7 +3030,6 @@ GameObject:
   - component: {fileID: 5102893360763890679}
   - component: {fileID: 8841424249255884859}
   - component: {fileID: 5102893360763890678}
-  - component: {fileID: 5133938250452459189}
   m_Layer: 0
   m_Name: UppercutHitbox
   m_TagString: Untagged
@@ -3175,19 +3084,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 1.13, y: 1.88, z: 1}
---- !u!114 &5133938250452459189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360763890665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 3996015374920888246, guid: e9a1faa674d113a428519eb042e2e097, type: 3}
 --- !u!1 &5102893360866760426
 GameObject:
   m_ObjectHideFlags: 0
@@ -3199,7 +3095,6 @@ GameObject:
   - component: {fileID: 5102893360866760424}
   - component: {fileID: 9182679894394194954}
   - component: {fileID: 5102893360866760427}
-  - component: {fileID: 2002257862998933130}
   m_Layer: 0
   m_Name: SlashAttackHitbox
   m_TagString: Untagged
@@ -3254,19 +3149,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 3, y: 1.15, z: 1}
---- !u!114 &2002257862998933130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893360866760426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1664870427821783217, guid: dd46b3ae7d054024c87a55ea5268a893, type: 3}
 --- !u!1 &5102893360874897723
 GameObject:
   m_ObjectHideFlags: 0
@@ -3505,7 +3387,6 @@ GameObject:
   - component: {fileID: 5102893361029256205}
   - component: {fileID: 6981507433473655714}
   - component: {fileID: 5102893361029256204}
-  - component: {fileID: 2515481451582170628}
   m_Layer: 0
   m_Name: RunKickHitbox
   m_TagString: Untagged
@@ -3560,19 +3441,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 0.65, y: 0.5, z: 1}
---- !u!114 &2515481451582170628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893361029256207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 2064102966546675340, guid: baca1c3b16caaf246824b26b93c8130a, type: 3}
 --- !u!1 &5102893361031154992
 GameObject:
   m_ObjectHideFlags: 0
@@ -3669,7 +3537,6 @@ GameObject:
   - component: {fileID: 5102893361076516095}
   - component: {fileID: 2369788678452133969}
   - component: {fileID: 5102893361076516092}
-  - component: {fileID: 4347562249962238493}
   m_Layer: 0
   m_Name: SpiningSwordAttackHitbox2
   m_TagString: Untagged
@@ -3724,19 +3591,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 1.9, y: 1.56, z: 1.5}
---- !u!114 &4347562249962238493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893361076516094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 4011335710652351277, guid: 4149b67738ee91743826106b7544e3e7, type: 3}
 --- !u!1 &5102893361279726048
 GameObject:
   m_ObjectHideFlags: 0
@@ -8733,7 +8587,6 @@ GameObject:
   - component: {fileID: 5102893361817772765}
   - component: {fileID: 3231622673701972927}
   - component: {fileID: 5102893361817772762}
-  - component: {fileID: 1596551910517510343}
   m_Layer: 0
   m_Name: AltNormalAttackHitbox
   m_TagString: Untagged
@@ -8788,19 +8641,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 2.75, y: 0.75, z: 1}
---- !u!114 &1596551910517510343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102893361817772764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
 --- !u!1 &5102893361865183972
 GameObject:
   m_ObjectHideFlags: 0
@@ -13662,7 +13502,6 @@ GameObject:
   - component: {fileID: 1314227279621820862}
   - component: {fileID: 1363608573659317620}
   - component: {fileID: 2267100158213249188}
-  - component: {fileID: 7387041220814322907}
   m_Layer: 0
   m_Name: SpikeDashAttackHitbox
   m_TagString: Untagged
@@ -13717,19 +13556,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 2.5, y: 1.8, z: 0.75}
---- !u!114 &7387041220814322907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5374606295249558086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
 --- !u!1 &5528643784447997400
 GameObject:
   m_ObjectHideFlags: 0
@@ -13741,7 +13567,6 @@ GameObject:
   - component: {fileID: 612838189951898733}
   - component: {fileID: 4168375211191068349}
   - component: {fileID: 7565641741475773786}
-  - component: {fileID: 2591298709682593087}
   m_Layer: 0
   m_Name: ForwardPushAttackHitbox1
   m_TagString: Untagged
@@ -13796,19 +13621,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 2.3, y: 2, z: 1.25}
---- !u!114 &2591298709682593087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5528643784447997400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
 --- !u!1 &5700907412895489081
 GameObject:
   m_ObjectHideFlags: 0
@@ -13889,6 +13701,10 @@ MonoBehaviour:
   instant: 0
   interruptible: 0
   hardRecovery: 0
+  includedHittableTags:
+    tags: 
+  excludedHittableTags:
+    tags: 
   activeDuration: 0.15
   hitDetector:
     rid: 3181427246007058587
@@ -13897,6 +13713,7 @@ MonoBehaviour:
     - rid: 3181427634693996673
     - rid: 3181427634693996675
     - rid: 1742320387755081785
+    - rid: 5450716960379109429
   minHeight: 0.5
   references:
     version: 2
@@ -13909,14 +13726,8 @@ MonoBehaviour:
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
         hitbox: {fileID: 5102893360536826755}
-        hitParticles: {fileID: 3603120142536149105}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-        onHit:
-          _persistentListeners: []
-          Expanded: 1
+        collisionDetector:
+          hitbox: {fileID: 5102893360536826755}
     - rid: 3181427634693996673
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -13927,6 +13738,10 @@ MonoBehaviour:
         knockbackPower: 12
         knockbackDirection: 80
         stunTime: 0.5
+    - rid: 5450716960379109429
+      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
 --- !u!1 &6771048749396688650
 GameObject:
   m_ObjectHideFlags: 0
@@ -14008,6 +13823,10 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
+  includedHittableTags:
+    tags: 
+  excludedHittableTags:
+    tags: 
   activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058572
@@ -14016,6 +13835,7 @@ MonoBehaviour:
     - rid: 3181427634693996652
     - rid: 3181427634693996654
     - rid: 1742320387755081775
+    - rid: 5450716960379109418
   references:
     version: 2
     RefIds:
@@ -14027,14 +13847,8 @@ MonoBehaviour:
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
         hitbox: {fileID: 4058469792659233068}
-        hitParticles: {fileID: 9085019184276698034}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-        onHit:
-          _persistentListeners: []
-          Expanded: 1
+        collisionDetector:
+          hitbox: {fileID: 4058469792659233068}
     - rid: 3181427634693996652
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -14043,6 +13857,10 @@ MonoBehaviour:
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         stunTime: 0.5
+    - rid: 5450716960379109418
+      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 824917772533207107, guid: 4beee89b5f87b224189fe289925793fb, type: 3}
 --- !u!1 &6836361419182836862
 GameObject:
   m_ObjectHideFlags: 0
@@ -14123,6 +13941,10 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
+  includedHittableTags:
+    tags: 
+  excludedHittableTags:
+    tags: 
   activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058563
@@ -14131,6 +13953,7 @@ MonoBehaviour:
     - rid: 3181427634693996648
     - rid: 3181427634693996650
     - rid: 1742320387755081764
+    - rid: 5450716960379109406
   references:
     version: 2
     RefIds:
@@ -14142,14 +13965,8 @@ MonoBehaviour:
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
         hitbox: {fileID: 5102893360536826755}
-        hitParticles: {fileID: 3603120142536149105}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-        onHit:
-          _persistentListeners: []
-          Expanded: 1
+        collisionDetector:
+          hitbox: {fileID: 5102893360536826755}
     - rid: 3181427634693996648
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -14158,6 +13975,10 @@ MonoBehaviour:
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         stunTime: 1
+    - rid: 5450716960379109406
+      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
 --- !u!1 &7431997943483031100
 GameObject:
   m_ObjectHideFlags: 0
@@ -14269,6 +14090,10 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
+  includedHittableTags:
+    tags: 
+  excludedHittableTags:
+    tags: 
   attackFlow:
     activeTimeout: 3
     minActiveTime: 0.25
@@ -14356,6 +14181,10 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
+  includedHittableTags:
+    tags: 
+  excludedHittableTags:
+    tags: 
   activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058574
@@ -14364,6 +14193,7 @@ MonoBehaviour:
     - rid: 3181427634693996656
     - rid: 3181427634693996658
     - rid: 1742320387755081766
+    - rid: 5450716960379109408
   references:
     version: 2
     RefIds:
@@ -14375,14 +14205,8 @@ MonoBehaviour:
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
         hitbox: {fileID: 5102893361817772762}
-        hitParticles: {fileID: 1596551910517510343}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-        onHit:
-          _persistentListeners: []
-          Expanded: 1
+        collisionDetector:
+          hitbox: {fileID: 5102893361817772762}
     - rid: 3181427634693996656
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -14391,6 +14215,10 @@ MonoBehaviour:
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         stunTime: 0.5
+    - rid: 5450716960379109408
+      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
 --- !u!1 &8326420566752417338
 GameObject:
   m_ObjectHideFlags: 0
@@ -14493,7 +14321,6 @@ GameObject:
   - component: {fileID: 2962741731568598863}
   - component: {fileID: 4519747569582337368}
   - component: {fileID: 6910350036342276064}
-  - component: {fileID: 900359517677223845}
   m_Layer: 0
   m_Name: CounterAttackHitbox
   m_TagString: Untagged
@@ -14548,19 +14375,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 3.15, y: 0.75, z: 1.5}
---- !u!114 &900359517677223845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8569227036497802345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
 --- !u!1 &8644654164908221865
 GameObject:
   m_ObjectHideFlags: 0
@@ -14641,6 +14455,10 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
+  includedHittableTags:
+    tags: 
+  excludedHittableTags:
+    tags: 
   velocity: 0
   acceleration: 0
   hitDetector:
@@ -14654,14 +14472,8 @@ MonoBehaviour:
       type: {class: AbsoluteHitDetector, ns: , asm: Assembly-CSharp}
       data:
         hitbox: {fileID: 0}
-        hitParticles: {fileID: 0}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-        onHit:
-          _persistentListeners: []
-          Expanded: 1
+        collisionDetector:
+          hitbox: {fileID: 0}
 --- !u!1 &8660113274356423321
 GameObject:
   m_ObjectHideFlags: 0
@@ -14754,6 +14566,10 @@ MonoBehaviour:
   instant: 0
   interruptible: 0
   hardRecovery: 1
+  includedHittableTags:
+    tags: 
+  excludedHittableTags:
+    tags: 
   velocity: 50
   acceleration: 250
   hitDetector:
@@ -14763,6 +14579,7 @@ MonoBehaviour:
     - rid: 3181427634693996669
     - rid: 3181427634693996671
     - rid: 1742320387755081781
+    - rid: 5450716960379109425
   references:
     version: 2
     RefIds:
@@ -14774,14 +14591,8 @@ MonoBehaviour:
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
         hitbox: {fileID: 5102893360866760427}
-        hitParticles: {fileID: 2002257862998933130}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-        onHit:
-          _persistentListeners: []
-          Expanded: 1
+        collisionDetector:
+          hitbox: {fileID: 5102893360866760427}
     - rid: 3181427634693996669
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -14792,6 +14603,10 @@ MonoBehaviour:
         knockbackPower: 17
         knockbackDirection: 70
         stunTime: 0.5
+    - rid: 5450716960379109425
+      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 1664870427821783217, guid: dd46b3ae7d054024c87a55ea5268a893, type: 3}
 --- !u!114 &7214283041871315255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14887,6 +14702,10 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
+  includedHittableTags:
+    tags: 
+  excludedHittableTags:
+    tags: 
   velocity: 20.76923
   acceleration: 69.23077
   hitDetector:
@@ -14896,6 +14715,7 @@ MonoBehaviour:
     - rid: 168482808540430692
     - rid: 3596404159038357510
     - rid: 1742320387755081791
+    - rid: 5450716960379109435
   references:
     version: 2
     RefIds:
@@ -14903,14 +14723,8 @@ MonoBehaviour:
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
         hitbox: {fileID: 6910350036342276064}
-        hitParticles: {fileID: 900359517677223845}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-        onHit:
-          _persistentListeners: []
-          Expanded: 1
+        collisionDetector:
+          hitbox: {fileID: 6910350036342276064}
     - rid: 168482808540430692
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -14923,6 +14737,10 @@ MonoBehaviour:
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         stunTime: 0.5
+    - rid: 5450716960379109435
+      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
 --- !u!1 &9039056182577971286
 GameObject:
   m_ObjectHideFlags: 0
@@ -14934,7 +14752,6 @@ GameObject:
   - component: {fileID: 8395896612012262159}
   - component: {fileID: 5588154613775285652}
   - component: {fileID: 5000059083912108390}
-  - component: {fileID: 8488057629190899137}
   m_Layer: 0
   m_Name: BackwardLaunchAttackHitbox
   m_TagString: Untagged
@@ -14989,16 +14806,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 2.15, y: 1.8, z: 1.25}
---- !u!114 &8488057629190899137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9039056182577971286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}

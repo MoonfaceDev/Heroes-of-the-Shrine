@@ -74,4 +74,9 @@ public class Rotation
     {
         return new Rotation(value == -1);
     }
+    
+    public static implicit operator Rotation(Vector3 offset)
+    {
+        return new Rotation(offset.x < 0);
+    }
 }

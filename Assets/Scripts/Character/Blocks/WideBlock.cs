@@ -123,14 +123,14 @@ public class WideBlock : PhasedBehaviour<WideBlock.Command>, IBlockBehaviour
 
     private bool CanBlock(Hit hit)
     {
-        var blockDefinition = GetBlockDefinition(hit.source);
+        var blockDefinition = GetBlockDefinition(hit.Source);
         return (blockWindow || Invincible) && blockDefinition != null;
     }
 
     private void SuccessfulBlock(Hit hit)
     {
         Stop();
-        var blockDefinition = GetBlockDefinition(hit.source);
+        var blockDefinition = GetBlockDefinition(hit.Source);
         energySystem.AddEnergy(blockDefinition.energyReward);
         if (!Invincible)
         {

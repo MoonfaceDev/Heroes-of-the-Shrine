@@ -9,8 +9,8 @@ public class SuperArmorHittableHitbox : HittableHitbox
     protected override void Awake()
     {
         base.Awake();
-        superArmor = Character.GetBehaviour<SuperArmor>();
-        healthSystem = Character.GetBehaviour<HealthSystem>();
+        superArmor = RelatedEntity.GetBehaviour<SuperArmor>();
+        healthSystem = RelatedEntity.GetBehaviour<HealthSystem>();
     }
 
     public override void ProcessHit(IHitExecutor executor, Hit hit)
@@ -20,7 +20,7 @@ public class SuperArmorHittableHitbox : HittableHitbox
             case KnockbackHitExecutor or StunHitExecutor:
                 return;
             case DamageHitExecutor hitExecutor:
-                var processedDamage = hit.source.AttackManager.damageTranspiler.Transpile(hit.source, hit.victim, hitExecutor.damage);
+                var processedDamage = hit.Source.AttackManager.damageTranspiler.Transpile(hit.Source, hit.Victim, hitExecutor.damage);
                 superArmor.HitArmor(processedDamage / healthSystem.damageMultiplier);
                 return;
         }

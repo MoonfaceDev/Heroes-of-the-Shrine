@@ -18,7 +18,7 @@ public class ElectrifyHitExecutor : IHitExecutor
     
     public void Execute(Hit hit)
     {
-        var electrifiedEffect = hit.victim.Character.GetBehaviour<ElectrifiedEffect>();
+        var electrifiedEffect = hit.Victim.RelatedEntity.GetBehaviour<ElectrifiedEffect>();
         if (electrifiedEffect)
         {
             electrifiedEffect.Play(new ElectrifiedEffect.Command {duration=duration, speedReductionMultiplier=speedMultiplier});

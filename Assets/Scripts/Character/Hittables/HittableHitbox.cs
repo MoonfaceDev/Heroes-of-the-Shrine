@@ -37,7 +37,7 @@ public class HittableHitbox : EntityBehaviour, IHittable
     /// </value>
     public Hitbox Hitbox { get; private set; }
 
-    public Character Character => hittableBehaviour.Character;
+    public GameEntity RelatedEntity => hittableBehaviour.Entity;
 
     public ExtEvent HitEvent => onHit;
 

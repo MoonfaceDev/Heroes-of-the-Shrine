@@ -8,7 +8,7 @@ public interface IHittable
     /// <value>
     /// Related character
     /// </value>
-    public Character Character { get; }
+    public GameEntity RelatedEntity { get; }
 
     /// <value>
     /// Invoked when <see cref="ProcessHit"/> is called

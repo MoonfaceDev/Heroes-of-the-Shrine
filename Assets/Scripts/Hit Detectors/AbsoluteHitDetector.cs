@@ -1,5 +1,5 @@
 using System;
-using Object = UnityEngine.Object;
+using ExtEvents.OdinSerializer.Utilities;
 
 /// <summary>
 /// An hit detector that detects hits only in the frame it is started
@@ -7,16 +7,11 @@ using Object = UnityEngine.Object;
 [Serializable]
 public class AbsoluteHitDetector : BaseHitDetector
 {
-    protected override void DoStartDetector(Action<HittableHitbox> hitCallable)
+    public SceneCollisionDetector collisionDetector;
+
+    public override void StartDetector(Action<Collision> listener)
     {
-        var hittables = Object.FindObjectsOfType<HittableHitbox>();
-        foreach (var hittable in hittables)
-        {
-            if (hittable.Hitbox.OverlapHitbox(hitbox))
-            {
-                hitCallable(hittable);
-            }
-        }
+        collisionDetector.Detect().ForEach(listener);
     }
 
     public override void StopDetector()

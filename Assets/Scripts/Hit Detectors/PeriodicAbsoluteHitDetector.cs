@@ -1,5 +1,5 @@
 using System;
-using Object = UnityEngine.Object;
+using ExtEvents.OdinSerializer.Utilities;
 
 /// <summary>
 /// An hit detector that detects hits periodically, with a given interval
@@ -7,6 +7,8 @@ using Object = UnityEngine.Object;
 [Serializable]
 public class PeriodicAbsoluteHitDetector : BaseHitDetector
 {
+    public SceneCollisionDetector collisionDetector;
+    
     /// <value>
     /// Interval between detections, in seconds
     /// </value>
@@ -25,26 +27,19 @@ public class PeriodicAbsoluteHitDetector : BaseHitDetector
 
     private string detectionInterval;
 
-    protected override void DoStartDetector(Action<HittableHitbox> hitCallable)
+    public override void StartDetector(Action<Collision> listener)
     {
-        detectionInterval = GlobalEventManager.Instance.StartInterval(() => DetectHits(hitCallable), interval);
+        detectionInterval = GlobalEventManager.Instance.StartInterval(() => DetectHits(listener), interval);
         if (startImmediately)
         {
-            DetectHits(hitCallable);
+            DetectHits(listener);
         }
     }
 
-    private void DetectHits(Action<HittableHitbox> hitCallable)
+    private void DetectHits(Action<Collision> listener)
     {
         OnDetect?.Invoke();
-        var hittables = Object.FindObjectsOfType<HittableHitbox>();
-        foreach (var hittable in hittables)
-        {
-            if (hittable.Hitbox.OverlapHitbox(hitbox))
-            {
-                hitCallable(hittable);
-            }
-        }
+        collisionDetector.Detect().ForEach(listener);
     }
 
     public override void StopDetector()

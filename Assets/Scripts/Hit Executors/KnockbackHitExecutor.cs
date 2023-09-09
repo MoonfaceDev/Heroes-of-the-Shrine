@@ -24,14 +24,13 @@ public class KnockbackHitExecutor : IHitExecutor
 
     public void Execute(Hit hit)
     {
-        var processedKnockbackPower = hit.source != null 
-            ? hit.source.AttackManager.knockbackPowerTranspiler.Transpile(hit.source, hit.victim, knockbackPower)
+        var processedKnockbackPower = hit.Source != null 
+            ? hit.Source.AttackManager.knockbackPowerTranspiler.Transpile(hit.Source, hit.Victim, knockbackPower)
             : knockbackPower;
 
-        var hitDirection =
-            (int)Mathf.Sign(hit.victim.Character.Entity.WorldPosition.x - hit.source.Entity.WorldPosition.x);
+        var hitDirection = (int)Mathf.Sign(hit.Victim.RelatedEntity.WorldPosition.x - hit.Source.Entity.WorldPosition.x);
 
-        var knockbackBehaviour = hit.victim.Character.GetBehaviour<KnockbackBehaviour>();
+        var knockbackBehaviour = hit.Victim.RelatedEntity.GetBehaviour<KnockbackBehaviour>();
 
         if (knockbackBehaviour)
         {
@@ -43,7 +42,7 @@ public class KnockbackHitExecutor : IHitExecutor
         }
         else
         {
-            hit.victim.Character.GetBehaviour<StunBehaviour>().Play(new StunBehaviour.Command { time = stunTime });
+            hit.Victim.RelatedEntity.GetBehaviour<StunBehaviour>().Play(new StunBehaviour.Command { time = stunTime });
         }
     }
 }

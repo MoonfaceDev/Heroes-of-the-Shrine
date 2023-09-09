@@ -16,7 +16,7 @@ public class ChainHitExecutor
     {
         foreach (var executor in executors)
         {
-            hit.victim.ProcessHit(executor, hit);
+            hit.Victim.ProcessHit(executor, hit);
         }
     }
 }

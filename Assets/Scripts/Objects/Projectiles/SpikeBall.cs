@@ -23,23 +23,21 @@ public class SpikeBall : EntityBehaviour
     {
         sourceAttack = source;
         MovableEntity.velocity = velocity;
-        latchHitDetector.StartDetector(hittable =>
+        latchHitDetector.StartDetector(collision =>
         {
+            if (!source.AttackManager.CanHit(collision.Other)) return;
             latchHitDetector.StopDetector();
-            var hitWorldPosition = Entity.WorldPosition;
-            Latch(hittable, Mathf.Sign(velocity.x), hitWorldPosition.y, source);
-        }, source.AttackManager.hittableTags);
+            Latch(collision, Mathf.Sign(velocity.x), source);
+        });
         onFire.Invoke();
     }
 
-    public void Latch(IHittable hittable, float hitDirection, float elevation, BaseAttack source)
+    public void Latch(Collision collision, float hitDirection, BaseAttack source)
     {
         sourceAttack = source;
-        Entity.parent = hittable.Character.Entity;
-        Entity.position = Vector3.zero + elevation * Vector3.up + latchZ * Vector3.forward;
-        hittable.Hit(latchHitExecutor,
-            new Hit { source = source, victim = hittable, direction = Mathf.RoundToInt(hitDirection) }
-        );
+        Entity.parent = collision.Other.RelatedEntity;
+        Entity.position = collision.Point.y * Vector3.up + latchZ * Vector3.forward;
+        collision.Other.Hit(latchHitExecutor, new Hit(collision, source, Mathf.RoundToInt(hitDirection)));
         MovableEntity.velocity = Vector3.zero;
         animator.SetTrigger($"{GetType().Name}-latch");
         onLatch.Invoke();
@@ -58,24 +56,20 @@ public class SpikeBall : EntityBehaviour
         Destroy(gameObject, explodeAnimationDuration);
         onExplode.Invoke();
 
-        eventManager.StartTimeout(() => explosionHitDetector.StartDetector(hittable =>
+        eventManager.StartTimeout(() => explosionHitDetector.StartDetector(collision =>
         {
-            if (hittable.Character.Entity == Entity.parent)
+            if (!sourceAttack.AttackManager.CanHit(collision.Other)) return;
+            
+            if (collision.Other.RelatedEntity == Entity.parent)
             {
-                hittable.Hit(explosionSourceHitExecutor, new Hit { source = sourceAttack, victim = hittable });
+                collision.Other.Hit(explosionSourceHitExecutor, new Hit(collision, sourceAttack));
             }
             else
             {
-                hittable.Hit(explosionHitExecutor,
-                    new Hit
-                    {
-                        source = sourceAttack,
-                        victim = hittable,
-                        direction = Mathf.RoundToInt(
-                            Mathf.Sign(hittable.Entity.WorldPosition.x - Entity.WorldPosition.x))
-                    }
+                collision.Other.Hit(explosionHitExecutor,
+                    new Hit(collision, sourceAttack, collision.Other.RelatedEntity.WorldPosition - Entity.WorldPosition)
                 );
             }
-        }, sourceAttack.AttackManager.hittableTags), explosionStartDelay);
+        }), explosionStartDelay);
     }
 }

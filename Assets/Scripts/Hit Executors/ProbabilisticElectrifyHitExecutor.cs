@@ -20,6 +20,6 @@ public class ProbabilisticElectrifyHitExecutor : IHitExecutor
     public void Execute(Hit hit)
     {
         if (!(Random.Range(0f, 1f) < probability)) return;
-        hit.victim.ProcessHit(electrifyHitExecutor, hit);
+        hit.Victim.ProcessHit(electrifyHitExecutor, hit);
     }
 }

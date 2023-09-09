@@ -1087,15 +1087,6 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
-  onComboCut:
-    _persistentListeners: []
-    Expanded: 1
-  onBlock:
-    _persistentListeners: []
-    Expanded: 1
-  onComboBlock:
-    _persistentListeners: []
-    Expanded: 1
 --- !u!1 &510981018 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5826350637849315246, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
@@ -3570,23 +3561,22 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks: []
   instant: 0
   interruptible: 1
   hardRecovery: 1
-  attackFlow:
-    activeDuration: 0.5
+  includedHittableTags:
+    tags: 
+  excludedHittableTags:
+    tags: 
   activeDuration: 0.5
   periodicHitDetector:
     hitbox: {fileID: 1340466848}
-    hitParticles: {fileID: 1340466850}
-    includedHittableTags:
-      tags: 
-    excludedHittableTags:
-      tags: 
-    onHit:
-      _persistentListeners: []
-      Expanded: 1
+    collisionDetector:
+      hitbox: {fileID: 1340466848}
     interval: 0.05
     startImmediately: 1
   periodicHitCount: 2
@@ -3595,6 +3585,7 @@ MonoBehaviour:
     - rid: 3181427634693996608
     - rid: 3181427634693996610
     - rid: 3181427634693996612
+    - rid: 5450716960379109459
   explosionHitDetector:
     rid: 3181427246007058591
   explosionHitExecutor:
@@ -3602,19 +3593,7 @@ MonoBehaviour:
     - rid: 3181427634693996614
     - rid: 3181427634693996616
     - rid: 3181427634693996618
-  onExplosion:
-    _persistentListeners:
-    - _persistentArguments: []
-      _target: {fileID: 968103254}
-      _isStatic: 0
-      CallState: 2
-      _staticType:
-        GuidAssignmentFailed: 0
-        GUID: 
-        _typeNameAndAssembly: 
-        _suppressLogs: 0
-      _methodName: Play
-    Expanded: 1
+    - rid: 5450716960379109401
   references:
     version: 2
     RefIds:
@@ -3622,14 +3601,8 @@ MonoBehaviour:
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
         hitbox: {fileID: 1468609907}
-        hitParticles: {fileID: 0}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-        onHit:
-          _persistentListeners: []
-          Expanded: 1
+        collisionDetector:
+          hitbox: {fileID: 1468609907}
     - rid: 3181427634693996608
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -3662,6 +3635,26 @@ MonoBehaviour:
       data:
         duration: 4
         speedMultiplier: 0.5
+    - rid: 5450716960379109401
+      type: {class: EventHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        event:
+          _persistentListeners:
+          - _persistentArguments: []
+            _target: {fileID: 968103254}
+            _isStatic: 0
+            CallState: 2
+            _staticType:
+              GuidAssignmentFailed: 0
+              GUID: 
+              _typeNameAndAssembly: 
+              _suppressLogs: 0
+            _methodName: Play
+          Expanded: 1
+    - rid: 5450716960379109459
+      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 1664870427821783217, guid: faab43d0b7c5cfa448b93f624f98e583, type: 3}
 --- !u!1 &973170795 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5826350639134677129, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
@@ -3953,7 +3946,6 @@ GameObject:
   - component: {fileID: 1340466849}
   - component: {fileID: 1340466851}
   - component: {fileID: 1340466848}
-  - component: {fileID: 1340466850}
   m_Layer: 0
   m_Name: ElectrifyAttackHitbox
   m_TagString: Untagged
@@ -3989,19 +3981,6 @@ Transform:
   m_Father: {fileID: 968103253}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1340466850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1340466845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b652822c51f790489cf120758315f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1664870427821783217, guid: faab43d0b7c5cfa448b93f624f98e583, type: 3}
 --- !u!114 &1340466851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4093,10 +4072,17 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks: []
   instant: 0
   interruptible: 1
   hardRecovery: 0
+  includedHittableTags:
+    tags: 
+  excludedHittableTags:
+    tags: 
   attackFlow:
     warningDuration: 0.75
     sourceActiveDuration: 1.5
@@ -6799,10 +6785,17 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
   previousAttacks: []
   instant: 0
   interruptible: 1
   hardRecovery: 1
+  includedHittableTags:
+    tags: 
+  excludedHittableTags:
+    tags: 
   maxEnemyCount: 5
   enemyPrefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
   spawnPoints:

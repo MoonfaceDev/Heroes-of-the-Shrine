@@ -210,15 +210,8 @@ MonoBehaviour:
     - rid: 3181427246007058606
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
-        hitbox: {fileID: 1815740459291873946}
-        hitParticles: {fileID: 0}
-        includedHittableTags:
-          tags: 
-        excludedHittableTags:
-          tags: 
-        onHit:
-          _persistentListeners: []
-          Expanded: 1
+        collisionDetector:
+          hitbox: {fileID: 1815740459291873946}
 --- !u!1 &8436393641562852876
 GameObject:
   m_ObjectHideFlags: 0

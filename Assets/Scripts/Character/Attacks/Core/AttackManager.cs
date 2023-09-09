@@ -118,4 +118,9 @@ public class AttackManager : CharacterBehaviour
     {
         return !AnyAttack(IsPreventing);
     }
+
+    public bool CanHit(IHittable hittable)
+    {
+        return hittable.CanGetHit() && hittableTags.Intersect(hittable.RelatedEntity.tags).Any();
+    }
 }

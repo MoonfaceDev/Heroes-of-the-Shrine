@@ -47,15 +47,17 @@ public class PossessSource : EntityBehaviour
                 Destroy(gameObject);
             }, activeDuration);
 
-            hitDetector.StartDetector(hittable =>
+            hitDetector.StartDetector(collision =>
             {
+                if (!relatedAttack.AttackManager.CanHit(collision.Other)) return;
+                
                 hitDetector.StopDetector();
                 animator.SetBool(Hit, true);
                 Destroy(gameObject, hitAnimationDuration);
                 eventManager.Cancel(destroyTimeout);
 
-                hittable.Hit(hitExecutor, new Hit { source = relatedAttack, victim = hittable });
-            }, hittableTags);
+                collision.Other.Hit(hitExecutor, new Hit(collision, relatedAttack));
+            });
         }, warningDuration);
     }
 }

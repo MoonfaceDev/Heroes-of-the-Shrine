@@ -12,6 +12,7 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
     /// </value>
     [SerializeField] public ExtEvent onHit;
 
+    public GameEntity RelatedEntity => Entity;
     public ExtEvent HitEvent => onHit;
 
     private HealthSystem healthSystem;
@@ -46,12 +47,12 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
         {
             if (blockBehaviour.TryBlock(hit))
             {
-                hit.source.Block();
+                hit.Source.Block();
                 return;
             }
         }
 
-        hit.victim.HitEvent.Invoke();
+        hit.Victim.HitEvent.Invoke();
         executor.Execute(hit);
     }
 
