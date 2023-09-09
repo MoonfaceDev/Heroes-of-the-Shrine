@@ -95,24 +95,6 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Global.BaseHitDetector.html#Global_BaseHitDetector_hitbox">BaseHitDetector.hitbox</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseHitDetector.html#Global_BaseHitDetector_hitParticles">BaseHitDetector.hitParticles</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseHitDetector.html#Global_BaseHitDetector_includedHittableTags">BaseHitDetector.includedHittableTags</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseHitDetector.html#Global_BaseHitDetector_excludedHittableTags">BaseHitDetector.excludedHittableTags</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseHitDetector.html#Global_BaseHitDetector_onHit">BaseHitDetector.onHit</a>
-    </div>
-    <div>
-      <a class="xref" href="Global.BaseHitDetector.html#Global_BaseHitDetector_StartDetector_Action_HittableHitbox__Tags_">BaseHitDetector.StartDetector(Action&lt;HittableHitbox&gt;, Tags)</a>
-    </div>
-    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">Object.ToString()</a>
     </div>
     <div>
@@ -140,17 +122,43 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class SingleHitDetector : BaseHitDetector</code></pre>
   </div>
-  <h3 id="methods">Methods
+  <h3 id="fields">Fields
   </h3>
   
   
-  <a id="Global_SingleHitDetector_DoStartDetector_" data-uid="Global.SingleHitDetector.DoStartDetector*"></a>
-  <h4 id="Global_SingleHitDetector_DoStartDetector_Action_HittableHitbox__" data-uid="Global.SingleHitDetector.DoStartDetector(Action{HittableHitbox})">DoStartDetector(Action&lt;HittableHitbox&gt;)</h4>
+  <h4 id="Global_SingleHitDetector_collisionDetector" data-uid="Global.SingleHitDetector.collisionDetector">collisionDetector</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void DoStartDetector(Action&lt;HittableHitbox&gt; hitCallable)</code></pre>
+    <pre><code class="lang-csharp hljs">public SceneCollisionDetector collisionDetector</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.SceneCollisionDetector.html">SceneCollisionDetector</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Global_SingleHitDetector_StartDetector_" data-uid="Global.SingleHitDetector.StartDetector*"></a>
+  <h4 id="Global_SingleHitDetector_StartDetector_Action_Collision__" data-uid="Global.SingleHitDetector.StartDetector(Action{Collision})">StartDetector(Action&lt;Collision&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void StartDetector(Action&lt;Collision&gt; listener)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -163,14 +171,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Action</span>&lt;<a class="xref" href="Global.HittableHitbox.html">HittableHitbox</a>&gt;</td>
-        <td><span class="parametername">hitCallable</span></td>
+        <td><span class="xref">Action</span>&lt;<a class="xref" href="Global.Collision.html">Collision</a>&gt;</td>
+        <td><span class="parametername">listener</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.BaseHitDetector.html#Global_BaseHitDetector_DoStartDetector_Action_HittableHitbox__">BaseHitDetector.DoStartDetector(Action&lt;HittableHitbox&gt;)</a></div>
+  <div><a class="xref" href="Global.BaseHitDetector.html#Global_BaseHitDetector_StartDetector_Action_Collision__">BaseHitDetector.StartDetector(Action&lt;Collision&gt;)</a></div>
   
   
   <a id="Global_SingleHitDetector_StopDetector_" data-uid="Global.SingleHitDetector.StopDetector*"></a>

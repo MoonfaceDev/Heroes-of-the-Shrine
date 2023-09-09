@@ -90,6 +90,10 @@
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><span class="xref">Hit</span></div>
   </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Global.Hit.html">Hit</a>&gt;</div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -118,20 +122,102 @@
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Global_Hit_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Hit</code></pre>
+    <pre><code class="lang-csharp hljs">public class Hit : IEquatable&lt;Hit&gt;</code></pre>
   </div>
-  <h3 id="fields">Fields
+  <h3 id="constructors">Constructors
   </h3>
   
   
-  <h4 id="Global_Hit_direction" data-uid="Global.Hit.direction">direction</h4>
+  <a id="Global_Hit__ctor_" data-uid="Global.Hit.#ctor*"></a>
+  <h4 id="Global_Hit__ctor_Collision_BaseAttack_Rotation_" data-uid="Global.Hit.#ctor(Collision,BaseAttack,Rotation)">Hit(Collision, BaseAttack, Rotation)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int direction</code></pre>
+    <pre><code class="lang-csharp hljs">public Hit(Collision collision, BaseAttack source = null, Rotation direction = null)</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.Collision.html">Collision</a></td>
+        <td><span class="parametername">collision</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Global.BaseAttack.html">BaseAttack</a></td>
+        <td><span class="parametername">source</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Global.Rotation.html">Rotation</a></td>
+        <td><span class="parametername">direction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Global_Hit__ctor_" data-uid="Global.Hit.#ctor*"></a>
+  <h4 id="Global_Hit__ctor_IHittable_Vector3_BaseAttack_Rotation_" data-uid="Global.Hit.#ctor(IHittable,Vector3,BaseAttack,Rotation)">Hit(IHittable, Vector3, BaseAttack, Rotation)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Hit(IHittable Victim, Vector3 Point, BaseAttack Source = null, Rotation Direction = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.IHittable.html">IHittable</a></td>
+        <td><span class="parametername">Victim</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">Point</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Global.BaseAttack.html">BaseAttack</a></td>
+        <td><span class="parametername">Source</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Global.Rotation.html">Rotation</a></td>
+        <td><span class="parametername">Direction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Global_Hit_Direction_" data-uid="Global.Hit.Direction*"></a>
+  <h4 id="Global_Hit_Direction" data-uid="Global.Hit.Direction">Direction</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Rotation Direction { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -141,22 +227,47 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><p>Direction the hit is pointed towards</p>
-</td>
+        <td><a class="xref" href="Global.Rotation.html">Rotation</a></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <h4 id="Global_Hit_source" data-uid="Global.Hit.source">source</h4>
+  <a id="Global_Hit_Point_" data-uid="Global.Hit.Point*"></a>
+  <h4 id="Global_Hit_Point" data-uid="Global.Hit.Point">Point</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public BaseAttack source</code></pre>
+    <pre><code class="lang-csharp hljs">public Vector3 Point { get; set; }</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Global_Hit_Source_" data-uid="Global.Hit.Source*"></a>
+  <h4 id="Global_Hit_Source" data-uid="Global.Hit.Source">Source</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BaseAttack Source { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -167,21 +278,21 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Global.BaseAttack.html">BaseAttack</a></td>
-        <td><p>Related attack that made hit</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <h4 id="Global_Hit_victim" data-uid="Global.Hit.victim">victim</h4>
+  <a id="Global_Hit_Victim_" data-uid="Global.Hit.Victim*"></a>
+  <h4 id="Global_Hit_Victim" data-uid="Global.Hit.Victim">Victim</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IHittable victim</code></pre>
+    <pre><code class="lang-csharp hljs">public IHittable Victim { get; set; }</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -192,11 +303,14 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Global.IHittable.html">IHittable</a></td>
-        <td><p>Hittable that got hit</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
 </article>
           </div>
           

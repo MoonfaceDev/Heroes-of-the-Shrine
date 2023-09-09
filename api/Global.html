@@ -198,6 +198,8 @@ Attach only the required brain modules for your state machine logic.</p>
       <h4><a class="xref" href="Global.ClosestToPlayerBrainModule.html">ClosestToPlayerBrainModule</a></h4>
       <section><p>State machine parameter telling if this is the closest enemy to the player</p>
 </section>
+      <h4><a class="xref" href="Global.Collision.html">Collision</a></h4>
+      <section></section>
       <h4><a class="xref" href="Global.Cooldown.html">Cooldown</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.CounterAttack.html">CounterAttack</a></h4>
@@ -300,6 +302,8 @@ After the periodic part is checking for hits a certain number of times, the expl
       <section></section>
       <h4><a class="xref" href="Global.EscapePattern.html">EscapePattern</a></h4>
       <section></section>
+      <h4><a class="xref" href="Global.EventHitExecutor.html">EventHitExecutor</a></h4>
+      <section></section>
       <h4><a class="xref" href="Global.EventManager.html">EventManager</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.EventWrapper.html">EventWrapper</a></h4>
@@ -308,10 +312,6 @@ After the periodic part is checking for hits a certain number of times, the expl
       <h4><a class="xref" href="Global.Figure.html">Figure</a></h4>
       <section><p>Component that updates a character&apos;s sprite according to its <span class="xref">GameEntity</span></p>
 </section>
-      <h4><a class="xref" href="Global.FireEffect.html">FireEffect</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Global.FireEffect.Command.html">FireEffect.Command</a></h4>
-      <section></section>
       <h4><a class="xref" href="Global.FocusBlock.html">FocusBlock</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.FocusBlock.BlockDefinition.html">FocusBlock.BlockDefinition</a></h4>
@@ -364,9 +364,6 @@ Should be used only in classes that don&apos;t inherit from <span class="xref">B
       <section></section>
       <h4><a class="xref" href="Global.Hitbox.html">Hitbox</a></h4>
       <section><p>Hitbox for an attack, particle, or an object that can get hit</p>
-</section>
-      <h4><a class="xref" href="Global.HitParticles.html">HitParticles</a></h4>
-      <section><p>Class for spawning particles when a <span class="xref">IHittable</span> is hit</p>
 </section>
       <h4><a class="xref" href="Global.HittableBehaviour.html">HittableBehaviour</a></h4>
       <section><p>Behaviours responsible for processing hits from attacks</p>
@@ -437,6 +434,8 @@ reaches zero.</p>
 </section>
       <h4><a class="xref" href="Global.ParticlesEditor.html">ParticlesEditor</a></h4>
       <section></section>
+      <h4><a class="xref" href="Global.ParticlesHitExecutor.html">ParticlesHitExecutor</a></h4>
+      <section></section>
       <h4><a class="xref" href="Global.Pathfind.html">Pathfind</a></h4>
       <section><p>Pathfinding on a <span class="xref">WalkableGrid</span> using Theta Star algorithm</p>
 </section>
@@ -445,9 +444,6 @@ reaches zero.</p>
 </section>
       <h4><a class="xref" href="Global.PeriodicAbsoluteHitDetector.html">PeriodicAbsoluteHitDetector</a></h4>
       <section><p>An hit detector that detects hits periodically, with a given interval</p>
-</section>
-      <h4><a class="xref" href="Global.PeriodicRelativeHitDetector.html">PeriodicRelativeHitDetector</a></h4>
-      <section><p>An hit detector that detects hits periodically, with a given interval, relative to the hit object</p>
 </section>
       <h4><a class="xref" href="Global.PhasedBehaviour-1.html">PhasedBehaviour&lt;T&gt;</a></h4>
       <section></section>
@@ -530,6 +526,8 @@ receive the possessed effect</p>
       <h4><a class="xref" href="Global.RunKick.html">RunKick</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.RunSwipe.html">RunSwipe</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Global.SceneCollisionDetector.html">SceneCollisionDetector</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.SerializeInterface.html">SerializeInterface</a></h4>
       <section><p>Attribute for serialized interface fields. It displays a dropdown for selecting an implementation, and then displays
@@ -646,6 +644,8 @@ Use it only when you cannot access the global <see cref="!:AudioBehaviour"></see
     <h3 id="interfaces">Interfaces
   </h3>
       <h4><a class="xref" href="Global.IBlockBehaviour.html">IBlockBehaviour</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Global.ICollisionDetector.html">ICollisionDetector</a></h4>
       <section></section>
       <h4><a class="xref" href="Global.IControlledBehaviour.html">IControlledBehaviour</a></h4>
       <section></section>

@@ -904,7 +904,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.AbsoluteHitDetector.html",
-          "hash": "DdVFpYOIjQfskgvO6/Q3gtwOKIbs1/TTA5+qtKj9pgU="
+          "hash": "AwYjAxyvxqxIG6sSCs5E7u7YMhk23tYJxkuShG1szE8="
         }
       },
       "is_incremental": false,
@@ -1048,7 +1048,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.AttackManager.html",
-          "hash": "Aqaam833NOR6uiHQUsZzlQ1+vpjuTUN/mdhqTpZSDno="
+          "hash": "x8xFH+M7/akZlK44yoJ3ohb858xrjVryXYKcVyqegpk="
         }
       },
       "is_incremental": false,
@@ -1192,7 +1192,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.BaseEffect-1.html",
-          "hash": "EuvOA7WYCL23ZIW5IwNt2B3rmmilmpYvmbjtlBDFc6k="
+          "hash": "QfEC8zX/rnul25W2EJjTYbXv1Bdnrtd+wEW2n55/5Aw="
         }
       },
       "is_incremental": false,
@@ -1204,7 +1204,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.BaseHitDetector.html",
-          "hash": "TrP55l4jUwCXYlDHPBZt4UMPzsU2fT1hd1CRS5rfy3Y="
+          "hash": "O/C8mbOooVv1T3g3rTHTzzGZ0Dzq3ChtUu1G2YsNsHQ="
         }
       },
       "is_incremental": false,
@@ -1240,7 +1240,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.BossHittableHitbox.html",
-          "hash": "OSF/+9QSTfmzrajttwY2jiPCahMUN3V7s/mQUxzEE4U="
+          "hash": "2wCPFcX9Oub2b9fowD6oa5FOkSacfQnwgpqDhQ2DY2I="
         }
       },
       "is_incremental": false,
@@ -1409,6 +1409,18 @@
         ".html": {
           "relative_path": "api/Global.ClosestToPlayerBrainModule.html",
           "hash": "UxJJDWcVnAUa1lQcamquxawicpCbiW/y2Yf8Da0T5CY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.Collision.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.Collision.html",
+          "hash": "k5awKzoqbQ7QjUZHzx1yChEjQrqoZI9a7NdDGHW/YqI="
         }
       },
       "is_incremental": false,
@@ -1672,7 +1684,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.ElectrifyAttack.html",
-          "hash": "7da3DaWD+hsPfEwn+ELrXt1/iTCea9POn58bbMfh5AQ="
+          "hash": "2qUSq20mUiShepiVurLFquI3HQVHZLUrIhDiTQbFkjY="
         }
       },
       "is_incremental": false,
@@ -1828,7 +1840,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.EntityBehaviour.html",
-          "hash": "1yADMDg+w2ATYlcqzL4JDI5jmuP2UcHtpdoJgHsuMww="
+          "hash": "bLcRjzSKMTI5aXsBHy71mTwS3qZJfsi2zWCLbY7uBD8="
         }
       },
       "is_incremental": false,
@@ -1884,6 +1896,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.EventHitExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.EventHitExecutor.html",
+          "hash": "wKdyKFAXqEe5q51va8OeEux5xEVW113tzb4OxGjcluA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.EventManager.yml",
       "output": {
         ".html": {
@@ -1913,30 +1937,6 @@
         ".html": {
           "relative_path": "api/Global.Figure.html",
           "hash": "uZgVChXJd0rMmexX1guww0J8aYaGXN23JymA67NGPeI="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.FireEffect.Command.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.FireEffect.Command.html",
-          "hash": "GkzKHvs134ory91V8bAt3wDyfoVV3HYb7nL/L21a8L8="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.FireEffect.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.FireEffect.html",
-          "hash": "1/Npjx2IPgwZui+T0apJ39IzHaDBPdJCgGM6NtKW7SA="
         }
       },
       "is_incremental": false,
@@ -2188,19 +2188,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.Hit.html",
-          "hash": "OvFMWvOr4pO21FJkkeQRxIgvcy1qscNP5EVK1ojYIg8="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.HitParticles.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.HitParticles.html",
-          "hash": "Bw7iiGSNV5nck/XmlJhhjwzozlhi/Tpex0j6miqmsfA="
+          "hash": "J7YXXHKmYn1RICEp5gjcePzW3oE/KRnwKLSoJm+ZEXA="
         }
       },
       "is_incremental": false,
@@ -2248,7 +2236,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.HittableBehaviour.html",
-          "hash": "eJs8Jqw/AVXXoLTtk2d0Ai35UTc25BiJ3Y9fo5fHOEI="
+          "hash": "fkzGlt+F53bSimURHsHNCs9NOrwRyGVao+TxkXMcvdg="
         }
       },
       "is_incremental": false,
@@ -2260,7 +2248,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.HittableHitbox.html",
-          "hash": "aAjpNdxNYc8ke3dYb24o5ulSO8KweTa2vr4Akql+loM="
+          "hash": "oT9gG/u259WuqIQLTRBr/QfiFpaRF1M5WjY9L8f6RIY="
         }
       },
       "is_incremental": false,
@@ -2273,6 +2261,18 @@
         ".html": {
           "relative_path": "api/Global.IBlockBehaviour.html",
           "hash": "ZgXw1f5yFoDBblLvH5oYzOt1t64ZwUYS/CBcploMIEw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.ICollisionDetector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.ICollisionDetector.html",
+          "hash": "SZ2NwJozBH6pGsDUn4vYt1cjxr71e4gtvwyoSzRQiUQ="
         }
       },
       "is_incremental": false,
@@ -2332,7 +2332,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.IHittable.html",
-          "hash": "498Jrw6A7+g0LZVvI+9nqbbll2c+3QEK17zaeggw5c4="
+          "hash": "Qk55CA3WCsht2baCENW5KyDF/WCD7ioOU2eaCLVepko="
         }
       },
       "is_incremental": false,
@@ -2652,6 +2652,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.ParticlesHitExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.ParticlesHitExecutor.html",
+          "hash": "05gnRecQ3J4oyMPgG6ui5Vf7ZS900Erk5Brt0fhGgxE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.Pathfind.yml",
       "output": {
         ".html": {
@@ -2680,19 +2692,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.PeriodicAbsoluteHitDetector.html",
-          "hash": "9JEWRJXxNPLO3iKPg7dS6QwJ1ADmn6liBlZNn7R4PUc="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.PeriodicRelativeHitDetector.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.PeriodicRelativeHitDetector.html",
-          "hash": "htm2C0EpPIhmOkJyDzzCmwjbZnPJtqJSLwG3xfret7w="
+          "hash": "LKHd9NB9DPoSJH8kJKZj3RNLXeIqU25DvME+A98tfec="
         }
       },
       "is_incremental": false,
@@ -3016,7 +3016,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.Rotation.html",
-          "hash": "BlhiVu352lutx/S9WiPgyAcEPjBo4TUObbsXioalQmg="
+          "hash": "EvKy4bVLucHFWxori6N66JnDce2s50P1WCXMUOAxULY="
         }
       },
       "is_incremental": false,
@@ -3077,6 +3077,18 @@
         ".html": {
           "relative_path": "api/Global.RunSwipe.html",
           "hash": "1e1YEoVe4gXtqa3UPKV9hO98wJs4ZmqmIUGLqFpIBiU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.SceneCollisionDetector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.SceneCollisionDetector.html",
+          "hash": "OEKb5rWWS28ljXwwvMANwEZDv+ed6vWaAEkMteX/30c="
         }
       },
       "is_incremental": false,
@@ -3148,7 +3160,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.SingleHitDetector.html",
-          "hash": "wyGuMUzZn5u2yjch2N7xD7wE6C9M5JDu6y4x7PKmfRY="
+          "hash": "ADxCPFzbYdTMAQ3fvifrlzXF826tvQjdd7X4F66ImsA="
         }
       },
       "is_incremental": false,
@@ -3232,7 +3244,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.SpikeBall.html",
-          "hash": "Ru67a+C1Ywq6ZfESkid1Mv+ZBrK+PY8sqZqQUVaCG0c="
+          "hash": "zEFOW2sRhIv1aFt3A+JGonT7sdy3rlgaXFc64hgR2Hg="
         }
       },
       "is_incremental": false,
@@ -3460,7 +3472,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.SuperArmorHittableHitbox.html",
-          "hash": "L80lmf0dRvGLy1SxAPnRJoHh7LaRVPYMTMEcwUBK5Q0="
+          "hash": "JfrpX9QjhF9TWYWt+CicItPiCoyd3RqtXm4HnmkKOwk="
         }
       },
       "is_incremental": false,
@@ -3652,7 +3664,31 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "y+Qt2VHdxL61ZTBM/OJA1jGWjA6ELlGP7u4UXsQxz+I="
+          "hash": "DjbjS9uR3u813bkWpm5RqNbwGPMdcq81K4kTXNbQoUQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/System.Runtime.CompilerServices.IsExternalInit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/System.Runtime.CompilerServices.IsExternalInit.html",
+          "hash": "OJ/xlvVUYT4FsGNv61UN3KKVuQm7h2qClR2QkVlIcWM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/System.Runtime.CompilerServices.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/System.Runtime.CompilerServices.html",
+          "hash": "NKnxblMDkliKVjAaGiO5ASNywqdxUN68lpO9UvYHc6A="
         }
       },
       "is_incremental": false,
@@ -3664,7 +3700,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "MIICBcwW3Wpvi9gEKmASPTVHKVAsgMIAtgMgwc9qwV0="
+          "hash": "dhoRfSm3bMD+caZ6r72c0zrNnZKtPNW83eK0c2P+Ofs="
         }
       },
       "is_incremental": false,
@@ -3875,7 +3911,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 303,
+          "total_file_count": 306,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
