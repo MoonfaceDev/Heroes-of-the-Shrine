@@ -9,12 +9,13 @@ public class EnragedBrainModule : BrainModule
     /// Parameter is set when health gets below this value
     /// </value>
     public float rageHealthThreshold;
-    
+
     /// <value>
     /// Attacks damage multiplier when rage is on
     /// </value>
     public float rageDamageMultiplier = 1;
 
+    [InjectBehaviour] private AttackManager attackManager;
     private bool rage;
 
     private const string RageParameter = "rage";
@@ -33,14 +34,10 @@ public class EnragedBrainModule : BrainModule
 
     private void Start()
     {
-        var attackManager = GetBehaviour<AttackManager>();
-        eventManager.InvokeWhen(() => rage, () =>
-        {
-            if (attackManager)
-            {
-                attackManager.damageTranspiler.Add((_, _, damage) => rageDamageMultiplier * damage);
-            }
-        });
+        eventManager.InvokeWhen(
+            () => rage,
+            () => attackManager.damageTranspiler.Add((_, _, damage) => rageDamageMultiplier * damage)
+        );
     }
 
     private bool ShouldGetEnraged()

@@ -7,11 +7,13 @@ public class PossessedEffect : BaseEffect<PossessedEffect.Command>
     {
         public float maxDuration;
     }
-    
+
+    [InjectBehaviour] private HittableBehaviour hittableBehaviour;
+
     private float currentDuration;
     private float currentStartTime;
     private string stopListener;
-    
+
     private static readonly Type[] BehavioursToBlock = { typeof(IControlledBehaviour), typeof(IForcedBehaviour) };
 
     public override bool CanPlay(Command command)
@@ -27,11 +29,7 @@ public class PossessedEffect : BaseEffect<PossessedEffect.Command>
         currentDuration = command.maxDuration;
         stopListener = eventManager.InvokeWhen(() => Time.time - currentStartTime > currentDuration, Stop);
 
-        var hittableBehaviour = GetBehaviour<HittableBehaviour>();
-        if (hittableBehaviour)
-        {
-            hittableBehaviour.onHit += OnHit;
-        }
+        hittableBehaviour.onHit += OnHit;
 
         StopBehaviours(BehavioursToBlock);
         BlockBehaviours(BehavioursToBlock);
@@ -52,11 +50,7 @@ public class PossessedEffect : BaseEffect<PossessedEffect.Command>
     {
         Active = false;
 
-        var hittableBehaviour = GetBehaviour<HittableBehaviour>();
-        if (hittableBehaviour)
-        {
-            hittableBehaviour.onHit -= OnHit;
-        }
+        hittableBehaviour.onHit -= OnHit;
 
         currentDuration = 0;
 

@@ -5,13 +5,13 @@
 /// </summary>
 public class StunBrainModule : BrainModule
 {
+    [InjectBehaviour] private StunBehaviour stunBehaviour;
+    
     private const string StunParameter = "stun";
     private static readonly int Stun = Animator.StringToHash(StunParameter);
 
     private void Start()
     {
-        var stunBehaviour = GetBehaviour<StunBehaviour>();
-        if (!stunBehaviour) return;
         stunBehaviour.PlayEvents.onPlay += () => StateMachine.SetBool(Stun, true);
         stunBehaviour.PlayEvents.onStop += () => StateMachine.SetBool(Stun, false);
     }

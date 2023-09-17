@@ -13,15 +13,9 @@ public class EscapeBehaviour : PlayableBehaviour<EscapeBehaviour.Command>, IMove
 
     public override bool Playing => Active;
 
-    private WalkBehaviour walkBehaviour;
+    [InjectBehaviour] private WalkBehaviour walkBehaviour;
     private float currentSpeedMultiplier;
     private string escapeListener;
-
-    protected override void Awake()
-    {
-        base.Awake();
-        walkBehaviour = GetBehaviour<WalkBehaviour>();
-    }
 
     private void Start()
     {

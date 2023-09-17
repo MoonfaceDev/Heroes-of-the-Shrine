@@ -42,8 +42,8 @@ public class WideBlock : PhasedBehaviour<WideBlock.Command>, IBlockBehaviour
     [SerializeField] public ExtEvent onStartInvincible;
     [SerializeField] public ExtEvent onFinishInvincible;
 
-    private HealthSystem healthSystem;
-    private EnergySystem energySystem;
+    [InjectBehaviour] private HealthSystem healthSystem;
+    [InjectBehaviour] private EnergySystem energySystem;
     private string blockWindowStartTimeout;
     private string blockWindowStopTimeout;
     private bool blockWindow;
@@ -52,9 +52,6 @@ public class WideBlock : PhasedBehaviour<WideBlock.Command>, IBlockBehaviour
     protected override void Awake()
     {
         base.Awake();
-
-        healthSystem = GetBehaviour<HealthSystem>();
-        energySystem = GetBehaviour<EnergySystem>();
 
         phaseEvents.onStartActive += () =>
         {

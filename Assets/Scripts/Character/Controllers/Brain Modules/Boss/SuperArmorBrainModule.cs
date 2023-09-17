@@ -5,16 +5,10 @@
 /// </summary>
 public class SuperArmorBrainModule : BrainModule
 {
-    private SuperArmor superArmor;
+    [InjectBehaviour] private SuperArmor superArmor;
 
     private const string SuperArmorHealthParameter = "superArmorHealth";
     private static readonly int SuperArmorHealth = Animator.StringToHash(SuperArmorHealthParameter);
-
-    protected override void Awake()
-    {
-        base.Awake();
-        superArmor = GetBehaviour<SuperArmor>();
-    }
 
     private void Start()
     {

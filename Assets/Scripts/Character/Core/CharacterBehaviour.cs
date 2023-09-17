@@ -9,7 +9,8 @@ public abstract class CharacterBehaviour : EntityBehaviour
     /// <value>
     /// Character reference
     /// </value>
-    public Character Character { get; private set; }
+    [field: InjectBehaviour]
+    protected Character Character { get; }
 
     /// <value>
     /// Animator of the figure (related <see cref="SpriteRenderer"/>)
@@ -25,12 +26,6 @@ public abstract class CharacterBehaviour : EntityBehaviour
     /// Attached <see cref="AttackManager"/>, possibly null
     /// </value>
     public AttackManager AttackManager => Character.attackManager;
-
-    protected override void Awake()
-    {
-        base.Awake();
-        Character = GetBehaviour<Character>();
-    }
 
     /// <summary>
     /// Blocks behaviours, meaning they cannot be played. If a behaviour is blocked N times, it will have to be unblocked N times so it can be played.

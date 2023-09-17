@@ -36,14 +36,13 @@ public class StaggerBehaviour : PlayableBehaviour<StaggerBehaviour.Command>
     }
 
     private bool active;
-    private StunBehaviour stunBehaviour;
+    [InjectBehaviour] private StunBehaviour stunBehaviour;
 
     public override bool Playing => Active;
 
     protected override void Awake()
     {
         base.Awake();
-        stunBehaviour = GetBehaviour<StunBehaviour>();
         balance = defaultBalance;
         
         eventManager.Register(() =>

@@ -11,15 +11,9 @@ public class ArcBehaviour : PlayableBehaviour<ArcBehaviour.Command>, IMovementBe
     public override bool Playing => active;
 
     private bool active;
-    private WalkBehaviour walkBehaviour;
+    [InjectBehaviour] private WalkBehaviour walkBehaviour;
     private float currentSpeedMultiplier;
     private string circleListener;
-
-    protected override void Awake()
-    {
-        base.Awake();
-        walkBehaviour = GetBehaviour<WalkBehaviour>();
-    }
 
     private void Start()
     {

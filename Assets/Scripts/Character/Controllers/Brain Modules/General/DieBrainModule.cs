@@ -9,10 +9,10 @@ public class DieBrainModule : BrainModule
     private const string DeadParameter = "dead";
     private static readonly int Dead = Animator.StringToHash(DeadParameter);
 
+    [InjectBehaviour] private DieBehaviour dieBehaviour;
+
     private void Start()
     {
-        var dieBehaviour = GetBehaviour<DieBehaviour>();
-        if (!dieBehaviour) return;
         dieBehaviour.onDie += () =>
         {
             if (!HasParameter())

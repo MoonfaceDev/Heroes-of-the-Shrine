@@ -13,18 +13,12 @@ public class ElectrifiedEffect : BaseEffect<ElectrifiedEffect.Command>
 
     private float startTime;
     private float currentDuration;
-    private WalkBehaviour walkBehaviour;
+    [InjectBehaviour] private WalkBehaviour walkBehaviour;
     private float currentSpeedMultiplier;
     private string stopListener;
 
     private static readonly Type[] BehavioursToBlock =
         { typeof(RunBehaviour), typeof(SlideBehaviour), typeof(DodgeBehaviour), typeof(JumpBehaviour) };
-
-    protected override void Awake()
-    {
-        base.Awake();
-        walkBehaviour = GetBehaviour<WalkBehaviour>();
-    }
 
     protected override void DoPlay(Command command)
     {

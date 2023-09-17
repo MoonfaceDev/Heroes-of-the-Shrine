@@ -15,17 +15,14 @@ public class HittableBehaviour : CharacterBehaviour, IHittable
     public GameEntity RelatedEntity => Entity;
     public ExtEvent HitEvent => onHit;
 
-    private HealthSystem healthSystem;
-    private KnockbackBehaviour knockbackBehaviour;
-    private ForcedWalkBehaviour forcedWalkBehaviour;
+    [InjectBehaviour] private HealthSystem healthSystem;
+    [InjectBehaviour] private KnockbackBehaviour knockbackBehaviour;
+    [InjectBehaviour] private ForcedWalkBehaviour forcedWalkBehaviour;
     private IEnumerable<IBlockBehaviour> blockBehaviours;
 
     protected override void Awake()
     {
         base.Awake();
-        healthSystem = GetBehaviour<HealthSystem>();
-        knockbackBehaviour = GetBehaviour<KnockbackBehaviour>();
-        forcedWalkBehaviour = GetBehaviour<ForcedWalkBehaviour>();
         blockBehaviours = GetBehaviours<IBlockBehaviour>();
     }
 

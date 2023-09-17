@@ -16,6 +16,8 @@ public class DieBehaviour : CharacterBehaviour
     /// </value>
     public float deathAnimationDuration;
 
+    [InjectBehaviour] private HealthSystem healthSystem;
+
     private static readonly int DeadParameter = Animator.StringToHash("dead");
 
     /// <value>
@@ -25,7 +27,6 @@ public class DieBehaviour : CharacterBehaviour
 
     private void Start()
     {
-        var healthSystem = GetBehaviour<HealthSystem>();
         eventManager.InvokeWhen(() => !healthSystem.Alive, Kill);
     }
 

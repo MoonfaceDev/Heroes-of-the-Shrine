@@ -1,5 +1,70 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &12531235040598657
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1239152131505402378}
+  - component: {fileID: 4137682712578551871}
+  - component: {fileID: 3992208905404404829}
+  m_Layer: 0
+  m_Name: Hitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1239152131505402378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12531235040598657}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.025, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4317582135459620756}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4137682712578551871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12531235040598657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bf802ce25740a5bb67001e6fc77540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5102893360874897665}
+  tags:
+    tags: 
+  position: {x: 0.025, y: 0.65, z: 0}
+  rotation:
+    flipped: 0
+  scale: {x: 1, y: 1, z: 1}
+--- !u!114 &3992208905404404829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12531235040598657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb99ffcfa5163ec419baa75a14b22f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 3.03, y: 1.2, z: 1}
 --- !u!1 &307263992615725128
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,10 +415,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 0
   hardRecovery: 0
-  includedHittableTags:
-    tags: 
-  excludedHittableTags:
-    tags: 
   activeDuration: 0.14
   hitDetector:
     rid: 168482633143812260
@@ -370,7 +431,6 @@ MonoBehaviour:
     - rid: 168482633143812260
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
-        hitbox: {fileID: 5102893361817772762}
         collisionDetector:
           hitbox: {fileID: 5102893361817772762}
     - rid: 168482633143812262
@@ -820,10 +880,6 @@ MonoBehaviour:
   instant: 1
   interruptible: 1
   hardRecovery: 0
-  includedHittableTags:
-    tags: 
-  excludedHittableTags:
-    tags: 
   velocity: 60
   acceleration: 300
   hitDetector:
@@ -839,7 +895,6 @@ MonoBehaviour:
     - rid: 2084589854795759621
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
-        hitbox: {fileID: 2267100158213249188}
         collisionDetector:
           hitbox: {fileID: 2267100158213249188}
     - rid: 2084589854795759623
@@ -951,10 +1006,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 1
-  includedHittableTags:
-    tags: 
-  excludedHittableTags:
-    tags: 
   velocity: 10
   acceleration: 10
   hitDetector:
@@ -975,7 +1026,6 @@ MonoBehaviour:
     - rid: 3181427246007058570
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
-        hitbox: {fileID: 5102893361029256204}
         collisionDetector:
           hitbox: {fileID: 5102893361029256204}
     - rid: 3181427634693996644
@@ -1071,10 +1121,6 @@ MonoBehaviour:
   instant: 1
   interruptible: 1
   hardRecovery: 0
-  includedHittableTags:
-    tags: 
-  excludedHittableTags:
-    tags: 
   activeDuration: 0.2
   hitDetector:
     rid: 3596404163551166479
@@ -1102,7 +1148,6 @@ MonoBehaviour:
     - rid: 3596404163551166479
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
-        hitbox: {fileID: 5352139521565845282}
         collisionDetector:
           hitbox: {fileID: 5352139521565845282}
     - rid: 5450716960379109437
@@ -1191,10 +1236,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  includedHittableTags:
-    tags: 
-  excludedHittableTags:
-    tags: 
   attackFlow:
     activeDuration: 0.45
     detector1StartTime: 0.05
@@ -1224,13 +1265,11 @@ MonoBehaviour:
     - rid: 1742320387755081729
       type: {class: AbsoluteHitDetector, ns: , asm: Assembly-CSharp}
       data:
-        hitbox: {fileID: 4199430159229373187}
         collisionDetector:
           hitbox: {fileID: 4199430159229373187}
     - rid: 1742320387755081741
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
-        hitbox: {fileID: 7565641741475773786}
         collisionDetector:
           hitbox: {fileID: 7565641741475773786}
     - rid: 1742320387755081742
@@ -1345,10 +1384,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 0
   hardRecovery: 0
-  includedHittableTags:
-    tags: 
-  excludedHittableTags:
-    tags: 
   activeDuration: 0.25
   hitDetector:
     rid: 3596404208624992257
@@ -1368,7 +1403,6 @@ MonoBehaviour:
     - rid: 3596404208624992257
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
-        hitbox: {fileID: 2932138046401966748}
         collisionDetector:
           hitbox: {fileID: 2932138046401966748}
     - rid: 3596404208624992258
@@ -1530,10 +1564,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  includedHittableTags:
-    tags: 
-  excludedHittableTags:
-    tags: 
   attackFlow:
     activeDuration: 0.8
     detector1StartTime: 0
@@ -1590,13 +1620,11 @@ MonoBehaviour:
     - rid: 3181427246007058579
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
-        hitbox: {fileID: 5102893360398477695}
         collisionDetector:
           hitbox: {fileID: 5102893360398477695}
     - rid: 3181427246007058585
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
-        hitbox: {fileID: 5102893361076516092}
         collisionDetector:
           hitbox: {fileID: 5102893361076516092}
     - rid: 5450716960379109421
@@ -1930,10 +1958,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 0
   hardRecovery: 0
-  includedHittableTags:
-    tags: 
-  excludedHittableTags:
-    tags: 
   activeDuration: 0.2
   hitDetector:
     rid: 3181427246007058589
@@ -1954,7 +1978,6 @@ MonoBehaviour:
     - rid: 3181427246007058589
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
-        hitbox: {fileID: 5102893360422186048}
         collisionDetector:
           hitbox: {fileID: 5102893360422186048}
     - rid: 3181427634693996681
@@ -2117,10 +2140,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  includedHittableTags:
-    tags: 
-  excludedHittableTags:
-    tags: 
   activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058576
@@ -2140,7 +2159,6 @@ MonoBehaviour:
     - rid: 3181427246007058576
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
-        hitbox: {fileID: 5102893360763890678}
         collisionDetector:
           hitbox: {fileID: 5102893360763890678}
     - rid: 3181427634693996660
@@ -2239,10 +2257,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  includedHittableTags:
-    tags: 
-  excludedHittableTags:
-    tags: 
   attackFlow:
     activeDuration: 0.45
     detectorStartTime: 0.1
@@ -2262,7 +2276,6 @@ MonoBehaviour:
     - rid: 1742320750102052865
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
-        hitbox: {fileID: 5000059083912108390}
         collisionDetector:
           hitbox: {fileID: 5000059083912108390}
     - rid: 1742320750102052867
@@ -3287,6 +3300,9 @@ MonoBehaviour:
       energyCost: 0
     - attack: {fileID: 7388694263344988399}
       button: 3
+      energyCost: 0
+    - attack: {fileID: 8129168138118657466}
+      button: 6
       energyCost: 0
   bufferingTime: 0.3
   jumpPriority: 1
@@ -13701,10 +13717,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 0
   hardRecovery: 0
-  includedHittableTags:
-    tags: 
-  excludedHittableTags:
-    tags: 
   activeDuration: 0.15
   hitDetector:
     rid: 3181427246007058587
@@ -13725,7 +13737,6 @@ MonoBehaviour:
     - rid: 3181427246007058587
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
-        hitbox: {fileID: 5102893360536826755}
         collisionDetector:
           hitbox: {fileID: 5102893360536826755}
     - rid: 3181427634693996673
@@ -13823,10 +13834,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  includedHittableTags:
-    tags: 
-  excludedHittableTags:
-    tags: 
   activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058572
@@ -13846,7 +13853,6 @@ MonoBehaviour:
     - rid: 3181427246007058572
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
-        hitbox: {fileID: 4058469792659233068}
         collisionDetector:
           hitbox: {fileID: 4058469792659233068}
     - rid: 3181427634693996652
@@ -13941,10 +13947,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  includedHittableTags:
-    tags: 
-  excludedHittableTags:
-    tags: 
   activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058563
@@ -13964,7 +13966,6 @@ MonoBehaviour:
     - rid: 3181427246007058563
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
-        hitbox: {fileID: 5102893360536826755}
         collisionDetector:
           hitbox: {fileID: 5102893360536826755}
     - rid: 3181427634693996648
@@ -13979,6 +13980,102 @@ MonoBehaviour:
       type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
+--- !u!1 &7373627853266784030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4317582135459620756}
+  - component: {fileID: 8129168138118657466}
+  m_Layer: 0
+  m_Name: Spike Fall Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4317582135459620756
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7373627853266784030}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1239152131505402378}
+  m_Father: {fileID: 32172274780924393}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8129168138118657466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7373627853266784030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef1774f3b67d4dc985831e57d2fd7398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playEvents:
+    onPlay:
+      _persistentListeners: []
+      Expanded: 1
+    onStop:
+      _persistentListeners: []
+      Expanded: 1
+  anticipationDuration: 0.2
+  recoveryDuration: 0.2
+  phaseEvents:
+    onStartAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishAnticipating:
+      _persistentListeners: []
+      Expanded: 1
+    onStartActive:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishActive:
+      _persistentListeners: []
+      Expanded: 1
+    onStartRecovery:
+      _persistentListeners: []
+      Expanded: 1
+    onFinishRecovery:
+      _persistentListeners: []
+      Expanded: 1
+  onBlock:
+    _persistentListeners: []
+    Expanded: 1
+  previousAttacks:
+  - {fileID: 0}
+  instant: 0
+  interruptible: 0
+  hardRecovery: 0
+  minHeight: 0.5
+  velocity: 20
+  angle: 45
+  hitDetector:
+    rid: 5450717124091969543
+  hitExecutor:
+    executors: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 5450717124091969543
+      type: {class: AbsoluteHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        collisionDetector:
+          hitbox: {fileID: 3992208905404404829}
 --- !u!1 &7431997943483031100
 GameObject:
   m_ObjectHideFlags: 0
@@ -14090,10 +14187,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  includedHittableTags:
-    tags: 
-  excludedHittableTags:
-    tags: 
   attackFlow:
     activeTimeout: 3
     minActiveTime: 0.25
@@ -14181,10 +14274,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  includedHittableTags:
-    tags: 
-  excludedHittableTags:
-    tags: 
   activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058574
@@ -14204,7 +14293,6 @@ MonoBehaviour:
     - rid: 3181427246007058574
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
-        hitbox: {fileID: 5102893361817772762}
         collisionDetector:
           hitbox: {fileID: 5102893361817772762}
     - rid: 3181427634693996656
@@ -14260,6 +14348,7 @@ Transform:
   - {fileID: 9029514677093264878}
   - {fileID: 5282987104477988010}
   - {fileID: 3216537126837818626}
+  - {fileID: 4317582135459620756}
   - {fileID: 3937311290927260544}
   - {fileID: 3891540237183761913}
   - {fileID: 2957365998039289448}
@@ -14455,10 +14544,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  includedHittableTags:
-    tags: 
-  excludedHittableTags:
-    tags: 
   velocity: 0
   acceleration: 0
   hitDetector:
@@ -14471,7 +14556,6 @@ MonoBehaviour:
     - rid: 168482633143812213
       type: {class: AbsoluteHitDetector, ns: , asm: Assembly-CSharp}
       data:
-        hitbox: {fileID: 0}
         collisionDetector:
           hitbox: {fileID: 0}
 --- !u!1 &8660113274356423321
@@ -14566,10 +14650,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 0
   hardRecovery: 1
-  includedHittableTags:
-    tags: 
-  excludedHittableTags:
-    tags: 
   velocity: 50
   acceleration: 250
   hitDetector:
@@ -14590,7 +14670,6 @@ MonoBehaviour:
     - rid: 3181427246007058586
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
-        hitbox: {fileID: 5102893360866760427}
         collisionDetector:
           hitbox: {fileID: 5102893360866760427}
     - rid: 3181427634693996669
@@ -14702,10 +14781,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  includedHittableTags:
-    tags: 
-  excludedHittableTags:
-    tags: 
   velocity: 20.76923
   acceleration: 69.23077
   hitDetector:
@@ -14722,7 +14797,6 @@ MonoBehaviour:
     - rid: 168482808540430691
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
-        hitbox: {fileID: 6910350036342276064}
         collisionDetector:
           hitbox: {fileID: 6910350036342276064}
     - rid: 168482808540430692

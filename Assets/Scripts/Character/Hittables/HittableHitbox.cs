@@ -35,7 +35,8 @@ public class HittableHitbox : EntityBehaviour, IHittable
     /// <value>
     /// Related hitbox
     /// </value>
-    public Hitbox Hitbox { get; private set; }
+    [field: InjectBehaviour]
+    public Hitbox Hitbox { get; }
 
     public GameEntity RelatedEntity => hittableBehaviour.Entity;
 
@@ -46,7 +47,6 @@ public class HittableHitbox : EntityBehaviour, IHittable
     protected override void Awake()
     {
         base.Awake();
-        Hitbox = GetBehaviour<Hitbox>();
         defaultMaterial = figure.material;
         onHit += hittableBehaviour.onHit.Invoke;
         onHit += Blink;

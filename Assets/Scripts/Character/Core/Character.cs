@@ -28,13 +28,12 @@ public class Character : EntityBehaviour
     /// <value>
     /// Attached <see cref="AttackManager"/>, possibly null
     /// </value>
-    [HideInInspector] public AttackManager attackManager;
+    [InjectBehaviour] [HideInInspector] public AttackManager attackManager;
 
     protected override void Awake()
     {
         base.Awake();
         movableEntity = (MovableEntity)Entity;
-        attackManager = GetBehaviour<AttackManager>();
     }
 
     private void SetBehavioursBlocked(bool blockedValue, IEnumerable<Type> types)

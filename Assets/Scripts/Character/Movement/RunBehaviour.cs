@@ -21,8 +21,8 @@ public class RunBehaviour : PlayableBehaviour<RunBehaviour.Command>, IMovementBe
 
     public override bool Playing => Run;
 
-    private WalkBehaviour walkBehaviour;
-    private JumpBehaviour jumpBehaviour;
+    [InjectBehaviour] private WalkBehaviour walkBehaviour;
+    [InjectBehaviour] private JumpBehaviour jumpBehaviour;
     private ParticleSystem.MainModule runParticlesMain;
     private bool run;
 
@@ -31,8 +31,6 @@ public class RunBehaviour : PlayableBehaviour<RunBehaviour.Command>, IMovementBe
     protected override void Awake()
     {
         base.Awake();
-        walkBehaviour = GetBehaviour<WalkBehaviour>();
-        jumpBehaviour = GetBehaviour<JumpBehaviour>();
         runParticlesMain = runParticles.main;
     }
 

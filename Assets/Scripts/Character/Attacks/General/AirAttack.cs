@@ -10,6 +10,8 @@ public class AirAttack : SimpleAttack
     protected override MotionSettings Motion => MotionSettings.WalkingEnabled;
     protected override bool IsMidair => true;
 
+    [InjectBehaviour] private JumpBehaviour jumpBehaviour;
+
     public override bool CanPlay(Command command)
     {
         return base.CanPlay(command) && Entity.position.y > minHeight;
@@ -17,8 +19,6 @@ public class AirAttack : SimpleAttack
 
     protected override IEnumerator ActivePhase()
     {
-        var jumpBehaviour = GetBehaviour<JumpBehaviour>();
-
         jumpBehaviour.Freeze();
         yield return base.ActivePhase();
         jumpBehaviour.Unfreeze();

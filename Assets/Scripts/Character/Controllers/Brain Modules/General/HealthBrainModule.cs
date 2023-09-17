@@ -5,16 +5,10 @@
 /// </summary>
 public class HealthBrainModule : BrainModule
 {
-    private HealthSystem healthSystem;
+    [InjectBehaviour] private HealthSystem healthSystem;
 
     private const string HealthParameter = "health";
     private static readonly int Health = Animator.StringToHash(HealthParameter);
-
-    protected override void Awake()
-    {
-        base.Awake();
-        healthSystem = GetBehaviour<HealthSystem>();
-    }
 
     public override string[] GetParameters()
     {

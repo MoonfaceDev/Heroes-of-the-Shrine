@@ -16,16 +16,9 @@ public class FollowBehaviour : PlayableBehaviour<FollowBehaviour.Command>, IMove
     public override bool Playing => active;
 
     private bool active;
-    private Pathfind pathfind;
-    private WalkBehaviour walkBehaviour;
+    [InjectBehaviour] private Pathfind pathfind;
+    [InjectBehaviour] private WalkBehaviour walkBehaviour;
     private string followListener;
-
-    protected override void Awake()
-    {
-        base.Awake();
-        pathfind = GetBehaviour<Pathfind>();
-        walkBehaviour = GetBehaviour<WalkBehaviour>();
-    }
 
     protected override void DoPlay(Command command)
     {

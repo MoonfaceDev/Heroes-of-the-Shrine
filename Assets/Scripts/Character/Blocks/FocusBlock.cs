@@ -39,14 +39,8 @@ public class FocusBlock : PhasedBehaviour<FocusBlock.Command>, IBlockBehaviour
     [SerializeField] public ExtEvent onStartInvincible;
     [SerializeField] public ExtEvent onFinishInvincible;
 
-    private EnergySystem energySystem;
+    [InjectBehaviour] private EnergySystem energySystem;
     private bool invincible;
-
-    protected override void Awake()
-    {
-        base.Awake();
-        energySystem = GetBehaviour<EnergySystem>();
-    }
 
     public override bool Playing => base.Playing || Invincible;
 

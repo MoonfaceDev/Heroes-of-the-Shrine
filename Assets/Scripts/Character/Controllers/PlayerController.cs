@@ -41,29 +41,22 @@ public class PlayerController : CharacterController
     public float possessedEffectDurationReduction;
 
 
-    private WalkBehaviour walkBehaviour;
-    private RunBehaviour runBehaviour;
-    private JumpBehaviour jumpBehaviour;
-    private SlideBehaviour slideBehaviour;
-    private DodgeBehaviour dodgeBehaviour;
-    private HealBehaviour healBehaviour;
-    private FocusBlock focusBlock;
-    private WideBlock wideBlock;
+    [InjectBehaviour] private WalkBehaviour walkBehaviour;
+    [InjectBehaviour] private RunBehaviour runBehaviour;
+    [InjectBehaviour] private JumpBehaviour jumpBehaviour;
+    [InjectBehaviour] private SlideBehaviour slideBehaviour;
+    [InjectBehaviour] private DodgeBehaviour dodgeBehaviour;
+    [InjectBehaviour] private HealBehaviour healBehaviour;
+    [InjectBehaviour] private FocusBlock focusBlock;
+    [InjectBehaviour] private WideBlock wideBlock;
+
+    [InjectBehaviour] private PossessedEffect possessedEffect;
 
     private List<BufferedAction> bufferedActions;
 
     protected override void Awake()
     {
         base.Awake();
-        walkBehaviour = GetBehaviour<WalkBehaviour>();
-        runBehaviour = GetBehaviour<RunBehaviour>();
-        jumpBehaviour = GetBehaviour<JumpBehaviour>();
-        slideBehaviour = GetBehaviour<SlideBehaviour>();
-        dodgeBehaviour = GetBehaviour<DodgeBehaviour>();
-        healBehaviour = GetBehaviour<HealBehaviour>();
-        focusBlock = GetBehaviour<FocusBlock>();
-        wideBlock = GetBehaviour<WideBlock>();
-
         bufferedActions = new List<BufferedAction>();
     }
 
@@ -88,11 +81,7 @@ public class PlayerController : CharacterController
     private void ReducePossessedEffectDuration()
     {
         if (!possessedEffectTimeReducing.Any(button => Input.GetButtonDown(button.ToString()))) return;
-        var possessedEffect = GetBehaviour<PossessedEffect>();
-        if (possessedEffect)
-        {
-            possessedEffect.ReduceDuration(possessedEffectDurationReduction);
-        }
+        possessedEffect.ReduceDuration(possessedEffectDurationReduction);
     }
 
     private void ExecuteBufferedActions()
@@ -219,7 +208,7 @@ public class PlayerController : CharacterController
     {
         return GetButtons().Where(button => Input.GetButtonDown(button.ToString())).ToArray();
     }
-    
+
     private static Button[] GetUpButtons()
     {
         return GetButtons().Where(button => Input.GetButtonUp(button.ToString())).ToArray();

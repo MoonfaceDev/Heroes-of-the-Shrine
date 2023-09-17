@@ -1,12 +1,6 @@
 ﻿public class RunSwipe : SimpleAttack
 {
-    private WalkBehaviour walkBehaviour;
-    
-    protected override void Awake()
-    {
-        base.Awake();
-        walkBehaviour = GetBehaviour<WalkBehaviour>();
-    }
+    [InjectBehaviour] private WalkBehaviour walkBehaviour;
 
     public override bool CanPlay(Command command)
     {

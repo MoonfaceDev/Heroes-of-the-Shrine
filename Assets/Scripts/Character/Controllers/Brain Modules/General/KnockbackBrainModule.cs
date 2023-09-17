@@ -5,13 +5,13 @@
 /// </summary>
 public class KnockbackBrainModule : BrainModule
 {
+    [InjectBehaviour] private KnockbackBehaviour knockbackBehaviour;
+    
     private const string KnockbackParameter = "knockback";
     private static readonly int Knockback = Animator.StringToHash(KnockbackParameter);
 
     private void Start()
     {
-        var knockbackBehaviour = GetBehaviour<KnockbackBehaviour>();
-        if (!knockbackBehaviour) return;
         knockbackBehaviour.PlayEvents.onPlay += () => StateMachine.SetBool(Knockback, true);
         knockbackBehaviour.PlayEvents.onStop += () => StateMachine.SetBool(Knockback, false);
     }

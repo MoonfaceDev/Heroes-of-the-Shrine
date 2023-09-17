@@ -16,16 +16,9 @@ public class HealBehaviour : PlayableBehaviour<HealBehaviour.Command>, IPlayable
     public float energyToHealthRatio;
     public float fullEnergyHealthReward;
 
-    private HealthSystem healthSystem;
-    private EnergySystem energySystem;
+    [InjectBehaviour] private HealthSystem healthSystem;
+    [InjectBehaviour] private EnergySystem energySystem;
     private string stopTimeout;
-
-    protected override void Awake()
-    {
-        base.Awake();
-        healthSystem = GetBehaviour<HealthSystem>();
-        energySystem = GetBehaviour<EnergySystem>();
-    }
 
     public override bool CanPlay(Command command)
     {
