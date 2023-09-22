@@ -1559,7 +1559,8 @@ MonoBehaviour:
   onBlock:
     _persistentListeners: []
     Expanded: 1
-  previousAttacks: []
+  previousAttacks:
+  - {fileID: 3226033048567882335}
   instant: 0
   interruptible: 1
   hardRecovery: 0
@@ -3267,13 +3268,13 @@ MonoBehaviour:
       button: 2
       energyCost: 0
     - attack: {fileID: 7157179758743540809}
-      button: 3
+      button: 2
       energyCost: 0
     - attack: {fileID: 1534430804526489236}
       button: 2
       energyCost: 0
     - attack: {fileID: 3226033048567882335}
-      button: 3
+      button: 2
       energyCost: 0
     - attack: {fileID: 3403884892882908741}
       button: 2
@@ -13828,7 +13829,7 @@ MonoBehaviour:
     _persistentListeners: []
     Expanded: 1
   previousAttacks:
-  - {fileID: 7126820491640019253}
+  - {fileID: 7157179758743540809}
   instant: 0
   interruptible: 1
   hardRecovery: 0
@@ -14646,7 +14647,7 @@ MonoBehaviour:
   previousAttacks:
   - {fileID: 1216366090443007232}
   instant: 0
-  interruptible: 0
+  interruptible: 1
   hardRecovery: 1
   velocity: 30
   acceleration: 120
