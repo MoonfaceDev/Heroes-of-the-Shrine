@@ -913,13 +913,13 @@ MonoBehaviour:
       GUID: 456a183db1e8752488fe8e192957fb8e
       _typeNameAndAssembly: AltNormalAttack, Assembly-CSharp
       _suppressLogs: 0
-    startTime: 0.5
+    startTime: 0.45
   - attackType:
       GuidAssignmentFailed: 0
       GUID: 120971cb774917b4593fc4bac3084f1d
       _typeNameAndAssembly: Uppercut, Assembly-CSharp
       _suppressLogs: 0
-    startTime: 1
+    startTime: 0.95
 --- !u!1101 &-4075617107260066686
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1685,13 +1685,13 @@ MonoBehaviour:
       GUID: 456a183db1e8752488fe8e192957fb8e
       _typeNameAndAssembly: AltNormalAttack, Assembly-CSharp
       _suppressLogs: 0
-    startTime: 0.5
+    startTime: 0.45
   - attackType:
       GuidAssignmentFailed: 0
       GUID: 81e86d033fb4f164abb77561de174642
       _typeNameAndAssembly: ElectrifyAttack, Assembly-CSharp
       _suppressLogs: 0
-    startTime: 1
+    startTime: 0.95
 --- !u!114 &558229741360402065
 MonoBehaviour:
   m_ObjectHideFlags: 1
