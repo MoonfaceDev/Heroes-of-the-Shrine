@@ -5540,6 +5540,19 @@ references:
   isSpec: "True"
   fullName: AttackManager.CanPlayAttack
   nameWithType: AttackManager.CanPlayAttack
+- uid: Global.AttackManager.CurrentAttack
+  name: CurrentAttack
+  href: api/Global.AttackManager.html#Global_AttackManager_CurrentAttack
+  commentId: P:Global.AttackManager.CurrentAttack
+  fullName: AttackManager.CurrentAttack
+  nameWithType: AttackManager.CurrentAttack
+- uid: Global.AttackManager.CurrentAttack*
+  name: CurrentAttack
+  href: api/Global.AttackManager.html#Global_AttackManager_CurrentAttack_
+  commentId: Overload:Global.AttackManager.CurrentAttack
+  isSpec: "True"
+  fullName: AttackManager.CurrentAttack
+  nameWithType: AttackManager.CurrentAttack
 - uid: Global.AttackManager.damageTranspiler
   name: damageTranspiler
   href: api/Global.AttackManager.html#Global_AttackManager_damageTranspiler
@@ -5558,25 +5571,6 @@ references:
   commentId: F:Global.AttackManager.knockbackPowerTranspiler
   fullName: AttackManager.knockbackPowerTranspiler
   nameWithType: AttackManager.knockbackPowerTranspiler
-- uid: Global.AttackManager.LastAttack
-  name: LastAttack
-  href: api/Global.AttackManager.html#Global_AttackManager_LastAttack
-  commentId: P:Global.AttackManager.LastAttack
-  fullName: AttackManager.LastAttack
-  nameWithType: AttackManager.LastAttack
-- uid: Global.AttackManager.LastAttack*
-  name: LastAttack
-  href: api/Global.AttackManager.html#Global_AttackManager_LastAttack_
-  commentId: Overload:Global.AttackManager.LastAttack
-  isSpec: "True"
-  fullName: AttackManager.LastAttack
-  nameWithType: AttackManager.LastAttack
-- uid: Global.AttackManager.maxComboDelay
-  name: maxComboDelay
-  href: api/Global.AttackManager.html#Global_AttackManager_maxComboDelay
-  commentId: F:Global.AttackManager.maxComboDelay
-  fullName: AttackManager.maxComboDelay
-  nameWithType: AttackManager.maxComboDelay
 - uid: Global.AttackManager.phaseEvents
   name: phaseEvents
   href: api/Global.AttackManager.html#Global_AttackManager_phaseEvents
