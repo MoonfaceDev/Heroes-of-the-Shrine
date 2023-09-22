@@ -1232,7 +1232,7 @@ MonoBehaviour:
     _persistentListeners: []
     Expanded: 1
   previousAttacks:
-  - {fileID: 1534430804526489236}
+  - {fileID: 7126820491640019253}
   instant: 0
   interruptible: 1
   hardRecovery: 0
@@ -1559,8 +1559,7 @@ MonoBehaviour:
   onBlock:
     _persistentListeners: []
     Expanded: 1
-  previousAttacks:
-  - {fileID: 1534430804526489236}
+  previousAttacks: []
   instant: 0
   interruptible: 1
   hardRecovery: 0
@@ -2111,8 +2110,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  anticipationDuration: 0.05
-  recoveryDuration: 0.25
+  anticipationDuration: 0.1
+  recoveryDuration: 0.2
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -2136,10 +2135,10 @@ MonoBehaviour:
     _persistentListeners: []
     Expanded: 1
   previousAttacks:
-  - {fileID: 1216366090443007232}
+  - {fileID: 1534430804526489236}
   instant: 0
   interruptible: 1
-  hardRecovery: 0
+  hardRecovery: 1
   activeDuration: 0.1
   hitDetector:
     rid: 3181427246007058576
@@ -2253,10 +2252,9 @@ MonoBehaviour:
     Expanded: 1
   previousAttacks:
   - {fileID: 1216366090443007232}
-  - {fileID: 7157179758743540809}
   instant: 0
   interruptible: 1
-  hardRecovery: 0
+  hardRecovery: 1
   attackFlow:
     activeDuration: 0.45
     detectorStartTime: 0.1
@@ -3296,7 +3294,7 @@ MonoBehaviour:
       button: 2
       energyCost: 0
     - attack: {fileID: 1216366090443007232}
-      button: 2
+      button: 3
       energyCost: 0
     - attack: {fileID: 7388694263344988399}
       button: 3
@@ -13920,7 +13918,7 @@ MonoBehaviour:
       _persistentListeners: []
       Expanded: 1
   anticipationDuration: 0.3
-  recoveryDuration: 0.25
+  recoveryDuration: 0.3
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -14245,7 +14243,7 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  anticipationDuration: 0.05
+  anticipationDuration: 0.1
   recoveryDuration: 0.3
   phaseEvents:
     onStartAnticipating:
@@ -14370,7 +14368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab68d069e0e79504ebe8ab7fd318ee7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxComboDelay: 0.05
+  maxComboDelay: 0
   hittableTags:
     tags: 0200000006000000
   playEvents:
@@ -14611,7 +14609,7 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  anticipationDuration: 0.05
+  anticipationDuration: 0.1
   recoveryDuration: 0.2
   phaseEvents:
     onStartAnticipating:
@@ -14646,12 +14644,12 @@ MonoBehaviour:
     _persistentListeners: []
     Expanded: 1
   previousAttacks:
-  - {fileID: 3226033048567882335}
+  - {fileID: 1216366090443007232}
   instant: 0
   interruptible: 0
   hardRecovery: 1
-  velocity: 50
-  acceleration: 250
+  velocity: 30
+  acceleration: 120
   hitDetector:
     rid: 3181427246007058586
   hitExecutor:
