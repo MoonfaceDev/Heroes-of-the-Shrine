@@ -416,14 +416,6 @@ MonoBehaviour:
   interruptible: 0
   hardRecovery: 0
   activeDuration: 0.14
-  hitDetector:
-    rid: 168482633143812260
-  hitExecutor:
-    executors:
-    - rid: 168482633143812262
-    - rid: 168482633143812264
-    - rid: 1742320387755081787
-    - rid: 5450716960379109431
   hitSource:
     hitDetector:
       rid: 5450717124091969758
@@ -437,29 +429,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 168482633143812260
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        collisionDetector:
-          hitbox: {fileID: 5102893361817772762}
-    - rid: 168482633143812262
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 1.2
-    - rid: 168482633143812264
-      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        knockbackPower: 10
-        knockbackDirection: 85
-        stunTime: 0.5
-    - rid: 1742320387755081787
-      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        energyReward: 5
-    - rid: 5450716960379109431
-      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
     - rid: 5450717124091969758
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -914,13 +883,6 @@ MonoBehaviour:
   hardRecovery: 0
   velocity: 60
   acceleration: 300
-  hitDetector:
-    rid: 2084589854795759621
-  hitExecutor:
-    executors:
-    - rid: 2084589854795759623
-    - rid: 5904501057880588292
-    - rid: 5450716960379109441
   hitSource:
     hitDetector:
       rid: 5450717124091969808
@@ -932,21 +894,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 2084589854795759621
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        collisionDetector:
-          hitbox: {fileID: 2267100158213249188}
-    - rid: 2084589854795759623
-      type: {class: EnergyBallExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        ballPrefab: {fileID: 7195235196650147203, guid: 6855b38c7105f134ba6e8744a09a9039, type: 3}
-        ballSpawnElevation: 1
-        ballExplodeDelay: 0.32
-    - rid: 5450716960379109441
-      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
     - rid: 5450717124091969808
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -966,10 +913,6 @@ MonoBehaviour:
       type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
-    - rid: 5904501057880588292
-      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        stunTime: 0.5
 --- !u!114 &3577510693266853273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1067,14 +1010,6 @@ MonoBehaviour:
   hardRecovery: 1
   velocity: 10
   acceleration: 10
-  hitDetector:
-    rid: 3181427246007058570
-  hitExecutor:
-    executors:
-    - rid: 3181427634693996644
-    - rid: 3596403818980179981
-    - rid: 1742320387755081783
-    - rid: 5450716960379109427
   hitSource:
     hitDetector:
       rid: 5450717124091969739
@@ -1087,27 +1022,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1742320387755081783
-      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        energyReward: 10
-    - rid: 3181427246007058570
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        collisionDetector:
-          hitbox: {fileID: 5102893361029256204}
-    - rid: 3181427634693996644
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 1.2
-    - rid: 3596403818980179981
-      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        stunTime: 0.5
-    - rid: 5450716960379109427
-      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        prefab: {fileID: 2064102966546675340, guid: baca1c3b16caaf246824b26b93c8130a, type: 3}
     - rid: 5450717124091969739
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -1211,14 +1125,6 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   activeDuration: 0.2
-  hitDetector:
-    rid: 3596404163551166479
-  hitExecutor:
-    executors:
-    - rid: 3596404163551166476
-    - rid: 3596404163551166478
-    - rid: 1742320387755081793
-    - rid: 5450716960379109437
   hitSource:
     hitDetector:
       rid: 5450717124091969789
@@ -1231,27 +1137,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1742320387755081793
-      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        energyReward: 10
-    - rid: 3596404163551166476
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 1.2
-    - rid: 3596404163551166478
-      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        stunTime: 0.5
-    - rid: 3596404163551166479
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        collisionDetector:
-          hitbox: {fileID: 5352139521565845282}
-    - rid: 5450716960379109437
-      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
     - rid: 5450717124091969789
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -1362,22 +1247,6 @@ MonoBehaviour:
     detector2StartTime: 0.35
     detector2Duration: 0.1
   speed: 1.5
-  hitDetector1:
-    rid: 1742320387755081741
-  hitDetector2:
-    rid: 1742320387755081729
-  hitExecutor1:
-    executors:
-    - rid: 1742320387755081742
-    - rid: 1742320387755081744
-    - rid: 1742320387755081770
-    - rid: 5450716960379109410
-  hitExecutor2:
-    executors:
-    - rid: 1742320387755081745
-    - rid: 1742320387755081747
-    - rid: 1742320387755081768
-    - rid: 5450716960379109412
   hitSource1:
     hitDetector:
       rid: 5450717124091969665
@@ -1399,48 +1268,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1742320387755081729
-      type: {class: AbsoluteHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        collisionDetector:
-          hitbox: {fileID: 4199430159229373187}
-    - rid: 1742320387755081741
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        collisionDetector:
-          hitbox: {fileID: 7565641741475773786}
-    - rid: 1742320387755081742
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 1
-    - rid: 1742320387755081744
-      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        stunTime: 0.5
-    - rid: 1742320387755081745
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 1.5
-    - rid: 1742320387755081747
-      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        stunTime: 0.5
-    - rid: 1742320387755081768
-      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        energyReward: 5
-    - rid: 1742320387755081770
-      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        energyReward: 5
-    - rid: 5450716960379109410
-      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
-    - rid: 5450716960379109412
-      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
     - rid: 5450717124091969665
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -1564,14 +1391,6 @@ MonoBehaviour:
   interruptible: 0
   hardRecovery: 0
   activeDuration: 0.25
-  hitDetector:
-    rid: 3596404208624992257
-  hitExecutor:
-    executors:
-    - rid: 3596404208624992258
-    - rid: 3596404208624992260
-    - rid: 1742320387755081795
-    - rid: 5450716960379109439
   hitSource:
     hitDetector:
       rid: 5450717124091969798
@@ -1584,27 +1403,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1742320387755081795
-      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        energyReward: 10
-    - rid: 3596404208624992257
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        collisionDetector:
-          hitbox: {fileID: 2932138046401966748}
-    - rid: 3596404208624992258
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 1.1
-    - rid: 3596404208624992260
-      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        stunTime: 0.5
-    - rid: 5450716960379109439
-      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
     - rid: 5450717124091969798
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -1779,22 +1577,6 @@ MonoBehaviour:
     detector1Duration: 0.4
     detector2StartTime: 0.5
     detector2Duration: 0.3
-  hitDetector1:
-    rid: 3181427246007058579
-  hitDetector2:
-    rid: 3181427246007058585
-  hitExecutor1:
-    executors:
-    - rid: 168482722489303110
-    - rid: 168482722489303112
-    - rid: 1742320387755081777
-    - rid: 5450716960379109421
-  hitExecutor2:
-    executors:
-    - rid: 168482722489303114
-    - rid: 168482722489303116
-    - rid: 1742320387755081779
-    - rid: 5450716960379109423
   hitSource1:
     hitDetector:
       rid: 5450717124091969713
@@ -1816,52 +1598,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 168482722489303110
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 1.25
-    - rid: 168482722489303112
-      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        knockbackPower: 10
-        knockbackDirection: 95
-        stunTime: 0.5
-    - rid: 168482722489303114
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 1.3
-    - rid: 168482722489303116
-      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        knockbackPower: 10
-        knockbackDirection: 90
-        stunTime: 0.5
-    - rid: 1742320387755081777
-      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        energyReward: 10
-    - rid: 1742320387755081779
-      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        energyReward: 10
-    - rid: 3181427246007058579
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        collisionDetector:
-          hitbox: {fileID: 5102893360398477695}
-    - rid: 3181427246007058585
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        collisionDetector:
-          hitbox: {fileID: 5102893361076516092}
-    - rid: 5450716960379109421
-      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        prefab: {fileID: 4436134962950998836, guid: 97424818f1eb2994fa6429d2ec6974de, type: 3}
-    - rid: 5450716960379109423
-      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        prefab: {fileID: 4011335710652351277, guid: 4149b67738ee91743826106b7544e3e7, type: 3}
     - rid: 5450717124091969713
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -2232,14 +1968,6 @@ MonoBehaviour:
   interruptible: 0
   hardRecovery: 0
   activeDuration: 0.2
-  hitDetector:
-    rid: 3181427246007058589
-  hitExecutor:
-    executors:
-    - rid: 3181427634693996681
-    - rid: 3181427634693996683
-    - rid: 1742320387755081789
-    - rid: 5450716960379109433
   hitSource:
     hitDetector:
       rid: 5450717124091969767
@@ -2253,29 +1981,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1742320387755081789
-      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        energyReward: 7
-    - rid: 3181427246007058589
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        collisionDetector:
-          hitbox: {fileID: 5102893360422186048}
-    - rid: 3181427634693996681
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 1
-    - rid: 3181427634693996683
-      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        knockbackPower: 13
-        knockbackDirection: 97
-        stunTime: 0.5
-    - rid: 5450716960379109433
-      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        prefab: {fileID: 2979184207129778206, guid: b27efde971e356747b9bdce37c18c7be, type: 3}
     - rid: 5450717124091969767
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -2416,8 +2121,8 @@ MonoBehaviour:
     onStop:
       _persistentListeners: []
       Expanded: 1
-  anticipationDuration: 0.1
-  recoveryDuration: 0.2
+  anticipationDuration: 0.4
+  recoveryDuration: 0.35
   phaseEvents:
     onStartAnticipating:
       _persistentListeners: []
@@ -2445,15 +2150,7 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 1
-  activeDuration: 0.1
-  hitDetector:
-    rid: 3181427246007058576
-  hitExecutor:
-    executors:
-    - rid: 3181427634693996660
-    - rid: 3181427634693996663
-    - rid: 1742320387755081773
-    - rid: 5450716960379109416
+  activeDuration: 0.15
   hitSource:
     hitDetector:
       rid: 5450717124091969694
@@ -2466,29 +2163,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1742320387755081773
-      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        energyReward: 10
-    - rid: 3181427246007058576
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        collisionDetector:
-          hitbox: {fileID: 5102893360763890678}
-    - rid: 3181427634693996660
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 1.5
-    - rid: 3181427634693996663
-      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        knockbackPower: 15
-        knockbackDirection: 85
-        stunTime: 0.5
-    - rid: 5450716960379109416
-      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        prefab: {fileID: 3996015374920888246, guid: e9a1faa674d113a428519eb042e2e097, type: 3}
     - rid: 5450717124091969694
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -2497,17 +2171,17 @@ MonoBehaviour:
     - rid: 5450717124091969695
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        damage: 1.5
+        damage: 3
     - rid: 5450717124091969699
       type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        knockbackPower: 15
+        knockbackPower: 20
         knockbackDirection: 85
-        stunTime: 0.5
+        stunTime: 0.8
     - rid: 5450717124091969700
       type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        energyReward: 10
+        energyReward: 20
     - rid: 5450717124091969701
       type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -2598,14 +2272,6 @@ MonoBehaviour:
     detectorStartTime: 0.1
     detectorDuration: 0.1
   speed: 1.5
-  hitDetector:
-    rid: 1742320750102052865
-  hitExecutor:
-    executors:
-    - rid: 1742320750102052871
-    - rid: 1742320750102052867
-    - rid: 1742320750102052870
-    - rid: 5450716960379109414
   hitSource:
     hitDetector:
       rid: 5450717124091969683
@@ -2618,29 +2284,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1742320750102052865
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        collisionDetector:
-          hitbox: {fileID: 5000059083912108390}
-    - rid: 1742320750102052867
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 1.3
-    - rid: 1742320750102052870
-      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        energyReward: 5
-    - rid: 1742320750102052871
-      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        knockbackPower: 16
-        knockbackDirection: 85
-        stunTime: 0.5
-    - rid: 5450716960379109414
-      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
     - rid: 5450717124091969683
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -14021,14 +13664,6 @@ MonoBehaviour:
   interruptible: 0
   hardRecovery: 0
   activeDuration: 0.15
-  hitDetector:
-    rid: 3181427246007058587
-  hitExecutor:
-    executors:
-    - rid: 3181427634693996673
-    - rid: 3181427634693996675
-    - rid: 1742320387755081785
-    - rid: 5450716960379109429
   hitSource:
     hitDetector:
       rid: 5450717124091969749
@@ -14042,29 +13677,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1742320387755081785
-      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        energyReward: 5
-    - rid: 3181427246007058587
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        collisionDetector:
-          hitbox: {fileID: 5102893360536826755}
-    - rid: 3181427634693996673
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 1.2
-    - rid: 3181427634693996675
-      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        knockbackPower: 12
-        knockbackDirection: 80
-        stunTime: 0.5
-    - rid: 5450716960379109429
-      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
     - rid: 5450717124091969749
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -14170,14 +13782,6 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   activeDuration: 0.1
-  hitDetector:
-    rid: 3181427246007058572
-  hitExecutor:
-    executors:
-    - rid: 3181427634693996652
-    - rid: 3181427634693996654
-    - rid: 1742320387755081775
-    - rid: 5450716960379109418
   hitSource:
     hitDetector:
       rid: 5450717124091969703
@@ -14190,27 +13794,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1742320387755081775
-      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        energyReward: 10
-    - rid: 3181427246007058572
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        collisionDetector:
-          hitbox: {fileID: 4058469792659233068}
-    - rid: 3181427634693996652
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 1.1
-    - rid: 3181427634693996654
-      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        stunTime: 0.5
-    - rid: 5450716960379109418
-      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        prefab: {fileID: 824917772533207107, guid: 4beee89b5f87b224189fe289925793fb, type: 3}
     - rid: 5450717124091969703
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -14313,14 +13896,6 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   activeDuration: 0.1
-  hitDetector:
-    rid: 3181427246007058563
-  hitExecutor:
-    executors:
-    - rid: 3181427634693996648
-    - rid: 3181427634693996650
-    - rid: 1742320387755081764
-    - rid: 5450716960379109406
   hitSource:
     hitDetector:
       rid: 5450717124091969685
@@ -14333,27 +13908,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1742320387755081764
-      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        energyReward: 10
-    - rid: 3181427246007058563
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        collisionDetector:
-          hitbox: {fileID: 5102893360536826755}
-    - rid: 3181427634693996648
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 1.25
-    - rid: 3181427634693996650
-      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        stunTime: 1
-    - rid: 5450716960379109406
-      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
     - rid: 5450717124091969647
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -14459,10 +14013,6 @@ MonoBehaviour:
   minHeight: 0.5
   velocity: 20
   angle: 45
-  hitDetector:
-    rid: 5450717124091969543
-  hitExecutor:
-    executors: []
   hitSource:
     hitDetector:
       rid: 5450717124091969776
@@ -14471,11 +14021,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 5450717124091969543
-      type: {class: AbsoluteHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        collisionDetector:
-          hitbox: {fileID: 3992208905404404829}
     - rid: 5450717124091969776
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -14680,14 +14225,6 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 0
   activeDuration: 0.1
-  hitDetector:
-    rid: 3181427246007058574
-  hitExecutor:
-    executors:
-    - rid: 3181427634693996656
-    - rid: 3181427634693996658
-    - rid: 1742320387755081766
-    - rid: 5450716960379109408
   hitSource:
     hitDetector:
       rid: 5450717124091969684
@@ -14700,27 +14237,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1742320387755081766
-      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        energyReward: 10
-    - rid: 3181427246007058574
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        collisionDetector:
-          hitbox: {fileID: 5102893361817772762}
-    - rid: 3181427634693996656
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 1
-    - rid: 3181427634693996658
-      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        stunTime: 0.5
-    - rid: 5450716960379109408
-      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
     - rid: 5450717124091969656
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -14728,7 +14244,7 @@ MonoBehaviour:
     - rid: 5450717124091969660
       type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
       data:
-        stunTime: 0.5
+        stunTime: 0.7
     - rid: 5450717124091969661
       type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
       data:
@@ -14992,14 +14508,6 @@ MonoBehaviour:
   hardRecovery: 1
   velocity: 30
   acceleration: 120
-  hitDetector:
-    rid: 3181427246007058586
-  hitExecutor:
-    executors:
-    - rid: 3181427634693996669
-    - rid: 3181427634693996671
-    - rid: 1742320387755081781
-    - rid: 5450716960379109425
   hitSource:
     hitDetector:
       rid: 5450717124091969730
@@ -15012,29 +14520,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1742320387755081781
-      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        energyReward: 10
-    - rid: 3181427246007058586
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        collisionDetector:
-          hitbox: {fileID: 5102893360866760427}
-    - rid: 3181427634693996669
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 1.5
-    - rid: 3181427634693996671
-      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        knockbackPower: 17
-        knockbackDirection: 70
-        stunTime: 0.5
-    - rid: 5450716960379109425
-      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        prefab: {fileID: 1664870427821783217, guid: dd46b3ae7d054024c87a55ea5268a893, type: 3}
     - rid: 5450717124091969730
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:
@@ -15155,14 +14640,6 @@ MonoBehaviour:
   hardRecovery: 0
   velocity: 20.76923
   acceleration: 69.23077
-  hitDetector:
-    rid: 168482808540430691
-  hitExecutor:
-    executors:
-    - rid: 168482808540430692
-    - rid: 3596404159038357510
-    - rid: 1742320387755081791
-    - rid: 5450716960379109435
   hitSource:
     hitDetector:
       rid: 5450717124091969778
@@ -15175,27 +14652,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 168482808540430691
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
-      data:
-        collisionDetector:
-          hitbox: {fileID: 6910350036342276064}
-    - rid: 168482808540430692
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 1.5
-    - rid: 1742320387755081791
-      type: {class: EnergyRewardHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        energyReward: 10
-    - rid: 3596404159038357510
-      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        stunTime: 0.5
-    - rid: 5450716960379109435
-      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        prefab: {fileID: 1664870427821783217, guid: f0bc1eb08458dde4e8a52ae47195fc69, type: 3}
     - rid: 5450717124091969778
       type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
       data:

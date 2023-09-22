@@ -3613,14 +3613,6 @@ MonoBehaviour:
   interruptible: 1
   hardRecovery: 1
   activeDuration: 0.5
-  periodicHitDetector:
-    collisionDetector:
-      hitbox: {fileID: 0}
-    interval: 0
-    startImmediately: 1
-  periodicHitCount: 0
-  periodicHitExecutor:
-    executors: []
   electrifyHitSource:
     hitDetector:
       rid: 5450717124091969846
@@ -4138,21 +4130,6 @@ MonoBehaviour:
   sourcesCount: 6
   spawnRadius: 6
   minSourcesDistance: 1.5
-  hitExecutor:
-    executors:
-    - rid: 168482808540430533
-    - rid: 168482808540430535
-  references:
-    version: 2
-    RefIds:
-    - rid: 168482808540430533
-      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 10
-    - rid: 168482808540430535
-      type: {class: PossessHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        duration: 5
 --- !u!1 &1372187416
 GameObject:
   m_ObjectHideFlags: 0
