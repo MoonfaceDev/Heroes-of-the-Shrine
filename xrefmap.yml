@@ -5527,19 +5527,6 @@ references:
   isSpec: "True"
   fullName: AttackManager.Awake
   nameWithType: AttackManager.Awake
-- uid: Global.AttackManager.CanHit(IHittable)
-  name: CanHit(IHittable)
-  href: api/Global.AttackManager.html#Global_AttackManager_CanHit_IHittable_
-  commentId: M:Global.AttackManager.CanHit(IHittable)
-  fullName: AttackManager.CanHit(IHittable)
-  nameWithType: AttackManager.CanHit(IHittable)
-- uid: Global.AttackManager.CanHit*
-  name: CanHit
-  href: api/Global.AttackManager.html#Global_AttackManager_CanHit_
-  commentId: Overload:Global.AttackManager.CanHit
-  isSpec: "True"
-  fullName: AttackManager.CanHit
-  nameWithType: AttackManager.CanHit
 - uid: Global.AttackManager.CanPlayAttack
   name: CanPlayAttack()
   href: api/Global.AttackManager.html#Global_AttackManager_CanPlayAttack
@@ -5873,18 +5860,12 @@ references:
   commentId: F:Global.BackwardLaunchAttack.AttackFlow.detectorStartTime
   fullName: BackwardLaunchAttack.AttackFlow.detectorStartTime
   nameWithType: BackwardLaunchAttack.AttackFlow.detectorStartTime
-- uid: Global.BackwardLaunchAttack.hitDetector
-  name: hitDetector
-  href: api/Global.BackwardLaunchAttack.html#Global_BackwardLaunchAttack_hitDetector
-  commentId: F:Global.BackwardLaunchAttack.hitDetector
-  fullName: BackwardLaunchAttack.hitDetector
-  nameWithType: BackwardLaunchAttack.hitDetector
-- uid: Global.BackwardLaunchAttack.hitExecutor
-  name: hitExecutor
-  href: api/Global.BackwardLaunchAttack.html#Global_BackwardLaunchAttack_hitExecutor
-  commentId: F:Global.BackwardLaunchAttack.hitExecutor
-  fullName: BackwardLaunchAttack.hitExecutor
-  nameWithType: BackwardLaunchAttack.hitExecutor
+- uid: Global.BackwardLaunchAttack.hitSource
+  name: hitSource
+  href: api/Global.BackwardLaunchAttack.html#Global_BackwardLaunchAttack_hitSource
+  commentId: F:Global.BackwardLaunchAttack.hitSource
+  fullName: BackwardLaunchAttack.hitSource
+  nameWithType: BackwardLaunchAttack.hitSource
 - uid: Global.BackwardLaunchAttack.speed
   name: speed
   href: api/Global.BackwardLaunchAttack.html#Global_BackwardLaunchAttack_speed
@@ -6024,19 +6005,6 @@ references:
   commentId: F:Global.BaseAttack.previousAttacks
   fullName: BaseAttack.previousAttacks
   nameWithType: BaseAttack.previousAttacks
-- uid: Global.BaseAttack.StartHitDetector(BaseHitDetector,ChainHitExecutor)
-  name: StartHitDetector(BaseHitDetector, ChainHitExecutor)
-  href: api/Global.BaseAttack.html#Global_BaseAttack_StartHitDetector_BaseHitDetector_ChainHitExecutor_
-  commentId: M:Global.BaseAttack.StartHitDetector(BaseHitDetector,ChainHitExecutor)
-  fullName: BaseAttack.StartHitDetector(BaseHitDetector, ChainHitExecutor)
-  nameWithType: BaseAttack.StartHitDetector(BaseHitDetector, ChainHitExecutor)
-- uid: Global.BaseAttack.StartHitDetector*
-  name: StartHitDetector
-  href: api/Global.BaseAttack.html#Global_BaseAttack_StartHitDetector_
-  commentId: Overload:Global.BaseAttack.StartHitDetector
-  isSpec: "True"
-  fullName: BaseAttack.StartHitDetector
-  nameWithType: BaseAttack.StartHitDetector
 - uid: Global.BaseChargeAttack
   name: BaseChargeAttack
   href: api/Global.BaseChargeAttack.html
@@ -7565,36 +7533,30 @@ references:
   isSpec: "True"
   fullName: ElectrifyAttack.ActivePhase
   nameWithType: ElectrifyAttack.ActivePhase
-- uid: Global.ElectrifyAttack.explosionHitDetector
-  name: explosionHitDetector
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_explosionHitDetector
-  commentId: F:Global.ElectrifyAttack.explosionHitDetector
-  fullName: ElectrifyAttack.explosionHitDetector
-  nameWithType: ElectrifyAttack.explosionHitDetector
-- uid: Global.ElectrifyAttack.explosionHitExecutor
-  name: explosionHitExecutor
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_explosionHitExecutor
-  commentId: F:Global.ElectrifyAttack.explosionHitExecutor
-  fullName: ElectrifyAttack.explosionHitExecutor
-  nameWithType: ElectrifyAttack.explosionHitExecutor
-- uid: Global.ElectrifyAttack.periodicHitCount
-  name: periodicHitCount
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_periodicHitCount
-  commentId: F:Global.ElectrifyAttack.periodicHitCount
-  fullName: ElectrifyAttack.periodicHitCount
-  nameWithType: ElectrifyAttack.periodicHitCount
-- uid: Global.ElectrifyAttack.periodicHitDetector
-  name: periodicHitDetector
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_periodicHitDetector
-  commentId: F:Global.ElectrifyAttack.periodicHitDetector
-  fullName: ElectrifyAttack.periodicHitDetector
-  nameWithType: ElectrifyAttack.periodicHitDetector
-- uid: Global.ElectrifyAttack.periodicHitExecutor
-  name: periodicHitExecutor
-  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_periodicHitExecutor
-  commentId: F:Global.ElectrifyAttack.periodicHitExecutor
-  fullName: ElectrifyAttack.periodicHitExecutor
-  nameWithType: ElectrifyAttack.periodicHitExecutor
+- uid: Global.ElectrifyAttack.electrifyCount
+  name: electrifyCount
+  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_electrifyCount
+  commentId: F:Global.ElectrifyAttack.electrifyCount
+  fullName: ElectrifyAttack.electrifyCount
+  nameWithType: ElectrifyAttack.electrifyCount
+- uid: Global.ElectrifyAttack.electrifyHitSource
+  name: electrifyHitSource
+  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_electrifyHitSource
+  commentId: F:Global.ElectrifyAttack.electrifyHitSource
+  fullName: ElectrifyAttack.electrifyHitSource
+  nameWithType: ElectrifyAttack.electrifyHitSource
+- uid: Global.ElectrifyAttack.electrifyInterval
+  name: electrifyInterval
+  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_electrifyInterval
+  commentId: F:Global.ElectrifyAttack.electrifyInterval
+  fullName: ElectrifyAttack.electrifyInterval
+  nameWithType: ElectrifyAttack.electrifyInterval
+- uid: Global.ElectrifyAttack.explosionHitSource
+  name: explosionHitSource
+  href: api/Global.ElectrifyAttack.html#Global_ElectrifyAttack_explosionHitSource
+  commentId: F:Global.ElectrifyAttack.explosionHitSource
+  fullName: ElectrifyAttack.explosionHitSource
+  nameWithType: ElectrifyAttack.explosionHitSource
 - uid: Global.ElectrifyHitExecutor
   name: ElectrifyHitExecutor
   href: api/Global.ElectrifyHitExecutor.html
@@ -7868,12 +7830,6 @@ references:
   isSpec: "True"
   fullName: EnergyBar.Update
   nameWithType: EnergyBar.Update
-- uid: Global.EnergyBurstAttack
-  name: EnergyBurstAttack
-  href: api/Global.EnergyBurstAttack.html
-  commentId: T:Global.EnergyBurstAttack
-  fullName: EnergyBurstAttack
-  nameWithType: EnergyBurstAttack
 - uid: Global.EnergyRewardHitExecutor
   name: EnergyRewardHitExecutor
   href: api/Global.EnergyRewardHitExecutor.html
@@ -8955,30 +8911,18 @@ references:
   commentId: F:Global.ForwardPushAttack.AttackFlow.detector2StartTime
   fullName: ForwardPushAttack.AttackFlow.detector2StartTime
   nameWithType: ForwardPushAttack.AttackFlow.detector2StartTime
-- uid: Global.ForwardPushAttack.hitDetector1
-  name: hitDetector1
-  href: api/Global.ForwardPushAttack.html#Global_ForwardPushAttack_hitDetector1
-  commentId: F:Global.ForwardPushAttack.hitDetector1
-  fullName: ForwardPushAttack.hitDetector1
-  nameWithType: ForwardPushAttack.hitDetector1
-- uid: Global.ForwardPushAttack.hitDetector2
-  name: hitDetector2
-  href: api/Global.ForwardPushAttack.html#Global_ForwardPushAttack_hitDetector2
-  commentId: F:Global.ForwardPushAttack.hitDetector2
-  fullName: ForwardPushAttack.hitDetector2
-  nameWithType: ForwardPushAttack.hitDetector2
-- uid: Global.ForwardPushAttack.hitExecutor1
-  name: hitExecutor1
-  href: api/Global.ForwardPushAttack.html#Global_ForwardPushAttack_hitExecutor1
-  commentId: F:Global.ForwardPushAttack.hitExecutor1
-  fullName: ForwardPushAttack.hitExecutor1
-  nameWithType: ForwardPushAttack.hitExecutor1
-- uid: Global.ForwardPushAttack.hitExecutor2
-  name: hitExecutor2
-  href: api/Global.ForwardPushAttack.html#Global_ForwardPushAttack_hitExecutor2
-  commentId: F:Global.ForwardPushAttack.hitExecutor2
-  fullName: ForwardPushAttack.hitExecutor2
-  nameWithType: ForwardPushAttack.hitExecutor2
+- uid: Global.ForwardPushAttack.hitSource1
+  name: hitSource1
+  href: api/Global.ForwardPushAttack.html#Global_ForwardPushAttack_hitSource1
+  commentId: F:Global.ForwardPushAttack.hitSource1
+  fullName: ForwardPushAttack.hitSource1
+  nameWithType: ForwardPushAttack.hitSource1
+- uid: Global.ForwardPushAttack.hitSource2
+  name: hitSource2
+  href: api/Global.ForwardPushAttack.html#Global_ForwardPushAttack_hitSource2
+  commentId: F:Global.ForwardPushAttack.hitSource2
+  fullName: ForwardPushAttack.hitSource2
+  nameWithType: ForwardPushAttack.hitSource2
 - uid: Global.ForwardPushAttack.speed
   name: speed
   href: api/Global.ForwardPushAttack.html#Global_ForwardPushAttack_speed
@@ -9836,6 +9780,53 @@ references:
   isSpec: "True"
   fullName: Hitbox.WorldPosition
   nameWithType: Hitbox.WorldPosition
+- uid: Global.HitSource
+  name: HitSource
+  href: api/Global.HitSource.html
+  commentId: T:Global.HitSource
+  fullName: HitSource
+  nameWithType: HitSource
+- uid: Global.HitSource.hitDetector
+  name: hitDetector
+  href: api/Global.HitSource.html#Global_HitSource_hitDetector
+  commentId: F:Global.HitSource.hitDetector
+  fullName: HitSource.hitDetector
+  nameWithType: HitSource.hitDetector
+- uid: Global.HitSource.hitExecutor
+  name: hitExecutor
+  href: api/Global.HitSource.html#Global_HitSource_hitExecutor
+  commentId: F:Global.HitSource.hitExecutor
+  fullName: HitSource.hitExecutor
+  nameWithType: HitSource.hitExecutor
+- uid: Global.HitSource.Start(BaseAttack,Action{Collision})
+  name: Start(BaseAttack, Action<Collision>)
+  href: api/Global.HitSource.html#Global_HitSource_Start_BaseAttack_Action_Collision__
+  commentId: M:Global.HitSource.Start(BaseAttack,Action{Collision})
+  name.vb: Start(BaseAttack, Action(Of Collision))
+  fullName: HitSource.Start(BaseAttack, Action<Collision>)
+  fullName.vb: HitSource.Start(BaseAttack, Action(Of Collision))
+  nameWithType: HitSource.Start(BaseAttack, Action<Collision>)
+  nameWithType.vb: HitSource.Start(BaseAttack, Action(Of Collision))
+- uid: Global.HitSource.Start*
+  name: Start
+  href: api/Global.HitSource.html#Global_HitSource_Start_
+  commentId: Overload:Global.HitSource.Start
+  isSpec: "True"
+  fullName: HitSource.Start
+  nameWithType: HitSource.Start
+- uid: Global.HitSource.Stop
+  name: Stop()
+  href: api/Global.HitSource.html#Global_HitSource_Stop
+  commentId: M:Global.HitSource.Stop
+  fullName: HitSource.Stop()
+  nameWithType: HitSource.Stop()
+- uid: Global.HitSource.Stop*
+  name: Stop
+  href: api/Global.HitSource.html#Global_HitSource_Stop_
+  commentId: Overload:Global.HitSource.Stop
+  isSpec: "True"
+  fullName: HitSource.Stop
+  nameWithType: HitSource.Stop
 - uid: Global.HittableBehaviour
   name: HittableBehaviour
   href: api/Global.HittableBehaviour.html
@@ -10924,18 +10915,12 @@ references:
   isSpec: "True"
   fullName: MotionAttack.ActivePhase
   nameWithType: MotionAttack.ActivePhase
-- uid: Global.MotionAttack.hitDetector
-  name: hitDetector
-  href: api/Global.MotionAttack.html#Global_MotionAttack_hitDetector
-  commentId: F:Global.MotionAttack.hitDetector
-  fullName: MotionAttack.hitDetector
-  nameWithType: MotionAttack.hitDetector
-- uid: Global.MotionAttack.hitExecutor
-  name: hitExecutor
-  href: api/Global.MotionAttack.html#Global_MotionAttack_hitExecutor
-  commentId: F:Global.MotionAttack.hitExecutor
-  fullName: MotionAttack.hitExecutor
-  nameWithType: MotionAttack.hitExecutor
+- uid: Global.MotionAttack.hitSource
+  name: hitSource
+  href: api/Global.MotionAttack.html#Global_MotionAttack_hitSource
+  commentId: F:Global.MotionAttack.hitSource
+  fullName: MotionAttack.hitSource
+  nameWithType: MotionAttack.hitSource
 - uid: Global.MotionAttack.Motion
   name: Motion
   href: api/Global.MotionAttack.html#Global_MotionAttack_Motion
@@ -11332,12 +11317,6 @@ references:
   commentId: F:Global.PeriodicAbsoluteHitDetector.interval
   fullName: PeriodicAbsoluteHitDetector.interval
   nameWithType: PeriodicAbsoluteHitDetector.interval
-- uid: Global.PeriodicAbsoluteHitDetector.OnDetect
-  name: OnDetect
-  href: api/Global.PeriodicAbsoluteHitDetector.html#Global_PeriodicAbsoluteHitDetector_OnDetect
-  commentId: E:Global.PeriodicAbsoluteHitDetector.OnDetect
-  fullName: PeriodicAbsoluteHitDetector.OnDetect
-  nameWithType: PeriodicAbsoluteHitDetector.OnDetect
 - uid: Global.PeriodicAbsoluteHitDetector.StartDetector(Action{Collision})
   name: StartDetector(Action<Collision>)
   href: api/Global.PeriodicAbsoluteHitDetector.html#Global_PeriodicAbsoluteHitDetector_StartDetector_Action_Collision__
@@ -12130,12 +12109,6 @@ references:
   isSpec: "True"
   fullName: PossessAttack.Awake
   nameWithType: PossessAttack.Awake
-- uid: Global.PossessAttack.hitExecutor
-  name: hitExecutor
-  href: api/Global.PossessAttack.html#Global_PossessAttack_hitExecutor
-  commentId: F:Global.PossessAttack.hitExecutor
-  fullName: PossessAttack.hitExecutor
-  nameWithType: PossessAttack.hitExecutor
 - uid: Global.PossessAttack.minSourcesDistance
   name: minSourcesDistance
   href: api/Global.PossessAttack.html#Global_PossessAttack_minSourcesDistance
@@ -12286,12 +12259,12 @@ references:
   commentId: T:Global.PossessSource
   fullName: PossessSource
   nameWithType: PossessSource
-- uid: Global.PossessSource.Activate(System.Single,System.Single,Tags,ChainHitExecutor,BaseAttack)
-  name: Activate(Single, Single, Tags, ChainHitExecutor, BaseAttack)
-  href: api/Global.PossessSource.html#Global_PossessSource_Activate_System_Single_System_Single_Tags_ChainHitExecutor_BaseAttack_
-  commentId: M:Global.PossessSource.Activate(System.Single,System.Single,Tags,ChainHitExecutor,BaseAttack)
-  fullName: PossessSource.Activate(System.Single, System.Single, Tags, ChainHitExecutor, BaseAttack)
-  nameWithType: PossessSource.Activate(Single, Single, Tags, ChainHitExecutor, BaseAttack)
+- uid: Global.PossessSource.Activate(System.Single,System.Single,BaseAttack)
+  name: Activate(Single, Single, BaseAttack)
+  href: api/Global.PossessSource.html#Global_PossessSource_Activate_System_Single_System_Single_BaseAttack_
+  commentId: M:Global.PossessSource.Activate(System.Single,System.Single,BaseAttack)
+  fullName: PossessSource.Activate(System.Single, System.Single, BaseAttack)
+  nameWithType: PossessSource.Activate(Single, Single, BaseAttack)
 - uid: Global.PossessSource.Activate*
   name: Activate
   href: api/Global.PossessSource.html#Global_PossessSource_Activate_
@@ -12311,12 +12284,12 @@ references:
   commentId: F:Global.PossessSource.hitAnimationDuration
   fullName: PossessSource.hitAnimationDuration
   nameWithType: PossessSource.hitAnimationDuration
-- uid: Global.PossessSource.hitDetector
-  name: hitDetector
-  href: api/Global.PossessSource.html#Global_PossessSource_hitDetector
-  commentId: F:Global.PossessSource.hitDetector
-  fullName: PossessSource.hitDetector
-  nameWithType: PossessSource.hitDetector
+- uid: Global.PossessSource.hitSource
+  name: hitSource
+  href: api/Global.PossessSource.html#Global_PossessSource_hitSource
+  commentId: F:Global.PossessSource.hitSource
+  fullName: PossessSource.hitSource
+  nameWithType: PossessSource.hitSource
 - uid: Global.PossessSourcesDestroyAction
   name: PossessSourcesDestroyAction
   href: api/Global.PossessSourcesDestroyAction.html
@@ -13061,18 +13034,12 @@ references:
   isSpec: "True"
   fullName: SimpleAttack.ActivePhase
   nameWithType: SimpleAttack.ActivePhase
-- uid: Global.SimpleAttack.hitDetector
-  name: hitDetector
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_hitDetector
-  commentId: F:Global.SimpleAttack.hitDetector
-  fullName: SimpleAttack.hitDetector
-  nameWithType: SimpleAttack.hitDetector
-- uid: Global.SimpleAttack.hitExecutor
-  name: hitExecutor
-  href: api/Global.SimpleAttack.html#Global_SimpleAttack_hitExecutor
-  commentId: F:Global.SimpleAttack.hitExecutor
-  fullName: SimpleAttack.hitExecutor
-  nameWithType: SimpleAttack.hitExecutor
+- uid: Global.SimpleAttack.hitSource
+  name: hitSource
+  href: api/Global.SimpleAttack.html#Global_SimpleAttack_hitSource
+  commentId: F:Global.SimpleAttack.hitSource
+  fullName: SimpleAttack.hitSource
+  nameWithType: SimpleAttack.hitSource
 - uid: Global.SingleHitDetector
   name: SingleHitDetector
   href: api/Global.SingleHitDetector.html
@@ -13333,24 +13300,12 @@ references:
   commentId: F:Global.SpikeBall.explodeAnimationDuration
   fullName: SpikeBall.explodeAnimationDuration
   nameWithType: SpikeBall.explodeAnimationDuration
-- uid: Global.SpikeBall.explosionHitDetector
-  name: explosionHitDetector
-  href: api/Global.SpikeBall.html#Global_SpikeBall_explosionHitDetector
-  commentId: F:Global.SpikeBall.explosionHitDetector
-  fullName: SpikeBall.explosionHitDetector
-  nameWithType: SpikeBall.explosionHitDetector
-- uid: Global.SpikeBall.explosionHitExecutor
-  name: explosionHitExecutor
-  href: api/Global.SpikeBall.html#Global_SpikeBall_explosionHitExecutor
-  commentId: F:Global.SpikeBall.explosionHitExecutor
-  fullName: SpikeBall.explosionHitExecutor
-  nameWithType: SpikeBall.explosionHitExecutor
-- uid: Global.SpikeBall.explosionSourceHitExecutor
-  name: explosionSourceHitExecutor
-  href: api/Global.SpikeBall.html#Global_SpikeBall_explosionSourceHitExecutor
-  commentId: F:Global.SpikeBall.explosionSourceHitExecutor
-  fullName: SpikeBall.explosionSourceHitExecutor
-  nameWithType: SpikeBall.explosionSourceHitExecutor
+- uid: Global.SpikeBall.explosionHitSource
+  name: explosionHitSource
+  href: api/Global.SpikeBall.html#Global_SpikeBall_explosionHitSource
+  commentId: F:Global.SpikeBall.explosionHitSource
+  fullName: SpikeBall.explosionHitSource
+  nameWithType: SpikeBall.explosionHitSource
 - uid: Global.SpikeBall.explosionStartDelay
   name: explosionStartDelay
   href: api/Global.SpikeBall.html#Global_SpikeBall_explosionStartDelay
@@ -13370,12 +13325,12 @@ references:
   isSpec: "True"
   fullName: SpikeBall.Fire
   nameWithType: SpikeBall.Fire
-- uid: Global.SpikeBall.Latch(Collision,System.Single,BaseAttack)
-  name: Latch(Collision, Single, BaseAttack)
-  href: api/Global.SpikeBall.html#Global_SpikeBall_Latch_Collision_System_Single_BaseAttack_
-  commentId: M:Global.SpikeBall.Latch(Collision,System.Single,BaseAttack)
-  fullName: SpikeBall.Latch(Collision, System.Single, BaseAttack)
-  nameWithType: SpikeBall.Latch(Collision, Single, BaseAttack)
+- uid: Global.SpikeBall.Latch(Collision,BaseAttack)
+  name: Latch(Collision, BaseAttack)
+  href: api/Global.SpikeBall.html#Global_SpikeBall_Latch_Collision_BaseAttack_
+  commentId: M:Global.SpikeBall.Latch(Collision,BaseAttack)
+  fullName: SpikeBall.Latch(Collision, BaseAttack)
+  nameWithType: SpikeBall.Latch(Collision, BaseAttack)
 - uid: Global.SpikeBall.Latch*
   name: Latch
   href: api/Global.SpikeBall.html#Global_SpikeBall_Latch_
@@ -13383,18 +13338,12 @@ references:
   isSpec: "True"
   fullName: SpikeBall.Latch
   nameWithType: SpikeBall.Latch
-- uid: Global.SpikeBall.latchHitDetector
-  name: latchHitDetector
-  href: api/Global.SpikeBall.html#Global_SpikeBall_latchHitDetector
-  commentId: F:Global.SpikeBall.latchHitDetector
-  fullName: SpikeBall.latchHitDetector
-  nameWithType: SpikeBall.latchHitDetector
-- uid: Global.SpikeBall.latchHitExecutor
-  name: latchHitExecutor
-  href: api/Global.SpikeBall.html#Global_SpikeBall_latchHitExecutor
-  commentId: F:Global.SpikeBall.latchHitExecutor
-  fullName: SpikeBall.latchHitExecutor
-  nameWithType: SpikeBall.latchHitExecutor
+- uid: Global.SpikeBall.latchHitSource
+  name: latchHitSource
+  href: api/Global.SpikeBall.html#Global_SpikeBall_latchHitSource
+  commentId: F:Global.SpikeBall.latchHitSource
+  fullName: SpikeBall.latchHitSource
+  nameWithType: SpikeBall.latchHitSource
 - uid: Global.SpikeBall.latchZ
   name: latchZ
   href: api/Global.SpikeBall.html#Global_SpikeBall_latchZ
@@ -13519,6 +13468,37 @@ references:
   isSpec: "True"
   fullName: SpikeBallAttack.MustRelease
   nameWithType: SpikeBallAttack.MustRelease
+- uid: Global.SpikeBallHitExecutor
+  name: SpikeBallHitExecutor
+  href: api/Global.SpikeBallHitExecutor.html
+  commentId: T:Global.SpikeBallHitExecutor
+  fullName: SpikeBallHitExecutor
+  nameWithType: SpikeBallHitExecutor
+- uid: Global.SpikeBallHitExecutor.Execute(Hit)
+  name: Execute(Hit)
+  href: api/Global.SpikeBallHitExecutor.html#Global_SpikeBallHitExecutor_Execute_Hit_
+  commentId: M:Global.SpikeBallHitExecutor.Execute(Hit)
+  fullName: SpikeBallHitExecutor.Execute(Hit)
+  nameWithType: SpikeBallHitExecutor.Execute(Hit)
+- uid: Global.SpikeBallHitExecutor.Execute*
+  name: Execute
+  href: api/Global.SpikeBallHitExecutor.html#Global_SpikeBallHitExecutor_Execute_
+  commentId: Overload:Global.SpikeBallHitExecutor.Execute
+  isSpec: "True"
+  fullName: SpikeBallHitExecutor.Execute
+  nameWithType: SpikeBallHitExecutor.Execute
+- uid: Global.SpikeBallHitExecutor.explodeHitExecutor
+  name: explodeHitExecutor
+  href: api/Global.SpikeBallHitExecutor.html#Global_SpikeBallHitExecutor_explodeHitExecutor
+  commentId: F:Global.SpikeBallHitExecutor.explodeHitExecutor
+  fullName: SpikeBallHitExecutor.explodeHitExecutor
+  nameWithType: SpikeBallHitExecutor.explodeHitExecutor
+- uid: Global.SpikeBallHitExecutor.sourceHitExecutor
+  name: sourceHitExecutor
+  href: api/Global.SpikeBallHitExecutor.html#Global_SpikeBallHitExecutor_sourceHitExecutor
+  commentId: F:Global.SpikeBallHitExecutor.sourceHitExecutor
+  fullName: SpikeBallHitExecutor.sourceHitExecutor
+  nameWithType: SpikeBallHitExecutor.sourceHitExecutor
 - uid: Global.SpikeDashAttack
   name: SpikeDashAttack
   href: api/Global.SpikeDashAttack.html
@@ -13563,18 +13543,12 @@ references:
   isSpec: "True"
   fullName: SpikeFallAttack.CanPlay
   nameWithType: SpikeFallAttack.CanPlay
-- uid: Global.SpikeFallAttack.hitDetector
-  name: hitDetector
-  href: api/Global.SpikeFallAttack.html#Global_SpikeFallAttack_hitDetector
-  commentId: F:Global.SpikeFallAttack.hitDetector
-  fullName: SpikeFallAttack.hitDetector
-  nameWithType: SpikeFallAttack.hitDetector
-- uid: Global.SpikeFallAttack.hitExecutor
-  name: hitExecutor
-  href: api/Global.SpikeFallAttack.html#Global_SpikeFallAttack_hitExecutor
-  commentId: F:Global.SpikeFallAttack.hitExecutor
-  fullName: SpikeFallAttack.hitExecutor
-  nameWithType: SpikeFallAttack.hitExecutor
+- uid: Global.SpikeFallAttack.hitSource
+  name: hitSource
+  href: api/Global.SpikeFallAttack.html#Global_SpikeFallAttack_hitSource
+  commentId: F:Global.SpikeFallAttack.hitSource
+  fullName: SpikeFallAttack.hitSource
+  nameWithType: SpikeFallAttack.hitSource
 - uid: Global.SpikeFallAttack.IsMidair
   name: IsMidair
   href: api/Global.SpikeFallAttack.html#Global_SpikeFallAttack_IsMidair
@@ -13674,30 +13648,18 @@ references:
   commentId: F:Global.SpinningSwordsAttack.AttackFlow.detector2StartTime
   fullName: SpinningSwordsAttack.AttackFlow.detector2StartTime
   nameWithType: SpinningSwordsAttack.AttackFlow.detector2StartTime
-- uid: Global.SpinningSwordsAttack.hitDetector1
-  name: hitDetector1
-  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_hitDetector1
-  commentId: F:Global.SpinningSwordsAttack.hitDetector1
-  fullName: SpinningSwordsAttack.hitDetector1
-  nameWithType: SpinningSwordsAttack.hitDetector1
-- uid: Global.SpinningSwordsAttack.hitDetector2
-  name: hitDetector2
-  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_hitDetector2
-  commentId: F:Global.SpinningSwordsAttack.hitDetector2
-  fullName: SpinningSwordsAttack.hitDetector2
-  nameWithType: SpinningSwordsAttack.hitDetector2
-- uid: Global.SpinningSwordsAttack.hitExecutor1
-  name: hitExecutor1
-  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_hitExecutor1
-  commentId: F:Global.SpinningSwordsAttack.hitExecutor1
-  fullName: SpinningSwordsAttack.hitExecutor1
-  nameWithType: SpinningSwordsAttack.hitExecutor1
-- uid: Global.SpinningSwordsAttack.hitExecutor2
-  name: hitExecutor2
-  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_hitExecutor2
-  commentId: F:Global.SpinningSwordsAttack.hitExecutor2
-  fullName: SpinningSwordsAttack.hitExecutor2
-  nameWithType: SpinningSwordsAttack.hitExecutor2
+- uid: Global.SpinningSwordsAttack.hitSource1
+  name: hitSource1
+  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_hitSource1
+  commentId: F:Global.SpinningSwordsAttack.hitSource1
+  fullName: SpinningSwordsAttack.hitSource1
+  nameWithType: SpinningSwordsAttack.hitSource1
+- uid: Global.SpinningSwordsAttack.hitSource2
+  name: hitSource2
+  href: api/Global.SpinningSwordsAttack.html#Global_SpinningSwordsAttack_hitSource2
+  commentId: F:Global.SpinningSwordsAttack.hitSource2
+  fullName: SpinningSwordsAttack.hitSource2
+  nameWithType: SpinningSwordsAttack.hitSource2
 - uid: Global.StabAttack
   name: StabAttack
   href: api/Global.StabAttack.html

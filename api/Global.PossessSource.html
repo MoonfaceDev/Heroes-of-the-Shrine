@@ -190,12 +190,12 @@ receive the possessed effect</p>
   </table>
   
   
-  <h4 id="Global_PossessSource_hitDetector" data-uid="Global.PossessSource.hitDetector">hitDetector</h4>
+  <h4 id="Global_PossessSource_hitSource" data-uid="Global.PossessSource.hitSource">hitSource</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public BaseHitDetector hitDetector</code></pre>
+    <pre><code class="lang-csharp hljs">public HitSource hitSource</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -207,7 +207,7 @@ receive the possessed effect</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.BaseHitDetector.html">BaseHitDetector</a></td>
+        <td><a class="xref" href="Global.HitSource.html">HitSource</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -217,13 +217,13 @@ receive the possessed effect</p>
   
   
   <a id="Global_PossessSource_Activate_" data-uid="Global.PossessSource.Activate*"></a>
-  <h4 id="Global_PossessSource_Activate_System_Single_System_Single_Tags_ChainHitExecutor_BaseAttack_" data-uid="Global.PossessSource.Activate(System.Single,System.Single,Tags,ChainHitExecutor,BaseAttack)">Activate(Single, Single, Tags, ChainHitExecutor, BaseAttack)</h4>
+  <h4 id="Global_PossessSource_Activate_System_Single_System_Single_BaseAttack_" data-uid="Global.PossessSource.Activate(System.Single,System.Single,BaseAttack)">Activate(Single, Single, BaseAttack)</h4>
   <div class="markdown level1 summary"><p>Starts the source</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Activate(float warningDuration, float activeDuration, Tags hittableTags, ChainHitExecutor hitExecutor, BaseAttack relatedAttack)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Activate(float warningDuration, float activeDuration, BaseAttack relatedAttack)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -245,18 +245,6 @@ receive the possessed effect</p>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
         <td><span class="parametername">activeDuration</span></td>
         <td><p>Duration of the active phase</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Global.Tags.html">Tags</a></td>
-        <td><span class="parametername">hittableTags</span></td>
-        <td><p>Tags of objects that can get hit. Get it from <span class="xref">AttackManager.hittableTags</span></p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Global.ChainHitExecutor.html">ChainHitExecutor</a></td>
-        <td><span class="parametername">hitExecutor</span></td>
-        <td><p>Executed on hit</p>
 </td>
       </tr>
       <tr>

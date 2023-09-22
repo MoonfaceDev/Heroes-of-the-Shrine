@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class PeriodicAbsoluteHitDetector
+    <title>Class SpikeBallHitExecutor
    | Heroes of the Shrine </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class PeriodicAbsoluteHitDetector
+    <meta name="title" content="Class SpikeBallHitExecutor
    | Heroes of the Shrine ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,19 +78,21 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Global.PeriodicAbsoluteHitDetector">
+            <article class="content wrap" id="_content" data-uid="Global.SpikeBallHitExecutor">
   
   
-  <h1 id="Global_PeriodicAbsoluteHitDetector" data-uid="Global.PeriodicAbsoluteHitDetector" class="text-break">Class PeriodicAbsoluteHitDetector
+  <h1 id="Global_SpikeBallHitExecutor" data-uid="Global.SpikeBallHitExecutor" class="text-break">Class SpikeBallHitExecutor
   </h1>
-  <div class="markdown level0 summary"><p>An hit detector that detects hits periodically, with a given interval</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><a class="xref" href="Global.BaseHitDetector.html">BaseHitDetector</a></div>
-    <div class="level2"><span class="xref">PeriodicAbsoluteHitDetector</span></div>
+    <div class="level1"><span class="xref">SpikeBallHitExecutor</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Global.IHitExecutor.html">IHitExecutor</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -118,20 +120,20 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Global.html">Global</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Global_PeriodicAbsoluteHitDetector_syntax">Syntax</h5>
+  <h5 id="Global_SpikeBallHitExecutor_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class PeriodicAbsoluteHitDetector : BaseHitDetector</code></pre>
+    <pre><code class="lang-csharp hljs">public class SpikeBallHitExecutor : IHitExecutor</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
   
   
-  <h4 id="Global_PeriodicAbsoluteHitDetector_collisionDetector" data-uid="Global.PeriodicAbsoluteHitDetector.collisionDetector">collisionDetector</h4>
+  <h4 id="Global_SpikeBallHitExecutor_explodeHitExecutor" data-uid="Global.SpikeBallHitExecutor.explodeHitExecutor">explodeHitExecutor</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SceneCollisionDetector collisionDetector</code></pre>
+    <pre><code class="lang-csharp hljs">public ChainHitExecutor explodeHitExecutor</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -143,19 +145,19 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.SceneCollisionDetector.html">SceneCollisionDetector</a></td>
+        <td><a class="xref" href="Global.ChainHitExecutor.html">ChainHitExecutor</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <h4 id="Global_PeriodicAbsoluteHitDetector_interval" data-uid="Global.PeriodicAbsoluteHitDetector.interval">interval</h4>
+  <h4 id="Global_SpikeBallHitExecutor_sourceHitExecutor" data-uid="Global.SpikeBallHitExecutor.sourceHitExecutor">sourceHitExecutor</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float interval</code></pre>
+    <pre><code class="lang-csharp hljs">public ChainHitExecutor sourceHitExecutor</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -167,35 +169,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
-        <td><p>Interval between detections, in seconds</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_PeriodicAbsoluteHitDetector_startImmediately" data-uid="Global.PeriodicAbsoluteHitDetector.startImmediately">startImmediately</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool startImmediately</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p>If true, a detection occurs immediately when <span class="xref">BaseHitDetector.StartDetector(Action{Collision})</span> is called. Otherwise,
-the first detection occurs after a <span class="xref">PeriodicAbsoluteHitDetector.interval</span>.</p>
-</td>
+        <td><a class="xref" href="Global.ChainHitExecutor.html">ChainHitExecutor</a></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -203,13 +178,13 @@ the first detection occurs after a <span class="xref">PeriodicAbsoluteHitDetecto
   </h3>
   
   
-  <a id="Global_PeriodicAbsoluteHitDetector_StartDetector_" data-uid="Global.PeriodicAbsoluteHitDetector.StartDetector*"></a>
-  <h4 id="Global_PeriodicAbsoluteHitDetector_StartDetector_Action_Collision__" data-uid="Global.PeriodicAbsoluteHitDetector.StartDetector(Action{Collision})">StartDetector(Action&lt;Collision&gt;)</h4>
+  <a id="Global_SpikeBallHitExecutor_Execute_" data-uid="Global.SpikeBallHitExecutor.Execute*"></a>
+  <h4 id="Global_SpikeBallHitExecutor_Execute_Hit_" data-uid="Global.SpikeBallHitExecutor.Execute(Hit)">Execute(Hit)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void StartDetector(Action&lt;Collision&gt; listener)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Execute(Hit hit)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -222,26 +197,16 @@ the first detection occurs after a <span class="xref">PeriodicAbsoluteHitDetecto
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Action</span>&lt;<a class="xref" href="Global.Collision.html">Collision</a>&gt;</td>
-        <td><span class="parametername">listener</span></td>
+        <td><a class="xref" href="Global.Hit.html">Hit</a></td>
+        <td><span class="parametername">hit</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.BaseHitDetector.html#Global_BaseHitDetector_StartDetector_Action_Collision__">BaseHitDetector.StartDetector(Action&lt;Collision&gt;)</a></div>
-  
-  
-  <a id="Global_PeriodicAbsoluteHitDetector_StopDetector_" data-uid="Global.PeriodicAbsoluteHitDetector.StopDetector*"></a>
-  <h4 id="Global_PeriodicAbsoluteHitDetector_StopDetector" data-uid="Global.PeriodicAbsoluteHitDetector.StopDetector">StopDetector()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void StopDetector()</code></pre>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Global.IHitExecutor.html">IHitExecutor</a>
   </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Global.BaseHitDetector.html#Global_BaseHitDetector_StopDetector">BaseHitDetector.StopDetector()</a></div>
 </article>
           </div>
           

@@ -142,9 +142,6 @@ After the periodic part is checking for hits a certain number of times, the expl
       <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_Block">BaseAttack.Block()</a>
     </div>
     <div>
-      <a class="xref" href="Global.BaseAttack.html#Global_BaseAttack_StartHitDetector_BaseHitDetector_ChainHitExecutor_">BaseAttack.StartHitDetector(BaseHitDetector, ChainHitExecutor)</a>
-    </div>
-    <div>
       <a class="xref" href="Global.PhasedBehaviour-1.html#Global_PhasedBehaviour_1_anticipationDuration">PhasedBehaviour&lt;BaseAttack.Command&gt;.anticipationDuration</a>
     </div>
     <div>
@@ -266,60 +263,12 @@ After the periodic part is checking for hits a certain number of times, the expl
   </table>
   
   
-  <h4 id="Global_ElectrifyAttack_explosionHitDetector" data-uid="Global.ElectrifyAttack.explosionHitDetector">explosionHitDetector</h4>
+  <h4 id="Global_ElectrifyAttack_electrifyCount" data-uid="Global.ElectrifyAttack.electrifyCount">electrifyCount</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public BaseHitDetector explosionHitDetector</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.BaseHitDetector.html">BaseHitDetector</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_ElectrifyAttack_explosionHitExecutor" data-uid="Global.ElectrifyAttack.explosionHitExecutor">explosionHitExecutor</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ChainHitExecutor explosionHitExecutor</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Global.ChainHitExecutor.html">ChainHitExecutor</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="Global_ElectrifyAttack_periodicHitCount" data-uid="Global.ElectrifyAttack.periodicHitCount">periodicHitCount</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int periodicHitCount</code></pre>
+    <pre><code class="lang-csharp hljs">public int electrifyCount</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -338,12 +287,12 @@ After the periodic part is checking for hits a certain number of times, the expl
   </table>
   
   
-  <h4 id="Global_ElectrifyAttack_periodicHitDetector" data-uid="Global.ElectrifyAttack.periodicHitDetector">periodicHitDetector</h4>
+  <h4 id="Global_ElectrifyAttack_electrifyHitSource" data-uid="Global.ElectrifyAttack.electrifyHitSource">electrifyHitSource</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public PeriodicAbsoluteHitDetector periodicHitDetector</code></pre>
+    <pre><code class="lang-csharp hljs">public HitSource electrifyHitSource</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -355,19 +304,19 @@ After the periodic part is checking for hits a certain number of times, the expl
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.PeriodicAbsoluteHitDetector.html">PeriodicAbsoluteHitDetector</a></td>
+        <td><a class="xref" href="Global.HitSource.html">HitSource</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <h4 id="Global_ElectrifyAttack_periodicHitExecutor" data-uid="Global.ElectrifyAttack.periodicHitExecutor">periodicHitExecutor</h4>
+  <h4 id="Global_ElectrifyAttack_electrifyInterval" data-uid="Global.ElectrifyAttack.electrifyInterval">electrifyInterval</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ChainHitExecutor periodicHitExecutor</code></pre>
+    <pre><code class="lang-csharp hljs">public float electrifyInterval</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -379,7 +328,31 @@ After the periodic part is checking for hits a certain number of times, the expl
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Global.ChainHitExecutor.html">ChainHitExecutor</a></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Global_ElectrifyAttack_explosionHitSource" data-uid="Global.ElectrifyAttack.explosionHitSource">explosionHitSource</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HitSource explosionHitSource</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.HitSource.html">HitSource</a></td>
         <td></td>
       </tr>
     </tbody>
