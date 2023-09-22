@@ -6,11 +6,8 @@ public class SpikeFallAttack : BaseAttack
     public float minHeight;
     public float velocity;
     public float angle;
-
-    [SerializeInterface] [SerializeReference]
-    public BaseHitDetector hitDetector;
-
-    public ChainHitExecutor hitExecutor;
+    
+    public HitSource hitSource;
 
     [InjectBehaviour] private JumpBehaviour jumpBehaviour;
     private bool landed;
@@ -30,7 +27,7 @@ public class SpikeFallAttack : BaseAttack
 
     private void FinishActive()
     {
-        hitDetector.StopDetector();
+        hitSource.Stop();
         MovableEntity.OnLand -= Land;
         MovableEntity.velocity = Vector3.zero;
     }
@@ -44,7 +41,7 @@ public class SpikeFallAttack : BaseAttack
         MovableEntity.velocity.z = 0;
         MovableEntity.acceleration = Vector3.zero;
 
-        StartHitDetector(hitDetector, hitExecutor);
+        hitSource.Start(this);
 
         landed = false;
         MovableEntity.OnLand += Land;

@@ -1317,9 +1317,17 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 63606340983029641, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 961200721986782457, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_LocalPosition.y
       value: 4.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057201847246009008, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2057201847246009008, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1327,6 +1335,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2057201847246009008, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413086483419108523, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2938681094569912794, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
@@ -1373,6 +1385,10 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[3].value
       value: 
       objectReference: {fileID: 973170795}
+    - target: {fileID: 2959019890704704816, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3235370196597282854, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: objects.Array.size
       value: 2
@@ -1385,6 +1401,10 @@ PrefabInstance:
       propertyPath: objects.Array.data[2]
       value: 
       objectReference: {fileID: 63080233}
+    - target: {fileID: 4093321284154454732, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4205167683501668961, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: spawnPosition.x
       value: 0
@@ -1392,6 +1412,10 @@ PrefabInstance:
     - target: {fileID: 4205167683501668961, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: spawnPosition.z
       value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4305774354775593336, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4584385578670512025, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1407,6 +1431,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4584385578670512025, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5733673920314189975, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5826350637341048340, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
@@ -1613,6 +1641,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 4.8
       objectReference: {fileID: 0}
+    - target: {fileID: 6735145565555508169, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6899004906894412483, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1754,12 +1786,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8011096904796056369, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011096904796056369, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8011096904796056369, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8011096904834315078, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1806,12 +1842,16 @@ PrefabInstance:
       value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8011096905359848505, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011096905359848505, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8011096905359848505, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8011096905611350563, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1847,6 +1887,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8011096905830801947, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576227501646729384, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9138288699133641890, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
@@ -3568,74 +3612,85 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 1
-  includedHittableTags:
-    tags: 
-  excludedHittableTags:
-    tags: 
   activeDuration: 0.5
   periodicHitDetector:
-    hitbox: {fileID: 1340466848}
     collisionDetector:
-      hitbox: {fileID: 1340466848}
-    interval: 0.05
+      hitbox: {fileID: 0}
+    interval: 0
     startImmediately: 1
-  periodicHitCount: 2
+  periodicHitCount: 0
   periodicHitExecutor:
-    executors:
-    - rid: 3181427634693996608
-    - rid: 3181427634693996610
-    - rid: 3181427634693996612
-    - rid: 5450716960379109459
-  explosionHitDetector:
-    rid: 3181427246007058591
-  explosionHitExecutor:
-    executors:
-    - rid: 3181427634693996614
-    - rid: 3181427634693996616
-    - rid: 3181427634693996618
-    - rid: 5450716960379109401
+    executors: []
+  electrifyHitSource:
+    hitDetector:
+      rid: 5450717124091969846
+    hitExecutor:
+      executors:
+      - rid: 5450717124091969849
+      - rid: 5450717124091969851
+      - rid: 5450717124091969853
+      - rid: 5450717124091969855
+  electrifyInterval: 0.05
+  electrifyCount: 2
+  explosionHitSource:
+    hitDetector:
+      rid: 5450717124091969856
+    hitExecutor:
+      executors:
+      - rid: 5450717124091969857
+      - rid: 5450717124091969859
+      - rid: 5450717124091969862
+      - rid: 5450717124091969864
   references:
     version: 2
     RefIds:
-    - rid: 3181427246007058591
-      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+    - rid: 5450717124091969846
+      type: {class: AbsoluteHitDetector, ns: , asm: Assembly-CSharp}
       data:
-        hitbox: {fileID: 1468609907}
         collisionDetector:
-          hitbox: {fileID: 1468609907}
-    - rid: 3181427634693996608
+          hitbox: {fileID: 1340466848}
+    - rid: 5450717124091969849
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         damage: 2.5
-    - rid: 3181427634693996610
+    - rid: 5450717124091969851
       type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         knockbackPower: 7
         knockbackDirection: 30
         stunTime: 0.5
-    - rid: 3181427634693996612
+    - rid: 5450717124091969853
       type: {class: ProbabilisticElectrifyHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         electrifyHitExecutor:
           duration: 4
           speedMultiplier: 0.5
         probability: 0.1
-    - rid: 3181427634693996614
+    - rid: 5450717124091969855
+      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 1664870427821783217, guid: faab43d0b7c5cfa448b93f624f98e583, type: 3}
+    - rid: 5450717124091969856
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        collisionDetector:
+          hitbox: {fileID: 1468609907}
+    - rid: 5450717124091969857
       type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         damage: 15
-    - rid: 3181427634693996616
+    - rid: 5450717124091969859
       type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         knockbackPower: 10
         knockbackDirection: 35
         stunTime: 0.5
-    - rid: 3181427634693996618
+    - rid: 5450717124091969862
       type: {class: ElectrifyHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         duration: 4
         speedMultiplier: 0.5
-    - rid: 5450716960379109401
+    - rid: 5450717124091969864
       type: {class: EventHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         event:
@@ -3651,10 +3706,6 @@ MonoBehaviour:
               _suppressLogs: 0
             _methodName: Play
           Expanded: 1
-    - rid: 5450716960379109459
-      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
-      data:
-        prefab: {fileID: 1664870427821783217, guid: faab43d0b7c5cfa448b93f624f98e583, type: 3}
 --- !u!1 &973170795 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5826350639134677129, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
@@ -4079,10 +4130,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 0
-  includedHittableTags:
-    tags: 
-  excludedHittableTags:
-    tags: 
   attackFlow:
     warningDuration: 0.75
     sourceActiveDuration: 1.5
@@ -6792,10 +6839,6 @@ MonoBehaviour:
   instant: 0
   interruptible: 1
   hardRecovery: 1
-  includedHittableTags:
-    tags: 
-  excludedHittableTags:
-    tags: 
   maxEnemyCount: 5
   enemyPrefab: {fileID: 3354150098320785675, guid: 5d9da8712ab367b49830723241e318c1, type: 3}
   spawnPoints:

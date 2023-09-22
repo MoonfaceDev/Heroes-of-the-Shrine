@@ -17,16 +17,9 @@ public class ForwardPushAttack : BaseAttack
 
     public AttackFlow attackFlow;
     public float speed;
-
-    [SerializeInterface] [SerializeReference]
-    public BaseHitDetector hitDetector1;
-
-    [SerializeInterface] [SerializeReference]
-    public BaseHitDetector hitDetector2;
-
-    public ChainHitExecutor hitExecutor1;
-
-    public ChainHitExecutor hitExecutor2;
+    
+    public HitSource hitSource1;
+    public HitSource hitSource2;
 
     private List<string> currentTimeouts;
 
@@ -36,8 +29,8 @@ public class ForwardPushAttack : BaseAttack
         {
             MovableEntity.velocity.x = 0;
 
-            hitDetector1.StopDetector();
-            hitDetector2.StopDetector();
+            hitSource1.Stop();
+            hitSource2.Stop();
             foreach (var timeout in currentTimeouts)
             {
                 eventManager.Cancel(timeout);
@@ -47,13 +40,12 @@ public class ForwardPushAttack : BaseAttack
         };
     }
 
-    private void ConfigureHitDetector(BaseHitDetector hitDetector, ChainHitExecutor hitExecutor, float startTime,
-        float duration)
+    private void ConfigureHitDetector(HitSource hitSource, float startTime, float duration)
     {
         currentTimeouts.Add(eventManager.StartTimeout(() =>
         {
-            StartHitDetector(hitDetector, hitExecutor);
-            currentTimeouts.Add(eventManager.StartTimeout(hitDetector.StopDetector, duration));
+            hitSource.Start(this);
+            currentTimeouts.Add(eventManager.StartTimeout(hitSource.Stop, duration));
         }, startTime));
     }
 
@@ -61,8 +53,8 @@ public class ForwardPushAttack : BaseAttack
     {
         MovableEntity.velocity.x = speed * Entity.rotation;
         currentTimeouts = new List<string>();
-        ConfigureHitDetector(hitDetector1, hitExecutor1, attackFlow.detector1StartTime, attackFlow.detector1Duration);
-        ConfigureHitDetector(hitDetector2, hitExecutor2, attackFlow.detector2StartTime, attackFlow.detector2Duration);
+        ConfigureHitDetector(hitSource1, attackFlow.detector1StartTime, attackFlow.detector1Duration);
+        ConfigureHitDetector(hitSource2, attackFlow.detector2StartTime, attackFlow.detector2Duration);
         yield return new WaitForSeconds(attackFlow.activeDuration);
     }
 }

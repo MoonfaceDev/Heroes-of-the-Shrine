@@ -7,23 +7,17 @@ using UnityEngine;
 public class SimpleAttack : BaseAttack
 {
     public float activeDuration;
-
-    [SerializeInterface] [SerializeReference]
-    public BaseHitDetector hitDetector;
-
-    public ChainHitExecutor hitExecutor;
+    
+    public HitSource hitSource;
 
     private void Start()
     {
-        PlayEvents.onStop += hitDetector.StopDetector;
+        phaseEvents.onFinishActive += hitSource.Stop;
     }
 
     protected override IEnumerator ActivePhase()
     {
-        StartHitDetector(hitDetector, hitExecutor);
-
+        hitSource.Start(this);
         yield return new WaitForSeconds(activeDuration);
-
-        hitDetector.StopDetector();
     }
 }

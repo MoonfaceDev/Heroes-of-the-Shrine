@@ -16,10 +16,7 @@ public class BackwardLaunchAttack : BaseAttack
     public AttackFlow attackFlow;
     public float speed;
 
-    [SerializeInterface] [SerializeReference]
-    public BaseHitDetector hitDetector;
-
-    public ChainHitExecutor hitExecutor;
+    public HitSource hitSource;
 
     private List<string> currentTimeouts;
 
@@ -27,7 +24,7 @@ public class BackwardLaunchAttack : BaseAttack
     {
         phaseEvents.onFinishActive += () =>
         {
-            hitDetector.StopDetector();
+            hitSource.Stop();
             MovableEntity.velocity.x = 0;
 
             foreach (var timeout in currentTimeouts)
@@ -43,8 +40,8 @@ public class BackwardLaunchAttack : BaseAttack
     {
         currentTimeouts.Add(eventManager.StartTimeout(() =>
         {
-            StartHitDetector(hitDetector, hitExecutor);
-            currentTimeouts.Add(eventManager.StartTimeout(hitDetector.StopDetector, attackFlow.detectorDuration));
+            hitSource.Start(this);
+            currentTimeouts.Add(eventManager.StartTimeout(hitSource.Stop, attackFlow.detectorDuration));
         }, attackFlow.detectorStartTime));
     }
 

@@ -19,16 +19,9 @@ public class SpinningSwordsAttack : BaseAttack
     }
 
     public AttackFlow attackFlow;
-
-    [SerializeInterface] [SerializeReference]
-    public BaseHitDetector hitDetector1;
-
-    [SerializeInterface] [SerializeReference]
-    public BaseHitDetector hitDetector2;
-
-    public ChainHitExecutor hitExecutor1;
-
-    public ChainHitExecutor hitExecutor2;
+    
+    public HitSource hitSource1;
+    public HitSource hitSource2;
 
     private List<string> currentTimeouts;
 
@@ -36,8 +29,8 @@ public class SpinningSwordsAttack : BaseAttack
     {
         phaseEvents.onFinishActive += () =>
         {
-            hitDetector1.StopDetector();
-            hitDetector2.StopDetector();
+            hitSource1.Stop();
+            hitSource2.Stop();
             foreach (var timeout in currentTimeouts)
             {
                 eventManager.Cancel(timeout);
@@ -47,21 +40,20 @@ public class SpinningSwordsAttack : BaseAttack
         };
     }
 
-    private void ConfigureHitDetector(BaseHitDetector hitDetector, ChainHitExecutor hitExecutor, float startTime,
-        float duration)
+    private void ConfigureHitDetector(HitSource hitSource, float startTime, float duration)
     {
         currentTimeouts.Add(eventManager.StartTimeout(() =>
         {
-            StartHitDetector(hitDetector, hitExecutor);
-            currentTimeouts.Add(eventManager.StartTimeout(hitDetector.StopDetector, duration));
+            hitSource.Start(this);
+            currentTimeouts.Add(eventManager.StartTimeout(hitSource.Stop, duration));
         }, startTime));
     }
 
     protected override IEnumerator ActivePhase()
     {
         currentTimeouts = new List<string>();
-        ConfigureHitDetector(hitDetector1, hitExecutor1, attackFlow.detector1StartTime, attackFlow.detector1Duration);
-        ConfigureHitDetector(hitDetector2, hitExecutor2, attackFlow.detector2StartTime, attackFlow.detector2Duration);
+        ConfigureHitDetector(hitSource1, attackFlow.detector1StartTime, attackFlow.detector1Duration);
+        ConfigureHitDetector(hitSource2, attackFlow.detector2StartTime, attackFlow.detector2Duration);
         yield return new WaitForSeconds(attackFlow.activeDuration);
     }
 }

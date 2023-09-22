@@ -202,6 +202,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitDetector:
     rid: 3181427246007058606
+  hitSource:
+    hitDetector:
+      rid: 5450717124091969841
+    hitExecutor:
+      executors:
+      - rid: 5450717124091969842
+      - rid: 5450717124091969844
   animator: {fileID: 8808664771124120978}
   hitAnimationDuration: 1
   references:
@@ -212,6 +219,19 @@ MonoBehaviour:
       data:
         collisionDetector:
           hitbox: {fileID: 1815740459291873946}
+    - rid: 5450717124091969841
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        collisionDetector:
+          hitbox: {fileID: 1815740459291873946}
+    - rid: 5450717124091969842
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 10
+    - rid: 5450717124091969844
+      type: {class: PossessHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        duration: 5
 --- !u!1 &8436393641562852876
 GameObject:
   m_ObjectHideFlags: 0

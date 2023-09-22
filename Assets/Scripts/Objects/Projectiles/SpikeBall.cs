@@ -1,17 +1,30 @@
-﻿using ExtEvents;
+﻿using System;
+using ExtEvents;
 using UnityEngine;
+
+[Serializable]
+public class SpikeBallHitExecutor : IHitExecutor
+{
+    public ChainHitExecutor sourceHitExecutor;
+    public ChainHitExecutor explodeHitExecutor;
+    
+    public void Execute(Hit hit)
+    {
+        var isHittingSource = hit.Victim.RelatedEntity == hit.Source.Entity.parent;
+        (isHittingSource ? sourceHitExecutor : explodeHitExecutor).Execute(hit);
+    }
+}
 
 public class SpikeBall : EntityBehaviour
 {
     public Animator animator;
     public ExtEvent onFire;
-    [Header("Latch")] public SingleHitDetector latchHitDetector;
-    public ChainHitExecutor latchHitExecutor;
+    
+    [Header("Latch")] public HitSource latchHitSource;
     public float latchZ;
     public ExtEvent onLatch;
-    [Header("Explosion")] public AbsoluteHitDetector explosionHitDetector;
-    public ChainHitExecutor explosionSourceHitExecutor;
-    public ChainHitExecutor explosionHitExecutor;
+    
+    [Header("Explosion")] public HitSource explosionHitSource;
     public float explosionStartDelay;
     public float explodeAnimationDuration;
     public ExtEvent onExplode;
@@ -23,21 +36,19 @@ public class SpikeBall : EntityBehaviour
     {
         sourceAttack = source;
         MovableEntity.velocity = velocity;
-        latchHitDetector.StartDetector(collision =>
+        latchHitSource.Start(source, collision =>
         {
-            if (!source.AttackManager.CanHit(collision.Other)) return;
-            latchHitDetector.StopDetector();
-            Latch(collision, Mathf.Sign(velocity.x), source);
+            latchHitSource.Stop();
+            Latch(collision, source);
         });
         onFire.Invoke();
     }
 
-    public void Latch(Collision collision, float hitDirection, BaseAttack source)
+    public void Latch(Collision collision, BaseAttack source)
     {
         sourceAttack = source;
         Entity.parent = collision.Other.RelatedEntity;
         Entity.position = collision.Point.y * Vector3.up + latchZ * Vector3.forward;
-        collision.Other.Hit(latchHitExecutor, new Hit(collision, source, Mathf.RoundToInt(hitDirection)));
         MovableEntity.velocity = Vector3.zero;
         animator.SetTrigger($"{GetType().Name}-latch");
         onLatch.Invoke();
@@ -51,25 +62,11 @@ public class SpikeBall : EntityBehaviour
     public void Explode()
     {
         MovableEntity.velocity = Vector3.zero;
-        latchHitDetector.StopDetector();
+        latchHitSource.Stop();
         animator.SetTrigger($"{GetType().Name}-explode");
         Destroy(gameObject, explodeAnimationDuration);
         onExplode.Invoke();
 
-        eventManager.StartTimeout(() => explosionHitDetector.StartDetector(collision =>
-        {
-            if (!sourceAttack.AttackManager.CanHit(collision.Other)) return;
-            
-            if (collision.Other.RelatedEntity == Entity.parent)
-            {
-                collision.Other.Hit(explosionSourceHitExecutor, new Hit(collision, sourceAttack));
-            }
-            else
-            {
-                collision.Other.Hit(explosionHitExecutor,
-                    new Hit(collision, sourceAttack, collision.Other.RelatedEntity.WorldPosition - Entity.WorldPosition)
-                );
-            }
-        }), explosionStartDelay);
+        eventManager.StartTimeout(() => explosionHitSource.Start(sourceAttack), explosionStartDelay);
     }
 }

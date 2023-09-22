@@ -12,7 +12,7 @@ public class EnergyBallExecutor : IHitExecutor
     {
         var ballEntity = GameEntity.Instantiate(ballPrefab, hit.Victim.RelatedEntity.WorldPosition);
         var ballInstance = ballEntity.GetBehaviour<SpikeBall>();
-        ballInstance.Latch(new Collision(hit.Victim, hit.Victim.RelatedEntity.position+ballSpawnElevation*Vector3.up), hit.Direction, hit.Source);
+        ballInstance.Latch(new Collision(hit.Victim, hit.Victim.RelatedEntity.position+ballSpawnElevation*Vector3.up), hit.Source);
         ballInstance.ExplodeAfter(ballExplodeDelay);
     }
 }

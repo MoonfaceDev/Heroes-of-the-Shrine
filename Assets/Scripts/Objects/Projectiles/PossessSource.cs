@@ -6,8 +6,7 @@
 /// </summary>
 public class PossessSource : EntityBehaviour
 {
-    [SerializeInterface] [SerializeReference]
-    public BaseHitDetector hitDetector;
+    public HitSource hitSource;
 
     /// <value>
     /// Related animator
@@ -28,11 +27,8 @@ public class PossessSource : EntityBehaviour
     /// </summary>
     /// <param name="warningDuration">Duration of the warning phase</param>
     /// <param name="activeDuration">Duration of the active phase</param>
-    /// <param name="hittableTags">Tags of objects that can get hit. Get it from <see cref="AttackManager.hittableTags"/></param>
-    /// <param name="hitExecutor">Executed on hit</param>
     /// <param name="relatedAttack">Attack that created the possess source</param>
-    public void Activate(float warningDuration, float activeDuration, Tags hittableTags, ChainHitExecutor hitExecutor,
-        BaseAttack relatedAttack)
+    public void Activate(float warningDuration, float activeDuration, BaseAttack relatedAttack)
     {
         animator.SetBool(Warning, true);
         eventManager.StartTimeout(() =>
@@ -42,21 +38,17 @@ public class PossessSource : EntityBehaviour
 
             var destroyTimeout = eventManager.StartTimeout(() =>
             {
-                hitDetector.StopDetector();
+                hitSource.Stop();
                 animator.SetBool(Active, false);
                 Destroy(gameObject);
             }, activeDuration);
 
-            hitDetector.StartDetector(collision =>
+            hitSource.Start(relatedAttack, _ =>
             {
-                if (!relatedAttack.AttackManager.CanHit(collision.Other)) return;
-                
-                hitDetector.StopDetector();
+                hitSource.Stop();
                 animator.SetBool(Hit, true);
                 Destroy(gameObject, hitAnimationDuration);
                 eventManager.Cancel(destroyTimeout);
-
-                collision.Other.Hit(hitExecutor, new Hit(collision, relatedAttack));
             });
         }, warningDuration);
     }

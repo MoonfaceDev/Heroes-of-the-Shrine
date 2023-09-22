@@ -10,22 +10,19 @@ public class MotionAttack : BaseAttack
 {
     public float velocity;
     public float acceleration;
-
-    [SerializeInterface] [SerializeReference]
-    public BaseHitDetector hitDetector;
-
-    public ChainHitExecutor hitExecutor;
+    
+    public HitSource hitSource;
 
     protected override MotionSettings Motion => MotionSettings.WalkingDisabled;
 
     private void Start()
     {
-        PlayEvents.onStop += FinishActive;
+        phaseEvents.onFinishActive += FinishActive;
     }
 
     private void FinishActive()
     {
-        hitDetector.StopDetector();
+        hitSource.Stop();
         MovableEntity.velocity.x = 0;
         MovableEntity.acceleration.x = 0;
     }
@@ -37,13 +34,11 @@ public class MotionAttack : BaseAttack
         MovableEntity.velocity.z = 0;
         MovableEntity.acceleration.x = -originalDirection * acceleration;
 
-        StartHitDetector(hitDetector, hitExecutor);
+        hitSource.Start(this);
 
         yield return new WaitUntil(() =>
             Mathf.Approximately(MovableEntity.velocity.x, 0) ||
             !Mathf.Approximately(Mathf.Sign(MovableEntity.velocity.x), originalDirection)
         );
-
-        FinishActive();
     }
 }

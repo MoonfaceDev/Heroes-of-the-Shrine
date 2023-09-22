@@ -20,11 +20,6 @@ public class PeriodicAbsoluteHitDetector : BaseHitDetector
     /// </value>
     public bool startImmediately = true;
 
-    /// <value>
-    /// Invoked when detection occurs
-    /// </value>
-    public event Action OnDetect;
-
     private string detectionInterval;
 
     public override void StartDetector(Action<Collision> listener)
@@ -38,7 +33,6 @@ public class PeriodicAbsoluteHitDetector : BaseHitDetector
 
     private void DetectHits(Action<Collision> listener)
     {
-        OnDetect?.Invoke();
         collisionDetector.Detect().ForEach(listener);
     }
 

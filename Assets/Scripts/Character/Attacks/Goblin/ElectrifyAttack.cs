@@ -9,14 +9,11 @@ public class ElectrifyAttack : BaseAttack
 {
     public float activeDuration;
 
-    [Header("Periodic hits")] public PeriodicAbsoluteHitDetector periodicHitDetector;
-    public int periodicHitCount;
-    public ChainHitExecutor periodicHitExecutor;
+    public HitSource electrifyHitSource;
+    public float electrifyInterval;
+    public int electrifyCount;
 
-    [Header("Explosion")] [SerializeInterface] [SerializeReference]
-    public BaseHitDetector explosionHitDetector;
-
-    public ChainHitExecutor explosionHitExecutor;
+    public HitSource explosionHitSource;
 
     private string switchDetectorsListener;
 
@@ -24,8 +21,8 @@ public class ElectrifyAttack : BaseAttack
     {
         PlayEvents.onStop += () =>
         {
-            periodicHitDetector.StopDetector();
-            explosionHitDetector.StopDetector();
+            electrifyHitSource.Stop();
+            explosionHitSource.Stop();
             eventManager.Cancel(switchDetectorsListener);
         };
     }
@@ -33,19 +30,25 @@ public class ElectrifyAttack : BaseAttack
     protected override IEnumerator ActivePhase()
     {
         float detectCount = 0;
-        periodicHitDetector.OnDetect += () => detectCount++;
-
-        switchDetectorsListener = eventManager.InvokeWhen(() => detectCount >= periodicHitCount, () =>
+        
+        void Electrify()
         {
-            periodicHitDetector.StopDetector();
-            StartHitDetector(explosionHitDetector, explosionHitExecutor);
-            detectCount = 0;
-        });
+            electrifyHitSource.Start(this);
+            electrifyHitSource.Stop();
+            detectCount++;
+        }
+        
+        var interval = eventManager.StartInterval(Electrify, electrifyInterval);
+        Electrify();
 
-        StartHitDetector(periodicHitDetector, periodicHitExecutor);
+        switchDetectorsListener = eventManager.InvokeWhen(() => detectCount >= electrifyCount, () =>
+        {
+            eventManager.Cancel(interval);
+            explosionHitSource.Start(this);
+        });
 
         yield return new WaitForSeconds(activeDuration);
 
-        explosionHitDetector.StopDetector();
+        explosionHitSource.Stop();
     }
 }

@@ -25,7 +25,6 @@ public class PossessAttack : BaseAttack
     public int sourcesCount;
     public float spawnRadius;
     public float minSourcesDistance;
-    public ChainHitExecutor hitExecutor;
 
     private WalkableGrid walkableGrid;
 
@@ -56,8 +55,6 @@ public class PossessAttack : BaseAttack
                 newPossessSource.GetBehaviour<PossessSource>().Activate(
                     attackFlow.warningDuration,
                     attackFlow.sourceActiveDuration,
-                    AttackManager.hittableTags,
-                    hitExecutor,
                     this
                 );
             }

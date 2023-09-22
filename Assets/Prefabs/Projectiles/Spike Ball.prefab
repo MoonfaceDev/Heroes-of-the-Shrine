@@ -321,13 +321,19 @@ MonoBehaviour:
       _methodName: Play
     Expanded: 1
   latchHitDetector:
-    hitbox: {fileID: 8328300429585350118}
     collisionDetector:
       hitbox: {fileID: 8328300429585350118}
   latchHitExecutor:
     executors:
     - rid: 13203342144831511
     - rid: 5450716960379109443
+  latchHitSource:
+    hitDetector:
+      rid: 5450717124091969816
+    hitExecutor:
+      executors:
+      - rid: 5450717124091969818
+      - rid: 5450717124091969820
   latchZ: -0.1
   onLatch:
     _persistentListeners:
@@ -341,9 +347,8 @@ MonoBehaviour:
         _typeNameAndAssembly: 
         _suppressLogs: 0
       _methodName: Stop
-    Expanded: 1
+    Expanded: 0
   explosionHitDetector:
-    hitbox: {fileID: 8804218209873540540}
     collisionDetector:
       hitbox: {fileID: 8804218209873540540}
   explosionSourceHitExecutor:
@@ -355,6 +360,12 @@ MonoBehaviour:
     - rid: 13203342144831515
     - rid: 1742320274296799258
     - rid: 5450716960379109445
+  explosionHitSource:
+    hitDetector:
+      rid: 5450717124091969823
+    hitExecutor:
+      executors:
+      - rid: 5450717124091969827
   explosionStartDelay: 0.15
   explodeAnimationDuration: 0.5
   onExplode:
@@ -400,6 +411,58 @@ MonoBehaviour:
       data:
         prefab: {fileID: 824917772533207107, guid: 2ab9493f6f3f8964ebce60115abec721, type: 3}
     - rid: 5450716960379109445
+      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 824917772533207107, guid: 4beee89b5f87b224189fe289925793fb, type: 3}
+    - rid: 5450717124091969816
+      type: {class: SingleHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        collisionDetector:
+          hitbox: {fileID: 8328300429585350118}
+    - rid: 5450717124091969818
+      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        stunTime: 0.5
+    - rid: 5450717124091969820
+      type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 824917772533207107, guid: 2ab9493f6f3f8964ebce60115abec721, type: 3}
+    - rid: 5450717124091969823
+      type: {class: AbsoluteHitDetector, ns: , asm: Assembly-CSharp}
+      data:
+        collisionDetector:
+          hitbox: {fileID: 8804218209873540540}
+    - rid: 5450717124091969827
+      type: {class: SpikeBallHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        sourceHitExecutor:
+          executors:
+          - rid: 5450717124091969830
+          - rid: 5450717124091969831
+        explodeHitExecutor:
+          executors:
+          - rid: 5450717124091969834
+          - rid: 5450717124091969837
+          - rid: 5450717124091969839
+    - rid: 5450717124091969830
+      type: {class: StunHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        stunTime: 1
+    - rid: 5450717124091969831
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 1
+    - rid: 5450717124091969834
+      type: {class: KnockbackHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        knockbackPower: 10
+        knockbackDirection: 30
+        stunTime: 0.5
+    - rid: 5450717124091969837
+      type: {class: DamageHitExecutor, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 5
+    - rid: 5450717124091969839
       type: {class: ParticlesHitExecutor, ns: , asm: Assembly-CSharp}
       data:
         prefab: {fileID: 824917772533207107, guid: 4beee89b5f87b224189fe289925793fb, type: 3}

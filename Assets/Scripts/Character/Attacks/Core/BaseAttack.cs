@@ -138,13 +138,4 @@ public abstract class BaseAttack : PhasedBehaviour<BaseAttack.Command>
         Stop();
         onBlock.Invoke();
     }
-
-    protected void StartHitDetector(BaseHitDetector hitDetector, ChainHitExecutor hitExecutor)
-    {
-        hitDetector.StartDetector(collision =>
-        {
-            if (!AttackManager.CanHit(collision.Other)) return;
-            collision.Other.Hit(hitExecutor, new Hit(collision, this, Entity.WorldRotation));
-        });
-    }
 }
