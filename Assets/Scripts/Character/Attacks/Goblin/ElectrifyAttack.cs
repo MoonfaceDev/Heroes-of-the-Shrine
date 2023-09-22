@@ -15,13 +15,14 @@ public class ElectrifyAttack : BaseAttack
 
     public HitSource explosionHitSource;
 
+    private string electrifyIntervalId;
     private string switchDetectorsListener;
 
     private void Start()
     {
         PlayEvents.onStop += () =>
         {
-            electrifyHitSource.Stop();
+            eventManager.Cancel(electrifyIntervalId);
             explosionHitSource.Stop();
             eventManager.Cancel(switchDetectorsListener);
         };
@@ -38,12 +39,12 @@ public class ElectrifyAttack : BaseAttack
             detectCount++;
         }
         
-        var interval = eventManager.StartInterval(Electrify, electrifyInterval);
+        electrifyIntervalId = eventManager.StartInterval(Electrify, electrifyInterval);
         Electrify();
 
         switchDetectorsListener = eventManager.InvokeWhen(() => detectCount >= electrifyCount, () =>
         {
-            eventManager.Cancel(interval);
+            eventManager.Cancel(electrifyIntervalId);
             explosionHitSource.Start(this);
         });
 
