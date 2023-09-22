@@ -104,7 +104,7 @@ public abstract class BaseAttack : PhasedBehaviour<BaseAttack.Command>
 
     private bool ComboCondition()
     {
-        return previousAttacks.Count == 0 || previousAttacks.Contains(AttackManager.LastAttack);
+        return previousAttacks.Count == 0 || previousAttacks.Contains(AttackManager.CurrentAttack);
     }
 
     protected override void DoPlay(Command command)

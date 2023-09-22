@@ -1,17 +1,11 @@
 using System;
 using System.Linq;
-using UnityEngine.Serialization;
 
 /// <summary>
 /// Behaviour that runs operation on all attacks
 /// </summary>
 public class AttackManager : CharacterBehaviour
 {
-    /// <value>
-    /// Time after attack finished, that it is removed from combo history
-    /// </value>
-    public float maxComboDelay;
-
     /// <value>
     /// Tags of objects that can get hit by character's attacks
     /// </value>
@@ -20,7 +14,7 @@ public class AttackManager : CharacterBehaviour
     /// <summary>
     /// Last attack dealt
     /// </summary>
-    public BaseAttack LastAttack { get; private set; }
+    public BaseAttack CurrentAttack => GetBehaviours<BaseAttack>().FirstOrDefault(attack => attack.Playing);
 
     /// <value>
     /// Attacks play and stop events. Whenever any attack starts or stops, these events are invoked.
@@ -30,7 +24,7 @@ public class AttackManager : CharacterBehaviour
     /// <value>
     /// General attack events. These events are invoked whenever a matching event is invoked in any attack.
     /// </value>
-    [FormerlySerializedAs("attackEvents")] public PhaseEvents phaseEvents;
+    public PhaseEvents phaseEvents;
 
     /// <value>
     /// Hit damage transpiler
@@ -41,8 +35,6 @@ public class AttackManager : CharacterBehaviour
     /// Hit knockback power transpiler
     /// </value>
     public KnockbackPowerTranspiler knockbackPowerTranspiler;
-
-    private string forgetComboTimeout;
 
     protected override void Awake()
     {
@@ -58,24 +50,6 @@ public class AttackManager : CharacterBehaviour
     private void Start()
     {
         InitializeEventForwarding();
-        TrackLastAttack();
-    }
-
-    private void TrackLastAttack()
-    {
-        foreach (var attack in GetBehaviours<BaseAttack>())
-        {
-            attack.PlayEvents.onPlay += () =>
-            {
-                eventManager.Cancel(forgetComboTimeout);
-                LastAttack = attack;
-            };
-
-            attack.PlayEvents.onStop += () =>
-            {
-                forgetComboTimeout = eventManager.StartTimeout(() => LastAttack = null, maxComboDelay);
-            };
-        }
     }
 
     private void InitializeEventForwarding()
