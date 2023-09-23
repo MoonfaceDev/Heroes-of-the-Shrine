@@ -106,7 +106,7 @@ MonoBehaviour:
   m_text: Full Screen
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 289bfda794927f8438f1fca2884c32d0, type: 2}
-  m_sharedMaterial: {fileID: 1465509143680854362, guid: 3a93424f7cf22ca48b498787dc23ecb3, type: 2}
+  m_sharedMaterial: {fileID: -4011802709000433281, guid: 289bfda794927f8438f1fca2884c32d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &766966554367936155
@@ -224,10 +224,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 404400072594527677}
+    m_SelectOnDown: {fileID: 5511722785218905326}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_text: OPTIONS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 289bfda794927f8438f1fca2884c32d0, type: 2}
-  m_sharedMaterial: {fileID: 1465509143680854362, guid: 3a93424f7cf22ca48b498787dc23ecb3, type: 2}
+  m_sharedMaterial: {fileID: -4011802709000433281, guid: 289bfda794927f8438f1fca2884c32d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -404,7 +404,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &986667033303204317
@@ -442,8 +442,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -115}
-  m_SizeDelta: {x: 800, y: 80}
+  m_AnchoredPosition: {x: 400, y: -88.75}
+  m_SizeDelta: {x: 800, y: 53.75}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1261792982295269657
 GameObject:
@@ -556,8 +556,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -325}
-  m_SizeDelta: {x: 800, y: 80}
+  m_AnchoredPosition: {x: 400, y: -246.25}
+  m_SizeDelta: {x: 800, y: 53.75}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1582731037771438657
 GameObject:
@@ -631,8 +631,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -220}
-  m_SizeDelta: {x: 800, y: 80}
+  m_AnchoredPosition: {x: 400, y: -167.5}
+  m_SizeDelta: {x: 800, y: 53.75}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1914027199646828588
 GameObject:
@@ -645,6 +645,7 @@ GameObject:
   - component: {fileID: 972702527356088706}
   - component: {fileID: 7109353960854763603}
   - component: {fileID: 6598599269568968386}
+  - component: {fileID: 8985233450818175057}
   m_Layer: 5
   m_Name: Options Panel
   m_TagString: Untagged
@@ -713,6 +714,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8985233450818175057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914027199646828588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b74329446741c0932c718b1e6389dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSelectedButton: {fileID: 404400072594527677}
 --- !u!1 &1921779895332371290
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,8 +764,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -45}
-  m_SizeDelta: {x: 800, y: 90}
+  m_AnchoredPosition: {x: 400, y: -31.875}
+  m_SizeDelta: {x: 800, y: 63.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &527332469676724877
 CanvasRenderer:
@@ -804,10 +818,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnDown: {fileID: 4373601060914708461}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -835,10 +849,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2554933243903441338}
-        m_TargetAssemblyTypeName: MenuManger, Assembly-CSharp
-        m_MethodName: ToggleOptionsPanel
-        m_Mode: 6
+      - m_Target: {fileID: 8985233450818175057}
+        m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
+        m_MethodName: Close
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1488,7 +1502,7 @@ MonoBehaviour:
   m_text: Resume
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 289bfda794927f8438f1fca2884c32d0, type: 2}
-  m_sharedMaterial: {fileID: 1465509143680854362, guid: 3a93424f7cf22ca48b498787dc23ecb3, type: 2}
+  m_sharedMaterial: {fileID: -4011802709000433281, guid: 289bfda794927f8438f1fca2884c32d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1551,7 +1565,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &4417220672825485272
@@ -1660,7 +1674,7 @@ MonoBehaviour:
   m_text: SFX
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 289bfda794927f8438f1fca2884c32d0, type: 2}
-  m_sharedMaterial: {fileID: 1465509143680854362, guid: 3a93424f7cf22ca48b498787dc23ecb3, type: 2}
+  m_sharedMaterial: {fileID: -4011802709000433281, guid: 289bfda794927f8438f1fca2884c32d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1723,7 +1737,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &5826350637323017586
@@ -1823,8 +1837,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d6dda8716a82214b91d76974089a2cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pausePanel: {fileID: 5826350637477200356}
-  optionsPanel: {fileID: 1914027199646828588}
+  menus:
+  - {fileID: 8797509028518525314}
+  - {fileID: 8985233450818175057}
 --- !u!1 &5826350637341048341
 GameObject:
   m_ObjectHideFlags: 0
@@ -2223,22 +2238,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5826350638911486880}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5826350639003675521}
-        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
-        m_MethodName: set_Paused
-        m_Mode: 6
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
+        m_MethodName: Close
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2270,6 +2273,7 @@ GameObject:
   - component: {fileID: 5826350638052058391}
   - component: {fileID: 5826350638052058345}
   - component: {fileID: 5826350638052058390}
+  - component: {fileID: 8797509028518525314}
   m_Layer: 5
   m_Name: Pause Panel
   m_TagString: Untagged
@@ -2338,6 +2342,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8797509028518525314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5826350637477200356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b74329446741c0932c718b1e6389dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSelectedButton: {fileID: 5826350638832563138}
 --- !u!1 &5826350637558136104
 GameObject:
   m_ObjectHideFlags: 0
@@ -3507,6 +3524,16 @@ MonoBehaviour:
         _typeNameAndAssembly: 
         _suppressLogs: 0
       _methodName: SetActive
+    - _persistentArguments: []
+      _target: {fileID: 2630428063615659774}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: Select
     Expanded: 1
   delay: 2
 --- !u!1 &5826350638685427418
@@ -4054,10 +4081,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2554933243903441338}
-        m_TargetAssemblyTypeName: MenuManger, Assembly-CSharp
-        m_MethodName: TogglePausePanel
-        m_Mode: 6
+      - m_Target: {fileID: 8797509028518525314}
+        m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
+        m_MethodName: Close
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4714,6 +4741,7 @@ GameObject:
   - component: {fileID: 5826350639144267950}
   - component: {fileID: 5826350639144267951}
   - component: {fileID: 5826350639144267948}
+  - component: {fileID: 1696502815438451847}
   m_Layer: 5
   m_Name: Options Button
   m_TagString: Untagged
@@ -4824,22 +4852,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2554933243903441338}
-        m_TargetAssemblyTypeName: MenuManger, Assembly-CSharp
-        m_MethodName: TogglePausePanel
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2554933243903441338}
-        m_TargetAssemblyTypeName: MenuManger, Assembly-CSharp
-        m_MethodName: ToggleOptionsPanel
-        m_Mode: 6
+      - m_Target: {fileID: 1696502815438451847}
+        m_TargetAssemblyTypeName: EventWrapper, Assembly-CSharp
+        m_MethodName: Invoke
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4848,6 +4864,54 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &1696502815438451847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5826350639144267946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae8d96379c024c2abf38af91ea913a2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  event:
+    _persistentListeners:
+    - _persistentArguments:
+      - _index: 0
+        _isSerialized: 1
+        _targetType:
+          GuidAssignmentFailed: 0
+          GUID: 53b74329446741c0932c718b1e6389dc
+          _typeNameAndAssembly: GameMenu, Assembly-CSharp
+          _suppressLogs: 1
+        _fromType:
+          GuidAssignmentFailed: 0
+          GUID: 
+          _typeNameAndAssembly: 
+          _suppressLogs: 0
+        _serializationData:
+          DataFormat: 2
+          ReferencedUnityObjects:
+          - {fileID: 8985233450818175057}
+          SerializationNodes:
+          - Name: 
+            Entry: 10
+            Data: 0
+          Bytes: 
+        _canBeDynamic: 0
+        _serializedArg: 
+      _target: {fileID: 2554933243903441338}
+      _isStatic: 0
+      CallState: 2
+      _staticType:
+        GuidAssignmentFailed: 0
+        GUID: 
+        _typeNameAndAssembly: 
+        _suppressLogs: 0
+      _methodName: OpenMenu
+    Expanded: 1
 --- !u!1 &5826350639199989768
 GameObject:
   m_ObjectHideFlags: 0
@@ -5150,9 +5214,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
+    m_SelectOnUp: {fileID: 5511722785218905326}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -5897,7 +5961,7 @@ MonoBehaviour:
   m_text: Music
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 289bfda794927f8438f1fca2884c32d0, type: 2}
-  m_sharedMaterial: {fileID: 1465509143680854362, guid: 3a93424f7cf22ca48b498787dc23ecb3, type: 2}
+  m_sharedMaterial: {fileID: -4011802709000433281, guid: 289bfda794927f8438f1fca2884c32d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5960,7 +6024,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &8660577622769630327
@@ -6458,10 +6522,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 4373601060914708461}
+    m_SelectOnDown: {fileID: 6172460104142170440}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
