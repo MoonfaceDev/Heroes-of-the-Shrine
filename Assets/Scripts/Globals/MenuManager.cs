@@ -1,12 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 /// <summary>
 /// Class responsible of toggling menus on/off, from pressing ESCAPE and from button clicks
 /// </summary>
 public class MenuManager : BaseComponent
 {
-    public GameObject pausePanel;
-    public GameObject optionsPanel;
+    public GameMenu[] menus;
 
     protected override void Update()
     {
@@ -19,30 +20,24 @@ public class MenuManager : BaseComponent
 
     private void HandleEscape()
     {
-        if (optionsPanel.activeSelf)
+        foreach (var menu in OpenedMenus)
         {
-            ToggleOptionsPanel(false);
+            menu.Close();
             return;
         }
 
-        if (pausePanel.activeSelf)
+        OpenMenu(menus[0]); // first menu is the default one, should be "pause" menu
+    }
+
+    private IEnumerable<GameMenu> OpenedMenus => menus.Where(menu => menu.Opened);
+
+    public void OpenMenu(GameMenu menu)
+    {
+        foreach (var currentMenu in OpenedMenus)
         {
-            TogglePausePanel(false);
-            return;
+            currentMenu.Close();
         }
 
-        TogglePausePanel(true);
-    }
-
-    public void TogglePausePanel(bool active)
-    {
-        pausePanel.SetActive(active);
-        PauseManager.Instance.Paused = active;
-    }
-
-    public void ToggleOptionsPanel(bool active)
-    {
-        optionsPanel.SetActive(active);
-        PauseManager.Instance.Paused = active;
+        menu.Open();
     }
 }

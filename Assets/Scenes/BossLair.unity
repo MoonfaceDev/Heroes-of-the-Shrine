@@ -1058,7 +1058,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab68d069e0e79504ebe8ab7fd318ee7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxComboDelay: 0.5
   hittableTags:
     tags: 01000000
   playEvents:
@@ -3473,6 +3472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 922160257}
   - component: {fileID: 922160258}
+  - component: {fileID: 922160259}
   m_Layer: 5
   m_Name: Victory Panel
   m_TagString: Untagged
@@ -3515,6 +3515,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 922160256}
   m_CullTransparentMesh: 1
+--- !u!114 &922160259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922160256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b74329446741c0932c718b1e6389dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSelectedButton: {fileID: 676580495}
 --- !u!1 &968103252
 GameObject:
   m_ObjectHideFlags: 0
@@ -6241,30 +6254,8 @@ MonoBehaviour:
         _typeNameAndAssembly: 
         _suppressLogs: 0
       _methodName: set_enabled
-    - _persistentArguments:
-      - _index: 0
-        _isSerialized: 1
-        _targetType:
-          GuidAssignmentFailed: 0
-          GUID: 
-          _typeNameAndAssembly: System.Boolean, mscorlib
-          _suppressLogs: 1
-        _fromType:
-          GuidAssignmentFailed: 0
-          GUID: 
-          _typeNameAndAssembly: 
-          _suppressLogs: 0
-        _serializationData:
-          DataFormat: 2
-          ReferencedUnityObjects: []
-          SerializationNodes:
-          - Name: 
-            Entry: 5
-            Data: true
-          Bytes: 
-        _canBeDynamic: 0
-        _serializedArg: 
-      _target: {fileID: 922160256}
+    - _persistentArguments: []
+      _target: {fileID: 922160259}
       _isStatic: 0
       CallState: 2
       _staticType:
@@ -6272,7 +6263,7 @@ MonoBehaviour:
         GUID: 
         _typeNameAndAssembly: 
         _suppressLogs: 0
-      _methodName: SetActive
+      _methodName: Open
     - _persistentArguments:
       - _index: 0
         _isSerialized: 1
