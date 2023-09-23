@@ -2088,6 +2088,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.GameMenu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.GameMenu.html",
+          "hash": "No4fzXhodcpSy6zUDPRSt8kowz8xrAIecyUI1ZI7NA0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.GetOverrideDirection.yml",
       "output": {
         ".html": {
@@ -2536,7 +2548,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.MenuManager.html",
-          "hash": "LSRR1k+w9Pd/P6m8pUirGpwC5Fmq1p8TdrznNkt/YKU="
+          "hash": "x9yKn3WHsHKPcYskM5E+Sd8qcR3ZXH7vP93UJIT4iH4="
         }
       },
       "is_incremental": false,
@@ -3688,7 +3700,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "2nQ2WYcTAcR5C8dBOQki7oqXWXJmgSHpOR2HCdnaq/c="
+          "hash": "nt27g9KRXk9SipPFIBaqo3amlCy6SYrlnaiksjToXjU="
         }
       },
       "is_incremental": false,
@@ -3724,7 +3736,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "CNpjujXgmsBeiCOqDzXJuLeEGPmDyaP4LrZ0xfs+c5M="
+          "hash": "u6kZ2dHG+gaqxPkAjQxPRBInJTQtnacWRKxotRUePXk="
         }
       },
       "is_incremental": false,
@@ -3935,7 +3947,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 308,
+          "total_file_count": 309,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

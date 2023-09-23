@@ -9254,6 +9254,70 @@ references:
   isSpec: "True"
   fullName: GameManager.Restart
   nameWithType: GameManager.Restart
+- uid: Global.GameMenu
+  name: GameMenu
+  href: api/Global.GameMenu.html
+  commentId: T:Global.GameMenu
+  fullName: GameMenu
+  nameWithType: GameMenu
+- uid: Global.GameMenu.Close
+  name: Close()
+  href: api/Global.GameMenu.html#Global_GameMenu_Close
+  commentId: M:Global.GameMenu.Close
+  fullName: GameMenu.Close()
+  nameWithType: GameMenu.Close()
+- uid: Global.GameMenu.Close*
+  name: Close
+  href: api/Global.GameMenu.html#Global_GameMenu_Close_
+  commentId: Overload:Global.GameMenu.Close
+  isSpec: "True"
+  fullName: GameMenu.Close
+  nameWithType: GameMenu.Close
+- uid: Global.GameMenu.defaultSelectedButton
+  name: defaultSelectedButton
+  href: api/Global.GameMenu.html#Global_GameMenu_defaultSelectedButton
+  commentId: F:Global.GameMenu.defaultSelectedButton
+  fullName: GameMenu.defaultSelectedButton
+  nameWithType: GameMenu.defaultSelectedButton
+- uid: Global.GameMenu.Open
+  name: Open()
+  href: api/Global.GameMenu.html#Global_GameMenu_Open
+  commentId: M:Global.GameMenu.Open
+  fullName: GameMenu.Open()
+  nameWithType: GameMenu.Open()
+- uid: Global.GameMenu.Open*
+  name: Open
+  href: api/Global.GameMenu.html#Global_GameMenu_Open_
+  commentId: Overload:Global.GameMenu.Open
+  isSpec: "True"
+  fullName: GameMenu.Open
+  nameWithType: GameMenu.Open
+- uid: Global.GameMenu.Opened
+  name: Opened
+  href: api/Global.GameMenu.html#Global_GameMenu_Opened
+  commentId: P:Global.GameMenu.Opened
+  fullName: GameMenu.Opened
+  nameWithType: GameMenu.Opened
+- uid: Global.GameMenu.Opened*
+  name: Opened
+  href: api/Global.GameMenu.html#Global_GameMenu_Opened_
+  commentId: Overload:Global.GameMenu.Opened
+  isSpec: "True"
+  fullName: GameMenu.Opened
+  nameWithType: GameMenu.Opened
+- uid: Global.GameMenu.SetOpened(System.Boolean)
+  name: SetOpened(Boolean)
+  href: api/Global.GameMenu.html#Global_GameMenu_SetOpened_System_Boolean_
+  commentId: M:Global.GameMenu.SetOpened(System.Boolean)
+  fullName: GameMenu.SetOpened(System.Boolean)
+  nameWithType: GameMenu.SetOpened(Boolean)
+- uid: Global.GameMenu.SetOpened*
+  name: SetOpened
+  href: api/Global.GameMenu.html#Global_GameMenu_SetOpened_
+  commentId: Overload:Global.GameMenu.SetOpened
+  isSpec: "True"
+  fullName: GameMenu.SetOpened
+  nameWithType: GameMenu.SetOpened
 - uid: Global.GetOverrideDirection
   name: GetOverrideDirection
   href: api/Global.GetOverrideDirection.html
@@ -10833,44 +10897,25 @@ references:
   commentId: T:Global.MenuManager
   fullName: MenuManager
   nameWithType: MenuManager
-- uid: Global.MenuManager.optionsPanel
-  name: optionsPanel
-  href: api/Global.MenuManager.html#Global_MenuManager_optionsPanel
-  commentId: F:Global.MenuManager.optionsPanel
-  fullName: MenuManager.optionsPanel
-  nameWithType: MenuManager.optionsPanel
-- uid: Global.MenuManager.pausePanel
-  name: pausePanel
-  href: api/Global.MenuManager.html#Global_MenuManager_pausePanel
-  commentId: F:Global.MenuManager.pausePanel
-  fullName: MenuManager.pausePanel
-  nameWithType: MenuManager.pausePanel
-- uid: Global.MenuManager.ToggleOptionsPanel(System.Boolean)
-  name: ToggleOptionsPanel(Boolean)
-  href: api/Global.MenuManager.html#Global_MenuManager_ToggleOptionsPanel_System_Boolean_
-  commentId: M:Global.MenuManager.ToggleOptionsPanel(System.Boolean)
-  fullName: MenuManager.ToggleOptionsPanel(System.Boolean)
-  nameWithType: MenuManager.ToggleOptionsPanel(Boolean)
-- uid: Global.MenuManager.ToggleOptionsPanel*
-  name: ToggleOptionsPanel
-  href: api/Global.MenuManager.html#Global_MenuManager_ToggleOptionsPanel_
-  commentId: Overload:Global.MenuManager.ToggleOptionsPanel
+- uid: Global.MenuManager.menus
+  name: menus
+  href: api/Global.MenuManager.html#Global_MenuManager_menus
+  commentId: F:Global.MenuManager.menus
+  fullName: MenuManager.menus
+  nameWithType: MenuManager.menus
+- uid: Global.MenuManager.OpenMenu(GameMenu)
+  name: OpenMenu(GameMenu)
+  href: api/Global.MenuManager.html#Global_MenuManager_OpenMenu_GameMenu_
+  commentId: M:Global.MenuManager.OpenMenu(GameMenu)
+  fullName: MenuManager.OpenMenu(GameMenu)
+  nameWithType: MenuManager.OpenMenu(GameMenu)
+- uid: Global.MenuManager.OpenMenu*
+  name: OpenMenu
+  href: api/Global.MenuManager.html#Global_MenuManager_OpenMenu_
+  commentId: Overload:Global.MenuManager.OpenMenu
   isSpec: "True"
-  fullName: MenuManager.ToggleOptionsPanel
-  nameWithType: MenuManager.ToggleOptionsPanel
-- uid: Global.MenuManager.TogglePausePanel(System.Boolean)
-  name: TogglePausePanel(Boolean)
-  href: api/Global.MenuManager.html#Global_MenuManager_TogglePausePanel_System_Boolean_
-  commentId: M:Global.MenuManager.TogglePausePanel(System.Boolean)
-  fullName: MenuManager.TogglePausePanel(System.Boolean)
-  nameWithType: MenuManager.TogglePausePanel(Boolean)
-- uid: Global.MenuManager.TogglePausePanel*
-  name: TogglePausePanel
-  href: api/Global.MenuManager.html#Global_MenuManager_TogglePausePanel_
-  commentId: Overload:Global.MenuManager.TogglePausePanel
-  isSpec: "True"
-  fullName: MenuManager.TogglePausePanel
-  nameWithType: MenuManager.TogglePausePanel
+  fullName: MenuManager.OpenMenu
+  nameWithType: MenuManager.OpenMenu
 - uid: Global.MenuManager.Update
   name: Update()
   href: api/Global.MenuManager.html#Global_MenuManager_Update
