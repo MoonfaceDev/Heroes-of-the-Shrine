@@ -3213,7 +3213,7 @@ Transform:
   - {fileID: 3725194561385273773}
   - {fileID: 7562827223860804901}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360874897665
 MonoBehaviour:
@@ -3289,7 +3289,7 @@ MonoBehaviour:
       button: 2
       energyCost: 0
     - attack: {fileID: 3403884892882908741}
-      button: 2
+      button: 3
       energyCost: 0
     - attack: {fileID: 8296055732026328267}
       button: 2
@@ -14320,7 +14320,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab68d069e0e79504ebe8ab7fd318ee7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxComboDelay: 0
   hittableTags:
     tags: 0200000006000000
   playEvents:
