@@ -6589,19 +6589,6 @@ references:
   commentId: F:Global.Character.attackManager
   fullName: Character.attackManager
   nameWithType: Character.attackManager
-- uid: Global.Character.Awake
-  name: Awake()
-  href: api/Global.Character.html#Global_Character_Awake
-  commentId: M:Global.Character.Awake
-  fullName: Character.Awake()
-  nameWithType: Character.Awake()
-- uid: Global.Character.Awake*
-  name: Awake
-  href: api/Global.Character.html#Global_Character_Awake_
-  commentId: Overload:Global.Character.Awake
-  isSpec: "True"
-  fullName: Character.Awake
-  nameWithType: Character.Awake
 - uid: Global.Character.BlockBehaviours(Type[])
   name: BlockBehaviours(Type[])
   href: api/Global.Character.html#Global_Character_BlockBehaviours_Type___
@@ -6634,12 +6621,19 @@ references:
   fullName.vb: Character.IsPlaying(Of T)()
   nameWithType: Character.IsPlaying<T>()
   nameWithType.vb: Character.IsPlaying(Of T)()
-- uid: Global.Character.movableEntity
-  name: movableEntity
-  href: api/Global.Character.html#Global_Character_movableEntity
-  commentId: F:Global.Character.movableEntity
-  fullName: Character.movableEntity
-  nameWithType: Character.movableEntity
+- uid: Global.Character.MovableEntity
+  name: MovableEntity
+  href: api/Global.Character.html#Global_Character_MovableEntity
+  commentId: P:Global.Character.MovableEntity
+  fullName: Character.MovableEntity
+  nameWithType: Character.MovableEntity
+- uid: Global.Character.MovableEntity*
+  name: MovableEntity
+  href: api/Global.Character.html#Global_Character_MovableEntity_
+  commentId: Overload:Global.Character.MovableEntity
+  isSpec: "True"
+  fullName: Character.MovableEntity
+  nameWithType: Character.MovableEntity
 - uid: Global.Character.stats
   name: stats
   href: api/Global.Character.html#Global_Character_stats
@@ -14321,6 +14315,25 @@ references:
   commentId: F:Global.TextLink.url
   fullName: TextLink.url
   nameWithType: TextLink.url
+- uid: Global.TransformEditor
+  name: TransformEditor
+  href: api/Global.TransformEditor.html
+  commentId: T:Global.TransformEditor
+  fullName: TransformEditor
+  nameWithType: TransformEditor
+- uid: Global.TransformEditor.CreateInspectorGUI
+  name: CreateInspectorGUI()
+  href: api/Global.TransformEditor.html#Global_TransformEditor_CreateInspectorGUI
+  commentId: M:Global.TransformEditor.CreateInspectorGUI
+  fullName: TransformEditor.CreateInspectorGUI()
+  nameWithType: TransformEditor.CreateInspectorGUI()
+- uid: Global.TransformEditor.CreateInspectorGUI*
+  name: CreateInspectorGUI
+  href: api/Global.TransformEditor.html#Global_TransformEditor_CreateInspectorGUI_
+  commentId: Overload:Global.TransformEditor.CreateInspectorGUI
+  isSpec: "True"
+  fullName: TransformEditor.CreateInspectorGUI
+  nameWithType: TransformEditor.CreateInspectorGUI
 - uid: Global.TransitionAction
   name: TransitionAction
   href: api/Global.TransitionAction.html
