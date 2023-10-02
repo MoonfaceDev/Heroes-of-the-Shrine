@@ -20,7 +20,7 @@ public abstract class CharacterBehaviour : EntityBehaviour
     /// <value>
     /// Attached <see cref="MovableEntity"/>
     /// </value>
-    public MovableEntity MovableEntity => Character.movableEntity;
+    public MovableEntity MovableEntity => Character.MovableEntity;
 
     /// <value>
     /// Attached <see cref="AttackManager"/>, possibly null

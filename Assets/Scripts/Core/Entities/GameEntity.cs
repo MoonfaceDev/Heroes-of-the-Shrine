@@ -67,11 +67,10 @@ public class GameEntity : BaseComponent
     /// </summary>
     public Vector3 GroundWorldPosition => WorldPosition - WorldPosition.y * Vector3.up;
 
-    private Dictionary<Type, HashSet<EntityBehaviour>> indexes;
+    private readonly Dictionary<Type, HashSet<EntityBehaviour>> indexes = new();
 
     protected virtual void Awake()
     {
-        indexes = new Dictionary<Type, HashSet<EntityBehaviour>>();
         RegisterBehaviours();
 
         UpdateTransform();
@@ -127,7 +126,7 @@ public class GameEntity : BaseComponent
 
     public IEnumerable<EntityBehaviour> GetBehaviours(Type type, bool exactType = false)
     {
-        var behaviourSet = indexes.ContainsKey(type) ? indexes[type] : new HashSet<EntityBehaviour>();
+        var behaviourSet = indexes.GetValueOrDefault(type, new HashSet<EntityBehaviour>());
         return exactType ? behaviourSet.Where(behaviour => behaviour.GetType() == type) : behaviourSet;
     }
 
