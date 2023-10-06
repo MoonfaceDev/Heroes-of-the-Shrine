@@ -560,8 +560,7 @@ MonoBehaviour:
   onBlock:
     _persistentListeners: []
     Expanded: 1
-  previousAttacks:
-  - {fileID: 8677902016000719218}
+  previousAttacks: []
   instant: 0
   interruptible: 1
   hardRecovery: 0
@@ -1230,7 +1229,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 569420c6d2393024bb6ee34397a968e6, type: 2}
   animator: {fileID: 5884619157808626363}
-  movableEntity: {fileID: 0}
   attackManager: {fileID: 0}
 --- !u!1 &5884619159192989555
 GameObject:
@@ -1628,8 +1626,7 @@ MonoBehaviour:
   onBlock:
     _persistentListeners: []
     Expanded: 1
-  previousAttacks:
-  - {fileID: 9150510433013758275}
+  previousAttacks: []
   instant: 0
   interruptible: 1
   hardRecovery: 0
