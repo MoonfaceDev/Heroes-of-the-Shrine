@@ -110,7 +110,7 @@ public class EncounterAction : BaseComponent
     private void StartWave(int index)
     {
         var waveEnemies = index == 0
-            ? new List<GameEntity>(firstWavePreSpawnedEnemies.Select(enemy => enemy.GetEntity()))
+            ? firstWavePreSpawnedEnemies.Select(enemy => enemy.GetEntity()).ToList()
             : new List<GameEntity>();
 
         // Alarm pre spawned

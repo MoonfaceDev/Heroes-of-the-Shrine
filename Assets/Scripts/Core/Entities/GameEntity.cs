@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -67,11 +66,11 @@ public class GameEntity : BaseComponent
     /// </summary>
     public Vector3 GroundWorldPosition => WorldPosition - WorldPosition.y * Vector3.up;
 
-    private readonly Dictionary<Type, HashSet<EntityBehaviour>> indexes = new();
+    private readonly BehaviourRegistry registry = new();
 
     protected virtual void Awake()
     {
-        RegisterBehaviours();
+        registry.RegisterBehaviours(transform);
 
         UpdateTransform();
         if (Application.isPlaying)
@@ -88,71 +87,24 @@ public class GameEntity : BaseComponent
         }
     }
 
-    private void RegisterBehaviours()
-    {
-        RegisterTransform(transform);
-    }
-
-    private void RegisterTransform(Transform currentObject)
-    {
-        foreach (var behaviour in currentObject.GetComponents<EntityBehaviour>())
-        {
-            RegisterBehaviour(behaviour);
-        }
-
-        foreach (Transform child in currentObject)
-        {
-            if (child.GetComponent<GameEntity>() == null)
-            {
-                RegisterTransform(child);
-            }
-        }
-    }
-
-    private void RegisterBehaviour(EntityBehaviour behaviour)
-    {
-        var currentType = behaviour.GetType();
-        while (currentType != null)
-        {
-            AddToIndex(currentType, behaviour);
-            currentType = currentType.BaseType;
-        }
-
-        foreach (var type in behaviour.GetType().GetInterfaces())
-        {
-            AddToIndex(type, behaviour);
-        }
-    }
-
     public IEnumerable<EntityBehaviour> GetBehaviours(Type type, bool exactType = false)
     {
-        var behaviourSet = indexes.GetValueOrDefault(type, new HashSet<EntityBehaviour>());
-        return exactType ? behaviourSet.Where(behaviour => behaviour.GetType() == type) : behaviourSet;
+        return registry.GetBehaviours(type, exactType);
     }
 
     public EntityBehaviour GetBehaviour(Type type, bool exactType = false)
     {
-        return GetBehaviours(type, exactType).SingleOrDefault();
+        return registry.GetBehaviour(type, exactType);
     }
 
     public IEnumerable<T> GetBehaviours<T>(bool exactType = false)
     {
-        return GetBehaviours(typeof(T), exactType).Select(behaviour => (T)(object)behaviour);
+        return registry.GetBehaviours<T>(exactType);
     }
 
     public T GetBehaviour<T>(bool exactType = false)
     {
-        return GetBehaviours<T>(exactType).SingleOrDefault();
-    }
-
-    private void AddToIndex(Type type, EntityBehaviour behaviour)
-    {
-        if (!indexes.ContainsKey(type))
-        {
-            indexes[type] = new HashSet<EntityBehaviour>();
-        }
-
-        indexes[type].Add(behaviour);
+        return registry.GetBehaviour<T>(exactType);
     }
 
     protected override void Update()
@@ -239,8 +191,9 @@ public class GameEntity : BaseComponent
 
         return entity;
     }
-    
-    public static GameEntity Instantiate(GameObject prefab, GameEntity parent, Vector3 position, Rotation rotation = null)
+
+    public static GameEntity Instantiate(GameObject prefab, GameEntity parent, Vector3 position,
+        Rotation rotation = null)
     {
         var @object = Instantiate(prefab, parent.transform);
         var entity = @object.GetComponent<GameEntity>();
@@ -251,7 +204,7 @@ public class GameEntity : BaseComponent
         }
 
         entity.parent = parent;
-        
+
         entity.position = position;
         if (rotation != null)
         {
