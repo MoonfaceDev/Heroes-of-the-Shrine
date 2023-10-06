@@ -6284,6 +6284,88 @@ references:
   isSpec: "True"
   fullName: BasePatternEditor.OnInspectorGUI
   nameWithType: BasePatternEditor.OnInspectorGUI
+- uid: Global.BehaviourInjector
+  name: BehaviourInjector
+  href: api/Global.BehaviourInjector.html
+  commentId: T:Global.BehaviourInjector
+  fullName: BehaviourInjector
+  nameWithType: BehaviourInjector
+- uid: Global.BehaviourInjector.Inject(EntityBehaviour)
+  name: Inject(EntityBehaviour)
+  href: api/Global.BehaviourInjector.html#Global_BehaviourInjector_Inject_EntityBehaviour_
+  commentId: M:Global.BehaviourInjector.Inject(EntityBehaviour)
+  fullName: BehaviourInjector.Inject(EntityBehaviour)
+  nameWithType: BehaviourInjector.Inject(EntityBehaviour)
+- uid: Global.BehaviourInjector.Inject*
+  name: Inject
+  href: api/Global.BehaviourInjector.html#Global_BehaviourInjector_Inject_
+  commentId: Overload:Global.BehaviourInjector.Inject
+  isSpec: "True"
+  fullName: BehaviourInjector.Inject
+  nameWithType: BehaviourInjector.Inject
+- uid: Global.BehaviourRegistry
+  name: BehaviourRegistry
+  href: api/Global.BehaviourRegistry.html
+  commentId: T:Global.BehaviourRegistry
+  fullName: BehaviourRegistry
+  nameWithType: BehaviourRegistry
+- uid: Global.BehaviourRegistry.GetBehaviour(Type,System.Boolean)
+  name: GetBehaviour(Type, Boolean)
+  href: api/Global.BehaviourRegistry.html#Global_BehaviourRegistry_GetBehaviour_Type_System_Boolean_
+  commentId: M:Global.BehaviourRegistry.GetBehaviour(Type,System.Boolean)
+  fullName: BehaviourRegistry.GetBehaviour(Type, System.Boolean)
+  nameWithType: BehaviourRegistry.GetBehaviour(Type, Boolean)
+- uid: Global.BehaviourRegistry.GetBehaviour*
+  name: GetBehaviour
+  href: api/Global.BehaviourRegistry.html#Global_BehaviourRegistry_GetBehaviour_
+  commentId: Overload:Global.BehaviourRegistry.GetBehaviour
+  isSpec: "True"
+  fullName: BehaviourRegistry.GetBehaviour
+  nameWithType: BehaviourRegistry.GetBehaviour
+- uid: Global.BehaviourRegistry.GetBehaviour``1(System.Boolean)
+  name: GetBehaviour<T>(Boolean)
+  href: api/Global.BehaviourRegistry.html#Global_BehaviourRegistry_GetBehaviour__1_System_Boolean_
+  commentId: M:Global.BehaviourRegistry.GetBehaviour``1(System.Boolean)
+  name.vb: GetBehaviour(Of T)(Boolean)
+  fullName: BehaviourRegistry.GetBehaviour<T>(System.Boolean)
+  fullName.vb: BehaviourRegistry.GetBehaviour(Of T)(System.Boolean)
+  nameWithType: BehaviourRegistry.GetBehaviour<T>(Boolean)
+  nameWithType.vb: BehaviourRegistry.GetBehaviour(Of T)(Boolean)
+- uid: Global.BehaviourRegistry.GetBehaviours(Type,System.Boolean)
+  name: GetBehaviours(Type, Boolean)
+  href: api/Global.BehaviourRegistry.html#Global_BehaviourRegistry_GetBehaviours_Type_System_Boolean_
+  commentId: M:Global.BehaviourRegistry.GetBehaviours(Type,System.Boolean)
+  fullName: BehaviourRegistry.GetBehaviours(Type, System.Boolean)
+  nameWithType: BehaviourRegistry.GetBehaviours(Type, Boolean)
+- uid: Global.BehaviourRegistry.GetBehaviours*
+  name: GetBehaviours
+  href: api/Global.BehaviourRegistry.html#Global_BehaviourRegistry_GetBehaviours_
+  commentId: Overload:Global.BehaviourRegistry.GetBehaviours
+  isSpec: "True"
+  fullName: BehaviourRegistry.GetBehaviours
+  nameWithType: BehaviourRegistry.GetBehaviours
+- uid: Global.BehaviourRegistry.GetBehaviours``1(System.Boolean)
+  name: GetBehaviours<T>(Boolean)
+  href: api/Global.BehaviourRegistry.html#Global_BehaviourRegistry_GetBehaviours__1_System_Boolean_
+  commentId: M:Global.BehaviourRegistry.GetBehaviours``1(System.Boolean)
+  name.vb: GetBehaviours(Of T)(Boolean)
+  fullName: BehaviourRegistry.GetBehaviours<T>(System.Boolean)
+  fullName.vb: BehaviourRegistry.GetBehaviours(Of T)(System.Boolean)
+  nameWithType: BehaviourRegistry.GetBehaviours<T>(Boolean)
+  nameWithType.vb: BehaviourRegistry.GetBehaviours(Of T)(Boolean)
+- uid: Global.BehaviourRegistry.RegisterBehaviours(Transform)
+  name: RegisterBehaviours(Transform)
+  href: api/Global.BehaviourRegistry.html#Global_BehaviourRegistry_RegisterBehaviours_Transform_
+  commentId: M:Global.BehaviourRegistry.RegisterBehaviours(Transform)
+  fullName: BehaviourRegistry.RegisterBehaviours(Transform)
+  nameWithType: BehaviourRegistry.RegisterBehaviours(Transform)
+- uid: Global.BehaviourRegistry.RegisterBehaviours*
+  name: RegisterBehaviours
+  href: api/Global.BehaviourRegistry.html#Global_BehaviourRegistry_RegisterBehaviours_
+  commentId: Overload:Global.BehaviourRegistry.RegisterBehaviours
+  isSpec: "True"
+  fullName: BehaviourRegistry.RegisterBehaviours
+  nameWithType: BehaviourRegistry.RegisterBehaviours
 - uid: Global.BossHittableHitbox
   name: BossHittableHitbox
   href: api/Global.BossHittableHitbox.html

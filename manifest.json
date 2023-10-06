@@ -1236,6 +1236,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.BehaviourInjector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.BehaviourInjector.html",
+          "hash": "eGUMmRW9MUKJPYPk2mAalKLw8ZOkzqZNU5NbDctCz5A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.BehaviourRegistry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.BehaviourRegistry.html",
+          "hash": "11LfftD+r0ESz9ywlhUtnpPpa7/tErB/6jwJMYhs6cs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.BossHittableHitbox.yml",
       "output": {
         ".html": {
@@ -3712,7 +3736,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "RpywBwIigfrnO0TpIV7U0J/Zh6ok61LBtFJoOQT/Yv8="
+          "hash": "JIVPluq1LOIPgld1X6bvFh4uywrVDZoBpiQkTkhpVpU="
         }
       },
       "is_incremental": false,
@@ -3748,7 +3772,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "iJfQH/f8UUc86jn/Nan0Z7vqPcxxa9OT5kAX1806d38="
+          "hash": "R5m5T73rSKXwoI3VNsB8e7/2wdbGob5AvCNfoPkhEpo="
         }
       },
       "is_incremental": false,
@@ -3959,7 +3983,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 310,
+          "total_file_count": 312,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
