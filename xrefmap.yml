@@ -5596,30 +5596,30 @@ references:
   isSpec: "True"
   fullName: AttackManager.Playing
   nameWithType: AttackManager.Playing
-- uid: Global.AttackNode
-  name: AttackNode
-  href: api/Global.AttackNode.html
-  commentId: T:Global.AttackNode
-  fullName: AttackNode
-  nameWithType: AttackNode
-- uid: Global.AttackNode.attackType
-  name: attackType
-  href: api/Global.AttackNode.html#Global_AttackNode_attackType
-  commentId: F:Global.AttackNode.attackType
-  fullName: AttackNode.attackType
-  nameWithType: AttackNode.attackType
-- uid: Global.AttackNode.startTime
-  name: startTime
-  href: api/Global.AttackNode.html#Global_AttackNode_startTime
-  commentId: F:Global.AttackNode.startTime
-  fullName: AttackNode.startTime
-  nameWithType: AttackNode.startTime
 - uid: Global.AttackPattern
   name: AttackPattern
   href: api/Global.AttackPattern.html
   commentId: T:Global.AttackPattern
   fullName: AttackPattern
   nameWithType: AttackPattern
+- uid: Global.AttackPattern.AttackEntry
+  name: AttackPattern.AttackEntry
+  href: api/Global.AttackPattern.AttackEntry.html
+  commentId: T:Global.AttackPattern.AttackEntry
+  fullName: AttackPattern.AttackEntry
+  nameWithType: AttackPattern.AttackEntry
+- uid: Global.AttackPattern.AttackEntry.attackType
+  name: attackType
+  href: api/Global.AttackPattern.AttackEntry.html#Global_AttackPattern_AttackEntry_attackType
+  commentId: F:Global.AttackPattern.AttackEntry.attackType
+  fullName: AttackPattern.AttackEntry.attackType
+  nameWithType: AttackPattern.AttackEntry.attackType
+- uid: Global.AttackPattern.AttackEntry.delayBefore
+  name: delayBefore
+  href: api/Global.AttackPattern.AttackEntry.html#Global_AttackPattern_AttackEntry_delayBefore
+  commentId: F:Global.AttackPattern.AttackEntry.delayBefore
+  fullName: AttackPattern.AttackEntry.delayBefore
+  nameWithType: AttackPattern.AttackEntry.delayBefore
 - uid: Global.AttackPattern.attacks
   name: attacks
   href: api/Global.AttackPattern.html#Global_AttackPattern_attacks
@@ -6196,6 +6196,12 @@ references:
   commentId: T:Global.BasePattern
   fullName: BasePattern
   nameWithType: BasePattern
+- uid: Global.BasePattern.eventManager
+  name: eventManager
+  href: api/Global.BasePattern.html#Global_BasePattern_eventManager
+  commentId: F:Global.BasePattern.eventManager
+  fullName: BasePattern.eventManager
+  nameWithType: BasePattern.eventManager
 - uid: Global.BasePattern.hasRandomExitTime
   name: hasRandomExitTime
   href: api/Global.BasePattern.html#Global_BasePattern_hasRandomExitTime
@@ -6220,12 +6226,6 @@ references:
   commentId: E:Global.BasePattern.OnEnter
   fullName: BasePattern.OnEnter
   nameWithType: BasePattern.OnEnter
-- uid: Global.BasePattern.OnExit
-  name: OnExit
-  href: api/Global.BasePattern.html#Global_BasePattern_OnExit
-  commentId: E:Global.BasePattern.OnExit
-  fullName: BasePattern.OnExit
-  nameWithType: BasePattern.OnExit
 - uid: Global.BasePattern.OnStateEnter(Animator,AnimatorStateInfo,System.Int32)
   name: OnStateEnter(Animator, AnimatorStateInfo, Int32)
   href: api/Global.BasePattern.html#Global_BasePattern_OnStateEnter_Animator_AnimatorStateInfo_System_Int32_
@@ -6239,19 +6239,6 @@ references:
   isSpec: "True"
   fullName: BasePattern.OnStateEnter
   nameWithType: BasePattern.OnStateEnter
-- uid: Global.BasePattern.OnStateExit(Animator,AnimatorStateInfo,System.Int32)
-  name: OnStateExit(Animator, AnimatorStateInfo, Int32)
-  href: api/Global.BasePattern.html#Global_BasePattern_OnStateExit_Animator_AnimatorStateInfo_System_Int32_
-  commentId: M:Global.BasePattern.OnStateExit(Animator,AnimatorStateInfo,System.Int32)
-  fullName: BasePattern.OnStateExit(Animator, AnimatorStateInfo, System.Int32)
-  nameWithType: BasePattern.OnStateExit(Animator, AnimatorStateInfo, Int32)
-- uid: Global.BasePattern.OnStateExit*
-  name: OnStateExit
-  href: api/Global.BasePattern.html#Global_BasePattern_OnStateExit_
-  commentId: Overload:Global.BasePattern.OnStateExit
-  isSpec: "True"
-  fullName: BasePattern.OnStateExit
-  nameWithType: BasePattern.OnStateExit
 - uid: Global.BasePattern.OnStateUpdate(Animator,AnimatorStateInfo,System.Int32)
   name: OnStateUpdate(Animator, AnimatorStateInfo, Int32)
   href: api/Global.BasePattern.html#Global_BasePattern_OnStateUpdate_Animator_AnimatorStateInfo_System_Int32_
@@ -8405,6 +8392,25 @@ references:
   commentId: F:Global.EscapePattern.targetTag
   fullName: EscapePattern.targetTag
   nameWithType: EscapePattern.targetTag
+- uid: Global.EventExtensions
+  name: EventExtensions
+  href: api/Global.EventExtensions.html
+  commentId: T:Global.EventExtensions
+  fullName: EventExtensions
+  nameWithType: EventExtensions
+- uid: Global.EventExtensions.SubscribeOnce(ExtEvent,Action)
+  name: SubscribeOnce(ExtEvent, Action)
+  href: api/Global.EventExtensions.html#Global_EventExtensions_SubscribeOnce_ExtEvent_Action_
+  commentId: M:Global.EventExtensions.SubscribeOnce(ExtEvent,Action)
+  fullName: EventExtensions.SubscribeOnce(ExtEvent, Action)
+  nameWithType: EventExtensions.SubscribeOnce(ExtEvent, Action)
+- uid: Global.EventExtensions.SubscribeOnce*
+  name: SubscribeOnce
+  href: api/Global.EventExtensions.html#Global_EventExtensions_SubscribeOnce_
+  commentId: Overload:Global.EventExtensions.SubscribeOnce
+  isSpec: "True"
+  fullName: EventExtensions.SubscribeOnce
+  nameWithType: EventExtensions.SubscribeOnce
 - uid: Global.EventHitExecutor
   name: EventHitExecutor
   href: api/Global.EventHitExecutor.html

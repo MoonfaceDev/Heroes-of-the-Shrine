@@ -1036,7 +1036,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.ArcPattern.html",
-          "hash": "iB2nV+thJc1mN5SHXiAhFfhCvfjrMCX73pnyquvPRBU="
+          "hash": "jws8fA6Uo99XNiYS7GNkbEafU+BiN4+CpUUpVvsuYBE="
         }
       },
       "is_incremental": false,
@@ -1056,11 +1056,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.AttackNode.yml",
+      "source_relative_path": "api/Global.AttackPattern.AttackEntry.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Global.AttackNode.html",
-          "hash": "p1kLz2VLjEU/FnPeliGnlYKZAXAnxhrFl1nmJuIhyVQ="
+          "relative_path": "api/Global.AttackPattern.AttackEntry.html",
+          "hash": "K/3vMLeTgQWZMhum6/Ak+eBEwn3fp42OeO+gziHIA+I="
         }
       },
       "is_incremental": false,
@@ -1072,7 +1072,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.AttackPattern.html",
-          "hash": "ZIDtBS7YYnCKK0guYHdTfFpyw5EzxzxJUP5ZN/VFJk0="
+          "hash": "KLb2yLnmHMQUqPlTYXyXzLdmd6dxMv+Z890wAfKawQg="
         }
       },
       "is_incremental": false,
@@ -1216,7 +1216,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.BasePattern.html",
-          "hash": "wMPs564HYzrJY2WHvo1iuPMAlbBQJkwT1Dw7bOGVbq0="
+          "hash": "kCEqLjP6CGvj3IZfc8RPMoiXCBLm4sAEJfxQTjsWyZ0="
         }
       },
       "is_incremental": false,
@@ -1900,7 +1900,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.EscapePattern.html",
-          "hash": "fSQZYVOraJq3pn0VS4aDC7IXmdPNHCNkNNRT/f50Nww="
+          "hash": "B2liiCCIvwnZQeYyy9hnTV4IGok9MsBnpBIKw0o/XrQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.EventExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.EventExtensions.html",
+          "hash": "XQBPQarVPHw8NIcTqwsFHegLl0MbVCQu7YU88j6rza8="
         }
       },
       "is_incremental": false,
@@ -2020,7 +2032,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.FollowPattern.html",
-          "hash": "OjejffgXPIgnH9fnMsud+nKD+9YrQsPfEZL3S/d2Vcg="
+          "hash": "ZbtzzxPNeskVy9wKYNMzq1ewfxUqn8tEaH2J3edAM8k="
         }
       },
       "is_incremental": false,
@@ -2404,7 +2416,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.IdlePattern.html",
-          "hash": "iyEwB62dNeviksAo+Y+ZDFyebDxD9dkg4OLSC7TbpNE="
+          "hash": "nKxA1Q+PLuB+q3WytoutkLBLeoz2qYceh5n0o+s7Cuw="
         }
       },
       "is_incremental": false,
@@ -3004,7 +3016,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.RandomRayPattern.html",
-          "hash": "qXCBHnATfXNnQtvcJw55nemANlHQF1SGNOcOs+9x5ME="
+          "hash": "xYqlgzmpK29mV1E4l8OIaqxS1xUfuw+sAOomnenRE/w="
         }
       },
       "is_incremental": false,
@@ -3040,7 +3052,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.RepositionPattern.html",
-          "hash": "nYE4rUQHZQqvd7XKlDu/6W/TzbGbRY3OqigxYSajQVU="
+          "hash": "OLzYjaLCAVi6DukkqqXKpGhF2LpOY2OeKu6on7zwtO0="
         }
       },
       "is_incremental": false,
@@ -3736,7 +3748,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "JIVPluq1LOIPgld1X6bvFh4uywrVDZoBpiQkTkhpVpU="
+          "hash": "bH3ZoBOY3/6KSnvbZnChIiaCgi6EfKvjYDpV1BhM3nI="
         }
       },
       "is_incremental": false,
@@ -3772,7 +3784,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "R5m5T73rSKXwoI3VNsB8e7/2wdbGob5AvCNfoPkhEpo="
+          "hash": "Z0QJq/HjwiTzeFEMK8mYZ2OItXO+Qu5nPSH2ZyZZETA="
         }
       },
       "is_incremental": false,
@@ -3983,7 +3995,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 312,
+          "total_file_count": 313,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
