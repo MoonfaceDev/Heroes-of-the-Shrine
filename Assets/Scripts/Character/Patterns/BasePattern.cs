@@ -10,11 +10,12 @@ public abstract class BasePattern : StateMachineBehaviour
     private float timeout;
 
     public event Action OnEnter;
-    public event Action OnExit;
 
     private float time;
 
     private static readonly int TimeoutParameter = Animator.StringToHash("timeout");
+
+    protected readonly EventManager eventManager = new();
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -30,16 +31,11 @@ public abstract class BasePattern : StateMachineBehaviour
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateUpdate(animator, stateInfo, layerIndex);
+        eventManager.Tick();
         time += Time.deltaTime;
         if (hasRandomExitTime && time > timeout)
         {
             animator.SetTrigger(TimeoutParameter);
         }
-    }
-
-    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        base.OnStateExit(animator, stateInfo, layerIndex);
-        OnExit?.Invoke();
     }
 }

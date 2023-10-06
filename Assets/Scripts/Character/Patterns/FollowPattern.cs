@@ -8,9 +8,7 @@ public class FollowPattern : BasePattern
     public float speedMultiplier;
 
     private const float DistanceFromOtherEnemies = 0.5f;
-
-    private string otherEnemiesListener;
-
+    
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
@@ -33,7 +31,7 @@ public class FollowPattern : BasePattern
 
         var otherEnemies = Array.Empty<GameEntity>();
 
-        otherEnemiesListener = GlobalEventManager.Instance.Register(() =>
+        eventManager.Register(() =>
         {
             otherEnemies = EntityManager.Instance.GetEntities(Tag.Enemy)
                 .Where(enemy => enemy != followBehaviour.MovableEntity)
@@ -79,18 +77,11 @@ public class FollowPattern : BasePattern
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
-
-        GlobalEventManager.Instance.Unregister(otherEnemiesListener);
-
+        
         var followBehaviour = animator.GetEntity().GetBehaviour<FollowBehaviour>();
         followBehaviour.Stop();
 
         var walkBehaviour = animator.GetEntity().GetBehaviour<WalkBehaviour>();
         walkBehaviour.speed /= speedMultiplier;
-    }
-
-    private void OnDestroy()
-    {
-        GlobalEventManager.Instance.Unregister(otherEnemiesListener);
     }
 }
