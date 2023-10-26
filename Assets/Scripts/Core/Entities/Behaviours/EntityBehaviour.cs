@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 
 public class EntityBehaviour : BaseComponent
 {
@@ -46,33 +44,10 @@ public class EntityBehaviour : BaseComponent
     }
 
     private GameEntity entity;
-    private const BindingFlags InjectableBindingFlags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance;
 
     protected virtual void Awake()
     {
-        var fields = GetTypeHierarchy().SelectMany(type => type.GetFields(InjectableBindingFlags));
-        foreach (var field in fields.Where(IsInjectable))
-        {
-            field.SetValue(this, GetBehaviour(field.FieldType));
-        }
-    }
-
-    private IEnumerable<Type> GetTypeHierarchy()
-    {
-        var type = GetType();
-        var types = new HashSet<Type>();
-        while (type != null)
-        {
-            types.Add(type);
-            type = type.BaseType;
-        }
-
-        return types;
-    }
-
-    private static bool IsInjectable(MemberInfo member)
-    {
-        return member.GetCustomAttribute<InjectBehaviourAttribute>(false) != null;
+        BehaviourInjector.Inject(this);
     }
 
     public IEnumerable<EntityBehaviour> GetBehaviours(Type type)

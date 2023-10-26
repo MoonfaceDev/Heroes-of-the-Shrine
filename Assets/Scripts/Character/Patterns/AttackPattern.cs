@@ -1,67 +1,61 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TypeReferences;
-
-[Serializable]
-public class AttackNode
-{
-    [Inherits(typeof(BaseAttack))] public TypeReference attackType;
-    public float startTime;
-}
+using UnityEngine;
 
 public class AttackPattern : BasePattern
 {
-    public Tag targetTag;
-    public List<AttackNode> attacks;
+    [Serializable]
+    public class AttackEntry
+    {
+        [Inherits(typeof(BaseAttack))] public TypeReference attackType;
+        public float delayBefore;
+    }
 
-    private Coroutine attackCoroutine;
+    public Tag targetTag;
+    public List<AttackEntry> attacks;
+
+    private BaseAttack currentAttack;
+    private Action attackStopListener;
+
+    private static readonly int AttackOver = Animator.StringToHash("attackOver");
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
+        NextAttack(animator, 0);
+    }
 
-        var player = EntityManager.Instance.GetEntity(targetTag);
-
-        if (!player)
+    private void NextAttack(Animator animator, int attackIndex)
+    {
+        if (attackIndex >= attacks.Count)
         {
+            animator.SetTrigger(AttackOver);
             return;
         }
 
         var entity = animator.GetEntity();
-        entity.WorldRotation = Mathf.RoundToInt(Mathf.Sign((player.WorldPosition - entity.WorldPosition).x));
-        attackCoroutine = GlobalEventManager.Instance.StartCoroutine(AttackCoroutine(entity));
+        var attackEntry = attacks[attackIndex];
+        currentAttack = (BaseAttack)entity.GetBehaviour(attackEntry.attackType, exactType: true);
+
+        eventManager.StartTimeout(() =>
+        {
+            RotateToPlayer(entity);
+            attackStopListener =
+                currentAttack.PlayEvents.onStop.SubscribeOnce(() => NextAttack(animator, attackIndex + 1));
+            currentAttack.Play(new BaseAttack.Command());
+        }, attackEntry.delayBefore);
     }
 
-    private IEnumerator AttackCoroutine(GameEntity entity)
+    private void RotateToPlayer(GameEntity entity)
     {
-        var startTime = Time.time;
-
-        foreach (var node in attacks)
-        {
-            yield return new WaitForSeconds(node.startTime - (Time.time - startTime));
-            var attack = entity.GetBehaviour(node.attackType, exactType: true) as BaseAttack;
-            if (attack == null) continue;
-            attack.Play(new BaseAttack.Command());
-        }
+        var player = EntityManager.Instance.GetEntity(targetTag);
+        entity.WorldRotation = player.WorldPosition - entity.WorldPosition;
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
-
-        if (attackCoroutine != null)
-        {
-            GlobalEventManager.Instance.StopCoroutine(attackCoroutine);
-        }
-    }
-
-    private void OnDestroy()
-    {
-        if (attackCoroutine != null)
-        {
-            GlobalEventManager.Instance.StopCoroutine(attackCoroutine);
-        }
+        currentAttack.PlayEvents.onStop -= attackStopListener;
     }
 }

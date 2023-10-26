@@ -8,9 +8,7 @@ public class RepositionPattern : BasePattern
     public float speedMultiplier;
 
     private const float DistanceFromOtherEnemies = 0.5f;
-
-    private string otherEnemiesListener;
-
+    
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
@@ -25,7 +23,7 @@ public class RepositionPattern : BasePattern
 
         var otherEnemies = Array.Empty<GameEntity>();
 
-        otherEnemiesListener = GlobalEventManager.Instance.Register(() =>
+        eventManager.Register(() =>
         {
             otherEnemies = EntityManager.Instance.GetEntities(Tag.Enemy)
                 .Where(enemy => enemy != autoWalkBehaviour.MovableEntity)
@@ -48,18 +46,11 @@ public class RepositionPattern : BasePattern
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
-
-        GlobalEventManager.Instance.Unregister(otherEnemiesListener);
-
+        
         var autoWalkBehaviour = animator.GetEntity().GetBehaviour<AutoWalkBehaviour>();
         autoWalkBehaviour.Stop();
 
         var walkBehaviour = animator.GetEntity().GetBehaviour<WalkBehaviour>();
         walkBehaviour.speed /= speedMultiplier;
-    }
-
-    private void OnDestroy()
-    {
-        GlobalEventManager.Instance.Unregister(otherEnemiesListener);
     }
 }

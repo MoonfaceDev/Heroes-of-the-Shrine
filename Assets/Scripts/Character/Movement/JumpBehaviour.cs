@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class JumpBehaviour : PhasedBehaviour<JumpBehaviour.Command>, IMovementBehaviour
 {
