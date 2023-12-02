@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WaterUnderRaftFar
+  m_Controller: {fileID: 9100000, guid: de11ceddfbdccc843a5c82ee59159929, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 600d5f87925089a4f8bd1c346c15cc94, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 566b234ffbf6f414f82cb96a14400537, type: 2}
