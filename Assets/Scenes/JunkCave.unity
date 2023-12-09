@@ -866,6 +866,10 @@ PrefabInstance:
       propertyPath: objectsToDestroy.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5989508014285571736, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: runSpeedMultiplier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6735145565555508169, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.6999998
@@ -873,6 +877,10 @@ PrefabInstance:
     - target: {fileID: 6899004906894412483, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111261599247639214, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: defaultSpeed
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7892979979956269628, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_AssetsPPU
@@ -1058,6 +1066,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8011096905049079380, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 83fe634c091e48348b319bd44b2e7be1, type: 2}
     - target: {fileID: 8011096905295114536, guid: 4d7a03ad715e5df479d4afc901fbeabd, type: 3}
       propertyPath: m_SortingOrder
       value: 3100
