@@ -2520,10 +2520,10 @@ MonoBehaviour:
     onFinishRecovery:
       _persistentListeners: []
       Expanded: 1
-  speed: 20
-  climbAcceleration: 100
+  speed: 40
+  climbAcceleration: 200
   peakDuration: 0.2
-  peakAcceleration: 5
+  peakAcceleration: 10
 --- !u!114 &7045785900987598505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2817,7 +2817,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -202314909
-  m_SortingLayer: -3
+  m_SortingLayer: -4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b3e0aeed74b096147b9b4c419c5d4fb2, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
@@ -3213,7 +3213,7 @@ Transform:
   - {fileID: 3725194561385273773}
   - {fileID: 7562827223860804901}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5102893360874897665
 MonoBehaviour:
@@ -3250,7 +3250,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: f0dd1cbac5660c1469a150b9876636ab, type: 2}
   animator: {fileID: 5102893361555062418}
-  movableEntity: {fileID: 0}
   attackManager: {fileID: 0}
 --- !u!114 &5102893360874897678
 MonoBehaviour:
@@ -8503,7 +8502,7 @@ Animator:
   m_GameObject: {fileID: 5102893361555062423}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 26064225d2af99c4d840617b8c4ac3c3, type: 2}
+  m_Controller: {fileID: 22100000, guid: 83fe634c091e48348b319bd44b2e7be1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
