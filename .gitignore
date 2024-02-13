@@ -11,6 +11,9 @@
 # Visual Studio cache directory
 .vs/
 
+# Rider
+.idea/
+
 # Gradle cache directory
 .gradle/
 
@@ -48,3 +51,8 @@ sysinfo.txt
 crashlytics-build.properties
 
 UserSettings/
+Assets/Unity.VisualScripting.Generated.meta
+Assets/Unity.VisualScripting.Generated/VisualScripting.Flow.meta
+Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db
+Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db.meta
+ProjectSettings/VisualScriptingSettings.asset

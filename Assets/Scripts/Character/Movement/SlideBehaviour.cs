@@ -1,79 +1,67 @@
 using UnityEngine;
 
-public class SlideBehaviour : CharacterBehaviour
+public class SlideBehaviour : PlayableBehaviour<SlideBehaviour.Command>, IMovementBehaviour
 {
+    public class Command
+    {
+        public int direction;
+    }
+    
     public float slideSpeedMultiplier;
     public float slideStopAcceleration;
 
-    public delegate void OnStart();
-    public delegate void OnStop();
+    public Cooldown cooldown;
 
-    public OnStart onStart;
-    public OnStop onStop;
-    public bool slide
+    public bool Slide
     {
-        get { return _slide; }
-        set { 
-            _slide = value;
-            animator.SetBool("slide", _slide);
-            if (value)
-            {
-                onStart();
-            }
-            else
-            {
-                onStop();
-            }
-        }
-    }
-
-    private bool _slide;
-    private WalkBehaviour walkBehaviour;
-    private KnockbackBehaviour knockbackBehaviour;
-    private StunBehaviour stunBehaviour;
-
-    private void Start()
-    {
-        walkBehaviour = GetComponent<WalkBehaviour>();
-        knockbackBehaviour = GetComponent<KnockbackBehaviour>();
-        stunBehaviour = GetComponent<StunBehaviour>();
-    }
-
-    public bool CanSlide()
-    {
-        return movableObject.velocity.x != 0 
-            && movableObject.position.y == 0
-            && !slide
-            && !(knockbackBehaviour && (knockbackBehaviour.knockback || knockbackBehaviour.recoveringFromKnockback))
-            && !(stunBehaviour && stunBehaviour.stun);
-    }
-
-    public void Slide()
-    {
-        if (!CanSlide())
+        get => slide;
+        private set
         {
-            return;
+            slide = value;
+            Animator.SetBool(SlideParameter, slide);
         }
-        if (walkBehaviour)
-        {
-            walkBehaviour.walk = false;
-        }
-        float slideDirection = lookDirection;
-        movableObject.velocity.x = slideDirection * slideSpeedMultiplier * movableObject.velocity.x;
-        movableObject.acceleration.x = -slideDirection * slideStopAcceleration;
-        movableObject.velocity.z = 0;
-        slide = true;
-        eventManager.Callback(
-            () => Mathf.Sign(movableObject.velocity.x) == Mathf.Sign(movableObject.acceleration.x),
-            EndSlide
+    }
+
+    public override bool Playing => Slide;
+
+    private bool slide;
+    private string stopListener;
+
+    private static readonly int SlideParameter = Animator.StringToHash("slide");
+
+    public override bool CanPlay(Command command)
+    {
+        return base.CanPlay(command)
+               && cooldown.CanPlay()
+               && !IsPlaying<JumpBehaviour>()
+               && command.direction != 0;
+    }
+
+    protected override void DoPlay(Command command)
+    {
+        cooldown.Reset();
+        
+        StopBehaviours(typeof(IControlledBehaviour));
+        BlockBehaviours(typeof(IControlledBehaviour));
+
+        Slide = true;
+
+        MovableEntity.rotation = command.direction;
+        MovableEntity.velocity.x = command.direction * slideSpeedMultiplier * GetBehaviour<WalkBehaviour>().speed;
+        MovableEntity.acceleration.x = -command.direction * slideStopAcceleration;
+        MovableEntity.velocity.z = 0;
+        stopListener = eventManager.InvokeWhen(
+            () => !Mathf.Approximately(Mathf.Sign(MovableEntity.velocity.x), command.direction),
+            Stop
         );
     }
 
-    public void EndSlide()
+    protected override void DoStop()
     {
-        slide = false;
-        lookDirection = -Mathf.RoundToInt(Mathf.Sign(movableObject.velocity.x));
-        movableObject.velocity.x = 0;
-        movableObject.acceleration.x = 0;
+        eventManager.Cancel(stopListener);
+        Slide = false;
+        MovableEntity.velocity.x = 0;
+        MovableEntity.acceleration.x = 0;
+        UnblockBehaviours(typeof(IControlledBehaviour));
     }
 }

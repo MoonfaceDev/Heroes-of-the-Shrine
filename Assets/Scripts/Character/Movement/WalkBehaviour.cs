@@ -1,77 +1,75 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(MovableObject))]
-public class WalkBehaviour : CharacterBehaviour
+public class WalkBehaviour : PlayableBehaviour<WalkBehaviour.Command>, IMovementBehaviour
 {
-    public float defaultSpeed;
-
-    public delegate void OnStart();
-    public delegate void OnStop();
-
-    [HideInInspector] public float speed;
-    public OnStart onStart;
-    public OnStop onStop;
-    public bool walk
+    public class Command
     {
-        get { return _walk; }
-        set
+        public readonly Vector2 direction;
+        public readonly bool fitRotation;
+
+        public Command(Vector2 direction, bool fitRotation = true)
         {
-            _walk = value;
-            animator.SetBool("walk", _walk);
-            if (value)
-            {
-                onStart();
-            }
-            else
-            {
-                onStop();
-            }
+            this.direction = direction.normalized;
+            this.fitRotation = fitRotation;
+        }
+
+        public Command(Vector3 direction, bool fitRotation = true)
+            : this(MathUtils.ToPlane(direction), fitRotation)
+        {
         }
     }
 
-    private JumpBehaviour jumpBehaviour;
-    private SlideBehaviour slideBehaviour;
-    private KnockbackBehaviour knockbackBehaviour;
-    private StunBehaviour stunBehaviour;
-    private bool _walk; //walking or running
+    
+    public float defaultSpeed;
 
-    private void Start()
+    public float speed;
+
+    public bool Walk
     {
-        jumpBehaviour = GetComponent<JumpBehaviour>();
-        slideBehaviour = GetComponent<SlideBehaviour>();
-        knockbackBehaviour = GetComponent<KnockbackBehaviour>();
-        stunBehaviour = GetComponent<StunBehaviour>();
+        get => walk;
+        private set
+        {
+            walk = value;
+            Animator.SetBool(WalkParameter, walk);
+        }
+    }
+
+    public override bool Playing => Walk;
+
+    private bool walk; //walking or running
+
+    private static readonly int WalkParameter = Animator.StringToHash("walk");
+
+    protected override void Awake()
+    {
+        base.Awake();
         speed = defaultSpeed;
     }
 
-    public bool CanWalk()
+    public override bool CanPlay(Command command)
     {
-        return
-            !(jumpBehaviour && (jumpBehaviour.anticipatingJump || jumpBehaviour.recoveringFromJump))
-            && !(slideBehaviour && slideBehaviour.slide)
-            && !(knockbackBehaviour && (knockbackBehaviour.knockback || knockbackBehaviour.recoveringFromKnockback))
-            && !(stunBehaviour && stunBehaviour.stun);
+        return base.CanPlay(command) && command.direction != Vector2.zero;
     }
 
-    public void Walk(float xAxis, float zAxis)
+    protected override void DoPlay(Command command)
     {
-        if (!CanWalk())
-        {
-            return;
-        }
-        // run callbacks
-        if (new Vector2(xAxis, zAxis) == Vector2.zero)
-        {
-            walk = false;
-        }
-        else if (!walk) //first walking frame
-        {
-            walk = true;
-        }
+        Walk = true;
+
         // move speed
-        movableObject.velocity.x = xAxis * speed;
-        movableObject.velocity.z = zAxis * speed;
+        MovableEntity.velocity.x = command.direction.x * speed;
+        MovableEntity.velocity.z = command.direction.y * speed;
+
+        // look direction
+        if (command.direction.x != 0 & command.fitRotation)
+        {
+            MovableEntity.rotation = Mathf.RoundToInt(Mathf.Sign(command.direction.x));
+        }
+    }
+
+    protected override void DoStop()
+    {
+        Walk = false;
+        MovableEntity.velocity.x = 0;
+        MovableEntity.velocity.z = 0;
     }
 }

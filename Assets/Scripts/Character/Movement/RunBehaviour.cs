@@ -1,101 +1,64 @@
-using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(WalkBehaviour))]
-public class RunBehaviour : CharacterBehaviour
+public class RunBehaviour : PlayableBehaviour<RunBehaviour.Command>, IMovementBehaviour
 {
-    public float timeToRun;
-    public float timeToStopRun;
-    public float runSpeedMultiplier;
-
-    public delegate void OnStart();
-    public delegate void OnStop();
-
-    public OnStart onStart;
-    public OnStop onStop;
-
-    public bool run
+    public class Command
     {
-        get { return _run; }
-        set
+    }
+
+    public float runSpeedMultiplier;
+    public ParticleSystem runParticles;
+
+    public bool Run
+    {
+        get => run;
+        private set
         {
-            _run = value;
-            animator.SetBool("run", _run); if (value)
-            {
-                onStart();
-            }
-            else
-            {
-                onStop();
-            }
+            run = value;
+            Animator.SetBool(RunParameter, run);
         }
     }
 
-    private WalkBehaviour walkBehaviour;
-    private JumpBehaviour jumpBehaviour;
-    private Coroutine startRunningCoroutine;
-    private ParticleSystem runParticles;
+    public override bool Playing => Run;
+
+    [InjectBehaviour] private WalkBehaviour walkBehaviour;
+    [InjectBehaviour] private JumpBehaviour jumpBehaviour;
     private ParticleSystem.MainModule runParticlesMain;
-    private bool _run;
+    private bool run;
+
+    private static readonly int RunParameter = Animator.StringToHash("run");
+
+    protected override void Awake()
+    {
+        base.Awake();
+        runParticlesMain = runParticles.main;
+    }
 
     private void Start()
     {
-        walkBehaviour = GetComponent<WalkBehaviour>();
-        jumpBehaviour = GetComponent<JumpBehaviour>();
-        runParticlesMain = runParticles.main;
-
-        walkBehaviour.onStart += () =>
-        {
-            startRunningCoroutine = StartCoroutine(StartRunningAfter(timeToRun));
-            eventManager.Callback(() => !walkBehaviour.walk, () => StopCoroutine(startRunningCoroutine));
-        };
-        walkBehaviour.onStop += () =>
-        {
-            if (startRunningCoroutine != null)
-            {
-                StopCoroutine(startRunningCoroutine);
-            }
-            if (run)
-            {
-                StartCoroutine(StopRunningAfter(timeToStopRun));
-            }
-        };
         if (jumpBehaviour)
         {
-            jumpBehaviour.onJump += () =>
-            {
-                runParticlesMain.gravityModifier = 1f;
-            };
-            jumpBehaviour.onLand += () =>
-            {
-                runParticlesMain.gravityModifier = 0;
-            };
+            jumpBehaviour.phaseEvents.onStartActive += () => runParticlesMain.gravityModifier = 1f;
+            jumpBehaviour.phaseEvents.onFinishActive += () => runParticlesMain.gravityModifier = 0;
         }
     }
 
-    private IEnumerator StartRunningAfter(float time)
+    public override bool CanPlay(Command command)
     {
-        yield return new WaitForSeconds(time);
-        StartRunning();
+        return base.CanPlay(command) && !walkBehaviour.Blocked;
     }
 
-    private IEnumerator StopRunningAfter(float time)
+    protected override void DoPlay(Command command)
     {
-        yield return new WaitForSeconds(time);
-        StopRunning();
-    }
-
-    public void StartRunning()
-    {
-        run = true;
+        Run = true;
         walkBehaviour.speed *= runSpeedMultiplier;
         runParticles.Play();
     }
 
-    public void StopRunning()
+    protected override void DoStop()
     {
-        run = false;
-        walkBehaviour.speed = walkBehaviour.defaultSpeed;
+        Run = false;
+        walkBehaviour.speed /= runSpeedMultiplier;
         runParticles.Stop();
     }
 }

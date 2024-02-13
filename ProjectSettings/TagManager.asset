@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Barrier
+  - Enemy.Goblin.Cave
   layers:
   - Default
   - TransparentFX
@@ -38,6 +40,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ground
+    uniqueID: 261890933
+    locked: 0
+  - name: Shadow
+    uniqueID: 4092652387
+    locked: 0
+  - name: Background
+    uniqueID: 3962787021
+    locked: 0
+  - name: Props
+    uniqueID: 3256364057
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 2244769361
+    locked: 0
+  - name: UI
+    uniqueID: 993037327
     locked: 0

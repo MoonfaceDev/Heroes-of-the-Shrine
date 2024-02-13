@@ -1,5 +1,45 @@
 {
   "dependencies": {
+    "com.solidalloy.extevents": {
+      "version": "1.7.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.solidalloy.util": "1.40.0",
+        "com.unity.settings-manager": "1.0.3",
+        "com.solidalloy.type-references": "2.16.0",
+        "com.solidalloy.unity-dropdown": "1.2.0"
+      },
+      "url": "https://package.openupm.com"
+    },
+    "com.solidalloy.type-references": {
+      "version": "2.16.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.solidalloy.util": "1.40.0",
+        "com.unity.settings-manager": "1.0.3",
+        "com.solidalloy.unity-dropdown": "1.2.0"
+      },
+      "url": "https://package.openupm.com"
+    },
+    "com.solidalloy.unity-dropdown": {
+      "version": "1.2.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.solidalloy.util": "1.40.0",
+        "org.nuget.system.memory": "4.5.4"
+      },
+      "url": "https://package.openupm.com"
+    },
+    "com.solidalloy.util": {
+      "version": "1.40.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
     "com.unity.2d.animation": {
       "version": "8.0.2",
       "depth": 1,
@@ -109,7 +149,7 @@
       }
     },
     "com.unity.ide.rider": {
-      "version": "3.0.14",
+      "version": "3.0.25",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -118,7 +158,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.15",
+      "version": "2.0.18",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -140,8 +180,31 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.settings-manager": {
+      "version": "2.0.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.sysroot": {
+      "version": "2.0.5",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.sysroot.linux-x86_64": {
+      "version": "2.0.4",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.sysroot": "2.0.5"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.test-framework": {
-      "version": "1.1.31",
+      "version": "1.1.33",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -161,7 +224,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
-      "version": "1.7.1",
+      "version": "1.7.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -169,6 +232,16 @@
         "com.unity.modules.animation": "1.0.0",
         "com.unity.modules.audio": "1.0.0",
         "com.unity.modules.particlesystem": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.toolchain.win-x86_64-linux-x86_64": {
+      "version": "2.0.4",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.sysroot": "2.0.5",
+        "com.unity.sysroot.linux-x86_64": "2.0.4"
       },
       "url": "https://packages.unity.com"
     },
@@ -181,27 +254,37 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
-    "com.unity.visualscripting": {
-      "version": "1.7.5",
-      "depth": 0,
+    "org.nuget.system.buffers": {
+      "version": "4.5.1",
+      "depth": 3,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
+    "org.nuget.system.memory": {
+      "version": "4.5.4",
+      "depth": 2,
       "source": "registry",
       "dependencies": {
-        "com.unity.ugui": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0"
+        "org.nuget.system.buffers": "4.5.1",
+        "org.nuget.system.numerics.vectors": "4.4.0",
+        "org.nuget.system.runtime.compilerservices.unsafe": "4.5.3"
       },
-      "url": "https://packages.unity.com"
+      "url": "https://package.openupm.com"
     },
-    "com.unity.modules.ai": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
+    "org.nuget.system.numerics.vectors": {
+      "version": "4.4.0",
+      "depth": 3,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
     },
-    "com.unity.modules.androidjni": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
+    "org.nuget.system.runtime.compilerservices.unsafe": {
+      "version": "4.5.3",
+      "depth": 3,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
     },
     "com.unity.modules.animation": {
       "version": "1.0.0",
@@ -220,14 +303,6 @@
       "depth": 0,
       "source": "builtin",
       "dependencies": {}
-    },
-    "com.unity.modules.cloth": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.physics": "1.0.0"
-      }
     },
     "com.unity.modules.director": {
       "version": "1.0.0",
@@ -273,22 +348,6 @@
       "depth": 0,
       "source": "builtin",
       "dependencies": {}
-    },
-    "com.unity.modules.screencapture": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.imageconversion": "1.0.0"
-      }
-    },
-    "com.unity.modules.subsystems": {
-      "version": "1.0.0",
-      "depth": 1,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.jsonserialize": "1.0.0"
-      }
     },
     "com.unity.modules.terrain": {
       "version": "1.0.0",
@@ -346,15 +405,6 @@
       "source": "builtin",
       "dependencies": {}
     },
-    "com.unity.modules.unityanalytics": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.unitywebrequest": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0"
-      }
-    },
     "com.unity.modules.unitywebrequest": {
       "version": "1.0.0",
       "depth": 0,
@@ -363,7 +413,7 @@
     },
     "com.unity.modules.unitywebrequestassetbundle": {
       "version": "1.0.0",
-      "depth": 0,
+      "depth": 1,
       "source": "builtin",
       "dependencies": {
         "com.unity.modules.assetbundle": "1.0.0",
@@ -372,20 +422,11 @@
     },
     "com.unity.modules.unitywebrequestaudio": {
       "version": "1.0.0",
-      "depth": 0,
+      "depth": 1,
       "source": "builtin",
       "dependencies": {
         "com.unity.modules.unitywebrequest": "1.0.0",
         "com.unity.modules.audio": "1.0.0"
-      }
-    },
-    "com.unity.modules.unitywebrequesttexture": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.unitywebrequest": "1.0.0",
-        "com.unity.modules.imageconversion": "1.0.0"
       }
     },
     "com.unity.modules.unitywebrequestwww": {
@@ -401,14 +442,6 @@
         "com.unity.modules.imageconversion": "1.0.0"
       }
     },
-    "com.unity.modules.vehicles": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.physics": "1.0.0"
-      }
-    },
     "com.unity.modules.video": {
       "version": "1.0.0",
       "depth": 0,
@@ -417,32 +450,6 @@
         "com.unity.modules.audio": "1.0.0",
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.unitywebrequest": "1.0.0"
-      }
-    },
-    "com.unity.modules.vr": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.jsonserialize": "1.0.0",
-        "com.unity.modules.physics": "1.0.0",
-        "com.unity.modules.xr": "1.0.0"
-      }
-    },
-    "com.unity.modules.wind": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.modules.xr": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.physics": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0",
-        "com.unity.modules.subsystems": "1.0.0"
       }
     }
   }
