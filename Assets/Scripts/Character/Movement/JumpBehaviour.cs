@@ -1,152 +1,93 @@
 using System.Collections;
 using UnityEngine;
 
-public class JumpBehaviour : CharacterBehaviour
+public class JumpBehaviour : PhasedBehaviour<JumpBehaviour.Command>, IMovementBehaviour
 {
-    public float jumpSpeed;
-    public float jumpAnticipateTime;
-    public float jumpRecoverTime;
-    public int maxJumps;
-
-    public delegate void OnAnticipate();
-    public delegate void OnJump();
-    public delegate void OnLand();
-    public delegate void OnRecover();
-
-    public OnAnticipate onAnticipate;
-    public OnJump onJump;
-    public OnLand onLand;
-    public OnRecover onRecover;
-    public bool jump
+    public class Command
     {
-        get { return _jump; }
-        set { 
-            _jump = value;
-            animator.SetBool("jump", _jump);
-            if (value)
-            {
-                onJump();
-            }
-            else
-            {
-                onLand();
-            }
-        }
-    }
-    public bool recoveringFromJump
-    {
-        get { return _recoveringFromJump; }
-        set { 
-            _recoveringFromJump = value;
-            animator.SetBool("recoveringFromJump", _recoveringFromJump);
-            if (!value)
-            {
-                onRecover();
-            }
-        }
-    }
-    public bool anticipatingJump
-    {
-        get { return _anticipatingJump; }
-        set { 
-            _anticipatingJump = value;
-            animator.SetBool("anticipatingJump", _anticipatingJump);
-            if (value)
-            {
-                onAnticipate();
-            }
-        }
-    }
-    [HideInInspector] public int jumps;
-
-    private bool _jump;
-    private bool _recoveringFromJump;
-    private bool _anticipatingJump;
-    private WalkBehaviour walkBehaviour;
-    private SlideBehaviour slideBehaviour;
-    private KnockbackBehaviour knockbackBehaviour;
-    private StunBehaviour stunBehaviour;
-
-    private void Start()
-    {
-        walkBehaviour = GetComponent<WalkBehaviour>();
-        slideBehaviour = GetComponent<SlideBehaviour>();
-        knockbackBehaviour = GetComponent<KnockbackBehaviour>();
-        stunBehaviour = GetComponent<StunBehaviour>();
     }
 
-    public bool CanJump()
+    public float speed;
+
+    public float climbAcceleration;
+    public float peakDuration;
+    public float peakAcceleration;
+
+    private bool landed;
+    private string stopClimbListener;
+    private string stopPeakListener;
+
+    public override bool CanPlay(Command command)
     {
-        return !anticipatingJump
-            && !recoveringFromJump 
-            && jumps < maxJumps
-            && !(slideBehaviour && slideBehaviour.slide)
-            && !(knockbackBehaviour && (knockbackBehaviour.knockback || knockbackBehaviour.recoveringFromKnockback))
-            && !(stunBehaviour && stunBehaviour.stun);
+        return base.CanPlay(command)
+               && !(AttackManager && !AttackManager.CanPlayAttack())
+               && !Playing;
     }
 
-    public void Jump()
+    protected override void DoPlay(Command command)
     {
-        if (!CanJump())
-        {
-            return;
-        }
-        if (walkBehaviour && walkBehaviour.walk == false && movableObject.position.y == 0) //not moving and grounded
-        {
-            anticipatingJump = true;
-            StartCoroutine(AnticipateJump());
-        }
-        else //moving or mid-air
-        {
-            StartJump();
-        }
+        landed = false;
+        StopBehaviours(typeof(BaseAttack));
+        BlockBehaviours(typeof(RunBehaviour));
+
+        base.DoPlay(command);
     }
 
-    IEnumerator AnticipateJump()
+    protected override IEnumerator ActivePhase()
     {
-        yield return new WaitForSeconds(jumpAnticipateTime);
-        anticipatingJump = false;
         StartJump();
+        yield return new WaitUntil(() => landed);
     }
 
-    void StartJump()
+    private void StartJump()
     {
-        jump = true;
-        jumps++;
-        movableObject.velocity.y = jumpSpeed;
-        movableObject.acceleration.y = -gravityAcceleration;
-        eventManager.Callback(
-            () => movableObject.velocity.y < 0 && movableObject.position.y <= 0,
-            Land
-        );
-    }
+        MovableEntity.velocity.y = speed;
+        MovableEntity.acceleration.y = -climbAcceleration;
 
-    public void Land()
-    {
-        movableObject.position.y = 0;
-        movableObject.velocity.y = 0;
-        movableObject.acceleration.y = 0;
-        jump = false;
-        if (walkBehaviour && walkBehaviour.walk) //moving
+        stopClimbListener = eventManager.InvokeWhen(() => MovableEntity.velocity.y < 0, () =>
         {
-            EndJump();
-        }
-        else //not moving
+            MovableEntity.acceleration.y = -peakAcceleration;
+            var peakStartTime = Time.time;
+            stopPeakListener = eventManager.InvokeWhen(
+                () => Time.time - peakStartTime > peakDuration,
+                () => MovableEntity.acceleration.y = -Character.stats.gravityAcceleration
+            );
+        });
+
+        MovableEntity.OnLand += Land;
+    }
+
+    public void Freeze()
+    {
+        eventManager.Cancel(stopClimbListener);
+        eventManager.Cancel(stopPeakListener);
+        MovableEntity.velocity.y = 0;
+        MovableEntity.acceleration.y = 0;
+    }
+
+    public void Unfreeze()
+    {
+        MovableEntity.acceleration.y = -Character.stats.gravityAcceleration;
+    }
+
+    private void Land()
+    {
+        MovableEntity.OnLand -= Land;
+        landed = true;
+    }
+
+    protected override void DoStop()
+    {
+        UnblockBehaviours(typeof(RunBehaviour));
+
+        if (Active)
         {
-            recoveringFromJump = true;
-            StartCoroutine(RecoverFromJump());
+            eventManager.Cancel(stopClimbListener);
+            eventManager.Cancel(stopPeakListener);
+            MovableEntity.velocity.y = 0;
+            MovableEntity.OnLand -= Land;
         }
-    }
 
-    IEnumerator RecoverFromJump()
-    {
-        yield return new WaitForSeconds(jumpRecoverTime);
-        recoveringFromJump = false;
-        EndJump();
-    }
-
-    public void EndJump()
-    {
-        jumps = 0;
+        base.DoStop();
     }
 }

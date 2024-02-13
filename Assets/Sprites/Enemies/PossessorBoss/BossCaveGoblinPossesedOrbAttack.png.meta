@@ -1,0 +1,475 @@
+fileFormatVersion: 2
+guid: 608ff83cc87534d4caa0ccb2efb7abaa
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BossCaveGoblinPossesedOrbAttack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 108
+        width: 96
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0.111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6cde86f9486a694abaf16e77e981c2e
+      internalID: -1813391275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossCaveGoblinPossesedOrbAttack_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 108
+        width: 96
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0.111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 661c0b905b5712c4bb52b2ce87ba5734
+      internalID: 2110862316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossCaveGoblinPossesedOrbAttack_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 108
+        width: 96
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0.111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35b54076b9507f34e9472fbee92a7d9c
+      internalID: -1656989788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossCaveGoblinPossesedOrbAttack_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 108
+        width: 96
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0.111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b576b4f58bf9b574eb94def99e089c1d
+      internalID: 180200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossCaveGoblinPossesedOrbAttack_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 72
+        width: 96
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0.111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ceb213c0cb3e448b16ae568c5fd041
+      internalID: -579756039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossCaveGoblinPossesedOrbAttack_5
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 72
+        width: 96
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0.111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7af95b08d52f3384fa635694b712f1dd
+      internalID: -1095365578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossCaveGoblinPossesedOrbAttack_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 72
+        width: 96
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0.111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d1aec9a608c974a8712650ec09c33b
+      internalID: 339611568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossCaveGoblinPossesedOrbAttack_7
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 72
+        width: 96
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0.111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63bab5cb10491404b9dae6b19a4c7e04
+      internalID: -1913866463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossCaveGoblinPossesedOrbAttack_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 36
+        width: 96
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0.111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bf150d686d0f6941840758b92b6881f
+      internalID: -160441452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossCaveGoblinPossesedOrbAttack_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 36
+        width: 96
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0.111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 987de2d5cd4958641946e1172c206e87
+      internalID: -1628083338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossCaveGoblinPossesedOrbAttack_10
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 36
+        width: 96
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0.111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c149a673defc9e6428617ee0974f19a0
+      internalID: 1053980602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossCaveGoblinPossesedOrbAttack_11
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 36
+        width: 96
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0.111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7f23c57f45ce4645a803f8fc9214f9e
+      internalID: 1352741072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossCaveGoblinPossesedOrbAttack_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0.111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 024903763f1fb5b46ab28cb9af502ed2
+      internalID: -819533657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossCaveGoblinPossesedOrbAttack_13
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0.111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c4524d009ffcd542a9e0ed63e41b6c7
+      internalID: 420213981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossCaveGoblinPossesedOrbAttack_14
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0.111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f1b41e080969b14c9eb89cd01c61fcf
+      internalID: 1557386643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossCaveGoblinPossesedOrbAttack_15
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0.111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d185bb09a0db59e4fb3627c855daab4c
+      internalID: 768133661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      BossCaveGoblinPossesedOrbAttack_8: -160441452
+      BossCaveGoblinPossesedOrbAttack_1: 2110862316
+      BossCaveGoblinPossesedOrbAttack_2: -1656989788
+      BossCaveGoblinPossesedOrbAttack_0: -1813391275
+      BossCaveGoblinPossesedOrbAttack_5: -1095365578
+      BossCaveGoblinPossesedOrbAttack_9: -1628083338
+      BossCaveGoblinPossesedOrbAttack_11: 1352741072
+      BossCaveGoblinPossesedOrbAttack_13: 420213981
+      BossCaveGoblinPossesedOrbAttack_15: 768133661
+      BossCaveGoblinPossesedOrbAttack_6: 339611568
+      BossCaveGoblinPossesedOrbAttack_12: -819533657
+      BossCaveGoblinPossesedOrbAttack_4: -579756039
+      BossCaveGoblinPossesedOrbAttack_3: 180200
+      BossCaveGoblinPossesedOrbAttack_14: 1557386643
+      BossCaveGoblinPossesedOrbAttack_10: 1053980602
+      BossCaveGoblinPossesedOrbAttack_7: -1913866463
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
